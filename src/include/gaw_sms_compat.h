@@ -1,0 +1,19 @@
+#ifndef GAW_SMS_COMPAT_H
+#define GAW_SMS_COMPAT_H
+#include <stdint.h>
+#include "gaw_entity.h"
+void gaw_sms_compat_reset(void);
+int gaw_sms_compat_call(uint8_t bank,uint16_t addr);
+int gaw_sms_compat_entity_call(uint8_t bank,uint16_t addr,GawEntity *e);
+int gaw_sms_compat_world_call(uint8_t bank,uint16_t addr);
+uint32_t gaw_sms_compat_faults(void);
+uint16_t gaw_sms_compat_last_pc(void);
+const uint8_t *gaw_sms_vram(void);
+const uint8_t *gaw_sms_cram(void);
+const uint8_t *gaw_sms_vdp_regs(void);
+int gaw_sms_take_tile_dirty(unsigned tile);
+void gaw_sms_mark_all_tiles_dirty(void);
+int gaw_sms_take_name_dirty(void);
+int gaw_sms_take_sat_dirty(void);
+uint8_t gaw_sms_rom_bank_read(uint8_t bank,uint16_t cpu_addr);
+#endif

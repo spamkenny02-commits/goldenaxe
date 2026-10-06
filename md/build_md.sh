@@ -1,0 +1,23 @@
+#!/bin/sh
+set -eu
+if [ "${FETCH_TOOLCHAIN:-0}" = 1 ] && ! command -v "${PREFIX:-m68k-elf-}gcc" >/dev/null 2>&1; then
+  ./md/fetch_toolchain.sh "$PWD/md/toolchain"
+  PATH="$PWD/md/toolchain/bin:$PATH"; export PATH
+fi
+PREFIX=${PREFIX:-m68k-elf-}
+CC=${PREFIX}gcc
+OBJCOPY=${PREFIX}objcopy
+SIZE=${PREFIX}size
+command -v "$CC" >/dev/null 2>&1 || { echo "missing $CC (run md/fetch_toolchain.sh or set FETCH_TOOLCHAIN=1)" >&2; exit 2; }
+CFLAGS='-m68000 -Os -ffreestanding -fno-builtin -fno-common -fomit-frame-pointer -ffunction-sections -fdata-sections -Wall -Wextra -Werror -Isrc/include -Imd/include'
+mkdir -p md/build
+SRC='src/ram.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c md/src/runtime.c md/src/platform_md.c md/src/main.c'
+OBJ=''
+for f in $SRC; do o=md/build/$(basename "$f" .c).o; "$CC" $CFLAGS -c "$f" -o "$o"; OBJ="$OBJ $o"; done
+"$CC" -m68000 -c md/src/startup.s -o md/build/startup.o
+"$CC" -m68000 -c md/src/vectors.s -o md/build/vectors.o
+"$CC" -m68000 -nostdlib -Wl,-T,md/link.ld -Wl,--gc-sections -Wl,-Map,md/build/gaw_md.map md/build/vectors.o md/build/startup.o $OBJ -lgcc -o md/build/gaw_md.elf
+"$OBJCOPY" -O binary md/build/gaw_md.elf md/build/gaw_md.bin
+python3 md/fix_header.py md/build/gaw_md.bin
+"$SIZE" md/build/gaw_md.elf
+python3 tools/check_md_rom.py md/build/gaw_md.bin
