@@ -2,21 +2,23 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V13)
+## Current status (V14)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
-- 509/512 world callback entries are native/no-op; 3 interactive callbacks remain bridged.
+- 512/512 world callback entries are native/no-op; no world callback fallback remains.
 - Map loading, progression, gameplay renderer, HUD, map animation, entity update, gameplay entry, map entity spawning and Arthur initialization are native C.
 - Mega Drive backend source and build scripts are present.
 - Save initialization `$0404` and initial VDP setup `$03C0` are now native C,
   with differential tests covering 58 SRAM cases and complete VDP state.
+- Dialogues, three Yes/No menus, stairs and card-game scripts are native C,
+  compared against original RAM, video state and frame timing.
 - Strict C11 tests, differential/regression tests, ASan/UBSan and the 68000 portability audit pass on the current working tree.
 - A linked/tested Mega Drive ROM is **not claimed yet**.
 
 See `docs/CURRENT_STATUS.md` for the exact verified state.
 
-The project is not fully decompiled yet. Three world scripts, two effect-state
-dispatch sites and non-gameplay states still use the instruction bridge. Ten
+The project is not fully decompiled yet. Two effect-state dispatch sites
+and non-gameplay states still use the instruction bridge. Eight
 Mega Drive presentation hooks remain empty. Dispatcher registration coverage
 does not establish complete-game equivalence or a playable console build.
 
@@ -34,7 +36,7 @@ From the repository root, with a C11 compiler and Python 3:
 
 ```sh
 make prepare-rom ROM="/absolute/path/to/Golden Axe Warrior.sms"
-make test test-final test-reset audit
+make test test-final test-reset test-ui audit
 make test-sanitize
 ```
 

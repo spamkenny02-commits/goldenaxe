@@ -1,23 +1,20 @@
 handler table entries: 128
 registered high-level C entity types: 127 / 127
 world callback entries: 512
-registered native/RET world callback entries: 509 / 512
-world callback entries still on compatibility bridge: 3 / 512
-remaining world targets: ADEE B00A B19E
-remaining instruction-bridge call sites: 4
-  src/core.c:524: if(!gaw_world_native_callback(target))gaw_recompiled_world_call(2,target);
-  src/core.c:666: uint8_t s=gaw_ram_read8(0xC090); if(s && s<5u)gaw_recompiled_call(1,effect_states[s]);
-  src/core.c:667: s=gaw_ram_read8(0xC098); if(s && s<5u)gaw_recompiled_call(1,effect_states[s]);
-  src/core.c:888: gaw_recompiled_call(bank, target);
-unimplemented Mega Drive presentation hooks: 10
+registered native/RET world callback entries: 512 / 512
+world callback entries still on compatibility bridge: 0 / 512
+remaining world targets:
+remaining instruction-bridge call sites: 3
+  src/core.c:806: uint8_t s=gaw_ram_read8(0xC090); if(s && s<5u)gaw_recompiled_call(1,effect_states[s]);
+  src/core.c:807: s=gaw_ram_read8(0xC098); if(s && s<5u)gaw_recompiled_call(1,effect_states[s]);
+  src/core.c:1028: gaw_recompiled_call(bank, target);
+unimplemented Mega Drive presentation hooks: 8
   gaw_platform_entity_resource_load
   gaw_platform_map_entity_resource_load
-  gaw_platform_world_rebuilt
   gaw_platform_world_scroll_begin
   gaw_platform_world_scroll_end
   gaw_platform_inventory_refresh
   gaw_platform_player_special_effect
   gaw_platform_show_world_map
-  gaw_platform_world_message
   gaw_platform_player_transition_frame
 Registration coverage is not full-game equivalence or console playability.

@@ -26,7 +26,8 @@ void gaw_platform_world_scroll_end(void);
 void gaw_platform_inventory_refresh(void);
 void gaw_platform_player_special_effect(uint8_t effect_id);
 void gaw_platform_show_world_map(void);
-void gaw_platform_world_message(uint16_t table_addr,uint8_t saved_cell);
+/* Direct bank-3 string address; core resolves per-cell message tables. */
+void gaw_platform_world_message(uint16_t resource,uint8_t saved_cell);
 void gaw_platform_player_transition_frame(void);
 uint8_t gaw_platform_sram_read(uint16_t offset);
 void gaw_platform_sram_write(uint16_t offset,uint8_t value);

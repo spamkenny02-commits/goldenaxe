@@ -9,6 +9,7 @@
 #include "include/gaw_sms_compat.h"
 #include "include/gaw_world.h"
 #include "include/gaw_world_progress.h"
+#include "include/gaw_ui.h"
 
 static void edge_update(uint16_t held_addr, uint16_t pressed_addr, uint8_t now) {
     uint8_t old = gaw_ram_read8(held_addr);
@@ -94,6 +95,7 @@ static void world_transition_display_reset_ram(void){
     gaw_ram_write8(0xC010u,(uint8_t)(gaw_ram_read8(0xC010u)&0xEFu));
     gaw_ram_write8(0xC011u,(uint8_t)(gaw_ram_read8(0xC011u)&0xBFu));
     gaw_ram_write8(0xDD40u,0xD0u);
+    gaw_ui_display_reset();
 }
 /* $65E1: return from a linked/interior room to the cell saved in C0BB. */
 static void world_return_to_saved_cell(void){
@@ -351,7 +353,8 @@ static int world_run_room_entry_callback(uint16_t target){
 static void world_try_script_marker(uint16_t pos,uint8_t value);
 static void hud_update_phase(uint8_t phase);
 static int world_try_message(uint16_t pos,uint16_t table_addr);
-static void world_direct_message(uint16_t resource){gaw_platform_world_message(resource,gaw_ram_read8(0xC0BBu));do{gaw_wait_frame();}while((gaw_ram_read8(RAM_INPUT_HELD)&0x3Fu)==0);gaw_world_finalize_transition();}
+static void script_wait_message(void);
+static void world_direct_message(uint16_t resource){gaw_ui_show_message(resource);script_wait_message();}
 static int world_try_cond_message(uint16_t pos,uint16_t a,uint16_t b){if((gaw_ram_read8(0xC0A6u)&0x77u)!=0x14u||gaw_ram_read16le(0xC060u)!=pos)return 0;world_direct_message((gaw_ram_read8(0xC0D7u)&0x80u)?b:a);return 1;}
 static int world_try_ad55_special(uint16_t pos){if((gaw_ram_read8(0xC0A6u)&0x77u)!=0x14u||gaw_ram_read16le(0xC060u)!=pos)return 0;if(gaw_ram_read8(0xC0D2u)==0){world_direct_message(0xA077u);return 1;}if(gaw_ram_read8(0xC0F7u)!=0){world_direct_message(0xA17Fu);return 1;}gaw_ram_write8(0xC0F7u,1);uint8_t cur=gaw_ram_read8(0xC0DDu);unsigned n=100u;if((unsigned)cur+n>255u)n=255u-cur;gaw_ram_write16le(0xDCE4u,(uint16_t)n);for(unsigned i=0;i<n;++i){gaw_ram_write8(0xC0DDu,(uint8_t)(gaw_ram_read8(0xC0DDu)+1u));gaw_ram_write8(0xDE08u,0x95u);gaw_ram_write8(0xC045u,0x83u);hud_update_phase(3u);}do{gaw_wait_frame();}while((gaw_ram_read8(RAM_INPUT_HELD)&0x3Fu)==0);gaw_world_finalize_transition();return 1;}
 static int world_run_special_message_callback(uint16_t target){
@@ -370,7 +373,13 @@ static int world_run_context_message_callback(uint16_t target){switch(target){ca
 
 /* $667E->$6277: context-sensitive room message.  Text/tile upload is a
    platform concern; input timing and world finalization remain game logic. */
-static int world_try_message(uint16_t pos,uint16_t table_addr){if((gaw_ram_read8(0xC0A6u)&0x77u)!=0x14u||gaw_ram_read16le(0xC060u)!=pos)return 0;gaw_platform_world_message(table_addr,gaw_ram_read8(0xC0BBu));do{gaw_wait_frame();}while((gaw_ram_read8(RAM_INPUT_HELD)&0x3Fu)==0);gaw_world_finalize_transition();return 1;}
+static int world_try_message(uint16_t pos,uint16_t table_addr){
+    if((gaw_ram_read8(0xC0A6u)&0x77u)!=0x14u||gaw_ram_read16le(0xC060u)!=pos)return 0;
+    uint16_t p=table_addr;uint8_t saved=gaw_ram_read8(0xC0BBu);
+    while(gaw_sms_rom_bank_read(2u,p)!=saved)p=(uint16_t)(p+3u);
+    uint16_t text=(uint16_t)(gaw_sms_rom_bank_read(2u,p+1u)|((uint16_t)gaw_sms_rom_bank_read(2u,p+2u)<<8));
+    world_direct_message(text);return 1;
+}
 static int world_run_message_callback(uint16_t target){switch(target){
  case 0xAC27u:world_try_script_marker(0x025Cu,0);world_try_script_marker(0x02C4u,1);world_try_script_marker(0x02F0u,2);if(world_try_message(0x0250u,0xAC5Eu))return 1;if(world_try_message(0x02D4u,0xAC67u))return 1;if(world_try_message(0x02E8u,0xAC70u))return 1;gaw_world_callback_65d0_native();return 1;
  case 0xAC79u:world_try_script_marker(0x0260u,1);world_try_script_marker(0x0268u,0);world_try_script_marker(0x0270u,2);if(world_try_message(0x0250u,0xACA7u))return 1;if(world_try_message(0x02C8u,0xACB0u))return 1;gaw_world_callback_65d0_native();return 1;
@@ -458,8 +467,10 @@ void gaw_world_callback_5d4c_native(void){if(gaw_ram_read8(0xC0A2u)!=0)return;ga
 static void gaw_world_callback_5e75_native(void){if(gaw_ram_read8(0xC0A2u)!=0)return;gaw_ram_write8(0xC0A2u,0x80u);if(gaw_world_progress_test_and_set())return;if((uint8_t)gaw_ram_read16le(RAM_WORLD_CELL_ID)==0x13u)world_spawn_type14();gaw_ram_write8(0xDE08u,0xA8u);gaw_world_finalize_transition();}
 static void gaw_world_callback_5e9c_native(void){if(gaw_ram_read8(0xC0A2u)!=0)return;gaw_ram_write8(0xC0A2u,0x80u);if(world_explicit_progress_test_and_set(3))return;world_callback_5e57_body();gaw_ram_write8(0xDE08u,0xA8u);world_spawn_type14();}
 static void gaw_world_callback_5ecd_native(void){if(gaw_ram_read8(0xC0A2u)!=0)return;gaw_ram_write8(0xC0A2u,0x80u);if(!world_explicit_progress_test_and_set(3)){gaw_ram_write8(0xDE08u,0xA8u);world_spawn_type14();}if(gaw_ram_read8(0xC0A8u)==1u){gaw_ram_write8(0xC0A8u,2u);uint16_t cell=gaw_ram_read16le(RAM_WORLD_CELL_ID);switch(gaw_ram_read8(0xC0A9u)&3u){case 0:case 1:world_open_gate5(cell);break;case 2:world_open_gate6(cell);break;default:world_open_gate7(cell);break;}}}
+static int world_run_interactive_callback(uint16_t target);
 int gaw_world_native_callback(uint16_t target){
     if(target==0 || target==0xB761u)return 1;
+    if(world_run_interactive_callback(target))return 1;
     if(world_run_link_callback(target))return 1;
     if(world_run_progress_gate_callback(target))return 1;
     if(world_run_finalize_callback(target))return 1;
@@ -520,8 +531,8 @@ void gaw_world_run_callback(void) {
     /* Native $5BB4-$5C93 special interior transition logic. */
     (void)gaw_world_pre_callback_transition();
     uint16_t target = gaw_ram_read16le(RAM_WORLD_CALLBACK);
-    /* $B761 is a bare RET and is used by 193/512 cells. */
-    if(!gaw_world_native_callback(target))gaw_recompiled_world_call(2,target);
+    /* All 512 table entries resolve to native handlers or the bare RET. */
+    (void)gaw_world_native_callback(target);
 }
 
 
@@ -595,6 +606,135 @@ static uint8_t world_random_byte(void){
 #undef WRRCA
     return (uint8_t)(gaw_platform_entropy8()^(uint8_t)hl);
 }
+
+/* Interactive scripts $66B5/$66F6/$616F/$6036. Their menus and dialogue
+   now write the shared video shadow directly; no instruction execution. */
+static uint8_t script_rom(uint16_t a){return gaw_sms_rom_bank_read(1u,a);}
+static void script_finish(void){
+    gaw_world_expand_metatiles();gaw_hud_rebuild_full();gaw_wait_frame();gaw_ui_upload_name_table();
+    for(unsigned i=0;i<16u;++i)gaw_ram_write8((uint16_t)(0xDCB0u+i),gaw_sms_rom_bank_read(0u,(uint16_t)(0x1E20u+i)));
+    gaw_hud_update_status_descriptor();
+}
+static void script_wait_message(void){do{gaw_wait_frame();}while((gaw_ram_read8(RAM_INPUT_PRESSED)&0x3Fu)==0);script_finish();}
+static void script_message(uint16_t text){gaw_ui_show_message(text);script_wait_message();}
+static void script_currency_step(int delta){
+    gaw_ram_write8(0xC0DDu,(uint8_t)(gaw_ram_read8(0xC0DDu)+delta));
+    gaw_ram_write8(0xDE08u,0x95);gaw_ram_write8(0xC045u,0x83);
+    hud_update_phase(3);gaw_wait_frame();gaw_wait_frame();
+}
+static int script_pay(uint8_t cost){
+    if(gaw_ram_read8(0xC0DDu)<cost){script_message(0x8BCDu);return 0;}
+    unsigned n=cost?cost:256u;while(n--)script_currency_step(-1);return 1;
+}
+static void script_change_cell(uint16_t cell){world_save_local_presence();gaw_ram_write16le(RAM_WORLD_CELL_ID,cell);}
+static void script_enter_cell(uint16_t cell){script_change_cell(cell);gaw_ui_wipe_name_table();(void)gaw_world_load_current_cell();}
+static int script_gate(uint16_t position){return (gaw_ram_read8(0xC0A6u)&0x77u)==0x14u&&gaw_ram_read16le(0xC060u)==position;}
+static uint8_t script_stair_price(void){
+    uint16_t p=0x6087u;uint8_t value=0,saved=gaw_ram_read8(0xC0BBu);
+    /* $61C3 cost markers update C once, followed by one or more cell IDs. */
+    for(;;){uint8_t key=script_rom(p++);if(key==0){value=script_rom(p++);key=script_rom(p++);}if(key==saved)return value;}
+}
+static int script_stairs(void){
+    if((gaw_ram_read8(0xC0A6u)&0x30u)==0x30u&&gaw_ram_read16le(0xC060u)==0x019Cu){
+        uint16_t p=0x61A8u;uint8_t saved=gaw_ram_read8(0xC0BBu);
+        while(script_rom(p)!=saved)p=(uint16_t)(p+3u);
+        p=(uint16_t)(p+9u);
+        gaw_ram_write8(0xC0BBu,script_rom(p));gaw_ram_write8(0xC0BDu,script_rom(p+1u));gaw_ram_write8(0xC0BEu,script_rom(p+2u));
+        world_return_to_saved_cell();world_explicit_progress_set(gaw_ram_read16le(RAM_WORLD_CELL_ID),0);return 1;
+    }
+    if(!script_gate(0x025Cu)||gaw_ram_read8(0xDC38u)==1u)return 0;
+    gaw_ram_write16le(0xDCE0u,0xDCE4u);gaw_ram_write16le(0xDCE4u,script_stair_price());
+    gaw_ui_show_message(0x911Eu);
+    if(gaw_ui_yes_no()==0xFFu&&script_pay(script_stair_price())){
+        gaw_ram_write16le(0xDC37u,gaw_ram_read16le(0xDC38u));
+        gaw_ram_write16le(0xDC47u,gaw_ram_read16le(0xDC48u));
+    }
+    script_finish();return 1;
+}
+static int script_game_entry(void){
+    if(!script_gate(0x02DCu))return 0;
+    gaw_ui_show_message(0xB90Eu);
+    if(gaw_ui_yes_no()==0){script_message(0xB930u);return 1;}
+    if(!script_pay(10)){script_finish();return 1;}
+    script_enter_cell(0x000Bu);gaw_ram_write8(0xC073u,0);gaw_ram_write8(RAM_MAIN_STATE,8);return 1;
+}
+static void card_refresh(void){gaw_ram_write8(0xDE08u,0x95);script_finish();}
+static void card_advance(void){gaw_ram_write8(0xC073u,(uint8_t)(gaw_ram_read8(0xC073u)+1u));}
+static int card_apply(uint16_t tile){
+    uint16_t table=gaw_ram_read8(0xDC0Cu)==0x38u?0x6801u:0x67F9u;
+    uint8_t original=gaw_ram_read8(tile),value=original;
+    for(;;){uint8_t from=script_rom(table);if(from&0x80u)break;if(from==original){value=script_rom(table+1u);break;}table=(uint16_t)(table+2u);}
+    gaw_ram_write8(tile,value);
+    return value!=original;
+}
+static void card_conversion_pause(void){for(unsigned i=0;i<15u;++i)gaw_wait_frame();card_refresh();}
+static void script_card_game(void){
+    switch(gaw_ram_read8(0xC073u)){
+        case 0:(void)gaw_world_load_current_cell();script_message(0xB94Du);card_advance();break;
+        case 1:{
+            if((gaw_ram_read8(0xC0A6u)&0x77u)!=0x14u||gaw_ram_read8(0xC061u)!=2u)return;
+            uint8_t pos=gaw_ram_read8(0xC060u);unsigned index;
+            for(index=0;index<10u;++index)if(pos==script_rom((uint16_t)(0x68ECu+index)))break;
+            if(index==10u)return;
+            uint16_t slot=(uint16_t)(0xDC00u+script_rom((uint16_t)(0x68F6u+index)));
+            if(gaw_ram_read8(slot)!=0x3Au)return;
+            for(;;){
+                uint8_t kind=script_rom((uint16_t)(0x6776u+(world_random_byte()&0x1Fu)));
+                uint16_t pair=(uint16_t)(script_rom((uint16_t)(0x6796u+kind*2u))|
+                                        ((uint16_t)script_rom((uint16_t)(0x6797u+kind*2u))<<8));
+                uint8_t face=(uint8_t)pair;
+                if(face>=0x38u&&gaw_ram_read8(0xDC0Cu)!=0)continue;
+                gaw_ram_write8(slot,face);
+                if(face>=0x38u){gaw_ram_write16le(0xDC0Cu,pair);card_refresh();script_message(face==0x38u?0xB9D7u:0xBA20u);}
+                else{
+                    if(gaw_ram_read8(0xDC03u)==0x3Au)gaw_ram_write16le(0xDC03u,pair);
+                    else if(gaw_ram_read8(0xDC06u)==0x3Au)gaw_ram_write16le(0xDC06u,pair);
+                    else{gaw_ram_write16le(0xDC09u,pair);card_advance();}
+                    card_refresh();
+                }
+                break;
+            }
+            break;
+        }
+        case 2:
+            if(gaw_ram_read8(0xDC0Cu)!=0){
+                for(unsigned i=0;i<10u;++i)if(card_apply((uint16_t)(0xDC33u+i)))card_conversion_pause();
+                for(unsigned i=0;i<3u;++i){uint16_t tile=(uint16_t)(0xDC03u+i*3u);(void)card_apply(tile);if(card_apply(tile+1u))card_conversion_pause();}
+            }
+            card_advance();break;
+        case 3:{
+            uint8_t sum=0;
+            for(unsigned i=0;i<3u;++i)sum=(uint8_t)(sum+script_rom((uint16_t)(0x68C3u+(uint8_t)(gaw_ram_read8((uint16_t)(0xDC03u+i*3u))-0x34u))));
+            int current=gaw_ram_read8(0xC0DDu),delta=(int8_t)sum;
+            if(delta>0&&current+delta>255)delta=255-current;
+            if(delta<0&&current+delta<0)delta=-current;
+            unsigned steps=(unsigned)(delta<0?-delta:delta);
+            gaw_ram_write16le(0xDCE0u,0xDCE4u);gaw_ram_write16le(0xDCE4u,(uint16_t)steps);
+            gaw_ui_show_message(sum&0x80u?0xB982u:0xB95Fu);
+            /* Positive $00 follows DJNZ's 256-iteration convention. */
+            if((sum&0x80u)==0&&steps==0)steps=256u;
+            while(steps--)script_currency_step((sum&0x80u)?-1:1);
+            script_wait_message();
+            if(gaw_ram_read8(0xC0DDu)>=10u){
+                gaw_ui_show_message(0xB9BFu);
+                if(gaw_ui_yes_no_card()!=0){
+                    (void)gaw_world_load_current_cell();gaw_ui_show_message(0xBA8Eu);(void)script_pay(10);script_wait_message();gaw_ram_write8(0xC073u,1);return;
+                }
+            }
+            script_message(0xB930u);script_enter_cell(0x005Fu);gaw_ram_write8(0xC311u,0x58);gaw_ram_write8(0xC313u,0x88);gaw_ram_write8(RAM_MAIN_STATE,8);break;
+        }
+        default:break;
+    }
+}
+static int world_run_interactive_callback(uint16_t target){
+    switch(target){
+        case 0xB19Eu:if(!script_stairs())gaw_world_callback_65d0_native();return 1;
+        case 0xB00Au:if(!script_game_entry())gaw_world_callback_65d0_native();return 1;
+        case 0xADEEu:script_card_game();return 1;
+        default:return 0;
+    }
+}
+
 static int byte_in_ram(uint16_t base,unsigned n,uint8_t v){for(unsigned i=0;i<n;++i)if(gaw_ram_read8((uint16_t)(base+i))==v)return 1;return 0;}
 /* $1C15-$1C90: maintain the recent-cell ring and pre-mark randomly selected
    local encounter slots in C200. */

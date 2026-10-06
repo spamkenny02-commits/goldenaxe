@@ -21,6 +21,8 @@ typedef struct {
 } Z;
 static uint32_t faults;
 static uint16_t last_fault_pc;
+static uint8_t refresh_trace[64];
+static unsigned refresh_count;
 static uint8_t vdp_ctrl_latch, vdp_ctrl_low;
 static uint16_t vdp_addr;
 static uint8_t vdp_code;
@@ -59,6 +61,7 @@ static void vdp_data_w(uint8_t v){vdp_ctrl_latch=0;if(vdp_code==3)vdp_cram[vdp_a
 static uint8_t vdp_data_r(void){uint8_t v=vdp_readbuf;vdp_readbuf=vdp_vram[vdp_addr&0x3FFFu];vdp_addr=(uint16_t)((vdp_addr+1u)&0x3FFFu);vdp_ctrl_latch=0;return v;}
 void gaw_sms_vdp_control_write(uint8_t value){vdp_ctrl(value);}
 void gaw_sms_vdp_data_write(uint8_t value){vdp_data_w(value);}
+uint8_t gaw_sms_vdp_data_read(void){return vdp_data_r();}
 static uint8_t inport(Z*z,uint8_t p){(void)z;if(p==0xBE)return vdp_data_r();if(p==0xBF){
     /* SMS VDP status is hardware state, not RAM_C01B. Reading $BF
        acknowledges/clears the pending status flags; the IRQ handler itself
@@ -79,7 +82,7 @@ static uint8_t fetch(Z*z){uint8_t v=mr(z,z->pc);z->pc++;z->r=(uint8_t)((z->r&0x8
 
 static void cbop(Z*z,uint8_t op,int idx,int8_t disp){unsigned x=op>>6,y=(op>>3)&7u,r=op&7u;uint16_t ma=0;uint8_t *rp;uint8_t v;if(idx){ma=(uint16_t)((idx==1?z->ix:z->iy)+disp);v=mr(z,ma);}else{rp=r8p(z,r,&ma,0,0);v=rp?*rp:mr(z,ma);}if(x==0){uint8_t c=0,q=v;switch(y){case 0:c=v>>7;q=(uint8_t)((v<<1)|c);break;case 1:c=v&1;q=(uint8_t)((v>>1)|(c<<7));break;case 2:c=v>>7;q=(uint8_t)((v<<1)|((z->f&FC)?1:0));break;case 3:c=v&1;q=(uint8_t)((v>>1)|((z->f&FC)?0x80:0));break;case 4:c=v>>7;q=(uint8_t)(v<<1);break;case 5:c=v&1;q=(uint8_t)((v>>1)|(v&0x80));break;case 6:c=v>>7;q=(uint8_t)((v<<1)|1);break;default:c=v&1;q=(uint8_t)(v>>1);break;}z->f=(uint8_t)(szp(q)|(c?FC:0));if(ma)mw(z,ma,q);else *r8p(z,r,&ma,0,0)=q;if(idx&&r!=6){uint16_t dummy=0;uint8_t *d=r8p(z,r,&dummy,0,0);if(d)*d=q;}}else if(x==1){z->f=(uint8_t)((z->f&FC)|FH|(v&(FY|FX))|((v&(1u<<y))?0:(FZ|FP))|((y==7&&(v&0x80))?FS:0));}else{uint8_t q=(x==2)?(uint8_t)(v&~(1u<<y)):(uint8_t)(v|(1u<<y));if(ma)mw(z,ma,q);else *r8p(z,r,&ma,0,0)=q;if(idx&&r!=6){uint16_t dummy=0;uint8_t*d=r8p(z,r,&dummy,0,0);if(d)*d=q;}}}
 
-static void edop(Z*z,uint8_t op){unsigned x=op>>6,y=(op>>3)&7u,zz=op&7u,p=y>>1,q=y&1u;if(x==1){if(zz==0){uint8_t v=inport(z,z->c);if(y!=6){uint16_t m=0;uint8_t*r=r8p(z,y,&m,0,0);if(r)*r=v;}z->f=(uint8_t)((z->f&FC)|szp(v));}else if(zz==1){uint8_t v=0;if(y!=6){uint16_t m=0;uint8_t*r=r8p(z,y,&m,0,0);v=r?*r:mr(z,m);}outport(z,z->c,v);}else if(zz==2){uint16_t a=hl(z),b=get16(z,p,0);uint32_t r;if(q){r=(uint32_t)a+b+((z->f&FC)?1:0);uint16_t w=(uint16_t)r;z->f=(uint8_t)((w>>8)&0xA8u);if(!w)z->f|=FZ;if(((a^b^w)&0x1000u))z->f|=FH;if((~(a^b)&(a^w)&0x8000u))z->f|=FP;if(r>0xFFFFu)z->f|=FC;shl16(z,w);}else{r=(uint32_t)a-b-((z->f&FC)?1:0);uint16_t w=(uint16_t)r;z->f=(uint8_t)(FN|((w>>8)&0xA8u));if(!w)z->f|=FZ;if((a^b^w)&0x1000u)z->f|=FH;if((a^b)&(a^w)&0x8000u)z->f|=FP;if(r&0x10000u)z->f|=FC;shl16(z,w);}}else if(zz==3){uint16_t a=fetch16(z);if(q){set16(z,p,0,mr16(z,a));}else mw16(z,a,get16(z,p,0));}else if(zz==4){z->a=sub8(z,0,z->a,0);}else if(zz==5){z->pc=pop(z);z->iff1=z->iff2;}else if(zz==6){static const uint8_t imv[8]={0,0,1,2,0,0,1,2};z->im=imv[y];}else{switch(y){case 0:z->i=z->a;break;case 1:z->r=z->a;break;case 2:z->a=z->i;z->f=(uint8_t)((z->f&FC)|(z->a&0xA8u)|(z->a?0:FZ)|(z->iff2?FP:0));break;case 3:z->a=z->r;z->f=(uint8_t)((z->f&FC)|(z->a&0xA8u)|(z->a?0:FZ)|(z->iff2?FP:0));break;default:break;}}return;}
+static void edop(Z*z,uint8_t op){unsigned x=op>>6,y=(op>>3)&7u,zz=op&7u,p=y>>1,q=y&1u;if(x==1){if(zz==0){uint8_t v=inport(z,z->c);if(y!=6){uint16_t m=0;uint8_t*r=r8p(z,y,&m,0,0);if(r)*r=v;}z->f=(uint8_t)((z->f&FC)|szp(v));}else if(zz==1){uint8_t v=0;if(y!=6){uint16_t m=0;uint8_t*r=r8p(z,y,&m,0,0);v=r?*r:mr(z,m);}outport(z,z->c,v);}else if(zz==2){uint16_t a=hl(z),b=get16(z,p,0);uint32_t r;if(q){r=(uint32_t)a+b+((z->f&FC)?1:0);uint16_t w=(uint16_t)r;z->f=(uint8_t)((w>>8)&0xA8u);if(!w)z->f|=FZ;if(((a^b^w)&0x1000u))z->f|=FH;if((~(a^b)&(a^w)&0x8000u))z->f|=FP;if(r>0xFFFFu)z->f|=FC;shl16(z,w);}else{r=(uint32_t)a-b-((z->f&FC)?1:0);uint16_t w=(uint16_t)r;z->f=(uint8_t)(FN|((w>>8)&0xA8u));if(!w)z->f|=FZ;if((a^b^w)&0x1000u)z->f|=FH;if((a^b)&(a^w)&0x8000u)z->f|=FP;if(r&0x10000u)z->f|=FC;shl16(z,w);}}else if(zz==3){uint16_t a=fetch16(z);if(q){set16(z,p,0,mr16(z,a));}else mw16(z,a,get16(z,p,0));}else if(zz==4){z->a=sub8(z,0,z->a,0);}else if(zz==5){z->pc=pop(z);z->iff1=z->iff2;}else if(zz==6){static const uint8_t imv[8]={0,0,1,2,0,0,1,2};z->im=imv[y];}else{switch(y){case 0:z->i=z->a;break;case 1:z->r=z->a;break;case 2:z->a=z->i;z->f=(uint8_t)((z->f&FC)|(z->a&0xA8u)|(z->a?0:FZ)|(z->iff2?FP:0));break;case 3:z->a=z->r;if(refresh_count<64u)refresh_trace[refresh_count++]=z->r;z->f=(uint8_t)((z->f&FC)|(z->a&0xA8u)|(z->a?0:FZ)|(z->iff2?FP:0));break;default:break;}}return;}
  if(x==2 && y>=4 && zz<=3){int dec=(y&1u);int rep=(y>=6);uint16_t h=hl(z),d=de(z),b=bc(z);uint8_t v;if(zz==0){v=mr(z,h);mw(z,d,v);h=(uint16_t)(h+(dec?-1:1));d=(uint16_t)(d+(dec?-1:1));b--;shl16(z,h);sde16(z,d);sbc16(z,b);z->f=(uint8_t)((z->f&(FS|FZ|FC))|(b?FP:0)|(((z->a+v)&2)?FY:0)|(((z->a+v)&8)?FX:0));if(rep&&b)z->pc=(uint16_t)(z->pc-2u);}else if(zz==1){v=mr(z,h);uint8_t r=sub8(z,z->a,v,0);uint8_t c=z->f&FC;h=(uint16_t)(h+(dec?-1:1));b--;shl16(z,h);sbc16(z,b);z->f=(uint8_t)((z->f&~FP)|(b?FP:0)|c);(void)r;if(rep&&b&&!(z->f&FZ))z->pc=(uint16_t)(z->pc-2u);}else if(zz==2){v=inport(z,z->c);mw(z,h,v);h=(uint16_t)(h+(dec?-1:1));z->b--;shl16(z,h);z->f=(uint8_t)((z->b?0:FZ)|FN);if(rep&&z->b)z->pc=(uint16_t)(z->pc-2u);}else{v=mr(z,h);outport(z,z->c,v);h=(uint16_t)(h+(dec?-1:1));z->b--;shl16(z,h);z->f=(uint8_t)((z->b?0:FZ)|FN);if(rep&&z->b)z->pc=(uint16_t)(z->pc-2u);} }
 }
 
@@ -116,8 +119,11 @@ static void native_032a(Z *z,int set_bank){
     shl16(z,src); z->b=0; z->c=4; uint16_t rv=(uint16_t)(last+1u); uint8_t lo=sub8(z,(uint8_t)rv,4,0); z->a=lo; z->d=(uint8_t)((rv>>8)-((uint8_t)rv<4u?1u:0u)); z->e=lo;
 }
 
-static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world){
+static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world,
+               uint16_t arg_hl,uint16_t arg_de,uint16_t arg_bc,uint8_t arg_a){
     Z z; memset(&z,0,sizeof z); z.p0=0; z.p1=1; z.p2=bank; z.sp=0xDFF0; z.pc=addr; z.ix=ix;
+    refresh_count=0;
+    shl16(&z,arg_hl);sde16(&z,arg_de);sbc16(&z,arg_bc);z.a=arg_a;
     if(world) z.e=gaw_ram_read8(0xC0A6);
     push(&z,0xFFFF);
     unsigned steps_since_sync=0;
@@ -136,11 +142,13 @@ static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world){
     }
 }
 void gaw_sms_compat_reset(void){memset(vdp_regs,0,sizeof vdp_regs);memset(vdp_vram,0,sizeof vdp_vram);memset(vdp_cram,0,sizeof vdp_cram);memset(vdp_tile_dirty,1,sizeof vdp_tile_dirty);vdp_name_dirty=vdp_sat_dirty=1;vdp_ctrl_latch=0;vdp_addr=0;vdp_code=0;vdp_status=0;faults=0;last_fault_pc=0;}
-int gaw_sms_compat_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,0);}
-int gaw_sms_compat_entity_call(uint8_t bank,uint16_t addr,GawEntity*e){return run(bank,addr,gaw_entity_addr(e),0);}
-int gaw_sms_compat_world_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,1);}
+int gaw_sms_compat_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,0,0,0,0,0);}
+int gaw_sms_compat_call_args(uint8_t bank,uint16_t addr,uint16_t h,uint16_t d,uint16_t b,uint8_t a){return run(bank,addr,0,0,h,d,b,a);}
+int gaw_sms_compat_entity_call(uint8_t bank,uint16_t addr,GawEntity*e){return run(bank,addr,gaw_entity_addr(e),0,0,0,0,0);}
+int gaw_sms_compat_world_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,1,0,0,0,0);}
 uint32_t gaw_sms_compat_faults(void){return faults;}
 uint16_t gaw_sms_compat_last_pc(void){return last_fault_pc;}
+unsigned gaw_sms_compat_refresh_trace(uint8_t *values,unsigned capacity){unsigned n=refresh_count<capacity?refresh_count:capacity;if(n)memcpy(values,refresh_trace,n);return refresh_count;}
 const uint8_t *gaw_sms_vram(void){return vdp_vram;}
 const uint8_t *gaw_sms_cram(void){return vdp_cram;}
 const uint8_t *gaw_sms_vdp_regs(void){return vdp_regs;}

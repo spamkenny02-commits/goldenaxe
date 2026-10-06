@@ -13,6 +13,7 @@ static void reset_probe(void) {
     memset(gaw_ram,0,sizeof gaw_ram);
     gaw_sms_compat_reset();
     gaw_ram_write16le(0xC060,0xFFFF);
+    gaw_ram_write8(0xC073,1); /* inert card-selection phase */
 }
 int main(void) {
     gaw_platform_init();

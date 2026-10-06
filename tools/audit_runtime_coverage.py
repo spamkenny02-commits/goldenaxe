@@ -38,7 +38,7 @@ def main():
     done = sum(t in native_world for t in world)
     print(f'registered native/RET world callback entries: {done} / {len(world)}')
     print(f'world callback entries still on compatibility bridge: {len(world)-done} / {len(world)}')
-    print('remaining world targets: ' + ' '.join(f'{t:04X}' for t in remaining_world))
+    print(('remaining world targets: ' + ' '.join(f'{t:04X}' for t in remaining_world)).rstrip())
     calls = []
     for p in sorted((ROOT/'src').glob('*.c')):
         if p.name == 'recompiled.c': continue
