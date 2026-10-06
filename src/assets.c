@@ -4,6 +4,11 @@
 
 static void address(uint16_t a){gaw_sms_vdp_control_write((uint8_t)a);gaw_sms_vdp_control_write((uint8_t)(a>>8));}
 static uint8_t rom(uint8_t bank,uint16_t a){return gaw_sms_rom_bank_read(a<0x4000u?0u:a<0x8000u?1u:bank,a);}
+void gaw_assets_load_masked(uint8_t bank,uint16_t source,uint16_t destination,uint16_t count,uint8_t mask){
+    gaw_ram_write8(0xC01Fu,mask);address(destination);
+    unsigned n=count?count:65536u;
+    while(n--){uint8_t value=rom(bank,source++);for(unsigned plane=0;plane<4u;++plane)gaw_sms_vdp_data_write(mask&(1u<<plane)?value:0);}
+}
 uint16_t gaw_assets_unpack_tiles(uint8_t bank,uint16_t source,uint16_t destination){
     for(unsigned plane=0;plane<4u;++plane){
         uint16_t dst=(uint16_t)(destination+plane);

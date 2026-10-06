@@ -19,7 +19,7 @@ static void setup(unsigned item,unsigned delay){
     gaw_host_queue_pause(delay);
 }
 int main(void){
-    for(unsigned s=0;s<256u;++s)assert(gaw_main_state_is_native((uint8_t)s)==((s>=2u&&s<=12u&&(s&1u)==0)||s==0x14u));
+    for(unsigned s=0;s<256u;++s)assert(gaw_main_state_is_native((uint8_t)s)==((s>=2u&&s<=12u&&(s&1u)==0)||s==0x10u||s==0x14u));
     const unsigned delays[]={24,30,80,255};
     for(zero_caps=0;zero_caps<2u;++zero_caps)for(unsigned item=0;item<6u;++item)for(unsigned d=0;d<4u;++d){
         setup(item,delays[d]);assert(gaw_sms_compat_call(0,0x00F4));assert(gaw_sms_compat_faults()==0);

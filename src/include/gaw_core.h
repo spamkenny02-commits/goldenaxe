@@ -12,6 +12,7 @@ void gaw_state_enter_gameplay(void); /* original $24B6, state value $08 */
 void gaw_state_gameplay_init(void); /* original $24C5, state value $0A */
 void gaw_world_spawn_map_entities_native(void); /* original $1780 */
 void gaw_state_gameplay(void);      /* original $24F3, state value $0C */
+void gaw_state_inventory(void); /* $70F2, state $10 */
 void gaw_wait_frame(void);          /* portable form of $0B95 */
 void gaw_nmi_pause(void);           /* original NMI behavior at $0066 */
 void gaw_vblank_tick(uint8_t held_bits); /* native video/input/frame IRQ portion */

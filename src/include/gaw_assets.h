@@ -3,6 +3,7 @@
 #include <stdint.h>
 /* Original four-plane RLE resource stream, returns next source address. */
 uint16_t gaw_assets_unpack_tiles(uint8_t bank,uint16_t source,uint16_t destination);
+void gaw_assets_load_masked(uint8_t bank,uint16_t source,uint16_t destination,uint16_t count,uint8_t mask); /* $0365 */
 /* $2AF4: item/resource dispatch into the portable VRAM shadow. */
 void gaw_assets_load_item(uint8_t item,uint16_t destination);
 void gaw_assets_load_map_entity(uint8_t type,uint8_t gfx_slot); /* $187D-$18CC */

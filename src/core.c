@@ -1083,6 +1083,7 @@ static NativeStateHandler native_state_handler(uint8_t state){
         case 0x08: return gaw_state_enter_gameplay;
         case 0x0A: return gaw_state_gameplay_init;
         case 0x0C: return gaw_state_gameplay;
+        case 0x10: return gaw_state_inventory;
         case 0x14: return state_game_over;
         default: return NULL;
     }

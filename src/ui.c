@@ -4,6 +4,7 @@
 #include "include/gaw_platform.h"
 #include "include/gaw_ram.h"
 #include "include/gaw_video.h"
+#include "include/gaw_assets.h"
 
 #define R(a) gaw_ram_read8((uint16_t)(a))
 #define W(a,v) gaw_ram_write8((uint16_t)(a),(uint8_t)(v))
@@ -260,8 +261,7 @@ void gaw_ui_status_font(void){
     for(unsigned i=0;i<28u*8u;++i){gaw_sms_vdp_data_write(0xFFu);(void)gaw_sms_vdp_data_read();(void)gaw_sms_vdp_data_read();(void)gaw_sms_vdp_data_read();}
 }
 /* $0812: fixed-width text using the bank-3 character descriptor. */
-void gaw_ui_fixed_text(uint16_t source,uint16_t destination){
-    const uint16_t descriptor=0x8A8Eu;
+static void fixed_text(uint16_t source,uint16_t destination,uint16_t descriptor){
     W16(0xDCC0u,destination);
     for(uint8_t ch=rom(source++);ch;ch=rom(source++)){
         if(ch==0xFFu){destination=(uint16_t)(R16(0xDCC0u)+0x40u);W16(0xDCC0u,destination);continue;}
@@ -270,4 +270,22 @@ void gaw_ui_fixed_text(uint16_t source,uint16_t destination){
         do{uint8_t found=rom(p--);--count;if(found==ch)break;}while(count);
         W(destination++,(uint8_t)((uint8_t)count+rom(descriptor+4u)));W(destination++,rom(descriptor+5u));
     }
+}
+void gaw_ui_fixed_text(uint16_t source,uint16_t destination){fixed_text(source,destination,0x8A8Eu);}
+void gaw_ui_inventory_text(uint16_t source,uint16_t destination){fixed_text(source,destination,0x8AE4u);}
+void gaw_ui_decimal(uint8_t value,uint16_t destination){
+    const uint8_t digits[3]={(uint8_t)(value/100u),(uint8_t)(value%100u/10u),(uint8_t)(value%10u)};
+    for(unsigned i=0;i<3u;++i){W(destination++,0xF0u+digits[i]);W(destination++,0x18);}
+}
+void gaw_ui_load_font(uint8_t characters,uint16_t destination){
+    unsigned count=(unsigned)characters*8u;if(!count)count=65536u;
+    gaw_assets_load_masked(3,0x87C6u,destination,(uint16_t)count,3);
+    video_address(destination);
+    while(count--){gaw_sms_vdp_data_write(0xFF);for(unsigned p=0;p<3u;++p)(void)gaw_sms_vdp_data_read();}
+}
+void gaw_ui_clear_playfield(void){
+    W(0xDD40u,0xD0);
+    for(unsigned i=0;i<0x500u;i+=2u)W16(0xD600u+i,0x08FFu);
+    frozen_frame();video_address(0x7800u);
+    for(unsigned i=0;i<0x500u;++i)gaw_sms_vdp_data_write(R(0xD600u+i));
 }

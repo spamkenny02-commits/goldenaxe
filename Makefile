@@ -1,9 +1,9 @@
 CC ?= cc
 CFLAGS ?= -std=c11 -Wall -Wextra -Werror -O2
 CPPFLAGS += -Isrc/include
-SRC = src/ram.c src/video.c src/presentation.c src/assets.c src/scene.c src/effects.c src/reset.c src/ui.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c src/platform_host.c
+SRC = src/ram.c src/video.c src/presentation.c src/assets.c src/scene.c src/effects.c src/reset.c src/ui.c src/inventory.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c src/platform_host.c
 INPUTS = $(wildcard src/include/*.h src/*.inc)
-.PHONY: all test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-sanitize audit clean prepare-rom
+.PHONY: all test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-sanitize audit clean prepare-rom
 all: phase17_host_test
 prepare-rom:
 	@test -n "$(ROM)" || { echo 'Use make prepare-rom ROM=/path/to/game.sms' >&2; exit 2; }
@@ -35,6 +35,8 @@ test-game-over: game_over_host_test
 	./game_over_host_test
 test-presentation: presentation_host_test
 	./presentation_host_test
+test-inventory: inventory_host_test
+	./inventory_host_test
 test-pause: pause_host_test
 	./pause_host_test
 test-effects: effects_host_test
@@ -72,6 +74,8 @@ test-sanitize:
 	./game_over_san
 	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) $(SRC) tests/test_presentation.c -o presentation_san
 	./presentation_san
+	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) $(SRC) tests/test_inventory.c -o inventory_san
+	./inventory_san
 runtime_coverage_host_test: tests/runtime_coverage.c $(SRC) $(INPUTS) src/original_rom.inc
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(SRC) $< -o $@
 audit: runtime_coverage_host_test

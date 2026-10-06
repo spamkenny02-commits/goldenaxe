@@ -17,4 +17,8 @@ void gaw_ui_reveal_world(void); /* $1FA7 */
 void gaw_ui_status_box(void); /* $6398 */
 void gaw_ui_status_font(void); /* $638D font portion */
 void gaw_ui_fixed_text(uint16_t source,uint16_t destination); /* $0812 */
+void gaw_ui_inventory_text(uint16_t source,uint16_t destination); /* $0818 */
+void gaw_ui_decimal(uint8_t value,uint16_t destination); /* $085B */
+void gaw_ui_load_font(uint8_t characters,uint16_t destination); /* $0C36 */
+void gaw_ui_clear_playfield(void); /* $20DA */
 #endif
