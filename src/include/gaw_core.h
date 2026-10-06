@@ -22,6 +22,7 @@ void gaw_world_animate_frame(void);       /* $699C */
 void gaw_render_build_sms_sat(void);      /* $0940 */
 void gaw_hud_update_quarter_frame(void); /* $1E99 */
 void gaw_hud_rebuild_full(void); /* $1E4E */
+void gaw_world_rebuild_display_native(void); /* $1DE2, no progress reapplication */
 void gaw_hud_update_status_descriptor(void); /* $1DF6 */
 
 #endif

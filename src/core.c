@@ -6,7 +6,7 @@
 #include "include/gaw_platform.h"
 #include "include/gaw_ram.h"
 #include "include/gaw_tables.h"
-#include "include/gaw_sms_compat.h"
+#include "include/gaw_video.h"
 #include "include/gaw_world.h"
 #include "include/gaw_world_progress.h"
 #include "include/gaw_ui.h"
@@ -612,12 +612,12 @@ static uint8_t world_random_byte(void){
 /* Interactive scripts $66B5/$66F6/$616F/$6036. Their menus and dialogue
    now write the shared video shadow directly; no instruction execution. */
 static uint8_t script_rom(uint16_t a){return gaw_sms_rom_bank_read(1u,a);}
-static void script_finish(void){
+void gaw_world_rebuild_display_native(void){
     gaw_world_expand_metatiles();gaw_hud_rebuild_full();gaw_wait_frame();gaw_ui_upload_name_table();
     for(unsigned i=0;i<16u;++i)gaw_ram_write8((uint16_t)(0xDCB0u+i),gaw_sms_rom_bank_read(0u,(uint16_t)(0x1E20u+i)));
     gaw_hud_update_status_descriptor();
 }
-static void script_wait_message(void){do{gaw_wait_frame();}while((gaw_ram_read8(RAM_INPUT_PRESSED)&0x3Fu)==0);script_finish();}
+static void script_wait_message(void){do{gaw_wait_frame();}while((gaw_ram_read8(RAM_INPUT_PRESSED)&0x3Fu)==0);gaw_world_rebuild_display_native();}
 static void script_message(uint16_t text){gaw_ui_show_message(text);script_wait_message();}
 static void script_currency_step(int delta){
     gaw_ram_write8(0xC0DDu,(uint8_t)(gaw_ram_read8(0xC0DDu)+delta));
@@ -651,16 +651,16 @@ static int script_stairs(void){
         gaw_ram_write16le(0xDC37u,gaw_ram_read16le(0xDC38u));
         gaw_ram_write16le(0xDC47u,gaw_ram_read16le(0xDC48u));
     }
-    script_finish();return 1;
+    gaw_world_rebuild_display_native();return 1;
 }
 static int script_game_entry(void){
     if(!script_gate(0x02DCu))return 0;
     gaw_ui_show_message(0xB90Eu);
     if(gaw_ui_yes_no()==0){script_message(0xB930u);return 1;}
-    if(!script_pay(10)){script_finish();return 1;}
+    if(!script_pay(10)){gaw_world_rebuild_display_native();return 1;}
     script_enter_cell(0x000Bu);gaw_ram_write8(0xC073u,0);gaw_ram_write8(RAM_MAIN_STATE,8);return 1;
 }
-static void card_refresh(void){gaw_ram_write8(0xDE08u,0x95);script_finish();}
+static void card_refresh(void){gaw_ram_write8(0xDE08u,0x95);gaw_world_rebuild_display_native();}
 static void card_advance(void){gaw_ram_write8(0xC073u,(uint8_t)(gaw_ram_read8(0xC073u)+1u));}
 static int card_apply(uint16_t tile){
     uint16_t table=gaw_ram_read8(0xDC0Cu)==0x38u?0x6801u:0x67F9u;
@@ -800,16 +800,10 @@ static void animate_mode2_bank5(void){
     for(unsigned i=0;i<3u;++i)gaw_ram_write8((uint16_t)(0xDCADu+i),gaw_sms_rom_bank_read(5u,(uint16_t)(src+i)));
 }
 
-/* $699C-$6AE1. Cursor restoration is native; full-screen effects 1/2
-   still use their original instruction stream. Both receive the correct IX. */
+/* $699C-$6AE1: all four effect states are native, for both state slots. */
 void gaw_world_animate_frame(void){
-    static const uint16_t effect_states[5]={0,0x6AFBu,0x6C2Eu,0x6D2Cu,0x6D40u};
-    for(unsigned slot=0;slot<2u;++slot){
-        uint16_t address=(uint16_t)(0xC090u+slot*8u);
-        uint8_t state=gaw_ram_read8(address);
-        if(!gaw_effect_native_step(address)&&state<5u)
-            gaw_sms_compat_indexed_call(1,effect_states[state],address);
-    }
+    (void)gaw_effect_native_step(0xC090u);
+    (void)gaw_effect_native_step(0xC098u);
     uint8_t mode=gaw_ram_read8(0xC040), f=gaw_ram_read8(RAM_FRAME_COUNTER);
     if(mode==0){
         animate_mode0_bank5();
@@ -844,7 +838,7 @@ void gaw_world_animate_frame(void){
     uint8_t cell=(uint8_t)(gaw_ram_read8(0xC0AA)+4u);if(cell>=0x90u)cell=0x20u;gaw_ram_write8(0xC0AA,cell);
 }
 
-static uint8_t render_rom12(uint16_t a){return gaw_sms_rom_bank_read(12u,a);}
+static uint8_t render_rom12(uint16_t a){return gaw_sms_rom_bank_read(a<0x4000u?0u:a<0x8000u?1u:12u,a);}
 
 /* $09EE: append one entity's sprite pieces to the SMS-format staging buffers
    at DD40 (X) and DD80 (Y/tile). */
@@ -1026,7 +1020,7 @@ static void state_pause(void){
     gaw_wait_frame();gaw_ui_upload_name_table();
     pause_sound_delay();gaw_ram_write8(0xDE0Au,0x80);
     do{gaw_wait_frame();}while(gaw_ram_read8(RAM_PAUSE_PRESSED)==0);
-    gaw_ui_status_box();gaw_assets_restore_inventory();script_finish();
+    gaw_ui_status_box();gaw_assets_restore_inventory();gaw_world_rebuild_display_native();
     gaw_ram_write8(0xDE0Au,0);gaw_ram_write8(RAM_MAIN_STATE,0x0C);pause_sound_delay();
 }
 

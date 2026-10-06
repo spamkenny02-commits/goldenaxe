@@ -6,9 +6,8 @@ world callback entries: 512
 registered native/RET world callback entries: 512 / 512
 world callback entries still on compatibility bridge: 0 / 512
 remaining world targets:
-remaining instruction-bridge call sites: 2
-  src/core.c:811: gaw_sms_compat_indexed_call(1,effect_states[state],address);
-  src/core.c:1050: gaw_recompiled_call(bank,target);
+remaining instruction-bridge call sites: 1
+  src/core.c:1044: gaw_recompiled_call(bank,target);
 unimplemented Mega Drive presentation hooks: 6
   gaw_platform_map_entity_resource_load
   gaw_platform_world_scroll_begin

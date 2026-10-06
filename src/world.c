@@ -84,7 +84,7 @@ static void world_post_load_aux(void) {
     if (R8(0xC040)==0) {
         uint16_t src=R8(0xC0AC)==0 ? 0xC998u : 0xC080u;
         memcpy(gaw_ram_ptr(0xCAC0),gaw_ram_ptr(src),8);
-        memcpy(gaw_ram_ptr(0xCAF0),gaw_ram_ptr(src),8);
+        memcpy(gaw_ram_ptr(0xCAF0),gaw_ram_ptr(R8(0xC0AC)==0?src:0xC088u),8);
         if (R8(0xC0AC)!=0) {
             uint8_t cell=(uint8_t)gaw_ram_read16le(RAM_WORLD_CELL_ID);
             if (cell==0x96u || cell==0xAAu || cell==0xCBu) {

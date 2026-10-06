@@ -37,8 +37,7 @@ int main(void){
         assert(gaw_host_frame_count()==0);++cases;
     }
     setup(0,0,0,0,0);assert(gaw_effect_native_step(0xC090));
-    gaw_ram_write8(0xC090,1);assert(!gaw_effect_native_step(0xC090));
-    gaw_ram_write8(0xC090,2);assert(!gaw_effect_native_step(0xC090));
+    gaw_ram_write8(0xC090,5);assert(!gaw_effect_native_step(0xC090));
     printf("native effect cursor differential tests: OK (%u cases)\n",cases);
     return 0;
 }
