@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V17)
+## Current status (V18)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -20,6 +20,8 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - All four world effects are native; 72 complete full-screen cycles are
   compared frame by frame with original execution. Scene asset restoration
   also passes 36 full RAM/video/SRAM comparisons.
+- Palette fades and the world reveal are native; 48 differential cases verify
+  each frame's RAM, VRAM, display registers and final timing.
 - Strict C11 tests, differential/regression tests, ASan/UBSan and the 68000 portability audit pass on the current working tree.
 - A linked/tested Mega Drive ROM is **not claimed yet**.
 
@@ -45,7 +47,7 @@ From the repository root, with a C11 compiler and Python 3:
 
 ```sh
 make prepare-rom ROM="/absolute/path/to/Golden Axe Warrior.sms"
-make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects audit
+make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions audit
 make test-sanitize
 ```
 

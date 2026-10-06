@@ -1,4 +1,4 @@
-# Current status — V17
+# Current status — V18
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -21,6 +21,10 @@ platform backends, including native Motorola 68000/Mega Drive.
   per-frame RAM/VRAM comparison and final CRAM/register/SRAM/timing comparison.
 - Scene restoration $16EF is native: three layers, gates, palettes, metatiles
   and SRAM animation workspace pass 36 unaccelerated original Z80 comparisons.
+- Palette fade-in $0AA4, fade-out $0B12 and world reveal $1FA7 are native C.
+  Their 48 comparisons cover zero/mixed palettes, display flags, input and
+  Pause events; RAM, VRAM and VDP registers match after every shared frame.
+  These are tested prerequisites for state 08, which remains bridged.
 - Sprite animation tables below $8000 now read the fixed ROM banks instead
   of incorrectly reading bank 12. Gate restoration preserves distinct C080
   and C088 records, correcting the previous duplicate copy.
@@ -44,7 +48,7 @@ platform backends, including native Motorola 68000/Mega Drive.
   equivalence. Those services also require lifting and integration validation.
 - No linked/play-tested Mega Drive ROM has been produced.
 
-Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene suites, ASan/UBSan,
+Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition suites, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
 structure/syntax checks. LeakSanitizer is disabled here because sandbox /proc
 access prevents its operation; address/undefined-behavior checks remain enabled.

@@ -110,6 +110,51 @@ void gaw_ui_display_reset(void){
     video_address((uint16_t)(0x8000u|R(0xC010u)));video_address((uint16_t)(0x8100u|R(0xC011u)));
     W(0xDD40u,0xD0);video_address(0x7F00u);gaw_sms_vdp_data_write(0xD0);
 }
+/* $0AD1/$0ADE adjusts one two-bit RGB component at a time. The original
+   waits twice only after a pass that changes at least one palette entry. */
+static void palette_transition(uint16_t steps){
+    for(uint8_t step=rom(steps);step;step=rom(++steps)){
+        uint8_t mask=(uint8_t)(step*3u);
+        for(;;){
+            unsigned changed=0;
+            for(unsigned i=0;i<32u;++i){
+                uint16_t at=(uint16_t)(0xDCA0u+i);
+                uint8_t current=R(at),target=(uint8_t)(R(at+32u)&mask),component=(uint8_t)(current&mask);
+                if(component!=target){W(at,component<target?current+step:current-step);++changed;}
+            }
+            if(!changed)break;
+            gaw_wait_frame();gaw_wait_frame();
+        }
+    }
+}
+void gaw_ui_fade_in(void){
+    memcpy(gaw_ram_ptr(0xDCC0u),gaw_ram_ptr(0xDCA0u),32);
+    memset(gaw_ram_ptr(0xDCA0u),0,32);
+    uint8_t reg=(uint8_t)(R(0xC011u)|0x20u);
+    video_address((uint16_t)(0x8100u|reg));(void)gaw_video_status_read();gaw_wait_frame();
+    reg|=0x40u;video_address((uint16_t)(0x8100u|reg));W(0xC011u,reg);
+    video_address((uint16_t)(0x8000u|R(0xC010u)));palette_transition(0x0B0Au);
+}
+void gaw_ui_fade_out(void){
+    memset(gaw_ram_ptr(0xDCC0u),0,32);palette_transition(0x0B0Eu);gaw_ui_display_reset();
+}
+/* $1FA7/$2003 reveals sixteen rectangular rings, preserving the exact
+   order of writes and the two-frame barrier preceding each ring. */
+void gaw_ui_reveal_world(void){
+    video_address(0x7800u);
+    for(unsigned i=0;i<0x300u;++i){gaw_sms_vdp_data_write(0xFF);gaw_sms_vdp_data_write(0x18);}
+    gaw_ui_fade_in();
+    for(unsigned ring=0;ring<16u;++ring){
+        uint16_t table=(uint16_t)(0x2011u+ring*4u),dst=(uint16_t)(rom(table)|((uint16_t)rom(table+1u)<<8));
+        unsigned rows=rom(table+2u),columns=rom(table+3u);
+        gaw_wait_frame();gaw_wait_frame();
+        for(unsigned side=0;side<4u;++side){
+            unsigned count=(side&1u)?rows:columns;if(!count)count=256u;
+            int delta=side==0?2:side==1?64:side==2?-2:-64;
+            while(count--){dst=(uint16_t)(dst+delta);video_address(dst);gaw_sms_vdp_data_write(R((uint16_t)(dst+0x5E00u)));gaw_sms_vdp_data_write(R((uint16_t)(dst+0x5E01u)));}
+        }
+    }
+}
 static void dialogue_flush(void){
     W(0xDE08u,0x9F);frozen_frame();
     for(unsigned i=0;i<0x410u;++i)video_byte((uint16_t)(0x2001u+i*4u),R(0xD100u+i));
