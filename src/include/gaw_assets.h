@@ -13,4 +13,5 @@ void gaw_assets_restore_inventory(void);
 uint16_t gaw_assets_unpack_ram(uint8_t bank,uint16_t source,uint16_t destination,uint8_t lanes);
 uint16_t gaw_assets_unpack_descriptors(uint8_t bank,uint16_t source,uint16_t destination); /* $0BD3 */
 void gaw_assets_restore_scene(void); /* $16EF */
+void gaw_assets_update_interior_palette(void); /* bank 5 $BE78 */
 #endif

@@ -133,6 +133,7 @@ static void palette_transition(uint16_t steps){
         }
     }
 }
+void gaw_ui_transition_palette(void){palette_transition(0x0B0Au);}
 void gaw_ui_fade_in(void){
     memcpy(gaw_ram_ptr(0xDCC0u),gaw_ram_ptr(0xDCA0u),32);
     memset(gaw_ram_ptr(0xDCA0u),0,32);

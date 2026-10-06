@@ -160,5 +160,18 @@ private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
   Standalone video/MD conversion, 256 presentation cases, 3,072 full IRQ cases,
   256 NMI cases and native-only boot regressions pass.
 
-Next: complete platform hooks, full-game integration, further MD performance
+- The remaining player presentation actions now run in portable C: 16-frame
+  rotating transition, 40-frame interior palette sequence, gradual healing,
+  teleport wipe, eight-pass terrain pattern transformation and the overworld
+  overview generated from all 225 cells. The obsolete special-effect, map and
+  transition-frame platform hooks are removed after implementing their work.
+  48 raw-original comparisons check RAM C000-DF8F, VRAM, CRAM and registers
+  at every shared frame, plus final SRAM and exact barrier totals. ASan/UBSan
+  passes. The reference step budget now accommodates the map's long generation
+  between barriers; frame tests still share native IRQ scheduling.
+- Current MD image is 473,672 bytes, BSS 25,174, checksum A28D. Native boot,
+  attack, Pause/resume, inventory open/close and four-direction movement still
+  execute on the actual 68000 emulator backend. Two empty scroll hooks remain.
+
+Next: complete screen scrolling, full-game integration, further MD performance
 work and hardware testing.

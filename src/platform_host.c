@@ -29,10 +29,7 @@ void gaw_platform_world_rebuilt(void) {gaw_ui_upload_name_table();}
 void gaw_platform_world_scroll_begin(void) {}
 void gaw_platform_world_scroll_end(void) {}
 void gaw_platform_inventory_refresh(void) {gaw_assets_update_inventory();}
-void gaw_platform_player_special_effect(uint8_t effect_id) { (void)effect_id; }
-void gaw_platform_show_world_map(void) {}
 void gaw_platform_world_message(uint16_t resource,uint8_t saved_cell){(void)saved_cell;gaw_ui_show_message(resource);}
-void gaw_platform_player_transition_frame(void) {}
 uint8_t gaw_platform_sram_read(uint16_t offset){return host_sram[offset&0x7FFFu];}
 void gaw_platform_sram_write(uint16_t offset,uint8_t value){host_sram[offset&0x7FFFu]=value;}
 

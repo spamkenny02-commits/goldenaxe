@@ -15,6 +15,7 @@ void gaw_ui_fade_grayscale(void); /* $263E */
 void gaw_ui_load_choice_font(uint16_t resource); /* $0C68 */
 uint16_t gaw_ui_load_choice_font_next(uint16_t resource);
 unsigned gaw_ui_palette_step(uint8_t step); /* one $0ADE pass */
+void gaw_ui_transition_palette(void); /* $0ACE, existing source/target palettes */
 void gaw_ui_reveal_world(void); /* $1FA7 */
 void gaw_ui_status_box(void); /* $6398 */
 void gaw_ui_status_font(void); /* $638D font portion */

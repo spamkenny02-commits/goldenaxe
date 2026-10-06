@@ -5,6 +5,8 @@
 #include "include/gaw_platform.h"
 #include "include/gaw_ram.h"
 #include "include/gaw_world_progress.h"
+#include "include/gaw_ui.h"
+#include "include/gaw_assets.h"
 
 #define R8(a) gaw_ram_read8((a))
 #define W8(a,v) gaw_ram_write8((a),(v))
@@ -275,17 +277,17 @@ bool gaw_world_check_boundary_transition(void) {
 }
 
 
-/* $30E8 gameplay-visible teleport path: save the eight local slots, switch
-   cell, clear non-player entities, decompress the destination and prepare
-   Arthur's entry state. Presentation is delegated to the platform. */
+/* $30E8: save local slots, wipe the old screen and prepare Arthur's entry. */
 void gaw_world_teleport(uint16_t target_cell) {
     uint8_t mask=0;
     for (unsigned i=0;i<8;++i) mask=(uint8_t)((mask<<1)|(R8((uint16_t)(0xC600u+i*0x30u))!=0));
     W8((uint16_t)(0xC200u+(uint8_t)gaw_ram_read16le(RAM_WORLD_CELL_ID)),mask);
     gaw_ram_write16le(RAM_WORLD_CELL_ID,target_cell);
+    gaw_ui_wipe_name_table();
     memset(gaw_ram_ptr(0xC330),0,0x5D0u);
     (void)gaw_world_load_current_cell();
-    W8(RAM_MAIN_STATE,0x08); W8(0xC0E9,0); W8(0xC30A,1);
+    W8(RAM_MAIN_STATE,0x08); W8(0xC0E9,0);
+    W8(0xC0DF,0);gaw_assets_update_inventory();
+    W8(0xC30A,1);
     gaw_ram_write16le(0xC310,0x7000); gaw_ram_write16le(0xC312,0x8800);
-    gaw_platform_world_rebuilt();
 }

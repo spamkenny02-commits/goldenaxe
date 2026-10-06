@@ -116,7 +116,8 @@ static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world,
     unsigned steps_since_sync=0;
     for(;;){
         if(z.pc==0xFFFF) return 1;
-        if(++steps_since_sync>2000000u){ last_fault_pc=z.pc; faults++; return 0; }
+        /* The overview generates all 225 cells without a synchronous wait. */
+        if(++steps_since_sync>20000000u){ last_fault_pc=z.pc; faults++; return 0; }
         if(!raw && (z.pc==0x0327u || z.pc==0x032Au)){ int sb=(z.pc==0x0327u); native_032a(&z,sb); z.pc=pop(&z); continue; }
         /* $0B95 is the game's synchronous VBlank barrier.  The portable
            platform boundary already performs the frame tick, so executing
@@ -149,3 +150,4 @@ unsigned gaw_sms_compat_refresh_trace(uint8_t *values,unsigned capacity){unsigne
 
 int gaw_sms_compat_indexed_call(uint8_t bank,uint16_t addr,uint16_t ix){return run(bank,addr,ix,0,0,0,0,0,0);}
 int gaw_sms_compat_raw_call_args(uint8_t bank,uint16_t addr,uint16_t h,uint16_t d,uint16_t b,uint8_t a){return run(bank,addr,0,0,h,d,b,a,1);}
+int gaw_sms_compat_raw_indexed_call(uint8_t bank,uint16_t addr,uint16_t ix){return run(bank,addr,ix,0,0,0,0,0,1);}

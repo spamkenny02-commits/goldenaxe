@@ -5,8 +5,14 @@
 #include "gaw_host.h"
 #include "gaw_player.h"
 #include "gaw_ram.h"
+#include "gaw_platform.h"
+#include "gaw_video.h"
 
-static void reset_all(void){ memset(gaw_ram,0,sizeof gaw_ram); gaw_host_set_entropy(0x5A); }
+static void reset_all(void){
+ memset(gaw_ram,0,sizeof gaw_ram);gaw_platform_init();gaw_video_reset();
+ gaw_ram_write16le(0xC034,0xDD00);gaw_ram_write8(0xDE05,0x80);
+ gaw_ram_write8(0xC0DA,24);gaw_ram_write8(0xC0DC,24);gaw_host_set_entropy(0x5A);
+}
 
 static void test_native_entity_handlers_1_50(void){
  for(uint8_t t=1;t<=50;++t){ reset_all(); GawEntity *e=gaw_entity(16); e->raw[ENT_TYPE]=t; e->raw[0x11]=0x50;e->raw[0x13]=0x60;gaw_entity(0)->raw[0x11]=0x80;gaw_entity(0)->raw[0x13]=0x80;gaw_ram_write8(0xC037,1);assert(gaw_entity_native_handler(e,t)==1); }

@@ -50,7 +50,7 @@ static void restore_gate_records(void){
     }
 }
 /* $BE78: interior palette selection and the C072 encounter marker. */
-static void interior_palette(void){
+void gaw_assets_update_interior_palette(void){
     if(gaw_ram_read8(0xC0BAu)==0)return;
     uint8_t enabled=0,cell=gaw_ram_read8(0xC0B9u);
     for(unsigned i=0;i<0x26u;++i)if(byte(5,(uint16_t)(0xBF68u+i))==cell){enabled=1;break;}
@@ -78,7 +78,7 @@ void gaw_assets_restore_scene(void){
     (void)gaw_assets_unpack_ram(bank,source,0xC900u,2);
     memcpy(gaw_ram_ptr(0xC080),gaw_ram_ptr(0xCAC0),8);
     memcpy(gaw_ram_ptr(0xC088),gaw_ram_ptr(0xCAF0),8);
-    restore_gate_records();interior_palette();auxiliary_metatiles();
+    restore_gate_records();gaw_assets_update_interior_palette();auxiliary_metatiles();
     source=word(0,(uint16_t)(0x1759u+2u*gaw_ram_read8(0xC040u)));
     (void)gaw_assets_unpack_ram(11,source,0xD100u,4);
     uint16_t page=(gaw_ram_read8(0xDFFCu)&4u)?0x4000u:0u;
