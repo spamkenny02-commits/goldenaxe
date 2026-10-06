@@ -57,6 +57,8 @@ static void push(Z*z,uint16_t v){mw(z,--z->sp,(uint8_t)(v>>8));mw(z,--z->sp,(uin
 static void vdp_ctrl(uint8_t v){ if(!vdp_ctrl_latch){vdp_ctrl_low=v;vdp_ctrl_latch=1;return;} vdp_ctrl_latch=0; vdp_code=(uint8_t)(v>>6); if(vdp_code==2){unsigned r=v&15u;vdp_regs[r]=vdp_ctrl_low;if(r==2u)vdp_name_dirty=1;if(r==0u||r==1u||r==5u||r==6u)vdp_sat_dirty=1;return;} vdp_addr=(uint16_t)(((uint16_t)(v&0x3Fu)<<8)|vdp_ctrl_low); if(vdp_code==0){vdp_readbuf=vdp_vram[vdp_addr&0x3FFFu];vdp_addr=(uint16_t)((vdp_addr+1u)&0x3FFFu);} }
 static void vdp_data_w(uint8_t v){vdp_ctrl_latch=0;if(vdp_code==3)vdp_cram[vdp_addr&31u]=v;else {uint16_t a=(uint16_t)(vdp_addr&0x3FFFu);vdp_vram[a]=v;vdp_tile_dirty[a>>5]=1;uint16_t nt=(uint16_t)((vdp_regs[2]&0x0Eu)<<10);if(a>=nt&&a<(uint16_t)(nt+0x0700u))vdp_name_dirty=1;uint16_t sat=(uint16_t)((vdp_regs[5]&0x7Eu)<<7);if(a>=sat&&a<(uint16_t)(sat+0x0100u))vdp_sat_dirty=1;}vdp_addr=(uint16_t)((vdp_addr+1u)&0x3FFFu);}
 static uint8_t vdp_data_r(void){uint8_t v=vdp_readbuf;vdp_readbuf=vdp_vram[vdp_addr&0x3FFFu];vdp_addr=(uint16_t)((vdp_addr+1u)&0x3FFFu);vdp_ctrl_latch=0;return v;}
+void gaw_sms_vdp_control_write(uint8_t value){vdp_ctrl(value);}
+void gaw_sms_vdp_data_write(uint8_t value){vdp_data_w(value);}
 static uint8_t inport(Z*z,uint8_t p){(void)z;if(p==0xBE)return vdp_data_r();if(p==0xBF){
     /* SMS VDP status is hardware state, not RAM_C01B. Reading $BF
        acknowledges/clears the pending status flags; the IRQ handler itself

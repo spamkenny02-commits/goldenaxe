@@ -4,6 +4,8 @@
 #include <stdint.h>
 
 void gaw_reset(void);
+void gaw_save_initialize_native(void); /* $0404 */
+void gaw_video_initialize_native(void); /* $03C0 */
 void gaw_dispatch_state_once(void);
 void gaw_state_gameplay_init(void); /* original $24C5, state value $0A */
 void gaw_world_spawn_map_entities_native(void); /* original $1780 */

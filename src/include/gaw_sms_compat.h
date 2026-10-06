@@ -13,6 +13,9 @@ const uint8_t *gaw_sms_cram(void);
 const uint8_t *gaw_sms_vdp_regs(void);
 int gaw_sms_take_tile_dirty(unsigned tile);
 void gaw_sms_mark_all_tiles_dirty(void);
+/* Shared VDP model access without executing Z80 instructions. */
+void gaw_sms_vdp_control_write(uint8_t value);
+void gaw_sms_vdp_data_write(uint8_t value);
 int gaw_sms_take_name_dirty(void);
 int gaw_sms_take_sat_dirty(void);
 uint8_t gaw_sms_rom_bank_read(uint8_t bank,uint16_t cpu_addr);

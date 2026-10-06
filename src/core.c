@@ -20,10 +20,8 @@ void gaw_reset(void) {
     gaw_ram_reset_like_z80();
     gaw_sms_compat_reset();
     gaw_platform_init();
-    /* Original save/VDP initialization now runs through the C recompiler.
-       Its SMS port writes populate the shadow VDP consumed by the MD backend. */
-    gaw_recompiled_call(0, 0x0404);
-    gaw_recompiled_call(0, 0x03C0);
+    gaw_save_initialize_native();
+    gaw_video_initialize_native();
     gaw_wait_frame();
 }
 

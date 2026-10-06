@@ -1,0 +1,46 @@
+name: Host validation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate extraction tool without game data
+        run: python3 -m unittest discover -s tests -p 'test_tools.py' -v
+      - name: Audit portability and backend structure
+        run: |
+          python3 tools/audit_portability.py
+          python3 tools/check_md_backend.py
+      - name: Check C syntax without game data
+        # Empty initializer is for syntax checking only. Never execute/link a
+        # game against placeholder data or report a behavioral test as passed.
+        run: |
+          trap 'rm -f src/original_rom.inc' EXIT
+          : > src/original_rom.inc
+          cc -std=c11 -Wall -Wextra -Werror -Isrc/include -fsyntax-only src/*.c
+          cc -std=c11 -Wall -Wextra -Werror -ffreestanding -fno-builtin -Isrc/include -Imd/include -fsyntax-only md/src/*.c
+      - name: Restore private reference input
+        if: github.event_name != 'pull_request'
+        env:
+          GAW_ROM_BASE64: ${{ secrets.GAW_ROM_BASE64 }}
+        run: |
+          if [ -z "$GAW_ROM_BASE64" ]; then
+            echo 'Reference-ROM tests skipped: GAW_ROM_BASE64 has not been configured.'
+            exit 0
+          fi
+          python3 - <<'PY'
+          import base64, os
+          from pathlib import Path
+          Path('reference.sms').write_bytes(base64.b64decode(os.environ['GAW_ROM_BASE64'], validate=True))
+          PY
+          make prepare-rom ROM=reference.sms
+      - name: Run reference-ROM differential tests
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ ! -f src/original_rom.inc ]; then
+            echo 'Behavioral tests not run; syntax checks alone do not establish equivalence.'
+            exit 0
+          fi
+          make test test-final test-reset audit test-sanitize

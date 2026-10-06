@@ -1,21 +1,39 @@
-# Current status — V12
+# Current status — V13
 
-Golden Axe Warrior SMS -> native Mega Drive, faithful-decompilation-first.
+Objective: faithful Golden Axe Warrior decompilation into portable C, then
+platform backends, including native Motorola 68000/Mega Drive.
 
-- **127/127 active entity types are high-level C; entity fallback is absent.**
-- **509/512 world callback entries are native/no-op; only 3 remain bridged.**
-- Remaining world callbacks: `ADEE`, `B00A`, `B19E`.
-- Ordinary gameplay renderer, HUD, map loading, progression, map animation,
-  entity update and gameplay entry are native C.
-- `$1C15`, `$1780` and `$2C63` gameplay initialization are native C.
-- `$2C63` validation fixed the previous one-byte `$2C8D` terrain-cache error.
-- Standard/keyed room entry, fixed rewards, context messages, resource rewards,
-  special message branches and `B0D9/$6911` are native C.
-- C090/C098 effect-state slots and non-gameplay main states still retain a
-  compatibility fallback.
-- Reset/save/initial SMS-VDP setup `$0404/$03C0` remains compatibility-backed.
-- Mega Drive backend source/build scripts are present; this container still has
-  no m68k cross-compiler, so no linked `.bin` has been produced locally.
+- Complete V12 sources/tests/tools/backend imported into Git, not just reports.
+- Actual compiled dispatchers register 127/127 entity types and 509/512 world
+  callbacks as native/RET. This is registration coverage, not an equivalence
+  proof for every state of every handler.
+- World scripts ADEE, B00A, B19E still use the instruction bridge.
+- Reset/save initialization $0404 and initial SMS VDP setup $03C0 are now native
+  C. Neither reset initialization call executes the Z80 instruction stream.
+- $0404 matches original execution across 58 SRAM cases (both mapper pages,
+  each possible signature mismatch, valid zero/nonzero saved flags). All 32 KiB
+  SRAM bytes are compared; RAM outside CPU stack workspace is compared.
+- $03C0 matches original RAM, full VRAM, CRAM and VDP register state; the final
+  command selects CRAM index $10. Subsequent-write behavior is checked too.
+- Four instruction-bridge call sites remain: world dispatch, two effect-state
+  slots C090/C098, and non-gameplay main-state dispatch.
+- Ten MD presentation hooks remain empty. Graphics/resource uploads, world
+  rebuild/scroll presentation, inventory, special effects, world map, messages
+  and transition presentation still need implementations.
+- ROM/VDP shadow state still lives in sms_compat.c; separating these data/hardware
+  services from the instruction interpreter is required before removing that
+  file from console builds.
+- No linked/play-tested Mega Drive ROM was produced in this session.
 
-Validation: strict C11, compatibility/regression suite, ASan/UBSan and 68000
-portability audit all pass.
+Validation performed locally: strict C11 Phase 17/final suites; reset differential
+suite; ASan/UBSan final/reset suites (LeakSanitizer disabled because /proc access
+is blocked in this sandbox); extraction failure tests; ROM table comparison;
+compiled-dispatcher coverage probe; portability and MD structure/syntax checks.
+
+Reproduction: see README.md. GitHub has source and workflows. Reference-ROM
+behavioral checks and manual MD builds need private GAW_ROM_BASE64 input;
+without it, CI reports behavioral tests as skipped, not passed.
+
+Next: shared interactive menu + ADEE/B00A/B19E, effect dispatch, non-gameplay
+states, separate asset/VDP services, complete platform hooks, then cross-link,
+full-game differential integration, emulator and hardware validation.

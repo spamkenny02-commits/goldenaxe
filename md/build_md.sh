@@ -1,5 +1,6 @@
 #!/bin/sh
 set -eu
+test -f src/original_rom.inc || { echo 'Missing original ROM data: run make prepare-rom ROM=/path/to/game.sms first' >&2; exit 2; }
 if [ "${FETCH_TOOLCHAIN:-0}" = 1 ] && ! command -v "${PREFIX:-m68k-elf-}gcc" >/dev/null 2>&1; then
   ./md/fetch_toolchain.sh "$PWD/md/toolchain"
   PATH="$PWD/md/toolchain/bin:$PATH"; export PATH
@@ -11,7 +12,7 @@ SIZE=${PREFIX}size
 command -v "$CC" >/dev/null 2>&1 || { echo "missing $CC (run md/fetch_toolchain.sh or set FETCH_TOOLCHAIN=1)" >&2; exit 2; }
 CFLAGS='-m68000 -Os -ffreestanding -fno-builtin -fno-common -fomit-frame-pointer -ffunction-sections -fdata-sections -Wall -Wextra -Werror -Isrc/include -Imd/include'
 mkdir -p md/build
-SRC='src/ram.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c md/src/runtime.c md/src/platform_md.c md/src/main.c'
+SRC='src/ram.c src/reset.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c md/src/runtime.c md/src/platform_md.c md/src/main.c'
 OBJ=''
 for f in $SRC; do o=md/build/$(basename "$f" .c).o; "$CC" $CFLAGS -c "$f" -o "$o"; OBJ="$OBJ $o"; done
 "$CC" -m68000 -c md/src/startup.s -o md/build/startup.o

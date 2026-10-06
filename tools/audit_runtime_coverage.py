@@ -1,30 +1,61 @@
 #!/usr/bin/env python3
+"""Report dispatcher registration and remaining bridge/presentation gaps.
+
+Registration counts do not prove behavior or rendering equivalence. The probe
+runs the actual C dispatchers; no list of completed types is hardcoded here.
+"""
+import argparse
+import json
 from pathlib import Path
 import re
-root=Path(__file__).resolve().parents[1]
-vals=[int(x,16) for x in re.findall(r'0x([0-9A-Fa-f]{4})',(root/'src/entity_handlers.inc').read_text())]
-hi=set(range(1,128))
-compat=[t for t in range(1,128) if t not in hi]
-print(f'handler table entries: {len(vals)}')
-print(f'high-level C entity types: {len(hi)} / 127')
-print(f'mechanically recompiled C entity types: {len(compat)} / 127')
-print('unsupported entity types: 0')
-print('no-op legacy bridge: absent')
-world=[int(x,16) for x in re.findall(r'0x([0-9A-Fa-f]{4})',(root/'src/world_callbacks_512.inc').read_text())]
-native_world_targets={0xB761,0x5D4C,0x5E75,0x5E9C,0x5ECD,0x654D,0x65D0,0xB3EB,0xB402,0xB444,0xB45F,0xB47A,0xB486,0xB4B5,0xB4C1,0xB4D6,0xB4F4,0xB51F,0xB528,0xB57D,0xB59E,0xB5B1,0xB5DE,0xB5ED,0xB60A,0xB61A,0xB656,0xB6A6,0xB6AF,0xB6C9,0xB6D2,0xB6E9,0xB719,0xB722,0xB3F4,0xB3FB,0xB48F,0xB4E6,0xB518,0xB5AA,0xB639,0xB669,0xB69F,0xB6DB,0xB6E2,0xB72B,0xB74A,0xB420,0xB49F,0xB4DF,0xB691,0xB6BB,0xB450,0xB54E,0xB557,0xB670,0xB6F5,0xB427,0xB58F,0xB5E7,0xB649,0xB586,0xB698,0xB40B,0xB4A6,0xB4CA,0xB531,0xB53D,0xB5CB,0xB65F,0xB732,0xB5BA,0xB62F,0xB740,0xB679,0xB506,0xB707,0xB433,0xB468,0xB566,0xB595,0xB5F9,0xB640,0xB686}
-native_world_targets.update(int(x,16) for x in re.findall(r'0x([0-9A-Fa-f]{4})',(root/'src/world_room_callback_targets.inc').read_text()))
-native_world_targets.update(int(x,16) for x in re.findall(r'0x([0-9A-Fa-f]{4})',(root/'src/world_key_room_callbacks.inc').read_text()))
-native_world_targets.update({0xB42D,0xB459,0xB574,0xB496,0xB626,0xB758,0xB4FD,0xB6FE,0xB560})
-native_world_targets.update({0xAD41,0xAED1,0xB047,0xB08F,0xB263})
-native_world_targets.update({0xB3DD,0xB3E4,0xB419,0xB4ED,0xB5C4,0xB5D7,0xB613,0xB64F,0xB6C2,0xB751})
-native_world_targets.update({0xAF4A})
-native_world_targets.update({0xAC27,0xAC79,0xAD19,0xAD79,0xADAE,0xAE4A,0xB102})
-native_world_targets.update({0xB0D9})
-native_world_targets.update({0xACB9,0xAD55})
-native_world_targets.update({0xADA1,0xADF2,0xAF88})
-native_world_targets.update({0xB205})
-native_world_targets.update({0xAF25})
-native_world=sum(1 for x in world if x in native_world_targets)
-print(f'world callback entries: {len(world)}')
-print(f'high-level/no-op world callback entries: {native_world} / {len(world)}')
-print(f'world callback entries still on compatibility bridge: {len(world)-native_world} / {len(world)}')
+import subprocess
+
+ROOT = Path(__file__).resolve().parents[1]
+
+def words(name):
+    return [int(v, 16) for v in re.findall(r'0x([0-9a-fA-F]{4})',
+                                         (ROOT/'src'/name).read_text())]
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--probe', type=Path, default=ROOT/'runtime_coverage_host_test')
+    parser.add_argument('--require-complete', action='store_true')
+    args = parser.parse_args()
+    if not args.probe.exists():
+        parser.exit(2, 'Build the registration probe with make runtime_coverage_host_test\n')
+    probe = json.loads(subprocess.check_output([str(args.probe.resolve())], text=True))
+    handlers = words('entity_handlers.inc')
+    world = words('world_callbacks_512.inc')
+    if len(handlers) != 128 or len(world) != 512:
+        parser.exit(2, 'Unexpected entity/world table size\n')
+    native_entities = set(probe['native_entity_types'])
+    native_world = set(probe['native_world_targets'])
+    remaining_entities = set(range(1, 128)) - native_entities
+    remaining_world = sorted(set(world) - native_world)
+    print(f'handler table entries: {len(handlers)}')
+    print(f'registered high-level C entity types: {len(native_entities)} / 127')
+    print(f'world callback entries: {len(world)}')
+    done = sum(t in native_world for t in world)
+    print(f'registered native/RET world callback entries: {done} / {len(world)}')
+    print(f'world callback entries still on compatibility bridge: {len(world)-done} / {len(world)}')
+    print('remaining world targets: ' + ' '.join(f'{t:04X}' for t in remaining_world))
+    calls = []
+    for p in sorted((ROOT/'src').glob('*.c')):
+        if p.name == 'recompiled.c': continue
+        for n, line in enumerate(p.read_text().splitlines(), 1):
+            if re.search(r'\bgaw_recompiled_(?:call|world_call|entity_call)\s*\(', line):
+                calls.append(f'{p.relative_to(ROOT)}:{n}: {line.strip()}')
+    print(f'remaining instruction-bridge call sites: {len(calls)}')
+    for call in calls: print('  ' + call)
+    stubs = []
+    md = (ROOT/'md/src/platform_md.c').read_text()
+    for name, body in re.findall(r'\b(gaw_platform_\w+)\([^)]*\)\s*\{([^{}]*)\}', md):
+        body = re.sub(r'\(void\)\s*\w+\s*;', '', body).strip()
+        if not body: stubs.append(name)
+    print(f'unimplemented Mega Drive presentation hooks: {len(stubs)}')
+    for name in stubs: print('  ' + name)
+    print('Registration coverage is not full-game equivalence or console playability.')
+    if args.require_complete and (remaining_entities or remaining_world or calls or stubs):
+        parser.exit(1, 'Full-decompilation/MD completion gate: NOT COMPLETE\n')
+
+if __name__ == '__main__': main()
