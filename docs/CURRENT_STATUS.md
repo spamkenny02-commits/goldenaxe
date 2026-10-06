@@ -1,4 +1,4 @@
-# Current status — V18
+# Current status — V19
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -24,16 +24,24 @@ platform backends, including native Motorola 68000/Mega Drive.
 - Palette fade-in $0AA4, fade-out $0B12 and world reveal $1FA7 are native C.
   Their 48 comparisons cover zero/mixed palettes, display flags, input and
   Pause events; RAM, VRAM and VDP registers match after every shared frame.
-  These are tested prerequisites for state 08, which remains bridged.
+  These routines are integrated into native state 08.
 - Sprite animation tables below $8000 now read the fixed ROM banks instead
   of incorrectly reading bank 12. Gate restoration preserves distinct C080
   and C088 records, correcting the previous duplicate copy.
 - Item graphics dispatch $2AF4 is native: 132 cases plus four compressed
   resources compared against the unaccelerated original Z80 decoder.
-- Six MD presentation hooks remain empty: map-entity resource uploads, scroll
-  begin/end, special effects, world map and transition presentation.
-- Main-state registration is 3/12: Pause (02), gameplay initialization (0A),
-  gameplay (0C). Nine other states remain bridged.
+- Five MD presentation hooks remain empty: scroll begin/end, special effects,
+  world map and transition presentation.
+- Main-state registration is 6/12: Pause (02), new game (04), continue (06),
+  scene entry (08), gameplay initialization (0A) and gameplay (0C). Six other
+  states remain bridged.
+- Complete entry sequences pass 4,148 raw original Z80 comparisons. Continue
+  and scene entry cover all 512 cells, cached/changed scenery and display flags.
+  RAM, VRAM and registers are compared each shared frame, with final SRAM,
+  CRAM and elapsed-frame comparisons; refresh-register entropy is replayed.
+- Map-entity graphics now load compressed resources and remap their pixels on
+  host and MD. 6,144 comparisons cover every cell, four persistence masks and
+  three boss-progression states, including RAM and all VRAM.
 - Pause $00F4 is native, including font/text, NMI resume, equipment restoration
   and two sound delays; 48 complete differential cycles pass.
 - Inventory graphics $7219/$722A and pixel remapping $1D0D are native. Sixteen
@@ -48,7 +56,7 @@ platform backends, including native Motorola 68000/Mega Drive.
   equivalence. Those services also require lifting and integration validation.
 - No linked/play-tested Mega Drive ROM has been produced.
 
-Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition suites, ASan/UBSan,
+Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource suites, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
 structure/syntax checks. LeakSanitizer is disabled here because sandbox /proc
 access prevents its operation; address/undefined-behavior checks remain enabled.

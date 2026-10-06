@@ -8,6 +8,7 @@
    format is executed from ROM-derived banks 8..11 and expands 160 bytes at
    $DC00 before persistent patches are restored. */
 bool gaw_world_load_current_cell(void);
+void gaw_world_select_layer(void); /* $175F */
 
 /* $2279/$22E2: expand the 16x10 metatile-id grid at $DC00 into the 32x20
    descriptor grid at $D600 using the 8-byte records at $C900. */

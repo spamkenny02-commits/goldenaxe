@@ -30,6 +30,15 @@ static uint16_t copy_vram(uint16_t source,uint16_t destination){
     return source;
 }
 static void clear_vram(uint16_t destination){address(destination);for(unsigned i=0;i<32u;++i)gaw_sms_vdp_data_write(0);}
+void gaw_assets_load_map_entity(uint8_t type,uint8_t gfx_slot){
+    if(type<32u)return;
+    uint16_t record=(uint16_t)(0x825Fu+3u*(type-32u));
+    uint8_t flags=rom(2,record);
+    uint16_t source=(uint16_t)(rom(2,record+1u)|((uint16_t)rom(2,record+2u)<<8));
+    uint16_t destination=(uint16_t)(0x6000u+(unsigned)gfx_slot*32u);
+    (void)gaw_assets_unpack_tiles(flags&0x0Fu,source,destination);
+    if(flags&0xF0u)gaw_assets_remap_tiles(destination,(uint16_t)(gaw_ram_read16le(0xC031u)-3u),flags&0xF0u);
+}
 void gaw_assets_load_item(uint8_t item,uint16_t destination){
     if(item<0x1Eu){
         uint16_t source=(uint16_t)(0xA801u+(uint16_t)item*0x80u);

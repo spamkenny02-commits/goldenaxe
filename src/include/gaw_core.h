@@ -8,6 +8,7 @@ void gaw_save_initialize_native(void); /* $0404 */
 void gaw_video_initialize_native(void); /* $03C0 */
 void gaw_dispatch_state_once(void);
 bool gaw_main_state_is_native(uint8_t state); /* shared dispatcher registration */
+void gaw_state_enter_gameplay(void); /* original $24B6, state value $08 */
 void gaw_state_gameplay_init(void); /* original $24C5, state value $0A */
 void gaw_world_spawn_map_entities_native(void); /* original $1780 */
 void gaw_state_gameplay(void);      /* original $24F3, state value $0C */

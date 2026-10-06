@@ -555,9 +555,6 @@ static const uint8_t world_entity_types[512u*8u]={
 static const uint8_t map_entity_stats[96u*4u]={
 #include "map_entity_stats.inc"
 };
-static const uint8_t map_entity_resource_spans[96u]={
-#include "map_entity_resource_spans.inc"
-};
 
 /* $1780-$18E1: construct the eight local C600 map entities, apply the
    per-cell persistence mask and assign compacted graphics slots.  The actual
@@ -588,11 +585,7 @@ void gaw_world_spawn_map_entities_native(void){
         int prior=-1;for(unsigned j=0;j<i;++j)if(gaw_entity(16u+j)->raw[ENT_TYPE]==type){prior=(int)j;break;}
         if(prior>=0){e->raw[ENT_GFX_ID]=gaw_entity(16u+(unsigned)prior)->raw[ENT_GFX_ID];continue;}
         e->raw[ENT_GFX_ID]=gfx;gaw_platform_map_entity_resource_load(type,gfx);
-        uint8_t span=map_entity_resource_spans[type-32u];
-        /* $032A leaves C031 at the last plane write position.  It is scratch,
-           but preserving it makes the high-level init RAM-visible faithful. */
-        gaw_ram_write16le(0xC031u,(uint16_t)(0x6003u+(uint16_t)gfx*32u+(uint16_t)span*32u));
-        gfx=(uint8_t)(gfx+span);
+        gfx=(uint8_t)((uint16_t)(gaw_ram_read16le(0xC031u)-3u)>>5);
     }
     gaw_ram_write8(0xC067u,gfx);
 }
@@ -1025,9 +1018,44 @@ static void state_pause(void){
 }
 
 typedef void (*NativeStateHandler)(void);
+/* $24B6: scene selection, map and entity initialization, then reveal. */
+void gaw_state_enter_gameplay(void){
+    gaw_world_select_layer();
+    uint8_t bank=(uint8_t)(15u-gaw_ram_read8(0xC040u)),old=gaw_ram_read8(0xC066u);
+    gaw_ram_write8(0xC066u,bank);
+    if(bank!=old){
+        gaw_ram_write8(0xC065u,0xB0);gaw_ram_write8(0xDE06u,0xB0);
+        if(gaw_ram_read8(0xC011u)&0x40u)gaw_ui_fade_out();
+        gaw_assets_restore_scene();
+    }
+    (void)gaw_world_load_current_cell();gaw_world_rebuild_display_native();
+    gaw_state_gameplay_init();gaw_ui_reveal_world();
+}
+/* $246F: resume at the checkpoint with equipment graphics restored. */
+static void state_continue_game(void){
+    if(gaw_ram_read8(0xC011u)&0x40u)gaw_ui_fade_out();
+    uint16_t cell=gaw_ram_read16le(0xC0C0u);gaw_ram_write16le(0xC0B9u,cell);
+    if((cell&0xFF00u)==0)gaw_ram_write8(0xC037u,0);
+    gaw_ram_write8(0xC30Au,1);gaw_ram_write16le(0xC310u,0x7000);gaw_ram_write16le(0xC312u,0x8800);
+    memset(gaw_ram_ptr(0xC040u),0,0x50);gaw_ram_write8(0xC305u,0);gaw_ram_write8(0xC31Du,0);
+    (void)gaw_assets_unpack_tiles(4,0xB701u,0x7040u);(void)gaw_assets_unpack_tiles(4,0xA74Cu,0x5E00u);
+    gaw_assets_restore_inventory();gaw_assets_update_inventory();gaw_state_enter_gameplay();
+}
+/* $2433: original new-game defaults followed by the same resume sequence. */
+static void state_new_game(void){
+    memset(gaw_ram_ptr(0xC300u),0,0x600);
+    gaw_ram_write8(0xC0DFu,0);gaw_ram_write8(0xC0DDu,0);gaw_ram_write8(0xC0DEu,0);
+    gaw_ram_write8(0xC0DAu,24);gaw_ram_write8(0xC0DCu,24);gaw_ram_write8(0xC318u,24);gaw_ram_write8(0xC0DBu,24);
+    gaw_ram_write8(0xC0E0u,1);gaw_ram_write8(0xC0F1u,1);gaw_ram_write8(0xC0F2u,1);
+    memset(gaw_ram_ptr(0xC200u),0xFF,256);memset(gaw_ram_ptr(0xDCF0u),0,16);
+    gaw_ram_write16le(0xC0C0u,0x95);gaw_ram_write16le(0xC0C2u,0x95);state_continue_game();
+}
 static NativeStateHandler native_state_handler(uint8_t state){
     switch(state){
         case 0x02: return state_pause;
+        case 0x04: return state_new_game;
+        case 0x06: return state_continue_game;
+        case 0x08: return gaw_state_enter_gameplay;
         case 0x0A: return gaw_state_gameplay_init;
         case 0x0C: return gaw_state_gameplay;
         default: return NULL;

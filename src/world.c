@@ -38,7 +38,7 @@ static const uint8_t *world_bank(unsigned index) {
 }
 
 /* $175F. C040 is a layer/environment selector used by progression and assets. */
-static void world_select_layer(void) {
+void gaw_world_select_layer(void) {
     uint8_t layer;
     if (R8(0xC0BA)!=0) layer=2;
     else {
@@ -102,7 +102,7 @@ static void world_post_load_aux(void) {
 }
 
 bool gaw_world_load_current_cell(void) {
-    world_select_layer();
+    gaw_world_select_layer();
     if (!world_decompress_map(gaw_ram_read16le(RAM_WORLD_CELL_ID))) return false;
     gaw_world_progress_restore_for_current_cell();
     world_post_load_aux();
