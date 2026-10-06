@@ -1,4 +1,4 @@
-# Current status — V15
+# Current status — V16
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -22,14 +22,25 @@ platform backends, including native Motorola 68000/Mega Drive.
   the original IX pointer instead of zero.
 - Item graphics dispatch $2AF4 is native: 132 cases plus four compressed
   resources compared against the unaccelerated original Z80 decoder.
-- Seven MD presentation hooks remain empty: map-entity resource uploads, scroll begin/end,
-  inventory, special effects, world map and transition presentation.
+- Six MD presentation hooks remain empty: map-entity resource uploads, scroll
+  begin/end, special effects, world map and transition presentation.
+- Main-state registration is 3/12: Pause (02), gameplay initialization (0A),
+  gameplay (0C). Nine other states remain bridged.
+- Pause $00F4 is native, including font/text, NMI resume, equipment restoration
+  and two sound delays; 48 complete differential cycles pass.
+- Inventory graphics $7219/$722A and pixel remapping $1D0D are native. Sixteen
+  remapping cases compare full video and scratch RAM against original execution.
+- Corrected VDP I/O aliases in the reference interpreter. Original $1D0D writes
+  commands through port BD, a hardware alias of BF. All 32 port pairs are tested.
 - ROM/VDP shadow services now live in video.c independently of the interpreter.
   The standalone video test links no instruction interpreter. Native item
   graphics loading uses assets.c on both host and Mega Drive.
+- Frame synchronization uses a shared replacement for the original IRQ. The
+  differential suites do not establish original IRQ/video-queue/audio-engine
+  equivalence. Those services also require lifting and integration validation.
 - No linked/play-tested Mega Drive ROM has been produced.
 
-Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset suites, ASan/UBSan,
+Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause suites, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
 structure/syntax checks. LeakSanitizer is disabled here because sandbox /proc
 access prevents its operation; address/undefined-behavior checks remain enabled.
@@ -37,5 +48,6 @@ access prevents its operation; address/undefined-behavior checks remain enabled.
 Reproduction: README.md. GitHub behavioral tests and manual MD builds require
 private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
 
-Next: effect dispatch and non-gameplay states, separate asset/VDP services,
-complete platform hooks, cross-link, full-game integration and hardware testing.
+Next: full-screen effects and non-gameplay states, complete asset/IRQ/video-queue
+and audio services, complete platform hooks, cross-link, full-game integration
+and hardware testing.

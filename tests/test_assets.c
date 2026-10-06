@@ -28,5 +28,19 @@ int main(void){
         test_item=100+i;test_destination=0x4000;setup();assert(gaw_sms_compat_raw_call_args(0,0x0327,sources[i],0x4000,0,banks[i]));capture();
         setup();(void)gaw_assets_unpack_tiles(banks[i],sources[i],0x4000);compare();
     }
-    puts("native asset differential tests: OK (132 item cases + 4 raw Z80 decoders)");return 0;
+    for(unsigned map=0;map<4u;++map)for(unsigned tiles=1;tiles<=4u;++tiles){
+        test_item=200+map;test_destination=0x5D80;setup();
+        assert(gaw_sms_compat_call_args(0,0x1D0D,0x5D80,(uint16_t)(0x5D80u+tiles*32u),0,(uint8_t)(map*16u)));capture();
+        setup();gaw_assets_remap_tiles(0x5D80,(uint16_t)(0x5D80u+tiles*32u),(uint8_t)(map*16u));compare();
+    }
+    /* VDP decoding uses A7/A6/A0; $BD is an actual control-port alias. */
+    for(unsigned port=0x80;port<0xC0;port+=2u){
+        uint8_t program[]={0x3E,0x10,0xD3,(uint8_t)(port+1u),0x3E,0x40,0xD3,(uint8_t)(port+1u),0x3E,0x77,0xD3,(uint8_t)port,0xC9};
+        setup();memcpy(gaw_ram_ptr(0xD500),program,sizeof program);
+        assert(gaw_sms_compat_call(0,0xD500));assert(gaw_sms_vram()[0x10]==0x77);
+        uint8_t read[]={0xDB,(uint8_t)(port+1u),0x32,0x80,0xD5,0xC9};
+        memcpy(gaw_ram_ptr(0xD500),read,sizeof read);gaw_video_vblank_pending();
+        assert(gaw_sms_compat_call(0,0xD500));assert(gaw_ram_read8(0xD580)==0x80);assert(gaw_video_status_read()==0);
+    }
+    puts("native asset differential tests: OK (132 item cases + 4 raw Z80 decoders + 16 remaps + 32 port pairs)");return 0;
 }

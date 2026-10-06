@@ -11,6 +11,7 @@
 #include "include/gaw_world_progress.h"
 #include "include/gaw_ui.h"
 #include "include/gaw_effects.h"
+#include "include/gaw_assets.h"
 
 static void edge_update(uint16_t held_addr, uint16_t pressed_addr, uint8_t now) {
     uint8_t old = gaw_ram_read8(held_addr);
@@ -923,7 +924,7 @@ static void hud_update_phase(uint8_t phase) {
         case 1: {
             uint16_t dst=0xDB5Eu;
             uint8_t hp=gaw_ram_read8(0xC318);
-            unsigned slots=(unsigned)(gaw_ram_read8(0xC0DA)>>3);
+            unsigned slots=(unsigned)(gaw_ram_read8(0xC0DA)>>3);if(slots==0)slots=256u;
             for (unsigned i=0;i<slots;++i) {
                 uint8_t tile;
                 if (hp >= 8u) { hp=(uint8_t)(hp-8u); tile=0x8B; }
@@ -943,7 +944,7 @@ static void hud_update_phase(uint8_t phase) {
         case 2: {
             uint16_t dst=0xDBDEu;
             uint8_t value=gaw_ram_read8(0xC0DB);
-            unsigned slots=(unsigned)(gaw_ram_read8(0xC0DC)>>3);
+            unsigned slots=(unsigned)(gaw_ram_read8(0xC0DC)>>3);if(slots==0)slots=256u;
             for (unsigned i=0;i<slots;++i) {
                 uint8_t tile;
                 if (value >= 8u) { value=(uint8_t)(value-8u); tile=0x90; }
@@ -1018,19 +1019,33 @@ void gaw_state_gameplay(void) {
     }
 }
 
-void gaw_dispatch_state_once(void) {
-    uint8_t state = gaw_ram_read8(RAM_MAIN_STATE);
-    if ((state & 1u) || state > 0x16u) return;
+/* $00F4: pause strip, NMI release, equipment restore and sound timing. */
+static void pause_sound_delay(void){gaw_ram_write8(0xDE08u,0xAC);for(unsigned i=0;i<20u;++i)gaw_wait_frame();}
+static void state_pause(void){
+    gaw_ui_status_box();gaw_ui_status_font();gaw_ui_fixed_text(0x012Du,0xDB58u);
+    gaw_wait_frame();gaw_ui_upload_name_table();
+    pause_sound_delay();gaw_ram_write8(0xDE0Au,0x80);
+    do{gaw_wait_frame();}while(gaw_ram_read8(RAM_PAUSE_PRESSED)==0);
+    gaw_ui_status_box();gaw_assets_restore_inventory();script_finish();
+    gaw_ram_write8(0xDE0Au,0);gaw_ram_write8(RAM_MAIN_STATE,0x0C);pause_sound_delay();
+}
 
-    switch (state) {
-        case 0x0A: gaw_state_gameplay_init(); break;
-        case 0x0C: gaw_state_gameplay(); break;
-        default:
-            {
-                uint16_t target = gaw_main_state_targets[state >> 1];
-                uint8_t bank = (target < 0x4000u) ? 0u : 1u;
-                gaw_recompiled_call(bank, target);
-            }
-            break;
+typedef void (*NativeStateHandler)(void);
+static NativeStateHandler native_state_handler(uint8_t state){
+    switch(state){
+        case 0x02: return state_pause;
+        case 0x0A: return gaw_state_gameplay_init;
+        case 0x0C: return gaw_state_gameplay;
+        default: return NULL;
     }
+}
+bool gaw_main_state_is_native(uint8_t state){return native_state_handler(state)!=NULL;}
+void gaw_dispatch_state_once(void) {
+    uint8_t state=gaw_ram_read8(RAM_MAIN_STATE);
+    if((state&1u)||state>0x16u)return;
+    NativeStateHandler native=native_state_handler(state);
+    if(native){native();return;}
+    uint16_t target=gaw_main_state_targets[state>>1];
+    uint8_t bank=target<0x4000u?0u:1u;
+    gaw_recompiled_call(bank,target);
 }

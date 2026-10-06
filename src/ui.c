@@ -195,3 +195,28 @@ void gaw_ui_show_message(uint16_t resource){
     for(unsigned i=0;i<0x410u;++i){gaw_sms_vdp_data_write(0xFF);for(unsigned p=0;p<3u;++p)gaw_sms_vdp_data_write(0);}
     frozen_frame();gaw_ui_upload_name_table();text_run();
 }
+
+/* $638D/$6398: modal strip and its original font setup. */
+void gaw_ui_status_box(void){
+    for(unsigned i=0;i<0x100u;i+=2u)W16(0xDB00u+i,0x18FFu);
+    gaw_ui_box(0xDAC2u,30,5);gaw_wait_frame();
+    gaw_ui_upload_name_table();
+}
+void gaw_ui_status_font(void){
+    W(0xC01Fu,3);video_address(0x5A00u);
+    for(unsigned i=0;i<28u*8u;++i){uint8_t bits=rom((uint16_t)(0x87C6u+i));gaw_sms_vdp_data_write(bits);gaw_sms_vdp_data_write(bits);gaw_sms_vdp_data_write(0);gaw_sms_vdp_data_write(0);}
+    video_address(0x5A00u);
+    for(unsigned i=0;i<28u*8u;++i){gaw_sms_vdp_data_write(0xFFu);(void)gaw_sms_vdp_data_read();(void)gaw_sms_vdp_data_read();(void)gaw_sms_vdp_data_read();}
+}
+/* $0812: fixed-width text using the bank-3 character descriptor. */
+void gaw_ui_fixed_text(uint16_t source,uint16_t destination){
+    const uint16_t descriptor=0x8A8Eu;
+    W16(0xDCC0u,destination);
+    for(uint8_t ch=rom(source++);ch;ch=rom(source++)){
+        if(ch==0xFFu){destination=(uint16_t)(R16(0xDCC0u)+0x40u);W16(0xDCC0u,destination);continue;}
+        uint16_t p=(uint16_t)(rom(descriptor)|(uint16_t)rom(descriptor+1u)<<8);
+        uint16_t count=(uint16_t)(rom(descriptor+2u)|(uint16_t)rom(descriptor+3u)<<8);
+        do{uint8_t found=rom(p--);--count;if(found==ch)break;}while(count);
+        W(destination++,(uint8_t)((uint8_t)count+rom(descriptor+4u)));W(destination++,rom(descriptor+5u));
+    }
+}

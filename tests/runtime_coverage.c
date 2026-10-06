@@ -35,6 +35,9 @@ int main(void) {
         reset_probe();
         if(gaw_world_native_callback(target))printf("%s%u",count++?",":"",target);
     }
+    printf("],\"native_main_states\":[");count=0;
+    for(unsigned state=0;state<=0x16u;state+=2u)
+        if(gaw_main_state_is_native((uint8_t)state))printf("%s%u",count++?",":"",state);
     printf("]}\n");
     return 0;
 }

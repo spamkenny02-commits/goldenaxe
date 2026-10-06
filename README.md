@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V15)
+## Current status (V16)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -14,15 +14,20 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   compared against original RAM, video state and frame timing.
 - ROM/video services are separate from the interpreter; cursor effects and item
   graphics loading are native and checked against original execution.
+- Pause is native (48 complete modal cycles compared with original execution);
+  equipment graphics and pixel remapping are native. Main-state registration is
+  now measured explicitly: 3/12 native states.
 - Strict C11 tests, differential/regression tests, ASan/UBSan and the 68000 portability audit pass on the current working tree.
 - A linked/tested Mega Drive ROM is **not claimed yet**.
 
 See `docs/CURRENT_STATUS.md` for the exact verified state.
 
 The project is not fully decompiled yet. Full-screen effect states 1/2 and non-gameplay states still use the instruction
-bridge at two call sites. Seven
+bridge at two call sites. Six
 Mega Drive presentation hooks remain empty. Dispatcher registration coverage
 does not establish complete-game equivalence or a playable console build.
+Original IRQ/video-queue handling and the audio engine also need full native
+integration; current frame tests use the shared IRQ replacement.
 
 ## Original game data
 
@@ -38,7 +43,7 @@ From the repository root, with a C11 compiler and Python 3:
 
 ```sh
 make prepare-rom ROM="/absolute/path/to/Golden Axe Warrior.sms"
-make test test-final test-reset test-ui test-effects test-assets test-video audit
+make test test-final test-reset test-ui test-effects test-assets test-video test-pause audit
 make test-sanitize
 ```
 

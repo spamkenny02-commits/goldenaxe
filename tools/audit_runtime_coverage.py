@@ -32,6 +32,10 @@ def main():
     native_world = set(probe['native_world_targets'])
     remaining_entities = set(range(1, 128)) - native_entities
     remaining_world = sorted(set(world) - native_world)
+    states=set(probe['native_main_states'])
+    pending_states=sorted(set(range(0,0x18,2))-states)
+    print(f'registered native main states: {len(states)} / 12')
+    print('remaining main states: ' + ' '.join(f'{s:02X}' for s in pending_states))
     print(f'handler table entries: {len(handlers)}')
     print(f'registered high-level C entity types: {len(native_entities)} / 127')
     print(f'world callback entries: {len(world)}')
@@ -55,7 +59,7 @@ def main():
     print(f'unimplemented Mega Drive presentation hooks: {len(stubs)}')
     for name in stubs: print('  ' + name)
     print('Registration coverage is not full-game equivalence or console playability.')
-    if args.require_complete and (remaining_entities or remaining_world or calls or stubs):
+    if args.require_complete and (remaining_entities or remaining_world or pending_states or calls or stubs):
         parser.exit(1, 'Full-decompilation/MD completion gate: NOT COMPLETE\n')
 
 if __name__ == '__main__': main()
