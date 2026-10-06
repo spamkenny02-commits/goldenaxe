@@ -195,5 +195,24 @@ private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
   changes and this status were preserved through the Git API; profiling and
   further runtime validation require restoring the local execution environment.
 
-Next: MD performance, SMS sprite-status fidelity in the hardware adapter,
-full-game replay/integration and physical-hardware testing.
+- V33 adds frame-level SMS Mode 4 sprite status: the eight-per-line limit,
+  opaque pixel collisions, terminator, clipping/wrap, height/zoom and pattern
+  bank. A cache recomputes on VRAM/configuration writes; each VBlank latches the
+  flags anew and status reads clear them normally. This supplies the overflow
+  flag used by the original gameplay renderer.
+- Private cartridge reads moved to src/rom.c so the video shadow and its new
+  status calculator link without ROM data. Both host and MD source lists include
+  the new modules. CI runs 6,948 independent synthetic comparisons against a
+  pixel/scanline oracle, then the same cases under ASan/UBSan; both pass.
+  Strict C11 syntax, portability/backend audits and MD conversion tests pass.
+- The last complete original-game differential run and actual 68000 image are
+  V32. V33's reference-ROM regressions, 68000 rebuild, sprite output/clipping and
+  emulator profiling have not run: the terminal remains disconnected and CI
+  has no private ROM input. Reference-ROM steps are explicitly skipped in CI
+  when that input is absent. No placeholder game data is executed.
+- Git saves include V33. These flags are frame-level, 192-line Mode 4 status;
+  they do not establish cycle-accurate timing or physical-hardware equivalence.
+
+Next: rebuild and rerun V33 reference/68000 tests, then profile MD cadence,
+validate actual sprite clipping, cross screens through controller input,
+complete full-game replay/integration and test physical hardware.

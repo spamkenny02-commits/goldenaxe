@@ -79,7 +79,7 @@ test-video-status: video_status_host_test
 test-video-status-sanitize:
 	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) src/video.c src/video_status.c tests/test_video_status.c -o video_status_san
 	./video_status_san
-test-sanitize:
+test-sanitize: test-video-status-sanitize
 	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) $(SRC) tests/test_final.c -o final_san
 	./final_san
 	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) $(SRC) tests/test_reset.c -o reset_san

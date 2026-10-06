@@ -26,8 +26,10 @@ python3 tools/test_md_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretro.so -
 The check drives title/name/new-game selection and requires 300 emulator
 frames of gameplay, at least 24 game updates and audible PSG. Private captures
 and metadata are written under md/build/emulator. This limited boot path is
-verified; full-game/hardware behavior, sprite-status fidelity and performance
-are still being completed. Scroll animation is implemented in the portable core,
+verified on V32; full-game/hardware behavior, actual sprite clipping and
+performance are still being completed. V33 synthesizes frame-level SMS sprite
+overflow/collision flags, independently tested in host CI. Its 68000 rebuild and
+emulator check remain pending after the execution environment disconnected. Scroll animation is implemented in the portable core,
 and no empty presentation hooks remain. Actual linked level 4/6 vectors are checked. The MD
 VBlank ISR services native sync/async IRQ paths, including audio while the main
 thread computes. Start sends the SMS Pause NMI; PAL/NTSC selects the original

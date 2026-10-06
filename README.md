@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V32)
+## Current status (V33)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -40,7 +40,10 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - The ending is native: four complete final-movement, crystal-reveal and
   credit-scroll sequences match original RAM, video, SRAM and frame timing.
   These comparisons also fixed the missing walk-pose increment.
-- Strict C11 tests, differential/regression tests, ASan/UBSan and the 68000 portability audit pass on the current working tree.
+- V32 passed the local differential/regression suites and ASan/UBSan. V33
+  passes current strict C11/portability checks and ROM-free sprite tests in CI;
+  the reference-ROM suites have not been rerun since the execution environment
+  disconnected.
 - Title/intro and new/continue selection are native: 20 complete comparisons
   cover attract mode, scene animations, text, skip paths, saved slots and cancel.
 - Boot, name creation, new-game setup and 24 gameplay updates run on the host
@@ -52,7 +55,12 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   palette effect, progressive full heal, teleport wipe, terrain transformation
   and the 225-cell overworld map. 48 complete original-instruction comparisons
   check every shared frame's RAM/video/palette/registers, final SRAM and timing.
-- The 68000 image links with GCC 14.2.0: 474,504-byte ROM, 25,174-byte BSS.
+- Sprite overflow/collision status is calculated from the SMS shadow, with the
+  eight-sprites-per-line limit, nontransparent pixels, clipping, 8/16-pixel
+  height, zoom and pattern bank. 6,948 independent synthetic scanline/pixel
+  comparisons pass, including ASan/UBSan and cached status-latch integration.
+  These ROM-free tests run in CI without private cartridge data.
+- The last verified 68000 image (V32) links with GCC 14.2.0: 474,504-byte ROM, 25,174-byte BSS.
   ELF checks verify mutable state in FF0000-FF6256, actual IRQ vectors and absence of interpreter
   symbols; cartridge header and checksum checks pass. Genesis Plus GX boots
   through title, name creation, new game and 300 emulator gameplay frames with
@@ -67,8 +75,9 @@ See `docs/CURRENT_STATUS.md` for the exact verified state.
 The native registration/completion gate now passes: no instruction bridge calls
 or empty Mega Drive presentation hooks remain. All known dispatch entries are
 native C. This coverage does not establish complete-game equivalence, a full
-playthrough or hardware correctness; MD cadence and sprite-status fidelity still
-need work.
+playthrough or hardware correctness. Frame-level SMS sprite flags are now
+implemented; MD cadence, actual sprite clipping and full-game/hardware behavior
+still need validation. V33 has not yet been rebuilt or run on the 68000.
 The audio driver passes 144,384 isolated differential updates, including RAM and
 ordered PSG/stereo writes, and is integrated into the native IRQ. Sync, async and
 line IRQ paths pass 3,072 independent original-instruction comparisons; NMI has
@@ -86,7 +95,14 @@ Reference ROM SHA-256 used during reverse engineering:
 
 ## Reproduce local validation
 
-From the repository root, with a C11 compiler and Python 3:
+From the repository root, with a C11 compiler and Python 3. The video hardware
+tests are independent of original game data:
+
+```sh
+make test-video-status test-video-status-sanitize test-md-video
+```
+
+Reference-game validation requires your original cartridge data:
 
 ```sh
 make prepare-rom ROM="/absolute/path/to/Golden Axe Warrior.sms"
@@ -111,8 +127,9 @@ differential and full-game integration validation are still needed.
 
 ## GitHub validation and Mega Drive build
 
-Push/PR checks validate extraction failures, portability, backend structure and
-C syntax without distributing the original ROM. To enable behavioral tests on
+Push/PR checks validate extraction failures, portability, backend structure,
+ROM-free sprite status (normal and ASan/UBSan) and C syntax without distributing
+the original ROM. To enable behavioral tests on
 pushes and the manual Mega Drive build, configure the repository Actions secret
 `GAW_ROM_BASE64` with a base64 encoding of your reference ROM. It is decoded
 privately and its exact SHA-256 is checked before use. Fork/PR jobs do not use

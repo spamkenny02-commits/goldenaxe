@@ -25,11 +25,13 @@ jobs:
           cc -std=c11 -Wall -Wextra -Werror -Isrc/include -fsyntax-only src/*.c
           cc -std=c11 -Wall -Wextra -Werror -ffreestanding -fno-builtin -Isrc/include -Imd/include -fsyntax-only md/src/*.c
       - name: Restore private reference input
+        id: reference
         if: github.event_name != 'pull_request'
         env:
           GAW_ROM_BASE64: ${{ secrets.GAW_ROM_BASE64 }}
         run: |
           if [ -z "$GAW_ROM_BASE64" ]; then
+            echo 'available=false' >> "$GITHUB_OUTPUT"
             echo 'Reference-ROM tests skipped: GAW_ROM_BASE64 has not been configured.'
             exit 0
           fi
@@ -39,11 +41,8 @@ jobs:
           Path('reference.sms').write_bytes(base64.b64decode(os.environ['GAW_ROM_BASE64'], validate=True))
           PY
           make prepare-rom ROM=reference.sms
+          echo 'available=true' >> "$GITHUB_OUTPUT"
       - name: Run reference-ROM differential tests
-        if: github.event_name != 'pull_request'
+        if: steps.reference.outputs.available == 'true'
         run: |
-          if [ ! -f src/original_rom.inc ]; then
-            echo 'Behavioral tests not run; syntax checks alone do not establish equivalence.'
-            exit 0
-          fi
           make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-player-items test-world-scroll test-native-boot audit test-sanitize
