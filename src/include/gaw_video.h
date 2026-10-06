@@ -5,6 +5,8 @@
 void gaw_video_reset(void);
 uint8_t gaw_video_status_read(void);
 void gaw_video_vblank_pending(void);
+/* SMS Mode 4, 192-line sprite flags; pure calculation, no ROM dependency. */
+uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs);
 void gaw_video_status_pending(uint8_t flags); /* VBlank/collision/overflow status */
 void gaw_video_write_at(uint16_t address,uint8_t value);
 const uint8_t *gaw_sms_vram(void);

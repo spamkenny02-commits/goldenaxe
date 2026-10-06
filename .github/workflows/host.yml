@@ -14,6 +14,8 @@ jobs:
           python3 tools/audit_portability.py
           python3 tools/check_md_backend.py
           make test-md-video
+      - name: Validate ROM-free SMS sprite status
+        run: make test-video-status test-video-status-sanitize
       - name: Check C syntax without game data
         # Empty initializer is for syntax checking only. Never execute/link a
         # game against placeholder data or report a behavioral test as passed.
