@@ -1050,6 +1050,29 @@ static void state_new_game(void){
     memset(gaw_ram_ptr(0xC200u),0xFF,256);memset(gaw_ram_ptr(0xDCF0u),0,16);
     gaw_ram_write16le(0xC0C0u,0x95);gaw_ram_write16le(0xC0C2u,0x95);state_continue_game();
 }
+/* $257D: original death menu, checkpoint selection and currency penalty. */
+static void state_game_over(void){
+    uint8_t old=gaw_ram_read8(0xC065u);gaw_ram_write8(0xC065u,0x8A);if(old!=0x8Au)gaw_ram_write8(0xDE06u,0x8A);
+    gaw_ui_fade_grayscale();gaw_ui_load_choice_font(0x267Au);gaw_ui_box(0xD7D6u,11,6);
+    for(unsigned i=0;i<18u;++i)gaw_ram_write8((uint16_t)(0xD818u+i),gaw_sms_rom_bank_read(0,(uint16_t)(0x268Au+i)));
+    for(unsigned i=0;i<18u;++i)gaw_ram_write8((uint16_t)(0xD898u+i),gaw_sms_rom_bank_read(0,(uint16_t)(0x269Cu+i)));
+    for(unsigned i=0;i<8u;++i)gaw_ram_write8((uint16_t)(0xD8D8u+i),gaw_sms_rom_bank_read(0,(uint16_t)(0x26AEu+i)));
+    gaw_ram_write8(0xDCC0u,1);
+    for(;;){
+        uint16_t first=(uint16_t)(gaw_sms_rom_bank_read(0,0x269Cu)|((uint16_t)gaw_sms_rom_bank_read(0,0x269Du)<<8));
+        uint16_t second=(uint16_t)(gaw_sms_rom_bank_read(0,0x26AEu)|((uint16_t)gaw_sms_rom_bank_read(0,0x26AFu)<<8));
+        uint8_t choice=gaw_ram_read8(0xDCC0u);gaw_ram_write16le(0xD898u,choice?first:second);gaw_ram_write16le(0xD8D8u,choice?second:first);
+        uint16_t q=gaw_ram_read16le(0xC034u);static const uint8_t command[5]={2,6,11,0xD6,0xD7};
+        for(unsigned i=0;i<5u;++i){gaw_ram_write8(q,command[i]);q=(uint16_t)((q&0xFF00u)|((q+1u)&0xFFu));}gaw_ram_write16le(0xC034u,q);
+        gaw_wait_frame();uint8_t pressed=gaw_ram_read8(RAM_INPUT_PRESSED);
+        if(((pressed&1u)&&!choice)||((pressed&2u)&&choice)){choice^=1u;gaw_ram_write8(0xDCC0u,choice);gaw_ram_write8(0xDE08u,0x95);}
+        if(pressed&0x30u)break;
+    }
+    gaw_ram_write8(0xDE08u,0xAB);
+    if(!gaw_ram_read8(0xDCC0u)){gaw_ram_write8(RAM_MAIN_STATE,0);return;}
+    gaw_ram_write16le(0xC0C0u,gaw_ram_read16le(gaw_ram_read8(0xC0BAu)?0xC0C4u:0xC0C2u));
+    gaw_ram_write8(0xC318u,24);gaw_ram_write8(0xC0DBu,24);gaw_ram_write8(0xC0DDu,(uint8_t)(3u*(gaw_ram_read8(0xC0DDu)>>2)));gaw_ram_write8(RAM_MAIN_STATE,6);
+}
 static NativeStateHandler native_state_handler(uint8_t state){
     switch(state){
         case 0x02: return state_pause;
@@ -1058,6 +1081,7 @@ static NativeStateHandler native_state_handler(uint8_t state){
         case 0x08: return gaw_state_enter_gameplay;
         case 0x0A: return gaw_state_gameplay_init;
         case 0x0C: return gaw_state_gameplay;
+        case 0x14: return state_game_over;
         default: return NULL;
     }
 }

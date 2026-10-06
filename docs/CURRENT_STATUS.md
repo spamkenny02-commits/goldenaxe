@@ -1,4 +1,4 @@
-# Current status — V19
+# Current status — V20
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -32,13 +32,16 @@ platform backends, including native Motorola 68000/Mega Drive.
   resources compared against the unaccelerated original Z80 decoder.
 - Five MD presentation hooks remain empty: scroll begin/end, special effects,
   world map and transition presentation.
-- Main-state registration is 6/12: Pause (02), new game (04), continue (06),
-  scene entry (08), gameplay initialization (0A) and gameplay (0C). Six other
-  states remain bridged.
+- Main-state registration is 7/12: Pause (02), new game (04), continue (06),
+  scene entry (08), gameplay initialization (0A), gameplay (0C) and game over
+  (14). Five other states remain bridged.
 - Complete entry sequences pass 4,148 raw original Z80 comparisons. Continue
   and scene entry cover all 512 cells, cached/changed scenery and display flags.
   RAM, VRAM and registers are compared each shared frame, with final SRAM,
   CRAM and elapsed-frame comparisons; refresh-register entropy is replayed.
+- Game over (14, $257D) is native: grayscale fade, menu graphics, input edges,
+  checkpoint selection and currency penalty pass 128 complete comparisons,
+  with RAM/VRAM/register checks at each shared frame.
 - Map-entity graphics now load compressed resources and remap their pixels on
   host and MD. 6,144 comparisons cover every cell, four persistence masks and
   three boss-progression states, including RAM and all VRAM.

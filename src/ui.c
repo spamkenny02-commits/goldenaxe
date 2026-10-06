@@ -32,8 +32,8 @@ void gaw_ui_box(uint16_t dst,uint8_t width,uint8_t height){
 
 /* $0C68 loads the O/U/I/N font patterns used by the contextual choice box.
    Reads in $0C51 intentionally skip the remaining three planes. */
-static void choice_font(void){
-    uint16_t src=0x6160u,dst=(uint16_t)(rom(src)|(uint16_t)rom(src+1u)<<8);src+=2u;
+void gaw_ui_load_choice_font(uint16_t src){
+    uint16_t dst=(uint16_t)(rom(src)|(uint16_t)rom(src+1u)<<8);src+=2u;
     for(uint8_t ch=rom(src++);ch;ch=rom(src++)){
         uint16_t glyph=(uint16_t)(0x87C6u+(uint16_t)(uint8_t)(ch-0x41u)*8u);
         W(0xC01Fu,3);
@@ -66,11 +66,11 @@ static uint8_t choice_at(uint16_t box){
     return choose_loop();
 }
 uint8_t gaw_ui_yes_no(void){
-    choice_font();
+    gaw_ui_load_choice_font(0x6160u);
     uint8_t e=(uint8_t)(R(0xC313u)+0x10u);e=(uint8_t)((e>>2)|(e<<6));
     return choice_at((uint16_t)(0xD600u+(uint16_t)(uint8_t)(R(0xC311u)-0x18u)*8u+e));
 }
-uint8_t gaw_ui_yes_no_card(void){choice_font();return choice_at(0xD9F2u);}
+uint8_t gaw_ui_yes_no_card(void){gaw_ui_load_choice_font(0x6160u);return choice_at(0xD9F2u);}
 
 /* $0818 text mapping used by the fixed-position Oui/Non variant. */
 uint8_t gaw_ui_yes_no_fixed(void){
@@ -137,6 +137,12 @@ void gaw_ui_fade_in(void){
 }
 void gaw_ui_fade_out(void){
     memset(gaw_ram_ptr(0xDCC0u),0,32);palette_transition(0x0B0Eu);gaw_ui_display_reset();
+}
+void gaw_ui_fade_grayscale(void){
+    W(0xDD40u,0xD0);video_address(0x7F00u);gaw_sms_vdp_data_write(0xD0);
+    memcpy(gaw_ram_ptr(0xDCC0u),gaw_ram_ptr(0xDCA0u),32);
+    for(unsigned i=0;i<16u;++i){uint8_t color=R(0xDCC0u+i);unsigned intensity=(color&3u)+((color>>2)&3u)+((color>>4)&3u);W(0xDCC0u+i,rom((uint16_t)(0x2670u+intensity)));}
+    palette_transition(0x0B0Au);
 }
 /* $1FA7/$2003 reveals sixteen rectangular rings, preserving the exact
    order of writes and the two-frame barrier preceding each ring. */
