@@ -22,12 +22,12 @@ void gaw_world_finalize_transition(void);
    callback. Returns true when it performed a transition/finalization. */
 bool gaw_world_pre_callback_transition(void);
 
-/* $2051 logical boundary crossing. Rendering/scroll animation is deliberately
-   omitted; world id, persistence, map reload and state transition are native. */
+/* $2051: complete neighboring-cell transition and strip-scroll animation. */
 bool gaw_world_check_boundary_transition(void);
+void gaw_world_change_neighbor(uint8_t delta,bool wrap_nibble); /* $21C5/$21CB */
 void gaw_world_teleport(uint16_t target_cell);
 
-/* $2260 logical reload after a neighboring-cell change. */
+/* $2260: reload descriptors without replacing the screen before scrolling. */
 void gaw_world_reload_after_scroll(void);
 
 #endif

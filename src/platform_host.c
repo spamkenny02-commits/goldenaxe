@@ -26,8 +26,6 @@ uint8_t gaw_platform_entropy8(void) { if(entropy_next<entropy_count)return entro
 void gaw_platform_entity_resource_load(uint8_t resource_id) { gaw_assets_load_item(resource_id,0x7780u); }
 void gaw_platform_map_entity_resource_load(uint8_t type,uint8_t gfx_slot){gaw_assets_load_map_entity(type,gfx_slot);}
 void gaw_platform_world_rebuilt(void) {gaw_ui_upload_name_table();}
-void gaw_platform_world_scroll_begin(void) {}
-void gaw_platform_world_scroll_end(void) {}
 void gaw_platform_inventory_refresh(void) {gaw_assets_update_inventory();}
 void gaw_platform_world_message(uint16_t resource,uint8_t saved_cell){(void)saved_cell;gaw_ui_show_message(resource);}
 uint8_t gaw_platform_sram_read(uint16_t offset){return host_sram[offset&0x7FFFu];}

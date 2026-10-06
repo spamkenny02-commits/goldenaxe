@@ -173,5 +173,27 @@ private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
   attack, Pause/resume, inventory open/close and four-direction movement still
   execute on the actual 68000 emulator backend. Two empty scroll hooks remain.
 
-Next: complete screen scrolling, full-game integration, further MD performance
-work and hardware testing.
+- Screen scrolling $2051-$229B is now complete portable C: original buffer
+  swaps, row/column uploads, sprite displacement, frozen barriers, line-scroll
+  setup/reset and neighboring-cell reload order. Corrected the five-stage route
+  puzzle at cell 77, including the valid exit to 76 and final exit to 67.
+  220 complete raw-original comparisons cover four directions, three layers,
+  edge cells, sprite-order phases and no-crossing cases. 320 independent route
+  comparisons and ASan/UBSan pass. Every shared frame compares RAM C000-DF8F,
+  all VRAM/CRAM/registers; final state and exact barrier totals match.
+- The last two platform hooks are removed after implementing the actual scroll.
+  The compiled completion gate passes: 12/12 states, 127/127 entity types,
+  512/512 world entries, zero instruction-bridge calls and zero empty MD hooks.
+  This gate measures coverage; it does not prove all game states or a playthrough.
+- Current MD image is 474,504 bytes, BSS 25,174 at FF0000-FF6256, checksum CA4B.
+  ELF/vector/header checks and the native-only boot regression pass. A longer
+  physical-controller sequence on MD and original SMS advances 890 gameplay
+  updates at cell 95 with the same recorded player positions and HP 24. Terrain
+  keeps that route inside the initial screen; emulator screen crossings remain
+  to be exercised. The MD path takes more physical frames than SMS.
+- The execution environment disconnected after these checks. The tested source
+  changes and this status were preserved through the Git API; profiling and
+  further runtime validation require restoring the local execution environment.
+
+Next: MD performance, SMS sprite-status fidelity in the hardware adapter,
+full-game replay/integration and physical-hardware testing.

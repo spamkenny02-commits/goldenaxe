@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V31)
+## Current status (V32)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -45,25 +45,30 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   cover attract mode, scene animations, text, skip paths, saved slots and cancel.
 - Boot, name creation, new-game setup and 24 gameplay updates run on the host
   with no interpreter linked. The MD production build also excludes it.
+- Screen scrolling is portable C: 220 complete original-instruction comparisons
+  cover four directions, three layers, sprite ordering, scratch buffers and
+  exact frame timing; 320 cases validate the route puzzle around cell 77.
 - Player rotation and five special items are complete portable C: interior
   palette effect, progressive full heal, teleport wipe, terrain transformation
   and the 225-cell overworld map. 48 complete original-instruction comparisons
   check every shared frame's RAM/video/palette/registers, final SRAM and timing.
-- The 68000 image links with GCC 14.2.0: 473,672-byte ROM, 25,174-byte BSS.
+- The 68000 image links with GCC 14.2.0: 474,504-byte ROM, 25,174-byte BSS.
   ELF checks verify mutable state in FF0000-FF6256, actual IRQ vectors and absence of interpreter
   symbols; cartridge header and checksum checks pass. Genesis Plus GX boots
   through title, name creation, new game and 300 emulator gameplay frames with
   visible graphics and audible PSG. Hardware VBlank and line interrupts are
   connected; asynchronous VBlank continues sound/timers during C computation.
   The idle gameplay check advances 139 game updates in 300 physical frames,
-  versus 70 before optimization. Hardware/full-game validation, two scroll hooks
+  versus 70 before optimization. Hardware/full-game validation
   and further frame-cadence improvements remain.
 
 See `docs/CURRENT_STATUS.md` for the exact verified state.
 
-The project is not fully decompiled yet. No gameplay dispatch uses the instruction bridge. Two
-Mega Drive scroll hooks remain empty. Dispatcher registration coverage
-does not establish complete-game equivalence or a playable console build.
+The native registration/completion gate now passes: no instruction bridge calls
+or empty Mega Drive presentation hooks remain. All known dispatch entries are
+native C. This coverage does not establish complete-game equivalence, a full
+playthrough or hardware correctness; MD cadence and sprite-status fidelity still
+need work.
 The audio driver passes 144,384 isolated differential updates, including RAM and
 ordered PSG/stereo writes, and is integrated into the native IRQ. Sync, async and
 line IRQ paths pass 3,072 independent original-instruction comparisons; NMI has
@@ -85,7 +90,7 @@ From the repository root, with a C11 compiler and Python 3:
 
 ```sh
 make prepare-rom ROM="/absolute/path/to/Golden Axe Warrior.sms"
-make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-player-items test-native-boot audit
+make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-player-items test-world-scroll test-native-boot audit
 make test-sanitize
 ```
 
@@ -101,8 +106,8 @@ eventually pass before claiming a full native port:
 python3 tools/audit_runtime_coverage.py --require-complete
 ```
 
-It currently fails, intentionally. The probe does not prove all handler states
-equivalent; differential and full-game integration validation are still needed.
+It now passes. The probe does not prove all handler states equivalent;
+differential and full-game integration validation are still needed.
 
 ## GitHub validation and Mega Drive build
 

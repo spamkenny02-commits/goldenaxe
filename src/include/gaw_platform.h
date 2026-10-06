@@ -18,11 +18,8 @@ void gaw_platform_entity_resource_load(uint8_t resource_id);
 /* $1780 map-entity graphics load. Gameplay assigns gfx_slot; backends may
    upload/convert the corresponding original resource for presentation. */
 void gaw_platform_map_entity_resource_load(uint8_t type,uint8_t gfx_slot);
-/* Phase 8 world/render boundaries. Host tests are no-ops; SMS/MD backends may
-   use these to upload the rebuilt map or animate a cell scroll. */
+/* Upload the rebuilt portable name table. Scroll animation lives in the core. */
 void gaw_platform_world_rebuilt(void);
-void gaw_platform_world_scroll_begin(void);
-void gaw_platform_world_scroll_end(void);
 /* Presentation-only boundaries lifted from the remaining player actions. */
 void gaw_platform_inventory_refresh(void);
 /* Direct bank-3 string address; core resolves per-cell message tables. */

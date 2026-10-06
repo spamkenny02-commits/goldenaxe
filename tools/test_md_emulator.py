@@ -207,6 +207,7 @@ def main():
                 if input_ticks >= inputs[input_step]['ticks']:
                     input_log.append({'step': input_step, 'emulator_frame': frame, 'state': f'{state:02X}',
                                       'position': [read(0xC313), read(0xC311)], 'player_state': read(0xC301),
+                                      'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
                                       'held': read(0xC020), 'pressed': read(0xC021)})
                     input_step += 1
                     input_ticks = 0
@@ -244,6 +245,7 @@ def main():
     if not args.observe_only:
         assert play_frames >= 300, 'Did not reach stable gameplay'
         assert play_ticks >= 24, 'Gameplay did not advance'
+        assert read(0xC01D) == 0x0C, 'Scenario did not finish in gameplay'
         assert current['audio_peak'] > 1024, 'No audible PSG output beyond boot noise'
         assert input_step == len(inputs), 'Controller scenario did not finish'
         if result.get('play_irqs'):
