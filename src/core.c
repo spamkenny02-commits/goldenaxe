@@ -549,6 +549,7 @@ static void gaw_world_audio_select_native(void) {
     else {uint8_t f=0;for(unsigned i=0;i<8u;++i)f|=gaw_entity(16u+i)->raw[ENT_FLAGS];if(f&0x40u){gaw_ram_write8(0xC0AEu,1u);cmd=0x86u;}else{gaw_ram_write8(0xC0AEu,0u);cmd=0x83u;}}
     uint8_t old=gaw_ram_read8(0xC065u);gaw_ram_write8(0xC065u,cmd);if(old!=cmd)gaw_ram_write8(0xDE06u,cmd);
 }
+void gaw_world_set_audio(uint8_t command){uint8_t old=gaw_ram_read8(0xC065u);gaw_ram_write8(0xC065u,command);if(old!=command)gaw_ram_write8(0xDE06u,command);}
 
 
 /* ROM-derived $1780 gameplay-init data. */
@@ -795,6 +796,7 @@ static void animate_mode2_bank5(void){
     else { if((f&3u)!=0)return; src=(uint16_t)(0xBDF3u+3u*((f>>2)&3u)); }
     for(unsigned i=0;i<3u;++i)gaw_ram_write8((uint16_t)(0xDCADu+i),gaw_sms_rom_bank_read(5u,(uint16_t)(src+i)));
 }
+void gaw_world_palette_cycle(void){animate_mode2_bank5();}
 
 /* $699C-$6AE1: all four effect states are native, for both state slots. */
 void gaw_world_animate_frame(void){
@@ -998,6 +1000,9 @@ void gaw_hud_initialize_status_descriptor(void){
 
 void gaw_state_gameplay(void) {
     gaw_wait_frame();
+    gaw_state_gameplay_update();
+}
+void gaw_state_gameplay_update(void){
     gaw_entities_update_all();
     gaw_render_build_sms_sat();
     gaw_hud_update_quarter_frame();
@@ -1092,6 +1097,7 @@ static NativeStateHandler native_state_handler(uint8_t state){
         case 0x08: return gaw_state_enter_gameplay;
         case 0x0A: return gaw_state_gameplay_init;
         case 0x0C: return gaw_state_gameplay;
+        case 0x0E: return gaw_state_ending;
         case 0x10: return gaw_state_inventory;
         case 0x12: return gaw_state_name_entry;
         case 0x14: return state_game_over;

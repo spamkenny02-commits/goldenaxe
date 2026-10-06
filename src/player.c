@@ -297,6 +297,9 @@ static void player_state_walk(GawEntity *e) {
         e->raw[ENT_DIRECTION]=resolved;
         memcpy(&e->raw[ENT_DELTA0],&rec[1u+(unsigned)resolved*4u],4);
     }
+    /* $3309 advances the walk pose whenever a movement attempt starts,
+       including attempts rejected by the terrain checks. */
+    e->raw[ENT_ANIM_FRAME]=(uint8_t)((e->raw[ENT_ANIM_FRAME]+1u)&3u);
     gaw_player_update_sprite_meta(e);
 }
 

@@ -12,6 +12,7 @@ void gaw_state_enter_gameplay(void); /* original $24B6, state value $08 */
 void gaw_state_gameplay_init(void); /* original $24C5, state value $0A */
 void gaw_world_spawn_map_entities_native(void); /* original $1780 */
 void gaw_state_gameplay(void);      /* original $24F3, state value $0C */
+void gaw_state_gameplay_update(void); /* $24F6, no initial wait */
 void gaw_state_inventory(void); /* $70F2, state $10 */
 void gaw_wait_frame(void);          /* portable form of $0B95 */
 void gaw_nmi_pause(void);           /* original NMI behavior at $0066 */
@@ -28,5 +29,7 @@ void gaw_world_rebuild_display_native(void); /* $1DE2, no progress reapplication
 void gaw_hud_update_status_descriptor(void); /* $1DF6 */
 void gaw_hud_initialize_status_descriptor(void); /* $1DEB */
 void gaw_hud_animate_value(uint8_t phase); /* $1E38/$1E41 */
+void gaw_world_palette_cycle(void); /* bank 5 $BDBE */
+void gaw_world_set_audio(uint8_t command); /* $1CF8 */
 
 #endif
