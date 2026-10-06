@@ -56,7 +56,9 @@ The project is not fully decompiled yet. No gameplay dispatch uses the instructi
 Mega Drive presentation hooks remain empty. Dispatcher registration coverage
 does not establish complete-game equivalence or a playable console build.
 The audio driver passes 144,384 isolated differential updates, including RAM and
-ordered PSG/stereo writes. It still needs native IRQ integration. Frame
+ordered PSG/stereo writes, and is integrated into the native IRQ. Sync, async and
+line IRQ paths pass 3,072 independent original-instruction comparisons; NMI has
+256 cases. Mega Drive interrupt timing still needs backend integration. Frame
 tests share the native video/input tick; isolated video-block tests compare
 the original instructions separately.
 
@@ -74,7 +76,7 @@ From the repository root, with a C11 compiler and Python 3:
 
 ```sh
 make prepare-rom ROM="/absolute/path/to/Golden Axe Warrior.sms"
-make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-native-boot audit
+make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-native-boot audit
 make test-sanitize
 ```
 

@@ -22,7 +22,6 @@ unsigned gaw_host_sound_trace(uint16_t *values,unsigned capacity){unsigned n=sou
 void gaw_platform_init(void) { host_pad = 0; host_entropy = 0x5A; host_frame=0; pulse_start=pulse_end=0; pulse_bits=0;pause_frame=0;frame_observer=0;event_count=event_next=0;entropy_count=entropy_next=0;sound_count=0; }
 void gaw_platform_wait_vblank(void) { ++host_frame;if(pause_frame==host_frame)gaw_nmi_pause(); if(pulse_start && host_frame>=pulse_start && host_frame<pulse_end) host_pad=pulse_bits; else if(pulse_start && host_frame>=pulse_end) host_pad=0; while(event_next<event_count && host_frame>=event_frame[event_next])host_pad=event_bits[event_next++]; gaw_vblank_tick(host_pad);if(frame_observer)frame_observer(); }
 uint8_t gaw_platform_read_pad_sms_bits(void) { return host_pad; }
-void gaw_platform_audio_command(uint8_t command) { (void)command; }
 uint8_t gaw_platform_entropy8(void) { if(entropy_next<entropy_count)return entropy_values[entropy_next++];uint8_t v=host_entropy; host_entropy=(uint8_t)(host_entropy*33u+17u); return v; }
 void gaw_platform_entity_resource_load(uint8_t resource_id) { gaw_assets_load_item(resource_id,0x7780u); }
 void gaw_platform_map_entity_resource_load(uint8_t type,uint8_t gfx_slot){gaw_assets_load_map_entity(type,gfx_slot);}

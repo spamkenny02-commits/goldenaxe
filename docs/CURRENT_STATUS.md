@@ -1,4 +1,4 @@
-# Current status — V27
+# Current status — V28
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -61,8 +61,7 @@ platform backends, including native Motorola 68000/Mega Drive.
   are excluded from this reference block.
 - Mega Drive uploads the shadow after the native video tick in the same
   platform barrier. This ordering is checked at source level, not on hardware.
-- Frame tests share the native video/input tick. Full original IRQ status,
-  line/asynchronous handling and audio-engine equivalence remain outstanding.
+- Frame tests share the native video/input tick. Full original IRQ behavior is also compared independently below.
 - Inventory (10, $70F2) is native: fonts, item icons, visited dungeon map,
   blinking location marker, equipment selection and scene restoration pass
   432 complete original-instruction comparisons. Each shared frame compares
@@ -116,8 +115,21 @@ private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
   original-instruction updates compare RAM C000-DF8F and every ordered
   PSG/stereo write, with refresh entropy replay. Tests cover all 13 music
   commands, 29 effects, both DE03 timing modes and mixed command sequences.
-  Unused/reserved malformed stream requests report diagnostics. Frame-loop
-  integration is the next step; this does not establish console audio yet.
+  Unused/reserved malformed stream requests report diagnostics. The driver is now active in the native frame loop; emulator audio
+  and hardware behavior are still being verified.
 
-Next: full IRQ/audio integration, complete platform hooks, full-game integration
+- Complete IRQ $0038 is native: status acknowledgment, synchronous video/audio/
+  input/timers, asynchronous audio/timer updates and all three line callbacks.
+  3,072 isolated raw-original comparisons check RAM, VRAM, CRAM, registers,
+  status reset and ordered sound writes; 256 cases check NMI. IRQ ASan/UBSan
+  passes. Shared-frame suites still use the native tick on both sides.
+- Game sound requests now write their original DE06/DE08 queue slots; no game
+  command is sent directly to PSG. Corrected two world barriers that had bypassed
+  C02E, linked-room wipe timing and room-entry/return fades. Impacted gameplay,
+  menu, inventory, service, ending, entry, effect and UI regressions pass.
+- 68000 link includes audio/IRQ and passes RAM/ELF/header checks: 432,418 bytes,
+  BSS 25,152 bytes at FF0000-FF6240 and checksum FB5E. MD still polls synchronous
+  barriers; asynchronous and line hardware scheduling is the next backend task.
+
+Next: Mega Drive IRQ scheduling, complete platform hooks, full-game integration
 and hardware testing.

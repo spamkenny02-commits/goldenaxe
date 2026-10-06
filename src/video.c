@@ -38,5 +38,6 @@ void gaw_video_reset(void){
     vdp_addr=0;vdp_code=0;vdp_status=0;vdp_readbuf=0;
 }
 uint8_t gaw_video_status_read(void){uint8_t s=vdp_status;vdp_status=0;vdp_ctrl_latch=0;return s;}
-void gaw_video_vblank_pending(void){vdp_status|=0x80u;}
+void gaw_video_status_pending(uint8_t flags){vdp_status|=flags;}
+void gaw_video_vblank_pending(void){gaw_video_status_pending(0x80);}
 void gaw_video_write_at(uint16_t address,uint8_t value){vdp_addr=address&0x3FFFu;vdp_code=1;vdp_data_w(value);}

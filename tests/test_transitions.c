@@ -24,6 +24,8 @@ static void observe(void){
 static void setup(unsigned seed,unsigned flags){
     gaw_platform_init();gaw_sms_compat_reset();
     for(unsigned i=0;i<GAW_RAM_SIZE;++i)gaw_ram[i]=(uint8_t)(i*13u+seed*17u);
+    /* Use a valid idle sound workspace; the IRQ now runs the real driver. */
+    memset(gaw_ram_ptr(0xDE00u),0,0x190);gaw_ram_write8(0xDE05u,0x80);
     /* The presentation IRQ consumes the queue during each barrier. */
     memset(gaw_ram_ptr(0xDD00u),0,64);gaw_ram_write16le(0xC034u,0xDD00);gaw_ram_write8(0xC042u,0);
     for(unsigned i=0;i<32u;++i)gaw_ram_write8((uint16_t)(0xDCA0u+i),(uint8_t)((i*seed+seed*11u)&0x3Fu));

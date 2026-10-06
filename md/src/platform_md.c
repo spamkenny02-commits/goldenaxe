@@ -69,7 +69,6 @@ uint8_t gaw_platform_read_pad_sms_bits(void){
     return held;
 }
 void gaw_platform_wait_vblank(void){while(VDP_CTRL&0x0008u){}while(!(VDP_CTRL&0x0008u)){}gaw_vblank_tick(gaw_platform_read_pad_sms_bits());sync_sms_shadow();}
-void gaw_platform_audio_command(uint8_t command){PSG=command;}
 void gaw_platform_sound_write(uint8_t port,uint8_t value){if(port==0x7Fu)PSG=value;}
 uint8_t gaw_platform_entropy8(void){uint8_t h=*(volatile uint8_t*)0xC00008;entropy=(uint8_t)(entropy*33u+17u+h);return entropy;}
 void gaw_platform_entity_resource_load(uint8_t id){gaw_assets_load_item(id,0x7780u);}void gaw_platform_map_entity_resource_load(uint8_t type,uint8_t gfx_slot){gaw_assets_load_map_entity(type,gfx_slot);}void gaw_platform_world_rebuilt(void){gaw_ui_upload_name_table();}void gaw_platform_world_scroll_begin(void){}void gaw_platform_world_scroll_end(void){}void gaw_platform_inventory_refresh(void){gaw_assets_update_inventory();}void gaw_platform_player_special_effect(uint8_t id){(void)id;}void gaw_platform_show_world_map(void){}void gaw_platform_world_message(uint16_t resource,uint8_t saved_cell){(void)saved_cell;gaw_ui_show_message(resource);}void gaw_platform_player_transition_frame(void){}

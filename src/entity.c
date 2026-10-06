@@ -89,8 +89,7 @@ void gaw_entity_apply_pending_damage(GawEntity *e) {
     GawEntity *related = entity_from_sms_pointer(gaw_entity_get16(e, ENT_RELATED_PTR));
     e->raw[ENT_PENDING_DAMAGE] = 0;
 
-    /* $2768-$282F is translated until the final 4-way collision response.
-       The four response handlers remain legacy hooks for now. */
+    /* $2768-$282F and the four directional recoil responses are native. */
     if (e->raw[ENT_FLAGS] & 0x40u) {
         e->raw[ENT_HP] = (damage > e->raw[ENT_HP]) ? 0 : (uint8_t)(e->raw[ENT_HP] - damage);
         if (e->raw[ENT_HP] == 0) {
@@ -99,7 +98,7 @@ void gaw_entity_apply_pending_damage(GawEntity *e) {
             e->raw[ENT_STATE] = 0;
             gaw_entity_set16(e, ENT_DELTA1, 0);
             gaw_entity_set16(e, ENT_DELTA0, 0);
-            gaw_platform_audio_command(0x9E);
+            gaw_ram_write8(0xDE08u,0x9E);
             return;
         }
     } else if (e->raw[ENT_FLAGS] & 0x20u) {
@@ -115,7 +114,7 @@ void gaw_entity_apply_pending_damage(GawEntity *e) {
             e->raw[ENT_STATE] = 0;
             gaw_entity_set16(e, ENT_DELTA1, 0);
             gaw_entity_set16(e, ENT_DELTA0, 0);
-            gaw_platform_audio_command(0xA0);
+            gaw_ram_write8(0xDE08u,0xA0);
             return;
         }
     } else {
@@ -125,7 +124,7 @@ void gaw_entity_apply_pending_damage(GawEntity *e) {
         return;
     }
 
-    gaw_platform_audio_command(0x9C);
+    gaw_ram_write8(0xDE08u,0x9C);
     e->raw[ENT_HIT_FLASH_TIMER] = 0x20;
 
     if ((e->raw[ENT_FLAGS] & 0x08u) && related) {

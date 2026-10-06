@@ -5,6 +5,7 @@
 void gaw_video_reset(void);
 uint8_t gaw_video_status_read(void);
 void gaw_video_vblank_pending(void);
+void gaw_video_status_pending(uint8_t flags); /* VBlank/collision/overflow status */
 void gaw_video_write_at(uint16_t address,uint8_t value);
 const uint8_t *gaw_sms_vram(void);
 const uint8_t *gaw_sms_cram(void);

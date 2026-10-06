@@ -17,9 +17,9 @@ def main():
         fields=line.split()
         if len(fields)==3:
             symbols[fields[2]]=(int(fields[0],16),fields[1])
-    required=('_start','__data_load','__data_start','__data_end','__bss_start','__bss_end','gaw_ram')
+    required=('_start','__data_load','__data_start','__data_end','__bss_start','__bss_end','gaw_ram','gaw_audio_tick','gaw_irq_service')
     if any(name not in symbols for name in required):
-        parser.exit(1,'Missing startup/RAM symbols\n')
+        parser.exit(1,'Missing startup/native runtime symbols\n')
     address=lambda name:symbols[name][0]
     assert address('_start')==0x200
     assert address('__data_load')<0x200000

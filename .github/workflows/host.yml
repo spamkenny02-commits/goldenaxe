@@ -43,4 +43,4 @@ jobs:
             echo 'Behavioral tests not run; syntax checks alone do not establish equivalence.'
             exit 0
           fi
-          make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-native-boot audit test-sanitize
+          make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-native-boot audit test-sanitize

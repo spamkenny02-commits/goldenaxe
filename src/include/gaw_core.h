@@ -16,7 +16,8 @@ void gaw_state_gameplay_update(void); /* $24F6, no initial wait */
 void gaw_state_inventory(void); /* $70F2, state $10 */
 void gaw_wait_frame(void);          /* portable form of $0B95 */
 void gaw_nmi_pause(void);           /* original NMI behavior at $0066 */
-void gaw_vblank_tick(uint8_t held_bits); /* native video/input/frame IRQ portion */
+void gaw_irq_service(uint8_t held_bits); /* $0038, acknowledges SMS shadow status */
+void gaw_vblank_tick(uint8_t held_bits); /* raises VBlank then services sync/async IRQ */
 void gaw_world_select_callback(void);    /* core of $5B20 */
 void gaw_world_run_callback(void);
 void gaw_world_callback_5d4c_native(void);

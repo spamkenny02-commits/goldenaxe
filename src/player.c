@@ -449,7 +449,7 @@ static void player_state_dispatch(GawEntity *e) {
             W8(RAM_PLAYER_SPRITE_BANK,4);
             break;
         case 8:
-            gaw_platform_audio_command(0x9A);
+            W8(0xDE06,0x9A);
             memset(gaw_ram_ptr(0xC330),0,0x180); /* $2D7C: slots 1..8 */
             gaw_entity_set16(e,ENT_DELTA0,0); gaw_entity_set16(e,ENT_DELTA1,0);
             e->raw[ENT_MOTION_PHASE]=0x5A; e->raw[ENT_STATE]++;
@@ -661,8 +661,8 @@ static void player_use_action(GawEntity *e) {
     uint8_t item=R8(0xC0DF);
     if (item>=12) return;
     switch (item) {
-        case 0: e->raw[ENT_STATE]=2; gaw_platform_audio_command(0x90); break;
-        case 1: e->raw[ENT_STATE]=4; gaw_platform_audio_command(0x99); break;
+        case 0: e->raw[ENT_STATE]=2; W8(0xDE06,0x90); break;
+        case 1: e->raw[ENT_STATE]=4; W8(0xDE06,0x99); break;
         case 2:
             if (R8(0xC0BF)) { W8(0xC0BF,0); W8(0xC0E2,0); W8(0xDE06,0x97); player_inventory_refresh(); }
             break;

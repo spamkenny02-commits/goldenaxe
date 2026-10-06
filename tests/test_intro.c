@@ -39,7 +39,7 @@ static void observe(void){
         unsigned picker=gaw_ram_read16le(0xD65Au)==0x08A8u;
         if(picker)seen_picker=1;
         if(seen_picker&&!picker)canceled=1;
-        if(gaw_ram_read8(0xDE08u)==0xA1u)refused=1;
+        if(gaw_ram_read8(0xDE0Fu)==0xA1u)refused=1;
         if(observed%4u==0u){
             if(case_now>=16u&&picker){
                 if(case_now<18u)pad=0x10;

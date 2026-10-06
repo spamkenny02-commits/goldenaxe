@@ -17,5 +17,6 @@ int gaw_sms_compat_indexed_call(uint8_t bank,uint16_t addr,uint16_t ix);
 int gaw_sms_compat_raw_call_args(uint8_t bank,uint16_t addr,uint16_t hl,uint16_t de,uint16_t bc,uint8_t a);
 /* Test-only original IRQ video block: stops before audio/input at $019C. */
 int gaw_sms_compat_irq_video_call(void);
+int gaw_sms_compat_irq_call(void); /* isolated full $0038, no shared native tick */
 #include "gaw_video.h"
 #endif

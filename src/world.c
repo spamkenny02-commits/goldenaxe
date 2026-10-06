@@ -135,7 +135,7 @@ void gaw_world_finalize_transition(void) {
     gaw_hud_rebuild_full();
     /* $229C begins with $0B95: preserve the VBlank boundary as well as the
        eventual platform upload, because C02F/input timers advance here. */
-    gaw_platform_wait_vblank();
+    gaw_wait_frame();
     gaw_platform_world_rebuilt();
     static const uint8_t status_template[16]={0x00,0x00,0x1B,0x3F,0x1F,0x06,0x38,0x30,0x03,0x0D,0x08,0x14,0x3C,0x30,0x2A,0x00};
     memcpy(gaw_ram_ptr(0xDCB0u),status_template,sizeof status_template);
@@ -217,7 +217,7 @@ static void world_refresh_interior_aux(void) {
 void gaw_world_reload_after_scroll(void) {
     W8(0xC0AD,0); W8(0xC0AC,0);
     world_refresh_interior_aux();
-    if (R8(0xC072)!=0) gaw_platform_wait_vblank();
+    if (R8(0xC072)!=0) gaw_wait_frame();
     if (gaw_world_load_current_cell()) {
         /* The Z80 performs the visual strip scroll around $2260. The portable
            core collapses that presentation step and leaves D600 immediately

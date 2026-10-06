@@ -1,10 +1,10 @@
 CC ?= cc
 CFLAGS ?= -std=c11 -Wall -Wextra -Werror -O2
 CPPFLAGS += -Isrc/include
-SRC = src/ram.c src/video.c src/presentation.c src/audio.c src/assets.c src/scene.c src/effects.c src/reset.c src/ui.c src/inventory.c src/menu.c src/services.c src/ending.c src/intro.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c src/platform_host.c
+SRC = src/ram.c src/video.c src/presentation.c src/audio.c src/irq.c src/assets.c src/scene.c src/effects.c src/reset.c src/ui.c src/inventory.c src/menu.c src/services.c src/ending.c src/intro.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c src/platform_host.c
 NATIVE_SRC = $(filter-out src/sms_compat.c src/recompiled.c,$(SRC))
 INPUTS = $(wildcard src/include/*.h src/*.inc)
-.PHONY: all test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-native-boot test-sanitize audit clean prepare-rom
+.PHONY: all test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-native-boot test-sanitize audit clean prepare-rom
 all: phase17_host_test
 prepare-rom:
 	@test -n "$(ROM)" || { echo 'Use make prepare-rom ROM=/path/to/game.sms' >&2; exit 2; }
@@ -46,6 +46,8 @@ test-ending: ending_host_test
 	./ending_host_test
 test-audio: audio_host_test
 	./audio_host_test
+test-irq: irq_host_test
+	./irq_host_test
 test-intro: intro_host_test
 	./intro_host_test
 native_boot_host_test: tests/test_native_boot.c $(NATIVE_SRC) $(INPUTS) src/original_rom.inc
@@ -101,6 +103,8 @@ test-sanitize:
 	./intro_san
 	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) $(SRC) tests/test_audio.c -o audio_san
 	./audio_san
+	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) $(SRC) tests/test_irq.c -o irq_san
+	./irq_san
 	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) $(NATIVE_SRC) tests/test_native_boot.c -o native_boot_san
 	./native_boot_san
 runtime_coverage_host_test: tests/runtime_coverage.c $(SRC) $(INPUTS) src/original_rom.inc

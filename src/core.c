@@ -13,16 +13,12 @@
 #include "include/gaw_assets.h"
 #include "include/gaw_presentation.h"
 #include "include/gaw_menu.h"
-
-static void edge_update(uint16_t held_addr, uint16_t pressed_addr, uint8_t now) {
-    uint8_t old = gaw_ram_read8(held_addr);
-    gaw_ram_write8(held_addr, now);
-    gaw_ram_write8(pressed_addr, (uint8_t)(now & (now ^ old)));
-}
+#include "include/gaw_audio.h"
 
 void gaw_reset(void) {
     gaw_ram_reset_like_z80();
     gaw_video_reset();
+    gaw_audio_reset_diagnostics();
     gaw_platform_init();
     gaw_save_initialize_native();
     gaw_video_initialize_native();
@@ -32,23 +28,6 @@ void gaw_reset(void) {
 void gaw_nmi_pause(void) {
     if (gaw_ram_read8(RAM_PAUSE_NMI_COUNTER) == 0)
         gaw_ram_write8(RAM_PAUSE_NMI_COUNTER, 0x14);
-}
-
-void gaw_vblank_tick(uint8_t held_bits) {
-    gaw_video_present_vblank();
-    uint8_t pause = 0;
-    uint8_t counter = gaw_ram_read8(RAM_PAUSE_NMI_COUNTER);
-    if (counter != 0) {
-        gaw_ram_write8(RAM_PAUSE_NMI_COUNTER, (uint8_t)(counter - 1u));
-        pause = 1;
-    }
-    edge_update(RAM_PAUSE_HELD, RAM_PAUSE_PRESSED, pause);
-    edge_update(RAM_INPUT_HELD, RAM_INPUT_PRESSED, (uint8_t)(held_bits & 0x3Fu));
-
-    uint8_t timer = gaw_ram_read8(RAM_TIMER_C030);
-    if (timer != 0) gaw_ram_write8(RAM_TIMER_C030, (uint8_t)(timer - 1u));
-    gaw_ram_write8(RAM_FRAME_COUNTER, (uint8_t)(gaw_ram_read8(RAM_FRAME_COUNTER) + 1u));
-    gaw_ram_write8(RAM_VBLANK_WAIT_FLAG, 0);
 }
 
 void gaw_wait_frame(void) {
@@ -92,14 +71,9 @@ static void world_save_local_presence(void){
     for(unsigned i=0;i<8u;++i) mask=(uint8_t)((mask<<1)|(gaw_ram_read8((uint16_t)(0xC600u+i*0x30u))!=0));
     gaw_ram_write8((uint16_t)(0xC200u+(uint8_t)gaw_ram_read16le(RAM_WORLD_CELL_ID)),mask);
 }
-/* $0B12 has VDP writes as well; these are the RAM-visible side effects used
-   by the room-entry callbacks. Physical VDP state is a platform concern. */
+/* Room-entry/return callbacks share the full $0B12 palette transition. */
 static void world_transition_display_reset_ram(void){
-    memset(gaw_ram_ptr(0xDCC0u),0,0x20u);
-    gaw_ram_write8(0xC010u,(uint8_t)(gaw_ram_read8(0xC010u)&0xEFu));
-    gaw_ram_write8(0xC011u,(uint8_t)(gaw_ram_read8(0xC011u)&0xBFu));
-    gaw_ram_write8(0xDD40u,0xD0u);
-    gaw_ui_display_reset();
+    gaw_ui_fade_out();
 }
 /* $65E1: return from a linked/interior room to the cell saved in C0BB. */
 static void world_return_to_saved_cell(void){
@@ -140,11 +114,7 @@ static int world_trigger_linked_room(uint16_t position,uint8_t low_cell){
     uint16_t old=gaw_ram_read16le(RAM_WORLD_CELL_ID);
     world_save_local_presence();
     gaw_ram_write16le(RAM_WORLD_CELL_ID,(uint16_t)((old&0xFF00u)|low_cell));
-    /* RAM-visible tail of $1F78/$0B24. */
-    gaw_ram_write8(0xDE08u,0xA6u);
-    gaw_ram_write8(0xC010u,(uint8_t)(gaw_ram_read8(0xC010u)&0xEFu));
-    gaw_ram_write8(0xC011u,(uint8_t)(gaw_ram_read8(0xC011u)&0xBFu));
-    gaw_ram_write8(0xDD40u,0xD0u);
+    gaw_ui_wipe_name_table();
     gaw_world_reload_after_scroll();
     unsigned found=160u;
     for(unsigned i=0;i<160u;++i)if(gaw_ram_read8((uint16_t)(0xDC00u+i))==0x0Cu){found=i;break;}

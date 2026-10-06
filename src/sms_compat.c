@@ -123,7 +123,7 @@ static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world,
            the original IRQ body as well would double-apply the interrupt
            side effects and corrupt its saved-register stack. */
         if(z.pc==0x0B95u){
-            gaw_platform_wait_vblank(); gaw_video_vblank_pending(); steps_since_sync=0; z.pc=pop(&z); continue;
+            gaw_ram_write8(0xC02Eu,1); gaw_platform_wait_vblank(); steps_since_sync=0; z.pc=pop(&z); continue;
         }
         step(&z);
     }
@@ -132,6 +132,11 @@ void gaw_sms_compat_reset(void){gaw_video_reset();faults=0;last_fault_pc=0;refre
 int gaw_sms_compat_irq_video_call(void){
     Z z;memset(&z,0,sizeof z);z.p1=1;z.p2=4;z.pc=0x013E;z.sp=0xDFF0;vertical_counter=0xF0;
     for(unsigned steps=0;steps<2000000u;++steps){if(z.pc==0x019Cu){vertical_counter=0x78;return 1;}step(&z);}
+    vertical_counter=0x78;last_fault_pc=z.pc;++faults;return 0;
+}
+int gaw_sms_compat_irq_call(void){
+    Z z;memset(&z,0,sizeof z);z.p1=1;z.p2=5;z.mapper=gaw_ram_read8(0xDFFCu);z.pc=0x0038;z.sp=0xDFF0;push(&z,0xFFFF);vertical_counter=0xF0;refresh_count=0;
+    for(unsigned steps=0;steps<2000000u;++steps){if(z.pc==0xFFFFu){vertical_counter=0x78;return 1;}step(&z);}
     vertical_counter=0x78;last_fault_pc=z.pc;++faults;return 0;
 }
 int gaw_sms_compat_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,0,0,0,0,0,0);}
