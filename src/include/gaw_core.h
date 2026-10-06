@@ -27,5 +27,6 @@ void gaw_hud_rebuild_full(void); /* $1E4E */
 void gaw_world_rebuild_display_native(void); /* $1DE2, no progress reapplication */
 void gaw_hud_update_status_descriptor(void); /* $1DF6 */
 void gaw_hud_initialize_status_descriptor(void); /* $1DEB */
+void gaw_hud_animate_value(uint8_t phase); /* $1E38/$1E41 */
 
 #endif

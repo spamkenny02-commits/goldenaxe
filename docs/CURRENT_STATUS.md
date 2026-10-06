@@ -1,4 +1,4 @@
-# Current status — V23
+# Current status — V24
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -20,7 +20,7 @@ platform backends, including native Motorola 68000/Mega Drive.
   8,192 differential cursor cases; states 1/2 pass 72 complete cycles with
   per-frame RAM/VRAM comparison and final CRAM/register/SRAM/timing comparison.
 - Scene restoration $16EF is native: three layers, gates, palettes, metatiles
-  and SRAM animation workspace pass 36 unaccelerated original Z80 comparisons.
+  and SRAM animation workspace pass 72 unaccelerated original Z80 comparisons.
 - Palette fade-in $0AA4, fade-out $0B12 and world reveal $1FA7 are native C.
   Their 48 comparisons cover zero/mixed palettes, display flags, input and
   Pause events; RAM, VRAM and VDP registers match after every shared frame.
@@ -32,9 +32,9 @@ platform backends, including native Motorola 68000/Mega Drive.
   resources compared against the unaccelerated original Z80 decoder.
 - Five MD presentation hooks remain empty: scroll begin/end, special effects,
   world map and transition presentation.
-- Main-state registration is 9/12: Pause (02), new game (04), continue (06),
+- Main-state registration is 10/12: Pause (02), new game (04), continue (06),
   scene entry (08), gameplay initialization (0A), gameplay (0C), inventory (10), name entry (12) and game over
-  (14). Three other states remain bridged.
+  (14) and services (16). Two other states remain bridged.
 - Complete entry sequences pass 4,148 raw original Z80 comparisons. Continue
   and scene entry cover all 512 cells, cached/changed scenery and display flags.
   RAM, VRAM and registers are compared each shared frame, with final SRAM,
@@ -72,9 +72,16 @@ platform backends, including native Motorola 68000/Mega Drive.
   compare 8,064 cursor cases, 2,688 input cases and four complete cycles with
   per-frame RAM/VRAM/register checks. The long message detects and verifies
   a scroll fix: all shifted-out bitmap rows are cleared, not only the last.
+- Save/shop/inn/magic-upgrade state 16 ($7390) is native, including portrait
+  masks, saved-slot names, prices, purchases, healing, refusal paths, magic
+  capacities and SRAM slot copies. 1,024 cursor cases, 25 drawing cases and
+  72 full cycles compare RAM/VRAM/registers each shared frame, final CRAM,
+  all SRAM and timing. The two-stage descriptor decoder $0BD3 is native.
+- Scene restoration now places its animation workspace on the selected SRAM
+  page; scene tests cover both pages in 72 cases.
 - No linked/play-tested Mega Drive ROM has been produced.
 
-Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource/game-over/presentation/inventory/menu suites, ASan/UBSan,
+Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource/game-over/presentation/inventory/menu/service suites, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
 structure/syntax checks. LeakSanitizer is disabled here because sandbox /proc
 access prevents its operation; address/undefined-behavior checks remain enabled.

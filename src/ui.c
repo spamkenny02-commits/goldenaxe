@@ -278,6 +278,7 @@ static uint16_t fixed_text(uint16_t source,uint16_t destination,uint16_t descrip
 void gaw_ui_fixed_text(uint16_t source,uint16_t destination){fixed_text(source,destination,0x8A8Eu);}
 uint16_t gaw_ui_fixed_text_next(uint16_t source,uint16_t destination){return fixed_text(source,destination,0x8A8Eu);}
 void gaw_ui_inventory_text(uint16_t source,uint16_t destination){fixed_text(source,destination,0x8AE4u);}
+uint16_t gaw_ui_inventory_text_next(uint16_t source,uint16_t destination){return fixed_text(source,destination,0x8AE4u);}
 void gaw_ui_decimal(uint8_t value,uint16_t destination){
     const uint8_t digits[3]={(uint8_t)(value/100u),(uint8_t)(value%100u/10u),(uint8_t)(value%10u)};
     for(unsigned i=0;i<3u;++i){W(destination++,0xF0u+digits[i]);W(destination++,0x18);}
@@ -300,6 +301,12 @@ void gaw_ui_menu_reset(void){
     video_address(0x7800u);for(unsigned i=0;i<0x380u;++i){gaw_sms_vdp_data_write(0xFA);gaw_sms_vdp_data_write(1);}
     for(unsigned i=0;i<0x600u;i+=2u)W16(0xD600u+i,0x01FA);
     memset(gaw_ram_ptr(0xDCA0u),0,32);
+}
+void gaw_ui_load_inventory_font(void){gaw_ui_load_font(32,0x5600u);gaw_assets_load_masked(4,0xA4D4u,0x7E00u,40,3);}
+uint16_t gaw_ui_icon_tiles(uint16_t tile,uint16_t destination,unsigned count){
+    if(!count)count=256u;
+    for(unsigned i=0;i<count;++i){W16(destination,tile++);W16(destination+2u,tile++);W16(destination+64u,tile++);W16(destination+66u,tile++);destination=(uint16_t)(destination+6u);}
+    return tile;
 }
 /* $0A78: append a fixed sprite descriptor with cumulative X/Y deltas. */
 void gaw_ui_sprite(uint8_t bank,uint16_t source,uint16_t entity){

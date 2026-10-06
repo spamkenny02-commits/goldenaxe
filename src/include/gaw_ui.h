@@ -18,6 +18,7 @@ void gaw_ui_status_box(void); /* $6398 */
 void gaw_ui_status_font(void); /* $638D font portion */
 void gaw_ui_fixed_text(uint16_t source,uint16_t destination); /* $0812 */
 void gaw_ui_inventory_text(uint16_t source,uint16_t destination); /* $0818 */
+uint16_t gaw_ui_inventory_text_next(uint16_t source,uint16_t destination);
 void gaw_ui_decimal(uint8_t value,uint16_t destination); /* $085B */
 void gaw_ui_load_font(uint8_t characters,uint16_t destination); /* $0C36 */
 void gaw_ui_clear_playfield(void); /* $20DA */
@@ -25,4 +26,6 @@ uint16_t gaw_ui_fixed_text_next(uint16_t source,uint16_t destination); /* $0812,
 void gaw_ui_sprite(uint8_t bank,uint16_t source,uint16_t entity); /* $0A78 */
 void gaw_ui_show_prepared_message(uint16_t resource); /* $0524 */
 void gaw_ui_menu_reset(void); /* $0B53 */
+void gaw_ui_load_inventory_font(void); /* $727A */
+uint16_t gaw_ui_icon_tiles(uint16_t tile,uint16_t destination,unsigned count); /* $729B */
 #endif

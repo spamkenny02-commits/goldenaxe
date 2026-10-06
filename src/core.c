@@ -964,6 +964,10 @@ void gaw_hud_update_quarter_frame(void) {
     gaw_ram_write8(0xC045,(uint8_t)(frame|0x80u));
     hud_update_phase(frame);
 }
+void gaw_hud_animate_value(uint8_t phase){
+    gaw_ram_write8(0xDE08u,0x95);gaw_ram_write8(0xC045u,(uint8_t)(phase|0x80u));hud_update_phase(phase);
+    gaw_wait_frame();gaw_wait_frame();
+}
 
 void gaw_hud_rebuild_full(void) {
     uint16_t src=0xA6ABu;
@@ -1091,6 +1095,7 @@ static NativeStateHandler native_state_handler(uint8_t state){
         case 0x10: return gaw_state_inventory;
         case 0x12: return gaw_state_name_entry;
         case 0x14: return state_game_over;
+        case 0x16: return gaw_state_services;
         default: return NULL;
     }
 }

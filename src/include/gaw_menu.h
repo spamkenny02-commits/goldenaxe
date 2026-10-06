@@ -6,4 +6,10 @@ void gaw_name_cursor(void); /* $12C1 */
 void gaw_name_input(void); /* $11BA */
 void gaw_menu_message(uint16_t resource); /* $779B */
 void gaw_menu_wait_input(uint8_t mask); /* $7447 */
+void gaw_state_services(void); /* $7390, state $16 */
+uint8_t gaw_menu_choose(uint8_t limit); /* $7716 */
+void gaw_menu_cursor(void); /* $7744 */
+void gaw_services_draw_portrait(void); /* $77B7 */
+void gaw_services_draw_saves(void); /* $782C */
+void gaw_services_draw_shop(void); /* $78CE */
 #endif

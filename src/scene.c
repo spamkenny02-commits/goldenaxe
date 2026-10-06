@@ -5,7 +5,7 @@
 #include "include/gaw_platform.h"
 #include "include/gaw_world_progress.h"
 
-static uint8_t byte(uint8_t bank,uint16_t a){return gaw_sms_rom_bank_read(a<0x4000u?0u:a<0x8000u?1u:bank,a);}
+static uint8_t byte(uint8_t bank,uint16_t a){return a>=0xC000u?gaw_ram_read8((uint16_t)(0xC000u+(a&0x1FFFu))):gaw_sms_rom_bank_read(a<0x4000u?0u:a<0x8000u?1u:bank,a);}
 static uint16_t word(uint8_t bank,uint16_t a){return (uint16_t)(byte(bank,a)|((uint16_t)byte(bank,(uint16_t)(a+1u))<<8));}
 /* $0C00: byte RLE with interleaved destination lanes. */
 uint16_t gaw_assets_unpack_ram(uint8_t bank,uint16_t source,uint16_t destination,uint8_t lanes){
@@ -23,6 +23,18 @@ uint16_t gaw_assets_unpack_ram(uint8_t bank,uint16_t source,uint16_t destination
         }
     }
     return source;
+}
+/* $0BD3 expands incrementing runs into D100, then decodes that temporary
+   stream as two descriptor lanes into the caller's destination. */
+uint16_t gaw_assets_unpack_descriptors(uint8_t bank,uint16_t source,uint16_t destination){
+    uint16_t dst=0xD100u;
+    for(;;){
+        uint8_t command=byte(bank,source++);if(!command)break;
+        unsigned count=command&0x7Fu;if(!count)count=256u;
+        uint8_t value=0;if(!(command&0x80u))value=byte(bank,source++);
+        while(count--){if(command&0x80u)value=byte(bank,source++);gaw_ram_write8((uint16_t)(0xC000u+(dst++&0x1FFFu)),value);if(!(command&0x80u))++value;}
+    }
+    (void)gaw_assets_unpack_ram(bank,0xD100u,destination,2);return source;
 }
 /* $1A30 preserves two different eight-byte records when the gate is open. */
 static void restore_gate_records(void){
@@ -69,5 +81,6 @@ void gaw_assets_restore_scene(void){
     restore_gate_records();interior_palette();auxiliary_metatiles();
     source=word(0,(uint16_t)(0x1759u+2u*gaw_ram_read8(0xC040u)));
     (void)gaw_assets_unpack_ram(11,source,0xD100u,4);
-    for(unsigned i=0;i<0x400u;++i)gaw_platform_sram_write((uint16_t)(0x1000u+i),gaw_ram_read8((uint16_t)(0xD100u+i)));
+    uint16_t page=(gaw_ram_read8(0xDFFCu)&4u)?0x4000u:0u;
+    for(unsigned i=0;i<0x400u;++i)gaw_platform_sram_write((uint16_t)(page+0x1000u+i),gaw_ram_read8((uint16_t)(0xD100u+i)));
 }
