@@ -15,5 +15,7 @@ unsigned gaw_sms_compat_refresh_trace(uint8_t *values,unsigned capacity);
 int gaw_sms_compat_indexed_call(uint8_t bank,uint16_t addr,uint16_t ix);
 /* Executes the original resource decoder too, without its accelerator. */
 int gaw_sms_compat_raw_call_args(uint8_t bank,uint16_t addr,uint16_t hl,uint16_t de,uint16_t bc,uint8_t a);
+/* Test-only original IRQ video block: stops before audio/input at $019C. */
+int gaw_sms_compat_irq_video_call(void);
 #include "gaw_video.h"
 #endif

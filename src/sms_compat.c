@@ -21,6 +21,7 @@ static uint32_t faults;
 static uint16_t last_fault_pc;
 static uint8_t refresh_trace[64];
 static unsigned refresh_count;
+static uint8_t vertical_counter=0x78;
 
 #if defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define U16_HI_PTR(p) ((uint8_t *)(void *)(p))
@@ -54,7 +55,7 @@ static uint8_t inport(Z*z,uint8_t p){(void)z;if((p&0xC0u)==0x80u && !(p&1u))retu
        acknowledges/clears the pending status flags; the IRQ handler itself
        copies the returned value to C01B. */
     return gaw_video_status_read();
-}if(p==0xDC)return (uint8_t)(~gaw_platform_read_pad_sms_bits());if(p==0xDD)return 0xFF;if(p==0x7E)return 0x78;if(p==0x7F)return 0x40;return 0xFF;}
+}if(p==0xDC)return (uint8_t)(~gaw_platform_read_pad_sms_bits());if(p==0xDD)return 0xFF;if(p==0x7E)return vertical_counter;if(p==0x7F)return 0x40;return 0xFF;}
 static void outport(Z*z,uint8_t p,uint8_t v){(void)z;if((p&0xC0u)==0x80u){if(p&1u)gaw_sms_vdp_control_write(v);else gaw_sms_vdp_data_write(v);}else if(p==0x7F)gaw_platform_audio_command(v);}
 
 static uint8_t add8(Z*z,uint8_t a,uint8_t b,uint8_t cy){uint16_t r=(uint16_t)a+b+cy;uint8_t q=(uint8_t)r;z->f=(uint8_t)((q&0xA8u)|(q?0:FZ)|(((a^b^q)&0x10)?FH:0)|((~(a^b)&(a^q)&0x80)?FP:0)|(r>255?FC:0));return q;}
@@ -128,7 +129,12 @@ static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world,
         step(&z);
     }
 }
-void gaw_sms_compat_reset(void){gaw_video_reset();faults=0;last_fault_pc=0;refresh_count=0;}
+void gaw_sms_compat_reset(void){gaw_video_reset();faults=0;last_fault_pc=0;refresh_count=0;vertical_counter=0x78;}
+int gaw_sms_compat_irq_video_call(void){
+    Z z;memset(&z,0,sizeof z);z.p1=1;z.p2=4;z.pc=0x013E;z.sp=0xDFF0;vertical_counter=0xF0;
+    for(unsigned steps=0;steps<2000000u;++steps){if(z.pc==0x019Cu){vertical_counter=0x78;return 1;}step(&z);}
+    vertical_counter=0x78;last_fault_pc=z.pc;++faults;return 0;
+}
 int gaw_sms_compat_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,0,0,0,0,0,0);}
 int gaw_sms_compat_call_args(uint8_t bank,uint16_t addr,uint16_t h,uint16_t d,uint16_t b,uint8_t a){return run(bank,addr,0,0,h,d,b,a,0);}
 int gaw_sms_compat_entity_call(uint8_t bank,uint16_t addr,GawEntity*e){return run(bank,addr,gaw_entity_addr(e),0,0,0,0,0,0);}

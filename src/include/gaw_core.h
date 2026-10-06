@@ -14,7 +14,7 @@ void gaw_world_spawn_map_entities_native(void); /* original $1780 */
 void gaw_state_gameplay(void);      /* original $24F3, state value $0C */
 void gaw_wait_frame(void);          /* portable form of $0B95 */
 void gaw_nmi_pause(void);           /* original NMI behavior at $0066 */
-void gaw_vblank_tick(uint8_t held_bits); /* input/frame part of IRQ */
+void gaw_vblank_tick(uint8_t held_bits); /* native video/input/frame IRQ portion */
 void gaw_world_select_callback(void);    /* core of $5B20 */
 void gaw_world_run_callback(void);
 void gaw_world_callback_5d4c_native(void);

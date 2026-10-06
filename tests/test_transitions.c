@@ -24,6 +24,8 @@ static void observe(void){
 static void setup(unsigned seed,unsigned flags){
     gaw_platform_init();gaw_sms_compat_reset();
     for(unsigned i=0;i<GAW_RAM_SIZE;++i)gaw_ram[i]=(uint8_t)(i*13u+seed*17u);
+    /* The presentation IRQ consumes the queue during each barrier. */
+    memset(gaw_ram_ptr(0xDD00u),0,64);gaw_ram_write16le(0xC034u,0xDD00);gaw_ram_write8(0xC042u,0);
     for(unsigned i=0;i<32u;++i)gaw_ram_write8((uint16_t)(0xDCA0u+i),(uint8_t)((i*seed+seed*11u)&0x3Fu));
     gaw_ram_write8(0xC010u,(uint8_t)(flags&1u?0x16:0x06));gaw_ram_write8(0xC011u,(uint8_t)(flags&2u?0xE0:0x80));
     for(unsigned i=0;i<16u;++i){gaw_sms_vdp_control_write(i<2u?gaw_ram_read8((uint16_t)(0xC010u+i)):(uint8_t)(i*3u));gaw_sms_vdp_control_write((uint8_t)(0x80u+i));}

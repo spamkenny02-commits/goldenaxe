@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V20)
+## Current status (V21)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -26,6 +26,8 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   entry comparisons, plus 6,144 map-entity graphics cases across all 512 cells.
 - The game-over menu is native, including grayscale fade, checkpoint selection
   and the currency penalty; 128 complete modal cycles match original execution.
+- Synchronous IRQ video presentation and its transfer queue are native and
+  active every frame; 256 isolated original-block comparisons pass.
 - Strict C11 tests, differential/regression tests, ASan/UBSan and the 68000 portability audit pass on the current working tree.
 - A linked/tested Mega Drive ROM is **not claimed yet**.
 
@@ -34,8 +36,9 @@ See `docs/CURRENT_STATUS.md` for the exact verified state.
 The project is not fully decompiled yet. Five non-gameplay states still use the instruction bridge at one call site. Five
 Mega Drive presentation hooks remain empty. Dispatcher registration coverage
 does not establish complete-game equivalence or a playable console build.
-Original IRQ/video-queue handling and the audio engine also need full native
-integration; current frame tests use the shared IRQ replacement.
+Remaining IRQ paths and the audio engine need full native integration. Frame
+tests share the native video/input tick; isolated video-block tests compare
+the original instructions separately.
 
 ## Original game data
 
@@ -51,7 +54,7 @@ From the repository root, with a C11 compiler and Python 3:
 
 ```sh
 make prepare-rom ROM="/absolute/path/to/Golden Axe Warrior.sms"
-make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over audit
+make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation audit
 make test-sanitize
 ```
 

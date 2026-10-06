@@ -12,7 +12,7 @@ SIZE=${PREFIX}size
 command -v "$CC" >/dev/null 2>&1 || { echo "missing $CC (run md/fetch_toolchain.sh or set FETCH_TOOLCHAIN=1)" >&2; exit 2; }
 CFLAGS='-m68000 -Os -ffreestanding -fno-builtin -fno-common -fomit-frame-pointer -ffunction-sections -fdata-sections -Wall -Wextra -Werror -Isrc/include -Imd/include'
 mkdir -p md/build
-SRC='src/ram.c src/video.c src/assets.c src/scene.c src/effects.c src/reset.c src/ui.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c md/src/runtime.c md/src/platform_md.c md/src/main.c'
+SRC='src/ram.c src/video.c src/presentation.c src/assets.c src/scene.c src/effects.c src/reset.c src/ui.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c md/src/runtime.c md/src/platform_md.c md/src/main.c'
 OBJ=''
 for f in $SRC; do o=md/build/$(basename "$f" .c).o; "$CC" $CFLAGS -c "$f" -o "$o"; OBJ="$OBJ $o"; done
 "$CC" -m68000 -c md/src/startup.s -o md/build/startup.o

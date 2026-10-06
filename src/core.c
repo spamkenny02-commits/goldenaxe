@@ -12,6 +12,7 @@
 #include "include/gaw_ui.h"
 #include "include/gaw_effects.h"
 #include "include/gaw_assets.h"
+#include "include/gaw_presentation.h"
 
 static void edge_update(uint16_t held_addr, uint16_t pressed_addr, uint8_t now) {
     uint8_t old = gaw_ram_read8(held_addr);
@@ -34,6 +35,7 @@ void gaw_nmi_pause(void) {
 }
 
 void gaw_vblank_tick(uint8_t held_bits) {
+    gaw_video_present_vblank();
     uint8_t pause = 0;
     uint8_t counter = gaw_ram_read8(RAM_PAUSE_NMI_COUNTER);
     if (counter != 0) {

@@ -1,4 +1,4 @@
-# Current status — V20
+# Current status — V21
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -54,12 +54,18 @@ platform backends, including native Motorola 68000/Mega Drive.
 - ROM/VDP shadow services now live in video.c independently of the interpreter.
   The standalone video test links no instruction interpreter. Native item
   graphics loading uses assets.c on both host and Mega Drive.
-- Frame synchronization uses a shared replacement for the original IRQ. The
-  differential suites do not establish original IRQ/video-queue/audio-engine
-  equivalence. Those services also require lifting and integration validation.
+- Synchronous IRQ video $013E-$0199 and queue $0293 are native and active
+  in the frame tick: scroll registers, SAT, pending resource/HUD uploads, CRAM,
+  ROM/RAM/SRAM blocks and descriptor rectangles. 256 isolated comparisons
+  execute original instructions up to $019C at a fixed VCounter; audio/input
+  are excluded from this reference block.
+- Mega Drive uploads the shadow after the native video tick in the same
+  platform barrier. This ordering is checked at source level, not on hardware.
+- Frame tests share the native video/input tick. Full original IRQ status,
+  line/asynchronous handling and audio-engine equivalence remain outstanding.
 - No linked/play-tested Mega Drive ROM has been produced.
 
-Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource suites, ASan/UBSan,
+Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource/game-over/presentation suites, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
 structure/syntax checks. LeakSanitizer is disabled here because sandbox /proc
 access prevents its operation; address/undefined-behavior checks remain enabled.
@@ -67,6 +73,5 @@ access prevents its operation; address/undefined-behavior checks remain enabled.
 Reproduction: README.md. GitHub behavioral tests and manual MD builds require
 private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
 
-Next: non-gameplay states, complete asset/IRQ/video-queue
-and audio services, complete platform hooks, cross-link, full-game integration
+Next: non-gameplay states, remaining asset/IRQ and audio services, complete platform hooks, cross-link, full-game integration
 and hardware testing.
