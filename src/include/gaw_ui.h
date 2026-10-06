@@ -21,4 +21,8 @@ void gaw_ui_inventory_text(uint16_t source,uint16_t destination); /* $0818 */
 void gaw_ui_decimal(uint8_t value,uint16_t destination); /* $085B */
 void gaw_ui_load_font(uint8_t characters,uint16_t destination); /* $0C36 */
 void gaw_ui_clear_playfield(void); /* $20DA */
+uint16_t gaw_ui_fixed_text_next(uint16_t source,uint16_t destination); /* $0812, returns next string */
+void gaw_ui_sprite(uint8_t bank,uint16_t source,uint16_t entity); /* $0A78 */
+void gaw_ui_show_prepared_message(uint16_t resource); /* $0524 */
+void gaw_ui_menu_reset(void); /* $0B53 */
 #endif

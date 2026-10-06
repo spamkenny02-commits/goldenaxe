@@ -182,7 +182,7 @@ static void new_line(void){
             unsigned shift=rom((uint16_t)(0x06B8u+i));
             /* Overlapping LDIR consumes a few bytes beyond the plane buffer. */
             for(unsigned k=0;k<0x410u;++k)W(0xD100u+k,R(0xD100u+shift+k));
-            for(unsigned k=0;k<26u;++k)W(0xD127u+k*0x28u,0);
+            for(unsigned tail=0;tail<shift;++tail)for(unsigned k=0;k<26u;++k)W(0xD127u-tail+k*0x28u,0);
             dialogue_flush();
         }
     }
@@ -238,6 +238,9 @@ static void text_run(void){
 void gaw_ui_show_message(uint16_t resource){
     frozen_frame();
     memcpy(gaw_ram_ptr(0xD600u),gaw_sms_vram()+0x3800u,0x600u);
+    gaw_ui_show_prepared_message(resource);
+}
+void gaw_ui_show_prepared_message(uint16_t resource){
     W16(0xDCC0u,resource);W16(0xDCC4u,resource);W16(0xDCC2u,0xDCE0u);
     W16(0xDCC8u,0);W16(0xDCCAu,0);W(0xDCCDu,0);W(0xDCC6u,0xFF);
     memset(gaw_ram_ptr(0xD100u),0,0x410u);gaw_ui_box(0xD944u,28,7);
@@ -261,17 +264,19 @@ void gaw_ui_status_font(void){
     for(unsigned i=0;i<28u*8u;++i){gaw_sms_vdp_data_write(0xFFu);(void)gaw_sms_vdp_data_read();(void)gaw_sms_vdp_data_read();(void)gaw_sms_vdp_data_read();}
 }
 /* $0812: fixed-width text using the bank-3 character descriptor. */
-static void fixed_text(uint16_t source,uint16_t destination,uint16_t descriptor){
+static uint16_t fixed_text(uint16_t source,uint16_t destination,uint16_t descriptor){
     W16(0xDCC0u,destination);
-    for(uint8_t ch=rom(source++);ch;ch=rom(source++)){
+    for(uint8_t ch=text_byte(source++);ch;ch=text_byte(source++)){
         if(ch==0xFFu){destination=(uint16_t)(R16(0xDCC0u)+0x40u);W16(0xDCC0u,destination);continue;}
         uint16_t p=(uint16_t)(rom(descriptor)|(uint16_t)rom(descriptor+1u)<<8);
         uint16_t count=(uint16_t)(rom(descriptor+2u)|(uint16_t)rom(descriptor+3u)<<8);
         do{uint8_t found=rom(p--);--count;if(found==ch)break;}while(count);
         W(destination++,(uint8_t)((uint8_t)count+rom(descriptor+4u)));W(destination++,rom(descriptor+5u));
     }
+    return source;
 }
 void gaw_ui_fixed_text(uint16_t source,uint16_t destination){fixed_text(source,destination,0x8A8Eu);}
+uint16_t gaw_ui_fixed_text_next(uint16_t source,uint16_t destination){return fixed_text(source,destination,0x8A8Eu);}
 void gaw_ui_inventory_text(uint16_t source,uint16_t destination){fixed_text(source,destination,0x8AE4u);}
 void gaw_ui_decimal(uint8_t value,uint16_t destination){
     const uint8_t digits[3]={(uint8_t)(value/100u),(uint8_t)(value%100u/10u),(uint8_t)(value%10u)};
@@ -288,4 +293,21 @@ void gaw_ui_clear_playfield(void){
     for(unsigned i=0;i<0x500u;i+=2u)W16(0xD600u+i,0x08FFu);
     frozen_frame();video_address(0x7800u);
     for(unsigned i=0;i<0x500u;++i)gaw_sms_vdp_data_write(R(0xD600u+i));
+}
+void gaw_ui_menu_reset(void){
+    gaw_ui_fade_out();video_address(0x8800u);video_address(0x8900u);W16(0xC018u,0);
+    video_address(0x7F40u);for(unsigned i=0;i<64u;++i)gaw_sms_vdp_data_write(0);
+    video_address(0x7800u);for(unsigned i=0;i<0x380u;++i){gaw_sms_vdp_data_write(0xFA);gaw_sms_vdp_data_write(1);}
+    for(unsigned i=0;i<0x600u;i+=2u)W16(0xD600u+i,0x01FA);
+    memset(gaw_ram_ptr(0xDCA0u),0,32);
+}
+/* $0A78: append a fixed sprite descriptor with cumulative X/Y deltas. */
+void gaw_ui_sprite(uint8_t bank,uint16_t source,uint16_t entity){
+    uint8_t fixed=source<0x4000u?0u:source<0x8000u?1u:bank;
+    unsigned count=gaw_sms_rom_bank_read(fixed,source++);if(!count)count=256u;
+    uint16_t dst=R16(0xC024u);uint8_t position=R(entity+0x11u);
+    for(unsigned i=0;i<count;++i){position=(uint8_t)(position+gaw_sms_rom_bank_read(fixed,source++));W(dst++,position);}
+    W(dst,0xD0);W16(0xC024u,dst);dst=R16(0xC026u);position=R(entity+0x13u);
+    for(unsigned i=0;i<count;++i){position=(uint8_t)(position+gaw_sms_rom_bank_read(fixed,source++));W(dst++,position);W(dst++,gaw_sms_rom_bank_read(fixed,source++));}
+    W16(0xC026u,dst);
 }

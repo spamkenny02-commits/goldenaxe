@@ -14,16 +14,6 @@ static uint8_t rom(uint8_t bank,uint16_t a){return gaw_sms_rom_bank_read(a<0x400
 static uint16_t word(uint8_t bank,uint16_t a){return (uint16_t)(rom(bank,a)|((uint16_t)rom(bank,a+1u)<<8));}
 static void address(uint16_t a){gaw_sms_vdp_control_write((uint8_t)a);gaw_sms_vdp_control_write((uint8_t)(a>>8));}
 
-/* $0A78 appends a fixed descriptor; X/Y deltas are cumulative. */
-static void cursor(uint8_t bank,uint16_t source,uint16_t entity){
-    unsigned count=rom(bank,source++);if(!count)count=256u;
-    uint16_t dst=R16(0xC024u);uint8_t position=R(entity+0x11u);
-    for(unsigned i=0;i<count;++i){position=(uint8_t)(position+rom(bank,source++));W(dst++,position);}
-    W(dst,0xD0);W16(0xC024u,dst);dst=R16(0xC026u);position=R(entity+0x13u);
-    for(unsigned i=0;i<count;++i){position=(uint8_t)(position+rom(bank,source++));W(dst++,position);W(dst++,rom(bank,source++));}
-    W16(0xC026u,dst);
-}
-
 /* $BCEF/$BD6C: visited cells are clipped by the dungeon's eight row masks. */
 static void dungeon_map(void){
     gaw_assets_load_masked(4,0xBDA1u,0x7E80u,8,3);
@@ -52,7 +42,7 @@ static void map_marker(void){
         uint8_t delta=(uint8_t)((cell&0xF0u)-(base&0xF0u));
         x=(uint8_t)((delta>>2)+(delta>>3)+0x18u);
     }
-    W(0xD141u,x);W(0xD143u,y);cursor(4,0xBC91u,0xD130u);
+    W(0xD141u,x);W(0xD143u,y);gaw_ui_sprite(4,0xBC91u,0xD130u);
 }
 static void icon(uint8_t item,uint16_t destination){
     if(item)gaw_assets_load_item(item,destination);
@@ -72,7 +62,7 @@ static void selection(void){
     if((pressed&2u)&&row!=2u)selected=(uint8_t)(selected+4u);
     W(0xC0A0u,selected);if(selected!=old)W(0xDE08u,0x95);
     uint16_t position=word(1,(uint16_t)(0x736Bu+(uint8_t)(selected*2u)));
-    W(0xD211u,position);W(0xD213u,position>>8);cursor(1,0x7383u,0xD200u);
+    W(0xD211u,position);W(0xD213u,position>>8);gaw_ui_sprite(1,0x7383u,0xD200u);
     if(!(pressed&0x20u))return;
     if(!R(0xC0E0u+selected)||((selected==9u||selected==11u)&&R(0xC040u))){W(0xDE08u,0xA1);return;}
     W(0xC0DFu,selected);W(0xDE08u,0xAB);gaw_assets_update_inventory();

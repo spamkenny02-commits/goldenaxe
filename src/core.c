@@ -13,6 +13,7 @@
 #include "include/gaw_effects.h"
 #include "include/gaw_assets.h"
 #include "include/gaw_presentation.h"
+#include "include/gaw_menu.h"
 
 static void edge_update(uint16_t held_addr, uint16_t pressed_addr, uint8_t now) {
     uint8_t old = gaw_ram_read8(held_addr);
@@ -986,6 +987,10 @@ void gaw_hud_update_status_descriptor(void) {
     }
     gaw_ram_write8(0xDCBF,(gaw_ram_read8(RAM_FRAME_COUNTER)&2u)?2u:1u);
 }
+void gaw_hud_initialize_status_descriptor(void){
+    for(unsigned i=0;i<16u;++i)gaw_ram_write8((uint16_t)(0xDCB0u+i),gaw_sms_rom_bank_read(0,(uint16_t)(0x1E20u+i)));
+    gaw_hud_update_status_descriptor();
+}
 
 void gaw_state_gameplay(void) {
     gaw_wait_frame();
@@ -1084,6 +1089,7 @@ static NativeStateHandler native_state_handler(uint8_t state){
         case 0x0A: return gaw_state_gameplay_init;
         case 0x0C: return gaw_state_gameplay;
         case 0x10: return gaw_state_inventory;
+        case 0x12: return gaw_state_name_entry;
         case 0x14: return state_game_over;
         default: return NULL;
     }

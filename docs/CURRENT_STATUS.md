@@ -1,4 +1,4 @@
-# Current status — V22
+# Current status — V23
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -32,9 +32,9 @@ platform backends, including native Motorola 68000/Mega Drive.
   resources compared against the unaccelerated original Z80 decoder.
 - Five MD presentation hooks remain empty: scroll begin/end, special effects,
   world map and transition presentation.
-- Main-state registration is 8/12: Pause (02), new game (04), continue (06),
-  scene entry (08), gameplay initialization (0A), gameplay (0C), inventory (10) and game over
-  (14). Four other states remain bridged.
+- Main-state registration is 9/12: Pause (02), new game (04), continue (06),
+  scene entry (08), gameplay initialization (0A), gameplay (0C), inventory (10), name entry (12) and game over
+  (14). Three other states remain bridged.
 - Complete entry sequences pass 4,148 raw original Z80 comparisons. Continue
   and scene entry cover all 512 cells, cached/changed scenery and display flags.
   RAM, VRAM and registers are compared each shared frame, with final SRAM,
@@ -67,9 +67,14 @@ platform backends, including native Motorola 68000/Mega Drive.
   blinking location marker, equipment selection and scene restoration pass
   432 complete original-instruction comparisons. Each shared frame compares
   RAM/VRAM/registers; final CRAM/SRAM and timing are also checked.
+- Name entry (12, $1101), keyboard cursor/repetition ($12C1), editing and
+  confirmation ($11BA), resources and following message are native. Tests
+  compare 8,064 cursor cases, 2,688 input cases and four complete cycles with
+  per-frame RAM/VRAM/register checks. The long message detects and verifies
+  a scroll fix: all shifted-out bitmap rows are cleared, not only the last.
 - No linked/play-tested Mega Drive ROM has been produced.
 
-Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource/game-over/presentation/inventory suites, ASan/UBSan,
+Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource/game-over/presentation/inventory/menu suites, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
 structure/syntax checks. LeakSanitizer is disabled here because sandbox /proc
 access prevents its operation; address/undefined-behavior checks remain enabled.
