@@ -13,6 +13,8 @@ void gaw_ui_fade_in(void); /* $0AA4 */
 void gaw_ui_fade_out(void); /* $0B12 */
 void gaw_ui_fade_grayscale(void); /* $263E */
 void gaw_ui_load_choice_font(uint16_t resource); /* $0C68 */
+uint16_t gaw_ui_load_choice_font_next(uint16_t resource);
+unsigned gaw_ui_palette_step(uint8_t step); /* one $0ADE pass */
 void gaw_ui_reveal_world(void); /* $1FA7 */
 void gaw_ui_status_box(void); /* $6398 */
 void gaw_ui_status_font(void); /* $638D font portion */
@@ -22,6 +24,7 @@ uint16_t gaw_ui_inventory_text_next(uint16_t source,uint16_t destination);
 void gaw_ui_decimal(uint8_t value,uint16_t destination); /* $085B */
 void gaw_ui_load_font(uint8_t characters,uint16_t destination); /* $0C36 */
 void gaw_ui_clear_playfield(void); /* $20DA */
+void gaw_ui_upload_playfield(void); /* $20F5, frozen VBlank */
 uint16_t gaw_ui_fixed_text_next(uint16_t source,uint16_t destination); /* $0812, returns next string */
 void gaw_ui_sprite(uint8_t bank,uint16_t source,uint16_t entity); /* $0A78 */
 void gaw_ui_show_prepared_message(uint16_t resource); /* $0524 */

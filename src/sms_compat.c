@@ -6,10 +6,9 @@
 #include "include/gaw_platform.h"
 #include "include/gaw_ram.h"
 
-/* Instruction-compatible C fallback for not-yet-high-level-lifted Z80 paths.
-   The opcode stream is immutable source data; all mutable machine state lives
-   in this C structure and SMS hardware I/O is routed through the platform API.
-   This is deliberately a correctness bridge, not the final high-level form. */
+/* Original-instruction reference engine for differential tests only.
+   Production dispatch and the Mega Drive build do not use this module.
+   The opcode stream is immutable ROM data; mutable CPU state lives here. */
 
 enum { FS=0x80,FZ=0x40,FY=0x20,FH=0x10,FX=0x08,FP=0x04,FN=0x02,FC=0x01 };
 typedef struct {

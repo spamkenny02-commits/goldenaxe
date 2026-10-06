@@ -59,6 +59,9 @@ void gaw_services_draw_portrait(void){
 }
 void gaw_services_draw_saves(void){
     for(unsigned i=0;i<3u;++i)(void)gaw_ui_icon_tiles(0x08A4u,(uint16_t)(0xD65Au+i*0xC0u),1);
+    gaw_services_draw_save_names();
+}
+void gaw_services_draw_save_names(void){
     (void)gaw_ui_icon_tiles(0x08A0u,0xD89Au,1);
     uint16_t source=0x789Fu;
     for(unsigned i=0;i<3u;++i)source=gaw_ui_inventory_text_next(source,(uint16_t)(0xD660u+i*0xC0u));

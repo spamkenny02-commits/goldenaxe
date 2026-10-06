@@ -2,7 +2,6 @@
 #include "include/gaw_core.h"
 #include "include/gaw_entity.h"
 #include "include/gaw_player.h"
-#include "include/gaw_recompiled.h"
 #include "include/gaw_platform.h"
 #include "include/gaw_ram.h"
 #include "include/gaw_tables.h"
@@ -1091,6 +1090,7 @@ static void state_game_over(void){
 }
 static NativeStateHandler native_state_handler(uint8_t state){
     switch(state){
+        case 0x00: return gaw_state_title_intro;
         case 0x02: return state_pause;
         case 0x04: return state_new_game;
         case 0x06: return state_continue_game;
@@ -1110,8 +1110,5 @@ void gaw_dispatch_state_once(void) {
     uint8_t state=gaw_ram_read8(RAM_MAIN_STATE);
     if((state&1u)||state>0x16u)return;
     NativeStateHandler native=native_state_handler(state);
-    if(native){native();return;}
-    uint16_t target=gaw_main_state_targets[state>>1];
-    uint8_t bank=target<0x4000u?0u:1u;
-    gaw_recompiled_call(bank,target);
+    if(native)native();
 }

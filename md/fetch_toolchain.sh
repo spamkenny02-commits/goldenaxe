@@ -16,6 +16,6 @@ curl -fL "$URL" -o "$tmp"
 if [ -n "${TOOLCHAIN_SHA256:-}" ]; then
   printf '%s  %s\n' "$TOOLCHAIN_SHA256" "$tmp" | sha256sum -c -
 fi
-tar xzf "$tmp" --strip-components=1 -C "$DEST"
+tar xzf "$tmp" --no-same-owner --strip-components=1 -C "$DEST"
 test "$("$DEST/bin/m68k-elf-gcc" -dumpmachine)" = m68k-elf
 "$DEST/bin/m68k-elf-gcc" --version | head -1

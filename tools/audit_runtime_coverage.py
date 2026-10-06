@@ -35,7 +35,7 @@ def main():
     states=set(probe['native_main_states'])
     pending_states=sorted(set(range(0,0x18,2))-states)
     print(f'registered native main states: {len(states)} / 12')
-    print('remaining main states: ' + ' '.join(f'{s:02X}' for s in pending_states))
+    print(('remaining main states: ' + ' '.join(f'{s:02X}' for s in pending_states)).rstrip())
     print(f'handler table entries: {len(handlers)}')
     print(f'registered high-level C entity types: {len(native_entities)} / 127')
     print(f'world callback entries: {len(world)}')

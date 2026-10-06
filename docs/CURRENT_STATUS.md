@@ -1,4 +1,4 @@
-# Current status — V25
+# Current status — V26
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -15,7 +15,7 @@ platform backends, including native Motorola 68000/Mega Drive.
   deterministic interactive branches and 285 card draws with replayed entropy.
 - Reset/save initialization $0404 and initial SMS VDP setup $03C0 are native C;
   reset tests cover 58 SRAM cases and complete VDP state.
-- One instruction-bridge call site remains: non-gameplay main-state dispatch.
+- No instruction-bridge call sites remain in production gameplay code.
 - All four effect states are native for both C090/C098 slots. States 3/4 pass
   8,192 differential cursor cases; states 1/2 pass 72 complete cycles with
   per-frame RAM/VRAM comparison and final CRAM/register/SRAM/timing comparison.
@@ -32,9 +32,9 @@ platform backends, including native Motorola 68000/Mega Drive.
   resources compared against the unaccelerated original Z80 decoder.
 - Five MD presentation hooks remain empty: scroll begin/end, special effects,
   world map and transition presentation.
-- Main-state registration is 11/12: Pause (02), new game (04), continue (06),
+- Main-state registration is 12/12: title/intro (00), Pause (02), new game (04), continue (06),
   scene entry (08), gameplay initialization (0A), gameplay (0C), ending (0E), inventory (10), name entry (12) and game over
-  (14) and services (16). Only title/intro (00) remains bridged.
+  (14) and services (16). All twelve states are native.
 - Complete entry sequences pass 4,148 raw original Z80 comparisons. Continue
   and scene entry cover all 512 cells, cached/changed scenery and display flags.
   RAM, VRAM and registers are compared each shared frame, with final SRAM,
@@ -84,9 +84,25 @@ platform backends, including native Motorola 68000/Mega Drive.
   sequences compare RAM/VRAM/CRAM/registers every shared frame, final SRAM
   and elapsed frames. Centering cases detected a missing walk-pose increment
   at $3309; blocked and successful movement attempts now advance the pose.
-- No linked/play-tested Mega Drive ROM has been produced.
+- Title/intro (00, $146D/$0C98), scene/text/actor/palette animations and
+  new/continue selection ($14ED) are native. Twenty complete comparisons
+  cover attract mode, five intro skips, new game, three saved slots on both
+  SRAM pages, empty-slot refusal and button/cursor cancellation. RAM outside
+  the reference stack plus obsolete C02A SP metadata, VRAM/CRAM/registers
+  are compared every shared frame; final SRAM and frame totals match.
+- Host integration boots through title, name creation, new-game setup and
+  24 gameplay updates without linking the instruction interpreter. The MD
+  production source list also excludes sms_compat.c/recompiled.c.
+- Native 68000 cross-link now passes with m68k-elf GCC 14.2.0. The ROM is
+  427,470 bytes, BSS 25,148 bytes, reset entry $000200 and checksum $F87C.
+  A critical empty-.data linker issue had placed BSS after ROM text; explicit
+  ROM/RAM memory regions now put mutable state at $FF0000-$FF623C. Actual
+  ELF checks verify all B/D symbols are in work RAM and no interpreter
+  symbols are linked. memmove is provided by the freestanding runtime.
+- Header, checksum, ELF address-map and MD source checks pass. Emulator
+  and hardware playability and full-game equivalence remain unverified.
 
-Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource/game-over/presentation/inventory/menu/service/ending suites, ASan/UBSan,
+Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource/game-over/presentation/inventory/menu/service/ending/intro suites and native-only boot, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
 structure/syntax checks. LeakSanitizer is disabled here because sandbox /proc
 access prevents its operation; address/undefined-behavior checks remain enabled.
@@ -94,5 +110,5 @@ access prevents its operation; address/undefined-behavior checks remain enabled.
 Reproduction: README.md. GitHub behavioral tests and manual MD builds require
 private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
 
-Next: non-gameplay states, remaining asset/IRQ and audio services, complete platform hooks, cross-link, full-game integration
+Next: full IRQ and audio, complete platform hooks, full-game integration
 and hardware testing.

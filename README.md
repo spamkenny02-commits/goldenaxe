@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V25)
+## Current status (V26)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -16,7 +16,7 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   graphics loading are native and checked against original execution.
 - Pause is native (48 complete modal cycles compared with original execution);
   equipment graphics and pixel remapping are native. Main-state registration is
-  now measured explicitly: 11/12 native states.
+  now measured explicitly: 12/12 native states.
 - All four world effects are native; 72 complete full-screen cycles are
   compared frame by frame with original execution. Scene asset restoration
   also passes 72 full RAM/video/SRAM comparisons.
@@ -41,11 +41,18 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   credit-scroll sequences match original RAM, video, SRAM and frame timing.
   These comparisons also fixed the missing walk-pose increment.
 - Strict C11 tests, differential/regression tests, ASan/UBSan and the 68000 portability audit pass on the current working tree.
-- A linked/tested Mega Drive ROM is **not claimed yet**.
+- Title/intro and new/continue selection are native: 20 complete comparisons
+  cover attract mode, scene animations, text, skip paths, saved slots and cancel.
+- Boot, name creation, new-game setup and 24 gameplay updates run on the host
+  with no interpreter linked. The MD production build also excludes it.
+- The 68000 image links with GCC 14.2.0: 427,470-byte ROM, 25,148-byte BSS.
+  ELF checks verify mutable state in FF0000-FF623C and absence of interpreter
+  symbols; cartridge header and checksum checks pass. Emulator/hardware
+  playability is **not established yet**.
 
 See `docs/CURRENT_STATUS.md` for the exact verified state.
 
-The project is not fully decompiled yet. The title/intro state still uses the instruction bridge at one call site. Five
+The project is not fully decompiled yet. No gameplay dispatch uses the instruction bridge. Five
 Mega Drive presentation hooks remain empty. Dispatcher registration coverage
 does not establish complete-game equivalence or a playable console build.
 Remaining IRQ paths and the audio engine need full native integration. Frame
@@ -66,7 +73,7 @@ From the repository root, with a C11 compiler and Python 3:
 
 ```sh
 make prepare-rom ROM="/absolute/path/to/Golden Axe Warrior.sms"
-make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending audit
+make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-native-boot audit
 make test-sanitize
 ```
 
@@ -96,7 +103,7 @@ this secret. Without it, CI explicitly reports reference-ROM tests as skipped.
 
 Run **Build Mega Drive ROM** manually after setting the secret. Local builds use
 `FETCH_TOOLCHAIN=1 ./md/build_md.sh` or an installed `m68k-elf-` toolchain. A
-successful link/header check will still require emulator and hardware testing;
+successful ELF/link/header check will still require emulator and hardware testing;
 it does not establish playability. Build artifacts contain game data.
 
 For a sandbox where LeakSanitizer cannot inspect `/proc`, run

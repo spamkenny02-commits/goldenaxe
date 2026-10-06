@@ -17,8 +17,8 @@ void gaw_menu_message(uint16_t resource){
     gaw_ui_show_prepared_message(resource);
 }
 void gaw_menu_wait_input(uint8_t mask){do{gaw_wait_frame();}while(!(R(RAM_INPUT_PRESSED)&mask));}
-static void reset_with_sound(void){W(0xDE0Bu,0x0C);W16(0xDE0Cu,0x0404);gaw_ui_menu_reset();}
-static void name_resources(void){
+void gaw_menu_reset_sound(void){W(0xDE0Bu,0x0C);W16(0xDE0Cu,0x0404);gaw_ui_menu_reset();}
+void gaw_menu_load_name_resources(void){
     gaw_assets_load_masked(0,0x1435u,0x7000u,0x38,3);gaw_assets_load_masked(3,0x8776u,0x5400u,0x180,2);
     gaw_ui_load_font(32,0x5A00u);(void)gaw_assets_unpack_tiles(4,0xA74Cu,0x5E00u);(void)gaw_assets_unpack_tiles(4,0xA707u,0x5F40u);
 }
@@ -73,7 +73,7 @@ void gaw_name_input(void){
     offset=(uint8_t)(offset-2u);if(!(offset&0x80u))W(0xD120u,offset);
 }
 void gaw_state_name_entry(void){
-    memset(gaw_ram_ptr(0xC0B0u),0,0x150u);gaw_ui_menu_reset();gaw_hud_initialize_status_descriptor();name_resources();
+    memset(gaw_ram_ptr(0xC0B0u),0,0x150u);gaw_ui_menu_reset();gaw_hud_initialize_status_descriptor();gaw_menu_load_name_resources();
     gaw_ui_box(0xD7CEu,17,3);gaw_ui_box(0xD904u,27,11);
     uint16_t source=gaw_ui_fixed_text_next(0x8AEAu,0xD690u);source=gaw_ui_fixed_text_next(source,0xD710u);(void)gaw_ui_fixed_text_next(source,0xD812u);
     source=name_tiles(0x8B19u,0xD988u,12,4);source=name_tiles(source,0xDA08u,12,4);source=name_tiles(source,0xDA88u,12,4);
@@ -81,6 +81,6 @@ void gaw_state_name_entry(void){
     for(unsigned i=0;i<0x300u;++i)W(0xD601u+i*2u,R(0xD601u+i*2u)&0xEFu);
     gaw_ui_upload_name_table();W16(0xC0A0u,0);W16(0xD121u,0);gaw_ui_fade_in();
     do{gaw_wait_frame();gaw_name_cursor();gaw_name_input();}while(R(RAM_MAIN_STATE)==0x12u);
-    reset_with_sound();gaw_hud_initialize_status_descriptor();(void)gaw_assets_unpack_tiles(4,0xA74Cu,0x5E00u);gaw_ui_fade_in();
-    W16(0xDCE0u,0xC0B0);gaw_menu_message(0xAB68u);gaw_menu_wait_input(0x3F);reset_with_sound();
+    gaw_menu_reset_sound();gaw_hud_initialize_status_descriptor();(void)gaw_assets_unpack_tiles(4,0xA74Cu,0x5E00u);gaw_ui_fade_in();
+    W16(0xDCE0u,0xC0B0);gaw_menu_message(0xAB68u);gaw_menu_wait_input(0x3F);gaw_menu_reset_sound();
 }

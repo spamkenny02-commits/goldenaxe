@@ -33,7 +33,7 @@ void gaw_ui_box(uint16_t dst,uint8_t width,uint8_t height){
 
 /* $0C68 loads the O/U/I/N font patterns used by the contextual choice box.
    Reads in $0C51 intentionally skip the remaining three planes. */
-void gaw_ui_load_choice_font(uint16_t src){
+uint16_t gaw_ui_load_choice_font_next(uint16_t src){
     uint16_t dst=(uint16_t)(rom(src)|(uint16_t)rom(src+1u)<<8);src+=2u;
     for(uint8_t ch=rom(src++);ch;ch=rom(src++)){
         uint16_t glyph=(uint16_t)(0x87C6u+(uint16_t)(uint8_t)(ch-0x41u)*8u);
@@ -44,7 +44,9 @@ void gaw_ui_load_choice_font(uint16_t src){
         for(unsigned y=0;y<8u;++y){gaw_sms_vdp_data_write(0xFF);for(unsigned p=0;p<3u;++p)(void)gaw_sms_vdp_data_read();}
         dst=(uint16_t)(dst+0x20u);
     }
+    return src;
 }
+void gaw_ui_load_choice_font(uint16_t src){(void)gaw_ui_load_choice_font_next(src);}
 
 static uint8_t choose_loop(void){
     W(0xDCC2u,0xFF);
@@ -113,16 +115,19 @@ void gaw_ui_display_reset(void){
 }
 /* $0AD1/$0ADE adjusts one two-bit RGB component at a time. The original
    waits twice only after a pass that changes at least one palette entry. */
+unsigned gaw_ui_palette_step(uint8_t step){
+    uint8_t mask=(uint8_t)(step*3u);unsigned changed=0;
+    for(unsigned i=0;i<32u;++i){
+        uint16_t at=(uint16_t)(0xDCA0u+i);
+        uint8_t current=R(at),target=(uint8_t)(R(at+32u)&mask),component=(uint8_t)(current&mask);
+        if(component!=target){W(at,component<target?current+step:current-step);++changed;}
+    }
+    return changed;
+}
 static void palette_transition(uint16_t steps){
     for(uint8_t step=rom(steps);step;step=rom(++steps)){
-        uint8_t mask=(uint8_t)(step*3u);
         for(;;){
-            unsigned changed=0;
-            for(unsigned i=0;i<32u;++i){
-                uint16_t at=(uint16_t)(0xDCA0u+i);
-                uint8_t current=R(at),target=(uint8_t)(R(at+32u)&mask),component=(uint8_t)(current&mask);
-                if(component!=target){W(at,component<target?current+step:current-step);++changed;}
-            }
+            unsigned changed=gaw_ui_palette_step(step);
             if(!changed)break;
             gaw_wait_frame();gaw_wait_frame();
         }
@@ -292,6 +297,9 @@ void gaw_ui_load_font(uint8_t characters,uint16_t destination){
 void gaw_ui_clear_playfield(void){
     W(0xDD40u,0xD0);
     for(unsigned i=0;i<0x500u;i+=2u)W16(0xD600u+i,0x08FFu);
+    gaw_ui_upload_playfield();
+}
+void gaw_ui_upload_playfield(void){
     frozen_frame();video_address(0x7800u);
     for(unsigned i=0;i<0x500u;++i)gaw_sms_vdp_data_write(R(0xD600u+i));
 }

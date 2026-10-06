@@ -1,13 +1,12 @@
-registered native main states: 11 / 12
-remaining main states: 00
+registered native main states: 12 / 12
+remaining main states:
 handler table entries: 128
 registered high-level C entity types: 127 / 127
 world callback entries: 512
 registered native/RET world callback entries: 512 / 512
 world callback entries still on compatibility bridge: 0 / 512
 remaining world targets:
-remaining instruction-bridge call sites: 1
-  src/core.c:1116: gaw_recompiled_call(bank,target);
+remaining instruction-bridge call sites: 0
 unimplemented Mega Drive presentation hooks: 5
   gaw_platform_world_scroll_begin
   gaw_platform_world_scroll_end
