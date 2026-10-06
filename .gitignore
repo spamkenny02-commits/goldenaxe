@@ -1,0 +1,21 @@
+# Original/copyrighted game images and generated full-ROM dumps
+*.sms
+*.bin
+*.rom
+src/original_rom.inc
+
+# Local build/test artifacts
+*_host_test
+*_san
+final_host_test
+final_san
+md/build/
+*.o
+*.elf
+*.map
+
+# Python/cache/editor noise
+__pycache__/
+*.pyc
+*.tmp
+.DS_Store
