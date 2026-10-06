@@ -145,5 +145,20 @@ private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
   cadence is still limited by the C backend; audio/line hardware IRQ scheduling
   and further performance work remain, as do the five presentation hooks.
 
-Next: Mega Drive IRQ scheduling, complete platform hooks, full-game integration
-and hardware testing.
+- MD level 6 VBlank and level 4 line interrupt vectors now call the portable
+  IRQ through register-preserving 68000 trampolines. VBlank continues native
+  sound/timers asynchronously while the main thread computes. Physical uploads
+  mask line IRQs while leaving VBlank enabled; Start provides Pause NMI.
+  NTSC uses DE03=80, independently observed in the original SMS emulator.
+- With O2/LTO and dirty name-table rows, the private boot check records 139
+  gameplay updates in 300 physical frames (299 VBlank, 160 async), plus 45
+  line IRQs during boot. This improves the previous 70 updates but is still
+  slower than the original SMS check's 298 updates. It is not a full playthrough.
+- The linked image is 471,702 bytes, BSS 25,174 at FF0000-FF6256, checksum 6178.
+  Actual ELF vectors, mutable symbols and interpreter exclusion pass. Fixed
+  ROM-end metadata for odd-sized link images before checksum generation.
+  Standalone video/MD conversion, 256 presentation cases, 3,072 full IRQ cases,
+  256 NMI cases and native-only boot regressions pass.
+
+Next: complete platform hooks, full-game integration, further MD performance
+work and hardware testing.

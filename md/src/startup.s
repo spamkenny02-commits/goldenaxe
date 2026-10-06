@@ -29,3 +29,17 @@ _start:
     .globl _vblank_stub
 _vblank_stub:
     rte
+
+    .globl _md_vblank_irq
+_md_vblank_irq:
+    movem.l %d0-%d7/%a0-%a6,-(%sp)
+    jsr     gaw_md_vblank_irq
+    movem.l (%sp)+,%d0-%d7/%a0-%a6
+    rte
+
+    .globl _md_line_irq
+_md_line_irq:
+    movem.l %d0-%d7/%a0-%a6,-(%sp)
+    jsr     gaw_md_line_irq
+    movem.l (%sp)+,%d0-%d7/%a0-%a6
+    rte

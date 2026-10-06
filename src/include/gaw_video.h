@@ -16,6 +16,7 @@ void gaw_sms_vdp_control_write(uint8_t value);
 void gaw_sms_vdp_data_write(uint8_t value);
 uint8_t gaw_sms_vdp_data_read(void);
 int gaw_sms_take_name_dirty(void);
+uint32_t gaw_sms_take_name_rows_dirty(void); /* alternate consumption of 28 dirty rows */
 int gaw_sms_take_sat_dirty(void);
 uint8_t gaw_sms_rom_bank_read(uint8_t bank,uint16_t cpu_addr);
 #endif

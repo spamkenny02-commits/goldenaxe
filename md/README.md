@@ -26,5 +26,16 @@ python3 tools/test_md_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretro.so -
 The check drives title/name/new-game selection and requires 300 emulator
 frames of gameplay, at least 24 game updates and audible PSG. Private captures
 and metadata are written under md/build/emulator. This limited boot path is
-verified; full-game/hardware behavior, hardware IRQ scheduling, five presentation
-hooks and performance are still being completed.
+verified; full-game/hardware behavior, five presentation hooks and performance
+are still being completed. Actual linked level 4/6 vectors are checked. The MD
+VBlank ISR services native sync/async IRQ paths, including audio while the main
+thread computes. Start sends the SMS Pause NMI; PAL/NTSC selects the original
+audio compensation mode. Line IRQs are blocked during physical VDP uploads to
+protect address commands; VBlank remains enabled.
+
+Default builds use `-O2 -flto`; set `MD_OPT_FLAGS` to change optimization.
+The private emulator harness also accepts `--reference-sms --rom /path/game.sms`
+to run the original hardware reference and `--play-inputs /path/inputs.json` for
+controller sequences after gameplay starts. Each JSON step has a positive
+`ticks` count and a `buttons` list (`up`, `down`, `left`, `right`, `button1`,
+`button2`, `pause`). Duration follows the game's C02F counter, including menus.

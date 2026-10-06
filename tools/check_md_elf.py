@@ -3,13 +3,15 @@
 import argparse
 from pathlib import Path
 import subprocess
+import struct
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('elf',type=Path)
     parser.add_argument('--nm',default='m68k-elf-nm')
     args=parser.parse_args()
-    header=args.elf.read_bytes()[:20]
+    image=args.elf.read_bytes()
+    header=image[:20]
     if header[:7]!=b'\x7fELF\x01\x02\x01' or header[18:20]!=b'\x00\x04':
         parser.exit(1,'Expected a big-endian ELF32 Motorola 68000 image\n')
     symbols={}
@@ -17,7 +19,8 @@ def main():
         fields=line.split()
         if len(fields)==3:
             symbols[fields[2]]=(int(fields[0],16),fields[1])
-    required=('_start','__data_load','__data_start','__data_end','__bss_start','__bss_end','gaw_ram','gaw_audio_tick','gaw_irq_service')
+    required=('_start','__data_load','__data_start','__data_end','__bss_start','__bss_end','gaw_ram','gaw_audio_tick','gaw_irq_service',
+              '_md_line_irq','_md_vblank_irq','gaw_md_line_irq','gaw_md_vblank_irq')
     if any(name not in symbols for name in required):
         parser.exit(1,'Missing startup/native runtime symbols\n')
     address=lambda name:symbols[name][0]
@@ -25,6 +28,20 @@ def main():
     assert address('__data_load')<0x200000
     assert 0xFF0000<=address('__data_start')<=address('__data_end')<=address('__bss_start')<=address('__bss_end')<=0xFFFF00
     assert address('__bss_start')<=address('gaw_ram')<address('__bss_end')
+    # Resolve the linked vector table through ELF load segments. Checking the
+    # assembly source cannot detect a misplaced table or a wrong relocation.
+    phoff=struct.unpack_from('>I',image,28)[0]
+    phsize,phcount=struct.unpack_from('>HH',image,42)
+    vectors=None
+    for i in range(phcount):
+        kind,offset,vaddr,paddr,size=struct.unpack_from('>5I',image,phoff+i*phsize)
+        if kind==1 and paddr==0 and size>=256:
+            vectors=struct.unpack_from('>64I',image,offset)
+    assert vectors is not None, 'No cartridge vector table in ELF load image'
+    assert vectors[0]==0xFFFF00 and vectors[1]==address('_start')
+    assert vectors[28]==address('_md_line_irq'), 'Level 4 vector is incorrect'
+    assert vectors[30]==address('_md_vblank_irq'), 'Level 6 vector is incorrect'
+    assert vectors[28]!=vectors[30]
     for name,(value,kind) in symbols.items():
         if kind in 'BbDd' and not 0xFF0000<=value<=0xFFFF00:
             parser.exit(1,f'Mutable symbol {name} is outside work RAM: {value:08X}\n')

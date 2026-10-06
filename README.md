@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V26)
+## Current status (V30)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -45,12 +45,15 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   cover attract mode, scene animations, text, skip paths, saved slots and cancel.
 - Boot, name creation, new-game setup and 24 gameplay updates run on the host
   with no interpreter linked. The MD production build also excludes it.
-- The 68000 image links with GCC 14.2.0: 433,646-byte ROM, 25,152-byte BSS.
-  ELF checks verify mutable state in FF0000-FF6240 and absence of interpreter
+- The 68000 image links with GCC 14.2.0: 471,702-byte ROM, 25,174-byte BSS.
+  ELF checks verify mutable state in FF0000-FF6256, actual IRQ vectors and absence of interpreter
   symbols; cartridge header and checksum checks pass. Genesis Plus GX boots
   through title, name creation, new game and 300 emulator gameplay frames with
-  visible graphics and audible PSG. Hardware/full-game validation, five hooks
-  and frame-cadence improvements remain.
+  visible graphics and audible PSG. Hardware VBlank and line interrupts are
+  connected; asynchronous VBlank continues sound/timers during C computation.
+  The idle gameplay check advances 139 game updates in 300 physical frames,
+  versus 70 before optimization. Hardware/full-game validation, five hooks
+  and further frame-cadence improvements remain.
 
 See `docs/CURRENT_STATUS.md` for the exact verified state.
 
@@ -60,7 +63,7 @@ does not establish complete-game equivalence or a playable console build.
 The audio driver passes 144,384 isolated differential updates, including RAM and
 ordered PSG/stereo writes, and is integrated into the native IRQ. Sync, async and
 line IRQ paths pass 3,072 independent original-instruction comparisons; NMI has
-256 cases. Mega Drive interrupt timing still needs backend integration. Frame
+256 cases. Mega Drive IRQ scheduling is active and checked in an emulator. Frame
 tests share the native video/input tick; isolated video-block tests compare
 the original instructions separately.
 
