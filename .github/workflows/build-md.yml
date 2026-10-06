@@ -1,12 +1,8 @@
 name: Build Mega Drive ROM
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'src/**'
-      - 'md/**'
-      - 'tools/check_md_rom.py'
-      - '.github/workflows/build-md.yml'
+
+# Push-triggered builds will be enabled once the initial V12 source import is complete.
 jobs:
   build:
     runs-on: ubuntu-latest
