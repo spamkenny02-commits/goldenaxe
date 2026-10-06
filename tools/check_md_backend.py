@@ -5,6 +5,9 @@ p=Path('md/src/platform_md.c').read_text()
 assert 'vdp_reg(16,0x00)' in p, 'Plane A must be 32 cells wide for 32-column shadow upload'
 assert '0x40000000u' in p and '0xC0000000u' in p, '32-bit VDP VRAM/CRAM command codes missing'
 assert 'VDP_CTRL32' in p, 'VDP address commands must use the 32-bit control port'
+assert 'vdp_reg(17,0);' in p, 'Horizontal Window must not mask the entire screen'
+assert 'vdp_reg(4,0x04)' in p, 'Plane B must not alias the opaque Window table'
+assert 'while(VCOUNTER' in p, 'Boot barrier must work with display disabled'
 # Validate command formula independently.
 def cmd(a,code): return code | ((a & 0x3fff)<<16) | ((a>>14)&3)
 assert cmd(0x0000,0x40000000)==0x40000000

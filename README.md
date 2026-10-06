@@ -45,10 +45,12 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   cover attract mode, scene animations, text, skip paths, saved slots and cancel.
 - Boot, name creation, new-game setup and 24 gameplay updates run on the host
   with no interpreter linked. The MD production build also excludes it.
-- The 68000 image links with GCC 14.2.0: 427,470-byte ROM, 25,148-byte BSS.
-  ELF checks verify mutable state in FF0000-FF623C and absence of interpreter
-  symbols; cartridge header and checksum checks pass. Emulator/hardware
-  playability is **not established yet**.
+- The 68000 image links with GCC 14.2.0: 433,646-byte ROM, 25,152-byte BSS.
+  ELF checks verify mutable state in FF0000-FF6240 and absence of interpreter
+  symbols; cartridge header and checksum checks pass. Genesis Plus GX boots
+  through title, name creation, new game and 300 emulator gameplay frames with
+  visible graphics and audible PSG. Hardware/full-game validation, five hooks
+  and frame-cadence improvements remain.
 
 See `docs/CURRENT_STATUS.md` for the exact verified state.
 

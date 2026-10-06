@@ -1,4 +1,4 @@
-# Current status — V28
+# Current status — V29
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -98,8 +98,8 @@ platform backends, including native Motorola 68000/Mega Drive.
   ROM/RAM memory regions now put mutable state at $FF0000-$FF623C. Actual
   ELF checks verify all B/D symbols are in work RAM and no interpreter
   symbols are linked. memmove is provided by the freestanding runtime.
-- Header, checksum, ELF address-map and MD source checks pass. Emulator
-  and hardware playability and full-game equivalence remain unverified.
+- Header, checksum, ELF address-map and MD source checks pass. Emulator boot is verified below; hardware and full-game equivalence
+  remain unverified.
 
 Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset/Pause/scene/transition/entry/map-resource/game-over/presentation/inventory/menu/service/ending/intro suites and native-only boot, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
@@ -130,6 +130,20 @@ private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
 - 68000 link includes audio/IRQ and passes RAM/ELF/header checks: 432,418 bytes,
   BSS 25,152 bytes at FF0000-FF6240 and checksum FB5E. MD still polls synchronous
   barriers; asynchronous and line hardware scheduling is the next backend task.
+
+- Genesis Plus GX (49c584764893b0505ac7f768a754f97330fa4392) executes the
+  native ROM through title, name creation, new-game setup and 300 emulator
+  gameplay frames at cell 95, HP 24, with visible graphics and audible PSG.
+  It does not establish a full-game playthrough or hardware correctness.
+- Fixed disabled-display VBlank polling, full-screen Window masking and an
+  opaque Plane B alias; empty SAT now clears old sprites and wrapped sprite Y
+  coordinates are converted correctly. Colors use full MD DAC range. A bit
+  expansion lookup accelerates pattern conversion; unchanged shadow bytes
+  no longer trigger unnecessary uploads. 5,120 pattern rows, 64 colors, 8,192
+  descriptors and 256 sprite positions pass independent conversion checks.
+- Current linked image is 433,646 bytes, BSS 25,152, checksum 6CD6. Frame
+  cadence is still limited by the C backend; audio/line hardware IRQ scheduling
+  and further performance work remain, as do the five presentation hooks.
 
 Next: Mega Drive IRQ scheduling, complete platform hooks, full-game integration
 and hardware testing.

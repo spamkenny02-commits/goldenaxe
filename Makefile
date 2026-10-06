@@ -4,7 +4,7 @@ CPPFLAGS += -Isrc/include
 SRC = src/ram.c src/video.c src/presentation.c src/audio.c src/irq.c src/assets.c src/scene.c src/effects.c src/reset.c src/ui.c src/inventory.c src/menu.c src/services.c src/ending.c src/intro.c src/tables.c src/entity.c src/entity_native.c src/player.c src/world_progress.c src/world.c src/core.c src/sms_compat.c src/recompiled.c src/platform_host.c
 NATIVE_SRC = $(filter-out src/sms_compat.c src/recompiled.c,$(SRC))
 INPUTS = $(wildcard src/include/*.h src/*.inc)
-.PHONY: all test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-native-boot test-sanitize audit clean prepare-rom
+.PHONY: all test test-final test-reset test-ui test-effects test-assets test-video test-md-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-native-boot test-sanitize audit clean prepare-rom
 all: phase17_host_test
 prepare-rom:
 	@test -n "$(ROM)" || { echo 'Use make prepare-rom ROM=/path/to/game.sms' >&2; exit 2; }
@@ -64,6 +64,10 @@ video_host_test: tests/test_video.c src/video.c $(INPUTS) src/original_rom.inc
 	$(CC) $(CFLAGS) $(CPPFLAGS) src/video.c $< -o $@
 test-video: video_host_test
 	./video_host_test
+md_video_host_test: tests/test_md_video.c md/src/video_convert.c md/src/pattern_plane.inc md/include/gaw_md_video.h
+	$(CC) $(CFLAGS) -Imd/include md/src/video_convert.c $< -o $@
+test-md-video: md_video_host_test
+	./md_video_host_test
 test-sanitize:
 	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) $(SRC) tests/test_final.c -o final_san
 	./final_san
