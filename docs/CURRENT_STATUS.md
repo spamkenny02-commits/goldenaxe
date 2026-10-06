@@ -1,4 +1,4 @@
-# Current status — V26
+# Current status — V27
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -110,5 +110,14 @@ access prevents its operation; address/undefined-behavior checks remain enabled.
 Reproduction: README.md. GitHub behavioral tests and manual MD builds require
 private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
 
-Next: full IRQ and audio, complete platform hooks, full-game integration
+- Bank 6 audio driver $8000 is high-level C: seven sequencer channels,
+  request priorities, overlays, pause, fades, note durations, pitch waves,
+  vibrato, envelopes, stream loops/calls and stereo control. 144,384 isolated
+  original-instruction updates compare RAM C000-DF8F and every ordered
+  PSG/stereo write, with refresh entropy replay. Tests cover all 13 music
+  commands, 29 effects, both DE03 timing modes and mixed command sequences.
+  Unused/reserved malformed stream requests report diagnostics. Frame-loop
+  integration is the next step; this does not establish console audio yet.
+
+Next: full IRQ/audio integration, complete platform hooks, full-game integration
 and hardware testing.

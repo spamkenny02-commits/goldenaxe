@@ -9,6 +9,8 @@ void gaw_platform_init(void);
 void gaw_platform_wait_vblank(void);
 uint8_t gaw_platform_read_pad_sms_bits(void); /* already normalized: bits 0..5, 1 = held */
 void gaw_platform_audio_command(uint8_t command);
+/* PSG data ($7F) and handheld stereo mask ($06). MD PSG is mono. */
+void gaw_platform_sound_write(uint8_t port,uint8_t value);
 /* Z80 R is used as entropy by a few original entity handlers. Backends expose
    a cheap changing byte; deterministic host tests can seed it. */
 uint8_t gaw_platform_entropy8(void);

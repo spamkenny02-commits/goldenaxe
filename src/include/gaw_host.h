@@ -1,6 +1,8 @@
 #ifndef GAW_HOST_H
 #define GAW_HOST_H
 #include <stdint.h>
+void gaw_host_clear_sound_trace(void);
+unsigned gaw_host_sound_trace(uint16_t *values,unsigned capacity);
 void gaw_host_set_pad(uint8_t held_bits);
 void gaw_host_set_entropy(uint8_t value);
 void gaw_host_pulse_pad(unsigned start_frame,unsigned duration,uint8_t bits);

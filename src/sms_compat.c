@@ -55,7 +55,7 @@ static uint8_t inport(Z*z,uint8_t p){(void)z;if((p&0xC0u)==0x80u && !(p&1u))retu
        copies the returned value to C01B. */
     return gaw_video_status_read();
 }if(p==0xDC)return (uint8_t)(~gaw_platform_read_pad_sms_bits());if(p==0xDD)return 0xFF;if(p==0x7E)return vertical_counter;if(p==0x7F)return 0x40;return 0xFF;}
-static void outport(Z*z,uint8_t p,uint8_t v){(void)z;if((p&0xC0u)==0x80u){if(p&1u)gaw_sms_vdp_control_write(v);else gaw_sms_vdp_data_write(v);}else if(p==0x7F)gaw_platform_audio_command(v);}
+static void outport(Z*z,uint8_t p,uint8_t v){(void)z;if((p&0xC0u)==0x80u){if(p&1u)gaw_sms_vdp_control_write(v);else gaw_sms_vdp_data_write(v);}else if(p==0x7F||p==6u)gaw_platform_sound_write(p,v);}
 
 static uint8_t add8(Z*z,uint8_t a,uint8_t b,uint8_t cy){uint16_t r=(uint16_t)a+b+cy;uint8_t q=(uint8_t)r;z->f=(uint8_t)((q&0xA8u)|(q?0:FZ)|(((a^b^q)&0x10)?FH:0)|((~(a^b)&(a^q)&0x80)?FP:0)|(r>255?FC:0));return q;}
 static uint8_t sub8(Z*z,uint8_t a,uint8_t b,uint8_t cy){uint16_t r=(uint16_t)a-b-cy;uint8_t q=(uint8_t)r;z->f=(uint8_t)(FN|(q&0xA8u)|(q?0:FZ)|(((a^b^q)&0x10)?FH:0)|(((a^b)&(a^q)&0x80)?FP:0)|((r&0x100)?FC:0));return q;}

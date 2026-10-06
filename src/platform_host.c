@@ -14,7 +14,12 @@ static unsigned event_frame[256],event_count,event_next;
 static uint8_t event_bits[256];
 static uint8_t entropy_values[64];
 static unsigned entropy_count,entropy_next;
-void gaw_platform_init(void) { host_pad = 0; host_entropy = 0x5A; host_frame=0; pulse_start=pulse_end=0; pulse_bits=0;pause_frame=0;frame_observer=0;event_count=event_next=0;entropy_count=entropy_next=0; }
+static uint16_t sound_trace[256];
+static unsigned sound_count;
+void gaw_platform_sound_write(uint8_t port,uint8_t value){if(sound_count<256u)sound_trace[sound_count]=(uint16_t)(((uint16_t)port<<8)|value);++sound_count;}
+void gaw_host_clear_sound_trace(void){sound_count=0;}
+unsigned gaw_host_sound_trace(uint16_t *values,unsigned capacity){unsigned n=sound_count<256u?sound_count:256u;if(n>capacity)n=capacity;for(unsigned i=0;i<n;++i)values[i]=sound_trace[i];return sound_count;}
+void gaw_platform_init(void) { host_pad = 0; host_entropy = 0x5A; host_frame=0; pulse_start=pulse_end=0; pulse_bits=0;pause_frame=0;frame_observer=0;event_count=event_next=0;entropy_count=entropy_next=0;sound_count=0; }
 void gaw_platform_wait_vblank(void) { ++host_frame;if(pause_frame==host_frame)gaw_nmi_pause(); if(pulse_start && host_frame>=pulse_start && host_frame<pulse_end) host_pad=pulse_bits; else if(pulse_start && host_frame>=pulse_end) host_pad=0; while(event_next<event_count && host_frame>=event_frame[event_next])host_pad=event_bits[event_next++]; gaw_vblank_tick(host_pad);if(frame_observer)frame_observer(); }
 uint8_t gaw_platform_read_pad_sms_bits(void) { return host_pad; }
 void gaw_platform_audio_command(uint8_t command) { (void)command; }
