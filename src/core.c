@@ -10,6 +10,7 @@
 #include "include/gaw_world.h"
 #include "include/gaw_world_progress.h"
 #include "include/gaw_ui.h"
+#include "include/gaw_effects.h"
 
 static void edge_update(uint16_t held_addr, uint16_t pressed_addr, uint8_t now) {
     uint8_t old = gaw_ram_read8(held_addr);
@@ -19,7 +20,7 @@ static void edge_update(uint16_t held_addr, uint16_t pressed_addr, uint8_t now) 
 
 void gaw_reset(void) {
     gaw_ram_reset_like_z80();
-    gaw_sms_compat_reset();
+    gaw_video_reset();
     gaw_platform_init();
     gaw_save_initialize_native();
     gaw_video_initialize_native();
@@ -798,13 +799,16 @@ static void animate_mode2_bank5(void){
     for(unsigned i=0;i<3u;++i)gaw_ram_write8((uint16_t)(0xDCADu+i),gaw_sms_rom_bank_read(5u,(uint16_t)(src+i)));
 }
 
-/* $699C-$6AE1.  The two rare full-screen effect state machines at C090/C098
-   remain on the compatibility bridge, but ordinary per-frame world animation
-   no longer interprets Z80 instructions. */
+/* $699C-$6AE1. Cursor restoration is native; full-screen effects 1/2
+   still use their original instruction stream. Both receive the correct IX. */
 void gaw_world_animate_frame(void){
     static const uint16_t effect_states[5]={0,0x6AFBu,0x6C2Eu,0x6D2Cu,0x6D40u};
-    uint8_t s=gaw_ram_read8(0xC090); if(s && s<5u)gaw_recompiled_call(1,effect_states[s]);
-    s=gaw_ram_read8(0xC098); if(s && s<5u)gaw_recompiled_call(1,effect_states[s]);
+    for(unsigned slot=0;slot<2u;++slot){
+        uint16_t address=(uint16_t)(0xC090u+slot*8u);
+        uint8_t state=gaw_ram_read8(address);
+        if(!gaw_effect_native_step(address)&&state<5u)
+            gaw_sms_compat_indexed_call(1,effect_states[state],address);
+    }
     uint8_t mode=gaw_ram_read8(0xC040), f=gaw_ram_read8(RAM_FRAME_COUNTER);
     if(mode==0){
         animate_mode0_bank5();

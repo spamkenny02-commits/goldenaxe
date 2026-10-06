@@ -1,4 +1,4 @@
-# Current status — V14
+# Current status — V15
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -15,15 +15,21 @@ platform backends, including native Motorola 68000/Mega Drive.
   deterministic interactive branches and 285 card draws with replayed entropy.
 - Reset/save initialization $0404 and initial SMS VDP setup $03C0 are native C;
   reset tests cover 58 SRAM cases and complete VDP state.
-- Three instruction-bridge call sites remain: effect-state slots C090/C098
-  and non-gameplay main-state dispatch.
-- Eight MD presentation hooks remain empty: resource uploads, scroll begin/end,
+- Two instruction-bridge call sites remain: full-screen effect states 1/2
+  (shared dispatch for C090/C098) and non-gameplay main-state dispatch.
+- Effect states 3/4 are native: 8,192 differential cases across both slots,
+  cursor coordinates and counter edge cases. Bridged effects now receive
+  the original IX pointer instead of zero.
+- Item graphics dispatch $2AF4 is native: 132 cases plus four compressed
+  resources compared against the unaccelerated original Z80 decoder.
+- Seven MD presentation hooks remain empty: map-entity resource uploads, scroll begin/end,
   inventory, special effects, world map and transition presentation.
-- ROM/VDP shadow services still live in sms_compat.c alongside the interpreter.
-  These must be separated before removing that file from console builds.
+- ROM/VDP shadow services now live in video.c independently of the interpreter.
+  The standalone video test links no instruction interpreter. Native item
+  graphics loading uses assets.c on both host and Mega Drive.
 - No linked/play-tested Mega Drive ROM has been produced.
 
-Validation locally: strict C11 Phase 17/final/reset/UI suites, ASan/UBSan,
+Validation locally: strict C11 Phase 17/final/reset/UI/effect/asset suites, ASan/UBSan,
 extraction failure tests, compiled registration coverage, portability and MD
 structure/syntax checks. LeakSanitizer is disabled here because sandbox /proc
 access prevents its operation; address/undefined-behavior checks remain enabled.

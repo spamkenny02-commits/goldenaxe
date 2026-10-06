@@ -1,3 +1,4 @@
+#include "include/gaw_assets.h"
 #include "include/gaw_ui.h"
 #include "include/gaw_core.h"
 #include "include/gaw_platform.h"
@@ -16,7 +17,7 @@ void gaw_platform_wait_vblank(void) { ++host_frame; if(pulse_start && host_frame
 uint8_t gaw_platform_read_pad_sms_bits(void) { return host_pad; }
 void gaw_platform_audio_command(uint8_t command) { (void)command; }
 uint8_t gaw_platform_entropy8(void) { if(entropy_next<entropy_count)return entropy_values[entropy_next++];uint8_t v=host_entropy; host_entropy=(uint8_t)(host_entropy*33u+17u); return v; }
-void gaw_platform_entity_resource_load(uint8_t resource_id) { (void)resource_id; }
+void gaw_platform_entity_resource_load(uint8_t resource_id) { gaw_assets_load_item(resource_id,0x7780u); }
 void gaw_platform_map_entity_resource_load(uint8_t type,uint8_t gfx_slot){(void)type;(void)gfx_slot;}
 void gaw_platform_world_rebuilt(void) {gaw_ui_upload_name_table();}
 void gaw_platform_world_scroll_begin(void) {}

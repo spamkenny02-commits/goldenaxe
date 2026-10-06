@@ -3,7 +3,7 @@
 #include "include/gaw_core.h"
 #include "include/gaw_platform.h"
 #include "include/gaw_ram.h"
-#include "include/gaw_sms_compat.h"
+#include "include/gaw_video.h"
 
 #define R(a) gaw_ram_read8((uint16_t)(a))
 #define W(a,v) gaw_ram_write8((uint16_t)(a),(uint8_t)(v))

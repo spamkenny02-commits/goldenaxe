@@ -1,7 +1,7 @@
 #include "include/gaw_core.h"
 #include "include/gaw_platform.h"
 #include "include/gaw_ram.h"
-#include "include/gaw_sms_compat.h"
+#include "include/gaw_video.h"
 
 /* $0404-$0443. The overlapping LDIR clears $8010 through $9FFE,
    inclusive, preserving the reserved first 16 bytes and the last byte.

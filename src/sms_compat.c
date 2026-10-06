@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include <string.h>
 #include "include/gaw_sms_compat.h"
+#include "include/gaw_video.h"
 #include "include/gaw_platform.h"
 #include "include/gaw_ram.h"
 
@@ -9,9 +10,6 @@
    The opcode stream is immutable source data; all mutable machine state lives
    in this C structure and SMS hardware I/O is routed through the platform API.
    This is deliberately a correctness bridge, not the final high-level form. */
-static const uint8_t rom[0x40000] = {
-#include "original_rom.inc"
-};
 
 enum { FS=0x80,FZ=0x40,FY=0x20,FH=0x10,FX=0x08,FP=0x04,FN=0x02,FC=0x01 };
 typedef struct {
@@ -23,12 +21,6 @@ static uint32_t faults;
 static uint16_t last_fault_pc;
 static uint8_t refresh_trace[64];
 static unsigned refresh_count;
-static uint8_t vdp_ctrl_latch, vdp_ctrl_low;
-static uint16_t vdp_addr;
-static uint8_t vdp_code;
-static uint8_t vdp_regs[16], vdp_vram[0x4000], vdp_cram[0x20], vdp_readbuf, vdp_status;
-static uint8_t vdp_tile_dirty[512];
-static uint8_t vdp_name_dirty, vdp_sat_dirty;
 
 #if defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
 #define U16_HI_PTR(p) ((uint8_t *)(void *)(p))
@@ -46,7 +38,8 @@ static uint32_t map_phys(const Z*z,uint16_t a){uint8_t bank;uint16_t o;if(a<0x40
 static uint8_t mr(Z*z,uint16_t a){
     if(a>=0xC000u){ if(a>=0xE000u)a=(uint16_t)(0xC000u+(a&0x1FFFu)); return gaw_ram_read8(a); }
     if(a>=0x8000u && (z->mapper&0x08u)){ unsigned page=(z->mapper&0x04u)?0x4000u:0; return gaw_platform_sram_read((uint16_t)(page+(a-0x8000u))); }
-    return rom[map_phys(z,a)];
+    uint32_t physical=map_phys(z,a);
+    return gaw_sms_rom_bank_read((uint8_t)(physical>>14),(uint16_t)physical);
 }
 static void mw(Z*z,uint16_t a,uint8_t v){
     if(a>=0xFFFCu){ if(a==0xFFFC)z->mapper=v;else if(a==0xFFFD)z->p0=(uint8_t)(v&15u);else if(a==0xFFFE)z->p1=(uint8_t)(v&15u);else z->p2=(uint8_t)(v&15u); return; }
@@ -56,19 +49,13 @@ static void mw(Z*z,uint16_t a,uint8_t v){
 static uint16_t mr16(Z*z,uint16_t a){uint8_t lo=mr(z,a);return (uint16_t)lo|((uint16_t)mr(z,(uint16_t)(a+1u))<<8);} static void mw16(Z*z,uint16_t a,uint16_t v){mw(z,a,(uint8_t)v);mw(z,(uint16_t)(a+1u),(uint8_t)(v>>8));}
 static void push(Z*z,uint16_t v){mw(z,--z->sp,(uint8_t)(v>>8));mw(z,--z->sp,(uint8_t)v);} static uint16_t pop(Z*z){uint8_t lo=mr(z,z->sp++);uint8_t hi=mr(z,z->sp++);return (uint16_t)lo|((uint16_t)hi<<8);}
 
-static void vdp_ctrl(uint8_t v){ if(!vdp_ctrl_latch){vdp_ctrl_low=v;vdp_ctrl_latch=1;return;} vdp_ctrl_latch=0; vdp_code=(uint8_t)(v>>6); if(vdp_code==2){unsigned r=v&15u;vdp_regs[r]=vdp_ctrl_low;if(r==2u)vdp_name_dirty=1;if(r==0u||r==1u||r==5u||r==6u)vdp_sat_dirty=1;return;} vdp_addr=(uint16_t)(((uint16_t)(v&0x3Fu)<<8)|vdp_ctrl_low); if(vdp_code==0){vdp_readbuf=vdp_vram[vdp_addr&0x3FFFu];vdp_addr=(uint16_t)((vdp_addr+1u)&0x3FFFu);} }
-static void vdp_data_w(uint8_t v){vdp_ctrl_latch=0;if(vdp_code==3)vdp_cram[vdp_addr&31u]=v;else {uint16_t a=(uint16_t)(vdp_addr&0x3FFFu);vdp_vram[a]=v;vdp_tile_dirty[a>>5]=1;uint16_t nt=(uint16_t)((vdp_regs[2]&0x0Eu)<<10);if(a>=nt&&a<(uint16_t)(nt+0x0700u))vdp_name_dirty=1;uint16_t sat=(uint16_t)((vdp_regs[5]&0x7Eu)<<7);if(a>=sat&&a<(uint16_t)(sat+0x0100u))vdp_sat_dirty=1;}vdp_addr=(uint16_t)((vdp_addr+1u)&0x3FFFu);}
-static uint8_t vdp_data_r(void){uint8_t v=vdp_readbuf;vdp_readbuf=vdp_vram[vdp_addr&0x3FFFu];vdp_addr=(uint16_t)((vdp_addr+1u)&0x3FFFu);vdp_ctrl_latch=0;return v;}
-void gaw_sms_vdp_control_write(uint8_t value){vdp_ctrl(value);}
-void gaw_sms_vdp_data_write(uint8_t value){vdp_data_w(value);}
-uint8_t gaw_sms_vdp_data_read(void){return vdp_data_r();}
-static uint8_t inport(Z*z,uint8_t p){(void)z;if(p==0xBE)return vdp_data_r();if(p==0xBF){
+static uint8_t inport(Z*z,uint8_t p){(void)z;if(p==0xBE)return gaw_sms_vdp_data_read();if(p==0xBF){
     /* SMS VDP status is hardware state, not RAM_C01B. Reading $BF
        acknowledges/clears the pending status flags; the IRQ handler itself
        copies the returned value to C01B. */
-    uint8_t status=vdp_status; vdp_status=0; vdp_ctrl_latch=0; return status;
+    return gaw_video_status_read();
 }if(p==0xDC)return (uint8_t)(~gaw_platform_read_pad_sms_bits());if(p==0xDD)return 0xFF;if(p==0x7E)return 0x78;if(p==0x7F)return 0x40;return 0xFF;}
-static void outport(Z*z,uint8_t p,uint8_t v){(void)z;if(p==0xBE)vdp_data_w(v);else if(p==0xBF)vdp_ctrl(v);else if(p==0x7F)gaw_platform_audio_command(v);}
+static void outport(Z*z,uint8_t p,uint8_t v){(void)z;if(p==0xBE)gaw_sms_vdp_data_write(v);else if(p==0xBF)gaw_sms_vdp_control_write(v);else if(p==0x7F)gaw_platform_audio_command(v);}
 
 static uint8_t add8(Z*z,uint8_t a,uint8_t b,uint8_t cy){uint16_t r=(uint16_t)a+b+cy;uint8_t q=(uint8_t)r;z->f=(uint8_t)((q&0xA8u)|(q?0:FZ)|(((a^b^q)&0x10)?FH:0)|((~(a^b)&(a^q)&0x80)?FP:0)|(r>255?FC:0));return q;}
 static uint8_t sub8(Z*z,uint8_t a,uint8_t b,uint8_t cy){uint16_t r=(uint16_t)a-b-cy;uint8_t q=(uint8_t)r;z->f=(uint8_t)(FN|(q&0xA8u)|(q?0:FZ)|(((a^b^q)&0x10)?FH:0)|(((a^b)&(a^q)&0x80)?FP:0)|((r&0x100)?FC:0));return q;}
@@ -106,21 +93,21 @@ static void native_032a(Z *z,int set_bank){
         uint16_t dst=(uint16_t)(base+plane);
         for(;;){
             uint8_t cmd=mr(z,src++); if(cmd==0) break;
-            unsigned n=cmd&0x7Fu; int literal=(cmd&0x80u)!=0; uint8_t value=0;
+            unsigned n=cmd&0x7Fu;if(n==0)n=256u; int literal=(cmd&0x80u)!=0; uint8_t value=0;
             if(!literal) value=mr(z,src++);
             while(n--){
                 if(literal) value=mr(z,src++);
-                vdp_addr=(uint16_t)(dst&0x3FFFu); vdp_code=1; vdp_data_w(value);
+                gaw_sms_vdp_control_write((uint8_t)dst);gaw_sms_vdp_control_write((uint8_t)(dst>>8));gaw_sms_vdp_data_write(value);
                 dst=(uint16_t)(dst+4u);
             }
         }
-        last=dst;
+        last=dst;gaw_ram_write16le(0xC031u,dst);
     }
     shl16(z,src); z->b=0; z->c=4; uint16_t rv=(uint16_t)(last+1u); uint8_t lo=sub8(z,(uint8_t)rv,4,0); z->a=lo; z->d=(uint8_t)((rv>>8)-((uint8_t)rv<4u?1u:0u)); z->e=lo;
 }
 
 static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world,
-               uint16_t arg_hl,uint16_t arg_de,uint16_t arg_bc,uint8_t arg_a){
+               uint16_t arg_hl,uint16_t arg_de,uint16_t arg_bc,uint8_t arg_a,int raw){
     Z z; memset(&z,0,sizeof z); z.p0=0; z.p1=1; z.p2=bank; z.sp=0xDFF0; z.pc=addr; z.ix=ix;
     refresh_count=0;
     shl16(&z,arg_hl);sde16(&z,arg_de);sbc16(&z,arg_bc);z.a=arg_a;
@@ -130,32 +117,25 @@ static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world,
     for(;;){
         if(z.pc==0xFFFF) return 1;
         if(++steps_since_sync>2000000u){ last_fault_pc=z.pc; faults++; return 0; }
-        if(z.pc==0x0327u || z.pc==0x032Au){ int sb=(z.pc==0x0327u); native_032a(&z,sb); z.pc=pop(&z); continue; }
+        if(!raw && (z.pc==0x0327u || z.pc==0x032Au)){ int sb=(z.pc==0x0327u); native_032a(&z,sb); z.pc=pop(&z); continue; }
         /* $0B95 is the game's synchronous VBlank barrier.  The portable
            platform boundary already performs the frame tick, so executing
            the original IRQ body as well would double-apply the interrupt
            side effects and corrupt its saved-register stack. */
         if(z.pc==0x0B95u){
-            gaw_platform_wait_vblank(); vdp_status|=0x80u; steps_since_sync=0; z.pc=pop(&z); continue;
+            gaw_platform_wait_vblank(); gaw_video_vblank_pending(); steps_since_sync=0; z.pc=pop(&z); continue;
         }
         step(&z);
     }
 }
-void gaw_sms_compat_reset(void){memset(vdp_regs,0,sizeof vdp_regs);memset(vdp_vram,0,sizeof vdp_vram);memset(vdp_cram,0,sizeof vdp_cram);memset(vdp_tile_dirty,1,sizeof vdp_tile_dirty);vdp_name_dirty=vdp_sat_dirty=1;vdp_ctrl_latch=0;vdp_addr=0;vdp_code=0;vdp_status=0;faults=0;last_fault_pc=0;}
-int gaw_sms_compat_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,0,0,0,0,0);}
-int gaw_sms_compat_call_args(uint8_t bank,uint16_t addr,uint16_t h,uint16_t d,uint16_t b,uint8_t a){return run(bank,addr,0,0,h,d,b,a);}
-int gaw_sms_compat_entity_call(uint8_t bank,uint16_t addr,GawEntity*e){return run(bank,addr,gaw_entity_addr(e),0,0,0,0,0);}
-int gaw_sms_compat_world_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,1,0,0,0,0);}
+void gaw_sms_compat_reset(void){gaw_video_reset();faults=0;last_fault_pc=0;refresh_count=0;}
+int gaw_sms_compat_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,0,0,0,0,0,0);}
+int gaw_sms_compat_call_args(uint8_t bank,uint16_t addr,uint16_t h,uint16_t d,uint16_t b,uint8_t a){return run(bank,addr,0,0,h,d,b,a,0);}
+int gaw_sms_compat_entity_call(uint8_t bank,uint16_t addr,GawEntity*e){return run(bank,addr,gaw_entity_addr(e),0,0,0,0,0,0);}
+int gaw_sms_compat_world_call(uint8_t bank,uint16_t addr){return run(bank,addr,0,1,0,0,0,0,0);}
 uint32_t gaw_sms_compat_faults(void){return faults;}
 uint16_t gaw_sms_compat_last_pc(void){return last_fault_pc;}
 unsigned gaw_sms_compat_refresh_trace(uint8_t *values,unsigned capacity){unsigned n=refresh_count<capacity?refresh_count:capacity;if(n)memcpy(values,refresh_trace,n);return refresh_count;}
-const uint8_t *gaw_sms_vram(void){return vdp_vram;}
-const uint8_t *gaw_sms_cram(void){return vdp_cram;}
-const uint8_t *gaw_sms_vdp_regs(void){return vdp_regs;}
-int gaw_sms_take_tile_dirty(unsigned tile){if(tile>=512||!vdp_tile_dirty[tile])return 0;vdp_tile_dirty[tile]=0;return 1;}
-void gaw_sms_mark_all_tiles_dirty(void){memset(vdp_tile_dirty,1,sizeof vdp_tile_dirty);}
 
-int gaw_sms_take_name_dirty(void){int v=vdp_name_dirty;vdp_name_dirty=0;return v;}
-int gaw_sms_take_sat_dirty(void){int v=vdp_sat_dirty;vdp_sat_dirty=0;return v;}
-
-uint8_t gaw_sms_rom_bank_read(uint8_t bank,uint16_t cpu_addr){return rom[(uint32_t)(bank&15u)*0x4000u+(cpu_addr&0x3FFFu)];}
+int gaw_sms_compat_indexed_call(uint8_t bank,uint16_t addr,uint16_t ix){return run(bank,addr,ix,0,0,0,0,0,0);}
+int gaw_sms_compat_raw_call_args(uint8_t bank,uint16_t addr,uint16_t h,uint16_t d,uint16_t b,uint8_t a){return run(bank,addr,0,0,h,d,b,a,1);}

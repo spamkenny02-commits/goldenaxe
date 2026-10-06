@@ -12,16 +12,8 @@ int gaw_sms_compat_world_call(uint8_t bank,uint16_t addr);
 uint32_t gaw_sms_compat_faults(void);
 uint16_t gaw_sms_compat_last_pc(void);
 unsigned gaw_sms_compat_refresh_trace(uint8_t *values,unsigned capacity);
-const uint8_t *gaw_sms_vram(void);
-const uint8_t *gaw_sms_cram(void);
-const uint8_t *gaw_sms_vdp_regs(void);
-int gaw_sms_take_tile_dirty(unsigned tile);
-void gaw_sms_mark_all_tiles_dirty(void);
-/* Shared VDP model access without executing Z80 instructions. */
-void gaw_sms_vdp_control_write(uint8_t value);
-void gaw_sms_vdp_data_write(uint8_t value);
-uint8_t gaw_sms_vdp_data_read(void);
-int gaw_sms_take_name_dirty(void);
-int gaw_sms_take_sat_dirty(void);
-uint8_t gaw_sms_rom_bank_read(uint8_t bank,uint16_t cpu_addr);
+int gaw_sms_compat_indexed_call(uint8_t bank,uint16_t addr,uint16_t ix);
+/* Executes the original resource decoder too, without its accelerator. */
+int gaw_sms_compat_raw_call_args(uint8_t bank,uint16_t addr,uint16_t hl,uint16_t de,uint16_t bc,uint8_t a);
+#include "gaw_video.h"
 #endif

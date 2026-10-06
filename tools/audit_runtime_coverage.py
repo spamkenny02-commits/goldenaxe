@@ -41,9 +41,9 @@ def main():
     print(('remaining world targets: ' + ' '.join(f'{t:04X}' for t in remaining_world)).rstrip())
     calls = []
     for p in sorted((ROOT/'src').glob('*.c')):
-        if p.name == 'recompiled.c': continue
+        if p.name in ('recompiled.c','sms_compat.c'): continue
         for n, line in enumerate(p.read_text().splitlines(), 1):
-            if re.search(r'\bgaw_recompiled_(?:call|world_call|entity_call)\s*\(', line):
+            if re.search(r'\b(?:gaw_recompiled_(?:call|world_call|entity_call)|gaw_sms_compat_indexed_call)\s*\(', line):
                 calls.append(f'{p.relative_to(ROOT)}:{n}: {line.strip()}')
     print(f'remaining instruction-bridge call sites: {len(calls)}')
     for call in calls: print('  ' + call)
