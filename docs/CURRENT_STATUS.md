@@ -1,4 +1,4 @@
-# Current status — V29
+# Current status — V34
 
 Objective: faithful Golden Axe Warrior decompilation into portable C, then
 platform backends, including native Motorola 68000/Mega Drive.
@@ -216,3 +216,28 @@ private GAW_ROM_BASE64 input. Without it, CI explicitly skips behavioral tests.
 Next: rebuild and rerun V33 reference/68000 tests, then profile MD cadence,
 validate actual sprite clipping, cross screens through controller input,
 complete full-game replay/integration and test physical hardware.
+
+
+- V34 removes the V33 sprite-status frame buffers from the 68000 IRQ stack.
+  The 192-byte per-line counters and 6,144-byte collision bitmap are now
+  persistent video scratch; touched collision rows are still cleared before
+  use, so overflow/collision semantics are unchanged while the VBlank C call no
+  longer reserves those arrays on the interrupt stack.
+- The production game only consumes C01B bit 6 (sprite overflow) in native
+  entity spawning, but collision bit 5 remains calculated for SMS hardware
+  fidelity rather than being optimized away.
+- In the restored execution sandbox, the V34 implementation passes 6,024
+  additional ROM-free comparisons against an independent scanline/pixel oracle
+  (1,024 all-Y/mode overflow cases plus 5,000 deterministic randomized cases)
+  and strict C11 compilation. The sanitizer-instrumented translation unit also
+  compiles cleanly. V33's repository CI already contains the broader 6,948-case
+  oracle and ASan/UBSan job; its push result for V34 is not claimed here.
+- V34 has not yet been linked or profiled as a new 68000 cartridge image in this
+  session because the private ROM/toolchain checkout is unavailable. The last
+  fully linked/emulated cartridge remains V32; do not infer a new ROM checksum
+  or cadence result from the ROM-free V34 validation.
+
+Next: obtain/restore the private reference build input, rerun the complete
+differential suite and V34 68000 build, then profile cadence/IRQ stack, validate
+actual sprite clipping and screen crossings, continue full-game replay and test
+physical hardware.
