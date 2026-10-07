@@ -50,3 +50,35 @@ uint16_t gaw_md_sprite_y(uint8_t y) {
     if(y>=0xE0u)line-=256;
     return (uint16_t)(line+128);
 }
+
+/* Count entries on visible lines, including transparent/off-screen-X sprites.
+   A zero mask means every output row is clipped or outside the SMS viewport. */
+uint32_t gaw_md_sprite_line_mask(uint8_t y,unsigned height,uint8_t counts[192]) {
+    if(y==0xD0u)return 0;
+    int top=(int)y+1;
+    if(y>0xD0u)top-=256;
+    uint32_t mask=0;
+    for(unsigned row=0;row<height;++row){
+        int line=top+(int)row;
+        if(line>=0&&line<192&&counts[line]<8u){
+            ++counts[line];mask|=(uint32_t)1u<<row;
+        }
+    }
+    return mask;
+}
+
+/* MD stores multi-tile sprites column-first. Zoom expands each SMS nibble to
+   two pixels; column 0/1 selects the left/right four source pixels. */
+uint32_t gaw_md_sprite_pattern_row(const uint8_t *vram,unsigned tile,unsigned row,
+                                   unsigned zoom,unsigned column) {
+    unsigned a=((tile<<5)+(row<<2))&0x3FFFu;
+    uint32_t pixels=gaw_md_pattern_row(vram[a],vram[a+1u],vram[a+2u],vram[a+3u]);
+    if(!zoom)return pixels;
+    uint16_t half=(uint16_t)(pixels>>(column?0u:16u));
+    uint32_t result=0;
+    for(unsigned x=0;x<4u;++x){
+        unsigned pixel=(half>>(12u-4u*x))&15u;
+        result=(result<<8)|(pixel*0x11u);
+    }
+    return result;
+}

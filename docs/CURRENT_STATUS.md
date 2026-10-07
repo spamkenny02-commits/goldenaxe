@@ -1,4 +1,4 @@
-# Current status — V40
+# Current status — V41
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -94,10 +94,30 @@ finishes in 3083 emulated frames. This verifies collision visibility, not
 scanline-accurate
 overflow timing or physical console behavior.
 
+## Native sprite rendering: V41
+
+The MD adapter now counts SMS SAT entries per visible line, including transparent
+and off-screen-X sprites. Per-instance row masks remove pixels after the eighth
+entry without removing its legal rows elsewhere. Cached copies live in MD VRAM
+4000–7FFF, separate from the 512 source patterns and name tables. Each slot
+reserves eight tiles, enough for a zoomed 16-high sprite (16×32 output pixels).
+
+The adapter implements 2x horizontal/vertical zoom and uses column-first MD
+pattern layout. Geometry changes update masks; source dirty bits refresh copies
+even when SAT metadata has not changed. Cached tile/mask/mode values avoid
+reconversion of unchanged copies. Scratch is persistent and small.
+
+ROM-free tests add 18688 independent mask/count cases and 98304 pixel cases,
+including ASan/UBSan. Fifteen extra native stages cover full/partial ninth-sprite
+clipping, transparent/off-screen count consumption, zoom, tall/odd patterns,
+the high pattern bank, source edits without SAT changes, list clearing and
+reuse, and sprite shift-left. Total raster checks become 530 stages /
+30392320 pixels. The new run is pending.
+
 ## Remaining work
 
 Confirm actual private-game pixels and
-cadence when local execution recovers. Then validate rendered eight-sprite line
-clipping, more controller/combat/interaction routes, SRAM save/reload,
+cadence when local execution recovers. Finish the V41 raster run, then validate more controller/combat/interaction
+routes, SRAM save/reload,
 playthrough/ending and PAL/NTSC/physical hardware behavior. The project is not
 declared finished or universally recompiled.

@@ -36,8 +36,43 @@ static void palette(void){
     gaw_sms_vdp_control_write(0);gaw_sms_vdp_control_write(0xC0);
     gaw_sms_vdp_data_write_block(colors,sizeof colors);
     reg(7,(uint8_t)(phase==2u?0u:2u));
-    reg(0,(uint8_t)(0x04u|(stage>=259u?0x80u:0u)));
-    reg(9,(uint8_t)(stage>=3u?stage-3u:0u));
+    if(stage<522u)reg(0,(uint8_t)(0x04u|(stage>=259u&&stage<515u?0x80u:0u)));
+    reg(9,(uint8_t)(stage>=3u&&stage<515u?stage-3u:0u));
+}
+static void solid(unsigned tile,unsigned color){
+    address((uint16_t)(tile*32u));
+    for(unsigned row=0;row<8u;++row)
+    for(unsigned plane=0;plane<4u;++plane)
+        gaw_sms_vdp_data_write((uint8_t)((color&(1u<<plane))?0xFFu:0u));
+}
+static void sprite_stage(void){
+    if(stage==522u){solid(288,3);return;}
+    if(stage==523u){solid(288,0);return;}
+    if(stage==525u){solid(289,3);return;}
+    unsigned mode=stage>=528u?0u:(stage==518u?3u:(stage==519u?1u:
+                  ((stage==520u||stage>=524u)?2u:0u)));
+    reg(0,(uint8_t)(stage>=528u?0x0Cu:0x04u));
+    reg(1,(uint8_t)(0x40u|mode));reg(6,(uint8_t)(stage>=521u&&stage<528u?4u:0u));
+    unsigned count=stage==526u?0u:(stage==528u?9u:(stage>=521u?2u:9u));
+    address(0x3F00);
+    for(unsigned i=0;i<count;++i){
+        unsigned y=49;
+        if(stage==518u)y=i==8u?0xE1u:0xE0u;
+        else if(i==8u&&(stage==516u||stage==519u||stage==520u))y=53;
+        gaw_sms_vdp_data_write((uint8_t)y);
+    }
+    gaw_sms_vdp_data_write(0xD0);
+    address(0x3F80);
+    for(unsigned i=0;i<count;++i){
+        unsigned x=stage>=521u?i*16u:i*((mode&1u)?16u:8u);
+        if(stage==528u&&i<8u)x=0;
+        if(i==8u)x=stage==518u?144u:(stage==519u?160u:80u);
+        unsigned tile=32;
+        if(stage==517u&&i<8u)tile=34;
+        else if(i==8u||stage==518u||stage==520u||(stage>=524u&&stage<528u))tile=33;
+        gaw_sms_vdp_data_write((uint8_t)x);
+        gaw_sms_vdp_data_write((uint8_t)tile);
+    }
 }
 static void setup(void){
     reg(0,0x04);reg(1,0x40);reg(2,0x0E);reg(5,0x7E);
@@ -53,6 +88,7 @@ static void setup(void){
     }
     address(32u*32u);
     for(unsigned i=0;i<32u;++i)gaw_sms_vdp_data_write(0xFF);
+    solid(33,1);solid(288,1);solid(289,2);
     address(0x3800);
     for(unsigned row=0;row<28u;++row)
     for(unsigned col=0;col<32u;++col){
@@ -90,7 +126,8 @@ void md_main(void){
         gaw_video_fixture_ready=(uint16_t)stage;
         uint8_t held=(uint8_t)(gaw_ram_read8(RAM_INPUT_HELD)&0x10u);
         if(held&&!old){
-            stage=(stage+1u)%515u;palette();
+            stage=(stage+1u)%530u;palette();
+            if(stage>=515u)sprite_stage();
             uint16_t d=descriptor(7,5);
             address((uint16_t)(0x3800u+2u*(7u*32u+5u)));
             gaw_sms_vdp_data_write((uint8_t)d);

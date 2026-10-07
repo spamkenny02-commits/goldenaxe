@@ -2,6 +2,7 @@
 """Check production 68000 video output against a ROM-free indexed-pixel oracle."""
 import argparse
 import ctypes as C
+from functools import lru_cache
 from pathlib import Path
 import struct
 import subprocess
@@ -9,10 +10,61 @@ import sys
 from test_md_emulator import GameInfo, Variable, png
 
 
+@lru_cache(maxsize=None)
+def sprite_layout(stage):
+    mode = 0 if stage >= 528 else (3 if stage == 518 else (1 if stage == 519 else (2 if stage == 520 or stage >= 524 else 0)))
+    bank = 256 if 521 <= stage < 528 else 0
+    count = 0 if stage == 526 else (9 if stage == 528 else (2 if stage >= 521 else 9))
+    entries = []
+    for i in range(count):
+        sy = 49
+        if stage == 518:
+            sy = 225 if i == 8 else 224
+        elif i == 8 and stage in (516, 519, 520):
+            sy = 53
+        x = i * (16 if stage >= 521 or mode & 1 else 8)
+        if stage == 528 and i < 8:
+            x = 0
+        if i == 8:
+            x = 144 if stage == 518 else (160 if stage == 519 else 80)
+        tile = 34 if stage == 517 and i < 8 else (33 if i == 8 or stage in (518, 520) or 524 <= stage < 528 else 32)
+        if stage >= 528:
+            x -= 8
+        entries.append((sy, x, tile))
+    return mode, bank, entries
+
+
+def sprite_pixel(stage, x, y):
+    if stage < 515:
+        return 15 if x < 64 and 50 <= y < 58 else 0
+    mode, bank, entries = sprite_layout(stage)
+    scale = 2 if mode & 1 else 1
+    height = 16 if mode & 2 else 8
+    count = 0
+    for sy, sx, tile in entries:
+        top = sy + 1 - (256 if sy > 208 else 0)
+        if not top <= y < top + height * scale:
+            continue
+        count += 1
+        if count > 8:
+            break
+        if not sx <= x < sx + 8 * scale:
+            continue
+        if height == 16:
+            tile &= ~1
+        tile += bank + ((y - top) // scale) // 8
+        color = {32: 15, 33: 1, 34: 0, 35: 0,
+                 288: (1 if stage == 521 else (3 if stage == 522 else 0)),
+                 289: (2 if stage < 525 else 3)}[tile]
+        if color:
+            return color
+    return 0
+
+
 def expected(stage, x, y):
     phase = stage if stage < 3 else 0
-    scroll = (stage - 3) & 255 if stage >= 3 else 0
-    right_lock = stage >= 259
+    scroll = (stage - 3) & 255 if 3 <= stage < 515 else 0
+    right_lock = 259 <= stage < 515
     colors = [0] * 32
     colors[:4] = [3 if phase else 12, 48, 60, 63]
     colors[16:20] = [12 if phase else 3, 15, 51, 60]
@@ -32,8 +84,8 @@ def expected(stage, x, y):
         changed = phase if stage < 3 else (stage - 3) & 1
         if changed and row == 7 and col == 5:
             palette ^= 1
-        sprite = x < 64 and 50 <= y < 58
-        color = colors[31] if sprite and (not (col & 2) or not bg) else colors[palette * 16 + bg]
+        sprite = sprite_pixel(stage, x, y)
+        color = colors[16 + sprite] if sprite and (not (col & 2) or not bg) else colors[palette * 16 + bg]
     # Pinned GPGX Mode 5 normal intensity expands CRAM 7 to 14/15 (238),
     # whereas Mode 4 expands SMS channel 3 to 15/15. Compare native output.
     return tuple(238 if (color >> shift) & 3 else 0 for shift in (0, 2, 4))
@@ -142,7 +194,7 @@ def main():
                 break
         else:
             raise AssertionError('Fixture failed to reach its frame barrier')
-        for stage in range(515):
+        for stage in range(530):
             if stage:
                 state['pad'] = 1
                 for _ in range(8):
@@ -153,7 +205,7 @@ def main():
             assert ready() == stage, (stage, ready())
             pixels, width, height, pitch = state['image']
             assert (width, height) == (256, 224), (width, height)
-            if stage < 3 or (stage - 3) % 256 in (31, 32, 223, 224, 255):
+            if stage < 3 or stage >= 515 or (stage - 3) % 256 in (31, 32, 223, 224, 255):
                 png(args.output / ('stage%d.png' % stage), pixels, width, height, pitch, state['format'])
             for y in range(height):
                 for x in range(width):
@@ -169,12 +221,12 @@ def main():
                             actual = tuple(((value >> shift) & 31) * 255 // 31 for shift in (10, 5, 0))
                     want = expected(stage, x, y)
                     assert actual == want, ('pixel', stage, x, y, actual, want)
-            if stage < 3 or (stage - 3) % 32 == 0 or stage == 514:
+            if stage < 3 or stage >= 514 or (stage - 3) % 32 == 0:
                 print('Native video stage %d: 57344 pixels match (palette zero, priority, scroll, viewport)' % stage)
     finally:
         lib.retro_unload_game()
         lib.retro_deinit()
-    print('ROM-free MD video hardware tests: OK (29532160 pixels, 256 scroll values with/without right lock, H-scroll zero)')
+    print('ROM-free MD video hardware tests: OK (30392320 pixels, 256 scroll values, 15 sprite clipping/zoom/bank/edit/shift stages, H-scroll zero)')
 
 
 if __name__ == '__main__':

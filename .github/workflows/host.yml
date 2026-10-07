@@ -13,7 +13,7 @@ jobs:
         run: |
           python3 tools/audit_portability.py
           python3 tools/check_md_backend.py
-          make test-md-video
+          make test-md-video test-md-sprite test-md-sprite-sanitize
       - name: Validate ROM-free SMS sprite status
         run: make test-video-status test-video-status-sanitize
       - name: Validate ROM-free VDP block transfers

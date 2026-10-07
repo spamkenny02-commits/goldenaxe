@@ -114,3 +114,18 @@ GitHub Actions 37599618930 passes all 1024 observed cases, including direct
 portable-C comparison, in 3083 emulated frames. This targets collision
 visibility; frame-level sprite
 status is not a scanline-accurate VDP model or a physical-console proof.
+
+V41 uses private sprite pattern copies at VRAM 4000–7FFF to mask output rows
+after the eighth SMS sprite on each line and implement 2x zoom. A 64-slot cache
+tracks source tile, row mask and mode; captured source dirty bits refresh copies
+without requiring a SAT change. The 192-line count scratch and caches are
+persistent. Plane names, viewport mask and original source patterns do not
+alias these slots.
+
+```sh
+make test-md-sprite test-md-sprite-sanitize
+```
+
+The hardware fixture adds 15 clipping/zoom/bank/source-edit/shift stages, bringing
+coverage to 530 stages / 30392320 pixels. The initial V41 run is pending. No new
+private full-game build/cadence or physical-console result is claimed.

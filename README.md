@@ -2,8 +2,11 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V40)
+## Current status (V41)
 
+- V41 implements rendered eight-sprite-per-line clipping and 2x sprite zoom
+  using cached private MD pattern slots. New mask/pixel tests and 15 extra
+  native raster stages await validation; full-game cadence remains V37.
 - V40 corrects the top-edge Y wrap for zoomed sprites, including E0's one
   visible row. All 6951 host cases pass; portable C matches all 1024 status
   values observed by an independent generated Z80 hardware probe.
