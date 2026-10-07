@@ -106,8 +106,11 @@ ROM-free SMS II hardware-reference collision fixture runs every Y in all four
 height/zoom modes, using generated Z80 code and the actual VDP status port:
 
 ```sh
-python3 tools/test_sms_sprite_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretro.so
+cc -std=c11 -Wall -Wextra -Werror -O2 -Isrc/include src/video_status.c tests/test_sms_sprite_hardware.c -o md/build/sms_sprite_hardware_test
+python3 tools/test_sms_sprite_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretro.so --compare md/build/sms_sprite_hardware_test
 ```
 
-The new run is pending. This targets collision visibility; frame-level sprite
+GitHub Actions 37599618930 passes all 1024 observed cases, including direct
+portable-C comparison, in 3083 emulated frames. This targets collision
+visibility; frame-level sprite
 status is not a scanline-accurate VDP model or a physical-console proof.

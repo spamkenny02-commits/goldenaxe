@@ -23,8 +23,13 @@ sprites, polls BF and accumulates collision/overflow bits until VBlank. It
 publishes those observed flags in RAM. Neither original-game data nor the
 portable C status helper is loaded into this reference.
 
-The pinned Genesis Plus GX core runs all 256 Y values in the four 8/16-high,
-normal/zoom modes: 1024 fixtures. The new run is pending at this checkpoint.
+The generated program probes all 256 Y values in the four 8/16-high,
+normal/zoom modes, recording 1024 status values in RAM. The pinned Genesis
+Plus GX core completes this in 3083 emulated frames. A compiled portable-C
+comparator matches every observed byte directly. GitHub Actions 37599618930
+passes both host and native-video jobs, including the 6951-case host suite and
+all 29532160 MD pixels. The program runs without reloading the core between
+cases, avoiding its unsafe reinitialization after unload with a forced model.
 It verifies collision visibility, with two sprites so no overflow is expected.
 Frame-level overflow timing and physical-hardware quirks are not signed off.
 

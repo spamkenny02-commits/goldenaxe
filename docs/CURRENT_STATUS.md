@@ -87,8 +87,11 @@ explicit DF/E0/E1 regressions increase the synthetic host suite to 6951 cases.
 An independent generated Z80 program configures the SMS II VDP, polls its real
 status port and accumulates flags until VBlank. The pinned hardware core runs
 all 256 Y positions in all four height/zoom modes: 1024 two-sprite collision
-fixtures with no game data and no portable status implementation linked. The
-new run is pending. This verifies collision visibility, not scanline-accurate
+cases in one generated program with no game data and no portable status implementation linked. The
+new run passes in GitHub Actions 37599618930. A compiled portable-C
+comparator also matches all 1024 observed status bytes directly. The probe
+finishes in 3083 emulated frames. This verifies collision visibility, not
+scanline-accurate
 overflow timing or physical console behavior.
 
 ## Remaining work
