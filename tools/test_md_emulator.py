@@ -57,7 +57,17 @@ def main():
     parser.add_argument('--reference-sms', action='store_true', help='Run an original SMS ROM as a hardware reference')
     parser.add_argument('--play-inputs', type=Path, help='JSON list of {ticks, buttons} controller steps after entering gameplay')
     parser.add_argument('--profile', action='store_true', help='Profile gameplay instructions using a locally instrumented core')
+    parser.add_argument('--sram-in', type=Path, help='Import logical 32 KiB SRAM before boot (native MD only)')
+    parser.add_argument('--sram-out', type=Path, help='Export logical 32 KiB SRAM after the run (native MD only)')
+    parser.add_argument('--save-slot', type=int, choices=range(3), help='Activate the save service from gameplay, then drive its menus with controller input')
+    parser.add_argument('--expect-save-slot', type=int, choices=range(3), help='Check boot selection and restored save payload before scene entry')
     args = parser.parse_args()
+    if args.reference_sms and any((args.sram_in, args.sram_out, args.save_slot is not None, args.expect_save_slot is not None)):
+        parser.error('SRAM scenarios currently require the native MD image')
+    if args.expect_save_slot is not None and not args.sram_in:
+        parser.error('--expect-save-slot requires --sram-in')
+    if args.save_slot is not None and args.play_inputs:
+        parser.error('--save-slot and --play-inputs are separate scenarios')
     if args.profile and args.reference_sms:
         parser.error('--profile requires the native 68000 image')
     args.output.mkdir(parents=True, exist_ok=True)
@@ -168,10 +178,31 @@ def main():
     memory_size = lib.retro_get_memory_size(2)
     assert memory_size == (0x2000 if args.reference_sms else 0x10000), 'Unexpected work RAM size'
     memory = (C.c_uint8*memory_size).from_address(lib.retro_get_memory_data(2))
+    sram = None
+    loaded_save = None
+    if args.sram_in or args.sram_out or args.save_slot is not None:
+        assert lib.retro_get_memory_size(0) == 0x10000, 'Expected Genesis Plus GX SRAM backing'
+        sram = (C.c_uint8*0x10000).from_address(lib.retro_get_memory_data(0))
+        if args.sram_in:
+            logical = args.sram_in.read_bytes()
+            assert len(logical) == 0x8000, 'Logical SRAM must contain exactly 32768 bytes'
+            # The pinned core byte handlers index SRAM by physical address,
+            # unlike its word-swapped 68000 work RAM. Our cartridge uses odd bytes.
+            for offset, value in enumerate(logical):
+                sram[offset*2+1] = value
+            if args.expect_save_slot is not None:
+                assert logical[0x30] == args.expect_save_slot+1, 'Unexpected last-save slot'
+                at = 0x400*(args.expect_save_slot+1)
+                loaded_save = logical[at:at+0x250]
+                assert loaded_save[0], 'Expected an occupied save slot'
     # Genesis Plus GX stores 68000 words in host byte order on little-endian hosts.
     byte_swap = int(sys.byteorder == 'little' and not args.reference_sms)
     def read(at):
         return memory[(base+at-0xC000)^byte_swap]
+    def write(at, value):
+        memory[(base+at-0xC000)^byte_swap] = value
+    save_started = save_completed = restore_checked = False
+    save_metadata = None
     def irq_counts():
         result = {}
         for name in ('vblank', 'async_vblank', 'line'):
@@ -197,7 +228,22 @@ def main():
     for frame in range(args.frames):
         current['frame'] = frame
         state = read(0xC01D)
-        if inputs and (input_started or state == 0x0C):
+        if args.save_slot is not None and state == 0x0C and not save_started:
+            # Controlled integration entry: service arrival is injected; every
+            # confirmation, slot selection and SRAM write runs in production code.
+            write(0xC036, args.save_slot+1)
+            write(0xC0A7, 0)
+            write(0xC0BB, read(0xC0B9))
+            write(0xC0BC, read(0xC0BA))
+            write(0xC01D, 0x16)
+            state = 0x16
+            save_started = True
+            save_metadata = {'slot': args.save_slot, 'hp': read(0xC318),
+                             'cell': read(0xC0BB)|(read(0xC0BC)<<8),
+                             'currency': read(0xC0DD), 'name': [read(0xC0B0+i) for i in range(8)]}
+        if args.save_slot is not None and save_started and not save_completed:
+            current['pad'] = 1 << 8 if read(0xC020) == 0 else 0
+        elif inputs and (input_started or state == 0x0C):
             input_started = True
             current['pad'] = inputs[input_step]['pad'] if input_step < len(inputs) else 0
         elif not args.observe_only and state != 0x0C:
@@ -209,6 +255,23 @@ def main():
             profiling = True
         lib.retro_run()
         state = read(0xC01D)
+        if save_started and state == 0x0C and not save_completed:
+            save_completed = True
+            at = 0x400*(args.save_slot+1)
+            block = bytes(sram[2*(at+i)+1] for i in range(0x250))
+            assert sram[0x30*2+1] == args.save_slot+1, 'Save service did not persist the selected slot'
+            assert list(block[:8]) == save_metadata['name'], 'Saved name differs'
+            assert block[0x29] == save_metadata['hp'], 'Saved HP differs'
+            assert int.from_bytes(block[0x12:0x14], 'little') == save_metadata['cell'], 'Saved return cell differs'
+            assert block[0x2D] == save_metadata['currency'], 'Saved currency differs'
+        if loaded_save is not None and state == 6 and not restore_checked:
+            restored = bytes(read(0xC0B0+i) for i in range(0x250))
+            expected = bytearray(loaded_save)
+            expected[0x10:0x12] = expected[0x12:0x14]  # continue restores position metadata
+            assert restored == expected, 'Continue did not restore the complete 592-byte save payload'
+            assert read(0xC318) == loaded_save[0x29], 'Continue did not restore HP'
+            assert read(0xC036) == args.expect_save_slot+1, 'Continue selected the wrong slot'
+            restore_checked = True
         cell = read(0xC0B9)|(read(0xC0BA)<<8)
         if state == 0x0C or last_cell is not None:
             if cell != last_cell:
@@ -265,6 +328,12 @@ def main():
         result['hardware_irqs'] = irq_counts()
         if play_irq_start is not None:
             result['play_irqs'] = {name: count-play_irq_start[name] for name, count in irq_counts().items()}
+    if sram is not None:
+        logical = bytes(sram[2*i+1] for i in range(0x8000))
+        if args.sram_out:
+            args.sram_out.write_bytes(logical)
+        result['sram'] = {'save_completed': save_completed, 'restore_checked': restore_checked,
+                          'last_slot': logical[0x30], 'save_metadata': save_metadata}
     if inputs:
         result['input_steps'] = input_log
     if profiling:
@@ -294,6 +363,10 @@ def main():
     lib.retro_unload_game()
     lib.retro_deinit()
     if not args.observe_only:
+        if args.save_slot is not None:
+            assert save_completed, 'Save service did not finish'
+        if args.expect_save_slot is not None:
+            assert restore_checked, 'Continue restoration was not observed'
         assert play_frames >= 300, 'Did not reach stable gameplay'
         assert play_ticks >= 24, 'Gameplay did not advance'
         assert result['final_state'] == '0C', 'Scenario did not finish in gameplay'

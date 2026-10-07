@@ -2,8 +2,14 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V44)
+## Current status (V45)
 
+- V45 validates SRAM-only save/reboot/continue cycles: 12 native host cycles
+  cover all three slots, both mapper pages and overwrites. Seven actual MD
+  emulator scenarios cover three saves, process restarts, overwrite/reload and
+  invalid-signature recovery. The runner imports/exports logical 32 KiB SRAM.
+  Service arrival is controlled; production menus use controller input.
+  See `docs/CONTINUOUS_V45_PROGRESS.md`.
 - V44 fixes a VBlank race between the two SMS video-command bytes, restoring
   the original RST $28 interrupt protection. The 363 differing pixels are
   resolved: the settled route viewport matches all 49152 SMS pixels using
