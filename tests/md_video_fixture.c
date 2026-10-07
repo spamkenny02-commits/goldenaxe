@@ -6,6 +6,7 @@
 #include "gaw_video.h"
 
 volatile uint16_t gaw_video_fixture_ready;
+void gaw_md_line_irq(void);
 static unsigned stage;
 
 static void reg(unsigned index,uint8_t value){
@@ -46,6 +47,14 @@ static void solid(unsigned tile,unsigned color){
         gaw_sms_vdp_data_write((uint8_t)((color&(1u<<plane))?0xFFu:0u));
 }
 static void sprite_stage(void){
+    if(stage==532u){reg(8,8);return;}
+    if(stage==533u){
+        /* The line IRQ overwrites H-scroll without changing the SMS register.
+           The following sync must restore it even with a populated cache. */
+        gaw_ram_write16le(0xC02Cu,0x0275u);gaw_md_line_irq();return;
+    }
+    if(stage==534u){reg(0,0x4C);reg(8,16);return;}
+    if(stage==535u){gaw_platform_init();return;}
     if(stage==530u){gaw_platform_init();return;}
     if(stage==531u){solid(32,1);return;}
     if(stage==522u){solid(288,3);return;}
@@ -128,7 +137,7 @@ void md_main(void){
         gaw_video_fixture_ready=(uint16_t)stage;
         uint8_t held=(uint8_t)(gaw_ram_read8(RAM_INPUT_HELD)&0x10u);
         if(held&&!old){
-            stage=(stage+1u)%532u;palette();
+            stage=(stage+1u)%536u;palette();
             if(stage>=515u)sprite_stage();
             uint16_t d=descriptor(7,5);
             address((uint16_t)(0x3800u+2u*(7u*32u+5u)));

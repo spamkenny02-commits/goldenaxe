@@ -2,12 +2,18 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V41)
+## Current status (V42)
 
+- V42 restores full-game local validation and caches unchanged physical scroll
+  tables, invalidating after the H-scroll line handler and backend reset. All
+  536 native raster stages / 30736384 pixels pass locally. The full-game image
+  links (478284 bytes, BSS 32296); idle measures 227 updates/300 frames and
+  the controller route matches SMS final cell, position and HP. See
+  `docs/CONTINUOUS_V42_PROGRESS.md` for measured limits.
 - V41 implements rendered eight-sprite-per-line clipping and 2x sprite zoom
   using cached private MD pattern slots. All 532 native raster stages /
   30507008 pixels and the new sanitized helper tests pass in GitHub Actions;
-  full-game cadence remains the last measured V37.
+  V41 full-game validation was deferred at that checkpoint.
 - V40 corrects the top-edge Y wrap for zoomed sprites, including E0's one
   visible row. All 6951 host cases pass; portable C matches all 1024 status
   values observed by an independent generated Z80 hardware probe.
@@ -17,7 +23,7 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - V38 fixes the MD background palette-zero layer while keeping zero pixels
   below sprites. A standalone ROM-free 68000 hardware fixture and pixel oracle
   pass in GitHub Actions: all 172032 rendered pixels match the independent oracle.
-  The last measured full-game image/cadence remains V37.
+  Full-game validation was deferred at that checkpoint.
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
 - Map loading, progression, gameplay renderer, HUD, map animation, entity update, gameplay entry, map entity spawning and Arthur initialization are native C.

@@ -21,6 +21,7 @@
 #define SRAM8(o) (*(volatile uint8_t*)(uintptr_t)(0x200001u+((uint32_t)(o)<<1)))
 
 static uint8_t entropy, md_start_held, name_scroll_base, name_vlock;
+static uint8_t scroll_initialized, scroll_flags, scroll_x, scroll_y;
 typedef struct {uint32_t mask;uint16_t tile;uint8_t mode;} SpriteCopy;
 static SpriteCopy sprite_copy[64];
 static uint8_t sprite_line_counts[192],sprite_source_dirty[64],sprite_copy_count,sprite_sat_initialized;
@@ -55,6 +56,10 @@ static void init_sms_viewport_mask(void){
     vdp_reg(18,0x98); /* Window from row 24 to the bottom. */
 }
 static void sync_scroll(const uint8_t *r){
+    /* Init and the line handler invalidate cached physical scroll state. */
+    uint8_t flags=r[0]&0xC0u;
+    if(scroll_initialized&&scroll_flags==flags&&scroll_x==r[8]&&scroll_y==r[9])return;
+    scroll_initialized=1;scroll_flags=flags;scroll_x=r[8];scroll_y=r[9];
     uint8_t mode=0;
     if(r[0]&0x40u) mode|=3u;       /* SMS: top 16 lines do not H-scroll. */
     if(r[0]&0x80u) mode|=4u;       /* SMS: rightmost 8 columns do not V-scroll. */
@@ -156,7 +161,7 @@ static void sync_sms_shadow(void){const uint8_t*v=gaw_sms_vram();const uint8_t*c
 }
 
 
-void gaw_platform_init(void){irq_mask(0x2700);entropy=0x5A;md_start_held=0;name_scroll_base=name_vlock=0xFF;sprite_copy_count=sprite_sat_initialized=0;memset(sprite_copy,0,sizeof sprite_copy);Z80_BUS=1;Z80_RESET=0;SRAM_CTRL=0x01;JOY1_CTRL=0x40;JOY1_DATA=0x40;vdp_reg(0,0x04);vdp_reg(1,0x24);vdp_reg(2,0x30);vdp_reg(3,0x2C);vdp_reg(4,0x04);vdp_reg(5,0x6C);vdp_reg(7,0);vdp_reg(10,0xFF);vdp_reg(11,0);vdp_reg(12,0x00);vdp_reg(13,0x2C);vdp_reg(15,2);vdp_reg(16,0x00);vdp_reg(17,0);vdp_reg(18,0);init_sms_viewport_mask();gaw_sms_mark_all_tiles_dirty();gaw_ram_write8(0xDE03u,(uint8_t)(IO_VER&0x40u?0:0x80));}
+void gaw_platform_init(void){irq_mask(0x2700);entropy=0x5A;md_start_held=0;scroll_initialized=0;name_scroll_base=name_vlock=0xFF;sprite_copy_count=sprite_sat_initialized=0;memset(sprite_copy,0,sizeof sprite_copy);Z80_BUS=1;Z80_RESET=0;SRAM_CTRL=0x01;JOY1_CTRL=0x40;JOY1_DATA=0x40;vdp_reg(0,0x04);vdp_reg(1,0x24);vdp_reg(2,0x30);vdp_reg(3,0x2C);vdp_reg(4,0x04);vdp_reg(5,0x6C);vdp_reg(7,0);vdp_reg(10,0xFF);vdp_reg(11,0);vdp_reg(12,0x00);vdp_reg(13,0x2C);vdp_reg(15,2);vdp_reg(16,0x00);vdp_reg(17,0);vdp_reg(18,0);init_sms_viewport_mask();gaw_sms_mark_all_tiles_dirty();gaw_ram_write8(0xDE03u,(uint8_t)(IO_VER&0x40u?0:0x80));}
 uint8_t gaw_platform_read_pad_sms_bits(void){
     JOY1_DATA=0x40; uint8_t hi=JOY1_DATA;
     JOY1_DATA=0x00; (void)JOY1_DATA; uint8_t lo=JOY1_DATA;
@@ -177,7 +182,7 @@ void gaw_md_line_irq(void){
     (void)VDP_CTRL;++gaw_md_line_count;gaw_irq_service(0);
     switch(gaw_ram_read16le(0xC02Cu)){
         case 0x0263:vdp_reg(0,(uint8_t)(0x04u|(gaw_sms_vdp_regs()[0]&0x30u)));break;
-        case 0x0275:vdp_addr_write(0xB000);VDP_DATA=0;VDP_DATA=0;break;
+        case 0x0275:vdp_addr_write(0xB000);VDP_DATA=0;VDP_DATA=0;scroll_initialized=0;break;
         case 0x0280:
             cram_addr_write(0x20);VDP_DATA=0;
             cram_addr_write(0x62);VDP_DATA=0;

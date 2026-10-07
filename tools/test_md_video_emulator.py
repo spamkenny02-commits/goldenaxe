@@ -12,7 +12,7 @@ from test_md_emulator import GameInfo, Variable, png
 
 @lru_cache(maxsize=None)
 def sprite_layout(stage):
-    if stage in (530, 531):
+    if 530 <= stage <= 535:
         return sprite_layout(529)
     mode = 0 if stage >= 528 else (3 if stage == 518 else (1 if stage == 519 else (2 if stage == 520 or stage >= 524 else 0)))
     bank = 256 if 521 <= stage < 528 else 0
@@ -55,7 +55,7 @@ def sprite_pixel(stage, x, y):
         if height == 16:
             tile &= ~1
         tile += bank + ((y - top) // scale) // 8
-        color = {32: (1 if stage == 531 else 15), 33: 1, 34: 0, 35: 0,
+        color = {32: (1 if stage >= 531 else 15), 33: 1, 34: 0, 35: 0,
                  288: (1 if stage == 521 else (3 if stage == 522 else 0)),
                  289: (2 if stage < 525 else 3)}[tile]
         if color:
@@ -74,6 +74,10 @@ def expected(stage, x, y):
     if y >= 192:
         color = colors[16 + (0 if phase == 2 else 2)]
     else:
+        sprite = sprite_pixel(stage, x, y)
+        if stage >= 532:
+            shift = 8 if stage < 534 else (0 if y < 16 else 16)
+            x = (x - shift) % 256
         source_y = (y + (0 if right_lock and x >= 192 else scroll)) % 224
         row, col = source_y // 8, x // 8
         px, py = x % 8, source_y % 8
@@ -86,7 +90,6 @@ def expected(stage, x, y):
         changed = phase if stage < 3 else (stage - 3) & 1
         if changed and row == 7 and col == 5:
             palette ^= 1
-        sprite = sprite_pixel(stage, x, y)
         color = colors[16 + sprite] if sprite and (not (col & 2) or not bg) else colors[palette * 16 + bg]
     # Pinned GPGX Mode 5 normal intensity expands CRAM 7 to 14/15 (238),
     # whereas Mode 4 expands SMS channel 3 to 15/15. Compare native output.
@@ -196,7 +199,7 @@ def main():
                 break
         else:
             raise AssertionError('Fixture failed to reach its frame barrier')
-        for stage in range(532):
+        for stage in range(536):
             if stage:
                 state['pad'] = 1
                 for _ in range(8):
@@ -236,7 +239,7 @@ def main():
     finally:
         lib.retro_unload_game()
         lib.retro_deinit()
-    print('ROM-free MD video hardware tests: OK (30507008 pixels, 256 scroll values, 17 sprite clipping/zoom/bank/edit/shift/reset stages, H-scroll zero)')
+    print('ROM-free MD video hardware tests: OK (30736384 pixels, 536 stages, 256 scroll values, 17 sprite stages, 4 H-scroll/cache/IRQ/reset stages; combined H-scroll/right V-lock remains unverified)')
 
 
 if __name__ == '__main__':

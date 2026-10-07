@@ -1,4 +1,4 @@
-# Current status — V41
+# Current status — V42
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -116,15 +116,26 @@ edits. All 532 stages / 30507008 pixels pass in Actions 37603203186. The actual
 standalone image is 9928 bytes, BSS 25943, checksum 92EA. Host/sanitizer checks
 and all 1024 directly observed SMS status comparisons also pass.
 
+## Full-game validation restored: V42
+
+Local execution and the previous private reference input/toolchain were recovered.
+A fresh V41 build and all host reference/differential targets pass. V42 caches
+unchanged physical scroll tables; the H-scroll line handler and backend init
+invalidate the cache. Four new native stages check nonzero H-scroll, restoration
+after the line handler, top-16-line H-lock and backend reinitialization. All
+536 stages / 30736384 pixels pass locally against the independent pixel oracle.
+The combined fine H-scroll/right V-lock case remains unverified.
+
+The V42 full game is 478284 bytes, BSS 32296 at FF0000–FF7E28, checksum 61A4.
+The actual vectors/link/header/native-only checks pass. Idle advances 227 updates
+in 300 physical gameplay frames, identical to freshly rebuilt V41 (V37: 239).
+The controller route reaches cell 94, position [56,104], HP 24, state 0C on
+both SMS and MD. It takes 571 MD gameplay frames versus 348 SMS; both sampled
+update counts are 346. No cadence gain or exact input-phase equivalence is claimed.
+
 ## Remaining work
 
-Local execution reports environment_offline (409: Environment is not connected).
-The private reference cartridge/toolchain cannot be accessed locally until that
-service is restored. All current source/tests/reports are saved in remote Git;
-the local checkout was last synchronized at V37 and needs a safe fast-forward
-before resuming. No new full-game image, RAM/link check or cadence is inferred
-from the standalone fixture.
-
-Then confirm private-game pixels/cadence, controller/combat/interaction routes,
-SRAM save/reload, playthrough/ending and PAL/NTSC/physical hardware behavior. The project is not
-declared finished or universally recompiled.
+Continue full-game sprite/rendering performance, combined fine H-scroll/right
+V-lock, exact overflow timing, controller/combat/interaction routes, SRAM
+save/reload, playthrough/ending and PAL/NTSC/physical hardware behavior.
+The project is not declared finished or universally recompiled.
