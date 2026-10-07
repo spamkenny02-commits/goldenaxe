@@ -1,5 +1,7 @@
 #include <string.h>
 #include "include/gaw_entity.h"
+#include "include/gaw_core.h"
+#include "include/gaw_world.h"
 #include "include/gaw_ram.h"
 #include "include/gaw_tables.h"
 #include "include/gaw_player.h"
@@ -184,7 +186,7 @@ static const uint8_t death_saved_types[32] = {
 static const uint8_t death_drop_classes[32] = {
 #include "death_drop_classes.inc"
 };
-static const uint8_t death_drop_rules[32] = {
+static const uint8_t death_drop_rules[160] = {
 #include "death_drop_rules.inc"
 };
 static const uint8_t action_type3_velocity[8] = {
@@ -452,9 +454,11 @@ static int special_pickup15_handler(GawEntity *e) {
     uint8_t idx=gaw_ram_read8(0xC037); gaw_ram_write8((uint16_t)(0xC0CEu+idx),0x80);
     static const uint8_t item_by_index[9]={0x24,0x22,0x26,0x28,0x21,0x27,0x25,0x23,0x29};
     uint8_t item=(idx>=1 && idx<=9)?item_by_index[idx-1u]:0x24;
-    gaw_ram_write8(0xC0A3,item); (void)gaw_world_progress_test_and_set(); gaw_world_progress_apply_loaded_patch(); gaw_platform_entity_resource_load(item);
+    gaw_world_grant_item(item);
     uint8_t cap=gaw_ram_read8(0xC0DA); if ((uint8_t)(cap+8u)<0x81u) gaw_ram_write8(0xC0DA,(uint8_t)(cap+8u));
-    gaw_ram_write8(0xC0DB,gaw_ram_read8(0xC0DC)); gaw_ram_write8(0xC318,gaw_ram_read8(0xC0DA));
+    gaw_ram_write8(0xC0DB,gaw_ram_read8(0xC0DC));
+    while(gaw_ram_read8(0xC318)!=gaw_ram_read8(0xC0DA)){gaw_ram_write8(0xC318,(uint8_t)(gaw_ram_read8(0xC318)+1u));gaw_hud_animate_value(1);}
+    gaw_world_audio_select_native();
     return 1;
 }
 
@@ -470,21 +474,17 @@ static int enemy_death_handler(GawEntity *e) {
     }
     if (e->raw[ENT_ANIM_FRAME]<4) return 1;
     uint8_t saved=e->raw[ENT_SAVED_TYPE];
-    if (saved!=0) {
-        uint8_t drop_class=2;
-        if (gaw_ram_read8(0xC0BA)!=0) drop_class=gaw_ram_read8(0xC0BA);
-        else for (unsigned i=0;i<32;++i) if (death_saved_types[i]==saved) { drop_class=death_drop_classes[i]; break; }
-        if ((unsigned)drop_class+1u < sizeof death_drop_rules) {
-            uint8_t rnd=original_random_byte();
-            uint8_t threshold=death_drop_rules[drop_class];
-            uint8_t spawn_type=death_drop_rules[drop_class+1u];
-            if ((rnd&0x1Fu)<threshold && spawn_type!=0) {
-                for (unsigned i=9;i<16;++i) {
-                    GawEntity *p=gaw_entity(i); if (p->raw[ENT_TYPE]) continue;
-                    p->raw[ENT_TYPE]=spawn_type; p->raw[ENT_STATE]=0; p->raw[ENT_FLAGS]=0;
-                    p->raw[0x11]=e->raw[0x11]; p->raw[0x13]=e->raw[0x13]; break;
-                }
-            }
+    if(saved==0){gaw_entity_clear(e);return 1;}
+    uint8_t drop_class=gaw_ram_read8(0xC0BA);
+    for(unsigned i=0;i<32;++i)if(death_saved_types[i]==saved){drop_class=death_drop_classes[i];break;}
+    uint8_t rnd=original_random_byte();
+    uint8_t selector=(uint8_t)((rnd&0xE0u)|drop_class);
+    unsigned offset=(unsigned)(uint8_t)((selector>>4)|(selector<<4));
+    if(offset+1u<sizeof death_drop_rules && (rnd&0x1Fu)<death_drop_rules[offset]){
+        for(unsigned i=9;i<16;++i){
+            GawEntity *p=gaw_entity(i);if(p->raw[ENT_TYPE])continue;
+            p->raw[ENT_TYPE]=death_drop_rules[offset+1u];p->raw[ENT_STATE]=0;p->raw[ENT_FLAGS]=0;
+            p->raw[0x11]=e->raw[0x11];p->raw[0x13]=e->raw[0x13];break;
         }
     }
     gaw_entity_clear(e);

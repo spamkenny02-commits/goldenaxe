@@ -55,7 +55,7 @@ void gaw_world_select_callback(void) {
 }
 
 
-static void gaw_world_audio_select_native(void);
+void gaw_world_audio_select_native(void);
 static void world_explicit_progress_set(uint16_t cell,uint8_t bit){uint16_t a=(uint16_t)(0xC100u+(uint8_t)cell);gaw_ram_write8(a,(uint8_t)(gaw_ram_read8(a)|(uint8_t)(1u<<bit)));}
 static int world_explicit_progress_test_and_set(uint8_t bit){uint16_t cell=gaw_ram_read16le(RAM_WORLD_CELL_ID),a=(uint16_t)(0xC100u+(uint8_t)cell);uint8_t m=(uint8_t)(1u<<bit),old=gaw_ram_read8(a);gaw_ram_write8(a,(uint8_t)(old|m));return (old&m)!=0;}
 static void world_spawn_type14(void){for(unsigned i=9u;i<15u;++i){GawEntity*e=gaw_entity(i);if(e->raw[ENT_TYPE])continue;memset(e->raw,0,GAW_ENTITY_SIZE);e->raw[ENT_TYPE]=14;e->raw[0x11]=0x60;e->raw[0x13]=0x80;return;}}
@@ -378,18 +378,19 @@ static int world_run_key_wave_callback(uint16_t target){if(target!=0xB0D9u)retur
 static void world_callback_698b_native(void){if(gaw_ram_read8(0xC301u)==0||(gaw_ram_read8(0xC0D3u)&0x80u)==0)return;if(gaw_world_progress_test_and_set())return;gaw_ram_write8(0xDE08u,0xA8u);gaw_world_finalize_transition();}
 static int world_run_key_effect_callback(uint16_t target){if(target!=0xAF4Au)return 0;world_try_enter_key_room(0x0314u,5u);world_callback_698b_native();return 1;}
 
-static void world_fixed_item_sequence(uint8_t item){
+/* $6317: shared item/crystal presentation, including modal text and input. */
+void gaw_world_grant_item(uint8_t item){
  gaw_ram_write8(0xC0A3u,item);(void)gaw_world_progress_test_and_set();gaw_world_progress_apply_loaded_patch();gaw_platform_entity_resource_load(item);
- /* $638D/$6398 ends at $229C. Preserve that presentation VBlank even
-    though the portable backend owns the actual graphics upload. */
- gaw_wait_frame();
+ gaw_ui_status_box();gaw_ui_status_font();
+ uint16_t at=(uint16_t)(0x63B3u+2u*item);
+ uint16_t text=(uint16_t)(gaw_sms_rom_bank_read(1,at)|((uint16_t)gaw_sms_rom_bank_read(1,(uint16_t)(at+1u))<<8));
+ gaw_ui_fixed_text(text,0xDB46u);
  gaw_hud_update_status_descriptor();gaw_ram_write16le(0xC308u,0x8495u);gaw_ram_write8(0xC30Bu,(uint8_t)((item<0x20u||item==0x2Au)?1u:0u));gaw_ram_write16le(0xC043u,0xA241u);gaw_ram_write8(0xC042u,4u);
- /* $0938 then $229C. */
- gaw_wait_frame();
- gaw_ram_write8(0xDE06u,0x8Cu);for(unsigned i=0;i<180u;++i)gaw_wait_frame();do{gaw_wait_frame();}while((gaw_ram_read8(RAM_INPUT_HELD)&0x3Fu)==0);
+ gaw_ram_write8(0xC303u,(uint8_t)(gaw_ram_read8(0xC303u)|1u));gaw_render_build_sms_sat();
+ gaw_wait_frame();gaw_ui_upload_name_table();
+ gaw_world_set_audio(0x8C);for(unsigned i=0;i<180u;++i)gaw_wait_frame();do{gaw_wait_frame();}while((gaw_ram_read8(RAM_INPUT_PRESSED)&0x3Fu)==0);
  gaw_world_audio_select_native();gaw_ram_write8(0xC301u,0);
- /* Second $6398 before $7219. */
- gaw_wait_frame();gaw_platform_inventory_refresh();gaw_world_finalize_transition();
+ gaw_ui_status_box();gaw_assets_restore_inventory();gaw_world_rebuild_display_native();
 }
 /* $5D59: ten fixed world rewards share one progression/item routine. */
 static void world_try_fixed_item(uint16_t pos){
@@ -398,7 +399,7 @@ static void world_try_fixed_item(uint16_t pos){
  gaw_world_progress_restore_for_current_cell();
  uint8_t cell=(uint8_t)gaw_ram_read16le(RAM_WORLD_CELL_ID),item=0;switch(cell){
   case 0x10:gaw_ram_write8(0xC0E3u,1);item=7;break;case 0x12:gaw_ram_write8(0xC0EAu,1);item=14;break;case 0x1D:gaw_ram_write8(0xC0E1u,2);item=5;break;case 0x57:gaw_ram_write8(0xC0EEu,1);item=18;break;case 0x9B:gaw_ram_write8(0xC0EBu,1);item=15;break;case 0xA2:gaw_ram_write8(0xC0ECu,1);item=16;break;case 0xA9:gaw_ram_write8(0xC0EFu,1);item=19;break;case 0xB6:if(gaw_ram_read8(0xC0E1u)!=0)return;gaw_ram_write8(0xC0E1u,1);item=4;break;case 0xD5:gaw_ram_write8(0xC0F0u,1);item=20;break;case 0xF4:gaw_ram_write8(0xC0EDu,1);item=17;break;default:return;}
- world_fixed_item_sequence(item);
+ gaw_world_grant_item(item);
 }
 static int world_run_fixed_item_callback(uint16_t target){switch(target){case 0xB3DDu:world_try_fixed_item(0x01DCu);return 1;case 0xB3E4u:world_try_fixed_item(0x01D8u);return 1;case 0xB419u:world_try_fixed_item(0x01C4u);return 1;case 0xB4EDu:world_try_fixed_item(0x02E4u);return 1;case 0xB5C4u:world_try_fixed_item(0x0248u);return 1;case 0xB5D7u:world_try_fixed_item(0x01CCu);return 1;case 0xB613u:world_try_fixed_item(0x0358u);return 1;case 0xB64Fu:world_try_fixed_item(0x0264u);return 1;case 0xB6C2u:world_try_fixed_item(0x02C4u);return 1;case 0xB751u:world_try_fixed_item(0x0370u);return 1;default:return 0;}}
 
@@ -408,7 +409,7 @@ static int world_run_resource_adjust_callback(uint16_t target){if(target!=0xAF25
 
 /* $5FC7/B205: one of two permanent capacity rewards selected by the room
    from which the player entered. */
-static int world_run_capacity_reward_callback(uint16_t target){if(target!=0xB205u)return 0;if((gaw_ram_read8(0xC0A6u)&0x77u)==0x14u||gaw_ram_read16le(0xC060u)!=0x025Cu)return 1;if(gaw_world_progress_test_and_set())return 1;uint8_t from=gaw_ram_read8(0xC0BBu);int magic=(from==0x32u||from==0xC0u||from==0xE5u||from==0xECu);if(magic){world_fixed_item_sequence(0x1Cu);unsigned v=(unsigned)gaw_ram_read8(0xC0DCu)+8u;if(v>0x80u)v=0x80u;gaw_ram_write8(0xC0DCu,(uint8_t)v);gaw_ram_write8(0xC0DBu,(uint8_t)v);}else{world_fixed_item_sequence(0x2Au);unsigned v=(unsigned)gaw_ram_read8(0xC0DAu)+8u;if(v>0x80u)v=0x80u;gaw_ram_write8(0xC0DAu,(uint8_t)v);while(gaw_ram_read8(0xC318u)!=(uint8_t)v){gaw_ram_write8(0xC318u,(uint8_t)(gaw_ram_read8(0xC318u)+1u));gaw_ram_write8(0xDE08u,0x95u);gaw_ram_write8(0xC045u,0x81u);hud_update_phase(1u);}}return 1;}
+static int world_run_capacity_reward_callback(uint16_t target){if(target!=0xB205u)return 0;if((gaw_ram_read8(0xC0A6u)&0x77u)==0x14u||gaw_ram_read16le(0xC060u)!=0x025Cu)return 1;if(gaw_world_progress_test_and_set())return 1;uint8_t from=gaw_ram_read8(0xC0BBu);int magic=(from==0x32u||from==0xC0u||from==0xE5u||from==0xECu);if(magic){gaw_world_grant_item(0x1Cu);unsigned v=(unsigned)gaw_ram_read8(0xC0DCu)+8u;if(v>0x80u)v=0x80u;gaw_ram_write8(0xC0DCu,(uint8_t)v);gaw_ram_write8(0xC0DBu,(uint8_t)v);}else{gaw_world_grant_item(0x2Au);unsigned v=(unsigned)gaw_ram_read8(0xC0DAu)+8u;if(v>0x80u)v=0x80u;gaw_ram_write8(0xC0DAu,(uint8_t)v);while(gaw_ram_read8(0xC318u)!=(uint8_t)v){gaw_ram_write8(0xC318u,(uint8_t)(gaw_ram_read8(0xC318u)+1u));gaw_ram_write8(0xDE08u,0x95u);gaw_ram_write8(0xC045u,0x81u);hud_update_phase(1u);}}return 1;}
 
 /* $669D: arm a scripted marker/state when Arthur activates a fixed point. */
 static void world_try_script_marker(uint16_t pos,uint8_t value){if((gaw_ram_read8(0xC0A6u)&0x77u)==0x14u&&gaw_ram_read16le(0xC060u)==pos){gaw_ram_write8(0xC0A7u,value);gaw_ram_write8(0xC01Du,0x16u);}}
@@ -510,7 +511,7 @@ void gaw_world_run_callback(void) {
 }
 
 
-static void gaw_world_audio_select_native(void) {
+void gaw_world_audio_select_native(void) {
     static const uint8_t special[11]={0x22,0x2E,0x4C,0x55,0x57,0x94,0x95,0xC7,0xCE,0xF0,0xFE};
     uint8_t mode=gaw_ram_read8(0xC040u),cell=(uint8_t)gaw_ram_read16le(RAM_WORLD_CELL_ID),cmd;
     if(mode==0){cmd=0x82u;for(unsigned i=0;i<11u;++i)if(cell==special[i]){cmd=0x84u;break;}}

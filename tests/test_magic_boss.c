@@ -97,6 +97,17 @@ int main(void){
         gaw_ram_write16le(0xC034,0xDD00);gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,1);
         compare(1,gaw_entity_handler_targets[type],handler);
     }
-    printf("magic/boss original-Z80 differential: OK (%u boss phase + %u death/reward + %u spell projectile cases)\n",bosses,deaths,cases-bosses-deaths);
+    unsigned before_drops=cases;
+    const uint8_t saved_types[]={0,32,38,46,77,67,102,43,120,124,127};
+    for(unsigned saved=0;saved<sizeof saved_types;++saved)for(unsigned interior=0;interior<2;++interior)
+    for(unsigned full=0;full<2;++full)for(unsigned seed=0;seed<64;++seed){
+        setup();GawEntity *e=gaw_entity(24);e->raw[ENT_TYPE]=1;e->raw[ENT_STATE]=2;e->raw[ENT_ANIM_FRAME]=4;
+        e->raw[ENT_SAVED_TYPE]=saved_types[saved];e->raw[0x11]=0x50;e->raw[0x13]=0x80;
+        gaw_ram_write8(0xC0BA,(uint8_t)interior);gaw_ram_write8(0xC0A2,1);
+        for(unsigned i=9;i<16;++i)gaw_entity(i)->raw[ENT_TYPE]=(uint8_t)(full?8:0);
+        gaw_sms_compat_set_refresh_seed((uint8_t)seed);compare(24,0x4AEE,handler);
+    }
+    printf("original-Z80 enemy/explosion loot differential: OK (%u cases)\n",cases-before_drops);
+    printf("magic/boss original-Z80 differential: OK (%u boss phase + %u death/reward + %u spell projectile cases)\n",bosses,deaths,before_drops-bosses-deaths);
     return 0;
 }

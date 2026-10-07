@@ -4,9 +4,10 @@
 #include "gaw_core.h"
 #include "gaw_entity.h"
 #include "gaw_host.h"
+#include "gaw_platform.h"
 #include "gaw_ram.h"
 
-static void reset_all(void) { memset(gaw_ram,0,sizeof gaw_ram); gaw_host_set_entropy(0x5A); }
+static void reset_all(void) { gaw_platform_init(); memset(gaw_ram,0,sizeof gaw_ram); gaw_host_set_entropy(0x5A); gaw_ram_write8(0xDE05,0x80); }
 
 static void test_action_type3_native(void) {
     reset_all(); GawEntity *e=gaw_entity(1);
@@ -52,7 +53,8 @@ static void test_death_handlers_native(void) {
     reset_all(); GawEntity *e=gaw_entity(16); e->raw[ENT_TYPE]=1; e->raw[ENT_STATE]=0;
     assert(gaw_entity_native_handler(e,1)); assert(e->raw[ENT_STATE]==2 && e->raw[ENT_ANIM_FRAMES]==5);
     e->raw[ENT_ANIM_FRAME]=4; e->raw[ENT_SAVED_TYPE]=0; gaw_ram_write8(0xC0A2,3);
-    assert(gaw_entity_native_handler(e,1)); assert(e->raw[ENT_TYPE]==0 && gaw_ram_read8(0xC0A2)==2);
+    assert(gaw_entity_native_handler(e,1)); /* Original $4B3F jumps directly to clear for visual explosions. */
+    assert(e->raw[ENT_TYPE]==0 && gaw_ram_read8(0xC0A2)==3);
 
     reset_all(); e=gaw_entity(16); e->raw[ENT_TYPE]=7; gaw_ram_write8(0xC037,3); e->raw[ENT_FLAGS]=0xFF;
     assert(gaw_entity_native_handler(e,7)); assert(e->raw[ENT_STATE]==2 && e->raw[0x28]==0xB4); assert(gaw_ram_read8(0xC0D1)==1);
@@ -108,24 +110,26 @@ static void test_special_pickup15_native(void) {
     assert(gaw_entity_native_handler(e,15));
     assert(e->raw[ENT_STATE]==2 && e->raw[ENT_GFX_ID]==0x85 && e->raw[0x11]==0x1C && e->raw[0x13]==0x80);
     e->raw[ENT_PENDING_DAMAGE]=1;
+    gaw_host_queue_pad(220,0x20);gaw_host_queue_pad(221,0);
     assert(gaw_entity_native_handler(e,15));
     assert(gaw_ram_read8(0xC0CF)==0x80 && gaw_ram_read8(0xC0A3)==0x24);
     assert(gaw_ram_read8(0xC0DA)==0x28 && gaw_ram_read8(0xC0DB)==0x30 && gaw_ram_read8(0xC318)==0x28);
 }
 
 
-static void test_native_coverage_31_of_32(void) {
+static void test_native_coverage_first32(void) {
     for (uint8_t type=1; type<=31; ++type) {
         reset_all(); GawEntity *e=gaw_entity(16); e->raw[ENT_TYPE]=type; e->raw[0x11]=0x50; e->raw[0x13]=0x60;
         gaw_entity(0)->raw[0x11]=0x60; gaw_entity(0)->raw[0x13]=0x70; gaw_ram_write8(0xC037,1);
         assert(gaw_entity_native_handler(e,type)==1);
     }
     reset_all(); GawEntity *e=gaw_entity(16); e->raw[ENT_TYPE]=32;
-    assert(gaw_entity_native_handler(e,32)==0);
+    /* Coverage expanded after the original phase-9 milestone. */
+    assert(gaw_entity_native_handler(e,32)==1);
 }
 
 int main(void) {
     test_action_type3_native(); test_action_type4_world_native(); test_action_type5_native(); test_resource_pickups_native(); test_special_pickup15_native();
-    test_death_handlers_native(); test_entity27_map_cull(); test_entity28_retarget(); test_ballistic_entities_native(); test_native_coverage_31_of_32();
+    test_death_handlers_native(); test_entity27_map_cull(); test_entity28_retarget(); test_ballistic_entities_native(); test_native_coverage_first32();
     puts("phase9 tests: OK"); return 0;
 }

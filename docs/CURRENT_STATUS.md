@@ -1,4 +1,4 @@
-# Current status — V48
+# Current status — V49
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -272,9 +272,40 @@ acquisition/use routes through the controller. Full arena rendering, acquisition
 loot collection and ending playback still need gameplay routes. See
 CONTINUOUS_V48_PROGRESS.md for reproduction and limits.
 
+## Real-arena boss integration: V49
+
+All ten full-HP boss encounters pass on native MD and original SMS, with a
+one-time equipped checkpoint fixture. Production state 6 loads each real
+arena and its graphics. After preparation, only joypad input changes gameplay;
+the runner's work-RAM write helper enforces this. Equipment/arrival are prepared,
+so this does not constitute normal dungeon traversal or acquisition.
+
+Eight satellites and five type-103 parts are observed. Nine crystals complete
+presentation, confirmation, pickup and health restoration. The final boss takes
+23 axe hits and hands off to ending state $0E (MD HP 32, SMS HP 36). A bounded
+sword probe leaves its 90 HP intact on both platforms. Random trajectories,
+physical timing and some contact/projectile counts differ.
+
+The routes expose and fix skipped $6317 crystal presentation, incremental
+healing, inventory-font restoration and reward input/music. The shared native
+item-grant routine now matches 18 complete original reward calls frame by frame
+in RAM/VRAM/CRAM/VDP registers, with final SRAM also compared.
+
+False satellite crystal drops expose truncated loot data and incorrect class
+selection/indexing. The full 160-byte table and original random/class mixing
+are restored. Saved-type-0 explosions no longer decrement the map-enemy count.
+2816 new original-Z80 loot cases pass; the combined magic/boss suite now has
+11394 cases. These and the 18 reward cycles pass ASan/UBSan.
+
+Native image: 484500 bytes, checksum 3383, BSS 32296, RAM end FF7E28; native-only
+ELF/header/vector/RAM checks and audits pass. Final, player items, combat,
+phase-9, native boot and SRAM host regressions pass. The rebuilt field combat,
+sanctuary save/restart and 49152-pixel settled SMS viewport comparison pass.
+See CONTINUOUS_V49_PROGRESS.md for scope and reproduction.
+
 ## Remaining work
 
 Continue full-game sprite/rendering performance, combined fine H-scroll/right
-V-lock, exact overflow timing, additional combat/enemy/boss and interaction routes, MD page-1 SRAM and physical cartridge
+V-lock, exact overflow timing, normal dungeon traversal, magic acquisition and interaction routes, MD page-1 SRAM and physical cartridge
 persistence, playthrough/ending and PAL/NTSC/physical hardware behavior.
 The project is not declared finished or universally recompiled.

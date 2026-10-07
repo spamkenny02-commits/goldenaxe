@@ -2,8 +2,15 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V48)
+## Current status (V49)
 
+- V49 validates all ten boss fights in their real arenas on MD and SMS,
+  starting from controlled equipped checkpoints and driving combat/rewards
+  exclusively with joypad input afterwards. All satellites/parts, nine crystal
+  rewards and final-boss ending handoff pass; the final boss rejects the sword.
+  Tests exposed and fix skipped crystal presentation/healing and truncated,
+  misindexed loot data. 18 full reward cycles and 2816 new loot cases match Z80;
+  the rebuilt native image is 484500 bytes. See `docs/CONTINUOUS_V49_PROGRESS.md`.
 - V48 validates four magic entry points and boss types 99..109 against
   original instructions: 8578 phase/death/projectile cases and 304 item cases
   pass, also under ASan/UBSan. Fixes include boss movement, orbit transitions,

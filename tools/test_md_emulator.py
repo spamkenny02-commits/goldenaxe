@@ -62,6 +62,9 @@ def main():
     parser.add_argument('--sram-out', type=Path, help='Export logical 32 KiB SRAM after the run (native MD only)')
     parser.add_argument('--save-slot', type=int, choices=range(3), help='Activate the save service from gameplay, then drive its menus with controller input')
     parser.add_argument('--expect-save-slot', type=int, choices=range(3), help='Check boot selection and restored save payload before scene entry')
+    parser.add_argument('--boss-arena', type=int, choices=(99,100,101,103,104,105,106,107,108,109), help='Controlled equipped checkpoint in a real boss room; fight and collect reward using controller input only')
+    parser.add_argument('--boss-weapon', choices=('axe','sword'), default='axe', help='Initial weapon for the controlled boss checkpoint')
+    parser.add_argument('--boss-weapon-probe', action='store_true', help='Run a bounded sword-immunity probe without requiring boss defeat')
     args = parser.parse_args()
     if args.reference_sms and any((args.sram_in, args.sram_out, args.save_slot is not None, args.expect_save_slot is not None)):
         parser.error('SRAM scenarios currently require the native MD image')
@@ -71,6 +74,10 @@ def main():
         parser.error('--save-slot and --play-inputs are separate scenarios')
     if args.profile and args.reference_sms:
         parser.error('--profile requires the native 68000 image')
+    if args.boss_weapon_probe and (args.boss_arena!=109 or args.boss_weapon!='sword'):
+        parser.error('--boss-weapon-probe requires --boss-arena 109 --boss-weapon sword')
+    if args.boss_arena is not None and any((args.play_inputs,args.save_slot is not None,args.sram_in,args.sram_out)):
+        parser.error('--boss-arena is a separate controlled checkpoint scenario')
     args.output.mkdir(parents=True, exist_ok=True)
     buttons = {'up': 4, 'down': 5, 'left': 6, 'right': 7, 'button1': 0, 'button2': 8, 'pause': 3}
     inputs = json.loads(args.play_inputs.read_text()) if args.play_inputs else []
@@ -214,6 +221,7 @@ def main():
     def read(at):
         return memory[(base+at-0xC000)^byte_swap]
     def write(at, value):
+        assert args.boss_arena is None or not boss_prepared, 'Work RAM writes after boss fixture are forbidden'
         memory[(base+at-0xC000)^byte_swap] = value
     save_started = save_completed = restore_checked = False
     save_metadata = None
@@ -248,9 +256,84 @@ def main():
                  'attack': read(0xC319+slot*48), 'defense': read(0xC31A+slot*48),
                  'position': [read(0xC313+slot*48), read(0xC311+slot*48)]}
                 for slot in range(32)]
+    arenas=json.loads((Path(__file__).resolve().parent.parent/'tests/scenarios/boss_arenas.json').read_text())
+    arena=next((entry for entry in arenas if entry['type']==args.boss_arena),None)
+    boss_index=arena['index'] if arena else None
+    boss_weapon=1 if args.boss_weapon=='axe' else 0
+    boss_run = {'fixture': None, 'phases': [], 'hits': [], 'deaths': [], 'projectiles': [], 'reward_spawned': False, 'reward_collected': False, 'heals': [], 'satellites_spawned': [], 'satellites_killed': [], 'parts_spawned': []}
+    boss_prepared = False
+    previous_boss = None
+    previous_aux = None
+    boss_done = False
+    boss_heal_stage = 'fight'
+    boss_inventory_goal = None
+    boss_heal_mp = None
+    def drive_boss():
+        nonlocal boss_heal_stage,boss_inventory_goal,boss_heal_mp
+        def pulse(name,mask):
+            return 0 if read(0xC020)&mask else 1<<buttons[name]
+        if state==0x10:
+            goal=boss_inventory_goal
+            if read(0xC0DF)==goal:
+                return pulse('button1',16)
+            cursor=read(0xC0A0)
+            if cursor==goal:return pulse('button2',32)
+            if cursor//4!=goal//4:
+                return pulse('down' if cursor//4<goal//4 else 'up',2 if cursor//4<goal//4 else 1)
+            return pulse('right' if cursor%4<goal%4 else 'left',8 if cursor%4<goal%4 else 4)
+        if state!=0x0C:return 0
+        if boss_heal_stage=='fight' and read(0xC318)<=24 and read(0xC600)==args.boss_arena:
+            goal=8 if read(0xC0E8) else 7 if read(0xC0E7) and read(0xC0DB)>=24 else None
+            if goal is not None:
+                boss_inventory_goal=goal;boss_heal_mp=read(0xC0DB);boss_heal_stage='select_heal'
+        if boss_heal_stage=='select_heal':
+            if read(0xC0DF)==boss_inventory_goal:boss_heal_stage='cast_heal'
+            else:return pulse('button1',16)
+        if boss_heal_stage=='cast_heal':
+            consumed=(boss_inventory_goal==8 and not read(0xC0E8)) or (boss_inventory_goal==7 and read(0xC0DB)<boss_heal_mp)
+            if consumed:
+                boss_inventory_goal=boss_weapon;boss_heal_stage='select_weapon'
+            else:return pulse('button2',32) if read(0xC301)==1 else 0
+        if boss_heal_stage=='select_weapon':
+            if read(0xC0DF)==boss_weapon:boss_heal_stage='fight'
+            else:return pulse('button1',16)
+        # Decisions inspect live positions, but apply only joypad buttons.
+        kind = read(0xC600)
+        if kind==0 and read(0xC0CE+boss_index)==0x80:
+            return pulse('button2',32)  # Confirm the production reward dialogue (SMS).
+        if kind == 7 or kind == 0:
+            return 0
+        px,py = read(0xC313),read(0xC311)
+        tx,ty = read(0xC613),read(0xC611)
+        if args.boss_arena == 101 and kind == 101:
+            children = [(read(0xC313+slot*48),read(0xC311+slot*48)) for slot in range(24,32) if read(0xC300+slot*48)==102 and read(0xC303+slot*48)&2]
+            if children:
+                tx,ty = min(children,key=lambda v:abs(v[0]-px)+abs(v[1]-py))
+        dx,dy = tx-px,ty-py
+        if abs(dx)>abs(dy):
+            direction='right' if dx>0 else 'left'
+        else:
+            direction='down' if dy>0 else 'up'
+        facing={'up':0,'down':1,'left':2,'right':3}[direction]
+        pad=0 if kind!=15 and abs(dx)+abs(dy)<=28 and read(0xC30A)==facing else 1<<buttons[direction]
+        if kind != 15 and abs(dx)+abs(dy)<42 and read(0xC020)&32==0:
+            pad |= 1<<buttons['button2']
+        return pad
     for frame in range(args.frames):
         current['frame'] = frame
         state = read(0xC01D)
+        if args.boss_arena is not None and state == 0x0C and not boss_prepared:
+            # One-time fixture: resume/scene loader constructs the real encounter.
+            cell=arena['cell']
+            for at in (0xC0C0,0xC0C4):
+                write(at,cell&255);write(at+1,cell>>8)
+            write(0xC037,boss_index)
+            write(0xC0DA,128);write(0xC318,128)
+            write(0xC0E0,3);write(0xC0E1,2);write(0xC0DF,boss_weapon)
+            write(0xC0F1,3);write(0xC0F2,3)
+            write(0xC0E7,1);write(0xC0E8,1);write(0xC0DC,120);write(0xC0DB,120)
+            write(0xC01D,6);state=6;boss_prepared=True
+            boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':1,'potion':1,'mp':120}
         if args.save_slot is not None and state == 0x0C and not save_started:
             # Controlled integration entry: service arrival is injected; every
             # confirmation, slot selection and SRAM write runs in production code.
@@ -266,6 +349,8 @@ def main():
                              'currency': read(0xC0DD), 'name': [read(0xC0B0+i) for i in range(8)]}
         if args.save_slot is not None and save_started and not save_completed:
             current['pad'] = 1 << 8 if read(0xC020) == 0 else 0
+        elif args.boss_arena is not None and boss_prepared:
+            current['pad'] = drive_boss()
         elif inputs and (input_started or state == 0x0C):
             input_started = True
             current['pad'] = inputs[input_step]['pad'] if input_step < len(inputs) else 0
@@ -306,6 +391,36 @@ def main():
             if cell != last_cell:
                 world_transitions.append({'emulator_frame': frame, 'cell': cell, 'state': f'{state:02X}'})
                 last_cell = cell
+        if args.boss_arena is not None and boss_prepared and state==0x0C:
+            snapshot=combat_snapshot();boss=snapshot[16]
+            if (not boss_run['phases'] or (boss_run['phases'][-1]['type'],boss_run['phases'][-1]['state'])!=(boss['type'],boss['state'])):
+                boss_run['phases'].append({'emulator_frame':frame,**boss})
+            if previous_boss is not None:
+                if previous_boss['type']==args.boss_arena and boss['hp']<previous_boss['hp']:
+                    boss_run['hits'].append({'emulator_frame':frame,'before':previous_boss['hp'],'after':boss['hp'],'type':boss['type'],'flash':boss['flash']})
+                if previous_boss['type']==args.boss_arena and boss['type']==7:
+                    boss_run['deaths'].append({'emulator_frame':frame,'before':previous_boss['hp'],'after':boss['hp']})
+            if previous_aux is not None:
+                for entity,old in zip(snapshot[24:],previous_aux):
+                    if old['type']==0 and entity['type']==102:
+                        boss_run['satellites_spawned'].append({'emulator_frame':frame,**entity})
+                    if old['type']==102 and entity['type']==1 and entity['saved_type']==102:
+                        boss_run['satellites_killed'].append({'emulator_frame':frame,**entity})
+                    if old['type']==0 and 112<=entity['type']<=119:
+                        boss_run['projectiles'].append({'emulator_frame':frame,**entity})
+            if args.boss_arena==103 and not boss_run['parts_spawned'] and all(e['type']==103 for e in snapshot[17:22]):
+                boss_run['parts_spawned']=snapshot[17:22]
+            if boss['type']==15:boss_run['reward_spawned']=True
+            if read(0xC0CE+boss_index)==0x80:
+                boss_run['reward_collected']=True
+                if read(0xC301)==0:boss_run['reward_acknowledged']=True
+                boss_done = boss_run['reward_spawned'] and boss_run.get('reward_acknowledged',False) and boss['type']==0 and read(0xC301)==1 and read(0xC318)==read(0xC0DA)
+            if previous_boss is not None and previous_boss['type']==args.boss_arena and read(0xC318)>boss_run.get('last_hp',read(0xC318)):
+                boss_run['heals'].append({'emulator_frame':frame,'before':boss_run['last_hp'],'after':read(0xC318),'mp':read(0xC0DB),'item':read(0xC0DF)})
+            boss_run['last_hp']=read(0xC318)
+            previous_boss=boss;previous_aux=snapshot[24:]
+        if args.boss_arena is not None and boss_prepared and boss_index==10 and state==0x0E:
+            boss_run['ending_handoff']=True;boss_done=True
         if args.combat:
             snapshot = combat_snapshot()
             if state == 0x0C:
@@ -394,7 +509,7 @@ def main():
                    'pc': f'{lib.m68k_get_reg(16):06X}' if not args.reference_sms and hasattr(lib, 'm68k_get_reg') else None}, flush=True)
             if current['image']:
                 png(args.output/'latest.png', *current['image'], pixel_format)
-        if play_frames >= 300 and input_step == len(inputs):
+        if boss_done or (args.boss_arena is None and play_frames >= 300 and input_step == len(inputs)):
             break
     if current['image']:
         png(args.output/'final.png', *current['image'], pixel_format)
@@ -405,6 +520,10 @@ def main():
               'audio_peak': current['audio_peak'], 'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
               'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03),
               'world_transitions': world_transitions, 'final_state': f'{read(0xC01D):02X}'}
+    if args.boss_arena is not None:
+        boss_run['final_item']=read(0xC0DF);boss_run['final_mp']=read(0xC0DB);boss_run['potion_remaining']=read(0xC0E8)
+        boss_run['final_entities']=combat_snapshot();boss_run['progress']=read(0xC0CE+boss_index) if boss_prepared else None
+        result['boss']=boss_run
     if args.combat:
         combat['final_entities'] = combat_snapshot()
         result['combat'] = combat
@@ -446,11 +565,17 @@ def main():
     print(result)
     lib.retro_unload_game()
     lib.retro_deinit()
-    if not args.observe_only:
+    if not args.observe_only and not args.boss_weapon_probe:
         if args.save_slot is not None:
             assert save_completed, 'Save service did not finish'
         if args.expect_save_slot is not None:
             assert restore_checked, 'Continue restoration was not observed'
+        if args.boss_arena is not None:
+            assert boss_done, 'Boss fight/reward did not finish'
+            assert boss_run['hits'] and boss_run['deaths'], 'No genuine boss damage/death observed'
+            assert result['player_hp']>0, 'Player died in boss encounter'
+            assert boss_run['reward_collected'] or boss_run.get('ending_handoff'), 'Missing reward/ending handoff'
+            return
         assert play_frames >= 300, 'Did not reach stable gameplay'
         assert play_ticks >= 24, 'Gameplay did not advance'
         assert result['final_state'] == '0C', 'Scenario did not finish in gameplay'

@@ -26,11 +26,13 @@ void gaw_world_animate_frame(void);       /* $699C */
 void gaw_render_build_sms_sat(void);      /* $0940 */
 void gaw_hud_update_quarter_frame(void); /* $1E99 */
 void gaw_hud_rebuild_full(void); /* $1E4E */
+void gaw_world_grant_item(uint8_t item); /* original $6317, blocking reward presentation */
 void gaw_world_rebuild_display_native(void); /* $1DE2, no progress reapplication */
 void gaw_hud_update_status_descriptor(void); /* $1DF6 */
 void gaw_hud_initialize_status_descriptor(void); /* $1DEB */
 void gaw_hud_animate_value(uint8_t phase); /* $1E38/$1E41 */
 void gaw_world_palette_cycle(void); /* bank 5 $BDBE */
+void gaw_world_audio_select_native(void); /* $1CAF, select music for the current room */
 void gaw_world_set_audio(uint8_t command); /* $1CF8 */
 
 #endif

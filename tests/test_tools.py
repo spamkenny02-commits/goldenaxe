@@ -1,4 +1,6 @@
 import importlib.util
+import json
+import re
 from pathlib import Path
 import tempfile
 import unittest
@@ -11,6 +13,21 @@ capture_spec = importlib.util.spec_from_file_location(
     'compare_game_viewports', Path(__file__).resolve().parents[1]/'tools/compare_game_viewports.py')
 captures = importlib.util.module_from_spec(capture_spec)
 capture_spec.loader.exec_module(captures)
+
+
+class BossArenaMetadataTest(unittest.TestCase):
+    def test_real_full_hp_boss_rooms(self):
+        root=Path(__file__).resolve().parents[1]
+        arenas=json.loads((root/'tests/scenarios/boss_arenas.json').read_text())
+        numbers=lambda name:[int(x,16) for x in re.findall(r'0x([0-9A-Fa-f]+)',(root/'src'/name).read_text())]
+        types=numbers('world_entity_types.inc');stats=numbers('map_entity_stats.inc')
+        self.assertEqual(len(numbers('death_drop_rules.inc')),(max(numbers('death_drop_classes.inc'))+1)*16)
+        bosses={i+32 for i in range(96) if stats[i*4+3]&0x40}-{102}
+        self.assertEqual({a['type'] for a in arenas},bosses)
+        self.assertEqual({a['index'] for a in arenas},set(range(1,11)))
+        for arena in arenas:
+            self.assertEqual(types[arena['cell']*8],arena['type'])
+            self.assertEqual(stats[(arena['type']-32)*4],arena['hp'])
 
 
 class ViewportComparisonTest(unittest.TestCase):
