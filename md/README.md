@@ -26,10 +26,11 @@ python3 tools/test_md_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretro.so -
 The check drives title/name/new-game selection and requires 300 emulator
 frames of gameplay, at least 24 game updates and audible PSG. Private captures
 and metadata are written under md/build/emulator. This limited boot path is
-verified on V32; full-game/hardware behavior, actual sprite clipping and
-performance are still being completed. V33 synthesizes frame-level SMS sprite
-overflow/collision flags, independently tested in host CI. Its 68000 rebuild and
-emulator check remain pending after the execution environment disconnected. Scroll animation is implemented in the portable core,
+verified on V35, including a controller-only screen crossing from cell 95 to 94.
+Full-game/hardware behavior, actual sprite clipping and performance remain.
+Frame-level SMS sprite overflow/collision flags and their persistent workspace
+pass local reference/sanitizer tests and the native emulator checks.
+Scroll animation is implemented in the portable core,
 and no empty presentation hooks remain. Actual linked level 4/6 vectors are checked. The MD
 VBlank ISR services native sync/async IRQ paths, including audio while the main
 thread computes. Start sends the SMS Pause NMI; PAL/NTSC selects the original
@@ -42,3 +43,22 @@ to run the original hardware reference and `--play-inputs /path/inputs.json` for
 controller sequences after gameplay starts. Each JSON step has a positive
 `ticks` count and a `buttons` list (`up`, `down`, `left`, `right`, `button1`,
 `button2`, `pause`). Duration follows the game's C02F counter, including menus.
+
+To run the checked first-screen exit on either native MD or original SMS, use
+`--play-inputs tests/scenarios/world_exit.json`; optional `expect_cell` fields
+make missed crossings fail rather than silently accepting an idle screen.
+The result includes world-cell transitions and the final game state.
+
+Instruction-cycle profiling uses an optional local emulator build:
+
+```sh
+python3 tools/instrument_gpgx.py /tmp/gpgx
+make -C /tmp/gpgx -f Makefile.libretro HAVE_CHD=0 -j4
+python3 tools/test_md_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretro.so --nm md/toolchain/bin/m68k-elf-nm --profile --output md/build/profile
+```
+
+Counters observe ROM instruction addresses and master cycles, including bus/VDP
+waits charged during instructions. Symbol buckets are instruction locations, not
+inclusive call graphs; IRQ-entry gaps and stopped CPU time are not attributed.
+V35 checked that enabling the profiler preserves full work RAM, input/output
+counters, game cadence and audio peak compared with the ordinary run.

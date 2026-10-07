@@ -5,6 +5,7 @@ Requires a locally built Genesis Plus GX .so and the corresponding MD ELF.
 No game input or screenshots are downloaded or distributed by this script.
 """
 import argparse
+import bisect
 import ctypes as C
 import json
 from pathlib import Path
@@ -55,21 +56,34 @@ def main():
     parser.add_argument('--observe-only', action='store_true')
     parser.add_argument('--reference-sms', action='store_true', help='Run an original SMS ROM as a hardware reference')
     parser.add_argument('--play-inputs', type=Path, help='JSON list of {ticks, buttons} controller steps after entering gameplay')
+    parser.add_argument('--profile', action='store_true', help='Profile gameplay instructions using a locally instrumented core')
     args = parser.parse_args()
+    if args.profile and args.reference_sms:
+        parser.error('--profile requires the native 68000 image')
     args.output.mkdir(parents=True, exist_ok=True)
     buttons = {'up': 4, 'down': 5, 'left': 6, 'right': 7, 'button1': 0, 'button2': 8, 'pause': 3}
     inputs = json.loads(args.play_inputs.read_text()) if args.play_inputs else []
     for step in inputs:
         assert isinstance(step['ticks'], int) and step['ticks'] > 0
+        if 'expect_cell' in step:
+            assert isinstance(step['expect_cell'], int) and 0 <= step['expect_cell'] < 0x200
         step['pad'] = sum(1 << buttons[name] for name in set(step['buttons']))
     symbols = {}
+    code_symbols = []
     if not args.reference_sms:
         for line in subprocess.check_output([args.nm, '-n', str(args.elf)], text=True).splitlines():
             fields = line.split()
             if len(fields) == 3:
                 symbols[fields[2]] = int(fields[0], 16)
+                if fields[1] in ('t', 'T'):
+                    code_symbols.append((int(fields[0], 16), fields[2]))
     base = 0 if args.reference_sms else symbols['gaw_ram']-0xFF0000
     lib = C.CDLL(str(args.core.resolve()))
+    if args.profile:
+        for name in ('gaw_profile_begin', 'gaw_profile_end', 'gaw_profile_get_cycles'):
+            if not hasattr(lib, name):
+                parser.error('Profiler unavailable: run tools/instrument_gpgx.py and rebuild the core')
+        lib.gaw_profile_get_cycles.restype = C.POINTER(C.c_uint64)
     variables = {}
     directory = str(args.output.resolve()).encode()
     pixel_format = 0
@@ -177,6 +191,9 @@ def main():
     input_ticks = 0
     input_started = False
     input_log = []
+    world_transitions = []
+    last_cell = None
+    profiling = False
     for frame in range(args.frames):
         current['frame'] = frame
         state = read(0xC01D)
@@ -187,8 +204,16 @@ def main():
             current['pad'] = 1 << 8 if read(0xC020) == 0 else 0  # MD C = SMS button 2
         else:
             current['pad'] = 0
+        if args.profile and not profiling and state == 0x0C:
+            lib.gaw_profile_begin()
+            profiling = True
         lib.retro_run()
         state = read(0xC01D)
+        cell = read(0xC0B9)|(read(0xC0BA)<<8)
+        if state == 0x0C or last_cell is not None:
+            if cell != last_cell:
+                world_transitions.append({'emulator_frame': frame, 'cell': cell, 'state': f'{state:02X}'})
+                last_cell = cell
         if state != last_state:
             entry = {'emulator_frame': frame, 'state': f'{state:02X}', 'game_frame': read(0xC02F)}
             stages.append(entry)
@@ -207,8 +232,11 @@ def main():
                 if input_ticks >= inputs[input_step]['ticks']:
                     input_log.append({'step': input_step, 'emulator_frame': frame, 'state': f'{state:02X}',
                                       'position': [read(0xC313), read(0xC311)], 'player_state': read(0xC301),
-                                      'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
+                                      'world_cell': cell,
                                       'held': read(0xC020), 'pressed': read(0xC021)})
+                    if 'expect_cell' in inputs[input_step]:
+                        expected = inputs[input_step]['expect_cell']
+                        assert cell == expected, f'Controller step {input_step}: cell {cell:03X}, expected {expected:03X}'
                     input_step += 1
                     input_ticks = 0
         old_tick = tick
@@ -231,13 +259,32 @@ def main():
     result = {'emulator_frames': frame+1, 'game_ticks': ticks, 'stages': stages,
               'play_frames': play_frames, 'play_ticks': play_ticks, 'audio_frames': current['audio_frames'],
               'audio_peak': current['audio_peak'], 'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
-              'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03)}
+              'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03),
+              'world_transitions': world_transitions, 'final_state': f'{read(0xC01D):02X}'}
     if irq_counts():
         result['hardware_irqs'] = irq_counts()
         if play_irq_start is not None:
             result['play_irqs'] = {name: count-play_irq_start[name] for name, count in irq_counts().items()}
     if inputs:
         result['input_steps'] = input_log
+    if profiling:
+        lib.gaw_profile_end()
+        counters = lib.gaw_profile_get_cycles()
+        code_symbols.sort()
+        addresses = [at for at, name in code_symbols]
+        costs = {}
+        for pc in range(0, min(args.rom.stat().st_size, 0x100000), 2):
+            cost = counters[pc >> 1]
+            if cost:
+                index = bisect.bisect_right(addresses, pc)-1
+                name = code_symbols[index][1] if index >= 0 else 'before_first_symbol'
+                costs[name] = costs.get(name, 0)+cost
+        total = sum(costs.values())
+        result['instruction_profile'] = {
+            'master_cycles': total,
+            'functions': [{'name': name, 'cycles': cost, 'percent': round(cost*100/total, 3)}
+                          for name, cost in sorted(costs.items(), key=lambda entry: -entry[1])]
+        }
     (args.output/'result.json').write_text(json.dumps(result, indent=2)+'\n')
     print(result)
     lib.retro_unload_game()
@@ -245,7 +292,7 @@ def main():
     if not args.observe_only:
         assert play_frames >= 300, 'Did not reach stable gameplay'
         assert play_ticks >= 24, 'Gameplay did not advance'
-        assert read(0xC01D) == 0x0C, 'Scenario did not finish in gameplay'
+        assert result['final_state'] == '0C', 'Scenario did not finish in gameplay'
         assert current['audio_peak'] > 1024, 'No audible PSG output beyond boot noise'
         assert input_step == len(inputs), 'Controller scenario did not finish'
         if result.get('play_irqs'):

@@ -241,3 +241,31 @@ Next: obtain/restore the private reference build input, rerun the complete
 differential suite and V34 68000 build, then profile cadence/IRQ stack, validate
 actual sprite clipping and screen crossings, continue full-game replay and test
 physical hardware.
+
+
+- V35 restores the original private-ROM/toolchain checkout and rebases the local
+  preserved V32 work onto remote V34 without losing unpublished changes. All
+  prior local differential/regression targets and ASan/UBSan pass again, along
+  with the 12/127/512 compiled coverage gate. Local LeakSanitizer cannot inspect
+  sandbox processes, so only leak checking is disabled; ASan/UBSan still run.
+- The actual V34/V35 native cartridge now links: 475,512 bytes, BSS 31,514 at
+  FF0000-FF7B1A, checksum D956. ELF vectors, RAM placement, interpreter exclusion
+  and cartridge metadata pass. The production sprite scratch is persistent.
+- Boot/name/new-game/audio/300 physical gameplay frames pass. Idle gameplay
+  advances 136 updates. Optional emulator instruction counters preserve full
+  work RAM, game/IRQ counters, cadence and audio peak. Measured instruction
+  buckets are dominated by shadow VDP writes (36.862%) and physical shadow
+  conversion/upload (21.282%); optimizing bulk transfers is next.
+- A controller-only route now exits the initial graveyard, scrolling cell 95 to
+  94 on both SMS and MD. Both finish at [56,104], HP 24 and state 0C. MD records
+  345 gameplay updates over 947 physical gameplay frames; SMS records 346 over
+  348. Input-step phase can differ by a few pixels before the final idle settle;
+  no game RAM or progression is patched to manufacture this integration check.
+- The route is checked into tests/scenarios/world_exit.json with expected cells.
+  The harness records transitions and fails missed cells. Optional profiling
+  modifies only the external emulator and exposes instruction-cycle buckets;
+  no original ROM data, generated image or private capture is committed.
+
+Next: optimize the measured VDP transfer costs, validate sprite clipping, extend
+controller routes across screens and gameplay interactions, compare save state
+and continue full-game/hardware validation.

@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V34)
+## Current status (V35)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -40,10 +40,10 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - The ending is native: four complete final-movement, crystal-reveal and
   credit-scroll sequences match original RAM, video, SRAM and frame timing.
   These comparisons also fixed the missing walk-pose increment.
-- V32 passed the local differential/regression suites and ASan/UBSan. V33
-  passes current strict C11/portability checks and ROM-free sprite tests in CI;
-  the reference-ROM suites have not been rerun since the execution environment
-  disconnected.
+- V35 restores the private reference/toolchain workspace and reruns every local
+  differential/regression target, ASan/UBSan and the compiled native coverage
+  gate successfully. Leak detection is disabled locally because this sandbox
+  blocks its process inspection; address/undefined-behavior checks remain active.
 - Title/intro and new/continue selection are native: 20 complete comparisons
   cover attract mode, scene animations, text, skip paths, saved slots and cancel.
 - Boot, name creation, new-game setup and 24 gameplay updates run on the host
@@ -58,22 +58,26 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - V34 moves the sprite-status counters/collision bitmap out of the 68000
   interrupt stack while preserving the V33 Mode 4 calculation. This removes
   roughly 6.3 KiB of automatic frame scratch from the VBlank C call. ROM-free
-  oracle validation passes locally; a new private-ROM 68000 rebuild/profile is
-  still pending.
+  oracle validation passes, including the full local sanitizer suite. The
+  private-ROM 68000 rebuild and emulator checks now pass in V35.
 - Sprite overflow/collision status is calculated from the SMS shadow, with the
   eight-sprites-per-line limit, nontransparent pixels, clipping, 8/16-pixel
   height, zoom and pattern bank. 6,948 independent synthetic scanline/pixel
   comparisons pass, including ASan/UBSan and cached status-latch integration.
   These ROM-free tests run in CI without private cartridge data.
-- The last verified 68000 image (V32) links with GCC 14.2.0: 474,504-byte ROM, 25,174-byte BSS.
-  ELF checks verify mutable state in FF0000-FF6256, actual IRQ vectors and absence of interpreter
+- The current production image links with GCC 14.2.0: 475,512-byte ROM,
+  31,514-byte BSS and checksum D956. ELF checks verify mutable state in
+  FF0000-FF7B1A, actual IRQ vectors and absence of interpreter
   symbols; cartridge header and checksum checks pass. Genesis Plus GX boots
   through title, name creation, new game and 300 emulator gameplay frames with
   visible graphics and audible PSG. Hardware VBlank and line interrupts are
   connected; asynchronous VBlank continues sound/timers during C computation.
-  The idle gameplay check advances 139 game updates in 300 physical frames,
-  versus 70 before optimization. Hardware/full-game validation
-  and further frame-cadence improvements remain.
+  The V34/V35 idle check advances 136 game updates in 300 physical frames.
+  A controller-only route genuinely scrolls from cell 95 to 94 on both native
+  MD and original SMS, finishing at position [56,104] with HP 24. MD takes
+  947 gameplay physical frames versus SMS 348. Performance and a complete
+  playthrough/hardware validation remain. Instruction profiling identifies
+  shadow VDP writes and physical shadow upload as the main measured costs.
 
 See `docs/CURRENT_STATUS.md` for the exact verified state.
 
@@ -82,7 +86,8 @@ or empty Mega Drive presentation hooks remain. All known dispatch entries are
 native C. This coverage does not establish complete-game equivalence, a full
 playthrough or hardware correctness. Frame-level SMS sprite flags are now
 implemented; MD cadence, actual sprite clipping and full-game/hardware behavior
-still need validation. V33 has not yet been rebuilt or run on the 68000.
+still need validation. The current native image has been rebuilt and exercised
+in an emulator, including the first controller-driven screen crossing.
 The audio driver passes 144,384 isolated differential updates, including RAM and
 ordered PSG/stereo writes, and is integrated into the native IRQ. Sync, async and
 line IRQ paths pass 3,072 independent original-instruction comparisons; NMI has
