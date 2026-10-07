@@ -47,6 +47,7 @@ static void solid(unsigned tile,unsigned color){
 }
 static void sprite_stage(void){
     if(stage==530u){gaw_platform_init();return;}
+    if(stage==531u){solid(32,1);return;}
     if(stage==522u){solid(288,3);return;}
     if(stage==523u){solid(288,0);return;}
     if(stage==525u){solid(289,3);return;}
@@ -127,7 +128,7 @@ void md_main(void){
         gaw_video_fixture_ready=(uint16_t)stage;
         uint8_t held=(uint8_t)(gaw_ram_read8(RAM_INPUT_HELD)&0x10u);
         if(held&&!old){
-            stage=(stage+1u)%531u;palette();
+            stage=(stage+1u)%532u;palette();
             if(stage>=515u)sprite_stage();
             uint16_t d=descriptor(7,5);
             address((uint16_t)(0x3800u+2u*(7u*32u+5u)));
