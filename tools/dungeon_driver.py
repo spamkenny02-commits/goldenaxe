@@ -68,7 +68,7 @@ class DungeonDriver:
                         elif boots&0x80:high|=0x80
                     door_approach = (delta==(0,-8) and 112<=px<=144 and 24<=py<=40) or (delta==(-8,0) and px<=32 and 64<=py<=88) or (delta==(8,0) and px>=224 and 64<=py<=88)
                     tile=r(0xDC00+((py+dy)//16)*16+(px+dx)//16)
-                    if high&0x80 and tile not in (0x0B,0x31) and not (high&0xE0==0xA0 and door_approach):return False
+                    if high&0x80 and (not r(0xC0BA) or tile not in (0x0B,0x31)) and not (high&0xE0==0xA0 and door_approach):return False
                 return True
             queue = deque([start]); parents = {start: None}
             best = start
@@ -94,7 +94,7 @@ class DungeonDriver:
         probes={'up':((-4,-12),(4,-12)),'down':((-4,4),(4,4)),'left':((-12,-4),),'right':((12,-4),)}[direction]
         for dx,dy in probes:
             tile=((y+dy)//16)*16+(x+dx)//16
-            if r(0xDC00+tile) in (0x0B,0x31):
+            if r(0xC0BA) and r(0xDC00+tile) in (0x0B,0x31):
                 self.breaking=(tile,direction);self.item=5;return 0
         self.item=0
         return self.pad(direction)
@@ -103,6 +103,9 @@ class DungeonDriver:
         r = self.read
         cell = r(0xC0B9) | r(0xC0BA)<<8
         if state != 0x0C:return 0
+        if r(0xC301)==12:
+            # Type 91 releases its grab after six new direction presses.
+            return self.pad('left') if not r(0xC020)&4 else self.pad('right')
         if self.last_cell != cell:
             self.visits.append({'cell': cell, 'stage': self.stage, 'index': r(0xC037)})
             self.last_cell = cell; self.target = None; self.path_key = None
@@ -143,16 +146,18 @@ class DungeonDriver:
                         self.actions_done.add(cell);self.events.append({'action':cell,'target':action})
                     elif [r(0xC313),r(0xC311)]==action:
                         return self.pad('up')
-                    else:return self.navigate(action)
+                    else:
+                        action_pad=self.navigate(action)
+                        if self.path and self.path[-1]==tuple(action):return action_pad
                 # Real room-clear shutters must open through enemy deaths.
-                enemies = [(r(0xC313+s*48),r(0xC311+s*48)) for s in range(16,24) if (32<=r(0xC300+s*48)<99 or 120<=r(0xC300+s*48)<=124) and (r(0xC318+s*48)>0 or r(0xC300+s*48)==45) and r(0xC300+s*48)!=94]
+                enemies = [(r(0xC313+s*48),r(0xC311+s*48),r(0xC300+s*48)) for s in range(16,24) if (32<=r(0xC300+s*48)<99 or 120<=r(0xC300+s*48)<=124) and (r(0xC318+s*48)>0 or r(0xC300+s*48)==45) and r(0xC300+s*48)!=94]
                 if r(0xC301) in (2,3,4,5,10):return 0
                 travel_pad=self.navigate(edge['target'])
                 probe={'up':(128,24),'left':(16,72),'right':(232,72)}.get(edge.get('direction'))
                 key_gate=probe and r(0xD600+((probe[1]&248)<<3)+((probe[0]>>2)&62)+1)&0xE0==0xA0
                 if enemies and (r(0xC0A8)==1 or (not key_gate and (not self.path or self.path[-1]!=tuple(edge['target'])))):
                     x,y=r(0xC313),r(0xC311)
-                    tx,ty=min(enemies,key=lambda p:abs(p[0]-x)+abs(p[1]-y))
+                    tx,ty,kind=min(enemies,key=lambda p:abs(p[0]-x)+abs(p[1]-y))
                     dx,dy=tx-x,ty-y
                     direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
                     facing={'up':0,'down':1,'left':2,'right':3}[direction]
@@ -172,13 +177,20 @@ class DungeonDriver:
                         if not r(0xC020)&32:pad|=self.pad('button2')
                         return pad
                     if abs(dx)+abs(dy)<24 and cross<=8:
-                        self.item=0
-                        if r(0xC0DF)!=0:return 0
+                        self.item=1 if kind>=120 else 0
+                        if r(0xC0DF)!=self.item:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)
                         pad=0
                         if not r(0xC020)&32:pad|=self.pad('button2')
                         return pad
-                    return self.navigate([round(tx/8)*8,round(ty/8)*8])
+                    pad=self.navigate([round(tx/8)*8,round(ty/8)*8])
+                    # A solid partition can put a room-clear enemy beyond
+                    # melee and projectile reach. Thunder crosses the partition.
+                    if not self.path and r(0xC0DB)>=32:
+                        self.item=6
+                        if r(0xC0DF)!=6:return 0
+                        return self.pad('button2') if not r(0xC020)&32 else 0
+                    return pad
                 return self.navigate(edge['target'])
         if self.stage == 'exit':
             if cell == self.route['outside_cell']:

@@ -67,10 +67,18 @@ for k in range(1,11):
  if k==6:
   split=next(i for i,e in enumerate(route) if e['from']==0x138)
   route=route[:split]+path(0x138,0x139)+path(0x139,0x138)+route[split:]
+  split=next(i for i,e in enumerate(route) if e['from']==0x118)
+  route=route[:split]+path(0x118,0x127,avoid=(0x117,))+path(0x127,0x117)+path(0x117,0x127)+path(0x127,0x118,avoid=(0x117,))+path(0x118,0x117)+route[split+1:]
  if k==10:
   split=next(i for i,e in enumerate(route) if e['from']==0x16D)
-  route=route[:split]+path(0x16D,0x17D)+path(0x17D,0x15D,avoid=(0x16D,))+[{'from':0x15D,'to':0x16D,'direction':'down','target':[128,168]}]+route[split:]
+  route=route[:split]+path(0x16D,0x18D)+path(0x18D,0x15D,avoid=(0x17D,0x16D))+[{'from':0x15D,'to':0x16D,'direction':'down','target':[128,168]}]+route[split:]
+ if k==9:
+  split=next(i for i,e in enumerate(route) if e['from']==0x1ED)
+  route=route[:split]+path(0x1ED,0x1CD,avoid=(0x1DD,))+path(0x1CD,0x1DD)+path(0x1DD,0x1CD)+route[split+2:]
  back=path(boss['cell'],starts[k]);cell,pos=entries[k]
+ if k==5:
+  # Return via the stairs: the eastern room locks its western doorway.
+  back=path(0x163,0x173)+path(0x173,0x162,avoid=(0x174,))+path(0x162,0x153)+path(0x153,0x154)+path(0x154,0x164)+path(0x164,starts[k],avoid=(0x174,0x154))
  o={'index':k,'outside_cell':cell,'entry_target':xy(pos),'entrance':starts[k],'boss':boss,'rooms':cells,'outbound':route,'return':back,'actions':{str(c):xy(actions[cb[c]]) for c in cells if cb[c] in actions},'avoid':{str(c):[xy(links[cb[c]][0])] for c in cells if cb[c] in links}}
  o['puzzles']={str(c):{'target':[(tile%16)*16+8,(tile//16)*16+24],'tile':tile} for c in cells for t,tile in [(0xB42D,0x7B),(0xB459,0x43),(0xB574,0x4A)] if cb[c]==t}
  out.append(o);print(k,hex(cell),xy(pos),'->',' '.join(f"{e['from']:03X}>{e['to']:03X}{'s' if e.get('stairs') else ''}" for e in route),'back',len(back))

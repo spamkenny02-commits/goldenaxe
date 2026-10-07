@@ -340,9 +340,9 @@ def main():
         else:
             direction='down' if dy>0 else 'up'
         facing={'up':0,'down':1,'left':2,'right':3}[direction]
-        if dungeon and abs(dx)+abs(dy)>28:
+        if dungeon and abs(dx)+abs(dy)>16:
             return dungeon.navigate([round(tx/8)*8,round(ty/8)*8])
-        pad=0 if kind!=15 and abs(dx)+abs(dy)<=28 and read(0xC30A)==facing else 1<<buttons[direction]
+        pad=0 if kind!=15 and abs(dx)+abs(dy)<=(16 if dungeon else 28) and read(0xC30A)==facing else 1<<buttons[direction]
         if kind != 15 and abs(dx)+abs(dy)<42 and read(0xC020)&32==0:
             pad |= 1<<buttons['button2']
         return pad
@@ -362,10 +362,10 @@ def main():
             if dungeon:
                 write(0xC0DE,20);write(0xC0DC,128);write(0xC0DB,128)
                 write(0xC0E4,2);write(0xC0E5,2);write(0xC0E6,2)
-                write(0xC0EC,1);write(0xC0ED,1);write(0xC0F0,0)
+                write(0xC0EC,1);write(0xC0ED,1);write(0xC0F0,1 if args.dungeon in (6,9) else 0)
                 for index in range(1,args.dungeon):write(0xC0CE+index,0x80)
             write(0xC01D,6);state=6;boss_prepared=True
-            boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':1,'potion':1,'mp':120}
+            boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':0 if dungeon else boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':1,'potion':1,'mp':128 if dungeon else 120}
         if args.save_slot is not None and state == 0x0C and not save_started:
             # Controlled integration entry: service arrival is injected; every
             # confirmation, slot selection and SRAM write runs in production code.

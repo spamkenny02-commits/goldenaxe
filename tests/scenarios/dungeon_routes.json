@@ -1214,7 +1214,34 @@
       },
       {
         "from": 371,
-        "to": 372,
+        "to": 370,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 370,
+        "to": 354,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 354,
+        "to": 339,
+        "target": [
+          136,
+          80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 339,
+        "to": 340,
         "direction": "right",
         "target": [
           248,
@@ -1222,12 +1249,12 @@
         ]
       },
       {
-        "from": 372,
+        "from": 340,
         "to": 356,
-        "direction": "up",
+        "direction": "down",
         "target": [
           128,
-          8
+          168
         ]
       },
       {
@@ -1423,6 +1450,96 @@
         "direction": "left",
         "target": [
           8,
+          80
+        ]
+      },
+      {
+        "from": 312,
+        "to": 296,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 296,
+        "to": 280,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 280,
+        "to": 296,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 296,
+        "to": 312,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 312,
+        "to": 311,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 311,
+        "to": 295,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 295,
+        "to": 279,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 279,
+        "to": 295,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 295,
+        "to": 311,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 311,
+        "to": 312,
+        "direction": "right",
+        "target": [
+          248,
           80
         ]
       },
@@ -2189,11 +2306,65 @@
       },
       {
         "from": 493,
-        "to": 477,
+        "to": 509,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 509,
+        "to": 510,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 510,
+        "to": 494,
         "direction": "up",
         "target": [
           128,
           8
+        ]
+      },
+      {
+        "from": 494,
+        "to": 478,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 478,
+        "to": 462,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 462,
+        "to": 461,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 461,
+        "to": 477,
+        "direction": "down",
+        "target": [
+          128,
+          168
         ]
       },
       {
@@ -2477,11 +2648,29 @@
       },
       {
         "from": 381,
-        "to": 382,
+        "to": 397,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 397,
+        "to": 398,
         "direction": "right",
         "target": [
           248,
           80
+        ]
+      },
+      {
+        "from": 398,
+        "to": 382,
+        "direction": "up",
+        "target": [
+          128,
+          8
         ]
       },
       {
