@@ -5,8 +5,9 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 ## Current status (V41)
 
 - V41 implements rendered eight-sprite-per-line clipping and 2x sprite zoom
-  using cached private MD pattern slots. New mask/pixel tests and 15 extra
-  native raster stages await validation; full-game cadence remains V37.
+  using cached private MD pattern slots. All 532 native raster stages /
+  30507008 pixels and the new sanitized helper tests pass in GitHub Actions;
+  full-game cadence remains the last measured V37.
 - V40 corrects the top-edge Y wrap for zoomed sprites, including E0's one
   visible row. All 6951 host cases pass; portable C matches all 1024 status
   values observed by an independent generated Z80 hardware probe.
@@ -105,7 +106,8 @@ The native registration/completion gate now passes: no instruction bridge calls
 or empty Mega Drive presentation hooks remain. All known dispatch entries are
 native C. This coverage does not establish complete-game equivalence, a full
 playthrough or hardware correctness. Frame-level SMS sprite flags are now
-implemented; MD cadence, actual sprite clipping and full-game/hardware behavior
+implemented and native sprite clipping/zoom pass generated hardware fixtures;
+MD cadence and full-game/physical-hardware behavior
 still need validation. The current native image has been rebuilt and exercised
 in an emulator, including the first controller-driven screen crossing.
 The audio driver passes 144,384 isolated differential updates, including RAM and

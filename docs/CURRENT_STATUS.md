@@ -108,16 +108,23 @@ even when SAT metadata has not changed. Cached tile/mask/mode values avoid
 reconversion of unchanged copies. Scratch is persistent and small.
 
 ROM-free tests add 18688 independent mask/count cases and 98304 pixel cases,
-including ASan/UBSan. Fifteen extra native stages cover full/partial ninth-sprite
+including ASan/UBSan. Seventeen extra native stages cover full/partial ninth-sprite
 clipping, transparent/off-screen count consumption, zoom, tall/odd patterns,
 the high pattern bank, source edits without SAT changes, list clearing and
-reuse, and sprite shift-left. Total raster checks become 530 stages /
-30392320 pixels. The new run is pending.
+reuse, sprite shift-left, backend reinitialization and subsequent pattern-only
+edits. All 532 stages / 30507008 pixels pass in Actions 37603203186. The actual
+standalone image is 9928 bytes, BSS 25943, checksum 92EA. Host/sanitizer checks
+and all 1024 directly observed SMS status comparisons also pass.
 
 ## Remaining work
 
-Confirm actual private-game pixels and
-cadence when local execution recovers. Finish the V41 raster run, then validate more controller/combat/interaction
-routes, SRAM save/reload,
-playthrough/ending and PAL/NTSC/physical hardware behavior. The project is not
+Local execution reports environment_offline (409: Environment is not connected).
+The private reference cartridge/toolchain cannot be accessed locally until that
+service is restored. All current source/tests/reports are saved in remote Git;
+the local checkout was last synchronized at V37 and needs a safe fast-forward
+before resuming. No new full-game image, RAM/link check or cadence is inferred
+from the standalone fixture.
+
+Then confirm private-game pixels/cadence, controller/combat/interaction routes,
+SRAM save/reload, playthrough/ending and PAL/NTSC/physical hardware behavior. The project is not
 declared finished or universally recompiled.

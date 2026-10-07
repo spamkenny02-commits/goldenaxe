@@ -28,23 +28,32 @@ ROM-free helper tests compare 18688 line-mask/count cases against a scanline-fir
 oracle and 98304 individual pixels against unpacked source planes. The helper
 suite also runs under ASan/UBSan.
 
-The production-backend 68000 fixture adds 15 stages:
+The production-backend 68000 fixture adds 17 stages:
 - A wholly blocked ninth sprite and a ninth with legal trailing rows.
 - Transparent first-eight entries and eight fully off-screen entries.
 - Zoomed 8/16-high sprites, E0/E1 top clipping, odd-index masking and tall rows.
 - High pattern bank and pattern-only colour/opacity changes without a SAT write,
   including an edit to the second tile of a tall sprite.
 - An empty list followed by slot reuse, and shift-left clipping.
+- Reinitializing the physical backend without resetting the SMS shadow, followed
+  by a source-pattern edit without a SAT write. A SAT initialization flag forces
+  cache/metadata reconstruction before subsequent pattern-only refreshes.
 
-The total native raster check is 530 stages / 30392320 pixels. This initial
-checkpoint awaits the expanded run. V40's 1024 independent Z80-observed status
-cases and V39's 29532160 MD pixels already pass; private reference-ROM CI tests
-remain explicitly skipped without input.
+GitHub Actions 37603203186 passes host and native-video jobs. All 532 stages /
+30507008 pixels match. The actual standalone image is 9928 bytes, BSS 25943,
+checksum 92EA; vectors/header/checksum and the real 68000 link pass. Host helper
+and ASan/UBSan checks pass (18688 mask/count cases, 98304 pixels), as do all
+1024 directly observed SMS collision status comparisons. Private reference-ROM
+CI tests remain explicitly skipped without input.
 
 ## Limits and next step
 
 Measure the actual full-game RAM/link/cadence and rerun private controller routes
-when local execution recovers. Generated fixtures prove covered raster behavior,
+when local execution recovers. The execution service now reports 409
+(environment_offline: Environment is not connected); no new full-game build,
+RAM/link result or cadence can be measured here. Sources/checkpoints are saved
+in remote Git; the existing local V37 checkout needs a safe fast-forward first.
+Generated fixtures prove covered raster behavior,
 not full-game or physical hardware equivalence. Combined fine H-scroll/right
 V-lock and exact sprite overflow timing still need attention. Continue combat,
 interactions, SRAM save/reload and playthrough/ending checks.

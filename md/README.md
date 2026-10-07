@@ -27,7 +27,8 @@ The check drives title/name/new-game selection and requires 300 emulator
 frames of gameplay, at least 24 game updates and audible PSG. Private captures
 and metadata are written under md/build/emulator. This limited boot path is
 verified on V35, including a controller-only screen crossing from cell 95 to 94.
-Full-game/hardware behavior, actual sprite clipping and performance remain.
+Full-game/physical-hardware behavior and performance remain. Native sprite
+clipping and zoom now pass the generated V41 hardware fixtures.
 Frame-level SMS sprite overflow/collision flags and their persistent workspace
 pass local reference/sanitizer tests and the native emulator checks.
 Scroll animation is implemented in the portable core,
@@ -126,6 +127,9 @@ alias these slots.
 make test-md-sprite test-md-sprite-sanitize
 ```
 
-The hardware fixture adds 15 clipping/zoom/bank/source-edit/shift stages, bringing
-coverage to 530 stages / 30392320 pixels. The initial V41 run is pending. No new
-private full-game build/cadence or physical-console result is claimed.
+The hardware fixture adds 17 clipping/zoom/bank/source-edit/shift/reset stages.
+Actions 37603203186 passes all 532 stages / 30507008 pixels plus the host/sanitizer
+helpers and 1024 directly observed SMS status cases. The actual standalone image
+is 9928 bytes, BSS 25943, checksum 92EA. Backend reinitialization forces the SAT
+cache to rebuild, preserving subsequent pattern-only edits without a SAT change.
+No new private full-game build/cadence or physical-console result is claimed.
