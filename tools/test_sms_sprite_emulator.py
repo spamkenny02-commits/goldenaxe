@@ -4,6 +4,7 @@ No original cartridge input or portable sprite-status implementation is used.
 """
 import argparse
 import ctypes as C
+import faulthandler
 from pathlib import Path
 import tempfile
 from test_md_emulator import GameInfo, Variable
@@ -70,6 +71,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--core', type=Path, required=True)
     args = parser.parse_args()
+    faulthandler.enable()
     lib = C.CDLL(str(args.core.resolve()))
     variables = {}
     with tempfile.TemporaryDirectory(prefix='gaw-sms-fixture-') as temporary:
@@ -143,9 +145,13 @@ def main():
         try:
             for mode in range(4):
                 for y in range(256):
+                    if y < 2:
+                        print('Loading SMS fixture mode=%d y=%02X' % (mode, y), flush=True)
                     rom.write_bytes(fixture(y, mode))
                     info = GameInfo(str(rom).encode(), None, 0, None)
                     assert lib.retro_load_game(C.byref(info)), 'Core rejected the generated SMS fixture'
+                    if y < 2:
+                        print('Fixture loaded; starting emulation', flush=True)
                     try:
                         lib.retro_set_controller_port_device(0, 1)
                         assert lib.retro_get_memory_size(2) == 0x2000, 'Fixture is not SMS'
