@@ -1,0 +1,2708 @@
+[
+  {
+    "index": 1,
+    "outside_cell": 185,
+    "entry_target": [
+      136,
+      80
+    ],
+    "entrance": 484,
+    "boss": {
+      "type": 104,
+      "cell": 373,
+      "index": 1,
+      "hp": 12
+    },
+    "rooms": [
+      373,
+      388,
+      389,
+      403,
+      404,
+      420,
+      421,
+      435,
+      436,
+      437,
+      438,
+      452,
+      453,
+      468,
+      484,
+      485
+    ],
+    "outbound": [
+      {
+        "from": 484,
+        "to": 468,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 468,
+        "to": 452,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 452,
+        "to": 436,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 436,
+        "to": 437,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 437,
+        "to": 421,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 421,
+        "to": 420,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 420,
+        "to": 404,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 404,
+        "to": 388,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 388,
+        "to": 389,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 389,
+        "to": 373,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 373,
+        "to": 389,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 389,
+        "to": 388,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 388,
+        "to": 404,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 404,
+        "to": 420,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 420,
+        "to": 421,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 421,
+        "to": 437,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 437,
+        "to": 436,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 436,
+        "to": 452,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 452,
+        "to": 468,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 468,
+        "to": 484,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      }
+    ],
+    "actions": {
+      "404": [
+        72,
+        40
+      ]
+    },
+    "avoid": {},
+    "puzzles": {}
+  },
+  {
+    "index": 2,
+    "outside_cell": 214,
+    "entry_target": [
+      120,
+      64
+    ],
+    "entrance": 369,
+    "boss": {
+      "type": 99,
+      "cell": 324,
+      "index": 2,
+      "hp": 30
+    },
+    "rooms": [
+      272,
+      288,
+      289,
+      304,
+      305,
+      306,
+      307,
+      320,
+      321,
+      322,
+      323,
+      324,
+      336,
+      337,
+      338,
+      352,
+      353,
+      369
+    ],
+    "outbound": [
+      {
+        "from": 369,
+        "to": 353,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 353,
+        "to": 337,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 337,
+        "to": 336,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 336,
+        "to": 320,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 320,
+        "to": 304,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 304,
+        "to": 288,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 288,
+        "to": 289,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 289,
+        "to": 305,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 305,
+        "to": 306,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 306,
+        "to": 307,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 307,
+        "to": 323,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 323,
+        "to": 324,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 324,
+        "to": 323,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 323,
+        "to": 307,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 307,
+        "to": 306,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 306,
+        "to": 305,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 305,
+        "to": 289,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 289,
+        "to": 288,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 288,
+        "to": 304,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 304,
+        "to": 320,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 320,
+        "to": 336,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 336,
+        "to": 337,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 337,
+        "to": 353,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 353,
+        "to": 369,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      }
+    ],
+    "actions": {
+      "320": [
+        72,
+        40
+      ],
+      "337": [
+        184,
+        40
+      ]
+    },
+    "avoid": {},
+    "puzzles": {}
+  },
+  {
+    "index": 3,
+    "outside_cell": 98,
+    "entry_target": [
+      136,
+      80
+    ],
+    "entrance": 504,
+    "boss": {
+      "type": 105,
+      "cell": 451,
+      "index": 3,
+      "hp": 32
+    },
+    "rooms": [
+      451,
+      466,
+      467,
+      473,
+      482,
+      483,
+      487,
+      489,
+      498,
+      499,
+      500,
+      502,
+      503,
+      504,
+      505
+    ],
+    "outbound": [
+      {
+        "from": 504,
+        "to": 503,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 503,
+        "to": 487,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 487,
+        "to": 482,
+        "target": [
+          120,
+          80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 482,
+        "to": 498,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 498,
+        "to": 499,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 499,
+        "to": 483,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 483,
+        "to": 499,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 499,
+        "to": 498,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 498,
+        "to": 482,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 482,
+        "to": 483,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 483,
+        "to": 467,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 467,
+        "to": 451,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 451,
+        "to": 467,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 467,
+        "to": 483,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 483,
+        "to": 482,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 482,
+        "to": 487,
+        "target": [
+          184,
+          80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 487,
+        "to": 503,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 503,
+        "to": 504,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      }
+    ],
+    "actions": {
+      "483": [
+        120,
+        104
+      ],
+      "489": [
+        72,
+        40
+      ]
+    },
+    "avoid": {
+      "482": [
+        [
+          184,
+          80
+        ]
+      ],
+      "487": [
+        [
+          120,
+          80
+        ]
+      ]
+    },
+    "puzzles": {}
+  },
+  {
+    "index": 4,
+    "outside_cell": 16,
+    "entry_target": [
+      136,
+      96
+    ],
+    "entrance": 496,
+    "boss": {
+      "type": 106,
+      "cell": 384,
+      "index": 4,
+      "hp": 30
+    },
+    "rooms": [
+      384,
+      385,
+      386,
+      387,
+      400,
+      401,
+      402,
+      416,
+      417,
+      418,
+      419,
+      432,
+      433,
+      434,
+      448,
+      449,
+      450,
+      464,
+      465,
+      480,
+      481,
+      496,
+      497
+    ],
+    "outbound": [
+      {
+        "from": 496,
+        "to": 497,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 497,
+        "to": 481,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 481,
+        "to": 465,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 465,
+        "to": 464,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 464,
+        "to": 448,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 448,
+        "to": 432,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 432,
+        "to": 433,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 433,
+        "to": 434,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 434,
+        "to": 418,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 418,
+        "to": 419,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 419,
+        "to": 402,
+        "target": [
+          200,
+          96
+        ],
+        "stairs": true
+      },
+      {
+        "from": 402,
+        "to": 401,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 401,
+        "to": 400,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 400,
+        "to": 384,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 384,
+        "to": 400,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 400,
+        "to": 401,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 401,
+        "to": 402,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 402,
+        "to": 419,
+        "target": [
+          216,
+          128
+        ],
+        "stairs": true
+      },
+      {
+        "from": 419,
+        "to": 418,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 418,
+        "to": 434,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 434,
+        "to": 433,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 433,
+        "to": 432,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 432,
+        "to": 448,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 448,
+        "to": 464,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 464,
+        "to": 465,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 465,
+        "to": 481,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 481,
+        "to": 497,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 497,
+        "to": 496,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      }
+    ],
+    "actions": {
+      "432": [
+        72,
+        40
+      ],
+      "448": [
+        72,
+        104
+      ],
+      "449": [
+        184,
+        40
+      ],
+      "450": [
+        184,
+        40
+      ]
+    },
+    "avoid": {
+      "402": [
+        [
+          216,
+          128
+        ]
+      ],
+      "419": [
+        [
+          200,
+          96
+        ]
+      ]
+    },
+    "puzzles": {}
+  },
+  {
+    "index": 5,
+    "outside_cell": 73,
+    "entry_target": [
+      104,
+      96
+    ],
+    "entrance": 390,
+    "boss": {
+      "type": 101,
+      "cell": 355,
+      "index": 5,
+      "hp": 72
+    },
+    "rooms": [
+      339,
+      340,
+      341,
+      342,
+      343,
+      354,
+      355,
+      356,
+      357,
+      358,
+      370,
+      371,
+      372,
+      374,
+      390
+    ],
+    "outbound": [
+      {
+        "from": 390,
+        "to": 374,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 374,
+        "to": 358,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 358,
+        "to": 357,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 357,
+        "to": 341,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 341,
+        "to": 340,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 340,
+        "to": 341,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 341,
+        "to": 357,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 357,
+        "to": 356,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 356,
+        "to": 340,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 340,
+        "to": 339,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 339,
+        "to": 354,
+        "target": [
+          72,
+          80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 354,
+        "to": 370,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 370,
+        "to": 371,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 371,
+        "to": 355,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 355,
+        "to": 371,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 371,
+        "to": 372,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 372,
+        "to": 356,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 356,
+        "to": 357,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 357,
+        "to": 358,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 358,
+        "to": 374,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 374,
+        "to": 390,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      }
+    ],
+    "actions": {
+      "340": [
+        184,
+        40
+      ],
+      "341": [
+        184,
+        40
+      ],
+      "354": [
+        72,
+        40
+      ],
+      "358": [
+        184,
+        40
+      ]
+    },
+    "avoid": {
+      "339": [
+        [
+          72,
+          80
+        ]
+      ],
+      "354": [
+        [
+          136,
+          80
+        ]
+      ],
+      "372": [
+        [
+          120,
+          96
+        ]
+      ]
+    },
+    "puzzles": {
+      "374": {
+        "target": [
+          168,
+          88
+        ],
+        "tile": 74
+      }
+    }
+  },
+  {
+    "index": 6,
+    "outside_cell": 139,
+    "entry_target": [
+      136,
+      96
+    ],
+    "entrance": 391,
+    "boss": {
+      "type": 100,
+      "cell": 277,
+      "index": 6,
+      "hp": 60
+    },
+    "rooms": [
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      325,
+      326,
+      327,
+      328,
+      359,
+      360,
+      361,
+      375,
+      376,
+      391,
+      392
+    ],
+    "outbound": [
+      {
+        "from": 391,
+        "to": 375,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 375,
+        "to": 376,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 376,
+        "to": 360,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 360,
+        "to": 361,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 361,
+        "to": 312,
+        "target": [
+          136,
+          80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 312,
+        "to": 313,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 313,
+        "to": 312,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 312,
+        "to": 296,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 296,
+        "to": 280,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 280,
+        "to": 279,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 279,
+        "to": 278,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 278,
+        "to": 294,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 294,
+        "to": 310,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 310,
+        "to": 309,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 309,
+        "to": 308,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 308,
+        "to": 292,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 292,
+        "to": 293,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 293,
+        "to": 277,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 277,
+        "to": 293,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 293,
+        "to": 292,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 292,
+        "to": 291,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 291,
+        "to": 275,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 275,
+        "to": 276,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 276,
+        "to": 312,
+        "target": [
+          216,
+          48
+        ],
+        "stairs": true
+      },
+      {
+        "from": 312,
+        "to": 361,
+        "target": [
+          216,
+          48
+        ],
+        "stairs": true
+      },
+      {
+        "from": 361,
+        "to": 360,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 360,
+        "to": 376,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 376,
+        "to": 375,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 375,
+        "to": 391,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      }
+    ],
+    "actions": {
+      "279": [
+        136,
+        104
+      ],
+      "280": [
+        184,
+        40
+      ],
+      "290": [
+        184,
+        40
+      ],
+      "313": [
+        184,
+        40
+      ]
+    },
+    "avoid": {
+      "276": [
+        [
+          216,
+          48
+        ]
+      ],
+      "312": [
+        [
+          216,
+          48
+        ]
+      ],
+      "359": [
+        [
+          40,
+          48
+        ]
+      ],
+      "361": [
+        [
+          136,
+          80
+        ]
+      ]
+    },
+    "puzzles": {
+      "293": {
+        "target": [
+          184,
+          136
+        ],
+        "tile": 123
+      },
+      "309": {
+        "target": [
+          56,
+          88
+        ],
+        "tile": 67
+      }
+    }
+  },
+  {
+    "index": 7,
+    "outside_cell": 27,
+    "entry_target": [
+      136,
+      96
+    ],
+    "entrance": 475,
+    "boss": {
+      "type": 103,
+      "cell": 377,
+      "index": 7,
+      "hp": 60
+    },
+    "rooms": [
+      377,
+      393,
+      407,
+      408,
+      409,
+      424,
+      439,
+      440,
+      441,
+      442,
+      443,
+      454,
+      455,
+      459,
+      469,
+      470,
+      475,
+      486
+    ],
+    "outbound": [
+      {
+        "from": 475,
+        "to": 459,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 459,
+        "to": 443,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 443,
+        "to": 442,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 442,
+        "to": 441,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 441,
+        "to": 440,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 440,
+        "to": 424,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 424,
+        "to": 408,
+        "target": [
+          120,
+          80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 408,
+        "to": 409,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 409,
+        "to": 393,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 393,
+        "to": 377,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 377,
+        "to": 393,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 393,
+        "to": 409,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 409,
+        "to": 408,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 408,
+        "to": 424,
+        "target": [
+          40,
+          48
+        ],
+        "stairs": true
+      },
+      {
+        "from": 424,
+        "to": 440,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 440,
+        "to": 439,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 439,
+        "to": 459,
+        "target": [
+          136,
+          80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 459,
+        "to": 475,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      }
+    ],
+    "actions": {
+      "441": [
+        184,
+        40
+      ],
+      "442": [
+        72,
+        40
+      ],
+      "486": [
+        72,
+        40
+      ]
+    },
+    "avoid": {
+      "408": [
+        [
+          40,
+          48
+        ]
+      ],
+      "424": [
+        [
+          120,
+          80
+        ]
+      ],
+      "439": [
+        [
+          136,
+          80
+        ]
+      ],
+      "486": [
+        [
+          120,
+          128
+        ]
+      ]
+    },
+    "puzzles": {}
+  },
+  {
+    "index": 8,
+    "outside_cell": 41,
+    "entry_target": [
+      136,
+      96
+    ],
+    "entrance": 490,
+    "boss": {
+      "type": 107,
+      "cell": 406,
+      "index": 8,
+      "hp": 80
+    },
+    "rooms": [
+      406,
+      410,
+      422,
+      423,
+      425,
+      426,
+      456,
+      457,
+      458,
+      471,
+      472,
+      474,
+      488,
+      490,
+      491,
+      492
+    ],
+    "outbound": [
+      {
+        "from": 490,
+        "to": 474,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 474,
+        "to": 458,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 458,
+        "to": 457,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 457,
+        "to": 456,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 456,
+        "to": 472,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 472,
+        "to": 471,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 471,
+        "to": 422,
+        "target": [
+          120,
+          80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 422,
+        "to": 406,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 406,
+        "to": 422,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 422,
+        "to": 423,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 423,
+        "to": 491,
+        "target": [
+          216,
+          48
+        ],
+        "stairs": true
+      },
+      {
+        "from": 491,
+        "to": 490,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      }
+    ],
+    "actions": {
+      "410": [
+        72,
+        40
+      ],
+      "491": [
+        72,
+        40
+      ],
+      "492": [
+        184,
+        40
+      ]
+    },
+    "avoid": {
+      "422": [
+        [
+          56,
+          128
+        ]
+      ],
+      "423": [
+        [
+          216,
+          48
+        ]
+      ],
+      "426": [
+        [
+          200,
+          128
+        ]
+      ],
+      "456": [
+        [
+          40,
+          48
+        ]
+      ],
+      "471": [
+        [
+          120,
+          80
+        ]
+      ],
+      "488": [
+        [
+          136,
+          96
+        ]
+      ]
+    },
+    "puzzles": {}
+  },
+  {
+    "index": 9,
+    "outside_cell": 235,
+    "entry_target": [
+      136,
+      96
+    ],
+    "entrance": 508,
+    "boss": {
+      "type": 108,
+      "cell": 428,
+      "index": 9,
+      "hp": 90
+    },
+    "rooms": [
+      411,
+      412,
+      413,
+      414,
+      427,
+      428,
+      429,
+      430,
+      444,
+      445,
+      446,
+      460,
+      461,
+      462,
+      476,
+      477,
+      478,
+      493,
+      494,
+      506,
+      507,
+      508,
+      509,
+      510
+    ],
+    "outbound": [
+      {
+        "from": 508,
+        "to": 509,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 509,
+        "to": 493,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 493,
+        "to": 477,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 477,
+        "to": 461,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 461,
+        "to": 462,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 462,
+        "to": 446,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 446,
+        "to": 445,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 445,
+        "to": 444,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 444,
+        "to": 428,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 428,
+        "to": 444,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 444,
+        "to": 445,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 445,
+        "to": 446,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 446,
+        "to": 462,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 462,
+        "to": 478,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 478,
+        "to": 494,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 494,
+        "to": 510,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 510,
+        "to": 509,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 509,
+        "to": 508,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      }
+    ],
+    "actions": {
+      "429": [
+        72,
+        40
+      ],
+      "444": [
+        72,
+        40
+      ],
+      "445": [
+        184,
+        40
+      ],
+      "461": [
+        184,
+        40
+      ],
+      "477": [
+        184,
+        40
+      ],
+      "478": [
+        72,
+        40
+      ],
+      "493": [
+        72,
+        40
+      ]
+    },
+    "avoid": {
+      "414": [
+        [
+          136,
+          80
+        ]
+      ],
+      "460": [
+        [
+          120,
+          96
+        ]
+      ],
+      "476": [
+        [
+          120,
+          80
+        ]
+      ]
+    },
+    "puzzles": {}
+  },
+  {
+    "index": 10,
+    "outside_cell": 137,
+    "entry_target": [
+      120,
+      80
+    ],
+    "entrance": 397,
+    "boss": {
+      "type": 109,
+      "cell": 332,
+      "index": 10,
+      "hp": 90
+    },
+    "rooms": [
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      314,
+      315,
+      316,
+      317,
+      318,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      362,
+      363,
+      364,
+      365,
+      366,
+      378,
+      379,
+      380,
+      381,
+      382,
+      394,
+      395,
+      396,
+      397,
+      398
+    ],
+    "outbound": [
+      {
+        "from": 397,
+        "to": 381,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 381,
+        "to": 365,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 365,
+        "to": 381,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 381,
+        "to": 382,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 382,
+        "to": 366,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 366,
+        "to": 350,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 350,
+        "to": 349,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 349,
+        "to": 365,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 365,
+        "to": 364,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 364,
+        "to": 348,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 348,
+        "to": 332,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      }
+    ],
+    "return": [
+      {
+        "from": 332,
+        "to": 348,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 348,
+        "to": 364,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 364,
+        "to": 365,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 365,
+        "to": 381,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 381,
+        "to": 397,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      }
+    ],
+    "actions": {
+      "297": [
+        72,
+        40
+      ],
+      "300": [
+        184,
+        40
+      ],
+      "329": [
+        72,
+        40
+      ],
+      "331": [
+        184,
+        40
+      ],
+      "364": [
+        72,
+        40
+      ],
+      "365": [
+        120,
+        104
+      ],
+      "366": [
+        184,
+        40
+      ],
+      "380": [
+        184,
+        40
+      ]
+    },
+    "avoid": {
+      "281": [
+        [
+          40,
+          48
+        ]
+      ],
+      "284": [
+        [
+          216,
+          48
+        ]
+      ],
+      "298": [
+        [
+          120,
+          80
+        ]
+      ],
+      "316": [
+        [
+          120,
+          96
+        ]
+      ],
+      "318": [
+        [
+          120,
+          96
+        ]
+      ],
+      "331": [
+        [
+          104,
+          128
+        ]
+      ],
+      "333": [
+        [
+          120,
+          112
+        ]
+      ],
+      "334": [
+        [
+          136,
+          80
+        ]
+      ],
+      "346": [
+        [
+          88,
+          80
+        ]
+      ],
+      "362": [
+        [
+          40,
+          48
+        ]
+      ],
+      "364": [
+        [
+          168,
+          128
+        ]
+      ],
+      "379": [
+        [
+          120,
+          64
+        ]
+      ]
+    },
+    "puzzles": {}
+  }
+]

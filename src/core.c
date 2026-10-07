@@ -409,7 +409,27 @@ static int world_run_resource_adjust_callback(uint16_t target){if(target!=0xAF25
 
 /* $5FC7/B205: one of two permanent capacity rewards selected by the room
    from which the player entered. */
-static int world_run_capacity_reward_callback(uint16_t target){if(target!=0xB205u)return 0;if((gaw_ram_read8(0xC0A6u)&0x77u)==0x14u||gaw_ram_read16le(0xC060u)!=0x025Cu)return 1;if(gaw_world_progress_test_and_set())return 1;uint8_t from=gaw_ram_read8(0xC0BBu);int magic=(from==0x32u||from==0xC0u||from==0xE5u||from==0xECu);if(magic){gaw_world_grant_item(0x1Cu);unsigned v=(unsigned)gaw_ram_read8(0xC0DCu)+8u;if(v>0x80u)v=0x80u;gaw_ram_write8(0xC0DCu,(uint8_t)v);gaw_ram_write8(0xC0DBu,(uint8_t)v);}else{gaw_world_grant_item(0x2Au);unsigned v=(unsigned)gaw_ram_read8(0xC0DAu)+8u;if(v>0x80u)v=0x80u;gaw_ram_write8(0xC0DAu,(uint8_t)v);while(gaw_ram_read8(0xC318u)!=(uint8_t)v){gaw_ram_write8(0xC318u,(uint8_t)(gaw_ram_read8(0xC318u)+1u));gaw_ram_write8(0xDE08u,0x95u);gaw_ram_write8(0xC045u,0x81u);hud_update_phase(1u);}}return 1;}
+static int world_run_capacity_reward_callback(uint16_t target){
+    if(target!=0xB205u)return 0;
+    uint8_t action=(uint8_t)(gaw_ram_read8(0xC0A6u)&0x77u);
+    /* CP $14 leaves a borrow consumed by the original SBC HL,BC. */
+    if(action==0x14u||gaw_ram_read16le(0xC060u)!=(uint16_t)(0x025Cu+(action<0x14u)))return 1;
+    if(gaw_world_progress_test_and_set())return 1;
+    uint8_t from=gaw_ram_read8(0xC0BBu);
+    int magic=(from==0x32u||from==0xC0u||from==0xE5u||from==0xECu);
+    world_direct_message(magic?0x9035u:0x9021u);
+    gaw_world_grant_item(magic?0x1Cu:0x2Au);
+    uint16_t capacity=magic?0xC0DCu:0xC0DAu;
+    unsigned value=(unsigned)gaw_ram_read8(capacity)+8u;
+    if(value>0x80u)value=0x80u;
+    gaw_ram_write8(capacity,(uint8_t)value);
+    if(magic)gaw_ram_write8(0xC0DBu,(uint8_t)value);
+    else while(gaw_ram_read8(0xC318u)!=(uint8_t)value){
+        gaw_ram_write8(0xC318u,(uint8_t)(gaw_ram_read8(0xC318u)+1u));
+        gaw_hud_animate_value(1);
+    }
+    return 1;
+}
 
 /* $669D: arm a scripted marker/state when Arthur activates a fixed point. */
 static void world_try_script_marker(uint16_t pos,uint8_t value){if((gaw_ram_read8(0xC0A6u)&0x77u)==0x14u&&gaw_ram_read16le(0xC060u)==pos){gaw_ram_write8(0xC0A7u,value);gaw_ram_write8(0xC01Du,0x16u);}}

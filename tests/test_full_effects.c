@@ -22,7 +22,7 @@ static void setup(unsigned mode,unsigned kind,unsigned frame,unsigned corner){
     gaw_ram_write8(0xC040,(uint8_t)mode);gaw_ram_write8(0xC066,(uint8_t)(15u-mode));gaw_ram_write16le(0xC0B9,(uint16_t)(mode==2?0x101:0x95));
     gaw_ram_write16le(0xC034,0xDD00);gaw_ram_write8(0xC02F,(uint8_t)frame);
     gaw_ram_write8(0xC0DA,24);gaw_ram_write8(0xC0DC,16);gaw_ram_write8(0xC0E0,2);gaw_ram_write8(0xC0E1,1);
-    gaw_ram_write8(0xC0DF,1);gaw_ram_write8(0xC318,16);gaw_ram_write8(0xC300,2);gaw_ram_write8(0xC301,1);
+    gaw_ram_write8(0xC0DF,6);gaw_ram_write8(0xC0E6,(uint8_t)kind);gaw_ram_write8(0xC318,16);gaw_ram_write8(0xC300,2);gaw_ram_write8(0xC301,1);
     gaw_ram_write8(0xC311,(uint8_t)(corner?2:0x58));gaw_ram_write8(0xC313,(uint8_t)(corner?0xFA:0x88));
     gaw_ram_write16le(0xC308,0x80A0);gaw_ram_write8(0xC303,1);
     for(unsigned i=0;i<16u;++i){uint16_t e=(uint16_t)(0xC600u+i*0x30u);gaw_ram_write8(e,(uint8_t)(i?32:0));gaw_ram_write8((uint16_t)(e+3u),(uint8_t)(i&2u));gaw_ram_write8((uint16_t)(e+0x1Bu),(uint8_t)(i%3u));gaw_ram_write8((uint16_t)(e+0x1Au),(uint8_t)(i*5u));gaw_ram_write8((uint16_t)(e+0x1Du),0xFA);}

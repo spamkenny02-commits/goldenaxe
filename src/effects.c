@@ -85,7 +85,7 @@ static void orbit_sprites(void){
 }
 static void finish_effect(void){
     uint8_t selected=R(0xC0DFu),level=R(0xC0E0u+selected);
-    uint8_t damage=effect_rom(0,(uint16_t)(0x2D9Eu+level*5u));
+    uint8_t damage=effect_rom(0,(uint16_t)(0x2D9Eu+selected*4u+level));
     for(unsigned i=0;i<16u;++i){
         uint16_t e=(uint16_t)(0xC600u+i*0x30u);
         if(!R(e)||!R(e+0x1Bu)||!(R(e+3u)&2u))continue;
