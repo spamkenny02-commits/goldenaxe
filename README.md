@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V33)
+## Current status (V34)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -55,6 +55,11 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   palette effect, progressive full heal, teleport wipe, terrain transformation
   and the 225-cell overworld map. 48 complete original-instruction comparisons
   check every shared frame's RAM/video/palette/registers, final SRAM and timing.
+- V34 moves the sprite-status counters/collision bitmap out of the 68000
+  interrupt stack while preserving the V33 Mode 4 calculation. This removes
+  roughly 6.3 KiB of automatic frame scratch from the VBlank C call. ROM-free
+  oracle validation passes locally; a new private-ROM 68000 rebuild/profile is
+  still pending.
 - Sprite overflow/collision status is calculated from the SMS shadow, with the
   eight-sprites-per-line limit, nontransparent pixels, clipping, 8/16-pixel
   height, zoom and pattern bank. 6,948 independent synthetic scanline/pixel
