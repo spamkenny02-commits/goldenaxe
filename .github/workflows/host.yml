@@ -48,3 +48,21 @@ jobs:
         if: steps.reference.outputs.available == 'true'
         run: |
           make test test-final test-reset test-ui test-effects test-assets test-video test-pause test-scene test-full-effects test-transitions test-entry test-map-resources test-game-over test-presentation test-inventory test-menu test-services test-ending test-intro test-audio test-irq test-player-items test-world-scroll test-native-boot audit test-sanitize
+  native-video:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ROM-free production 68000 video fixture
+        run: |
+          sh md/fetch_toolchain.sh "$PWD/md/toolchain"
+          PREFIX="$PWD/md/toolchain/bin/m68k-elf-" sh tools/build_md_video_fixture.sh
+      - name: Build pinned Genesis Plus GX core
+        run: |
+          git init md/build/genesis-plus-gx
+          git -C md/build/genesis-plus-gx remote add origin https://github.com/libretro/Genesis-Plus-GX.git
+          git -C md/build/genesis-plus-gx fetch --depth=1 origin 49c584764893b0505ac7f768a754f97330fa4392
+          git -C md/build/genesis-plus-gx checkout --detach FETCH_HEAD
+          make -C md/build/genesis-plus-gx -f Makefile.libretro HAVE_CHD=0 -j2
+      - name: Compare native video pixels to independent indexed oracle
+        run: |
+          python3 tools/test_md_video_emulator.py --core md/build/genesis-plus-gx/genesis_plus_gx_libretro.so --nm md/toolchain/bin/m68k-elf-nm

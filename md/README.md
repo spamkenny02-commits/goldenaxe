@@ -75,4 +75,19 @@ pattern per block. The native image is 476,460 bytes, BSS 31,518, checksum BC9D.
 Local reference/sanitizer tests pass; idle is 239 updates/300 physical frames
 and the checked exit uses 508 gameplay physical frames. Screen comparison
 reveals that SMS background color zero is incorrectly transparent on MD; its
-zero-color layer/scroll/priority mapping remains to fix.
+V38 introduces a zero-colour filler layer and an independent hardware fixture.
+No newer full-game cadence is measured while local execution is unavailable.
+
+V38's standalone hardware fixture uses generated patterns and colours. It links
+production video.c/platform_md.c directly, without game data or gameplay:
+
+```sh
+PREFIX="$PWD/md/toolchain/bin/m68k-elf-" sh tools/build_md_video_fixture.sh
+python3 tools/test_md_video_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretro.so --nm md/toolchain/bin/m68k-elf-nm
+```
+
+Three stages check every output pixel against an independent indexed oracle,
+including both background palette-zero colours, sprite priority, palette/name
+updates and the bottom viewport mask. The fixture also runs in GitHub Actions.
+The initial V38 checkpoint awaits that run; this fixture does not constitute a
+full-game, performance or physical-hardware validation.

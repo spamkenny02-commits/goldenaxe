@@ -39,11 +39,32 @@ int main(void) {
         assert(((actual>>12)&1u)==((descriptor>>10)&1u));
         assert(((actual>>13)&1u)==((descriptor>>11)&1u));
         assert(((actual>>15)&1u)==((descriptor>>12)&1u));
+        uint16_t zero=gaw_md_zero_descriptor((uint16_t)descriptor);
+        assert((zero&0x07FFu)==0x500u);
+        assert(((zero>>13)&3u)==2u+((descriptor>>11)&1u));
+        assert((zero&0x9800u)==0); /* no priority or flips */
+    }
+    /* Independently compose indexed colours for all background/sprite pixels.
+       SMS priority applies only to nonzero background pixels. MD transparent
+       Plane A exposes the low-priority palette-zero filler beneath sprites. */
+    for(unsigned palette=0;palette<2u;++palette)
+    for(unsigned priority=0;priority<2u;++priority)
+    for(unsigned bg=0;bg<16u;++bg)
+    for(unsigned sprite=0;sprite<16u;++sprite){
+        unsigned sms=(sprite&&(!priority||!bg))?16u+sprite:palette*16u+bg;
+        uint16_t descriptor=(uint16_t)((palette<<11)|(priority<<12));
+        uint16_t a=gaw_md_descriptor(descriptor),b=gaw_md_zero_descriptor(descriptor);
+        unsigned md;
+        if(bg&&(a&0x8000u))md=((a>>13)&1u)*16u+bg;
+        else if(sprite)md=16u+sprite;
+        else if(bg)md=((a>>13)&1u)*16u+bg;
+        else md=(((b>>13)&3u)-2u)*16u;
+        assert(md==sms);
     }
     for(unsigned y=0;y<256u;++y){
         int expected=(int)y+1+(y>=224u?-256:0);
         assert((int)gaw_md_sprite_y((uint8_t)y)-128==expected);
     }
-    puts("MD video conversion tests: OK (5120 rows, 64 colors, 8192 descriptors, 256 sprite positions)");
+    puts("MD video conversion tests: OK (5120 rows, 64 colors, 8192 descriptors and zero layers, 1024 priority cases, 256 sprite positions)");
     return 0;
 }

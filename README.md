@@ -2,8 +2,12 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V37)
+## Current status (V38)
 
+- V38 fixes the MD background palette-zero layer while keeping zero pixels
+  below sprites. A standalone ROM-free 68000 hardware fixture and pixel oracle
+  have been added; the new GitHub validation is pending at this checkpoint.
+  The last measured full-game image/cadence remains V37.
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
 - Map loading, progression, gameplay renderer, HUD, map animation, entity update, gameplay entry, map entity spawning and Arthur initialization are native C.

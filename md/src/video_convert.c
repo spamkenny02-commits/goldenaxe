@@ -21,6 +21,12 @@ uint16_t gaw_md_descriptor(uint16_t descriptor) {
                       ((descriptor&0x1000u)<<3));
 }
 
+/* Palette 2/3 colour 1 is filled with SMS background palette 0/1 colour 0.
+   This layer stays below sprites even if the source descriptor has priority. */
+uint16_t gaw_md_zero_descriptor(uint16_t descriptor) {
+    return (uint16_t)(0x4500u|((descriptor&0x0800u)<<2));
+}
+
 uint16_t gaw_md_sprite_y(uint8_t y) {
     int line=(int)y+1;
     if(y>=0xE0u)line-=256;
