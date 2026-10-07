@@ -28,9 +28,13 @@ updates the extra zero-colour entry and, when selected, the Window backdrop.
   zero-colour palettes, palette changes, one dirty name descriptor and the
   192-line viewport mask. GitHub Actions builds and runs this fixture.
 
-At the initial V38 checkpoint the new checks have not yet completed. Local
-execution is unavailable; no new full-game ROM build, cadence measurement or
-real-game screenshot comparison is claimed for this change.
+GitHub Actions run 37596443981 passes both host and native-video jobs. The
+standalone 68000 image is 6516 bytes, BSS 25171, checksum 8D82; all 172032
+rendered pixels match. The harness waits for an explicit startup sentinel and
+compares Mode 5 normal intensity using the pinned core's 14/15 channel maximum.
+Private-ROM CI comparisons are explicitly skipped without the reference input.
+Local execution is unavailable; no new full-game ROM build, cadence measurement
+or real-game screenshot comparison is claimed for this change.
 
 ## Next
 

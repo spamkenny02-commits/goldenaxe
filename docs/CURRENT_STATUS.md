@@ -55,8 +55,10 @@ are added to the ROM-free host test. A standalone generated 68000 video fixture
 links the actual production video adapter and shadow, without original game
 data or game dispatcher. Its emulator oracle checks 172032 pixels over palette,
 sprite-overlap, dirty-descriptor and viewport stages. The new checks are
-pending at this checkpoint; no V38 full-game build or cadence result is claimed
-while local execution is unavailable.
+passing in GitHub Actions run 37596443981, including the actual standalone
+68000 link, header/checksum checks and all 172032 rendered pixels. The fixture
+is 6516 bytes (checksum 8D82, BSS 25171). No V38 full-game build or cadence
+result is claimed while local execution is unavailable.
 
 ## Remaining work
 

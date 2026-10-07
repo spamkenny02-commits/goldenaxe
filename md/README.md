@@ -89,5 +89,6 @@ python3 tools/test_md_video_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretr
 Three stages check every output pixel against an independent indexed oracle,
 including both background palette-zero colours, sprite priority, palette/name
 updates and the bottom viewport mask. The fixture also runs in GitHub Actions.
-The initial V38 checkpoint awaits that run; this fixture does not constitute a
-full-game, performance or physical-hardware validation.
+GitHub Actions run 37596443981 passes: the actual standalone image is 6516
+bytes, BSS 25171, checksum 8D82 and all 172032 pixels match. This fixture does
+not constitute a full-game, performance or physical-hardware validation.
