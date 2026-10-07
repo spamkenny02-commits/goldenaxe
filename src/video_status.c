@@ -6,6 +6,7 @@
  * registers before entering C, and a 6144-byte automatic bitmap here made the
  * worst-case IRQ stack needlessly large. The engine is single-threaded and the
  * workspace is fully initialized per touched scanline before it is read. */
+static uint8_t sprite_counts[192];
 static uint8_t sprite_occupied[192][32];
 
 /* 192-line Mode 4, as used by Golden Axe Warrior. Sprite positions, the
@@ -13,12 +14,12 @@ static uint8_t sprite_occupied[192][32];
  * independently of the host console's sprite limits. No ROM data is read.
  * This is frame-level status, not a scanline/cycle-accurate VDP emulator. */
 uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs){
-    uint8_t counts[192]={0};
     static const uint8_t doubled[16]={
         0x00,0x03,0x0C,0x0F,0x30,0x33,0x3C,0x3F,
         0xC0,0xC3,0xCC,0xCF,0xF0,0xF3,0xFC,0xFF
     };
     uint8_t flags=0;
+    memset(sprite_counts,0,sizeof sprite_counts);
     unsigned sat=(unsigned)(regs[5]&0x7Eu)<<7;
     unsigned zoom=regs[1]&1u;
     unsigned height=(regs[1]&2u)?16u:8u;
@@ -36,9 +37,9 @@ uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs){
         if(height==16u)tile&=0xFEu;
         tile|=bank;
         for(int y=first;y<last;++y){
-            if(counts[y]>=8u){flags|=0x40u;continue;}
-            if(!counts[y]&&!(flags&0x20u))memset(sprite_occupied[y],0,32);
-            ++counts[y];
+            if(sprite_counts[y]>=8u){flags|=0x40u;continue;}
+            if(!sprite_counts[y]&&!(flags&0x20u))memset(sprite_occupied[y],0,32);
+            ++sprite_counts[y];
             if(flags&0x20u)continue;
             unsigned row=(unsigned)(y-top)>>zoom;
             unsigned a=(tile<<5)+(row<<2);
