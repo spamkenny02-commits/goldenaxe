@@ -1,3 +1,4 @@
+#include "include/gaw_platform.h"
 #include "include/gaw_audio.h"
 #include "include/gaw_core.h"
 #include "include/gaw_presentation.h"
@@ -22,17 +23,14 @@ static void line_irq(void) {
         case 0x0263: {
             uint8_t mode = gaw_ram_read8(0xC010u) & 0xEFu;
             gaw_ram_write8(0xC010u, mode);
-            gaw_sms_vdp_control_write(mode);
-            gaw_sms_vdp_control_write(0x80);
+            gaw_platform_video_command((uint16_t)(0x8000u|mode));
             break;
         }
         case 0x0275:
-            gaw_sms_vdp_control_write(0);
-            gaw_sms_vdp_control_write(0x88);
+            gaw_platform_video_command(0x8800u);
             break;
         case 0x0280:
-            gaw_sms_vdp_control_write(0x10);
-            gaw_sms_vdp_control_write(0xC0);
+            gaw_platform_video_command(0xC010u);
             gaw_sms_vdp_data_write(0);
             break;
     }

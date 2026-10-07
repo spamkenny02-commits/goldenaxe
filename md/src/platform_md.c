@@ -28,6 +28,18 @@ static uint8_t sprite_line_counts[192],sprite_source_dirty[64],sprite_copy_count
 /* Hardware diagnostics read by the private emulator check. */
 volatile uint32_t gaw_md_vblank_count, gaw_md_async_vblank_count, gaw_md_line_count;
 static inline void irq_mask(uint16_t status){__asm__ volatile("move.w %0,%%sr"::"d"(status):"cc","memory");}
+void gaw_platform_video_command(uint16_t command){
+    uint16_t saved;
+    __asm__ volatile("move.w %%sr,%0":"=d"(saved)::"memory");
+    irq_mask(0x2700);
+    gaw_sms_vdp_control_write((uint8_t)command);
+#ifdef GAW_MD_COMMAND_STRESS
+    /* ROM-free fixture only: force a pending VBlank between control bytes. */
+    if(command==0x4567u)for(volatile unsigned delay=0;delay<60000u;++delay){}
+#endif
+    gaw_sms_vdp_control_write((uint8_t)(command>>8));
+    irq_mask(saved);
+}
 static inline void vdp_reg(unsigned r,uint8_t v){VDP_CTRL=(uint16_t)(0x8000u|((r&31u)<<8)|v);}
 uint32_t gaw_md_vdp_command(uint16_t a,uint32_t code){
     return code|((uint32_t)(a&0x3FFFu)<<16)|((uint32_t)(a>>14)&3u);

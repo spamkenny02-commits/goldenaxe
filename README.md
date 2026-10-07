@@ -2,14 +2,21 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V43)
+## Current status (V44)
 
+- V44 fixes a VBlank race between the two SMS video-command bytes, restoring
+  the original RST $28 interrupt protection. The 363 differing pixels are
+  resolved: the settled route viewport matches all 49152 SMS pixels using
+  fixed DAC conversion. All 537 native raster stages / 30793728 pixels pass,
+  including a forced-interrupt regression that fails without protection.
+  Route cadence stays at 529 gameplay frames; idle measures 225/300 updates.
+  See `docs/CONTINUOUS_V44_PROGRESS.md`.
 - V43 optimizes sprite collision scratch clearing and opacity merges, plus
   clipped-row mask generation. The controller route uses 529 gameplay frames
   versus V42's 571 (7.4% fewer), with the same final cell/position/HP. Idle
   remains 227 updates/300 frames. All 536 raster stages and the modified
-  helper/sanitizer/hardware collision checks pass; full-game screenshot
-  equivalence remains open. See `docs/CONTINUOUS_V43_PROGRESS.md`.
+  helper/sanitizer/hardware collision checks pass; its observed full-game screenshot
+  regression is resolved by V44. See `docs/CONTINUOUS_V43_PROGRESS.md`.
 - V42 restores full-game local validation and caches unchanged physical scroll
   tables, invalidating after the H-scroll line handler and backend reset. All
   536 native raster stages / 30736384 pixels pass locally. The full-game image

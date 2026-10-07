@@ -1,3 +1,4 @@
+#include "include/gaw_platform.h"
 #include <string.h>
 #include "include/gaw_assets.h"
 #include "include/gaw_core.h"
@@ -12,7 +13,7 @@
 #define W16(a,v) gaw_ram_write16le((uint16_t)(a),(uint16_t)(v))
 static uint8_t rom(uint8_t bank,uint16_t a){return gaw_sms_rom_bank_read(a<0x4000u?0u:a<0x8000u?1u:bank,a);}
 static uint16_t word(uint8_t bank,uint16_t a){return (uint16_t)(rom(bank,a)|((uint16_t)rom(bank,a+1u)<<8));}
-static void address(uint16_t a){gaw_sms_vdp_control_write((uint8_t)a);gaw_sms_vdp_control_write((uint8_t)(a>>8));}
+static void address(uint16_t a){gaw_platform_video_command(a);}
 static void tick(void){gaw_world_palette_cycle();gaw_wait_frame();}
 static void delay(unsigned frames){while(frames--)tick();}
 static void render(void){W(0xC303u,R(0xC303u)|1u);gaw_render_build_sms_sat();}

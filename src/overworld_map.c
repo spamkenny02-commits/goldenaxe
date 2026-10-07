@@ -12,7 +12,7 @@
 #define R16(a) gaw_ram_read16le((uint16_t)(a))
 #define W16(a,v) gaw_ram_write16le((uint16_t)(a),(uint16_t)(v))
 static uint8_t rom(uint16_t a){return gaw_sms_rom_bank_read(2,a);}
-static void address(uint16_t a){gaw_sms_vdp_control_write((uint8_t)a);gaw_sms_vdp_control_write((uint8_t)(a>>8));}
+static void address(uint16_t a){gaw_platform_video_command(a);}
 
 /* Bank 2 $837C: 15x10 tiles, each containing an 8x8 part of the map. */
 static void map_setup(void){

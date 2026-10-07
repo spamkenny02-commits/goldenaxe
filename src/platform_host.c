@@ -2,6 +2,12 @@
 #include "include/gaw_ui.h"
 #include "include/gaw_core.h"
 #include "include/gaw_platform.h"
+#include "include/gaw_video.h"
+
+void gaw_platform_video_command(uint16_t command){
+    gaw_sms_vdp_control_write((uint8_t)command);
+    gaw_sms_vdp_control_write((uint8_t)(command>>8));
+}
 
 static uint8_t host_pad;
 static uint8_t host_entropy;

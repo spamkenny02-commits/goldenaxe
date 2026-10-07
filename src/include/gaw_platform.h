@@ -7,6 +7,8 @@
 /* Portable boundary. SMS and Mega Drive backends will implement these later. */
 void gaw_platform_init(void);
 void gaw_platform_wait_vblank(void);
+/* Original RST $28 masks interrupts while emitting the two control bytes. */
+void gaw_platform_video_command(uint16_t command);
 uint8_t gaw_platform_read_pad_sms_bits(void); /* already normalized: bits 0..5, 1 = held */
 /* PSG data ($7F) and handheld stereo mask ($06). MD PSG is mono. */
 void gaw_platform_sound_write(uint8_t port,uint8_t value);

@@ -242,7 +242,7 @@ static void world_swap_scroll_buffers(void){
     for(unsigned i=0;i<0x500u;++i){uint8_t byte=R8(0xD100u+i);W8(0xD100u+i,R8(0xD600u+i));W8(0xD600u+i,byte);}
 }
 static void world_frozen_frame(void){W8(0xC033,1);gaw_wait_frame();W8(0xC033,0);}
-static void world_video_address(uint16_t a){gaw_sms_vdp_control_write((uint8_t)a);gaw_sms_vdp_control_write((uint8_t)(a>>8));}
+static void world_video_address(uint16_t a){gaw_platform_video_command(a);}
 static void world_scroll_rows(uint16_t source){
     world_frozen_frame();world_video_address(0x7800u);
     gaw_sms_vdp_data_write_block(gaw_ram_ptr(source),0x500u);

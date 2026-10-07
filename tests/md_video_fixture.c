@@ -10,12 +10,10 @@ void gaw_md_line_irq(void);
 static unsigned stage;
 
 static void reg(unsigned index,uint8_t value){
-    gaw_sms_vdp_control_write(value);
-    gaw_sms_vdp_control_write((uint8_t)(0x80u|index));
+    gaw_platform_video_command((uint16_t)(value|((0x80u|index)<<8)));
 }
 static void address(uint16_t at){
-    gaw_sms_vdp_control_write((uint8_t)at);
-    gaw_sms_vdp_control_write((uint8_t)(0x40u|(at>>8)));
+    gaw_platform_video_command((uint16_t)(0x4000u|at));
 }
 static unsigned pixel(unsigned tile,unsigned x,unsigned y){
     return ((tile+1u)>>(x%5u))&1u?1u+(tile+y)%3u:0u;
@@ -34,7 +32,7 @@ static void palette(void){
     colors[1]=0x30;colors[2]=0x3C;colors[3]=0x3F;
     colors[16]=(uint8_t)(phase?0x0Cu:0x03u);
     colors[17]=0x0F;colors[18]=0x33;colors[19]=0x3C;colors[31]=0x3F;
-    gaw_sms_vdp_control_write(0);gaw_sms_vdp_control_write(0xC0);
+    gaw_platform_video_command(0xC000u);
     gaw_sms_vdp_data_write_block(colors,sizeof colors);
     reg(7,(uint8_t)(phase==2u?0u:2u));
     if(stage<522u)reg(0,(uint8_t)(0x04u|(stage>=259u&&stage<515u?0x80u:0u)));
@@ -47,6 +45,21 @@ static void solid(unsigned tile,unsigned color){
         gaw_sms_vdp_data_write((uint8_t)((color&(1u<<plane))?0xFFu:0u));
 }
 static void sprite_stage(void){
+    if(stage==536u){
+        address(0);
+        uint8_t poison=(uint8_t)(gaw_sms_vram()[0]^0xFFu);
+        gaw_platform_video_command(0x4567u);
+        gaw_sms_vdp_data_write(poison); /* unused pattern; never tile zero */
+        /* Repeated active-pattern writes span many real VBlanks. The IRQ
+           cancels partial commands as in production; atomic pairs must keep
+           every write at its intended address. Re-submit existing bytes. */
+        for(unsigned pass=0;pass<64u;++pass)
+        for(unsigned at=0;at<28u*32u;++at){
+            uint8_t value=gaw_sms_vram()[at];
+            address((uint16_t)at);gaw_sms_vdp_data_write(value);
+        }
+        return;
+    }
     if(stage==532u){reg(8,8);return;}
     if(stage==533u){
         /* The line IRQ overwrites H-scroll without changing the SMS register.
@@ -120,6 +133,7 @@ static void setup(void){
 
 /* Only a hardware frame barrier and controller input are needed in this fixture. */
 void gaw_vblank_tick(uint8_t held_bits){
+    (void)gaw_video_status_read();
     gaw_ram_write8(RAM_INPUT_HELD,held_bits);
     gaw_ram_write8(RAM_VBLANK_WAIT_FLAG,0);
 }
@@ -137,7 +151,7 @@ void md_main(void){
         gaw_video_fixture_ready=(uint16_t)stage;
         uint8_t held=(uint8_t)(gaw_ram_read8(RAM_INPUT_HELD)&0x10u);
         if(held&&!old){
-            stage=(stage+1u)%536u;palette();
+            stage=(stage+1u)%537u;palette();
             if(stage>=515u)sprite_stage();
             uint16_t d=descriptor(7,5);
             address((uint16_t)(0x3800u+2u*(7u*32u+5u)));

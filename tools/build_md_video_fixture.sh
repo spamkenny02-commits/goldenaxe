@@ -3,7 +3,7 @@ set -eu
 PREFIX=${PREFIX:-m68k-elf-}
 OUT=md/build/video-fixture
 mkdir -p "$OUT"
-CFLAGS='-m68000 -O2 -flto -ffreestanding -fno-builtin -fno-common -fomit-frame-pointer -ffunction-sections -fdata-sections -Wall -Wextra -Werror -Isrc/include -Imd/include'
+CFLAGS='-m68000 -O2 -flto -DGAW_MD_COMMAND_STRESS -ffreestanding -fno-builtin -fno-common -fomit-frame-pointer -ffunction-sections -fdata-sections -Wall -Wextra -Werror -Isrc/include -Imd/include'
 OBJ=''
 # These are the production video backend and shadow. No game data or game logic.
 for f in src/ram.c src/video.c src/video_status.c md/src/runtime.c md/src/platform_md.c md/src/video_convert.c tests/md_video_fixture.c; do

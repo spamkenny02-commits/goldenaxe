@@ -639,7 +639,7 @@ static void player_action_transform_world(void) {
     for (unsigned i=0;i<160;++i) if (R8((uint16_t)(0xDC00u+i))==0x3Fu) { W8((uint16_t)(0xDC00u+i),0x3A); ++changed; }
     if (changed) {
         uint16_t source=(uint16_t)(gaw_ram_read16le(0xCAD0u)<<5);
-        gaw_sms_vdp_control_write((uint8_t)source);gaw_sms_vdp_control_write((uint8_t)(source>>8));
+        gaw_platform_video_command(source);
         for(unsigned i=0;i<32u;++i)W8(0xD100u+i,gaw_sms_vdp_data_read());
         for(unsigned i=32u;i<128u;++i)W8(0xD100u+i,R8(0xD100u+i-32u));
         uint16_t destination=(uint16_t)(gaw_ram_read16le(0xCAF8u)<<5);
@@ -649,9 +649,9 @@ static void player_action_transform_world(void) {
             uint8_t plane_mask=mask;
             for(unsigned i=0;i<128u;++i){
                 uint16_t at=(uint16_t)((destination+i)&~0x4000u);
-                gaw_sms_vdp_control_write((uint8_t)at);gaw_sms_vdp_control_write((uint8_t)(at>>8));
+                gaw_platform_video_command(at);
                 uint8_t value=(uint8_t)((gaw_sms_vdp_data_read()&plane_mask)|(R8(0xD100u+i)&(uint8_t)~plane_mask));
-                at|=0x4000u;gaw_sms_vdp_control_write((uint8_t)at);gaw_sms_vdp_control_write((uint8_t)(at>>8));
+                at|=0x4000u;gaw_platform_video_command(at);
                 gaw_sms_vdp_data_write(value);
                 if((i&3u)==3u)plane_mask=(uint8_t)((plane_mask>>4)|(plane_mask<<4));
             }

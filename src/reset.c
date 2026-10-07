@@ -31,10 +31,8 @@ void gaw_video_initialize_native(void) {
     for(unsigned i=0;i<11u;++i) {
         uint8_t value=gaw_sms_rom_bank_read(0u,(uint16_t)(0x03DFu+i));
         gaw_ram_write8((uint16_t)(0xC010u+i),value);
-        gaw_sms_vdp_control_write(value);
-        gaw_sms_vdp_control_write((uint8_t)(0x80u+i));
+        gaw_platform_video_command((uint16_t)(value|((0x80u+i)<<8)));
     }
-    gaw_sms_vdp_control_write(0x10u);
-    gaw_sms_vdp_control_write(0xC0u);
+    gaw_platform_video_command(0xC010u);
     gaw_sms_vdp_data_write(0);
 }

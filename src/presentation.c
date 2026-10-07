@@ -10,7 +10,7 @@ static uint8_t read_byte(uint8_t bank,uint16_t at,int sram){
 }
 static void write_byte(uint16_t at,uint8_t value){if(at>=0xC000u)gaw_ram_write8((uint16_t)(0xC000u+(at&0x1FFFu)),value);}
 static uint16_t read_word(uint8_t bank,uint16_t at){return (uint16_t)(read_byte(bank,at,0)|((uint16_t)read_byte(bank,(uint16_t)(at+1u),0)<<8));}
-static void address(uint16_t at){gaw_sms_vdp_control_write((uint8_t)at);gaw_sms_vdp_control_write((uint8_t)(at>>8));}
+static void address(uint16_t at){gaw_platform_video_command(at);}
 static void copy(uint8_t bank,uint16_t source,unsigned count,int sram){
     while(count){
         unsigned n;

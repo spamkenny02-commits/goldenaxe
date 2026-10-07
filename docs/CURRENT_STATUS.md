@@ -1,4 +1,4 @@
-# Current status — V43
+# Current status — V44
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -147,8 +147,27 @@ cycles decrease from 613517949 to 572321489. Idle remains 227 updates/300 frames
 All 6951 status cases, 1024 hardware collision cases, MD helper oracles,
 ASan/UBSan helper checks, IRQ/final differential checks and 536 native raster
 stages / 30736384 pixels pass. The settled full-game screenshot differs from
-V42 at 363 pixels; exact full-game upload/animation phase equivalence remains
-open and is not inferred from the generated fixtures.
+V42 at 363 pixels at that checkpoint; V44 resolves this observation below.
+
+## Atomic video commands: V44
+
+The original RST $28 protects its two control-port bytes with DI/EI. Independent
+C calls left an asynchronous VBlank free to cancel a partial shadow command.
+All native address/register helpers now use gaw_platform_video_command: MD
+saves/restores SR around the pair, while the synchronous host emits both bytes.
+Scalar ports remain intact for reference/protocol testing.
+
+The V43 mismatch is resolved: the shared 256x192 route viewport matches V42
+exactly and all 49152 SMS pixels after fixed DAC conversion. All 537 fixture
+stages / 30793728 pixels pass, including a forced-pending-VBlank command test.
+Removing only the mask in a temporary negative build fails at stage 536 [0,0].
+The stress delay is enabled in the fixture only, not the production image.
+
+Full-game size is 479592 bytes, BSS 32296, checksum 5223, RAM end FF7E28;
+actual native-only link/vector/header checks pass. The route stays at 529
+gameplay frames with identical final cell/position/HP; idle measures 225/300
+updates. The small idle cost is documented. This is one route's settled raster,
+not a claim of full-game or physical input-phase equivalence.
 
 ## Remaining work
 

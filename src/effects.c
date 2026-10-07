@@ -1,3 +1,4 @@
+#include "include/gaw_platform.h"
 #include <string.h>
 #include "include/gaw_effects.h"
 #include "include/gaw_assets.h"
@@ -12,8 +13,7 @@ static void restore_half_metatile(void){
     uint8_t column=(uint8_t)((x>>2)|(x<<6));
     uint16_t address=(uint16_t)(0x7800u+((uint16_t)y<<3 & 0xFF00u)+
                               (uint8_t)((uint8_t)(y<<3)|column));
-    gaw_sms_vdp_control_write((uint8_t)address);
-    gaw_sms_vdp_control_write((uint8_t)(address>>8));
+    gaw_platform_video_command(address);
     uint16_t shadow=(uint16_t)(address+0x5E00u);
     uint8_t cell=(uint8_t)((y&0xF0u)|(x>>4));
     uint8_t tile=gaw_ram_read8((uint16_t)(0xDC00u+cell));
@@ -44,7 +44,7 @@ int gaw_effect_native_step(uint16_t state_address){
 static uint8_t effect_rom(uint8_t bank,uint16_t a){return gaw_sms_rom_bank_read(a<0x4000u?0u:a<0x8000u?1u:bank,a);}
 static uint16_t effect_word(uint8_t bank,uint16_t a){return (uint16_t)(effect_rom(bank,a)|((uint16_t)effect_rom(bank,(uint16_t)(a+1u))<<8));}
 static void upload_playfield(void){
-    gaw_sms_vdp_control_write(0);gaw_sms_vdp_control_write(0x78);
+    gaw_platform_video_command(0x7800u);
     /* OUTI and DJNZ each decrement B: ten groups of 128 bytes. */
     for(unsigned i=0;i<0x500u;++i)gaw_sms_vdp_data_write(R(0xD600u+i));
 }

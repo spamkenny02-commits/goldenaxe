@@ -12,7 +12,7 @@ from test_md_emulator import GameInfo, Variable, png
 
 @lru_cache(maxsize=None)
 def sprite_layout(stage):
-    if 530 <= stage <= 535:
+    if 530 <= stage <= 536:
         return sprite_layout(529)
     mode = 0 if stage >= 528 else (3 if stage == 518 else (1 if stage == 519 else (2 if stage == 520 or stage >= 524 else 0)))
     bank = 256 if 521 <= stage < 528 else 0
@@ -199,7 +199,7 @@ def main():
                 break
         else:
             raise AssertionError('Fixture failed to reach its frame barrier')
-        for stage in range(536):
+        for stage in range(537):
             if stage:
                 state['pad'] = 1
                 for _ in range(8):
@@ -207,8 +207,8 @@ def main():
                 state['pad'] = 0
             for _ in range(8):
                 lib.retro_run()
-            if stage == 530:
-                for _ in range(120):
+            if stage in (530, 536):
+                for _ in range(600):
                     if ready() == stage:
                         break
                     lib.retro_run()
@@ -239,7 +239,7 @@ def main():
     finally:
         lib.retro_unload_game()
         lib.retro_deinit()
-    print('ROM-free MD video hardware tests: OK (30736384 pixels, 536 stages, 256 scroll values, 17 sprite stages, 4 H-scroll/cache/IRQ/reset stages; combined H-scroll/right V-lock remains unverified)')
+    print('ROM-free MD video hardware tests: OK (30793728 pixels, 537 stages, 256 scroll values, sprite/scroll/cache/IRQ/reset stages and atomic command stress; combined H-scroll/right V-lock remains unverified)')
 
 
 if __name__ == '__main__':
