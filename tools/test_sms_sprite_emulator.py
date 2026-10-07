@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run generated Z80 fixtures in a pinned SMS II core; check collision at every Y.
+"""Run a generated Z80 fixture in a pinned SMS II core; check collision at every Y.
 No original cartridge input or portable sprite-status implementation is used.
 """
 import argparse
@@ -10,7 +10,7 @@ import tempfile
 from test_md_emulator import GameInfo, Variable
 
 
-def fixture(y, mode):
+def fixture():
     code = bytearray()
     labels, fixups = {}, []
     def emit(*data):
@@ -29,33 +29,49 @@ def fixture(y, mode):
         write(0xBF, at & 255)
         write(0xBF, 0x40 | (at >> 8))
 
-    emit(0xF3, 0x31, 0xF0, 0xDF)  # DI; LD SP,DFF0
-    emit(0xAF, 0x32, 0x10, 0xC0, 0x32, 0x11, 0xC0)
-    write(0xBF, 0)  # Consume a complete harmless VRAM-address command.
+    emit(0xF3, 0x31, 0xF0, 0xDF, 0xAF)  # DI; SP=DFF0; A=0
+    for at in (0xC012, 0xC013, 0xC014, 0xC015):
+        emit(0x32, at & 255, at >> 8)
+    write(0xBF, 0)
     write(0xBF, 0x40)
-    for index, value in enumerate((4, mode, 14, 255, 255, 127, 0, 0, 0, 0, 255)):
+    for index, value in enumerate((4, 0, 14, 255, 255, 127, 0, 0, 0, 0, 255)):
         reg(index, value)
     address(0)
     emit(0x01, 0, 0x40)  # BC=16384 bytes
     label('clear')
     emit(0xAF, 0xD3, 0xBE, 0x0B, 0x78, 0xB1)
-    jump(0xC2, 'clear')  # JP NZ,clear
-    address(64)  # Fully opaque patterns 2 and 3.
-    emit(0x06, 64, 0x3E, 255)
-    emit(0xD3, 0xBE, 0x10, 0xFC)  # OUT (BE),A; DJNZ -4
+    jump(0xC2, 'clear')
+    address(64)  # Opaque patterns 2 and 3.
+    emit(0x06, 64, 0x3E, 255, 0xD3, 0xBE, 0x10, 0xFC)
     address(0x3F00)
-    for value in (y, y, 0xD0):
+    for value in (0, 0, 0xD0):
         write(0xBE, value)
     address(0x3F80)
     for value in (24, 3, 24, 2):
         write(0xBE, value)
-    reg(1, 0x40 | mode)
-    emit(0x3E, 0x5A, 0x32, 0x12, 0xC0, 0x16, 0)  # Started marker; D=0
+    emit(0x3E, 0x5A, 0x32, 0x12, 0xC0)  # Startup sentinel.
+    emit(0x21, 0, 0xC1)  # HL points to the 1024 observed flags.
+    label('case')
+    address(0x3F00)
+    emit(0x3A, 0x14, 0xC0, 0xD3, 0xBE, 0xD3, 0xBE)  # SAT Y pair.
+    emit(0x3A, 0x15, 0xC0, 0xF6, 0x40, 0xD3, 0xBF)
+    write(0xBF, 0x81)  # Height/zoom and display-enable register.
+    emit(0x06, 3, 0x16, 0)  # Three VBlanks: discard two settling frames.
     label('poll')
     emit(0xDB, 0xBF, 0x5F, 0xE6, 0x60, 0xB2, 0x57, 0x7B, 0xE6, 0x80)
-    jump(0xCA, 'poll')  # OR all collision/overflow bits until VBlank.
-    emit(0x7A, 0x32, 0x10, 0xC0)
-    emit(0x3A, 0x11, 0xC0, 0x3C, 0x32, 0x11, 0xC0, 0x16, 0)
+    jump(0xCA, 'poll')  # OR all status flags until VBlank.
+    emit(0x05)  # DEC B
+    jump(0xC2, 'settle')
+    emit(0x7A, 0x77, 0x23)  # Store final frame flags; INC HL.
+    emit(0x3A, 0x14, 0xC0, 0x3C, 0x32, 0x14, 0xC0)
+    jump(0xC2, 'case')  # Continue until Y wraps.
+    emit(0x3A, 0x15, 0xC0, 0x3C, 0x32, 0x15, 0xC0, 0xFE, 4)
+    jump(0xC2, 'case')
+    emit(0x3E, 0xA5, 0x32, 0x13, 0xC0)
+    label('done')
+    jump(0xC3, 'done')
+    label('settle')
+    emit(0x16, 0)
     jump(0xC3, 'poll')
     for offset, name in fixups:
         code[offset:offset + 2] = labels[name].to_bytes(2, 'little')
@@ -65,7 +81,6 @@ def fixture(y, mode):
     rom[0x7FF0:0x7FF8] = b'TMR SEGA'
     rom[0x7FFF] = 0x4C  # Export SMS, 32 KiB.
     return rom
-
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -141,36 +156,34 @@ def main():
         lib.retro_get_memory_size.argtypes = [C.c_uint]
         lib.retro_get_memory_size.restype = C.c_size_t
         rom = Path(temporary) / 'fixture.sms'
+        rom.write_bytes(fixture())
+        info = GameInfo(str(rom).encode(), None, 0, None)
+        assert lib.retro_load_game(C.byref(info)), 'Core rejected the generated SMS fixture'
         comparisons = 0
         try:
+            lib.retro_set_controller_port_device(0, 1)
+            assert lib.retro_get_memory_size(2) == 0x2000, 'Fixture is not SMS'
+            memory = (C.c_uint8 * 0x2000).from_address(lib.retro_get_memory_data(2))
+            for frame in range(5000):
+                lib.retro_run()
+                if memory[0x12] == 0x5A and memory[0x13] == 0xA5:
+                    break
+            else:
+                raise AssertionError(('SMS fixture timeout', memory[0x14], memory[0x15]))
+            assert memory[0x14] == 0 and memory[0x15] == 4, 'Incomplete fixture table'
             for mode in range(4):
                 for y in range(256):
-                    if y < 2:
-                        print('Loading SMS fixture mode=%d y=%02X' % (mode, y), flush=True)
-                    rom.write_bytes(fixture(y, mode))
-                    info = GameInfo(str(rom).encode(), None, 0, None)
-                    assert lib.retro_load_game(C.byref(info)), 'Core rejected the generated SMS fixture'
-                    if y < 2:
-                        print('Fixture loaded; starting emulation', flush=True)
-                    try:
-                        lib.retro_set_controller_port_device(0, 1)
-                        assert lib.retro_get_memory_size(2) == 0x2000, 'Fixture is not SMS'
-                        memory = (C.c_uint8 * 0x2000).from_address(lib.retro_get_memory_data(2))
-                        for _ in range(80):
-                            lib.retro_run()
-                        assert memory[0x12] == 0x5A and memory[0x11] >= 3, ('fixture boot', mode, y, memory[0x11])
-                        top = y + 1 - (256 if y > 208 else 0)
-                        height = (16 if mode & 2 else 8) * (2 if mode & 1 else 1)
-                        want = 0x20 if y != 208 and top < 192 and top + height > 0 else 0
-                        got = memory[0x10]
-                        assert got == want, ('SMS collision', mode, y, got, want)
-                        comparisons += 1
-                    finally:
-                        lib.retro_unload_game()
+                    top = y + 1 - (256 if y > 208 else 0)
+                    height = (16 if mode & 2 else 8) * (2 if mode & 1 else 1)
+                    want = 0x20 if y != 208 and top < 192 and top + height > 0 else 0
+                    got = memory[0x100 + mode * 256 + y]
+                    assert got == want, ('SMS collision', mode, y, got, want)
+                    comparisons += 1
                 print('SMS II collision mode %d: all 256 Y values match' % mode)
         finally:
+            lib.retro_unload_game()
             lib.retro_deinit()
-        print('Independent SMS sprite collision tests: OK (%d generated Z80 fixtures)' % comparisons)
+        print('Independent SMS sprite collision tests: OK (%d Z80-driven hardware cases, %d frames)' % (comparisons, frame + 1))
 
 
 if __name__ == '__main__':
