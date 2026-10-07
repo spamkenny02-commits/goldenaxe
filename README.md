@@ -2,8 +2,14 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V45)
+## Current status (V46)
 
+- V46 adds a controller-only village/save-service route: overworld travel,
+  door entry, dialogue and slot-0 save run without work RAM edits. A fresh
+  process restores its 592-byte payload and returns to village 94 with HP 24.
+  The SMS reference follows the same state/game-counter milestones; all
+  49152 settled viewport pixels match after fixed DAC conversion.
+  See `docs/CONTINUOUS_V46_PROGRESS.md`.
 - V45 validates SRAM-only save/reboot/continue cycles: 12 native host cycles
   cover all three slots, both mapper pages and overwrites. Seven actual MD
   emulator scenarios cover three saves, process restarts, overwrite/reload and

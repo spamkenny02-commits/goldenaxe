@@ -77,6 +77,14 @@ def main():
         assert isinstance(step['ticks'], int) and step['ticks'] > 0
         if 'expect_cell' in step:
             assert isinstance(step['expect_cell'], int) and 0 <= step['expect_cell'] < 0x200
+        if 'expect_state' in step:
+            assert isinstance(step['expect_state'], int) and 0 <= step['expect_state'] < 256
+        if 'pulse' in step:
+            assert isinstance(step['pulse'], bool)
+        if 'expect_saved_slot' in step:
+            assert isinstance(step['expect_saved_slot'], int) and 0 <= step['expect_saved_slot'] < 3
+            if args.reference_sms:
+                parser.error('Logical SRAM assertions currently require the native MD image')
         step['pad'] = sum(1 << buttons[name] for name in set(step['buttons']))
     symbols = {}
     code_symbols = []
@@ -180,7 +188,7 @@ def main():
     memory = (C.c_uint8*memory_size).from_address(lib.retro_get_memory_data(2))
     sram = None
     loaded_save = None
-    if args.sram_in or args.sram_out or args.save_slot is not None:
+    if args.sram_in or args.sram_out or args.save_slot is not None or any('expect_saved_slot' in step for step in inputs):
         assert lib.retro_get_memory_size(0) == 0x10000, 'Expected Genesis Plus GX SRAM backing'
         sram = (C.c_uint8*0x10000).from_address(lib.retro_get_memory_data(0))
         if args.sram_in:
@@ -246,6 +254,8 @@ def main():
         elif inputs and (input_started or state == 0x0C):
             input_started = True
             current['pad'] = inputs[input_step]['pad'] if input_step < len(inputs) else 0
+            if input_step < len(inputs) and inputs[input_step].get('pulse') and read(0xC020):
+                current['pad'] = 0
         elif not args.observe_only and state != 0x0C:
             current['pad'] = 1 << 8 if read(0xC020) == 0 else 0  # MD C = SMS button 2
         else:
@@ -300,6 +310,24 @@ def main():
                     if 'expect_cell' in inputs[input_step]:
                         expected = inputs[input_step]['expect_cell']
                         assert cell == expected, f'Controller step {input_step}: cell {cell:03X}, expected {expected:03X}'
+                    step = inputs[input_step]
+                    if 'expect_state' in step:
+                        assert state == step['expect_state'], f'Controller step {input_step}: state {state:02X}, expected {step["expect_state"]:02X}'
+                    if 'expect_saved_slot' in step:
+                        slot = step['expect_saved_slot']
+                        at = 0x400*(slot+1)
+                        block = bytes(sram[2*(at+i)+1] for i in range(0x250))
+                        assert sram[0x30*2+1] == slot+1, 'Controller route did not save to the expected slot'
+                        assert block[0], 'Controller route saved an empty name'
+                        assert list(block[:8]) == [read(0xC0B0+i) for i in range(8)], 'Controller route saved the wrong name'
+                        assert block[0x29] == read(0xC318), 'Controller route saved the wrong HP'
+                        assert block[0x2D] == read(0xC0DD), 'Controller route saved the wrong currency'
+                        assert block[0x12:0x14] == bytes((read(0xC0BB), read(0xC0BC))), 'Controller route saved the wrong return cell'
+                        input_log[-1]['saved_slot'] = slot
+                        input_log[-1]['saved_hp'] = block[0x29]
+                        input_log[-1]['saved_return_cell'] = int.from_bytes(block[0x12:0x14], 'little')
+                    if current['image']:
+                        png(args.output/f'input_{input_step:02d}.png', *current['image'], pixel_format)
                     input_step += 1
                     input_ticks = 0
         old_tick = tick

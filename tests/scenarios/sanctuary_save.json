@@ -1,0 +1,87 @@
+[
+  {
+    "ticks": 130,
+    "buttons": [
+      "left"
+    ],
+    "expect_cell": 149
+  },
+  {
+    "ticks": 12,
+    "buttons": [
+      "right"
+    ],
+    "expect_cell": 149
+  },
+  {
+    "ticks": 16,
+    "buttons": [
+      "up"
+    ],
+    "expect_cell": 149
+  },
+  {
+    "ticks": 180,
+    "buttons": [
+      "left"
+    ],
+    "expect_cell": 148
+  },
+  {
+    "ticks": 40,
+    "buttons": [],
+    "expect_cell": 148
+  },
+  {
+    "ticks": 50,
+    "buttons": [
+      "right"
+    ],
+    "expect_cell": 148,
+    "expect_state": 12
+  },
+  {
+    "ticks": 60,
+    "buttons": [
+      "up"
+    ],
+    "expect_cell": 0,
+    "expect_state": 12
+  },
+  {
+    "ticks": 40,
+    "buttons": [],
+    "expect_cell": 0,
+    "expect_state": 12
+  },
+  {
+    "ticks": 60,
+    "buttons": [
+      "up"
+    ],
+    "expect_cell": 0,
+    "expect_state": 22
+  },
+  {
+    "ticks": 40,
+    "buttons": [],
+    "expect_cell": 0,
+    "expect_state": 22
+  },
+  {
+    "ticks": 800,
+    "buttons": [
+      "button2"
+    ],
+    "pulse": true,
+    "expect_cell": 0,
+    "expect_state": 12,
+    "expect_saved_slot": 0
+  },
+  {
+    "ticks": 40,
+    "buttons": [],
+    "expect_cell": 0,
+    "expect_state": 12
+  }
+]

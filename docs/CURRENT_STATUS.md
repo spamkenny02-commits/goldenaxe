@@ -1,4 +1,4 @@
-# Current status — V45
+# Current status — V46
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -113,46 +113,106 @@ clipping, transparent/off-screen count consumption, zoom, tall/odd patterns,
 the high pattern bank, source edits without SAT changes, list clearing and
 reuse, sprite shift-left, backend reinitialization and subsequent pattern-only
 edits. All 532 stages / 30507008 pixels pass in Actions 37603203186. The actual
-standalone image is 9928 bytes, BSS 25943, checksum 92EA…1641 tokens truncated…to slot 1.
-3. Import SRAM, continue slot 1, save to slot 2.
-4. Import SRAM and continue slot 2 without saving.
-5. Import SRAM, continue slot 2, overwrite slot 0.
-6. Import SRAM and continue the overwritten slot 0.
-7. Corrupt one signature byte, restart and check new-game entry and erased
-   slots, while preserving reserved bytes and the other mapper page.
+standalone image is 9928 bytes, BSS 25943, checksum 92EA. Host/sanitizer checks
+and all 1024 directly observed SMS status comparisons also pass.
 
-All seven pass and resume at least 300 physical gameplay frames with audio
-and IRQ checks. Every observed continue checks all 592 serialized bytes
-before scene entry, adjusting only C0C0/C0C1 from C0C2/C0C3 as the original
-continue routine does, and checks separately restored HP and selected slot.
-Save checks name, HP, return cell and currency. Between processes, only SRAM
-is transferred: no emulator savestate or work RAM snapshot is loaded.
+## Full-game validation restored: V42
 
-SRAM $1000-$149F is production scene/map scratch, so preservation comparisons
-exclude that workspace. Slot writes are confined to their 592-byte payload
-at $0400, $0800 or $0C00 and last-slot byte $0030. Host tests use distinct
-payloads for overwrites; MD tests validate the production boot payload.
+Local execution and the previous private reference input/toolchain were recovered.
+A fresh V41 build and all host reference/differential targets pass. V42 caches
+unchanged physical scroll tables; the H-scroll line handler and backend init
+invalidate the cache. Four new native stages check nonzero H-scroll, restoration
+after the line handler, top-16-line H-lock and backend reinitialization. All
+536 stages / 30736384 pixels pass locally against the independent pixel oracle.
+The combined fine H-scroll/right V-lock case remains unverified.
 
-## Reproduction
+The V42 full game is 478284 bytes, BSS 32296 at FF0000–FF7E28, checksum 61A4.
+The actual vectors/link/header/native-only checks pass. Idle advances 227 updates
+in 300 physical gameplay frames, identical to freshly rebuilt V41 (V37: 239).
+The controller route reaches cell 94, position [56,104], HP 24, state 0C on
+both SMS and MD. It takes 571 MD gameplay frames versus 348 SMS; both sampled
+update counts are 346. No cadence gain or exact input-phase equivalence is claimed.
 
-Use the private prepared ROM and the existing native MD build. For example:
+## Sprite work reduction: V43
 
-```sh
-make test-save-cycle test-reset test-intro test-services
-python3 tools/test_md_save_emulator.py \
-  --core /path/to/genesis_plus_gx_libretro.so \
-  --nm /path/to/m68k-elf-nm
-```
+Collision scratch uses eight aligned 32-bit zero stores per touched line and
+character-byte access with constant shifts for opacity merges. The MD line-mask
+helper clamps visible rows once and advances a mask bit per line. Persistent
+RAM remains unchanged at 32296 bytes; the full native image is 478324 bytes,
+checksum 20D7, with RAM ending FF7E28. Actual link/vector/header checks pass.
 
-Generated SRAM, screenshots and logs stay in ignored `md/build/save-cycles/`.
-The public repository contains only code, checks and this report.
+The controller route takes 529 gameplay frames versus V42's 571 (7.4% fewer),
+finishing at the same cell 94 / [56,104] / HP 24 / state 0C. Profiled master
+cycles decrease from 613517949 to 572321489. Idle remains 227 updates/300 frames.
+All 6951 status cases, 1024 hardware collision cases, MD helper oracles,
+ASan/UBSan helper checks, IRQ/final differential checks and 536 native raster
+stages / 30736384 pixels pass. The settled full-game screenshot differs from
+V42 at 363 pixels at that checkpoint; V44 resolves this observation below.
 
-## Limits and next work
+## Atomic video commands: V44
 
-Service arrival is a controlled RAM transition from gameplay into the
-production save service. All menu confirmation and SRAM writing then execute
-through production C and controller input. Traveling to the sanctuary and
-entering it through normal collision/interaction remains a separate route
-test. Both mapper pages are covered on the native host; this MD scenario uses
-the normal boot page. Physical cartridge battery behavior, power loss during
-writes, PAL/NTSC hardware and a full playthrough remain unverified.
+The original RST $28 protects its two control-port bytes with DI/EI. Independent
+C calls left an asynchronous VBlank free to cancel a partial shadow command.
+All native address/register helpers now use gaw_platform_video_command: MD
+saves/restores SR around the pair, while the synchronous host emits both bytes.
+Scalar ports remain intact for reference/protocol testing.
+
+The V43 mismatch is resolved: the shared 256x192 route viewport matches V42
+exactly and all 49152 SMS pixels after fixed DAC conversion. All 537 fixture
+stages / 30793728 pixels pass, including a forced-pending-VBlank command test.
+Removing only the mask in a temporary negative build fails at stage 536 [0,0].
+The stress delay is enabled in the fixture only, not the production image.
+
+Full-game size is 479592 bytes, BSS 32296, checksum 5223, RAM end FF7E28;
+actual native-only link/vector/header checks pass. The route stays at 529
+gameplay frames with identical final cell/position/HP; idle measures 225/300
+updates. The small idle cost is documented. This is one route's settled raster,
+not a claim of full-game or physical input-phase equivalence.
+
+## SRAM persistence: V45
+
+No production game code or MD image changed. Native-only host integration
+passes 12 save/reboot/continue cycles (three slots, two pages, initial save and
+overwrite), including complete 592-byte restore, HP, currency, return cell and
+preservation of other slots. ASan/UBSan passes with leak detection disabled.
+
+The actual V44 MD image passes seven SRAM scenarios in separate emulator
+processes: three saves, reload of slot 2, overwrite of slot 0, reload of the
+overwrite and invalid-signature recovery. The runner imports/exports logical
+32 KiB SRAM, without CPU savestates or work RAM imports. Continue restores all
+592 bytes (with the original position adjustment) and HP before scene entry.
+Every scenario resumes at least 300 physical gameplay frames.
+
+Service arrival is injected at gameplay; the production save and continue
+menus run on controller input. Full travel to the sanctuary (subsequently covered below), MD page-1 mapper
+operation and physical battery persistence remain unverified. See
+CONTINUOUS_V45_PROGRESS.md for reproduction and precise scope.
+
+## Controller-driven save interaction: V46
+
+The new sanctuary_save.json route travels from starting cell 95 into village
+94, enters interior 00 through its normal door, walks to the save marker and
+confirms the production save menus. There are no work RAM writes, direct
+service calls or CPU savestates in this route. Slot 0 stores the name, HP,
+currency and return cell 94. A separate process imports only cartridge SRAM,
+checks all 592 restored bytes before scene entry, resumes 300 gameplay frames
+at cell 94 / HP 24 and preserves persistent SRAM outside scene scratch.
+
+The SMS reference passes the same route checkpoints and matches every sampled
+state transition's game counter. Its settled viewport matches all 49152 MD
+pixels after fixed DAC conversion. Physical duration remains different: 4542
+MD emulator frames versus 2076 SMS frames for boot plus the complete scenario.
+No speed improvement or exact physical input phase is claimed.
+
+The seven V45 emulator cases, 12 native SRAM cycles, reset/intro/service
+reference suites and tool tests pass again. The native SRAM integration passes
+ASan/UBSan with leak detection disabled. A wrong expected slot in a temporary
+scenario fails at the save assertion. No production C or MD image changed.
+The truncated remote V45 status report is repaired in this checkpoint.
+
+## Remaining work
+
+Continue full-game sprite/rendering performance, combined fine H-scroll/right
+V-lock, exact overflow timing, controller/combat/interaction routes, MD page-1 SRAM and physical cartridge
+persistence, playthrough/ending and PAL/NTSC/physical hardware behavior.
+The project is not declared finished or universally recompiled.
