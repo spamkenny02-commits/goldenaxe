@@ -21,19 +21,23 @@ static unsigned pixel(unsigned tile,unsigned x,unsigned y){
 }
 static uint16_t descriptor(unsigned row,unsigned col){
     unsigned palette=(row+col)&1u;
-    if(stage&&row==7u&&col==5u)palette^=1u;
+    unsigned changed=stage<3u?stage:((stage-3u)&1u);
+    if(changed&&row==7u&&col==5u)palette^=1u;
     return (uint16_t)(row|(palette<<11)|((col&2u)?0x1000u:0u)|
                       ((col&4u)?0x0200u:0u)|((col&8u)?0x0400u:0u));
 }
 static void palette(void){
+    unsigned phase=stage<3u?stage:0u;
     uint8_t colors[32]={0};
-    colors[0]=(uint8_t)(stage?0x03u:0x0Cu);
+    colors[0]=(uint8_t)(phase?0x03u:0x0Cu);
     colors[1]=0x30;colors[2]=0x3C;colors[3]=0x3F;
-    colors[16]=(uint8_t)(stage?0x0Cu:0x03u);
+    colors[16]=(uint8_t)(phase?0x0Cu:0x03u);
     colors[17]=0x0F;colors[18]=0x33;colors[19]=0x3C;colors[31]=0x3F;
     gaw_sms_vdp_control_write(0);gaw_sms_vdp_control_write(0xC0);
     gaw_sms_vdp_data_write_block(colors,sizeof colors);
-    reg(7,(uint8_t)(stage==2u?0u:2u));
+    reg(7,(uint8_t)(phase==2u?0u:2u));
+    reg(0,(uint8_t)(0x04u|(stage>=259u?0x80u:0u)));
+    reg(9,(uint8_t)(stage>=3u?stage-3u:0u));
 }
 static void setup(void){
     reg(0,0x04);reg(1,0x40);reg(2,0x0E);reg(5,0x7E);
@@ -86,7 +90,7 @@ void md_main(void){
         gaw_video_fixture_ready=(uint16_t)stage;
         uint8_t held=(uint8_t)(gaw_ram_read8(RAM_INPUT_HELD)&0x10u);
         if(held&&!old){
-            stage=(stage+1u)%3u;palette();
+            stage=(stage+1u)%515u;palette();
             uint16_t d=descriptor(7,5);
             address((uint16_t)(0x3800u+2u*(7u*32u+5u)));
             gaw_sms_vdp_data_write((uint8_t)d);

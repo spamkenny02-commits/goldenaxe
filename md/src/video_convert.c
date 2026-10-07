@@ -27,6 +27,24 @@ uint16_t gaw_md_zero_descriptor(uint16_t descriptor) {
     return (uint16_t)(0x4500u|((descriptor&0x0800u)<<2));
 }
 
+/* SMS's 28-row name table wraps at 224 pixels; a 32-row MD plane wraps at 256.
+   Move the coarse (32-pixel) part into name rows and keep VSRAM in 0..31.
+   Visible source rows then stay within physical rows 0..27. */
+unsigned gaw_md_scroll_row(uint8_t scroll,unsigned row) {
+    unsigned base=(scroll>>5)*4u;
+    if(base==28u)base=0;
+    row+=base;
+    return row>=28u?row-28u:row;
+}
+
+uint32_t gaw_md_scroll_dirty_rows(uint32_t rows,uint8_t scroll,uint8_t right_lock) {
+    rows&=0x0FFFFFFFu;
+    unsigned base=gaw_md_scroll_row(scroll,0);
+    uint32_t rotated=base?((rows>>base)|(rows<<(28u-base))):rows;
+    if(right_lock)rotated|=rows;
+    return rotated&0x0FFFFFFFu;
+}
+
 uint16_t gaw_md_sprite_y(uint8_t y) {
     int line=(int)y+1;
     if(y>=0xE0u)line-=256;

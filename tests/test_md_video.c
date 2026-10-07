@@ -61,10 +61,30 @@ int main(void) {
         else md=(((b>>13)&3u)-2u)*16u;
         assert(md==sms);
     }
+    for(unsigned scroll=0;scroll<256u;++scroll){
+        for(unsigned line=0;line<192u;++line){
+            unsigned physical=line+(scroll&31u);
+            unsigned logical=gaw_md_scroll_row((uint8_t)scroll,physical/8u)*8u+physical%8u;
+            assert(logical==(line+scroll)%224u);
+            /* The right-locked pairs use VSRAM zero and the original row. */
+            assert(gaw_md_scroll_row(0,line/8u)*8u+line%8u==line);
+        }
+        for(unsigned locked=0;locked<2u;++locked)
+        for(unsigned dirty=0;dirty<30u;++dirty){
+            uint32_t input=dirty<28u?(uint32_t)1u<<dirty:(dirty==28u?0xFFFFFFFFu:0x0A55AA55u);
+            uint32_t expected=0;
+            for(unsigned row=0;row<28u;++row){
+                unsigned source=(row+4u*(scroll/32u))%28u;
+                if((input&((uint32_t)1u<<source))||
+                   (locked&&(input&((uint32_t)1u<<row))))expected|=(uint32_t)1u<<row;
+            }
+            assert(gaw_md_scroll_dirty_rows(input,(uint8_t)scroll,(uint8_t)locked)==expected);
+        }
+    }
     for(unsigned y=0;y<256u;++y){
         int expected=(int)y+1+(y>=224u?-256:0);
         assert((int)gaw_md_sprite_y((uint8_t)y)-128==expected);
     }
-    puts("MD video conversion tests: OK (5120 rows, 64 colors, 8192 descriptors and zero layers, 1024 priority cases, 256 sprite positions)");
+    puts("MD video conversion tests: OK (5120 rows, 64 colors, 8192 descriptors and zero layers, 1024 priority cases, 49152 scroll lines, 15360 dirty-row cases, 256 sprite positions)");
     return 0;
 }

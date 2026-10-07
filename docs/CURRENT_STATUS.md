@@ -1,4 +1,4 @@
-# Current status — V38
+# Current status — V39
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -60,11 +60,26 @@ passing in GitHub Actions run 37596443981, including the actual standalone
 is 6516 bytes (checksum 8D82, BSS 25171). No V38 full-game build or cadence
 result is claimed while local execution is unavailable.
 
+## Current scroll correction: V39
+
+VSRAM now holds only the low five bits of SMS vertical scroll. The coarse
+32-pixel component selects a rotated 28-row source name table, so all visible
+source pixels obey the SMS modulo-224 wrap. Plane A and its palette-zero filler
+use the same mapping. Changing the coarse base or right-column lock refreshes
+all rows; subsequent dirty logical rows rotate to their physical destinations.
+Right-locked name columns retain unscrolled rows.
+
+Host tests add 49152 visible-line comparisons and 15360 independent dirty-row
+mask comparisons. The production-backend fixture exercises all 256 scroll
+values with/without the right-column lock, one changing logical descriptor and
+sprite overlap: 515 stages / 29532160 pixels. This expanded run is pending.
+Horizontal scroll is zero in the right-lock fixture; combined fine horizontal
+scroll and vertical column-lock behavior is not signed off.
+
 ## Remaining work
 
-Correct SMS's 224-pixel vertical wrap on MD's 256-pixel name plane. Extend the
-hardware fixture to all scroll values and confirm actual private-game pixels
-and cadence when execution recovers. Then validate rendered eight-sprite line
+Validate the V39 expanded fixture and confirm actual private-game pixels and
+cadence when local execution recovers. Then validate rendered eight-sprite line
 clipping, more controller/combat/interaction routes, SRAM save/reload,
 playthrough/ending and PAL/NTSC/physical hardware behavior. The project is not
 declared finished or universally recompiled.

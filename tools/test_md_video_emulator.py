@@ -10,22 +10,27 @@ from test_md_emulator import GameInfo, Variable, png
 
 
 def expected(stage, x, y):
+    phase = stage if stage < 3 else 0
+    scroll = (stage - 3) & 255 if stage >= 3 else 0
+    right_lock = stage >= 259
     colors = [0] * 32
-    colors[:4] = [3 if stage else 12, 48, 60, 63]
-    colors[16:20] = [12 if stage else 3, 15, 51, 60]
+    colors[:4] = [3 if phase else 12, 48, 60, 63]
+    colors[16:20] = [12 if phase else 3, 15, 51, 60]
     colors[31] = 63
     if y >= 192:
-        color = colors[16 + (0 if stage == 2 else 2)]
+        color = colors[16 + (0 if phase == 2 else 2)]
     else:
-        row, col = y // 8, x // 8
-        px, py = x % 8, y % 8
+        source_y = (y + (0 if right_lock and x >= 192 else scroll)) % 224
+        row, col = source_y // 8, x // 8
+        px, py = x % 8, source_y % 8
         if col & 4:
             px = 7 - px
         if col & 8:
             py = 7 - py
         bg = 1 + (row + py) % 3 if ((row + 1) >> (px % 5)) & 1 else 0
         palette = (row + col) & 1
-        if stage and row == 7 and col == 5:
+        changed = phase if stage < 3 else (stage - 3) & 1
+        if changed and row == 7 and col == 5:
             palette ^= 1
         sprite = x < 64 and 50 <= y < 58
         color = colors[31] if sprite and (not (col & 2) or not bg) else colors[palette * 16 + bg]
@@ -137,7 +142,7 @@ def main():
                 break
         else:
             raise AssertionError('Fixture failed to reach its frame barrier')
-        for stage in range(3):
+        for stage in range(515):
             if stage:
                 state['pad'] = 1
                 for _ in range(8):
@@ -148,7 +153,8 @@ def main():
             assert ready() == stage, (stage, ready())
             pixels, width, height, pitch = state['image']
             assert (width, height) == (256, 224), (width, height)
-            png(args.output / ('stage%d.png' % stage), pixels, width, height, pitch, state['format'])
+            if stage < 3 or (stage - 3) % 256 in (31, 32, 223, 224, 255):
+                png(args.output / ('stage%d.png' % stage), pixels, width, height, pitch, state['format'])
             for y in range(height):
                 for x in range(width):
                     if state['format'] == 1:
@@ -163,11 +169,12 @@ def main():
                             actual = tuple(((value >> shift) & 31) * 255 // 31 for shift in (10, 5, 0))
                     want = expected(stage, x, y)
                     assert actual == want, ('pixel', stage, x, y, actual, want)
-            print('Native video stage %d: 57344 pixels match (palette zero, sprite priority, viewport)' % stage)
+            if stage < 3 or (stage - 3) % 32 == 0 or stage == 514:
+                print('Native video stage %d: 57344 pixels match (palette zero, priority, scroll, viewport)' % stage)
     finally:
         lib.retro_unload_game()
         lib.retro_deinit()
-    print('ROM-free MD video hardware tests: OK (172032 pixels)')
+    print('ROM-free MD video hardware tests: OK (29532160 pixels, 256 scroll values with/without right lock, H-scroll zero)')
 
 
 if __name__ == '__main__':

@@ -92,3 +92,11 @@ updates and the bottom viewport mask. The fixture also runs in GitHub Actions.
 GitHub Actions run 37596443981 passes: the actual standalone image is 6516
 bytes, BSS 25171, checksum 8D82 and all 172032 pixels match. This fixture does
 not constitute a full-game, performance or physical-hardware validation.
+
+V39 maps coarse vertical scroll into the 28 logical name rows, keeping physical
+VSRAM in 0..31 to avoid MD's incompatible 256-pixel plane wrap. Dirty rows are
+rotated, with unscrolled right columns retained when locked. The fixture now
+runs 515 stages (29532160 pixels): all 256 vertical values with/without right
+lock, H-scroll zero, plus the original palette/viewport stages. The expanded
+run is pending; combined fine H-scroll/right V-lock and full-game cadence
+still need verification.

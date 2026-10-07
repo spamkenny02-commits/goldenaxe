@@ -19,7 +19,7 @@
 #define Z80_RESET (*(volatile uint8_t*)0xA11200)
 #define SRAM8(o) (*(volatile uint8_t*)(uintptr_t)(0x200001u+((uint32_t)(o)<<1)))
 
-static uint8_t entropy, md_start_held;
+static uint8_t entropy, md_start_held, name_scroll_base, name_vlock;
 /* Hardware diagnostics read by the private emulator check. */
 volatile uint32_t gaw_md_vblank_count, gaw_md_async_vblank_count, gaw_md_line_count;
 static inline void irq_mask(uint16_t status){__asm__ volatile("move.w %0,%%sr"::"d"(status):"cc","memory");}
@@ -63,25 +63,35 @@ static void sync_scroll(const uint8_t *r){
 
     vsram_addr_write(0);
     if(mode&4u){
-        for(unsigned col=0;col<16u;++col){uint16_t s=(uint16_t)(col<12u?r[9]:0u);VDP_DATA=s;VDP_DATA=s;}
-    }else{VDP_DATA=r[9];VDP_DATA=r[9];}
+        for(unsigned col=0;col<16u;++col){uint16_t s=(uint16_t)(col<12u?(r[9]&31u):0u);VDP_DATA=s;VDP_DATA=s;}
+    }else{VDP_DATA=(uint16_t)(r[9]&31u);VDP_DATA=(uint16_t)(r[9]&31u);}
 }
 static void sync_sms_shadow(void){const uint8_t*v=gaw_sms_vram();const uint8_t*c=gaw_sms_cram();const uint8_t*r=gaw_sms_vdp_regs();vdp_reg(0,(uint8_t)(0x04u|(r[0]&0x30u)));vdp_reg(1,(uint8_t)(0x24u|(r[1]&0x40u)));vdp_reg(10,r[10]);vdp_reg(7,(uint8_t)(0x10u|(r[7]&0x0Fu)));sync_scroll(r);for(int t=gaw_sms_take_next_tile_dirty();t>=0;t=gaw_sms_take_next_tile_dirty())upload_tile((unsigned)t,v);
     cram_addr_write(0);for(unsigned i=0;i<32;++i)VDP_DATA=gaw_md_color(c[i]);
     cram_addr_write(0x42);VDP_DATA=gaw_md_color(c[0]);
     cram_addr_write(0x62);VDP_DATA=gaw_md_color(c[16]);
     cram_addr_write(0x44);VDP_DATA=gaw_md_color(c[16u+(r[7]&0x0Fu)]);
-    uint32_t rows=gaw_sms_take_name_rows_dirty();
+    uint8_t base=(uint8_t)gaw_md_scroll_row(r[9],0),lock=(uint8_t)((r[0]>>7)&1u);
+    uint32_t rows=gaw_md_scroll_dirty_rows(gaw_sms_take_name_rows_dirty(),r[9],lock);
+    if(base!=name_scroll_base||lock!=name_vlock)rows=0x0FFFFFFFu;
+    name_scroll_base=base;name_vlock=lock;
     uint16_t nt=(uint16_t)((r[2]&0x0Eu)<<10);
     for(unsigned y=0;rows;++y,rows>>=1)if(rows&1u){
+        uint16_t source[32];
+        unsigned scrolled=gaw_md_scroll_row(r[9],y);
+        for(unsigned x=0;x<32u;++x){
+            unsigned row=lock&&x>=24u?y:scrolled;
+            unsigned o=(nt+2u*(row*32u+x))&0x3FFFu;
+            source[x]=(uint16_t)v[o]|((uint16_t)v[(o+1u)&0x3FFFu]<<8);
+        }
         vdp_addr_write((uint16_t)(0xC000u+y*64u));
-        for(unsigned x=0;x<32u;++x){unsigned o=(nt+2u*(y*32u+x))&0x3FFFu;uint16_t s=(uint16_t)v[o]|((uint16_t)v[(o+1u)&0x3FFFu]<<8);VDP_DATA=gaw_md_descriptor(s);}
+        for(unsigned x=0;x<32u;++x)VDP_DATA=gaw_md_descriptor(source[x]);
         vdp_addr_write((uint16_t)(0x8000u+y*64u));
-        for(unsigned x=0;x<32u;++x){unsigned o=(nt+2u*(y*32u+x))&0x3FFFu;uint16_t s=(uint16_t)v[o]|((uint16_t)v[(o+1u)&0x3FFFu]<<8);VDP_DATA=gaw_md_zero_descriptor(s);}
+        for(unsigned x=0;x<32u;++x)VDP_DATA=gaw_md_zero_descriptor(source[x]);
     }
     if(gaw_sms_take_sat_dirty()){uint16_t sat=(uint16_t)((r[5]&0x7Eu)<<7);vdp_addr_write(0xD800);unsigned out=0;int tall=(r[1]&0x02u)!=0;int shift_left=(r[0]&0x08u)!=0;uint16_t sprite_base=(r[6]&0x04u)?0x100u:0u;for(unsigned i=0;i<64&&out<64;++i){uint8_t sy=v[(sat+i)&0x3FFFu];if(sy==0xD0)break;uint8_t sx=v[(sat+0x80u+i*2u)&0x3FFFu];uint16_t tile=(uint16_t)(sprite_base|v[(sat+0x81u+i*2u)&0x3FFFu]);if(tall)tile&=0x01FEu;VDP_DATA=gaw_md_sprite_y(sy);VDP_DATA=(uint16_t)(((tall?1u:0u)<<8)|((out+1u)&0x7Fu));VDP_DATA=(uint16_t)(0x2000u|tile);VDP_DATA=(uint16_t)((uint16_t)(sx+128u-(shift_left?8u:0u))&0x03FFu);++out;}if(out){uint16_t a=(uint16_t)(0xD800u+(out-1u)*8u+2u);vdp_addr_write(a);VDP_DATA=(uint16_t)((tall?1u:0u)<<8);}else{vdp_addr_write(0xD800);for(unsigned i=0;i<4u;++i)VDP_DATA=0;}} }
 
-void gaw_platform_init(void){irq_mask(0x2700);entropy=0x5A;md_start_held=0;Z80_BUS=1;Z80_RESET=0;SRAM_CTRL=0x01;JOY1_CTRL=0x40;JOY1_DATA=0x40;vdp_reg(0,0x04);vdp_reg(1,0x24);vdp_reg(2,0x30);vdp_reg(3,0x2C);vdp_reg(4,0x04);vdp_reg(5,0x6C);vdp_reg(7,0);vdp_reg(10,0xFF);vdp_reg(11,0);vdp_reg(12,0x00);vdp_reg(13,0x2C);vdp_reg(15,2);vdp_reg(16,0x00);vdp_reg(17,0);vdp_reg(18,0);init_sms_viewport_mask();gaw_sms_mark_all_tiles_dirty();gaw_ram_write8(0xDE03u,(uint8_t)(IO_VER&0x40u?0:0x80));}
+void gaw_platform_init(void){irq_mask(0x2700);entropy=0x5A;md_start_held=0;name_scroll_base=name_vlock=0xFF;Z80_BUS=1;Z80_RESET=0;SRAM_CTRL=0x01;JOY1_CTRL=0x40;JOY1_DATA=0x40;vdp_reg(0,0x04);vdp_reg(1,0x24);vdp_reg(2,0x30);vdp_reg(3,0x2C);vdp_reg(4,0x04);vdp_reg(5,0x6C);vdp_reg(7,0);vdp_reg(10,0xFF);vdp_reg(11,0);vdp_reg(12,0x00);vdp_reg(13,0x2C);vdp_reg(15,2);vdp_reg(16,0x00);vdp_reg(17,0);vdp_reg(18,0);init_sms_viewport_mask();gaw_sms_mark_all_tiles_dirty();gaw_ram_write8(0xDE03u,(uint8_t)(IO_VER&0x40u?0:0x80));}
 uint8_t gaw_platform_read_pad_sms_bits(void){
     JOY1_DATA=0x40; uint8_t hi=JOY1_DATA;
     JOY1_DATA=0x00; (void)JOY1_DATA; uint8_t lo=JOY1_DATA;
