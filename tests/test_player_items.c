@@ -45,6 +45,14 @@ static void setup(unsigned item,unsigned variant){
     gaw_ram_write8(0xC0E8u,1);gaw_ram_write8(0xC0E9u,1);gaw_ram_write16le(0xC0C2u,(uint16_t)(variant&2u?0x101u:0xAAu));
     gaw_ram_write8(0xC01Du,12);gaw_ram_write8(0xC02Fu,(uint8_t)(variant*17u));
     if(item==3u){gaw_ram_write8(0xC072u,(uint8_t)(variant&4u?0:1));gaw_ram_write8(0xC0ADu,(uint8_t)(variant&2u));}
+    if(item>=4u && item<=7u){
+        static const uint8_t mp[]={0,7,8,23,24,31,32,255};
+        gaw_ram_write8(0xC0DBu,mp[variant&7u]);
+        gaw_ram_write8(0xC0C6u,(uint8_t)((variant>>3)&3u));
+        gaw_ram_write8(0xC0E6u,(uint8_t)(1u+(variant&1u)));
+        gaw_ram_write8(0xC041u,(uint8_t)((variant&8u)?2:0));
+        gaw_ram_write8(0xC330u,(uint8_t)((variant&32u)?3:0));
+    }
     if(item==10u){
         gaw_ram_write8(0xC0ACu,(uint8_t)(variant&1u));if(!(variant&2u))gaw_ram_write8(0xDC34u,0x3F);
         for(unsigned i=16;i<32u;++i){GawEntity *e=gaw_entity(i);e->raw[ENT_TYPE]=(uint8_t)(i&2u?0:32);e->raw[ENT_FLAGS]=(uint8_t)(i&1u);e->raw[ENT_STATE]=4;e->raw[ENT_COOLDOWN]=9;}
@@ -64,8 +72,8 @@ static void setup(unsigned item,unsigned variant){
     gaw_host_set_frame_observer(observe);
 }
 int main(void){
-    const unsigned items[]={3,8,9,10,11,12};const uint16_t targets[]={0x2FD2,0x30D6,0x30E8,0x3124,0x31E7,0x2F18};unsigned cases=0;
-    for(unsigned kind=0;kind<6u;++kind)for(unsigned variant=0;variant<8u;++variant){
+    const unsigned items[]={3,4,5,6,7,8,9,10,11,12};const uint16_t targets[]={0x2FD2,0x3050,0x3077,0x30A7,0x3021,0x30D6,0x30E8,0x3124,0x31E7,0x2F18};unsigned cases=0;
+    for(unsigned kind=0;kind<10u;++kind)for(unsigned variant=0;variant<(items[kind]>=4u && items[kind]<=7u?64u:8u);++variant){
         current_item=items[kind];current_case=variant;reference=1;observed=0;setup(current_item,variant);
         if(!gaw_sms_compat_raw_indexed_call(0,targets[kind],0xC300)){
             fprintf(stderr,"reference item%u case%u fault%04X frames%u\n",current_item,current_case,gaw_sms_compat_last_pc(),observed);assert(0);
@@ -74,7 +82,7 @@ int main(void){
         memcpy(ram,gaw_ram,sizeof ram);memcpy(video,gaw_sms_vram(),sizeof video);memcpy(cram,gaw_sms_cram(),32);memcpy(regs,gaw_sms_vdp_regs(),16);
         for(unsigned i=0;i<0x8000u;++i)sram[i]=gaw_platform_sram_read((uint16_t)i);
         reference=0;observed=0;setup(current_item,variant);
-        if(kind==5u)gaw_player_grid_transition(gaw_entity(0));else gaw_player_use_item(gaw_entity(0));
+        if(current_item==12u)gaw_player_grid_transition(gaw_entity(0));else gaw_player_use_item(gaw_entity(0));
         assert(observed==total&&gaw_host_frame_count()==total);
         compare(ram,gaw_ram,sizeof ram,"RAM",0xC000);compare(video,gaw_sms_vram(),sizeof video,"VRAM",0);
         compare(cram,gaw_sms_cram(),32,"CRAM",0);compare(regs,gaw_sms_vdp_regs(),16,"REG",0);

@@ -1900,7 +1900,7 @@ static int entity99_family_handler(GawEntity *e,uint8_t type) {
     if(st==6){
         if(e->raw[ENT_MOTION_PHASE]!=0) return 1;
         e->raw[ENT_STATE]=4;
-        if((e->raw[ENT_DIRECTION]&1u)!=0){--e->raw[0x21];if(++e->raw[0x20]==5u)e->raw[ENT_DIRECTION]=1u;}else{--e->raw[0x20];if(++e->raw[0x21]==5u)e->raw[ENT_DIRECTION]=0u;}
+        if((e->raw[ENT_DIRECTION]&1u)==0){--e->raw[0x21];if(++e->raw[0x20]==5u)e->raw[ENT_DIRECTION]=1u;}else{--e->raw[0x20];if(++e->raw[0x21]==5u)e->raw[ENT_DIRECTION]=0u;}
         if((gaw_platform_entropy8()&0x0Fu)>=4u) return 1;
         e->raw[ENT_STATE]=8;
         if(type==100u && (gaw_platform_entropy8()&0x0Fu)<0x0Du){e->raw[0x08]=0xB9;e->raw[0x09]=0x99;e->raw[ENT_STATE]=0x0A;}else{e->raw[0x08]=0x7F;e->raw[0x09]=0x99;}
@@ -1933,18 +1933,21 @@ static void entity101_boundary_correct(GawEntity *e) {
         case 1: if(x>=0x70u)e->raw[0x20]=0; break;
         case 2: if(y<0x50u)e->raw[0x20]=3; break;
         case 3: if(y>=0xB0u)e->raw[0x20]=2; break;
-        case 4: if(y<0x50u || x>=0x70u)e->raw[0x20]=4; break;
-        case 5: if(y>=0xB0u || x<0x30u)e->raw[0x20]=5; break;
-        case 6: if(y>=0xB0u || x>=0x70u)e->raw[0x20]=6; break;
-        case 7: if(y<0x50u || x<0x30u)e->raw[0x20]=7; break;
+        case 4: if(y>=0xB0u || x<0x30u)e->raw[0x20]=5; break;
+        case 5: if(y<0x50u || x>=0x70u)e->raw[0x20]=4; break;
+        case 6: if(y<0x50u || x<0x30u)e->raw[0x20]=7; break;
+        case 7: if(y>=0xB0u || x>=0x70u)e->raw[0x20]=6; break;
     }
 }
 static uint8_t entity101_choose_mode(const GawEntity *e) {
-    /* $4EB7 for types >= $49: wait for an odd refresh sample, then choose
-       the quadrant facing Arthur.  The portable entropy source replaces R. */
-    uint8_t r;
-    do { r=gaw_platform_entropy8(); } while((r&1u)==0u);
-    (void)r;
+    /* $4ED5 takes the player-facing quadrant for an odd R sample;
+       an even sample falls into the random/table branch at $4EBE. */
+    uint8_t r=gaw_platform_entropy8();
+    if((r&1u)==0){
+        static const uint8_t choices[32]={0,0,6,4,1,1,5,7,2,2,5,6,3,3,4,7,4,4,0,3,5,5,2,1,6,6,0,2,7,7,1,3};
+        r=gaw_platform_entropy8();
+        return r<0x20u?(uint8_t)(r&7u):choices[(unsigned)(e->raw[0x20]&7u)*4u+(r&3u)];
+    }
     uint8_t d=6u, py=gaw_ram_read8(PLAYER_Y_ADDR), px=gaw_ram_read8(PLAYER_X_ADDR);
     if(py>=e->raw[0x13]){d=4u;if(px>=e->raw[0x11])d=7u;}
     else if(px>=e->raw[0x11])d=5u;
@@ -1952,14 +1955,10 @@ static uint8_t entity101_choose_mode(const GawEntity *e) {
 }
 static void entity101_load_motion(GawEntity *e) {
     static const uint8_t slow[41]={
-        0x08, 0x00,0xFF,0x00,0x00,0x00, 0x00,0x01,0x00,0x00,0x01, 0x00,0x00,0xFF,0x02,0x00,
-        0x00,0x00,0x01,0x03,0x00, 0xFF,0x00,0x01,0x03,0x00, 0x01,0x00,0xFF,0x02,0x00,
-        0xFF,0x00,0xFF,0x02,0x00, 0x01,0x00,0x01,0x00,0x00
+        0x08,0x00,0xFF,0x00,0x00,0x00,0x00,0x01,0x00,0x00,0x01,0x00,0x00,0x00,0xFF,0x02,0x00,0x00,0x00,0x01,0x03,0x00,0xFF,0x00,0x01,0x03,0x00,0x01,0x00,0xFF,0x02,0x00,0xFF,0x00,0xFF,0x02,0x00,0x01,0x00,0x01,0x03
     };
     static const uint8_t fast[41]={
-        0x10, 0x80,0xFF,0x00,0x00,0x00, 0x80,0x00,0x00,0x00,0x01, 0x00,0x00,0x80,0xFF,0x02,
-        0x00,0x00,0x80,0x00,0x03, 0x80,0xFF,0x80,0x00,0x03, 0x80,0x00,0x80,0xFF,0x02,
-        0x80,0xFF,0x80,0xFF,0x02, 0x80,0x00,0x80,0x00,0x00
+        0x10,0x80,0xFF,0x00,0x00,0x00,0x80,0x00,0x00,0x00,0x01,0x00,0x00,0x80,0xFF,0x02,0x00,0x00,0x80,0x00,0x03,0x80,0xFF,0x80,0x00,0x03,0x80,0x00,0x80,0xFF,0x02,0x80,0xFF,0x80,0xFF,0x02,0x80,0x00,0x80,0x00,0x03
     };
     const uint8_t *t=e->raw[0x2B]?fast:slow;uint8_t d=(uint8_t)(e->raw[0x20]&7u);const uint8_t *q=t+1u+(unsigned)d*5u;
     e->raw[ENT_MOTION_PHASE]=t[0];e->raw[ENT_DELTA0]=q[0];e->raw[ENT_DELTA0+1]=q[1];e->raw[ENT_DELTA1]=q[2];e->raw[ENT_DELTA1+1]=q[3];e->raw[ENT_DIRECTION]=q[4];
@@ -1986,9 +1985,18 @@ static void entity101_update_orbit(GawEntity *e) {
 static int entity101_handler(GawEntity *e) {
     uint8_t st=e->raw[ENT_STATE];
     if(st==0){e->raw[ENT_FLAGS]|=1u;e->raw[0x13]=0x80;e->raw[0x11]=0x50;e->raw[0x08]=0x02;e->raw[0x09]=0x9A;e->raw[0x2B]=8;e->raw[ENT_HIT_FLASH_TIMER]=0x30;e->raw[ENT_STATE]=2;}
-    else if(st==2){if(e->raw[ENT_HIT_FLASH_TIMER]==0){for(unsigned i=0;i<8u;++i){GawEntity*c=gaw_entity(24u+i);c->raw[ENT_TYPE]=102;c->raw[0x29]=(uint8_t)((7u-i)*0x20u);}e->raw[ENT_ANIM_DELAY]=2;e->raw[ENT_ANIM_FRAMES]=2;e->raw[0x28]=0;e->raw[0x2A]=0;e->raw[ENT_STATE]=4;}}
+    else if(st==2){if(e->raw[ENT_HIT_FLASH_TIMER]==0){for(unsigned i=0;i<8u;++i){GawEntity*c=gaw_entity(24u+i);c->raw[ENT_TYPE]=102;c->raw[0x29]=(uint8_t)((7u-i)*0x20u);}e->raw[ENT_ANIM_DELAY]=2;e->raw[ENT_ANIM_FRAMES]=2;e->raw[0x28]=0;e->raw[0x2A]=0;e->raw[0x2E]=0x14;e->raw[ENT_STATE]=4;}}
     else if(st==4){e->raw[0x20]=entity101_choose_mode(e);entity101_boundary_correct(e);entity101_load_motion(e);e->raw[ENT_STATE]=6;}
-    else if(st==6){if(e->raw[ENT_MOTION_PHASE]==0){if(e->raw[0x2E]!=0){--e->raw[0x2E];e->raw[ENT_STATE]=4;}else if((gaw_platform_entropy8()&0xFFu)<8u){gaw_entity_set16(e,ENT_DELTA0,0);gaw_entity_set16(e,ENT_DELTA1,0);e->raw[0x2F]=(uint8_t)((gaw_platform_entropy8()&0x3Fu)+0x40u);e->raw[ENT_STATE]=8;}else e->raw[ENT_STATE]=4;}}
+    else if(st==6 && e->raw[ENT_MOTION_PHASE]==0){
+        int move=1;
+        if(e->raw[0x2E]!=0)--e->raw[0x2E];
+        else if(original_random_byte()<8u){
+            gaw_entity_set16(e,ENT_DELTA0,0);gaw_entity_set16(e,ENT_DELTA1,0);
+            e->raw[0x2F]=(uint8_t)((gaw_platform_entropy8()&0x3Fu)+0x40u);
+            e->raw[ENT_STATE]=8;--e->raw[0x2F];move=0;
+        }
+        if(move){e->raw[0x20]=entity101_choose_mode(e);entity101_boundary_correct(e);entity101_load_motion(e);e->raw[ENT_STATE]=6;}
+    }
     else if(st==8){if(--e->raw[0x2F]==0){e->raw[0x2E]=0x14;e->raw[ENT_STATE]=4;}}
     entity101_update_orbit(e);return 1;
 }
@@ -2070,7 +2078,45 @@ static int entity109_handler(GawEntity *e) {
 }
 
 
-/* Types $67-$69/$7A-$7B (103..105,122..123), shared direct handler
+/* Type 103, real wrapper $5193 and bank-2 state table $A972.
+   The controller and its five parts share a type but use distinct states. */
+static void boss103_spawn_parts(GawEntity *e) {
+    for(unsigned i=17;i<=21;++i){GawEntity *c=gaw_entity(i);c->raw[ENT_TYPE]=103;c->raw[ENT_STATE]=0x10;c->raw[ENT_MOTION_PHASE]=(uint8_t)((22u-i)*16u);}
+    if(e->raw[0x20]==0){uint8_t r=(uint8_t)(gaw_platform_entropy8()&3u);e->raw[0x21]=(uint8_t)(r==3u?2u:r);}
+}
+static void boss103_position(GawEntity *e,uint8_t mode,unsigned index) {
+    static const uint8_t positions[3][10]={
+        {0xB0,0x58,0x98,0x78,0x68,0x78,0x50,0x58,0x80,0x30},
+        {0x30,0x38,0xD0,0x38,0x80,0x58,0x30,0x78,0xD0,0x78},
+        {0x40,0x38,0xC0,0x38,0x60,0x58,0xA0,0x58,0x80,0x78}
+    };
+    e->raw[0x13]=positions[mode][index*2u];e->raw[0x11]=positions[mode][index*2u+1u];
+}
+static int boss103_handler(GawEntity *e) {
+    uint8_t phase=e->raw[ENT_MOTION_PHASE];
+    switch(e->raw[ENT_STATE]){
+        case 0:e->raw[ENT_ANIM_FRAME]=0;e->raw[0x21]=0;e->raw[0x08]=0x62;e->raw[0x09]=0x9A;e->raw[0x20]=1;e->raw[0x13]=0x80;e->raw[0x11]=0x58;e->raw[ENT_MOTION_PHASE]=0x70;e->raw[ENT_STATE]=2;boss103_spawn_parts(e);break;
+        case 2:if(!phase){e->raw[ENT_HIT_FLASH_TIMER]=0x28;e->raw[ENT_FLAGS]|=1;e->raw[ENT_STATE]=4;e->raw[ENT_ANIM_DELAY]=0x10;e->raw[ENT_ANIM_FRAMES]=2;e->raw[ENT_MOTION_PHASE]=0x27;e->raw[0x20]=0;}break;
+        case 4:if(!phase){e->raw[ENT_ANIM_FRAME]=0;e->raw[0x08]=0x98;e->raw[0x09]=0x9A;e->raw[ENT_MOTION_PHASE]=0x27;e->raw[ENT_STATE]=6;}break;
+        case 6:if(!phase){e->raw[ENT_FLAGS]&=(uint8_t)~1u;uint8_t r=(uint8_t)(gaw_platform_entropy8()&7u);if(r>=5u)r-=3u;boss103_position(e,e->raw[0x21],r);e->raw[ENT_FLAGS]|=2;e->raw[ENT_STATE]=8;}break;
+        case 8:break;
+        case 10:e->raw[ENT_ANIM_FRAME]=0;e->raw[0x08]=0xA4;e->raw[0x09]=0x9A;e->raw[ENT_ANIM_DELAY]=8;e->raw[ENT_ANIM_FRAMES]=2;e->raw[ENT_MOTION_PHASE]=10;e->raw[ENT_FLAGS]&=(uint8_t)~3u;e->raw[ENT_STATE]=12;break;
+        case 12:if(!phase)e->raw[ENT_STATE]=14;break;
+        case 14:e->raw[ENT_MOTION_PHASE]=0x27;e->raw[ENT_STATE]=4;boss103_spawn_parts(e);break;
+        case 16:if(!phase){e->raw[ENT_ANIM_FRAME]=0;e->raw[0x08]=0x34;e->raw[0x09]=0x9B;e->raw[ENT_ANIM_DELAY]=8;e->raw[ENT_ANIM_FRAMES]=2;e->raw[ENT_FLAGS]=(uint8_t)((e->raw[ENT_FLAGS]|1u)&~2u);e->raw[ENT_HIT_FLASH_TIMER]=0x30;e->raw[ENT_MOTION_PHASE]=0x30;boss103_position(e,gaw_ram_read8(0xC621),(unsigned)gaw_ram_read8(RAM_ENTITY_SLOT_INDEX)-17u);e->raw[ENT_STATE]=18;}break;
+        case 18:if(!phase){e->raw[ENT_FLAGS]|=2;e->raw[ENT_STATE]=20;e->raw[ENT_MOTION_PHASE]=(uint8_t)((gaw_platform_entropy8()&15u)+0x71u);
+            if(gaw_ram_read8(0xC600)==7u || gaw_ram_read8(0xC601)==14u){e->raw[ENT_STATE]=22;e->raw[ENT_HIT_FLASH_TIMER]=0x30;e->raw[ENT_MOTION_PHASE]=0x30;e->raw[ENT_FLAGS]&=(uint8_t)~2u;}}break;
+        case 20:if(gaw_ram_read8(0xC600)==7u || gaw_ram_read8(0xC601)==14u){e->raw[ENT_STATE]=22;e->raw[ENT_HIT_FLASH_TIMER]=0x30;e->raw[ENT_MOTION_PHASE]=0x30;e->raw[ENT_FLAGS]&=(uint8_t)~2u;}
+            else if(!phase){if((gaw_platform_entropy8()&15u)<4u)(void)entity_spawn_aux(e,21);e->raw[ENT_MOTION_PHASE]=(uint8_t)((gaw_platform_entropy8()&15u)+0x71u);}
+            break;
+        case 22:if(!phase)gaw_entity_clear(e);break;
+        default:break;
+    }
+    if(e->raw[ENT_PENDING_DAMAGE] && e->raw[ENT_HP]>e->raw[ENT_PENDING_DAMAGE]){e->raw[ENT_FLAGS]|=1;e->raw[ENT_STATE]=10;}
+    return 1;
+}
+
+/* Types $68-$69/$7A-$7B (104,105,122,123), shared direct handler
    $51AE.  105/123 only differ in the alternate-attack probability. */
 static const uint8_t entity103_move[33]={0x10,0x80,0xFF,0x00,0x00, 0x80,0x00,0x00,0x00, 0x00,0x00,0x80,0xFF, 0x00,0x00,0x80,0x00, 0x80,0xFF,0x80,0xFF, 0x80,0xFF,0x80,0x00, 0x80,0x00,0x80,0xFF, 0x80,0x00,0x80,0x00};
 static const uint8_t entity103_attack_vec[32]={0xAB,0x00,0x63,0xFE, 0x9D,0x01,0x55,0xFF, 0xAB,0x00,0x9D,0x01, 0x9D,0x01,0xAB,0x00, 0x55,0xFF,0x63,0xFE, 0x63,0xFE,0x55,0xFF, 0x55,0xFF,0x9D,0x01, 0x63,0xFE,0xAB,0x00};
@@ -2090,7 +2136,7 @@ static int entity103_family_handler(GawEntity *e,uint8_t type) {
         case 2:if(e->raw[ENT_MOTION_PHASE]==0){e->raw[ENT_STATE]=4;uint8_t d;if(entity108_direction_to_offset(e,0,0,&d)){e->raw[0x22]=d;entity103_load_move(e,d);e->raw[ENT_STATE]=8;}}break;
         case 4:{uint8_t d;if(entity108_direction_to_offset(e,0,0,&d)){e->raw[0x22]=d;entity103_load_move(e,d);e->raw[ENT_STATE]=8;}break;}
         case 6:entity103_load_move(e,e->raw[0x22]);e->raw[ENT_STATE]=8;break;
-        case 8:if(e->raw[ENT_MOTION_PHASE]==0){e->raw[ENT_STATE]=4;uint8_t r=gaw_platform_entropy8();if(r<0x20u){if((type==105u||type==123u) && (r&0x0Fu)<6u)entity103_start_alt_attack(e);else entity103_start_primary_attack(e);}}break;
+        case 8:if(e->raw[ENT_MOTION_PHASE]==0){e->raw[ENT_STATE]=4;uint8_t r=original_random_byte();if(r<0x20u){if((type==105u||type==123u) && (r&0x0Fu)<6u)entity103_start_alt_attack(e);else entity103_start_primary_attack(e);}}break;
         case 0x0A:if(e->raw[ENT_MOTION_PHASE]==0){e->raw[ENT_ANIM_FRAME]=0;e->raw[0x08]=0x39;e->raw[0x09]=0x9C;e->raw[ENT_ANIM_DELAY]=2;e->raw[ENT_ANIM_FRAMES]=2;e->raw[ENT_MOTION_PHASE]=0x18;e->raw[ENT_STATE]=0x0C;}break;
         case 0x0C:if(e->raw[ENT_MOTION_PHASE]==0)entity103_reset_cycle(e);break;
         case 0x0E:if(e->raw[ENT_MOTION_PHASE]==0){e->raw[0x08]=0xE8;e->raw[0x09]=0x9C;e->raw[ENT_ANIM_DELAY]=1;e->raw[ENT_ANIM_FRAMES]=2;e->raw[ENT_STATE]=0x10;}break;
@@ -2229,7 +2275,8 @@ int gaw_entity_native_handler(GawEntity *e, uint8_t type) {
     if (type==99 || type==100 || type==120 || type==121) return entity99_family_handler(e,type);
     if (type==101) return entity101_handler(e);
     if (type==102) return entity102_handler(e);
-    if ((type>=103 && type<=105) || type==122 || type==123) return entity103_family_handler(e,type);
+    if (type==103) return boss103_handler(e);
+    if ((type>=104 && type<=105) || type==122 || type==123) return entity103_family_handler(e,type);
     if (type==106 || type==107 || type==124) return entity106_family_handler(e);
     if (type==108) return entity108_handler(e);
     if (type==109) return entity109_handler(e);

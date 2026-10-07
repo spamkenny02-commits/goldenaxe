@@ -20,6 +20,7 @@ static uint32_t faults;
 static uint16_t last_fault_pc;
 static uint8_t refresh_trace[64];
 static unsigned refresh_count;
+static uint8_t refresh_seed;
 static uint8_t vertical_counter=0x78;
 
 #if defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
@@ -108,7 +109,7 @@ static void native_032a(Z *z,int set_bank){
 
 static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world,
                uint16_t arg_hl,uint16_t arg_de,uint16_t arg_bc,uint8_t arg_a,int raw){
-    Z z; memset(&z,0,sizeof z); z.p0=0; z.p1=1; z.p2=bank; z.sp=0xDFF0; z.pc=addr; z.ix=ix;
+    Z z; memset(&z,0,sizeof z); z.p0=0; z.p1=1; z.p2=bank; z.sp=0xDFF0; z.pc=addr; z.ix=ix; z.r=refresh_seed;
     refresh_count=0;
     shl16(&z,arg_hl);sde16(&z,arg_de);sbc16(&z,arg_bc);z.a=arg_a;
     if(world) z.e=gaw_ram_read8(0xC0A6);
@@ -129,7 +130,8 @@ static int run(uint8_t bank,uint16_t addr,uint16_t ix,uint8_t world,
         step(&z);
     }
 }
-void gaw_sms_compat_reset(void){gaw_video_reset();faults=0;last_fault_pc=0;refresh_count=0;vertical_counter=0x78;}
+void gaw_sms_compat_set_refresh_seed(uint8_t value){refresh_seed=value;}
+void gaw_sms_compat_reset(void){refresh_seed=0;gaw_video_reset();faults=0;last_fault_pc=0;refresh_count=0;vertical_counter=0x78;}
 int gaw_sms_compat_irq_video_call(void){
     Z z;memset(&z,0,sizeof z);z.p1=1;z.p2=4;z.pc=0x013E;z.sp=0xDFF0;vertical_counter=0xF0;
     for(unsigned steps=0;steps<2000000u;++steps){if(z.pc==0x019Cu){vertical_counter=0x78;return 1;}step(&z);}

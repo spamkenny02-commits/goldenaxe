@@ -1,4 +1,4 @@
-# Current status — V47
+# Current status — V48
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -237,6 +237,40 @@ ASan/UBSan passes all 4992 new cases with leak detection disabled. Final,
 player-item, map-resource, IRQ, native boot and SRAM host checks pass. The
 controller-only sanctuary/save/restart regression and all 49152 SMS viewport
 pixels pass on the rebuilt image. See CONTINUOUS_V47_PROGRESS.md for scope.
+
+## Magic and boss logic: V48
+
+All four magic item entry points now have original-instruction comparisons for
+resource thresholds, active projectile rejection, the four-shot counter,
+spell level, healing cap and environment. The item suite passes 304 cases,
+including 256 new magic calls; blocking items still compare every observed
+frame's RAM/VRAM/CRAM/VDP registers and the final SRAM.
+
+The new suite identifies boss types 99..109 from map statistics flag bit 6.
+It compares 5792 phase/sub-entity cases, 2530 death/reward calls and 256 magic
+projectile cases against unaccelerated Z80. Original refresh seeds vary and
+samples are replayed by the native entropy source. The death tests include
+all 11 complete 182-call sequences to reward/ending handoff.
+
+Corrections include types 99/100 counter direction, type 101 motion records,
+arena boundary changes, random selection, cooldown and same-call transitions;
+type 103 now uses its real controller at $5193/$A972 instead of the $51AE
+routine shared by types 104/105/122/123. Its five parts and damage/retreat
+states are restored. The $51AE attack decision now updates the original LFSR.
+The older type-103 test incorrectly used the sub-entity reference address;
+the new suite uses the actual registered wrapper and compares shared RAM.
+
+All 8578 new suite cases and 304 item cases pass ASan/UBSan. Final, combat,
+full effects, native boot, SRAM and portability/backend/coverage checks pass.
+Native image: 481196 bytes, checksum CA62, BSS 32296, RAM end FF7E28.
+The rebuilt MD controller combat passes with three deaths and HP 16; native
+hardware entropy can change outcomes as code/timing changes. The sanctuary
+save/restart route and 49152-pixel SMS comparison pass again.
+
+These are controlled routine comparisons, not completed boss fights or magic
+acquisition/use routes through the controller. Full arena rendering, acquisition,
+loot collection and ending playback still need gameplay routes. See
+CONTINUOUS_V48_PROGRESS.md for reproduction and limits.
 
 ## Remaining work
 

@@ -11,6 +11,8 @@ int gaw_sms_compat_entity_call(uint8_t bank,uint16_t addr,GawEntity *e);
 int gaw_sms_compat_world_call(uint8_t bank,uint16_t addr);
 uint32_t gaw_sms_compat_faults(void);
 uint16_t gaw_sms_compat_last_pc(void);
+/* Test-only starting refresh register for original-instruction calls. */
+void gaw_sms_compat_set_refresh_seed(uint8_t value);
 unsigned gaw_sms_compat_refresh_trace(uint8_t *values,unsigned capacity);
 int gaw_sms_compat_indexed_call(uint8_t bank,uint16_t addr,uint16_t ix);
 /* Executes the original resource decoder too, without its accelerator. */

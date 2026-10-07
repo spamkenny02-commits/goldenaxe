@@ -2,8 +2,14 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V47)
+## Current status (V48)
 
+- V48 validates four magic entry points and boss types 99..109 against
+  original instructions: 8578 phase/death/projectile cases and 304 item cases
+  pass, also under ASan/UBSan. Fixes include boss movement, orbit transitions,
+  the real type-103 controller/parts and LFSR attack selection. The native MD
+  image builds and combat/save regressions pass; boss fights and magic routes
+  through controller input remain open. See `docs/CONTINUOUS_V48_PROGRESS.md`.
 - V47 adds controller-only combat against five enemies, checking attacks,
   player/enemy damage, projectiles, deaths and survival. New original-Z80
   tests expose and fix enemy transition, movement-counter and clone-damage
