@@ -2,8 +2,15 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V46)
+## Current status (V47)
 
+- V47 adds controller-only combat against five enemies, checking attacks,
+  player/enemy damage, projectiles, deaths and survival. New original-Z80
+  tests expose and fix enemy transition, movement-counter and clone-damage
+  errors: all 4992 collision/damage/entropy-replayed AI cases pass. The new
+  MD route kills two enemies and finishes at HP 16; SMS also passes combat
+  checks, with different random trajectories. Native image: 479560 bytes.
+  See `docs/CONTINUOUS_V47_PROGRESS.md`.
 - V46 adds a controller-only village/save-service route: overworld travel,
   door entry, dialogue and slot-0 save run without work RAM edits. A fresh
   process restores its 592-byte payload and returns to village 94 with HP 24.

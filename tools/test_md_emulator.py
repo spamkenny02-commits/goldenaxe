@@ -56,6 +56,7 @@ def main():
     parser.add_argument('--observe-only', action='store_true')
     parser.add_argument('--reference-sms', action='store_true', help='Run an original SMS ROM as a hardware reference')
     parser.add_argument('--play-inputs', type=Path, help='JSON list of {ticks, buttons} controller steps after entering gameplay')
+    parser.add_argument('--combat', action='store_true', help='Record observed attacks, HP losses and enemy deaths during gameplay')
     parser.add_argument('--profile', action='store_true', help='Profile gameplay instructions using a locally instrumented core')
     parser.add_argument('--sram-in', type=Path, help='Import logical 32 KiB SRAM before boot (native MD only)')
     parser.add_argument('--sram-out', type=Path, help='Export logical 32 KiB SRAM after the run (native MD only)')
@@ -81,6 +82,11 @@ def main():
             assert isinstance(step['expect_state'], int) and 0 <= step['expect_state'] < 256
         if 'pulse' in step:
             assert isinstance(step['pulse'], bool)
+        if 'pulse_buttons' in step:
+            assert isinstance(step['pulse_buttons'], list) and step['pulse_buttons']
+            assert all(name in ('button1', 'button2') for name in step['pulse_buttons'])
+            step['pulse_pad'] = sum(1 << buttons[name] for name in set(step['pulse_buttons']))
+            step['pulse_held'] = sum({'button1': 16, 'button2': 32}[name] for name in set(step['pulse_buttons']))
         if 'expect_saved_slot' in step:
             assert isinstance(step['expect_saved_slot'], int) and 0 <= step['expect_saved_slot'] < 3
             if args.reference_sms:
@@ -233,6 +239,15 @@ def main():
     world_transitions = []
     last_cell = None
     profiling = False
+    combat = {'attacks': [], 'player_hits': [], 'enemy_hits': [], 'enemy_deaths': [], 'encounters': [], 'projectiles': []}
+    previous_combat = None
+    def combat_snapshot():
+        return [{'slot': slot, 'type': read(0xC300+slot*48), 'state': read(0xC301+slot*48),
+                 'flags': read(0xC303+slot*48), 'saved_type': read(0xC307+slot*48),
+                 'hp': read(0xC318+slot*48), 'flash': read(0xC305+slot*48),
+                 'attack': read(0xC319+slot*48), 'defense': read(0xC31A+slot*48),
+                 'position': [read(0xC313+slot*48), read(0xC311+slot*48)]}
+                for slot in range(32)]
     for frame in range(args.frames):
         current['frame'] = frame
         state = read(0xC01D)
@@ -256,6 +271,10 @@ def main():
             current['pad'] = inputs[input_step]['pad'] if input_step < len(inputs) else 0
             if input_step < len(inputs) and inputs[input_step].get('pulse') and read(0xC020):
                 current['pad'] = 0
+            elif input_step < len(inputs) and 'pulse_buttons' in inputs[input_step]:
+                step = inputs[input_step]
+                if read(0xC020) & step['pulse_held']:
+                    current['pad'] &= ~step['pulse_pad']
         elif not args.observe_only and state != 0x0C:
             current['pad'] = 1 << 8 if read(0xC020) == 0 else 0  # MD C = SMS button 2
         else:
@@ -287,6 +306,40 @@ def main():
             if cell != last_cell:
                 world_transitions.append({'emulator_frame': frame, 'cell': cell, 'state': f'{state:02X}'})
                 last_cell = cell
+        if args.combat:
+            snapshot = combat_snapshot()
+            if state == 0x0C:
+                stamp = {'emulator_frame': frame, 'game_frame': read(0xC02F), 'cell': cell}
+                if previous_combat is None or previous_combat[0] != cell:
+                    combat['encounters'].append({**stamp, 'entities': snapshot})
+                else:
+                    previous = previous_combat[1]
+                    player, old_player = snapshot[0], previous[0]
+                    if player['state'] in (3, 5) and player['state'] != old_player['state']:
+                        combat['attacks'].append({**stamp, 'pose': player['state'], 'position': player['position']})
+                    if player['type'] == old_player['type'] == 2 and player['hp'] < old_player['hp']:
+                        related = read(0xC31E)|(read(0xC31F)<<8)
+                        attacker_slot = (related-0xC300)//48 if 0xC300 <= related < 0xC900 and (related-0xC300)%48 == 0 else None
+                        attacker = previous[attacker_slot] if attacker_slot is not None else None
+                        combat['player_hits'].append({**stamp, 'before': old_player['hp'], 'after': player['hp'], 'flash': player['flash'],
+                                                      'attacker_slot': attacker_slot,
+                                                      'attacker_type': attacker['type'] if attacker else None,
+                                                      'attacker_attack': attacker['attack'] if attacker else None})
+                    for entity, old in zip(snapshot[1:], previous[1:]):
+                        if entity['slot'] >= 24 and old['type'] == 0 and 16 <= entity['type'] <= 23:
+                            combat['projectiles'].append({**stamp, 'slot': entity['slot'], 'type': entity['type'], 'attack': entity['attack']})
+                        if old['type'] < 32 or not old['flags'] & 0x20:
+                            continue
+                        if entity['type'] == old['type'] and entity['hp'] < old['hp']:
+                            combat['enemy_hits'].append({**stamp, 'slot': entity['slot'], 'type': old['type'],
+                                                         'before': old['hp'], 'after': entity['hp']})
+                        if entity['type'] == 1 and entity['hp'] == 0 and entity['saved_type'] == old['type']:
+                            combat['enemy_hits'].append({**stamp, 'slot': entity['slot'], 'type': old['type'],
+                                                         'before': old['hp'], 'after': 0})
+                            combat['enemy_deaths'].append({**stamp, 'slot': entity['slot'], 'type': old['type'], 'before': old['hp']})
+                previous_combat = (cell, snapshot)
+            else:
+                previous_combat = None  # Scene teardown must not count as damage/death.
         if state != last_state:
             entry = {'emulator_frame': frame, 'state': f'{state:02X}', 'game_frame': read(0xC02F)}
             stages.append(entry)
@@ -352,6 +405,9 @@ def main():
               'audio_peak': current['audio_peak'], 'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
               'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03),
               'world_transitions': world_transitions, 'final_state': f'{read(0xC01D):02X}'}
+    if args.combat:
+        combat['final_entities'] = combat_snapshot()
+        result['combat'] = combat
     if irq_counts():
         result['hardware_irqs'] = irq_counts()
         if play_irq_start is not None:

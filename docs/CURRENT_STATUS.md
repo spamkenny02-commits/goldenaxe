@@ -1,4 +1,4 @@
-# Current status — V46
+# Current status — V47
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -210,9 +210,37 @@ ASan/UBSan with leak detection disabled. A wrong expected slot in a temporary
 scenario fails at the save assertion. No production C or MD image changed.
 The truncated remote V45 status report is repaired in this checkpoint.
 
+## Controller combat and AI corrections: V47
+
+combat_field.json travels from cell 95 through village 94 into encounter 93,
+using only controller input. Five enemies initialize (four type 38, one type
+32). Selective button-2 pulses preserve movement while attacking. The new
+combat observer records all 32 slots, ignores scene teardown, and checks HP
+losses, death-state/saved-type transitions, cleared death slots and projectiles.
+
+Unaccelerated original-Z80 comparisons pass 2688 collision, 1152 damage/death/
+recoil and 1152 entropy-replayed AI cases. They exposed premature returns in
+types 32 and 38, an incorrectly committed type-38 movement-counter decrement,
+and pending damage copied into a type-38 clone. The native routines now match
+these original branches, including counter wrap and clone damage suppression.
+
+The rebuilt MD image is 479560 bytes, checksum DAB5, BSS 32296, RAM end FF7E28;
+native-only ELF/header/vector/RAM checks pass. The controller combat passes:
+61 sampled attack entries, three enemy HP reductions, two deaths, four
+projectiles, two player hits and final HP 16 in cell 93. SMS also passes:
+61 attack entries, three deaths, three projectiles and HP 16. Final positions
+and random trajectories differ; pixel equality is not claimed for combat.
+Native hardware entropy replaces the SMS refresh register. Controlled AI
+comparisons replay the original entropy to distinguish logic from random input.
+
+ASan/UBSan passes all 4992 new cases with leak detection disabled. Final,
+player-item, map-resource, IRQ, native boot and SRAM host checks pass. The
+controller-only sanctuary/save/restart regression and all 49152 SMS viewport
+pixels pass on the rebuilt image. See CONTINUOUS_V47_PROGRESS.md for scope.
+
 ## Remaining work
 
 Continue full-game sprite/rendering performance, combined fine H-scroll/right
-V-lock, exact overflow timing, controller/combat/interaction routes, MD page-1 SRAM and physical cartridge
+V-lock, exact overflow timing, additional combat/enemy/boss and interaction routes, MD page-1 SRAM and physical cartridge
 persistence, playthrough/ending and PAL/NTSC/physical hardware behavior.
 The project is not declared finished or universally recompiled.

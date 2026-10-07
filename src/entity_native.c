@@ -728,7 +728,8 @@ static int entity32_handler(GawEntity *e) {
             e->raw[0x08]=0x2E; e->raw[0x09]=0x85;
             e->raw[ENT_ANIM_DELAY]=0x0A; e->raw[ENT_ANIM_FRAMES]=2;
             e->raw[ENT_STATE]=4;
-            return 1;
+            /* The original falls through from spawn completion into movement. */
+            /* fall through */
         case 4:
             if (!entity_choose_random_direction(e)) return 1;
             /* original falls through into state 6 */
@@ -857,23 +858,33 @@ static int entity38_40_handler(GawEntity *e) {
             e->raw[0x08]=0xFA;e->raw[0x09]=0x84;e->raw[ENT_ANIM_DELAY]=0x10;e->raw[ENT_ANIM_FRAMES]=4;e->raw[ENT_STATE]=2;break;
         case 2:
             if(e->raw[ENT_ANIM_FRAME]!=3) break;
-            e->raw[ENT_ANIM_FRAME]=0;e->raw[0x08]=0x24;e->raw[0x09]=0x86;e->raw[ENT_ANIM_FRAMES]=2;e->raw[0x20]=entity38_variant[type-38u];e->raw[ENT_STATE]=4;break;
+            e->raw[ENT_ANIM_FRAME]=0;e->raw[0x08]=0x24;e->raw[0x09]=0x86;e->raw[ENT_ANIM_FRAMES]=2;e->raw[0x20]=entity38_variant[type-38u];e->raw[ENT_STATE]=4;
+            /* fall through */
         case 4:
-            if(entity_choose_random_direction(e)) e->raw[ENT_STATE]=6;
-            break;
+            if(!entity_choose_random_direction(e)) break;
+            e->raw[ENT_STATE]=6;
+            /* fall through */
         case 6:
             load_motion_record(e,(type==40)?entity32_motion:entity38_motion_fast);e->raw[ENT_ANIM_DELAY]=e->raw[ENT_MOTION_PHASE];e->raw[ENT_STATE]=8;break;
-        case 8:
+        case 8: {
             if(e->raw[ENT_MOTION_PHASE]!=0) break;
-            if(e->raw[0x20] && --e->raw[0x20]==0) { e->raw[ENT_STATE]=4;break; }
-            if(entity_direction_blocked(e,e->raw[ENT_DIRECTION]) || (gaw_platform_entropy8()&0x0Fu)==0) e->raw[ENT_STATE]=4; else e->raw[ENT_STATE]=6;
+            /* $87A1 commits the decrement only when choosing a new direction. */
+            uint8_t next=(uint8_t)(e->raw[0x20]-1u);
+            if(next==0 || entity_direction_blocked(e,e->raw[ENT_DIRECTION]) || (gaw_platform_entropy8()&0x0Fu)==0){
+                e->raw[0x20]=next;e->raw[ENT_STATE]=4;
+            }else e->raw[ENT_STATE]=6;
             break;
+        }
         default: break;
     }
     uint8_t dmg=e->raw[ENT_PENDING_DAMAGE];
     if(dmg && e->raw[ENT_HP]>dmg && e->raw[0x20]==2u) {
         --e->raw[0x20]; unsigned slot=24u+(gaw_ram_read8(RAM_ENTITY_SLOT_INDEX)&7u); GawEntity *c=gaw_entity(slot);
-        if(c && c->raw[ENT_TYPE]==0) { memcpy(c->raw,e->raw,0x21u); e->raw[ENT_PENDING_DAMAGE]=dmg; }
+        if(c && c->raw[ENT_TYPE]==0) {
+            /* $4C78 clears pending damage before cloning, then restores the parent. */
+            memcpy(c->raw,e->raw,0x21u);c->raw[ENT_PENDING_DAMAGE]=0;
+            e->raw[ENT_PENDING_DAMAGE]=dmg;
+        }
     }
     return 1;
 }
