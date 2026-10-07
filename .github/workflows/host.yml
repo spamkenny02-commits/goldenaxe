@@ -67,4 +67,6 @@ jobs:
         run: |
           python3 tools/test_md_video_emulator.py --core md/build/genesis-plus-gx/genesis_plus_gx_libretro.so --nm md/toolchain/bin/m68k-elf-nm
       - name: Validate wrapped sprite collisions on independent SMS hardware core
-        run: python3 tools/test_sms_sprite_emulator.py --core md/build/genesis-plus-gx/genesis_plus_gx_libretro.so
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror -O2 -Isrc/include src/video_status.c tests/test_sms_sprite_hardware.c -o md/build/sms_sprite_hardware_test
+          python3 tools/test_sms_sprite_emulator.py --core md/build/genesis-plus-gx/genesis_plus_gx_libretro.so --compare md/build/sms_sprite_hardware_test

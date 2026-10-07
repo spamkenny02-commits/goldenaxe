@@ -6,6 +6,7 @@ import argparse
 import ctypes as C
 import faulthandler
 from pathlib import Path
+import subprocess
 import tempfile
 from test_md_emulator import GameInfo, Variable
 
@@ -85,6 +86,7 @@ def fixture():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--core', type=Path, required=True)
+    parser.add_argument('--compare', type=Path, help='Optional compiled portable-C hardware-table comparator')
     args = parser.parse_args()
     faulthandler.enable()
     lib = C.CDLL(str(args.core.resolve()))
@@ -171,18 +173,23 @@ def main():
             else:
                 raise AssertionError(('SMS fixture timeout', memory[0x14], memory[0x15]))
             assert memory[0x14] == 0 and memory[0x15] == 4, 'Incomplete fixture table'
+            observed = bytes(memory[0x100:0x500])
             for mode in range(4):
                 for y in range(256):
                     top = y + 1 - (256 if y > 208 else 0)
                     height = (16 if mode & 2 else 8) * (2 if mode & 1 else 1)
                     want = 0x20 if y != 208 and top < 192 and top + height > 0 else 0
-                    got = memory[0x100 + mode * 256 + y]
+                    got = observed[mode * 256 + y]
                     assert got == want, ('SMS collision', mode, y, got, want)
                     comparisons += 1
                 print('SMS II collision mode %d: all 256 Y values match' % mode)
         finally:
             lib.retro_unload_game()
             lib.retro_deinit()
+        if args.compare:
+            table = Path(temporary) / 'observed.bin'
+            table.write_bytes(observed)
+            subprocess.run([str(args.compare.resolve()), str(table)], check=True)
         print('Independent SMS sprite collision tests: OK (%d Z80-driven hardware cases, %d frames)' % (comparisons, frame + 1))
 
 
