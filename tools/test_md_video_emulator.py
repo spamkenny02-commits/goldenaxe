@@ -12,6 +12,8 @@ from test_md_emulator import GameInfo, Variable, png
 
 @lru_cache(maxsize=None)
 def sprite_layout(stage):
+    if stage == 530:
+        return sprite_layout(529)
     mode = 0 if stage >= 528 else (3 if stage == 518 else (1 if stage == 519 else (2 if stage == 520 or stage >= 524 else 0)))
     bank = 256 if 521 <= stage < 528 else 0
     count = 0 if stage == 526 else (9 if stage == 528 else (2 if stage >= 521 else 9))
@@ -194,7 +196,7 @@ def main():
                 break
         else:
             raise AssertionError('Fixture failed to reach its frame barrier')
-        for stage in range(530):
+        for stage in range(531):
             if stage:
                 state['pad'] = 1
                 for _ in range(8):
@@ -202,6 +204,14 @@ def main():
                 state['pad'] = 0
             for _ in range(8):
                 lib.retro_run()
+            if stage == 530:
+                for _ in range(120):
+                    if ready() == stage:
+                        break
+                    lib.retro_run()
+                # Reinitialization uploads the entire original pattern shadow.
+                for _ in range(8):
+                    lib.retro_run()
             assert ready() == stage, (stage, ready())
             pixels, width, height, pitch = state['image']
             assert (width, height) == (256, 224), (width, height)
@@ -226,7 +236,7 @@ def main():
     finally:
         lib.retro_unload_game()
         lib.retro_deinit()
-    print('ROM-free MD video hardware tests: OK (30392320 pixels, 256 scroll values, 15 sprite clipping/zoom/bank/edit/shift stages, H-scroll zero)')
+    print('ROM-free MD video hardware tests: OK (30449664 pixels, 256 scroll values, 16 sprite clipping/zoom/bank/edit/shift/reset stages, H-scroll zero)')
 
 
 if __name__ == '__main__':
