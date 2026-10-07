@@ -29,8 +29,9 @@ def expected(stage, x, y):
             palette ^= 1
         sprite = x < 64 and 50 <= y < 58
         color = colors[31] if sprite and (not (col & 2) or not bg) else colors[palette * 16 + bg]
-    # The fixture deliberately uses only channel extrema; MD and SMS match exactly.
-    return tuple(255 if (color >> shift) & 3 else 0 for shift in (0, 2, 4))
+    # Pinned GPGX Mode 5 normal intensity expands CRAM 7 to 14/15 (238),
+    # whereas Mode 4 expands SMS channel 3 to 15/15. Compare native output.
+    return tuple(238 if (color >> shift) & 3 else 0 for shift in (0, 2, 4))
 
 
 def main():
