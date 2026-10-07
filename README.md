@@ -2,8 +2,14 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V49)
+## Current status (V50)
 
+- V50 completes the final boss, credits and confirmed title return on native MD
+  and original SMS. It fixes potion-shop recognition, capacity-item dialogue,
+  borrow/animation behavior and full-screen magic damage indexing. 354 merchant,
+  38 world-item and 144 full-effect differential cycles pass. Dungeon routes
+  1-4 pass on MD; later controller routes remain experimental. The native image
+  is 484504 bytes. See `docs/CONTINUOUS_V50_PROGRESS.md` for exact scope.
 - V49 validates all ten boss fights in their real arenas on MD and SMS,
   starting from controlled equipped checkpoints and driving combat/rewards
   exclusively with joypad input afterwards. All satellites/parts, nine crystal

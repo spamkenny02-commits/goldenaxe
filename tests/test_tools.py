@@ -1,4 +1,6 @@
 import importlib.util
+import copy
+import sys
 import json
 import re
 from pathlib import Path
@@ -28,6 +30,69 @@ class BossArenaMetadataTest(unittest.TestCase):
         for arena in arenas:
             self.assertEqual(types[arena['cell']*8],arena['type'])
             self.assertEqual(stats[(arena['type']-32)*4],arena['hp'])
+
+
+class DungeonRouteTest(unittest.TestCase):
+    def setUp(self):
+        root = Path(__file__).resolve().parents[1]
+        sys.path.insert(0, str(root / 'tools'))
+        from test_md_dungeon_emulator import ROUTES, validate
+        self.routes, self.validate = ROUTES, validate
+
+    def test_routes_are_continuous_and_reach_real_bosses(self):
+        self.assertEqual([r['index'] for r in self.routes], list(range(1, 11)))
+        for route in self.routes:
+            for key, start, finish in [('outbound', route['entrance'], route['boss']['cell']),
+                                       ('return', route['boss']['cell'], route['entrance'])]:
+                cell = start
+                for edge in route[key]:
+                    self.assertEqual(edge['from'], cell)
+                    self.assertIn(edge['to'], route['rooms'])
+                    self.assertEqual(len(edge['target']), 2)
+                    cell = edge['to']
+                self.assertEqual(cell, finish)
+
+    def complete_run(self):
+        route = self.routes[0]
+        cells = [route['outside_cell'], route['entrance']]
+        cells += [e['to'] for e in route['outbound'] + route['return']]
+        cells += [route['outside_cell']]
+        return {'dungeon': {'index': 1, 'done': True, 'stage': 'exit',
+                'events': ['exited'], 'keys_remaining': 18,
+                'visits': [{'cell': c, 'index': 1 if c >= 256 else 0} for c in cells]},
+                'boss': {'phases': [route['boss']],
+                'hits': [{'before': route['boss']['hp'], 'after': 0}],
+                'deaths': [{}], 'reward_collected': True,
+                'reward_acknowledged': True, 'progress': 128},
+                'combat': {'attacks': [{}]}, 'player_hp': 128,
+                'world_cell': route['outside_cell'], 'final_state': '0C',
+                'audio_peak': 2048, 'emulator_frames': 10000}
+
+    def test_complete_run_and_real_retreat(self):
+        report = self.complete_run()
+        self.validate(report, self.routes[0])
+        visits = report['dungeon']['visits']
+        visits[3:3] = [copy.deepcopy(visits[1]), copy.deepcopy(visits[2])]
+        self.validate(report, self.routes[0])
+
+    def test_incomplete_or_fabricated_success_is_rejected(self):
+        base = self.complete_run()
+        reports = []
+        missing = copy.deepcopy(base)
+        del missing['dungeon']['visits'][2]
+        reports.append(missing)
+        wrong_hp = copy.deepcopy(base)
+        wrong_hp['boss']['phases'][0] = dict(wrong_hp['boss']['phases'][0], hp=1)
+        reports.append(wrong_hp)
+        skipped_hits = copy.deepcopy(base)
+        skipped_hits['boss']['hits'] = []
+        reports.append(skipped_hits)
+        no_reward = copy.deepcopy(base)
+        no_reward['boss']['reward_acknowledged'] = False
+        reports.append(no_reward)
+        for report in reports:
+            with self.assertRaises(AssertionError):
+                self.validate(report, self.routes[0])
 
 
 class ViewportComparisonTest(unittest.TestCase):

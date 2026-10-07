@@ -127,8 +127,9 @@ static void buy_item(uint8_t item,uint8_t price){
     if(R(flag)){gaw_menu_message(0x8BEAu);return;}if(pay(price))W(flag,1);
 }
 static void shop(void){
-    gaw_services_draw_portrait();uint8_t price=pass_price();
-    if(!price){
+    gaw_services_draw_portrait();unsigned potion_shop=0;
+    while(potion_shop<5u&&rom(1,(uint16_t)(0x752Eu+potion_shop))!=R(0xC0BBu))++potion_shop;
+    if(potion_shop<5u){
         draw_pass();W(0xC0A0u,0);
         while(gaw_menu_choose(1)!=R(0xC0A1u)){if(R(0xC0E8u)){gaw_menu_message(0x8BEAu);continue;}if(pay(pass_price())){W(0xC0E8u,1);return;}}
         return;

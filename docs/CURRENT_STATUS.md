@@ -1,7 +1,19 @@
-# Current status — V49
+# Current status — V50
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
+
+## V50 validation
+
+Potion merchants now use the original five-cell lookup. Capacity rewards preserve
+original subtraction borrow, dialogue and HP animation waits. Full-screen magic
+uses the original selected-item/level damage lookup. New differential suites pass:
+354 merchant cycles across 23 shops, 38 world-item cases, 144 full-effect cycles.
+The full ending reaches the actual title state 12 on original SMS and native MD.
+
+Prepared equipped controller routes 1-4 complete on MD, and 1-7 on SMS pilots.
+Later MD routes and SMS routes 8-10 remain experimental; no full new-game-to-ending
+claim is made. See CONTINUOUS_V50_PROGRESS.md and V50_WORK_IN_PROGRESS.md.
 
 ## Native game core
 

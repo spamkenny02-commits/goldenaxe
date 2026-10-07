@@ -14,6 +14,8 @@ import subprocess
 import sys
 import zlib
 
+from dungeon_driver import DungeonDriver
+
 
 class GameInfo(C.Structure):
     _fields_ = [('path', C.c_char_p), ('data', C.c_void_p),
@@ -65,7 +67,16 @@ def main():
     parser.add_argument('--boss-arena', type=int, choices=(99,100,101,103,104,105,106,107,108,109), help='Controlled equipped checkpoint in a real boss room; fight and collect reward using controller input only')
     parser.add_argument('--boss-weapon', choices=('axe','sword'), default='axe', help='Initial weapon for the controlled boss checkpoint')
     parser.add_argument('--boss-weapon-probe', action='store_true', help='Run a bounded sword-immunity probe without requiring boss defeat')
+    parser.add_argument('--complete-ending', action='store_true', help='Continue final-boss combat through credits, confirmation and return to title')
+    parser.add_argument('--dungeon', type=int, choices=range(1,11), help='Traverse a dungeon from its overworld entry checkpoint, defeat the boss and return outside (or play the final ending)')
     args = parser.parse_args()
+    dungeon_route = None
+    if args.dungeon is not None:
+        if args.boss_arena is not None or args.boss_weapon_probe:
+            parser.error('--dungeon selects its own boss')
+        dungeon_route = next(r for r in json.loads((Path(__file__).resolve().parent.parent/'tests/scenarios/dungeon_routes.json').read_text()) if r['index']==args.dungeon)
+        args.boss_arena = dungeon_route['boss']['type']
+        args.complete_ending = args.dungeon==10
     if args.reference_sms and any((args.sram_in, args.sram_out, args.save_slot is not None, args.expect_save_slot is not None)):
         parser.error('SRAM scenarios currently require the native MD image')
     if args.expect_save_slot is not None and not args.sram_in:
@@ -78,6 +89,8 @@ def main():
         parser.error('--boss-weapon-probe requires --boss-arena 109 --boss-weapon sword')
     if args.boss_arena is not None and any((args.play_inputs,args.save_slot is not None,args.sram_in,args.sram_out)):
         parser.error('--boss-arena is a separate controlled checkpoint scenario')
+    if args.complete_ending and (args.boss_arena!=109 or args.boss_weapon_probe):
+        parser.error('--complete-ending requires the final axe boss scenario')
     args.output.mkdir(parents=True, exist_ok=True)
     buttons = {'up': 4, 'down': 5, 'left': 6, 'right': 7, 'button1': 0, 'button2': 8, 'pause': 3}
     inputs = json.loads(args.play_inputs.read_text()) if args.play_inputs else []
@@ -262,9 +275,11 @@ def main():
     boss_weapon=1 if args.boss_weapon=='axe' else 0
     boss_run = {'fixture': None, 'phases': [], 'hits': [], 'deaths': [], 'projectiles': [], 'reward_spawned': False, 'reward_collected': False, 'heals': [], 'satellites_spawned': [], 'satellites_killed': [], 'parts_spawned': []}
     boss_prepared = False
+    dungeon = DungeonDriver(dungeon_route,read,buttons) if dungeon_route else None
     previous_boss = None
     previous_aux = None
     boss_done = False
+    ending = {'started': False, 'credits_started': False, 'credits_finished': False, 'returned_to_title': False, 'scroll_values': [], 'crystal_slots': [], 'audio_commands': []}
     boss_heal_stage = 'fight'
     boss_inventory_goal = None
     boss_heal_mp = None
@@ -281,9 +296,16 @@ def main():
             if cursor//4!=goal//4:
                 return pulse('down' if cursor//4<goal//4 else 'up',2 if cursor//4<goal//4 else 1)
             return pulse('right' if cursor%4<goal%4 else 'left',8 if cursor%4<goal%4 else 4)
+        if args.complete_ending and ending['returned_to_title'] and state==0:
+            return pulse('button2',32)
+        if state==0x0E and args.complete_ending:
+            return pulse('button2',32) if ending['credits_finished'] else 0
         if state!=0x0C:return 0
-        if boss_heal_stage=='fight' and read(0xC318)<=24 and read(0xC600)==args.boss_arena:
-            goal=8 if read(0xC0E8) else 7 if read(0xC0E7) and read(0xC0DB)>=24 else None
+        desired_weapon=dungeon.item if dungeon and dungeon.stage!='boss' else boss_weapon
+        if boss_heal_stage=='fight' and read(0xC0DF)!=desired_weapon:
+            boss_inventory_goal=desired_weapon;boss_heal_stage='select_weapon'
+        if boss_heal_stage=='fight' and read(0xC318)<=24 and (read(0xC600)==args.boss_arena or dungeon):
+            goal=7 if dungeon and read(0xC0E7) and read(0xC0DB)>=32 else 8 if read(0xC0E8) else 7 if read(0xC0E7) and read(0xC0DB)>=(32 if dungeon else 24) else None
             if goal is not None:
                 boss_inventory_goal=goal;boss_heal_mp=read(0xC0DB);boss_heal_stage='select_heal'
         if boss_heal_stage=='select_heal':
@@ -292,11 +314,14 @@ def main():
         if boss_heal_stage=='cast_heal':
             consumed=(boss_inventory_goal==8 and not read(0xC0E8)) or (boss_inventory_goal==7 and read(0xC0DB)<boss_heal_mp)
             if consumed:
-                boss_inventory_goal=boss_weapon;boss_heal_stage='select_weapon'
+                boss_inventory_goal=desired_weapon;boss_heal_stage='select_weapon'
             else:return pulse('button2',32) if read(0xC301)==1 else 0
         if boss_heal_stage=='select_weapon':
-            if read(0xC0DF)==boss_weapon:boss_heal_stage='fight'
+            if read(0xC0DF)==desired_weapon:boss_heal_stage='fight'
             else:return pulse('button1',16)
+        if dungeon and not dungeon.done:
+            pad = dungeon.drive(state,boss_done)
+            if pad is not None:return pad
         # Decisions inspect live positions, but apply only joypad buttons.
         kind = read(0xC600)
         if kind==0 and read(0xC0CE+boss_index)==0x80:
@@ -315,7 +340,9 @@ def main():
         else:
             direction='down' if dy>0 else 'up'
         facing={'up':0,'down':1,'left':2,'right':3}[direction]
-        pad=0 if kind!=15 and abs(dx)+abs(dy)<=28 and read(0xC30A)==facing else 1<<buttons[direction]
+        if dungeon and abs(dx)+abs(dy)>16:
+            return dungeon.navigate([round(tx/8)*8,round(ty/8)*8])
+        pad=0 if kind!=15 and abs(dx)+abs(dy)<=(16 if dungeon else 28) and read(0xC30A)==facing else 1<<buttons[direction]
         if kind != 15 and abs(dx)+abs(dy)<42 and read(0xC020)&32==0:
             pad |= 1<<buttons['button2']
         return pad
@@ -324,16 +351,22 @@ def main():
         state = read(0xC01D)
         if args.boss_arena is not None and state == 0x0C and not boss_prepared:
             # One-time fixture: resume/scene loader constructs the real encounter.
-            cell=arena['cell']
+            cell=dungeon_route['outside_cell'] if dungeon else arena['cell']
             for at in (0xC0C0,0xC0C4):
                 write(at,cell&255);write(at+1,cell>>8)
-            write(0xC037,boss_index)
+            write(0xC037,0 if dungeon else boss_index)
             write(0xC0DA,128);write(0xC318,128)
-            write(0xC0E0,3);write(0xC0E1,2);write(0xC0DF,boss_weapon)
+            write(0xC0E0,3);write(0xC0E1,2);write(0xC0DF,0 if dungeon else boss_weapon)
             write(0xC0F1,3);write(0xC0F2,3)
             write(0xC0E7,1);write(0xC0E8,1);write(0xC0DC,120);write(0xC0DB,120)
+            if dungeon:
+                write(0xC0DE,20);write(0xC0DC,128);write(0xC0DB,128)
+                write(0xC0E7,2)
+                write(0xC0E4,2);write(0xC0E5,2);write(0xC0E6,2)
+                write(0xC0EC,1);write(0xC0ED,1);write(0xC0F0,1 if args.dungeon in (6,9) else 0)
+                for index in range(1,args.dungeon):write(0xC0CE+index,0x80)
             write(0xC01D,6);state=6;boss_prepared=True
-            boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':1,'potion':1,'mp':120}
+            boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':0 if dungeon else boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':2 if dungeon else 1,'potion':1,'mp':128 if dungeon else 120}
         if args.save_slot is not None and state == 0x0C and not save_started:
             # Controlled integration entry: service arrival is injected; every
             # confirmation, slot selection and SRAM write runs in production code.
@@ -391,7 +424,7 @@ def main():
             if cell != last_cell:
                 world_transitions.append({'emulator_frame': frame, 'cell': cell, 'state': f'{state:02X}'})
                 last_cell = cell
-        if args.boss_arena is not None and boss_prepared and state==0x0C:
+        if args.boss_arena is not None and boss_prepared and state==0x0C and (not dungeon or cell==arena['cell']):
             snapshot=combat_snapshot();boss=snapshot[16]
             if (not boss_run['phases'] or (boss_run['phases'][-1]['type'],boss_run['phases'][-1]['state'])!=(boss['type'],boss['state'])):
                 boss_run['phases'].append({'emulator_frame':frame,**boss})
@@ -420,7 +453,27 @@ def main():
             boss_run['last_hp']=read(0xC318)
             previous_boss=boss;previous_aux=snapshot[24:]
         if args.boss_arena is not None and boss_prepared and boss_index==10 and state==0x0E:
-            boss_run['ending_handoff']=True;boss_done=True
+            boss_run['ending_handoff']=True;boss_done=not args.complete_ending
+        if args.complete_ending and boss_run.get('ending_handoff'):
+            if not ending['started']:
+                ending['started']=True;ending['start_frame']=frame
+            cmd=read(0xC065)
+            if not ending['audio_commands'] or ending['audio_commands'][-1]!=cmd:ending['audio_commands'].append(cmd)
+            for slot in range(16,25):
+                if read(0xC300+slot*48)==6 and read(0xC303+slot*48)&1 and slot not in ending['crystal_slots']:ending['crystal_slots'].append(slot)
+            ptr=read(0xDCC6)|(read(0xDCC7)<<8)
+            if state==0x0E and 0xC900<ptr<0xCE00:
+                ending['credits_started']=True
+                y=read(0xC019)
+                if y not in ending['scroll_values']:ending['scroll_values'].append(y)
+            if state==0x0E and ending['credits_started']:
+                if read(0xDCC1)==1:
+                    ending['credits_finished']=True
+                    if 'finish_frame' not in ending:ending['finish_frame']=frame
+            if ending['credits_finished'] and state in (0,0x12):
+                ending['returned_to_title']=True
+                if 'return_frame' not in ending:ending['return_frame']=frame
+                if state==0x12:ending['title_confirmed']=True;boss_done=True
         if args.combat:
             snapshot = combat_snapshot()
             if state == 0x0C:
@@ -504,12 +557,13 @@ def main():
                 play_irq_start = irq_counts()
             play_frames += 1
         if frame % 600 == 599:
+            if dungeon:print({'dungeon':args.dungeon,'route_stage':dungeon.stage,'edge':dungeon.edge,'cell':f'{cell:03X}','xy':[read(0xC313),read(0xC311)],'hp':read(0xC318),'keys':read(0xC0DE)},flush=True)
             print({'emulator_frame': frame, 'state': f'{state:02X}', 'game_ticks': ticks,
                    'audio_peak': current['audio_peak'],
                    'pc': f'{lib.m68k_get_reg(16):06X}' if not args.reference_sms and hasattr(lib, 'm68k_get_reg') else None}, flush=True)
             if current['image']:
                 png(args.output/'latest.png', *current['image'], pixel_format)
-        if boss_done or (args.boss_arena is None and play_frames >= 300 and input_step == len(inputs)):
+        if (boss_done and (not dungeon or dungeon.done or ending.get('title_confirmed',False))) or (args.boss_arena is None and play_frames >= 300 and input_step == len(inputs)):
             break
     if current['image']:
         png(args.output/'final.png', *current['image'], pixel_format)
@@ -524,6 +578,8 @@ def main():
         boss_run['final_item']=read(0xC0DF);boss_run['final_mp']=read(0xC0DB);boss_run['potion_remaining']=read(0xC0E8)
         boss_run['final_entities']=combat_snapshot();boss_run['progress']=read(0xC0CE+boss_index) if boss_prepared else None
         result['boss']=boss_run
+        if args.complete_ending:result['ending']=ending
+        if dungeon:result['dungeon']={'index':args.dungeon,'stage':dungeon.stage,'edge':dungeon.edge,'visits':dungeon.visits,'events':dungeon.events,'done':dungeon.done,'keys_remaining':read(0xC0DE),'route':dungeon_route}
     if args.combat:
         combat['final_entities'] = combat_snapshot()
         result['combat'] = combat
@@ -572,8 +628,13 @@ def main():
             assert restore_checked, 'Continue restoration was not observed'
         if args.boss_arena is not None:
             assert boss_done, 'Boss fight/reward did not finish'
+            if args.complete_ending:
+                assert ending['credits_started'] and ending['credits_finished'] and ending.get('title_confirmed'), 'Ending did not complete'
+                assert set(ending['crystal_slots'])==set(range(16,25)), 'Nine ending crystals were not shown'
+                assert len(ending['scroll_values'])>150, 'Credit scroll stalled'
             assert boss_run['hits'] and boss_run['deaths'], 'No genuine boss damage/death observed'
             assert result['player_hp']>0, 'Player died in boss encounter'
+            if dungeon:assert dungeon.done or ending['returned_to_title'], 'Dungeon traversal did not finish'
             assert boss_run['reward_collected'] or boss_run.get('ending_handoff'), 'Missing reward/ending handoff'
             return
         assert play_frames >= 300, 'Did not reach stable gameplay'

@@ -8,7 +8,7 @@
 #include "gaw_platform.h"
 #include "gaw_host.h"
 static uint8_t ram[GAW_RAM_SIZE],video[0x4000],cram[32],regs[16],sram[0x8000];
-static unsigned frames,observed,reference_mode,current_slot;
+static unsigned frames,observed,reference_mode,current_slot,selected_item;
 static uint8_t frame_ram[128][0x1F80],frame_video[128][0x4000];
 static void observe(void){
     assert(observed<128u);
@@ -22,7 +22,7 @@ static void setup(unsigned mode,unsigned kind,unsigned frame,unsigned corner){
     gaw_ram_write8(0xC040,(uint8_t)mode);gaw_ram_write8(0xC066,(uint8_t)(15u-mode));gaw_ram_write16le(0xC0B9,(uint16_t)(mode==2?0x101:0x95));
     gaw_ram_write16le(0xC034,0xDD00);gaw_ram_write8(0xC02F,(uint8_t)frame);
     gaw_ram_write8(0xC0DA,24);gaw_ram_write8(0xC0DC,16);gaw_ram_write8(0xC0E0,2);gaw_ram_write8(0xC0E1,1);
-    gaw_ram_write8(0xC0DF,1);gaw_ram_write8(0xC318,16);gaw_ram_write8(0xC300,2);gaw_ram_write8(0xC301,1);
+    gaw_ram_write8(0xC0DF,(uint8_t)selected_item);gaw_ram_write8((uint16_t)(0xC0E0u+selected_item),(uint8_t)kind);gaw_ram_write8(0xC318,16);gaw_ram_write8(0xC300,2);gaw_ram_write8(0xC301,1);
     gaw_ram_write8(0xC311,(uint8_t)(corner?2:0x58));gaw_ram_write8(0xC313,(uint8_t)(corner?0xFA:0x88));
     gaw_ram_write16le(0xC308,0x80A0);gaw_ram_write8(0xC303,1);
     for(unsigned i=0;i<16u;++i){uint16_t e=(uint16_t)(0xC600u+i*0x30u);gaw_ram_write8(e,(uint8_t)(i?32:0));gaw_ram_write8((uint16_t)(e+3u),(uint8_t)(i&2u));gaw_ram_write8((uint16_t)(e+0x1Bu),(uint8_t)(i%3u));gaw_ram_write8((uint16_t)(e+0x1Au),(uint8_t)(i*5u));gaw_ram_write8((uint16_t)(e+0x1Du),0xFA);}
@@ -31,7 +31,7 @@ static void setup(unsigned mode,unsigned kind,unsigned frame,unsigned corner){
 }
 int main(void){
     unsigned cases=0;
-    for(current_slot=0;current_slot<2u;++current_slot)for(unsigned mode=0;mode<3u;++mode)for(unsigned kind=1;kind<=2u;++kind)for(unsigned phase=0;phase<3u;++phase)for(unsigned corner=0;corner<2u;++corner){
+    for(selected_item=1;selected_item<=6u;selected_item+=5u)for(current_slot=0;current_slot<2u;++current_slot)for(unsigned mode=0;mode<3u;++mode)for(unsigned kind=1;kind<=2u;++kind)for(unsigned phase=0;phase<3u;++phase)for(unsigned corner=0;corner<2u;++corner){
         unsigned frame=phase==2?255:phase*7u;
         reference_mode=1;observed=0;setup(mode,kind,frame,corner);gaw_host_set_frame_observer(observe);assert(gaw_sms_compat_indexed_call(1,kind==1?0x6AFB:0x6C2E,(uint16_t)(0xC090u+current_slot*8u)));assert(gaw_sms_compat_faults()==0);
         memcpy(ram,gaw_ram,sizeof ram);memcpy(video,gaw_sms_vram(),sizeof video);memcpy(cram,gaw_sms_cram(),sizeof cram);memcpy(regs,gaw_sms_vdp_regs(),sizeof regs);frames=gaw_host_frame_count();for(unsigned i=0;i<0x8000u;++i)sram[i]=gaw_platform_sram_read((uint16_t)i);
