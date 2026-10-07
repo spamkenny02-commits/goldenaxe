@@ -59,10 +59,38 @@ static void compare(unsigned at,unsigned code,unsigned count,int pending,int row
     }
     ++cases;
 }
+static void iterator_tests(void){
+    gaw_video_reset();
+    for(int i=0;i<512;++i)assert(gaw_sms_take_next_tile_dirty()==i);
+    assert(gaw_sms_take_next_tile_dirty()==-1);
+    assert(gaw_sms_take_next_tile_dirty()==-1);
+    gaw_video_write_at(503u*32u,1);gaw_video_write_at(499u*32u,1);gaw_video_write_at(498u*32u,1);
+    assert(gaw_sms_take_next_tile_dirty()==498);
+    assert(gaw_sms_take_next_tile_dirty()==499);
+    assert(gaw_sms_take_next_tile_dirty()==503);
+    assert(gaw_sms_take_next_tile_dirty()==-1);
+    gaw_video_write_at(503u*32u,1);assert(gaw_sms_take_next_tile_dirty()==-1);
+    gaw_video_write_at(7u*32u,1);gaw_video_write_at(17u*32u,1);gaw_video_write_at(200u*32u,1);
+    assert(gaw_sms_take_tile_dirty(17));assert(gaw_sms_take_tile_dirty(200));
+    assert(gaw_sms_take_next_tile_dirty()==7);
+    gaw_video_write_at(2u*32u,1);gaw_video_write_at(7u*32u,2);
+    assert(gaw_sms_take_next_tile_dirty()==2);assert(gaw_sms_take_next_tile_dirty()==7);
+    assert(gaw_sms_take_next_tile_dirty()==-1);
+    control(0x3FFC,1);gaw_sms_vdp_data_write_block(input,8);
+    assert(gaw_sms_take_next_tile_dirty()==0);assert(gaw_sms_take_next_tile_dirty()==511);
+    assert(gaw_sms_take_next_tile_dirty()==-1);
+    gaw_sms_mark_all_tiles_dirty();
+    for(int i=0;i<512;++i){
+        if(i&1)assert(gaw_sms_take_tile_dirty((unsigned)i));
+        else assert(gaw_sms_take_next_tile_dirty()==i);
+    }
+    assert(gaw_sms_take_next_tile_dirty()==-1);
+}
 int main(void){
     static const unsigned lengths[]={0,1,2,31,32,33,63,64,65,127,128,129,255,256,257,1280,8192,16384,16417};
     static const unsigned starts[]={0,1,0x1F,0x20,0x3F,0x800,0x37FF,0x3800,0x3EFF,0x3F00,0x3F7F,0x3F80,0x3FFE,0x3FFF};
     for(unsigned i=0;i<sizeof input;++i)input[i]=(uint8_t)(i*31u+(i>>3));
+    iterator_tests();
     for(unsigned a=0;a<sizeof starts/sizeof starts[0];++a)
         for(unsigned n=0;n<sizeof lengths/sizeof lengths[0];++n)
             for(unsigned code=0;code<4;++code)for(int rows=0;rows<2;++rows)

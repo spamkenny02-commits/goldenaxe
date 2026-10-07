@@ -13,6 +13,7 @@ const uint8_t *gaw_sms_vram(void);
 const uint8_t *gaw_sms_cram(void);
 const uint8_t *gaw_sms_vdp_regs(void);
 int gaw_sms_take_tile_dirty(unsigned tile);
+int gaw_sms_take_next_tile_dirty(void); /* ascending dirty tiles, -1 when drained */
 void gaw_sms_mark_all_tiles_dirty(void);
 void gaw_sms_vdp_control_write(uint8_t value);
 void gaw_sms_vdp_data_write(uint8_t value);

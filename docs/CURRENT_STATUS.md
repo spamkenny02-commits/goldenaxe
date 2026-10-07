@@ -294,3 +294,28 @@ and continue full-game/hardware validation.
 Next: reduce dirty-pattern traversal and resource expansion overhead, measure
 cadence, then validate sprite output/clipping and extend controller/integration
 coverage. Full-game and physical hardware validation remain unfinished.
+
+
+- V37 keeps conservative low/high dirty-pattern bounds and supplies an
+  ascending consuming iterator. The physical adapter traverses only that
+  interval instead of all 512 entries. Mixed scalar/iterator consumers, new
+  writes after consumption, unchanged bytes, reset/all-dirty and wraparound
+  pass explicit tests; the prior 4,274 port/dirty comparisons still pass.
+- Synchronous IRQ sprite resources expand one three-plane pattern into a
+  32-byte temporary and submit one block, with mapped fallback at ROM/RAM
+  boundaries. The original 256 raw-IRQ video/queue comparisons pass. All
+  regular local regressions, ASan/UBSan and the native coverage gate pass.
+- Actual linked image: 476,460 bytes, BSS 31,518 at FF0000-FF7B1E, checksum BC9D.
+  Native vectors/RAM/header checks and emulator boot/audio pass. Idle cadence
+  rises to 239 game updates/300 physical frames (V36 148, V35 136). The exit
+  route takes 508 gameplay physical frames, versus V36 721 and SMS 348. It
+  settles at the same [56,104], cell 94 and HP 24; its C-state sampled update
+  count is 345 versus SMS 346, so exact physical/input phase is not claimed.
+- Visual comparison of the actual final screens reveals black ground regions
+  where SMS draws background palette color zero. MD treats tile pixel zero
+  as transparent; a correct background zero-color layer is needed. This was
+  not covered by shadow-byte equality and must be fixed before renderer signoff.
+
+Next: correct background zero-color rendering and its scroll/priority behavior,
+validate eight-sprite output clipping, keep improving cadence, then extend
+controller/save/combat/playthrough and physical-hardware coverage.

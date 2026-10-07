@@ -60,7 +60,22 @@ void gaw_video_present_vblank(void){
     if(resource){
         bank=resource;uint16_t source=gaw_ram_read16le(0xC043u);unsigned count=read_byte(bank,source++,0);if(!count)count=256u;
         gaw_ram_write8(0xC042u,0);address(0x7E00u);
-        while(count--)for(unsigned row=0;row<8u;++row){copy(bank,source,3,0);source=(uint16_t)(source+3u);gaw_sms_vdp_data_write(0);}
+        while(count--){
+            uint8_t pattern[32];
+            /* Expand one three-plane SMS pattern, then submit one fragment.
+             * Fall back to mapped reads when its source straddles a boundary. */
+            const uint8_t *data=0;
+            if(source<0xC000u&&(source&0x3FFFu)<=0x3FE8u)
+                data=gaw_sms_rom_bank_data(source<0x4000u?0u:source<0x8000u?1u:bank,source);
+            else if(source>=0xC000u&&(source&0x1FFFu)<=0x1FE8u)
+                data=gaw_ram_ptr((uint16_t)(0xC000u+(source&0x1FFFu)));
+            for(unsigned row=0;row<8u;++row){
+                for(unsigned plane=0;plane<3u;++plane)
+                    pattern[row*4u+plane]=data?data[row*3u+plane]:read_byte(bank,(uint16_t)(source+row*3u+plane),0);
+                pattern[row*4u+3u]=0;
+            }
+            gaw_sms_vdp_data_write_block(pattern,32);source=(uint16_t)(source+24u);
+        }
     }
     if(!gaw_ram_read8(0xC033u)){
         uint8_t phase=gaw_ram_read8(0xC045u)&3u;

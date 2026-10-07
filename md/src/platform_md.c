@@ -65,7 +65,7 @@ static void sync_scroll(const uint8_t *r){
         for(unsigned col=0;col<16u;++col){ VDP_DATA=(uint16_t)(col<12u?r[9]:0u); VDP_DATA=0; }
     }else{ VDP_DATA=r[9]; VDP_DATA=0; }
 }
-static void sync_sms_shadow(void){const uint8_t*v=gaw_sms_vram();const uint8_t*c=gaw_sms_cram();const uint8_t*r=gaw_sms_vdp_regs();vdp_reg(0,(uint8_t)(0x04u|(r[0]&0x30u)));vdp_reg(1,(uint8_t)(0x24u|(r[1]&0x40u)));vdp_reg(10,r[10]);vdp_reg(7,(uint8_t)(0x10u|(r[7]&0x0Fu)));sync_scroll(r);for(unsigned t=0;t<512;++t)if(gaw_sms_take_tile_dirty(t))upload_tile(t,v);
+static void sync_sms_shadow(void){const uint8_t*v=gaw_sms_vram();const uint8_t*c=gaw_sms_cram();const uint8_t*r=gaw_sms_vdp_regs();vdp_reg(0,(uint8_t)(0x04u|(r[0]&0x30u)));vdp_reg(1,(uint8_t)(0x24u|(r[1]&0x40u)));vdp_reg(10,r[10]);vdp_reg(7,(uint8_t)(0x10u|(r[7]&0x0Fu)));sync_scroll(r);for(int t=gaw_sms_take_next_tile_dirty();t>=0;t=gaw_sms_take_next_tile_dirty())upload_tile((unsigned)t,v);
     cram_addr_write(0);for(unsigned i=0;i<32;++i)VDP_DATA=gaw_md_color(c[i]);cram_addr_write(0x42);VDP_DATA=gaw_md_color(c[16u+(r[7]&0x0Fu)]);
     uint32_t rows=gaw_sms_take_name_rows_dirty();
     uint16_t nt=(uint16_t)((r[2]&0x0Eu)<<10);

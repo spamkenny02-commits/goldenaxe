@@ -69,3 +69,10 @@ local frame tests and sanitizers pass; the native image is 475,604 bytes, BSS
 checked exit uses 721 gameplay physical frames. This is still below SMS cadence.
 The profile also reports the 64 hottest instruction addresses to distinguish
 inlined wait loops from computation inside the same symbol bucket.
+
+V37 consumes bounded dirty-pattern ranges and expands sprite resources one
+pattern per block. The native image is 476,460 bytes, BSS 31,518, checksum BC9D.
+Local reference/sanitizer tests pass; idle is 239 updates/300 physical frames
+and the checked exit uses 508 gameplay physical frames. Screen comparison
+reveals that SMS background color zero is incorrectly transparent on MD; its
+zero-color layer/scroll/priority mapping remains to fix.

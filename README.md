@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V36)
+## Current status (V37)
 
 - 127/127 active entity types are high-level C; no entity Z80 fallback remains.
 - 512/512 world callback entries are native/no-op; no world callback fallback remains.
@@ -40,7 +40,7 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - The ending is native: four complete final-movement, crystal-reveal and
   credit-scroll sequences match original RAM, video, SRAM and frame timing.
   These comparisons also fixed the missing walk-pose increment.
-- V36 reruns every local
+- V37 reruns every local
   differential/regression target, ASan/UBSan and the compiled native coverage
   gate successfully. Leak detection is disabled locally because this sandbox
   blocks its process inspection; address/undefined-behavior checks remain active.
@@ -68,19 +68,22 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - Bulk VDP transfers preserve scalar address/read-buffer/control-latch behavior
   and exact dirty pattern/name-row/SAT flags. 4,274 ROM-free comparisons pass
   normally and under ASan/UBSan; all original-game differential targets pass.
-- The current production image links with GCC 14.2.0: 475,604-byte ROM,
-  31,514-byte BSS and checksum 7F7F. ELF checks verify mutable state in
-  FF0000-FF7B1A, actual IRQ vectors and absence of interpreter
+- The current production image links with GCC 14.2.0: 476,460-byte ROM,
+  31,518-byte BSS and checksum BC9D. ELF checks verify mutable state in
+  FF0000-FF7B1E, actual IRQ vectors and absence of interpreter
   symbols; cartridge header and checksum checks pass. Genesis Plus GX boots
   through title, name creation, new game and 300 emulator gameplay frames with
   visible graphics and audible PSG. Hardware VBlank and line interrupts are
   connected; asynchronous VBlank continues sound/timers during C computation.
-  The V36 idle check advances 148 game updates in 300 physical frames,
-  versus 136 in V35 after faithful bulk shadow transfers.
+  The V37 idle check advances 239 game updates in 300 physical frames,
+  versus V36 148 and V35 136. A bounded dirty-tile iterator and whole-pattern
+  three-plane expansion remove the measured per-frame traversal overhead.
   A controller-only route genuinely scrolls from cell 95 to 94 on both native
   MD and original SMS, finishing at position [56,104] with HP 24. MD takes
-  721 gameplay physical frames versus V35 947 and SMS 348. Performance and a complete
-  playthrough/hardware validation remain. Instruction profiling identifies
+  508 gameplay physical frames versus V36 721, V35 947 and SMS 348. Performance and a complete
+  playthrough/hardware validation remain. Visual comparison exposed incorrect
+  background color-zero transparency on MD, which is the next renderer fix.
+  Instruction profiling identifies
   shadow VDP writes and physical shadow upload as the main measured costs.
 
 See `docs/CURRENT_STATUS.md` for the exact verified state.
