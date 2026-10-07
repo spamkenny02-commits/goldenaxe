@@ -1,4 +1,4 @@
-# Current status — V42
+# Current status — V43
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -132,6 +132,23 @@ in 300 physical gameplay frames, identical to freshly rebuilt V41 (V37: 239).
 The controller route reaches cell 94, position [56,104], HP 24, state 0C on
 both SMS and MD. It takes 571 MD gameplay frames versus 348 SMS; both sampled
 update counts are 346. No cadence gain or exact input-phase equivalence is claimed.
+
+## Sprite work reduction: V43
+
+Collision scratch uses eight aligned 32-bit zero stores per touched line and
+character-byte access with constant shifts for opacity merges. The MD line-mask
+helper clamps visible rows once and advances a mask bit per line. Persistent
+RAM remains unchanged at 32296 bytes; the full native image is 478324 bytes,
+checksum 20D7, with RAM ending FF7E28. Actual link/vector/header checks pass.
+
+The controller route takes 529 gameplay frames versus V42's 571 (7.4% fewer),
+finishing at the same cell 94 / [56,104] / HP 24 / state 0C. Profiled master
+cycles decrease from 613517949 to 572321489. Idle remains 227 updates/300 frames.
+All 6951 status cases, 1024 hardware collision cases, MD helper oracles,
+ASan/UBSan helper checks, IRQ/final differential checks and 536 native raster
+stages / 30736384 pixels pass. The settled full-game screenshot differs from
+V42 at 363 pixels; exact full-game upload/animation phase equivalence remains
+open and is not inferred from the generated fixtures.
 
 ## Remaining work
 

@@ -7,7 +7,7 @@
  * worst-case IRQ stack needlessly large. The engine is single-threaded and the
  * workspace is fully initialized per touched scanline before it is read. */
 static uint8_t sprite_counts[192];
-static uint8_t sprite_occupied[192][32];
+static uint32_t sprite_occupied[192][8];
 
 /* 192-line Mode 4, as used by Golden Axe Warrior. Sprite positions, the
  * eight-per-line limit and nonzero pattern pixels belong to the SMS shadow,
@@ -40,7 +40,9 @@ uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs){
         tile|=bank;
         for(int y=first;y<last;++y){
             if(sprite_counts[y]>=8u){flags|=0x40u;continue;}
-            if(!sprite_counts[y]&&!(flags&0x20u))memset(sprite_occupied[y],0,32);
+            if(!sprite_counts[y]&&!(flags&0x20u)){
+                for(unsigned word=0;word<8u;++word)sprite_occupied[y][word]=0;
+            }
             ++sprite_counts[y];
             if(flags&0x20u)continue;
             unsigned row=(unsigned)(y-top)>>zoom;
@@ -51,10 +53,23 @@ uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs){
             if(left<0){bits=(uint16_t)((unsigned)bits<<(-left));left=0;}
             uint32_t packed=(uint32_t)bits<<(8u-(unsigned)(left&7));
             unsigned byte=(unsigned)left>>3;
-            for(unsigned j=0;j<3u&&byte+j<32u;++j){
-                uint8_t part=(uint8_t)(packed>>(16u-8u*j));
-                if(sprite_occupied[y][byte+j]&part)flags|=0x20u;
-                sprite_occupied[y][byte+j]|=part;
+            /* Character access may alias the aligned word scratch. Constant
+               shifts avoid the 68000's variable multi-bit shift loop. */
+            uint8_t *occupied=(uint8_t*)sprite_occupied[y];
+            if(byte<32u){
+                uint8_t part=(uint8_t)(packed>>16);
+                if(occupied[byte]&part)flags|=0x20u;
+                occupied[byte++]|=part;
+            }
+            if(byte<32u){
+                uint8_t part=(uint8_t)(packed>>8);
+                if(occupied[byte]&part)flags|=0x20u;
+                occupied[byte++]|=part;
+            }
+            if(byte<32u){
+                uint8_t part=(uint8_t)packed;
+                if(occupied[byte]&part)flags|=0x20u;
+                occupied[byte]|=part;
             }
         }
         if(flags==0x60u)break;

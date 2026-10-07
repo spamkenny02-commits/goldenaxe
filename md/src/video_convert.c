@@ -57,11 +57,14 @@ uint32_t gaw_md_sprite_line_mask(uint8_t y,unsigned height,uint8_t counts[192]) 
     if(y==0xD0u)return 0;
     int top=(int)y+1;
     if(y>0xD0u)top-=256;
+    int first=top<0?0:top,last=top+(int)height;
+    if(last>192)last=192;
+    if(first>=last)return 0;
+    uint32_t bit=(uint32_t)1u<<(unsigned)(first-top);
     uint32_t mask=0;
-    for(unsigned row=0;row<height;++row){
-        int line=top+(int)row;
-        if(line>=0&&line<192&&counts[line]<8u){
-            ++counts[line];mask|=(uint32_t)1u<<row;
+    for(int line=first;line<last;++line,bit<<=1){
+        if(counts[line]<8u){
+            ++counts[line];mask|=bit;
         }
     }
     return mask;
