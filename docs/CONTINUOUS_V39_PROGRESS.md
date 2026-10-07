@@ -26,10 +26,11 @@ once into a 64-byte temporary and uploads both physical planes.
   value, and checks sprite overlap and the viewport mask. Together with V38's
   three palette stages this checks 515 stages / 29532160 rendered pixels.
 
-This initial checkpoint awaits the expanded GitHub hardware run. V38's 172032
-pixel run is already successful (Actions 37596443981). No private full-game
-build, screenshot or cadence measurement is claimed for V39 while local
-execution is unavailable. Private-ROM CI tests remain conditional/skipped
+GitHub Actions run 37597060478 passes both host and native-video jobs. All
+515 stages / 29532160 pixels match; the actual standalone image is 7052 bytes,
+BSS 25175, checksum 187C. V38's initial 172032-pixel run also passes (Actions
+37596443981). No private full-game build, screenshot or cadence measurement
+is claimed for V39 while local execution is unavailable. Private-ROM CI tests remain conditional/skipped
 without the reference input.
 
 Horizontal scroll is zero in the locked-column fixture. Combined fine
@@ -38,7 +39,7 @@ The current MD backend also still needs rendered eight-sprite line clipping.
 
 ## Next
 
-Complete the expanded hardware verification, check the zoomed sprite-Y boundary
+Check the zoomed sprite-Y boundary
 against independent SMS hardware, then implement actual native sprite clipping.
 Resume private-game controller/save/combat/playthrough and cadence checks when
 local execution is restored.

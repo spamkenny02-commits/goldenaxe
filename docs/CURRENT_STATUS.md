@@ -72,13 +72,14 @@ Right-locked name columns retain unscrolled rows.
 Host tests add 49152 visible-line comparisons and 15360 independent dirty-row
 mask comparisons. The production-backend fixture exercises all 256 scroll
 values with/without the right-column lock, one changing logical descriptor and
-sprite overlap: 515 stages / 29532160 pixels. This expanded run is pending.
+sprite overlap: all 515 stages / 29532160 pixels pass in GitHub Actions run
+37597060478. The standalone image is 7052 bytes, BSS 25175, checksum 187C.
 Horizontal scroll is zero in the right-lock fixture; combined fine horizontal
 scroll and vertical column-lock behavior is not signed off.
 
 ## Remaining work
 
-Validate the V39 expanded fixture and confirm actual private-game pixels and
+Confirm actual private-game pixels and
 cadence when local execution recovers. Then validate rendered eight-sprite line
 clipping, more controller/combat/interaction routes, SRAM save/reload,
 playthrough/ending and PAL/NTSC/physical hardware behavior. The project is not

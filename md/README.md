@@ -97,6 +97,6 @@ V39 maps coarse vertical scroll into the 28 logical name rows, keeping physical
 VSRAM in 0..31 to avoid MD's incompatible 256-pixel plane wrap. Dirty rows are
 rotated, with unscrolled right columns retained when locked. The fixture now
 runs 515 stages (29532160 pixels): all 256 vertical values with/without right
-lock, H-scroll zero, plus the original palette/viewport stages. The expanded
-run is pending; combined fine H-scroll/right V-lock and full-game cadence
-still need verification.
+lock, H-scroll zero, plus the original palette/viewport stages. GitHub Actions run 37597060478
+passes all stages (7052-byte fixture, BSS 25175, checksum 187C). Combined fine
+H-scroll/right V-lock and full-game cadence still need verification.
