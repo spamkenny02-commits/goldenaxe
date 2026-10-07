@@ -1,4 +1,4 @@
-# Current status — V39
+# Current status — V40
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -76,6 +76,20 @@ sprite overlap: all 515 stages / 29532160 pixels pass in GitHub Actions run
 37597060478. The standalone image is 7052 bytes, BSS 25175, checksum 187C.
 Horizontal scroll is zero in the right-lock fixture; combined fine horizontal
 scroll and vertical column-lock behavior is not signed off.
+
+## Sprite boundary correction: V40
+
+The frame-level portable sprite-status calculation now wraps SAT Y values
+above D0 (the list terminator), fixing E0 in the zoomed 16-high mode. Two opaque
+E0 sprites expose their final row on display line zero and must collide. Three
+explicit DF/E0/E1 regressions increase the synthetic host suite to 6951 cases.
+
+An independent generated Z80 program configures the SMS II VDP, polls its real
+status port and accumulates flags until VBlank. The pinned hardware core runs
+all 256 Y positions in all four height/zoom modes: 1024 two-sprite collision
+fixtures with no game data and no portable status implementation linked. The
+new run is pending. This verifies collision visibility, not scanline-accurate
+overflow timing or physical console behavior.
 
 ## Remaining work
 

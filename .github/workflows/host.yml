@@ -66,3 +66,5 @@ jobs:
       - name: Compare native video pixels to independent indexed oracle
         run: |
           python3 tools/test_md_video_emulator.py --core md/build/genesis-plus-gx/genesis_plus_gx_libretro.so --nm md/toolchain/bin/m68k-elf-nm
+      - name: Validate wrapped sprite collisions on independent SMS hardware core
+        run: python3 tools/test_sms_sprite_emulator.py --core md/build/genesis-plus-gx/genesis_plus_gx_libretro.so

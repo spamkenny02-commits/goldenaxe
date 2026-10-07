@@ -100,3 +100,14 @@ runs 515 stages (29532160 pixels): all 256 vertical values with/without right
 lock, H-scroll zero, plus the original palette/viewport stages. GitHub Actions run 37597060478
 passes all stages (7052-byte fixture, BSS 25175, checksum 187C). Combined fine
 H-scroll/right V-lock and full-game cadence still need verification.
+
+V40 corrects the portable sprite-status Y wrap for E0 zoomed sprites. The
+ROM-free SMS II hardware-reference collision fixture runs every Y in all four
+height/zoom modes, using generated Z80 code and the actual VDP status port:
+
+```sh
+python3 tools/test_sms_sprite_emulator.py --core /tmp/gpgx/genesis_plus_gx_libretro.so
+```
+
+The new run is pending. This targets collision visibility; frame-level sprite
+status is not a scanline-accurate VDP model or a physical-console proof.

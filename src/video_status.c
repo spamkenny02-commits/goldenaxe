@@ -28,7 +28,9 @@ uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs){
     for(unsigned i=0;i<64u;++i){
         unsigned sy=vram[sat+i];
         if(sy==0xD0u)break;
-        int top=sy>0xE0u?(int)sy-255:(int)sy+1;
+        /* D0 terminates the list; larger values wrap above the 192-line view.
+           E0 is visible for one line in the 16-high, 2x zoom mode. */
+        int top=sy>0xD0u?(int)sy-255:(int)sy+1;
         int first=top<0?0:top;
         int last=top+(int)(height<<zoom);
         if(last>192)last=192;

@@ -21,7 +21,7 @@ static uint8_t reference_status(void){
             unsigned y=vram[sat+i];
             if(y==208)break;
             int top=(int)y+1;
-            if(y>224u)top-=256;
+            if(y>208u)top-=256;
             int dy=line-top;
             if(dy<0||dy>=(int)(height*scale))continue;
             if(++count>8){flags|=0x40;break;}
@@ -106,6 +106,15 @@ int main(void){
         assert(!(gaw_video_sprite_status(vram,regs)&0x20));
         /* Exactly eight visible entries cannot overflow. */
         terminate(8);check(0);assert(gaw_video_sprite_status(vram,regs)==0);
+    }
+    /* Zoomed 16-high E0 sprites expose their final pixel row on line zero.
+       DF ends just before the viewport; E1 exposes two rows. Odd tile indices
+       are masked to the even first pattern, including the second tile row. */
+    for(unsigned y=0xDFu;y<=0xE1u;++y){
+        fixture();regs[1]=0x43;opaque_tile(2,0xFF);opaque_tile(3,0xFF);
+        sprite(0,(uint8_t)y,24,3);sprite(1,(uint8_t)y,24,2);terminate(2);
+        check(1);
+        assert(gaw_video_sprite_status(vram,regs)==(y>=0xE0u?0x20u:0u));
     }
     /* The ninth entry is never drawn and cannot create a collision. */
     fixture();opaque_tile(1,0xFF);

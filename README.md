@@ -2,8 +2,11 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V39)
+## Current status (V40)
 
+- V40 corrects the top-edge Y wrap for zoomed sprites, including E0's one
+  visible row. Three explicit host regressions and 1024 independent generated
+  Z80 collision fixtures have been added; their new run is pending.
 - V39 remaps the native name plane to preserve SMS's 224-pixel vertical
   wrap. Host tests cover every vertical value and dirty-row rotation; the
   hardware fixture passes 515 stages / 29532160 pixels in GitHub Actions.
