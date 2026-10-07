@@ -127,9 +127,12 @@ def main():
     def ready():
         return (memory[at ^ swap] << 8) | memory[(at + 1) ^ swap]
     try:
-        for _ in range(120):
+        initialized = False
+        for _ in range(240):
             lib.retro_run()
-            if ready() == 0:
+            marker = ready()
+            initialized |= marker == 0xFFFF
+            if initialized and marker == 0:
                 break
         else:
             raise AssertionError('Fixture failed to reach its frame barrier')
