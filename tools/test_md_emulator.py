@@ -273,9 +273,11 @@ def main():
         code_symbols.sort()
         addresses = [at for at, name in code_symbols]
         costs = {}
+        instructions = []
         for pc in range(0, min(args.rom.stat().st_size, 0x100000), 2):
             cost = counters[pc >> 1]
             if cost:
+                instructions.append((pc, cost))
                 index = bisect.bisect_right(addresses, pc)-1
                 name = code_symbols[index][1] if index >= 0 else 'before_first_symbol'
                 costs[name] = costs.get(name, 0)+cost
@@ -283,7 +285,9 @@ def main():
         result['instruction_profile'] = {
             'master_cycles': total,
             'functions': [{'name': name, 'cycles': cost, 'percent': round(cost*100/total, 3)}
-                          for name, cost in sorted(costs.items(), key=lambda entry: -entry[1])]
+                          for name, cost in sorted(costs.items(), key=lambda entry: -entry[1])],
+            'instructions': [{'pc': f'{pc:06X}', 'cycles': cost, 'percent': round(cost*100/total, 3)}
+                             for pc, cost in sorted(instructions, key=lambda entry: -entry[1])[:64]]
         }
     (args.output/'result.json').write_text(json.dumps(result, indent=2)+'\n')
     print(result)

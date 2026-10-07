@@ -62,3 +62,10 @@ waits charged during instructions. Symbol buckets are instruction locations, not
 inclusive call graphs; IRQ-entry gaps and stopped CPU time are not attributed.
 V35 checked that enabling the profiler preserves full work RAM, input/output
 counters, game cadence and audio peak compared with the ordinary run.
+
+V36 uses faithful bulk SMS-shadow transfers and a freestanding memcmp. The
+local frame tests and sanitizers pass; the native image is 475,604 bytes, BSS
+31,514 and checksum 7F7F. Idle cadence is 148 updates/300 physical frames; the
+checked exit uses 721 gameplay physical frames. This is still below SMS cadence.
+The profile also reports the 64 hottest instruction addresses to distinguish
+inlined wait loops from computation inside the same symbol bucket.

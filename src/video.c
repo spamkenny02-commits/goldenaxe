@@ -16,6 +16,35 @@ static void vdp_data_w(uint8_t v){vdp_ctrl_latch=0;if(vdp_code==3)vdp_cram[vdp_a
 static uint8_t vdp_data_r(void){uint8_t v=vdp_readbuf;vdp_readbuf=vdp_vram[vdp_addr&0x3FFFu];vdp_addr=(uint16_t)((vdp_addr+1u)&0x3FFFu);vdp_ctrl_latch=0;return v;}
 void gaw_sms_vdp_control_write(uint8_t value){vdp_ctrl(value);}
 void gaw_sms_vdp_data_write(uint8_t value){vdp_data_w(value);}
+/* Preserve scalar port state/dirty semantics while testing/copying one pattern
+ * fragment at a time. Name rows and SAT boundaries are pattern-aligned too. */
+void gaw_sms_vdp_data_write_block(const uint8_t *source,unsigned count){
+    if(!count)return;
+    uintptr_t p=(uintptr_t)source;
+    if((p>=(uintptr_t)vdp_vram&&p<(uintptr_t)(vdp_vram+sizeof vdp_vram))||
+       (p>=(uintptr_t)vdp_cram&&p<(uintptr_t)(vdp_cram+sizeof vdp_cram))){
+        /* A source inside the shadow can observe earlier writes in this block. */
+        while(count--)vdp_data_w(*source++);
+        return;
+    }
+    vdp_ctrl_latch=0;
+    uint16_t nt=(uint16_t)((vdp_regs[2]&0x0Eu)<<10);
+    uint16_t sat=(uint16_t)((vdp_regs[5]&0x7Eu)<<7);
+    while(count){
+        uint16_t a=vdp_addr;
+        unsigned n=32u-(a&31u);if(n>count)n=count;
+        if(vdp_code==3u)memcpy(vdp_cram+(a&31u),source,n);
+        else if(memcmp(vdp_vram+a,source,n)!=0){
+            memcpy(vdp_vram+a,source,n);
+            vdp_tile_dirty[a>>5]=1;vdp_sprite_status_dirty=1;
+            if(a>=nt&&a<(uint16_t)(nt+0x700u)){
+                vdp_name_dirty=1;vdp_name_rows_dirty|=(uint32_t)1u<<((a-nt)>>6);
+            }
+            if(a>=sat&&a<(uint16_t)(sat+0x100u))vdp_sat_dirty=1;
+        }
+        vdp_addr=(uint16_t)((a+n)&0x3FFFu);source+=n;count-=n;
+    }
+}
 uint8_t gaw_sms_vdp_data_read(void){return vdp_data_r();}
 
 const uint8_t *gaw_sms_vram(void){return vdp_vram;}

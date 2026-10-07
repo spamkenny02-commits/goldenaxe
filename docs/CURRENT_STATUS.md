@@ -269,3 +269,28 @@ physical hardware.
 Next: optimize the measured VDP transfer costs, validate sprite clipping, extend
 controller routes across screens and gameplay interactions, compare save state
 and continue full-game/hardware validation.
+
+
+- V36 adds tile-fragment bulk writes to the SMS shadow, preserving VRAM/CRAM
+  wrapping, read buffer, command latch, mode and exact dirty tile/name/SAT state.
+  Sequential shadow-alias sources retain scalar semantics. ROM/RAM queue
+  sources use contiguous spans, split at bank/mirror boundaries; SRAM retains
+  platform reads. Vertical scroll upload uses the same bulk primitive.
+- 4,274 independent scalar-versus-block cases pass, including ASan/UBSan. All
+  existing local reference/regression suites and the native completion gate
+  pass again. The regular suite's interrupted initial batch was completed
+  from full-effects through audit; no skipped target is called a passed test.
+- The linked cartridge is 475,604 bytes, BSS 31,514 at FF0000-FF7B1A, checksum
+  7F7F. Actual ELF/vector/header checks and emulator boot/audio pass. Idle
+  advances 148 updates/300 physical frames versus V35 136. The exit route
+  takes 721 physical gameplay frames versus V35 947; both SMS and MD now log
+  346 gameplay updates and finish cell 94, position [56,104], HP 24, state 0C.
+  Attack, Pause/resume, inventory open/close and movement also pass on MD.
+- Profiling now retains hot instruction addresses. The larger gameplay-symbol
+  bucket contains inlined VBlank waiting, not a new expensive gameplay routine.
+  The physical upload still walks all 512 dirty-pattern slots per frame; that
+  measured loop and per-row three-plane resource transfers are next to optimize.
+
+Next: reduce dirty-pattern traversal and resource expansion overhead, measure
+cadence, then validate sprite output/clipping and extend controller/integration
+coverage. Full-game and physical hardware validation remain unfinished.

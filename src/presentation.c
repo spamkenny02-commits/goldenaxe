@@ -11,7 +11,23 @@ static uint8_t read_byte(uint8_t bank,uint16_t at,int sram){
 static void write_byte(uint16_t at,uint8_t value){if(at>=0xC000u)gaw_ram_write8((uint16_t)(0xC000u+(at&0x1FFFu)),value);}
 static uint16_t read_word(uint8_t bank,uint16_t at){return (uint16_t)(read_byte(bank,at,0)|((uint16_t)read_byte(bank,(uint16_t)(at+1u),0)<<8));}
 static void address(uint16_t at){gaw_sms_vdp_control_write((uint8_t)at);gaw_sms_vdp_control_write((uint8_t)(at>>8));}
-static void copy(uint8_t bank,uint16_t source,unsigned count,int sram){while(count--)gaw_sms_vdp_data_write(read_byte(bank,source++,sram));}
+static void copy(uint8_t bank,uint16_t source,unsigned count,int sram){
+    while(count){
+        unsigned n;
+        const uint8_t *data;
+        if(source>=0xC000u){
+            unsigned offset=source&0x1FFFu;
+            n=0x2000u-offset;data=gaw_ram_ptr((uint16_t)(0xC000u+offset));
+        }else if(sram&&source>=0x8000u){
+            gaw_sms_vdp_data_write(read_byte(bank,source++,1));--count;continue;
+        }else{
+            uint8_t selected=source<0x4000u?0u:source<0x8000u?1u:bank;
+            n=0x4000u-(source&0x3FFFu);data=gaw_sms_rom_bank_data(selected,source);
+        }
+        if(n>count)n=count;
+        gaw_sms_vdp_data_write_block(data,n);source=(uint16_t)(source+n);count-=n;
+    }
+}
 
 /* Command 1 copies 32-byte groups; OUTI and DJNZ both decrement B. Command
    2 copies descriptor rectangles and consumes its mutable row counter. */

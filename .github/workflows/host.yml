@@ -16,6 +16,8 @@ jobs:
           make test-md-video
       - name: Validate ROM-free SMS sprite status
         run: make test-video-status test-video-status-sanitize
+      - name: Validate ROM-free VDP block transfers
+        run: make test-video-block test-video-block-sanitize
       - name: Check C syntax without game data
         # Empty initializer is for syntax checking only. Never execute/link a
         # game against placeholder data or report a behavioral test as passed.

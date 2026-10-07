@@ -245,7 +245,7 @@ static void world_frozen_frame(void){W8(0xC033,1);gaw_wait_frame();W8(0xC033,0);
 static void world_video_address(uint16_t a){gaw_sms_vdp_control_write((uint8_t)a);gaw_sms_vdp_control_write((uint8_t)(a>>8));}
 static void world_scroll_rows(uint16_t source){
     world_frozen_frame();world_video_address(0x7800u);
-    for(unsigned i=0;i<0x500u;++i)gaw_sms_vdp_data_write(R8((uint16_t)(source+i)));
+    gaw_sms_vdp_data_write_block(gaw_ram_ptr(source),0x500u);
 }
 static void world_scroll_column(uint16_t column,uint8_t scroll){
     W8(0xC018,(uint8_t)((scroll&0x3Eu)<<2));world_frozen_frame();
