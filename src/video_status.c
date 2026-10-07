@@ -1,13 +1,19 @@
 #include <string.h>
 #include "include/gaw_video.h"
 
+/* Collision coverage is frame scratch, not persistent game state. Keep it out
+ * of the 68000 interrupt stack: the VBlank trampoline already saves all CPU
+ * registers before entering C, and a 6144-byte automatic bitmap here made the
+ * worst-case IRQ stack needlessly large. The engine is single-threaded and the
+ * workspace is fully initialized per touched scanline before it is read. */
+static uint8_t sprite_occupied[192][32];
+
 /* 192-line Mode 4, as used by Golden Axe Warrior. Sprite positions, the
  * eight-per-line limit and nonzero pattern pixels belong to the SMS shadow,
  * independently of the host console's sprite limits. No ROM data is read.
  * This is frame-level status, not a scanline/cycle-accurate VDP emulator. */
 uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs){
     uint8_t counts[192]={0};
-    uint8_t occupied[192][32];
     static const uint8_t doubled[16]={
         0x00,0x03,0x0C,0x0F,0x30,0x33,0x3C,0x3F,
         0xC0,0xC3,0xCC,0xCF,0xF0,0xF3,0xFC,0xFF
@@ -31,7 +37,7 @@ uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs){
         tile|=bank;
         for(int y=first;y<last;++y){
             if(counts[y]>=8u){flags|=0x40u;continue;}
-            if(!counts[y]&&!(flags&0x20u))memset(occupied[y],0,32);
+            if(!counts[y]&&!(flags&0x20u))memset(sprite_occupied[y],0,32);
             ++counts[y];
             if(flags&0x20u)continue;
             unsigned row=(unsigned)(y-top)>>zoom;
@@ -44,8 +50,8 @@ uint8_t gaw_video_sprite_status(const uint8_t *vram,const uint8_t *regs){
             unsigned byte=(unsigned)left>>3;
             for(unsigned j=0;j<3u&&byte+j<32u;++j){
                 uint8_t part=(uint8_t)(packed>>(16u-8u*j));
-                if(occupied[y][byte+j]&part)flags|=0x20u;
-                occupied[y][byte+j]|=part;
+                if(sprite_occupied[y][byte+j]&part)flags|=0x20u;
+                sprite_occupied[y][byte+j]|=part;
             }
         }
         if(flags==0x60u)break;
