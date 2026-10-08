@@ -229,6 +229,25 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x611] = 80
         self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
 
+    def test_fire_reaches_partitioned_enemy_below_normal_reserve(self):
+        driver = self.driver()
+        driver.route = {'index': 6, 'return': [
+            {'from': 0x125, 'to': 0x115, 'target': [128,8]}]}
+        driver.stage = 'return'
+        self.ram[0xDB] = 80
+        self.ram[0xA8] = self.ram[0x301] = 1
+        self.ram[0x30A] = 3
+        self.ram[0xDF] = 4
+        self.ram[0x600] = 79
+        self.ram[0x603] = 3
+        self.ram[0x618] = 10
+        self.ram[0x613] = 120
+        self.ram[0x611] = 80
+        for y in range(0,176,8):
+            self.terrain(104,y,0xE0)
+        self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
+        self.assertEqual(driver.item, 4)
+
     def test_break_cost_uses_collision_probe_not_player_center(self):
         driver = self.driver()
         self.ram[0x1C00 + 4 * 16 + 4] = 0x0B

@@ -1,0 +1,102 @@
+{
+  "scope": "Equipped outside checkpoint; controller input only after one-time setup; not a fresh uninterrupted game",
+  "fixture": {
+    "hp": 128,
+    "mp": 128,
+    "keys": 20,
+    "sword_level": 3,
+    "axe_level": 2,
+    "armor_level": 3,
+    "shield_level": 3,
+    "healing_potion": 1,
+    "antidote": 1
+  },
+  "controller_sha256": "bb57dfc66a945dd18bf99aa60c3bcb90c46cb9a1fb96c2fd49c8ebbb860e32f1",
+  "routes_sha256": "6e759249054a334aeaf8315f13d3e91260c265851f922e3361ead58e5ee07b6b",
+  "native_rom": {
+    "size": 484504,
+    "checksum": "BB38",
+    "sha256": "bf07219f0f8d75cb4a487b7a6afae1025c20ae796c70eabb21140abe1e244ccb"
+  },
+  "tooling_tests": 26,
+  "combat_original_instruction_cases": 5052,
+  "runs": {
+    "md": [
+      {
+        "index": 5,
+        "rooms": 27,
+        "boss_hits": 8,
+        "stairs": 2,
+        "keys_net_spent": 1,
+        "final_hp": 120,
+        "frames": 22957
+      },
+      {
+        "index": 6,
+        "rooms": 42,
+        "boss_hits": 8,
+        "stairs": 3,
+        "keys_net_spent": 3,
+        "final_hp": 104,
+        "frames": 46537
+      },
+      {
+        "index": 7,
+        "rooms": 21,
+        "boss_hits": 6,
+        "stairs": 3,
+        "keys_net_spent": 2,
+        "final_hp": 122,
+        "frames": 27864
+      },
+      {
+        "index": 8,
+        "rooms": 29,
+        "boss_hits": 8,
+        "stairs": 5,
+        "keys_net_spent": 1,
+        "final_hp": 110,
+        "frames": 41006
+      }
+    ],
+    "sms": [
+      {
+        "index": 5,
+        "rooms": 27,
+        "boss_hits": 8,
+        "stairs": 2,
+        "keys_net_spent": 1,
+        "final_hp": 118,
+        "frames": 8576
+      },
+      {
+        "index": 6,
+        "rooms": 42,
+        "boss_hits": 8,
+        "stairs": 3,
+        "keys_net_spent": 3,
+        "final_hp": 68,
+        "frames": 16175
+      },
+      {
+        "index": 7,
+        "rooms": 21,
+        "boss_hits": 6,
+        "stairs": 3,
+        "keys_net_spent": 2,
+        "final_hp": 128,
+        "frames": 9505
+      },
+      {
+        "index": 8,
+        "rooms": 29,
+        "boss_hits": 8,
+        "stairs": 5,
+        "keys_net_spent": 1,
+        "final_hp": 104,
+        "frames": 13637
+      }
+    ]
+  },
+  "runner_sha256": "a8b0533096360a569af7a9a59c1ecb1020bce36fc4565dde5434131631ee8c03"
+}

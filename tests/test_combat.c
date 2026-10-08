@@ -115,6 +115,18 @@ int main(void){
         compare(16,gaw_entity_handler_targets[type],handler);
         assert(e->raw[ENT_PENDING_DAMAGE]==(hero_facing==opposite[facing]?8u:0u));
     }
-    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense cases)\n",collisions,damage_cases,ai_cases,grab_cases,cases-collisions-damage_cases-ai_cases-grab_cases);
+    unsigned directional_cases=cases-collisions-damage_cases-ai_cases-grab_cases;
+    /* Fire stops at 80/A0 terrain, but crosses E0 partitions. */
+    const uint8_t terrain[]={0x00,0x80,0xA0,0xE0};
+    for(unsigned t=0;t<4;++t)for(unsigned facing=0;facing<4;++facing){
+        setup();GawEntity *e=gaw_entity(1);
+        e->raw[ENT_TYPE]=3;e->raw[ENT_STATE]=1;e->raw[ENT_FLAGS]=3;
+        e->raw[ENT_DIRECTION]=(uint8_t)facing;e->raw[0x11]=80;e->raw[0x13]=128;
+        for(unsigned i=1;i<1536u;i+=2)gaw_ram_write8((uint16_t)(0xD600u+i),terrain[t]);
+        gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,1);
+        compare(1,gaw_entity_handler_targets[3],handler);
+        assert(e->raw[ENT_TYPE]==(t==1u||t==2u?0u:3u));
+    }
+    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense + %u fire-terrain cases)\n",collisions,damage_cases,ai_cases,grab_cases,directional_cases,cases-collisions-damage_cases-ai_cases-grab_cases-directional_cases);
     return 0;
 }

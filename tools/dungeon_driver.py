@@ -273,6 +273,14 @@ class DungeonDriver:
                     # A solid partition can put a room-clear enemy beyond
                     # melee and projectile reach. Thunder crosses the partition.
                     enemy_goal=(round(tx/8)*8,round(ty/8)*8)
+                    # Fire crosses E0 partitions that block walking. Use it
+                    # for an unreachable room-clear enemy even below the
+                    # ordinary travel reserve (SMS 6, return room 113).
+                    if self.stage=='return' and (not self.path or self.path[-1]!=enemy_goal) and not r(0xC304) and kind not in (83,91,45) and cross<=8 and clear_shot() and (r(0xC0DB)>=8 or r(0xC0C6)):
+                        self.item=4
+                        if r(0xC0DF)!=4:return 0
+                        if r(0xC30A)!=facing:return self.pad(direction)
+                        return self.pad('button2') if not r(0xC020)&32 else 0
                     vulnerable=all(not r(0xC318+s*48) or r(0xC303+s*48)&2 for s in range(16,24))
                     if (not self.path or self.path[-1]!=enemy_goal) and vulnerable and self.route['index']==8 and r(0xC0DB)>=32 and self.thunder_cells.get(cell,0)<3:
                         self.item=6
