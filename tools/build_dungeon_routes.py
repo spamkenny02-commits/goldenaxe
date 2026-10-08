@@ -80,6 +80,10 @@ for k in range(1,11):
   # Reach the remote switches through the stairs before returning to 1C8.
   split=next(i for i,e in enumerate(route) if e['from']==0x1C8)
   route=route[:split]+path(0x1C8,0x1EB)+path(0x1EB,0x1EC)+path(0x1EC,starts[k])+path(starts[k],0x1C8)+route[split:]
+  # $B5BA in 19A sets bit 2 in D8, opening its western gate. The shortest
+  # geometric route skipped this dependency and stopped at the closed gate.
+  split=next(i for i,e in enumerate(route) if e['from']==0x1D8)
+  route=route[:split]+path(0x1D8,0x19A,avoid=(0x1D7,))+path(0x19A,0x1D8)+route[split:]
  back=path(boss['cell'],starts[k]);cell,pos=entries[k]
  if k==5:
   # Return via the stairs: the eastern room locks its western doorway.

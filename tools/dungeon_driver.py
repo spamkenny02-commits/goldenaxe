@@ -70,7 +70,10 @@ class DungeonDriver:
         grid = bytes(r(0xD600+i) for i in range(1536))
         cell=r(0xC0B9)|r(0xC0BA)<<8
         terrain_context=(cell,bool(r(0xC0EC)),bool(r(0xC0F0)),r(0xC0DB)>=8)
-        key = (start, goal, grid, terrain_context)
+        hazards=() if attack else tuple((r(0xC313+s*48),r(0xC311+s*48))
+            for s in range(16,24) if 32<=r(0xC300+s*48)<99
+            and r(0xC303+s*48)&3==3 and r(0xC300+s*48)!=94)
+        key = (start, goal, grid, terrain_context, hazards)
         if key != self.path_key:
             self.path_key = key
             def allowed(point, delta):
@@ -96,6 +99,10 @@ class DungeonDriver:
                     tile=r(0xDC00+((py+dy)//16)*16+(px+dx)//16)
                     if high&0x80 and (not r(0xC0BA) or r(0xC0DB)<8 or tile not in (0x0B,0x31)) and not (high&0xE0==0xA0 and door_approach):return False
                     if high&0x80 and tile in (0x0B,0x31):move_cost=16
+                if hazards:
+                    distance=min(abs(hx-nx)+abs(hy-ny) for hx,hy in hazards)
+                    if distance<24:move_cost+=24
+                    elif distance<40:move_cost+=8
                 return move_cost
             queue = [(0,start)]; parents = {start: None}; costs={start:0}
             best = start
@@ -182,6 +189,16 @@ class DungeonDriver:
             else:
                 edge = edges[self.edge]
                 assert cell == edge['from'], f"Unexpected route cell {cell:03X}, expected {edge['from']:03X}"
+                # Collect real drops before spending the limited magic reserve.
+                x,y=r(0xC313),r(0xC311)
+                drops=[(r(0xC313+s*48),r(0xC311+s*48)) for s in range(16,24)
+                    if (r(0xC300+s*48)==12 and r(0xC0DB)<r(0xC0DC))
+                    or (r(0xC300+s*48) in (10,11) and r(0xC318)<r(0xC0DA))]
+                for tx,ty in sorted(drops,key=lambda p:abs(p[0]-x)+abs(p[1]-y)):
+                    goal=(round(tx/8)*8,round(ty/8)*8)
+                    pad=self.navigate(goal)
+                    if self.breaking:self.breaking=None;continue
+                    if self.path and self.path[-1]==goal:return pad
                 puzzle=self.route.get('puzzles',{}).get(str(cell))
                 trigger=r(0xC06E)
                 if trigger<160 and r(0xDC00+trigger)==0x0B:
@@ -209,13 +226,14 @@ class DungeonDriver:
                 key_gate=probe and r(0xD600+((probe[1]&248)<<3)+((probe[0]>>2)&62)+1)&0xE0==0xA0
                 if enemies and (r(0xC0A8)==1 or (not key_gate and (not self.path or self.path[-1]!=tuple(edge['target'])))):
                     x,y=r(0xC313),r(0xC311)
-                    tx,ty,kind=min(enemies,key=lambda p:abs(p[0]-x)+abs(p[1]-y))
+                    # Stop armor curses and grabs before ordinary melee targets.
+                    tx,ty,kind=min(enemies,key=lambda p:(p[2] not in (83,91),abs(p[0]-x)+abs(p[1]-y)))
                     dx,dy=tx-x,ty-y
                     direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
                     facing={'up':0,'down':1,'left':2,'right':3}[direction]
                     cross=abs(dx) if direction in ('up','down') else abs(dy)
-                    if kind==91 and abs(dx)+abs(dy)<32:
-                        return self.evade([(ex,ey) for ex,ey,enemy in enemies if enemy==91])
+                    if kind in (83,91) and abs(dx)+abs(dy)<32:
+                        return self.evade([(ex,ey) for ex,ey,enemy in enemies if enemy in (83,91)])
                     def clear_shot():
                         for distance in range(8,max(abs(dx),abs(dy)),8):
                             sx=x+(distance if dx>0 else -distance) if direction in ('left','right') else x
@@ -223,7 +241,7 @@ class DungeonDriver:
                             high=r(0xD600+((sy&248)<<3)+((sx>>2)&62)+1)
                             if high&0xE0 in (0x80,0xA0):return False
                         return True
-                    fire_reserve=16 if kind==91 else 80
+                    fire_reserve=16 if kind in (83,91) else 112
                     if abs(dx)+abs(dy)>=24 and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
                         self.item=4
                         if r(0xC0DF)!=4:return 0
@@ -238,7 +256,7 @@ class DungeonDriver:
                         pad=0
                         if not r(0xC020)&32:pad|=self.pad('button2')
                         return pad
-                    pad=self.navigate([round(tx/8)*8,round(ty/8)*8])
+                    pad=self.navigate([round(tx/8)*8,round(ty/8)*8],attack=True)
                     # A solid partition can put a room-clear enemy beyond
                     # melee and projectile reach. Thunder crosses the partition.
                     enemy_goal=(round(tx/8)*8,round(ty/8)*8)

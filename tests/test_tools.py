@@ -52,6 +52,14 @@ class DungeonRouteTest(unittest.TestCase):
                     cell = edge['to']
                 self.assertEqual(cell, finish)
 
+    def test_dungeon8_activates_remote_switch_before_western_gate(self):
+        route = self.routes[7]
+        edges = route['outbound']
+        gate = next(i for i,e in enumerate(edges)
+                    if (e['from'],e['to']) == (0x1D8,0x1D7))
+        self.assertIn(0x19A, [e['to'] for e in edges[:gate]])
+        self.assertEqual(route['actions'][str(0x19A)], [72,40])
+
     def complete_run(self):
         route = self.routes[0]
         cells = [route['outside_cell'], route['entrance']]
@@ -191,6 +199,32 @@ class DungeonNavigationTest(unittest.TestCase):
         driver.navigate([56, 80])
         self.assertNotEqual(driver.path_key, previous_key)
         self.assertTrue(not driver.path or driver.path[-1] != (56, 80))
+
+    def test_travel_avoids_enemy_but_melee_can_approach_it(self):
+        driver = self.driver()
+        self.ram[0x600] = 83
+        self.ram[0x603] = 3
+        self.ram[0x613] = 104
+        self.ram[0x611] = 80
+        driver.navigate([136, 80])
+        self.assertNotIn((104, 80), driver.path)
+        previous_key = driver.path_key
+        driver.navigate([104, 80], attack=True)
+        self.assertEqual(driver.path, [(96, 80), (104, 80)])
+        self.assertNotEqual(driver.path_key, previous_key)
+
+    def test_moving_enemy_invalidates_travel_path(self):
+        driver = self.driver()
+        self.ram[0x600] = 83
+        self.ram[0x603] = 3
+        self.ram[0x613] = 104
+        self.ram[0x611] = 80
+        driver.navigate([136, 80])
+        previous_key = driver.path_key
+        self.ram[0x611] = 136
+        driver.navigate([136, 80])
+        self.assertNotEqual(driver.path_key, previous_key)
+        self.assertIn((104, 80), driver.path)
 
 
 class ViewportComparisonTest(unittest.TestCase):

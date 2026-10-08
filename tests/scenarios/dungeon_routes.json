@@ -2199,6 +2199,60 @@
       },
       {
         "from": 472,
+        "to": 488,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 488,
+        "to": 426,
+        "target": [
+          136,
+          96
+        ],
+        "stairs": true
+      },
+      {
+        "from": 426,
+        "to": 410,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 410,
+        "to": 426,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 426,
+        "to": 488,
+        "target": [
+          200,
+          128
+        ],
+        "stairs": true
+      },
+      {
+        "from": 488,
+        "to": 472,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 472,
         "to": 471,
         "direction": "left",
         "target": [

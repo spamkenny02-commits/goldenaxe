@@ -76,3 +76,43 @@ python3 tools/test_md_dungeon_emulator.py --core "$CORE" --nm "$MD_NM" \
 CORE is the Genesis Plus GX libretro core, MD_NM the m68k-elf-nm path, and
 SMS_ROM the privately supplied original ROM. No original ROM, captures,
 compiled binaries or RAM dumps are committed.
+
+## Second checkpoint — 2026-10-08
+
+The driver now collects genuine MP/HP drops, charges travel paths for proximity
+to active enemies, invalidates paths when those enemies move, and allows melee
+approaches to ignore that travel penalty. It prioritizes type-83 armor curses
+and type-91 grabs, keeps its distance and reserves more MP during ordinary
+ranged combat. 20 tooling tests pass, including enemy motion/approach and the
+new dungeon-8 dependency.
+
+The eighth dungeon's western gate in 1D8 is opened by the $B5BA switch in 19A.
+The generated route now visits 1D8 -> 1E8 -> stairs 1AA -> 19A and returns to
+1D8 before trying that gate. The original callback sets the room's progress bit;
+no gate or progress RAM is patched by the driver.
+
+| Dungeon | Backend | Visits | Stairs | Boss hits | Net keys spent | Final HP | Frames |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 5 | MD | 27 | 2 | 8 | 1 | 116 | 23071 |
+| 5 | SMS | 27 | 2 | 8 | 1 | 118 | 8374 |
+| 6 | MD | 42 | 3 | 8 | 3 | 98 | 44432 |
+| 6 | SMS | 42 | 3 | 8 | 3 | 104 | 14999 |
+| 7 | MD | 21 | 3 | 6 | 2 | 126 | 27385 |
+| 7 | SMS | 21 | 3 | 6 | 2 | 128 | 9042 |
+| 8 | MD | 29 | 5 | 8 | 1 | 114 | 42154 |
+
+All rows passed the strict full-route validator. Reports are private under
+md/build/v51_reserve_regression57/, v51_reserve_dungeon6/,
+v51_reserve_sms6/ and v51_reserve_dungeon8/.
+
+Updated open issues supersede the earlier remaining-work list:
+- SMS 8 reaches the real full-HP boss, but dies after two hits. MP is mostly
+  consumed by partition-clearing thunder casts; no full SMS route is claimed.
+- MD 9 reaches 1CE with no MP for its required trigger block, then dies.
+- MD 10 reaches 16C alive but cannot reach the switch across its partition.
+  Eight private one-step comparisons of the original $2DBE player routine
+  against native C, with four directions and both equipment states, produced
+  no RAM differences at that checkpoint. Further route analysis is needed.
+- The production V50 ROM remains 484504 bytes / BB38; only tooling and route
+  metadata have changed. Fixture equipment and one-time RAM-write rules are
+  unchanged at this checkpoint.
