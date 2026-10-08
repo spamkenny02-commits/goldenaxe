@@ -28,7 +28,7 @@ circuit and enter the real boss room. The route regression is covered by a test.
 - Stop failed runs at the first zero-HP frame and include MP, actual/requested
   item, curse and antidote status in progress logs. Failure assertions remain.
 
-31 tooling tests pass. The MD ROM checker passes. Existing V51 combat comparisons
+34 tooling tests pass. The MD ROM checker passes. Existing V51 combat comparisons
 and dungeon 5-8 results remain prior evidence; no production source changed.
 The new late-dungeon policies are scoped to indices 9/10.
 
@@ -50,3 +50,16 @@ outside the entrance; no HP/MP/keys or progression are injected during traversal
 Next: reduce contact losses around minibosses and boss 108, complete dungeon 9
 on both backends, then complete the dungeon 10 circuit and ending. Use the strict
 validator in `tools/test_md_dungeon_emulator.py` before promoting these results.
+
+## Step 2 — axis placement, original-SMS arena passes
+
+The large-boss controller now approaches an axis offset instead of the boss
+center, finishes the axe animation before repositioning, and retreats during
+hit invulnerability. `--late-boss-controller` exposes the same method in an
+isolated real boss 108/109 arena, so it can be diagnosed without replaying travel.
+
+Original-SMS boss 108 (90 HP) passes: 15 genuine 6-HP hits, one death, crystal
+collected/acknowledged, 2099 emulator frames. No healing was used: MP remains
+120 and the one potion remains available. Hero survives on 44 HP before the
+normal reward restores HP to 128. This is equipped ARENA evidence; dungeon 9
+is not yet a pass. MD arena and full-route runs are the next checks.

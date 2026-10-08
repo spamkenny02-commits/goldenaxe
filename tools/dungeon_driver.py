@@ -53,6 +53,32 @@ class DungeonDriver:
         if not candidates:return 0
         return self.navigate(max(candidates,key=lambda c:c[:2])[2])
 
+    def boss_melee(self):
+        """Approach an axis of the large boss rather than its center."""
+        r=self.read
+        x,y=r(0xC313),r(0xC311)
+        tx,ty=r(0xC613),r(0xC611)
+        dx,dy=tx-x,ty-y
+        if r(0xC301) in (2,3,4,5):return 0
+        if r(0xC605)>0:
+            return self.evade([(tx,ty)]) if abs(dx)+abs(dy)<56 else 0
+        if (abs(dx)<=4 and 24<=abs(dy)<=32) or (abs(dy)<=4 and 24<=abs(dx)<=32):
+            direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
+            facing={'up':0,'down':1,'left':2,'right':3}[direction]
+            if r(0xC30A)!=facing:return self.pad(direction)
+            return self.pad('button2') if not r(0xC020)&32 else 0
+        candidates=[]
+        for ox,oy in ((0,-32),(32,0),(0,24),(-24,0)):
+            goal=(round((tx+ox)/8)*8,round((ty+oy)/8)*8)
+            if not 24<=goal[0]<=232 or not 24<=goal[1]<=144:continue
+            pad=self.navigate(goal,attack=True)
+            if self.breaking:
+                self.breaking=None;continue
+            if self.path and self.path[-1]==goal:
+                candidates.append((len(self.path),goal))
+        if candidates:return self.navigate(min(candidates)[1],attack=True)
+        return self.evade([(tx,ty)])
+
     def navigate(self, target, attack=False):
         r = self.read
         x, y = r(0xC313), r(0xC311)

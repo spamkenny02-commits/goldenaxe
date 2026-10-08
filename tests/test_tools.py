@@ -261,6 +261,35 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x30A] = 0
         self.assertEqual(driver.drive(0x0C,False), driver.pad('right'))
 
+    def test_large_boss_attack_stays_on_axis(self):
+        driver = self.driver()
+        self.ram[0x613] = 88
+        self.ram[0x611] = 112
+        self.ram[0x30A] = 1
+        self.assertEqual(driver.boss_melee(), driver.pad('button2'))
+        self.ram[0x613] = 104
+        driver.boss_melee()
+        self.assertTrue(driver.path)
+        self.assertNotEqual(driver.path[-1], (104,112))
+
+    def test_large_boss_recedes_during_hit_invulnerability(self):
+        driver = self.driver()
+        self.ram[0x613] = 88
+        self.ram[0x611] = 112
+        self.ram[0x605] = 24
+        pad = driver.boss_melee()
+        self.assertTrue(pad)
+        self.assertFalse(pad & driver.pad('button2'))
+        self.assertGreater(abs(driver.path[-1][0]-88)+abs(driver.path[-1][1]-112),32)
+
+    def test_large_boss_finishes_swing_before_repositioning(self):
+        driver = self.driver()
+        self.ram[0x301] = 5
+        self.ram[0x613] = 88
+        self.ram[0x611] = 112
+        self.ram[0x605] = 24
+        self.assertEqual(driver.boss_melee(), 0)
+
     def test_miniboss_flash_triggers_retreat_between_hits(self):
         driver = self.driver()
         driver.route = {'index': 9, 'outbound': [

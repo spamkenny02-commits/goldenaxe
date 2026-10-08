@@ -65,6 +65,7 @@ def main():
     parser.add_argument('--save-slot', type=int, choices=range(3), help='Activate the save service from gameplay, then drive its menus with controller input')
     parser.add_argument('--expect-save-slot', type=int, choices=range(3), help='Check boot selection and restored save payload before scene entry')
     parser.add_argument('--boss-arena', type=int, choices=(99,100,101,103,104,105,106,107,108,109), help='Controlled equipped checkpoint in a real boss room; fight and collect reward using controller input only')
+    parser.add_argument('--late-boss-controller', action='store_true', help='Exercise the large-boss spacing controller in an isolated real arena')
     parser.add_argument('--boss-weapon', choices=('axe','sword'), default='axe', help='Initial weapon for the controlled boss checkpoint')
     parser.add_argument('--boss-weapon-probe', action='store_true', help='Run a bounded sword-immunity probe without requiring boss defeat')
     parser.add_argument('--complete-ending', action='store_true', help='Continue final-boss combat through credits, confirmation and return to title')
@@ -77,6 +78,8 @@ def main():
         dungeon_route = next(r for r in json.loads((Path(__file__).resolve().parent.parent/'tests/scenarios/dungeon_routes.json').read_text()) if r['index']==args.dungeon)
         args.boss_arena = dungeon_route['boss']['type']
         args.complete_ending = args.dungeon==10
+    if args.late_boss_controller and args.boss_arena not in (108,109):
+        parser.error('--late-boss-controller requires boss 108 or 109')
     if args.reference_sms and any((args.sram_in, args.sram_out, args.save_slot is not None, args.expect_save_slot is not None)):
         parser.error('SRAM scenarios currently require the native MD image')
     if args.expect_save_slot is not None and not args.sram_in:
@@ -276,6 +279,7 @@ def main():
     boss_run = {'fixture': None, 'phases': [], 'hits': [], 'deaths': [], 'projectiles': [], 'reward_spawned': False, 'reward_collected': False, 'heals': [], 'satellites_spawned': [], 'satellites_killed': [], 'parts_spawned': []}
     boss_prepared = False
     dungeon = DungeonDriver(dungeon_route,read,buttons) if dungeon_route else None
+    arena_driver= DungeonDriver({'index':9,'avoid':{}},read,buttons) if args.late_boss_controller else None
     previous_boss = None
     previous_aux = None
     boss_done = False
@@ -337,10 +341,8 @@ def main():
             if children:
                 tx,ty = min(children,key=lambda v:abs(v[0]-px)+abs(v[1]-py))
         dx,dy = tx-px,ty-py
-        if args.dungeon in (9,10) and kind in (108,109):
-            if read(0xC301) in (2,3,4,5):return 0
-            if read(0xC605)>8 and abs(dx)+abs(dy)<56:
-                return dungeon.evade([(tx,ty)])
+        if kind in (108,109) and (args.dungeon in (9,10) or arena_driver):
+            return (dungeon or arena_driver).boss_melee()
         if abs(dx)>abs(dy):
             direction='right' if dx>0 else 'left'
         else:
