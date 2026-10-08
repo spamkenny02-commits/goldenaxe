@@ -292,7 +292,7 @@ class DungeonNavigationTest(unittest.TestCase):
 
     def test_miniboss_flash_triggers_retreat_between_hits(self):
         driver = self.driver()
-        driver.route = {'index': 9, 'outbound': [
+        driver.route = {'index': 10, 'outbound': [
             {'from': 0x125, 'to': 0x115, 'target': [128,8]}]}
         driver.stage = 'outbound'
         self.ram[0x301] = self.ram[0xA8] = 1

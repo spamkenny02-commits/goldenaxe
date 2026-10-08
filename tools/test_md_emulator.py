@@ -311,7 +311,6 @@ def main():
         heal_cost=24 if not dungeon or args.dungeon in (9,10) else 32
         if boss_heal_stage=='fight' and read(0xC318)<=24 and (read(0xC600)==args.boss_arena or dungeon):
             goal=7 if dungeon and read(0xC0E7) and read(0xC0DB)>=heal_cost else 8 if read(0xC0E8) else 7 if read(0xC0E7) and read(0xC0DB)>=heal_cost else None
-            if args.dungeon in (9,10) and read(0xC0E8):goal=8
             if goal is not None:
                 boss_inventory_goal=goal;boss_heal_mp=read(0xC0DB);boss_heal_stage='select_heal'
         if boss_heal_stage=='select_heal':

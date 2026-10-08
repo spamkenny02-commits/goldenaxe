@@ -282,7 +282,7 @@ class DungeonDriver:
                     # Stop armor curses and grabs before ordinary melee targets.
                     tx,ty,kind=min(enemies,key=lambda p:(p[2] not in (83,91),abs(p[0]-x)+abs(p[1]-y)))
                     dx,dy=tx-x,ty-y
-                    if self.route['index']>=9 and kind>=120:
+                    if self.route['index']==10 and kind>=120:
                         slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind)
                         if r(0xC305+slot*48)>8 and abs(dx)+abs(dy)<48:
                             return self.evade([(tx,ty)])

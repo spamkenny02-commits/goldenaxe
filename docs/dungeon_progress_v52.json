@@ -15,8 +15,8 @@
     "setup": "once outside entrance; controller input only afterwards"
   },
   "checkpoint_sha256": {
-    "tools/dungeon_driver.py": "5204d732ae9e502f6ba347b26bb5dc09c792d3c137953328dd88fa133948a9a4",
-    "tools/test_md_emulator.py": "bd53ae4d572eab24e514ae0b3033487361c98d09efe801e422d88ebf607baa99",
+    "tools/dungeon_driver.py": "2ce1320f30e1b828da355d310da162ef6170ecdc5006a4b88c59b0e2db164863",
+    "tools/test_md_emulator.py": "cd0b4ce138b4afb9916455160c457adf7bd433adedc5d4d1cb11eb1a93f83f5f",
     "tools/build_dungeon_routes.py": "07a26933010f9d7e9d3dd6d3a10f53209c77b1d251653c65ea1894bac93dedd0",
     "tests/scenarios/dungeon_routes.json": "3efb00a09850d1d38210995edb8ef457f6bf25e64db16f0d5e00ae1b53556a38"
   },
@@ -174,24 +174,68 @@
       "mp": 8,
       "boss_hits": 2,
       "boss_remaining_hp": 78
+    },
+    {
+      "run": "axis_heal9",
+      "backend": "sms",
+      "dungeon": 9,
+      "complete": false,
+      "frames": 13174,
+      "cell": 428,
+      "stage": "boss",
+      "edge": 13,
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 6,
+      "boss_remaining_hp": 54
+    },
+    {
+      "run": "axis_heal9_md",
+      "backend": "md",
+      "dungeon": 9,
+      "complete": false,
+      "frames": 40922,
+      "cell": 428,
+      "stage": "boss",
+      "edge": 13,
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 1,
+      "boss_remaining_hp": 84
     }
   ],
   "note": "Runs reflect successive prototypes, not necessarily the final checkpoint controller. Failed runs remain failed; none are full-route evidence.",
   "verified_steps": [
     {
-      "scenario": "isolated original-SMS boss 108 arena",
+      "scenario": "isolated real boss 108 arena",
+      "backend": "sms",
       "full_hp": 90,
       "genuine_hits": 15,
       "deaths": 1,
       "reward_collected": true,
       "reward_acknowledged": true,
       "frames": 2099,
-      "heals": 0,
       "mp_final": 120,
       "potion_remaining": 1,
-      "hp_before_reward": 44,
+      "hp_before_boss_death": 44,
       "hp_after_reward": 128,
-      "scope": "isolated equipped arena; no completed dungeon claim"
+      "scope": "isolated equipped arena; not completed dungeon evidence"
+    },
+    {
+      "scenario": "isolated real boss 108 arena",
+      "backend": "md",
+      "full_hp": 90,
+      "genuine_hits": 15,
+      "deaths": 1,
+      "reward_collected": true,
+      "reward_acknowledged": true,
+      "frames": 5757,
+      "mp_final": 120,
+      "potion_remaining": 0,
+      "hp_before_boss_death": 74,
+      "hp_after_reward": 128,
+      "scope": "isolated equipped arena; not completed dungeon evidence"
     }
-  ]
+  ],
+  "resume": "Boss-108 arena passes on both backends. Full dungeon 9 reaches the boss but dies (SMS 6 hits; MD 1 hit). Dungeon 10 previous mini-retreat pilot reached 16A; no full-route pass. Preserve resources during traversal before retrying."
 }
