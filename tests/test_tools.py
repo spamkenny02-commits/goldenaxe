@@ -74,6 +74,14 @@ class DungeonRouteTest(unittest.TestCase):
         self.assertEqual(edge['to'], 0x1AE)
         self.assertEqual(edge['direction'], 'up')
 
+    def test_dungeon9_opens_boss_gate_from_neighbor_switch(self):
+        edges = self.routes[8]['outbound']
+        gate = next(i for i,e in enumerate(edges)
+                    if (e['from'],e['to']) == (0x1BC,0x1AC))
+        self.assertEqual([(e['from'],e['to']) for e in edges[gate-2:gate]],
+                         [(0x1BC,0x1BD),(0x1BD,0x1BC)])
+        self.assertEqual(self.routes[8]['actions'][str(0x1BD)], [184,40])
+
     def complete_run(self):
         route = self.routes[0]
         cells = [route['outside_cell'], route['entrance']]
@@ -204,6 +212,7 @@ class DungeonNavigationTest(unittest.TestCase):
             'puzzles': {str(0x125): {'target': [88,80]}}}
         driver.stage = 'outbound'
         self.ram[0xDB] = 0
+        self.ram[0xDF] = 1
         self.ram[0xA8] = self.ram[0x301] = 1
         self.ram[0x30A] = 3
         self.ram[0x600] = 32
@@ -212,7 +221,7 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x613] = 96
         self.ram[0x611] = 80
         self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
-        self.assertEqual(driver.item, 0)
+        self.assertEqual(driver.item, 1)
 
     def test_curse_enemy_can_be_defeated_in_melee_when_magic_is_empty(self):
         driver = self.driver()
@@ -220,6 +229,7 @@ class DungeonNavigationTest(unittest.TestCase):
             {'from': 0x125, 'to': 0x115, 'target': [128,8]}]}
         driver.stage = 'outbound'
         self.ram[0xDB] = 0
+        self.ram[0xDF] = 1
         self.ram[0xA8] = self.ram[0x301] = 1
         self.ram[0x30A] = 3
         self.ram[0x600] = 83
@@ -227,6 +237,58 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x618] = 18
         self.ram[0x613] = 96
         self.ram[0x611] = 80
+        self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
+
+    def test_late_dungeon_keeps_axe_between_approaches(self):
+        driver = self.driver()
+        driver.route['index'] = 9
+        driver.navigate([128,80], attack=True)
+        self.assertEqual(driver.desired_item(), 1)
+        driver.escaping = True
+        self.assertEqual(driver.desired_item(), 0)
+
+    def test_axe_swing_tracks_shield_direction(self):
+        driver = self.driver()
+        driver.route = {'index': 9, 'outbound': [
+            {'from': 0x125, 'to': 0x115, 'target': [128,8]}]}
+        driver.stage = 'outbound'
+        self.ram[0x301] = 5
+        self.ram[0x600] = 93
+        self.ram[0x618] = 36
+        self.ram[0x613] = 96
+        self.ram[0x611] = 80
+        self.ram[0x60A] = 2
+        self.ram[0x30A] = 0
+        self.assertEqual(driver.drive(0x0C,False), driver.pad('right'))
+
+    def test_miniboss_flash_triggers_retreat_between_hits(self):
+        driver = self.driver()
+        driver.route = {'index': 9, 'outbound': [
+            {'from': 0x125, 'to': 0x115, 'target': [128,8]}]}
+        driver.stage = 'outbound'
+        self.ram[0x301] = self.ram[0xA8] = 1
+        self.ram[0x600] = 121
+        self.ram[0x618] = 20
+        self.ram[0x605] = 24
+        self.ram[0x613] = 104
+        self.ram[0x611] = 80
+        pad = driver.drive(0x0C,False)
+        self.assertTrue(pad)
+        self.assertFalse(pad & driver.pad('button2'))
+        self.assertGreater(abs(driver.path[-1][0]-104)+abs(driver.path[-1][1]-80), 16)
+
+    def test_late_cure_waits_until_last_caster_is_dead(self):
+        driver = self.driver()
+        driver.route = {'index': 10, 'outbound': [
+            {'from': 0x125, 'to': 0x115, 'target': [128,8]}]}
+        driver.stage = 'outbound'
+        self.ram[0xBF] = self.ram[0xE2] = self.ram[0x301] = 1
+        self.ram[0x600] = 83
+        self.ram[0x618] = 18
+        driver.drive(0x0C,False)
+        self.assertNotEqual(driver.item, 2)
+        self.ram[0x618] = 0
+        self.ram[0xDF] = 2
         self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
 
     def test_fire_reaches_partitioned_enemy_below_normal_reserve(self):

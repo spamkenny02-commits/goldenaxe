@@ -34,7 +34,7 @@ class DungeonDriver:
         # reopen inventory for an antidote that has just been consumed.
         if self.item==2 and (not self.read(0xC0BF) or not self.read(0xC0E2)):
             self.item=0
-        return self.item
+        return 1 if self.item==0 and self.route.get('index',0)>=9 and not self.escaping else self.item
 
     def evade(self, grabbers):
         """Choose a reachable escape instead of pushing into a nearby wall."""
@@ -168,7 +168,11 @@ class DungeonDriver:
                     # grabber can leave the hero trapped even in the original.
                     return self.evade(grabbers)
             self.escaping=False
-        if r(0xC0BF) and r(0xC0E2):
+        # Late rooms contain several curse casters. Cure only after they
+        # are gone, so the single antidote is not immediately invalidated.
+        cure_ready=self.route.get('index',0)<9 or (cell!=0x1FD and not any(
+            r(0xC300+s*48)==83 and r(0xC318+s*48)>0 for s in range(16,24)))
+        if r(0xC0BF) and r(0xC0E2) and cure_ready:
             self.item=2
             if r(0xC0DF)!=2 or r(0xC301)!=1:return 0
             return self.pad('button2') if not r(0xC020)&32 else 0
@@ -233,6 +237,16 @@ class DungeonDriver:
                         if self.path and self.path[-1]==tuple(action):return action_pad
                 # Real room-clear shutters must open through enemy deaths.
                 enemies = [(r(0xC313+s*48),r(0xC311+s*48),r(0xC300+s*48)) for s in range(16,24) if (32<=r(0xC300+s*48)<99 or 120<=r(0xC300+s*48)<=124) and (r(0xC318+s*48)>0 or r(0xC300+s*48)==45) and r(0xC300+s*48)!=94]
+                if r(0xC301) in (2,3,4,5) and self.route['index']>=9:
+                    # Attack animation can rotate. Track the opposing shield
+                    # facing throughout the swing, not just when it starts.
+                    shield=[s for s in range(16,24) if r(0xC300+s*48) in (92,93)
+                            and r(0xC318+s*48)>0]
+                    if shield:
+                        s=min(shield,key=lambda s:abs(r(0xC313+s*48)-x)+abs(r(0xC311+s*48)-y))
+                        required=(1,0,3,2)[r(0xC30A+s*48)&3]
+                        if r(0xC30A)!=required:return self.pad(('up','down','left','right')[required])
+                    return 0
                 if r(0xC301) in (2,3,4,5,10):return 0
                 travel_pad=self.navigate(edge['target'])
                 probe={'up':(128,24),'left':(16,72),'right':(232,72)}.get(edge.get('direction'))
@@ -242,6 +256,10 @@ class DungeonDriver:
                     # Stop armor curses and grabs before ordinary melee targets.
                     tx,ty,kind=min(enemies,key=lambda p:(p[2] not in (83,91),abs(p[0]-x)+abs(p[1]-y)))
                     dx,dy=tx-x,ty-y
+                    if self.route['index']>=9 and kind>=120:
+                        slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind)
+                        if r(0xC305+slot*48)>8 and abs(dx)+abs(dy)<48:
+                            return self.evade([(tx,ty)])
                     direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
                     facing={'up':0,'down':1,'left':2,'right':3}[direction]
                     cross=abs(dx) if direction in ('up','down') else abs(dy)
@@ -263,7 +281,7 @@ class DungeonDriver:
                         if not r(0xC020)&32:pad|=self.pad('button2')
                         return pad
                     if abs(dx)+abs(dy)<=20 and cross<=16:
-                        self.item=1 if kind>=120 else 0
+                        self.item=1 if kind>=120 or self.route['index']>=9 else 0
                         if r(0xC0DF)!=self.item:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)
                         pad=0

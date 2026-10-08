@@ -304,8 +304,10 @@ def main():
         desired_weapon=dungeon.desired_item() if dungeon and dungeon.stage!='boss' else boss_weapon
         if boss_heal_stage=='fight' and read(0xC0DF)!=desired_weapon:
             boss_inventory_goal=desired_weapon;boss_heal_stage='select_weapon'
+        heal_cost=24 if not dungeon or args.dungeon in (9,10) else 32
         if boss_heal_stage=='fight' and read(0xC318)<=24 and (read(0xC600)==args.boss_arena or dungeon):
-            goal=7 if dungeon and read(0xC0E7) and read(0xC0DB)>=32 else 8 if read(0xC0E8) else 7 if read(0xC0E7) and read(0xC0DB)>=(32 if dungeon else 24) else None
+            goal=7 if dungeon and read(0xC0E7) and read(0xC0DB)>=heal_cost else 8 if read(0xC0E8) else 7 if read(0xC0E7) and read(0xC0DB)>=heal_cost else None
+            if args.dungeon in (9,10) and read(0xC0E8):goal=8
             if goal is not None:
                 boss_inventory_goal=goal;boss_heal_mp=read(0xC0DB);boss_heal_stage='select_heal'
         if boss_heal_stage=='select_heal':
@@ -335,15 +337,20 @@ def main():
             if children:
                 tx,ty = min(children,key=lambda v:abs(v[0]-px)+abs(v[1]-py))
         dx,dy = tx-px,ty-py
+        if args.dungeon in (9,10) and kind in (108,109):
+            if read(0xC301) in (2,3,4,5):return 0
+            if read(0xC605)>8 and abs(dx)+abs(dy)<56:
+                return dungeon.evade([(tx,ty)])
         if abs(dx)>abs(dy):
             direction='right' if dx>0 else 'left'
         else:
             direction='down' if dy>0 else 'up'
         facing={'up':0,'down':1,'left':2,'right':3}[direction]
-        if dungeon and abs(dx)+abs(dy)>16:
+        melee_range=40 if args.dungeon in (9,10) else 16 if dungeon else 28
+        if dungeon and abs(dx)+abs(dy)>melee_range:
             return dungeon.navigate([round(tx/8)*8,round(ty/8)*8])
-        pad=0 if kind!=15 and abs(dx)+abs(dy)<=(16 if dungeon else 28) and read(0xC30A)==facing else 1<<buttons[direction]
-        if kind != 15 and abs(dx)+abs(dy)<42 and read(0xC020)&32==0:
+        pad=0 if kind!=15 and abs(dx)+abs(dy)<=melee_range and read(0xC30A)==facing else 1<<buttons[direction]
+        if kind != 15 and abs(dx)+abs(dy)<(48 if args.dungeon in (9,10) else 42) and read(0xC020)&32==0:
             pad |= 1<<buttons['button2']
         return pad
     for frame in range(args.frames):
@@ -558,12 +565,14 @@ def main():
                 play_irq_start = irq_counts()
             play_frames += 1
         if frame % 600 == 599:
-            if dungeon:print({'dungeon':args.dungeon,'route_stage':dungeon.stage,'edge':dungeon.edge,'cell':f'{cell:03X}','xy':[read(0xC313),read(0xC311)],'hp':read(0xC318),'keys':read(0xC0DE)},flush=True)
+            if dungeon:print({'dungeon':args.dungeon,'route_stage':dungeon.stage,'edge':dungeon.edge,'cell':f'{cell:03X}','xy':[read(0xC313),read(0xC311)],'hp':read(0xC318),'mp':read(0xC0DB),'item':read(0xC0DF),'requested_item':dungeon.desired_item(),'curse':read(0xC0BF),'antidotes':read(0xC0E2),'keys':read(0xC0DE)},flush=True)
             print({'emulator_frame': frame, 'state': f'{state:02X}', 'game_ticks': ticks,
                    'audio_peak': current['audio_peak'],
                    'pc': f'{lib.m68k_get_reg(16):06X}' if not args.reference_sms and hasattr(lib, 'm68k_get_reg') else None}, flush=True)
             if current['image']:
                 png(args.output/'latest.png', *current['image'], pixel_format)
+        if dungeon and boss_prepared and read(0xC318)==0:
+            break  # Preserve the first fatal frame instead of idling to the cap.
         if (boss_done and (not dungeon or dungeon.done or ending.get('title_confirmed',False))) or (args.boss_arena is None and play_frames >= 300 and input_step == len(inputs)):
             break
     if current['image']:

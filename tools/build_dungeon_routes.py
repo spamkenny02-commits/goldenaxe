@@ -84,6 +84,9 @@ for k in range(1,11):
   # gate. Reach BC through AE/9E and its stairs instead of the sealed exit.
   split=next(i for i,e in enumerate(route) if e['from']==0x1BE)
   route=route[:split]+path(0x1BE,boss['cell'],avoid=(0x1BD,))
+  # BC's switch opens the east gate; BD's $B679 sets BC's north bit.
+  split=next(i for i,e in enumerate(route) if e['from']==0x1BC)
+  route=route[:split]+path(0x1BC,0x1BD)+path(0x1BD,0x1BC)+route[split:]
  if k==8:
   # Reach the remote switches through the stairs before returning to 1C8.
   split=next(i for i,e in enumerate(route) if e['from']==0x1C8)
