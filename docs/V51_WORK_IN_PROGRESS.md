@@ -116,3 +116,34 @@ Updated open issues supersede the earlier remaining-work list:
 - The production V50 ROM remains 484504 bytes / BB38; only tooling and route
   metadata have changed. Fixture equipment and one-time RAM-write rules are
   unchanged at this checkpoint.
+
+## Third checkpoint — controller recovery and late-dungeon routes
+
+The equipped dungeon fixture now includes one ordinary antidote (C0E2=1),
+alongside its original healing potion. The controller selects and consumes it
+through the real inventory/item routines after an armor curse. The inventory
+request is cleared after consumption, preventing attempts to reselect a missing
+item. No RAM writes are allowed after the one-time outside checkpoint setup.
+
+A zero-MP puzzle no longer causes endless failed spell casts: the controller can
+fight for actual resource drops. Curse enemies can be attacked in melee once
+ranged magic is unavailable. These cases have targeted tooling regressions.
+
+Two more route dependencies are encoded, still awaiting complete traversal:
+- $B686 in 1BE closes the western gate during combat and opens the upper gate
+  afterwards. Dungeon 9 now follows 1BE -> 1AE -> 19E -> stairs 1CC -> 1BC -> 1AC.
+- 16C has disconnected floor regions. Dungeon 10 now takes its stairs to 14D,
+  follows the circuit through 13D/13E/16A/17A/17B/13C/13B/14B/15A/15B/16B,
+  then reenters 16C from the west before trying its northern gate.
+
+25 tooling tests pass. The combat oracle now also verifies all 32 combinations
+of enemy type 92/93 and enemy/hero facing: $5049 cancels damage unless the hero
+faces opposite the enemy. Total combat comparisons: 5036. Reliable controller
+placement against these enemies remains part of late-dungeon work.
+
+The antidote-enabled SMS 8 pilot passed strict full-route validation: 29 visits,
+5 stairs, 8 genuine full-HP boss hits, one net key spent, HP 104, 13637 frames
+(md/build/v51_antidote_fixed_sms8/). A fresh MD/SMS 5-8 matrix is being collected
+under md/build/v51_release_regression58/ before closing this checkpoint.
+The 9/10 pilots remain incomplete; geometric route corrections do not establish
+survival or completed rewards/ending through those routes.

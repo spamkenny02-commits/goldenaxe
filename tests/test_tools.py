@@ -60,6 +60,20 @@ class DungeonRouteTest(unittest.TestCase):
         self.assertIn(0x19A, [e['to'] for e in edges[:gate]])
         self.assertEqual(route['actions'][str(0x19A)], [72,40])
 
+    def test_dungeon10_reenters_partitioned_room_from_west(self):
+        edges = self.routes[9]['outbound']
+        gate = next(i for i,e in enumerate(edges)
+                    if (e['from'],e['to']) == (0x16C,0x15C))
+        self.assertEqual((edges[gate-1]['from'],edges[gate-1]['to']),
+                         (0x16B,0x16C))
+        self.assertTrue(any(e.get('stairs') and e['from']==0x16C
+                            for e in edges[:gate]))
+
+    def test_dungeon9_uses_upper_gate_after_room_clear(self):
+        edge = next(e for e in self.routes[8]['outbound'] if e['from']==0x1BE)
+        self.assertEqual(edge['to'], 0x1AE)
+        self.assertEqual(edge['direction'], 'up')
+
     def complete_run(self):
         route = self.routes[0]
         cells = [route['outside_cell'], route['entrance']]
@@ -174,6 +188,46 @@ class DungeonNavigationTest(unittest.TestCase):
         self.assertIn(pad, (driver.pad('left'), driver.pad('right')))
         self.assertTrue(driver.path)
         self.assertIsNone(driver.breaking)
+
+    def test_consumed_antidote_does_not_reopen_inventory_for_missing_item(self):
+        driver = self.driver()
+        driver.item = 2
+        self.ram[0xBF] = self.ram[0xE2] = 1
+        self.assertEqual(driver.desired_item(), 2)
+        self.ram[0xBF] = self.ram[0xE2] = 0
+        self.assertEqual(driver.desired_item(), 0)
+
+    def test_empty_magic_reserve_fights_instead_of_repeated_failed_casts(self):
+        driver = self.driver()
+        driver.route = {'index': 9, 'outbound': [
+            {'from': 0x125, 'to': 0x115, 'target': [128,8]}],
+            'puzzles': {str(0x125): {'target': [88,80]}}}
+        driver.stage = 'outbound'
+        self.ram[0xDB] = 0
+        self.ram[0xA8] = self.ram[0x301] = 1
+        self.ram[0x30A] = 3
+        self.ram[0x600] = 32
+        self.ram[0x603] = 3
+        self.ram[0x618] = 6
+        self.ram[0x613] = 96
+        self.ram[0x611] = 80
+        self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
+        self.assertEqual(driver.item, 0)
+
+    def test_curse_enemy_can_be_defeated_in_melee_when_magic_is_empty(self):
+        driver = self.driver()
+        driver.route = {'index': 10, 'outbound': [
+            {'from': 0x125, 'to': 0x115, 'target': [128,8]}]}
+        driver.stage = 'outbound'
+        self.ram[0xDB] = 0
+        self.ram[0xA8] = self.ram[0x301] = 1
+        self.ram[0x30A] = 3
+        self.ram[0x600] = 83
+        self.ram[0x603] = 3
+        self.ram[0x618] = 18
+        self.ram[0x613] = 96
+        self.ram[0x611] = 80
+        self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
 
     def test_break_cost_uses_collision_probe_not_player_center(self):
         driver = self.driver()

@@ -2468,20 +2468,38 @@
       },
       {
         "from": 446,
-        "to": 445,
-        "direction": "left",
+        "to": 430,
+        "direction": "up",
         "target": [
-          8,
-          80
+          128,
+          8
         ]
       },
       {
-        "from": 445,
-        "to": 444,
-        "direction": "left",
+        "from": 430,
+        "to": 414,
+        "direction": "up",
         "target": [
-          8,
+          128,
+          8
+        ]
+      },
+      {
+        "from": 414,
+        "to": 460,
+        "target": [
+          136,
           80
+        ],
+        "stairs": true
+      },
+      {
+        "from": 460,
+        "to": 444,
+        "direction": "up",
+        "target": [
+          128,
+          8
         ]
       },
       {
@@ -2787,6 +2805,123 @@
         "direction": "left",
         "target": [
           8,
+          80
+        ]
+      },
+      {
+        "from": 364,
+        "to": 333,
+        "target": [
+          168,
+          128
+        ],
+        "stairs": true
+      },
+      {
+        "from": 333,
+        "to": 317,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 317,
+        "to": 318,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 318,
+        "to": 362,
+        "target": [
+          120,
+          96
+        ],
+        "stairs": true
+      },
+      {
+        "from": 362,
+        "to": 378,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 378,
+        "to": 379,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 379,
+        "to": 316,
+        "target": [
+          120,
+          64
+        ],
+        "stairs": true
+      },
+      {
+        "from": 316,
+        "to": 315,
+        "direction": "left",
+        "target": [
+          8,
+          80
+        ]
+      },
+      {
+        "from": 315,
+        "to": 331,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 331,
+        "to": 346,
+        "target": [
+          104,
+          128
+        ],
+        "stairs": true
+      },
+      {
+        "from": 346,
+        "to": 347,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 347,
+        "to": 363,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 363,
+        "to": 364,
+        "direction": "right",
+        "target": [
+          248,
           80
         ]
       },

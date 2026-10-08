@@ -301,7 +301,7 @@ def main():
         if state==0x0E and args.complete_ending:
             return pulse('button2',32) if ending['credits_finished'] else 0
         if state!=0x0C:return 0
-        desired_weapon=dungeon.item if dungeon and dungeon.stage!='boss' else boss_weapon
+        desired_weapon=dungeon.desired_item() if dungeon and dungeon.stage!='boss' else boss_weapon
         if boss_heal_stage=='fight' and read(0xC0DF)!=desired_weapon:
             boss_inventory_goal=desired_weapon;boss_heal_stage='select_weapon'
         if boss_heal_stage=='fight' and read(0xC318)<=24 and (read(0xC600)==args.boss_arena or dungeon):
@@ -361,12 +361,13 @@ def main():
             write(0xC0E7,1);write(0xC0E8,1);write(0xC0DC,120);write(0xC0DB,120)
             if dungeon:
                 write(0xC0DE,20);write(0xC0DC,128);write(0xC0DB,128)
+                write(0xC0E2,1)  # One ordinary antidote in the equipped checkpoint.
                 write(0xC0E7,2)
                 write(0xC0E4,2);write(0xC0E5,2);write(0xC0E6,2)
                 write(0xC0EC,1);write(0xC0ED,1);write(0xC0F0,1 if args.dungeon in (6,9) else 0)
                 for index in range(1,args.dungeon):write(0xC0CE+index,0x80)
             write(0xC01D,6);state=6;boss_prepared=True
-            boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':0 if dungeon else boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':2 if dungeon else 1,'potion':1,'mp':128 if dungeon else 120}
+            boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':0 if dungeon else boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':2 if dungeon else 1,'potion':1,'antidote':1 if dungeon else 0,'mp':128 if dungeon else 120}
         if args.save_slot is not None and state == 0x0C and not save_started:
             # Controlled integration entry: service arrival is injected; every
             # confirmation, slot selection and SRAM write runs in production code.

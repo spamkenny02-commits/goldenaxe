@@ -74,8 +74,16 @@ for k in range(1,11):
  if k==10:
   split=next(i for i,e in enumerate(route) if e['from']==0x16D)
   route=route[:split]+path(0x16D,0x18D)+path(0x18D,0x15D,avoid=(0x17D,0x16D))+[{'from':0x15D,'to':0x16D,'direction':'down','target':[128,168]}]+route[split:]
+  # 16C has two disconnected floor regions. Enter the western region from
+  # 16B after the stair circuit, rather than trying to cross its solid wall.
+  split=next(i for i,e in enumerate(route) if e['from']==0x16C)
+  route=route[:split]+path(0x16C,0x14D)+path(0x14D,0x16B,avoid=(0x16C,))+path(0x16B,0x16C)+route[split:]
  if k==9:
   route=path(starts[k],boss['cell'],avoid=(0x1ED,0x1DD))
+  # $B686 closes the western gate while fighting, then opens the upper
+  # gate. Reach BC through AE/9E and its stairs instead of the sealed exit.
+  split=next(i for i,e in enumerate(route) if e['from']==0x1BE)
+  route=route[:split]+path(0x1BE,boss['cell'],avoid=(0x1BD,))
  if k==8:
   # Reach the remote switches through the stairs before returning to 1C8.
   split=next(i for i,e in enumerate(route) if e['from']==0x1C8)

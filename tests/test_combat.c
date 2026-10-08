@@ -100,6 +100,21 @@ int main(void){
         compare(16,0x2768,gaw_entity_apply_pending_damage);
         if(pending==18){assert(e->raw[ENT_TYPE]!=91);assert(hero->raw[ENT_STATE]==12);}
     }
-    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death boundary cases)\n",collisions,damage_cases,ai_cases,cases-collisions-damage_cases-ai_cases);
+    unsigned grab_cases=cases-collisions-damage_cases-ai_cases;
+    /* $5049 rejects hits unless the hero faces opposite types 92/93. */
+    for(unsigned type=92;type<=93;++type)for(unsigned facing=0;facing<4;++facing)
+    for(unsigned hero_facing=0;hero_facing<4;++hero_facing){
+        static const uint8_t opposite[4]={1,0,3,2};
+        setup();GawEntity *e=gaw_entity(16);
+        e->raw[ENT_TYPE]=(uint8_t)type;e->raw[ENT_STATE]=8;
+        e->raw[ENT_FLAGS]=0x2B;e->raw[ENT_HP]=36;
+        e->raw[ENT_PENDING_DAMAGE]=8;e->raw[ENT_MOTION_PHASE]=1;
+        e->raw[ENT_DIRECTION]=(uint8_t)facing;
+        gaw_ram_write8(0xC30A,(uint8_t)hero_facing);
+        gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,16);
+        compare(16,gaw_entity_handler_targets[type],handler);
+        assert(e->raw[ENT_PENDING_DAMAGE]==(hero_facing==opposite[facing]?8u:0u));
+    }
+    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense cases)\n",collisions,damage_cases,ai_cases,grab_cases,cases-collisions-damage_cases-ai_cases-grab_cases);
     return 0;
 }

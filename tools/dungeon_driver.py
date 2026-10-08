@@ -29,6 +29,13 @@ class DungeonDriver:
     def pad(self, direction):
         return 1 << self.buttons[direction]
 
+    def desired_item(self):
+        # Using a consumable refreshes the HUD and selects the sword. Do not
+        # reopen inventory for an antidote that has just been consumed.
+        if self.item==2 and (not self.read(0xC0BF) or not self.read(0xC0E2)):
+            self.item=0
+        return self.item
+
     def evade(self, grabbers):
         """Choose a reachable escape instead of pushing into a nearby wall."""
         x,y=self.read(0xC313),self.read(0xC311)
@@ -161,6 +168,10 @@ class DungeonDriver:
                     # grabber can leave the hero trapped even in the original.
                     return self.evade(grabbers)
             self.escaping=False
+        if r(0xC0BF) and r(0xC0E2):
+            self.item=2
+            if r(0xC0DF)!=2 or r(0xC301)!=1:return 0
+            return self.pad('button2') if not r(0xC020)&32 else 0
         if self.last_cell != cell:
             self.visits.append({'cell': cell, 'stage': self.stage, 'index': r(0xC037)})
             self.last_cell = cell; self.target = None; self.path_key = None
@@ -203,7 +214,9 @@ class DungeonDriver:
                 trigger=r(0xC06E)
                 if trigger<160 and r(0xDC00+trigger)==0x0B:
                     puzzle={'target':[(trigger%16)*16+8,(trigger//16)*16+24]}
-                if puzzle and not r(0xC100+(cell&255))&4:
+                # With no MP, fight for real drops instead of casting an
+                # unavailable spell forever at the trigger block.
+                if puzzle and r(0xC0DB)>=8 and not r(0xC100+(cell&255))&4:
                     if [r(0xC313),r(0xC311)]!=puzzle['target']:return self.navigate(puzzle['target'])
                     self.item=5
                     if r(0xC0DF)!=5:return 0
@@ -232,7 +245,7 @@ class DungeonDriver:
                     direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
                     facing={'up':0,'down':1,'left':2,'right':3}[direction]
                     cross=abs(dx) if direction in ('up','down') else abs(dy)
-                    if kind in (83,91) and abs(dx)+abs(dy)<32:
+                    if (kind==91 or (kind==83 and (r(0xC0DB)>=16 or r(0xC0C6)))) and abs(dx)+abs(dy)<32:
                         return self.evade([(ex,ey) for ex,ey,enemy in enemies if enemy in (83,91)])
                     def clear_shot():
                         for distance in range(8,max(abs(dx),abs(dy)),8):
