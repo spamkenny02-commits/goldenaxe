@@ -2,7 +2,14 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V50)
+## Current status (V51 checkpoint)
+
+- V51 validates full dungeon 5 and 7 routes on native MD and original SMS,
+  including full-HP bosses, crystals, stairs and the outside return. It fixes
+  controller navigation costs/cache permissions, intended room-return loops
+  and escapes from grabbing enemies. 17 tooling tests and 5004 original-Z80
+  combat cases pass. The production image remains V50 (484504 bytes / BB38).
+  Dungeon 6 and 8-10 traversal remains open. See `docs/V51_WORK_IN_PROGRESS.md`.
 
 - V50 completes the final boss, credits and confirmed title return on native MD
   and original SMS. It fixes potion-shop recognition, capacity-item dialogue,

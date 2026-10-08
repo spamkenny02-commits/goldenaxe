@@ -83,6 +83,23 @@ int main(void){
         gaw_ram_write8(RAM_FRAME_COUNTER,(uint8_t)(variant*47u));
         compare(16,gaw_entity_handler_targets[type],handler);
     }
-    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI cases)\n",collisions,damage_cases,cases-collisions-damage_cases);
+    unsigned ai_cases=cases-collisions-damage_cases;
+    /* An attached type-91 enemy may die while the hero remains grabbed.
+     * Preserve the original behavior; the controller must escape first. */
+    for(unsigned pending=0;pending<=18;pending+=9)
+    for(unsigned player_state=1;player_state<=12;player_state+=11){
+        setup();GawEntity *e=gaw_entity(16),*hero=gaw_entity(0);
+        hero->raw[ENT_TYPE]=2;hero->raw[ENT_STATE]=(uint8_t)player_state;
+        hero->raw[ENT_HP]=128;hero->raw[0x11]=80;hero->raw[0x13]=120;
+        e->raw[ENT_TYPE]=91;e->raw[ENT_STATE]=12;e->raw[ENT_FLAGS]=0x2B;
+        e->raw[ENT_HP]=18;e->raw[ENT_PENDING_DAMAGE]=(uint8_t)pending;
+        e->raw[0x11]=88;e->raw[0x13]=120;e->raw[0x21]=16;
+        gaw_entity_set16(e,ENT_RELATED_PTR,gaw_entity_addr(hero));
+        gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,16);
+        compare(16,gaw_entity_handler_targets[91],handler);
+        compare(16,0x2768,gaw_entity_apply_pending_damage);
+        if(pending==18){assert(e->raw[ENT_TYPE]!=91);assert(hero->raw[ENT_STATE]==12);}
+    }
+    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death boundary cases)\n",collisions,damage_cases,ai_cases,cases-collisions-damage_cases-ai_cases);
     return 0;
 }

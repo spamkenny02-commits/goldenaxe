@@ -29,6 +29,23 @@ class DungeonDriver:
     def pad(self, direction):
         return 1 << self.buttons[direction]
 
+    def evade(self, grabbers):
+        """Choose a reachable escape instead of pushing into a nearby wall."""
+        x,y=self.read(0xC313),self.read(0xC311)
+        candidates=[]
+        for dx,dy in ((0,-32),(0,32),(-32,0),(32,0)):
+            goal=(max(24,min(232,round(x/8)*8+dx)),
+                  max(24,min(144,round(y/8)*8+dy)))
+            self.navigate(goal)
+            if self.breaking:
+                self.breaking=None
+                continue
+            if self.path and self.path[-1]==goal:
+                separation=min(abs(tx-goal[0])+abs(ty-goal[1]) for tx,ty in grabbers)
+                candidates.append((separation,-len(self.path),goal))
+        if not candidates:return 0
+        return self.navigate(max(candidates,key=lambda c:c[:2])[2])
+
     def navigate(self, target, attack=False):
         r = self.read
         x, y = r(0xC313), r(0xC311)
@@ -128,9 +145,15 @@ class DungeonDriver:
         if self.escaping:
             self.item=0
             if r(0xC0DF)!=0 or r(0xC301)==0:return 0
-            if r(0xC301) in (2,3):self.escaping=False;return 0
-            if r(0xC30A)!=3:return self.pad('right')
-            return self.pad('button2') if not r(0xC020)&32 else 0
+            x,y=r(0xC313),r(0xC311)
+            grabbers=[(r(0xC313+s*48),r(0xC311+s*48)) for s in range(16,24) if r(0xC300+s*48)==91 and r(0xC318+s*48)]
+            if grabbers:
+                tx,ty=min(grabbers,key=lambda p:abs(p[0]-x)+abs(p[1]-y))
+                if abs(tx-x)+abs(ty-y)<24:
+                    # Retreat before attacking. Killing a still attached
+                    # grabber can leave the hero trapped even in the original.
+                    return self.evade(grabbers)
+            self.escaping=False
         if self.last_cell != cell:
             self.visits.append({'cell': cell, 'stage': self.stage, 'index': r(0xC037)})
             self.last_cell = cell; self.target = None; self.path_key = None
@@ -191,6 +214,8 @@ class DungeonDriver:
                     direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
                     facing={'up':0,'down':1,'left':2,'right':3}[direction]
                     cross=abs(dx) if direction in ('up','down') else abs(dy)
+                    if kind==91 and abs(dx)+abs(dy)<32:
+                        return self.evade([(ex,ey) for ex,ey,enemy in enemies if enemy==91])
                     def clear_shot():
                         for distance in range(8,max(abs(dx),abs(dy)),8):
                             sx=x+(distance if dx>0 else -distance) if direction in ('left','right') else x
@@ -198,7 +223,8 @@ class DungeonDriver:
                             high=r(0xD600+((sy&248)<<3)+((sx>>2)&62)+1)
                             if high&0xE0 in (0x80,0xA0):return False
                         return True
-                    if abs(dx)+abs(dy)>=24 and cross<=8 and clear_shot() and (r(0xC0DB)>=80 or r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
+                    fire_reserve=16 if kind==91 else 80
+                    if abs(dx)+abs(dy)>=24 and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
                         self.item=4
                         if r(0xC0DF)!=4:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)

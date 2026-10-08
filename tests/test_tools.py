@@ -138,9 +138,34 @@ class DungeonNavigationTest(unittest.TestCase):
         self.assertEqual(driver.edge, 0)
         self.assertIn({'retreated_to': 0x138}, driver.events)
 
+    def test_grab_release_retreats_before_using_sword(self):
+        driver = self.driver()
+        driver.route = {'index': 5, 'outbound': [
+            {'from': 0x125, 'to': 0x115, 'target': [128, 8]}]}
+        driver.stage = 'outbound'
+        self.ram[0x301] = 12
+        self.ram[0x600] = 91
+        self.ram[0x618] = 18
+        self.ram[0x613] = 88
+        self.ram[0x611] = 88
+        driver.drive(0x0C, False)
+        self.ram[0x301] = 1
+        pad = driver.drive(0x0C, False)
+        self.assertEqual(pad, 1 << driver.buttons['up'])
+        self.assertFalse(pad & (1 << driver.buttons['button2']))
+
     def terrain(self, x, y, high):
         offset = ((y & 248) << 3) + ((x >> 2) & 62) + 1
         self.ram[0x1600 + offset] = high
+
+    def test_escape_chooses_reachable_side_when_wall_blocks_retreat(self):
+        driver = self.driver()
+        for x in range(0, 256, 8):
+            self.terrain(x, 64, 0x80)
+        pad = driver.evade([(88, 88)])
+        self.assertIn(pad, (driver.pad('left'), driver.pad('right')))
+        self.assertTrue(driver.path)
+        self.assertIsNone(driver.breaking)
 
     def test_break_cost_uses_collision_probe_not_player_center(self):
         driver = self.driver()
