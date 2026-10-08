@@ -51,13 +51,14 @@ class DungeonDriver:
         start = (round(x/8)*8, round(y/8)*8)
         goal = tuple(target)
         grid = bytes(r(0xD600+i) for i in range(1536))
-        key = (start, goal, grid)
+        cell=r(0xC0B9)|r(0xC0BA)<<8
+        terrain_context=(cell,bool(r(0xC0EC)),bool(r(0xC0F0)),r(0xC0DB)>=8)
+        key = (start, goal, grid, terrain_context)
         if key != self.path_key:
             self.path_key = key
             def allowed(point, delta):
                 px, py = point
                 nx, ny = px+delta[0], py+delta[1]
-                cell=r(0xC0B9)|r(0xC0BA)<<8
                 if [nx,ny] in self.route.get('avoid',{}).get(str(cell),[]) and (nx,ny)!=goal:return False
                 if not 8 <= nx <= 248 or not 8 <= ny <= 168:return False
                 if (nx < 16 or nx > 240 or ny < 16 or ny > 160) and (nx,ny) != goal:return False
@@ -66,6 +67,7 @@ class DungeonDriver:
                     off=((((py+dy)&255)&248)<<3)+((((px+dx)&255)>>2)&62)+1
                     return grid[off] if off<len(grid) else 0x80
                 boots = high_at(-4,-4)&high_at(4,-4)&0xC0 if r(0xC0F0) else 0
+                move_cost=1
                 for dx, dy in probes:
                     off = ((((py+dy)&255)&248)<<3) + ((((px+dx)&255)>>2)&62) + 1
                     high = grid[off] if off < len(grid) else 0x80
@@ -76,7 +78,8 @@ class DungeonDriver:
                     door_approach = (delta==(0,-8) and 112<=px<=144 and 24<=py<=40) or (delta==(-8,0) and px<=32 and 64<=py<=88) or (delta==(8,0) and px>=224 and 64<=py<=88)
                     tile=r(0xDC00+((py+dy)//16)*16+(px+dx)//16)
                     if high&0x80 and (not r(0xC0BA) or r(0xC0DB)<8 or tile not in (0x0B,0x31)) and not (high&0xE0==0xA0 and door_approach):return False
-                return True
+                    if high&0x80 and tile in (0x0B,0x31):move_cost=16
+                return move_cost
             queue = [(0,start)]; parents = {start: None}; costs={start:0}
             best = start
             while queue:
@@ -86,9 +89,9 @@ class DungeonDriver:
                 if point == goal: best = point; break
                 for dx, dy in ((0,-8),(0,8),(-8,0),(8,0)):
                     nxt = (point[0]+dx, point[1]+dy)
-                    if allowed(point,(dx,dy)):
-                        tile=r(0xDC00+(nxt[1]//16)*16+nxt[0]//16)
-                        new_cost=cost+(16 if tile in (0x0B,0x31) else 1)
+                    move_cost=allowed(point,(dx,dy))
+                    if move_cost:
+                        new_cost=cost+move_cost
                         if new_cost<costs.get(nxt,10**9):
                             costs[nxt]=new_cost;parents[nxt]=point;heappush(queue,(new_cost,nxt))
             path = []
@@ -142,7 +145,8 @@ class DungeonDriver:
             self.events.append('reward_complete'); self.stage = 'return'; self.edge = 0
         if self.stage in ('outbound','return'):
             edges = self.route[self.stage]
-            if self.edge and cell==edges[self.edge-1]['from']:
+            expected_arrival=self.edge<len(edges) and cell==edges[self.edge]['to']
+            if self.edge and not expected_arrival and cell==edges[self.edge-1]['from']:
                 self.edge-=1;self.target=None;self.path_key=None
                 self.events.append({'retreated_to':cell})
             while self.edge < len(edges) and cell == edges[self.edge]['to']:

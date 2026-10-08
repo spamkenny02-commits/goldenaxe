@@ -95,6 +95,79 @@ class DungeonRouteTest(unittest.TestCase):
                 self.validate(report, self.routes[0])
 
 
+class DungeonNavigationTest(unittest.TestCase):
+    def driver(self):
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
+        from dungeon_driver import DungeonDriver
+        self.ram = bytearray(8192)
+        for address, value in [(0xC0BA, 1), (0xC0B9, 0x25),
+                               (0xC313, 88), (0xC311, 80), (0xC0DB, 16)]:
+            self.ram[address - 0xC000] = value
+        return DungeonDriver({'avoid': {}}, lambda a: self.ram[a - 0xC000],
+                             {'up': 0, 'down': 1, 'left': 2, 'right': 3,
+                              'button1': 4, 'button2': 5})
+
+    def loop_driver(self, destinations):
+        driver = self.driver()
+        cells = [0x138] + destinations
+        driver.route = {'outbound': [
+            {'from': a, 'to': b, 'target': [128, 8]}
+            for a, b in zip(cells, cells[1:])], 'index': 6}
+        driver.stage = 'outbound'
+        driver.navigate = lambda target: 0
+        self.arrive(driver, 0x138)
+        return driver
+
+    def arrive(self, driver, cell):
+        self.ram[0xB9] = cell & 255
+        self.ram[0xBA] = cell >> 8
+        driver.drive(0x0C, False)
+
+    def test_planned_return_to_previous_room_is_not_a_retreat(self):
+        driver = self.loop_driver([0x139, 0x138, 0x128])
+        self.arrive(driver, 0x139)
+        self.arrive(driver, 0x138)
+        self.assertEqual(driver.edge, 2)
+        self.assertFalse(any('retreated_to' in event for event in driver.events
+                             if isinstance(event, dict)))
+
+    def test_unplanned_backtrack_retries_previous_edge(self):
+        driver = self.loop_driver([0x139, 0x129])
+        self.arrive(driver, 0x139)
+        self.arrive(driver, 0x138)
+        self.assertEqual(driver.edge, 0)
+        self.assertIn({'retreated_to': 0x138}, driver.events)
+
+    def terrain(self, x, y, high):
+        offset = ((y & 248) << 3) + ((x >> 2) & 62) + 1
+        self.ram[0x1600 + offset] = high
+
+    def test_break_cost_uses_collision_probe_not_player_center(self):
+        driver = self.driver()
+        self.ram[0x1C00 + 4 * 16 + 4] = 0x0B
+        for x in (64, 72):
+            for y in (64, 72):
+                self.terrain(x, y, 0x80)
+        driver.navigate([56, 80])
+        self.assertEqual(driver.path[0], (88, 88))
+        self.assertEqual(driver.path[-1], (56, 80))
+        self.assertIsNone(driver.breaking)
+
+    def test_terrain_permission_change_invalidates_cached_path(self):
+        driver = self.driver()
+        self.ram[0xEC] = 1
+        for x in (64, 72):
+            for y in range(0, 176, 8):
+                self.terrain(x, y, 0x20)
+        driver.navigate([56, 80])
+        self.assertEqual(driver.path[-1], (56, 80))
+        previous_key = driver.path_key
+        self.ram[0xEC] = 0
+        driver.navigate([56, 80])
+        self.assertNotEqual(driver.path_key, previous_key)
+        self.assertTrue(not driver.path or driver.path[-1] != (56, 80))
+
+
 class ViewportComparisonTest(unittest.TestCase):
     def test_fixed_dac_conversion(self):
         sms = bytes((82, 85, 255))*49152
