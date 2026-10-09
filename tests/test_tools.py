@@ -287,6 +287,27 @@ class DungeonNavigationTest(unittest.TestCase):
         driver.navigate((120,80))
         self.assertIn((104,80),driver.path)
 
+    def test_timed_pit_crossing_rejects_a_phase_about_to_open(self):
+        driver=self.driver()
+        self.ram[0xB9]=0x4A
+        self.ram[0x1C46]=0x41
+        driver.route.update(damage_terrain_cells=(0x14A,),timed_damage_terrain=True)
+        self.ram[0xAA]=0x48
+        self.assertFalse(driver.dangerous_terrain((104,80)))
+        self.ram[0xAA]=0x44
+        self.assertTrue(driver.dangerous_terrain((104,80)))
+        self.ram[0xAA],self.ram[0xAB]=0x48,0
+        self.ram[0x1C46]=0x4F
+        self.ram[0x2F]+=1
+        self.assertTrue(driver.dangerous_terrain((104,80)))
+
+    def test_terrain_probe_does_not_sample_outside_room_exit_targets(self):
+        driver=self.driver()
+        self.ram[0xB9]=0x4A
+        driver.route.update(damage_terrain_cells=(0x14A,),strict_damage_terrain=True)
+        for goal in ((128,8),(128,168),(8,80),(248,80)):
+            self.assertFalse(driver.dangerous_terrain(goal,bytes(1536)))
+
     def test_contact_navigation_avoids_body_and_refreshes_when_hitbox_deactivates(self):
         from combat_geometry import rect, overlaps
         driver=self.driver()
@@ -594,6 +615,17 @@ class DungeonNavigationTest(unittest.TestCase):
         self.assertFalse(driver.boss_melee() & driver.pad('button2'))
         self.ram[0x305] = 40
         self.assertEqual(driver.boss_melee(), driver.pad('button2'))
+
+    def test_final_patient_policy_preserves_miniboss_attack_timing(self):
+        driver=self.driver()
+        driver.route['final_boss_patient']=True
+        self.ram[0x613],self.ram[0x611]=88,48
+        self.ram[0x61B]=self.ram[0x61C]=44
+        self.ram[0x601],self.ram[0x30A]=8,0
+        self.ram[0x600]=123
+        self.assertEqual(driver.boss_melee(),driver.pad('button2'))
+        self.ram[0x600]=109
+        self.assertFalse(driver.boss_melee() & driver.pad('button2'))
 
     def test_large_boss_finishes_swing_before_repositioning(self):
         driver = self.driver()

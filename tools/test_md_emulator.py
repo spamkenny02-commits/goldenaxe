@@ -88,13 +88,15 @@ def main():
     parser.add_argument('--potion-first', action='store_true', help='Dungeon10 controller probe: conserve magic by using the potion before healing spells')
     parser.add_argument('--final-magic-reserve', type=int, choices=(0,8,16,24), default=0, help='Dungeon10 controller probe: reserve MP after13C for the ice-trigger passage in15B')
     parser.add_argument('--caster-axe-margin', type=int, choices=(2,4), default=4, help='Dungeon10 controller probe: body margin for low-magic caster melee in14A')
-    parser.add_argument('--late-terrain-awareness', action='store_true', help='Dungeon10 controller probe: penalize damaging terrain in14A/15C')
+    parser.add_argument('--late-terrain-awareness', action='store_true', help='Dungeon10 controller probe: penalize damaging terrain in14A')
+    parser.add_argument('--exit-room-terrain-awareness', action='store_true', help='Dungeon10 controller probe: also penalize damaging terrain in15C')
+    parser.add_argument('--strict-late-terrain', action='store_true', help='Dungeon10 controller probe: reject damaging destinations in14A/15C instead of adding cost')
+    parser.add_argument('--timed-late-terrain', action='store_true', help='Dungeon10 controller probe: permit cycling-pit crossings only when24 future animation ticks stay safe')
     parser.add_argument('--late-contact-awareness', action='store_true', help='Dungeon10 controller probe: penalize actual enemy body rectangles in14A/14B navigation')
     parser.add_argument('--caster-projectile-awareness', action='store_true', help='Dungeon10 controller probe: evade close type113 projectiles in14A')
     parser.add_argument('--guard-melee-geometry', action='store_true', help='Dungeon10 controller probe: checked axe reach and hit-flash retreat in16B')
     parser.add_argument('--exit-room-melee-geometry', action='store_true', help='Dungeon10 controller probe: checked axe reach and retreat from flashing enemies in15C')
     parser.add_argument('--final-boss-patient', action='store_true', help='Dungeon10 controller probe: patient melee only against final boss109, keeping mini-boss timing')
-    parser.add_argument('--shield-room-melee-geometry', action='store_true', help='Dungeon10 controller probe: checked axe reach and required shield direction in18A')
     parser.add_argument('--flash-ice', action='store_true', help='Dungeon10 controller probe: allow close ice shots in13C during hero invulnerability')
     parser.add_argument('--late-melee-geometry', action='store_true', help='Dungeon10 controller probe: avoid unsafe81/96 body approaches in13C before hero flash expires')
     parser.add_argument('--boss-projectile-window', type=int, choices=(0,4,8,12,16), default=0, help='Late boss controller probe: anticipate projectile danger before hero flash expires')
@@ -129,13 +131,20 @@ def main():
         if args.collect_before_exit:dungeon_route['collect_before_exit']=True
         if args.final_magic_reserve:dungeon_route['final_magic_reserve']=args.final_magic_reserve
         if args.caster_axe_margin!=4:dungeon_route['caster_axe_margin']=args.caster_axe_margin
-        if args.late_terrain_awareness:dungeon_route['damage_terrain_cells']=(0x14A,0x15C)
+        if args.late_terrain_awareness:dungeon_route['damage_terrain_cells']=(0x14A,)
+        if args.exit_room_terrain_awareness:dungeon_route['damage_terrain_cells']=(*dungeon_route.get('damage_terrain_cells',()),0x15C)
+        if args.strict_late_terrain:
+            dungeon_route['damage_terrain_cells']=(0x14A,0x15C)
+            dungeon_route['strict_damage_terrain']=True
+        if args.timed_late_terrain:
+            dungeon_route['damage_terrain_cells']=(0x14A,0x15C)
+            dungeon_route['strict_damage_terrain']=True
+            dungeon_route['timed_damage_terrain']=True
         if args.late_contact_awareness:dungeon_route['contact_cells']=(0x14A,0x14B)
         if args.caster_projectile_awareness:dungeon_route['caster_projectile_awareness']=True
         if args.guard_melee_geometry:dungeon_route['guard_melee_geometry']=True
         if args.exit_room_melee_geometry:dungeon_route['exit_room_melee_geometry']=True
         if args.final_boss_patient:dungeon_route['final_boss_patient']=True
-        if args.shield_room_melee_geometry:dungeon_route['shield_room_melee_geometry']=True
         if args.flash_ice:dungeon_route['flash_ice']=True
         if args.late_melee_geometry:dungeon_route['late_melee_geometry']=True
         if args.boss_projectile_window:dungeon_route['boss_projectile_window']=args.boss_projectile_window
@@ -158,11 +167,17 @@ def main():
         parser.error('--caster-axe-margin requires dungeon 10')
     if args.late_terrain_awareness and args.dungeon!=10:
         parser.error('--late-terrain-awareness requires dungeon 10')
+    if args.exit_room_terrain_awareness and args.dungeon!=10:
+        parser.error('--exit-room-terrain-awareness requires dungeon 10')
+    if args.strict_late_terrain and args.dungeon!=10:
+        parser.error('--strict-late-terrain requires dungeon 10')
+    if args.timed_late_terrain and args.dungeon!=10:
+        parser.error('--timed-late-terrain requires dungeon 10')
     if args.late_contact_awareness and args.dungeon!=10:
         parser.error('--late-contact-awareness requires dungeon 10')
     if args.caster_projectile_awareness and args.dungeon!=10:
         parser.error('--caster-projectile-awareness requires dungeon 10')
-    if (args.guard_melee_geometry or args.exit_room_melee_geometry or args.final_boss_patient or args.shield_room_melee_geometry) and args.dungeon!=10:
+    if (args.guard_melee_geometry or args.exit_room_melee_geometry or args.final_boss_patient) and args.dungeon!=10:
         parser.error('Guard controller probes require dungeon 10')
     if args.flash_ice and args.dungeon!=10:
         parser.error('--flash-ice requires dungeon 10')

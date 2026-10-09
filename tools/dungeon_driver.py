@@ -26,6 +26,37 @@ class DungeonDriver:
         self.thunder_cells = {}
         self.escaping = False
         self.last_mp = None
+        self.pit_forecast_key = None
+        self.pit_forecast = ()
+
+    def forecast_pits(self, cell):
+        """Mirror $699C's metatile cycle over the next24 gameplay ticks."""
+        r=self.read
+        group,phase=r(0xC0AA),r(0xC0AB)
+        key=(cell,group,phase,r(0xC02F))
+        if key==self.pit_forecast_key:return self.pit_forecast
+        tiles=[r(0xDC00+i) for i in range(160)]
+        cycles=[i for i,tile in enumerate(tiles) if tile in (0x41,0x4E,0x4F,0x50)]
+        dangerous=set()
+        sequence=(0x41,0x4E,0x4F,0x50,0x50,0x4F,0x4E,0x41,0x41)
+        for tick in range(25):
+            dangerous.update(i for i in cycles if tiles[i]!=0x41)
+            if tick==24:break
+            if phase&1:
+                phase=(phase+1)&15
+                if phase:continue
+            else:
+                before,after=sequence[phase>>1:][:2]
+                changing=[i for i in range(group,min(group+4,160)) if tiles[i]==before]
+                if changing:
+                    for i in changing:tiles[i]=after
+                    phase=(phase+1)&15
+                    continue
+            group+=4
+            if group>=0x90:group=0x20
+        self.pit_forecast_key=key
+        self.pit_forecast=frozenset(dangerous)
+        return self.pit_forecast
 
     def pad(self, direction):
         return 1 << self.buttons[direction]
@@ -42,12 +73,17 @@ class DungeonDriver:
         cell=r(0xC0B9)|r(0xC0BA)<<8
         if cell not in self.route.get('damage_terrain_cells',()):return False
         x,y=point
+        # Exit targets lie beyond the room's descriptor buffer. They are
+        # transition inputs, not floor cells to sample with wrapped offsets.
+        if not 16<=x<=240 or not 16<=y<=160:return False
         sx=((x-12)&248)+8;sy=((y-12)&248)+8
         # $699C cycles these metatiles through open and damaging phases.
         # A currently open pit is still unsafe as a walking destination.
-        if any(r(0xDC00+(sy//16)*16+px//16) in (0x41,0x4E,0x4F,0x50)
-               for px in (sx,sx+8)):
-            return True
+        indices=tuple((sy//16)*16+px//16 for px in (sx,sx+8))
+        cycles=tuple(i for i in indices if r(0xDC00+i) in (0x41,0x4E,0x4F,0x50))
+        if cycles:
+            if not self.route.get('timed_damage_terrain'):return True
+            if any(i in self.forecast_pits(cell) for i in cycles):return True
         at=(((y-12)&248)<<3)+((((x-12)&255)>>2)&62)+64
         tiles=tuple(grid[at+d] if grid is not None else r(0xD600+at+d) for d in (2,4))
         return 0xFF not in tiles and any(0x78<=t<=0x7F for t in tiles)
@@ -157,7 +193,9 @@ class DungeonDriver:
             and 32<=r(0xC300+s*48)<99 and r(0xC303+s*48)&3==3
             and r(0xC300+s*48)!=94 and r(0xC31C+s*48))
         key = (start, goal, grid, terrain_context, hazards,combat_bounds,
-               cell in self.route.get('damage_terrain_cells',()),contacts)
+               cell in self.route.get('damage_terrain_cells',()),contacts,
+               bool(self.route.get('strict_damage_terrain')),
+               (r(0xC0AA),r(0xC0AB)) if self.route.get('timed_damage_terrain') else ())
         if key != self.path_key:
             self.path_key = key
             def allowed(point, delta):
@@ -188,7 +226,9 @@ class DungeonDriver:
                     distance=min(abs(hx-nx)+abs(hy-ny) for hx,hy in hazards)
                     if distance<24:move_cost+=24
                     elif distance<40:move_cost+=8
-                if self.dangerous_terrain((nx,ny),grid):move_cost+=64
+                if self.dangerous_terrain((nx,ny),grid):
+                    if self.route.get('strict_damage_terrain'):return False
+                    move_cost+=64
                 if contacts:
                     hx,hy,hw,hh=rect((nx,ny),5)
                     if any(overlaps((hx-4,hy-4,hw+8,hh+8),body) for body in contacts):
@@ -215,6 +255,9 @@ class DungeonDriver:
         if self.path:
             self.target = self.path[0]
         else:
+            if self.route.get('strict_damage_terrain') and self.dangerous_terrain(goal,grid):
+                self.target=None
+                return 0
             self.target = goal
         tx, ty = self.target
         direction=('right' if x<tx else 'left') if x!=tx else ('down' if y<ty else 'up') if y!=ty else None
@@ -435,8 +478,7 @@ class DungeonDriver:
                             return self.evade([(tx,ty)])
                     guard_geometry=self.route.get('guard_melee_geometry') and cell==0x16B and kind in (69,73)
                     exit_geometry=self.route.get('exit_room_melee_geometry') and cell==0x15C and kind in (82,88)
-                    shield_geometry=self.route.get('shield_room_melee_geometry') and cell==0x18A and kind in (90,92,93)
-                    checked_geometry=guard_geometry or exit_geometry or shield_geometry
+                    checked_geometry=guard_geometry or exit_geometry
                     if checked_geometry or self.route.get('late_melee_geometry') and cell==0x13C and kind in (81,96) and not frozen and r(0xC305)<=8:
                         slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind
                                   and (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty))
@@ -451,8 +493,6 @@ class DungeonDriver:
                             if goals:
                                 return self.navigate(min(goals,key=lambda g:abs(g[0]-x)+abs(g[1]-y)))
                         openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48),margin=2)
-                        required=(1,0,3,2)[r(0xC30A+slot*48)&3] if shield_geometry and kind in (92,93) else None
-                        if required is not None:openings=tuple(d for d in openings if d==required)
                         if openings and (not checked_geometry or not r(0xC305+slot*48)):
                             self.item=1
                             if r(0xC0DF)!=1:return 0
@@ -460,12 +500,8 @@ class DungeonDriver:
                             if facing not in openings:return self.pad(('up','down','left','right')[openings[0]])
                             return self.pad('button2') if not r(0xC020)&32 else 0
                         if abs(dx)+abs(dy)<(40 if checked_geometry and not frozen and r(0xC305)<=8 else 24):
-                            types=(69,73) if guard_geometry else (82,88) if exit_geometry else (90,92,93) if shield_geometry else (81,96)
+                            types=(69,73) if guard_geometry else (82,88) if exit_geometry else (81,96)
                             return self.evade([(ex,ey) for ex,ey,k in enemies if k in types])
-                        if required is not None:
-                            ox,oy=((0,16),(0,-16),(16,0),(-16,0))[required]
-                            return self.navigate((max(24,min(232,round((tx+ox)/8)*8)),
-                                                  max(24,min(144,round((ty+oy)/8)*8))),attack=True)
                     elif abs(dx)+abs(dy)<=20 and cross<=16:
                         self.item=1 if kind>=120 or self.route['index']>=9 else 0
                         if r(0xC0DF)!=self.item:return 0
