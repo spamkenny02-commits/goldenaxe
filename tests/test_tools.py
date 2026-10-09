@@ -125,6 +125,28 @@ class DungeonRouteTest(unittest.TestCase):
                 self.validate(report, self.routes[0])
 
 
+class CombatGeometryTest(unittest.TestCase):
+    def setUp(self):
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
+        from combat_geometry import rect, overlaps, axe_openings
+        self.rect,self.overlaps,self.openings=rect,overlaps,axe_openings
+
+    def test_axes_and_signed_offsets_follow_original_order(self):
+        self.assertEqual(self.rect((128,80),5),(121,65,13,13))
+
+    def test_original_collision_accepts_only_one_touching_endpoint(self):
+        self.assertTrue(self.overlaps((10,10,8,8),(2,10,8,8)))
+        self.assertFalse(self.overlaps((10,10,8,8),(18,10,8,8)))
+
+    def test_same_distance_has_different_safe_weapon_reach(self):
+        self.assertIn(3,self.openings((100,80),(128,80),44,44))
+        self.assertEqual(self.openings((156,80),(128,80),44,44),())
+        self.assertEqual(self.openings((128,52),(128,80),44,44),())
+
+    def test_inactive_hitbox_has_no_opening(self):
+        self.assertEqual(self.openings((100,80),(128,80),0,44),())
+
+
 class DungeonNavigationTest(unittest.TestCase):
     def driver(self):
         sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
@@ -264,13 +286,14 @@ class DungeonNavigationTest(unittest.TestCase):
     def test_large_boss_attack_stays_on_axis(self):
         driver = self.driver()
         self.ram[0x613] = 88
-        self.ram[0x611] = 112
-        self.ram[0x30A] = 1
+        self.ram[0x611] = 48
+        self.ram[0x61B] = self.ram[0x61C] = 44
+        self.ram[0x30A] = 0
         self.assertEqual(driver.boss_melee(), driver.pad('button2'))
         self.ram[0x613] = 104
         driver.boss_melee()
         self.assertTrue(driver.path)
-        self.assertNotEqual(driver.path[-1], (104,112))
+        self.assertNotEqual(driver.path[-1], (104,48))
 
     def test_large_boss_recedes_during_hit_invulnerability(self):
         driver = self.driver()
@@ -280,6 +303,15 @@ class DungeonNavigationTest(unittest.TestCase):
         pad = driver.boss_melee()
         self.assertTrue(pad)
         self.assertFalse(pad & driver.pad('button2'))
+        self.assertGreater(abs(driver.path[-1][0]-88)+abs(driver.path[-1][1]-112),32)
+
+    def test_large_boss_does_not_approach_inactive_damage_box(self):
+        driver = self.driver()
+        self.ram[0x613] = 88
+        self.ram[0x611] = 112
+        self.ram[0x61B] = 0
+        self.ram[0x61C] = 40
+        driver.boss_melee()
         self.assertGreater(abs(driver.path[-1][0]-88)+abs(driver.path[-1][1]-112),32)
 
     def test_large_boss_finishes_swing_before_repositioning(self):

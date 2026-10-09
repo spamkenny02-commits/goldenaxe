@@ -127,6 +127,28 @@ int main(void){
         compare(1,gaw_entity_handler_targets[3],handler);
         assert(e->raw[ENT_TYPE]==(t==1u||t==2u?0u:3u));
     }
-    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense + %u fire-terrain cases)\n",collisions,damage_cases,ai_cases,grab_cases,directional_cases,cases-collisions-damage_cases-ai_cases-grab_cases-directional_cases);
+    unsigned fire_cases=cases-collisions-damage_cases-ai_cases-grab_cases-directional_cases;
+    unsigned before_geometry=cases;
+    /* Large actor boxes against every axe-2 weapon pose, on both axes.
+       Compare receiving-player and receiving-boss scans with original $2346. */
+    const int gaps[]={-40,-32,-28,-24,-16,0,16,24,28,32,40};
+    for(unsigned box=40;box<=44;++box)for(unsigned weapon=14;weapon<=25;++weapon)
+    for(unsigned axis=0;axis<2;++axis)for(unsigned gap=0;gap<11;++gap)
+    for(unsigned slot=0;slot<=16;slot+=16){
+        setup();GawEntity *hero=gaw_entity(0),*boss=gaw_entity(16);
+        hero->raw[ENT_TYPE]=2;boss->raw[ENT_TYPE]=108;
+        hero->raw[ENT_FLAGS]=boss->raw[ENT_FLAGS]=3;
+        hero->raw[ENT_ATTACK]=12;hero->raw[ENT_DEFENSE]=12;
+        boss->raw[ENT_ATTACK]=30;boss->raw[ENT_DEFENSE]=6;
+        hero->raw[ENT_HITBOX_SOURCE]=5;hero->raw[ENT_HITBOX_TARGET]=(uint8_t)weapon;
+        boss->raw[ENT_HITBOX_SOURCE]=boss->raw[ENT_HITBOX_TARGET]=(uint8_t)box;
+        boss->raw[0x13]=128;boss->raw[0x11]=80;
+        hero->raw[0x13]=(uint8_t)(128+(axis==0?gaps[gap]:0));
+        hero->raw[0x11]=(uint8_t)(80+(axis==1?gaps[gap]:0));
+        gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,(uint8_t)slot);
+        gaw_ram_write8(RAM_FRAME_COUNTER,(uint8_t)slot);
+        compare(slot,0x2346,gaw_entity_collision_scan);
+    }
+    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense + %u fire-terrain + %u large-actor geometry cases)\n",collisions,damage_cases,ai_cases,grab_cases,directional_cases,fire_cases,cases-before_geometry);
     return 0;
 }

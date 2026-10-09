@@ -5,6 +5,7 @@ plans on the live descriptor buffer, waits for real gates, and attacks actual
 enemies rather than changing collision, health or progression RAM.
 """
 from heapq import heappop, heappush
+from combat_geometry import axe_openings
 
 
 class DungeonDriver:
@@ -54,30 +55,23 @@ class DungeonDriver:
         return self.navigate(max(candidates,key=lambda c:c[:2])[2])
 
     def boss_melee(self):
-        """Approach an axis of the large boss rather than its center."""
+        """Swing only when the axe reaches and body collision has a margin."""
         r=self.read
         x,y=r(0xC313),r(0xC311)
         tx,ty=r(0xC613),r(0xC611)
-        dx,dy=tx-x,ty-y
         if r(0xC301) in (2,3,4,5):return 0
-        if r(0xC605)>0:
-            return self.evade([(tx,ty)]) if abs(dx)+abs(dy)<56 else 0
-        if (abs(dx)<=4 and 24<=abs(dy)<=32) or (abs(dy)<=4 and 24<=abs(dx)<=32):
-            direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
-            facing={'up':0,'down':1,'left':2,'right':3}[direction]
-            if r(0xC30A)!=facing:return self.pad(direction)
+        if r(0xC605)>0 or not r(0xC61B):
+            return self.evade([(tx,ty)]) if abs(tx-x)+abs(ty-y)<56 else 0
+        openings=axe_openings((x,y),(tx,ty),r(0xC61B),r(0xC61C))
+        if openings:
+            facing=r(0xC30A)&3
+            if facing not in openings:return self.pad(('up','down','left','right')[openings[0]])
             return self.pad('button2') if not r(0xC020)&32 else 0
-        candidates=[]
-        for ox,oy in ((0,-32),(32,0),(0,24),(-24,0)):
-            goal=(round((tx+ox)/8)*8,round((ty+oy)/8)*8)
-            if not 24<=goal[0]<=232 or not 24<=goal[1]<=144:continue
-            pad=self.navigate(goal,attack=True)
-            if self.breaking:
-                self.breaking=None;continue
-            if self.path and self.path[-1]==goal:
-                candidates.append((len(self.path),goal))
-        if candidates:return self.navigate(min(candidates)[1],attack=True)
-        return self.evade([(tx,ty)])
+        # The walk goal is only an approach: live geometry stops the walk
+        # before reaching the boss, including between eight-pixel grid nodes.
+        goal=(max(24,min(232,round((tx-24)/8)*8)),
+              max(24,min(144,round(ty/8)*8)))
+        return self.navigate(goal,attack=True)
 
     def navigate(self, target, attack=False):
         r = self.read
