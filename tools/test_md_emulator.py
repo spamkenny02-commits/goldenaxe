@@ -97,6 +97,8 @@ def main():
     parser.add_argument('--guard-melee-geometry', action='store_true', help='Dungeon10 controller probe: checked axe reach and hit-flash retreat in16B')
     parser.add_argument('--guard-axe-margin', type=int, choices=(2,4), default=2, help='Dungeon10 controller probe: body margin for checked guard melee in16B')
     parser.add_argument('--exit-room-melee-geometry', action='store_true', help='Dungeon10 controller probe: checked axe reach and retreat from flashing enemies in15C')
+    parser.add_argument('--exit-room-axe-only', action='store_true', help='Dungeon10 controller probe: conserve offensive spell MP in15C')
+    parser.add_argument('--final-projectile-awareness', action='store_true', help='Dungeon10 controller probe: include type118 in final boss projectile retreat')
     parser.add_argument('--final-boss-patient', action='store_true', help='Dungeon10 controller probe: patient melee only against final boss109, keeping mini-boss timing')
     parser.add_argument('--flash-ice', action='store_true', help='Dungeon10 controller probe: allow close ice shots in13C during hero invulnerability')
     parser.add_argument('--late-melee-geometry', action='store_true', help='Dungeon10 controller probe: avoid unsafe81/96 body approaches in13C before hero flash expires')
@@ -146,6 +148,8 @@ def main():
         if args.guard_melee_geometry:dungeon_route['guard_melee_geometry']=True
         if args.guard_axe_margin!=2:dungeon_route['guard_axe_margin']=args.guard_axe_margin
         if args.exit_room_melee_geometry:dungeon_route['exit_room_melee_geometry']=True
+        if args.exit_room_axe_only:dungeon_route['exit_room_axe_only']=True
+        if args.final_projectile_awareness:dungeon_route['final_projectile_awareness']=True
         if args.final_boss_patient:dungeon_route['final_boss_patient']=True
         if args.flash_ice:dungeon_route['flash_ice']=True
         if args.late_melee_geometry:dungeon_route['late_melee_geometry']=True
@@ -179,7 +183,7 @@ def main():
         parser.error('--late-contact-awareness requires dungeon 10')
     if args.caster_projectile_awareness and args.dungeon!=10:
         parser.error('--caster-projectile-awareness requires dungeon 10')
-    if (args.guard_melee_geometry or args.exit_room_melee_geometry or args.final_boss_patient) and args.dungeon!=10:
+    if (args.guard_melee_geometry or args.exit_room_melee_geometry or args.exit_room_axe_only or args.final_projectile_awareness or args.final_boss_patient) and args.dungeon!=10:
         parser.error('Guard controller probes require dungeon 10')
     if args.guard_axe_margin!=2 and (args.dungeon!=10 or not args.guard_melee_geometry):
         parser.error('--guard-axe-margin requires dungeon10 and --guard-melee-geometry')

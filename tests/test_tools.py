@@ -391,6 +391,21 @@ class DungeonNavigationTest(unittest.TestCase):
         self.assertEqual(driver.drive(0x0C,False),7)
         self.assertEqual(calls,[([128,8],False)])
 
+    def test_exit_axe_policy_preserves_spell_selection_in_other_rooms(self):
+        for cell, enabled, casts in ((0x15C,False,True),(0x15C,True,False),(0x15B,True,True)):
+            with self.subTest(cell=cell,enabled=enabled):
+                driver=self.loop_driver([0x14C])
+                driver.route.update(index=10,exit_room_axe_only=enabled)
+                driver.route['outbound'][0]['from']=cell
+                self.ram[0xB9]=cell&255
+                self.ram[0x600],self.ram[0x618],self.ram[0x603]=82,8,2
+                self.ram[0x613],self.ram[0x611]=120,80
+                self.ram[0x318]=72
+                self.ram[0xA8]=1
+                driver.navigate=lambda *args,**kwargs:7
+                driver.drive(0x0C,False)
+                self.assertEqual(driver.item==4,casts)
+
     def test_dormant_exit_enemy_approach_wakes_it_without_choosing_a_pit(self):
         driver=self.loop_driver([0x14C])
         driver.route.update(index=10,exit_room_melee_geometry=True)
@@ -611,6 +626,20 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x61C] = 40
         driver.boss_melee()
         self.assertGreater(abs(driver.path[-1][0]-88)+abs(driver.path[-1][1]-112),32)
+
+    def test_final_projectile_probe_includes_118_only_for_boss109(self):
+        for kind, enabled, retreats in ((109,False,False),(109,True,True),(108,True,False)):
+            with self.subTest(kind=kind,enabled=enabled):
+                driver=self.driver()
+                driver.route['final_projectile_awareness']=enabled
+                self.ram[0x600]=kind
+                self.ram[0x613],self.ram[0x611]=88,48
+                self.ram[0x61B]=self.ram[0x61C]=44
+                self.ram[0x30A]=0
+                self.ram[0x780],self.ram[0x783]=118,2
+                self.ram[0x793],self.ram[0x791]=88,64
+                driver.evade=lambda threats:7
+                self.assertEqual(driver.boss_melee(),7 if retreats else driver.pad('button2'))
 
     def test_patient_boss_probe_waits_for_moving_phase_except_when_invulnerable(self):
         driver = self.driver()

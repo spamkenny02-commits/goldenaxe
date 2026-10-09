@@ -1,0 +1,1275 @@
+{
+  "production_changed": false,
+  "fixture_changed": false,
+  "full_entry_complete": false,
+  "runs": [
+    {
+      "probe": "v98_axe_patient",
+      "report_sha256": "30478cf3755ca0d8244e9723768682f61b448da45534a77a9c7b823366b1a310",
+      "frames": 77758,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 90,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "guard_axe_margin": 4,
+        "exit_room_melee_geometry": true,
+        "exit_room_axe_only": true,
+        "final_boss_patient": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      },
+      "strict_validation": "Missing genuine full-HP boss defeat",
+      "late_resources": [
+        {
+          "emulator_frame": 73459,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 26,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              88,
+              113
+            ]
+          },
+          "after": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              88,
+              112
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73611,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 5,
+            "position": [
+              88,
+              76
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73615,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 16,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              94,
+              80
+            ]
+          }
+        }
+      ],
+      "final_player_hits": [
+        {
+          "emulator_frame": 76691,
+          "game_frame": 62,
+          "cell": 332,
+          "before": 22,
+          "after": 6,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 26,
+          "attacker_type": 118,
+          "attacker_attack": 28,
+          "player_direction": 0,
+          "player_position": [
+            88,
+            104
+          ],
+          "attacker_direction": 1,
+          "attacker_position": [
+            88,
+            120
+          ],
+          "player_before": {
+            "position": [
+              88,
+              113
+            ],
+            "direction": 0,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 77757,
+          "game_frame": 18,
+          "cell": 332,
+          "before": 6,
+          "after": 0,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 27,
+          "attacker_type": 118,
+          "attacker_attack": 28,
+          "player_direction": 0,
+          "player_position": [
+            56,
+            64
+          ],
+          "attacker_direction": 1,
+          "attacker_position": [
+            56,
+            56
+          ],
+          "player_before": {
+            "position": [
+              56,
+              56
+            ],
+            "direction": 0,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        }
+      ]
+    },
+    {
+      "probe": "v98_axe_standard",
+      "report_sha256": "11db6993cbc24c032e734ce4b248932ded0ef28d59f7452584cea0fc9d5c9581",
+      "frames": 77517,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 6,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 66,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "guard_axe_margin": 4,
+        "exit_room_melee_geometry": true,
+        "exit_room_axe_only": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      },
+      "strict_validation": "Missing genuine full-HP boss defeat",
+      "late_resources": [
+        {
+          "emulator_frame": 73459,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 26,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              88,
+              113
+            ]
+          },
+          "after": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              88,
+              112
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73611,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 5,
+            "position": [
+              88,
+              76
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73615,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 16,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              94,
+              80
+            ]
+          }
+        }
+      ],
+      "final_player_hits": [
+        {
+          "emulator_frame": 76900,
+          "game_frame": 118,
+          "cell": 332,
+          "before": 22,
+          "after": 14,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 25,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 1,
+          "player_position": [
+            56,
+            80
+          ],
+          "attacker_direction": 2,
+          "attacker_position": [
+            74,
+            72
+          ],
+          "player_before": {
+            "position": [
+              64,
+              81
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 77087,
+          "game_frame": 176,
+          "cell": 332,
+          "before": 14,
+          "after": 6,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 25,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 1,
+          "player_position": [
+            96,
+            104
+          ],
+          "attacker_direction": 2,
+          "attacker_position": [
+            77,
+            99
+          ],
+          "player_before": {
+            "position": [
+              88,
+              107
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 77516,
+          "game_frame": 74,
+          "cell": 332,
+          "before": 6,
+          "after": 0,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 16,
+          "attacker_type": 109,
+          "attacker_attack": 32,
+          "player_direction": 0,
+          "player_position": [
+            56,
+            64
+          ],
+          "attacker_direction": 1,
+          "attacker_position": [
+            74,
+            82
+          ],
+          "player_before": {
+            "position": [
+              56,
+              72
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 44
+        }
+      ]
+    },
+    {
+      "probe": "v98_axe_window0",
+      "report_sha256": "c4fcef042a020ae6b4ce9bc8872d2e16be5676e8b89ea9c8836af2986298eac8",
+      "frames": 78099,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 11,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 46,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "guard_axe_margin": 4,
+        "exit_room_melee_geometry": true,
+        "exit_room_axe_only": true,
+        "boss_projectile_distance": 32
+      },
+      "strict_validation": "Missing genuine full-HP boss defeat",
+      "late_resources": [
+        {
+          "emulator_frame": 73459,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 26,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              88,
+              113
+            ]
+          },
+          "after": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              88,
+              112
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73611,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 5,
+            "position": [
+              88,
+              76
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73615,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 16,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              94,
+              80
+            ]
+          }
+        }
+      ],
+      "final_player_hits": [
+        {
+          "emulator_frame": 76900,
+          "game_frame": 118,
+          "cell": 332,
+          "before": 22,
+          "after": 14,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 25,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 1,
+          "player_position": [
+            56,
+            80
+          ],
+          "attacker_direction": 2,
+          "attacker_position": [
+            74,
+            72
+          ],
+          "player_before": {
+            "position": [
+              64,
+              81
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 77088,
+          "game_frame": 176,
+          "cell": 332,
+          "before": 14,
+          "after": 6,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 25,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 0,
+          "player_position": [
+            96,
+            72
+          ],
+          "attacker_direction": 2,
+          "attacker_position": [
+            77,
+            66
+          ],
+          "player_before": {
+            "position": [
+              88,
+              68
+            ],
+            "direction": 0,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 78098,
+          "game_frame": 54,
+          "cell": 332,
+          "before": 6,
+          "after": 0,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 24,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 1,
+          "player_position": [
+            40,
+            120
+          ],
+          "attacker_direction": 1,
+          "attacker_position": [
+            51,
+            103
+          ],
+          "player_before": {
+            "position": [
+              40,
+              110
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        }
+      ]
+    },
+    {
+      "probe": "v98_axe_distance48",
+      "report_sha256": "564545f892acc0cfdca2e5a5023e4da7882232cb5841b61a2d35b6e680dcaa14",
+      "frames": 77564,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 6,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 66,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "guard_axe_margin": 4,
+        "exit_room_melee_geometry": true,
+        "exit_room_axe_only": true,
+        "boss_projectile_window": 8
+      },
+      "strict_validation": "Missing genuine full-HP boss defeat",
+      "late_resources": [
+        {
+          "emulator_frame": 73459,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 26,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              88,
+              113
+            ]
+          },
+          "after": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              88,
+              112
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73611,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 5,
+            "position": [
+              88,
+              76
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73615,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 16,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              94,
+              80
+            ]
+          }
+        }
+      ],
+      "final_player_hits": [
+        {
+          "emulator_frame": 76896,
+          "game_frame": 118,
+          "cell": 332,
+          "before": 22,
+          "after": 14,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 25,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 1,
+          "player_position": [
+            56,
+            72
+          ],
+          "attacker_direction": 2,
+          "attacker_position": [
+            74,
+            66
+          ],
+          "player_before": {
+            "position": [
+              64,
+              72
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 77097,
+          "game_frame": 180,
+          "cell": 332,
+          "before": 14,
+          "after": 6,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 25,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 1,
+          "player_position": [
+            96,
+            120
+          ],
+          "attacker_direction": 2,
+          "attacker_position": [
+            83,
+            109
+          ],
+          "player_before": {
+            "position": [
+              88,
+              121
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 77563,
+          "game_frame": 92,
+          "cell": 332,
+          "before": 6,
+          "after": 0,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 16,
+          "attacker_type": 109,
+          "attacker_attack": 32,
+          "player_direction": 3,
+          "player_position": [
+            56,
+            128
+          ],
+          "attacker_direction": 1,
+          "attacker_position": [
+            70,
+            97
+          ],
+          "player_before": {
+            "position": [
+              56,
+              120
+            ],
+            "direction": 3,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 44
+        }
+      ]
+    },
+    {
+      "probe": "v98_axe_both_projectiles",
+      "report_sha256": "7e59cd9f08c6705b4c8f02ba56125623c37ad1e373e3a3d18407b17e099c9271",
+      "frames": 77517,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 6,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 66,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "guard_axe_margin": 4,
+        "exit_room_melee_geometry": true,
+        "exit_room_axe_only": true,
+        "final_projectile_awareness": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      },
+      "strict_validation": "Missing genuine full-HP boss defeat",
+      "late_resources": [
+        {
+          "emulator_frame": 73459,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 26,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              88,
+              113
+            ]
+          },
+          "after": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              88,
+              112
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73611,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 24,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 5,
+            "position": [
+              88,
+              76
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          }
+        },
+        {
+          "emulator_frame": 73615,
+          "cell": 348,
+          "state": 12,
+          "before": {
+            "hp": 22,
+            "mp": 8,
+            "item": 1,
+            "environment": 0,
+            "player_state": 0,
+            "position": [
+              96,
+              80
+            ]
+          },
+          "after": {
+            "hp": 22,
+            "mp": 16,
+            "item": 1,
+            "environment": 0,
+            "player_state": 1,
+            "position": [
+              94,
+              80
+            ]
+          }
+        }
+      ],
+      "final_player_hits": [
+        {
+          "emulator_frame": 76900,
+          "game_frame": 118,
+          "cell": 332,
+          "before": 22,
+          "after": 14,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 25,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 1,
+          "player_position": [
+            56,
+            80
+          ],
+          "attacker_direction": 2,
+          "attacker_position": [
+            74,
+            72
+          ],
+          "player_before": {
+            "position": [
+              64,
+              81
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 77087,
+          "game_frame": 176,
+          "cell": 332,
+          "before": 14,
+          "after": 6,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 25,
+          "attacker_type": 117,
+          "attacker_attack": 20,
+          "player_direction": 1,
+          "player_position": [
+            96,
+            104
+          ],
+          "attacker_direction": 2,
+          "attacker_position": [
+            77,
+            99
+          ],
+          "player_before": {
+            "position": [
+              88,
+              107
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 5
+        },
+        {
+          "emulator_frame": 77516,
+          "game_frame": 74,
+          "cell": 332,
+          "before": 6,
+          "after": 0,
+          "flash": 47,
+          "environment": 0,
+          "attacker_slot": 16,
+          "attacker_type": 109,
+          "attacker_attack": 32,
+          "player_direction": 0,
+          "player_position": [
+            56,
+            64
+          ],
+          "attacker_direction": 1,
+          "attacker_position": [
+            74,
+            82
+          ],
+          "player_before": {
+            "position": [
+              56,
+              72
+            ],
+            "direction": 1,
+            "defense": 12,
+            "hitbox_source": 5
+          },
+          "attacker_hitbox_target": 44
+        }
+      ]
+    }
+  ]
+}

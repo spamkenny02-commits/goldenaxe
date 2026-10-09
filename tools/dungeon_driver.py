@@ -127,8 +127,9 @@ class DungeonDriver:
         adaptive=r(0xC600)==123 and self.route.get('adaptive_miniboss')
         if adaptive and r(0xC601)>=10 and not r(0xC305):
             return self.evade([(tx,ty)])
+        projectile_types=(117,118) if self.route.get('final_projectile_awareness') and r(0xC600)==109 else (117,)
         projectiles=[(r(0xC313+s*48),r(0xC311+s*48)) for s in range(24,32)
-                     if r(0xC300+s*48)==117 and r(0xC303+s*48)&2
+                     if r(0xC300+s*48) in projectile_types and r(0xC303+s*48)&2
                      and abs(r(0xC313+s*48)-x)+abs(r(0xC311+s*48)-y)<self.route.get('boss_projectile_distance',48)]
         if projectiles and r(0xC305)<=self.route.get('boss_projectile_window',0):
             return self.evade([(tx,ty),*projectiles])
@@ -454,7 +455,8 @@ class DungeonDriver:
                     if freeze:fire_reserve=8
                     fire_reserve+=reserve
                     minimum_range=8 if freeze and cell==0x13C and self.route.get('flash_ice') and r(0xC305)>8 else 24
-                    if not frozen and abs(dx)+abs(dy)>=minimum_range and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or not freeze and r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
+                    conserve_exit_magic=self.route.get('exit_room_axe_only') and cell==0x15C
+                    if not conserve_exit_magic and not frozen and abs(dx)+abs(dy)>=minimum_range and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or not freeze and r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
                         self.item=5 if freeze else 4
                         if r(0xC0DF)!=self.item:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)
