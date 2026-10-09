@@ -278,6 +278,8 @@ def main():
                  'flags': read(0xC303+slot*48), 'saved_type': read(0xC307+slot*48),
                  'hp': read(0xC318+slot*48), 'flash': read(0xC305+slot*48),
                  'attack': read(0xC319+slot*48), 'defense': read(0xC31A+slot*48),
+                 'direction':read(0xC30A+slot*48),
+                 'hitbox_source':read(0xC31B+slot*48),'hitbox_target':read(0xC31C+slot*48),
                  'position': [read(0xC313+slot*48), read(0xC311+slot*48)]}
                 for slot in range(32)]
     arenas=json.loads((Path(__file__).resolve().parent.parent/'tests/scenarios/boss_arenas.json').read_text())
@@ -509,7 +511,8 @@ def main():
                     previous = previous_combat[1]
                     player, old_player = snapshot[0], previous[0]
                     if player['state'] in (3, 5) and player['state'] != old_player['state']:
-                        combat['attacks'].append({**stamp, 'pose': player['state'], 'position': player['position']})
+                        combat['attacks'].append({**stamp, 'pose': player['state'], 'position': player['position'],
+                                                  'direction':player['direction'],'hitbox_target':player['hitbox_target']})
                     if player['type'] == old_player['type'] == 2 and player['hp'] < old_player['hp']:
                         related = read(0xC31E)|(read(0xC31F)<<8)
                         attacker_slot = (related-0xC300)//48 if 0xC300 <= related < 0xC900 and (related-0xC300)%48 == 0 else None
@@ -517,7 +520,10 @@ def main():
                         combat['player_hits'].append({**stamp, 'before': old_player['hp'], 'after': player['hp'], 'flash': player['flash'],
                                                       'attacker_slot': attacker_slot,
                                                       'attacker_type': attacker['type'] if attacker else None,
-                                                      'attacker_attack': attacker['attack'] if attacker else None})
+                                                      'attacker_attack': attacker['attack'] if attacker else None,
+                                                      'player_direction':player['direction'],'player_position':player['position'],
+                                                      'attacker_direction':attacker['direction'] if attacker else None,
+                                                      'attacker_position':attacker['position'] if attacker else None})
                     for entity, old in zip(snapshot[1:], previous[1:]):
                         if entity['slot'] >= 24 and old['type'] == 0 and 16 <= entity['type'] <= 23:
                             combat['projectiles'].append({**stamp, 'slot': entity['slot'], 'type': entity['type'], 'attack': entity['attack']})

@@ -1,0 +1,250 @@
+{
+  "status": "Shield direction/damage checks expanded; traversal experiments reverted; retained SMS9 strictly passes",
+  "tool_tests": 48,
+  "combat_cases": 9228,
+  "directional_defense_cases": 384,
+  "new_directional_defense_cases": 352,
+  "validated_sms9": {
+    "index": 9,
+    "rooms": 25,
+    "boss_hits": 15,
+    "stairs": 1,
+    "keys_net_spent": 1,
+    "final_hp": 124,
+    "frames": 17286
+  },
+  "attempts": [
+    {
+      "scenario": "geometry_sms10",
+      "frames": 25070,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 4,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 4,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 4,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "retained": false,
+      "result_sha256": "9ab23907838d51e5619665181b569da716b3c8e069653dd80be1bcdd46f18286"
+    },
+    {
+      "scenario": "nearshield_sms10",
+      "frames": 25294,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 18,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 6,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "retained": false,
+      "result_sha256": "4e6182ea30e3c9bb8786d99ea3f5612c6c0ccad7ebcfd7b8c28e0db5d8641d6f"
+    },
+    {
+      "scenario": "nearshield_md10",
+      "frames": 61688,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 24,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "retained": false,
+      "result_sha256": "fe8fdd5a16635ff24d2fb00261839c71f6a80f86390d7e0ab17bc3d0f59fcf77"
+    },
+    {
+      "scenario": "nearshield_sms9",
+      "frames": 13338,
+      "cell": "1AC",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 445,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 76,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 444,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 72,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 428,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 72,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "retained": false,
+      "result_sha256": "ded7586237e3a916d3209cf52016683f32ecf2f76a70da12be0d44bb3b6cdb90"
+    },
+    {
+      "scenario": "fire_sms10",
+      "frames": 25732,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 16,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 16,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 16,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "retained": false,
+      "result_sha256": "15d678821d5ca8c0a4fcfcf2457afa986dee789810c51cdd8e099dbec248e91c"
+    },
+    {
+      "scenario": "fire_md10",
+      "frames": 60425,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 24,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "retained": false,
+      "result_sha256": "4080d63cdaf40e2051bdf4912d438136cd292559be7d6485d7371bf993a7e5f1"
+    }
+  ],
+  "cancelled": "geometry_md10 stopped while stalled in17D; no completed-run claim",
+  "retained": "Default V59 controller; expanded shield differential and direction/hitbox combat telemetry",
+  "production_changes": false,
+  "next": "Native10 still dies in18A with potion-first; plan a reachable shield flank instead of repeatedly retreating or spending the final terrain reserve"
+}

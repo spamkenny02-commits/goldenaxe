@@ -105,17 +105,20 @@ int main(void){
     unsigned grab_cases=cases-collisions-damage_cases-ai_cases;
     /* $5049 rejects hits unless the hero faces opposite types 92/93. */
     for(unsigned type=92;type<=93;++type)for(unsigned facing=0;facing<4;++facing)
-    for(unsigned hero_facing=0;hero_facing<4;++hero_facing){
+    for(unsigned hero_facing=0;hero_facing<4;++hero_facing)
+    for(unsigned pending=0;pending<4;++pending)for(unsigned flash=0;flash<3;++flash){
         static const uint8_t opposite[4]={1,0,3,2};
+        static const uint8_t pending_values[4]={0,2,12,255},flash_values[3]={0,1,48};
         setup();GawEntity *e=gaw_entity(16);
         e->raw[ENT_TYPE]=(uint8_t)type;e->raw[ENT_STATE]=8;
         e->raw[ENT_FLAGS]=0x2B;e->raw[ENT_HP]=36;
-        e->raw[ENT_PENDING_DAMAGE]=8;e->raw[ENT_MOTION_PHASE]=1;
+        e->raw[ENT_PENDING_DAMAGE]=pending_values[pending];e->raw[ENT_MOTION_PHASE]=1;
+        e->raw[ENT_HIT_FLASH_TIMER]=flash_values[flash];
         e->raw[ENT_DIRECTION]=(uint8_t)facing;
         gaw_ram_write8(0xC30A,(uint8_t)hero_facing);
         gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,16);
         compare(16,gaw_entity_handler_targets[type],handler);
-        assert(e->raw[ENT_PENDING_DAMAGE]==(hero_facing==opposite[facing]?8u:0u));
+        assert(e->raw[ENT_PENDING_DAMAGE]==(hero_facing==opposite[facing]?pending_values[pending]:0u));
     }
     unsigned directional_cases=cases-collisions-damage_cases-ai_cases-grab_cases;
     /* Fire stops at 80/A0 terrain, but crosses E0 partitions. */
