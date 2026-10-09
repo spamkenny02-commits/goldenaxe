@@ -100,7 +100,7 @@ class DungeonDriver:
             if self.route.get('invulnerable_boss_wait') and r(0xC600) in (108,109) and r(0xC61B) and r(0xC305)>=r(0xC605)+8:
                 return 0
             return self.evade([(tx,ty)]) if abs(tx-x)+abs(ty-y)<56 else 0
-        patient=self.route.get('patient_boss',False)
+        patient=self.route.get('patient_boss',False) or self.route.get('final_boss_patient',False) and r(0xC600)==109
         if patient and r(0xC601)==8 and not r(0xC305):
             return self.evade([(tx,ty)]) if abs(tx-x)+abs(ty-y)<56 else 0
         openings=axe_openings((x,y),(tx,ty),r(0xC61B),r(0xC61C),margin=6 if patient else 4)
@@ -433,18 +433,39 @@ class DungeonDriver:
                             return self.pad('button2') if not r(0xC020)&32 else 0
                         if r(0xC31B+slot*48) and abs(dx)+abs(dy)<32:
                             return self.evade([(tx,ty)])
-                    if self.route.get('late_melee_geometry') and cell==0x13C and kind in (81,96) and not frozen and r(0xC305)<=8:
+                    guard_geometry=self.route.get('guard_melee_geometry') and cell==0x16B and kind in (69,73)
+                    exit_geometry=self.route.get('exit_room_melee_geometry') and cell==0x15C and kind in (82,88)
+                    shield_geometry=self.route.get('shield_room_melee_geometry') and cell==0x18A and kind in (90,92,93)
+                    checked_geometry=guard_geometry or exit_geometry or shield_geometry
+                    if checked_geometry or self.route.get('late_melee_geometry') and cell==0x13C and kind in (81,96) and not frozen and r(0xC305)<=8:
                         slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind
                                   and (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty))
+                        if exit_geometry and kind==88 and not r(0xC303+slot*48)&2:
+                            # Dormant88 wakes only inside a24x24 proximity
+                            # square. Approach diagonally, then wait for its
+                            # real activation instead of retreating forever.
+                            if abs(dx)<24 and abs(dy)<24 and not self.dangerous_terrain((x,y)):return 0
+                            goals=[(round((tx+ox)/8)*8,round((ty+oy)/8)*8)
+                                   for ox,oy in ((-16,16),(16,16),(-16,-16),(16,-16))]
+                            goals=[g for g in goals if 24<=g[0]<=232 and 24<=g[1]<=144 and not self.dangerous_terrain(g)]
+                            if goals:
+                                return self.navigate(min(goals,key=lambda g:abs(g[0]-x)+abs(g[1]-y)))
                         openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48),margin=2)
-                        if openings:
+                        required=(1,0,3,2)[r(0xC30A+slot*48)&3] if shield_geometry and kind in (92,93) else None
+                        if required is not None:openings=tuple(d for d in openings if d==required)
+                        if openings and (not checked_geometry or not r(0xC305+slot*48)):
                             self.item=1
                             if r(0xC0DF)!=1:return 0
                             facing=r(0xC30A)&3
                             if facing not in openings:return self.pad(('up','down','left','right')[openings[0]])
                             return self.pad('button2') if not r(0xC020)&32 else 0
-                        if abs(dx)+abs(dy)<24:
-                            return self.evade([(ex,ey) for ex,ey,k in enemies if k in (81,96)])
+                        if abs(dx)+abs(dy)<(40 if checked_geometry and not frozen and r(0xC305)<=8 else 24):
+                            types=(69,73) if guard_geometry else (82,88) if exit_geometry else (90,92,93) if shield_geometry else (81,96)
+                            return self.evade([(ex,ey) for ex,ey,k in enemies if k in types])
+                        if required is not None:
+                            ox,oy=((0,16),(0,-16),(16,0),(-16,0))[required]
+                            return self.navigate((max(24,min(232,round((tx+ox)/8)*8)),
+                                                  max(24,min(144,round((ty+oy)/8)*8))),attack=True)
                     elif abs(dx)+abs(dy)<=20 and cross<=16:
                         self.item=1 if kind>=120 or self.route['index']>=9 else 0
                         if r(0xC0DF)!=self.item:return 0

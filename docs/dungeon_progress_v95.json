@@ -1,0 +1,410 @@
+{
+  "production_changed": false,
+  "fixture_changed": false,
+  "full_entry_complete": false,
+  "runs": [
+    {
+      "probe": "v95_awake",
+      "report_sha256": "5b112b2e2eb76d9f0ec668827bff15f46419aca12edeac6e95b464f305d1e5c0",
+      "frames": 75086,
+      "cell": "15C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true
+      }
+    },
+    {
+      "probe": "v95_awake_patient",
+      "report_sha256": "2e5fb55cf78fca557085e43367d9847fee008be2ffbfde1ac13168f56abbf68d",
+      "frames": 30127,
+      "cell": "15E",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "patient_boss": true,
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      }
+    },
+    {
+      "probe": "v95_exit",
+      "report_sha256": "e30ff2655bf97df6724c5a4827f8b9276bf9bc10e1c91fd29ff481a57cadcdc1",
+      "frames": 100000,
+      "cell": "15C",
+      "hp": 24,
+      "mp": 0,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true
+      }
+    },
+    {
+      "probe": "v95_exit_patient",
+      "report_sha256": "2e5fb55cf78fca557085e43367d9847fee008be2ffbfde1ac13168f56abbf68d",
+      "frames": 30127,
+      "cell": "15E",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "patient_boss": true,
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      }
+    },
+    {
+      "probe": "v95_final_patient",
+      "report_sha256": "3500493f355ad42ad7e0270286ce4757a2e5efa813e453e2c20c6b6ce18ffeb5",
+      "frames": 75086,
+      "cell": "15C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true,
+        "final_boss_patient": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      }
+    },
+    {
+      "probe": "v95_geometry",
+      "report_sha256": "9e963dc6acc03e98b3efdbcfd1b2f6cb1b40a2de71e07892f4a4219f4c9d2432",
+      "frames": 78276,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 2,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true
+      }
+    },
+    {
+      "probe": "v95_ice",
+      "report_sha256": "b95f5f108719a3b9663fd3d351d34ad889af9aff996302cc249ef22dd533de7a",
+      "frames": 74550,
+      "cell": "15C",
+      "hp": 0,
+      "mp": 0,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_ice": true
+      }
+    },
+    {
+      "probe": "v95_ice_geometry",
+      "report_sha256": "f8ba72966f108b4f1e6acc447036cda5469f9dfb4e057a7f5e791accb17e653a",
+      "frames": 74682,
+      "cell": "15C",
+      "hp": 0,
+      "mp": 0,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_ice": true,
+        "guard_melee_geometry": true
+      }
+    },
+    {
+      "probe": "v95_safe_terrain",
+      "report_sha256": "e04cff2585b39f5c58b36d6fb1bf366473e1f586a35d5f350d9ed3cbcc558e76",
+      "frames": 77982,
+      "cell": "15C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true
+      }
+    },
+    {
+      "probe": "v95_safe_terrain_final",
+      "report_sha256": "e9bf237a764b474edce4262ff2ab648585ba53166536a11572f68fdf63fd4abd",
+      "frames": 77982,
+      "cell": "15C",
+      "hp": 0,
+      "mp": 16,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true,
+        "final_boss_patient": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      }
+    },
+    {
+      "probe": "v95_shield",
+      "report_sha256": "628870c23fbc53bb19a0b8c927310dd69727214d291d0739f7bf987f0ae15ffe",
+      "frames": 77906,
+      "cell": "14A",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true,
+        "shield_room_melee_geometry": true
+      }
+    },
+    {
+      "probe": "v95_shield_final",
+      "report_sha256": "b129095233faf1585060615f873b204af1b6c6d7179c1276f76f48070f16bc9a",
+      "frames": 77906,
+      "cell": "14A",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true,
+        "final_boss_patient": true,
+        "shield_room_melee_geometry": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      }
+    }
+  ]
+}

@@ -370,6 +370,27 @@ class DungeonNavigationTest(unittest.TestCase):
         self.assertEqual(driver.drive(0x0C,False),7)
         self.assertEqual(calls,[([128,8],False)])
 
+    def test_dormant_exit_enemy_approach_wakes_it_without_choosing_a_pit(self):
+        driver=self.loop_driver([0x14C])
+        driver.route.update(index=10,exit_room_melee_geometry=True)
+        driver.route['outbound'][0]['from']=0x15C
+        self.ram[0xB9]=0x5C
+        self.ram[0x600],self.ram[0x618],self.ram[0x603]=88,30,40
+        self.ram[0x613],self.ram[0x611]=120,80
+        self.ram[0x318]=10
+        self.ram[0xDB]=0
+        chosen=[]
+        driver.navigate=lambda point,attack=False:chosen.append(tuple(point)) or 7
+        driver.dangerous_terrain=lambda point:tuple(point)==(104,96)
+        self.assertEqual(driver.drive(0x0C,False),7)
+        goal=chosen[-1]
+        self.assertLess(abs(goal[0]-120),24)
+        self.assertLess(abs(goal[1]-80),24)
+        self.assertFalse(driver.dangerous_terrain(goal))
+        self.ram[0x313],self.ram[0x311]=goal
+        self.assertEqual(driver.drive(0x0C,False),0)
+        self.assertNotEqual(driver.item,5)
+
     def test_planned_return_to_previous_room_is_not_a_retreat(self):
         driver = self.loop_driver([0x139, 0x138, 0x128])
         self.arrive(driver, 0x139)
