@@ -16,10 +16,17 @@ Initial geometry boss-108 arena runs pass on original SMS and native MD with all
 120 MP. Before reward HP is 50 on SMS and 26 on MD. Reports are summarized in
 `combat_geometry_v53.json`. These are isolated equipped arenas, not traversal.
 
-Full dungeon 9 still fails. An additional guard now retreats while the boss has
-no active damage-receiving box instead of walking into it; this refinement needs
-fresh arena verification. Dungeon 10 remains at the V52 partial circuit. No
-completed traversal or release claim is made.
+The saved inactive-source retreat guard now passes fresh boss-108 arenas on
+both backends: 15 hits, crystal collection, no healing, 120 MP and one potion
+remaining. SMS takes 1971 frames with 96 HP before reward; MD takes 4715
+frames with 42 HP before reward. These results validate the current controller.
+
+Full dungeon 9 still fails after 11 boss hits on SMS (24 boss HP remaining).
+Two travel-geometry experiments were tested and reverted: applying geometry to
+ordinary enemies and minibosses dies at cell $1BE before the boss; restricting
+it to ordinary enemies reaches the boss but dies after only two hits. The
+saved travel behavior is retained. Dungeon 10 remains at the V52 partial
+circuit. No completed traversal or release claim is made.
 
 Continue with safe melee placement during ordinary late-dungeon travel, which
 currently consumes most healing before boss arrival. Retain the strict route,

@@ -35,5 +35,55 @@
     "tests/test_combat.c": "2325e21549895a6a71304e3840961a6ae6573ddba8ea7d34514518bbba0900fb",
     "tests/test_tools.py": "6e26d9f61c666f123e3b2dc1982e8bf50085fabdec194e1534969e06699c9005"
   },
-  "limitation": "Arena results precede the additional inactive-source retreat guard; full dungeon 9 still fails and guard needs arena recheck."
+  "limitation": "Saved boss controller passes fresh SMS/MD isolated arenas. Full dungeon 9 still fails after 11 hits; two travel geometry experiments regress and were reverted. Dungeon 10 remains incomplete.",
+  "verified_guard_arena_runs": [
+    {
+      "backend": "sms",
+      "scenario": "boss 108 isolated arena; inactive-source retreat guard",
+      "full_hp": 90,
+      "hits": 15,
+      "frames": 1971,
+      "hp_before_reward": 96,
+      "potion_remaining": 1,
+      "mp_remaining": 120,
+      "reward_collected": true
+    },
+    {
+      "backend": "md",
+      "scenario": "boss 108 isolated arena; inactive-source retreat guard",
+      "full_hp": 90,
+      "hits": 15,
+      "frames": 4715,
+      "hp_before_reward": 42,
+      "potion_remaining": 1,
+      "mp_remaining": 120,
+      "reward_collected": true
+    }
+  ],
+  "traversal_experiments": [
+    {
+      "scenario": "saved boss guard; baseline travel",
+      "backend": "sms",
+      "final_cell": "0x1ac",
+      "final_hp": 0,
+      "boss_hits": 11,
+      "done": false
+    },
+    {
+      "scenario": "ordinary and miniboss geometry; reverted",
+      "backend": "sms",
+      "final_cell": "0x1be",
+      "final_hp": 0,
+      "boss_hits": 0,
+      "done": false
+    },
+    {
+      "scenario": "ordinary enemy geometry only; reverted",
+      "backend": "sms",
+      "final_cell": "0x1ac",
+      "final_hp": 0,
+      "boss_hits": 2,
+      "done": false
+    }
+  ]
 }
