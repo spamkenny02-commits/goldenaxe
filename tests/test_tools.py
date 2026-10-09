@@ -282,6 +282,22 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x611] = 80
         self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
 
+    def test_low_health_magic_drainer_can_be_shot_with_one_cast_remaining(self):
+        driver = self.driver()
+        driver.route = {'index': 9, 'outbound': [
+            {'from': 0x125, 'to': 0x115, 'target': [128,8]}]}
+        driver.stage = 'outbound'
+        self.ram[0xDB],self.ram[0xDF],self.ram[0x318] = 8,4,72
+        self.ram[0xA8] = self.ram[0x301] = 1
+        self.ram[0x30A] = 3
+        self.ram[0x600],self.ram[0x618] = 78,8
+        self.ram[0x613],self.ram[0x611] = 128,80
+        self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
+        self.assertEqual(driver.item, 4)
+        self.ram[0x318] = 80
+        self.assertFalse(driver.drive(0x0C,False) & driver.pad('button2'))
+        self.assertNotEqual(driver.item, 4)
+
     def test_late_dungeon_keeps_axe_between_approaches(self):
         driver = self.driver()
         driver.route['index'] = 9
@@ -334,6 +350,16 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x61C] = 40
         driver.boss_melee()
         self.assertGreater(abs(driver.path[-1][0]-88)+abs(driver.path[-1][1]-112),32)
+
+    def test_patient_boss_probe_waits_for_moving_phase_except_when_invulnerable(self):
+        driver = self.driver()
+        driver.route['patient_boss'] = True
+        self.ram[0x613],self.ram[0x611] = 88,48
+        self.ram[0x61B] = self.ram[0x61C] = 44
+        self.ram[0x601],self.ram[0x30A] = 8,0
+        self.assertFalse(driver.boss_melee() & driver.pad('button2'))
+        self.ram[0x305] = 40
+        self.assertEqual(driver.boss_melee(), driver.pad('button2'))
 
     def test_large_boss_finishes_swing_before_repositioning(self):
         driver = self.driver()

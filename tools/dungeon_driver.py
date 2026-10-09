@@ -72,7 +72,10 @@ class DungeonDriver:
             return self.evade([(tx,ty),*projectiles])
         if r(0xC605)>0 or not r(0xC61B):
             return self.evade([(tx,ty)]) if abs(tx-x)+abs(ty-y)<56 else 0
-        openings=axe_openings((x,y),(tx,ty),r(0xC61B),r(0xC61C))
+        patient=self.route.get('patient_boss',False)
+        if patient and r(0xC601)==8 and not r(0xC305):
+            return self.evade([(tx,ty)]) if abs(tx-x)+abs(ty-y)<56 else 0
+        openings=axe_openings((x,y),(tx,ty),r(0xC61B),r(0xC61C),margin=6 if patient else 4)
         if openings:
             facing=r(0xC30A)&3
             if facing not in openings:return self.pad(('up','down','left','right')[openings[0]])
@@ -284,8 +287,9 @@ class DungeonDriver:
                 key_gate=probe and r(0xD600+((probe[1]&248)<<3)+((probe[0]>>2)&62)+1)&0xE0==0xA0
                 if enemies and (r(0xC0A8)==1 or (not key_gate and (not self.path or self.path[-1]!=tuple(edge['target'])))):
                     x,y=r(0xC313),r(0xC311)
-                    # Stop armor curses and grabs before ordinary melee targets.
-                    tx,ty,kind=min(enemies,key=lambda p:(p[2] not in (83,91),abs(p[0]-x)+abs(p[1]-y)))
+                    # Spend fire against magic drainers only when health is low.
+                    drainers=(77,78,82) if self.route['index']>=9 and r(0xC318)<=72 else ()
+                    tx,ty,kind=min(enemies,key=lambda p:(0 if p[2] in (83,91) else 1 if p[2] in drainers else 2,abs(p[0]-x)+abs(p[1]-y)))
                     dx,dy=tx-x,ty-y
                     if self.route['index']==10 and kind>=120:
                         slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind)
@@ -303,7 +307,7 @@ class DungeonDriver:
                             high=r(0xD600+((sy&248)<<3)+((sx>>2)&62)+1)
                             if high&0xE0 in (0x80,0xA0):return False
                         return True
-                    fire_reserve=16 if kind in (83,91) else 112
+                    fire_reserve=8 if kind in drainers else 16 if kind in (83,91) else 112
                     if abs(dx)+abs(dy)>=24 and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
                         self.item=4
                         if r(0xC0DF)!=4:return 0

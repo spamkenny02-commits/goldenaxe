@@ -70,6 +70,7 @@ def main():
     parser.add_argument('--boss-weapon-probe', action='store_true', help='Run a bounded sword-immunity probe without requiring boss defeat')
     parser.add_argument('--complete-ending', action='store_true', help='Continue final-boss combat through credits, confirmation and return to title')
     parser.add_argument('--dungeon', type=int, choices=range(1,11), help='Traverse a dungeon from its overworld entry checkpoint, defeat the boss and return outside (or play the final ending)')
+    parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
     dungeon_route = None
     if args.dungeon is not None:
@@ -78,6 +79,9 @@ def main():
         dungeon_route = next(r for r in json.loads((Path(__file__).resolve().parent.parent/'tests/scenarios/dungeon_routes.json').read_text()) if r['index']==args.dungeon)
         args.boss_arena = dungeon_route['boss']['type']
         args.complete_ending = args.dungeon==10
+        if args.patient_boss:dungeon_route['patient_boss']=True
+    if args.patient_boss and args.dungeon not in (9,10):
+        parser.error('--patient-boss requires dungeon 9 or 10')
     if args.late_boss_controller and args.boss_arena not in (108,109):
         parser.error('--late-boss-controller requires boss 108 or 109')
     if args.reference_sms and any((args.sram_in, args.sram_out, args.save_slot is not None, args.expect_save_slot is not None)):

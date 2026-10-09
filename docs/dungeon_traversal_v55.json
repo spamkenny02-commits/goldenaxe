@@ -1,6 +1,6 @@
 {
-  "status": "Escape planner fixed; SMS 9 preserved; MD 9 and dungeon 10 incomplete",
-  "tool_tests": 44,
+  "status": "Selective fire preserves SMS 9; native MD 9 arrives with 70 HP, patient probe reaches 13 hits; not complete",
+  "tool_tests": 46,
   "sms_dungeon9": {
     "index": 9,
     "rooms": 25,
@@ -87,10 +87,94 @@
         "potion": 0,
         "curse": 0
       }
+    },
+    {
+      "scenario": "rest_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "hits": 13,
+      "done": false,
+      "frames": 46400,
+      "boss_arrival": {
+        "cell": 428,
+        "stage": "outbound",
+        "index": 9,
+        "hp": 70,
+        "mp": 8,
+        "potion": 0,
+        "curse": 0
+      }
+    },
+    {
+      "scenario": "selective_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "hits": 4,
+      "done": false,
+      "frames": 44778,
+      "boss_arrival": {
+        "cell": 428,
+        "stage": "outbound",
+        "index": 9,
+        "hp": 70,
+        "mp": 8,
+        "potion": 0,
+        "curse": 0
+      }
+    },
+    {
+      "scenario": "patient6_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "hits": 13,
+      "done": false,
+      "frames": 49106,
+      "boss_arrival": {
+        "cell": 428,
+        "stage": "outbound",
+        "index": 9,
+        "hp": 70,
+        "mp": 8,
+        "potion": 0,
+        "curse": 0
+      }
+    },
+    {
+      "scenario": "patient_timer_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "hits": 9,
+      "done": false,
+      "frames": 50545,
+      "boss_arrival": {
+        "cell": 428,
+        "stage": "outbound",
+        "index": 9,
+        "hp": 70,
+        "mp": 8,
+        "potion": 0,
+        "curse": 0
+      }
     }
   ],
   "hashes": {
-    "tools/dungeon_driver.py": "8f966bfb28308942e9b0a6ef77ca0257170eb975db6cba3f821e1ed5753ffe48",
-    "tests/test_tools.py": "8e6a09e5670e75f27ad60f0e7134bc40a246e4d0f423d395bc85e03c491a408d"
-  }
+    "tools/dungeon_driver.py": "76886ab76022667b267b6c1ae9a400b6c32b1a98bb67bdc5977ca41619f2fbd3",
+    "tools/test_md_emulator.py": "25fb152815bc709bd683e64ea00583cb4a5250bf4a8909ae0c3de745a9176c84",
+    "tests/test_tools.py": "c7eb86a2d639f507a5a8b3bee6bd5caa3997bb4a82cfaa8af2349cad2a01b084"
+  },
+  "sms_selective_dungeon9": {
+    "index": 9,
+    "rooms": 25,
+    "boss_hits": 15,
+    "stairs": 1,
+    "keys_net_spent": 1,
+    "final_hp": 124,
+    "frames": 17286
+  },
+  "retained_tactics": [
+    "Replan each escape candidate independently of unfinished walk step.",
+    "For dungeons 9/10 only and HP <=72: prioritize magic drainers 77/78/82 after curses/grabs and allow fire from 8 MP.",
+    "Optional --patient-boss retains the margin-6 stationary-boss probe; default does not change the SMS boss policy."
+  ],
+  "patient_probe_command": "python3 tools/test_md_emulator.py --core CORE --nm NM --combat --dungeon 9 --patient-boss --frames 60000 --output OUTPUT"
 }

@@ -1,30 +1,41 @@
-# V55 — escape search fixed, traversal remains incomplete
+# V55 — escape correction and better MD boss arrival, no native pass yet
 
-`evade` now clears the unfinished navigation target before evaluating each
-candidate and before committing the selected route. Previously an off-grid
-hero could keep the old walk target for every candidate; no escape would be
-recognized. A regression test reproduces this with X=89 and an old rightward
-target while the threat is on the right. 44 tooling tests pass.
+`evade` clears the unfinished navigation target before evaluating each
+candidate and before committing the selected route. An off-grid hero could
+previously keep the old walk target for every candidate, producing no escape.
+A regression test reproduces this at X=89 with an old rightward target while
+the threat is on the right.
 
-The saved change preserves the strict original-SMS dungeon-9 pass:
-25 room visits, one stair, 15 genuine boss hits, crystal/reward acknowledgment
-and overworld return with 124 HP at frame 17286. MD 9 and SMS 10 retain their
-V54 blockers; the controller fix is valid but did not solve those scenarios.
+The retained travel change targets magic drainers 77/78/82 after curse/grab
+actors in dungeons 9/10 only, and only when hero HP <=72. Fire can then use an
+8-MP reserve. Native `entity77_wrapper_resource` confirms contact removes
+8 MP for those types. Applying this policy at all HP was rejected because
+it regresses the previously successful SMS route.
 
-Two tactical experiments were not retained. Prioritizing types 77/78/82
-and allowing fire below the usual reserve gives MD 70 HP at boss arrival
-and four hits before death; it regresses SMS to two hits before death.
-The resource-drain behavior is in native `entity77_wrapper_resource` and
-applies to 77, 78 and 82. A stationary-boss swing policy plus conditional
-anti-drainer fire regresses SMS to seven hits; the MD result is pending.
-Only the escape-planning correction is in the saved controller.
+The selective policy preserves the strict original-SMS dungeon-9 pass:
+25 visits, one staircase, one key, 90 boss HP removed in 15 real hits,
+crystal collection/acknowledgment and overworld return with 124 HP at frame
+17286. The escape-only run passes identically. 46 tooling tests pass.
 
-The original healing routine at $3021 was checked: it reads environment
-$C041 and heals 32 in mode 2, otherwise 16. The native implementation matches;
-this is not a discovered decompilation mismatch. No production C/ROM changes
-are made. The checked MD image remains V50, 484504 bytes and checksum BB38.
+Native MD 9 now arrives at the boss with 70 HP and 8 MP, no potion, versus
+18 HP / 16 MP in V54. The default boss controller still dies after four
+hits. The optional `--patient-boss` probe waits during moving phases unless
+the hero is invulnerable, and uses body margin 6. It reaches 13 genuine hits
+(12 boss HP remaining) before dying at frame 49106. Strict native dungeon
+validation therefore remains incomplete. The option is explicit; default
+SMS boss behavior is preserved. A further timer-aware probe was tested,
+regressed native combat to nine hits and was reverted.
 
-Continue by testing selective anti-drainer fire without changing the proven
-SMS boss policy. Any controller variation must retain strict full-HP boss,
-room-order, reward and survival checks. Private reports remain in ignored
-md/build/v55_*; no original ROM or capture is published.
+SMS 10 still dies at $16A before the boss with the escape-only correction.
+The selective-fire change has not been retested through dungeon 10. Resume
+with avoiding the remaining type-117 projectile hits in the MD patient probe,
+then inspect $18D/$18E backtracks and renewed curse at $13D in dungeon 10.
+
+The original heal routine at $3021 was inspected: it reads environment
+$C041 and heals 32 in mode 2, otherwise 16. Native code matches; this is not
+a decompilation mismatch. No production C/ROM changes are made. The checked
+MD image remains V50, 484504 bytes and checksum BB38. Private ROMs, reports,
+binaries and captures stay ignored under md/build/v55_*.
+
+See dungeon_traversal_v55.json for compact outcomes, code hashes and the
+patient-probe command; it reports failed attempts as failed, not releases.
