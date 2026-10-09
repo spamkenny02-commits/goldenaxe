@@ -1,0 +1,96 @@
+{
+  "status": "Escape planner fixed; SMS 9 preserved; MD 9 and dungeon 10 incomplete",
+  "tool_tests": 44,
+  "sms_dungeon9": {
+    "index": 9,
+    "rooms": 25,
+    "boss_hits": 15,
+    "stairs": 1,
+    "keys_net_spent": 1,
+    "final_hp": 124,
+    "frames": 17286
+  },
+  "attempts": [
+    {
+      "scenario": "escape_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "hits": 2,
+      "done": false,
+      "frames": 41504,
+      "boss_arrival": {
+        "cell": 428,
+        "stage": "outbound",
+        "index": 9,
+        "hp": 18,
+        "mp": 16,
+        "potion": 0,
+        "curse": 0
+      }
+    },
+    {
+      "scenario": "escape_sms10",
+      "final_hp": 0,
+      "cell": "0x16a",
+      "hits": 0,
+      "done": false,
+      "frames": 24718,
+      "boss_arrival": null
+    },
+    {
+      "scenario": "drainers_sms9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "hits": 2,
+      "done": false,
+      "frames": 13577,
+      "boss_arrival": {
+        "cell": 428,
+        "stage": "outbound",
+        "index": 9,
+        "hp": 16,
+        "mp": 16,
+        "potion": 0,
+        "curse": 0
+      }
+    },
+    {
+      "scenario": "drainers_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "hits": 4,
+      "done": false,
+      "frames": 44778,
+      "boss_arrival": {
+        "cell": 428,
+        "stage": "outbound",
+        "index": 9,
+        "hp": 70,
+        "mp": 8,
+        "potion": 0,
+        "curse": 0
+      }
+    },
+    {
+      "scenario": "rest_sms9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "hits": 7,
+      "done": false,
+      "frames": 13512,
+      "boss_arrival": {
+        "cell": 428,
+        "stage": "outbound",
+        "index": 9,
+        "hp": 86,
+        "mp": 8,
+        "potion": 0,
+        "curse": 0
+      }
+    }
+  ],
+  "hashes": {
+    "tools/dungeon_driver.py": "8f966bfb28308942e9b0a6ef77ca0257170eb975db6cba3f821e1ed5753ffe48",
+    "tests/test_tools.py": "8e6a09e5670e75f27ad60f0e7134bc40a246e4d0f423d395bc85e03c491a408d"
+  }
+}

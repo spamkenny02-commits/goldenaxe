@@ -44,6 +44,10 @@ class DungeonDriver:
         for dx,dy in ((0,-32),(0,32),(-32,0),(32,0)):
             goal=(max(24,min(232,round(x/8)*8+dx)),
                   max(24,min(144,round(y/8)*8+dy)))
+            # Candidate searches must not inherit an unfinished walk step.
+            # Otherwise off-grid positions keep the old target for every
+            # candidate and can produce no escape at all.
+            self.target=None
             self.navigate(goal)
             if self.breaking:
                 self.breaking=None
@@ -52,6 +56,7 @@ class DungeonDriver:
                 separation=min(abs(tx-goal[0])+abs(ty-goal[1]) for tx,ty in grabbers)
                 candidates.append((separation,-len(self.path),goal))
         if not candidates:return 0
+        self.target=None
         return self.navigate(max(candidates,key=lambda c:c[:2])[2])
 
     def boss_melee(self):

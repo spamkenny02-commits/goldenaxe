@@ -229,6 +229,17 @@ class DungeonNavigationTest(unittest.TestCase):
         self.assertTrue(driver.path)
         self.assertIsNone(driver.breaking)
 
+    def test_escape_replans_between_grid_nodes_instead_of_following_old_target(self):
+        driver = self.driver()
+        self.ram[0x313] = 89
+        driver.target = (96,80)
+        driver.path = [(96,80)]
+        pad = driver.evade([(120,80)])
+        self.assertTrue(pad)
+        self.assertNotEqual(pad, driver.pad('right'))
+        self.assertTrue(driver.path)
+        self.assertNotEqual(driver.path[-1], (96,80))
+
     def test_consumed_antidote_does_not_reopen_inventory_for_missing_item(self):
         driver = self.driver()
         driver.item = 2
