@@ -571,6 +571,19 @@ class DungeonNavigationTest(unittest.TestCase):
         self.assertFalse(pad & driver.pad('button2'))
         self.assertTrue(driver.path)
 
+    def test_short_projectile_distance_preserves_attack_until_threat_is_close(self):
+        driver = self.driver()
+        driver.route.update(boss_projectile_window=8, boss_projectile_distance=32)
+        self.ram[0x613],self.ram[0x611] = 88,48
+        self.ram[0x61B] = self.ram[0x61C] = 44
+        self.ram[0x30A],self.ram[0x305] = 0,8
+        self.ram[0x780],self.ram[0x783] = 117,2
+        self.ram[0x793],self.ram[0x791] = 128,80
+        self.assertEqual(driver.boss_melee(), driver.pad('button2'))
+        self.ram[0x793] = 112
+        self.assertFalse(driver.boss_melee() & driver.pad('button2'))
+        self.assertTrue(driver.path)
+
     def test_large_boss_keeps_attacking_during_player_invulnerability(self):
         driver = self.driver()
         self.ram[0x613],self.ram[0x611] = 88,48

@@ -92,8 +92,11 @@ def main():
         for route in ROUTES:
             if route['index'] not in args.dungeons:continue
             output=args.output/name/str(route['index']);output.mkdir(parents=True,exist_ok=True)
+            # Native9 needs a later projectile retreat to finish its axe
+            # openings. The SMS timing passed with its existing controller.
+            policy=['--patient-boss','--boss-projectile-window','8','--boss-projectile-distance','32'] if name=='md' and route['index']==9 else []
             with (output/'run.log').open('w') as log:
-                subprocess.run([sys.executable,str(runner),'--core',str(args.core),*extra,'--combat','--dungeon',str(route['index']),'--frames',str(args.frames),'--output',str(output)],stdout=log,stderr=subprocess.STDOUT,check=True)
+                subprocess.run([sys.executable,str(runner),'--core',str(args.core),*extra,'--combat','--dungeon',str(route['index']),*policy,'--frames',str(args.frames),'--output',str(output)],stdout=log,stderr=subprocess.STDOUT,check=True)
             summary=validate(json.loads((output/'result.json').read_text()),route)
             results[name].append(summary);print(name+': '+json.dumps(summary),flush=True)
     (args.output/'result.json').write_text(json.dumps(results,indent=2)+'\n')

@@ -93,7 +93,7 @@ class DungeonDriver:
             return self.evade([(tx,ty)])
         projectiles=[(r(0xC313+s*48),r(0xC311+s*48)) for s in range(24,32)
                      if r(0xC300+s*48)==117 and r(0xC303+s*48)&2
-                     and abs(r(0xC313+s*48)-x)+abs(r(0xC311+s*48)-y)<48]
+                     and abs(r(0xC313+s*48)-x)+abs(r(0xC311+s*48)-y)<self.route.get('boss_projectile_distance',48)]
         if projectiles and r(0xC305)<=self.route.get('boss_projectile_window',0):
             return self.evade([(tx,ty),*projectiles])
         if r(0xC605)>0 or not r(0xC61B):

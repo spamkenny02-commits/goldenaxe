@@ -1,13 +1,13 @@
-# Current status — V89
+# Current status — V93
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
 
 ## Current integration limits
 
-Full equipped-checkpoint dungeon routes1–8 are validated on native MD and
-original SMS. Original SMS9 also passes; native9's patient-boss run still
-dies after13 of15 hits, with12HP remaining on the boss. Full-entry10 remains
+Full equipped-checkpoint dungeon routes1–9 are validated on native MD and
+original SMS. Native9 now completes15 axe hits, crystal collection and
+outside return with126HP using its32-pixel projectile retreat policy. Full-entry10 remains
 open on both platforms. No new-game-to-ending equivalence claim is made.
 
 Separate equipped13C suffix proofs complete the final dungeon, full boss,
@@ -17,11 +17,12 @@ full-entry health/magic gap. The17C and14B west-entry circuits are corrected.
 Native full-entry10 currently reaches15B with18–20HP/0MP and dies there;
 a reserved16MP trial now completes14A but dies14B with insufficient health.
 
-61 tooling tests pass. Resource and environment observations distinguish
+62 tooling tests pass. Resource and environment observations distinguish
 healing/spell costs from late inventory selection and flag suspicious stale
 attacker attribution. Experimental controller policies are optional and
 keep all actions on the joypad after the initial fixture. See
-V89_WORK_IN_PROGRESS.md for outcomes and private report hashes.
+V93_WORK_IN_PROGRESS.md for outcomes and private report hashes. The native9
+policy is not used for SMS, where the same variant fails.
 
 The current production MD image is still V50,484504bytes/checksumBB38.
 Recent controller probes do not change production C or rebuild that image.

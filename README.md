@@ -2,11 +2,12 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V89)
+## Current status (V93)
 
-- Full equipped-checkpoint dungeon routes1–8 are validated on native MD and
-  original SMS; original SMS9 also passes. Native9 still dies after13 of15
-  boss hits. Full-entry dungeon10 remains incomplete on both platforms.
+- Full equipped-checkpoint dungeon routes1–9 are validated on native MD and
+  original SMS. Native9 now defeats its full90HP boss in15 axe hits, collects
+  the crystal and returns outside with126HP. Full-entry dungeon10 remains
+  incomplete on both platforms.
 - Dungeon10's separate equipped13C suffix reaches the genuine final boss,
   complete credits and confirmed title return on both platforms. The17C
   and14B partition-dependent route circuits are corrected. These suffix
@@ -14,8 +15,8 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - Current work targets actual health/magic losses before15B. Reports now
   capture before/after resource changes and environment mode; optional14A
   cycling-pit avoidance improves one reserved-MP trial through14A but does
-  not finish the dungeon.61 tooling tests pass. Production image remains
-  V50 (484504 bytes / BB38). See `docs/V89_WORK_IN_PROGRESS.md`.
+  not finish the dungeon.62 tooling tests pass. Production image remains
+  V50 (484504 bytes / BB38). See `docs/V93_WORK_IN_PROGRESS.md`.
 
 Earlier production and integration milestones:
 

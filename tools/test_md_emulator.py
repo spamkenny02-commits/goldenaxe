@@ -92,6 +92,7 @@ def main():
     parser.add_argument('--flash-ice', action='store_true', help='Dungeon10 controller probe: allow close ice shots in13C during hero invulnerability')
     parser.add_argument('--late-melee-geometry', action='store_true', help='Dungeon10 controller probe: avoid unsafe81/96 body approaches in13C before hero flash expires')
     parser.add_argument('--boss-projectile-window', type=int, choices=(0,4,8,12,16), default=0, help='Late boss controller probe: anticipate projectile danger before hero flash expires')
+    parser.add_argument('--boss-projectile-distance', type=int, choices=(32,48,64), default=48, help='Late boss controller probe: distance at which an active projectile triggers retreat')
     parser.add_argument('--invulnerable-boss-wait', action='store_true', help='Late boss controller probe: hold attack reach while hero flash outlasts boss flash')
     parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
@@ -126,6 +127,7 @@ def main():
         if args.flash_ice:dungeon_route['flash_ice']=True
         if args.late_melee_geometry:dungeon_route['late_melee_geometry']=True
         if args.boss_projectile_window:dungeon_route['boss_projectile_window']=args.boss_projectile_window
+        if args.boss_projectile_distance!=48:dungeon_route['boss_projectile_distance']=args.boss_projectile_distance
         if args.invulnerable_boss_wait:dungeon_route['invulnerable_boss_wait']=True
         if args.dungeon_start_room is not None:
             start=next(i for i,e in enumerate(dungeon_route['outbound']) if e['from']==args.dungeon_start_room)
@@ -150,6 +152,8 @@ def main():
         parser.error('--late-melee-geometry requires dungeon 10')
     if args.boss_projectile_window and args.dungeon not in (9,10):
         parser.error('--boss-projectile-window requires dungeon 9 or 10')
+    if args.boss_projectile_distance!=48 and args.dungeon not in (9,10):
+        parser.error('--boss-projectile-distance requires dungeon 9 or 10')
     if args.invulnerable_boss_wait and args.dungeon not in (9,10):
         parser.error('--invulnerable-boss-wait requires dungeon 9 or 10')
     if args.patient_boss and args.dungeon not in (9,10):
