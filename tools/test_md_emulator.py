@@ -89,6 +89,8 @@ def main():
     parser.add_argument('--final-magic-reserve', type=int, choices=(0,8,16,24), default=0, help='Dungeon10 controller probe: reserve MP after13C for the ice-trigger passage in15B')
     parser.add_argument('--caster-axe-margin', type=int, choices=(2,4), default=4, help='Dungeon10 controller probe: body margin for low-magic caster melee in14A')
     parser.add_argument('--late-terrain-awareness', action='store_true', help='Dungeon10 controller probe: penalize damaging terrain in14A')
+    parser.add_argument('--late-contact-awareness', action='store_true', help='Dungeon10 controller probe: penalize actual enemy body rectangles in14A/14B navigation')
+    parser.add_argument('--caster-projectile-awareness', action='store_true', help='Dungeon10 controller probe: evade close type113 projectiles in14A')
     parser.add_argument('--flash-ice', action='store_true', help='Dungeon10 controller probe: allow close ice shots in13C during hero invulnerability')
     parser.add_argument('--late-melee-geometry', action='store_true', help='Dungeon10 controller probe: avoid unsafe81/96 body approaches in13C before hero flash expires')
     parser.add_argument('--boss-projectile-window', type=int, choices=(0,4,8,12,16), default=0, help='Late boss controller probe: anticipate projectile danger before hero flash expires')
@@ -124,6 +126,8 @@ def main():
         if args.final_magic_reserve:dungeon_route['final_magic_reserve']=args.final_magic_reserve
         if args.caster_axe_margin!=4:dungeon_route['caster_axe_margin']=args.caster_axe_margin
         if args.late_terrain_awareness:dungeon_route['damage_terrain_cells']=(0x14A,)
+        if args.late_contact_awareness:dungeon_route['contact_cells']=(0x14A,0x14B)
+        if args.caster_projectile_awareness:dungeon_route['caster_projectile_awareness']=True
         if args.flash_ice:dungeon_route['flash_ice']=True
         if args.late_melee_geometry:dungeon_route['late_melee_geometry']=True
         if args.boss_projectile_window:dungeon_route['boss_projectile_window']=args.boss_projectile_window
@@ -146,6 +150,10 @@ def main():
         parser.error('--caster-axe-margin requires dungeon 10')
     if args.late_terrain_awareness and args.dungeon!=10:
         parser.error('--late-terrain-awareness requires dungeon 10')
+    if args.late_contact_awareness and args.dungeon!=10:
+        parser.error('--late-contact-awareness requires dungeon 10')
+    if args.caster_projectile_awareness and args.dungeon!=10:
+        parser.error('--caster-projectile-awareness requires dungeon 10')
     if args.flash_ice and args.dungeon!=10:
         parser.error('--flash-ice requires dungeon 10')
     if args.late_melee_geometry and args.dungeon!=10:

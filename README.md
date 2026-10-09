@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V93)
+## Current status (V94)
 
 - Full equipped-checkpoint dungeon routes1–9 are validated on native MD and
   original SMS. Native9 now defeats its full90HP boss in15 axe hits, collects
@@ -15,8 +15,11 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
 - Current work targets actual health/magic losses before15B. Reports now
   capture before/after resource changes and environment mode; optional14A
   cycling-pit avoidance improves one reserved-MP trial through14A but does
-  not finish the dungeon.62 tooling tests pass. Production image remains
-  V50 (484504 bytes / BB38). See `docs/V93_WORK_IN_PROGRESS.md`.
+  not finish the dungeon. Optional contact/projectile avoidance with
+  retreat window0 now opens the15B ice passage and reaches16B with10HP/8MP,
+  but dies against its guards. Both equipped13C suffixes still pass.
+  63 tooling tests pass. Production image remains V50 (484504 bytes / BB38).
+  See `docs/V94_WORK_IN_PROGRESS.md` and the native9 proof in V93.
 
 Earlier production and integration milestones:
 

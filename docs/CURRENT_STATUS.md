@@ -1,4 +1,4 @@
-# Current status — V93
+# Current status — V94
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -16,8 +16,13 @@ Those tests start with128HP/128MP and a potion, so they do not close the
 full-entry health/magic gap. The17C and14B west-entry circuits are corrected.
 Native full-entry10 currently reaches15B with18–20HP/0MP and dies there;
 a reserved16MP trial now completes14A but dies14B with insufficient health.
+Optional live-contact/projectile avoidance with reserve8 and retreat window0
+now opens15B through the real8MP ice cast and reaches16B with10HP/8MP.
+It dies against type69 guards and a type112 projectile in16B; full entry
+is still incomplete. Both separate equipped13C suffixes pass with the new
+options. See V94_WORK_IN_PROGRESS.md.
 
-62 tooling tests pass. Resource and environment observations distinguish
+63 tooling tests pass. Resource and environment observations distinguish
 healing/spell costs from late inventory selection and flag suspicious stale
 attacker attribution. Experimental controller policies are optional and
 keep all actions on the joypad after the initial fixture. See

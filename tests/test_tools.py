@@ -287,6 +287,29 @@ class DungeonNavigationTest(unittest.TestCase):
         driver.navigate((120,80))
         self.assertIn((104,80),driver.path)
 
+    def test_contact_navigation_avoids_body_and_refreshes_when_hitbox_deactivates(self):
+        from combat_geometry import rect, overlaps
+        driver=self.driver()
+        self.ram[0xB9]=0x4B
+        self.ram[0x600],self.ram[0x603]=73,3
+        self.ram[0x613],self.ram[0x611],self.ram[0x61C]=104,112,40
+        body=rect((104,112),40)
+        def danger(point):
+            x,y,w,h=rect(point,5)
+            return overlaps((x-4,y-4,w+8,h+8),body)
+        driver.navigate((136,80))
+        original=driver.path[:]
+        self.assertTrue(any(danger(point) for point in original))
+        driver.route['contact_cells']=(0x14B,)
+        driver.target=None
+        driver.navigate((136,80))
+        self.assertFalse(any(danger(point) for point in driver.path))
+        self.assertEqual(driver.path[-1],(136,80))
+        self.ram[0x61C]=0
+        driver.target=None
+        driver.navigate((136,80))
+        self.assertEqual(driver.path,original)
+
     def test_final_dungeon_turret_is_not_a_melee_target(self):
         driver = self.loop_driver([0x139])
         driver.route.update(index=10)

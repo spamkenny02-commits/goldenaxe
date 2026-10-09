@@ -1,0 +1,224 @@
+{
+  "production_changed": false,
+  "fixture_changed": false,
+  "runs": [
+    {
+      "probe": "v94_contact_r16",
+      "report_sha256": "29203cb2369bbfc622a53938605c1d95c664ef161d69bd0ce25316c93b0636a3",
+      "outcome": "incomplete",
+      "validation": "Missing/out-of-order room traversal",
+      "frames": 66935,
+      "final_hp": 0,
+      "final_mp": 16,
+      "cell": "14A",
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "start_room": null,
+      "policy": {
+        "late_retreat": true,
+        "late_retreat_window": 8,
+        "final_magic_reserve": 16,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ]
+      }
+    },
+    {
+      "probe": "v94_contact_r8",
+      "report_sha256": "084a3c2bd003995f6ce6bb8429e2c2a088cad43910f8341c701fb9788bcd2038",
+      "outcome": "incomplete",
+      "validation": "Missing/out-of-order room traversal",
+      "frames": 69255,
+      "final_hp": 0,
+      "final_mp": 8,
+      "cell": "14A",
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "start_room": null,
+      "policy": {
+        "late_retreat": true,
+        "late_retreat_window": 8,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ]
+      }
+    },
+    {
+      "probe": "v94_md_suffix",
+      "report_sha256": "2bb15988d2568cee64aaf8f978e2dbd7c7d3976651eec3e8320d5dde8ed85a81",
+      "outcome": "strict segment pass",
+      "validation": {
+        "index": 10,
+        "start_room": 316,
+        "rooms": 13,
+        "boss_hits": 23,
+        "stairs": 1,
+        "keys_net_spent": null,
+        "final_hp": 104,
+        "frames": 42576
+      },
+      "frames": 42576,
+      "final_hp": 104,
+      "final_mp": 0,
+      "cell": "000",
+      "boss_hits": 23,
+      "boss_deaths": 1,
+      "start_room": 316,
+      "policy": {
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true
+      }
+    },
+    {
+      "probe": "v94_no_retreat",
+      "report_sha256": "3a4449c7decaf6770ab2068910ad1bbb88f033af3abf5afd381f90301a7b5e91",
+      "outcome": "incomplete",
+      "validation": "Missing/out-of-order room traversal",
+      "frames": 62214,
+      "final_hp": 0,
+      "final_mp": 8,
+      "cell": "14B",
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "start_room": null,
+      "policy": {
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true
+      }
+    },
+    {
+      "probe": "v94_retreat0",
+      "report_sha256": "3b5e2ca2fb9320759ad4dd6a7ffed77c18ec48f3946228ed41d4d004b644b61f",
+      "outcome": "incomplete",
+      "validation": "Missing/out-of-order room traversal",
+      "frames": 73112,
+      "final_hp": 0,
+      "final_mp": 16,
+      "cell": "16B",
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "start_room": null,
+      "policy": {
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true
+      }
+    },
+    {
+      "probe": "v94_shots_r16",
+      "report_sha256": "b43c8071a9cbf07407188ed62f1c4521917cd2fa4260a0fd5a1db8eb75c5db08",
+      "outcome": "incomplete",
+      "validation": "Missing/out-of-order room traversal",
+      "frames": 67517,
+      "final_hp": 0,
+      "final_mp": 16,
+      "cell": "14A",
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "start_room": null,
+      "policy": {
+        "late_retreat": true,
+        "late_retreat_window": 8,
+        "final_magic_reserve": 16,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true
+      }
+    },
+    {
+      "probe": "v94_shots_r8",
+      "report_sha256": "29c28d64a584ef64c2e090324534d1e2640458ab484ea62275a70c6de7b46bff",
+      "outcome": "incomplete",
+      "validation": "Missing/out-of-order room traversal",
+      "frames": 73436,
+      "final_hp": 0,
+      "final_mp": 0,
+      "cell": "15B",
+      "boss_hits": 0,
+      "boss_deaths": 0,
+      "start_room": null,
+      "policy": {
+        "late_retreat": true,
+        "late_retreat_window": 8,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true
+      }
+    },
+    {
+      "probe": "v94_sms_suffix",
+      "report_sha256": "4c4f8407c48e461ea544dc9d519a82211657d9c78b5ee7a56975bbd0a046856d",
+      "outcome": "strict segment pass",
+      "validation": {
+        "index": 10,
+        "start_room": 316,
+        "rooms": 13,
+        "boss_hits": 23,
+        "stairs": 1,
+        "keys_net_spent": null,
+        "final_hp": 128,
+        "frames": 17929
+      },
+      "frames": 17929,
+      "final_hp": 128,
+      "final_mp": 0,
+      "cell": "000",
+      "boss_hits": 23,
+      "boss_deaths": 1,
+      "start_room": 316,
+      "policy": {
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330
+        ],
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true
+      }
+    }
+  ]
+}

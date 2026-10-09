@@ -5,7 +5,7 @@ plans on the live descriptor buffer, waits for real gates, and attacks actual
 enemies rather than changing collision, health or progression RAM.
 """
 from heapq import heappop, heappush
-from combat_geometry import axe_openings
+from combat_geometry import axe_openings, rect, overlaps
 
 
 class DungeonDriver:
@@ -152,8 +152,12 @@ class DungeonDriver:
         hazards=() if attack else tuple((r(0xC313+s*48),r(0xC311+s*48))
             for s in range(16,24) if 32<=r(0xC300+s*48)<99
             and r(0xC303+s*48)&3==3 and r(0xC300+s*48)!=94)
+        contacts=tuple(rect((r(0xC313+s*48),r(0xC311+s*48)),r(0xC31C+s*48))
+            for s in range(16,24) if cell in self.route.get('contact_cells',()) and not attack
+            and 32<=r(0xC300+s*48)<99 and r(0xC303+s*48)&3==3
+            and r(0xC300+s*48)!=94 and r(0xC31C+s*48))
         key = (start, goal, grid, terrain_context, hazards,combat_bounds,
-               cell in self.route.get('damage_terrain_cells',()))
+               cell in self.route.get('damage_terrain_cells',()),contacts)
         if key != self.path_key:
             self.path_key = key
             def allowed(point, delta):
@@ -185,6 +189,10 @@ class DungeonDriver:
                     if distance<24:move_cost+=24
                     elif distance<40:move_cost+=8
                 if self.dangerous_terrain((nx,ny),grid):move_cost+=64
+                if contacts:
+                    hx,hy,hw,hh=rect((nx,ny),5)
+                    if any(overlaps((hx-4,hy-4,hw+8,hh+8),body) for body in contacts):
+                        move_cost+=256
                 return move_cost
             queue = [(0,start)]; parents = {start: None}; costs={start:0}
             best = start
@@ -331,6 +339,11 @@ class DungeonDriver:
                         if r(0xC30A)!=required:return self.pad(('up','down','left','right')[required])
                     return 0
                 if r(0xC301) in (2,3,4,5,10):return 0
+                if self.route.get('caster_projectile_awareness') and cell==0x14A and r(0xC305)<=8:
+                    shots=[(r(0xC313+s*48),r(0xC311+s*48)) for s in range(24,32)
+                           if r(0xC300+s*48)==113 and r(0xC303+s*48)&2
+                           and abs(r(0xC313+s*48)-x)+abs(r(0xC311+s*48)-y)<32]
+                    if shots:return self.evade(shots)
                 travel_pad=self.navigate(edge['target'])
                 probe={'up':(128,24),'left':(16,72),'right':(232,72)}.get(edge.get('direction'))
                 key_gate=probe and r(0xD600+((probe[1]&248)<<3)+((probe[0]>>2)&62)+1)&0xE0==0xA0
