@@ -165,6 +165,14 @@ class DungeonDriver:
                     distance=min(abs(hx-nx)+abs(hy-ny) for hx,hy in hazards)
                     if distance<24:move_cost+=24
                     elif distance<40:move_cost+=8
+                if cell in self.route.get('damage_terrain_cells',()):
+                    # $2C8D samples C052/C054 from the middle cache row.
+                    # Dungeon environment mode4 adds4HP damage even when
+                    # the related-entity pointer still names an old attacker.
+                    at=(((ny-12)&248)<<3)+((((nx-12)&255)>>2)&62)+64
+                    tiles=tuple(grid[at+d] for d in (2,4))
+                    if 0xFF not in tiles and any(0x78<=t<=0x7F for t in tiles):
+                        move_cost+=64
                 return move_cost
             queue = [(0,start)]; parents = {start: None}; costs={start:0}
             best = start
@@ -389,7 +397,8 @@ class DungeonDriver:
                     if not frozen and self.route['index']==10 and kind==83 and r(0xC0DB)<16+reserve and not r(0xC0C6):
                         slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind
                                   and (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty))
-                        openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48))
+                        margin=self.route.get('caster_axe_margin',4) if cell==0x14A else 4
+                        openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48),margin=margin)
                         if openings and not r(0xC305+slot*48):
                             self.item=1
                             if r(0xC0DF)!=1:return 0

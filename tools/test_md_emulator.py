@@ -86,7 +86,9 @@ def main():
     parser.add_argument('--late-live-targets', action='store_true', help='Dungeon10 controller: apply spawn-position filtering in13C and15C')
     parser.add_argument('--collect-before-exit', action='store_true', help='Dungeon10 controller: wait for enemy death animations and collect real health/magic drops')
     parser.add_argument('--potion-first', action='store_true', help='Dungeon10 controller probe: conserve magic by using the potion before healing spells')
-    parser.add_argument('--final-magic-reserve', type=int, choices=(0,8,16), default=0, help='Dungeon10 controller probe: reserve MP after13C for partition fire in15B')
+    parser.add_argument('--final-magic-reserve', type=int, choices=(0,8,16,24), default=0, help='Dungeon10 controller probe: reserve MP after13C for partition fire in15B')
+    parser.add_argument('--caster-axe-margin', type=int, choices=(2,4), default=4, help='Dungeon10 controller probe: body margin for low-magic caster melee in14A')
+    parser.add_argument('--late-terrain-awareness', action='store_true', help='Dungeon10 controller probe: penalize damaging terrain in14A')
     parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
     if args.dungeon_start_room is not None and args.dungeon!=10:
@@ -115,6 +117,8 @@ def main():
         if args.late_live_targets:dungeon_route['late_live_targets']=True
         if args.collect_before_exit:dungeon_route['collect_before_exit']=True
         if args.final_magic_reserve:dungeon_route['final_magic_reserve']=args.final_magic_reserve
+        if args.caster_axe_margin!=4:dungeon_route['caster_axe_margin']=args.caster_axe_margin
+        if args.late_terrain_awareness:dungeon_route['damage_terrain_cells']=(0x14A,)
         if args.dungeon_start_room is not None:
             start=next(i for i,e in enumerate(dungeon_route['outbound']) if e['from']==args.dungeon_start_room)
             dungeon_route['outbound']=dungeon_route['outbound'][start:]
@@ -128,6 +132,10 @@ def main():
         parser.error('--potion-first requires dungeon 10')
     if args.final_magic_reserve and args.dungeon!=10:
         parser.error('--final-magic-reserve requires dungeon 10')
+    if args.caster_axe_margin!=4 and args.dungeon!=10:
+        parser.error('--caster-axe-margin requires dungeon 10')
+    if args.late_terrain_awareness and args.dungeon!=10:
+        parser.error('--late-terrain-awareness requires dungeon 10')
     if args.patient_boss and args.dungeon not in (9,10):
         parser.error('--patient-boss requires dungeon 9 or 10')
     if args.late_boss_controller and args.boss_arena not in (108,109):
@@ -315,7 +323,11 @@ def main():
     world_transitions = []
     last_cell = None
     profiling = False
-    combat = {'attacks': [], 'player_hits': [], 'enemy_hits': [], 'enemy_deaths': [], 'encounters': [], 'ready_encounters': [], 'projectiles': [], 'curse_changes': []}
+    combat = {'attacks': [], 'player_hits': [], 'enemy_hits': [], 'enemy_deaths': [], 'encounters': [], 'ready_encounters': [], 'projectiles': [], 'curse_changes': [], 'resource_changes': []}
+    def resource_snapshot():
+        return {'hp':read(0xC318),'mp':read(0xC0DB),'item':read(0xC0DF),
+                'environment':read(0xC041),'player_state':read(0xC301),
+                'position':[read(0xC313),read(0xC311)]}
     previous_combat = None
     previous_curse = None
     ready_cell = None
@@ -470,8 +482,15 @@ def main():
         if args.profile and not profiling and state == 0x0C:
             lib.gaw_profile_begin()
             profiling = True
+        resources_before=resource_snapshot() if args.combat else None
         lib.retro_run()
         state = read(0xC01D)
+        if args.combat:
+            resources_after=resource_snapshot()
+            if resources_after['mp']!=resources_before['mp'] or resources_after['hp']!=resources_before['hp']:
+                combat['resource_changes'].append({'emulator_frame':frame,
+                    'cell':read(0xC0B9)|(read(0xC0BA)<<8),'state':state,
+                    'before':resources_before,'after':resources_after})
         if save_started and state == 0x0C and not save_completed:
             save_completed = True
             at = 0x400*(args.save_slot+1)
@@ -571,7 +590,9 @@ def main():
                         related = read(0xC31E)|(read(0xC31F)<<8)
                         attacker_slot = (related-0xC300)//48 if 0xC300 <= related < 0xC900 and (related-0xC300)%48 == 0 else None
                         attacker = previous[attacker_slot] if attacker_slot is not None else None
+                        if attacker and not attacker['type']:attacker=None
                         combat['player_hits'].append({**stamp, 'before': old_player['hp'], 'after': player['hp'], 'flash': player['flash'],
+                                                      'environment':read(0xC041),
                                                       'attacker_slot': attacker_slot,
                                                       'attacker_type': attacker['type'] if attacker else None,
                                                       'attacker_attack': attacker['attack'] if attacker else None,
