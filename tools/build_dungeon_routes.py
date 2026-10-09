@@ -79,9 +79,10 @@ for k in range(1,11):
   split=next(i for i,e in enumerate(route) if e['from']==0x16C)
   route=route[:split]+path(0x16C,0x14D)+path(0x14D,0x16B,avoid=(0x16C,))+path(0x16B,0x16C)+route[split:]
   # $B586 in 17C sets bit 2 in 17B, opening access to its stairs.
-  # Enter 17B from 18B: its western region cannot reach the east exit.
+  # Enter 17B from 18B to reach17C. After the switch, reenter from
+  # 17A: the southern/eastern region cannot reach the upper stair pocket.
   split=next(i for i,e in enumerate(route) if e['from']==0x17A)
-  route=route[:split]+path(0x17A,0x18B,avoid=(0x17B,))+path(0x18B,0x17C)+path(0x17C,0x17B)+route[split+1:]
+  route=route[:split]+path(0x17A,0x18B,avoid=(0x17B,))+path(0x18B,0x17C)+path(0x17C,0x17B)+path(0x17B,0x18B)+path(0x18B,0x17A,avoid=(0x17B,))+path(0x17A,0x17B)+route[split+1:]
  if k==9:
   route=path(starts[k],boss['cell'],avoid=(0x1ED,0x1DD))
   # $B686 closes the western gate while fighting, then opens the upper

@@ -109,7 +109,10 @@ class DungeonRouteTest(unittest.TestCase):
         self.assertEqual(prefix[first-1], 0x18B)
         self.assertIn(0x17C, prefix[first+1:])
         self.assertEqual((edges[stairs-1]['from'],edges[stairs-1]['to']),
-                         (0x17C,0x17B))
+                         (0x17A,0x17B))
+        switch_return = next(i for i,e in enumerate(edges) if (e['from'],e['to'])==(0x17C,0x17B))
+        self.assertEqual([(e['from'],e['to']) for e in edges[switch_return+1:stairs]],
+                         [(0x17B,0x18B),(0x18B,0x18A),(0x18A,0x17A),(0x17A,0x17B)])
         self.assertEqual(route['actions'][str(0x17C)], [184,40])
 
     def test_dungeon9_uses_upper_gate_after_room_clear(self):

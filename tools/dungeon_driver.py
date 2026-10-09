@@ -289,8 +289,18 @@ class DungeonDriver:
                     x,y=r(0xC313),r(0xC311)
                     # Spend fire against magic drainers only when health is low.
                     drainers=(77,78,82) if self.route['index']>=9 and r(0xC318)<=72 else ()
-                    tx,ty,kind=min(enemies,key=lambda p:(0 if p[2] in (83,91) else 1 if p[2] in drainers else 2,abs(p[0]-x)+abs(p[1]-y)))
+                    if self.route.get('late_fire') and cell==0x13C:drainers=(*drainers,81,96)
+                    if cell in self.route.get('shield_cells',()):
+                        active=[p for p in enemies if any(r(0xC300+s*48)==p[2] and
+                                (r(0xC313+s*48),r(0xC311+s*48))==p[:2] and r(0xC303+s*48)&2
+                                for s in range(16,24))]
+                        if not active:return 0
+                        tx,ty,kind=min(active,key=lambda p:(p[2] not in (92,93),abs(p[0]-x)+abs(p[1]-y)))
+                    else:
+                        tx,ty,kind=min(enemies,key=lambda p:(0 if p[2] in (83,91) else 1 if p[2] in drainers else 2,abs(p[0]-x)+abs(p[1]-y)))
                     dx,dy=tx-x,ty-y
+                    if self.route.get('miniboss_spacing') and kind==123:
+                        return self.boss_melee()
                     if self.route['index']==10 and kind>=120:
                         slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind)
                         if r(0xC305+slot*48)>8 and abs(dx)+abs(dy)<48:

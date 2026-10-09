@@ -71,6 +71,10 @@ def main():
     parser.add_argument('--boss-weapon-probe', action='store_true', help='Run a bounded sword-immunity probe without requiring boss defeat')
     parser.add_argument('--complete-ending', action='store_true', help='Continue final-boss combat through credits, confirmation and return to title')
     parser.add_argument('--dungeon', type=int, choices=range(1,11), help='Traverse a dungeon from its overworld entry checkpoint, defeat the boss and return outside (or play the final ending)')
+    parser.add_argument('--miniboss-spacing', action='store_true', help='Dungeon10 controller probe: approach type123 from checked left axe reach')
+    parser.add_argument('--shield-first', action='store_true', help='Dungeon10 controller probe: prioritize active shields in17D and18A')
+    parser.add_argument('--late-shield-first', action='store_true', help='Dungeon10 controller probe: prioritize active shields only in18A')
+    parser.add_argument('--late-fire', action='store_true', help='Dungeon10 controller probe: spend fire against type81 and96 in13C')
     parser.add_argument('--potion-first', action='store_true', help='Dungeon10 controller probe: conserve magic by using the potion before healing spells')
     parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
@@ -82,6 +86,14 @@ def main():
         args.boss_arena = dungeon_route['boss']['type']
         args.complete_ending = args.dungeon==10
         if args.patient_boss:dungeon_route['patient_boss']=True
+        if args.miniboss_spacing:dungeon_route['miniboss_spacing']=True
+        if args.shield_first:dungeon_route['shield_cells']=(0x17D,0x18A)
+        if args.late_shield_first:dungeon_route['shield_cells']=(0x18A,)
+        if args.late_fire:dungeon_route['late_fire']=True
+    if args.miniboss_spacing and args.dungeon!=10:
+        parser.error('--miniboss-spacing requires dungeon 10')
+    if (args.shield_first or args.late_shield_first or args.late_fire) and args.dungeon!=10:
+        parser.error('Late controller probes require dungeon 10')
     if args.potion_first and args.dungeon!=10:
         parser.error('--potion-first requires dungeon 10')
     if args.patient_boss and args.dungeon not in (9,10):
