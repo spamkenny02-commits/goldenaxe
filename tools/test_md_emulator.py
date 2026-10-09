@@ -86,9 +86,13 @@ def main():
     parser.add_argument('--late-live-targets', action='store_true', help='Dungeon10 controller: apply spawn-position filtering in13C and15C')
     parser.add_argument('--collect-before-exit', action='store_true', help='Dungeon10 controller: wait for enemy death animations and collect real health/magic drops')
     parser.add_argument('--potion-first', action='store_true', help='Dungeon10 controller probe: conserve magic by using the potion before healing spells')
-    parser.add_argument('--final-magic-reserve', type=int, choices=(0,8,16,24), default=0, help='Dungeon10 controller probe: reserve MP after13C for partition fire in15B')
+    parser.add_argument('--final-magic-reserve', type=int, choices=(0,8,16,24), default=0, help='Dungeon10 controller probe: reserve MP after13C for the ice-trigger passage in15B')
     parser.add_argument('--caster-axe-margin', type=int, choices=(2,4), default=4, help='Dungeon10 controller probe: body margin for low-magic caster melee in14A')
     parser.add_argument('--late-terrain-awareness', action='store_true', help='Dungeon10 controller probe: penalize damaging terrain in14A')
+    parser.add_argument('--flash-ice', action='store_true', help='Dungeon10 controller probe: allow close ice shots in13C during hero invulnerability')
+    parser.add_argument('--late-melee-geometry', action='store_true', help='Dungeon10 controller probe: avoid unsafe81/96 body approaches in13C before hero flash expires')
+    parser.add_argument('--boss-projectile-window', type=int, choices=(0,4,8,12,16), default=0, help='Late boss controller probe: anticipate projectile danger before hero flash expires')
+    parser.add_argument('--invulnerable-boss-wait', action='store_true', help='Late boss controller probe: hold attack reach while hero flash outlasts boss flash')
     parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
     if args.dungeon_start_room is not None and args.dungeon!=10:
@@ -119,6 +123,10 @@ def main():
         if args.final_magic_reserve:dungeon_route['final_magic_reserve']=args.final_magic_reserve
         if args.caster_axe_margin!=4:dungeon_route['caster_axe_margin']=args.caster_axe_margin
         if args.late_terrain_awareness:dungeon_route['damage_terrain_cells']=(0x14A,)
+        if args.flash_ice:dungeon_route['flash_ice']=True
+        if args.late_melee_geometry:dungeon_route['late_melee_geometry']=True
+        if args.boss_projectile_window:dungeon_route['boss_projectile_window']=args.boss_projectile_window
+        if args.invulnerable_boss_wait:dungeon_route['invulnerable_boss_wait']=True
         if args.dungeon_start_room is not None:
             start=next(i for i,e in enumerate(dungeon_route['outbound']) if e['from']==args.dungeon_start_room)
             dungeon_route['outbound']=dungeon_route['outbound'][start:]
@@ -136,6 +144,14 @@ def main():
         parser.error('--caster-axe-margin requires dungeon 10')
     if args.late_terrain_awareness and args.dungeon!=10:
         parser.error('--late-terrain-awareness requires dungeon 10')
+    if args.flash_ice and args.dungeon!=10:
+        parser.error('--flash-ice requires dungeon 10')
+    if args.late_melee_geometry and args.dungeon!=10:
+        parser.error('--late-melee-geometry requires dungeon 10')
+    if args.boss_projectile_window and args.dungeon not in (9,10):
+        parser.error('--boss-projectile-window requires dungeon 9 or 10')
+    if args.invulnerable_boss_wait and args.dungeon not in (9,10):
+        parser.error('--invulnerable-boss-wait requires dungeon 9 or 10')
     if args.patient_boss and args.dungeon not in (9,10):
         parser.error('--patient-boss requires dungeon 9 or 10')
     if args.late_boss_controller and args.boss_arena not in (108,109):

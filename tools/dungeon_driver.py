@@ -94,9 +94,11 @@ class DungeonDriver:
         projectiles=[(r(0xC313+s*48),r(0xC311+s*48)) for s in range(24,32)
                      if r(0xC300+s*48)==117 and r(0xC303+s*48)&2
                      and abs(r(0xC313+s*48)-x)+abs(r(0xC311+s*48)-y)<48]
-        if projectiles and not r(0xC305):
+        if projectiles and r(0xC305)<=self.route.get('boss_projectile_window',0):
             return self.evade([(tx,ty),*projectiles])
         if r(0xC605)>0 or not r(0xC61B):
+            if self.route.get('invulnerable_boss_wait') and r(0xC600) in (108,109) and r(0xC61B) and r(0xC305)>=r(0xC605)+8:
+                return 0
             return self.evade([(tx,ty)]) if abs(tx-x)+abs(ty-y)<56 else 0
         patient=self.route.get('patient_boss',False)
         if patient and r(0xC601)==8 and not r(0xC305):
@@ -395,7 +397,8 @@ class DungeonDriver:
                     fire_reserve=8 if kind in drainers else 16 if kind in (83,91) else 112
                     if freeze:fire_reserve=8
                     fire_reserve+=reserve
-                    if not frozen and abs(dx)+abs(dy)>=24 and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or not freeze and r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
+                    minimum_range=8 if freeze and cell==0x13C and self.route.get('flash_ice') and r(0xC305)>8 else 24
+                    if not frozen and abs(dx)+abs(dy)>=minimum_range and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or not freeze and r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
                         self.item=5 if freeze else 4
                         if r(0xC0DF)!=self.item:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)
@@ -417,7 +420,19 @@ class DungeonDriver:
                             return self.pad('button2') if not r(0xC020)&32 else 0
                         if r(0xC31B+slot*48) and abs(dx)+abs(dy)<32:
                             return self.evade([(tx,ty)])
-                    if abs(dx)+abs(dy)<=20 and cross<=16:
+                    if self.route.get('late_melee_geometry') and cell==0x13C and kind in (81,96) and not frozen and r(0xC305)<=8:
+                        slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind
+                                  and (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty))
+                        openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48),margin=2)
+                        if openings:
+                            self.item=1
+                            if r(0xC0DF)!=1:return 0
+                            facing=r(0xC30A)&3
+                            if facing not in openings:return self.pad(('up','down','left','right')[openings[0]])
+                            return self.pad('button2') if not r(0xC020)&32 else 0
+                        if abs(dx)+abs(dy)<24:
+                            return self.evade([(ex,ey) for ex,ey,k in enemies if k in (81,96)])
+                    elif abs(dx)+abs(dy)<=20 and cross<=16:
                         self.item=1 if kind>=120 or self.route['index']>=9 else 0
                         if r(0xC0DF)!=self.item:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)
@@ -431,8 +446,7 @@ class DungeonDriver:
                     # Fire crosses E0 partitions that block walking. Use it
                     # for an unreachable room-clear enemy even below the
                     # ordinary travel reserve (SMS 6, return room 113).
-                    partition_fire=self.stage=='return' or self.route.get('final_magic_reserve') and cell==0x15B
-                    if partition_fire and (not self.path or self.path[-1]!=enemy_goal) and not r(0xC304) and kind not in (83,91,45) and cross<=8 and clear_shot() and (r(0xC0DB)>=8 or r(0xC0C6)):
+                    if self.stage=='return' and (not self.path or self.path[-1]!=enemy_goal) and not r(0xC304) and kind not in (83,91,45) and cross<=8 and clear_shot() and (r(0xC0DB)>=8 or r(0xC0C6)):
                         self.item=4
                         if r(0xC0DF)!=4:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)
