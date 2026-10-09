@@ -95,6 +95,7 @@ def main():
     parser.add_argument('--late-contact-awareness', action='store_true', help='Dungeon10 controller probe: penalize actual enemy body rectangles in14A/14B navigation')
     parser.add_argument('--caster-projectile-awareness', action='store_true', help='Dungeon10 controller probe: evade close type113 projectiles in14A')
     parser.add_argument('--guard-melee-geometry', action='store_true', help='Dungeon10 controller probe: checked axe reach and hit-flash retreat in16B')
+    parser.add_argument('--guard-axe-margin', type=int, choices=(2,4), default=2, help='Dungeon10 controller probe: body margin for checked guard melee in16B')
     parser.add_argument('--exit-room-melee-geometry', action='store_true', help='Dungeon10 controller probe: checked axe reach and retreat from flashing enemies in15C')
     parser.add_argument('--final-boss-patient', action='store_true', help='Dungeon10 controller probe: patient melee only against final boss109, keeping mini-boss timing')
     parser.add_argument('--flash-ice', action='store_true', help='Dungeon10 controller probe: allow close ice shots in13C during hero invulnerability')
@@ -143,6 +144,7 @@ def main():
         if args.late_contact_awareness:dungeon_route['contact_cells']=(0x14A,0x14B)
         if args.caster_projectile_awareness:dungeon_route['caster_projectile_awareness']=True
         if args.guard_melee_geometry:dungeon_route['guard_melee_geometry']=True
+        if args.guard_axe_margin!=2:dungeon_route['guard_axe_margin']=args.guard_axe_margin
         if args.exit_room_melee_geometry:dungeon_route['exit_room_melee_geometry']=True
         if args.final_boss_patient:dungeon_route['final_boss_patient']=True
         if args.flash_ice:dungeon_route['flash_ice']=True
@@ -179,6 +181,8 @@ def main():
         parser.error('--caster-projectile-awareness requires dungeon 10')
     if (args.guard_melee_geometry or args.exit_room_melee_geometry or args.final_boss_patient) and args.dungeon!=10:
         parser.error('Guard controller probes require dungeon 10')
+    if args.guard_axe_margin!=2 and (args.dungeon!=10 or not args.guard_melee_geometry):
+        parser.error('--guard-axe-margin requires dungeon10 and --guard-melee-geometry')
     if args.flash_ice and args.dungeon!=10:
         parser.error('--flash-ice requires dungeon 10')
     if args.late_melee_geometry and args.dungeon!=10:

@@ -1,0 +1,392 @@
+{
+  "production_changed": false,
+  "fixture_changed": false,
+  "full_entry_complete": false,
+  "session_start_utc": "2026-10-09T20:29:43Z",
+  "runs": [
+    {
+      "probe": "v97_activation",
+      "report_sha256": "45d8dc4aea92c85b6c0abce7f4850609ad0783a116eaa34d5daa00b94ce6a06a",
+      "frames": 78943,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 2,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 82,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 24,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 16,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 10,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true
+      }
+    },
+    {
+      "probe": "v97_activation_final",
+      "report_sha256": "9dd6a45065b79d1c2b2210ef2ff735d5ec278ce710166d8112e9ba593622fcb2",
+      "frames": 79050,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 1,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 86,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 24,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 16,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 10,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "exit_room_melee_geometry": true,
+        "final_boss_patient": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      }
+    },
+    {
+      "probe": "v97_boss_d48",
+      "report_sha256": "34fae88feaffe8d33d77c6a92c3272fbbc9f18de16716873c46b78577573fc68",
+      "frames": 78696,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 1,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 86,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 20,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "guard_axe_margin": 4,
+        "exit_room_melee_geometry": true,
+        "final_boss_patient": true,
+        "boss_projectile_window": 16
+      }
+    },
+    {
+      "probe": "v97_boss_d64",
+      "report_sha256": "32ad51f0af84df4c6d460dc4f8dc59ad6abff9f23dea736b208b53a52d277b58",
+      "frames": 78352,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 1,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 86,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 20,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "guard_axe_margin": 4,
+        "exit_room_melee_geometry": true,
+        "final_boss_patient": true,
+        "boss_projectile_window": 16,
+        "boss_projectile_distance": 64
+      }
+    },
+    {
+      "probe": "v97_margin4",
+      "report_sha256": "544c097a357e4c63c1b22149bf50ec363510c7b6ac13979516aed91613dae166",
+      "frames": 77674,
+      "cell": "14C",
+      "hp": 0,
+      "mp": 8,
+      "boss_hits": 2,
+      "boss_deaths": 0,
+      "boss_remaining_hp": 82,
+      "last_arrivals": [
+        {
+          "cell": 363,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 348,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 332,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 20,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "policy": {
+        "miniboss_spacing": true,
+        "shield_cells": [
+          394
+        ],
+        "late_ice": true,
+        "late_retreat": true,
+        "late_retreat_window": 0,
+        "caster_room_retreat": true,
+        "late_live_targets": true,
+        "final_magic_reserve": 8,
+        "damage_terrain_cells": [
+          330,
+          348
+        ],
+        "strict_damage_terrain": true,
+        "timed_damage_terrain": true,
+        "contact_cells": [
+          330,
+          331
+        ],
+        "caster_projectile_awareness": true,
+        "guard_melee_geometry": true,
+        "guard_axe_margin": 4,
+        "exit_room_melee_geometry": true,
+        "final_boss_patient": true,
+        "boss_projectile_window": 8,
+        "boss_projectile_distance": 32
+      }
+    }
+  ]
+}

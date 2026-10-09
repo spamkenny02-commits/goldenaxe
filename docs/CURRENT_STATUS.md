@@ -1,4 +1,4 @@
-# Current status — V94
+# Current status — V97
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -14,15 +14,16 @@ Separate equipped13C suffix proofs complete the final dungeon, full boss,
 all nine crystals, credits and confirmed title return on SMS and native MD.
 Those tests start with128HP/128MP and a potion, so they do not close the
 full-entry health/magic gap. The17C and14B west-entry circuits are corrected.
-Native full-entry10 currently reaches15B with18–20HP/0MP and dies there;
-a reserved16MP trial now completes14A but dies14B with insufficient health.
-Optional live-contact/projectile avoidance with reserve8 and retreat window0
-now opens15B through the real8MP ice cast and reaches16B with10HP/8MP.
-It dies against type69 guards and a type112 projectile in16B; full entry
-is still incomplete. Both separate equipped13C suffixes pass with the new
-options. See V94_WORK_IN_PROGRESS.md.
+Native full-entry10 now opens15B through its real8MP ice cast, clears the
+remaining rooms and enters14C with20HP/8MP in the best guard-margin trial.
+It lands two4HP axe hits on the genuine90HP final boss, then dies to117
+projectiles. Full entry is still incomplete. Timed pit navigation improves
+14A health, and reachable approach goals solve a dormant88 stall in15C.
+The timed/guard variant does not preserve the earlier SMS suffix success;
+the original V94 suffix proofs and their options remain separate evidence.
+See V95–V97_WORK_IN_PROGRESS.md for the30-minute session's results.
 
-63 tooling tests pass. Resource and environment observations distinguish
+67 tooling tests pass. Resource and environment observations distinguish
 healing/spell costs from late inventory selection and flag suspicious stale
 attacker attribution. Experimental controller policies are optional and
 keep all actions on the joypad after the initial fixture. See

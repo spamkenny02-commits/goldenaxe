@@ -400,8 +400,14 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x613],self.ram[0x611]=120,80
         self.ram[0x318]=10
         self.ram[0xDB]=0
+        self.ram[0xA8]=1
         chosen=[]
-        driver.navigate=lambda point,attack=False:chosen.append(tuple(point)) or 7
+        def navigate(point,attack=False):
+            point=tuple(point)
+            chosen.append(point)
+            driver.path=[] if point==(104,64) else [point]
+            return 7
+        driver.navigate=navigate
         driver.dangerous_terrain=lambda point:tuple(point)==(104,96)
         self.assertEqual(driver.drive(0x0C,False),7)
         goal=chosen[-1]

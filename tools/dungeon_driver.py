@@ -488,11 +488,16 @@ class DungeonDriver:
                             # real activation instead of retreating forever.
                             if abs(dx)<24 and abs(dy)<24 and not self.dangerous_terrain((x,y)):return 0
                             goals=[(round((tx+ox)/8)*8,round((ty+oy)/8)*8)
-                                   for ox,oy in ((-16,16),(16,16),(-16,-16),(16,-16))]
+                                   for ox,oy in ((-16,16),(16,16),(-16,-16),(16,-16),(-16,0),(16,0),(0,-16),(0,16))]
                             goals=[g for g in goals if 24<=g[0]<=232 and 24<=g[1]<=144 and not self.dangerous_terrain(g)]
-                            if goals:
-                                return self.navigate(min(goals,key=lambda g:abs(g[0]-x)+abs(g[1]-y)))
-                        openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48),margin=2)
+                            for goal in sorted(goals,key=lambda g:abs(g[0]-x)+abs(g[1]-y)):
+                                self.target=None
+                                pad=self.navigate(goal)
+                                if (x,y)==goal or self.path and self.path[-1]==goal:return pad
+                            self.target=None
+                            return 0
+                        margin=self.route.get('guard_axe_margin',2) if guard_geometry else 2
+                        openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48),margin=margin)
                         if openings and (not checked_geometry or not r(0xC305+slot*48)):
                             self.item=1
                             if r(0xC0DF)!=1:return 0
