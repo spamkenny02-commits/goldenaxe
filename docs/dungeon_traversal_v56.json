@@ -1,5 +1,5 @@
 {
-  "status": "Projectile117 differential verified; native dungeon9 still incomplete; dungeon10 runs pending",
+  "status": "Projectile117 verified; dungeon10 remote-switch route corrected, new native run pending",
   "new_differential_cases": 768,
   "magic_boss_cases": {
     "boss_phase": 5792,
@@ -8,7 +8,7 @@
     "homing_projectile": 768,
     "loot": 2816
   },
-  "tool_tests": 46,
+  "tool_tests": 47,
   "attempts": [
     {
       "scenario": "homing_md9",
@@ -36,11 +36,68 @@
       "complete": false,
       "frames": 48951,
       "retained": false
+    },
+    {
+      "scenario": "saved_sms10",
+      "final_hp": 0,
+      "cell": "0x16a",
+      "boss_hits": 0,
+      "complete": false,
+      "frames": 24718,
+      "retained": true
+    },
+    {
+      "scenario": "saved_md10",
+      "final_hp": 12,
+      "cell": "0x17b",
+      "boss_hits": 0,
+      "complete": false,
+      "frames": 90000,
+      "retained": true
+    },
+    {
+      "scenario": "inside_sms9",
+      "final_hp": 124,
+      "cell": "0xeb",
+      "boss_hits": 15,
+      "complete": true,
+      "frames": 17286,
+      "retained": false
+    },
+    {
+      "scenario": "inside_sms10",
+      "final_hp": 0,
+      "cell": "0x14d",
+      "boss_hits": 0,
+      "complete": false,
+      "frames": 15617,
+      "retained": false
     }
   ],
   "source_hashes": {
     "tests/test_magic_boss.c": "04be7e413afc91713bc141fae3b30b0cdbc677156f302dc8929804957456fae8",
     "tools/dungeon_driver.py": "76886ab76022667b267b6c1ae9a400b6c32b1a98bb67bdc5977ca41619f2fbd3",
-    "tools/test_md_emulator.py": "25fb152815bc709bd683e64ea00583cb4a5250bf4a8909ae0c3de745a9176c84"
+    "tools/test_md_emulator.py": "25fb152815bc709bd683e64ea00583cb4a5250bf4a8909ae0c3de745a9176c84",
+    "tools/build_dungeon_routes.py": "45ca0b70df3db91f501a725b6eb9be0b47d2ae8805fbea771a561182d9e3dacd",
+    "tests/scenarios/dungeon_routes.json": "0abce9b5e5087e999f791737ab4474bcbed93a74c5a30d324c2d9c536b2ccb48",
+    "tests/test_tools.py": "8965f1160acaf215b2f66545e827bb6e105b0b215bb3914674163b6adad42e7b"
+  },
+  "route10_correction": {
+    "source": "src/core.c world_run_finalize_special_callback: B586 sets progress bit 2 in 17B; world_callbacks_512 maps B586 to 17C",
+    "sequence": [
+      "17A",
+      "18A",
+      "18B",
+      "17B",
+      "17C",
+      "17B",
+      "13C"
+    ],
+    "switch_target": [
+      184,
+      40
+    ],
+    "other_routes_unchanged": true,
+    "emulator_verification": "pending"
   }
 }

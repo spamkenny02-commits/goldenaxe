@@ -69,6 +69,19 @@ class DungeonRouteTest(unittest.TestCase):
         self.assertTrue(any(e.get('stairs') and e['from']==0x16C
                             for e in edges[:gate]))
 
+    def test_dungeon10_activates_remote_switch_before_17b_stairs(self):
+        route = self.routes[9]
+        edges = route['outbound']
+        stairs = next(i for i,e in enumerate(edges)
+                      if (e['from'],e['to']) == (0x17B,0x13C))
+        prefix = [route['entrance']] + [e['to'] for e in edges[:stairs]]
+        first = prefix.index(0x17B)
+        self.assertEqual(prefix[first-1], 0x18B)
+        self.assertIn(0x17C, prefix[first+1:])
+        self.assertEqual((edges[stairs-1]['from'],edges[stairs-1]['to']),
+                         (0x17C,0x17B))
+        self.assertEqual(route['actions'][str(0x17C)], [184,40])
+
     def test_dungeon9_uses_upper_gate_after_room_clear(self):
         edge = next(e for e in self.routes[8]['outbound'] if e['from']==0x1BE)
         self.assertEqual(edge['to'], 0x1AE)

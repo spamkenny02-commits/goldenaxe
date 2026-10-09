@@ -2873,10 +2873,46 @@
       },
       {
         "from": 378,
-        "to": 379,
+        "to": 394,
+        "direction": "down",
+        "target": [
+          128,
+          168
+        ]
+      },
+      {
+        "from": 394,
+        "to": 395,
         "direction": "right",
         "target": [
           248,
+          80
+        ]
+      },
+      {
+        "from": 395,
+        "to": 379,
+        "direction": "up",
+        "target": [
+          128,
+          8
+        ]
+      },
+      {
+        "from": 379,
+        "to": 380,
+        "direction": "right",
+        "target": [
+          248,
+          80
+        ]
+      },
+      {
+        "from": 380,
+        "to": 379,
+        "direction": "left",
+        "target": [
+          8,
           80
         ]
       },
