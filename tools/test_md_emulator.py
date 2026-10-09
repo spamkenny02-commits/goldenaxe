@@ -15,6 +15,7 @@ import sys
 import zlib
 
 from dungeon_driver import DungeonDriver
+from emulator_report import console_summary
 
 
 class GameInfo(C.Structure):
@@ -661,7 +662,7 @@ def main():
                              for pc, cost in sorted(instructions, key=lambda entry: -entry[1])[:64]]
         }
     (args.output/'result.json').write_text(json.dumps(result, indent=2)+'\n')
-    print(result)
+    print(json.dumps(console_summary(result, args.output/'result.json')), flush=True)
     lib.retro_unload_game()
     lib.retro_deinit()
     if not args.observe_only and not args.boss_weapon_probe:

@@ -1,0 +1,807 @@
+{
+  "status": "Dungeon10 still incomplete; all new controller probes reverted",
+  "tool_tests": 50,
+  "production_changed": false,
+  "controller_changed": false,
+  "retained": "V61 controller and V59 optional potion-first; bounded console report",
+  "attempts": [
+    {
+      "scenario": "v62_active_md10",
+      "frames": 61463,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "contact_combat": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 24,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "be2c0d5e29f19e12449e3c336eb9a4378a6ed30e6c0260c8e1f8d424db8c7c99"
+    },
+    {
+      "scenario": "v62_active_sms10",
+      "frames": 25437,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": false,
+        "patient_boss": false,
+        "contact_combat": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "6e60756291db236339b7cef0693e0a9b2a9f669a6f84e8e96fbb697c84737149"
+    },
+    {
+      "scenario": "v62_boots_md10",
+      "frames": 50366,
+      "cell": "16A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "water_heal": true,
+        "water_boots": true
+      },
+      "last_visits": [
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 30,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 6,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 6,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "5c97ca881799c23f49e6a457795224fdf58e663f81df5935e3fc9345bbb6f809"
+    },
+    {
+      "scenario": "v62_boots_sms10",
+      "frames": 18253,
+      "cell": "13D",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": false,
+        "patient_boss": false,
+        "water_heal": true,
+        "water_boots": true
+      },
+      "last_visits": [
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 44,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 44,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 24,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "4c2f637539b0e9a3e1d8c37e3c9abd83f570b74840ec5f9f6b0c7f932f3b7004"
+    },
+    {
+      "scenario": "v62_contact_md10",
+      "frames": 61825,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "contact_combat": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 24,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "2cc54c26f2a8a6e668d58fd28ecbf072311ee303701c48c4c085c54bb897c42b"
+    },
+    {
+      "scenario": "v62_contact_sms10",
+      "frames": 25525,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": false,
+        "patient_boss": false,
+        "contact_combat": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "437d06c5ce212fc6be8b1ec54b024cbd7b42739f6a75843b30815204a6d8e232"
+    },
+    {
+      "scenario": "v62_fire32_md10",
+      "frames": 57061,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "fire_reserve": 32
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 42,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 24,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 24,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "30b0a72b13cb540bafbffc2a013369bc33115c467a6a662b5195d0929ee29a03"
+    },
+    {
+      "scenario": "v62_fire64_md10",
+      "frames": 44735,
+      "cell": "14D",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "fire_reserve": 64
+      },
+      "last_visits": [
+        {
+          "cell": 365,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 8,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 8,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 8,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "60cfd821bc115eaad98f80afae6424fc475c51137a680490e96f34d752a2312c"
+    },
+    {
+      "scenario": "v62_fire64_sms10",
+      "frames": 13077,
+      "cell": "15E",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": false,
+        "patient_boss": false,
+        "fire_reserve": 64
+      },
+      "last_visits": [
+        {
+          "cell": 382,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 114,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 366,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 112,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 350,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 108,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "7a15b9124c1def6f1389a76b6f422034d845d90938198816d999131df4f5d75d"
+    },
+    {
+      "scenario": "v62_fire8_md10",
+      "frames": 240000,
+      "cell": "13E",
+      "hp": 28,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "fire_reserve": 8
+      },
+      "last_visits": [
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 54,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 34,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "cfff5c2e969f73a98bc99523156065d4eee112dea3fa5093404aa51018bea8fb"
+    },
+    {
+      "scenario": "v62_group_md10",
+      "frames": 61948,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "contact_combat": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 24,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "021b185aebe2bd8e5b36b4a74d97e5b74eb08bf27f608b8acdf55a2c904751fe"
+    },
+    {
+      "scenario": "v62_group_sms10",
+      "frames": 25531,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": false,
+        "patient_boss": false,
+        "contact_combat": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "731e672cf147a77f1caa3f7188e970bacf9b1d8436c00252bb58b6257fed6b85"
+    },
+    {
+      "scenario": "v62_miniboss_md10",
+      "frames": 29643,
+      "cell": "15E",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "contact_combat": false,
+        "patient_miniboss": true
+      },
+      "last_visits": [
+        {
+          "cell": 382,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 60,
+          "mp": 80,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 366,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 60,
+          "mp": 80,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 350,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 56,
+          "mp": 80,
+          "potion": 1,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "d0d0082f7df9238db4246294e6db6baacf991a014e3f337c3464fc5fce006e9b"
+    },
+    {
+      "scenario": "v62_miniboss_sms10",
+      "frames": 16610,
+      "cell": "15E",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": false,
+        "patient_boss": false,
+        "contact_combat": false,
+        "patient_miniboss": true
+      },
+      "last_visits": [
+        {
+          "cell": 382,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 40,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 366,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 40,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 350,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 42,
+          "mp": 40,
+          "potion": 1,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "22e3f08b608e811720302e1afd6b7be64433560502be5c53be34a9a2191006c3"
+    },
+    {
+      "scenario": "v62_minifire_md10",
+      "frames": 56716,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "fire_reserve": 112,
+        "miniboss_fire": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 32,
+          "mp": 40,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "a19f661f9b5c2e0cf7411725cb13e083d8ecb89b9c2491e4a5dcd402b64dfa89"
+    },
+    {
+      "scenario": "v62_minifire_sms10",
+      "frames": 21606,
+      "cell": "14D",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": false,
+        "patient_boss": false,
+        "fire_reserve": 112,
+        "miniboss_fire": true
+      },
+      "last_visits": [
+        {
+          "cell": 365,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 30,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "5f0a4d492a3810a6b2c817d448892011326503fc70cdc25429998991f735ac16"
+    },
+    {
+      "scenario": "v62_water_md10",
+      "frames": 61782,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": true,
+        "patient_boss": false,
+        "water_heal": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 24,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "fcbab1bbd379e1f8e1d4d27dc7dfcb6f79fbb9de776bc7cab34e1b40f5ff9a0b"
+    },
+    {
+      "scenario": "v62_water_sms10",
+      "frames": 25505,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "validation_failure": "Missing/out-of-order room traversal",
+      "retained": false,
+      "controller": {
+        "potion_first": false,
+        "patient_boss": false,
+        "water_heal": true
+      },
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "bcaf294d0a35dabc77c0fa6549118f4f0dc639a25f72142719d1cfb50966099e"
+    }
+  ]
+}

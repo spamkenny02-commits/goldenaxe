@@ -17,6 +17,36 @@ captures = importlib.util.module_from_spec(capture_spec)
 capture_spec.loader.exec_module(captures)
 
 
+class EmulatorConsoleReportTest(unittest.TestCase):
+    def test_large_trace_stays_in_file_report_without_changing_data(self):
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'tools'))
+        from emulator_report import console_summary
+        result = {'emulator_frames': 61782, 'world_cell': 0x18A,
+                  'player_hp': 0, 'final_state': '0C',
+                  'dungeon': {'index': 10, 'stage': 'outbound', 'edge': 16,
+                              'done': False, 'visits': [{}]*25},
+                  'boss': {'hits': [{}]*5000, 'deaths': [], 'reward_collected': False},
+                  'combat': {'attacks': [{}]*10000},
+                  'ending': {'credits_started': False}}
+        before = copy.deepcopy(result)
+        summary = console_summary(result, Path('run/result.json'))
+        self.assertEqual(result, before)
+        self.assertEqual(summary['boss']['hits'], 5000)
+        self.assertEqual(summary['dungeon']['visits'], 25)
+        self.assertFalse(summary['ending']['title_confirmed'])
+        self.assertEqual(summary['report'], 'run/result.json')
+        self.assertNotIn('combat', summary)
+        self.assertLess(len(json.dumps(summary)), 600)
+
+    def test_plain_run_needs_no_combat_or_dungeon(self):
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'tools'))
+        from emulator_report import console_summary
+        result = {'emulator_frames': 2000, 'world_cell': 137,
+                  'player_hp': 128, 'final_state': '0C'}
+        self.assertEqual(console_summary(result, 'result.json'),
+                         dict(result, report='result.json'))
+
+
 class BossArenaMetadataTest(unittest.TestCase):
     def test_real_full_hp_boss_rooms(self):
         root=Path(__file__).resolve().parents[1]
