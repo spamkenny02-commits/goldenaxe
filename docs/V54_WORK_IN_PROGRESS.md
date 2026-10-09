@@ -1,4 +1,4 @@
-# V54 — dungeon 9 SMS pass, native traversal pending
+# V54 — dungeon 9 SMS pass reproduced, native traversal incomplete
 
 The large-boss controller now checks active type-117 projectiles in slots
 24..31 before starting a swing. With no hero invulnerability, a projectile
@@ -14,11 +14,25 @@ after one initial equipped fixture. This is a test-controller improvement,
 not a change to the game's Z80/C damage rules or production ROM.
 
 43 tooling tests pass. Room visits now include HP, MP, potion and curse at
-arrival to locate resource loss in future runs. The first successful SMS
-report predates that added diagnostic data; combat decisions are identical.
-Native MD dungeon 9 is running; dungeon 10 remains unfinished. The wider
-boss margin experiment was rejected: SMS died after four hits, and MD
-reached $19E but timed out at 30000 frames before reaching the boss.
+arrival. The successful SMS run was repeated with this diagnostic data and
+has identical strict validation, 17286 frames and 124 final HP. Boss arrival
+is 86 HP, 8 MP, no potion and no curse.
+
+Native MD dungeon 9 still fails: it arrives at the boss with 18 HP, 16 MP and
+no potion, dies after two hits at frame 41504. A shield-facing approach trial
+was tested and reverted: boss arrival 10 HP, two hits before death. It does
+not improve the route. The wider boss margin experiment was also rejected:
+SMS died after four hits, and MD reached $19E but timed out at 30000 frames
+before reaching the boss.
+
+SMS dungeon 10 still fails at $16A, edge 15, before the boss. The room-entry
+trace reveals repeated unintended $18D/$18E crossings, then reserve depletion
+and a renewed curse in $13D. Arrival at $13E: 24 HP, 8 MP, no potion and an
+active curse. Arrival at $16A: 24 HP and 0 MP. These are diagnostic findings,
+not a completed dungeon/ending proof.
+
+Resume with MD resource preservation before the dungeon-9 boss, then inspect
+the dungeon-10 retreat/backtrack behavior around $18E and antidote timing.
 
 Private reports, original ROMs, RAM dumps and binaries remain ignored.
 See dungeon_traversal_v54.json for compact validation and code hashes.

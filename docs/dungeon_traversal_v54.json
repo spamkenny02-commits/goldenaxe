@@ -1,5 +1,5 @@
 {
-  "status": "SMS dungeon 9 validated; native MD 9 and dungeon 10 pending",
+  "status": "SMS dungeon 9 validated and reproduced; native MD 9 and dungeon 10 incomplete",
   "sms_dungeon9": {
     "index": 9,
     "rooms": 25,
@@ -15,5 +15,873 @@
   "hashes": {
     "tools/dungeon_driver.py": "bb85264bac07c8ceb8f45d45717068cdb505b471983f7393dcdd93746c25f0bb",
     "tests/test_tools.py": "58b02245215f5116fff287d76158c04535bdde9d5c28413893435ae18d0a3860"
+  },
+  "sms_dungeon9_repeat": {
+    "index": 9,
+    "rooms": 25,
+    "boss_hits": 15,
+    "stairs": 1,
+    "keys_net_spent": 1,
+    "final_hp": 124,
+    "frames": 17286
+  },
+  "sms_boss_arrival": {
+    "cell": 428,
+    "stage": "outbound",
+    "index": 9,
+    "hp": 86,
+    "mp": 8,
+    "potion": 0,
+    "curse": 0
+  },
+  "failed_runs": [
+    {
+      "scenario": "projectile_md9",
+      "backend": "md",
+      "index": 9,
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "boss_hits": 2,
+      "frames": 41504,
+      "done": false,
+      "room_arrivals": [
+        {
+          "cell": 235,
+          "stage": "entry",
+          "index": 0,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 508,
+          "stage": "entry",
+          "index": 9,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 509,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 510,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 96,
+          "mp": 96,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 494,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 74,
+          "mp": 104,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 478,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 64,
+          "mp": 88,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 462,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 56,
+          "mp": 72,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 446,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 56,
+          "mp": 64,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 430,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 40,
+          "mp": 16,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 414,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 72,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 460,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 42,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 444,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 18,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 445,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 18,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 444,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 18,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 428,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 18,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ]
+    },
+    {
+      "scenario": "projectile_sms10",
+      "backend": "sms",
+      "index": 10,
+      "final_hp": 0,
+      "cell": "0x16a",
+      "boss_hits": 0,
+      "frames": 24718,
+      "done": false,
+      "room_arrivals": [
+        {
+          "cell": 137,
+          "stage": "entry",
+          "index": 0,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "entry",
+          "index": 10,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 381,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 365,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 381,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 382,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 40,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 366,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 40,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 350,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 42,
+          "mp": 40,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 349,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 120,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 365,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 120,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 112,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 112,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 74,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 24,
+          "mp": 8,
+          "potion": 0,
+          "curse": 1
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 24,
+          "mp": 0,
+          "potion": 0,
+          "curse": 1
+        }
+      ]
+    },
+    {
+      "scenario": "shield_md9",
+      "backend": "md",
+      "index": 9,
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "boss_hits": 2,
+      "frames": 40523,
+      "done": false,
+      "room_arrivals": [
+        {
+          "cell": 235,
+          "stage": "entry",
+          "index": 0,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 508,
+          "stage": "entry",
+          "index": 9,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 509,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 128,
+          "mp": 128,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 510,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 96,
+          "mp": 96,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 494,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 74,
+          "mp": 104,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 478,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 64,
+          "mp": 88,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 462,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 56,
+          "mp": 72,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 446,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 56,
+          "mp": 64,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 430,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 40,
+          "mp": 16,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 414,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 60,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 460,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 38,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 444,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 24,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 445,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 24,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 444,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 20,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 428,
+          "stage": "outbound",
+          "index": 9,
+          "hp": 10,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "reverted": true
+    }
+  ],
+  "next_steps": [
+    "MD 9: conserve resources before boss; saved run arrives at 18 HP and 16 MP, no potion.",
+    "SMS 10: inspect unintended 18D/18E backtracks before resource loss; preserve antidote or avoid renewed curse in 13D."
+  ],
+  "report_hashes": {
+    "saved_sms9": "9070ba915b5a62a449ba208f454a3766b298fa9241bccf5e8c7466105b427b69",
+    "projectile_md9": "04119dd59c4cf97f7cb209123729109760b644fd5f8293d40ce68c8ea7f6f5c2",
+    "projectile_sms10": "842a6fc53fdd05d75d08d4ff71a7073404760f823a36f195643c5e189ab7a473",
+    "shield_md9": "9b167494ba713cc17fbc6d36e9f95625ad87f3827ec37d3d92093ecbf74df21d"
   }
 }
