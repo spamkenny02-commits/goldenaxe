@@ -279,6 +279,18 @@ class DungeonNavigationTest(unittest.TestCase):
         driver.evade=lambda threats: 9
         self.assertEqual(driver.drive(0x0C,False),9)
 
+    def test_caster_room_retreat_uses_matching_flashing_enemy(self):
+        driver = self.loop_driver([0x139])
+        driver.route.update(index=10, caster_room_retreat=True)
+        driver.route['outbound'][0]['from']=0x14A
+        self.ram[0xB9]=0x4A
+        self.ram[0x600],self.ram[0x618]=86,18
+        self.ram[0x613],self.ram[0x611]=112,80
+        self.ram[0x605],self.ram[0x305]=20,8
+        driver.evade=lambda threats: 9 if threats==[(112,80)] else 0
+        self.assertEqual(driver.drive(0x0C,False),9)
+
+
     def test_unplaced_drainer_does_not_override_real_route_target(self):
         driver = self.loop_driver([0x139])
         driver.route.update(index=10, live_targets=True)

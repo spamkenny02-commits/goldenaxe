@@ -80,6 +80,7 @@ def main():
     parser.add_argument('--late-ice', action='store_true', help='Dungeon10 controller probe: freeze type81 in13C before melee')
     parser.add_argument('--caster-ice', action='store_true', help='Dungeon10 controller probe: freeze curse casters before melee')
     parser.add_argument('--late-retreat', action='store_true', help='Dungeon10 controller probe: retreat from invulnerable enemies in 13C')
+    parser.add_argument('--caster-room-retreat', action='store_true', help='Dungeon10 controller probe: retreat from flashing enemies in 14A')
     parser.add_argument('--late-retreat-window', type=int, choices=(0,8), default=0, help='Hero flash threshold for --late-retreat (0: wait until vulnerable; 8: preemptive retreat)')
     parser.add_argument('--live-targets', action='store_true', help='Dungeon10 controller: do not pursue actors whose spawn position is still zero')
     parser.add_argument('--late-live-targets', action='store_true', help='Dungeon10 controller: apply spawn-position filtering in13C and15C')
@@ -108,6 +109,7 @@ def main():
         if args.late_retreat:
             dungeon_route['late_retreat']=True
             dungeon_route['late_retreat_window']=args.late_retreat_window
+        if args.caster_room_retreat:dungeon_route['caster_room_retreat']=True
         if args.live_targets:dungeon_route['live_targets']=True
         if args.late_live_targets:dungeon_route['late_live_targets']=True
         if args.collect_before_exit:dungeon_route['collect_before_exit']=True
@@ -118,7 +120,7 @@ def main():
         parser.error('--miniboss-spacing requires dungeon 10')
     if args.weapon_speed_equipment and args.dungeon!=10:
         parser.error('--weapon-speed-equipment requires dungeon 10')
-    if (args.shield_first or args.late_shield_first or args.late_ice or args.caster_ice or args.late_retreat or args.live_targets or args.late_live_targets or args.collect_before_exit) and args.dungeon!=10:
+    if (args.shield_first or args.late_shield_first or args.late_ice or args.caster_ice or args.late_retreat or args.caster_room_retreat or args.live_targets or args.late_live_targets or args.collect_before_exit) and args.dungeon!=10:
         parser.error('Late controller probes require dungeon 10')
     if args.potion_first and args.dungeon!=10:
         parser.error('--potion-first requires dungeon 10')
