@@ -115,6 +115,46 @@ class DungeonRouteTest(unittest.TestCase):
                          [(0x17B,0x18B),(0x18B,0x18A),(0x18A,0x17A),(0x17A,0x17B)])
         self.assertEqual(route['actions'][str(0x17C)], [184,40])
 
+    def test_dungeon10_returns_to_14b_from_west_after_switch(self):
+        route = self.routes[9]
+        edges = route['outbound']
+        stairs = next(i for i,e in enumerate(edges)
+                      if (e['from'],e['to']) == (0x14B,0x15A))
+        self.assertEqual([(e['from'],e['to']) for e in edges[stairs-4:stairs]],
+                         [(0x14B,0x13B),(0x13B,0x13A),(0x13A,0x14A),(0x14A,0x14B)])
+        self.assertEqual(route['actions'][str(0x14B)], [184,40])
+
+    def test_room_checkpoint_cannot_be_reported_as_full_entry(self):
+        report = self.complete_run()
+        report['dungeon']['start_room'] = 0x13C
+        with self.assertRaisesRegex(AssertionError, 'not a full-entry'):
+            self.validate(report, self.routes[0])
+
+    def test_suffix_requires_entire_walk_full_boss_and_complete_ending(self):
+        from test_md_dungeon_emulator import validate_segment
+        route = self.routes[9]
+        first = next(i for i,e in enumerate(route['outbound']) if e['from']==0x13C)
+        cells = [0x13C]+[e['to'] for e in route['outbound'][first:]]
+        result = {'dungeon': {'index':10,'start_room':0x13C,'keys_remaining':0,
+                  'visits':[{'cell':c,'index':10} for c in cells]},
+                  'boss': {'phases':[route['boss']],
+                           'hits':[{'before':90,'after':0}],'deaths':[{}],
+                           'ending_handoff':True},
+                  'ending': {'credits_started':True,'credits_finished':True,
+                             'title_confirmed':True,'crystal_slots':list(range(16,25)),
+                             'scroll_values':list(range(151))},
+                  'combat':{'attacks':[{}]},'player_hp':62,
+                  'final_state':'12','audio_peak':2048,'emulator_frames':56382}
+        self.assertEqual(validate_segment(result,route)['start_room'],0x13C)
+        self.assertIsNone(validate_segment(result,route)['keys_net_spent'])
+        missing = copy.deepcopy(result)
+        del missing['dungeon']['visits'][2]
+        with self.assertRaises(AssertionError):validate_segment(missing,route)
+        missing = copy.deepcopy(result)
+        missing['ending']['crystal_slots'].pop()
+        with self.assertRaises(AssertionError):validate_segment(missing,route)
+        with self.assertRaises(AssertionError):self.validate(result,route)
+
     def test_dungeon9_uses_upper_gate_after_room_clear(self):
         edge = next(e for e in self.routes[8]['outbound'] if e['from']==0x1BE)
         self.assertEqual(edge['to'], 0x1AE)
@@ -220,6 +260,25 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0xB9] = cell & 255
         self.ram[0xBA] = cell >> 8
         driver.drive(0x0C, False)
+
+    def test_waits_for_actual_death_loot_before_exit(self):
+        driver = self.loop_driver([0x139])
+        driver.route.update(index=10, collect_before_exit=True)
+        self.ram[0x600],self.ram[0x607] = 1,90
+        driver.navigate = lambda target: self.fail('Left before the corpse resolved')
+        self.assertEqual(driver.drive(0x0C,False),0)
+
+    def test_unplaced_drainer_does_not_override_real_route_target(self):
+        driver = self.loop_driver([0x139])
+        driver.route.update(index=10, live_targets=True)
+        self.ram[0x600],self.ram[0x618],self.ram[0xA8] = 82,8,1
+        calls=[]
+        def navigate(target,attack=False):
+            calls.append((target,attack))
+            return 7
+        driver.navigate=navigate
+        self.assertEqual(driver.drive(0x0C,False),7)
+        self.assertEqual(calls,[([128,8],False)])
 
     def test_planned_return_to_previous_room_is_not_a_retreat(self):
         driver = self.loop_driver([0x139, 0x138, 0x128])

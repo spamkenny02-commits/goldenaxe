@@ -271,6 +271,9 @@ class DungeonDriver:
                         if self.path and self.path[-1]==tuple(action):return action_pad
                 # Real room-clear shutters must open through enemy deaths.
                 enemies = [(r(0xC313+s*48),r(0xC311+s*48),r(0xC300+s*48)) for s in range(16,24) if (32<=r(0xC300+s*48)<99 or 120<=r(0xC300+s*48)<=124) and (r(0xC318+s*48)>0 or r(0xC300+s*48)==45) and r(0xC300+s*48)!=94]
+                if self.route.get('collect_before_exit') and not enemies and any(
+                        r(0xC300+s*48)==1 and r(0xC307+s*48)>=32 for s in range(16,24)):
+                    return 0
                 if r(0xC301) in (2,3,4,5) and self.route['index']>=9:
                     # Attack animation can rotate. Track the opposing shield
                     # facing throughout the swing, not just when it starts.
@@ -286,10 +289,14 @@ class DungeonDriver:
                 probe={'up':(128,24),'left':(16,72),'right':(232,72)}.get(edge.get('direction'))
                 key_gate=probe and r(0xD600+((probe[1]&248)<<3)+((probe[0]>>2)&62)+1)&0xE0==0xA0
                 if enemies and (r(0xC0A8)==1 or (not key_gate and (not self.path or self.path[-1]!=tuple(edge['target'])))):
+                    if self.route.get('live_targets') or self.route.get('late_live_targets') and cell in (0x13C,0x15C):
+                        enemies=[p for p in enemies if p[:2]!=(0,0)]
+                        if not enemies:return travel_pad
                     x,y=r(0xC313),r(0xC311)
                     # Spend fire against magic drainers only when health is low.
                     drainers=(77,78,82) if self.route['index']>=9 and r(0xC318)<=72 else ()
-                    if self.route.get('late_fire') and cell==0x13C:drainers=(*drainers,81,96)
+                    ice_room=self.route.get('late_ice') and cell==0x13C
+                    if ice_room:drainers=(*drainers,81,96)
                     if cell in self.route.get('shield_cells',()):
                         active=[p for p in enemies if any(r(0xC300+s*48)==p[2] and
                                 (r(0xC313+s*48),r(0xC311+s*48))==p[:2] and r(0xC303+s*48)&2
@@ -298,7 +305,15 @@ class DungeonDriver:
                         tx,ty,kind=min(active,key=lambda p:(p[2] not in (92,93),abs(p[0]-x)+abs(p[1]-y)))
                     else:
                         tx,ty,kind=min(enemies,key=lambda p:(0 if p[2] in (83,91) else 1 if p[2] in drainers else 2,abs(p[0]-x)+abs(p[1]-y)))
+                    if ice_room:
+                        tx,ty,kind=min(enemies,key=lambda p:(p[2]!=81,abs(p[0]-x)+abs(p[1]-y)))
                     dx,dy=tx-x,ty-y
+                    freeze=ice_room and kind==81
+                    frozen=freeze and any(r(0xC300+s*48)==kind and
+                        (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty) and r(0xC306+s*48)
+                        for s in range(16,24))
+                    if freeze and not frozen and r(0xC0DB)>=8 and abs(dx)+abs(dy)<32 and not r(0xC305):
+                        return self.evade([(ex,ey) for ex,ey,k in enemies if k in (81,96,92,93)])
                     if self.route.get('miniboss_spacing') and kind==123:
                         return self.boss_melee()
                     if self.route['index']==10 and kind>=120:
@@ -315,12 +330,14 @@ class DungeonDriver:
                             sx=x+(distance if dx>0 else -distance) if direction in ('left','right') else x
                             sy=y+(distance if dy>0 else -distance) if direction in ('up','down') else y
                             high=r(0xD600+((sy&248)<<3)+((sx>>2)&62)+1)
+                            if freeze and high&0x80:return False
                             if high&0xE0 in (0x80,0xA0):return False
                         return True
                     fire_reserve=8 if kind in drainers else 16 if kind in (83,91) else 112
-                    if abs(dx)+abs(dy)>=24 and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
-                        self.item=4
-                        if r(0xC0DF)!=4:return 0
+                    if freeze:fire_reserve=8
+                    if not frozen and abs(dx)+abs(dy)>=24 and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or not freeze and r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
+                        self.item=5 if freeze else 4
+                        if r(0xC0DF)!=self.item:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)
                         pad=0
                         if not r(0xC020)&32:pad|=self.pad('button2')

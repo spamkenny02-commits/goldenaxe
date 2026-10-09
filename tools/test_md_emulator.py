@@ -71,13 +71,19 @@ def main():
     parser.add_argument('--boss-weapon-probe', action='store_true', help='Run a bounded sword-immunity probe without requiring boss defeat')
     parser.add_argument('--complete-ending', action='store_true', help='Continue final-boss combat through credits, confirmation and return to title')
     parser.add_argument('--dungeon', type=int, choices=range(1,11), help='Traverse a dungeon from its overworld entry checkpoint, defeat the boss and return outside (or play the final ending)')
+    parser.add_argument('--dungeon-start-room', type=lambda v:int(v,16), choices=(0x13C,0x14B,0x15A), help='Separate dungeon10 suffix test from an equipped room checkpoint; never a full-entry proof')
     parser.add_argument('--miniboss-spacing', action='store_true', help='Dungeon10 controller probe: approach type123 from checked left axe reach')
     parser.add_argument('--shield-first', action='store_true', help='Dungeon10 controller probe: prioritize active shields in17D and18A')
     parser.add_argument('--late-shield-first', action='store_true', help='Dungeon10 controller probe: prioritize active shields only in18A')
-    parser.add_argument('--late-fire', action='store_true', help='Dungeon10 controller probe: spend fire against type81 and96 in13C')
+    parser.add_argument('--late-ice', action='store_true', help='Dungeon10 controller probe: freeze type81 in13C before melee')
+    parser.add_argument('--live-targets', action='store_true', help='Dungeon10 controller: do not pursue actors whose spawn position is still zero')
+    parser.add_argument('--late-live-targets', action='store_true', help='Dungeon10 controller: apply spawn-position filtering in13C and15C')
+    parser.add_argument('--collect-before-exit', action='store_true', help='Dungeon10 controller: wait for enemy death animations and collect real health/magic drops')
     parser.add_argument('--potion-first', action='store_true', help='Dungeon10 controller probe: conserve magic by using the potion before healing spells')
     parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
+    if args.dungeon_start_room is not None and args.dungeon!=10:
+        parser.error('--dungeon-start-room requires dungeon 10')
     dungeon_route = None
     if args.dungeon is not None:
         if args.boss_arena is not None or args.boss_weapon_probe:
@@ -89,10 +95,16 @@ def main():
         if args.miniboss_spacing:dungeon_route['miniboss_spacing']=True
         if args.shield_first:dungeon_route['shield_cells']=(0x17D,0x18A)
         if args.late_shield_first:dungeon_route['shield_cells']=(0x18A,)
-        if args.late_fire:dungeon_route['late_fire']=True
+        if args.late_ice:dungeon_route['late_ice']=True
+        if args.live_targets:dungeon_route['live_targets']=True
+        if args.late_live_targets:dungeon_route['late_live_targets']=True
+        if args.collect_before_exit:dungeon_route['collect_before_exit']=True
+        if args.dungeon_start_room is not None:
+            start=next(i for i,e in enumerate(dungeon_route['outbound']) if e['from']==args.dungeon_start_room)
+            dungeon_route['outbound']=dungeon_route['outbound'][start:]
     if args.miniboss_spacing and args.dungeon!=10:
         parser.error('--miniboss-spacing requires dungeon 10')
-    if (args.shield_first or args.late_shield_first or args.late_fire) and args.dungeon!=10:
+    if (args.shield_first or args.late_shield_first or args.late_ice or args.live_targets or args.late_live_targets or args.collect_before_exit) and args.dungeon!=10:
         parser.error('Late controller probes require dungeon 10')
     if args.potion_first and args.dungeon!=10:
         parser.error('--potion-first requires dungeon 10')
@@ -303,6 +315,7 @@ def main():
     boss_run = {'fixture': None, 'phases': [], 'hits': [], 'deaths': [], 'projectiles': [], 'reward_spawned': False, 'reward_collected': False, 'heals': [], 'satellites_spawned': [], 'satellites_killed': [], 'parts_spawned': []}
     boss_prepared = False
     dungeon = DungeonDriver(dungeon_route,read,buttons) if dungeon_route else None
+    if args.dungeon_start_room is not None:dungeon.stage='outbound'
     arena_driver= DungeonDriver({'index':9,'avoid':{}},read,buttons) if args.late_boss_controller else None
     previous_boss = None
     previous_aux = None
@@ -384,10 +397,10 @@ def main():
         state = read(0xC01D)
         if args.boss_arena is not None and state == 0x0C and not boss_prepared:
             # One-time fixture: resume/scene loader constructs the real encounter.
-            cell=dungeon_route['outside_cell'] if dungeon else arena['cell']
+            cell=args.dungeon_start_room if args.dungeon_start_room is not None else dungeon_route['outside_cell'] if dungeon else arena['cell']
             for at in (0xC0C0,0xC0C4):
                 write(at,cell&255);write(at+1,cell>>8)
-            write(0xC037,0 if dungeon else boss_index)
+            write(0xC037,0 if dungeon and args.dungeon_start_room is None else boss_index)
             write(0xC0DA,128);write(0xC318,128)
             write(0xC0E0,3);write(0xC0E1,2);write(0xC0DF,0 if dungeon else boss_weapon)
             write(0xC0F1,3);write(0xC0F2,3)
@@ -629,13 +642,13 @@ def main():
               'audio_peak': current['audio_peak'], 'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
               'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03),
               'world_transitions': world_transitions, 'final_state': f'{read(0xC01D):02X}',
-              'controller': {'potion_first':args.potion_first,'patient_boss':args.patient_boss}}
+              'controller': {'potion_first':args.potion_first,'patient_boss':args.patient_boss,'miniboss_spacing':args.miniboss_spacing,'shield_first':args.shield_first,'late_shield_first':args.late_shield_first,'late_ice':args.late_ice,'live_targets':args.live_targets,'late_live_targets':args.late_live_targets,'collect_before_exit':args.collect_before_exit}}
     if args.boss_arena is not None:
         boss_run['final_item']=read(0xC0DF);boss_run['final_mp']=read(0xC0DB);boss_run['potion_remaining']=read(0xC0E8)
         boss_run['final_entities']=combat_snapshot();boss_run['progress']=read(0xC0CE+boss_index) if boss_prepared else None
         result['boss']=boss_run
         if args.complete_ending:result['ending']=ending
-        if dungeon:result['dungeon']={'index':args.dungeon,'stage':dungeon.stage,'edge':dungeon.edge,'visits':dungeon.visits,'events':dungeon.events,'done':dungeon.done,'keys_remaining':read(0xC0DE),'route':dungeon_route}
+        if dungeon:result['dungeon']={'index':args.dungeon,'start_room':args.dungeon_start_room,'stage':dungeon.stage,'edge':dungeon.edge,'visits':dungeon.visits,'events':dungeon.events,'done':dungeon.done,'keys_remaining':read(0xC0DE),'route':dungeon_route}
     if args.combat:
         combat['final_entities'] = combat_snapshot()
         result['combat'] = combat

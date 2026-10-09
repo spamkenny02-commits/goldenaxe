@@ -15,11 +15,28 @@ ROUTES=json.loads((Path(__file__).resolve().parent.parent/'tests/scenarios/dunge
 
 
 def validate(result,route):
+    assert result['dungeon'].get('start_room') is None, 'Room checkpoint is not a full-entry traversal'
+    return validate_walk(result,route)
+
+
+def validate_segment(result,route):
+    start=result['dungeon'].get('start_room')
+    assert route['index']==10 and start is not None, 'Expected a separate dungeon10 room checkpoint'
+    first=next(i for i,e in enumerate(route['outbound']) if e['from']==start)
+    suffix=dict(route,outbound=route['outbound'][first:])
+    return validate_walk(result,suffix,start)
+
+
+def validate_walk(result,route,start_room=None):
     dungeon=result['dungeon'];boss=result['boss']
     assert dungeon['index']==route['index']
     visits=dungeon['visits']
-    assert visits[0]['cell']==route['outside_cell'] and visits[0]['index']==0
-    expected=[route['outside_cell'],route['entrance']]+[e['to'] for e in route['outbound']]
+    if start_room is None:
+        assert visits[0]['cell']==route['outside_cell'] and visits[0]['index']==0
+        expected=[route['outside_cell'],route['entrance']]+[e['to'] for e in route['outbound']]
+    else:
+        assert visits[0]['cell']==start_room and visits[0]['index']==route['index']
+        expected=[start_room]+[e['to'] for e in route['outbound']]
     if route['index']!=10:expected += [e['to'] for e in route['return']]+[route['outside_cell']]
     actual=[v['cell'] for v in visits]
     cursor=0
@@ -50,9 +67,9 @@ def validate(result,route):
         assert result['final_state']=='0C'
     assert 0<=dungeon['keys_remaining']<=255
     assert result['audio_peak']>1024
-    return {'index':route['index'],'rooms':len(visits),'boss_hits':len(boss['hits']),
+    return {'index':route['index'],'start_room':start_room,'rooms':len(visits),'boss_hits':len(boss['hits']),
             'stairs':sum(bool(e.get('stairs')) for e in route['outbound']+([] if route['index']==10 else route['return'])),
-            'keys_net_spent':20-dungeon['keys_remaining'],'final_hp':result['player_hp'],'frames':result['emulator_frames']}
+            'keys_net_spent':None if route['index']==10 else 20-dungeon['keys_remaining'],'final_hp':result['player_hp'],'frames':result['emulator_frames']}
 
 
 def main():

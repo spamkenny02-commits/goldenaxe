@@ -1,0 +1,1032 @@
+{
+  "status": "Final dungeon suffix and ending strictly validated on MD and SMS; full entry still open",
+  "tool_tests": 55,
+  "suffix_runs": [
+    {
+      "platform": "md",
+      "scope": "equipped13C checkpoint through title; not full entry",
+      "summary": {
+        "index": 10,
+        "start_room": 316,
+        "rooms": 13,
+        "boss_hits": 23,
+        "stairs": 1,
+        "keys_net_spent": null,
+        "final_hp": 62,
+        "frames": 56382
+      },
+      "fixture": {
+        "cell": 316,
+        "type": 109,
+        "index": 10,
+        "hp": 128,
+        "item": 0,
+        "axe_level": 2,
+        "armor_level": 3,
+        "shield_level": 3,
+        "heal_magic_level": 2,
+        "potion": 1,
+        "antidote": 1,
+        "mp": 128
+      },
+      "boss_hits": [
+        {
+          "before": 90,
+          "after": 86
+        },
+        {
+          "before": 86,
+          "after": 82
+        },
+        {
+          "before": 82,
+          "after": 78
+        },
+        {
+          "before": 78,
+          "after": 74
+        },
+        {
+          "before": 74,
+          "after": 70
+        },
+        {
+          "before": 70,
+          "after": 66
+        },
+        {
+          "before": 66,
+          "after": 62
+        },
+        {
+          "before": 62,
+          "after": 58
+        },
+        {
+          "before": 58,
+          "after": 54
+        },
+        {
+          "before": 54,
+          "after": 50
+        },
+        {
+          "before": 50,
+          "after": 46
+        },
+        {
+          "before": 46,
+          "after": 42
+        },
+        {
+          "before": 42,
+          "after": 38
+        },
+        {
+          "before": 38,
+          "after": 34
+        },
+        {
+          "before": 34,
+          "after": 30
+        },
+        {
+          "before": 30,
+          "after": 26
+        },
+        {
+          "before": 26,
+          "after": 22
+        },
+        {
+          "before": 22,
+          "after": 18
+        },
+        {
+          "before": 18,
+          "after": 14
+        },
+        {
+          "before": 14,
+          "after": 10
+        },
+        {
+          "before": 10,
+          "after": 6
+        },
+        {
+          "before": 6,
+          "after": 2
+        },
+        {
+          "before": 2,
+          "after": 0
+        }
+      ],
+      "credits_scroll_count": 224,
+      "crystals": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "result_sha256": "1bb116adc5eced6f7b911154b7453282e985084362e2cb577d61211fc8946d53"
+    },
+    {
+      "platform": "sms",
+      "scope": "equipped13C checkpoint through title; not full entry",
+      "summary": {
+        "index": 10,
+        "start_room": 316,
+        "rooms": 13,
+        "boss_hits": 23,
+        "stairs": 1,
+        "keys_net_spent": null,
+        "final_hp": 108,
+        "frames": 19378
+      },
+      "fixture": {
+        "cell": 316,
+        "type": 109,
+        "index": 10,
+        "hp": 128,
+        "item": 0,
+        "axe_level": 2,
+        "armor_level": 3,
+        "shield_level": 3,
+        "heal_magic_level": 2,
+        "potion": 1,
+        "antidote": 1,
+        "mp": 128
+      },
+      "boss_hits": [
+        {
+          "before": 90,
+          "after": 86
+        },
+        {
+          "before": 86,
+          "after": 82
+        },
+        {
+          "before": 82,
+          "after": 78
+        },
+        {
+          "before": 78,
+          "after": 74
+        },
+        {
+          "before": 74,
+          "after": 70
+        },
+        {
+          "before": 70,
+          "after": 66
+        },
+        {
+          "before": 66,
+          "after": 62
+        },
+        {
+          "before": 62,
+          "after": 58
+        },
+        {
+          "before": 58,
+          "after": 54
+        },
+        {
+          "before": 54,
+          "after": 50
+        },
+        {
+          "before": 50,
+          "after": 46
+        },
+        {
+          "before": 46,
+          "after": 42
+        },
+        {
+          "before": 42,
+          "after": 38
+        },
+        {
+          "before": 38,
+          "after": 34
+        },
+        {
+          "before": 34,
+          "after": 30
+        },
+        {
+          "before": 30,
+          "after": 26
+        },
+        {
+          "before": 26,
+          "after": 22
+        },
+        {
+          "before": 22,
+          "after": 18
+        },
+        {
+          "before": 18,
+          "after": 14
+        },
+        {
+          "before": 14,
+          "after": 10
+        },
+        {
+          "before": 10,
+          "after": 6
+        },
+        {
+          "before": 6,
+          "after": 2
+        },
+        {
+          "before": 2,
+          "after": 0
+        }
+      ],
+      "credits_scroll_count": 224,
+      "crystals": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "result_sha256": "c3fa2d29879f46416f69bf54e542e9835cd33e9541bd582551ac068e6127c0e6"
+    }
+  ],
+  "attempts": [
+    {
+      "scenario": "v64_closefreeze_md10",
+      "frames": 56720,
+      "cell": "18A",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "16A",
+          38,
+          64,
+          0
+        ],
+        [
+          "17A",
+          34,
+          0,
+          0
+        ],
+        [
+          "18A",
+          34,
+          0,
+          0
+        ]
+      ],
+      "result_sha256": "c804fd3b63db6ce5b8a3f595d00f29ccfca46e9ed1d51689b625d3233d77cd7c"
+    },
+    {
+      "scenario": "v64_closefreeze_sms10",
+      "frames": 18462,
+      "cell": "17C",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "18B",
+          16,
+          0,
+          0
+        ],
+        [
+          "17B",
+          14,
+          0,
+          0
+        ],
+        [
+          "17C",
+          14,
+          0,
+          0
+        ]
+      ],
+      "result_sha256": "80a519a769ba0b61198205fad73f056e50aece6ad15eb47f00d02195cb035fe3"
+    },
+    {
+      "scenario": "v64_closeice_md10",
+      "frames": 57372,
+      "cell": "13C",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17A",
+          32,
+          24,
+          0
+        ],
+        [
+          "17B",
+          32,
+          24,
+          0
+        ],
+        [
+          "13C",
+          30,
+          24,
+          0
+        ]
+      ],
+      "result_sha256": "a45021c023e4b32212ecde9e7304a1963058c887ced904e19eb70e950e0b4549"
+    },
+    {
+      "scenario": "v64_delay128_md10",
+      "frames": 160000,
+      "cell": "16A",
+      "hp": 34,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "13D",
+          34,
+          96,
+          0
+        ],
+        [
+          "13E",
+          38,
+          48,
+          0
+        ],
+        [
+          "16A",
+          34,
+          40,
+          0
+        ]
+      ],
+      "result_sha256": "029ba3ae843e6a2a50ae8cc43cfa0aa7f66d3a12c065b2a60dbf0c9420d445d3"
+    },
+    {
+      "scenario": "v64_delay16_md10",
+      "frames": 61569,
+      "cell": "14B",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "13C",
+          30,
+          24,
+          0
+        ],
+        [
+          "13B",
+          6,
+          0,
+          0
+        ],
+        [
+          "14B",
+          6,
+          0,
+          0
+        ]
+      ],
+      "result_sha256": "7a0e2158a2c67fc908c9466738ae3f82d485b77166a8c4352b9c36cb9c4b82ac"
+    },
+    {
+      "scenario": "v64_delay256_md10",
+      "frames": 41319,
+      "cell": "15E",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17E",
+          10,
+          8,
+          0
+        ],
+        [
+          "16E",
+          10,
+          8,
+          0
+        ],
+        [
+          "15E",
+          6,
+          8,
+          0
+        ]
+      ],
+      "result_sha256": "0373a82dbe44be43377a9a5e86acd30b83774b11b1e9b1f362a1e2133ee545af"
+    },
+    {
+      "scenario": "v64_delay32_md10",
+      "frames": 38087,
+      "cell": "15E",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17E",
+          104,
+          80,
+          0
+        ],
+        [
+          "16E",
+          104,
+          80,
+          0
+        ],
+        [
+          "15E",
+          100,
+          80,
+          0
+        ]
+      ],
+      "result_sha256": "90d94793c7a25de53821114ad11a3b95c7a0c362ec4eeeca0fd841c7e26e5eea"
+    },
+    {
+      "scenario": "v64_delay48_md10",
+      "frames": 38087,
+      "cell": "15E",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17E",
+          104,
+          80,
+          0
+        ],
+        [
+          "16E",
+          104,
+          80,
+          0
+        ],
+        [
+          "15E",
+          100,
+          80,
+          0
+        ]
+      ],
+      "result_sha256": "90d94793c7a25de53821114ad11a3b95c7a0c362ec4eeeca0fd841c7e26e5eea"
+    },
+    {
+      "scenario": "v64_delay64_md10",
+      "frames": 38087,
+      "cell": "15E",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17E",
+          104,
+          80,
+          0
+        ],
+        [
+          "16E",
+          104,
+          80,
+          0
+        ],
+        [
+          "15E",
+          100,
+          80,
+          0
+        ]
+      ],
+      "result_sha256": "90d94793c7a25de53821114ad11a3b95c7a0c362ec4eeeca0fd841c7e26e5eea"
+    },
+    {
+      "scenario": "v64_freeze81_md10",
+      "frames": 51630,
+      "cell": "15E",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17E",
+          30,
+          72,
+          0
+        ],
+        [
+          "16E",
+          30,
+          72,
+          0
+        ],
+        [
+          "15E",
+          26,
+          72,
+          0
+        ]
+      ],
+      "result_sha256": "ac08cb6fdab4bf3dd27e2f37a6dc48d08e505dea6ad0eede4a0efcd201a6c47a"
+    },
+    {
+      "scenario": "v64_freeze81_sms10",
+      "frames": 20372,
+      "cell": "16A",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "13D",
+          30,
+          16,
+          0
+        ],
+        [
+          "13E",
+          12,
+          16,
+          0
+        ],
+        [
+          "16A",
+          12,
+          8,
+          0
+        ]
+      ],
+      "result_sha256": "65a595bb3f94eda53cd6fcda2b6dfc23e0bf7477de4ef6b07d87f3c222114db6"
+    },
+    {
+      "scenario": "v64_freeze_md10",
+      "frames": 51630,
+      "cell": "15E",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17E",
+          30,
+          72,
+          0
+        ],
+        [
+          "16E",
+          30,
+          72,
+          0
+        ],
+        [
+          "15E",
+          26,
+          72,
+          0
+        ]
+      ],
+      "result_sha256": "ac08cb6fdab4bf3dd27e2f37a6dc48d08e505dea6ad0eede4a0efcd201a6c47a"
+    },
+    {
+      "scenario": "v64_freeze_sms10",
+      "frames": 20372,
+      "cell": "16A",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "13D",
+          30,
+          16,
+          0
+        ],
+        [
+          "13E",
+          12,
+          16,
+          0
+        ],
+        [
+          "16A",
+          12,
+          8,
+          0
+        ]
+      ],
+      "result_sha256": "65a595bb3f94eda53cd6fcda2b6dfc23e0bf7477de4ef6b07d87f3c222114db6"
+    },
+    {
+      "scenario": "v64_fulllive_md10",
+      "frames": 30710,
+      "cell": "15E",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17E",
+          84,
+          80,
+          1
+        ],
+        [
+          "16E",
+          84,
+          80,
+          1
+        ],
+        [
+          "15E",
+          80,
+          80,
+          1
+        ]
+      ],
+      "result_sha256": "d6a7b65a3491bb687fc86966af15101100c0a2db1f7766fffcabc1ebf4a61081"
+    },
+    {
+      "scenario": "v64_ice81_md10",
+      "frames": 61569,
+      "cell": "14B",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "13C",
+          30,
+          24,
+          0
+        ],
+        [
+          "13B",
+          6,
+          0,
+          0
+        ],
+        [
+          "14B",
+          6,
+          0,
+          0
+        ]
+      ],
+      "result_sha256": "7a0e2158a2c67fc908c9466738ae3f82d485b77166a8c4352b9c36cb9c4b82ac"
+    },
+    {
+      "scenario": "v64_ice_md10",
+      "frames": 60812,
+      "cell": "14B",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "13C",
+          30,
+          24,
+          0
+        ],
+        [
+          "13B",
+          2,
+          0,
+          0
+        ],
+        [
+          "14B",
+          2,
+          0,
+          0
+        ]
+      ],
+      "result_sha256": "7f00cb77ef7e78f02733b66d17261d8225807fa26bc72a3c5ac7f54c3231beba"
+    },
+    {
+      "scenario": "v64_ice_sms10",
+      "frames": 23187,
+      "cell": "13C",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17A",
+          12,
+          16,
+          0
+        ],
+        [
+          "17B",
+          4,
+          16,
+          0
+        ],
+        [
+          "13C",
+          2,
+          16,
+          0
+        ]
+      ],
+      "result_sha256": "132adee9773eb42f49281f3f09e622867ff1fd7a4b02de7767b881eb3ad4584c"
+    },
+    {
+      "scenario": "v64_magicfirst_md10",
+      "frames": 30728,
+      "cell": "15E",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "17E",
+          84,
+          80,
+          1
+        ],
+        [
+          "16E",
+          84,
+          80,
+          1
+        ],
+        [
+          "15E",
+          80,
+          80,
+          1
+        ]
+      ],
+      "result_sha256": "ad2b8ae2f73c954d0f54c353bdb38e91dfd1f7f7bc3e686fd0cd14a0aa1153de"
+    },
+    {
+      "scenario": "v64_miniice_sms10",
+      "frames": 17195,
+      "cell": "18A",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "16A",
+          34,
+          0,
+          0
+        ],
+        [
+          "17A",
+          10,
+          16,
+          0
+        ],
+        [
+          "18A",
+          4,
+          16,
+          0
+        ]
+      ],
+      "result_sha256": "91989b14e8f4d3134676889ba338d23ce66e8700f62533297fe552a40a39cef5"
+    },
+    {
+      "scenario": "v64_potionmini_sms10",
+      "frames": 21199,
+      "cell": "17C",
+      "hp": 0,
+      "start_room": null,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "18B",
+          12,
+          8,
+          0
+        ],
+        [
+          "17B",
+          12,
+          8,
+          0
+        ],
+        [
+          "17C",
+          12,
+          8,
+          0
+        ]
+      ],
+      "result_sha256": "5226ba168e4f5277d1ae6d0915133a159a758072b10bf44844681430f2f20e44"
+    },
+    {
+      "scenario": "v64_suffix_md10",
+      "frames": 180000,
+      "cell": "14B",
+      "hp": 112,
+      "start_room": 316,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "13C",
+          128,
+          128,
+          1
+        ],
+        [
+          "13B",
+          112,
+          88,
+          1
+        ],
+        [
+          "14B",
+          112,
+          88,
+          1
+        ]
+      ],
+      "result_sha256": "ab46c32349ac41113e8e83bf17efda5918fea710cab1f694e495e4099f2ab9da"
+    },
+    {
+      "scenario": "v64_suffix_sms10",
+      "frames": 180000,
+      "cell": "14B",
+      "hp": 98,
+      "start_room": 316,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "13C",
+          128,
+          128,
+          1
+        ],
+        [
+          "13B",
+          96,
+          128,
+          1
+        ],
+        [
+          "14B",
+          96,
+          128,
+          1
+        ]
+      ],
+      "result_sha256": "6c979be5183151ca5193614bf2ec37151673659bf2c3342bc90ba77b5dd4da92"
+    },
+    {
+      "scenario": "v64_suffixlive_md10",
+      "frames": 56382,
+      "cell": "000",
+      "hp": 62,
+      "start_room": 316,
+      "title_confirmed": true,
+      "last_visits": [
+        [
+          "16C",
+          38,
+          40,
+          1
+        ],
+        [
+          "15C",
+          38,
+          40,
+          1
+        ],
+        [
+          "14C",
+          122,
+          24,
+          0
+        ]
+      ],
+      "result_sha256": "1bb116adc5eced6f7b911154b7453282e985084362e2cb577d61211fc8946d53"
+    },
+    {
+      "scenario": "v64_suffixlive_sms10",
+      "frames": 19378,
+      "cell": "000",
+      "hp": 108,
+      "start_room": 316,
+      "title_confirmed": true,
+      "last_visits": [
+        [
+          "16C",
+          42,
+          104,
+          1
+        ],
+        [
+          "15C",
+          42,
+          104,
+          1
+        ],
+        [
+          "14C",
+          30,
+          64,
+          1
+        ]
+      ],
+      "result_sha256": "c3fa2d29879f46416f69bf54e542e9835cd33e9541bd582551ac068e6127c0e6"
+    },
+    {
+      "scenario": "v64_suffixwest_md10",
+      "frames": 80000,
+      "cell": "15C",
+      "hp": 60,
+      "start_room": 316,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "16B",
+          68,
+          56,
+          1
+        ],
+        [
+          "16C",
+          60,
+          64,
+          1
+        ],
+        [
+          "15C",
+          60,
+          64,
+          1
+        ]
+      ],
+      "result_sha256": "fff5ce04f365bc91cb24eacaa32b2dc0c29bc1b2aba77180f190478f79b45659"
+    },
+    {
+      "scenario": "v64_suffixwest_sms10",
+      "frames": 80000,
+      "cell": "15C",
+      "hp": 44,
+      "start_room": 316,
+      "title_confirmed": false,
+      "last_visits": [
+        [
+          "16B",
+          62,
+          88,
+          1
+        ],
+        [
+          "16C",
+          44,
+          96,
+          1
+        ],
+        [
+          "15C",
+          44,
+          96,
+          1
+        ]
+      ],
+      "result_sha256": "88ddddbbeb8c01b410457d5d672da539692bebc59bc219d6d28555c61d1b88d0"
+    }
+  ]
+}

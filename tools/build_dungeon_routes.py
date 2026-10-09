@@ -83,6 +83,10 @@ for k in range(1,11):
   # 17A: the southern/eastern region cannot reach the upper stair pocket.
   split=next(i for i,e in enumerate(route) if e['from']==0x17A)
   route=route[:split]+path(0x17A,0x18B,avoid=(0x17B,))+path(0x18B,0x17C)+path(0x17C,0x17B)+path(0x17B,0x18B)+path(0x18B,0x17A,avoid=(0x17B,))+path(0x17A,0x17B)+route[split+1:]
+  #14B's switch opens tile64 in its western partition. Reenter from14A
+  # before taking the bottom-left stair; the north floor is disconnected.
+  split=next(i for i,e in enumerate(route) if e['from']==0x14B and e.get('stairs'))
+  route=route[:split]+path(0x14B,0x13B)+path(0x13B,0x14A,avoid=(0x14B,))+path(0x14A,0x14B)+route[split:]
  if k==9:
   route=path(starts[k],boss['cell'],avoid=(0x1ED,0x1DD))
   # $B686 closes the western gate while fighting, then opens the upper
