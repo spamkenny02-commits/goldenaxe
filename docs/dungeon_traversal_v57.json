@@ -1,0 +1,125 @@
+{
+  "status": "Antidote matches original Z80; delaying its use until 13D regresses both dungeon10 controllers and is reverted",
+  "player_item_cycles": 328,
+  "new_antidote_cycles": 24,
+  "original_handler": "bank0:$2FBE",
+  "tool_tests": 47,
+  "production_changes": false,
+  "attempts": [
+    {
+      "platform": "sms",
+      "frames": 15436,
+      "cell": "15E",
+      "hp": 0,
+      "boss_hits": 0,
+      "complete": false,
+      "retained": false,
+      "result_sha256": "62d65502071dbe5927e592fca996e8099dd468a4df9fc88c3be66411f14f7a9b",
+      "last_visits": [
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 70,
+          "mp": 112,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 382,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 118,
+          "mp": 16,
+          "potion": 0,
+          "curse": 1
+        },
+        {
+          "cell": 366,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 118,
+          "mp": 16,
+          "potion": 0,
+          "curse": 1
+        },
+        {
+          "cell": 350,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 112,
+          "mp": 16,
+          "potion": 0,
+          "curse": 1
+        }
+      ]
+    },
+    {
+      "platform": "md",
+      "frames": 27540,
+      "cell": "15E",
+      "hp": 0,
+      "boss_hits": 0,
+      "complete": false,
+      "retained": false,
+      "result_sha256": "36e5ea0160a5f819d0d817894c4cff4b9a959fc450daf7f833cdc7e5ef2066ab",
+      "last_visits": [
+        {
+          "cell": 397,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 76,
+          "mp": 104,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 398,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 76,
+          "mp": 104,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 382,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 56,
+          "potion": 1,
+          "curse": 1
+        },
+        {
+          "cell": 366,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 40,
+          "mp": 32,
+          "potion": 1,
+          "curse": 1
+        },
+        {
+          "cell": 350,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 36,
+          "mp": 32,
+          "potion": 1,
+          "curse": 1
+        }
+      ]
+    }
+  ],
+  "next": "Avoid renewed curse in13D while retaining the earlier antidote use needed to survive15E; south17B entry and17C switch still await integration validation."
+}

@@ -44,6 +44,15 @@ static void setup(unsigned item,unsigned variant){
     gaw_ram_write16le(0xC308u,0x80A0);gaw_ram_write8(0xC0E0u,1);gaw_ram_write8(0xC0E1u,1);gaw_ram_write8(0xC0F5u,(uint8_t)(variant&1u));
     gaw_ram_write8(0xC0E8u,1);gaw_ram_write8(0xC0E9u,1);gaw_ram_write16le(0xC0C2u,(uint16_t)(variant&2u?0x101u:0xAAu));
     gaw_ram_write8(0xC01Du,12);gaw_ram_write8(0xC02Fu,(uint8_t)(variant*17u));
+    if(item==2u){
+        static const uint8_t curse[]={0,1,2,255};
+        gaw_ram_write8(0xC0BFu,curse[variant&3u]);
+        gaw_ram_write8(0xC0E2u,(uint8_t)((variant>>2)&1u));
+        gaw_ram_write8(0xC0E0u,(uint8_t)(1u+((variant>>3)%3u)));
+        gaw_ram_write8(0xC0F1u,(uint8_t)(1u+variant/8u));
+        gaw_ram_write8(0xC0F2u,(uint8_t)(1u+variant%3u));
+        gaw_ram_write8(0xC31Au,(uint8_t)(variant*3u));
+    }
     if(item==3u){gaw_ram_write8(0xC072u,(uint8_t)(variant&4u?0:1));gaw_ram_write8(0xC0ADu,(uint8_t)(variant&2u));}
     if(item>=4u && item<=7u){
         static const uint8_t mp[]={0,7,8,23,24,31,32,255};
@@ -72,8 +81,8 @@ static void setup(unsigned item,unsigned variant){
     gaw_host_set_frame_observer(observe);
 }
 int main(void){
-    const unsigned items[]={3,4,5,6,7,8,9,10,11,12};const uint16_t targets[]={0x2FD2,0x3050,0x3077,0x30A7,0x3021,0x30D6,0x30E8,0x3124,0x31E7,0x2F18};unsigned cases=0;
-    for(unsigned kind=0;kind<10u;++kind)for(unsigned variant=0;variant<(items[kind]>=4u && items[kind]<=7u?64u:8u);++variant){
+    const unsigned items[]={2,3,4,5,6,7,8,9,10,11,12};const uint16_t targets[]={0x2FBE,0x2FD2,0x3050,0x3077,0x30A7,0x3021,0x30D6,0x30E8,0x3124,0x31E7,0x2F18};unsigned cases=0;
+    for(unsigned kind=0;kind<sizeof items/sizeof items[0];++kind)for(unsigned variant=0;variant<(items[kind]==2u?24u:items[kind]>=4u && items[kind]<=7u?64u:8u);++variant){
         current_item=items[kind];current_case=variant;reference=1;observed=0;setup(current_item,variant);
         if(!gaw_sms_compat_raw_indexed_call(0,targets[kind],0xC300)){
             fprintf(stderr,"reference item%u case%u fault%04X frames%u\n",current_item,current_case,gaw_sms_compat_last_pc(),observed);assert(0);
