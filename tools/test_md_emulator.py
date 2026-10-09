@@ -270,9 +270,10 @@ def main():
     world_transitions = []
     last_cell = None
     profiling = False
-    combat = {'attacks': [], 'player_hits': [], 'enemy_hits': [], 'enemy_deaths': [], 'encounters': [], 'projectiles': [], 'curse_changes': []}
+    combat = {'attacks': [], 'player_hits': [], 'enemy_hits': [], 'enemy_deaths': [], 'encounters': [], 'ready_encounters': [], 'projectiles': [], 'curse_changes': []}
     previous_combat = None
     previous_curse = None
+    ready_cell = None
     def combat_snapshot():
         return [{'slot': slot, 'type': read(0xC300+slot*48), 'state': read(0xC301+slot*48),
                  'flags': read(0xC303+slot*48), 'saved_type': read(0xC307+slot*48),
@@ -505,6 +506,10 @@ def main():
             previous_curse=curse
             if state == 0x0C:
                 stamp = {'emulator_frame': frame, 'game_frame': read(0xC02F), 'cell': cell}
+                if ready_cell!=cell and snapshot[0]['hitbox_source'] and any(
+                        e['type']>=32 and e['flags']&2 and e['hitbox_source'] for e in snapshot[16:24]):
+                    combat['ready_encounters'].append({**stamp,'entities':snapshot})
+                    ready_cell=cell
                 if previous_combat is None or previous_combat[0] != cell:
                     combat['encounters'].append({**stamp, 'entities': snapshot})
                 else:
@@ -523,7 +528,11 @@ def main():
                                                       'attacker_attack': attacker['attack'] if attacker else None,
                                                       'player_direction':player['direction'],'player_position':player['position'],
                                                       'attacker_direction':attacker['direction'] if attacker else None,
-                                                      'attacker_position':attacker['position'] if attacker else None})
+                                                      'attacker_position':attacker['position'] if attacker else None,
+                                                      'player_before':{'position':old_player['position'],
+                                                          'direction':old_player['direction'],'defense':old_player['defense'],
+                                                          'hitbox_source':old_player['hitbox_source']},
+                                                      'attacker_hitbox_target':attacker['hitbox_target'] if attacker else None})
                     for entity, old in zip(snapshot[1:], previous[1:]):
                         if entity['slot'] >= 24 and old['type'] == 0 and 16 <= entity['type'] <= 23:
                             combat['projectiles'].append({**stamp, 'slot': entity['slot'], 'type': entity['type'], 'attack': entity['attack']})

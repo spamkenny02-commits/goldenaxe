@@ -1,0 +1,297 @@
+{
+  "status": "Shield approach experiments reverted; pre-damage and active-actor observations added",
+  "tool_tests": 48,
+  "attempts": [
+    {
+      "scenario": "flank_sms10",
+      "frames": 14350,
+      "cell": "14D",
+      "hp": 0,
+      "complete": false,
+      "retained": false,
+      "last_visits": [
+        {
+          "cell": 365,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 16,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 8,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 8,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "a4e064fac8de7d0d8059c34077409abb5294b97bb68f0d5c4da50b479c868a29"
+    },
+    {
+      "scenario": "flank_md10",
+      "frames": 54830,
+      "cell": "16A",
+      "hp": 0,
+      "complete": false,
+      "retained": false,
+      "last_visits": [
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 56,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 40,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 36,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "5b9332c6d1a94b72c43f615a99963bd0aa99ccc90506bd5670e7d4ce0e73105a"
+    },
+    {
+      "scenario": "roomflank_sms10",
+      "frames": 25467,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "retained": false,
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "ee696115c50d174829cbecccb4986748fdab1ca24ee9a416c15c2006a1774238"
+    },
+    {
+      "scenario": "roomflank_md10",
+      "frames": 61540,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "retained": false,
+      "last_visits": [
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 24,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "4bb321d0863e2a2cc3bf53437fce3808cc09069d63e4b5505109728f6a0de964"
+    }
+  ],
+  "retained": "V60 driver and V59 optional potion-first; read-only combat diagnostics",
+  "production_changes": false,
+  "next": "Use pre-frame damage geometry to reduce type90 contact before tackling the two type93 shields in18A",
+  "retained_md10": {
+    "frames": 61782,
+    "cell": "18A",
+    "hp": 0,
+    "complete": false,
+    "potion_first": true,
+    "matches_v59_failure": true,
+    "ready_snapshot_count": 14,
+    "room18a_hits": [
+      {
+        "emulator_frame": 60098,
+        "game_frame": 12,
+        "cell": 394,
+        "before": 28,
+        "after": 22,
+        "flash": 47,
+        "attacker_slot": 17,
+        "attacker_type": 90,
+        "attacker_attack": 18,
+        "player_direction": 3,
+        "player_position": [
+          96,
+          56
+        ],
+        "attacker_direction": 3,
+        "attacker_position": [
+          88,
+          64
+        ],
+        "player_before": {
+          "position": [
+            88,
+            54
+          ],
+          "direction": 3,
+          "defense": 12,
+          "hitbox_source": 5
+        },
+        "attacker_hitbox_target": 5
+      },
+      {
+        "emulator_frame": 61304,
+        "game_frame": 36,
+        "cell": 394,
+        "before": 22,
+        "after": 14,
+        "flash": 47,
+        "attacker_slot": 21,
+        "attacker_type": 93,
+        "attacker_attack": 20,
+        "player_direction": 3,
+        "player_position": [
+          48,
+          112
+        ],
+        "attacker_direction": 2,
+        "attacker_position": [
+          68,
+          112
+        ],
+        "player_before": {
+          "position": [
+            56,
+            112
+          ],
+          "direction": 3,
+          "defense": 12,
+          "hitbox_source": 5
+        },
+        "attacker_hitbox_target": 5
+      },
+      {
+        "emulator_frame": 61442,
+        "game_frame": 84,
+        "cell": 394,
+        "before": 14,
+        "after": 6,
+        "flash": 47,
+        "attacker_slot": 21,
+        "attacker_type": 93,
+        "attacker_attack": 20,
+        "player_direction": 2,
+        "player_position": [
+          40,
+          112
+        ],
+        "attacker_direction": 2,
+        "attacker_position": [
+          45,
+          112
+        ],
+        "player_before": {
+          "position": [
+            44,
+            112
+          ],
+          "direction": 2,
+          "defense": 12,
+          "hitbox_source": 5
+        },
+        "attacker_hitbox_target": 5
+      },
+      {
+        "emulator_frame": 61781,
+        "game_frame": 196,
+        "cell": 394,
+        "before": 6,
+        "after": 0,
+        "flash": 47,
+        "attacker_slot": 20,
+        "attacker_type": 90,
+        "attacker_attack": 18,
+        "player_direction": 1,
+        "player_position": [
+          96,
+          56
+        ],
+        "attacker_direction": 1,
+        "attacker_position": [
+          104,
+          48
+        ],
+        "player_before": {
+          "position": [
+            94,
+            48
+          ],
+          "direction": 1,
+          "defense": 12,
+          "hitbox_source": 5
+        },
+        "attacker_hitbox_target": 5
+      }
+    ],
+    "result_sha256": "503688004d786ba296d104fc2fadda296a82263f7d7d9044d4e784acb09a0e9f"
+  }
+}
