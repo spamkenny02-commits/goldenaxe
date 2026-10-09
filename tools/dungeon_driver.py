@@ -30,6 +30,13 @@ class DungeonDriver:
     def pad(self, direction):
         return 1 << self.buttons[direction]
 
+    def magic_reserve(self):
+        """Keep the probe's spell budget through the final approach to15B."""
+        cell=self.read(0xC0B9)|self.read(0xC0BA)<<8
+        if self.stage=='outbound' and cell in (0x13C,0x13B,0x14B,0x13A,0x14A,0x15A,0x15B):
+            return self.route.get('final_magic_reserve',0)
+        return 0
+
     def desired_item(self):
         # Using a consumable refreshes the HUD and selects the sword. Do not
         # reopen inventory for an antidote that has just been consumed.
@@ -343,7 +350,8 @@ class DungeonDriver:
                     frozen=freeze and any(r(0xC300+s*48)==kind and
                         (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty) and r(0xC306+s*48)
                         for s in range(16,24))
-                    if freeze and not frozen and r(0xC0DB)>=8 and abs(dx)+abs(dy)<32 and not r(0xC305):
+                    reserve=0 if cell==0x15B else self.magic_reserve()
+                    if freeze and not frozen and r(0xC0DB)>=8+reserve and abs(dx)+abs(dy)<32 and not r(0xC305):
                         threats=[(ex,ey) for ex,ey,k in enemies if k in (81,96,92,93)]
                         return self.evade(threats or [(tx,ty)])
                     if self.route.get('miniboss_spacing') and kind==123:
@@ -355,7 +363,7 @@ class DungeonDriver:
                     direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
                     facing={'up':0,'down':1,'left':2,'right':3}[direction]
                     cross=abs(dx) if direction in ('up','down') else abs(dy)
-                    if not frozen and (kind==91 or (kind==83 and (r(0xC0DB)>=16 or r(0xC0C6)))) and abs(dx)+abs(dy)<32:
+                    if not frozen and (kind==91 or (kind==83 and (r(0xC0DB)>=16+reserve or r(0xC0C6)))) and abs(dx)+abs(dy)<32:
                         threats=[(ex,ey) for ex,ey,enemy in enemies if enemy in (83,91)]
                         return self.evade(threats or [(tx,ty)])
                     def clear_shot():
@@ -368,6 +376,7 @@ class DungeonDriver:
                         return True
                     fire_reserve=8 if kind in drainers else 16 if kind in (83,91) else 112
                     if freeze:fire_reserve=8
+                    fire_reserve+=reserve
                     if not frozen and abs(dx)+abs(dy)>=24 and cross<=8 and clear_shot() and (r(0xC0DB)>=fire_reserve or not freeze and r(0xC0C6)) and not (self.route['index']==8 and cell==0x1DA):
                         self.item=5 if freeze else 4
                         if r(0xC0DF)!=self.item:return 0
@@ -377,7 +386,7 @@ class DungeonDriver:
                         return pad
                     # With no fire reserve, use the axe's real reach before
                     # body contact can curse the hero. Do not pursue a flashing caster.
-                    if not frozen and self.route['index']==10 and kind==83 and r(0xC0DB)<16 and not r(0xC0C6):
+                    if not frozen and self.route['index']==10 and kind==83 and r(0xC0DB)<16+reserve and not r(0xC0C6):
                         slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind
                                   and (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty))
                         openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48))
@@ -403,7 +412,8 @@ class DungeonDriver:
                     # Fire crosses E0 partitions that block walking. Use it
                     # for an unreachable room-clear enemy even below the
                     # ordinary travel reserve (SMS 6, return room 113).
-                    if self.stage=='return' and (not self.path or self.path[-1]!=enemy_goal) and not r(0xC304) and kind not in (83,91,45) and cross<=8 and clear_shot() and (r(0xC0DB)>=8 or r(0xC0C6)):
+                    partition_fire=self.stage=='return' or self.route.get('final_magic_reserve') and cell==0x15B
+                    if partition_fire and (not self.path or self.path[-1]!=enemy_goal) and not r(0xC304) and kind not in (83,91,45) and cross<=8 and clear_shot() and (r(0xC0DB)>=8 or r(0xC0C6)):
                         self.item=4
                         if r(0xC0DF)!=4:return 0
                         if r(0xC30A)!=facing:return self.pad(direction)

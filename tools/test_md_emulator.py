@@ -86,6 +86,7 @@ def main():
     parser.add_argument('--late-live-targets', action='store_true', help='Dungeon10 controller: apply spawn-position filtering in13C and15C')
     parser.add_argument('--collect-before-exit', action='store_true', help='Dungeon10 controller: wait for enemy death animations and collect real health/magic drops')
     parser.add_argument('--potion-first', action='store_true', help='Dungeon10 controller probe: conserve magic by using the potion before healing spells')
+    parser.add_argument('--final-magic-reserve', type=int, choices=(0,8,16), default=0, help='Dungeon10 controller probe: reserve MP after13C for partition fire in15B')
     parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
     if args.dungeon_start_room is not None and args.dungeon!=10:
@@ -113,6 +114,7 @@ def main():
         if args.live_targets:dungeon_route['live_targets']=True
         if args.late_live_targets:dungeon_route['late_live_targets']=True
         if args.collect_before_exit:dungeon_route['collect_before_exit']=True
+        if args.final_magic_reserve:dungeon_route['final_magic_reserve']=args.final_magic_reserve
         if args.dungeon_start_room is not None:
             start=next(i for i,e in enumerate(dungeon_route['outbound']) if e['from']==args.dungeon_start_room)
             dungeon_route['outbound']=dungeon_route['outbound'][start:]
@@ -124,6 +126,8 @@ def main():
         parser.error('Late controller probes require dungeon 10')
     if args.potion_first and args.dungeon!=10:
         parser.error('--potion-first requires dungeon 10')
+    if args.final_magic_reserve and args.dungeon!=10:
+        parser.error('--final-magic-reserve requires dungeon 10')
     if args.patient_boss and args.dungeon not in (9,10):
         parser.error('--patient-boss requires dungeon 9 or 10')
     if args.late_boss_controller and args.boss_arena not in (108,109):
@@ -362,8 +366,10 @@ def main():
         if boss_heal_stage=='fight' and read(0xC0DF)!=desired_weapon:
             boss_inventory_goal=desired_weapon;boss_heal_stage='select_weapon'
         heal_cost=24 if not dungeon or args.dungeon in (9,10) else 32
+        heal_reserve=dungeon.magic_reserve() if dungeon else 0
+        can_heal=read(0xC0E7) and read(0xC0DB)>=heal_cost+heal_reserve
         if boss_heal_stage=='fight' and read(0xC318)<=24 and (read(0xC600)==args.boss_arena or dungeon):
-            goal=7 if dungeon and read(0xC0E7) and read(0xC0DB)>=heal_cost else 8 if read(0xC0E8) else 7 if read(0xC0E7) and read(0xC0DB)>=heal_cost else None
+            goal=7 if dungeon and can_heal else 8 if read(0xC0E8) else 7 if can_heal else None
             if args.potion_first and read(0xC0E8):goal=8
             if goal is not None:
                 boss_inventory_goal=goal;boss_heal_mp=read(0xC0DB);boss_heal_stage='select_heal'
@@ -659,7 +665,7 @@ def main():
               'audio_peak': current['audio_peak'], 'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
               'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03),
               'world_transitions': world_transitions, 'final_state': f'{read(0xC01D):02X}',
-              'controller': {'potion_first':args.potion_first,'patient_boss':args.patient_boss,'miniboss_spacing':args.miniboss_spacing,'shield_first':args.shield_first,'late_shield_first':args.late_shield_first,'late_ice':args.late_ice,'late_retreat':args.late_retreat,'live_targets':args.live_targets,'late_live_targets':args.late_live_targets,'collect_before_exit':args.collect_before_exit}}
+              'controller': {'potion_first':args.potion_first,'final_magic_reserve':args.final_magic_reserve,'patient_boss':args.patient_boss,'miniboss_spacing':args.miniboss_spacing,'shield_first':args.shield_first,'late_shield_first':args.late_shield_first,'late_ice':args.late_ice,'late_retreat':args.late_retreat,'live_targets':args.live_targets,'late_live_targets':args.late_live_targets,'collect_before_exit':args.collect_before_exit}}
     if args.boss_arena is not None:
         boss_run['final_item']=read(0xC0DF);boss_run['final_mp']=read(0xC0DB);boss_run['potion_remaining']=read(0xC0E8)
         boss_run['final_entities']=combat_snapshot();boss_run['progress']=read(0xC0CE+boss_index) if boss_prepared else None
