@@ -121,16 +121,19 @@ class DungeonDriver:
         goal = tuple(target)
         grid = bytes(r(0xD600+i) for i in range(1536))
         cell=r(0xC0B9)|r(0xC0BA)<<8
+        combat_bounds=attack and self.route.get('index')==10 and cell==0x15B
+        if combat_bounds:goal=(max(24,min(232,goal[0])),max(24,min(144,goal[1])))
         terrain_context=(cell,bool(r(0xC0EC)),bool(r(0xC0F0)),r(0xC0DB)>=8)
         hazards=() if attack else tuple((r(0xC313+s*48),r(0xC311+s*48))
             for s in range(16,24) if 32<=r(0xC300+s*48)<99
             and r(0xC303+s*48)&3==3 and r(0xC300+s*48)!=94)
-        key = (start, goal, grid, terrain_context, hazards)
+        key = (start, goal, grid, terrain_context, hazards,combat_bounds)
         if key != self.path_key:
             self.path_key = key
             def allowed(point, delta):
                 px, py = point
                 nx, ny = px+delta[0], py+delta[1]
+                if combat_bounds and not (24<=nx<=232 and 24<=ny<=144):return False
                 if [nx,ny] in self.route.get('avoid',{}).get(str(cell),[]) and (nx,ny)!=goal:return False
                 if not 8 <= nx <= 248 or not 8 <= ny <= 168:return False
                 if (nx < 16 or nx > 240 or ny < 16 or ny > 160) and (nx,ny) != goal:return False
@@ -283,6 +286,10 @@ class DungeonDriver:
                         if self.path and self.path[-1]==tuple(action):return action_pad
                 # Real room-clear shutters must open through enemy deaths.
                 enemies = [(r(0xC313+s*48),r(0xC311+s*48),r(0xC300+s*48)) for s in range(16,24) if (32<=r(0xC300+s*48)<99 or 120<=r(0xC300+s*48)<=124) and (r(0xC318+s*48)>0 or r(0xC300+s*48)==45) and r(0xC300+s*48)!=94]
+                # Type45 is a fixed projectile source without a death state.
+                # In15B it must not outrank the real room-clear enemies.
+                if self.route['index']==10 and cell==0x15B:
+                    enemies=[p for p in enemies if p[2]!=45]
                 if self.route.get('collect_before_exit') and not enemies and any(
                         r(0xC300+s*48)==1 and r(0xC307+s*48)>=32 for s in range(16,24)):
                     return 0

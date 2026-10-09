@@ -268,6 +268,31 @@ class DungeonNavigationTest(unittest.TestCase):
         driver.navigate = lambda target: self.fail('Left before the corpse resolved')
         self.assertEqual(driver.drive(0x0C,False),0)
 
+    def test_final_dungeon_turret_is_not_a_melee_target(self):
+        driver = self.loop_driver([0x139])
+        driver.route.update(index=10)
+        driver.route['outbound'][0]['from']=0x15B
+        self.ram[0xB9],self.ram[0xA8]=0x5B,1
+        self.ram[0x600],self.ram[0x613],self.ram[0x611]=45,88,56
+        self.ram[0x630],self.ram[0x648]=80,18
+        self.ram[0x643],self.ram[0x641]=168,112
+        calls=[]
+        def navigate(target,attack=False):
+            calls.append((target,attack))
+            return 7
+        driver.navigate=navigate
+        self.assertEqual(driver.drive(0x0C,False),7)
+        self.assertEqual(calls[-1],([168,112],True))
+
+    def test_combat_boundary_does_not_cache_a_closed_exit(self):
+        driver=self.driver()
+        driver.route.update(index=10)
+        self.ram[0xB9]=0x5B
+        driver.navigate([8,80],attack=True)
+        self.assertEqual(driver.path[-1],(24,80))
+        driver.navigate([8,80])
+        self.assertEqual(driver.path[-1],(8,80))
+
     def test_late_retreat_before_hero_invulnerability_expires(self):
         driver = self.loop_driver([0x139])
         driver.route.update(index=10, late_retreat=True, late_retreat_window=8)
