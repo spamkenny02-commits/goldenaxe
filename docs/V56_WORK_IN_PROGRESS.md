@@ -25,8 +25,11 @@ puts the hero in its western region, unable to reach the eastern exit.
 The corrected generator now uses $17A->$18A->$18B->$17B (south entry),
 then $17C's switch at [184,40], returns to $17B and takes the stairs to $13C.
 Only route 10 changes; routes 1..9 are byte-for-byte unchanged as JSON data.
-The route continuity and dependency tests pass. Native traversal of the
-corrected route is running; no completed switch/traversal claim is made.
+The route continuity and dependency tests pass. The native full-entry run
+with this route dies in $18A at frame 41041, before reaching $18B/$17C.
+Arrival at $18A is 40 HP, 8 MP, no potion and an active curse. Remote-switch
+activation, the new south entry and later traversal remain unverified in
+this integration run. No completed switch/traversal claim is made.
 
 A combat-target clamp was rejected: it preserves the SMS dungeon-9 pass
 but makes SMS 10 die earlier, at $14D. The V55 controller is retained.

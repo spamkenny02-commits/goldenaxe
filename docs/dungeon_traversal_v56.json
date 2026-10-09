@@ -1,5 +1,5 @@
 {
-  "status": "Projectile117 verified; dungeon10 remote-switch route corrected, new native run pending",
+  "status": "Projectile117 differential verified; remote-switch route10 corrected structurally, native run dies in 18A before switch validation",
   "new_differential_cases": 768,
   "magic_boss_cases": {
     "boss_phase": 5792,
@@ -72,6 +72,80 @@
       "complete": false,
       "frames": 15617,
       "retained": false
+    },
+    {
+      "scenario": "south17b_md10",
+      "final_hp": 0,
+      "cell": "0x18a",
+      "boss_hits": 0,
+      "complete": false,
+      "frames": 41041,
+      "retained": true,
+      "last_arrivals": [
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 0,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 0,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 120,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 82,
+          "mp": 32,
+          "potion": 0,
+          "curse": 1
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 82,
+          "mp": 24,
+          "potion": 0,
+          "curse": 1
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 40,
+          "mp": 8,
+          "potion": 0,
+          "curse": 1
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 40,
+          "mp": 8,
+          "potion": 0,
+          "curse": 1
+        }
+      ]
     }
   ],
   "source_hashes": {
@@ -98,6 +172,10 @@
       40
     ],
     "other_routes_unchanged": true,
-    "emulator_verification": "pending"
-  }
+    "emulator_verification": "Native full-entry run dies in 18A at frame 41041 before 18B/17C; remote switch and later traversal still unverified in this run."
+  },
+  "next_steps": [
+    "Dungeon10: preserve antidote/health past renewed curse in13D and survive18A before verifying south17B entry,17C switch and13C stairs.",
+    "Dungeon9 native: V55 patient mode remains13 genuine hits,12 boss HP remaining; three further tactics were rejected."
+  ]
 }
