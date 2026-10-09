@@ -73,9 +73,12 @@ def main():
     parser.add_argument('--dungeon', type=int, choices=range(1,11), help='Traverse a dungeon from its overworld entry checkpoint, defeat the boss and return outside (or play the final ending)')
     parser.add_argument('--dungeon-start-room', type=lambda v:int(v,16), choices=(0x13C,0x14B,0x15A), help='Separate dungeon10 suffix test from an equipped room checkpoint; never a full-entry proof')
     parser.add_argument('--miniboss-spacing', action='store_true', help='Dungeon10 controller probe: approach type123 from checked left axe reach')
+    parser.add_argument('--adaptive-miniboss', action='store_true', help='Dungeon10 controller probe: use a reachable alternate mini-boss flank and avoid its attack phases')
+    parser.add_argument('--weapon-speed-equipment', action='store_true', help='Dungeon10 entrance fixture: include the original C0EE weapon-speed equipment')
     parser.add_argument('--shield-first', action='store_true', help='Dungeon10 controller probe: prioritize active shields in17D and18A')
     parser.add_argument('--late-shield-first', action='store_true', help='Dungeon10 controller probe: prioritize active shields only in18A')
     parser.add_argument('--late-ice', action='store_true', help='Dungeon10 controller probe: freeze type81 in13C before melee')
+    parser.add_argument('--caster-ice', action='store_true', help='Dungeon10 controller probe: freeze curse casters before melee')
     parser.add_argument('--live-targets', action='store_true', help='Dungeon10 controller: do not pursue actors whose spawn position is still zero')
     parser.add_argument('--late-live-targets', action='store_true', help='Dungeon10 controller: apply spawn-position filtering in13C and15C')
     parser.add_argument('--collect-before-exit', action='store_true', help='Dungeon10 controller: wait for enemy death animations and collect real health/magic drops')
@@ -93,18 +96,24 @@ def main():
         args.complete_ending = args.dungeon==10
         if args.patient_boss:dungeon_route['patient_boss']=True
         if args.miniboss_spacing:dungeon_route['miniboss_spacing']=True
+        if args.adaptive_miniboss:
+            dungeon_route['miniboss_spacing']=True
+            dungeon_route['adaptive_miniboss']=True
         if args.shield_first:dungeon_route['shield_cells']=(0x17D,0x18A)
         if args.late_shield_first:dungeon_route['shield_cells']=(0x18A,)
         if args.late_ice:dungeon_route['late_ice']=True
+        if args.caster_ice:dungeon_route['caster_ice']=True
         if args.live_targets:dungeon_route['live_targets']=True
         if args.late_live_targets:dungeon_route['late_live_targets']=True
         if args.collect_before_exit:dungeon_route['collect_before_exit']=True
         if args.dungeon_start_room is not None:
             start=next(i for i,e in enumerate(dungeon_route['outbound']) if e['from']==args.dungeon_start_room)
             dungeon_route['outbound']=dungeon_route['outbound'][start:]
-    if args.miniboss_spacing and args.dungeon!=10:
+    if (args.miniboss_spacing or args.adaptive_miniboss) and args.dungeon!=10:
         parser.error('--miniboss-spacing requires dungeon 10')
-    if (args.shield_first or args.late_shield_first or args.late_ice or args.live_targets or args.late_live_targets or args.collect_before_exit) and args.dungeon!=10:
+    if args.weapon_speed_equipment and args.dungeon!=10:
+        parser.error('--weapon-speed-equipment requires dungeon 10')
+    if (args.shield_first or args.late_shield_first or args.late_ice or args.caster_ice or args.live_targets or args.late_live_targets or args.collect_before_exit) and args.dungeon!=10:
         parser.error('Late controller probes require dungeon 10')
     if args.potion_first and args.dungeon!=10:
         parser.error('--potion-first requires dungeon 10')
@@ -411,6 +420,7 @@ def main():
                 write(0xC0E7,2)
                 write(0xC0E4,2);write(0xC0E5,2);write(0xC0E6,2)
                 write(0xC0EC,1);write(0xC0ED,1);write(0xC0F0,1 if args.dungeon in (6,9) else 0)
+                if args.weapon_speed_equipment:write(0xC0EE,1)
                 for index in range(1,args.dungeon):write(0xC0CE+index,0x80)
             write(0xC01D,6);state=6;boss_prepared=True
             boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':0 if dungeon else boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':2 if dungeon else 1,'potion':1,'antidote':1 if dungeon else 0,'mp':128 if dungeon else 120}

@@ -65,6 +65,9 @@ class DungeonDriver:
         x,y=r(0xC313),r(0xC311)
         tx,ty=r(0xC613),r(0xC611)
         if r(0xC301) in (2,3,4,5):return 0
+        adaptive=r(0xC600)==123 and self.route.get('adaptive_miniboss')
+        if adaptive and r(0xC601)>=10 and not r(0xC305):
+            return self.evade([(tx,ty)])
         projectiles=[(r(0xC313+s*48),r(0xC311+s*48)) for s in range(24,32)
                      if r(0xC300+s*48)==117 and r(0xC303+s*48)&2
                      and abs(r(0xC313+s*48)-x)+abs(r(0xC311+s*48)-y)<48]
@@ -84,6 +87,15 @@ class DungeonDriver:
         # before reaching the boss, including between eight-pixel grid nodes.
         goal=(max(24,min(232,round((tx-24)/8)*8)),
               max(24,min(144,round(ty/8)*8)))
+        if adaptive:
+            self.target=None
+            pad=self.navigate(goal,attack=True)
+            if self.path and self.path[-1]==goal:return pad
+            # At the west wall the preferred left flank is outside the floor.
+            # Try the other flank instead of pushing at the wall forever.
+            goal=(max(24,min(232,round((tx+24)/8)*8)),
+                  max(24,min(144,round(ty/8)*8)))
+            self.target=None
         return self.navigate(goal,attack=True)
 
     def navigate(self, target, attack=False):
@@ -308,12 +320,14 @@ class DungeonDriver:
                     if ice_room:
                         tx,ty,kind=min(enemies,key=lambda p:(p[2]!=81,abs(p[0]-x)+abs(p[1]-y)))
                     dx,dy=tx-x,ty-y
-                    freeze=ice_room and kind==81
+                    caster_ice = self.route.get('caster_ice') and (not self.route.get('caster_ice_cells') or cell in self.route.get('caster_ice_cells'))
+                    freeze=ice_room and kind==81 or caster_ice and kind==83
                     frozen=freeze and any(r(0xC300+s*48)==kind and
                         (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty) and r(0xC306+s*48)
                         for s in range(16,24))
                     if freeze and not frozen and r(0xC0DB)>=8 and abs(dx)+abs(dy)<32 and not r(0xC305):
-                        return self.evade([(ex,ey) for ex,ey,k in enemies if k in (81,96,92,93)])
+                        threats=[(ex,ey) for ex,ey,k in enemies if k in (81,96,92,93)]
+                        return self.evade(threats or [(tx,ty)])
                     if self.route.get('miniboss_spacing') and kind==123:
                         return self.boss_melee()
                     if self.route['index']==10 and kind>=120:
@@ -323,8 +337,9 @@ class DungeonDriver:
                     direction=('right' if dx>0 else 'left') if abs(dx)>abs(dy) else ('down' if dy>0 else 'up')
                     facing={'up':0,'down':1,'left':2,'right':3}[direction]
                     cross=abs(dx) if direction in ('up','down') else abs(dy)
-                    if (kind==91 or (kind==83 and (r(0xC0DB)>=16 or r(0xC0C6)))) and abs(dx)+abs(dy)<32:
-                        return self.evade([(ex,ey) for ex,ey,enemy in enemies if enemy in (83,91)])
+                    if not frozen and (kind==91 or (kind==83 and (r(0xC0DB)>=16 or r(0xC0C6)))) and abs(dx)+abs(dy)<32:
+                        threats=[(ex,ey) for ex,ey,enemy in enemies if enemy in (83,91)]
+                        return self.evade(threats or [(tx,ty)])
                     def clear_shot():
                         for distance in range(8,max(abs(dx),abs(dy)),8):
                             sx=x+(distance if dx>0 else -distance) if direction in ('left','right') else x
@@ -344,7 +359,7 @@ class DungeonDriver:
                         return pad
                     # With no fire reserve, use the axe's real reach before
                     # body contact can curse the hero. Do not pursue a flashing caster.
-                    if self.route['index']==10 and kind==83 and r(0xC0DB)<16 and not r(0xC0C6):
+                    if not frozen and self.route['index']==10 and kind==83 and r(0xC0DB)<16 and not r(0xC0C6):
                         slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind
                                   and (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty))
                         openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48))
