@@ -1,0 +1,19 @@
+{
+  "status": "SMS dungeon 9 validated; native MD 9 and dungeon 10 pending",
+  "sms_dungeon9": {
+    "index": 9,
+    "rooms": 25,
+    "boss_hits": 15,
+    "stairs": 1,
+    "keys_net_spent": 1,
+    "final_hp": 124,
+    "frames": 17286
+  },
+  "tool_tests": 43,
+  "controller_change": "Avoid active type-117 projectiles within Manhattan 48 before a swing unless hero is invulnerable; score retreat against boss and projectiles together.",
+  "production_changed": false,
+  "hashes": {
+    "tools/dungeon_driver.py": "bb85264bac07c8ceb8f45d45717068cdb505b471983f7393dcdd93746c25f0bb",
+    "tests/test_tools.py": "58b02245215f5116fff287d76158c04535bdde9d5c28413893435ae18d0a3860"
+  }
+}

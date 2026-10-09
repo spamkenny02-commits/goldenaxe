@@ -190,6 +190,16 @@ class DungeonNavigationTest(unittest.TestCase):
         self.assertEqual(driver.edge, 0)
         self.assertIn({'retreated_to': 0x138}, driver.events)
 
+    def test_room_entry_records_resources_once_per_crossing(self):
+        driver = self.loop_driver([0x139, 0x129])
+        self.ram[0x318],self.ram[0xDB],self.ram[0xE8],self.ram[0xBF] = 86,8,0,1
+        self.arrive(driver, 0x139)
+        entry = dict(driver.visits[-1])
+        self.assertEqual((entry['hp'],entry['mp'],entry['potion'],entry['curse']), (86,8,0,1))
+        self.ram[0x318] = 78
+        self.arrive(driver, 0x139)
+        self.assertEqual(driver.visits[-1], entry)
+
     def test_grab_release_retreats_before_using_sword(self):
         driver = self.driver()
         driver.route = {'index': 5, 'outbound': [
@@ -321,6 +331,37 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x611] = 112
         self.ram[0x605] = 24
         self.assertEqual(driver.boss_melee(), 0)
+
+    def test_large_boss_avoids_nearby_projectile_before_swing(self):
+        driver = self.driver()
+        self.ram[0x613],self.ram[0x611] = 88,48
+        self.ram[0x61B] = self.ram[0x61C] = 44
+        self.ram[0x30A] = 0
+        self.ram[0x780],self.ram[0x783] = 117,2
+        self.ram[0x793],self.ram[0x791] = 88,96
+        pad = driver.boss_melee()
+        self.assertTrue(pad)
+        self.assertFalse(pad & driver.pad('button2'))
+        self.assertTrue(driver.path)
+
+    def test_large_boss_keeps_attacking_during_player_invulnerability(self):
+        driver = self.driver()
+        self.ram[0x613],self.ram[0x611] = 88,48
+        self.ram[0x61B] = self.ram[0x61C] = 44
+        self.ram[0x30A] = 0
+        self.ram[0x780],self.ram[0x783] = 117,2
+        self.ram[0x793],self.ram[0x791] = 88,96
+        self.ram[0x305] = 20
+        self.assertEqual(driver.boss_melee(), driver.pad('button2'))
+
+    def test_inactive_projectile_does_not_interrupt_safe_swing(self):
+        driver = self.driver()
+        self.ram[0x613],self.ram[0x611] = 88,48
+        self.ram[0x61B] = self.ram[0x61C] = 44
+        self.ram[0x30A] = 0
+        self.ram[0x780],self.ram[0x783] = 117,0
+        self.ram[0x793],self.ram[0x791] = 88,96
+        self.assertEqual(driver.boss_melee(), driver.pad('button2'))
 
     def test_miniboss_flash_triggers_retreat_between_hits(self):
         driver = self.driver()

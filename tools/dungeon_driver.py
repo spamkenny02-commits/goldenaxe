@@ -60,6 +60,11 @@ class DungeonDriver:
         x,y=r(0xC313),r(0xC311)
         tx,ty=r(0xC613),r(0xC611)
         if r(0xC301) in (2,3,4,5):return 0
+        projectiles=[(r(0xC313+s*48),r(0xC311+s*48)) for s in range(24,32)
+                     if r(0xC300+s*48)==117 and r(0xC303+s*48)&2
+                     and abs(r(0xC313+s*48)-x)+abs(r(0xC311+s*48)-y)<48]
+        if projectiles and not r(0xC305):
+            return self.evade([(tx,ty),*projectiles])
         if r(0xC605)>0 or not r(0xC61B):
             return self.evade([(tx,ty)]) if abs(tx-x)+abs(ty-y)<56 else 0
         openings=axe_openings((x,y),(tx,ty),r(0xC61B),r(0xC61C))
@@ -197,7 +202,8 @@ class DungeonDriver:
             if r(0xC0DF)!=2 or r(0xC301)!=1:return 0
             return self.pad('button2') if not r(0xC020)&32 else 0
         if self.last_cell != cell:
-            self.visits.append({'cell': cell, 'stage': self.stage, 'index': r(0xC037)})
+            self.visits.append({'cell': cell, 'stage': self.stage, 'index': r(0xC037),
+                                'hp':r(0xC318),'mp':mp,'potion':r(0xC0E8),'curse':r(0xC0BF)})
             self.last_cell = cell; self.target = None; self.path_key = None
         if self.stage == 'entry':
             if cell == self.route['entrance']:
