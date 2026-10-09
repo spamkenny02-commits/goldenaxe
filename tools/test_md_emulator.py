@@ -267,8 +267,9 @@ def main():
     world_transitions = []
     last_cell = None
     profiling = False
-    combat = {'attacks': [], 'player_hits': [], 'enemy_hits': [], 'enemy_deaths': [], 'encounters': [], 'projectiles': []}
+    combat = {'attacks': [], 'player_hits': [], 'enemy_hits': [], 'enemy_deaths': [], 'encounters': [], 'projectiles': [], 'curse_changes': []}
     previous_combat = None
+    previous_curse = None
     def combat_snapshot():
         return [{'slot': slot, 'type': read(0xC300+slot*48), 'state': read(0xC301+slot*48),
                  'flags': read(0xC303+slot*48), 'saved_type': read(0xC307+slot*48),
@@ -489,6 +490,13 @@ def main():
                 if state==0x12:ending['title_confirmed']=True;boss_done=True
         if args.combat:
             snapshot = combat_snapshot()
+            curse=read(0xC0BF)
+            if previous_curse is not None and curse!=previous_curse:
+                combat['curse_changes'].append({'emulator_frame':frame,'cell':cell,
+                    'before':previous_curse,'after':curse,'state':state,
+                    'antidotes':read(0xC0E2),'player':snapshot[0],
+                    'casters':[e for e in snapshot[16:24] if e['type']==83]})
+            previous_curse=curse
             if state == 0x0C:
                 stamp = {'emulator_frame': frame, 'game_frame': read(0xC02F), 'cell': cell}
                 if previous_combat is None or previous_combat[0] != cell:

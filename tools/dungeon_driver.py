@@ -315,6 +315,20 @@ class DungeonDriver:
                         pad=0
                         if not r(0xC020)&32:pad|=self.pad('button2')
                         return pad
+                    # With no fire reserve, use the axe's real reach before
+                    # body contact can curse the hero. Do not pursue a flashing caster.
+                    if self.route['index']==10 and kind==83 and r(0xC0DB)<16 and not r(0xC0C6):
+                        slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind
+                                  and (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty))
+                        openings=axe_openings((x,y),(tx,ty),r(0xC31B+slot*48),r(0xC31C+slot*48))
+                        if openings and not r(0xC305+slot*48):
+                            self.item=1
+                            if r(0xC0DF)!=1:return 0
+                            facing=r(0xC30A)&3
+                            if facing not in openings:return self.pad(('up','down','left','right')[openings[0]])
+                            return self.pad('button2') if not r(0xC020)&32 else 0
+                        if r(0xC31B+slot*48) and abs(dx)+abs(dy)<32:
+                            return self.evade([(tx,ty)])
                     if abs(dx)+abs(dy)<=20 and cross<=16:
                         self.item=1 if kind>=120 or self.route['index']>=9 else 0
                         if r(0xC0DF)!=self.item:return 0

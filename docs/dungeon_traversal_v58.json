@@ -1,0 +1,364 @@
+{
+  "status": "Second curse avoided, full dungeon10 still incomplete",
+  "tool_tests": 48,
+  "combat_cases": 8204,
+  "new_curse_wrapper_cases": 512,
+  "attempts": [
+    {
+      "scenario": "caster_sms10",
+      "frames": 25505,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "retained": true,
+      "last_visits": [
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "curse_changes": [],
+      "result_sha256": "04839817096a9783c6c13f98be3c13c1bbf4cecb16f892158585e88079811b79"
+    },
+    {
+      "scenario": "caster_md10",
+      "frames": 90000,
+      "cell": "13E",
+      "hp": 82,
+      "complete": false,
+      "retained": true,
+      "last_visits": [
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 0,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 0,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 120,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 110,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "curse_changes": [],
+      "result_sha256": "09baf67fb300c9b8c1743d3f6a678e7655e9c38fa5bc37593a2477ab9c9b8b5c"
+    },
+    {
+      "scenario": "reserve_sms10",
+      "frames": 25505,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "retained": false,
+      "last_visits": [
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 22,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "curse_changes": [
+        {
+          "emulator_frame": 7156,
+          "cell": 398,
+          "before": 0,
+          "after": 1,
+          "state": 12,
+          "antidotes": 1,
+          "player": {
+            "slot": 0,
+            "type": 2,
+            "state": 0,
+            "flags": 2,
+            "saved_type": 0,
+            "hp": 68,
+            "flash": 47,
+            "attack": 12,
+            "defense": 12,
+            "position": [
+              112,
+              144
+            ]
+          },
+          "casters": [
+            {
+              "slot": 19,
+              "type": 83,
+              "state": 10,
+              "flags": 43,
+              "saved_type": 0,
+              "hp": 18,
+              "flash": 0,
+              "attack": 0,
+              "defense": 0,
+              "position": [
+                129,
+                144
+              ]
+            },
+            {
+              "slot": 20,
+              "type": 83,
+              "state": 10,
+              "flags": 43,
+              "saved_type": 0,
+              "hp": 2,
+              "flash": 0,
+              "attack": 0,
+              "defense": 0,
+              "position": [
+                90,
+                48
+              ]
+            }
+          ]
+        },
+        {
+          "emulator_frame": 11304,
+          "cell": 398,
+          "before": 1,
+          "after": 0,
+          "state": 12,
+          "antidotes": 0,
+          "player": {
+            "slot": 0,
+            "type": 2,
+            "state": 1,
+            "flags": 3,
+            "saved_type": 0,
+            "hp": 62,
+            "flash": 0,
+            "attack": 0,
+            "defense": 4,
+            "position": [
+              128,
+              72
+            ]
+          },
+          "casters": []
+        }
+      ],
+      "result_sha256": "28e22cd6f9dfa95af7dd2b4390f998391532cfb82efdc81a7b08d7e46258ff11"
+    },
+    {
+      "scenario": "reserve_md10",
+      "frames": 90000,
+      "cell": "13E",
+      "hp": 82,
+      "complete": false,
+      "retained": false,
+      "last_visits": [
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 0,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 0,
+          "potion": 1,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 120,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 110,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "curse_changes": [
+        {
+          "emulator_frame": 11928,
+          "cell": 398,
+          "before": 0,
+          "after": 1,
+          "state": 12,
+          "antidotes": 1,
+          "player": {
+            "slot": 0,
+            "type": 2,
+            "state": 0,
+            "flags": 2,
+            "saved_type": 0,
+            "hp": 74,
+            "flash": 47,
+            "attack": 12,
+            "defense": 12,
+            "position": [
+              64,
+              128
+            ]
+          },
+          "casters": [
+            {
+              "slot": 19,
+              "type": 83,
+              "state": 10,
+              "flags": 43,
+              "saved_type": 0,
+              "hp": 18,
+              "flash": 0,
+              "attack": 0,
+              "defense": 0,
+              "position": [
+                81,
+                128
+              ]
+            },
+            {
+              "slot": 20,
+              "type": 83,
+              "state": 8,
+              "flags": 43,
+              "saved_type": 0,
+              "hp": 18,
+              "flash": 0,
+              "attack": 0,
+              "defense": 0,
+              "position": [
+                152,
+                90
+              ]
+            }
+          ]
+        },
+        {
+          "emulator_frame": 15088,
+          "cell": 398,
+          "before": 1,
+          "after": 0,
+          "state": 12,
+          "antidotes": 0,
+          "player": {
+            "slot": 0,
+            "type": 2,
+            "state": 1,
+            "flags": 3,
+            "saved_type": 0,
+            "hp": 72,
+            "flash": 0,
+            "attack": 0,
+            "defense": 4,
+            "position": [
+              104,
+              120
+            ]
+          },
+          "casters": []
+        }
+      ],
+      "result_sha256": "2f5efda580954b96e75880511bdd584f19eba870a5fc60fd0d7d200add4a990e"
+    }
+  ],
+  "retained": "Dungeon10 type83 axe geometry when fire reserve is unavailable; curse transition diagnostics",
+  "reverted": "Additional last-cast reserve and geometry for magic drainers gave no traversal benefit",
+  "production_changes": false,
+  "next": "Preserve or obtain at least8MP for the blocked13E stair passage without losing early miniboss survival; native9 and dungeon10 completion remain open"
+}

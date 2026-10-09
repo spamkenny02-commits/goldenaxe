@@ -149,6 +149,20 @@ int main(void){
         gaw_ram_write8(RAM_FRAME_COUNTER,(uint8_t)slot);
         compare(slot,0x2346,gaw_entity_collision_scan);
     }
-    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense + %u fire-terrain + %u large-actor geometry cases)\n",collisions,damage_cases,ai_cases,grab_cases,directional_cases,fire_cases,cases-before_geometry);
+    unsigned geometry_cases=cases-before_geometry,before_curse=cases;
+    const uint8_t contact_flags[]={0,1,2,3,4,7,0x2B,0xFF};
+    const uint8_t curses[]={0,1,2,255};
+    for(unsigned st=8;st<=10;st+=2)for(unsigned phase=0;phase<2;++phase)
+    for(unsigned dir=0;dir<4;++dir)for(unsigned f=0;f<8;++f)for(unsigned c=0;c<4;++c){
+        setup();GawEntity *e=gaw_entity(16);
+        e->raw[ENT_TYPE]=83;e->raw[ENT_STATE]=(uint8_t)st;
+        e->raw[ENT_MOTION_PHASE]=(uint8_t)phase;e->raw[ENT_DIRECTION]=(uint8_t)dir;
+        e->raw[ENT_FLAGS]=contact_flags[f];e->raw[ENT_HP]=18;
+        e->raw[0x11]=96;e->raw[0x13]=80;
+        gaw_ram_write8(0xC311,64);gaw_ram_write8(0xC313,128);
+        gaw_ram_write8(0xC0BF,curses[c]);gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,16);
+        compare(16,0x4FF3,handler);
+    }
+    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense + %u fire-terrain + %u large-actor geometry + %u curse-wrapper cases)\n",collisions,damage_cases,ai_cases,grab_cases,directional_cases,fire_cases,geometry_cases,cases-before_curse);
     return 0;
 }

@@ -295,6 +295,24 @@ class DungeonNavigationTest(unittest.TestCase):
         self.ram[0x611] = 80
         self.assertEqual(driver.drive(0x0C,False), driver.pad('button2'))
 
+    def test_dungeon10_caster_is_hit_at_safe_reach_then_evaded(self):
+        driver = self.driver()
+        driver.route = {'index':10,'outbound':[
+            {'from':0x125,'to':0x115,'target':[128,8]}]}
+        driver.stage = 'outbound'
+        self.ram[0xDB],self.ram[0x318],self.ram[0xDF] = 8,40,1
+        self.ram[0xA8] = self.ram[0x301] = 1
+        self.ram[0x30A] = 3
+        self.ram[0x600],self.ram[0x618] = 83,18
+        self.ram[0x613],self.ram[0x611] = 108,80
+        self.ram[0x61B] = self.ram[0x61C] = 5
+        self.assertEqual(driver.drive(0x0C,False),driver.pad('button2'))
+        self.assertEqual(driver.item,1)
+        self.ram[0x605] = 8
+        pad = driver.drive(0x0C,False)
+        self.assertTrue(pad)
+        self.assertFalse(pad & driver.pad('button2'))
+
     def test_low_health_magic_drainer_can_be_shot_with_one_cast_remaining(self):
         driver = self.driver()
         driver.route = {'index': 9, 'outbound': [
