@@ -79,6 +79,8 @@ def main():
     parser.add_argument('--late-shield-first', action='store_true', help='Dungeon10 controller probe: prioritize active shields only in18A')
     parser.add_argument('--late-ice', action='store_true', help='Dungeon10 controller probe: freeze type81 in13C before melee')
     parser.add_argument('--caster-ice', action='store_true', help='Dungeon10 controller probe: freeze curse casters before melee')
+    parser.add_argument('--late-retreat', action='store_true', help='Dungeon10 controller probe: retreat from invulnerable enemies in 13C')
+    parser.add_argument('--late-retreat-window', type=int, choices=(0,8), default=0, help='Hero flash threshold for --late-retreat (0: wait until vulnerable; 8: preemptive retreat)')
     parser.add_argument('--live-targets', action='store_true', help='Dungeon10 controller: do not pursue actors whose spawn position is still zero')
     parser.add_argument('--late-live-targets', action='store_true', help='Dungeon10 controller: apply spawn-position filtering in13C and15C')
     parser.add_argument('--collect-before-exit', action='store_true', help='Dungeon10 controller: wait for enemy death animations and collect real health/magic drops')
@@ -103,6 +105,9 @@ def main():
         if args.late_shield_first:dungeon_route['shield_cells']=(0x18A,)
         if args.late_ice:dungeon_route['late_ice']=True
         if args.caster_ice:dungeon_route['caster_ice']=True
+        if args.late_retreat:
+            dungeon_route['late_retreat']=True
+            dungeon_route['late_retreat_window']=args.late_retreat_window
         if args.live_targets:dungeon_route['live_targets']=True
         if args.late_live_targets:dungeon_route['late_live_targets']=True
         if args.collect_before_exit:dungeon_route['collect_before_exit']=True
@@ -113,7 +118,7 @@ def main():
         parser.error('--miniboss-spacing requires dungeon 10')
     if args.weapon_speed_equipment and args.dungeon!=10:
         parser.error('--weapon-speed-equipment requires dungeon 10')
-    if (args.shield_first or args.late_shield_first or args.late_ice or args.caster_ice or args.live_targets or args.late_live_targets or args.collect_before_exit) and args.dungeon!=10:
+    if (args.shield_first or args.late_shield_first or args.late_ice or args.caster_ice or args.late_retreat or args.live_targets or args.late_live_targets or args.collect_before_exit) and args.dungeon!=10:
         parser.error('Late controller probes require dungeon 10')
     if args.potion_first and args.dungeon!=10:
         parser.error('--potion-first requires dungeon 10')
@@ -652,7 +657,7 @@ def main():
               'audio_peak': current['audio_peak'], 'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
               'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03),
               'world_transitions': world_transitions, 'final_state': f'{read(0xC01D):02X}',
-              'controller': {'potion_first':args.potion_first,'patient_boss':args.patient_boss,'miniboss_spacing':args.miniboss_spacing,'shield_first':args.shield_first,'late_shield_first':args.late_shield_first,'late_ice':args.late_ice,'live_targets':args.live_targets,'late_live_targets':args.late_live_targets,'collect_before_exit':args.collect_before_exit}}
+              'controller': {'potion_first':args.potion_first,'patient_boss':args.patient_boss,'miniboss_spacing':args.miniboss_spacing,'shield_first':args.shield_first,'late_shield_first':args.late_shield_first,'late_ice':args.late_ice,'late_retreat':args.late_retreat,'live_targets':args.live_targets,'late_live_targets':args.late_live_targets,'collect_before_exit':args.collect_before_exit}}
     if args.boss_arena is not None:
         boss_run['final_item']=read(0xC0DF);boss_run['final_mp']=read(0xC0DB);boss_run['potion_remaining']=read(0xC0E8)
         boss_run['final_entities']=combat_snapshot();boss_run['progress']=read(0xC0CE+boss_index) if boss_prepared else None

@@ -268,6 +268,17 @@ class DungeonNavigationTest(unittest.TestCase):
         driver.navigate = lambda target: self.fail('Left before the corpse resolved')
         self.assertEqual(driver.drive(0x0C,False),0)
 
+    def test_late_retreat_before_hero_invulnerability_expires(self):
+        driver = self.loop_driver([0x139])
+        driver.route.update(index=10, late_retreat=True, late_retreat_window=8)
+        driver.route['outbound'][0]['from']=0x13C
+        self.ram[0xB9]=0x3C
+        self.ram[0x600],self.ram[0x618]=96,24
+        self.ram[0x613],self.ram[0x611]=112,80
+        self.ram[0x605],self.ram[0x305]=20,8
+        driver.evade=lambda threats: 9
+        self.assertEqual(driver.drive(0x0C,False),9)
+
     def test_unplaced_drainer_does_not_override_real_route_target(self):
         driver = self.loop_driver([0x139])
         driver.route.update(index=10, live_targets=True)

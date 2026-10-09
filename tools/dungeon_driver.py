@@ -320,6 +320,12 @@ class DungeonDriver:
                     if ice_room:
                         tx,ty,kind=min(enemies,key=lambda p:(p[2]!=81,abs(p[0]-x)+abs(p[1]-y)))
                     dx,dy=tx-x,ty-y
+                    if self.route.get('late_retreat') and cell==0x13C and kind in (81,96):
+                        slot=next(s for s in range(16,24) if r(0xC300+s*48)==kind
+                                  and (r(0xC313+s*48),r(0xC311+s*48))==(tx,ty))
+                        window=self.route.get('late_retreat_window',0)
+                        if r(0xC305+slot*48) and r(0xC305)<=window and (not window or not r(0xC306+slot*48)) and abs(dx)+abs(dy)<40:
+                            return self.evade([(ex,ey) for ex,ey,k in enemies if k in (81,96)])
                     caster_ice = self.route.get('caster_ice') and (not self.route.get('caster_ice_cells') or cell in self.route.get('caster_ice_cells'))
                     freeze=ice_room and kind==81 or caster_ice and kind==83
                     frozen=freeze and any(r(0xC300+s*48)==kind and
