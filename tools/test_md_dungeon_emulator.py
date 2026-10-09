@@ -2,7 +2,9 @@
 """Controller-only dungeon entry, traversal, boss/reward, return and ending.
 
 Each run boots normally and prepares one equipped overworld checkpoint.
-Afterwards the runner forbids RAM writes. Room crossings, keys, enemies,
+Strict runs forbid later RAM writes. Explicit assisted reports have a
+separate validator and can never pass the default controller-only check.
+Room crossings, keys, enemies,
 inventory/healing, stairs, crystals and the ending execute in production code.
 """
 import argparse
@@ -27,7 +29,19 @@ def validate_segment(result,route):
     return validate_walk(result,suffix,start)
 
 
-def validate_walk(result,route,start_room=None):
+def validate_assisted(result,route):
+    """Check an explicitly assisted full-entry ending, never a strict proof."""
+    cheat=result.get('cheats',{})
+    assert route['index']==10 and result['dungeon'].get('start_room') is None
+    assert cheat.get('enabled') and cheat.get('kind')=='final_boss_hp_refill'
+    assert cheat.get('scope_cell')==0x14C and cheat.get('address')=='C318'
+    assert cheat.get('events') and all(e['cell']==0x14C and 0<e['before']<e['after']<=128 for e in cheat['events'])
+    summary=validate_walk(result,route,allow_cheats=True)
+    return dict(summary,validation_mode='assisted',cheat_interventions=len(cheat['events']))
+
+
+def validate_walk(result,route,start_room=None,*,allow_cheats=False):
+    assert allow_cheats or not result.get('cheats',{}).get('enabled'), 'Assisted cheat run is not a controller-only proof'
     dungeon=result['dungeon'];boss=result['boss']
     assert dungeon['index']==route['index']
     visits=dungeon['visits']

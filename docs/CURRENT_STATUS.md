@@ -1,4 +1,4 @@
-# Current status — V98
+# Current status — V99
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
@@ -25,10 +25,20 @@ the original V94 suffix proofs and their options remain separate evidence.
 See V98_WORK_IN_PROGRESS.md for the latest five native comparisons, and
 V95–V97_WORK_IN_PROGRESS.md for the preceding30-minute session's results.
 
-69 tooling tests pass. Resource and environment observations distinguish
+A separate user-requested HP cheat now completes the native full-entry10
+ending:23 genuine axe hits defeat the90HP boss, all nine crystals appear,
+credits finish and title state12 is confirmed at89883 frames. Ten recorded
+HP refills occur only in14C while boss109 is present. The entire approach
+remains unassisted and reaches22HP/16MP. This is an assisted diagnostic;
+strict validation rejects it. A disabled-cheat control reproduces V98's
+eleven-hit death exactly. See V99_WORK_IN_PROGRESS.md. No new SMS or
+unassisted full-entry completion is claimed.
+
+75 tooling tests pass. Resource and environment observations distinguish
 healing/spell costs from late inventory selection and flag suspicious stale
 attacker attribution. Experimental controller policies are optional and
-keep all actions on the joypad after the initial fixture. See
+keep all actions on the joypad after the initial fixture unless the separate
+explicit HP cheat is enabled; that report cannot pass strict validation. See
 V93_WORK_IN_PROGRESS.md for outcomes and private report hashes. The native9
 policy is not used for SMS, where the same variant fails.
 

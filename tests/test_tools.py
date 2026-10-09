@@ -47,6 +47,47 @@ class EmulatorConsoleReportTest(unittest.TestCase):
                          dict(result, report='result.json'))
 
 
+class FinalBossCheatTest(unittest.TestCase):
+    def setUp(self):
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
+        from emulator_cheats import FinalBossHpCheat
+        self.cheat_type=FinalBossHpCheat
+        self.ram={0xC01D:0x0C,0xC0B9:0x4C,0xC0BA:1,
+                  0xC600:109,0xC318:22,0xC0DA:128}
+        self.writes=[]
+
+    def apply(self,cheat):
+        return cheat.apply(100,self.ram.__getitem__,self.writes.append)
+
+    def test_disabled_cheat_cannot_write(self):
+        cheat=self.cheat_type()
+        self.assertFalse(self.apply(cheat))
+        self.assertEqual(self.writes,[])
+        self.assertEqual(cheat.report['events'],[])
+
+    def test_enabled_cheat_records_exact_hp_intervention(self):
+        cheat=self.cheat_type(True)
+        self.assertTrue(self.apply(cheat))
+        self.assertEqual(self.writes,[128])
+        self.assertEqual(cheat.report['events'],[{'emulator_frame':100,'cell':0x14C,'before':22,'after':128}])
+
+    def test_cheat_stops_outside_living_final_boss_combat(self):
+        for address,value in ((0xC01D,0x0E),(0xC0B9,0x5C),(0xC600,7),(0xC318,0),(0xC318,128)):
+            with self.subTest(address=address,value=value):
+                previous=self.ram[address];self.ram[address]=value
+                self.assertFalse(self.apply(self.cheat_type(True)))
+                self.ram[address]=previous
+        self.assertEqual(self.writes,[])
+
+    def test_console_reports_assistance_even_without_interventions(self):
+        from emulator_report import console_summary
+        report={'emulator_frames':100,'world_cell':0x14C,'player_hp':128,
+                'final_state':'0C','cheats':self.cheat_type(True).report}
+        summary=console_summary(report,'result.json')
+        self.assertEqual(summary['validation_mode'],'assisted')
+        self.assertEqual(summary['cheat_interventions'],0)
+
+
 class BossArenaMetadataTest(unittest.TestCase):
     def test_real_full_hp_boss_rooms(self):
         root=Path(__file__).resolve().parents[1]
@@ -129,6 +170,33 @@ class DungeonRouteTest(unittest.TestCase):
         report['dungeon']['start_room'] = 0x13C
         with self.assertRaisesRegex(AssertionError, 'not a full-entry'):
             self.validate(report, self.routes[0])
+
+    def test_strict_validation_rejects_enabled_cheat_even_without_writes(self):
+        report=self.complete_run()
+        report['cheats']={'enabled':True,'events':[]}
+        with self.assertRaisesRegex(AssertionError,'Assisted cheat run'):
+            self.validate(report,self.routes[0])
+
+    def test_assisted_full_entry_requires_real_boss_and_complete_ending(self):
+        from test_md_dungeon_emulator import validate_assisted,validate_walk
+        route=self.routes[9]
+        cells=[route['outside_cell'],route['entrance']]+[e['to'] for e in route['outbound']]
+        report={'dungeon':{'index':10,'start_room':None,'keys_remaining':14,
+                          'visits':[{'cell':c,'index':10 if c>=256 else 0} for c in cells]},
+                'boss':{'phases':[route['boss']],'hits':[{'before':90,'after':0}],
+                        'deaths':[{}],'ending_handoff':True},
+                'ending':{'credits_started':True,'credits_finished':True,'title_confirmed':True,
+                          'crystal_slots':list(range(16,25)),'scroll_values':list(range(151))},
+                'combat':{'attacks':[{}]},'player_hp':128,'final_state':'12',
+                'audio_peak':2048,'emulator_frames':90000,
+                'cheats':{'enabled':True,'kind':'final_boss_hp_refill','scope_cell':0x14C,
+                          'address':'C318','events':[{'emulator_frame':80000,'cell':0x14C,'before':22,'after':128}]}}
+        self.assertEqual(validate_assisted(report,route)['validation_mode'],'assisted')
+        with self.assertRaisesRegex(AssertionError,'Assisted cheat run'):validate_walk(report,route)
+        for section,key,value in (('boss','deaths',[]),('ending','title_confirmed',False),
+                                  ('cheats','events',[]),('dungeon','start_room',0x13C)):
+            bad=copy.deepcopy(report);bad[section][key]=value
+            with self.assertRaises(AssertionError):validate_assisted(bad,route)
 
     def test_suffix_requires_entire_walk_full_boss_and_complete_ending(self):
         from test_md_dungeon_emulator import validate_segment

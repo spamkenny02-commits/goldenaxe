@@ -2,7 +2,7 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V98)
+## Current status (V99)
 
 - Full equipped-checkpoint dungeon routes1–9 are validated on native MD and
   original SMS. Native9 now defeats its full90HP boss in15 axe hits, collects
@@ -19,8 +19,14 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   reach the final boss. Conserving15C magic now leaves22HP/16MP on arrival;
   the best new trial lands eleven hits, reducing90HP to46HP before death.
   Full entry remains incomplete. The V94 suffix proofs use different options.
-  69 tooling tests pass. Production image remains V50 (484504 bytes / BB38).
+  75 tooling tests pass. Production image remains V50 (484504 bytes / BB38).
   See `docs/V98_WORK_IN_PROGRESS.md` and the native9 proof in V93.
+- A separate native full-entry10 diagnostic with final-boss HP assistance
+  defeats the90HP boss in23 genuine axe hits, shows all nine crystals,
+  finishes credits and confirms title return. Ten HP refills are recorded
+  only in14C; the approach remains unassisted. Strict validation rejects
+  cheat reports, and the disabled-cheat control exactly reproduces the
+  eleven-hit death. See `docs/V99_WORK_IN_PROGRESS.md`.
 
 Earlier production and integration milestones:
 

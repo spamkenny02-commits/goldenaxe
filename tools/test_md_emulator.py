@@ -16,6 +16,7 @@ import zlib
 
 from dungeon_driver import DungeonDriver
 from emulator_report import console_summary
+from emulator_cheats import FinalBossHpCheat
 
 
 class GameInfo(C.Structure):
@@ -72,6 +73,7 @@ def main():
     parser.add_argument('--complete-ending', action='store_true', help='Continue final-boss combat through credits, confirmation and return to title')
     parser.add_argument('--dungeon', type=int, choices=range(1,11), help='Traverse a dungeon from its overworld entry checkpoint, defeat the boss and return outside (or play the final ending)')
     parser.add_argument('--dungeon-start-room', type=lambda v:int(v,16), choices=(0x13C,0x14B,0x15A), help='Separate dungeon10 suffix test from an equipped room checkpoint; never a full-entry proof')
+    parser.add_argument('--cheat-final-boss-hp', action='store_true', help='Assisted diagnostic only: refill HP in14C while boss109 is present; excluded from strict validation')
     parser.add_argument('--miniboss-spacing', action='store_true', help='Dungeon10 controller probe: approach type123 from checked left axe reach')
     parser.add_argument('--adaptive-miniboss', action='store_true', help='Dungeon10 controller probe: use a reachable alternate mini-boss flank and avoid its attack phases')
     parser.add_argument('--weapon-speed-equipment', action='store_true', help='Dungeon10 entrance fixture: include the original C0EE weapon-speed equipment')
@@ -107,6 +109,8 @@ def main():
     parser.add_argument('--invulnerable-boss-wait', action='store_true', help='Late boss controller probe: hold attack reach while hero flash outlasts boss flash')
     parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
+    if args.cheat_final_boss_hp and (args.dungeon!=10 or not args.combat):
+        parser.error('--cheat-final-boss-hp requires --dungeon 10 --combat')
     if args.dungeon_start_room is not None and args.dungeon!=10:
         parser.error('--dungeon-start-room requires dungeon 10')
     dungeon_route = None
@@ -360,6 +364,12 @@ def main():
     def write(at, value):
         assert args.boss_arena is None or not boss_prepared, 'Work RAM writes after boss fixture are forbidden'
         memory[(base+at-0xC000)^byte_swap] = value
+    cheat=FinalBossHpCheat(args.cheat_final_boss_hp)
+    def restore_cheat_hp(value):
+        # Deliberately separate from the fixture writer: this exception can
+        # write only hero HP, and every intervention is recorded as assisted.
+        assert args.cheat_final_boss_hp and boss_prepared
+        memory[(base+0x318)^byte_swap]=value
     save_started = save_completed = restore_checked = False
     save_metadata = None
     def irq_counts():
@@ -510,6 +520,7 @@ def main():
                 for index in range(1,args.dungeon):write(0xC0CE+index,0x80)
             write(0xC01D,6);state=6;boss_prepared=True
             boss_run['fixture']={'cell':cell,'type':args.boss_arena,'index':boss_index,'hp':128,'item':0 if dungeon else boss_weapon,'axe_level':2,'armor_level':3,'shield_level':3,'heal_magic_level':2 if dungeon else 1,'potion':1,'antidote':1 if dungeon else 0,'mp':128 if dungeon else 120}
+        cheat_applied=cheat.apply(frame,read,restore_cheat_hp) if boss_prepared else False
         if args.save_slot is not None and state == 0x0C and not save_started:
             # Controlled integration entry: service arrival is injected; every
             # confirmation, slot selection and SRAM write runs in production code.
@@ -599,7 +610,7 @@ def main():
                 if read(0xC301)==0:boss_run['reward_acknowledged']=True
                 boss_done = boss_run['reward_spawned'] and boss_run.get('reward_acknowledged',False) and boss['type']==0 and read(0xC301)==1 and read(0xC318)==read(0xC0DA)
             if previous_boss is not None and previous_boss['type']==args.boss_arena and read(0xC318)>boss_run.get('last_hp',read(0xC318)):
-                boss_run['heals'].append({'emulator_frame':frame,'before':boss_run['last_hp'],'after':read(0xC318),'mp':read(0xC0DB),'item':read(0xC0DF)})
+                boss_run['heals'].append({'emulator_frame':frame,'before':boss_run['last_hp'],'after':read(0xC318),'mp':read(0xC0DB),'item':read(0xC0DF),'source':'cheat' if cheat_applied else 'game'})
             boss_run['last_hp']=read(0xC318)
             previous_boss=boss;previous_aux=snapshot[24:]
         if args.boss_arena is not None and boss_prepared and boss_index==10 and state==0x0E:
@@ -754,6 +765,7 @@ def main():
         result['boss']=boss_run
         if args.complete_ending:result['ending']=ending
         if dungeon:result['dungeon']={'index':args.dungeon,'start_room':args.dungeon_start_room,'stage':dungeon.stage,'edge':dungeon.edge,'visits':dungeon.visits,'events':dungeon.events,'done':dungeon.done,'keys_remaining':read(0xC0DE),'route':dungeon_route}
+    if args.cheat_final_boss_hp:result['cheats']=cheat.report
     if args.combat:
         combat['final_entities'] = combat_snapshot()
         result['combat'] = combat
