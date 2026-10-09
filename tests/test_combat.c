@@ -17,7 +17,9 @@ static void setup(void){
 }
 static void compare(unsigned slot,uint16_t target,void (*native)(GawEntity *)){
     memcpy(initial,gaw_ram,sizeof initial);
-    assert(gaw_sms_compat_raw_indexed_call((uint8_t)(target>=0x4000u?1:0),target,gaw_entity_addr(gaw_entity(slot))));
+    if(!gaw_sms_compat_raw_indexed_call((uint8_t)(target>=0x4000u?1:0),target,gaw_entity_addr(gaw_entity(slot)))){
+        fprintf(stderr,"combat case%u routine%04X slot%u reference fault%04X\n",cases,target,slot,gaw_sms_compat_last_pc());assert(0);
+    }
     assert(gaw_sms_compat_faults()==0);
     memcpy(expected,gaw_ram,sizeof expected);
     uint8_t entropy[64];unsigned count=gaw_sms_compat_refresh_trace(entropy,64);assert(count<=64);
@@ -163,6 +165,20 @@ int main(void){
         gaw_ram_write8(0xC0BF,curses[c]);gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,16);
         compare(16,0x4FF3,handler);
     }
-    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense + %u fire-terrain + %u large-actor geometry + %u curse-wrapper cases)\n",collisions,damage_cases,ai_cases,grab_cases,directional_cases,fire_cases,geometry_cases,cases-before_curse);
+    unsigned curse_cases=cases-before_curse,before_drain=cases;
+    const uint8_t drain_types[]={77,78,82},magic_values[]={0,1,7,8,9,16,255};
+    for(unsigned type=0;type<3;++type)for(unsigned dir=0;dir<4;++dir)
+    for(unsigned f=0;f<8;++f)for(unsigned mp=0;mp<7;++mp){
+        setup();GawEntity *e=gaw_entity(16);
+        e->raw[ENT_TYPE]=drain_types[type];e->raw[ENT_STATE]=(uint8_t)(drain_types[type]==82?10:6);
+        e->raw[ENT_MOTION_PHASE]=1;e->raw[ENT_DIRECTION]=(uint8_t)dir;
+        e->raw[ENT_FLAGS]=contact_flags[f];e->raw[ENT_HP]=18;
+        e->raw[0x11]=96;e->raw[0x13]=80;
+        gaw_ram_write8(0xC311,64);gaw_ram_write8(0xC313,128);
+        e->raw[0x11]=80;e->raw[0x13]=96;e->raw[0x21]=4;
+        gaw_ram_write8(0xC0DB,magic_values[mp]);gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,16);
+        compare(16,gaw_entity_handler_targets[drain_types[type]],handler);
+    }
+    printf("combat original-Z80 differential: OK (%u collision + %u damage/death/recoil + %u entropy-replayed AI + %u grab/death + %u directional-defense + %u fire-terrain + %u large-actor geometry + %u curse-wrapper + %u magic-drain cases)\n",collisions,damage_cases,ai_cases,grab_cases,directional_cases,fire_cases,geometry_cases,curse_cases,cases-before_drain);
     return 0;
 }

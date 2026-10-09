@@ -1,0 +1,240 @@
+{
+  "status": "Optional potion-first MD10 probe opens13E passage; full traversal still incomplete",
+  "tool_tests": 48,
+  "combat_cases": 8876,
+  "new_magic_drain_cases": 672,
+  "attempts": [
+    {
+      "scenario": "potion_actual_sms10",
+      "frames": 25043,
+      "cell": "13D",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 349,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 56,
+          "mp": 40,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 365,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 56,
+          "mp": 40,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 56,
+          "mp": 40,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 56,
+          "mp": 40,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 50,
+          "mp": 40,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "59614130e946c019969791a4d566facc83e5a784140a875fde0d2c46704984d9",
+      "potion_first": true,
+      "miniboss_geometry": false
+    },
+    {
+      "scenario": "potion_actual_md10",
+      "frames": 61782,
+      "cell": "18A",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 60,
+          "mp": 72,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 48,
+          "mp": 40,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 46,
+          "mp": 24,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 378,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 394,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "ce230641f7610f889c67a57e97fbe1fa111a0c0238ee842ab8e5033c996192f7",
+      "potion_first": true,
+      "miniboss_geometry": false
+    },
+    {
+      "scenario": "miniboss_sms10",
+      "frames": 24243,
+      "cell": "16A",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 32,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 28,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 40,
+          "mp": 16,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 14,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 2,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "135c0f000503435bd2aa644fdb5498916d064bc54cb323c5b75beb6e999029d5",
+      "potion_first": false,
+      "miniboss_geometry": true
+    },
+    {
+      "scenario": "miniboss_md10",
+      "frames": 46228,
+      "cell": "16A",
+      "hp": 0,
+      "complete": false,
+      "last_visits": [
+        {
+          "cell": 364,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 32,
+          "mp": 56,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 333,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 32,
+          "mp": 56,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 317,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 38,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 318,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 8,
+          "potion": 0,
+          "curse": 0
+        },
+        {
+          "cell": 362,
+          "stage": "outbound",
+          "index": 10,
+          "hp": 26,
+          "mp": 0,
+          "potion": 0,
+          "curse": 0
+        }
+      ],
+      "result_sha256": "1c670197e337f2452bf66f591418e0d67af96ca529e650095d5c89493465b9b3",
+      "potion_first": true,
+      "miniboss_geometry": true
+    }
+  ],
+  "retained": "Optional --potion-first requires dungeon10; default heal policy and V58 controller unchanged",
+  "reverted": "Miniboss geometry worsens SMS10; potion-first is not the default because SMS10 regresses",
+  "production_changes": false,
+  "next": "Improve survival in18A on native10 without losing the magic needed for13E; south17B/17C integration remains unverified"
+}

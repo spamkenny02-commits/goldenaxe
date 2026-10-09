@@ -70,6 +70,7 @@ def main():
     parser.add_argument('--boss-weapon-probe', action='store_true', help='Run a bounded sword-immunity probe without requiring boss defeat')
     parser.add_argument('--complete-ending', action='store_true', help='Continue final-boss combat through credits, confirmation and return to title')
     parser.add_argument('--dungeon', type=int, choices=range(1,11), help='Traverse a dungeon from its overworld entry checkpoint, defeat the boss and return outside (or play the final ending)')
+    parser.add_argument('--potion-first', action='store_true', help='Dungeon10 controller probe: conserve magic by using the potion before healing spells')
     parser.add_argument('--patient-boss', action='store_true', help='Late-dungeon controller probe: wait for stationary boss phases and use a wider body margin')
     args = parser.parse_args()
     dungeon_route = None
@@ -80,6 +81,8 @@ def main():
         args.boss_arena = dungeon_route['boss']['type']
         args.complete_ending = args.dungeon==10
         if args.patient_boss:dungeon_route['patient_boss']=True
+    if args.potion_first and args.dungeon!=10:
+        parser.error('--potion-first requires dungeon 10')
     if args.patient_boss and args.dungeon not in (9,10):
         parser.error('--patient-boss requires dungeon 9 or 10')
     if args.late_boss_controller and args.boss_arena not in (108,109):
@@ -316,6 +319,7 @@ def main():
         heal_cost=24 if not dungeon or args.dungeon in (9,10) else 32
         if boss_heal_stage=='fight' and read(0xC318)<=24 and (read(0xC600)==args.boss_arena or dungeon):
             goal=7 if dungeon and read(0xC0E7) and read(0xC0DB)>=heal_cost else 8 if read(0xC0E8) else 7 if read(0xC0E7) and read(0xC0DB)>=heal_cost else None
+            if args.potion_first and read(0xC0E8):goal=8
             if goal is not None:
                 boss_inventory_goal=goal;boss_heal_mp=read(0xC0DB);boss_heal_stage='select_heal'
         if boss_heal_stage=='select_heal':
@@ -596,7 +600,8 @@ def main():
               'play_frames': play_frames, 'play_ticks': play_ticks, 'audio_frames': current['audio_frames'],
               'audio_peak': current['audio_peak'], 'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
               'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03),
-              'world_transitions': world_transitions, 'final_state': f'{read(0xC01D):02X}'}
+              'world_transitions': world_transitions, 'final_state': f'{read(0xC01D):02X}',
+              'controller': {'potion_first':args.potion_first,'patient_boss':args.patient_boss}}
     if args.boss_arena is not None:
         boss_run['final_item']=read(0xC0DF);boss_run['final_mp']=read(0xC0DB);boss_run['potion_remaining']=read(0xC0E8)
         boss_run['final_entities']=combat_snapshot();boss_run['progress']=read(0xC0CE+boss_index) if boss_prepared else None
