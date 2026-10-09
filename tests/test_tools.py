@@ -268,6 +268,25 @@ class DungeonNavigationTest(unittest.TestCase):
         driver.navigate = lambda target: self.fail('Left before the corpse resolved')
         self.assertEqual(driver.drive(0x0C,False),0)
 
+    def test_navigation_avoids_cycling_pit_even_in_open_phase(self):
+        driver=self.driver()
+        self.ram[0xB9]=0x4A
+        self.ram[0x1C46]=0x41
+        driver.navigate((120,80))
+        self.assertIn((104,80),driver.path)
+        driver.route['damage_terrain_cells']=(0x14A,)
+        driver.target=None
+        driver.navigate((120,80))
+        self.assertNotIn((104,80),driver.path)
+        self.assertEqual(driver.path[-1],(120,80))
+
+    def test_damage_terrain_probe_does_not_change_another_room(self):
+        driver=self.driver()
+        self.ram[0x1C46]=0x4F
+        driver.route['damage_terrain_cells']=(0x14A,)
+        driver.navigate((120,80))
+        self.assertIn((104,80),driver.path)
+
     def test_final_dungeon_turret_is_not_a_melee_target(self):
         driver = self.loop_driver([0x139])
         driver.route.update(index=10)

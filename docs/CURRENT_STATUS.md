@@ -1,9 +1,32 @@
-# Current status — V50
+# Current status — V89
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
 
-## V50 validation
+## Current integration limits
+
+Full equipped-checkpoint dungeon routes1–8 are validated on native MD and
+original SMS. Original SMS9 also passes; native9's patient-boss run still
+dies after13 of15 hits, with12HP remaining on the boss. Full-entry10 remains
+open on both platforms. No new-game-to-ending equivalence claim is made.
+
+Separate equipped13C suffix proofs complete the final dungeon, full boss,
+all nine crystals, credits and confirmed title return on SMS and native MD.
+Those tests start with128HP/128MP and a potion, so they do not close the
+full-entry health/magic gap. The17C and14B west-entry circuits are corrected.
+Native full-entry10 currently reaches15B with18–20HP/0MP and dies there;
+a reserved16MP trial now completes14A but dies14B with insufficient health.
+
+61 tooling tests pass. Resource and environment observations distinguish
+healing/spell costs from late inventory selection and flag suspicious stale
+attacker attribution. Experimental controller policies are optional and
+keep all actions on the joypad after the initial fixture. See
+V89_WORK_IN_PROGRESS.md for outcomes and private report hashes.
+
+The current production MD image is still V50,484504bytes/checksumBB38.
+Recent controller probes do not change production C or rebuild that image.
+
+## V50 production validation
 
 Potion merchants now use the original five-cell lookup. Capacity rewards preserve
 original subtraction borrow, dialogue and HP animation waits. Full-screen magic
@@ -11,9 +34,9 @@ uses the original selected-item/level damage lookup. New differential suites pas
 354 merchant cycles across 23 shops, 38 world-item cases, 144 full-effect cycles.
 The full ending reaches the actual title state 12 on original SMS and native MD.
 
-Prepared equipped controller routes 1-4 complete on MD, and 1-7 on SMS pilots.
-Later MD routes and SMS routes 8-10 remain experimental; no full new-game-to-ending
-claim is made. See CONTINUOUS_V50_PROGRESS.md and V50_WORK_IN_PROGRESS.md.
+At the V50 milestone, prepared equipped controller routes1–4 completed on
+MD and1–7 on SMS pilots. Later route results are listed above. See
+CONTINUOUS_V50_PROGRESS.md and V50_WORK_IN_PROGRESS.md for that milestone.
 
 ## Native game core
 
@@ -40,7 +63,7 @@ GitHub Actions host validation completed successfully; private-ROM comparisons
 are conditional on the private input and must not be inferred from skipped CI
 steps.
 
-## Last measured full-game Mega Drive image: V37
+## Historical Mega Drive image measurements: V37
 
 - 476460 bytes; BSS 31518 at FF0000–FF7B1E; checksum BC9D.
 - Actual linked vectors, writable state, interpreter exclusion, ROM header and
