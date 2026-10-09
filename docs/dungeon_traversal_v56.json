@@ -1,0 +1,46 @@
+{
+  "status": "Projectile117 differential verified; native dungeon9 still incomplete; dungeon10 runs pending",
+  "new_differential_cases": 768,
+  "magic_boss_cases": {
+    "boss_phase": 5792,
+    "death_reward": 2530,
+    "spell_projectile": 256,
+    "homing_projectile": 768,
+    "loot": 2816
+  },
+  "tool_tests": 46,
+  "attempts": [
+    {
+      "scenario": "homing_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "boss_hits": 5,
+      "complete": false,
+      "frames": 45784,
+      "retained": false
+    },
+    {
+      "scenario": "finish_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "boss_hits": 13,
+      "complete": false,
+      "frames": 49106,
+      "retained": false
+    },
+    {
+      "scenario": "flash32_md9",
+      "final_hp": 0,
+      "cell": "0x1ac",
+      "boss_hits": 13,
+      "complete": false,
+      "frames": 48951,
+      "retained": false
+    }
+  ],
+  "source_hashes": {
+    "tests/test_magic_boss.c": "04be7e413afc91713bc141fae3b30b0cdbc677156f302dc8929804957456fae8",
+    "tools/dungeon_driver.py": "76886ab76022667b267b6c1ae9a400b6c32b1a98bb67bdc5977ca41619f2fbd3",
+    "tools/test_md_emulator.py": "25fb152815bc709bd683e64ea00583cb4a5250bf4a8909ae0c3de745a9176c84"
+  }
+}

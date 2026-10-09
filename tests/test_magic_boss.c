@@ -97,6 +97,29 @@ int main(void){
         gaw_ram_write16le(0xC034,0xDD00);gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,1);
         compare(1,gaw_entity_handler_targets[type],handler);
     }
+    unsigned before_homing=cases;
+    /* Type 117: signed velocity limits, wall reversals, contact switching,
+       returning-to-boss clearing and lifetime endpoints against real Z80. */
+    const int16_t speeds[]={-768,-736,-1,0,1,736,767,768};
+    const uint8_t positions[][2]={{0x1F,0x80},{0x20,0x27},{0x8F,0xD7},
+                                 {0x90,0xD8},{0x50,0x80},{0x40,0x70}};
+    const uint8_t life[]={1,47,48,192};
+    for(unsigned state=2;state<=4;state+=2)
+    for(unsigned speed=0;speed<8;++speed)for(unsigned position=0;position<6;++position)
+    for(unsigned timer=0;timer<4;++timer)for(unsigned contact=0;contact<2;++contact){
+        setup();GawEntity *e=gaw_entity(24),*boss=gaw_entity(16);
+        e->raw[ENT_TYPE]=117;e->raw[ENT_STATE]=(uint8_t)state;
+        e->raw[ENT_FLAGS]=(uint8_t)(0x13u|(contact?4u:0u));
+        e->raw[0x11]=positions[position][0];e->raw[0x13]=positions[position][1];
+        e->raw[0x22]=life[timer];
+        gaw_entity_set16(e,ENT_DELTA0,(uint16_t)speeds[speed]);
+        gaw_entity_set16(e,ENT_DELTA1,(uint16_t)-speeds[speed]);
+        boss->raw[ENT_TYPE]=108;boss->raw[0x11]=0x40;boss->raw[0x13]=0x70;
+        gaw_ram_write8(0xC311,0x70);gaw_ram_write8(0xC313,0x80);
+        gaw_ram_write8(RAM_ENTITY_SLOT_INDEX,24);
+        compare(24,gaw_entity_handler_targets[117],handler);
+    }
+    unsigned homing_cases=cases-before_homing;
     unsigned before_drops=cases;
     const uint8_t saved_types[]={0,32,38,46,77,67,102,43,120,124,127};
     for(unsigned saved=0;saved<sizeof saved_types;++saved)for(unsigned interior=0;interior<2;++interior)
@@ -108,6 +131,6 @@ int main(void){
         gaw_sms_compat_set_refresh_seed((uint8_t)seed);compare(24,0x4AEE,handler);
     }
     printf("original-Z80 enemy/explosion loot differential: OK (%u cases)\n",cases-before_drops);
-    printf("magic/boss original-Z80 differential: OK (%u boss phase + %u death/reward + %u spell projectile cases)\n",bosses,deaths,before_drops-bosses-deaths);
+    printf("magic/boss original-Z80 differential: OK (%u boss phase + %u death/reward + %u spell projectile + %u homing projectile cases)\n",bosses,deaths,before_homing-bosses-deaths,homing_cases);
     return 0;
 }
