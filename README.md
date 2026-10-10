@@ -2,7 +2,20 @@
 
 Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C, with a native Motorola 68000 / Mega Drive backend.
 
-## Current status (V99)
+## Current status (V100)
+
+- Manual testing and pinned SMS/MD comparisons expose substantial slowdown:
+  MD idle228 updates/300 frames versus SMS298; first transition110 versus37
+  frames; the monster scenario runs at about38% SMS cadence and fails strict
+  combat validation. Initial transfer optimizations improve the walking script
+  from531 to499 gameplay frames. Fidelity is not established. Intermediate
+  transition artifacts remain open even though the settled viewport matches.
+  78 tooling tests and537 native hardware video stages pass.
+  Current production image:489158bytes/checksum2759. See
+  `docs/V100_WORK_IN_PROGRESS.md` for measurements and reproduction commands.
+
+Earlier route evidence below uses V50 and its recorded options; full dungeon
+proofs have not been repeated on the V100 performance build.
 
 - Full equipped-checkpoint dungeon routes1–9 are validated on native MD and
   original SMS. Native9 now defeats its full90HP boss in15 axe hits, collects
@@ -19,7 +32,7 @@ Faithful decompilation of **Golden Axe Warrior** (Master System) into portable C
   reach the final boss. Conserving15C magic now leaves22HP/16MP on arrival;
   the best new trial lands eleven hits, reducing90HP to46HP before death.
   Full entry remains incomplete. The V94 suffix proofs use different options.
-  75 tooling tests pass. Production image remains V50 (484504 bytes / BB38).
+  At V99,75 tooling tests passed and production was V50 (484504 bytes / BB38).
   See `docs/V98_WORK_IN_PROGRESS.md` and the native9 proof in V93.
 - A separate native full-entry10 diagnostic with final-boss HP assistance
   defeats the90HP boss in23 genuine axe hits, shows all nine crystals,

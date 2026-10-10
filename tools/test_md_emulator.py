@@ -28,6 +28,19 @@ class Variable(C.Structure):
     _fields_ = [('key', C.c_char_p), ('value', C.c_char_p)]
 
 
+class AvGeometry(C.Structure):
+    _fields_=[('base_width',C.c_uint),('base_height',C.c_uint),
+              ('max_width',C.c_uint),('max_height',C.c_uint),('aspect_ratio',C.c_float)]
+
+
+class AvTiming(C.Structure):
+    _fields_=[('fps',C.c_double),('sample_rate',C.c_double)]
+
+
+class AvInfo(C.Structure):
+    _fields_=[('geometry',AvGeometry),('timing',AvTiming)]
+
+
 def png(path, pixels, width, height, pitch, pixel_format):
     def chunk(kind, data):
         return struct.pack('>I', len(data))+kind+data+struct.pack('>I', zlib.crc32(kind+data))
@@ -58,6 +71,8 @@ def main():
     parser.add_argument('--frames', type=int, default=6000)
     parser.add_argument('--output', type=Path, default=Path('md/build/emulator'))
     parser.add_argument('--observe-only', action='store_true')
+    parser.add_argument('--region', choices=('ntsc','pal'), help='Pin the same video standard for SMS/MD cadence comparisons')
+    parser.add_argument('--timing-trace', action='store_true', help='Record physical-frame game/intro/text markers for cadence comparisons')
     parser.add_argument('--reference-sms', action='store_true', help='Run an original SMS ROM as a hardware reference')
     parser.add_argument('--play-inputs', type=Path, help='JSON list of {ticks, buttons} controller steps after entering gameplay')
     parser.add_argument('--combat', action='store_true', help='Record observed attacks, HP losses and enemy deaths during gameplay')
@@ -284,6 +299,7 @@ def main():
                 value = entries[i].value.decode().split('; ', 1)[1].split('|', 1)[0].encode()
                 variables[entries[i].key] = value
                 i += 1
+            if args.region:variables[b'genesis_plus_gx_region_detect']=b'ntsc-u' if args.region=='ntsc' else b'pal'
             return True
         if command == 15:
             entry = C.cast(data, C.POINTER(Variable)).contents
@@ -332,6 +348,10 @@ def main():
     lib.retro_load_game.restype = C.c_bool
     info = GameInfo(str(args.rom.resolve()).encode(), None, 0, None)
     assert lib.retro_load_game(C.byref(info)), 'Core rejected the ROM'
+    av=AvInfo()
+    lib.retro_get_system_av_info.argtypes=[C.POINTER(AvInfo)]
+    lib.retro_get_system_av_info(C.byref(av))
+    timing_trace=[]
     lib.retro_set_controller_port_device(0, 1)
     lib.retro_get_memory_data.argtypes = [C.c_uint]
     lib.retro_get_memory_data.restype = C.c_void_p
@@ -563,6 +583,16 @@ def main():
                 combat['resource_changes'].append({'emulator_frame':frame,
                     'cell':read(0xC0B9)|(read(0xC0BA)<<8),'state':state,
                     'before':resources_before,'after':resources_after})
+        if args.timing_trace:
+            timing_trace.append({'frame':frame,'state':state,'game_counter':read(0xC02F),
+                'cell':read(0xC0B9)|(read(0xC0BA)<<8),'x':read(0xC313),'y':read(0xC311),
+                'player_state':read(0xC301),'player_animation':read(0xC30B),
+                'enemies':[{'slot':s,'type':read(0xC300+s*48),'state':read(0xC301+s*48),
+                            'animation':read(0xC30B+s*48),'x':read(0xC313+s*48),'y':read(0xC311+s*48)}
+                           for s in range(16,24) if read(0xC300+s*48)],
+                'intro_line':read(0xDCE0),'intro_text_pointer':read(0xDCE8)|(read(0xDCE9)<<8),
+                'intro_event_pointer':read(0xDCEA)|(read(0xDCEB)<<8),
+                'text_pointer':read(0xDCC6)|(read(0xDCC7)<<8),'scroll':read(0xC019)})
         if save_started and state == 0x0C and not save_completed:
             save_completed = True
             at = 0x400*(args.save_slot+1)
@@ -754,6 +784,7 @@ def main():
     memory_copy = bytes(memory[i^byte_swap] for i in range(memory_size))
     (args.output/'work_ram.bin').write_bytes(memory_copy)
     result = {'emulator_frames': frame+1, 'game_ticks': ticks, 'stages': stages,
+              'video_timing':{'fps':av.timing.fps,'region_requested':args.region},
               'play_frames': play_frames, 'play_ticks': play_ticks, 'audio_frames': current['audio_frames'],
               'audio_peak': current['audio_peak'], 'world_cell': read(0xC0B9)|(read(0xC0BA)<<8),
               'player_hp': read(0xC318), 'audio_timing_mode': read(0xDE03),
@@ -769,6 +800,7 @@ def main():
     if args.combat:
         combat['final_entities'] = combat_snapshot()
         result['combat'] = combat
+    if args.timing_trace:result['timing_trace']=timing_trace
     if irq_counts():
         result['hardware_irqs'] = irq_counts()
         if play_irq_start is not None:

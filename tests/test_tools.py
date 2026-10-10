@@ -88,6 +88,38 @@ class FinalBossCheatTest(unittest.TestCase):
         self.assertEqual(summary['cheat_interventions'],0)
 
 
+class CadenceComparisonTest(unittest.TestCase):
+    def setUp(self):
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
+        from compare_emulator_cadence import compare
+        self.compare=compare
+        self.report={'video_timing':{'fps':59.9227,'region_requested':'ntsc'},
+                     'play_frames':300,'play_ticks':298,'stages':[
+                         {'state':'0C','emulator_frame':476},
+                         {'state':'0A','emulator_frame':664},
+                         {'state':'0C','emulator_frame':701}]}
+
+    def test_physical_frames_and_transition_duration_drive_comparison(self):
+        md=copy.deepcopy(self.report);md['play_ticks']=225
+        result=self.compare(md,self.report)
+        self.assertAlmostEqual(result['md_gameplay_cadence_relative_to_sms'],225/298)
+        self.assertEqual(result['sms']['transition_frames'],[37])
+        self.assertAlmostEqual(result['sms']['transition_seconds'][0],37/59.9227)
+
+    def test_mismatched_or_unpinned_standard_and_cheats_are_rejected(self):
+        for key,value in (('region_requested','pal'),('region_requested',None),('fps',50.0)):
+            bad=copy.deepcopy(self.report);bad['video_timing'][key]=value
+            with self.assertRaises(AssertionError):self.compare(bad,self.report)
+        bad=copy.deepcopy(self.report);bad['cheats']={'enabled':True}
+        with self.assertRaises(AssertionError):self.compare(bad,self.report)
+
+    def test_intro_only_run_does_not_invent_a_gameplay_cadence(self):
+        report=copy.deepcopy(self.report);report.update(play_frames=0,play_ticks=0,stages=[])
+        result=self.compare(report,report)
+        self.assertIsNone(result['md_gameplay_cadence_relative_to_sms'])
+        self.assertIsNone(result['md']['first_gameplay_seconds'])
+
+
 class BossArenaMetadataTest(unittest.TestCase):
     def test_real_full_hp_boss_rooms(self):
         root=Path(__file__).resolve().parents[1]

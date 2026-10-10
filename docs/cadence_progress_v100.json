@@ -1,0 +1,545 @@
+{
+  "production_changed": true,
+  "strict_dungeon_completion_revalidated": false,
+  "standard": "NTSC, same59.92274340431231fps",
+  "rom": {
+    "bytes": 489158,
+    "sha256": "bfcdbac6f87c5c1781cdbd8fef210c34d228da2efc32291fa4a8229e511bdde4",
+    "checksum": "2759"
+  },
+  "runs": [
+    {
+      "probe": "idle_baseline",
+      "report_sha256": "f6964819cf68cd5d8404c8bb9efb0100a2f7ee65b5b488f861c264cbee65f80e",
+      "emulator_frames": 1541,
+      "player_hp": 24,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 300,
+        "play_ticks": 225,
+        "updates_per_physical_frame": 0.75,
+        "first_gameplay_frame": 1241,
+        "first_gameplay_seconds": 20.70999973460314,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      }
+    },
+    {
+      "probe": "idle_sms_trace",
+      "report_sha256": "2e4e40e3dd4b884e93e41a50c6c317cb546460d2b7b4a083fd40c87e2afdda59",
+      "emulator_frames": 776,
+      "player_hp": 24,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 300,
+        "play_ticks": 298,
+        "updates_per_physical_frame": 0.9933333333333333,
+        "first_gameplay_frame": 476,
+        "first_gameplay_seconds": 7.943561542039561,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      }
+    },
+    {
+      "probe": "idle_final",
+      "report_sha256": "e4383129c5e6ba3401da6240f9f0b0b499320701e17c7ce9a479b609840aba8a",
+      "emulator_frames": 1455,
+      "player_hp": 24,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 300,
+        "play_ticks": 228,
+        "updates_per_physical_frame": 0.76,
+        "first_gameplay_frame": 1155,
+        "first_gameplay_seconds": 19.274818447595994,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "hottest_symbols": [
+        {
+          "name": "gaw_state_gameplay",
+          "cycles": 73568152,
+          "percent": 27.471
+        },
+        {
+          "name": "sync_sms_shadow.lto_priv.0",
+          "cycles": 48094158,
+          "percent": 17.959
+        },
+        {
+          "name": "vdp_data_w.lto_priv.0",
+          "cycles": 22613430,
+          "percent": 8.444
+        },
+        {
+          "name": "gaw_sms_vdp_data_write_block.part.0",
+          "cycles": 18947838,
+          "percent": 7.075
+        },
+        {
+          "name": "gaw_state_enter_gameplay",
+          "cycles": 17339000,
+          "percent": 6.475
+        },
+        {
+          "name": "gaw_irq_service",
+          "cycles": 16675246,
+          "percent": 6.227
+        },
+        {
+          "name": "palette_transition.lto_priv.0",
+          "cycles": 12387564,
+          "percent": 4.626
+        },
+        {
+          "name": "vdp_ctrl.lto_priv.0",
+          "cycles": 7612122,
+          "percent": 2.842
+        }
+      ]
+    },
+    {
+      "probe": "exit_baseline",
+      "report_sha256": "9073a61c70a055783caa50c90d96ae89ab8e107c3085754ddb3320d460188196",
+      "emulator_frames": 1883,
+      "player_hp": 24,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 531,
+        "play_ticks": 345,
+        "updates_per_physical_frame": 0.6497175141242938,
+        "first_gameplay_frame": 1241,
+        "first_gameplay_seconds": 20.70999973460314,
+        "transition_frames": [
+          111
+        ],
+        "transition_seconds": [
+          1.8523851495092254
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      }
+    },
+    {
+      "probe": "exit_sms_trace",
+      "report_sha256": "101d56625887589fcb80bc455e73f236021647bfe758e0c4c5da84c7d013b9a7",
+      "emulator_frames": 861,
+      "player_hp": 24,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 348,
+        "play_ticks": 346,
+        "updates_per_physical_frame": 0.9942528735632183,
+        "first_gameplay_frame": 476,
+        "first_gameplay_seconds": 7.943561542039561,
+        "transition_frames": [
+          37
+        ],
+        "transition_seconds": [
+          0.6174617165030751
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      }
+    },
+    {
+      "probe": "exit_final",
+      "report_sha256": "45939df5b73f84bfb1d75f1daf2bb3aa7519a114302649323554fa768b7469f9",
+      "emulator_frames": 1764,
+      "player_hp": 24,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 499,
+        "play_ticks": 345,
+        "updates_per_physical_frame": 0.6913827655310621,
+        "first_gameplay_frame": 1155,
+        "first_gameplay_seconds": 19.274818447595994,
+        "transition_frames": [
+          110
+        ],
+        "transition_seconds": [
+          1.8356969950091422
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "hottest_symbols": [
+        {
+          "name": "sync_sms_shadow.lto_priv.0",
+          "cycles": 141779656,
+          "percent": 26.036
+        },
+        {
+          "name": "gaw_state_gameplay",
+          "cycles": 77549458,
+          "percent": 14.241
+        },
+        {
+          "name": "gaw_md_vblank_irq",
+          "cycles": 69247514,
+          "percent": 12.716
+        },
+        {
+          "name": "vdp_data_w.lto_priv.0",
+          "cycles": 32697154,
+          "percent": 6.004
+        },
+        {
+          "name": "gaw_sms_vdp_data_write_block.part.0",
+          "cycles": 31363318,
+          "percent": 5.759
+        },
+        {
+          "name": "gaw_state_gameplay_update",
+          "cycles": 30055606,
+          "percent": 5.519
+        },
+        {
+          "name": "gaw_irq_service",
+          "cycles": 28360220,
+          "percent": 5.208
+        },
+        {
+          "name": "gaw_state_enter_gameplay",
+          "cycles": 17339000,
+          "percent": 3.184
+        }
+      ]
+    },
+    {
+      "probe": "intro_md",
+      "report_sha256": "835db7cdebe6c41dfb2f00359036294d47d090a8a3d44a7bea68b5ea76cd055f",
+      "emulator_frames": 3000,
+      "player_hp": 0,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 0,
+        "play_ticks": 0,
+        "updates_per_physical_frame": null,
+        "first_gameplay_frame": null,
+        "first_gameplay_seconds": null,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": 455,
+        "first_intro_line_seconds": 7.593110297537816
+      }
+    },
+    {
+      "probe": "intro_sms",
+      "report_sha256": "5b6dfda1e99a086f432facbe99a241b2189aa96422027bc4c49c2c9e7b76b989",
+      "emulator_frames": 3000,
+      "player_hp": 0,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 0,
+        "play_ticks": 0,
+        "updates_per_physical_frame": null,
+        "first_gameplay_frame": null,
+        "first_gameplay_seconds": null,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": 110,
+        "first_intro_line_seconds": 1.8356969950091422
+      }
+    },
+    {
+      "probe": "intro_final",
+      "report_sha256": "fc0544421443f9ef9552e63b42e9ecc9e18da4b9474986700a48c7cab962c60c",
+      "emulator_frames": 3000,
+      "player_hp": 0,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 0,
+        "play_ticks": 0,
+        "updates_per_physical_frame": null,
+        "first_gameplay_frame": null,
+        "first_gameplay_seconds": null,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": 429,
+        "first_intro_line_seconds": 7.159218280535654
+      }
+    },
+    {
+      "probe": "combat_md",
+      "report_sha256": "b9f8b1a3b6dad6aa9ba3ca25a415b802bd419962ecd835843ca23d0279b90f5d",
+      "emulator_frames": 4967,
+      "player_hp": 24,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 3525,
+        "play_ticks": 1326,
+        "updates_per_physical_frame": 0.37617021276595747,
+        "first_gameplay_frame": 1155,
+        "first_gameplay_seconds": 19.274818447595994,
+        "transition_frames": [
+          110,
+          177
+        ],
+        "transition_seconds": [
+          1.8356969950091422,
+          2.953803346514711
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "combat_counts": {
+        "attacks": 60,
+        "player_hits": 0,
+        "enemy_hits": 2,
+        "enemy_deaths": 2,
+        "projectiles": 3
+      }
+    },
+    {
+      "probe": "combat_sms",
+      "report_sha256": "1f90d625b4bc69fe6d68f51bac5932f016b97eee597222403fd83e994b6791c1",
+      "emulator_frames": 1907,
+      "player_hp": 16,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 1330,
+        "play_ticks": 1327,
+        "updates_per_physical_frame": 0.9977443609022556,
+        "first_gameplay_frame": 476,
+        "first_gameplay_seconds": 7.943561542039561,
+        "transition_frames": [
+          37,
+          64
+        ],
+        "transition_seconds": [
+          0.6174617165030751,
+          1.068041888005319
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "combat_counts": {
+        "attacks": 61,
+        "player_hits": 2,
+        "enemy_hits": 3,
+        "enemy_deaths": 3,
+        "projectiles": 3
+      }
+    },
+    {
+      "probe": "combat_profile",
+      "report_sha256": "1418e5b7f26748b812416434d364b81892c44521878d0e2e85fdd35cee51841c",
+      "emulator_frames": 4967,
+      "player_hp": 24,
+      "timing": {
+        "fps": 59.92274340431231,
+        "play_frames": 3525,
+        "play_ticks": 1326,
+        "updates_per_physical_frame": 0.37617021276595747,
+        "first_gameplay_frame": 1155,
+        "first_gameplay_seconds": 19.274818447595994,
+        "transition_frames": [
+          110,
+          177
+        ],
+        "transition_seconds": [
+          1.8356969950091422,
+          2.953803346514711
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "hottest_symbols": [
+        {
+          "name": "gaw_md_vblank_irq",
+          "cycles": 1000833218,
+          "percent": 29.319
+        },
+        {
+          "name": "sync_sms_shadow.lto_priv.0",
+          "cycles": 601690761,
+          "percent": 17.626
+        },
+        {
+          "name": "gaw_state_gameplay",
+          "cycles": 460868058,
+          "percent": 13.501
+        },
+        {
+          "name": "sync_sprite_copy",
+          "cycles": 235659662,
+          "percent": 6.904
+        },
+        {
+          "name": "render_entity_sms",
+          "cycles": 149001902,
+          "percent": 4.365
+        },
+        {
+          "name": "gaw_irq_service",
+          "cycles": 136008474,
+          "percent": 3.984
+        },
+        {
+          "name": "gaw_sms_vdp_data_write_block.part.0",
+          "cycles": 134626058,
+          "percent": 3.944
+        },
+        {
+          "name": "gaw_state_gameplay_update",
+          "cycles": 126013125,
+          "percent": 3.691
+        }
+      ],
+      "combat_counts": {
+        "attacks": 60,
+        "player_hits": 0,
+        "enemy_hits": 2,
+        "enemy_deaths": 2,
+        "projectiles": 3
+      }
+    }
+  ],
+  "final_comparisons": {
+    "idle": {
+      "md": {
+        "fps": 59.92274340431231,
+        "play_frames": 300,
+        "play_ticks": 228,
+        "updates_per_physical_frame": 0.76,
+        "first_gameplay_frame": 1155,
+        "first_gameplay_seconds": 19.274818447595994,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "sms": {
+        "fps": 59.92274340431231,
+        "play_frames": 300,
+        "play_ticks": 298,
+        "updates_per_physical_frame": 0.9933333333333333,
+        "first_gameplay_frame": 476,
+        "first_gameplay_seconds": 7.943561542039561,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "md_gameplay_cadence_relative_to_sms": 0.7651006711409396,
+      "scope": "Timing diagnostic; use the same controller scenario, not proof of gameplay or visual equivalence"
+    },
+    "exit": {
+      "md": {
+        "fps": 59.92274340431231,
+        "play_frames": 499,
+        "play_ticks": 345,
+        "updates_per_physical_frame": 0.6913827655310621,
+        "first_gameplay_frame": 1155,
+        "first_gameplay_seconds": 19.274818447595994,
+        "transition_frames": [
+          110
+        ],
+        "transition_seconds": [
+          1.8356969950091422
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "sms": {
+        "fps": 59.92274340431231,
+        "play_frames": 348,
+        "play_ticks": 346,
+        "updates_per_physical_frame": 0.9942528735632183,
+        "first_gameplay_frame": 476,
+        "first_gameplay_seconds": 7.943561542039561,
+        "transition_frames": [
+          37
+        ],
+        "transition_seconds": [
+          0.6174617165030751
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "md_gameplay_cadence_relative_to_sms": 0.6953791977017619,
+      "scope": "Timing diagnostic; use the same controller scenario, not proof of gameplay or visual equivalence"
+    },
+    "intro": {
+      "md": {
+        "fps": 59.92274340431231,
+        "play_frames": 0,
+        "play_ticks": 0,
+        "updates_per_physical_frame": null,
+        "first_gameplay_frame": null,
+        "first_gameplay_seconds": null,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": 429,
+        "first_intro_line_seconds": 7.159218280535654
+      },
+      "sms": {
+        "fps": 59.92274340431231,
+        "play_frames": 0,
+        "play_ticks": 0,
+        "updates_per_physical_frame": null,
+        "first_gameplay_frame": null,
+        "first_gameplay_seconds": null,
+        "transition_frames": [],
+        "transition_seconds": [],
+        "first_intro_line_frame": 110,
+        "first_intro_line_seconds": 1.8356969950091422
+      },
+      "md_gameplay_cadence_relative_to_sms": null,
+      "scope": "Timing diagnostic; use the same controller scenario, not proof of gameplay or visual equivalence"
+    },
+    "combat": {
+      "md": {
+        "fps": 59.92274340431231,
+        "play_frames": 3525,
+        "play_ticks": 1326,
+        "updates_per_physical_frame": 0.37617021276595747,
+        "first_gameplay_frame": 1155,
+        "first_gameplay_seconds": 19.274818447595994,
+        "transition_frames": [
+          110,
+          177
+        ],
+        "transition_seconds": [
+          1.8356969950091422,
+          2.953803346514711
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "sms": {
+        "fps": 59.92274340431231,
+        "play_frames": 1330,
+        "play_ticks": 1327,
+        "updates_per_physical_frame": 0.9977443609022556,
+        "first_gameplay_frame": 476,
+        "first_gameplay_seconds": 7.943561542039561,
+        "transition_frames": [
+          37,
+          64
+        ],
+        "transition_seconds": [
+          0.6174617165030751,
+          1.068041888005319
+        ],
+        "first_intro_line_frame": null,
+        "first_intro_line_seconds": null
+      },
+      "md_gameplay_cadence_relative_to_sms": 0.37702063525148716,
+      "scope": "Timing diagnostic; use the same controller scenario, not proof of gameplay or visual equivalence"
+    }
+  },
+  "combat_strict_validation": {
+    "md": "REJECTED: Combat did not exercise player damage and survival",
+    "sms": "PASS"
+  },
+  "viewport_after_exit": "49152 pixels match fixed SMS/MD DAC conversion; intermediate transition images remain unvalidated",
+  "video_fixture": "PASS:30793728 pixels,537 stages; combined H-scroll/right V-lock remains unverified"
+}

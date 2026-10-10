@@ -89,6 +89,19 @@ md_video_host_test: tests/test_md_video.c md/src/video_convert.c md/src/pattern_
 	$(CC) $(CFLAGS) -Imd/include md/src/video_convert.c $< -o $@
 test-md-video: md_video_host_test
 	./md_video_host_test
+.PHONY: test-md-runtime test-md-runtime-sanitize
+MD_RUNTIME_NAMES = -Dmemcpy=gaw_md_memcpy -Dmemset=gaw_md_memset -Dmemcmp=gaw_md_memcmp -Dmemmove=gaw_md_memmove
+md_runtime_host_test: tests/test_md_runtime.c md/src/runtime.c
+	@mkdir -p md/build
+	$(CC) $(CFLAGS) -fno-builtin $(MD_RUNTIME_NAMES) -c md/src/runtime.c -o md/build/runtime_host.o
+	$(CC) $(CFLAGS) tests/test_md_runtime.c md/build/runtime_host.o -o $@
+test-md-runtime: md_runtime_host_test
+	./md_runtime_host_test
+test-md-runtime-sanitize:
+	@mkdir -p md/build
+	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fno-builtin -fsanitize=address,undefined -fno-omit-frame-pointer $(MD_RUNTIME_NAMES) -c md/src/runtime.c -o md/build/runtime_san.o
+	$(CC) -std=c11 -Wall -Wextra -Werror -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer tests/test_md_runtime.c md/build/runtime_san.o -o md/build/runtime_san
+	./md/build/runtime_san
 md_sprite_host_test: tests/test_md_sprite.c md/src/video_convert.c md/src/pattern_plane.inc md/include/gaw_md_video.h
 	$(CC) $(CFLAGS) -Imd/include md/src/video_convert.c $< -o $@
 test-md-sprite: md_sprite_host_test

@@ -9,6 +9,7 @@
 #include "gaw_ram.h"
 
 #define VDP_DATA (*(volatile uint16_t*)0xC00000)
+#define VDP_DATA32 (*(volatile uint32_t*)0xC00000)
 #define VDP_CTRL (*(volatile uint16_t*)0xC00004)
 #define VDP_CTRL32 (*(volatile uint32_t*)0xC00004)
 #define PSG      (*(volatile uint8_t*)0xC00011)
@@ -52,7 +53,7 @@ static void upload_tile(unsigned t,const uint8_t *v){
     vdp_addr_write((uint16_t)(t*32u));
     for(unsigned y=0;y<8u;++y){
         uint32_t row=gaw_md_pattern_row(p[0],p[1],p[2],p[3]);
-        VDP_DATA=(uint16_t)(row>>16);VDP_DATA=(uint16_t)row;p+=4;
+        VDP_DATA32=row;p+=4;
     }
 }
 static void init_sms_viewport_mask(void){
@@ -103,7 +104,7 @@ static void sync_sprite_copy(unsigned index,unsigned tile,uint32_t mask,unsigned
         for(unsigned row=0;row<(height<<zoom);++row){
             uint32_t pixels=(mask&((uint32_t)1u<<row))?
                 gaw_md_sprite_pattern_row(v,tile,row>>zoom,zoom,column):0;
-            VDP_DATA=(uint16_t)(pixels>>16);VDP_DATA=(uint16_t)pixels;
+            VDP_DATA32=pixels;
         }
     }
     cached->tile=(uint16_t)tile;cached->mask=mask;cached->mode=(uint8_t)(0x80u|mode);

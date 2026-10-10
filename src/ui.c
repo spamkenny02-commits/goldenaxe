@@ -17,7 +17,7 @@ static void video_byte(uint16_t a,uint8_t v){video_address((uint16_t)(0x4000u|(a
 
 void gaw_ui_upload_name_table(void){
     video_address(0x7800u);
-    for(unsigned i=0;i<0x600u;++i)gaw_sms_vdp_data_write(R(0xD600u+i));
+    gaw_sms_vdp_data_write_block(gaw_ram_ptr(0xD600u),0x600u);
 }
 
 /* $0877 writes a width x height border using the three rows at $0902. */
@@ -302,7 +302,7 @@ void gaw_ui_clear_playfield(void){
 }
 void gaw_ui_upload_playfield(void){
     frozen_frame();video_address(0x7800u);
-    for(unsigned i=0;i<0x500u;++i)gaw_sms_vdp_data_write(R(0xD600u+i));
+    gaw_sms_vdp_data_write_block(gaw_ram_ptr(0xD600u),0x500u);
 }
 void gaw_ui_menu_reset(void){
     gaw_ui_fade_out();video_address(0x8800u);video_address(0x8900u);W16(0xC018u,0);

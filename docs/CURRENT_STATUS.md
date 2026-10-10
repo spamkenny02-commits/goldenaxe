@@ -1,11 +1,27 @@
-# Current status — V99
+# Current status — V100
 
 Objective: faithfully decompile Golden Axe Warrior into portable C and run it
 through native platform backends, including Motorola 68000/Mega Drive.
 
 ## Current integration limits
 
-Full equipped-checkpoint dungeon routes1–9 are validated on native MD and
+The user's manual test exposes substantial slowdown and transient transition
+artifacts. Pinned NTSC measurements confirm it: current MD idle is228 updates
+per300 frames versus298 on SMS; the first crossing transition is110 frames
+versus37, and the monster scenario runs at about38% of SMS cadence. Small
+bulk-transfer/runtime optimizations improve the walking script from531 to499
+gameplay frames, but faithful speed is not established. Native combat's strict
+validation rejects its current outcome.78 tooling tests, native host suites
+and the537-stage hardware video fixture pass. Only the settled crossing image
+is compared pixel-for-pixel; intermediate artifacts remain open.
+See V100_WORK_IN_PROGRESS.md and cadence_progress_v100.json.
+
+Current production image is V100,489158bytes/checksum2759. Previous dungeon
+and ending proofs below belong to V50 and their recorded controller policies;
+they have not been rerun on this performance build. Do not infer faithful
+timing or complete visual reproduction from a route-completion pass.
+
+On V50, full equipped-checkpoint dungeon routes1–9 are validated on native MD and
 original SMS. Native9 now completes15 axe hits, crystal collection and
 outside return with126HP using its32-pixel projectile retreat policy. Full-entry10 remains
 open on both platforms. No new-game-to-ending equivalence claim is made.
@@ -34,7 +50,7 @@ strict validation rejects it. A disabled-cheat control reproduces V98's
 eleven-hit death exactly. See V99_WORK_IN_PROGRESS.md. No new SMS or
 unassisted full-entry completion is claimed.
 
-75 tooling tests pass. Resource and environment observations distinguish
+The V99 checkpoint's75 tooling tests passed. Resource and environment observations distinguish
 healing/spell costs from late inventory selection and flag suspicious stale
 attacker attribution. Experimental controller policies are optional and
 keep all actions on the joypad after the initial fixture unless the separate
@@ -42,8 +58,8 @@ explicit HP cheat is enabled; that report cannot pass strict validation. See
 V93_WORK_IN_PROGRESS.md for outcomes and private report hashes. The native9
 policy is not used for SMS, where the same variant fails.
 
-The current production MD image is still V50,484504bytes/checksumBB38.
-Recent controller probes do not change production C or rebuild that image.
+The preceding controller-only checkpoints used V50,484504bytes/checksumBB38.
+V100 changes the production transfer/runtime/backend path as described above.
 
 ## V50 production validation
 

@@ -14,7 +14,7 @@
 static uint8_t rom(uint8_t bank,uint16_t a){return gaw_sms_rom_bank_read(a<0x4000u?0u:a<0x8000u?1u:bank,a);}
 static uint16_t word(uint8_t bank,uint16_t a){return (uint16_t)(rom(bank,a)|((uint16_t)rom(bank,a+1u)<<8));}
 static void address(uint16_t a){gaw_platform_video_command(a);}
-static void upload(uint16_t source,uint16_t destination,unsigned bytes){address(destination);while(bytes--)gaw_sms_vdp_data_write(R(source++));}
+static void upload(uint16_t source,uint16_t destination,unsigned bytes){address(destination);gaw_sms_vdp_data_write_block(gaw_ram_ptr(source),bytes);}
 static void fill(uint16_t destination,uint16_t value,unsigned bytes){for(unsigned i=0;i<bytes;i+=2u)W16(destination+i,value);}
 static void sat_begin(void){W16(0xC024u,0xDD40);W16(0xC026u,0xDD80);}
 static void sat_end(void){W(R16(0xC024u),0xD0);}

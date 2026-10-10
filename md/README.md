@@ -14,6 +14,16 @@ FETCH_TOOLCHAIN=1 ./md/build_md.sh
 Output: ignored `md/build/gaw_md.bin` plus ELF/map. This contains your private
 original-game data and must not be committed to the public repository.
 
+V100 adds pinned physical-frame comparisons after the user's manual slowdown
+report. The current build is489158bytes/checksum2759. Idle is228 updates/300
+frames versus298 on SMS; the first transition takes110 frames versus37.
+The monster scenario reaches about38% SMS cadence and fails its strict combat
+check. Small runtime/transfer optimizations do not establish faithful timing.
+Use `--region ntsc --timing-trace` on both reference/native runs and
+`tools/compare_emulator_cadence.py`. See `docs/V100_WORK_IN_PROGRESS.md`.
+The537-stage ROM-free hardware fixture and settled first-crossing viewport
+pass, but transient transition artifacts and combined scroll locks remain open.
+
 For a reproducible headless emulator check, build Genesis Plus GX:
 
 ```sh
