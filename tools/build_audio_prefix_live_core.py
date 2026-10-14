@@ -2,8 +2,9 @@
 import subprocess,sys
 from actor_reference import ROOT
 
-def main(arbitration=False):
- folder=ROOT/('analysis/audio-arbitration-v0180' if arbitration else 'analysis/audio-prefix-v0180');folder.mkdir(exist_ok=True)
+def main(arbitration=False,dispatch=False):
+ tag='audio-dispatch' if dispatch else 'audio-arbitration' if arbitration else 'audio-prefix'
+ folder=ROOT/f'analysis/{tag}-v0180';folder.mkdir(exist_ok=True)
  path=ROOT.parents[1]/'work/genesis-plus-gx/core/z80/z80.c';original=path.read_bytes()
  source=(ROOT/'analysis/audio-irq-v0180/z80-audio-irq.txt').read_text()
  declarations='''
@@ -28,10 +29,14 @@ static void gaw_live_prefix_observe(unsigned pc)
   }
 }
 '''
- if arbitration:
+ if arbitration or dispatch:
   declarations=declarations.replace('pc==0x807e || pc==0x80c8','pc==0x807e || pc==0x80c8 || pc==0x8097')
   declarations=declarations.replace('e->kind=(pc==0x80c8);','e->kind=pc==0x8097?2:(pc==0x80c8);')
   declarations=declarations.replace('(pc==0x8015 && gaw_live_prefix_active==2)', '(pc==0x8015 && gaw_live_prefix_active==2) || (pc==0x800f && gaw_live_prefix_active==3)')
+ if dispatch:
+  declarations=declarations.replace('pc==0x80c8 || pc==0x8097','pc==0x80c8 || pc==0x8097 || pc==0x80ff')
+  declarations=declarations.replace('e->kind=pc==0x8097?2:(pc==0x80c8);','e->kind=pc==0x80ff?3:pc==0x8097?2:(pc==0x80c8);')
+  declarations=declarations.replace('(pc==0x800f && gaw_live_prefix_active==3)', '(pc==0x800f && gaw_live_prefix_active==3) || (pc==0x8018 && gaw_live_prefix_active==4)')
  anchor='static unsigned gaw_irq_sp[32];';assert source.count(anchor)==1
  source=source.replace(anchor,anchor+declarations)
  anchor='gaw_event_count=gaw_irq_active=gaw_hero_count=gaw_hero_active=gaw_audio_count=0;';assert source.count(anchor)==1
@@ -44,11 +49,12 @@ static void gaw_live_prefix_observe(unsigned pc)
   with target.open('xb') as f:f.write(modified)
  try:
   path.write_bytes(modified)
-  result=subprocess.run([sys.executable,str(ROOT/'tools/build_timing_core.py'),'--target','genesis_plus_gx_arbitration_libretro.dll' if arbitration else 'genesis_plus_gx_liveprefix_libretro.dll'],cwd=ROOT,capture_output=True,text=True)
-  (ROOT/('validation/audio-arbitration-live-core-build.log' if arbitration else 'validation/audio-prefix-live-core-build.log')).write_text(result.stdout+result.stderr)
+  target_dll='genesis_plus_gx_dispatch_libretro.dll' if dispatch else 'genesis_plus_gx_arbitration_libretro.dll' if arbitration else 'genesis_plus_gx_liveprefix_libretro.dll'
+  result=subprocess.run([sys.executable,str(ROOT/'tools/build_timing_core.py'),'--target',target_dll],cwd=ROOT,capture_output=True,text=True)
+  (ROOT/f'validation/{tag}-live-core-build.log').write_text(result.stdout+result.stderr)
   assert result.returncode==0,result.stderr
  finally:path.write_bytes(original)
  assert path.read_bytes()==original
  print('Read-only live prefix core built.')
 
-if __name__=='__main__':main('--arbitration' in sys.argv)
+if __name__=='__main__':main('--arbitration' in sys.argv,'--dispatch' in sys.argv)
