@@ -11,7 +11,7 @@ def rows(kind):
  if kind=='tempo':return [(a,b,12,1,18,0,10,11,255,0,1,254,255) for a,b in itertools.product(range(256),[0,1,6,255])]
  return [(7,6,b,counter,18,*v,0,1,254,255) for b,counter,v in itertools.product([0,1,2,12],[0,1,2,18],itertools.product([0,10,11,255],repeat=4))]
 
-def generate(kind,records,offsets=None,address=None,folder_name='audio-prefix'):
+def generate(kind,records,offsets=None,address=None,folder_name='audio-prefix',ix_address=None,unwind_frame=False,de_address=None):
  image=bytearray(SOURCE)+bytearray(0x200000-len(SOURCE));code=bytearray();labels={};fix=[]
  def emit(h):code.extend(bytes.fromhex(h))
  def label(n):labels[n]=0x3100+len(code)
@@ -20,7 +20,9 @@ def generate(kind,records,offsets=None,address=None,folder_name='audio-prefix'):
  label('case');emit('2130341100de019001edb03a08c032ffffdd2a06c0')
  if offsets is None:offsets=[1,2,0xb,0xc,0xd,0x48,0x78,0xa8,0x18,0x4a,0x7a,0xaa,0xda]
  for i,offset in enumerate(offsets):emit(f'dd7e{i:02x}32'+(0xde00+offset).to_bytes(2,'little').hex())
- emit('3e0632ffffcd00300603')
+ if ix_address is not None:emit('dd21'+ix_address.to_bytes(2,'little').hex())
+ if de_address is not None:emit('ed5b'+de_address.to_bytes(2,'little').hex())
+ emit('3e0632ffff'+('cd5030' if unwind_frame else 'cd0030')+'0603')
  label('hold');emit('dbbfe680');jp('ca','hold');emit('05');jp('c2','hold')
  emit('2a06c011100019cb74');jp('ca','pointer');emit('2100803a08c03c3208c0')
  label('pointer');emit('2206c02a00c0232200c001'+len(records).to_bytes(2,'little').hex()+'b7ed42')
@@ -30,6 +32,7 @@ def generate(kind,records,offsets=None,address=None,folder_name='audio-prefix'):
  image[0x3430:0x3430+400]=SEED
  if address is None:address=0x807e if kind=='tempo' else 0x80c8
  image[0x3000:0x3004]=b'\xcd'+address.to_bytes(2,'little')+b'\xc9'
+ if unwind_frame:image[0x3050:0x3054]=bytes.fromhex('cd0030c9')
  data=b''.join(bytes(r)+bytes(16-len(r)) for r in records);image[0x80000:0x80000+len(data)]=data
  assert image[0x18000:0x1c000]==SOURCE[0x18000:0x1c000],'original bank6 modified'
  folder=ROOT/f'validation/{folder_name}/{kind}';folder.mkdir(parents=True,exist_ok=True)

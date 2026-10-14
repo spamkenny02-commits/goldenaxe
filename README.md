@@ -45,8 +45,10 @@ Le binaire Mega Drive ne contient pas d’interpréteur Z80.
 Rapprocher les durées de chargement et les animations de la SMS, en calculant
 le travail original et les interruptions audio. Les routines de tempo,
 fondu, arbitrage et traitement des commandes musicales/sonores ont des
-modèles de coût vérifiés. Le traitement des canaux et des enveloppes reste
-à couvrir avant l’intégration de ce calcul aux chargements natifs.
+modèles de coût vérifiés. Les enveloppes de volume ADSR et sur tables sont
+également vérifiées. La hauteur des notes, les séquences et le traitement
+complet des canaux restent à couvrir avant l’intégration de ce calcul aux
+chargements natifs.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -59,6 +61,7 @@ et la vérification sur matériel Mega Drive.
 - [Corrections v0180](analysis/reveal_wait_milestone.md).
 - [Mesures des interruptions audio](analysis/audio_irq_milestone.md).
 - [Calcul du traitement des musiques et bruitages](analysis/audio_dispatch_milestone.md).
+- [Calcul des enveloppes de volume](analysis/audio_envelope_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

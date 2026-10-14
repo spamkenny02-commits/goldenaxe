@@ -1,0 +1,27 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "97d9b201e19b8821679a2476a874658fae68b31522550be7000158383e4a4a8d",
+  "cases": 26800,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 13400,
+      "caller_unwind_cases": 1080,
+      "results_sha256": "03a2091ff7d462a7948d0f47809712bb1cf43cb19932acf98918f010fa158014"
+    },
+    {
+      "region": "pal",
+      "cases": 13400,
+      "caller_unwind_cases": 1080,
+      "results_sha256": "03a2091ff7d462a7948d0f47809712bb1cf43cb19932acf98918f010fa158014"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original854B/8602/863E andallbank6 unchanged. Custom two-caller trampoline,IXDE40,IRQs disabled. All16 ROM table envelopes/every offset up to nexttable,six channel flags,four tone types andthree explicitDE inputs;zero mode separately.",
+    "Checks400 bytes,returnedA,DE,cost and source81/82 caller-frame unwinding. The83 stream command reads(++DE),not necessarily the adjacent table operand;explicit DE is an input,not a natural-game equivalence claim.",
+    "Invalid out-of-table indices and arbitrary RAM DE inputs excluded. Live table/envelope phase,PSG waveform and complete channel/futureIRQ/loading prediction remain open."
+  ]
+}

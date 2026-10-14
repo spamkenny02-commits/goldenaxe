@@ -1,0 +1,25 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "e5f58b8f6bceb6faaf60b53ce875f9210c54cad49ef4cf9167b7130fa0a2aa6d",
+  "cases": 80384,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 40192,
+      "results_sha256": "4f1755ffe0b1022371917ec21c16130423c3474af97cd963a24272b3a4c5240c"
+    },
+    {
+      "region": "pal",
+      "cases": 40192,
+      "results_sha256": "4f1755ffe0b1022371917ec21c16130423c3474af97cd963a24272b3a4c5240c"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unchanged original854B and ADSR termination863E,all bank6 bytes preserved. Custom boot/3000 caller,IXDE40,IRQs disabled. Complete400-byte state,returned A and helper cost predicted independently.",
+    "All256 values,eight step boundaries,phase and bounce flags,decay limit boundaries,muted/unmuted channel termination,four PSG tone types,zero envelope and synthetic multi-phase/high-bit flags. Dimensions are not a full Cartesian product.",
+    "Only zero/ADSR modes:table envelopes with stack unwinding are excluded. Live ADSR/PSG waveforms,complete channel processing and physical IRQ/loading prediction remain open."
+  ]
+}

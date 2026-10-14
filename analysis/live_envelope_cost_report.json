@@ -1,0 +1,46 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 4245,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 1932,
+      "envelope_modes": {
+        "16": 500,
+        "6": 68,
+        "8": 479,
+        "2": 158,
+        "1": 323,
+        "7": 404
+      },
+      "ADSR_cases": 0,
+      "caller_unwind_cases": 820,
+      "raw_sha256": "520ed8152be8aedbd28c867748edd6fb64b8428834bac9f445b61604f2b9bee1",
+      "source_cycle_array_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "cases": 2313,
+      "envelope_modes": {
+        "16": 599,
+        "6": 75,
+        "8": 589,
+        "1": 382,
+        "2": 162,
+        "7": 506
+      },
+      "ADSR_cases": 0,
+      "caller_unwind_cases": 981,
+      "raw_sha256": "5349432ffd34be3d8b1a4af87dad7a30efdc1bca42fa1dd1ad5baf56ab8c9d81",
+      "source_cycle_array_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actual6D->96/full-mask paid route,original854B/return paths observed read-only. Cost,all400 audio RAM bytes,returnedA and table DE/caller unwinding predicted independently per call. Complete original cycle arrays identical to archivedv0179.",
+    "Only modes actually encountered are covered live;ADSR and all16 table streams covered separately by explicit fixtures. Mode9 control83 depends on DE;arbitrary RAM reads and full progression are not validated.",
+    "Pitch,sequence/channel processing and reader entry/region gating still need cost prediction. PSG waveforms,full future IRQ/load scheduling and whole faithful port remain unproved."
+  ]
+}
