@@ -26,12 +26,19 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      for f,k,v in [(3100,'hero_gold',initial_gold),(3120,'room_id',town),(3120,'world_graphics_class',0),(3120,'hero_y',door['y']<<8),(3120,'hero_x',(door['x']-1)<<8),(3120,'hero_dy',0),(3120,'hero_dx',256),(3120,'hero_counter',1),(3120,'hero_state',1),(3120,'hero_flags',3),(3120,'hero_direction',0),(3400,'hero_y',y<<8),(3400,'hero_x',x<<8),(3400,'hero_dy',0),(3400,'hero_dx',0),(3400,'hero_state',1),(3400,'hero_flags',3),(3400,'hero_counter',0),(3400,'hero_hurt',0),(3400,'hero_direction',0)]:add(f,k,v)
     if enemy_mask is not None:writes.append((3100,0x200+target if tag=='sms' else sy['game_save_state']+0x150+target,bytes([enemy_mask])))
     timing=[];previous_event=[0];core=ROOT.parents[1]/'work/genesis-plus-gx'/core_name;dll=c.CDLL(str(core));dll.gaw_timing_reset();dll.gaw_timing_count.restype=c.c_uint;dll.gaw_timing_events.restype=c.POINTER(c.c_uint64)
-    profile={};rows={};tiles={};arrival=[None];changes=[];last_gold=[initial_gold];hud=[None];samples={};confirm=[None];previous_hero=[0]
+    profile={};rows={};tiles={};arrival=[None];changes=[];last_gold=[initial_gold];hud=[None];samples={};confirm=[None];previous_hero=[0];audio_events=[];previous_audio=[0]
+    if hasattr(dll,'gaw_audio_irq_count'):
+     dll.gaw_audio_irq_count.restype=c.c_uint;dll.gaw_audio_irq_events.restype=c.POINTER(c.c_uint64)
     if hasattr(dll,'gaw_hero_samples'):
      dll.gaw_hero_samples.restype=c.c_uint;dll.gaw_hero_entry.restype=c.POINTER(c.c_uint8);dll.gaw_hero_return.restype=c.POINTER(c.c_uint8)
     def observe(f,r):
      if tag=='sms':
-      if f==4199:dll.gaw_timing_reset();previous_event[0]=0;previous_hero[0]=0
+      if f==4199:dll.gaw_timing_reset();previous_event[0]=0;previous_hero[0]=0;previous_audio[0]=0
+      if hasattr(dll,'gaw_audio_irq_count'):
+       count_audio=dll.gaw_audio_irq_count();raw_audio=dll.gaw_audio_irq_events()
+       for i in range(previous_audio[0],count_audio):
+        if f>=4200:audio_events.append([f]+[raw_audio[i*14+k] for k in range(14)])
+       previous_audio[0]=count_audio
       count=dll.gaw_timing_count();events=dll.gaw_timing_events()
       for i in range(previous_event[0],count):
        if f>=4200:timing.append([f]+[events[i*8+k] for k in range(8)])
@@ -75,7 +82,9 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     if paid:presses.append((4200,4240,4))
     if menu:presses.extend([(4000,4004,0),(4070,4074,0)])
     with contextlib.redirect_stdout(io.StringIO()):run(rom,4800,folder/f'captures-{region}-{tag}',{3600,4100,4500,4800},presses,ram_writes=sorted(writes,key=lambda x:x[0]),ram_observer=observe,vram_observer=vram,core=core if tag=='sms' else None,core_options={'genesis_plus_gx_region_detect':region})
-    if tag=='sms':(folder/f'{region}-cycle-events.json').write_text(json.dumps(timing)+'\n')
+    if tag=='sms':
+     (folder/f'{region}-cycle-events.json').write_text(json.dumps(timing)+'\n')
+     if hasattr(dll,'gaw_audio_irq_count'):(folder/f'{region}-audio-irq-events.json').write_text(json.dumps(audio_events)+'\n')
     assert tag=='sms' or arrival[0] is not None,(region,hex(town),tag,'gold interaction not reached',rows);traces[tag]=rows;patterns[tag]=tiles;births[tag]=arrival[0];gold_changes[tag]=changes;cell_samples[tag]=samples;confirm_maps[tag]=confirm[0];profiles[tag]=profile
    (folder/f'{region}-profiles.json').write_text(json.dumps(profiles,separators=(',',':'))+'\n')
    summary={}
