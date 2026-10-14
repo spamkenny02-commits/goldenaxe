@@ -1,0 +1,1331 @@
+{
+  "md_sha256": "3161f829edc97c40f95ff52c90dd23529207d265ec73e170f4c6e6c9486bc172",
+  "source_only_evidence": true,
+  "source_files": {
+    "tools/profile_portals.py": "8be19f31259cfa5e306accd138f7e94d000da1111b5de1a2a90f5291f2af2fad",
+    "tools/capture_portal_prepared_rooms.py": "a3f8294f3ff599e5e0a70e0943c603caec578a539ec98d217c49ff1537b93724",
+    "tools/audit_portal_source.py": "11fd7dca302de1cd250510c6afc45840259ee7087d0cc7847f26814181a01468",
+    "analysis/portal_prepared_rooms.json": "bc8a7882e87638f0d1258e8f809860c2b9408af605ec714365c4a5ee0a37437a"
+  },
+  "research_core_source_sha256": "b60f5d835c068ee853f3343e69a31958bb46bed0b3f90fbdf6992635f31d3c7f",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "profiles": [
+    {
+      "file": "analysis\\portal_profile.json",
+      "sha256": "e79bd7f35b8e15478169587c77e17cc48f7d185f95fc95fcc73fd46145f2f370"
+    },
+    {
+      "file": "analysis\\portal_profile-pal.json",
+      "sha256": "63eaf277af3a4a91a24321bec54b1c59c0701374e58cfb82f66c36e4ededd020"
+    }
+  ],
+  "cases": [
+    {
+      "loader_prefix_foreground_tstates": 329535,
+      "actor_loader_foreground_tstates": 1364264,
+      "region": "auto",
+      "room": 276,
+      "destination": 312,
+      "arrival": [
+        216,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3468
+    },
+    {
+      "loader_prefix_foreground_tstates": 329826,
+      "actor_loader_foreground_tstates": 85771,
+      "region": "auto",
+      "room": 281,
+      "destination": 334,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3445
+    },
+    {
+      "loader_prefix_foreground_tstates": 330184,
+      "actor_loader_foreground_tstates": 1536509,
+      "region": "auto",
+      "room": 284,
+      "destination": 298,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3471
+    },
+    {
+      "loader_prefix_foreground_tstates": 329518,
+      "actor_loader_foreground_tstates": 336610,
+      "region": "auto",
+      "room": 298,
+      "destination": 284,
+      "arrival": [
+        216,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3450
+    },
+    {
+      "loader_prefix_foreground_tstates": 331231,
+      "actor_loader_foreground_tstates": 814651,
+      "region": "auto",
+      "room": 312,
+      "destination": 361,
+      "arrival": [
+        136,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3458
+    },
+    {
+      "loader_prefix_foreground_tstates": 330756,
+      "actor_loader_foreground_tstates": 218975,
+      "region": "auto",
+      "room": 316,
+      "destination": 379,
+      "arrival": [
+        120,
+        64
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3447
+    },
+    {
+      "loader_prefix_foreground_tstates": 332182,
+      "actor_loader_foreground_tstates": 957138,
+      "region": "auto",
+      "room": 318,
+      "destination": 362,
+      "arrival": [
+        40,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3461
+    },
+    {
+      "loader_prefix_foreground_tstates": 329060,
+      "actor_loader_foreground_tstates": 337500,
+      "region": "auto",
+      "room": 331,
+      "destination": 346,
+      "arrival": [
+        88,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3450
+    },
+    {
+      "loader_prefix_foreground_tstates": 329540,
+      "actor_loader_foreground_tstates": 953666,
+      "region": "auto",
+      "room": 333,
+      "destination": 364,
+      "arrival": [
+        168,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3461
+    },
+    {
+      "loader_prefix_foreground_tstates": 330220,
+      "actor_loader_foreground_tstates": 247082,
+      "region": "auto",
+      "room": 334,
+      "destination": 281,
+      "arrival": [
+        40,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3448
+    },
+    {
+      "loader_prefix_foreground_tstates": 331207,
+      "actor_loader_foreground_tstates": 717197,
+      "region": "auto",
+      "room": 339,
+      "destination": 354,
+      "arrival": [
+        136,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3456
+    },
+    {
+      "loader_prefix_foreground_tstates": 330884,
+      "actor_loader_foreground_tstates": 109702,
+      "region": "auto",
+      "room": 346,
+      "destination": 331,
+      "arrival": [
+        104,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3445
+    },
+    {
+      "loader_prefix_foreground_tstates": 329897,
+      "actor_loader_foreground_tstates": 852033,
+      "region": "auto",
+      "room": 354,
+      "destination": 339,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3459
+    },
+    {
+      "loader_prefix_foreground_tstates": 327043,
+      "actor_loader_foreground_tstates": 1474623,
+      "region": "auto",
+      "room": 359,
+      "destination": 392,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3470
+    },
+    {
+      "loader_prefix_foreground_tstates": 329535,
+      "actor_loader_foreground_tstates": 1364264,
+      "region": "auto",
+      "room": 361,
+      "destination": 312,
+      "arrival": [
+        216,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3468
+    },
+    {
+      "loader_prefix_foreground_tstates": 329845,
+      "actor_loader_foreground_tstates": 499525,
+      "region": "auto",
+      "room": 362,
+      "destination": 318,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3453
+    },
+    {
+      "loader_prefix_foreground_tstates": 328281,
+      "actor_loader_foreground_tstates": 499526,
+      "region": "auto",
+      "room": 364,
+      "destination": 333,
+      "arrival": [
+        120,
+        112
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3453
+    },
+    {
+      "loader_prefix_foreground_tstates": 329529,
+      "actor_loader_foreground_tstates": 812978,
+      "region": "auto",
+      "room": 372,
+      "destination": 341,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3458
+    },
+    {
+      "loader_prefix_foreground_tstates": 328429,
+      "actor_loader_foreground_tstates": 378867,
+      "region": "auto",
+      "room": 379,
+      "destination": 316,
+      "arrival": [
+        120,
+        96
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3450
+    },
+    {
+      "loader_prefix_foreground_tstates": 328699,
+      "actor_loader_foreground_tstates": 399666,
+      "region": "auto",
+      "room": 402,
+      "destination": 419,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3451
+    },
+    {
+      "loader_prefix_foreground_tstates": 328769,
+      "actor_loader_foreground_tstates": 1447401,
+      "region": "auto",
+      "room": 408,
+      "destination": 424,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3470
+    },
+    {
+      "loader_prefix_foreground_tstates": 328472,
+      "actor_loader_foreground_tstates": 499555,
+      "region": "auto",
+      "room": 414,
+      "destination": 460,
+      "arrival": [
+        120,
+        96
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3453
+    },
+    {
+      "loader_prefix_foreground_tstates": 327383,
+      "actor_loader_foreground_tstates": 1827734,
+      "region": "auto",
+      "room": 419,
+      "destination": 402,
+      "arrival": [
+        216,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3476
+    },
+    {
+      "loader_prefix_foreground_tstates": 328879,
+      "actor_loader_foreground_tstates": 841271,
+      "region": "auto",
+      "room": 422,
+      "destination": 471,
+      "arrival": [
+        120,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3459
+    },
+    {
+      "loader_prefix_foreground_tstates": 327069,
+      "actor_loader_foreground_tstates": 218504,
+      "region": "auto",
+      "room": 423,
+      "destination": 491,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 1156,
+      "trigger_frame": 3419,
+      "script_return_frame": 3443,
+      "gameplay_resume_frame": 3453
+    },
+    {
+      "loader_prefix_foreground_tstates": 329666,
+      "actor_loader_foreground_tstates": 997356,
+      "region": "auto",
+      "room": 424,
+      "destination": 408,
+      "arrival": [
+        40,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3461
+    },
+    {
+      "loader_prefix_foreground_tstates": 327678,
+      "actor_loader_foreground_tstates": 521660,
+      "region": "auto",
+      "room": 426,
+      "destination": 488,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3453
+    },
+    {
+      "loader_prefix_foreground_tstates": 326972,
+      "actor_loader_foreground_tstates": 218976,
+      "region": "auto",
+      "room": 439,
+      "destination": 459,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3447
+    },
+    {
+      "loader_prefix_foreground_tstates": 327173,
+      "actor_loader_foreground_tstates": 218531,
+      "region": "auto",
+      "room": 456,
+      "destination": 491,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3447
+    },
+    {
+      "loader_prefix_foreground_tstates": 328761,
+      "actor_loader_foreground_tstates": 954852,
+      "region": "auto",
+      "room": 460,
+      "destination": 414,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3461
+    },
+    {
+      "loader_prefix_foreground_tstates": 327876,
+      "actor_loader_foreground_tstates": 480812,
+      "region": "auto",
+      "room": 471,
+      "destination": 422,
+      "arrival": [
+        56,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3452
+    },
+    {
+      "loader_prefix_foreground_tstates": 326774,
+      "actor_loader_foreground_tstates": 1517559,
+      "region": "auto",
+      "room": 476,
+      "destination": 506,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3471
+    },
+    {
+      "loader_prefix_foreground_tstates": 328371,
+      "actor_loader_foreground_tstates": 285949,
+      "region": "auto",
+      "room": 482,
+      "destination": 487,
+      "arrival": [
+        120,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3449
+    },
+    {
+      "loader_prefix_foreground_tstates": 326972,
+      "actor_loader_foreground_tstates": 218976,
+      "region": "auto",
+      "room": 486,
+      "destination": 459,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3447
+    },
+    {
+      "loader_prefix_foreground_tstates": 328796,
+      "actor_loader_foreground_tstates": 911863,
+      "region": "auto",
+      "room": 487,
+      "destination": 482,
+      "arrival": [
+        184,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3460
+    },
+    {
+      "loader_prefix_foreground_tstates": 327874,
+      "actor_loader_foreground_tstates": 217334,
+      "region": "auto",
+      "room": 488,
+      "destination": 426,
+      "arrival": [
+        200,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3447
+    },
+    {
+      "loader_prefix_foreground_tstates": 292618,
+      "actor_loader_foreground_tstates": 1364500,
+      "region": "pal",
+      "room": 276,
+      "destination": 312,
+      "arrival": [
+        216,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3462
+    },
+    {
+      "loader_prefix_foreground_tstates": 292909,
+      "actor_loader_foreground_tstates": 85771,
+      "region": "pal",
+      "room": 281,
+      "destination": 334,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3443
+    },
+    {
+      "loader_prefix_foreground_tstates": 293267,
+      "actor_loader_foreground_tstates": 1536703,
+      "region": "pal",
+      "room": 284,
+      "destination": 298,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3464
+    },
+    {
+      "loader_prefix_foreground_tstates": 292630,
+      "actor_loader_foreground_tstates": 336610,
+      "region": "pal",
+      "room": 298,
+      "destination": 284,
+      "arrival": [
+        216,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3446
+    },
+    {
+      "loader_prefix_foreground_tstates": 294343,
+      "actor_loader_foreground_tstates": 814651,
+      "region": "pal",
+      "room": 312,
+      "destination": 361,
+      "arrival": [
+        136,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3454
+    },
+    {
+      "loader_prefix_foreground_tstates": 293868,
+      "actor_loader_foreground_tstates": 218739,
+      "region": "pal",
+      "room": 316,
+      "destination": 379,
+      "arrival": [
+        120,
+        64
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3445
+    },
+    {
+      "loader_prefix_foreground_tstates": 295236,
+      "actor_loader_foreground_tstates": 957048,
+      "region": "pal",
+      "room": 318,
+      "destination": 362,
+      "arrival": [
+        40,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3456
+    },
+    {
+      "loader_prefix_foreground_tstates": 292172,
+      "actor_loader_foreground_tstates": 337500,
+      "region": "pal",
+      "room": 331,
+      "destination": 346,
+      "arrival": [
+        88,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3446
+    },
+    {
+      "loader_prefix_foreground_tstates": 292652,
+      "actor_loader_foreground_tstates": 953798,
+      "region": "pal",
+      "room": 333,
+      "destination": 364,
+      "arrival": [
+        168,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3456
+    },
+    {
+      "loader_prefix_foreground_tstates": 293332,
+      "actor_loader_foreground_tstates": 246965,
+      "region": "pal",
+      "room": 334,
+      "destination": 281,
+      "arrival": [
+        40,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3445
+    },
+    {
+      "loader_prefix_foreground_tstates": 294319,
+      "actor_loader_foreground_tstates": 717197,
+      "region": "pal",
+      "room": 339,
+      "destination": 354,
+      "arrival": [
+        136,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3452
+    },
+    {
+      "loader_prefix_foreground_tstates": 293996,
+      "actor_loader_foreground_tstates": 109508,
+      "region": "pal",
+      "room": 346,
+      "destination": 331,
+      "arrival": [
+        104,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3443
+    },
+    {
+      "loader_prefix_foreground_tstates": 292980,
+      "actor_loader_foreground_tstates": 852227,
+      "region": "pal",
+      "room": 354,
+      "destination": 339,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3454
+    },
+    {
+      "loader_prefix_foreground_tstates": 290126,
+      "actor_loader_foreground_tstates": 1474623,
+      "region": "pal",
+      "room": 359,
+      "destination": 392,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3463
+    },
+    {
+      "loader_prefix_foreground_tstates": 292618,
+      "actor_loader_foreground_tstates": 1364500,
+      "region": "pal",
+      "room": 361,
+      "destination": 312,
+      "arrival": [
+        216,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3462
+    },
+    {
+      "loader_prefix_foreground_tstates": 292957,
+      "actor_loader_foreground_tstates": 499525,
+      "region": "pal",
+      "room": 362,
+      "destination": 318,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3449
+    },
+    {
+      "loader_prefix_foreground_tstates": 291364,
+      "actor_loader_foreground_tstates": 499526,
+      "region": "pal",
+      "room": 364,
+      "destination": 333,
+      "arrival": [
+        120,
+        112
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3449
+    },
+    {
+      "loader_prefix_foreground_tstates": 292641,
+      "actor_loader_foreground_tstates": 813047,
+      "region": "pal",
+      "room": 372,
+      "destination": 341,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3453
+    },
+    {
+      "loader_prefix_foreground_tstates": 291512,
+      "actor_loader_foreground_tstates": 378867,
+      "region": "pal",
+      "room": 379,
+      "destination": 316,
+      "arrival": [
+        120,
+        96
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3447
+    },
+    {
+      "loader_prefix_foreground_tstates": 291811,
+      "actor_loader_foreground_tstates": 399666,
+      "region": "pal",
+      "room": 402,
+      "destination": 419,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3447
+    },
+    {
+      "loader_prefix_foreground_tstates": 291878,
+      "actor_loader_foreground_tstates": 1447401,
+      "region": "pal",
+      "room": 408,
+      "destination": 424,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3463
+    },
+    {
+      "loader_prefix_foreground_tstates": 291558,
+      "actor_loader_foreground_tstates": 499465,
+      "region": "pal",
+      "room": 414,
+      "destination": 460,
+      "arrival": [
+        120,
+        96
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3449
+    },
+    {
+      "loader_prefix_foreground_tstates": 290437,
+      "actor_loader_foreground_tstates": 1827928,
+      "region": "pal",
+      "room": 419,
+      "destination": 402,
+      "arrival": [
+        216,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3469
+    },
+    {
+      "loader_prefix_foreground_tstates": 291991,
+      "actor_loader_foreground_tstates": 841271,
+      "region": "pal",
+      "room": 422,
+      "destination": 471,
+      "arrival": [
+        120,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3454
+    },
+    {
+      "loader_prefix_foreground_tstates": 290257,
+      "actor_loader_foreground_tstates": 218531,
+      "region": "pal",
+      "room": 423,
+      "destination": 491,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 542,
+      "trigger_frame": 3418,
+      "script_return_frame": 3441,
+      "gameplay_resume_frame": 3449
+    },
+    {
+      "loader_prefix_foreground_tstates": 292749,
+      "actor_loader_foreground_tstates": 997356,
+      "region": "pal",
+      "room": 424,
+      "destination": 408,
+      "arrival": [
+        40,
+        48
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3456
+    },
+    {
+      "loader_prefix_foreground_tstates": 290761,
+      "actor_loader_foreground_tstates": 521660,
+      "region": "pal",
+      "room": 426,
+      "destination": 488,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3449
+    },
+    {
+      "loader_prefix_foreground_tstates": 290084,
+      "actor_loader_foreground_tstates": 218976,
+      "region": "pal",
+      "room": 439,
+      "destination": 459,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3445
+    },
+    {
+      "loader_prefix_foreground_tstates": 290256,
+      "actor_loader_foreground_tstates": 218531,
+      "region": "pal",
+      "room": 456,
+      "destination": 491,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3445
+    },
+    {
+      "loader_prefix_foreground_tstates": 291873,
+      "actor_loader_foreground_tstates": 954852,
+      "region": "pal",
+      "room": 460,
+      "destination": 414,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3456
+    },
+    {
+      "loader_prefix_foreground_tstates": 290988,
+      "actor_loader_foreground_tstates": 480812,
+      "region": "pal",
+      "room": 471,
+      "destination": 422,
+      "arrival": [
+        56,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3449
+    },
+    {
+      "loader_prefix_foreground_tstates": 289886,
+      "actor_loader_foreground_tstates": 1517323,
+      "region": "pal",
+      "room": 476,
+      "destination": 506,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3464
+    },
+    {
+      "loader_prefix_foreground_tstates": 291454,
+      "actor_loader_foreground_tstates": 285997,
+      "region": "pal",
+      "room": 482,
+      "destination": 487,
+      "arrival": [
+        120,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3446
+    },
+    {
+      "loader_prefix_foreground_tstates": 290084,
+      "actor_loader_foreground_tstates": 218976,
+      "region": "pal",
+      "room": 486,
+      "destination": 459,
+      "arrival": [
+        128,
+        88
+      ],
+      "default_arrival": true,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3445
+    },
+    {
+      "loader_prefix_foreground_tstates": 291908,
+      "actor_loader_foreground_tstates": 911863,
+      "region": "pal",
+      "room": 487,
+      "destination": 482,
+      "arrival": [
+        184,
+        80
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3455
+    },
+    {
+      "loader_prefix_foreground_tstates": 290928,
+      "actor_loader_foreground_tstates": 217334,
+      "region": "pal",
+      "room": 488,
+      "destination": 426,
+      "arrival": [
+        200,
+        128
+      ],
+      "default_arrival": false,
+      "wipe_steps": 20,
+      "full_wipe_frame_maps_verified": 20,
+      "captured_written_words_verified": 850,
+      "trigger_frame": 3414,
+      "script_return_frame": 3437,
+      "gameplay_resume_frame": 3445
+    }
+  ],
+  "source_portals_checked": 72,
+  "full_wipe_frame_maps_checked": 1440,
+  "all_arrivals_flags_actor_masks_exact": true,
+  "native_portals_implemented": false,
+  "full_game_ported": false,
+  "limits": [
+    "Source research only. Production remains v0051 and does not implement these portals.",
+    "Solved-origin flag and source-prepared map are injected; controller input then triggers the original routine. Natural dungeon progression remains unverified.",
+    "The wipe model starts with the actual VRAM map at the first wipe wait, preserving preceding shutter redraws and floor-animation updates.",
+    "Arrival assertions use the script return frame, before subsequent buffered input can move the hero."
+  ]
+}

@@ -1,0 +1,1357 @@
+{
+  "source_room_script_table": 46946,
+  "direct_unconditional_doors": [
+    {
+      "room": 17,
+      "x": 104,
+      "y": 80,
+      "target": 143,
+      "script_entry": 44546,
+      "rom_stub_offset": 44546,
+      "source_coordinate": 660
+    },
+    {
+      "room": 19,
+      "x": 72,
+      "y": 80,
+      "target": 95,
+      "script_entry": 44555,
+      "rom_stub_offset": 44555,
+      "source_coordinate": 652
+    },
+    {
+      "room": 20,
+      "x": 72,
+      "y": 96,
+      "target": 127,
+      "script_entry": 44564,
+      "rom_stub_offset": 44564,
+      "source_coordinate": 780
+    },
+    {
+      "room": 22,
+      "x": 152,
+      "y": 64,
+      "target": 63,
+      "script_entry": 44573,
+      "rom_stub_offset": 44573,
+      "source_coordinate": 544
+    },
+    {
+      "room": 24,
+      "x": 200,
+      "y": 96,
+      "target": 175,
+      "script_entry": 44582,
+      "rom_stub_offset": 44582,
+      "source_coordinate": 812
+    },
+    {
+      "room": 26,
+      "x": 232,
+      "y": 32,
+      "target": 159,
+      "script_entry": 44591,
+      "rom_stub_offset": 44591,
+      "source_coordinate": 308
+    },
+    {
+      "room": 29,
+      "x": 104,
+      "y": 112,
+      "target": 175,
+      "script_entry": 44609,
+      "rom_stub_offset": 44609,
+      "source_coordinate": 916
+    },
+    {
+      "room": 33,
+      "x": 72,
+      "y": 48,
+      "target": 111,
+      "script_entry": 44637,
+      "rom_stub_offset": 44637,
+      "source_coordinate": 396
+    },
+    {
+      "room": 34,
+      "x": 88,
+      "y": 64,
+      "target": 5,
+      "script_entry": 44646,
+      "rom_stub_offset": 44646,
+      "source_coordinate": 528
+    },
+    {
+      "room": 34,
+      "x": 72,
+      "y": 80,
+      "target": 7,
+      "script_entry": 44646,
+      "rom_stub_offset": 44654,
+      "source_coordinate": 652
+    },
+    {
+      "room": 34,
+      "x": 168,
+      "y": 96,
+      "target": 6,
+      "script_entry": 44646,
+      "rom_stub_offset": 44662,
+      "source_coordinate": 804
+    },
+    {
+      "room": 35,
+      "x": 88,
+      "y": 96,
+      "target": 47,
+      "script_entry": 44671,
+      "rom_stub_offset": 44671,
+      "source_coordinate": 784
+    },
+    {
+      "room": 37,
+      "x": 104,
+      "y": 112,
+      "target": 143,
+      "script_entry": 44680,
+      "rom_stub_offset": 44680,
+      "source_coordinate": 916
+    },
+    {
+      "room": 39,
+      "x": 120,
+      "y": 96,
+      "target": 79,
+      "script_entry": 44689,
+      "rom_stub_offset": 44689,
+      "source_coordinate": 792
+    },
+    {
+      "room": 43,
+      "x": 232,
+      "y": 48,
+      "target": 143,
+      "script_entry": 44710,
+      "rom_stub_offset": 44710,
+      "source_coordinate": 436
+    },
+    {
+      "room": 44,
+      "x": 24,
+      "y": 80,
+      "target": 191,
+      "script_entry": 44719,
+      "rom_stub_offset": 44719,
+      "source_coordinate": 640
+    },
+    {
+      "room": 46,
+      "x": 120,
+      "y": 64,
+      "target": 0,
+      "script_entry": 44728,
+      "rom_stub_offset": 44728,
+      "source_coordinate": 536
+    },
+    {
+      "room": 46,
+      "x": 72,
+      "y": 96,
+      "target": 8,
+      "script_entry": 44728,
+      "rom_stub_offset": 44736,
+      "source_coordinate": 780
+    },
+    {
+      "room": 46,
+      "x": 184,
+      "y": 112,
+      "target": 7,
+      "script_entry": 44728,
+      "rom_stub_offset": 44744,
+      "source_coordinate": 936
+    },
+    {
+      "room": 48,
+      "x": 136,
+      "y": 96,
+      "target": 143,
+      "script_entry": 44765,
+      "rom_stub_offset": 44765,
+      "source_coordinate": 796
+    },
+    {
+      "room": 50,
+      "x": 168,
+      "y": 96,
+      "target": 175,
+      "script_entry": 44774,
+      "rom_stub_offset": 44774,
+      "source_coordinate": 804
+    },
+    {
+      "room": 51,
+      "x": 152,
+      "y": 80,
+      "target": 143,
+      "script_entry": 44783,
+      "rom_stub_offset": 44783,
+      "source_coordinate": 672
+    },
+    {
+      "room": 52,
+      "x": 40,
+      "y": 80,
+      "target": 47,
+      "script_entry": 44792,
+      "rom_stub_offset": 44792,
+      "source_coordinate": 644
+    },
+    {
+      "room": 54,
+      "x": 120,
+      "y": 64,
+      "target": 159,
+      "script_entry": 44801,
+      "rom_stub_offset": 44801,
+      "source_coordinate": 536
+    },
+    {
+      "room": 59,
+      "x": 40,
+      "y": 112,
+      "target": 143,
+      "script_entry": 44810,
+      "rom_stub_offset": 44810,
+      "source_coordinate": 900
+    },
+    {
+      "room": 60,
+      "x": 24,
+      "y": 144,
+      "target": 159,
+      "script_entry": 44819,
+      "rom_stub_offset": 44819,
+      "source_coordinate": 1152
+    },
+    {
+      "room": 62,
+      "x": 152,
+      "y": 112,
+      "target": 143,
+      "script_entry": 44828,
+      "rom_stub_offset": 44828,
+      "source_coordinate": 928
+    },
+    {
+      "room": 64,
+      "x": 88,
+      "y": 96,
+      "target": 63,
+      "script_entry": 44847,
+      "rom_stub_offset": 44847,
+      "source_coordinate": 784
+    },
+    {
+      "room": 65,
+      "x": 136,
+      "y": 96,
+      "target": 143,
+      "script_entry": 44856,
+      "rom_stub_offset": 44856,
+      "source_coordinate": 796
+    },
+    {
+      "room": 67,
+      "x": 40,
+      "y": 144,
+      "target": 63,
+      "script_entry": 44865,
+      "rom_stub_offset": 44865,
+      "source_coordinate": 1156
+    },
+    {
+      "room": 74,
+      "x": 88,
+      "y": 80,
+      "target": 143,
+      "script_entry": 44885,
+      "rom_stub_offset": 44885,
+      "source_coordinate": 656
+    },
+    {
+      "room": 76,
+      "x": 40,
+      "y": 48,
+      "target": 2,
+      "script_entry": 44894,
+      "rom_stub_offset": 44894,
+      "source_coordinate": 388
+    },
+    {
+      "room": 76,
+      "x": 104,
+      "y": 80,
+      "target": 6,
+      "script_entry": 44894,
+      "rom_stub_offset": 44902,
+      "source_coordinate": 660
+    },
+    {
+      "room": 76,
+      "x": 40,
+      "y": 112,
+      "target": 9,
+      "script_entry": 44894,
+      "rom_stub_offset": 44910,
+      "source_coordinate": 900
+    },
+    {
+      "room": 76,
+      "x": 168,
+      "y": 112,
+      "target": 6,
+      "script_entry": 44894,
+      "rom_stub_offset": 44918,
+      "source_coordinate": 932
+    },
+    {
+      "room": 78,
+      "x": 104,
+      "y": 96,
+      "target": 47,
+      "script_entry": 44927,
+      "rom_stub_offset": 44927,
+      "source_coordinate": 788
+    },
+    {
+      "room": 80,
+      "x": 200,
+      "y": 32,
+      "target": 79,
+      "script_entry": 44949,
+      "rom_stub_offset": 44949,
+      "source_coordinate": 300
+    },
+    {
+      "room": 82,
+      "x": 72,
+      "y": 128,
+      "target": 111,
+      "script_entry": 44958,
+      "rom_stub_offset": 44958,
+      "source_coordinate": 1036
+    },
+    {
+      "room": 83,
+      "x": 120,
+      "y": 80,
+      "target": 47,
+      "script_entry": 44967,
+      "rom_stub_offset": 44967,
+      "source_coordinate": 664
+    },
+    {
+      "room": 84,
+      "x": 200,
+      "y": 96,
+      "target": 63,
+      "script_entry": 44979,
+      "rom_stub_offset": 44979,
+      "source_coordinate": 812
+    },
+    {
+      "room": 85,
+      "x": 104,
+      "y": 80,
+      "target": 1,
+      "script_entry": 44988,
+      "rom_stub_offset": 44988,
+      "source_coordinate": 660
+    },
+    {
+      "room": 85,
+      "x": 56,
+      "y": 112,
+      "target": 3,
+      "script_entry": 44988,
+      "rom_stub_offset": 44996,
+      "source_coordinate": 904
+    },
+    {
+      "room": 85,
+      "x": 168,
+      "y": 112,
+      "target": 31,
+      "script_entry": 44988,
+      "rom_stub_offset": 45004,
+      "source_coordinate": 932
+    },
+    {
+      "room": 87,
+      "x": 216,
+      "y": 48,
+      "target": 1,
+      "script_entry": 45013,
+      "rom_stub_offset": 45013,
+      "source_coordinate": 432
+    },
+    {
+      "room": 87,
+      "x": 120,
+      "y": 64,
+      "target": 10,
+      "script_entry": 45013,
+      "rom_stub_offset": 45021,
+      "source_coordinate": 536
+    },
+    {
+      "room": 91,
+      "x": 152,
+      "y": 80,
+      "target": 63,
+      "script_entry": 45030,
+      "rom_stub_offset": 45030,
+      "source_coordinate": 672
+    },
+    {
+      "room": 92,
+      "x": 168,
+      "y": 64,
+      "target": 95,
+      "script_entry": 45039,
+      "rom_stub_offset": 45039,
+      "source_coordinate": 548
+    },
+    {
+      "room": 93,
+      "x": 216,
+      "y": 96,
+      "target": 63,
+      "script_entry": 45048,
+      "rom_stub_offset": 45048,
+      "source_coordinate": 816
+    },
+    {
+      "room": 94,
+      "x": 232,
+      "y": 64,
+      "target": 47,
+      "script_entry": 45057,
+      "rom_stub_offset": 45057,
+      "source_coordinate": 564
+    },
+    {
+      "room": 96,
+      "x": 168,
+      "y": 96,
+      "target": 63,
+      "script_entry": 45073,
+      "rom_stub_offset": 45073,
+      "source_coordinate": 804
+    },
+    {
+      "room": 100,
+      "x": 200,
+      "y": 128,
+      "target": 143,
+      "script_entry": 45091,
+      "rom_stub_offset": 45091,
+      "source_coordinate": 1068
+    },
+    {
+      "room": 101,
+      "x": 88,
+      "y": 64,
+      "target": 63,
+      "script_entry": 45100,
+      "rom_stub_offset": 45100,
+      "source_coordinate": 528
+    },
+    {
+      "room": 106,
+      "x": 168,
+      "y": 64,
+      "target": 79,
+      "script_entry": 45109,
+      "rom_stub_offset": 45109,
+      "source_coordinate": 548
+    },
+    {
+      "room": 109,
+      "x": 104,
+      "y": 144,
+      "target": 159,
+      "script_entry": 45118,
+      "rom_stub_offset": 45118,
+      "source_coordinate": 1172
+    },
+    {
+      "room": 113,
+      "x": 120,
+      "y": 80,
+      "target": 47,
+      "script_entry": 45139,
+      "rom_stub_offset": 45139,
+      "source_coordinate": 664
+    },
+    {
+      "room": 114,
+      "x": 72,
+      "y": 96,
+      "target": 47,
+      "script_entry": 45151,
+      "rom_stub_offset": 45151,
+      "source_coordinate": 780
+    },
+    {
+      "room": 117,
+      "x": 88,
+      "y": 96,
+      "target": 143,
+      "script_entry": 45160,
+      "rom_stub_offset": 45160,
+      "source_coordinate": 784
+    },
+    {
+      "room": 118,
+      "x": 88,
+      "y": 64,
+      "target": 143,
+      "script_entry": 45169,
+      "rom_stub_offset": 45169,
+      "source_coordinate": 528
+    },
+    {
+      "room": 123,
+      "x": 136,
+      "y": 80,
+      "target": 47,
+      "script_entry": 45181,
+      "rom_stub_offset": 45181,
+      "source_coordinate": 668
+    },
+    {
+      "room": 125,
+      "x": 40,
+      "y": 112,
+      "target": 63,
+      "script_entry": 45190,
+      "rom_stub_offset": 45190,
+      "source_coordinate": 900
+    },
+    {
+      "room": 128,
+      "x": 88,
+      "y": 32,
+      "target": 63,
+      "script_entry": 45211,
+      "rom_stub_offset": 45211,
+      "source_coordinate": 272
+    },
+    {
+      "room": 129,
+      "x": 136,
+      "y": 128,
+      "target": 63,
+      "script_entry": 45220,
+      "rom_stub_offset": 45220,
+      "source_coordinate": 1052
+    },
+    {
+      "room": 130,
+      "x": 216,
+      "y": 32,
+      "target": 143,
+      "script_entry": 45229,
+      "rom_stub_offset": 45229,
+      "source_coordinate": 304
+    },
+    {
+      "room": 130,
+      "x": 232,
+      "y": 144,
+      "target": 175,
+      "script_entry": 45229,
+      "rom_stub_offset": 45237,
+      "source_coordinate": 1204
+    },
+    {
+      "room": 134,
+      "x": 136,
+      "y": 128,
+      "target": 143,
+      "script_entry": 45246,
+      "rom_stub_offset": 45246,
+      "source_coordinate": 1052
+    },
+    {
+      "room": 135,
+      "x": 88,
+      "y": 112,
+      "target": 159,
+      "script_entry": 45255,
+      "rom_stub_offset": 45255,
+      "source_coordinate": 912
+    },
+    {
+      "room": 140,
+      "x": 40,
+      "y": 128,
+      "target": 143,
+      "script_entry": 45284,
+      "rom_stub_offset": 45284,
+      "source_coordinate": 1028
+    },
+    {
+      "room": 141,
+      "x": 184,
+      "y": 96,
+      "target": 47,
+      "script_entry": 45293,
+      "rom_stub_offset": 45293,
+      "source_coordinate": 808
+    },
+    {
+      "room": 142,
+      "x": 216,
+      "y": 96,
+      "target": 63,
+      "script_entry": 45305,
+      "rom_stub_offset": 45305,
+      "source_coordinate": 816
+    },
+    {
+      "room": 144,
+      "x": 56,
+      "y": 64,
+      "target": 63,
+      "script_entry": 45399,
+      "rom_stub_offset": 45399,
+      "source_coordinate": 520
+    },
+    {
+      "room": 145,
+      "x": 120,
+      "y": 80,
+      "target": 143,
+      "script_entry": 45408,
+      "rom_stub_offset": 45408,
+      "source_coordinate": 664
+    },
+    {
+      "room": 146,
+      "x": 152,
+      "y": 48,
+      "target": 79,
+      "script_entry": 45417,
+      "rom_stub_offset": 45417,
+      "source_coordinate": 416
+    },
+    {
+      "room": 148,
+      "x": 136,
+      "y": 64,
+      "target": 0,
+      "script_entry": 45426,
+      "rom_stub_offset": 45426,
+      "source_coordinate": 540
+    },
+    {
+      "room": 148,
+      "x": 72,
+      "y": 96,
+      "target": 2,
+      "script_entry": 45426,
+      "rom_stub_offset": 45434,
+      "source_coordinate": 780
+    },
+    {
+      "room": 150,
+      "x": 136,
+      "y": 80,
+      "target": 159,
+      "script_entry": 45443,
+      "rom_stub_offset": 45443,
+      "source_coordinate": 668
+    },
+    {
+      "room": 156,
+      "x": 168,
+      "y": 112,
+      "target": 111,
+      "script_entry": 45452,
+      "rom_stub_offset": 45452,
+      "source_coordinate": 932
+    },
+    {
+      "room": 158,
+      "x": 24,
+      "y": 32,
+      "target": 63,
+      "script_entry": 45461,
+      "rom_stub_offset": 45461,
+      "source_coordinate": 256
+    },
+    {
+      "room": 161,
+      "x": 184,
+      "y": 112,
+      "target": 63,
+      "script_entry": 45480,
+      "rom_stub_offset": 45480,
+      "source_coordinate": 936
+    },
+    {
+      "room": 162,
+      "x": 136,
+      "y": 80,
+      "target": 63,
+      "script_entry": 45489,
+      "rom_stub_offset": 45489,
+      "source_coordinate": 668
+    },
+    {
+      "room": 163,
+      "x": 136,
+      "y": 80,
+      "target": 191,
+      "script_entry": 45498,
+      "rom_stub_offset": 45498,
+      "source_coordinate": 668
+    },
+    {
+      "room": 165,
+      "x": 56,
+      "y": 144,
+      "target": 47,
+      "script_entry": 45507,
+      "rom_stub_offset": 45507,
+      "source_coordinate": 1160
+    },
+    {
+      "room": 166,
+      "x": 88,
+      "y": 32,
+      "target": 63,
+      "script_entry": 45519,
+      "rom_stub_offset": 45519,
+      "source_coordinate": 272
+    },
+    {
+      "room": 167,
+      "x": 88,
+      "y": 80,
+      "target": 95,
+      "script_entry": 45528,
+      "rom_stub_offset": 45528,
+      "source_coordinate": 656
+    },
+    {
+      "room": 170,
+      "x": 152,
+      "y": 112,
+      "target": 191,
+      "script_entry": 45537,
+      "rom_stub_offset": 45537,
+      "source_coordinate": 928
+    },
+    {
+      "room": 171,
+      "x": 56,
+      "y": 32,
+      "target": 143,
+      "script_entry": 45546,
+      "rom_stub_offset": 45546,
+      "source_coordinate": 264
+    },
+    {
+      "room": 172,
+      "x": 200,
+      "y": 32,
+      "target": 63,
+      "script_entry": 45555,
+      "rom_stub_offset": 45555,
+      "source_coordinate": 300
+    },
+    {
+      "room": 173,
+      "x": 56,
+      "y": 128,
+      "target": 127,
+      "script_entry": 45564,
+      "rom_stub_offset": 45564,
+      "source_coordinate": 1032
+    },
+    {
+      "room": 177,
+      "x": 88,
+      "y": 112,
+      "target": 79,
+      "script_entry": 45580,
+      "rom_stub_offset": 45580,
+      "source_coordinate": 912
+    },
+    {
+      "room": 179,
+      "x": 200,
+      "y": 32,
+      "target": 143,
+      "script_entry": 45589,
+      "rom_stub_offset": 45589,
+      "source_coordinate": 300
+    },
+    {
+      "room": 180,
+      "x": 136,
+      "y": 80,
+      "target": 63,
+      "script_entry": 45598,
+      "rom_stub_offset": 45598,
+      "source_coordinate": 668
+    },
+    {
+      "room": 181,
+      "x": 184,
+      "y": 112,
+      "target": 63,
+      "script_entry": 45607,
+      "rom_stub_offset": 45607,
+      "source_coordinate": 936
+    },
+    {
+      "room": 182,
+      "x": 24,
+      "y": 144,
+      "target": 143,
+      "script_entry": 45616,
+      "rom_stub_offset": 45616,
+      "source_coordinate": 1152
+    },
+    {
+      "room": 184,
+      "x": 40,
+      "y": 80,
+      "target": 111,
+      "script_entry": 45625,
+      "rom_stub_offset": 45625,
+      "source_coordinate": 644
+    },
+    {
+      "room": 187,
+      "x": 216,
+      "y": 96,
+      "target": 143,
+      "script_entry": 45646,
+      "rom_stub_offset": 45646,
+      "source_coordinate": 816
+    },
+    {
+      "room": 189,
+      "x": 152,
+      "y": 32,
+      "target": 63,
+      "script_entry": 45658,
+      "rom_stub_offset": 45658,
+      "source_coordinate": 288
+    },
+    {
+      "room": 192,
+      "x": 88,
+      "y": 64,
+      "target": 175,
+      "script_entry": 45679,
+      "rom_stub_offset": 45679,
+      "source_coordinate": 528
+    },
+    {
+      "room": 195,
+      "x": 232,
+      "y": 48,
+      "target": 47,
+      "script_entry": 45688,
+      "rom_stub_offset": 45688,
+      "source_coordinate": 436
+    },
+    {
+      "room": 197,
+      "x": 136,
+      "y": 48,
+      "target": 143,
+      "script_entry": 45697,
+      "rom_stub_offset": 45697,
+      "source_coordinate": 412
+    },
+    {
+      "room": 199,
+      "x": 216,
+      "y": 64,
+      "target": 1,
+      "script_entry": 45706,
+      "rom_stub_offset": 45706,
+      "source_coordinate": 560
+    },
+    {
+      "room": 199,
+      "x": 168,
+      "y": 128,
+      "target": 31,
+      "script_entry": 45706,
+      "rom_stub_offset": 45714,
+      "source_coordinate": 1060
+    },
+    {
+      "room": 201,
+      "x": 104,
+      "y": 96,
+      "target": 175,
+      "script_entry": 45723,
+      "rom_stub_offset": 45723,
+      "source_coordinate": 788
+    },
+    {
+      "room": 205,
+      "x": 184,
+      "y": 128,
+      "target": 143,
+      "script_entry": 45732,
+      "rom_stub_offset": 45732,
+      "source_coordinate": 1064
+    },
+    {
+      "room": 206,
+      "x": 184,
+      "y": 64,
+      "target": 4,
+      "script_entry": 45741,
+      "rom_stub_offset": 45741,
+      "source_coordinate": 552
+    },
+    {
+      "room": 206,
+      "x": 104,
+      "y": 80,
+      "target": 2,
+      "script_entry": 45741,
+      "rom_stub_offset": 45749,
+      "source_coordinate": 660
+    },
+    {
+      "room": 212,
+      "x": 120,
+      "y": 48,
+      "target": 63,
+      "script_entry": 45758,
+      "rom_stub_offset": 45758,
+      "source_coordinate": 408
+    },
+    {
+      "room": 213,
+      "x": 136,
+      "y": 144,
+      "target": 111,
+      "script_entry": 45767,
+      "rom_stub_offset": 45767,
+      "source_coordinate": 1180
+    },
+    {
+      "room": 215,
+      "x": 24,
+      "y": 32,
+      "target": 47,
+      "script_entry": 45785,
+      "rom_stub_offset": 45785,
+      "source_coordinate": 256
+    },
+    {
+      "room": 218,
+      "x": 136,
+      "y": 64,
+      "target": 143,
+      "script_entry": 45797,
+      "rom_stub_offset": 45797,
+      "source_coordinate": 540
+    },
+    {
+      "room": 219,
+      "x": 184,
+      "y": 64,
+      "target": 63,
+      "script_entry": 45806,
+      "rom_stub_offset": 45806,
+      "source_coordinate": 552
+    },
+    {
+      "room": 220,
+      "x": 136,
+      "y": 144,
+      "target": 47,
+      "script_entry": 45815,
+      "rom_stub_offset": 45815,
+      "source_coordinate": 1180
+    },
+    {
+      "room": 221,
+      "x": 72,
+      "y": 112,
+      "target": 63,
+      "script_entry": 45824,
+      "rom_stub_offset": 45824,
+      "source_coordinate": 908
+    },
+    {
+      "room": 222,
+      "x": 152,
+      "y": 80,
+      "target": 95,
+      "script_entry": 45833,
+      "rom_stub_offset": 45833,
+      "source_coordinate": 672
+    },
+    {
+      "room": 226,
+      "x": 88,
+      "y": 112,
+      "target": 63,
+      "script_entry": 45842,
+      "rom_stub_offset": 45842,
+      "source_coordinate": 912
+    },
+    {
+      "room": 228,
+      "x": 88,
+      "y": 128,
+      "target": 63,
+      "script_entry": 45851,
+      "rom_stub_offset": 45851,
+      "source_coordinate": 1040
+    },
+    {
+      "room": 229,
+      "x": 232,
+      "y": 48,
+      "target": 175,
+      "script_entry": 45860,
+      "rom_stub_offset": 45860,
+      "source_coordinate": 436
+    },
+    {
+      "room": 230,
+      "x": 88,
+      "y": 80,
+      "target": 191,
+      "script_entry": 45869,
+      "rom_stub_offset": 45869,
+      "source_coordinate": 656
+    },
+    {
+      "room": 231,
+      "x": 88,
+      "y": 32,
+      "target": 63,
+      "script_entry": 45878,
+      "rom_stub_offset": 45878,
+      "source_coordinate": 272
+    },
+    {
+      "room": 236,
+      "x": 24,
+      "y": 32,
+      "target": 175,
+      "script_entry": 45896,
+      "rom_stub_offset": 45896,
+      "source_coordinate": 256
+    },
+    {
+      "room": 238,
+      "x": 232,
+      "y": 144,
+      "target": 63,
+      "script_entry": 45905,
+      "rom_stub_offset": 45905,
+      "source_coordinate": 1204
+    },
+    {
+      "room": 240,
+      "x": 56,
+      "y": 32,
+      "target": 47,
+      "script_entry": 45914,
+      "rom_stub_offset": 45914,
+      "source_coordinate": 264
+    },
+    {
+      "room": 240,
+      "x": 184,
+      "y": 64,
+      "target": 4,
+      "script_entry": 45914,
+      "rom_stub_offset": 45922,
+      "source_coordinate": 552
+    },
+    {
+      "room": 240,
+      "x": 88,
+      "y": 80,
+      "target": 3,
+      "script_entry": 45914,
+      "rom_stub_offset": 45930,
+      "source_coordinate": 656
+    },
+    {
+      "room": 241,
+      "x": 120,
+      "y": 112,
+      "target": 63,
+      "script_entry": 45939,
+      "rom_stub_offset": 45939,
+      "source_coordinate": 920
+    },
+    {
+      "room": 242,
+      "x": 232,
+      "y": 128,
+      "target": 47,
+      "script_entry": 45948,
+      "rom_stub_offset": 45948,
+      "source_coordinate": 1076
+    },
+    {
+      "room": 244,
+      "x": 104,
+      "y": 32,
+      "target": 63,
+      "script_entry": 45957,
+      "rom_stub_offset": 45957,
+      "source_coordinate": 276
+    },
+    {
+      "room": 245,
+      "x": 120,
+      "y": 32,
+      "target": 127,
+      "script_entry": 45966,
+      "rom_stub_offset": 45966,
+      "source_coordinate": 280
+    },
+    {
+      "room": 246,
+      "x": 136,
+      "y": 48,
+      "target": 63,
+      "script_entry": 45975,
+      "rom_stub_offset": 45975,
+      "source_coordinate": 412
+    },
+    {
+      "room": 249,
+      "x": 88,
+      "y": 96,
+      "target": 47,
+      "script_entry": 45984,
+      "rom_stub_offset": 45984,
+      "source_coordinate": 784
+    },
+    {
+      "room": 250,
+      "x": 216,
+      "y": 96,
+      "target": 111,
+      "script_entry": 45993,
+      "rom_stub_offset": 45993,
+      "source_coordinate": 816
+    },
+    {
+      "room": 251,
+      "x": 104,
+      "y": 128,
+      "target": 143,
+      "script_entry": 46002,
+      "rom_stub_offset": 46002,
+      "source_coordinate": 1044
+    },
+    {
+      "room": 252,
+      "x": 168,
+      "y": 112,
+      "target": 47,
+      "script_entry": 46011,
+      "rom_stub_offset": 46011,
+      "source_coordinate": 932
+    },
+    {
+      "room": 254,
+      "x": 216,
+      "y": 48,
+      "target": 3,
+      "script_entry": 46020,
+      "rom_stub_offset": 46020,
+      "source_coordinate": 432
+    },
+    {
+      "room": 254,
+      "x": 72,
+      "y": 64,
+      "target": 0,
+      "script_entry": 46020,
+      "rom_stub_offset": 46028,
+      "source_coordinate": 524
+    },
+    {
+      "room": 254,
+      "x": 120,
+      "y": 96,
+      "target": 2,
+      "script_entry": 46020,
+      "rom_stub_offset": 46036,
+      "source_coordinate": 792
+    }
+  ],
+  "standard_house_exits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    31,
+    47,
+    63,
+    79,
+    95,
+    111,
+    127,
+    143,
+    159,
+    175,
+    191,
+    207,
+    223,
+    239,
+    255
+  ],
+  "direct_unconditional_dungeon_doors": [
+    {
+      "room": 16,
+      "x": 136,
+      "y": 96,
+      "index": 4,
+      "target": 496,
+      "script_entry": 44537,
+      "rom_stub_offset": 44537,
+      "source_coordinate": 796
+    },
+    {
+      "room": 27,
+      "x": 136,
+      "y": 96,
+      "index": 7,
+      "target": 475,
+      "script_entry": 44600,
+      "rom_stub_offset": 44600,
+      "source_coordinate": 796
+    },
+    {
+      "room": 41,
+      "x": 136,
+      "y": 96,
+      "index": 8,
+      "target": 490,
+      "script_entry": 44701,
+      "rom_stub_offset": 44701,
+      "source_coordinate": 796
+    },
+    {
+      "room": 73,
+      "x": 104,
+      "y": 96,
+      "index": 5,
+      "target": 390,
+      "script_entry": 44874,
+      "rom_stub_offset": 44874,
+      "source_coordinate": 788
+    },
+    {
+      "room": 98,
+      "x": 136,
+      "y": 80,
+      "index": 3,
+      "target": 504,
+      "script_entry": 45082,
+      "rom_stub_offset": 45082,
+      "source_coordinate": 668
+    },
+    {
+      "room": 137,
+      "x": 120,
+      "y": 80,
+      "index": 10,
+      "target": 397,
+      "script_entry": 45264,
+      "rom_stub_offset": 45264,
+      "source_coordinate": 664
+    },
+    {
+      "room": 139,
+      "x": 136,
+      "y": 96,
+      "index": 6,
+      "target": 391,
+      "script_entry": 45273,
+      "rom_stub_offset": 45273,
+      "source_coordinate": 796
+    },
+    {
+      "room": 185,
+      "x": 136,
+      "y": 80,
+      "index": 1,
+      "target": 484,
+      "script_entry": 45637,
+      "rom_stub_offset": 45637,
+      "source_coordinate": 668
+    },
+    {
+      "room": 214,
+      "x": 120,
+      "y": 64,
+      "index": 2,
+      "target": 369,
+      "script_entry": 45776,
+      "rom_stub_offset": 45776,
+      "source_coordinate": 536
+    },
+    {
+      "room": 235,
+      "x": 136,
+      "y": 96,
+      "index": 9,
+      "target": 508,
+      "script_entry": 45887,
+      "rom_stub_offset": 45887,
+      "source_coordinate": 796
+    }
+  ],
+  "standard_dungeon_exits": [
+    369,
+    390,
+    391,
+    397,
+    475,
+    484,
+    490,
+    496,
+    504,
+    508
+  ],
+  "conditional_and_later_script_suffixes_ported": false
+}

@@ -1,0 +1,1291 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixtures": [
+    {
+      "frame": 3127,
+      "actors": 0,
+      "x": 80,
+      "y": 64
+    },
+    {
+      "frame": 3135,
+      "actors": 5,
+      "x": 80,
+      "y": 64
+    },
+    {
+      "frame": 3147,
+      "actors": 0,
+      "x": 80,
+      "y": 64
+    },
+    {
+      "frame": 3159,
+      "actors": 4,
+      "x": 80,
+      "y": 64
+    },
+    {
+      "frame": 3171,
+      "actors": 5,
+      "x": 255,
+      "y": 64
+    },
+    {
+      "frame": 3183,
+      "actors": 0,
+      "x": 80,
+      "y": 64
+    }
+  ],
+  "regions": {
+    "ntsc": [
+      {
+        "frame": 3127,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 66,
+        "hardware_overflow": false,
+        "hardware_maximum": 4
+      },
+      {
+        "frame": 3128,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 67,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3129,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 68,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3130,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 69,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3131,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 70,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3132,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 71,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3133,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 72,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3134,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 73,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3135,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": false,
+        "clock": 74,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3136,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": false,
+        "clock": 75,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3137,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 76,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3138,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 77,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3139,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 78,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3140,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 79,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3141,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 80,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3142,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 81,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3143,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 82,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3144,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 83,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3145,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 84,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3146,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 85,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3147,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": true,
+        "clock": 86,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3148,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": true,
+        "clock": 87,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3149,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 88,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3150,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 89,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3151,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 90,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3152,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 91,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3153,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 92,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3154,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 93,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3155,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 94,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3156,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 95,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3157,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 96,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3158,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 97,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3159,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 98,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3160,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 99,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3161,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 100,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3162,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 101,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3163,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 102,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3164,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 103,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3165,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 104,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3166,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 105,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3167,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 106,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3168,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 107,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3169,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 108,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3170,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 109,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3171,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": false,
+        "clock": 110,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3172,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": false,
+        "clock": 111,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3173,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 112,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3174,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 113,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3175,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 114,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3176,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 115,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3177,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 116,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3178,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 117,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3179,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 118,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3180,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 119,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3181,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 120,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3182,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 121,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3183,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": true,
+        "clock": 122,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3184,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": true,
+        "clock": 123,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3185,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 124,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3186,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 125,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3187,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 126,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3188,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 127,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3189,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 128,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3190,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 129,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3191,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 130,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3192,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 131,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3193,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 132,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3194,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 133,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3195,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 134,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      }
+    ],
+    "pal": [
+      {
+        "frame": 3127,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 85,
+        "hardware_overflow": false,
+        "hardware_maximum": 4
+      },
+      {
+        "frame": 3128,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 86,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3129,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 87,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3130,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 88,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3131,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 89,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3132,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 90,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3133,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 91,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3134,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 92,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3135,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": false,
+        "clock": 93,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3136,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": false,
+        "clock": 94,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3137,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 95,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3138,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 96,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3139,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 97,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3140,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 98,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3141,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 99,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3142,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 100,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3143,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 101,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3144,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 102,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3145,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 103,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3146,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 104,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3147,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": true,
+        "clock": 105,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3148,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": true,
+        "clock": 106,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3149,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 107,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3150,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 108,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3151,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 109,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3152,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 110,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3153,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 111,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3154,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 112,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3155,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 113,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3156,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 114,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3157,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 115,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3158,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 116,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3159,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 117,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3160,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 118,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3161,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 119,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3162,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 120,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3163,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 121,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3164,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 122,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3165,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 123,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3166,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 124,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3167,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 125,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3168,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 126,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3169,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 127,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3170,
+        "prepared_overflow": false,
+        "prepared_maximum": 8,
+        "irq_status_overflow": false,
+        "clock": 128,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3171,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": false,
+        "clock": 129,
+        "hardware_overflow": false,
+        "hardware_maximum": 8
+      },
+      {
+        "frame": 3172,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": false,
+        "clock": 130,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3173,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 131,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3174,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 132,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3175,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 133,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3176,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 134,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3177,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 135,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3178,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 136,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3179,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 137,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3180,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 138,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3181,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 139,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3182,
+        "prepared_overflow": true,
+        "prepared_maximum": 10,
+        "irq_status_overflow": true,
+        "clock": 140,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3183,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": true,
+        "clock": 141,
+        "hardware_overflow": true,
+        "hardware_maximum": 10
+      },
+      {
+        "frame": 3184,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": true,
+        "clock": 142,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3185,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 143,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3186,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 144,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3187,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 145,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3188,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 146,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3189,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 147,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3190,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 148,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3191,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 149,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3192,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 150,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3193,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 151,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3194,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 152,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      },
+      {
+        "frame": 3195,
+        "prepared_overflow": false,
+        "prepared_maximum": 2,
+        "irq_status_overflow": false,
+        "clock": 153,
+        "hardware_overflow": false,
+        "hardware_maximum": 2
+      }
+    ]
+  },
+  "test_only_actor_ram_writes": true,
+  "status_or_vram_mutations": false
+}

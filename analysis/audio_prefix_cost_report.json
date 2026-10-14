@@ -1,0 +1,43 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "a208d1d38e0d9d9d5f9e8cf5cf5b653cc8ecc48d1668d41f939f281e7fd293d5",
+  "cases": 10240,
+  "rows": [
+    {
+      "kind": "tempo",
+      "region": "auto",
+      "cases": 1024,
+      "results_sha256": "ccd532ec11cd45fa68220e8de09488993f33a11dd8647d549114c3012ff40544",
+      "fixture_rom_sha256": "bed0c65b50518ae67f8271fb57916d2c46cced6ddc2e727b7668e0693b02c6c3"
+    },
+    {
+      "kind": "tempo",
+      "region": "pal",
+      "cases": 1024,
+      "results_sha256": "ccd532ec11cd45fa68220e8de09488993f33a11dd8647d549114c3012ff40544",
+      "fixture_rom_sha256": "bed0c65b50518ae67f8271fb57916d2c46cced6ddc2e727b7668e0693b02c6c3"
+    },
+    {
+      "kind": "fade",
+      "region": "auto",
+      "cases": 4096,
+      "results_sha256": "65f8f91955cd58dff04817f9c1ff7f2dc434a593b485759af2162d6990f0550c",
+      "fixture_rom_sha256": "ccceb4cf1bd9cc8db9458de2118b3b0f0edd4898f0e08090f90faaa5f77a6b59"
+    },
+    {
+      "kind": "fade",
+      "region": "pal",
+      "cases": 4096,
+      "results_sha256": "65f8f91955cd58dff04817f9c1ff7f2dc434a593b485759af2162d6990f0550c",
+      "fixture_rom_sha256": "ccceb4cf1bd9cc8db9458de2118b3b0f0edd4898f0e08090f90faaa5f77a6b59"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original bank6 helpers807E and80C8,including83EF stop/mute path. Custom boot/3000 caller supplies400-byte patterned RAM and16-byte input records from extra banks;IRQs disabled. Independent semantic/cycle models compare all400 bytes and complete helper costs.",
+    "Tempo:all256 counters,four reload values,phase increment wrap. Fade:B0/1/2/12,C0/1/2/18,all four-volume combinations0/10/11/255. Invalid boundary255 is synthetic. Regions checked separately.",
+    "Isolated helper tests do not establish full reader cost,PSG mute waveform,live prefixes/IRQ phase,physical loading duration or natural progression."
+  ]
+}

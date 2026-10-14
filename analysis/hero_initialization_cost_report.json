@@ -1,0 +1,25 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "7db08c6f54dc535b5cc1f969956d260889db408be6cb4e710baedb7e142092c6",
+  "cases": 13150,
+  "regions": [
+    {
+      "region": "auto",
+      "cases": 6575,
+      "table_sha256": "32a441a5adb6ca8621d25277b3c04925dbd730de397e6d752e6170f127bc140e"
+    },
+    {
+      "region": "pal",
+      "cases": 6575,
+      "table_sha256": "32a441a5adb6ca8621d25277b3c04925dbd730de397e6d752e6170f127bc140e"
+    }
+  ],
+  "compared_RAM_bytes_per_case": 475,
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original2C63 and every callee unchanged. Custom boot supplies class/hero/gear/terrain neighborhood;original24E4 CALL used,24E7 patched RET as end marker. Read-only core snapshots RAM at entry/return;interrupts disabled in this isolated test.",
+    "Classes0/1/2,all six old terrain states,17 selections,four directions;secondary0/3 plus11/255 boundary probes;all classifier tile pairs from both ROM tables;water/amulet and eight attribute combinations;gear/curse boundaries,64 sub-tile phases and36 edge coordinates. Independent dimensions are not a full Cartesian product.",
+    "Checks instruction cost and475 affected/preserved RAM bytes,not rendered pixels,audio IRQ scheduling,source refresh RNG,whole load duration or natural full progression. Boundary gear states are explicitly synthetic."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "a6fd638a7644a2be7297325e7de3a7953b1d5df5d819ae72ca78c4ba369b0da5",
+  "cases": 131072,
+  "regions": [
+    {
+      "region": "auto",
+      "cases": 65536,
+      "seed_cost_table_sha256": "488d70c223bd84e963226adf03d2491b0d4f856110535539289e93556c96cb33",
+      "record_format": "Seed-indexed4byte records:next_seed LE16,full04E1 T states LE16."
+    },
+    {
+      "region": "pal",
+      "cases": 65536,
+      "seed_cost_table_sha256": "488d70c223bd84e963226adf03d2491b0d4f856110535539289e93556c96cb33",
+      "record_format": "Seed-indexed4byte records:next_seed LE16,full04E1 T states LE16."
+    }
+  ],
+  "normal_cost_tstates": 130,
+  "zero_fallback_cost_tstates": 135,
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original04E1 unchanged; custom boot supplies each16-bit C028 seed. Read-only transition core observes04E1 and04FD; final RET10 included arithmetically. Interrupts disabled for this isolated recurrence test.",
+    "All65536 seed transitions and normal/zero-fallback foreground costs match in both regions. Validates seed recurrence only; output LD A,R XOR L is represented with an explicit refresh argument but not validated by these HL/cycle observations.",
+    "No faithful native refresh-register model or native RNG replacement is supplied. Initial RNG seed,caller instruction fetches and IRQ-dependent refresh evolution,natural actors/combat and full progression remain open."
+  ]
+}

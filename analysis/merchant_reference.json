@@ -1,0 +1,33 @@
+{
+  "source_script": "room0 bank2 AC27; selector index1 at world offset02C4",
+  "position": [
+    40,
+    88
+  ],
+  "routine": "7452",
+  "capture": "validation/sms-merchant-first/frame_03600.png",
+  "capture_position_controlled": true,
+  "observed_initial_village_goods": [
+    {
+      "label": "CLE",
+      "price": 60
+    },
+    {
+      "label": "PLUME MAGIQUE",
+      "price": 60
+    },
+    {
+      "label": "HUILE MAGIQUE",
+      "price": 130
+    }
+  ],
+  "portrait_rom_pointer": "bank7:AE69",
+  "price_table_rom_752e": "345e72f0fc2828282828",
+  "special_table_rom_75a8": "237bc3dc020408141e32",
+  "currency_byte": "C0DD",
+  "key_count_byte": "C0DE",
+  "unported": false,
+  "native_scope": "First village 94 merchant: keys, feather, oil; other villages unported",
+  "native_source": "megadrive/src/merchant.inc",
+  "validation": "validation/merchant_report.json"
+}

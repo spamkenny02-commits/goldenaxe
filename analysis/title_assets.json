@@ -1,0 +1,41 @@
+{
+  "bank": 7,
+  "palette_offset": 114688,
+  "patterns_start": 114704,
+  "patterns_end": 124795,
+  "decoded_pattern_bytes": 14368,
+  "tilemap_start": 124795,
+  "tilemap_end": 125062,
+  "second_map_end": 125736,
+  "map_vram_destination": 14592,
+  "preview": "Initial title map before Z80 routines 165C..169C animate it; not final title screen.",
+  "loading_cost": {
+    "clear_tstates": 95572,
+    "setup_tstates": 401,
+    "assets_tstates": 2269572,
+    "tail_tstates": 50086,
+    "foreground_tstates": 2415631,
+    "resources": [
+      {
+        "tstates": 2058555,
+        "source_end": 124795,
+        "decoded_bytes": 14368,
+        "packed_bytes": 10091
+      },
+      {
+        "tstates": 101616,
+        "source_end": 125062,
+        "packed_bytes": 267,
+        "decoded_bytes": 1536,
+        "scratch_bytes": 411
+      },
+      {
+        "tstates": 109320,
+        "source_end": 125736,
+        "packed_bytes": 674,
+        "decoded_bytes": 1536,
+        "scratch_bytes": 728
+      }
+    ]
+  }
+}

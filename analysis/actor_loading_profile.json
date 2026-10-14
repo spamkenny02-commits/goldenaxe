@@ -1,0 +1,222 @@
+{
+  "resource_cycle_models": [
+    {
+      "type": 38,
+      "rle_tstates": 28946,
+      "remap_tstates": 117183,
+      "foreground_graphics_tstates": 146129,
+      "decoded_bytes": 192
+    },
+    {
+      "type": 32,
+      "rle_tstates": 248831,
+      "remap_tstates": 1069687,
+      "foreground_graphics_tstates": 1318518,
+      "decoded_bytes": 1760
+    }
+  ],
+  "remap_source_cycle_checks": [
+    {
+      "decoded_bytes": 192,
+      "nominal_z80_isa_tstates": 117183,
+      "reference_core_tstates": 117951,
+      "observed_tstates": 117951,
+      "reference_core_ini_extra_tstates_per_instruction": 4
+    },
+    {
+      "decoded_bytes": 1760,
+      "nominal_z80_isa_tstates": 1069687,
+      "reference_core_tstates": 1076727,
+      "observed_tstates": 1076727,
+      "reference_core_ini_extra_tstates_per_instruction": 4
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "ecd0eb72d7593f581e54a0774a8977d2cb728a322b183c5872a7e2b7e6bd6e06",
+  "region": "auto",
+  "cycles_per_tstate": 15,
+  "room": 164,
+  "original_rle_and_remap_resources": [
+    {
+      "type": 38,
+      "bank": 15,
+      "rom_start": 253603,
+      "rom_end": 253763,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 32,
+      "bank": 15,
+      "rom_start": 251826,
+      "rom_end": 253345,
+      "palette_remap": 32,
+      "tile_base": 6,
+      "tile_count": 55
+    }
+  ],
+  "actor_loader_start_frame": 3070,
+  "actor_loader_end_frame": 3097,
+  "pre_gameplay_frame": 3097,
+  "actor_loader_tstates": 1580744,
+  "interrupt_tstates_during_loader": 86470,
+  "foreground_tstates_during_loader": 1494274,
+  "events": [
+    {
+      "frame": 3070,
+      "pc": "0x20d3",
+      "master_cycles": 2749832130,
+      "irq_master_cycles": 465819915,
+      "room": 164,
+      "clock": 36,
+      "hl": 54848,
+      "de": 64,
+      "bc": 248
+    },
+    {
+      "frame": 3070,
+      "pc": "0x24c5",
+      "master_cycles": 2749834845,
+      "irq_master_cycles": 465819915,
+      "room": 164,
+      "clock": 36,
+      "hl": 9413,
+      "de": 64,
+      "bc": 248
+    },
+    {
+      "frame": 3070,
+      "pc": "0x1780",
+      "master_cycles": 2749991835,
+      "irq_master_cycles": 465819915,
+      "room": 164,
+      "clock": 36,
+      "hl": 49713,
+      "de": 56560,
+      "bc": 0
+    },
+    {
+      "frame": 3071,
+      "pc": "0x18ac",
+      "master_cycles": 2750340435,
+      "irq_master_cycles": 465870600,
+      "room": 164,
+      "clock": 36,
+      "hl": 40611,
+      "de": 24576,
+      "bc": 2048
+    },
+    {
+      "frame": 3071,
+      "pc": "0x32a",
+      "master_cycles": 2750340690,
+      "irq_master_cycles": 465870600,
+      "room": 164,
+      "clock": 36,
+      "hl": 40611,
+      "de": 24576,
+      "bc": 2048
+    },
+    {
+      "frame": 3071,
+      "pc": "0x1d0d",
+      "master_cycles": 2750775690,
+      "irq_master_cycles": 465870600,
+      "room": 164,
+      "clock": 36,
+      "hl": 24576,
+      "de": 24768,
+      "bc": 2048
+    },
+    {
+      "frame": 3073,
+      "pc": "0x18b7",
+      "master_cycles": 2752646325,
+      "irq_master_cycles": 465971970,
+      "room": 164,
+      "clock": 36,
+      "hl": 24576,
+      "de": 24768,
+      "bc": 2048
+    },
+    {
+      "frame": 3073,
+      "pc": "0x18ac",
+      "master_cycles": 2752667910,
+      "irq_master_cycles": 465971970,
+      "room": 164,
+      "clock": 36,
+      "hl": 38834,
+      "de": 24768,
+      "bc": 1030
+    },
+    {
+      "frame": 3073,
+      "pc": "0x32a",
+      "master_cycles": 2752668165,
+      "irq_master_cycles": 465971970,
+      "room": 164,
+      "clock": 36,
+      "hl": 38834,
+      "de": 24768,
+      "bc": 1030
+    },
+    {
+      "frame": 3078,
+      "pc": "0x1d0d",
+      "master_cycles": 2756646015,
+      "irq_master_cycles": 466216545,
+      "room": 164,
+      "clock": 36,
+      "hl": 24768,
+      "de": 26528,
+      "bc": 1030
+    },
+    {
+      "frame": 3097,
+      "pc": "0x18b7",
+      "master_cycles": 2773697340,
+      "irq_master_cycles": 467116965,
+      "room": 164,
+      "clock": 36,
+      "hl": 24768,
+      "de": 26528,
+      "bc": 1030
+    },
+    {
+      "frame": 3097,
+      "pc": "0x18e1",
+      "master_cycles": 2773702995,
+      "irq_master_cycles": 467116965,
+      "room": 164,
+      "clock": 36,
+      "hl": 24768,
+      "de": 48,
+      "bc": 61
+    },
+    {
+      "frame": 3097,
+      "pc": "0x24ed",
+      "master_cycles": 2773894200,
+      "irq_master_cycles": 467116965,
+      "room": 164,
+      "clock": 36,
+      "hl": 49253,
+      "de": 46945,
+      "bc": 0
+    },
+    {
+      "frame": 3097,
+      "pc": "0x24f2",
+      "master_cycles": 2773894500,
+      "irq_master_cycles": 467116965,
+      "room": 164,
+      "clock": 36,
+      "hl": 49253,
+      "de": 46945,
+      "bc": 0
+    }
+  ],
+  "notes": "Diagnostic hook only observes PCs, registers and cycle deltas; never substitutes source/native RAM or captured state into the cartridge."
+}

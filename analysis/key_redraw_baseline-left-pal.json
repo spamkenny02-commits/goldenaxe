@@ -1,0 +1,2228 @@
+{
+  "md_sha256": "2230c2b4badf9c0086cfcd0fd2ca45cea0e8942a79631252ee24306ddd8409ff",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "325cb22de714c5116e72bf20c377ca30efce6b02512adfb30daf6014642ddc98",
+  "direction": "left",
+  "region": "pal",
+  "redraw_start_frame": 3414,
+  "redraw_end_frame": 3418,
+  "redraw_tstates": 317166,
+  "phases": [
+    {
+      "start_pc": "0x5e90",
+      "end_pc": "0x5e93",
+      "start_frame": 3414,
+      "end_frame": 3414,
+      "tstates": 4862,
+      "irq_tstates": 0,
+      "foreground_tstates": 4862
+    },
+    {
+      "start_pc": "0x5e93",
+      "end_pc": "0x1de2",
+      "start_frame": 3414,
+      "end_frame": 3414,
+      "tstates": 17,
+      "irq_tstates": 0,
+      "foreground_tstates": 17
+    },
+    {
+      "start_pc": "0x1de2",
+      "end_pc": "0x2279",
+      "start_frame": 3414,
+      "end_frame": 3414,
+      "tstates": 17,
+      "irq_tstates": 0,
+      "foreground_tstates": 17
+    },
+    {
+      "start_pc": "0x2279",
+      "end_pc": "0x1de5",
+      "start_frame": 3414,
+      "end_frame": 3417,
+      "tstates": 208390,
+      "irq_tstates": 15704,
+      "foreground_tstates": 192686
+    },
+    {
+      "start_pc": "0x1de5",
+      "end_pc": "0x1e4e",
+      "start_frame": 3417,
+      "end_frame": 3417,
+      "tstates": 17,
+      "irq_tstates": 0,
+      "foreground_tstates": 17
+    },
+    {
+      "start_pc": "0x1e4e",
+      "end_pc": "0x1de8",
+      "start_frame": 3417,
+      "end_frame": 3417,
+      "tstates": 31967,
+      "irq_tstates": 0,
+      "foreground_tstates": 31967
+    },
+    {
+      "start_pc": "0x1de8",
+      "end_pc": "0x229c",
+      "start_frame": 3417,
+      "end_frame": 3417,
+      "tstates": 17,
+      "irq_tstates": 0,
+      "foreground_tstates": 17
+    },
+    {
+      "start_pc": "0x229c",
+      "end_pc": "0xb95",
+      "start_frame": 3417,
+      "end_frame": 3417,
+      "tstates": 61,
+      "irq_tstates": 0,
+      "foreground_tstates": 61
+    },
+    {
+      "start_pc": "0xb95",
+      "end_pc": "0xbb3",
+      "start_frame": 3417,
+      "end_frame": 3418,
+      "tstates": 26335,
+      "irq_tstates": 15494,
+      "foreground_tstates": 10841
+    },
+    {
+      "start_pc": "0xbb3",
+      "end_pc": "0x22bf",
+      "start_frame": 3418,
+      "end_frame": 3418,
+      "tstates": 44890,
+      "irq_tstates": 0,
+      "foreground_tstates": 44890
+    },
+    {
+      "start_pc": "0x22bf",
+      "end_pc": "0x1deb",
+      "start_frame": 3418,
+      "end_frame": 3418,
+      "tstates": 40,
+      "irq_tstates": 0,
+      "foreground_tstates": 40
+    },
+    {
+      "start_pc": "0x1deb",
+      "end_pc": "0x1e1f",
+      "start_frame": 3418,
+      "end_frame": 3418,
+      "tstates": 543,
+      "irq_tstates": 0,
+      "foreground_tstates": 543
+    },
+    {
+      "start_pc": "0x1e1f",
+      "end_pc": "0x5e96",
+      "start_frame": 3418,
+      "end_frame": 3418,
+      "tstates": 10,
+      "irq_tstates": 0,
+      "foreground_tstates": 10
+    }
+  ],
+  "hero_traces": {
+    "sms": [
+      {
+        "frame": 3408,
+        "x": 10240,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 95
+      },
+      {
+        "frame": 3409,
+        "x": 10240,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 96
+      },
+      {
+        "frame": 3410,
+        "x": 9831,
+        "y": 20480,
+        "counter": 4,
+        "room": 289,
+        "state": 12,
+        "clock": 97
+      },
+      {
+        "frame": 3411,
+        "x": 9422,
+        "y": 20480,
+        "counter": 3,
+        "room": 289,
+        "state": 12,
+        "clock": 98
+      },
+      {
+        "frame": 3412,
+        "x": 9013,
+        "y": 20480,
+        "counter": 2,
+        "room": 289,
+        "state": 12,
+        "clock": 99
+      },
+      {
+        "frame": 3413,
+        "x": 8604,
+        "y": 20480,
+        "counter": 1,
+        "room": 289,
+        "state": 12,
+        "clock": 100
+      },
+      {
+        "frame": 3414,
+        "x": 8192,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 101
+      },
+      {
+        "frame": 3415,
+        "x": 8192,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 101
+      },
+      {
+        "frame": 3416,
+        "x": 8192,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 101
+      },
+      {
+        "frame": 3417,
+        "x": 8192,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 101
+      },
+      {
+        "frame": 3418,
+        "x": 8192,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 102
+      },
+      {
+        "frame": 3419,
+        "x": 7783,
+        "y": 20480,
+        "counter": 4,
+        "room": 289,
+        "state": 12,
+        "clock": 103
+      },
+      {
+        "frame": 3420,
+        "x": 7374,
+        "y": 20480,
+        "counter": 3,
+        "room": 289,
+        "state": 12,
+        "clock": 104
+      },
+      {
+        "frame": 3421,
+        "x": 6965,
+        "y": 20480,
+        "counter": 2,
+        "room": 289,
+        "state": 12,
+        "clock": 105
+      },
+      {
+        "frame": 3422,
+        "x": 6556,
+        "y": 20480,
+        "counter": 1,
+        "room": 289,
+        "state": 12,
+        "clock": 106
+      },
+      {
+        "frame": 3423,
+        "x": 6144,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 107
+      },
+      {
+        "frame": 3424,
+        "x": 5735,
+        "y": 20480,
+        "counter": 4,
+        "room": 289,
+        "state": 12,
+        "clock": 108
+      },
+      {
+        "frame": 3425,
+        "x": 5326,
+        "y": 20480,
+        "counter": 3,
+        "room": 289,
+        "state": 12,
+        "clock": 109
+      },
+      {
+        "frame": 3426,
+        "x": 4917,
+        "y": 20480,
+        "counter": 2,
+        "room": 289,
+        "state": 12,
+        "clock": 110
+      },
+      {
+        "frame": 3427,
+        "x": 4508,
+        "y": 20480,
+        "counter": 1,
+        "room": 289,
+        "state": 12,
+        "clock": 111
+      },
+      {
+        "frame": 3428,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12,
+        "clock": 112
+      },
+      {
+        "frame": 3429,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 10,
+        "clock": 113
+      },
+      {
+        "frame": 3430,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 113
+      },
+      {
+        "frame": 3431,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 113
+      },
+      {
+        "frame": 3432,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 113
+      },
+      {
+        "frame": 3433,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 113
+      },
+      {
+        "frame": 3434,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 114
+      },
+      {
+        "frame": 3435,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 115
+      },
+      {
+        "frame": 3436,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 116
+      },
+      {
+        "frame": 3437,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 117
+      },
+      {
+        "frame": 3438,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 118
+      },
+      {
+        "frame": 3439,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 119
+      },
+      {
+        "frame": 3440,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 120
+      },
+      {
+        "frame": 3441,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 121
+      },
+      {
+        "frame": 3442,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 122
+      },
+      {
+        "frame": 3443,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 123
+      },
+      {
+        "frame": 3444,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 124
+      },
+      {
+        "frame": 3445,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 125
+      },
+      {
+        "frame": 3446,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 126
+      },
+      {
+        "frame": 3447,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 127
+      },
+      {
+        "frame": 3448,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 128
+      },
+      {
+        "frame": 3449,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 129
+      },
+      {
+        "frame": 3450,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 130
+      },
+      {
+        "frame": 3451,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 131
+      },
+      {
+        "frame": 3452,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 132
+      },
+      {
+        "frame": 3453,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 133
+      },
+      {
+        "frame": 3454,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 134
+      },
+      {
+        "frame": 3455,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 135
+      },
+      {
+        "frame": 3456,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 136
+      },
+      {
+        "frame": 3457,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 137
+      },
+      {
+        "frame": 3458,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 138
+      },
+      {
+        "frame": 3459,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 139
+      },
+      {
+        "frame": 3460,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 140
+      },
+      {
+        "frame": 3461,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 141
+      },
+      {
+        "frame": 3462,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 142
+      },
+      {
+        "frame": 3463,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 143
+      },
+      {
+        "frame": 3464,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 144
+      },
+      {
+        "frame": 3465,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3466,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3467,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3468,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3469,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3470,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3471,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3472,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3473,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3474,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3475,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3476,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3477,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3478,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3479,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3480,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3481,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3482,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10,
+        "clock": 145
+      },
+      {
+        "frame": 3483,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 145
+      },
+      {
+        "frame": 3484,
+        "x": 61031,
+        "y": 20480,
+        "counter": 4,
+        "room": 288,
+        "state": 12,
+        "clock": 146
+      },
+      {
+        "frame": 3485,
+        "x": 60622,
+        "y": 20480,
+        "counter": 3,
+        "room": 288,
+        "state": 12,
+        "clock": 147
+      },
+      {
+        "frame": 3486,
+        "x": 60213,
+        "y": 20480,
+        "counter": 2,
+        "room": 288,
+        "state": 12,
+        "clock": 148
+      },
+      {
+        "frame": 3487,
+        "x": 59804,
+        "y": 20480,
+        "counter": 1,
+        "room": 288,
+        "state": 12,
+        "clock": 149
+      },
+      {
+        "frame": 3488,
+        "x": 59392,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 150
+      },
+      {
+        "frame": 3489,
+        "x": 58983,
+        "y": 20480,
+        "counter": 4,
+        "room": 288,
+        "state": 12,
+        "clock": 151
+      },
+      {
+        "frame": 3490,
+        "x": 58574,
+        "y": 20480,
+        "counter": 3,
+        "room": 288,
+        "state": 12,
+        "clock": 152
+      },
+      {
+        "frame": 3491,
+        "x": 58165,
+        "y": 20480,
+        "counter": 2,
+        "room": 288,
+        "state": 12,
+        "clock": 153
+      },
+      {
+        "frame": 3492,
+        "x": 57756,
+        "y": 20480,
+        "counter": 1,
+        "room": 288,
+        "state": 12,
+        "clock": 154
+      },
+      {
+        "frame": 3493,
+        "x": 57344,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 155
+      },
+      {
+        "frame": 3494,
+        "x": 56935,
+        "y": 20480,
+        "counter": 4,
+        "room": 288,
+        "state": 12,
+        "clock": 156
+      },
+      {
+        "frame": 3495,
+        "x": 56526,
+        "y": 20480,
+        "counter": 3,
+        "room": 288,
+        "state": 12,
+        "clock": 157
+      },
+      {
+        "frame": 3496,
+        "x": 56117,
+        "y": 20480,
+        "counter": 2,
+        "room": 288,
+        "state": 12,
+        "clock": 158
+      },
+      {
+        "frame": 3497,
+        "x": 55708,
+        "y": 20480,
+        "counter": 1,
+        "room": 288,
+        "state": 12,
+        "clock": 159
+      },
+      {
+        "frame": 3498,
+        "x": 55296,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 160
+      },
+      {
+        "frame": 3499,
+        "x": 54887,
+        "y": 20480,
+        "counter": 4,
+        "room": 288,
+        "state": 12,
+        "clock": 161
+      },
+      {
+        "frame": 3500,
+        "x": 54478,
+        "y": 20480,
+        "counter": 3,
+        "room": 288,
+        "state": 12,
+        "clock": 162
+      },
+      {
+        "frame": 3501,
+        "x": 54069,
+        "y": 20480,
+        "counter": 2,
+        "room": 288,
+        "state": 12,
+        "clock": 163
+      },
+      {
+        "frame": 3502,
+        "x": 53660,
+        "y": 20480,
+        "counter": 1,
+        "room": 288,
+        "state": 12,
+        "clock": 164
+      },
+      {
+        "frame": 3503,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 165
+      },
+      {
+        "frame": 3504,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 166
+      },
+      {
+        "frame": 3505,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 167
+      },
+      {
+        "frame": 3506,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 168
+      },
+      {
+        "frame": 3507,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 169
+      },
+      {
+        "frame": 3508,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 170
+      },
+      {
+        "frame": 3509,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 171
+      },
+      {
+        "frame": 3510,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 172
+      },
+      {
+        "frame": 3511,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 173
+      },
+      {
+        "frame": 3512,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 174
+      },
+      {
+        "frame": 3513,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 175
+      },
+      {
+        "frame": 3514,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 176
+      },
+      {
+        "frame": 3515,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 177
+      },
+      {
+        "frame": 3516,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 178
+      },
+      {
+        "frame": 3517,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 179
+      },
+      {
+        "frame": 3518,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 180
+      },
+      {
+        "frame": 3519,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 181
+      },
+      {
+        "frame": 3520,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 182
+      },
+      {
+        "frame": 3521,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 183
+      },
+      {
+        "frame": 3522,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 184
+      },
+      {
+        "frame": 3523,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 185
+      },
+      {
+        "frame": 3524,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 186
+      },
+      {
+        "frame": 3525,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 187
+      },
+      {
+        "frame": 3526,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 188
+      },
+      {
+        "frame": 3527,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 189
+      },
+      {
+        "frame": 3528,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 190
+      },
+      {
+        "frame": 3529,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 191
+      },
+      {
+        "frame": 3530,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12,
+        "clock": 192
+      }
+    ],
+    "md": [
+      {
+        "frame": 3408,
+        "x": 10240,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3409,
+        "x": 10240,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3410,
+        "x": 9831,
+        "y": 20480,
+        "counter": 4,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3411,
+        "x": 9422,
+        "y": 20480,
+        "counter": 3,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3412,
+        "x": 9013,
+        "y": 20480,
+        "counter": 2,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3413,
+        "x": 8604,
+        "y": 20480,
+        "counter": 1,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3414,
+        "x": 8192,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3415,
+        "x": 8192,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3416,
+        "x": 7783,
+        "y": 20480,
+        "counter": 4,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3417,
+        "x": 7374,
+        "y": 20480,
+        "counter": 3,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3418,
+        "x": 6965,
+        "y": 20480,
+        "counter": 2,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3419,
+        "x": 6556,
+        "y": 20480,
+        "counter": 1,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3420,
+        "x": 6144,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3421,
+        "x": 5735,
+        "y": 20480,
+        "counter": 4,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3422,
+        "x": 5326,
+        "y": 20480,
+        "counter": 3,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3423,
+        "x": 4917,
+        "y": 20480,
+        "counter": 2,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3424,
+        "x": 4508,
+        "y": 20480,
+        "counter": 1,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3425,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 12
+      },
+      {
+        "frame": 3426,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 289,
+        "state": 10
+      },
+      {
+        "frame": 3427,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3428,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3429,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3430,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3431,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3432,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3433,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3434,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3435,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3436,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3437,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3438,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3439,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3440,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3441,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3442,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3443,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3444,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3445,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3446,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3447,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3448,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3449,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3450,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3451,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3452,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3453,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3454,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3455,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3456,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3457,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3458,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3459,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3460,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3461,
+        "x": 4096,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3462,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3463,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3464,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3465,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3466,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3467,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3468,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3469,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3470,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3471,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3472,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3473,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3474,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3475,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3476,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3477,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3478,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3479,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 10
+      },
+      {
+        "frame": 3480,
+        "x": 61440,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3481,
+        "x": 61031,
+        "y": 20480,
+        "counter": 4,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3482,
+        "x": 60622,
+        "y": 20480,
+        "counter": 3,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3483,
+        "x": 60213,
+        "y": 20480,
+        "counter": 2,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3484,
+        "x": 59804,
+        "y": 20480,
+        "counter": 1,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3485,
+        "x": 59392,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3486,
+        "x": 58983,
+        "y": 20480,
+        "counter": 4,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3487,
+        "x": 58574,
+        "y": 20480,
+        "counter": 3,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3488,
+        "x": 58165,
+        "y": 20480,
+        "counter": 2,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3489,
+        "x": 57756,
+        "y": 20480,
+        "counter": 1,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3490,
+        "x": 57344,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3491,
+        "x": 56935,
+        "y": 20480,
+        "counter": 4,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3492,
+        "x": 56526,
+        "y": 20480,
+        "counter": 3,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3493,
+        "x": 56117,
+        "y": 20480,
+        "counter": 2,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3494,
+        "x": 55708,
+        "y": 20480,
+        "counter": 1,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3495,
+        "x": 55296,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3496,
+        "x": 54887,
+        "y": 20480,
+        "counter": 4,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3497,
+        "x": 54478,
+        "y": 20480,
+        "counter": 3,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3498,
+        "x": 54069,
+        "y": 20480,
+        "counter": 2,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3499,
+        "x": 53660,
+        "y": 20480,
+        "counter": 1,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3500,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3501,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3502,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3503,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3504,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3505,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3506,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3507,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3508,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3509,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3510,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3511,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3512,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3513,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3514,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3515,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3516,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3517,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3518,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3519,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3520,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3521,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3522,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3523,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3524,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3525,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3526,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3527,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3528,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3529,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      },
+      {
+        "frame": 3530,
+        "x": 53248,
+        "y": 20480,
+        "counter": 0,
+        "room": 288,
+        "state": 12
+      }
+    ]
+  },
+  "read_only_instruction_cycle_hook": true,
+  "source_rom_unmodified": true
+}

@@ -1,0 +1,49 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "evidence": [
+    {
+      "path": "validation\\paid-passage-loader\\auto-cycle-events.json",
+      "sha256": "0ed7dc6d0c08a2290d065fefb37bb099d7d1831f891414ef3b23f2a6363b2136"
+    },
+    {
+      "path": "validation\\paid-passage-loader\\pal-cycle-events.json",
+      "sha256": "d3bc4c0af50da0085e0e70a7c5abf1c41408d589fea02651a958ac4ef510a1bb"
+    }
+  ],
+  "regions": [
+    {
+      "region": "auto",
+      "post_wait_clock": 97,
+      "exact_phases": {
+        "world_map_caller": 15311,
+        "HUD": 32004,
+        "palette": 552,
+        "transfer_excluding_save_spin": 45008,
+        "map_HUD_caller_excluding_save_spin": 270284
+      },
+      "wait_save_spin_tstates": 6694,
+      "observed_repeated_busy_loops": 224
+    },
+    {
+      "region": "pal",
+      "post_wait_clock": 134,
+      "exact_phases": {
+        "world_map_caller": 15311,
+        "HUD": 32004,
+        "palette": 553,
+        "transfer_excluding_save_spin": 45008,
+        "map_HUD_caller_excluding_save_spin": 270285
+      },
+      "wait_save_spin_tstates": 43640,
+      "observed_repeated_busy_loops": 1498
+    }
+  ],
+  "exact_phase_comparisons": 10,
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Retained live original6D->96 paid-exit profiles; source routines unpatched,controlled entrance/hero/initial clock. Default health/magic24/max24,gold10,no gems or curse. End-of-wait clock is observed rather than predicted.",
+    "190B,HUD,palette,VDP map transfer excluding save/spin,and full1DE2 caller excluding save/spin match independently in both regions. Loop counts are recovered for auditing instruction shape,not a prediction of wait length or a native delay.",
+    "Whole loading/interrupt phase,source logical-clock freeze,native elapsed work,RNG and complete transition fidelity remain unfinished."
+  ]
+}

@@ -1,0 +1,731 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "room_count": 512,
+  "pattern_offset_bytes": 4,
+  "unique_graphic_types": 80,
+  "pattern_bytes": 89408,
+  "resources": [
+    {
+      "type": 32,
+      "bank": 15,
+      "rom_start": 251826,
+      "rom_end": 253345,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 55
+    },
+    {
+      "type": 33,
+      "bank": 15,
+      "rom_start": 251826,
+      "rom_end": 253345,
+      "palette_remap": 16,
+      "tile_base": 21,
+      "tile_count": 55
+    },
+    {
+      "type": 34,
+      "bank": 15,
+      "rom_start": 251826,
+      "rom_end": 253345,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 55
+    },
+    {
+      "type": 35,
+      "bank": 15,
+      "rom_start": 253345,
+      "rom_end": 253603,
+      "palette_remap": 32,
+      "tile_base": 52,
+      "tile_count": 10
+    },
+    {
+      "type": 36,
+      "bank": 15,
+      "rom_start": 253345,
+      "rom_end": 253603,
+      "palette_remap": 16,
+      "tile_base": 55,
+      "tile_count": 10
+    },
+    {
+      "type": 38,
+      "bank": 15,
+      "rom_start": 253603,
+      "rom_end": 253763,
+      "palette_remap": 32,
+      "tile_base": 55,
+      "tile_count": 6
+    },
+    {
+      "type": 39,
+      "bank": 15,
+      "rom_start": 253603,
+      "rom_end": 253763,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 40,
+      "bank": 15,
+      "rom_start": 253603,
+      "rom_end": 253763,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 41,
+      "bank": 15,
+      "rom_start": 253763,
+      "rom_end": 254900,
+      "palette_remap": 32,
+      "tile_base": 16,
+      "tile_count": 40
+    },
+    {
+      "type": 42,
+      "bank": 15,
+      "rom_start": 253763,
+      "rom_end": 254900,
+      "palette_remap": 0,
+      "tile_base": 40,
+      "tile_count": 40
+    },
+    {
+      "type": 43,
+      "bank": 15,
+      "rom_start": 254900,
+      "rom_end": 255305,
+      "palette_remap": 0,
+      "tile_base": 21,
+      "tile_count": 16
+    },
+    {
+      "type": 44,
+      "bank": 15,
+      "rom_start": 255305,
+      "rom_end": 255824,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 16
+    },
+    {
+      "type": 45,
+      "bank": 15,
+      "rom_start": 255824,
+      "rom_end": 256444,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 21
+    },
+    {
+      "type": 46,
+      "bank": 15,
+      "rom_start": 255824,
+      "rom_end": 256444,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 21
+    },
+    {
+      "type": 47,
+      "bank": 15,
+      "rom_start": 255824,
+      "rom_end": 256444,
+      "palette_remap": 0,
+      "tile_base": 21,
+      "tile_count": 21
+    },
+    {
+      "type": 49,
+      "bank": 15,
+      "rom_start": 256444,
+      "rom_end": 256624,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 50,
+      "bank": 15,
+      "rom_start": 256444,
+      "rom_end": 256624,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 51,
+      "bank": 15,
+      "rom_start": 256624,
+      "rom_end": 257783,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 45
+    },
+    {
+      "type": 52,
+      "bank": 15,
+      "rom_start": 256624,
+      "rom_end": 257783,
+      "palette_remap": 0,
+      "tile_base": 45,
+      "tile_count": 45
+    },
+    {
+      "type": 53,
+      "bank": 15,
+      "rom_start": 257783,
+      "rom_end": 258495,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 24
+    },
+    {
+      "type": 54,
+      "bank": 15,
+      "rom_start": 257783,
+      "rom_end": 258495,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 24
+    },
+    {
+      "type": 55,
+      "bank": 15,
+      "rom_start": 257783,
+      "rom_end": 258495,
+      "palette_remap": 0,
+      "tile_base": 10,
+      "tile_count": 24
+    },
+    {
+      "type": 56,
+      "bank": 15,
+      "rom_start": 258495,
+      "rom_end": 260310,
+      "palette_remap": 16,
+      "tile_base": 6,
+      "tile_count": 60
+    },
+    {
+      "type": 57,
+      "bank": 15,
+      "rom_start": 258495,
+      "rom_end": 260310,
+      "palette_remap": 0,
+      "tile_base": 66,
+      "tile_count": 60
+    },
+    {
+      "type": 58,
+      "bank": 15,
+      "rom_start": 260310,
+      "rom_end": 261675,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 52
+    },
+    {
+      "type": 59,
+      "bank": 15,
+      "rom_start": 260310,
+      "rom_end": 261675,
+      "palette_remap": 16,
+      "tile_base": 73,
+      "tile_count": 52
+    },
+    {
+      "type": 60,
+      "bank": 13,
+      "rom_start": 216692,
+      "rom_end": 217530,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 29
+    },
+    {
+      "type": 61,
+      "bank": 14,
+      "rom_start": 233526,
+      "rom_end": 234740,
+      "palette_remap": 16,
+      "tile_base": 6,
+      "tile_count": 46
+    },
+    {
+      "type": 62,
+      "bank": 14,
+      "rom_start": 233526,
+      "rom_end": 234740,
+      "palette_remap": 0,
+      "tile_base": 46,
+      "tile_count": 46
+    },
+    {
+      "type": 63,
+      "bank": 14,
+      "rom_start": 234740,
+      "rom_end": 235034,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 10
+    },
+    {
+      "type": 64,
+      "bank": 14,
+      "rom_start": 235034,
+      "rom_end": 235972,
+      "palette_remap": 0,
+      "tile_base": 10,
+      "tile_count": 29
+    },
+    {
+      "type": 65,
+      "bank": 14,
+      "rom_start": 235972,
+      "rom_end": 236276,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 10
+    },
+    {
+      "type": 66,
+      "bank": 14,
+      "rom_start": 236276,
+      "rom_end": 237223,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 35
+    },
+    {
+      "type": 67,
+      "bank": 14,
+      "rom_start": 237223,
+      "rom_end": 238443,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 52
+    },
+    {
+      "type": 68,
+      "bank": 14,
+      "rom_start": 237223,
+      "rom_end": 238443,
+      "palette_remap": 16,
+      "tile_base": 20,
+      "tile_count": 52
+    },
+    {
+      "type": 69,
+      "bank": 14,
+      "rom_start": 237223,
+      "rom_end": 238443,
+      "palette_remap": 0,
+      "tile_base": 72,
+      "tile_count": 52
+    },
+    {
+      "type": 70,
+      "bank": 14,
+      "rom_start": 238443,
+      "rom_end": 239083,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 20
+    },
+    {
+      "type": 71,
+      "bank": 14,
+      "rom_start": 239083,
+      "rom_end": 239201,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 72,
+      "bank": 14,
+      "rom_start": 239083,
+      "rom_end": 239201,
+      "palette_remap": 16,
+      "tile_base": 8,
+      "tile_count": 6
+    },
+    {
+      "type": 73,
+      "bank": 14,
+      "rom_start": 239083,
+      "rom_end": 239201,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 74,
+      "bank": 14,
+      "rom_start": 239201,
+      "rom_end": 239497,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 9
+    },
+    {
+      "type": 75,
+      "bank": 14,
+      "rom_start": 239201,
+      "rom_end": 239497,
+      "palette_remap": 16,
+      "tile_base": 9,
+      "tile_count": 9
+    },
+    {
+      "type": 76,
+      "bank": 14,
+      "rom_start": 239201,
+      "rom_end": 239497,
+      "palette_remap": 0,
+      "tile_base": 36,
+      "tile_count": 9
+    },
+    {
+      "type": 77,
+      "bank": 14,
+      "rom_start": 239497,
+      "rom_end": 239645,
+      "palette_remap": 16,
+      "tile_base": 8,
+      "tile_count": 8
+    },
+    {
+      "type": 78,
+      "bank": 14,
+      "rom_start": 239497,
+      "rom_end": 239645,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 79,
+      "bank": 14,
+      "rom_start": 239645,
+      "rom_end": 240506,
+      "palette_remap": 32,
+      "tile_base": 32,
+      "tile_count": 28
+    },
+    {
+      "type": 80,
+      "bank": 14,
+      "rom_start": 239645,
+      "rom_end": 240506,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 28
+    },
+    {
+      "type": 81,
+      "bank": 14,
+      "rom_start": 239645,
+      "rom_end": 240506,
+      "palette_remap": 0,
+      "tile_base": 46,
+      "tile_count": 28
+    },
+    {
+      "type": 82,
+      "bank": 14,
+      "rom_start": 240506,
+      "rom_end": 241600,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 36
+    },
+    {
+      "type": 83,
+      "bank": 14,
+      "rom_start": 241600,
+      "rom_end": 242525,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 32
+    },
+    {
+      "type": 84,
+      "bank": 14,
+      "rom_start": 242525,
+      "rom_end": 243860,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 48
+    },
+    {
+      "type": 85,
+      "bank": 14,
+      "rom_start": 242525,
+      "rom_end": 243860,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 48
+    },
+    {
+      "type": 86,
+      "bank": 14,
+      "rom_start": 242525,
+      "rom_end": 243860,
+      "palette_remap": 0,
+      "tile_base": 8,
+      "tile_count": 48
+    },
+    {
+      "type": 87,
+      "bank": 14,
+      "rom_start": 243860,
+      "rom_end": 244104,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 88,
+      "bank": 14,
+      "rom_start": 243860,
+      "rom_end": 244104,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 89,
+      "bank": 14,
+      "rom_start": 244104,
+      "rom_end": 245095,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 32
+    },
+    {
+      "type": 90,
+      "bank": 14,
+      "rom_start": 244104,
+      "rom_end": 245095,
+      "palette_remap": 0,
+      "tile_base": 32,
+      "tile_count": 32
+    },
+    {
+      "type": 91,
+      "bank": 14,
+      "rom_start": 245095,
+      "rom_end": 245346,
+      "palette_remap": 0,
+      "tile_base": 32,
+      "tile_count": 8
+    },
+    {
+      "type": 92,
+      "bank": 13,
+      "rom_start": 217530,
+      "rom_end": 218334,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 32
+    },
+    {
+      "type": 93,
+      "bank": 13,
+      "rom_start": 217530,
+      "rom_end": 218334,
+      "palette_remap": 0,
+      "tile_base": 52,
+      "tile_count": 32
+    },
+    {
+      "type": 94,
+      "bank": 15,
+      "rom_start": 261675,
+      "rom_end": 261907,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 95,
+      "bank": 13,
+      "rom_start": 218334,
+      "rom_end": 219586,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 46
+    },
+    {
+      "type": 96,
+      "bank": 13,
+      "rom_start": 218334,
+      "rom_end": 219586,
+      "palette_remap": 0,
+      "tile_base": 32,
+      "tile_count": 46
+    },
+    {
+      "type": 97,
+      "bank": 14,
+      "rom_start": 245346,
+      "rom_end": 245599,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 98,
+      "bank": 14,
+      "rom_start": 245346,
+      "rom_end": 245599,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 99,
+      "bank": 13,
+      "rom_start": 219586,
+      "rom_end": 221034,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 49
+    },
+    {
+      "type": 100,
+      "bank": 13,
+      "rom_start": 219586,
+      "rom_end": 221034,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 49
+    },
+    {
+      "type": 101,
+      "bank": 13,
+      "rom_start": 221034,
+      "rom_end": 221549,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 20
+    },
+    {
+      "type": 103,
+      "bank": 13,
+      "rom_start": 221549,
+      "rom_end": 222216,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 24
+    },
+    {
+      "type": 104,
+      "bank": 13,
+      "rom_start": 222216,
+      "rom_end": 225315,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 107
+    },
+    {
+      "type": 105,
+      "bank": 13,
+      "rom_start": 222216,
+      "rom_end": 225315,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 107
+    },
+    {
+      "type": 106,
+      "bank": 13,
+      "rom_start": 225315,
+      "rom_end": 226300,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 46
+    },
+    {
+      "type": 107,
+      "bank": 13,
+      "rom_start": 225315,
+      "rom_end": 226300,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 46
+    },
+    {
+      "type": 108,
+      "bank": 8,
+      "rom_start": 143962,
+      "rom_end": 146382,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 81
+    },
+    {
+      "type": 109,
+      "bank": 9,
+      "rom_start": 159019,
+      "rom_end": 162474,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 121
+    },
+    {
+      "type": 120,
+      "bank": 13,
+      "rom_start": 219586,
+      "rom_end": 221034,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 49
+    },
+    {
+      "type": 121,
+      "bank": 13,
+      "rom_start": 219586,
+      "rom_end": 221034,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 49
+    },
+    {
+      "type": 122,
+      "bank": 13,
+      "rom_start": 222216,
+      "rom_end": 225315,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 107
+    },
+    {
+      "type": 123,
+      "bank": 13,
+      "rom_start": 222216,
+      "rom_end": 225315,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 107
+    },
+    {
+      "type": 124,
+      "bank": 13,
+      "rom_start": 225315,
+      "rom_end": 226300,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 46
+    }
+  ],
+  "story_conditionals_ported": false,
+  "actor_simulation_ported": false
+}

@@ -1,0 +1,38 @@
+{
+  "source": "Original ROM resources, no emulator image/audio captures",
+  "native_routines": [
+    "0C98",
+    "0D10",
+    "0E4A",
+    "0E3F",
+    "0DD2",
+    "0D8C",
+    "1061"
+  ],
+  "scene_headers": [
+    "bank6:9D70",
+    "bank6:A655",
+    "bank6:AF1F"
+  ],
+  "event_lines": [
+    18,
+    19,
+    39,
+    40,
+    44
+  ],
+  "text_lines": 65,
+  "music_command": 133,
+  "arrays": {
+    "intro_bank6": 16384,
+    "sound_low_rom": 1025,
+    "world_music_rooms": 11,
+    "intro_fixed": 330,
+    "intro_mono_font": 272,
+    "intro_symbols_rle": 177,
+    "intro_fire_colors": 18,
+    "intro_lightning_colors": 35,
+    "house_npc_text": 398,
+    "house_npc_text_index": 12
+  }
+}

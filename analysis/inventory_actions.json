@@ -1,0 +1,75 @@
+{
+  "provenance": "ROM dispatch table 2EDB, selected index C0DF",
+  "handlers": [
+    {
+      "slot": 0,
+      "address": "0x2faa",
+      "implemented": true
+    },
+    {
+      "slot": 1,
+      "address": "0x2fb4",
+      "implemented": true
+    },
+    {
+      "slot": 2,
+      "address": "0x2fbe",
+      "implemented": false
+    },
+    {
+      "slot": 3,
+      "address": "0x2fd2",
+      "implemented": false
+    },
+    {
+      "slot": 4,
+      "address": "0x3050",
+      "implemented": false
+    },
+    {
+      "slot": 5,
+      "address": "0x3077",
+      "implemented": false
+    },
+    {
+      "slot": 6,
+      "address": "0x30a7",
+      "implemented": false
+    },
+    {
+      "slot": 7,
+      "address": "0x3021",
+      "implemented": true,
+      "scope": "Normal exterior, tested health/magic capacities 24 and 48; sounds absent"
+    },
+    {
+      "slot": 8,
+      "address": "0x30d6",
+      "implemented": true,
+      "scope": "Normal exterior, tested health/magic capacities 24 and 48; sounds absent"
+    },
+    {
+      "slot": 9,
+      "address": "0x30e8",
+      "implemented": false
+    },
+    {
+      "slot": 10,
+      "address": "0x3124",
+      "implemented": false
+    },
+    {
+      "slot": 11,
+      "address": "0x31e7",
+      "implemented": false
+    }
+  ],
+  "spell_cost_table_address": "30D2",
+  "spell_costs": [
+    8,
+    8,
+    32,
+    24
+  ],
+  "next_target": "Remaining item handlers 2/3/4/5/6/9/10/11 and their auxiliary world entities; preserve source conditions, magic costs, maps and scene transitions"
+}

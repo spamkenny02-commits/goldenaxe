@@ -1,0 +1,37 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "room": 164,
+  "resources": [
+    {
+      "type": 38,
+      "bank": 15,
+      "rom_start": 253603,
+      "rom_end": 253763,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 32,
+      "bank": 15,
+      "rom_start": 251826,
+      "rom_end": 253345,
+      "palette_remap": 32,
+      "tile_base": 6,
+      "tile_count": 55
+    }
+  ],
+  "actor_count": 5,
+  "allocated_tiles": 61,
+  "checked_entity_bytes": 768,
+  "checked_pattern_bytes": 1952,
+  "initial_characteristics_exact": true,
+  "final_entities_exact": true,
+  "final_patterns_exact": true,
+  "first_spawn_with_explicit_refresh_inputs_exact": true,
+  "z80_refresh_stream_reproduced": false,
+  "complete_actor_simulation": false,
+  "reference_core": "official downloaded GX core",
+  "official_core_reference_exact": true,
+  "instrumented_core_reference_exact": true
+}

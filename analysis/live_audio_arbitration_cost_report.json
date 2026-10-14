@@ -1,0 +1,40 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 3606,
+  "arbitration_cases": 1202,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 1803,
+      "tempo": 601,
+      "fade": 601,
+      "arbitration": 601,
+      "arbitration_decisions": {
+        "empty": 1799,
+        "accepted": 4
+      },
+      "raw_sha256": "780ae66c0be365cfe9faf542b879d86455f445ddfa69d8871c60b573fe5254cb",
+      "source_cycle_array_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "cases": 1803,
+      "tempo": 601,
+      "fade": 601,
+      "arbitration": 601,
+      "arbitration_decisions": {
+        "empty": 1800,
+        "accepted": 3
+      },
+      "raw_sha256": "9878c02d71a05851f3c30326466b815dd8ac595f34adac754a03e939f0bcb2e3",
+      "source_cycle_array_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actual6D->96 paid route,full destination mask,PAL/NTSC,601 audio IRQs observed per region. All three independently modeled helper costs and400-byte states compare;original cycle arrays identical to retained source reference.",
+    "Other routes/phase histories,dispatch,channel/envelope costs,source RNG and native IRQ/load scheduling are not established."
+  ]
+}

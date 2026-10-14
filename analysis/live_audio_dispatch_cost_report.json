@@ -1,0 +1,48 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 4808,
+  "dispatch_cases": 1202,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 2404,
+      "tempo": 601,
+      "fade": 601,
+      "arbitration": 601,
+      "dispatch": 601,
+      "dispatch_commands": {
+        "0x80": 597,
+        "0xb0": 1,
+        "0x82": 1,
+        "0x98": 2
+      },
+      "consecutive_helper_state_checks": 1803,
+      "raw_sha256": "7129075be2d1e870d7f16b46306dd5f7fb0aa7654d9b53f34a5bb04af20c786b",
+      "source_cycle_array_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "cases": 2404,
+      "tempo": 601,
+      "fade": 601,
+      "arbitration": 601,
+      "dispatch": 601,
+      "dispatch_commands": {
+        "0x80": 598,
+        "0xb0": 1,
+        "0x82": 1,
+        "0x98": 1
+      },
+      "consecutive_helper_state_checks": 1803,
+      "raw_sha256": "155920431be9866e00727594c3903c39ced3c05bc7b816062490ea46017769a7",
+      "source_cycle_array_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actual6D->96/full-mask paid route,PAL/NTSC,601 IRQs per region. Four independent state/cost models compare all400 audio RAM bytes and each helper cost. Consecutive arbitration->tempo->fade->dispatch snapshots chain exactly;original cycle arrays equal retained source reference.",
+    "This route does not exercise all29 effects/all13 music tracks;isolated suite supplies those command cases. B4 and five out-of-table commands remain excluded. Seven channel/envelope processing and full future IRQ cost/phase/physical loading prediction remain open."
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "a02f0920515d06b754a6c480593f1049bcf0495d213db1b4af93503e43c558a6",
+  "cases": 36,
+  "model": {
+    "foreground_tstates": 982060,
+    "components": {
+      "classify_and_bank_change": 266,
+      "palette_and_patterns": 868078,
+      "metatiles": 56485,
+      "metatile_backup": 373,
+      "terrain_patch": 481,
+      "dungeon_palette_skip": 65,
+      "extra_metatiles": 4351,
+      "terrain_pointer": 27,
+      "terrain_decode": 30284,
+      "SRAM_enable": 64,
+      "terrain_SRAM_copy": 21529,
+      "SRAM_disable_return": 57
+    },
+    "extra_metatile_count": 7,
+    "scope": "World class0 graphics bank change, display off,C0AC0; other branches not modeled."
+  },
+  "rows": [
+    {
+      "region": "auto",
+      "room": 26,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 26,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 26,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 60,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 60,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 60,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 54,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 54,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 54,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 135,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 135,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 135,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 109,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 109,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 109,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 150,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 150,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "auto",
+      "room": 150,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 26,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 26,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 26,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 60,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 60,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 60,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 54,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 54,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 54,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 135,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 135,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 135,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 109,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 109,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 109,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 150,
+      "previous_graphics_bank": 0,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 150,
+      "previous_graphics_bank": 14,
+      "foreground_tstates": 982060
+    },
+    {
+      "region": "pal",
+      "room": 150,
+      "previous_graphics_bank": 255,
+      "foreground_tstates": 982060
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original16D0,032A,0C00,1A30,banked helpers and SRAM operations execute unchanged. Custom boot supplies ordinary class0 room,previous graphics bank,C0AC0 and display-off state.24B9 is patched RET only as the post-return marker; its17-T-state CALL is removed.",
+    "Six paid-passage destinations,three distinct previous banks,PAL/NTSC reference core. Read-only timing excludes IRQ cycles. Other graphics classes,C0AC nonzero,already-loaded graphics and display-on entry are outside this model.",
+    "Reference GX INI timing is retained. Physical hardware contention,190B/map/HUD callers,native elapsed work and complete transition cadence remain unverified."
+  ]
+}

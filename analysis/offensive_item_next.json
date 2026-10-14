@@ -1,0 +1,189 @@
+{
+  "provenance": "ROM tables and Z80 listings; fire now translated, see fire_report/fire_damage_report for dynamic evidence. Other items remain pending.",
+  "hero_cast_initial_handler": "0x376c",
+  "hero_cast_update_handler": "0x377d",
+  "hero_cast_descriptor": "83E3",
+  "hero_cast_bitmap_table": "3D7B",
+  "auxiliary_record": "C330",
+  "types": {
+    "3": "0x393a",
+    "4": "0x3a27",
+    "5": "0x39cc"
+  },
+  "fire": {
+    "activation": "3050",
+    "charge_byte": "C0C6",
+    "first_charge_only_spends_magic": true,
+    "charge_cycle_mask": 3,
+    "descriptor_base": "8411",
+    "descriptor_level_step": 8,
+    "velocity_words": [
+      253,
+      3,
+      64768,
+      768
+    ],
+    "origin_offset_words": [
+      248,
+      0,
+      63738,
+      2298
+    ],
+    "common_move_counter": 2,
+    "terrain_stop_high_flags": [
+      128,
+      160
+    ],
+    "native_source": "megadrive/src/actors.c: tick_world_spell; main.c: activate_hero_item/cast states",
+    "velocity_q8_yx": [
+      [
+        -768,
+        0
+      ],
+      [
+        768,
+        0
+      ],
+      [
+        0,
+        -768
+      ],
+      [
+        0,
+        768
+      ]
+    ],
+    "origin_signed_yx": [
+      [
+        -8,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        -6,
+        -8
+      ],
+      [
+        -6,
+        8
+      ]
+    ]
+  },
+  "second_spell": {
+    "activation": "3077",
+    "descriptor": "8461",
+    "velocity_words": [
+      254,
+      2,
+      65024,
+      512
+    ],
+    "terrain_mutation_handler": "3A9A",
+    "terrain_mutation_tables": [
+      "3AE2",
+      "3AEE",
+      "3AF7",
+      "3AFF"
+    ],
+    "requires_native_metatile_mutation": true,
+    "terrain_offset_pairs_yx": {
+      "0x3af7": [
+        [
+          -12,
+          -4
+        ],
+        [
+          -4,
+          -4
+        ],
+        [
+          -12,
+          -4
+        ],
+        [
+          -12,
+          4
+        ]
+      ],
+      "0x3aff": [
+        [
+          -12,
+          4
+        ],
+        [
+          -4,
+          4
+        ],
+        [
+          -4,
+          -4
+        ],
+        [
+          -4,
+          4
+        ]
+      ]
+    },
+    "normal_class_replacement_records": {
+      "0x3ae2": [
+        [
+          56,
+          0,
+          41,
+          0
+        ],
+        [
+          133,
+          63,
+          0,
+          0
+        ],
+        [
+          61,
+          58,
+          57,
+          58
+        ]
+      ],
+      "0x3aee": [
+        [
+          19,
+          0,
+          41,
+          0
+        ],
+        [
+          134,
+          31,
+          0,
+          0
+        ]
+      ]
+    },
+    "record_format": [
+      "matched metatile",
+      "replacement",
+      "optional metatile one row below",
+      "replacement below"
+    ],
+    "metatile_update_addresses": {
+      "match": "3591",
+      "write_and_special_progress": "35B7",
+      "enqueue_2x2": "35D4",
+      "source_metatiles": "C900",
+      "mutable_cells": "DC00",
+      "map_ram": "D600",
+      "queue_pointer": "C034"
+    }
+  },
+  "temporary_effect": {
+    "activation": "30A7",
+    "duration_byte": "C090",
+    "value_source": "C0E6",
+    "hero_initial_state": 6,
+    "hero_update_state": 7
+  }
+}

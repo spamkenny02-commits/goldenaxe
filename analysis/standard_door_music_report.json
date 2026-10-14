@@ -1,0 +1,280 @@
+{
+  "diagnostic_only": true,
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "name": "house",
+      "town": 80,
+      "house": 79,
+      "region": "auto",
+      "music_sequences": {
+        "sms": [
+          {
+            "frame": 3100,
+            "command": 132,
+            "room": 149
+          },
+          {
+            "frame": 3138,
+            "command": 176,
+            "room": 79
+          },
+          {
+            "frame": 3156,
+            "command": 135,
+            "room": 79
+          },
+          {
+            "frame": 3422,
+            "command": 176,
+            "room": 80
+          },
+          {
+            "frame": 3445,
+            "command": 130,
+            "room": 80
+          }
+        ],
+        "md": [
+          {
+            "frame": 3100,
+            "command": 132,
+            "room": 149
+          },
+          {
+            "frame": 3120,
+            "command": 130,
+            "room": 79
+          },
+          {
+            "frame": 3138,
+            "command": 176,
+            "room": 79
+          },
+          {
+            "frame": 3154,
+            "command": 135,
+            "room": 79
+          },
+          {
+            "frame": 3422,
+            "command": 176,
+            "room": 80
+          },
+          {
+            "frame": 3439,
+            "command": 130,
+            "room": 80
+          }
+        ]
+      }
+    },
+    {
+      "name": "dungeon",
+      "town": 16,
+      "house": 496,
+      "region": "auto",
+      "music_sequences": {
+        "sms": [
+          {
+            "frame": 3100,
+            "command": 132,
+            "room": 149
+          },
+          {
+            "frame": 3138,
+            "command": 176,
+            "room": 496
+          },
+          {
+            "frame": 3156,
+            "command": 131,
+            "room": 496
+          },
+          {
+            "frame": 3421,
+            "command": 176,
+            "room": 16
+          },
+          {
+            "frame": 3448,
+            "command": 130,
+            "room": 16
+          }
+        ],
+        "md": [
+          {
+            "frame": 3100,
+            "command": 132,
+            "room": 149
+          },
+          {
+            "frame": 3120,
+            "command": 130,
+            "room": 496
+          },
+          {
+            "frame": 3138,
+            "command": 176,
+            "room": 496
+          },
+          {
+            "frame": 3154,
+            "command": 131,
+            "room": 496
+          },
+          {
+            "frame": 3421,
+            "command": 176,
+            "room": 16
+          },
+          {
+            "frame": 3438,
+            "command": 130,
+            "room": 16
+          }
+        ]
+      }
+    },
+    {
+      "name": "house",
+      "town": 80,
+      "house": 79,
+      "region": "pal",
+      "music_sequences": {
+        "sms": [
+          {
+            "frame": 3100,
+            "command": 132,
+            "room": 149
+          },
+          {
+            "frame": 3138,
+            "command": 176,
+            "room": 79
+          },
+          {
+            "frame": 3153,
+            "command": 135,
+            "room": 79
+          },
+          {
+            "frame": 3422,
+            "command": 176,
+            "room": 80
+          },
+          {
+            "frame": 3442,
+            "command": 130,
+            "room": 80
+          }
+        ],
+        "md": [
+          {
+            "frame": 3100,
+            "command": 132,
+            "room": 149
+          },
+          {
+            "frame": 3120,
+            "command": 130,
+            "room": 79
+          },
+          {
+            "frame": 3138,
+            "command": 176,
+            "room": 79
+          },
+          {
+            "frame": 3151,
+            "command": 135,
+            "room": 79
+          },
+          {
+            "frame": 3422,
+            "command": 176,
+            "room": 80
+          },
+          {
+            "frame": 3436,
+            "command": 130,
+            "room": 80
+          }
+        ]
+      }
+    },
+    {
+      "name": "dungeon",
+      "town": 16,
+      "house": 496,
+      "region": "pal",
+      "music_sequences": {
+        "sms": [
+          {
+            "frame": 3100,
+            "command": 132,
+            "room": 149
+          },
+          {
+            "frame": 3138,
+            "command": 176,
+            "room": 496
+          },
+          {
+            "frame": 3153,
+            "command": 131,
+            "room": 496
+          },
+          {
+            "frame": 3421,
+            "command": 176,
+            "room": 16
+          },
+          {
+            "frame": 3443,
+            "command": 130,
+            "room": 16
+          }
+        ],
+        "md": [
+          {
+            "frame": 3100,
+            "command": 132,
+            "room": 149
+          },
+          {
+            "frame": 3120,
+            "command": 130,
+            "room": 496
+          },
+          {
+            "frame": 3138,
+            "command": 176,
+            "room": 496
+          },
+          {
+            "frame": 3151,
+            "command": 131,
+            "room": 496
+          },
+          {
+            "frame": 3421,
+            "command": 176,
+            "room": 16
+          },
+          {
+            "frame": 3435,
+            "command": 130,
+            "room": 16
+          }
+        ]
+      }
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Actual standard house/dungeon doors and normal DOWN exit. Controlled exterior/hero fixture at3120;no interior/exit/audio request/state injection. Source ROM unpatched;read-only source cycle markers retained.",
+    "Diagnostic source/native music ordering and fade bytes,not waveform/full physical duration equality. Initial cleared outside actors and visited flag are explicit fixtures."
+  ]
+}

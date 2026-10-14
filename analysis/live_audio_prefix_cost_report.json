@@ -1,0 +1,45 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 2404,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 1202,
+      "tempo_cases": 601,
+      "fade_cases": 601,
+      "tempo_cost_range": [
+        32,
+        234
+      ],
+      "fade_cost_range": [
+        28,
+        432
+      ],
+      "raw_sha256": "230bdf41cb64b0818175c0f21d151911e090d1324c3fdf86b02609fe325c9af3",
+      "source_trace_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "cases": 1202,
+      "tempo_cases": 601,
+      "fade_cases": 601,
+      "tempo_cost_range": [
+        32,
+        234
+      ],
+      "fade_cost_range": [
+        28,
+        432
+      ],
+      "raw_sha256": "c4c70d4219cf7d81af5c4191dfed5da67775c89ec97a08e4fc3449c78aa805ca",
+      "source_trace_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "One actual controlled paid route6D->96 with full destination actor mask,in PAL/NTSC. Original helper input/output snapshots and wall T states are observed read-only. Independent state/cost models compare all400 audio RAM bytes per call. Original cycle arrays remain identical to archived source.",
+    "Includes surrounding game/audio phase during4200..4800,not all command/envelope paths. Isolated helper suite covers additional fade end/zero/wrap states. Remaining arbitration/dispatch/channel costs and full future IRQ scheduling/physical load prediction remain open."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "a208d1d38e0d9d9d5f9e8cf5cf5b653cc8ecc48d1668d41f939f281e7fd293d5",
+  "cases": 48000,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 24000,
+      "results_sha256": "25fada983cb1abfbe0668dddae4b27e33be5951d38de32a06f6d3d2225898fa6"
+    },
+    {
+      "region": "pal",
+      "cases": 24000,
+      "results_sha256": "25fada983cb1abfbe0668dddae4b27e33be5951d38de32a06f6d3d2225898fa6"
+    }
+  ],
+  "excluded_commands": [
+    142,
+    143,
+    173,
+    174,
+    175,
+    180
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original80FF and bank6 callees/tables;custom boot/caller,IRQs disabled. All13 music starts,29 effects,B0/B1/B2/B3,80 idle and defined low/high reset branches compare complete400-byte state and instruction cost.",
+    "Eight noise ownership flag patterns,four DE0F values,three DE0E values;invalid high/reset values are explicit synthetic probes. Six unsupported/out-of-table command values are excluded,includingB4 jump7000.",
+    "Does not compare actual PSG output waveforms,full channel processing/live dispatch phase,source IRQ scheduling or physical loading timing."
+  ]
+}

@@ -1,0 +1,13 @@
+# v0130 - hopping dungeon actor4C
+
+Native4FB1/9B1E implements appearance via shared984F/9A2B, random96..127-tick stationary cooldown, eight bounded hop vectors9B28..9B57,32-tick flight and32/256-pixel velocity gravity per actor update. The timer is set before rejected bounds; gravity increments before common integration and before an expired flight resets to a new cooldown. Room slots0..7 may copy their first32 bytes to temporary slot8+((clock&14)>>1) when free. Copied state4 precedes the parent's state8/first gravity increment. Temporary slots8..15 do not recursively copy.
+
+2367 isolated original/native cases compare all768 actor bytes. Four register-preserving random-input shims supply explicit sourceLD A,R values; the original dispatcher, spawn, state and copy instructions execute. Tests include128 spawn candidates, five even states, all eight vectors, bounds, all16 parent slots, all eight clock-selected destinations, free/occupied targets and16-bit gravity wrapping. Fixture rows occupy unused test banks10..15; runtime assets and production code are not recorded emulator data.
+
+36 controlled production segments compare1148 actor frames exactly in PAL/NTSC. Appearance, active cooldown and all eight32-frame trajectories execute in both room slot0 and temporary slot8. Actor/hero records and initial native clock are explicitly aligned; flight segments stop before the random next cooldown. This proves integration/timers/animation on the tested paths. Actual copy creation and random choices remain covered only by direct routines; complete natural hop/copy cycles and source RNG/global clock are unproved.
+
+Two actual14E scroll/load paths compare nine original graphic tiles at three samples each and thirty first4C appearance records per region, excluding unaligned random X/Y high bytes and direction. Other actor records, random placement equality and full framebuffer/SAT are not claimed. Departure uses controlled relocation before real scroll and destination loading.
+
+All48 literal vector bytes match source. Scope audit againstv0129 proves only the4C helper/dispatch and its collision-publication inclusion changed; main.c and prior actor source are unchanged. Rerun regressions:848 prior direct cases,440 prior controlled actor frames, six natural static-background inventory restoration routes, ordinary hero/three-direction scrolling/eight deterministic enemy timing and natural music89 in both regions. These checks pass.
+
+22 reviewed room actor types4D..62 remain without native behaviors. Original global clock/RNG, full natural combat/progression, remaining audio hooks, ending, complete quests/saves and a natural full playthrough remain unfinished or unverified. Port incomplete.

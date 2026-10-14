@@ -1,0 +1,208 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "9f463fc8da6149b7008279591cbe4eadd6b88333fc37c39a53a0f49f9eed83e9",
+  "models": [
+    {
+      "routine": "032A",
+      "model": {
+        "tstates": 2058555,
+        "source_end": 124795,
+        "decoded_bytes": 14368,
+        "packed_bytes": 10091
+      },
+      "observed_tstates": 2058555
+    },
+    {
+      "routine": "0BD3",
+      "model": {
+        "tstates": 101616,
+        "source_end": 125062,
+        "packed_bytes": 267,
+        "decoded_bytes": 1536,
+        "scratch_bytes": 411
+      },
+      "observed_tstates": 101616
+    },
+    {
+      "routine": "0BD3",
+      "model": {
+        "tstates": 109320,
+        "source_end": 125736,
+        "packed_bytes": 674,
+        "decoded_bytes": 1536,
+        "scratch_bytes": 728
+      },
+      "observed_tstates": 109320
+    }
+  ],
+  "full_model": {
+    "clear_tstates": 95572,
+    "setup_tstates": 401,
+    "assets_tstates": 2269572,
+    "tail_tstates": 50086,
+    "foreground_tstates": 2415631,
+    "resources": [
+      {
+        "tstates": 2058555,
+        "source_end": 124795,
+        "decoded_bytes": 14368,
+        "packed_bytes": 10091
+      },
+      {
+        "tstates": 101616,
+        "source_end": 125062,
+        "packed_bytes": 267,
+        "decoded_bytes": 1536,
+        "scratch_bytes": 411
+      },
+      {
+        "tstates": 109320,
+        "source_end": 125736,
+        "packed_bytes": 674,
+        "decoded_bytes": 1536,
+        "scratch_bytes": 728
+      }
+    ]
+  },
+  "foreground_components_exact": true,
+  "events": [
+    {
+      "frame": 5970,
+      "pc": "0xb56",
+      "master_cycles": 6389001465,
+      "irq_master_cycles": 1329892920,
+      "hl": 2833,
+      "de": 32512,
+      "bc": 0
+    },
+    {
+      "frame": 5971,
+      "pc": "0x1473",
+      "master_cycles": 6390487125,
+      "irq_master_cycles": 1329945000,
+      "hl": 56511,
+      "de": 56512,
+      "bc": 0
+    },
+    {
+      "frame": 5971,
+      "pc": "0x1487",
+      "master_cycles": 6390493140,
+      "irq_master_cycles": 1329945000,
+      "hl": 32784,
+      "de": 56496,
+      "bc": 0
+    },
+    {
+      "frame": 5971,
+      "pc": "0x32a",
+      "master_cycles": 6390493545,
+      "irq_master_cycles": 1329945000,
+      "hl": 32784,
+      "de": 16384,
+      "bc": 0
+    },
+    {
+      "frame": 6002,
+      "pc": "0x148d",
+      "master_cycles": 6423194430,
+      "irq_master_cycles": 1331767560,
+      "hl": 42875,
+      "de": 30752,
+      "bc": 4
+    },
+    {
+      "frame": 6002,
+      "pc": "0xbd3",
+      "master_cycles": 6423194835,
+      "irq_master_cycles": 1331767560,
+      "hl": 42875,
+      "de": 54784,
+      "bc": 4
+    },
+    {
+      "frame": 6002,
+      "pc": "0xbfe",
+      "master_cycles": 6423458895,
+      "irq_master_cycles": 1331767560,
+      "hl": 53504,
+      "de": 54784,
+      "bc": 4
+    },
+    {
+      "frame": 6003,
+      "pc": "0x1493",
+      "master_cycles": 6424740180,
+      "irq_master_cycles": 1331788665,
+      "hl": 43142,
+      "de": 54786,
+      "bc": 2
+    },
+    {
+      "frame": 6003,
+      "pc": "0xbd3",
+      "master_cycles": 6424740585,
+      "irq_master_cycles": 1331788665,
+      "hl": 43142,
+      "de": 51456,
+      "bc": 2
+    },
+    {
+      "frame": 6004,
+      "pc": "0xbfe",
+      "master_cycles": 6425249175,
+      "irq_master_cycles": 1331809770,
+      "hl": 53504,
+      "de": 51456,
+      "bc": 2
+    },
+    {
+      "frame": 6005,
+      "pc": "0x1499",
+      "master_cycles": 6426422595,
+      "irq_master_cycles": 1331830875,
+      "hl": 43816,
+      "de": 51458,
+      "bc": 2
+    },
+    {
+      "frame": 6005,
+      "pc": "0x14cf",
+      "master_cycles": 6427173885,
+      "irq_master_cycles": 1331830875,
+      "hl": 56320,
+      "de": 30976,
+      "bc": 190
+    },
+    {
+      "frame": 6006,
+      "pc": "0x14d2",
+      "master_cycles": 6427280115,
+      "irq_master_cycles": 1331934900,
+      "hl": 640,
+      "de": 30976,
+      "bc": 190
+    },
+    {
+      "frame": 6025,
+      "pc": "0x14d5",
+      "master_cycles": 6447840555,
+      "irq_master_cycles": 1336495425,
+      "hl": 2829,
+      "de": 3,
+      "bc": 0
+    },
+    {
+      "frame": 6025,
+      "pc": "0x14da",
+      "master_cycles": 6447840855,
+      "irq_master_cycles": 1336495425,
+      "hl": 2829,
+      "de": 3,
+      "bc": 0
+    }
+  ],
+  "foreground_load_tstates": 2415631,
+  "foreground_asset_routines_tstates": 2269572,
+  "region": "pal"
+}

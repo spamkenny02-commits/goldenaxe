@@ -1,0 +1,47 @@
+{
+  "routines": {
+    "service_dispatch": "7390",
+    "save": "73E5",
+    "yes_no": "6093/60F5",
+    "slot_selector": "7716/7744",
+    "restore_record": "15F6",
+    "death_checkpoint": "2614"
+  },
+  "source_record": {
+    "start": "C0B0",
+    "bytes": 592,
+    "slot_addresses": [
+      "8400",
+      "8800",
+      "8C00"
+    ],
+    "last_slot": "8030",
+    "stored_health": "C0D9",
+    "stored_checkpoint": "C0C2"
+  },
+  "native_sram": {
+    "start": "200001",
+    "end": "203FFF",
+    "byte_lane": "odd",
+    "slot_offsets": [
+      "0400",
+      "0800",
+      "0C00"
+    ],
+    "last_slot_offset": "0030"
+  },
+  "initialization": {
+    "C200_C2FF": "FF from 1C97",
+    "empty_enemy_room_masks": [
+      "94",
+      "95"
+    ]
+  },
+  "remaining": [
+    "Nonempty enemy-room persistence masks",
+    "Services in other villages",
+    "Shop items/quest/other progression fields",
+    "Exact service/Continue fade and frame timing",
+    "Move key slots/higher-tier equipment tests"
+  ]
+}

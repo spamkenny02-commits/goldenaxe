@@ -1,0 +1,661 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "records": [
+    {
+      "room": 276,
+      "entry": 46059,
+      "call_site": 46064,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 176,
+        "e": 56
+      },
+      "coordinate": 432,
+      "destination_room": 312
+    },
+    {
+      "room": 281,
+      "entry": 46082,
+      "call_site": 46087,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 132,
+        "e": 78
+      },
+      "coordinate": 388,
+      "destination_room": 334
+    },
+    {
+      "room": 284,
+      "entry": 46091,
+      "call_site": 46101,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 176,
+        "e": 42
+      },
+      "coordinate": 432,
+      "destination_room": 298
+    },
+    {
+      "room": 293,
+      "entry": 46125,
+      "call_site": 46127,
+      "target": 23788,
+      "kind": "empty_cell_passages",
+      "explicit_registers": {
+        "c": 123
+      }
+    },
+    {
+      "room": 298,
+      "entry": 46148,
+      "call_site": 46153,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 152,
+        "e": 28
+      },
+      "coordinate": 664,
+      "destination_room": 284
+    },
+    {
+      "room": 309,
+      "entry": 46169,
+      "call_site": 46171,
+      "target": 23788,
+      "kind": "empty_cell_passages",
+      "explicit_registers": {
+        "c": 67
+      }
+    },
+    {
+      "room": 312,
+      "entry": 46175,
+      "call_site": 46180,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 176,
+        "e": 105
+      },
+      "coordinate": 432,
+      "destination_room": 361
+    },
+    {
+      "room": 313,
+      "entry": 46184,
+      "call_site": 46190,
+      "target": 23702,
+      "kind": "stationary_up_passages",
+      "explicit_registers": {
+        "b": 1,
+        "c": 104,
+        "d": 5,
+        "e": 56
+      },
+      "coordinate": 360
+    },
+    {
+      "room": 316,
+      "entry": 46202,
+      "call_site": 46207,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 3,
+        "c": 24,
+        "e": 123
+      },
+      "coordinate": 792,
+      "destination_room": 379
+    },
+    {
+      "room": 318,
+      "entry": 46214,
+      "call_site": 46219,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 3,
+        "c": 24,
+        "e": 106
+      },
+      "coordinate": 792,
+      "destination_room": 362
+    },
+    {
+      "room": 331,
+      "entry": 46246,
+      "call_site": 46257,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 4,
+        "c": 20,
+        "e": 90
+      },
+      "coordinate": 1044,
+      "destination_room": 346
+    },
+    {
+      "room": 333,
+      "entry": 46261,
+      "call_site": 46269,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 3,
+        "c": 152,
+        "e": 108
+      },
+      "coordinate": 920,
+      "destination_room": 364
+    },
+    {
+      "room": 334,
+      "entry": 46273,
+      "call_site": 46278,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 156,
+        "e": 25
+      },
+      "coordinate": 668,
+      "destination_room": 281
+    },
+    {
+      "room": 339,
+      "entry": 46294,
+      "call_site": 46299,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 140,
+        "e": 98
+      },
+      "coordinate": 652,
+      "destination_room": 354
+    },
+    {
+      "room": 346,
+      "entry": 46324,
+      "call_site": 46329,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 144,
+        "e": 75
+      },
+      "coordinate": 656,
+      "destination_room": 331
+    },
+    {
+      "room": 354,
+      "entry": 46342,
+      "call_site": 46348,
+      "target": 23702,
+      "kind": "stationary_up_passages",
+      "explicit_registers": {
+        "b": 1,
+        "c": 76,
+        "d": 8,
+        "e": 114
+      },
+      "coordinate": 332
+    },
+    {
+      "room": 354,
+      "entry": 46342,
+      "call_site": 46356,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 156,
+        "e": 83
+      },
+      "coordinate": 668,
+      "destination_room": 339
+    },
+    {
+      "room": 359,
+      "entry": 46367,
+      "call_site": 46372,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 132,
+        "e": 136
+      },
+      "coordinate": 388,
+      "destination_room": 392
+    },
+    {
+      "room": 361,
+      "entry": 46376,
+      "call_site": 46381,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 156,
+        "e": 56
+      },
+      "coordinate": 668,
+      "destination_room": 312
+    },
+    {
+      "room": 362,
+      "entry": 46385,
+      "call_site": 46390,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 132,
+        "e": 62
+      },
+      "coordinate": 388,
+      "destination_room": 318
+    },
+    {
+      "room": 364,
+      "entry": 46397,
+      "call_site": 46402,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 4,
+        "c": 36,
+        "e": 77
+      },
+      "coordinate": 1060,
+      "destination_room": 333
+    },
+    {
+      "room": 371,
+      "entry": 46432,
+      "call_site": 46434,
+      "target": 23751,
+      "kind": "stationary_up_cell",
+      "explicit_registers": {
+        "e": 3
+      }
+    },
+    {
+      "room": 372,
+      "entry": 46438,
+      "call_site": 46448,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 3,
+        "c": 24,
+        "e": 85
+      },
+      "coordinate": 792,
+      "destination_room": 341
+    },
+    {
+      "room": 374,
+      "entry": 46452,
+      "call_site": 46454,
+      "target": 23788,
+      "kind": "empty_cell_passages",
+      "explicit_registers": {
+        "c": 74
+      }
+    },
+    {
+      "room": 379,
+      "entry": 46461,
+      "call_site": 46466,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 24,
+        "e": 60
+      },
+      "coordinate": 536,
+      "destination_room": 316
+    },
+    {
+      "room": 402,
+      "entry": 46494,
+      "call_site": 46499,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 4,
+        "c": 48,
+        "e": 163
+      },
+      "coordinate": 1072,
+      "destination_room": 419
+    },
+    {
+      "room": 408,
+      "entry": 46513,
+      "call_site": 46518,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 132,
+        "e": 168
+      },
+      "coordinate": 388,
+      "destination_room": 424
+    },
+    {
+      "room": 410,
+      "entry": 46522,
+      "call_site": 46528,
+      "target": 23702,
+      "kind": "stationary_up_passages",
+      "explicit_registers": {
+        "b": 1,
+        "c": 76,
+        "d": 4,
+        "e": 216
+      },
+      "coordinate": 332
+    },
+    {
+      "room": 414,
+      "entry": 46539,
+      "call_site": 46544,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 156,
+        "e": 204
+      },
+      "coordinate": 668,
+      "destination_room": 460
+    },
+    {
+      "room": 419,
+      "entry": 46558,
+      "call_site": 46563,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 3,
+        "c": 44,
+        "e": 146
+      },
+      "coordinate": 812,
+      "destination_room": 402
+    },
+    {
+      "room": 422,
+      "entry": 46573,
+      "call_site": 46581,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 4,
+        "c": 8,
+        "e": 215
+      },
+      "coordinate": 1032,
+      "destination_room": 471
+    },
+    {
+      "room": 423,
+      "entry": 46585,
+      "call_site": 46598,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 176,
+        "e": 235
+      },
+      "coordinate": 432,
+      "destination_room": 491
+    },
+    {
+      "room": 424,
+      "entry": 46602,
+      "call_site": 46607,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 152,
+        "e": 152
+      },
+      "coordinate": 664,
+      "destination_room": 408
+    },
+    {
+      "room": 426,
+      "entry": 46618,
+      "call_site": 46626,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 4,
+        "c": 44,
+        "e": 232
+      },
+      "coordinate": 1068,
+      "destination_room": 488
+    },
+    {
+      "room": 429,
+      "entry": 46639,
+      "call_site": 46645,
+      "target": 23702,
+      "kind": "stationary_up_passages",
+      "explicit_registers": {
+        "b": 1,
+        "c": 76,
+        "d": 4,
+        "e": 157
+      },
+      "coordinate": 332
+    },
+    {
+      "room": 439,
+      "entry": 46678,
+      "call_site": 46683,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 156,
+        "e": 203
+      },
+      "coordinate": 668,
+      "destination_room": 459
+    },
+    {
+      "room": 445,
+      "entry": 46713,
+      "call_site": 46719,
+      "target": 23702,
+      "kind": "stationary_up_passages",
+      "explicit_registers": {
+        "b": 1,
+        "c": 104,
+        "d": 1,
+        "e": 188
+      },
+      "coordinate": 360
+    },
+    {
+      "room": 456,
+      "entry": 46758,
+      "call_site": 46763,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 1,
+        "c": 132,
+        "e": 235
+      },
+      "coordinate": 388,
+      "destination_room": 491
+    },
+    {
+      "room": 460,
+      "entry": 46767,
+      "call_site": 46772,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 3,
+        "c": 24,
+        "e": 158
+      },
+      "coordinate": 792,
+      "destination_room": 414
+    },
+    {
+      "room": 471,
+      "entry": 46793,
+      "call_site": 46798,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 152,
+        "e": 166
+      },
+      "coordinate": 664,
+      "destination_room": 422
+    },
+    {
+      "room": 476,
+      "entry": 46802,
+      "call_site": 46807,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 152,
+        "e": 250
+      },
+      "coordinate": 664,
+      "destination_room": 506
+    },
+    {
+      "room": 482,
+      "entry": 46825,
+      "call_site": 46833,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 168,
+        "e": 231
+      },
+      "coordinate": 680,
+      "destination_room": 487
+    },
+    {
+      "room": 486,
+      "entry": 46855,
+      "call_site": 46861,
+      "target": 23702,
+      "kind": "stationary_up_passages",
+      "explicit_registers": {
+        "b": 1,
+        "c": 76,
+        "d": 4,
+        "e": 214
+      },
+      "coordinate": 332
+    },
+    {
+      "room": 486,
+      "entry": 46855,
+      "call_site": 46869,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 4,
+        "c": 24,
+        "e": 203
+      },
+      "coordinate": 1048,
+      "destination_room": 459
+    },
+    {
+      "room": 487,
+      "entry": 46873,
+      "call_site": 46878,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 2,
+        "c": 152,
+        "e": 226
+      },
+      "coordinate": 664,
+      "destination_room": 482
+    },
+    {
+      "room": 488,
+      "entry": 46882,
+      "call_site": 46887,
+      "target": 23803,
+      "kind": "moving_aligned_portal",
+      "explicit_registers": {
+        "b": 3,
+        "c": 28,
+        "e": 170
+      },
+      "coordinate": 796,
+      "destination_room": 426
+    },
+    {
+      "room": 492,
+      "entry": 46912,
+      "call_site": 46918,
+      "target": 23702,
+      "kind": "stationary_up_passages",
+      "explicit_registers": {
+        "b": 1,
+        "c": 104,
+        "d": 4,
+        "e": 235
+      },
+      "coordinate": 360
+    }
+  ],
+  "handler_counts": {
+    "stationary_up_passages": 7,
+    "stationary_up_cell": 1,
+    "empty_cell_passages": 3,
+    "moving_aligned_portal": 36
+  },
+  "native_implemented": false,
+  "findings": [
+    "5C96 requires C0A6 & 77 == 14: aligned, stationary coordinate, unchanged direction, facing up with UP held. It marks the class-specific persistent bit before marking D-selected sides of the room in E and redrawing the current room. It is not a generic movable-block routine.",
+    "5CC7 uses the same flag gate at coordinate 0168; changes DC1B to 4D after E-selected passage action.",
+    "5CEC tests current persistent class bit and cell DC00+C == 0 before marking the flag and opening blocked passages.",
+    "5CFB requires C0A6 & 30 == 30 and C060 == BC; it discards the room-script return address, loads room E, and places the hero on its first cell 0C or defaults to 128,88. Transition/load timing must be translated, not just the room id.",
+    "Complete native contact flags were validated in v0050. This inventory alone does not enable contact effects."
+  ]
+}

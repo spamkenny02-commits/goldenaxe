@@ -1,0 +1,711 @@
+{
+  "md_sha256": "3f4dbbc93e4c6db3e688c77c85912be93ed886dd73d0610d75fb77ec4c8f558c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 24,
+  "cumulative_and_prepare_comparisons": 72,
+  "rows": [
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 0,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1317394,
+      "to_fade_foreground_excluding_two_save_spins": 1370864,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        8231,
+        1271
+      ],
+      "observed_IRQ_master_cycles": 1714365,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 13789,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 27976,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 0,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1317395,
+      "to_fade_foreground_excluding_two_save_spins": 1370865,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        45177,
+        27342
+      ],
+      "observed_IRQ_master_cycles": 1830030,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 13789,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 27976,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 255,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1355304,
+      "to_fade_foreground_excluding_two_save_spins": 1408774,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        8231,
+        15568
+      ],
+      "observed_IRQ_master_cycles": 1770300,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 13789,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 65901,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 255,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1355305,
+      "to_fade_foreground_excluding_two_save_spins": 1408775,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        45177,
+        3910
+      ],
+      "observed_IRQ_master_cycles": 1827240,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 13789,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 65901,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 0,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1319190,
+      "to_fade_foreground_excluding_two_save_spins": 1372660,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        6955,
+        749
+      ],
+      "observed_IRQ_master_cycles": 1714365,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15072,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 28489,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 0,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1319191,
+      "to_fade_foreground_excluding_two_save_spins": 1372661,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        43901,
+        26820
+      ],
+      "observed_IRQ_master_cycles": 1830030,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15072,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 28489,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 255,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 3056959,
+      "to_fade_foreground_excluding_two_save_spins": 3110429,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        6955,
+        1967
+      ],
+      "observed_IRQ_master_cycles": 3349920,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15072,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 1766273,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 255,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 3056960,
+      "to_fade_foreground_excluding_two_save_spins": 3110430,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        43901,
+        45177
+      ],
+      "observed_IRQ_master_cycles": 3320355,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15072,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 1766273,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 0,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1319640,
+      "to_fade_foreground_excluding_two_save_spins": 1373110,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        6694,
+        546
+      ],
+      "observed_IRQ_master_cycles": 1714365,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15311,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 28660,
+        "actor_return_and_hero_call": 27,
+        "hero": 12091,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 0,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1319641,
+      "to_fade_foreground_excluding_two_save_spins": 1373111,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        43640,
+        26617
+      ],
+      "observed_IRQ_master_cycles": 1830030,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15311,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 28660,
+        "actor_return_and_hero_call": 27,
+        "hero": 12091,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 255,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 2785818,
+      "to_fade_foreground_excluding_two_save_spins": 2839288,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        6694,
+        49063
+      ],
+      "observed_IRQ_master_cycles": 3130170,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15311,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 1494853,
+        "actor_return_and_hero_call": 27,
+        "hero": 12091,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 255,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 2785819,
+      "to_fade_foreground_excluding_two_save_spins": 2839289,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        43640,
+        45322
+      ],
+      "observed_IRQ_master_cycles": 3106875,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15311,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 1494853,
+        "actor_return_and_hero_call": 27,
+        "hero": 12091,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 0,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1322558,
+      "to_fade_foreground_excluding_two_save_spins": 1376028,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        3591,
+        749
+      ],
+      "observed_IRQ_master_cycles": 1714365,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 18441,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 28489,
+        "actor_return_and_hero_call": 27,
+        "hero": 12050,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 0,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1322559,
+      "to_fade_foreground_excluding_two_save_spins": 1376029,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        40537,
+        26820
+      ],
+      "observed_IRQ_master_cycles": 1830030,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 18441,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 28489,
+        "actor_return_and_hero_call": 27,
+        "hero": 12050,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 255,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 2127872,
+      "to_fade_foreground_excluding_two_save_spins": 2181342,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        3591,
+        33171
+      ],
+      "observed_IRQ_master_cycles": 2532165,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 18441,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 833818,
+        "actor_return_and_hero_call": 27,
+        "hero": 12050,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 255,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 2127873,
+      "to_fade_foreground_excluding_two_save_spins": 2181343,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        40537,
+        31431
+      ],
+      "observed_IRQ_master_cycles": 2526900,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 18441,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 833818,
+        "actor_return_and_hero_call": 27,
+        "hero": 12050,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 0,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1317417,
+      "to_fade_foreground_excluding_two_save_spins": 1370887,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        8202,
+        1271
+      ],
+      "observed_IRQ_master_cycles": 1714365,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 13813,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 27976,
+        "actor_return_and_hero_call": 27,
+        "hero": 12050,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 0,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1317418,
+      "to_fade_foreground_excluding_two_save_spins": 1370888,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        45148,
+        27371
+      ],
+      "observed_IRQ_master_cycles": 1830030,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 13813,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 27976,
+        "actor_return_and_hero_call": 27,
+        "hero": 12050,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 255,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1816428,
+      "to_fade_foreground_excluding_two_save_spins": 1869898,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        8202,
+        1619
+      ],
+      "observed_IRQ_master_cycles": 2231475,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 13813,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 527002,
+        "actor_return_and_hero_call": 27,
+        "hero": 12050,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 255,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1816429,
+      "to_fade_foreground_excluding_two_save_spins": 1869899,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        45148,
+        14060
+      ],
+      "observed_IRQ_master_cycles": 2251950,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 13813,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 527002,
+        "actor_return_and_hero_call": 27,
+        "hero": 12050,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 0,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1319301,
+      "to_fade_foreground_excluding_two_save_spins": 1372771,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        7013,
+        604
+      ],
+      "observed_IRQ_master_cycles": 1714365,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15012,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 28660,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 0,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1319302,
+      "to_fade_foreground_excluding_two_save_spins": 1372772,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        43930,
+        26675
+      ],
+      "observed_IRQ_master_cycles": 1830030,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15012,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 28660,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 303,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 255,
+      "region": "auto",
+      "loading_foreground_excluding_save_spin": 1565556,
+      "to_fade_foreground_excluding_two_save_spins": 1619026,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        7013,
+        27110
+      ],
+      "observed_IRQ_master_cycles": 2007735,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15012,
+        "HUD_caller_excluding_save_spin": 270284,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 274930,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 255,
+      "region": "pal",
+      "loading_foreground_excluding_save_spin": 1565557,
+      "to_fade_foreground_excluding_two_save_spins": 1619027,
+      "reveal_prepare_foreground_excluding_save_spin": 1842,
+      "observed_save_spin_tstates": [
+        43930,
+        52050
+      ],
+      "observed_IRQ_master_cycles": 2037630,
+      "components": {
+        "graphics": 982060,
+        "map_caller": 15012,
+        "HUD_caller_excluding_save_spin": 270285,
+        "call24C5": 17,
+        "clear_and_history": 10466,
+        "actors": 274930,
+        "actor_return_and_hero_call": 27,
+        "hero": 12051,
+        "script_caller": 288,
+        "music_caller": 381,
+        "load_return": 40,
+        "VRAM_clear": 51628,
+        "reveal_prepare_excluding_save_spin": 1842
+      }
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "All foreground loader components now combine without a fitted constant on24 actual ordinary paid-exit paths. Full16D0..1FA7 and16D0..0ACE work exclude only anchored0B95..0BB3 save/spin spans and source IRQ cycles. Both register restores remain counted. Initial reveal preparation1842T matches separately.",
+    "Hero entry state and three history/RNG branch inputs are supplied from observed snapshots/traces. This predicts instruction work for those states;it does not predict refresh outputs or arbitrary history branches/native game states.",
+    "Wait lengths and audio IRQ work are recorded,not modeled. No physical frame budget or native wait has been integrated. Other graphics classes,C0AC!=0,boss/story actors,physical VDP contention and complete natural progression remain unproved."
+  ]
+}

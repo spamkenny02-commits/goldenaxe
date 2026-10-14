@@ -1,0 +1,13 @@
+# v0126 - dungeon46..49 production validation and aimed projectile collision timing
+
+A successful type49 shot exposed a shared type14 projectile publication gap: original0940 commits its collision descriptor in the birth frame, but the native record retained attack-box byte1C=0 until the delayed SAT update. The current-frame collision publication branch now includes type14. A source audit against archivedv0125 proves this is the sole production source change; main.c and all other actor source are unchanged.
+
+The direct fixture now has899 original/native cases, comparing all768 actor bytes. Added35 cases exercise type49 first-free allocation in each of eight projectile slots with all four inherited directions, a fully free pool, and absence of shooting for47/48. Remaining occupied records retain arbitrary bytes, so partial initializer writes are checked explicitly.
+
+26 controlled production segments in PAL/NTSC compare936 actor frames exactly. They cover46 far/proximity wait through expiration, ballistic flight through landing, appearance/walk/slowdown/pause47..49, successful49 shot birth and subsequent flight, and standalone14 aimed flight through removal. Actor and hero records are injected into the exterior, and native initial world clock is explicitly aligned to SMS. Segments stop before random movement/jump choices. This is evidence for native production-loop behavior, not proof of natural combat or global timing/RNG.
+
+Two actual room112 scroll/load paths compare the first type46 record for47 relative frames per region,20 graphic tiles at three samples each, and its four-part SAT at three samples each (24 ordered sprite entries total). Entry arrival is3467 for both NTSC ROMs; PAL arrivals are recorded in the report. Neighbor44/45 records use unaligned random placement and are excluded explicitly. The real destination scripts, loader and renderer execute; travel to the boundary is controlled relocation, not a natural dungeon walkthrough.
+
+Regression checks on this ROM retain all six natural menu black windows, visible HUD, silent closure and gameplay-resume frames, natural start-menu music89, six static-background restore cases and ordinary movement/scroll timing in both regions. The thirteen-track reader was validated inv0125 and its source is unchanged; it is not rerun or claimed as a new audio-waveform test here.
+
+The remaining reviewed behavior-dispatch gap is25 types4A..62. Global original clock/RNG, complete natural fights/progression, remaining audio hooks, ending and full quests/saves/playthrough remain unfinished or unverified. Port incomplete.

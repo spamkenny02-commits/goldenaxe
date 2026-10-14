@@ -1,0 +1,9 @@
+# v0099 - general arrival pose preparation
+
+Source 2C63 clears hero state and animation and sets flags 3 near the end of room actor loading, then 369F selects the bitmap using the departing terrain context before 2C8D classifies arrival. Native previously applied that ordering only to water departure; normal ground reset animation immediately after scrolling and displayed its arrival pose throughout actor loading.
+
+Preparation now follows the same order on both terrains. The old animation remains during loading; source initialization occurs at its end. The right NTSC initialization/publication split is retained. PAL down retains a separate publication continuation only when a new native bitmap is actually pending; an unchanged cached pose does not add that wait. This is a bounded native publication model, not a complete source CPU/VDP workload model. The v0098 intermediate applied the PAL continuation unconditionally and regressed the ordinary down exit by one frame; it is preserved but superseded.
+
+Four directions, two terrains and two regions are compared for 151 frames each. Fourteen cases match game state, room, hero coordinates/velocities, animation, hero state/flags/counter, terrain context and four actual hero pattern hashes. Their actual transition SAT lists contain exactly four matching hero sprites. The two NTSC upward cases retain documented differences. Ground up resumed state now differs on two frames versus one before; its many premature pose-pattern frames are removed, but this is not a fix for upward timing.
+
+Ordinary PAL/NTSC movement, three scrolling directions and eight deterministic enemy movements are rerun. Static-map staging and post-arrival enemy sprite differences remain. Natural shore traversal, all equipment/abilities, complete enemies/bosses, progression/quests/ending and a full playthrough remain unfinished.

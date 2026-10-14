@@ -1,0 +1,68 @@
+{
+  "source_rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "routines": {
+    "dispatch": "667E",
+    "dialogue": "6277",
+    "restore": "1DE2",
+    "room_0_script": "bank2:AC27",
+    "room_2_script": "bank2:ACB9"
+  },
+  "return_room": "94",
+  "cases": [
+    {
+      "room": 0,
+      "position": [
+        88,
+        72
+      ],
+      "text_rom_offset": "0xdacc"
+    },
+    {
+      "room": 0,
+      "position": [
+        104,
+        88
+      ],
+      "text_rom_offset": "0xdb3d"
+    },
+    {
+      "room": 0,
+      "position": [
+        184,
+        88
+      ],
+      "text_rom_offset": "0xdb72"
+    },
+    {
+      "room": 2,
+      "position": [
+        136,
+        72
+      ],
+      "text_rom_offset": "0xdbc5"
+    },
+    {
+      "room": 2,
+      "position": [
+        152,
+        88
+      ],
+      "text_rom_offset": "0xdbfe"
+    },
+    {
+      "room": 2,
+      "position": [
+        40,
+        104
+      ],
+      "text_rom_offset": "0xdc09"
+    }
+  ],
+  "remaining": [
+    "Room 0 save selector 669D/state22",
+    "Other return-room text tables and quest branches",
+    "NPC confirmation follows fresh SMS directions/buttons (C021 & 3F); tested action button and Right",
+    "Held Up after confirmation and repeat-dialogue behavior",
+    "Exact dialogue presentation and restore timing"
+  ]
+}

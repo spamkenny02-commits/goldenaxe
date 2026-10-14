@@ -1,0 +1,70 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "evidence": [
+    {
+      "path": "validation\\paid-passage-loader\\auto-cycle-events.json",
+      "sha256": "0ed7dc6d0c08a2290d065fefb37bb099d7d1831f891414ef3b23f2a6363b2136"
+    },
+    {
+      "path": "validation\\paid-passage-loader\\pal-cycle-events.json",
+      "sha256": "d3bc4c0af50da0085e0e70a7c5abf1c41408d589fea02651a958ac4ef510a1bb"
+    }
+  ],
+  "regions": [
+    {
+      "region": "auto",
+      "exact_modeled_phases": {
+        "classify_and_bank_change": 266,
+        "palette_and_patterns": 868078,
+        "metatiles": 56485,
+        "metatile_backup": 373,
+        "terrain_patch": 481,
+        "dungeon_palette_skip": 65,
+        "extra_metatiles": 4351,
+        "terrain_pointer": 27,
+        "terrain_decode": 30284,
+        "SRAM_enable": 64,
+        "terrain_SRAM_copy": 21529,
+        "SRAM_disable_return": 57,
+        "whole_graphics": 982060,
+        "room_map_preparation": 192686,
+        "whole_actors": 1494853
+      },
+      "map_HUD_and_wait_tstates": 276978,
+      "wait_save_spin_tstates": 6694,
+      "remaining_map_HUD_tstates": 270284
+    },
+    {
+      "region": "pal",
+      "exact_modeled_phases": {
+        "classify_and_bank_change": 266,
+        "palette_and_patterns": 868078,
+        "metatiles": 56485,
+        "metatile_backup": 373,
+        "terrain_patch": 481,
+        "dungeon_palette_skip": 65,
+        "extra_metatiles": 4351,
+        "terrain_pointer": 27,
+        "terrain_decode": 30284,
+        "SRAM_enable": 64,
+        "terrain_SRAM_copy": 21529,
+        "SRAM_disable_return": 57,
+        "whole_graphics": 982060,
+        "room_map_preparation": 192686,
+        "whole_actors": 1494853
+      },
+      "map_HUD_and_wait_tstates": 313925,
+      "wait_save_spin_tstates": 43640,
+      "remaining_map_HUD_tstates": 270285
+    }
+  ],
+  "exact_phase_comparisons": 30,
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Retained live original6D->96 paid-exit profiles; original source routines are unpatched. Controlled entrance/hero/initial clock only; destination enemies retained.",
+    "Twelve graphics components plus complete graphics,map preparation and actors match separately in PAL/NTSC. Models cover the stated class0,C0AC0,maskFF live path; controlled graphics36 and actor1536 validations broaden only those model scopes.",
+    "The0B95->0BB3 span includes wait register saves and busy loop,not its restoration. It is selected after1DE8 to exclude earlier fade waits. Remaining PAL/NTSC totals differ by1T from the palette clock-bit branch,as independently derived in live_map_hud_loading_cost_report.json; not a universal calibrated constant.",
+    "Source logical-clock freezes,native elapsed work,RNG and whole transition equivalence remain unfinished. Separate190B/HUD models cover only their explicitly validated scopes."
+  ]
+}

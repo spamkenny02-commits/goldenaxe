@@ -1,0 +1,99 @@
+{
+  "diagnostic_only": true,
+  "md_sha256": "3f4dbbc93e4c6db3e688c77c85912be93ed886dd73d0610d75fb77ec4c8f558c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135,
+            "phase": null,
+            "fade": "000000"
+          },
+          {
+            "frame": 4232,
+            "command": 176,
+            "phase": null,
+            "fade": "000000"
+          },
+          {
+            "frame": 4255,
+            "command": 130,
+            "phase": null,
+            "fade": "0b0e12"
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135,
+            "phase": 0,
+            "fade": "000000"
+          },
+          {
+            "frame": 4302,
+            "command": 130,
+            "phase": 0,
+            "fade": "000000"
+          }
+        ]
+      },
+      "native_fade_frame": 4251,
+      "native_world_music_frame": 4302,
+      "raw_profile_sha256": "ba452b1831517e768fa76b2d8e98d52ef4adae72e5b4ff16b72911e5470f8358"
+    },
+    {
+      "region": "pal",
+      "sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135,
+            "phase": null,
+            "fade": "000000"
+          },
+          {
+            "frame": 4232,
+            "command": 176,
+            "phase": null,
+            "fade": "000000"
+          },
+          {
+            "frame": 4252,
+            "command": 130,
+            "phase": null,
+            "fade": "0b1112"
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135,
+            "phase": 0,
+            "fade": "000000"
+          },
+          {
+            "frame": 4299,
+            "command": 130,
+            "phase": 0,
+            "fade": "000000"
+          }
+        ]
+      },
+      "native_fade_frame": 4248,
+      "native_world_music_frame": 4299,
+      "raw_profile_sha256": "c305d1632a5b8627f65a9e31d826350d2b48d85eacc8f9c7187eee07c93edf6c"
+    }
+  ],
+  "missing_native_B0_fade_command_reproduced": true,
+  "native_world_music_starts_after_reveal_begins": true,
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Actual6D->96 paid exit,empty mask,controlled door/hero/initial clock. Observes sourceC065/DE06/DE0B..0D and native music latches/reader fade bytes. No source command patch or per-choice RNG injection.",
+    "This verifies a missing/reordered native command hook,not waveform equivalence or full physical load timing. Source16D0 requestsB0;1CAF requests82 before1FA7. Native helper has neither operation at those phases;fix remains pending."
+  ]
+}

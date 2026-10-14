@@ -1,0 +1,3615 @@
+{
+  "diagnostic_only": true,
+  "md_sha256": "9a4471c02bbe93c05bd6c7ab1d4488a575ea1a278ada0fbd6619955f26496ce5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 24,
+  "rows": [
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 0,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 13789,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 278515,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 27976,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4255,
+          "end_frame": 4256,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 174675,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4256,
+          "end_frame": 4257,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 3113,
+          "IRQ_master_cycles": 252930,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4257,
+          "end_frame": 4275,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 847371,
+          "IRQ_master_cycles": 3446415,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4275,
+          "end_frame": 4307,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1519471,
+          "IRQ_master_cycles": 6095715,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4307,
+        "video_frame_boundaries": 75,
+        "foreground_tstates": 3747208,
+        "IRQ_master_cycles": 11256495,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4308,
+      "native_first_fade": 4251,
+      "native_first_contour": 4269,
+      "native_first_idle": 4302,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\1a-00\\auto-cycle-events.json",
+      "raw_events_sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 0,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 13789,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 315462,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 27976,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4252,
+          "end_frame": 4253,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4253,
+          "end_frame": 4254,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 29184,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4254,
+          "end_frame": 4272,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010968,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4272,
+          "end_frame": 4304,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810747,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4304,
+        "video_frame_boundaries": 72,
+        "foreground_tstates": 4265099,
+        "IRQ_master_cycles": 13327650,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4305,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\1a-00\\pal-cycle-events.json",
+      "raw_events_sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 255,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 13789,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 278515,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4256,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 65901,
+          "IRQ_master_cycles": 17715,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4256,
+          "end_frame": 4256,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4256,
+          "end_frame": 4256,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4256,
+          "end_frame": 4256,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4256,
+          "end_frame": 4256,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4256,
+          "end_frame": 4257,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269940,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4257,
+          "end_frame": 4258,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 17410,
+          "IRQ_master_cycles": 195885,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4258,
+          "end_frame": 4276,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 848937,
+          "IRQ_master_cycles": 3444540,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4276,
+          "end_frame": 4308,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1521936,
+          "IRQ_master_cycles": 6094020,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4308,
+        "video_frame_boundaries": 76,
+        "foreground_tstates": 3803446,
+        "IRQ_master_cycles": 11308860,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4309,
+      "native_first_fade": 4251,
+      "native_first_contour": 4269,
+      "native_first_idle": 4302,
+      "native_idle_frame_gap": -7,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\1a-ff\\auto-cycle-events.json",
+      "raw_events_sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 255,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 13789,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 315462,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 65901,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4252,
+          "end_frame": 4253,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4253,
+          "end_frame": 4253,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4253,
+          "end_frame": 4253,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4253,
+          "end_frame": 4253,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4253,
+          "end_frame": 4253,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4253,
+          "end_frame": 4254,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 5752,
+          "IRQ_master_cycles": 443400,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4254,
+          "end_frame": 4272,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 996584,
+          "IRQ_master_cycles": 4155015,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4272,
+          "end_frame": 4304,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810805,
+          "IRQ_master_cycles": 7345545,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4304,
+        "video_frame_boundaries": 72,
+        "foreground_tstates": 4265251,
+        "IRQ_master_cycles": 13327800,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4305,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\1a-ff\\pal-cycle-events.json",
+      "raw_events_sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 0,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 15072,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 277239,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 28489,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4255,
+          "end_frame": 4256,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 174675,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4256,
+          "end_frame": 4257,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 2591,
+          "IRQ_master_cycles": 252930,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4257,
+          "end_frame": 4275,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 847400,
+          "IRQ_master_cycles": 3446415,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4275,
+          "end_frame": 4307,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1519442,
+          "IRQ_master_cycles": 6096120,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4307,
+        "video_frame_boundaries": 75,
+        "foreground_tstates": 3747206,
+        "IRQ_master_cycles": 11256900,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4308,
+      "native_first_fade": 4251,
+      "native_first_contour": 4269,
+      "native_first_idle": 4302,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\36-00\\auto-cycle-events.json",
+      "raw_events_sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 0,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 15072,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 314186,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 28489,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4252,
+          "end_frame": 4253,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4253,
+          "end_frame": 4254,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 28662,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4254,
+          "end_frame": 4272,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010997,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4272,
+          "end_frame": 4304,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4304,
+        "video_frame_boundaries": 72,
+        "foreground_tstates": 4265097,
+        "IRQ_master_cycles": 13327650,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4305,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\36-00\\pal-cycle-events.json",
+      "raw_events_sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 255,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 15072,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 277239,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4286,
+          "video_frame_boundaries": 31,
+          "foreground_tstates": 1766273,
+          "IRQ_master_cycles": 1591890,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4286,
+          "end_frame": 4286,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4286,
+          "end_frame": 4286,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4286,
+          "end_frame": 4286,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4286,
+          "end_frame": 4286,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4286,
+          "end_frame": 4287,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 275385,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4287,
+          "end_frame": 4288,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 3809,
+          "IRQ_master_cycles": 195885,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4288,
+          "end_frame": 4306,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 848966,
+          "IRQ_master_cycles": 3444135,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4306,
+          "end_frame": 4338,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1521994,
+          "IRQ_master_cycles": 6093615,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4338,
+        "video_frame_boundaries": 106,
+        "foreground_tstates": 5490311,
+        "IRQ_master_cycles": 12887670,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4339,
+      "native_first_fade": 4252,
+      "native_first_contour": 4270,
+      "native_first_idle": 4303,
+      "native_idle_frame_gap": -36,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\36-ff\\auto-cycle-events.json",
+      "raw_events_sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 255,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 15072,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 314186,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4278,
+          "video_frame_boundaries": 26,
+          "foreground_tstates": 1766273,
+          "IRQ_master_cycles": 1490325,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4278,
+          "end_frame": 4278,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4278,
+          "end_frame": 4278,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4278,
+          "end_frame": 4278,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4278,
+          "end_frame": 4278,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4278,
+          "end_frame": 4279,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4279,
+          "end_frame": 4280,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 47019,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4280,
+          "end_frame": 4298,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010968,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4298,
+          "end_frame": 4330,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4330,
+        "video_frame_boundaries": 98,
+        "foreground_tstates": 6021194,
+        "IRQ_master_cycles": 14817975,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4331,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -32,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\36-ff\\pal-cycle-events.json",
+      "raw_events_sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 0,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 15311,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 276978,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 28660,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12118,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4255,
+          "end_frame": 4256,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 174675,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4256,
+          "end_frame": 4257,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 2388,
+          "IRQ_master_cycles": 252930,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4257,
+          "end_frame": 4275,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 847400,
+          "IRQ_master_cycles": 3446415,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4275,
+          "end_frame": 4307,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1519471,
+          "IRQ_master_cycles": 6095310,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4307,
+        "video_frame_boundaries": 75,
+        "foreground_tstates": 3747221,
+        "IRQ_master_cycles": 11256090,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4308,
+      "native_first_fade": 4251,
+      "native_first_contour": 4269,
+      "native_first_idle": 4302,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\6d-00\\auto-cycle-events.json",
+      "raw_events_sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 0,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 15311,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 313925,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 28660,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12118,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4252,
+          "end_frame": 4253,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4253,
+          "end_frame": 4254,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 28459,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4254,
+          "end_frame": 4272,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010997,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4272,
+          "end_frame": 4304,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4304,
+        "video_frame_boundaries": 72,
+        "foreground_tstates": 4265083,
+        "IRQ_master_cycles": 13327650,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4305,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\6d-00\\pal-cycle-events.json",
+      "raw_events_sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 255,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 15311,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 276978,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4281,
+          "video_frame_boundaries": 26,
+          "foreground_tstates": 1494853,
+          "IRQ_master_cycles": 1322025,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4281,
+          "end_frame": 4281,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12118,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4281,
+          "end_frame": 4281,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4281,
+          "end_frame": 4281,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4281,
+          "end_frame": 4281,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4281,
+          "end_frame": 4283,
+          "video_frame_boundaries": 2,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 325500,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4283,
+          "end_frame": 4284,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 50905,
+          "IRQ_master_cycles": 195885,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4284,
+          "end_frame": 4302,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 849024,
+          "IRQ_master_cycles": 3445860,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4302,
+          "end_frame": 4334,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1522081,
+          "IRQ_master_cycles": 6054480,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4334,
+        "video_frame_boundaries": 102,
+        "foreground_tstates": 5266150,
+        "IRQ_master_cycles": 12630510,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4335,
+      "native_first_fade": 4252,
+      "native_first_contour": 4270,
+      "native_first_idle": 4303,
+      "native_idle_frame_gap": -32,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\6d-ff\\auto-cycle-events.json",
+      "raw_events_sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 255,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 15311,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 313925,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4274,
+          "video_frame_boundaries": 22,
+          "foreground_tstates": 1494853,
+          "IRQ_master_cycles": 1276845,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4274,
+          "end_frame": 4274,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12118,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4274,
+          "end_frame": 4274,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4274,
+          "end_frame": 4274,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4274,
+          "end_frame": 4274,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4274,
+          "end_frame": 4275,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4275,
+          "end_frame": 4276,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 47164,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4276,
+          "end_frame": 4294,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010997,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4294,
+          "end_frame": 4326,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4326,
+        "video_frame_boundaries": 94,
+        "foreground_tstates": 5749966,
+        "IRQ_master_cycles": 14604495,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4327,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -28,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\6d-ff\\pal-cycle-events.json",
+      "raw_events_sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 0,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 18441,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 273875,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 28489,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12077,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4255,
+          "end_frame": 4256,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 174675,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4256,
+          "end_frame": 4257,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 2591,
+          "IRQ_master_cycles": 252930,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4257,
+          "end_frame": 4275,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 847487,
+          "IRQ_master_cycles": 3445200,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4275,
+          "end_frame": 4307,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1519413,
+          "IRQ_master_cycles": 6096120,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4307,
+        "video_frame_boundaries": 75,
+        "foreground_tstates": 3747268,
+        "IRQ_master_cycles": 11255685,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4308,
+      "native_first_fade": 4251,
+      "native_first_contour": 4269,
+      "native_first_idle": 4302,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\3c-00\\auto-cycle-events.json",
+      "raw_events_sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 0,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 18441,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 310822,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 28489,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12077,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4252,
+          "end_frame": 4253,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4253,
+          "end_frame": 4254,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 28662,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4254,
+          "end_frame": 4272,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010997,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4272,
+          "end_frame": 4304,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4304,
+        "video_frame_boundaries": 72,
+        "foreground_tstates": 4265101,
+        "IRQ_master_cycles": 13327650,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4305,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\3c-00\\pal-cycle-events.json",
+      "raw_events_sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 255,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 18441,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 273875,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4269,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 833818,
+          "IRQ_master_cycles": 725340,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4269,
+          "end_frame": 4270,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 12077,
+          "IRQ_master_cycles": 54240,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4270,
+          "end_frame": 4270,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4270,
+          "end_frame": 4270,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4270,
+          "end_frame": 4270,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4270,
+          "end_frame": 4271,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269940,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4271,
+          "end_frame": 4272,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 35013,
+          "IRQ_master_cycles": 195885,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4272,
+          "end_frame": 4290,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 848937,
+          "IRQ_master_cycles": 3444540,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4290,
+          "end_frame": 4322,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1521936,
+          "IRQ_master_cycles": 6058965,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4322,
+        "video_frame_boundaries": 90,
+        "foreground_tstates": 4588977,
+        "IRQ_master_cycles": 12035670,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4323,
+      "native_first_fade": 4252,
+      "native_first_contour": 4270,
+      "native_first_idle": 4303,
+      "native_idle_frame_gap": -20,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\3c-ff\\auto-cycle-events.json",
+      "raw_events_sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 255,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 18441,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 310822,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4264,
+          "video_frame_boundaries": 12,
+          "foreground_tstates": 833818,
+          "IRQ_master_cycles": 696870,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4264,
+          "end_frame": 4264,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12077,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4264,
+          "end_frame": 4264,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4264,
+          "end_frame": 4264,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4264,
+          "end_frame": 4264,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4264,
+          "end_frame": 4265,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4265,
+          "end_frame": 4266,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 33273,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4266,
+          "end_frame": 4284,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010968,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4284,
+          "end_frame": 4316,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4316,
+        "video_frame_boundaries": 84,
+        "foreground_tstates": 5074997,
+        "IRQ_master_cycles": 14024520,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4317,
+      "native_first_fade": 4249,
+      "native_first_contour": 4267,
+      "native_first_idle": 4300,
+      "native_idle_frame_gap": -17,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\3c-ff\\pal-cycle-events.json",
+      "raw_events_sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 0,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 13813,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 278486,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 27976,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12077,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4255,
+          "end_frame": 4256,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 174675,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4256,
+          "end_frame": 4257,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 3113,
+          "IRQ_master_cycles": 252930,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4257,
+          "end_frame": 4275,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 847458,
+          "IRQ_master_cycles": 3445605,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4275,
+          "end_frame": 4307,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1519413,
+          "IRQ_master_cycles": 6096120,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4307,
+        "video_frame_boundaries": 75,
+        "foreground_tstates": 3747231,
+        "IRQ_master_cycles": 11256090,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4308,
+      "native_first_fade": 4251,
+      "native_first_contour": 4269,
+      "native_first_idle": 4302,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\87-00\\auto-cycle-events.json",
+      "raw_events_sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 0,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 13813,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 315433,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 27976,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12077,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4252,
+          "end_frame": 4253,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4253,
+          "end_frame": 4254,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 29213,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4254,
+          "end_frame": 4272,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010968,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4272,
+          "end_frame": 4304,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4304,
+        "video_frame_boundaries": 72,
+        "foreground_tstates": 4265093,
+        "IRQ_master_cycles": 13327650,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4305,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\87-00\\pal-cycle-events.json",
+      "raw_events_sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 255,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 13813,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 278486,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4264,
+          "video_frame_boundaries": 9,
+          "foreground_tstates": 527002,
+          "IRQ_master_cycles": 478890,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4264,
+          "end_frame": 4264,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12077,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4264,
+          "end_frame": 4264,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4264,
+          "end_frame": 4264,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4264,
+          "end_frame": 4264,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4264,
+          "end_frame": 4265,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269940,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4265,
+          "end_frame": 4266,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 3461,
+          "IRQ_master_cycles": 195885,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4266,
+          "end_frame": 4284,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 848908,
+          "IRQ_master_cycles": 3444945,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4284,
+          "end_frame": 4316,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1521936,
+          "IRQ_master_cycles": 6058965,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4316,
+        "video_frame_boundaries": 84,
+        "foreground_tstates": 4250563,
+        "IRQ_master_cycles": 11735385,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4317,
+      "native_first_fade": 4251,
+      "native_first_contour": 4269,
+      "native_first_idle": 4302,
+      "native_idle_frame_gap": -15,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\87-ff\\auto-cycle-events.json",
+      "raw_events_sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 255,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 13813,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 315433,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4259,
+          "video_frame_boundaries": 7,
+          "foreground_tstates": 527002,
+          "IRQ_master_cycles": 421545,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4259,
+          "end_frame": 4260,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 12077,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4260,
+          "end_frame": 4260,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 55065,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4260,
+          "end_frame": 4260,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4260,
+          "end_frame": 4260,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4260,
+          "end_frame": 4260,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4260,
+          "end_frame": 4261,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 15902,
+          "IRQ_master_cycles": 443400,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4261,
+          "end_frame": 4279,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 996584,
+          "IRQ_master_cycles": 4155015,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4279,
+          "end_frame": 4311,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810805,
+          "IRQ_master_cycles": 7345545,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4311,
+        "video_frame_boundaries": 79,
+        "foreground_tstates": 4736496,
+        "IRQ_master_cycles": 13752510,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4312,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -13,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\87-ff\\pal-cycle-events.json",
+      "raw_events_sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 0,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 15012,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 277297,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 28660,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4255,
+          "end_frame": 4255,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4255,
+          "end_frame": 4256,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 174675,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4256,
+          "end_frame": 4257,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 2446,
+          "IRQ_master_cycles": 252930,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4257,
+          "end_frame": 4275,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 847371,
+          "IRQ_master_cycles": 3446415,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4275,
+          "end_frame": 4307,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1519500,
+          "IRQ_master_cycles": 6095310,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4307,
+        "video_frame_boundaries": 75,
+        "foreground_tstates": 3747259,
+        "IRQ_master_cycles": 11256090,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4308,
+      "native_first_fade": 4251,
+      "native_first_contour": 4269,
+      "native_first_idle": 4302,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\96-00\\auto-cycle-events.json",
+      "raw_events_sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 0,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 15012,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 314215,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 28660,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 303,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4252,
+          "end_frame": 4252,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4252,
+          "end_frame": 4253,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269070,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4253,
+          "end_frame": 4254,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 28517,
+          "IRQ_master_cycles": 229020,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4254,
+          "end_frame": 4272,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010997,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4272,
+          "end_frame": 4304,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4304,
+        "video_frame_boundaries": 72,
+        "foreground_tstates": 4265092,
+        "IRQ_master_cycles": 13327650,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4305,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -6,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\96-00\\pal-cycle-events.json",
+      "raw_events_sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 255,
+      "region": "auto",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4249,
+          "video_frame_boundaries": 17,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 859395,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "map": {
+          "start_frame": 4249,
+          "end_frame": 4249,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 15012,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 96,
+          "end_clock": 96
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4249,
+          "end_frame": 4254,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 277297,
+          "IRQ_master_cycles": 374595,
+          "begin_clock": 96,
+          "end_clock": 97
+        },
+        "call_setup": {
+          "start_frame": 4254,
+          "end_frame": 4254,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "clear_and_room_history": {
+          "start_frame": 4254,
+          "end_frame": 4255,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 52770,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "actors": {
+          "start_frame": 4255,
+          "end_frame": 4260,
+          "video_frame_boundaries": 5,
+          "foreground_tstates": 274930,
+          "IRQ_master_cycles": 293370,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "hero_initialization": {
+          "start_frame": 4260,
+          "end_frame": 4260,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "room_script_setup": {
+          "start_frame": 4260,
+          "end_frame": 4260,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "music_setup": {
+          "start_frame": 4260,
+          "end_frame": 4260,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "load_return": {
+          "start_frame": 4260,
+          "end_frame": 4260,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "VRAM_clear": {
+          "start_frame": 4260,
+          "end_frame": 4261,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 269940,
+          "begin_clock": 97,
+          "end_clock": 97
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4261,
+          "end_frame": 4262,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 28952,
+          "IRQ_master_cycles": 157665,
+          "begin_clock": 97,
+          "end_clock": 98
+        },
+        "palette_fade": {
+          "start_frame": 4262,
+          "end_frame": 4280,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 848937,
+          "IRQ_master_cycles": 3446010,
+          "begin_clock": 98,
+          "end_clock": 116
+        },
+        "contour_reveal": {
+          "start_frame": 4280,
+          "end_frame": 4312,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1524285,
+          "IRQ_master_cycles": 6095715,
+          "begin_clock": 116,
+          "end_clock": 148
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4312,
+        "video_frame_boundaries": 80,
+        "foreground_tstates": 4026371,
+        "IRQ_master_cycles": 11549460,
+        "begin_clock": 96,
+        "end_clock": 148
+      },
+      "source_first_idle": 4313,
+      "native_first_fade": 4252,
+      "native_first_contour": 4270,
+      "native_first_idle": 4303,
+      "native_idle_frame_gap": -10,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\96-ff\\auto-cycle-events.json",
+      "raw_events_sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 255,
+      "region": "pal",
+      "source_phases": {
+        "graphics": {
+          "start_frame": 4232,
+          "end_frame": 4246,
+          "video_frame_boundaries": 14,
+          "foreground_tstates": 982060,
+          "IRQ_master_cycles": 838815,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "map": {
+          "start_frame": 4246,
+          "end_frame": 4247,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 15012,
+          "IRQ_master_cycles": 53595,
+          "begin_clock": 133,
+          "end_clock": 133
+        },
+        "HUD_wait_palette": {
+          "start_frame": 4247,
+          "end_frame": 4251,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 314215,
+          "IRQ_master_cycles": 387630,
+          "begin_clock": 133,
+          "end_clock": 134
+        },
+        "call_setup": {
+          "start_frame": 4251,
+          "end_frame": 4251,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 17,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "clear_and_room_history": {
+          "start_frame": 4251,
+          "end_frame": 4252,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 10466,
+          "IRQ_master_cycles": 51900,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "actors": {
+          "start_frame": 4252,
+          "end_frame": 4256,
+          "video_frame_boundaries": 4,
+          "foreground_tstates": 274930,
+          "IRQ_master_cycles": 207600,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "hero_initialization": {
+          "start_frame": 4256,
+          "end_frame": 4256,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 12078,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "room_script_setup": {
+          "start_frame": 4256,
+          "end_frame": 4256,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 288,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "music_setup": {
+          "start_frame": 4256,
+          "end_frame": 4256,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 381,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "load_return": {
+          "start_frame": 4256,
+          "end_frame": 4256,
+          "video_frame_boundaries": 0,
+          "foreground_tstates": 40,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "VRAM_clear": {
+          "start_frame": 4256,
+          "end_frame": 4257,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 51628,
+          "IRQ_master_cycles": 0,
+          "begin_clock": 134,
+          "end_clock": 134
+        },
+        "initial_reveal_wait": {
+          "start_frame": 4257,
+          "end_frame": 4258,
+          "video_frame_boundaries": 1,
+          "foreground_tstates": 53892,
+          "IRQ_master_cycles": 498090,
+          "begin_clock": 134,
+          "end_clock": 135
+        },
+        "palette_fade": {
+          "start_frame": 4258,
+          "end_frame": 4276,
+          "video_frame_boundaries": 18,
+          "foreground_tstates": 1010968,
+          "IRQ_master_cycles": 4153545,
+          "begin_clock": 135,
+          "end_clock": 153
+        },
+        "contour_reveal": {
+          "start_frame": 4276,
+          "end_frame": 4308,
+          "video_frame_boundaries": 32,
+          "foreground_tstates": 1810718,
+          "IRQ_master_cycles": 7344075,
+          "begin_clock": 153,
+          "end_clock": 185
+        }
+      },
+      "source_whole_loading_and_reveal": {
+        "start_frame": 4232,
+        "end_frame": 4308,
+        "video_frame_boundaries": 76,
+        "foreground_tstates": 4536693,
+        "IRQ_master_cycles": 13535250,
+        "begin_clock": 133,
+        "end_clock": 185
+      },
+      "source_first_idle": 4309,
+      "native_first_fade": 4248,
+      "native_first_contour": 4266,
+      "native_first_idle": 4299,
+      "native_idle_frame_gap": -10,
+      "raw_events_path": "validation\\paid-passage-transition-matrix\\96-ff\\pal-cycle-events.json",
+      "raw_events_sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Actual unpatched source paid exits; six routes,empty/full destination masks,PAL/NTSC. Initial entrance/hero/clock and pre-entry persistence controlled; no RNG or post-load actor injection. Native ROM v0176 remains unchanged during all captures.",
+    "Four previously instruction-derived components independently match96 live comparisons. Fourteen contiguous source intervals telescope to total loading/reveal foreground work; interrupts and frame boundaries are recorded separately.",
+    "Empty rooms now find idle by room arrival/hero state,not actor slot0 existence. Native fade/contour stage fields are observations at frame boundaries,not exact sub-frame PC timestamps.",
+    "Orchestration costs,RNG/refresh,IRQ alignment and global/natural transition fidelity are still not modeled or asserted equal. This is diagnostic evidence,not a calibrated wait table."
+  ]
+}

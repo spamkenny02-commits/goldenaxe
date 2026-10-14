@@ -1,0 +1,65 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "measurements": [
+    {
+      "region": "auto",
+      "room": 343,
+      "foreground_tstates": 324139,
+      "start_frame": 3700,
+      "redraw_frame": 3706,
+      "profile_sha256": "e180f820be5ef36c6484b19c6021f873cfc34696e8eab281dbee1668d974eb58"
+    },
+    {
+      "region": "auto",
+      "room": 411,
+      "foreground_tstates": 324168,
+      "start_frame": 3700,
+      "redraw_frame": 3706,
+      "profile_sha256": "e180f820be5ef36c6484b19c6021f873cfc34696e8eab281dbee1668d974eb58"
+    },
+    {
+      "region": "auto",
+      "room": 425,
+      "foreground_tstates": 324139,
+      "start_frame": 3700,
+      "redraw_frame": 3706,
+      "profile_sha256": "e180f820be5ef36c6484b19c6021f873cfc34696e8eab281dbee1668d974eb58"
+    },
+    {
+      "region": "pal",
+      "room": 343,
+      "foreground_tstates": 333564,
+      "start_frame": 3700,
+      "redraw_frame": 3705,
+      "profile_sha256": "8233982f3688cf597941c3f26d7e5313db2bcbeb46d9aac39c37cb4352a715da"
+    },
+    {
+      "region": "pal",
+      "room": 411,
+      "foreground_tstates": 333564,
+      "start_frame": 3700,
+      "redraw_frame": 3705,
+      "profile_sha256": "8233982f3688cf597941c3f26d7e5313db2bcbeb46d9aac39c37cb4352a715da"
+    },
+    {
+      "region": "pal",
+      "room": 425,
+      "foreground_tstates": 333564,
+      "start_frame": 3700,
+      "redraw_frame": 3705,
+      "profile_sha256": "8233982f3688cf597941c3f26d7e5313db2bcbeb46d9aac39c37cb4352a715da"
+    }
+  ],
+  "native_budget_tstates": {
+    "auto": 56664,
+    "pal": 68292
+  },
+  "model_pre_redraw_tstates": {
+    "auto": 324168,
+    "pal": 333564
+  },
+  "limits": [
+    "Instrumented read-only source core; three controlled rooms per region.",
+    "Foreground costs include the original VBlank wait; phase and IRQ budget remain approximations for other input timings."
+  ]
+}

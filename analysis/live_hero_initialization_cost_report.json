@@ -1,0 +1,520 @@
+{
+  "md_sha256": "3f4dbbc93e4c6db3e688c77c85912be93ed886dd73d0610d75fb77ec4c8f558c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 24,
+  "independent_phase_comparisons": 144,
+  "compared_RAM_bytes_per_case": 475,
+  "rows": [
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 0,
+      "region": "auto",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "960dddd4cbe14560f957fcbb9f5a4f582e91e6366b202c546350b8e444407b7a",
+      "return_sha256": "ed6a58d508cf8366acaef008c24ac31ff688780730c338843be709e3034b20aa",
+      "snapshot_path": "validation\\paid-passage-hero-init\\1a-00\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 0,
+      "region": "pal",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "6d89bde6e6badc3ee16dd87e10586b390f37f2ec7827fee161b8f178b13b520f",
+      "return_sha256": "35ddf83fd2c0f3baa5c8075f93ea8b0ce96db6339f0ac4629f03bbed63eeef40",
+      "snapshot_path": "validation\\paid-passage-hero-init\\1a-00\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 255,
+      "region": "auto",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "dec477f72e621b2927c12308e8e6c808ab60cdc719c78cd506e60c0005396e3a",
+      "return_sha256": "c0c111e829cc241cc2cd5d4b0211ddfb10dd5540155e9a2d8c87ab030483f4de",
+      "snapshot_path": "validation\\paid-passage-hero-init\\1a-ff\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 255,
+      "region": "pal",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "3401e413dd3e1ec0406ab07c8acbb48b5388c2c5248fbee73742fe83fe275452",
+      "return_sha256": "b254ff39488b5acff2346c40bd171d9e3a3a58fd711d1aae809be9d8be6f379f",
+      "snapshot_path": "validation\\paid-passage-hero-init\\1a-ff\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 0,
+      "region": "auto",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "329b1ba315381614fab76855fca94b70844cc0417f30e88a1489db18ab225e3b",
+      "return_sha256": "1c4588721cd9f315df7d39acd870f58e4f2bbbfdb3ace0722a43fd5718a685d6",
+      "snapshot_path": "validation\\paid-passage-hero-init\\36-00\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 0,
+      "region": "pal",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "3529a4a597fd5e17158443d8bd41c3132a93eb30a934c70d6cc715ee0f8cae47",
+      "return_sha256": "a81eed81daa7d9e90245b8e88ed91f5ac19556c785b66f091ebc129578981161",
+      "snapshot_path": "validation\\paid-passage-hero-init\\36-00\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 255,
+      "region": "auto",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "8a285920e028e7a2cfdee16a1f585baf9987ad2fbae921fa0bfde303e7e5833f",
+      "return_sha256": "75d17c510d1ca4d3b781f15151b0f46dd23ec71d3193ca9e0fe6654aa359440b",
+      "snapshot_path": "validation\\paid-passage-hero-init\\36-ff\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 255,
+      "region": "pal",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "f6988ce50e0bb945f4047518ef04eff4d6da5b08ca55f60e4733600ef5acc4c4",
+      "return_sha256": "39c0c713a718da98966792d5de5418bf2dc98d0553cb2ebf1a0988aef3c7859f",
+      "snapshot_path": "validation\\paid-passage-hero-init\\36-ff\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 0,
+      "region": "auto",
+      "foreground_tstates": 12091,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 607,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "37000f36fa78d7fd135d2e60084134d118ad6cb1c6fa6fb2e872463cecfc4872",
+      "return_sha256": "83886d74eb2fca804f0ce703336ee9b0acf3f99c13fd5d9802d13075e9d0e2c3",
+      "snapshot_path": "validation\\paid-passage-hero-init\\6d-00\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 0,
+      "region": "pal",
+      "foreground_tstates": 12091,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 607,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "3aafc06da35c08ba5d79a528380bc2b889697d12e4a21bff09b59362c27d0a7f",
+      "return_sha256": "03c74875d4da09b7da2cb2cc92bcaaa09f601e8866b62f2795a92ef3401361d2",
+      "snapshot_path": "validation\\paid-passage-hero-init\\6d-00\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 255,
+      "region": "auto",
+      "foreground_tstates": 12091,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 607,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "99097ce6be59e28e732c2a2a50d9cfbd48be6e12562df35824c32aac4a1a3c72",
+      "return_sha256": "e869e833faff024ddf9a5538aaf68bcd0a168d42c18ed8dfaafd9f2f24483620",
+      "snapshot_path": "validation\\paid-passage-hero-init\\6d-ff\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 255,
+      "region": "pal",
+      "foreground_tstates": 12091,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 607,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "e560400f64c44d9fd8ada8bfb94a6a1fd242f4696f9826fc0f8db08ea308f7af",
+      "return_sha256": "333268bb24f5e6dd6f3b310fe69c782cc7a6324087a6fd8205e27d2e7e4bf484",
+      "snapshot_path": "validation\\paid-passage-hero-init\\6d-ff\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 0,
+      "region": "auto",
+      "foreground_tstates": 12050,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 899,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "08aa107cee08103564614abf59f9d7e8d8764819bf16f8d4dbcebe70839fc0d9",
+      "return_sha256": "ea3611a1993628a3638ced04753f7ef6f53438a376003473ea1b3738476e4fae",
+      "snapshot_path": "validation\\paid-passage-hero-init\\3c-00\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 0,
+      "region": "pal",
+      "foreground_tstates": 12050,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 899,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "1ff861e719aaf04b559fda25d3f4001ccfe418176e6b9ea81871d74005dd80cf",
+      "return_sha256": "5c1e713e002ef8c40631d1b47a677331f98b058ccb234de5dcff2449cccf90b6",
+      "snapshot_path": "validation\\paid-passage-hero-init\\3c-00\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 255,
+      "region": "auto",
+      "foreground_tstates": 12050,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 899,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "5b8cb3ea1b9ecf3d3a1bbf2568d9282eb873f594376402cbc1294fe77222078e",
+      "return_sha256": "06fbf8336bcf5e0f9dacb27facd01330ee42520a58be6d2f46f21bbebcbf4b1f",
+      "snapshot_path": "validation\\paid-passage-hero-init\\3c-ff\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 255,
+      "region": "pal",
+      "foreground_tstates": 12050,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 899,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "6510e284394d2398204fb2d5a2064ea1ca3b27db8e56475d31d8dbd50273389f",
+      "return_sha256": "6316e910b29f9473b4ac0505415b5002f484c113c720b211551da996be6ee63b",
+      "snapshot_path": "validation\\paid-passage-hero-init\\3c-ff\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 0,
+      "region": "auto",
+      "foreground_tstates": 12050,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 899,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "4a16f818a89be300145b47798766ec1da26e2be81ac9ac6cde134bae7d3bad57",
+      "return_sha256": "995039c5933a9cdf50321108cd6a82c90152025dfa4cfcd8bf3e835b9101a5f6",
+      "snapshot_path": "validation\\paid-passage-hero-init\\87-00\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 0,
+      "region": "pal",
+      "foreground_tstates": 12050,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 899,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "4e6921b3dca331e4143a83f7c00b11ef7a56334f01e12fa6342f90d7ec4f5b89",
+      "return_sha256": "b67cbaa3e466493e1720a57344479c748c2430633a991ae177ed67d5459b4047",
+      "snapshot_path": "validation\\paid-passage-hero-init\\87-00\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 255,
+      "region": "auto",
+      "foreground_tstates": 12050,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 899,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "402ebe7ca4857d5385a293ae75b32138c74e708019086455ea84740f24234515",
+      "return_sha256": "8433f830ea54610c230f5e5820165b2fc1f9339a78e35e010d8b75fdcb6f6bef",
+      "snapshot_path": "validation\\paid-passage-hero-init\\87-ff\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 255,
+      "region": "pal",
+      "foreground_tstates": 12050,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 899,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "5b6423887736062ee9248991509bd732ba5837a64214401866c9dc6bd54a5a66",
+      "return_sha256": "bc1bbae47965ce70e1258872fbbe6859e88d53a8ccda99fc2d4de607aaa6d846",
+      "snapshot_path": "validation\\paid-passage-hero-init\\87-ff\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 0,
+      "region": "auto",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "f664f50250012c816a3f95a4bb514de5f7a126ff3a16c7421d3753b68f0a38a7",
+      "return_sha256": "1e3d003925bad063959670f29f5fec7ee02afebf1686a63222d3e216a378580c",
+      "snapshot_path": "validation\\paid-passage-hero-init\\96-00\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 0,
+      "region": "pal",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "421f0a4455a16e287eb34cba6f649bb0091acbe682d0bd8d2a6e4b3186ee2b33",
+      "return_sha256": "74b819f8e6ab8c9fe63078ce51cf7676dd6901ad7437e532ef40600bb856d7f1",
+      "snapshot_path": "validation\\paid-passage-hero-init\\96-00\\pal-hero-001-before.bin"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 255,
+      "region": "auto",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "d57aa6b5706146e510d51e8489f82db53ff9b74e592836bd9332fb2d27d2c20c",
+      "return_sha256": "5fe471e1cf5490a40b355ce7ce4eb9d4e06ad7221827f0ff80817873811b2dee",
+      "snapshot_path": "validation\\paid-passage-hero-init\\96-ff\\auto-hero-001-before.bin"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 255,
+      "region": "pal",
+      "foreground_tstates": 12051,
+      "components": {
+        "initial_fields": 159,
+        "pose": 401,
+        "auxiliary_clear": 8105,
+        "defense": 104,
+        "attack": 157,
+        "contact_copy": 900,
+        "water_collision_flags": 567,
+        "terrain_classifier": 1619,
+        "earth_collision_flags_and_return": 39
+      },
+      "entry_sha256": "896210d8c533a592e24b07d28c4dfbc0718a0ff7a8269bca21f4d9d956c88f74",
+      "return_sha256": "a5770130fe5050bcf901c4246abc67e5f360d03bc8ec837665488d3a82800d3c",
+      "snapshot_path": "validation\\paid-passage-hero-init\\96-ff\\pal-hero-001-before.bin"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Actual unpatched source six paid-exit routes,two extreme destination enemy masks,both regions. Entrance/hero/initial clock and pre-entry mask controlled;no per-choice RNG mutation or hero-state repair during loading.",
+    "Read-only core captures full8192-byte RAM at2C63 entry and24E7 return. Model predicts full hero cost,475 relevant/preserved RAM bytes and five independent internal phase costs. Source IRQ work is subtracted,not simulated.",
+    "Native production remains v0177. Model is not integrated as a delay;source audio IRQ costs/phase alignment,refresh RNG,physical hardware and whole natural progression remain incomplete."
+  ]
+}

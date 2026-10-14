@@ -1,0 +1,30 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "a208d1d38e0d9d9d5f9e8cf5cf5b653cc8ecc48d1668d41f939f281e7fd293d5",
+  "cases": 56288,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 28144,
+      "results_sha256": "c4d62c6045b24c44591203c7095d88f479bacf9ccfa1d697a1161f087fe720a2"
+    },
+    {
+      "region": "pal",
+      "cases": 28144,
+      "results_sha256": "c4d62c6045b24c44591203c7095d88f479bacf9ccfa1d697a1161f087fe720a2"
+    }
+  ],
+  "branch_comparisons": {
+    "empty": 18432,
+    "accepted": 126684,
+    "rejected": 23748
+  },
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original bank6 arbitration8097 and priority table8AD5. Custom boot/3000 caller supplies400-byte patterned state andfive request/priority fields;IRQs disabled. All400 RAM bytes and complete helper instruction cost independently predicted.",
+    "Every byte request in each ofthree slots,six prior priority values;all14 music/B0 x29 effects x29 effects xpriority0/1 combinations. Invalid high request/priority boundaries are synthetic.",
+    "Does not establish complete reader/dispatch/channel cost,live arbitration phase,PSG waveforms or physical loading prediction."
+  ]
+}
