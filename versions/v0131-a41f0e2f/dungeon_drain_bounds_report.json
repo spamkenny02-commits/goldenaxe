@@ -1,0 +1,65 @@
+{
+  "md_sha256": "a41f0e2f59bc338620aab82c6937924cf50b9771a4ceec9c8e4275eee822c415",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "vectors": [
+    {
+      "octant": 0,
+      "dx": 122,
+      "dy": -295,
+      "maximum_actor_updates_before_border_callback": 92
+    },
+    {
+      "octant": 1,
+      "dx": 295,
+      "dy": -122,
+      "maximum_actor_updates_before_border_callback": 154
+    },
+    {
+      "octant": 2,
+      "dx": 122,
+      "dy": 295,
+      "maximum_actor_updates_before_border_callback": 92
+    },
+    {
+      "octant": 3,
+      "dx": 295,
+      "dy": 122,
+      "maximum_actor_updates_before_border_callback": 154
+    },
+    {
+      "octant": 4,
+      "dx": -122,
+      "dy": -295,
+      "maximum_actor_updates_before_border_callback": 92
+    },
+    {
+      "octant": 5,
+      "dx": -295,
+      "dy": -122,
+      "maximum_actor_updates_before_border_callback": 154
+    },
+    {
+      "octant": 6,
+      "dx": -122,
+      "dy": 295,
+      "maximum_actor_updates_before_border_callback": 92
+    },
+    {
+      "octant": 7,
+      "dx": -295,
+      "dy": 122,
+      "maximum_actor_updates_before_border_callback": 154
+    }
+  ],
+  "source_segment_ticks": 32,
+  "source_lifetime_segments": 128,
+  "maximum_segment_decrements_before_border": 4,
+  "interior_lifetime_expiry_unreachable_under_invariant": true,
+  "full_game_ported": false,
+  "assumptions": [
+    "Initial9C29/9C30 sets one of eight nonzero vectors and lifetime128; border checks precede timer/lifetime checks.",
+    "Interior coordinate bounds are40<=X<216 and40<=Y<144, including arbitrary low fixed-point bytes.",
+    "Generic surviving hurt preserves velocities because both source stats flags20 exclude knockback08. Freeze/pause does not consume AI lifetime segments; room reload replaces records.",
+    "Externally corrupted actor RAM, unsupported mechanics or a forced zero velocity break this invariant; direct routine tests cover only explicit inheritedE0..3 in that forced branch."
+  ]
+}

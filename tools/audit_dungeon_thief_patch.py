@@ -1,0 +1,24 @@
+"""Restrict5B thief, hero12 and after-actor gold HUD changes."""
+import hashlib,json,re
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def main():
+ base=ROOT/'versions/v0141-51ff11b9';old=(base/'actors.c').read_text();s=(ROOT/'megadrive/src/actors.c').read_text()
+ a=s.index('extern u16 world_hero_state(void);');b=s.index('/* 5071 -> A86D:',a);s=s[:a]+s[b:]
+ d='            else if(entity[0]==0x5b) dungeon_thief_behavior(entity,tilemap,cells,hero_x,hero_y,frame,slot,NULL);\n';assert s.count(d)==1;s=s.replace(d,'').replace('(entity[0]>=0x4a && entity[0]<=0x5b)','(entity[0]>=0x4a && entity[0]<=0x5a)').replace('if(entity[0]<0x56 || entity[0]>0x5b)','if(entity[0]<0x56 || entity[0]>0x5a)');assert s==old,'Unrelated actor implementation changed'
+ main=(ROOT/'megadrive/src/main.c').read_text();a=main.index('/* A36F/A3BF:5B capture');b=main.index('static s16 world_hscroll[224];',a);main=main[:a]+main[b:]
+ branch='                if(hero_state==12) { hero_animation=0;hero_flags|=1;hero_casting=0; } /* 2F0D/369F */\n                else if(hero_state==1) move_hero();';assert main.count(branch)==1;main=main.replace(branch,'                if(hero_state==1) move_hero();')
+ main=main.replace('prepare_hero_health_bar(FALSE);prepare_hero_magic_bar();','prepare_hero_health_bar(FALSE);prepare_hero_gold_bar();prepare_hero_magic_bar();').replace('            prepare_hero_gold_bar(); /* 1EA1/1F4B follows actor gold mutations. */\n','')
+ assert main==(base/'main.c').read_text(),'Unrelated main implementation changed'
+ source=(ROOT/'input/original.sms').read_bytes();assert source[0xa3bb:0xa3c2]==bytes.fromhex('dd36010c3a18c3') and source[0x2f0d:0x2f18]==bytes.fromhex('af320bc3ddcb03c6c39f36')
+ data=(ROOT/'gaw-megadrive.bin').read_bytes();assert len(data)==1048576 and data==(ROOT/'gaw-title-megadrive.bin').read_bytes()==(ROOT/'megadrive/out/release/rom.bin').read_bytes()
+ checksum=sum(int.from_bytes(data[i:i+2],'big') for i in range(0x200,len(data),2))&65535;assert int.from_bytes(data[0x18e:0x190],'big')==checksum
+ assert data[0x1a4:0x1a8]==bytes.fromhex('000fffff') and data[0x1b0:0x1b4]==bytes.fromhex('5241f820')
+ evidence={}
+ for name in ['dungeon_thief_allocation_unit_report.json','dungeon_thief_gameplay_report.json','dungeon_thief_entry_report.json','dungeon_thief_capture_entry_report.json','loot_pickup_regression_report.json','loot_expiry_regression_diagnostic.json','timing_report.json','timing-pal_report.json','start_menu_audio_report.json']:
+  p=ROOT/'validation'/name;d=json.loads(p.read_text());assert d['md_sha256']==sha(ROOT/'gaw-megadrive.bin');evidence[name]=sha(p)
+ capture=json.loads((ROOT/'validation/dungeon_thief_capture_entry_report.json').read_text());assert len(capture['cases'])==2 and all(c['controlled_cycle_actor_hero_gold_sound_frames_exact']==65 and c['controlled_cycle_sat_frames_exact']==64 and c['excluded_fixture_sat_frame']==3700 for c in capture['cases'])
+ report=dict(md_sha256=sha(ROOT/'gaw-megadrive.bin'),source_sha256=sha(ROOT/'input/original.sms'),rom_bytes=len(data),checksum=checksum,aliases_and_header_verified=True,production_changes_confined_to_5B_AI_hero12_grab_glue_and_after_actor_gold_HUD=True,prior_actor_implementations_unchanged_since_v0141=True,source_capture_falls_into_attachment_same_tick=True,source_hero12_animation_display_descriptor_hook_ported=True,original_random_stream_reproduced=False,evidence_sha256=evidence,source_files={str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'megadrive/src/main.c',ROOT/'megadrive/src/actors.c',ROOT/'tools/validate_dungeon_thief.py',ROOT/'tools/validate_dungeon_thief_gameplay.py',ROOT/'tools/validate_dungeon_thief_entry.py',ROOT/'tools/validate_dungeon_thief_capture.py']},full_game_ported=False,limits=['Initial controlled production clocks explicitly aligned; source random reads controlled only in isolated cases.','Escape event immediately chooses random movement. Prior actor frames compare fully; on the escape frame only restored descriptor/counters/state and hero side effects compare, without claiming equal random motion.','Actual153 first appearance aligns to initialization and excludes unaligned random X/Y/direction. Controlled capture SAT excludes and records injection frame3700; no timeline shift.','Legacy full loot expiry visual check still fails at3985 by105 pixels; three baselinev0141/current images match and all370 loot records are exact, so this is an inherited unresolved visual gap. Six pickup fixtures pass independently.','Full natural fights, RNG/global clock, full framebuffer/audio waveforms and hardware timing remain unproved.'])
+ (ROOT/'validation/dungeon_thief_patch_audit.json').write_text(json.dumps(report,indent=2)+'\n');print('Only5B, hero grab12 and gold HUD ordering changes; integrity/current evidence verified. Inherited loot expiry visual gap retained.')
+if __name__=='__main__':main()

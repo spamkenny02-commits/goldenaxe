@@ -1,0 +1,149 @@
+{
+  "md_sha256": "d7bdb3f6112d2efe06cef2c6ca9cde0159dd35b4f71c643b924428516a2196aa",
+  "rows": [
+    {
+      "room": 29,
+      "system": "sms",
+      "frames": 6000,
+      "required_states": {
+        "66": 4
+      },
+      "states": {
+        "66": [
+          0,
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "first_walking_events": {
+        "66": 1494
+      },
+      "projectile_births": [
+        [
+          1518,
+          8
+        ],
+        [
+          1669,
+          8
+        ],
+        [
+          1779,
+          9
+        ]
+      ]
+    },
+    {
+      "room": 29,
+      "system": "md",
+      "frames": 6000,
+      "required_states": {
+        "66": 4
+      },
+      "states": {
+        "66": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "first_walking_events": {
+        "66": 1400
+      },
+      "projectile_births": [
+        [
+          1424,
+          8
+        ],
+        [
+          1524,
+          13
+        ],
+        [
+          1638,
+          8
+        ]
+      ]
+    },
+    {
+      "room": 45,
+      "system": "sms",
+      "frames": 6000,
+      "required_states": {
+        "66": 4
+      },
+      "states": {
+        "66": [
+          0,
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "first_walking_events": {
+        "66": 1675
+      },
+      "projectile_births": [
+        [
+          1699,
+          9
+        ],
+        [
+          1790,
+          8
+        ],
+        [
+          1959,
+          8
+        ],
+        [
+          2406,
+          9
+        ]
+      ]
+    },
+    {
+      "room": 45,
+      "system": "md",
+      "frames": 6000,
+      "required_states": {
+        "66": 4
+      },
+      "states": {
+        "66": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "first_walking_events": {
+        "66": 1401
+      },
+      "projectile_births": [
+        [
+          1425,
+          8
+        ],
+        [
+          1506,
+          9
+        ],
+        [
+          1621,
+          8
+        ]
+      ]
+    }
+  ],
+  "ram_mutations": false,
+  "controlled_saved_room": true,
+  "checkpoint_health": 80,
+  "two_orbit_rooms_verified": true,
+  "absolute_timing_exact": false,
+  "full_progression_verified": false
+}

@@ -1,0 +1,92 @@
+{
+  "md_sha256": "365b546d3f02682d7642b10970eda3863f47d49e80602619ebef16c95006b021",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_bytes": 1048576,
+  "checksum": "0xafe",
+  "aliases_header_and_prior_assets_verified": true,
+  "exact_v0080_restored_by_replacing_only_glyph_lookup_and_renderer": true,
+  "source_files": {
+    "megadrive/src/main.c": "bb77077b567dc505e76cd63f562867743af79fea66a7bbbf73d497062494bcfc",
+    "tools/validate_dialogue_controls.py": "0fcff26838a66d2aaf98adba51fdb4d756b2496ff80bdc624a1d794bff6e4e63",
+    "tools/audit_dialogue_controls_patch.py": "d9b3dbb3843f2568c82ce131c451e3ae41dbeb0bd93c7086a903149bd917d4c5",
+    "analysis/dialogue-controls-baseline-v0080/main.c": "c77becae09eda557e4ec0cb4de6458be08a42aef96d6460bbd4bda5ed036bde2",
+    "analysis/dialogue-controls-baseline-v0080/dialogue_controls_baseline_report.json": "e9a543f6fb9e857ce117de22f7c4b42cc8a7366cf6522af4e2bdf9cb8f737f69"
+  },
+  "reports": [
+    {
+      "file": "dialogue_controls_report.json",
+      "sha256": "b96c184282edce870140f6112a93ac58d2b2805b4b9b154ac126a64a7356610a"
+    },
+    {
+      "file": "dialogue_scroll_report.json",
+      "sha256": "7fe53b89e90b553ca07683fb5da9dc895cf19c658503dca50302653d65377862"
+    },
+    {
+      "file": "final_dialogue_report.json",
+      "sha256": "9ea33ac68d28c35162f57e7acdc8bf7c62d797f761838b4ac0489f991564bd86"
+    },
+    {
+      "file": "house_dialogue_report.json",
+      "sha256": "10e2e730f6eafd395c1c38251e04b921a537121927e514402d681f49eecbfc81"
+    },
+    {
+      "file": "all_merchants_report.json",
+      "sha256": "4e8c250f90e0d9d6be55661c77c7b027ff7cdd428fc7e42554378c0ae6eb6fe4"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "65a6f1d49a81febbdef30e2add43b5a31c1c838beba256736ed5c8c06cbeb752"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "cdfd2dd37912e72a020d34627012d95b7d194238650ea229ac27a2892d23bca8"
+    },
+    {
+      "file": "dialogue_publications_report.json",
+      "sha256": "2f762839f1e4baa57aba39166568207edcc3fd184fde0263f4108596841d3582"
+    },
+    {
+      "file": "dialogue_preparation_profile.json",
+      "sha256": "a49053aefeb6671224bcd4c5b385b5860058d1503167be7823e109afd5ee7619"
+    },
+    {
+      "file": "dialogue_preparation-pal_profile.json",
+      "sha256": "c64412cf0cd3c5e76f65a4432fe3f39928057c77e9b18a646d6920377f3a40a6"
+    },
+    {
+      "file": "world_clock_profile.json",
+      "sha256": "68180e0f7f1f2160e989029eaf35c5e75737202d4d5234c41cbc942c9d3a553f"
+    },
+    {
+      "file": "world_clock-pal_profile.json",
+      "sha256": "9f07a94658c8a7483b86da198d6a1f7c11d126f4d596a3f7ac4857ca3955f377"
+    }
+  ],
+  "original_renderer_fixture_cases": 26,
+  "formerly_failing_identical_fixtures_now_passing": [
+    "toggle:auto",
+    "toggle_inside_word:auto",
+    "double_toggle:auto",
+    "overwide_word:auto",
+    "forced_name:auto",
+    "pause:auto",
+    "pause_toggle:auto",
+    "newline_toggle:auto",
+    "toggle:pal",
+    "toggle_inside_word:pal",
+    "double_toggle:pal",
+    "overwide_word:pal",
+    "forced_name:pal",
+    "pause:pal",
+    "pause_toggle:pal",
+    "newline_toggle:pal"
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Fixture ROM copies replace only opening text and native checksum; controlled argument RAM writes are explicit. These are not natural game progression tests.",
+    "Stable bitmap/control continuation equality, not exact timing, marker, palette, partial word clearing or audio.",
+    "First-page waits remain 9 frames late NTSC / 10 PAL; initial room remains 33/31 early.",
+    "Save/free-healer evidence remains v0080 and was not rerun for this change.",
+    "Global clock reset, full parameter streams and renderer edge cases, full enemy/boss behavior, abilities, quests, ending and a natural complete playthrough remain unfinished."
+  ]
+}

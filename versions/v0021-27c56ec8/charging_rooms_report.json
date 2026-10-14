@@ -1,0 +1,99 @@
+{
+  "md_sha256": "27c56ec87e272f87f6d6bf368e5f34bd9b85264956b87932d74e281df5aa5cf5",
+  "rows": [
+    {
+      "room": 68,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "58": 8
+      },
+      "states": {
+        "58": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "first_charge_events": {
+        "58": 1485
+      }
+    },
+    {
+      "room": 68,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "58": 8
+      },
+      "states": {
+        "58": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "first_charge_events": {
+        "58": 1470
+      }
+    },
+    {
+      "room": 86,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "59": 8
+      },
+      "states": {
+        "59": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "first_charge_events": {
+        "59": 1536
+      }
+    },
+    {
+      "room": 86,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "59": 8
+      },
+      "states": {
+        "59": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "first_charge_events": {
+        "59": 1440
+      }
+    }
+  ],
+  "ram_mutations": false,
+  "controlled_saved_room": true,
+  "two_charging_rooms_verified": true,
+  "both_types_charge_in_at_least_one_room": true,
+  "absolute_timing_exact": false,
+  "full_progression_verified": false
+}

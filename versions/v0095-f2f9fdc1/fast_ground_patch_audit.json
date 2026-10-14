@@ -1,0 +1,76 @@
+{
+  "md_sha256": "f2f9fdc1aaa20bc67eb5f1d9e21697b30c47dd9bc7b60f863c14b204b14d0328",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "only_declared_fast_normal_ground_selection_and_boots_grant_restore_changes_from_v0093": true,
+  "source_files": {
+    "megadrive/src/main.c": "ee2e4a8d0f402e0d5b02975cf95f700c6c00034e778c8bb3de89380c8408dd7b",
+    "megadrive/src/fast_ground_data.c": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df",
+    "tools/extract_fast_ground.py": "585e3b781f14b391ec67d71c8fd3529b9dc36e12bf23d461d091123620e7ac10",
+    "tools/validate_ground_walk.py": "a622951c86d9ff14aa5d158b62dfbcd8cff567c92afaa1be7113de1f272f7282",
+    "tools/validate_fast_ground_cross.py": "962a736bb3c2152bfff1b50bebaf9f6cc50671efa550fa994a42407802435112",
+    "tools/audit_fast_ground_patch.py": "4c70accb24793dadbc82e82ce7f34052a9fa518d75b33b53c7e9b77135a7d1af",
+    "analysis/fast_ground_resources.json": "c7a49b0e1540906254b5dc411ceeb932ff149ce4c7f33e3e85ca0d62a622bdcf",
+    "analysis/fast_ground_milestone.md": "e882daded513d6b6ec5c17e05734251c9fa5d29bad01b4d9d5e739a9edcef8dd",
+    "analysis/fast-ground-baseline-v0093/main.c": "355b40cba40d39022e6695db5155288fecaff0f2cd6cfc43cf12c55210714dc3",
+    "analysis/fast-ground-baseline-v0093/save.inc": "f4817eebbd8836f0f9f44adf4f1611fc83b789f5e2653634cc6ce95afa174bc3",
+    "megadrive/src/save.inc": "939bee7ebf54e4eeca38b9f950abd3451c12520fa43d16205742dabf74715687",
+    "tools/validate_item_rewards_gameplay.py": "8047bcbde0c5a5e0fb6cf2e82f4563e775f087a8a9403a55a8052d9e35fec9e5",
+    "tools/validate_item_rewards_save.py": "2b5083b6ea29d4a535185f93c5420c4e1614a4f4c999650765c0a909f8eb1cd6"
+  },
+  "reports": [
+    {
+      "file": "ground_walk_report.json",
+      "sha256": "396170a887c4acf50f90b9c5a14d36d558cef4913bfb471d8bb7aa9eae2fb38d"
+    },
+    {
+      "file": "water_cross_pose_report.json",
+      "sha256": "93ee3e2f3eb245d517afbe131413af5ab863b0f34582bfca4f09b786d4198434"
+    },
+    {
+      "file": "water_cross_all_diagnostic.json",
+      "sha256": "4a7594e261024a63c3ac77d5fa93abde8cc3a6b5bfda9dd795e1ad448148d40e"
+    },
+    {
+      "file": "ground_cross_all_diagnostic.json",
+      "sha256": "359c651bb321997dc614e41c7012420f36badf31298185d7df58681e38b56e79"
+    },
+    {
+      "file": "fast_ground_cross_improvement.json",
+      "sha256": "462cb53047ffa9afebfbc0d697e8001189657de72a202d1709c4ae0d88c864ad"
+    },
+    {
+      "file": "thrown_axe_walk_report.json",
+      "sha256": "32aa6dc57a36eb7d650a74b3ce921bb512a64c86d629ae257742d31a21d19a58"
+    },
+    {
+      "file": "thrown_axe_walk_fast_report.json",
+      "sha256": "742d9be63d5c74873b607a8041276ed6c2e92c5be6c1c557046a8c68c79ba457"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "147c88f9429ee3ffb383c065d80df02de618684aa0957fffc0d03f137f703c09"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "14d187c718a195545f605bb492e4bb170d76a13c050f356d7d0c2e903d2e6736"
+    },
+    {
+      "file": "item_rewards_gameplay_report.json",
+      "sha256": "40564cc0e33896f33d2de7d20e30ab40ed8cd8c3e83af0468336ef76aa3f6c74"
+    },
+    {
+      "file": "item_rewards_gameplay-pal_report.json",
+      "sha256": "397d169763a8b80237d11af33a2d11a19030f22af90bc1ae9b067cfeb605a0fa"
+    },
+    {
+      "file": "item_rewards_save_report.json",
+      "sha256": "455e1df1851a21235a7095cfeda670bfbeaa1ac007f433fb11c8b85dc4cfb9ca"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled ground movement, reward acquisition and cold-load equipment validated; natural dungeon-to-save route, obstacles, combat and other terrain contexts remain unverified.",
+    "Up NTSC transition timing, ground arrival pose/loading phases and software-map staging remain incomplete.",
+    "No complete framebuffer/audio, all enemy AI, boss, quest, ending or complete playthrough proof."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "md_sha256": "174b10157b48d7f44ff7a271195b7d4367aa5ae219e32f757ddabf419b4f1aa9",
+  "version": 11,
+  "rom_bytes": 524288,
+  "aliases_identical": true,
+  "standard_additive_checksum_valid": true,
+  "targeted_reports": [
+    {
+      "file": "intro_report.json",
+      "sha256": "5976b692a13c1282e35929440f8f2ccaf5d33f77d7868b500f1d14f2e9fea18a"
+    },
+    {
+      "file": "intro-pal_report.json",
+      "sha256": "c034dc485eb3477d68a4fbc7ee020737827e6e2918db44827aae477545236207"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "643dc55a1593690ee7087a2c890f32377c9f2aaa1bf5ec3eb771e3a822de5a4e"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "9311925a49ebfa013042616eccb2313923de05da4d73a85543421b5d3c93fbc6"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "1190025d50a4508007a327b0dc7d3766b1dee080254775c2aa66aaabbc2792a2"
+    },
+    {
+      "file": "service_transition_report.json",
+      "sha256": "174a20fceea7080d7eed010f218b59827186b7d232524f1df842abfb456d4456"
+    },
+    {
+      "file": "sfx_report.json",
+      "sha256": "80bc897ceae84b527209078302a0fa677f412f86d0124b71f07ae2c076225da2"
+    },
+    {
+      "file": "save_report.json",
+      "sha256": "f49ee42e4ed91856a9955927a36421ce494717535509b2e19b63f258c19aba48"
+    },
+    {
+      "file": "paid_healer_report.json",
+      "sha256": "1b3dd871e9ed319137ec64d5148c06647fe431d0808d6be20841a9276712b5fd"
+    },
+    {
+      "file": "house_dialogue_report.json",
+      "sha256": "6464a388120d1232ec46dd7de914eb7501f77431c69268d9e482fa0b04a74520"
+    }
+  ],
+  "full_game_regression_run": false,
+  "known_remaining_timing_differences": [
+    "Small absolute intro offsets: NTSC 13..14 frames per line, PAL -5..-4.",
+    "Destination preparation after vertical scroll remains shorter: 27 frames in NTSC, 22 in PAL, on route94->A4.",
+    "All monster AI and original Z80 random stream are not covered."
+  ]
+}

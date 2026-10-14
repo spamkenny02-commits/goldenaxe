@@ -1,0 +1,220 @@
+{
+  "md_sha256": "3161f829edc97c40f95ff52c90dd23529207d265ec73e170f4c6e6c9486bc172",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "region": "auto",
+  "cases": [
+    {
+      "direction": "up",
+      "inventory": "ordinary",
+      "room": 288,
+      "target": 272,
+      "opened_crossed_returned": true,
+      "empty_inventory_refused": false,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 1,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": 3414,
+          "reached": 3488,
+          "returned": 3591
+        },
+        "md": {
+          "opening": 3414,
+          "reached": 3483,
+          "returned": 3596
+        }
+      }
+    },
+    {
+      "direction": "up",
+      "inventory": "master",
+      "room": 288,
+      "target": 272,
+      "opened_crossed_returned": true,
+      "empty_inventory_refused": false,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 5,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": 3414,
+          "reached": 3488,
+          "returned": 3591
+        },
+        "md": {
+          "opening": 3414,
+          "reached": 3483,
+          "returned": 3596
+        }
+      }
+    },
+    {
+      "direction": "up",
+      "inventory": "empty",
+      "room": 288,
+      "target": 272,
+      "opened_crossed_returned": false,
+      "empty_inventory_refused": true,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 0,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": null,
+          "reached": null,
+          "returned": null
+        },
+        "md": {
+          "opening": null,
+          "reached": null,
+          "returned": null
+        }
+      }
+    },
+    {
+      "direction": "left",
+      "inventory": "ordinary",
+      "room": 289,
+      "target": 288,
+      "opened_crossed_returned": true,
+      "empty_inventory_refused": false,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 1,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": 3414,
+          "reached": 3490,
+          "returned": 3599
+        },
+        "md": {
+          "opening": 3414,
+          "reached": 3489,
+          "returned": 3603
+        }
+      }
+    },
+    {
+      "direction": "left",
+      "inventory": "master",
+      "room": 289,
+      "target": 288,
+      "opened_crossed_returned": true,
+      "empty_inventory_refused": false,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 5,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": 3414,
+          "reached": 3490,
+          "returned": 3599
+        },
+        "md": {
+          "opening": 3414,
+          "reached": 3489,
+          "returned": 3603
+        }
+      }
+    },
+    {
+      "direction": "left",
+      "inventory": "empty",
+      "room": 289,
+      "target": 288,
+      "opened_crossed_returned": false,
+      "empty_inventory_refused": true,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 0,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": null,
+          "reached": null,
+          "returned": null
+        },
+        "md": {
+          "opening": null,
+          "reached": null,
+          "returned": null
+        }
+      }
+    },
+    {
+      "direction": "right",
+      "inventory": "ordinary",
+      "room": 288,
+      "target": 289,
+      "opened_crossed_returned": true,
+      "empty_inventory_refused": false,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 1,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": 3414,
+          "reached": 3511,
+          "returned": 3588
+        },
+        "md": {
+          "opening": 3414,
+          "reached": 3509,
+          "returned": 3588
+        }
+      }
+    },
+    {
+      "direction": "right",
+      "inventory": "master",
+      "room": 288,
+      "target": 289,
+      "opened_crossed_returned": true,
+      "empty_inventory_refused": false,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 5,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": 3414,
+          "reached": 3511,
+          "returned": 3588
+        },
+        "md": {
+          "opening": 3414,
+          "reached": 3509,
+          "returned": 3588
+        }
+      }
+    },
+    {
+      "direction": "right",
+      "inventory": "empty",
+      "room": 288,
+      "target": 289,
+      "opened_crossed_returned": false,
+      "empty_inventory_refused": true,
+      "settled_crossing_return_fields_source_exact": true,
+      "keys_after_repeated_contacts": 0,
+      "death_continue_persistence_verified": false,
+      "timing": {
+        "sms": {
+          "opening": null,
+          "reached": null,
+          "returned": null
+        },
+        "md": {
+          "opening": null,
+          "reached": null,
+          "returned": null
+        }
+      }
+    }
+  ],
+  "production_cartridges_unmodified": true,
+  "controller_opening_crossing_and_return": true,
+  "initial_room_map_position_inventory_controlled": true,
+  "save_reload_verified": false,
+  "absolute_transition_timing_exact": false,
+  "full_natural_dungeon_progression_verified": false
+}

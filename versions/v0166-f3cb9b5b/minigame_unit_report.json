@@ -1,0 +1,13 @@
+{
+  "md_sha256": "f3cb9b5b9731933f7ba686412f77702be75872f74daee3d945cd17681d136895",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 19491,
+  "all_256_gold_values_all_64_card_triples": true,
+  "all_32_rolls_ten_slots_three_special_states_three_selection_counts": true,
+  "cells_stage_gold_text_count_requests_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Original6719,67CA and680A execute.050C captures text pointer;627A,1DE2 and0B95 return;6876 stops before replay;1E48 counts units after real95 request. RNG04E1 supplied first roll then0 retry: RNG algorithm/timing is not verified.",
+    "Unit tests compare64 cells, stage, gold, text pointer, display count, executed unit count,95 request and RNG call count. Live presentation, natural randomness and full game progression excluded."
+  ]
+}

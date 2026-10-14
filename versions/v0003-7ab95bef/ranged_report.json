@@ -1,0 +1,64 @@
+{
+  "md_sha256": "7ab95bef3e0ecfae795bfc2705f5a316501b6b8f25ce815e2e125e3ece360dc0",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "frames_checked": 99,
+  "entity_steps_checked": 1584,
+  "projectile_births": [
+    [
+      3102,
+      8,
+      16
+    ],
+    [
+      3102,
+      9,
+      17
+    ],
+    [
+      3102,
+      10,
+      18
+    ],
+    [
+      3143,
+      11,
+      16
+    ],
+    [
+      3184,
+      8,
+      16
+    ]
+  ],
+  "projectile_deaths": [
+    [
+      3147,
+      8,
+      16
+    ],
+    [
+      3167,
+      10,
+      18
+    ],
+    [
+      3171,
+      9,
+      17
+    ],
+    [
+      3183,
+      11,
+      16
+    ]
+  ],
+  "native_ranged_and_projectile_logic_exact": true,
+  "full_pool_recovery_exact": true,
+  "observed_sms_projectile_steps_exact": 60,
+  "observed_sms_entity_bytes_exact": 48,
+  "complete_combat_ported": false,
+  "normal_ground_hero_damage_ported": true,
+  "source_sprite_overflow_suppression_ported": false,
+  "dungeon_projectile_bounds_ported": false,
+  "scope": "Isolated state fixtures, all three projectile types, controlled SGDK RNG; ROM-semantic reference"
+}

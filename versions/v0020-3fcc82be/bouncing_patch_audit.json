@@ -1,0 +1,67 @@
+{
+  "md_sha256": "3fcc82be4c00617bb36be4e1adfd765e8443daa536afa7b61484c4ff1b434748",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "original_unchanged": true,
+  "evidence": [
+    {
+      "file": "bouncing_shooters_report.json",
+      "sha256": "5f4171940ef3d075bdb29eb18743ef30dc9b9d058cf7823674cfed390717fd17"
+    },
+    {
+      "file": "bouncing_shooters-pal_report.json",
+      "sha256": "9291ae2eceb6011adad36e92861a3a932210f67c5575f75f13990be75929ae6d"
+    },
+    {
+      "file": "bouncing_rooms_report.json",
+      "sha256": "9e7e2ec1dbdd455e6594e57c296c8973ff5c7b232521874194ff57da08b5df0e"
+    },
+    {
+      "file": "burst_walkers_report.json",
+      "sha256": "82b245bb6acd1e0e8087ce66e6103fdd2f3defc96b0358585d247b93e6876ed6"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "5491b9c20c55aa4a8e372c414e7d720b83afb23508241c58027edec4203c6f6c"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "3001b4b1ff5758a60205c1683f34bfbef92c5280f977c409b51926d7997720d1"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "7f16167d0d25f2973a021b409661ee2dd1d85f966668b382500e5d4122932f2e"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "0f16bb003064d95d4f0328c9d04ca468b05bc3b53c521d88ecb365869366dd91"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "5164c969eb8ce2f4d306d28b601dd364c3724f60ad285305f197497bb15408be"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "992269014302b0ff68cf1099d09bd94adbefb0dc1aa9303b9e06c023197fd0d2"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/actors.c": "87470ec1f449f5253002ec697b9a78412c4143d502766d4e8ef20de943dcb229",
+    "megadrive/src/actor_data.c": "fa78fd0e2a1721d8820c242ceceba2ffb806eaf1f15dd785560f749931f5209f",
+    "tools/extract_actors.py": "671631ee8633037fa5e36bbbc0d1eea68daf9a9cc3778c54d9545eef367a88de",
+    "tools/validate_bouncing_shooters.py": "f83316b21f099112ae031b3f28897d33f8cd7fe15d0862b96d156f0772886b82",
+    "tools/validate_bouncing_rooms.py": "7281d9a6d13fdda62b9577f917a5892f5077420e8ec84db8fae5b962e8c2094c"
+  },
+  "source_record_comparisons": 9148,
+  "full_game_ported": false,
+  "original_rng_stream_reproduced": false,
+  "full_transition_timing_equivalence": false,
+  "notes": [
+    "Collision-list descriptor bytes27/28 excluded from record comparisons",
+    "Cold-load room checkpoints verify activity and shots, not complete progression",
+    "Both types aim in at least one checkpoint; MD type38 does not aim during the observed room24 run",
+    "Existing intro startup offsets, quest/dungeon and remaining actor work are pending"
+  ]
+}

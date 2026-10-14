@@ -1,0 +1,49 @@
+{
+  "md_sha256": "cc830a8216e7432706dfd53bfafc3deee7c9e73635be09c232523e0aa524efc3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "room": 284,
+      "type": 90,
+      "arrival_frames": {
+        "sms": 3474,
+        "md": 3449
+      },
+      "relative_first_actor_frames_except_random_fields_exact": 30,
+      "excluded_random_record_offsets": [
+        10,
+        17,
+        19
+      ],
+      "loaded_pattern_tiles_exact": 64,
+      "pattern_samples": 3,
+      "boss_sat_samples_exact": 0,
+      "boss_sat": null
+    },
+    {
+      "region": "pal",
+      "room": 284,
+      "type": 90,
+      "arrival_frames": {
+        "sms": 3482,
+        "md": 3478
+      },
+      "relative_first_actor_frames_except_random_fields_exact": 30,
+      "excluded_random_record_offsets": [
+        10,
+        17,
+        19
+      ],
+      "loaded_pattern_tiles_exact": 64,
+      "pattern_samples": 3,
+      "boss_sat_samples_exact": 0,
+      "boss_sat": null
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Normal dungeon doorway entry after exterior relocation; controlled relocation to room11b boundary with cleared actors and passable departure map. Right scroll and actual destination11c scripts/resources/actor loading execute normally.",
+    "Actor timelines aligned to first initialized core frame, not absolute loading cadence; Thirty first hunter appearance frames exclude X/Y high bytes and direction, chosen by unaligned source/native random inputs. Other actor records are not compared. First 64 sprite pattern pixels sampled at three relative frames. Natural travel, full fight, SAT/full framebuffer, audio and full transition timing remain unproved."
+  ]
+}

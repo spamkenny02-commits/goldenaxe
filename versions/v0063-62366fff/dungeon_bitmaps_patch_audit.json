@@ -1,0 +1,150 @@
+{
+  "md_sha256": "62366fff149b56f25a62b8e10bdd13615bdef58efa3548362ab3ac857bf2f07b",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_size": 524288,
+  "checksum": "0x3c76",
+  "aliases_verified": true,
+  "sram_animation_resource_exact": true,
+  "previous_production_files_except_main_unchanged": true,
+  "source_files": {
+    "megadrive/src/main.c": "49f1599520ce53a54def1681a5e003c17fb19c87d2b4b405b57ca27ed3a24433",
+    "megadrive/src/dungeon_animation_data.c": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4",
+    "tools/extract_dungeon_bitmaps.py": "2b56f721d65cd22b23283098b725124345a0235d1b6d75f2fef77e7d76ddca95",
+    "tools/validate_dungeon_bitmaps.py": "cfd8e1170d68fe8f7e6ab078825ac8596828bc2b051369b26c9b361b91ea48e4",
+    "tools/dungeon_bitmaps_harness.c": "3d8b6fe38fdc7a25780a117cc10233b9e656d7638d5a6c256bd52a7852ce8c6a",
+    "tools/build_dungeon_bitmaps_harness.ps1": "07522a1503fc8063b709d431ca41c5187ea006890dca92b385aaee72a647d13f",
+    "tools/validate_dungeon_bitmaps_gameplay.py": "11dd8c60b4170448bf0f852521c09cb15adeb00c2e2ab4a6c9e82adfad55d5ad",
+    "tools/profile_reward_floor_phase.py": "6f22957a5c24712fdfd871e9b9aff60beddfe1ac45c94957143864334a46d844",
+    "tools/profile_reward_restore_timing.py": "d35b3db64424d13f011bd2c6815e32b0e387b0ce156dc6ab25bfc8b0e9f671fb",
+    "tools/validate_reward_floor_phase.py": "ef1a675c4b7fa70179d4fc1c3cfd093a8b0d7e724cbbaebdbc6fbddde0f03a46",
+    "tools/audit_dungeon_bitmaps_patch.py": "62c464e27156fe6be5083b600f21ec2235d82a8a85703d21114d67c36ea4c9e4",
+    "analysis/baseline-v0060-main.c": "35efc3e34ebe7563c96745ce909c0ddb7316ca00a4eb94ff931e6bb01809edcd",
+    "analysis/reward_restore_cost.json": "efe25151ab74519aa8930dd3e81bd8a70252d97e8740703bcf9caf1429030672"
+  },
+  "source_timing_evidence": [
+    {
+      "file": "analysis\\dungeon-bitmaps-source-v0063\\reward_restore_timing_profile.json",
+      "sha256": "e180f820be5ef36c6484b19c6021f873cfc34696e8eab281dbee1668d974eb58"
+    },
+    {
+      "file": "analysis\\dungeon-bitmaps-source-v0063\\reward_restore_timing-pal_profile.json",
+      "sha256": "8233982f3688cf597941c3f26d7e5313db2bcbeb46d9aac39c37cb4352a715da"
+    }
+  ],
+  "current_reports": [
+    {
+      "file": "dungeon_bitmaps_report.json",
+      "sha256": "b9de7551459997eb3c971157765b2c8e2b9d42d88a67f016c6cd5d05e93985e5"
+    },
+    {
+      "file": "dungeon_bitmaps_gameplay_report.json",
+      "sha256": "6227fa385ba7beba7d5e247653d9e598f26db4a35f56e12c9fdbdc81c5295dfc"
+    },
+    {
+      "file": "dungeon_bitmaps_gameplay-pal_report.json",
+      "sha256": "0c138d6401a8ca09e08675c6ac8daca30c2550a96fe97452fa10f7481c221030"
+    },
+    {
+      "file": "reward_floor_phase_report.json",
+      "sha256": "6f9f375b6c53dbaff517df8972cd0e9818046dcf4bf3bd230241581a2e7843c3"
+    },
+    {
+      "file": "item_rewards_report.json",
+      "sha256": "9d5392eb5f04c7f78f4e3015a4a6973115589dbb24ed36c1f330e7884f0253dc"
+    },
+    {
+      "file": "item_rewards_gameplay_report.json",
+      "sha256": "b6172da33597a09b5f2588be6798e969559394230e4af906276819928c62b7bf"
+    },
+    {
+      "file": "item_rewards_gameplay-pal_report.json",
+      "sha256": "dba7e096642faf813b4e5a920ffef338bc0dbad575bdfb3cbad7108d1ba8892b"
+    },
+    {
+      "file": "item_rewards_visuals_report.json",
+      "sha256": "08c2f01ebfb6afb4ec14be2deee333bfd3d063439297eecaf2d5e0ec46b87ed5"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "70d973038ce7a5a99b29b0a7871b6b9b5b37e1e220a32e26bf048ba211e458b1"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "329aa0129a0f40e31ac5a71fc5b42fbd37761897cc4f668906f83a6fd5a5a14f"
+    }
+  ],
+  "recovery_cases": [
+    {
+      "region": "auto",
+      "room": 343,
+      "first_floor_step": {
+        "sms": 3712,
+        "md": 3711
+      },
+      "resume_delta": -1,
+      "steady_scan_phase_frame_shift": -1,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "auto",
+      "room": 411,
+      "first_floor_step": {
+        "sms": 3712,
+        "md": 3711
+      },
+      "resume_delta": -1,
+      "steady_scan_phase_frame_shift": -1,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "auto",
+      "room": 425,
+      "first_floor_step": {
+        "sms": 3711,
+        "md": 3711
+      },
+      "resume_delta": 0,
+      "steady_scan_phase_frame_shift": -1,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "pal",
+      "room": 343,
+      "first_floor_step": {
+        "sms": 3709,
+        "md": 3709
+      },
+      "resume_delta": 0,
+      "steady_scan_phase_frame_shift": 0,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "pal",
+      "room": 411,
+      "first_floor_step": {
+        "sms": 3709,
+        "md": 3709
+      },
+      "resume_delta": 0,
+      "steady_scan_phase_frame_shift": 0,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "pal",
+      "room": 425,
+      "first_floor_step": {
+        "sms": 3709,
+        "md": 3709
+      },
+      "resume_delta": 0,
+      "steady_scan_phase_frame_shift": 0,
+      "aligned_scan_phase_frames_exact": 180
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Live bitmap test synchronizes the source/native IRQ clock once; natural absolute clock phase remains unproven.",
+    "Source closing/HUD timing is measured in three controlled rooms per region; recovery and steady floor phase retain a one-frame NTSC offset.",
+    "Full natural dungeon progression, all item abilities, enemies/bosses, ending, full framebuffers and audio waveforms remain incomplete or unverified."
+  ]
+}

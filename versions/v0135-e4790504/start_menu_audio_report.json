@@ -1,0 +1,48 @@
+{
+  "md_sha256": "e4790504a6f3a165285c2cef9402fee56240c32dfe2b4a9f730f08a19fc6d8ae",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "results": {
+        "sms": {
+          "track_89_source_call_frames": [
+            939
+          ],
+          "active_music_frames": 501,
+          "audible_frames": 501
+        },
+        "md": {
+          "track_89_source_call_frames": [],
+          "active_music_frames": 501,
+          "audible_frames": 501
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "results": {
+        "sms": {
+          "track_89_source_call_frames": [
+            1,
+            939
+          ],
+          "active_music_frames": 501,
+          "audible_frames": 501
+        },
+        "md": {
+          "track_89_source_call_frames": [],
+          "active_music_frames": 501,
+          "audible_frames": 501
+        }
+      }
+    }
+  ],
+  "natural_controller_input": true,
+  "ram_injections": false,
+  "full_game_ported": false,
+  "limits": [
+    "Natural source14F3 hook and native89 selection, active channels and audible PSG checked.",
+    "Exact sequence/pitch/envelopes validated separately by validate_music; natural track start frame and audio waveforms are not claimed equal."
+  ]
+}

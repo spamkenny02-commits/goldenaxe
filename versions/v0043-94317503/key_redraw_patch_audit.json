@@ -1,0 +1,91 @@
+{
+  "md_sha256": "94317503805abf9288dd056b64a4f8b61d92dc3c9b2a51227813777879f01fb1",
+  "md_size": 524288,
+  "rom_aliases_exact": true,
+  "additive_checksum_valid": true,
+  "current_targeted_reports": [
+    {
+      "file": "key_doors_report.json",
+      "sha256": "05ed92597dc4818b28f3b89bcb604334fdefca785dfcaf690a000f5d67ac09a8"
+    },
+    {
+      "file": "key_door_save_report.json",
+      "sha256": "30ef2b74c297351b47b7f85d43ff431843019cb59153764400ceb4fc33bc202a"
+    },
+    {
+      "file": "key_redraw_model_report.json",
+      "sha256": "5cca0f2b5e099afe242441e36ff8be29116a5cbcaddcbbcaa84f3f0ce71049da"
+    },
+    {
+      "file": "key_door_gameplay_report.json",
+      "sha256": "276fa05b3e0f21cd87181568fc4411d637a3ca1fc3af20b4cbe6b5e669a9c4c6"
+    },
+    {
+      "file": "key_door_gameplay-pal_report.json",
+      "sha256": "325c199e3d3d093b5f8263c9f4fad395d3327a86225f16c70cbe41932deb7b4f"
+    },
+    {
+      "file": "key_door_continue_report.json",
+      "sha256": "b4e25f2f5f4528f77b0eff15c2b826aaeeac8cd38bc1cba98179ffa00a918ced"
+    },
+    {
+      "file": "key_door_continue-pal_report.json",
+      "sha256": "56c1f27a0d6b672820e0dd30afc931ba85628bda4c7996d9f6d297b722b01b3a"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "6082f0baee4efddf1f9fdb5304b941e11198b2a0b8d47efe82f549ff4d016359"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "7bab29066516312ea464673a3b38a2b80ac6f971f1337e1415694fad25ce4981"
+    },
+    {
+      "file": "analysis/key_redraw_profile-up.json",
+      "sha256": "38468588c954a470ec70c9df8f609622fa0f5fba19624d173a23f0ee53d1bfea"
+    },
+    {
+      "file": "analysis/key_redraw_profile-up-pal.json",
+      "sha256": "caa5bc6a28cf7c8a3fb424df3f9c27a7a80711decfc29d60f3f422073ae820ed"
+    },
+    {
+      "file": "analysis/key_redraw_profile-left.json",
+      "sha256": "d6d0166bc67dc6adb5fe87879da13cfd63dca721ede9846f4f37f021fc62ad37"
+    },
+    {
+      "file": "analysis/key_redraw_profile-left-pal.json",
+      "sha256": "b67c071669bb63ba6ef8e76457957228206cb061b3823445c1f2f8eb7420d500"
+    },
+    {
+      "file": "analysis/key_redraw_profile-right.json",
+      "sha256": "298f4c5aa39c4de38889c940091e982a541f60645fcfa72c0136fdc3aa33cc5b"
+    },
+    {
+      "file": "analysis/key_redraw_profile-right-pal.json",
+      "sha256": "c7298bb09df7c5dcf944824672980dcd6f7984fd1fb3a41f4f12d0852b13ad4a"
+    }
+  ],
+  "original_map_loop_tstates": 192686,
+  "redraw_pause_pal_source_exact_in_three_cases": true,
+  "redraw_pause_ntsc_one_frame_early": true,
+  "key_logic_cases": 8192,
+  "controller_cases": 18,
+  "death_continue_cases": 18,
+  "cold_load_cases": 2,
+  "source_files": {
+    "megadrive/src/main.c": "3f072f441d96e95d3c5ade04b4698ecc6f88ee1ed090657f7b1be634dc16f8e7",
+    "megadrive/src/key_redraw_cost.inc": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37",
+    "tools/extract_key_redraw_cost.py": "79a7c16c83c53bd58b103ea74df368b3a13dfa8043c38dcf78982e30e32e598f",
+    "tools/instrument_key_timing.py": "295b1fbc5d8b378b5b31337a0169df00d599d65c2a7fa67b4f21460f0a3cc34a",
+    "tools/profile_key_redraw.py": "51c3589fda33bbbfec48e0276ba32129e6b80a47f3284be848821f6e134d6e90",
+    "tools/validate_key_redraw_model.py": "9fdafa6311e5d81c54f72486483fb8abbf02135b03c79a5b5d3743b4a8403bf4",
+    "tools/audit_key_redraw_patch.py": "e52b9efa91d4a4be0c30ea0e61b9af02608767da5175825b5e0d682b96f49c49"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "HUD/metadata/IRQ phase uses an approximate budget; only the original map loop cost is instruction exact.",
+    "NTSC post-redraw movement remains one frame early; vertical scrolling/loading has additional offsets.",
+    "Whole transition pixels and audio waveform are unverified.",
+    "Fixtures control initial rooms/inventory; complete natural dungeon progression, remaining puzzles, bosses and ending are incomplete."
+  ]
+}

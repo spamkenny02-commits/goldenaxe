@@ -1,0 +1,14 @@
+{
+  "md_sha256": "ee2d31fc71c765be4802ec8b5ad7d86b99a6225a2ce7850ea2071e23c721aa73",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "4ec9e5e7e359119e43eee75a6876cf6ea6f528a39fa68aa44af95c03f316e01e",
+  "harness_sha256": "f001047f09c347789b9f9d74337bb23288b66faa550f17c86e4aba8583ea40ea",
+  "cases": 2367,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Four sourceLD A,R sites use explicit register-preserving input shim. Original4FB1/9B1E/9A2B/57F8/9B58/9B72/9BEA execute.",
+    "Five even states; spawn candidates, eight vectors and bounds, all16 parent slots, clock-selected free/occupied copies and gravity word wrap. State0 requires loader animation0.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

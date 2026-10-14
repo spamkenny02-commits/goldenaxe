@@ -1,0 +1,72 @@
+{
+  "md_sha256": "3161f829edc97c40f95ff52c90dd23529207d265ec73e170f4c6e6c9486bc172",
+  "md_size": 524288,
+  "checksum_aliases_verified": true,
+  "current_reports": [
+    {
+      "file": "validation\\contacts_report.json",
+      "sha256": "c2fca002eba5b3be1a5d4284b89c87cb92afd2dc1535a8f930df3c0a843f131f"
+    },
+    {
+      "file": "validation\\contacts_gameplay_report.json",
+      "sha256": "4e0855c1abbf910c25743832cef100f3ed9968953045d67d33fb594c99559732"
+    },
+    {
+      "file": "validation\\contacts_gameplay-pal_report.json",
+      "sha256": "757f32255a547f779117a8db6ba6815799996d31c7ee0bc8f26dbcceed2fb81a"
+    },
+    {
+      "file": "validation\\shutters_gameplay_report.json",
+      "sha256": "fca9a29e40b8ef55c6280050576be2729c7a4ecc00232b40c6dacb2424ab6f09"
+    },
+    {
+      "file": "validation\\shutters_gameplay-pal_report.json",
+      "sha256": "93b48cbd1178351e9b46713ea2edad76a7efcd8b55158981e51a255a34d5807e"
+    },
+    {
+      "file": "validation\\key_door_gameplay_report.json",
+      "sha256": "22e27e227502256e269c5f64d9d7288e38701bb09d0e6045af7debd48b589852"
+    },
+    {
+      "file": "validation\\key_door_gameplay-pal_report.json",
+      "sha256": "1247a2a8c53d7e14d251230f8406e48cc1c435fb253f376a86caea825cef47c2"
+    },
+    {
+      "file": "validation\\timing_report.json",
+      "sha256": "60e7b685ae141eb1c8b484fbb1c2358fe8b3ea733b28c3cde5abd07b39326660"
+    },
+    {
+      "file": "validation\\timing-pal_report.json",
+      "sha256": "4281caf54b9e28bf71b6858eccc139c71e931061280d14606959bfe619c040cd"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/main.c": "df05362d08e8e7c8b566f061bf4bf578d076983b71700d30d24ef0e3efc28c21",
+    "megadrive/src/room_contact.inc": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134",
+    "tools/extract_contact_scripts.py": "88e822d3563e74455ac524f9f2f2eac7a5e5fee6ebf8eb702eef52a2e9465887",
+    "tools/validate_room_cells.py": "3db8214881bae707169d0393cffdaa18d1b3e80fadbbdfea14479385b380e88f",
+    "tools/contacts_harness.c": "c8e1dccc913e4a3cfc743d4514deea765d7ac0db98fe758250621562a3a2dde1",
+    "tools/validate_contacts.py": "85a9eb2cd366c1539547c3b87d7fbc9e66efb9d019e45ef985acb80e4eb78709",
+    "tools/build_contacts_harness.ps1": "1e5d85960239d36208d640e823532d94784fff8a262eefbd30bf891b7263a337",
+    "tools/validate_contacts_gameplay.py": "ab6d6bbd4187da310e0dec8b70252108a91e22ad93775ede45b2efffd0368521",
+    "tools/audit_contacts_patch.py": "8d488d3a761feb567e21508b3b136e0b4edff32f62499a5261ef674ea0f2e90b",
+    "analysis/baseline-v0050-main.c": "131433d1ff00b92d15b59e2f2ffc8977421fa6cc5423b5ca13e7c3ad8fb74288"
+  },
+  "prior_contact_flag_audit_sha256": "92036d6dd97db4158fde92adfe8e326ef1dfd4041d1a37a8b563376837b74b01",
+  "production_delta_confined_to_contact_effects": true,
+  "source_prefix_before_suffix_order_verified": true,
+  "stationary_passage_handlers": 7,
+  "cell_marker_handlers": 1,
+  "empty_cell_handlers": 3,
+  "isolated_cases": 8192,
+  "live_contact_cases": 44,
+  "live_shutter_regression_cases": 20,
+  "live_key_regression_cases": 18,
+  "full_game_ported": false,
+  "limits": [
+    "Live fixtures initialize rooms, hero and a frozen actor after a real dungeon entrance. Only stationary-UP triggers use natural controller input; empty cells are injected with their map change.",
+    "Full natural block destruction, fights, travel and persistence through an uninterrupted dungeon route are unverified.",
+    "36 internal portals, other contact routines, true movable blocks, bosses, quests and ending remain incomplete.",
+    "Original map/flag/record bytes and bounded trigger timing are compared; full pixels, sprite priority, audio waveforms and generic IRQ phase are not proven."
+  ]
+}

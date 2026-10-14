@@ -1,0 +1,16 @@
+{
+  "md_sha256": "a72eb3e83e49733761e285e3639ef6c4a344995fd8fd45f7372b3be8d2c60405",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "6665611f2922f9ac74ea9f6a8e97dde93f60601dc34eaf58650c9f9fe874a48b",
+  "harness_sha256": "cfb7e730f982a87578e9db7774026d03d53dcd9f48183cfedc7ee2b6ddf3b454",
+  "cases": 974,
+  "boss_cases": 582,
+  "projectile_cases": 392,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Two57F8 LD A,R sites replaced by register-preserving explicit input shim. Other original54D3/AB40/57F8/4457/3DAF/3DFA and allocator instructions execute.",
+    "Selected eight boss/six projectile states, parent variants, waits/animation, all128 placement candidates with accepted/rejected terrain plus proximity/phase cases, partial/full pools. Full pools supply ROM-resident IY8000; writes ignored as on source. Inherited RAM IY for an already-full pool is not reproduced.",
+    "Original RNG/refresh and global placement clock phase, natural fights, complete video/audio and hardware timing remain unproved."
+  ]
+}

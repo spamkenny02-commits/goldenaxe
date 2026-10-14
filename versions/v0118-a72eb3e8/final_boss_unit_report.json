@@ -1,0 +1,14 @@
+{
+  "md_sha256": "a72eb3e83e49733761e285e3639ef6c4a344995fd8fd45f7372b3be8d2c60405",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "e67e3320631d9e77f90a8bb27ac0670dca601e870d7319b1532885fc112bd80f",
+  "harness_sha256": "fae19ca713ec9f8f560e0fc2b44bc6eb014dff08c6a78b92e18660a5800338fb",
+  "cases": 482,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Two LD A,R sites use explicit register-preserving inputs. Other original55F1 state dispatch, post-state weapon filter,577F/5467 and shared satellite allocator instructions execute.",
+    "Ten states, selected item/weapon level matrix, heroY-16 byte wrap, chase bounds, attack gates, shot counters, partial/full allocations and wait pool. Full pools supply ROM IY8000; inherited RAM IY effects remain unsupported.",
+    "Original RNG/global clock, natural fight, ending, complete video/audio and hardware timing remain unproved."
+  ]
+}

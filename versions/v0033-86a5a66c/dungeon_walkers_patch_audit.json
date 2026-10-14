@@ -1,0 +1,808 @@
+{
+  "md_sha256": "86a5a66c59a479cd96214440abb4b76fa878f3b7a3690b29afec998d6665e6ff",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "evidence": [
+    {
+      "file": "dungeon_walkers_report.json",
+      "sha256": "78ad46f2914f5835feb3e7a07740057bdd5edb447ee5b7369c7e386bd5f61723"
+    },
+    {
+      "file": "dungeon_walkers-pal_report.json",
+      "sha256": "cfe3fa011c43d6f2269594ca4629a34fdce319ad23b4510a2c30460bfe43b746"
+    },
+    {
+      "file": "dungeon_walker_spawns_report.json",
+      "sha256": "1faf5f9d2a5975dc1bbb15ba15991ef0a3dfc18a463299c196078421efab5143"
+    },
+    {
+      "file": "dungeon_walker_spawns-pal_report.json",
+      "sha256": "c2046f90934f2eff54bbaf8d1431711c6a185316fd56d3fb730a344fc8c35828"
+    },
+    {
+      "file": "actor_loader_harness_report.json",
+      "sha256": "fc61c3ccaa1989a6c063855aa6a3b43bb8c9b593045dbb2df7f11fe17bed9e7b"
+    },
+    {
+      "file": "sprite_overflow_report.json",
+      "sha256": "82667a5606e508b40aad2b18c9235d298f868fb6b1859494d641af29a0aa4e0e"
+    },
+    {
+      "file": "walker40_report.json",
+      "sha256": "20efbbc2ed63e631d7b947ed53a1897145f28608aa7162e0d6004fe8df37fa50"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "07ec901d699e939263558a7bb22c405c042ec390f3eb35617fa6c7c242f55044"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "2c3f324debf7ae593b295af2eb1182516e4be4a9eb84ec114aabe8bc16d3ad56"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "b7c6b3f85af023796724166b5fceaed3ca2f62cc02592418d1471375f7b116f6"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "faa513923e0e0c9679229c8809953b621e19f8b1567ed70d074204b8d385630a"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "d145a5b11a9c2c55adbadb8c7858a4806c153f8792c42def61269133c2eee179"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "5237ea7640b2e47d7fd34cd3fb425d3ffa17b04b147c9cd6147e3cb690cbe699"
+    },
+    {
+      "file": "intro_report.json",
+      "sha256": "ba77873182f5ac4635b77f5110cfa6a4f2f322cd329ebffd5fca25e8709913ee"
+    },
+    {
+      "file": "intro-pal_report.json",
+      "sha256": "39c71c79ee8d3bed2dd875045a9f5166b6b728feb6ed154672dcadffc3bcdf8f"
+    }
+  ],
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "actor_asset_rooms": 512,
+  "actor_graphic_types": 80,
+  "actor_pattern_bytes": 89408,
+  "actor_pattern_offset_bytes": 4,
+  "actor_assets": [
+    {
+      "type": 32,
+      "bank": 15,
+      "rom_start": 251826,
+      "rom_end": 253345,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 55
+    },
+    {
+      "type": 33,
+      "bank": 15,
+      "rom_start": 251826,
+      "rom_end": 253345,
+      "palette_remap": 16,
+      "tile_base": 21,
+      "tile_count": 55
+    },
+    {
+      "type": 34,
+      "bank": 15,
+      "rom_start": 251826,
+      "rom_end": 253345,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 55
+    },
+    {
+      "type": 35,
+      "bank": 15,
+      "rom_start": 253345,
+      "rom_end": 253603,
+      "palette_remap": 32,
+      "tile_base": 52,
+      "tile_count": 10
+    },
+    {
+      "type": 36,
+      "bank": 15,
+      "rom_start": 253345,
+      "rom_end": 253603,
+      "palette_remap": 16,
+      "tile_base": 55,
+      "tile_count": 10
+    },
+    {
+      "type": 38,
+      "bank": 15,
+      "rom_start": 253603,
+      "rom_end": 253763,
+      "palette_remap": 32,
+      "tile_base": 55,
+      "tile_count": 6
+    },
+    {
+      "type": 39,
+      "bank": 15,
+      "rom_start": 253603,
+      "rom_end": 253763,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 40,
+      "bank": 15,
+      "rom_start": 253603,
+      "rom_end": 253763,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 41,
+      "bank": 15,
+      "rom_start": 253763,
+      "rom_end": 254900,
+      "palette_remap": 32,
+      "tile_base": 16,
+      "tile_count": 40
+    },
+    {
+      "type": 42,
+      "bank": 15,
+      "rom_start": 253763,
+      "rom_end": 254900,
+      "palette_remap": 0,
+      "tile_base": 40,
+      "tile_count": 40
+    },
+    {
+      "type": 43,
+      "bank": 15,
+      "rom_start": 254900,
+      "rom_end": 255305,
+      "palette_remap": 0,
+      "tile_base": 21,
+      "tile_count": 16
+    },
+    {
+      "type": 44,
+      "bank": 15,
+      "rom_start": 255305,
+      "rom_end": 255824,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 16
+    },
+    {
+      "type": 45,
+      "bank": 15,
+      "rom_start": 255824,
+      "rom_end": 256444,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 21
+    },
+    {
+      "type": 46,
+      "bank": 15,
+      "rom_start": 255824,
+      "rom_end": 256444,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 21
+    },
+    {
+      "type": 47,
+      "bank": 15,
+      "rom_start": 255824,
+      "rom_end": 256444,
+      "palette_remap": 0,
+      "tile_base": 21,
+      "tile_count": 21
+    },
+    {
+      "type": 49,
+      "bank": 15,
+      "rom_start": 256444,
+      "rom_end": 256624,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 50,
+      "bank": 15,
+      "rom_start": 256444,
+      "rom_end": 256624,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 51,
+      "bank": 15,
+      "rom_start": 256624,
+      "rom_end": 257783,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 45
+    },
+    {
+      "type": 52,
+      "bank": 15,
+      "rom_start": 256624,
+      "rom_end": 257783,
+      "palette_remap": 0,
+      "tile_base": 45,
+      "tile_count": 45
+    },
+    {
+      "type": 53,
+      "bank": 15,
+      "rom_start": 257783,
+      "rom_end": 258495,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 24
+    },
+    {
+      "type": 54,
+      "bank": 15,
+      "rom_start": 257783,
+      "rom_end": 258495,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 24
+    },
+    {
+      "type": 55,
+      "bank": 15,
+      "rom_start": 257783,
+      "rom_end": 258495,
+      "palette_remap": 0,
+      "tile_base": 10,
+      "tile_count": 24
+    },
+    {
+      "type": 56,
+      "bank": 15,
+      "rom_start": 258495,
+      "rom_end": 260310,
+      "palette_remap": 16,
+      "tile_base": 6,
+      "tile_count": 60
+    },
+    {
+      "type": 57,
+      "bank": 15,
+      "rom_start": 258495,
+      "rom_end": 260310,
+      "palette_remap": 0,
+      "tile_base": 66,
+      "tile_count": 60
+    },
+    {
+      "type": 58,
+      "bank": 15,
+      "rom_start": 260310,
+      "rom_end": 261675,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 52
+    },
+    {
+      "type": 59,
+      "bank": 15,
+      "rom_start": 260310,
+      "rom_end": 261675,
+      "palette_remap": 16,
+      "tile_base": 73,
+      "tile_count": 52
+    },
+    {
+      "type": 60,
+      "bank": 13,
+      "rom_start": 216692,
+      "rom_end": 217530,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 29
+    },
+    {
+      "type": 61,
+      "bank": 14,
+      "rom_start": 233526,
+      "rom_end": 234740,
+      "palette_remap": 16,
+      "tile_base": 6,
+      "tile_count": 46
+    },
+    {
+      "type": 62,
+      "bank": 14,
+      "rom_start": 233526,
+      "rom_end": 234740,
+      "palette_remap": 0,
+      "tile_base": 46,
+      "tile_count": 46
+    },
+    {
+      "type": 63,
+      "bank": 14,
+      "rom_start": 234740,
+      "rom_end": 235034,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 10
+    },
+    {
+      "type": 64,
+      "bank": 14,
+      "rom_start": 235034,
+      "rom_end": 235972,
+      "palette_remap": 0,
+      "tile_base": 10,
+      "tile_count": 29
+    },
+    {
+      "type": 65,
+      "bank": 14,
+      "rom_start": 235972,
+      "rom_end": 236276,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 10
+    },
+    {
+      "type": 66,
+      "bank": 14,
+      "rom_start": 236276,
+      "rom_end": 237223,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 35
+    },
+    {
+      "type": 67,
+      "bank": 14,
+      "rom_start": 237223,
+      "rom_end": 238443,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 52
+    },
+    {
+      "type": 68,
+      "bank": 14,
+      "rom_start": 237223,
+      "rom_end": 238443,
+      "palette_remap": 16,
+      "tile_base": 20,
+      "tile_count": 52
+    },
+    {
+      "type": 69,
+      "bank": 14,
+      "rom_start": 237223,
+      "rom_end": 238443,
+      "palette_remap": 0,
+      "tile_base": 72,
+      "tile_count": 52
+    },
+    {
+      "type": 70,
+      "bank": 14,
+      "rom_start": 238443,
+      "rom_end": 239083,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 20
+    },
+    {
+      "type": 71,
+      "bank": 14,
+      "rom_start": 239083,
+      "rom_end": 239201,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 72,
+      "bank": 14,
+      "rom_start": 239083,
+      "rom_end": 239201,
+      "palette_remap": 16,
+      "tile_base": 8,
+      "tile_count": 6
+    },
+    {
+      "type": 73,
+      "bank": 14,
+      "rom_start": 239083,
+      "rom_end": 239201,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 6
+    },
+    {
+      "type": 74,
+      "bank": 14,
+      "rom_start": 239201,
+      "rom_end": 239497,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 9
+    },
+    {
+      "type": 75,
+      "bank": 14,
+      "rom_start": 239201,
+      "rom_end": 239497,
+      "palette_remap": 16,
+      "tile_base": 9,
+      "tile_count": 9
+    },
+    {
+      "type": 76,
+      "bank": 14,
+      "rom_start": 239201,
+      "rom_end": 239497,
+      "palette_remap": 0,
+      "tile_base": 36,
+      "tile_count": 9
+    },
+    {
+      "type": 77,
+      "bank": 14,
+      "rom_start": 239497,
+      "rom_end": 239645,
+      "palette_remap": 16,
+      "tile_base": 8,
+      "tile_count": 8
+    },
+    {
+      "type": 78,
+      "bank": 14,
+      "rom_start": 239497,
+      "rom_end": 239645,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 79,
+      "bank": 14,
+      "rom_start": 239645,
+      "rom_end": 240506,
+      "palette_remap": 32,
+      "tile_base": 32,
+      "tile_count": 28
+    },
+    {
+      "type": 80,
+      "bank": 14,
+      "rom_start": 239645,
+      "rom_end": 240506,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 28
+    },
+    {
+      "type": 81,
+      "bank": 14,
+      "rom_start": 239645,
+      "rom_end": 240506,
+      "palette_remap": 0,
+      "tile_base": 46,
+      "tile_count": 28
+    },
+    {
+      "type": 82,
+      "bank": 14,
+      "rom_start": 240506,
+      "rom_end": 241600,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 36
+    },
+    {
+      "type": 83,
+      "bank": 14,
+      "rom_start": 241600,
+      "rom_end": 242525,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 32
+    },
+    {
+      "type": 84,
+      "bank": 14,
+      "rom_start": 242525,
+      "rom_end": 243860,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 48
+    },
+    {
+      "type": 85,
+      "bank": 14,
+      "rom_start": 242525,
+      "rom_end": 243860,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 48
+    },
+    {
+      "type": 86,
+      "bank": 14,
+      "rom_start": 242525,
+      "rom_end": 243860,
+      "palette_remap": 0,
+      "tile_base": 8,
+      "tile_count": 48
+    },
+    {
+      "type": 87,
+      "bank": 14,
+      "rom_start": 243860,
+      "rom_end": 244104,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 88,
+      "bank": 14,
+      "rom_start": 243860,
+      "rom_end": 244104,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 89,
+      "bank": 14,
+      "rom_start": 244104,
+      "rom_end": 245095,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 32
+    },
+    {
+      "type": 90,
+      "bank": 14,
+      "rom_start": 244104,
+      "rom_end": 245095,
+      "palette_remap": 0,
+      "tile_base": 32,
+      "tile_count": 32
+    },
+    {
+      "type": 91,
+      "bank": 14,
+      "rom_start": 245095,
+      "rom_end": 245346,
+      "palette_remap": 0,
+      "tile_base": 32,
+      "tile_count": 8
+    },
+    {
+      "type": 92,
+      "bank": 13,
+      "rom_start": 217530,
+      "rom_end": 218334,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 32
+    },
+    {
+      "type": 93,
+      "bank": 13,
+      "rom_start": 217530,
+      "rom_end": 218334,
+      "palette_remap": 0,
+      "tile_base": 52,
+      "tile_count": 32
+    },
+    {
+      "type": 94,
+      "bank": 15,
+      "rom_start": 261675,
+      "rom_end": 261907,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 95,
+      "bank": 13,
+      "rom_start": 218334,
+      "rom_end": 219586,
+      "palette_remap": 16,
+      "tile_base": 0,
+      "tile_count": 46
+    },
+    {
+      "type": 96,
+      "bank": 13,
+      "rom_start": 218334,
+      "rom_end": 219586,
+      "palette_remap": 0,
+      "tile_base": 32,
+      "tile_count": 46
+    },
+    {
+      "type": 97,
+      "bank": 14,
+      "rom_start": 245346,
+      "rom_end": 245599,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 98,
+      "bank": 14,
+      "rom_start": 245346,
+      "rom_end": 245599,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 8
+    },
+    {
+      "type": 99,
+      "bank": 13,
+      "rom_start": 219586,
+      "rom_end": 221034,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 49
+    },
+    {
+      "type": 100,
+      "bank": 13,
+      "rom_start": 219586,
+      "rom_end": 221034,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 49
+    },
+    {
+      "type": 101,
+      "bank": 13,
+      "rom_start": 221034,
+      "rom_end": 221549,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 20
+    },
+    {
+      "type": 103,
+      "bank": 13,
+      "rom_start": 221549,
+      "rom_end": 222216,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 24
+    },
+    {
+      "type": 104,
+      "bank": 13,
+      "rom_start": 222216,
+      "rom_end": 225315,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 107
+    },
+    {
+      "type": 105,
+      "bank": 13,
+      "rom_start": 222216,
+      "rom_end": 225315,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 107
+    },
+    {
+      "type": 106,
+      "bank": 13,
+      "rom_start": 225315,
+      "rom_end": 226300,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 46
+    },
+    {
+      "type": 107,
+      "bank": 13,
+      "rom_start": 225315,
+      "rom_end": 226300,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 46
+    },
+    {
+      "type": 108,
+      "bank": 8,
+      "rom_start": 143962,
+      "rom_end": 146382,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 81
+    },
+    {
+      "type": 109,
+      "bank": 9,
+      "rom_start": 159019,
+      "rom_end": 162474,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 121
+    },
+    {
+      "type": 120,
+      "bank": 13,
+      "rom_start": 219586,
+      "rom_end": 221034,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 49
+    },
+    {
+      "type": 121,
+      "bank": 13,
+      "rom_start": 219586,
+      "rom_end": 221034,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 49
+    },
+    {
+      "type": 122,
+      "bank": 13,
+      "rom_start": 222216,
+      "rom_end": 225315,
+      "palette_remap": 32,
+      "tile_base": 0,
+      "tile_count": 107
+    },
+    {
+      "type": 123,
+      "bank": 13,
+      "rom_start": 222216,
+      "rom_end": 225315,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 107
+    },
+    {
+      "type": 124,
+      "bank": 13,
+      "rom_start": 225315,
+      "rom_end": 226300,
+      "palette_remap": 0,
+      "tile_base": 0,
+      "tile_count": 46
+    }
+  ],
+  "native_loader_cases": 1536,
+  "behavior_record_comparisons": 11616,
+  "natural_dungeon_entry_verified": false,
+  "story_conditionals_ported": false,
+  "all_enemy_behaviors_ported": false,
+  "full_game_ported": false,
+  "source_files": {
+    "megadrive/src/actors.c": "57482ee07c6314b2b928209e84ae35027280b33ce2b06821de7d81d070f260cb",
+    "megadrive/src/actor_data.c": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4",
+    "tools/extract_actors.py": "2a040420566710fb7202cf933b09a13fff1c4003b714abdc1dc4f69fb9c08bf6",
+    "tools/validate_dungeon_walkers.py": "8126b9f2c490fb057b9598b166b7ec8f02ebe46fac6f5680ee2c2a14fe2944c0",
+    "tools/validate_actor_loader_harness.py": "b27629fb0c031316ccc82c04196c2cf67fd69b0e25a531595a08de88fc84a47a"
+  }
+}

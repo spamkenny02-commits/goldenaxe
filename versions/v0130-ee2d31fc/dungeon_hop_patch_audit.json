@@ -1,0 +1,24 @@
+{
+  "md_sha256": "ee2d31fc71c765be4802ec8b5ad7d86b99a6225a2ce7850ea2071e23c721aa73",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 61603,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_4C_behavior_dispatch_and_collision_publication": true,
+  "main_and_prior_actor_source_unchanged_since_v0129": true,
+  "literal_table_bytes_exact": 48,
+  "source_files": {
+    "megadrive\\src\\main.c": "ad73c1956ec480f832dd6c268709f5ad79c753d76e31d48ac8231487631f4329",
+    "megadrive\\src\\actors.c": "bfeadd7a123565a51ac53e1ef9522652f9d7a4ccf89b85055e497211cc6652d6",
+    "megadrive\\src\\dungeon_hop_data.c": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12",
+    "tools\\validate_dungeon_hop.py": "e80e771358ce72546f156296d6460e566e7cca47ec8af7453445cf678098eff3",
+    "tools\\validate_dungeon_hop_gameplay.py": "7d2a22c4c20337242bdbebd72e7cc15fd7888599b5c4c5227b937be484d7eff3",
+    "tools\\validate_dungeon_hop_entry.py": "bf4110babeea7c0681390b9269a7eedfe2a5671d052c4b17a567430e4962a8f2"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Controlled state injection and initial native clock alignment. Production flight segments stop before random cooldown; copying/choices are checked only in direct routine cases.",
+    "Actual14E first4C appearance excludes random X/Y/direction and other actor records.",
+    "Full natural jump/copy cycles and source RNG/global clock remain unproved."
+  ]
+}

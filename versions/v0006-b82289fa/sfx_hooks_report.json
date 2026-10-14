@@ -1,0 +1,88 @@
+{
+  "md_sha256": "b82289fa4a91003b304285c77c9b41505c93e299a0ac9625641cb79d8138047e",
+  "cases": [
+    {
+      "item": 0,
+      "command": 144,
+      "systems": [
+        {
+          "system": "sms",
+          "first_effect_frame": 2805,
+          "audio_file": "validation\\sms-sfx-hook-0\\audio.wav",
+          "gameplay_setup_writes": true,
+          "audio_state_injected": false
+        },
+        {
+          "system": "md",
+          "first_effect_frame": 2805,
+          "audio_file": "validation\\md-sfx-hook-0\\audio.wav",
+          "gameplay_setup_writes": true,
+          "audio_state_injected": false
+        }
+      ]
+    },
+    {
+      "item": 1,
+      "command": 153,
+      "systems": [
+        {
+          "system": "sms",
+          "first_effect_frame": 2805,
+          "audio_file": "validation\\sms-sfx-hook-1\\audio.wav",
+          "gameplay_setup_writes": true,
+          "audio_state_injected": false
+        },
+        {
+          "system": "md",
+          "first_effect_frame": 2805,
+          "audio_file": "validation\\md-sfx-hook-1\\audio.wav",
+          "gameplay_setup_writes": true,
+          "audio_state_injected": false
+        }
+      ]
+    },
+    {
+      "item": 4,
+      "command": 146,
+      "systems": [
+        {
+          "system": "sms",
+          "first_effect_frame": 2805,
+          "audio_file": "validation\\sms-sfx-hook-4\\audio.wav",
+          "gameplay_setup_writes": true,
+          "audio_state_injected": false
+        },
+        {
+          "system": "md",
+          "first_effect_frame": 2805,
+          "audio_file": "validation\\md-sfx-hook-4\\audio.wav",
+          "gameplay_setup_writes": true,
+          "audio_state_injected": false
+        }
+      ]
+    },
+    {
+      "item": 7,
+      "command": 151,
+      "systems": [
+        {
+          "system": "sms",
+          "first_effect_frame": 2805,
+          "audio_file": "validation\\sms-sfx-hook-7\\audio.wav",
+          "gameplay_setup_writes": true,
+          "audio_state_injected": false
+        },
+        {
+          "system": "md",
+          "first_effect_frame": 2805,
+          "audio_file": "validation\\md-sfx-hook-7\\audio.wav",
+          "gameplay_setup_writes": true,
+          "audio_state_injected": false
+        }
+      ]
+    }
+  ],
+  "scope": "Four button-triggered actions; controlled equipment, HP, magic and enemies; sound state never injected",
+  "all_game_event_hooks_verified": false,
+  "full_progression_verified": false
+}

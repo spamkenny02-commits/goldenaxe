@@ -1,0 +1,60 @@
+{
+  "md_sha256": "7de7d76b234815306e8c91923f5413745ec5678c0697aeb929a3f2a31959da9a",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "baseline_md_sha256": "365b546d3f02682d7642b10970eda3863f47d49e80602619ebef16c95006b021",
+  "baseline_rebuild_byte_exact": true,
+  "diagnostic_only": true,
+  "cases": [
+    {
+      "frame": 3748,
+      "normalized_pixel_differences": {
+        "baseline": 0,
+        "current": 0
+      },
+      "baseline_spell_record_exact": true
+    },
+    {
+      "frame": 3749,
+      "normalized_pixel_differences": {
+        "baseline": 190,
+        "current": 190
+      },
+      "baseline_spell_record_exact": true
+    },
+    {
+      "frame": 3750,
+      "normalized_pixel_differences": {
+        "baseline": 1,
+        "current": 1
+      },
+      "baseline_spell_record_exact": true
+    },
+    {
+      "frame": 3751,
+      "normalized_pixel_differences": {
+        "baseline": 25,
+        "current": 30
+      },
+      "baseline_spell_record_exact": true
+    },
+    {
+      "frame": 3752,
+      "normalized_pixel_differences": {
+        "baseline": 18,
+        "current": 18
+      },
+      "baseline_spell_record_exact": true
+    },
+    {
+      "frame": 3753,
+      "normalized_pixel_differences": {
+        "baseline": 114,
+        "current": 114
+      },
+      "baseline_spell_record_exact": true
+    }
+  ],
+  "limits": [
+    "One controlled up-fire sequence near the top edge; normalized images, not complete scanline timing accounting."
+  ]
+}

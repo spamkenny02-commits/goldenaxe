@@ -1,0 +1,18 @@
+{
+  "md_sha256": "cea9c1bb5063dcc3bdfc8ae73c8c375aaecf979cb4cc2aa4ba5f59ef0e02e797",
+  "route": "0094 -> 00A4, south",
+  "verified_state_frames": 70,
+  "verified_image_frames": 99,
+  "verified_scroll_image_frames": 71,
+  "arrival_map_identical": true,
+  "verified_room_and_hero_state_frames": 161,
+  "first_remaining_state_difference": null,
+  "first_remaining_image_difference": [
+    3099,
+    45
+  ],
+  "remaining_different_state_frames": 0,
+  "remaining_different_image_frames": 62,
+  "remaining_work": "Types20..22 and 26..28 spawn/move natively; ranged types create exterior projectiles10..12. Timing/positions differ because loading is faster and SGDK random replaces the original R stream. Damage, sprite-overflow shot suppression, original randomness and loading timing remain pending.",
+  "whole_vertical_room_entry_complete": false
+}

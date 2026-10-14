@@ -1,0 +1,78 @@
+{
+  "md_sha256": "b82289fa4a91003b304285c77c9b41505c93e299a0ac9625641cb79d8138047e",
+  "md_size": 524288,
+  "source_unchanged": true,
+  "rom_aliases_exact": true,
+  "md_additive_checksum": 14367,
+  "current_reports": [
+    {
+      "file": "sfx_report.json",
+      "sha256": "d1dc1b6e6756b40411c033ef7f7c37944d97ba4c0ab3a49ca520c2c89121babc"
+    },
+    {
+      "file": "sfx_priority_report.json",
+      "sha256": "abfdff993291a64580f7cc1bdea36cc3ca27903d6042ea470a9ba25e38b46645"
+    },
+    {
+      "file": "music_report.json",
+      "sha256": "fcc34d0156d45383a12ecff070d2dcd8e01cc0f4e8a7c7ab87a229faece7707f"
+    },
+    {
+      "file": "sfx_hooks_report.json",
+      "sha256": "fb3b610eebffee741657c12c8a6aa71c57646c7f0aacb5b650e4351fb9ac230e"
+    },
+    {
+      "file": "sfx_event_records_report.json",
+      "sha256": "a9aaf0ccb02c537b6bd2e64476daf6b19984d9e51ab0d1a96f3440cf11b3077a"
+    },
+    {
+      "file": "damage_report.json",
+      "sha256": "b1cb75c6ff79f1312cba8b605c4bebd68b20fbba94a176355ea78145e0bdd729"
+    },
+    {
+      "file": "enemy_damage_report.json",
+      "sha256": "990d8c23c40e4e2b9b18a8c3fd05a1186898d3a7bc817f93a9267a81e68bc9cc"
+    },
+    {
+      "file": "shield_report.json",
+      "sha256": "ce3c5b63733c2f4eacf780d367c79192a6b7e6cce09461505f74ebc85112727a"
+    },
+    {
+      "file": "loot_report.json",
+      "sha256": "2217d0e398225d48d9914f84bc299c02ac3f5b179a7b544d0bf28e709c1a946a"
+    },
+    {
+      "file": "inventory_report.json",
+      "sha256": "6b4d66ed85530aa68799c762642a49ab2e3107f7344165188efc224c34850174"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "9005a2c7f0459c3bdc44eb4a518a9b2af65bc51a0f828bb4820888411e02bb4e"
+    },
+    {
+      "file": "house_dialogue_report.json",
+      "sha256": "78813f6ff3b753a84fde6a4996c6b42edee15fa19536b1702452c459408a442d"
+    },
+    {
+      "file": "save_report.json",
+      "sha256": "118c3d747644d7bc2194ca2bef07f96e3b31647996ed7174fa3d4ac6bf200a7f"
+    }
+  ],
+  "effects": 29,
+  "effect_irq_states": 19140,
+  "priority_scenarios": 12,
+  "priority_irq_states": 7920,
+  "music_tracks": 13,
+  "music_irq_states": 23400,
+  "button_triggered_actions": 4,
+  "gameplay_capture_event_classes": 7,
+  "full_regression_rerun": false,
+  "full_game_ported": false,
+  "known_limits": [
+    "Full original RNG/clock and natural progression incomplete",
+    "DE09 background-effect arbitration and unused random sequence opcodes not translated",
+    "Some event hooks remain for unported scripts and forced healing/HUD routines",
+    "Sound waveform/LFSR phase equality not claimed",
+    "Merchant service transition and global speed comparison newly requested, pending"
+  ]
+}

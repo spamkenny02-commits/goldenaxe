@@ -1,0 +1,59 @@
+{
+  "md_sha256": "a4f0f052ea5cb60c04f60c0dcae01245099b920464fa83e14eb198d2b2743122",
+  "md_size": 524288,
+  "rom_aliases_exact": true,
+  "additive_checksum_valid": true,
+  "controlled_dungeon_scroll_cases": 16,
+  "dungeon_entry_exit_regressions": 20,
+  "destination_maps_palettes_persistence_source_exact": true,
+  "old_objects_hidden": true,
+  "gameplay_resume_offset_frames_min": -3,
+  "gameplay_resume_offset_frames_max": 0,
+  "current_targeted_reports": [
+    {
+      "file": "dungeon_scroll_report.json",
+      "sha256": "779b21cf3aeaa36a44f620db7494d414777ad8258bcb9a0399a26d0e3338ba30"
+    },
+    {
+      "file": "dungeon_doors_report.json",
+      "sha256": "bf3cc3fd8c6b0712d07a5b20756d7a23e8c92be151d9d83dbad57f2275d04bb5"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "e6d746633d9af9ad68a39d6a3cbf66ba26fa3acf49493c1f09dc6ae7ae35b422"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "0378009b6aac73f8ac50c2b8b12483bd96f0c907fcfa859fac2f78afc4245476"
+    },
+    {
+      "file": "dungeon_scroll-pal_report.json",
+      "sha256": "4f287de34fe0837524ac068d4b48430bedcec8e118a742cd9b22c3d58fbfb70f"
+    },
+    {
+      "file": "dungeon_doors-pal_report.json",
+      "sha256": "7abee4204ebcaa6035e383a531a34ff4adcb104a15fd94f661aab99f3546fa65"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "9ee7f5f24b8523cd222319f08c2d8e307a59cc11e00faa3f26c4483349df2d1f"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "e835aa661607ac55b95856e29614736909c8b3efb5485e84f91d3194b5472b49"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/main.c": "369531c9d4f1f33e785e3bdd95f077f4529acbd15444f8de381f1fc1f3239b3f",
+    "tools/validate_dungeon_scroll.py": "8b09fcbb3f224e26af0fcdcac551b6ab0847cd2d701126fc32a4dbe69ec8bed1",
+    "tools/audit_dungeon_scroll_patch.py": "7994cfeb019030bbc4fdf83ea75e861deda0501a0e9c433e4b5ce6ea1ee8d53b"
+  },
+  "full_game_ported": false,
+  "full_natural_dungeon_progression_verified": false,
+  "limits": [
+    "Controlled room/edge fixtures do not establish natural dungeon progression.",
+    "Some scroll setup/loading durations still differ from SMS; full transition pixels are not compared.",
+    "Conditional cells, room puzzles, keys, quests, remaining enemy behaviors, bosses and ending remain incomplete.",
+    "Lantern activation, tile animation and animated palette phase remain incomplete."
+  ]
+}

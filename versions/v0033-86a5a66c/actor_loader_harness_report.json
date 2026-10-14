@@ -1,0 +1,25 @@
+{
+  "md_sha256": "86a5a66c59a479cd96214440abb4b76fa878f3b7a3690b29afec998d6665e6ff",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "harness_sha256": "5ac3ad4b560c939e5daaaec26c8de463d094faecf9de9b67ad1ab0b6127e2354",
+  "native_68000_loader_executed": true,
+  "room_mask_cases": 1536,
+  "rooms": 512,
+  "persistence_masks": [
+    255,
+    165,
+    0
+  ],
+  "actor_record_bytes_compared": 1179648,
+  "pattern_bytes_compared": 50331648,
+  "first_done_frame": 5358,
+  "source_copies_exact": true,
+  "test_only_harness": true,
+  "natural_dungeon_entry_verified": false,
+  "source_files": {
+    "actors.c": "57482ee07c6314b2b928209e84ae35027280b33ce2b06821de7d81d070f260cb",
+    "actors.h": "4910eb2d87b143a153220fce5d2541f05451eb0dc1c163ecae943266989253a5",
+    "actor_data.c": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4",
+    "main.c": "07bceaf3149bd2494f29841fdd868753549344529cfcb72774f62188ac877e4d"
+  }
+}

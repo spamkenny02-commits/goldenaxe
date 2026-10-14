@@ -1,0 +1,150 @@
+{
+  "md_sha256": "fa3b3fda81fb8d4aa6ee9241483561895da82738b395743eef88abecc5ea8443",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "name": "exterior",
+      "region": "auto",
+      "room": 149,
+      "graphics_class": 0,
+      "normal_controller_route": true,
+      "inventory_open_and_closed": true,
+      "background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "static_background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "animated_source_tile": 53,
+      "early_native_pattern_changes_from_before_menu": [],
+      "early_native_static_pattern_changes_from_before_menu": [],
+      "settled_background_tiles_compared": 124
+    },
+    {
+      "name": "first_house",
+      "region": "auto",
+      "room": 0,
+      "graphics_class": 1,
+      "normal_controller_route": true,
+      "inventory_open_and_closed": true,
+      "background_pattern_difference_indices": {
+        "3300": [
+          61,
+          62
+        ],
+        "3440": [],
+        "3470": []
+      },
+      "static_background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "animated_source_tile": 61,
+      "early_native_pattern_changes_from_before_menu": [],
+      "early_native_static_pattern_changes_from_before_menu": [],
+      "settled_background_tiles_compared": 124
+    },
+    {
+      "name": "second_house",
+      "region": "auto",
+      "room": 2,
+      "graphics_class": 1,
+      "normal_controller_route": true,
+      "inventory_open_and_closed": true,
+      "background_pattern_difference_indices": {
+        "3300": [
+          61,
+          62
+        ],
+        "3440": [],
+        "3470": []
+      },
+      "static_background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "animated_source_tile": 61,
+      "early_native_pattern_changes_from_before_menu": [],
+      "early_native_static_pattern_changes_from_before_menu": [],
+      "settled_background_tiles_compared": 124
+    },
+    {
+      "name": "exterior",
+      "region": "pal",
+      "room": 149,
+      "graphics_class": 0,
+      "normal_controller_route": true,
+      "inventory_open_and_closed": true,
+      "background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "static_background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "animated_source_tile": 53,
+      "early_native_pattern_changes_from_before_menu": [],
+      "early_native_static_pattern_changes_from_before_menu": [],
+      "settled_background_tiles_compared": 124
+    },
+    {
+      "name": "first_house",
+      "region": "pal",
+      "room": 0,
+      "graphics_class": 1,
+      "normal_controller_route": true,
+      "inventory_open_and_closed": true,
+      "background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "static_background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "animated_source_tile": 61,
+      "early_native_pattern_changes_from_before_menu": [],
+      "early_native_static_pattern_changes_from_before_menu": [],
+      "settled_background_tiles_compared": 124
+    },
+    {
+      "name": "second_house",
+      "region": "pal",
+      "room": 2,
+      "graphics_class": 1,
+      "normal_controller_route": true,
+      "inventory_open_and_closed": true,
+      "background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "static_background_pattern_difference_indices": {
+        "3300": [],
+        "3440": [],
+        "3470": []
+      },
+      "animated_source_tile": 61,
+      "early_native_pattern_changes_from_before_menu": [],
+      "early_native_static_pattern_changes_from_before_menu": [],
+      "settled_background_tiles_compared": 124
+    }
+  ],
+  "diagnostic_only": false,
+  "full_game_ported": false,
+  "limits": [
+    "All static background tiles among the first 124 match source; four animated house tiles are identified by original C9E0 and excluded from static equality. All raw differences remain recorded. Native early restored static tiles match its pre-menu tiles. Complete framebuffer and animated phase are outside this check.",
+    "Initial exterior and two village houses reached by normal input; dungeon inventory restoration is not exercised by these routes."
+  ]
+}

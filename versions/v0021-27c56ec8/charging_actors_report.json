@@ -1,0 +1,1970 @@
+{
+  "md_sha256": "27c56ec87e272f87f6d6bf368e5f34bd9b85264956b87932d74e281df5aa5cf5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "region": "auto",
+  "deterministic_cases": 72,
+  "blocked_terrain_cases": 48,
+  "controlled_decisions": [
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 2,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 2,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 2,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 10,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 10,
+      "direction": 1,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        120,
+        144
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 1,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        32,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        216,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 6,
+      "direction": 0,
+      "hero": [
+        200,
+        32
+      ]
+    },
+    {
+      "type": 58,
+      "state": 4,
+      "next_state": 8,
+      "direction": 2,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 4,
+      "next_state": 8,
+      "direction": 3,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 58,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    },
+    {
+      "type": 59,
+      "state": 8,
+      "next_state": 4,
+      "direction": 0,
+      "hero": [
+        120,
+        80
+      ]
+    }
+  ],
+  "charge_stops": [
+    {
+      "slot": 0,
+      "stop_frame": 3164
+    },
+    {
+      "slot": 1,
+      "stop_frame": 3182
+    },
+    {
+      "slot": 2,
+      "stop_frame": 3218
+    },
+    {
+      "slot": 3,
+      "stop_frame": 3227
+    },
+    {
+      "slot": 4,
+      "stop_frame": 3164
+    },
+    {
+      "slot": 5,
+      "stop_frame": 3182
+    },
+    {
+      "slot": 6,
+      "stop_frame": 3218
+    },
+    {
+      "slot": 7,
+      "stop_frame": 3227
+    }
+  ],
+  "record_comparisons": 4086,
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ],
+  "original_rng_stream_verified": false,
+  "natural_gameplay_verified": false
+}

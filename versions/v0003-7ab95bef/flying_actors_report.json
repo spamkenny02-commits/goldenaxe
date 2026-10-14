@@ -1,0 +1,27 @@
+{
+  "md_sha256": "7ab95bef3e0ecfae795bfc2705f5a316501b6b8f25ce815e2e125e3ece360dc0",
+  "arithmetic_cases": 60,
+  "aimed_projectile_types": [
+    19,
+    21
+  ],
+  "aim_targets": 11,
+  "free_motion_frames": 160,
+  "projectile_births_source_exact": true,
+  "projectile_lifetime_frames": 108,
+  "projectile_culls": [
+    {
+      "slot": 8,
+      "frame": 3198
+    },
+    {
+      "slot": 9,
+      "frame": 3171
+    }
+  ],
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ],
+  "source_rng_stream_reproduced": false
+}

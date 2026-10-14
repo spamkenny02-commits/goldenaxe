@@ -1,0 +1,46 @@
+{
+  "md_sha256": "a72eb3e83e49733761e285e3639ef6c4a344995fd8fd45f7372b3be8d2c60405",
+  "cases": [
+    {
+      "region": "auto",
+      "seed_state": 0,
+      "frames": 90,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "seed_state": 8,
+      "frames": 32,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "seed_state": 10,
+      "frames": 32,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "seed_state": 0,
+      "frames": 90,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "seed_state": 8,
+      "frames": 32,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "seed_state": 10,
+      "frames": 32,
+      "all_768_actor_bytes_exact": true
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled boss record and hero position injected in exterior; production actor loop, movement integration, animation, projectiles and culling execute unchanged.",
+    "Segments stop before random attack selection. Natural fight, original random stream, dungeon loading/graphics, complete framebuffer and audio not established."
+  ]
+}

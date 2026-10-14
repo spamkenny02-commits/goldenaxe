@@ -1,0 +1,194 @@
+{
+  "md_sha256": "4ab93fb473e026f95828ceca1d1881cb1d81b2b756bc8bc9871912322782b977",
+  "cases": [
+    {
+      "region": "auto",
+      "persistence_mask": 255,
+      "unique_resources": [
+        38,
+        32
+      ],
+      "expected_nominal_graphics_tstates": 1464652,
+      "native_graphics_tstates": 1464652,
+      "transition_frames": {
+        "sms": [
+          3045,
+          3096,
+          52
+        ],
+        "md": [
+          3045,
+          3096,
+          52
+        ]
+      },
+      "native_minus_source_completion_frames": 0,
+      "actor_count_and_tile_allocation_exact": true
+    },
+    {
+      "region": "auto",
+      "persistence_mask": 240,
+      "unique_resources": [
+        38
+      ],
+      "expected_nominal_graphics_tstates": 146129,
+      "native_graphics_tstates": 146129,
+      "transition_frames": {
+        "sms": [
+          3045,
+          3073,
+          29
+        ],
+        "md": [
+          3045,
+          3072,
+          28
+        ]
+      },
+      "native_minus_source_completion_frames": -1,
+      "actor_count_and_tile_allocation_exact": true
+    },
+    {
+      "region": "auto",
+      "persistence_mask": 128,
+      "unique_resources": [
+        38
+      ],
+      "expected_nominal_graphics_tstates": 146129,
+      "native_graphics_tstates": 146129,
+      "transition_frames": {
+        "sms": [
+          3045,
+          3073,
+          29
+        ],
+        "md": [
+          3045,
+          3072,
+          28
+        ]
+      },
+      "native_minus_source_completion_frames": -1,
+      "actor_count_and_tile_allocation_exact": true
+    },
+    {
+      "region": "auto",
+      "persistence_mask": 8,
+      "unique_resources": [
+        32
+      ],
+      "expected_nominal_graphics_tstates": 1318523,
+      "native_graphics_tstates": 1318523,
+      "transition_frames": {
+        "sms": [
+          3045,
+          3094,
+          50
+        ],
+        "md": [
+          3045,
+          3093,
+          49
+        ]
+      },
+      "native_minus_source_completion_frames": -1,
+      "actor_count_and_tile_allocation_exact": true
+    },
+    {
+      "region": "pal",
+      "persistence_mask": 255,
+      "unique_resources": [
+        38,
+        32
+      ],
+      "expected_nominal_graphics_tstates": 1464652,
+      "native_graphics_tstates": 1464652,
+      "transition_frames": {
+        "sms": [
+          3045,
+          3090,
+          46
+        ],
+        "md": [
+          3045,
+          3090,
+          46
+        ]
+      },
+      "native_minus_source_completion_frames": 0,
+      "actor_count_and_tile_allocation_exact": true
+    },
+    {
+      "region": "pal",
+      "persistence_mask": 240,
+      "unique_resources": [
+        38
+      ],
+      "expected_nominal_graphics_tstates": 146129,
+      "native_graphics_tstates": 146129,
+      "transition_frames": {
+        "sms": [
+          3045,
+          3071,
+          27
+        ],
+        "md": [
+          3045,
+          3071,
+          27
+        ]
+      },
+      "native_minus_source_completion_frames": 0,
+      "actor_count_and_tile_allocation_exact": true
+    },
+    {
+      "region": "pal",
+      "persistence_mask": 128,
+      "unique_resources": [
+        38
+      ],
+      "expected_nominal_graphics_tstates": 146129,
+      "native_graphics_tstates": 146129,
+      "transition_frames": {
+        "sms": [
+          3045,
+          3071,
+          27
+        ],
+        "md": [
+          3045,
+          3071,
+          27
+        ]
+      },
+      "native_minus_source_completion_frames": 0,
+      "actor_count_and_tile_allocation_exact": true
+    },
+    {
+      "region": "pal",
+      "persistence_mask": 8,
+      "unique_resources": [
+        32
+      ],
+      "expected_nominal_graphics_tstates": 1318523,
+      "native_graphics_tstates": 1318523,
+      "transition_frames": {
+        "sms": [
+          3045,
+          3088,
+          44
+        ],
+        "md": [
+          3045,
+          3088,
+          44
+        ]
+      },
+      "native_minus_source_completion_frames": 0,
+      "actor_count_and_tile_allocation_exact": true
+    }
+  ],
+  "scope": "Room94->A4, four persistence masks in PAL/NTSC. Resources count once per unique surviving type; no constant room-specific delay.",
+  "general_interrupt_budget_exact": false,
+  "source_rng_reproduced": false
+}

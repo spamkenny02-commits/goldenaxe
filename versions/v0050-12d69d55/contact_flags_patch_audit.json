@@ -1,0 +1,59 @@
+{
+  "md_sha256": "12d69d553cc634c242d6143af7df3d196fff95e822fc4a6ad539deb97562b52f",
+  "md_size": 524288,
+  "checksum_aliases_verified": true,
+  "current_reports": [
+    {
+      "file": "validation\\contact_flags_report.json",
+      "sha256": "94670333866c470d5bcc3e583bddfb205d08c3d14e30a614607cb66d473f2b65"
+    },
+    {
+      "file": "validation\\contact_cache_gameplay_report.json",
+      "sha256": "ac4d2259f6c9c1569c47fea27980788bcdeca837c278095d37a11d69ea557ed3"
+    },
+    {
+      "file": "validation\\contact_cache_gameplay-pal_report.json",
+      "sha256": "7f20c09f131beb3dbbf080a2bf736d3b5774eca2f3f71a4e566baa0131a687e2"
+    },
+    {
+      "file": "validation\\shutters_gameplay_report.json",
+      "sha256": "5483270cf69fcf1fa7be3d7bbfab9715d460996f543681e02cc577cf2dd49945"
+    },
+    {
+      "file": "validation\\shutters_gameplay-pal_report.json",
+      "sha256": "68477e0abf93802f0ed6e150596ee190f5c95f758f7b54f79a5337fe72c0e6ec"
+    },
+    {
+      "file": "validation\\timing_report.json",
+      "sha256": "b866108dc5cb833097254f92d3fb4cbc8d57bc5e853366a7a1ab7840955d137b"
+    },
+    {
+      "file": "validation\\timing-pal_report.json",
+      "sha256": "468b15786b4247b62239e0de8fea59fbb718edfc3839ab070543acb148baf159"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/main.c": "131433d1ff00b92d15b59e2f2ffc8977421fa6cc5423b5ca13e7c3ad8fb74288",
+    "tools/validate_contact_flags.py": "a84da43a673567b28adcb22d070fd13069e2da5db209384cb23677498ae5f2b7",
+    "tools/contact_flags_harness.c": "509707a7270e5b6bfcc3d2bd01dfa4179b4b594ae13c092e1f15c7243b457942",
+    "tools/contact_flags_cases.inc": "27b43c58740e9a70be504a8df023c53c8102f97218eac35ddeaedef644afadde",
+    "tools/build_contact_flags_harness.ps1": "bd0bb51b243e9baf47707bab364caa5fb378b65f50d11c5ff0c7929f334a5e67",
+    "tools/validate_contact_cache_gameplay.py": "f00dc00d75fd4bc288ac1032558c586ec92e5b723b7c55149a11810b650e56cc",
+    "tools/audit_contact_flags_patch.py": "79407bfcf977619cddc1dfb334948e0b3dab8172bb7212a27eef9f3da6e1d1c2",
+    "analysis/baseline-v0049-main.c": "2807a7d72c36f7d373c60bac38636d656995e8856a282bb1fca132c3795edc8c"
+  },
+  "prior_audit_sha256": "8530e40576088f52a395948adc58b36e70298d044bd9a9a278c4bb4bb57ea98c",
+  "production_delta_exactly_contact_flags": true,
+  "prior_room_effect_handlers_unchanged": true,
+  "isolated_cases": 8192,
+  "consecutive_dispatches_per_case": 2,
+  "live_cache_frames": 742,
+  "live_shutter_regression_cases": 20,
+  "full_game_ported": false,
+  "limits": [
+    "47 inventoried contact-script effects are still not enabled; this patch supplies their correct flag prerequisite.",
+    "Current isolated fixtures cover boundary positions, four directions, UP held/released, matching/different cached coordinates and direction, and pending room initialization. They do not establish full progression.",
+    "Previous v0049 room-effect unit reports are inherited evidence for unchanged handlers, not reruns of this ROM.",
+    "Loading IRQ phase, other puzzles, natural dungeon routes, bosses, ending, full pixels and audio remain incomplete."
+  ]
+}

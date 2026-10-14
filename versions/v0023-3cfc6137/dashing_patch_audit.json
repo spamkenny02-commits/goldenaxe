@@ -1,0 +1,79 @@
+{
+  "md_sha256": "3cfc61378ff64ecf311163707de88b6f309892e864693bcedcf849f1bb0b04b3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "original_unchanged": true,
+  "source_dash_and_terrain_bytes_preserved": true,
+  "evidence": [
+    {
+      "file": "dashing_actor_report.json",
+      "sha256": "c3b63973a4c6d288df982faf113b953cc1aaf3958beb7cb9cee69fc29a8eabbb"
+    },
+    {
+      "file": "dashing_actor-pal_report.json",
+      "sha256": "e1fe0f421cc21087b9cb6cd709fe08571007b9d62da4783493f3d6d5734dd181"
+    },
+    {
+      "file": "dashing_spawns_report.json",
+      "sha256": "821630cc425e00daad51365def1e8252651912f04892d181ce663173f742ebbb"
+    },
+    {
+      "file": "dashing_spawns-pal_report.json",
+      "sha256": "56a34892f16c3a59f2b341b32d8c3f51338932010c760e38551f751dd86bc622"
+    },
+    {
+      "file": "dashing_rooms_report.json",
+      "sha256": "2bc306dce25a2a50ec3f3a4b2f08769499e194dba06d1d6f05b9f693170d3e67"
+    },
+    {
+      "file": "bouncing_shooters_report.json",
+      "sha256": "0a11feb86850207a63fffc1b6ce386bd5c6343e293b6b70d5717b1f57206fa85"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "62ae9cdd73399372490f8c4d28cb1a3296cdbf147022abcccabac7319acfc65b"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "801c6c67e3919bdb6103f7aac315915247d9ffb3cccf1dea73cd30458b7faed1"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "42149b435e5a66ccd0706e60c2fc2708f4011cc9e344f6e2b30de53b26f2f59b"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "94480fe9410972bac3599d4097e6fad120a12ccc1ab53a4ff084bc725d61f6ba"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "ad3f3e827b07ab560159a3df0542be0492788c1323ef9c9485357ed5c363d67c"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "70e0539377eafbd989733745d8dc28d4a0410d5564b49c3028723f39b16cfa67"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/actors.c": "fef15ce8751ff1a4e49037816b6336f7619a7001dd5e84cf48e1159b41f9a8a3",
+    "megadrive/src/actor_data.c": "77e30b75554515c86109285e4464c9c26232dc2326d13ce58bc51aa7cb8eb670",
+    "tools/extract_actors.py": "b45157c6b96188f60fe22e78b039deb6fbe8a24c9644c4475051d32a934f118b",
+    "tools/validate_dashing_actor.py": "c22c7cc8eba4dfcfed4acca71b190cd010d4a2baa80f09f8ee9bfe48cec5b9bc",
+    "tools/validate_dashing_spawns.py": "611cf9af4a1560061f741f4a0f438b4ad38e75c1d150eb468988fcd43b6acbf3",
+    "tools/validate_dashing_rooms.py": "b55bfe667aeb050804ae7e588b8c60145909a9461982d3967a339501e46dd7f3",
+    "tools/validate_bouncing_shooters.py": "3b949f82780c46f9bb9edbf107fb5a6edc4ca46f02ed6eced7a6ceecaf29fdb2"
+  },
+  "dashing_actor_record_comparisons": 8710,
+  "full_game_ported": false,
+  "original_rng_stream_reproduced": false,
+  "full_transition_timing_equivalence": false,
+  "notes": [
+    "Collision-list descriptor bytes27/28 excluded from record comparisons",
+    "Hidden-delay and spawn RNG choices/phase explicitly controlled in fixtures",
+    "Cold-load checkpoints verify activity, not full progression or identical RNG",
+    "Eight1F test origins now prove eight distinct vectors; old origins covered six",
+    "Intro startup offsets, quests/dungeons and remaining actors are pending"
+  ]
+}

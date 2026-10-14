@@ -1,0 +1,126 @@
+{
+  "md_sha256": "7ab95bef3e0ecfae795bfc2705f5a316501b6b8f25ce815e2e125e3ece360dc0",
+  "deterministic_cases": 16,
+  "placement_rooms": [
+    81,
+    196,
+    245,
+    164,
+    280,
+    426
+  ],
+  "proximity_terrain_cases": [
+    {
+      "hero_x": 143,
+      "hero_y": 111,
+      "activated": true,
+      "first_tile": 0,
+      "lower_tile53": false,
+      "logical_and_tilemap_source_exact": true
+    },
+    {
+      "hero_x": 144,
+      "hero_y": 80,
+      "activated": false,
+      "first_tile": 0,
+      "lower_tile53": false,
+      "logical_and_tilemap_source_exact": true
+    },
+    {
+      "hero_x": 120,
+      "hero_y": 112,
+      "activated": false,
+      "first_tile": 0,
+      "lower_tile53": false,
+      "logical_and_tilemap_source_exact": true
+    },
+    {
+      "hero_x": 97,
+      "hero_y": 49,
+      "activated": true,
+      "first_tile": 107,
+      "lower_tile53": false,
+      "logical_and_tilemap_source_exact": true
+    },
+    {
+      "hero_x": 96,
+      "hero_y": 80,
+      "activated": false,
+      "first_tile": 0,
+      "lower_tile53": false,
+      "logical_and_tilemap_source_exact": true
+    },
+    {
+      "hero_x": 120,
+      "hero_y": 48,
+      "activated": false,
+      "first_tile": 0,
+      "lower_tile53": false,
+      "logical_and_tilemap_source_exact": true
+    },
+    {
+      "hero_x": 120,
+      "hero_y": 80,
+      "activated": true,
+      "first_tile": 107,
+      "lower_tile53": true,
+      "logical_and_tilemap_source_exact": true
+    },
+    {
+      "hero_x": 120,
+      "hero_y": 80,
+      "activated": true,
+      "first_tile": 0,
+      "lower_tile53": true,
+      "logical_and_tilemap_source_exact": true
+    }
+  ],
+  "controlled_decisions": [
+    {
+      "state": 4,
+      "next_state": 10,
+      "shot": false,
+      "native_rng_controlled": true
+    },
+    {
+      "state": 6,
+      "next_state": 10,
+      "shot": false,
+      "native_rng_controlled": true
+    },
+    {
+      "state": 10,
+      "next_state": 6,
+      "shot": false,
+      "native_rng_controlled": true
+    }
+  ],
+  "projectile16_free_frames": 108,
+  "projectile16_source_birth": 3103,
+  "projectile16_source_cull": 3146,
+  "projectile16_four_direction_culls": [
+    {
+      "slot": 8,
+      "frame": 3145
+    },
+    {
+      "slot": 9,
+      "frame": 3156
+    },
+    {
+      "slot": 10,
+      "frame": 3177
+    },
+    {
+      "slot": 11,
+      "frame": 3188
+    }
+  ],
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ],
+  "source_rng_stream_reproduced": false,
+  "sprite_overflow_suppression_verified": false,
+  "natural_gameplay_verified": false
+}

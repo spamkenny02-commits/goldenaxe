@@ -1,0 +1,199 @@
+{
+  "md_sha256": "8639238d6de100f584c6f7daa18c7cb54398a3bd9b217da288c4169c3b80303d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "fast": false,
+      "direction": 0,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        -32.0,
+        0.0
+      ]
+    },
+    {
+      "region": "auto",
+      "fast": false,
+      "direction": 1,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        32.0,
+        0.0
+      ]
+    },
+    {
+      "region": "auto",
+      "fast": false,
+      "direction": 2,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        0.0,
+        -32.0
+      ]
+    },
+    {
+      "region": "auto",
+      "fast": false,
+      "direction": 3,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        0.0,
+        32.0
+      ]
+    },
+    {
+      "region": "auto",
+      "fast": true,
+      "direction": 0,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        -40.0,
+        0.0
+      ]
+    },
+    {
+      "region": "auto",
+      "fast": true,
+      "direction": 1,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        40.0,
+        0.0
+      ]
+    },
+    {
+      "region": "auto",
+      "fast": true,
+      "direction": 2,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        0.0,
+        -40.0
+      ]
+    },
+    {
+      "region": "auto",
+      "fast": true,
+      "direction": 3,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        0.0,
+        40.0
+      ]
+    },
+    {
+      "region": "pal",
+      "fast": false,
+      "direction": 0,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        -32.0,
+        0.0
+      ]
+    },
+    {
+      "region": "pal",
+      "fast": false,
+      "direction": 1,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        32.0,
+        0.0
+      ]
+    },
+    {
+      "region": "pal",
+      "fast": false,
+      "direction": 2,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        0.0,
+        -32.0
+      ]
+    },
+    {
+      "region": "pal",
+      "fast": false,
+      "direction": 3,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        0.0,
+        32.0
+      ]
+    },
+    {
+      "region": "pal",
+      "fast": true,
+      "direction": 0,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        -40.0,
+        0.0
+      ]
+    },
+    {
+      "region": "pal",
+      "fast": true,
+      "direction": 1,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        40.0,
+        0.0
+      ]
+    },
+    {
+      "region": "pal",
+      "fast": true,
+      "direction": 2,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        0.0,
+        -40.0
+      ]
+    },
+    {
+      "region": "pal",
+      "fast": true,
+      "direction": 3,
+      "frames_exact": 121,
+      "hero_pattern_frames_exact": 118,
+      "displacement_pixels": [
+        0.0,
+        40.0
+      ]
+    }
+  ],
+  "fields": [
+    "hero_y",
+    "hero_x",
+    "hero_dy",
+    "hero_dx",
+    "hero_counter",
+    "hero_animation",
+    "hero_direction",
+    "hero_state",
+    "hero_terrain_context"
+  ],
+  "controlled_initial_state": true,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled flat ground, ownership and cleared departing enemies; no equipment acquisition, obstacles, combat or other terrain physics proof.",
+    "Four hero VRAM tiles compared; complete framebuffer/audio and transition timing are outside these within-room tests."
+  ]
+}

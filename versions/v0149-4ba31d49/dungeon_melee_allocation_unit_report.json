@@ -1,0 +1,14 @@
+{
+  "md_sha256": "4ba31d49f9553901b5128ea1172d069b7488bc0ace2471ca4a285b403557fc18",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "8c4d0acc3e5eba18d978e96c8c0dce635481e1aead94bb05bd2224a44ee63518",
+  "harness_sha256": "faa3094dc06dd323d94e2df705b9002a9fdf7be70cd0287a767d99a78e59b5b7",
+  "cases": 1984,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Four source LD A,R sites use explicit register-preserving inputs. Original505F/A566/984F/57F8/4859/48F3/4A15 execute.",
+    "Seven even states, canonical spawn, terrain/bounds,5F random thresholds and separate X/Y strict24 proximity decisions,60 pursuit/ties/ground, attack animation completion and facing reversal. State0 uses loader animation0.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

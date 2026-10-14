@@ -1,0 +1,74 @@
+{
+  "md_sha256": "4ab93fb473e026f95828ceca1d1881cb1d81b2b756bc8bc9871912322782b977",
+  "compiled_resource_cost_types": 33,
+  "targeted_reports": [
+    {
+      "file": "timing_report.json",
+      "sha256": "1b6dd2f75d01cd1f300a546aa0020761f9032a85dc6cdad3faf714b666d09724"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "870dbfebfeb6afe110b16355cae01a57e6ca2f1486c411bc7c4da10004be955d"
+    },
+    {
+      "file": "loading_budget_report.json",
+      "sha256": "439bdfa06b26b6f582e7dbd5b6ced7ad5930224b4a6c9061ad0e49330eee110f"
+    },
+    {
+      "file": "actor_tick_report.json",
+      "sha256": "61e4bf18260ff4c985072de3ca48bcab734da23dc5e7300f576abd2af0cd756a"
+    },
+    {
+      "file": "vertical_report.json",
+      "sha256": "88edfe9ba0b1d19eef675590e1da8988dd029c248876651d18c1fe1a00a532f9"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "a6b88163c1ec89642b1860bfa7e035355e95e05f7409c682fbf30ba57748c914"
+    },
+    {
+      "file": "service_transition_report.json",
+      "sha256": "6db605a5dafadece26f2ef4e3e13c48ebb2ddcbc8babb3737d92617f1cfed0b6"
+    },
+    {
+      "file": "intro_report.json",
+      "sha256": "e84edf5f7b126cb0dd6225eaca50b09b3dc749ce487e89c00716e2099eda70ef"
+    },
+    {
+      "file": "intro-pal_report.json",
+      "sha256": "fbc3119060280deff7c4caa9065ef608f3d8453fce176c784b729acbbec67292"
+    }
+  ],
+  "source_cycle_profiles": [
+    {
+      "file": "actor_loading_profile.json",
+      "sha256": "df7484b16fb9b7a0b42ef7f3eeea969643c024fa4ceabf525b39abf07444c5a5"
+    },
+    {
+      "file": "actor_loading_profile-pal.json",
+      "sha256": "5e4d672643e85b6082d6788b71ae2ffea781065054bade6936e945241c2e48cc"
+    }
+  ],
+  "natural_vertical_route_loading_timing_exact_in_pal_and_ntsc": true,
+  "controlled_persistence_cases": 8,
+  "remaining_persistence_case_offsets": [
+    {
+      "region": "auto",
+      "mask": 240,
+      "frames": -1
+    },
+    {
+      "region": "auto",
+      "mask": 128,
+      "frames": -1
+    },
+    {
+      "region": "auto",
+      "mask": 8,
+      "frames": -1
+    }
+  ],
+  "full_game_regression": false,
+  "clock_budget_model": "Nominal ROM instruction work plus approximate 20000T loader control and 3072T IRQ allowance per frame; not cycle-accurate for all rooms.",
+  "original_rng_and_sprite_overflow_still_incomplete": true
+}

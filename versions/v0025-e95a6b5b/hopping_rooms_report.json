@@ -1,0 +1,102 @@
+{
+  "md_sha256": "e95a6b5bfe9f5e1a714f6042531779e8213fcda3ac41cb142b2b7d4f9d005c58",
+  "rows": [
+    {
+      "room": 218,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "63": 8
+      },
+      "states": {
+        "63": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "first_hop_events": {
+        "63": 1661
+      }
+    },
+    {
+      "room": 218,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "63": 8
+      },
+      "states": {
+        "63": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ]
+      },
+      "first_hop_events": {
+        "63": 1619
+      }
+    },
+    {
+      "room": 252,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "63": 8
+      },
+      "states": {
+        "63": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ]
+      },
+      "first_hop_events": {
+        "63": 1512
+      }
+    },
+    {
+      "room": 252,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "63": 8
+      },
+      "states": {
+        "63": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ]
+      },
+      "first_hop_events": {
+        "63": 1447
+      }
+    }
+  ],
+  "ram_mutations": false,
+  "controlled_saved_room": true,
+  "two_hopping_rooms_verified": true,
+  "actor_hops_in_at_least_one_room": true,
+  "absolute_timing_exact": false,
+  "full_progression_verified": false
+}

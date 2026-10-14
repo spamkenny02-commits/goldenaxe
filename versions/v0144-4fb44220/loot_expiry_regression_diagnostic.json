@@ -1,0 +1,38 @@
+{
+  "md_sha256": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "baseline_md_sha256": "51ff11b9c6a5d9ba1321f81c60bc3c4fb9fbc61d4c47514f9f0005dca3aee89e",
+  "all_370_loot_record_frames_exact_for_source_baseline_and_current": true,
+  "samples": [
+    {
+      "frame": 3984,
+      "source_pixel_differences": {
+        "baseline": 0,
+        "current": 0
+      },
+      "native_baseline_and_current_pixels_identical": true
+    },
+    {
+      "frame": 3985,
+      "source_pixel_differences": {
+        "baseline": 105,
+        "current": 105
+      },
+      "native_baseline_and_current_pixels_identical": true
+    },
+    {
+      "frame": 3986,
+      "source_pixel_differences": {
+        "baseline": 0,
+        "current": 0
+      },
+      "native_baseline_and_current_pixels_identical": true
+    }
+  ],
+  "legacy_full_expiry_visual_validator_passed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Inherited pre-thief expiry visual gap at3985 under legacy controlled fixture, which writes vtimer from an old source clock snapshot.",
+    "All336 loot bytes over370 expiry frames compare. Only three images near the first legacy failure are compared to the prior ROM; complete expiry framebuffer fidelity is not proved."
+  ]
+}

@@ -1,0 +1,8343 @@
+{
+  "sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "size": 262144,
+  "header_hex": "544d5220534547412020190905750040",
+  "main_state_table": [
+    5229,
+    244,
+    9267,
+    9327,
+    9398,
+    9413,
+    9459,
+    28350,
+    28914,
+    4353,
+    9597,
+    29584
+  ],
+  "provenance": "Static reachability plus optional instrumented instruction starts. Only rows carrying executions have dynamic evidence.",
+  "instructions": 7608,
+  "decoded_bytes": 15363,
+  "executed_instruction_starts": 5987,
+  "observed_dispatch_states": {
+    "0": 8,
+    "4": 8,
+    "10": 9,
+    "12": 8942,
+    "16": 1,
+    "18": 8
+  },
+  "trace_sources": [
+    {
+      "directory": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\outputs\\gaw-md\\validation\\sms-world",
+      "frames": 5000,
+      "core": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\work\\genesis-plus-gx\\genesis_plus_gx_libretro.dll",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9"
+    },
+    {
+      "directory": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\outputs\\gaw-md\\validation\\sms-transition",
+      "frames": 3100,
+      "core": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\work\\genesis-plus-gx\\genesis_plus_gx_libretro.dll",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9"
+    },
+    {
+      "directory": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\outputs\\gaw-md\\validation\\sms-vertical",
+      "frames": 3160,
+      "core": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\work\\genesis-plus-gx\\genesis_plus_gx_libretro.dll",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9"
+    },
+    {
+      "directory": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\outputs\\gaw-md\\validation\\sms-combat-trace",
+      "frames": 2880,
+      "core": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\work\\genesis-plus-gx\\genesis_plus_gx_libretro.dll",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9"
+    },
+    {
+      "directory": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\outputs\\gaw-md\\validation\\sms-loot-trace",
+      "frames": 4500,
+      "core": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\work\\genesis-plus-gx\\genesis_plus_gx_libretro.dll",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9"
+    },
+    {
+      "directory": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\outputs\\gaw-md\\validation\\sms-inventory-trace",
+      "frames": 3030,
+      "core": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\work\\genesis-plus-gx\\genesis_plus_gx_libretro.dll",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9"
+    },
+    {
+      "directory": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\outputs\\gaw-md\\validation\\sms-heal-potion-trace",
+      "frames": 4000,
+      "core": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\work\\genesis-plus-gx\\genesis_plus_gx_libretro.dll",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9"
+    },
+    {
+      "directory": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\outputs\\gaw-md\\validation\\sms-fire-trace",
+      "frames": 3960,
+      "core": "C:\\Users\\UniKennY\\Documents\\Codex\\2026-10-07\\hel\\work\\genesis-plus-gx\\genesis_plus_gx_libretro.dll",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9"
+    }
+  ],
+  "unresolved": [
+    {
+      "from": 33,
+      "reason": "indirect jump; table or runtime target required"
+    },
+    {
+      "from": 5928,
+      "target": 48760,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 5936,
+      "target": 33216,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 28982,
+      "target": 48367,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 29164,
+      "target": 48171,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 8812,
+      "target": 48760,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 27079,
+      "target": 48539,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 27243,
+      "target": 48574,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 23475,
+      "reason": "indirect jump; table or runtime target required"
+    },
+    {
+      "from": 28893,
+      "target": 48574,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 4336,
+      "reason": "indirect jump; table or runtime target required"
+    },
+    {
+      "from": 3893,
+      "reason": "indirect jump; table or runtime target required"
+    },
+    {
+      "from": 353,
+      "target": 32896,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 362,
+      "target": 32768,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 418,
+      "target": 32768,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 8053,
+      "target": 32904,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 514,
+      "target": 32768,
+      "reason": "banked ROM or RAM target"
+    },
+    {
+      "from": 610,
+      "reason": "indirect jump; table or runtime target required"
+    }
+  ],
+  "hardware": [
+    {
+      "address": 42,
+      "rom_offset": 42,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 330068,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 45,
+      "rom_offset": 45,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 330068,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 57,
+      "rom_offset": 57,
+      "bytes": "dbbf",
+      "asm": "IN A,(0x00bf)",
+      "op": "IN",
+      "executions": 35774,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 140,
+      "rom_offset": 140,
+      "bytes": "21fcff",
+      "asm": "LD HL,0xfffc",
+      "op": "LD",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 174,
+      "rom_offset": 174,
+      "bytes": "dbbf",
+      "asm": "IN A,(0x00bf)",
+      "op": "IN",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 176,
+      "rom_offset": 176,
+      "bytes": "dbbf",
+      "asm": "IN A,(0x00bf)",
+      "op": "IN",
+      "executions": 4568,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 186,
+      "rom_offset": 186,
+      "bytes": "dbbf",
+      "asm": "IN A,(0x00bf)",
+      "op": "IN",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 324,
+      "rom_offset": 324,
+      "bytes": "edab",
+      "asm": "OUTD",
+      "op": "OUTD",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 326,
+      "rom_offset": 326,
+      "bytes": "ed41",
+      "asm": "OUT (C),B",
+      "op": "OUT",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 328,
+      "rom_offset": 328,
+      "bytes": "edab",
+      "asm": "OUTD",
+      "op": "OUTD",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 330,
+      "rom_offset": 330,
+      "bytes": "ed41",
+      "asm": "OUT (C),B",
+      "op": "OUT",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 332,
+      "rom_offset": 332,
+      "bytes": "edab",
+      "asm": "OUTD",
+      "op": "OUTD",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 334,
+      "rom_offset": 334,
+      "bytes": "ed41",
+      "asm": "OUT (C),B",
+      "op": "OUT",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 338,
+      "rom_offset": 338,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 342,
+      "rom_offset": 342,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 346,
+      "rom_offset": 346,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 357,
+      "rom_offset": 357,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 360,
+      "rom_offset": 360,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 387,
+      "rom_offset": 387,
+      "bytes": "db7e",
+      "asm": "IN A,(0x007e)",
+      "op": "IN",
+      "executions": 2862213,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 393,
+      "rom_offset": 393,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 21180,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 397,
+      "rom_offset": 397,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 21180,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 405,
+      "rom_offset": 405,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 677760,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 415,
+      "rom_offset": 415,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 442,
+      "rom_offset": 442,
+      "bytes": "dbdc",
+      "asm": "IN A,(0x00dc)",
+      "op": "IN",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 456,
+      "rom_offset": 456,
+      "bytes": "dbdd",
+      "asm": "IN A,(0x00dd)",
+      "op": "IN",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 496,
+      "rom_offset": 496,
+      "bytes": "3affff",
+      "asm": "LD A,(0xffff)",
+      "op": "LD",
+      "executions": 2256,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 500,
+      "rom_offset": 500,
+      "bytes": "3afcff",
+      "asm": "LD A,(0xfffc)",
+      "op": "LD",
+      "executions": 2256,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 506,
+      "rom_offset": 506,
+      "bytes": "32fcff",
+      "asm": "LD (0xfffc),A",
+      "op": "LD",
+      "executions": 2256,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 511,
+      "rom_offset": 511,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 2256,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 528,
+      "rom_offset": 528,
+      "bytes": "32fcff",
+      "asm": "LD (0xfffc),A",
+      "op": "LD",
+      "executions": 2256,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 532,
+      "rom_offset": 532,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 2256,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 569,
+      "rom_offset": 569,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 26,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 573,
+      "rom_offset": 573,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 26,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 630,
+      "rom_offset": 630,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 160,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 634,
+      "rom_offset": 634,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 160,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 642,
+      "rom_offset": 642,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 6056,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 646,
+      "rom_offset": 646,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 6056,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 653,
+      "rom_offset": 653,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 6056,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 692,
+      "rom_offset": 692,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 1112,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 697,
+      "rom_offset": 697,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 1112,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 712,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "rom_offset": 712,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 720,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "rom_offset": 720,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 742,
+      "rom_offset": 742,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 142336,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 773,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "rom_offset": 773,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 776,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "rom_offset": 776,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 784,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "rom_offset": 784,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 807,
+      "rom_offset": 807,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 108,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 827,
+      "rom_offset": 827,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 290560,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 888,
+      "rom_offset": 888,
+      "bytes": "ed51",
+      "asm": "OUT (C),D",
+      "op": "OUT",
+      "executions": 55712,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 910,
+      "rom_offset": 910,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 209152,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 926,
+      "rom_offset": 926,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 88512,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 931,
+      "rom_offset": 931,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 88512,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 944,
+      "rom_offset": 944,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61776,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 971,
+      "rom_offset": 971,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 88,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 974,
+      "rom_offset": 974,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 88,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 988,
+      "rom_offset": 988,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 4896,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1082,
+      "rom_offset": 1082,
+      "bytes": "3afcff",
+      "asm": "LD A,(0xfffc)",
+      "op": "LD",
+      "executions": 1129,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1087,
+      "rom_offset": 1087,
+      "bytes": "32fcff",
+      "asm": "LD (0xfffc),A",
+      "op": "LD",
+      "executions": 1129,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1093,
+      "rom_offset": 1093,
+      "bytes": "3afcff",
+      "asm": "LD A,(0xfffc)",
+      "op": "LD",
+      "executions": 1129,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1098,
+      "rom_offset": 1098,
+      "bytes": "32fcff",
+      "asm": "LD (0xfffc),A",
+      "op": "LD",
+      "executions": 1129,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1109,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "rom_offset": 1109,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 1318,
+      "rom_offset": 1318,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1417,
+      "rom_offset": 1417,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 33280,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1867,
+      "bytes": "11ffff",
+      "asm": "LD DE,0xffff",
+      "op": "LD",
+      "rom_offset": 1867,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 1954,
+      "rom_offset": 1954,
+      "bytes": "ed69",
+      "asm": "OUT (C),L",
+      "op": "OUT",
+      "executions": 407680,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1956,
+      "rom_offset": 1956,
+      "bytes": "ed61",
+      "asm": "OUT (C),H",
+      "op": "OUT",
+      "executions": 407680,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 1961,
+      "rom_offset": 1961,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 407680,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2078,
+      "rom_offset": 2078,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 34,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2330,
+      "rom_offset": 2330,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 32,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2334,
+      "rom_offset": 2334,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 32,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2344,
+      "rom_offset": 2344,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 49152,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2352,
+      "rom_offset": 2352,
+      "bytes": "dbbf",
+      "asm": "IN A,(0x00bf)",
+      "op": "IN",
+      "executions": 32,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2670,
+      "rom_offset": 2670,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 11894,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2747,
+      "rom_offset": 2747,
+      "bytes": "dbbf",
+      "asm": "IN A,(0x00bf)",
+      "op": "IN",
+      "executions": 48,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2979,
+      "rom_offset": 2979,
+      "bytes": "3affff",
+      "asm": "LD A,(0xffff)",
+      "op": "LD",
+      "executions": 27310,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 2996,
+      "rom_offset": 2996,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3146,
+      "rom_offset": 3146,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 25,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3156,
+      "rom_offset": 3156,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 6848,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3160,
+      "rom_offset": 3160,
+      "bytes": "dbbe",
+      "asm": "IN A,(0x00be)",
+      "op": "IN",
+      "executions": 6848,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3164,
+      "rom_offset": 3164,
+      "bytes": "dbbe",
+      "asm": "IN A,(0x00be)",
+      "op": "IN",
+      "executions": 6848,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3168,
+      "rom_offset": 3168,
+      "bytes": "dbbe",
+      "asm": "IN A,(0x00be)",
+      "op": "IN",
+      "executions": 6848,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3178,
+      "rom_offset": 3178,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 56,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3360,
+      "rom_offset": 3360,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 16,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3390,
+      "rom_offset": 3390,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 248,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3638,
+      "rom_offset": 3638,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 18432,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3725,
+      "rom_offset": 3725,
+      "bytes": "ed69",
+      "asm": "OUT (C),L",
+      "op": "OUT",
+      "executions": 147456,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3727,
+      "rom_offset": 3727,
+      "bytes": "ed61",
+      "asm": "OUT (C),H",
+      "op": "OUT",
+      "executions": 147456,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3737,
+      "rom_offset": 3737,
+      "bytes": "ed59",
+      "asm": "OUT (C),E",
+      "op": "OUT",
+      "executions": 147456,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3785,
+      "rom_offset": 3785,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3873,
+      "rom_offset": 3873,
+      "bytes": "db7e",
+      "asm": "IN A,(0x007e)",
+      "op": "IN",
+      "executions": 72552,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 3903,
+      "rom_offset": 3903,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 104,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 4562,
+      "rom_offset": 4562,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 4630,
+      "rom_offset": 4630,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 4720,
+      "rom_offset": 4720,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 16,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 5241,
+      "rom_offset": 5241,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 5874,
+      "rom_offset": 5874,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 9,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 5925,
+      "rom_offset": 5925,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 9,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 5933,
+      "rom_offset": 5933,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 9,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 5949,
+      "rom_offset": 5949,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 9,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 6018,
+      "rom_offset": 6018,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 17,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 6287,
+      "rom_offset": 6287,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 6298,
+      "rom_offset": 6298,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 6425,
+      "rom_offset": 6425,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 17,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 6523,
+      "rom_offset": 6523,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 17,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7484,
+      "rom_offset": 7484,
+      "bytes": "ed59",
+      "asm": "OUT (C),E",
+      "op": "OUT",
+      "executions": 320,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7486,
+      "rom_offset": 7486,
+      "bytes": "ed51",
+      "asm": "OUT (C),D",
+      "op": "OUT",
+      "executions": 320,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7494,
+      "rom_offset": 7494,
+      "bytes": "eda2",
+      "asm": "INI",
+      "op": "INI",
+      "executions": 10240,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7501,
+      "rom_offset": 7501,
+      "bytes": "ed59",
+      "asm": "OUT (C),E",
+      "op": "OUT",
+      "executions": 320,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7503,
+      "rom_offset": 7503,
+      "bytes": "ed51",
+      "asm": "OUT (C),D",
+      "op": "OUT",
+      "executions": 320,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7547,
+      "rom_offset": 7547,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 2560,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7557,
+      "rom_offset": 7557,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 2560,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7567,
+      "rom_offset": 7567,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 2560,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7577,
+      "rom_offset": 7577,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 2560,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 7760,
+      "rom_offset": 7760,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 9,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8035,
+      "rom_offset": 8035,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 6737,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8040,
+      "rom_offset": 8040,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 6737,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8050,
+      "rom_offset": 8050,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 6737,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8201,
+      "rom_offset": 8201,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 7296,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8206,
+      "rom_offset": 8206,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 7296,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8448,
+      "rom_offset": 8448,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 730,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8452,
+      "rom_offset": 8452,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 730,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8459,
+      "rom_offset": 8459,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 934400,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8593,
+      "rom_offset": 8593,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 3200,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8602,
+      "rom_offset": 8602,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 3200,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8809,
+      "rom_offset": 8809,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 9,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8869,
+      "rom_offset": 8869,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 10,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8873,
+      "rom_offset": 8873,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 10,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8883,
+      "rom_offset": 8883,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 15360,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 8891,
+      "rom_offset": 8891,
+      "bytes": "dbbf",
+      "asm": "IN A,(0x00bf)",
+      "op": "IN",
+      "executions": 10,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 9051,
+      "rom_offset": 9051,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 10230,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 11028,
+      "rom_offset": 11028,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 26,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 11082,
+      "bytes": "dbbe",
+      "asm": "IN A,(0x00be)",
+      "op": "IN",
+      "rom_offset": 11082,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 11088,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "rom_offset": 11088,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 15116,
+      "rom_offset": 15116,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8944,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15126,
+      "rom_offset": 15126,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 8944,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15130,
+      "rom_offset": 15130,
+      "bytes": "d3bf",
+      "asm": "OUT (0x00bf),A",
+      "op": "OUT",
+      "executions": 8944,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15138,
+      "rom_offset": 15138,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15140,
+      "rom_offset": 15140,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15142,
+      "rom_offset": 15142,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15144,
+      "rom_offset": 15144,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15146,
+      "rom_offset": 15146,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15148,
+      "rom_offset": 15148,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15150,
+      "rom_offset": 15150,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15152,
+      "rom_offset": 15152,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15154,
+      "rom_offset": 15154,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15156,
+      "rom_offset": 15156,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15158,
+      "rom_offset": 15158,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15160,
+      "rom_offset": 15160,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15162,
+      "rom_offset": 15162,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15164,
+      "rom_offset": 15164,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15166,
+      "rom_offset": 15166,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15168,
+      "rom_offset": 15168,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15170,
+      "rom_offset": 15170,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15172,
+      "rom_offset": 15172,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15174,
+      "rom_offset": 15174,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15176,
+      "rom_offset": 15176,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15178,
+      "rom_offset": 15178,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15180,
+      "rom_offset": 15180,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15182,
+      "rom_offset": 15182,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15184,
+      "rom_offset": 15184,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15186,
+      "rom_offset": 15186,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15188,
+      "rom_offset": 15188,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15190,
+      "rom_offset": 15190,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15192,
+      "rom_offset": 15192,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15194,
+      "rom_offset": 15194,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15196,
+      "rom_offset": 15196,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15198,
+      "rom_offset": 15198,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 15200,
+      "rom_offset": 15200,
+      "bytes": "d3be",
+      "asm": "OUT (0x00be),A",
+      "op": "OUT",
+      "executions": 35888,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 19256,
+      "rom_offset": 19256,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 2,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 19554,
+      "rom_offset": 19554,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 9960,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 23356,
+      "rom_offset": 23356,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 17,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 23469,
+      "rom_offset": 23469,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8934,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 24216,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "rom_offset": 24216,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 27076,
+      "rom_offset": 27076,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 8934,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 27240,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "rom_offset": 27240,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 28673,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "rom_offset": 28673,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 28771,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "rom_offset": 28771,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 28890,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "rom_offset": 28890,
+      "evidence": "static reachability"
+    },
+    {
+      "address": 28975,
+      "rom_offset": 28975,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 1,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 29082,
+      "rom_offset": 29082,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 1,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 29161,
+      "rom_offset": 29161,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 126,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 29316,
+      "rom_offset": 29316,
+      "bytes": "32ffff",
+      "asm": "LD (0xffff),A",
+      "op": "LD",
+      "executions": 1,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32768,
+      "rom_offset": 65536,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32770,
+      "rom_offset": 65538,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32772,
+      "rom_offset": 65540,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32774,
+      "rom_offset": 65542,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32776,
+      "rom_offset": 65544,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32778,
+      "rom_offset": 65546,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32780,
+      "rom_offset": 65548,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32782,
+      "rom_offset": 65550,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32784,
+      "rom_offset": 65552,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32786,
+      "rom_offset": 65554,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32788,
+      "rom_offset": 65556,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32790,
+      "rom_offset": 65558,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32792,
+      "rom_offset": 65560,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32794,
+      "rom_offset": 65562,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32796,
+      "rom_offset": 65564,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32798,
+      "rom_offset": 65566,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32800,
+      "rom_offset": 65568,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32802,
+      "rom_offset": 65570,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32804,
+      "rom_offset": 65572,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32806,
+      "rom_offset": 65574,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32808,
+      "rom_offset": 65576,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32810,
+      "rom_offset": 65578,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32812,
+      "rom_offset": 65580,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32814,
+      "rom_offset": 65582,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32816,
+      "rom_offset": 65584,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32818,
+      "rom_offset": 65586,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32820,
+      "rom_offset": 65588,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32822,
+      "rom_offset": 65590,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32824,
+      "rom_offset": 65592,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32826,
+      "rom_offset": 65594,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32828,
+      "rom_offset": 65596,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32830,
+      "rom_offset": 65598,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32832,
+      "rom_offset": 65600,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32834,
+      "rom_offset": 65602,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32836,
+      "rom_offset": 65604,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32838,
+      "rom_offset": 65606,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32840,
+      "rom_offset": 65608,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32842,
+      "rom_offset": 65610,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32844,
+      "rom_offset": 65612,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32846,
+      "rom_offset": 65614,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32848,
+      "rom_offset": 65616,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32850,
+      "rom_offset": 65618,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32852,
+      "rom_offset": 65620,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32854,
+      "rom_offset": 65622,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32856,
+      "rom_offset": 65624,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32858,
+      "rom_offset": 65626,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32860,
+      "rom_offset": 65628,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32862,
+      "rom_offset": 65630,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32864,
+      "rom_offset": 65632,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32866,
+      "rom_offset": 65634,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32868,
+      "rom_offset": 65636,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32870,
+      "rom_offset": 65638,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32872,
+      "rom_offset": 65640,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32874,
+      "rom_offset": 65642,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32876,
+      "rom_offset": 65644,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32878,
+      "rom_offset": 65646,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32880,
+      "rom_offset": 65648,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32882,
+      "rom_offset": 65650,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32884,
+      "rom_offset": 65652,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32886,
+      "rom_offset": 65654,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32888,
+      "rom_offset": 65656,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32890,
+      "rom_offset": 65658,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32892,
+      "rom_offset": 65660,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32894,
+      "rom_offset": 65662,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 27302,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32896,
+      "rom_offset": 65664,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 54604,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32898,
+      "rom_offset": 65666,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 54604,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32900,
+      "rom_offset": 65668,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 54604,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32902,
+      "rom_offset": 65670,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 54604,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32904,
+      "rom_offset": 65672,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32906,
+      "rom_offset": 65674,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32908,
+      "rom_offset": 65676,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32910,
+      "rom_offset": 65678,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32912,
+      "rom_offset": 65680,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32914,
+      "rom_offset": 65682,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32916,
+      "rom_offset": 65684,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32918,
+      "rom_offset": 65686,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32920,
+      "rom_offset": 65688,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32922,
+      "rom_offset": 65690,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32924,
+      "rom_offset": 65692,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32926,
+      "rom_offset": 65694,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32928,
+      "rom_offset": 65696,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32930,
+      "rom_offset": 65698,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32932,
+      "rom_offset": 65700,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32934,
+      "rom_offset": 65702,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32936,
+      "rom_offset": 65704,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32938,
+      "rom_offset": 65706,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32940,
+      "rom_offset": 65708,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32942,
+      "rom_offset": 65710,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32944,
+      "rom_offset": 65712,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32946,
+      "rom_offset": 65714,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32948,
+      "rom_offset": 65716,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32950,
+      "rom_offset": 65718,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32952,
+      "rom_offset": 65720,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32954,
+      "rom_offset": 65722,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32956,
+      "rom_offset": 65724,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32958,
+      "rom_offset": 65726,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32960,
+      "rom_offset": 65728,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32962,
+      "rom_offset": 65730,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32964,
+      "rom_offset": 65732,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32966,
+      "rom_offset": 65734,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32968,
+      "rom_offset": 65736,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32970,
+      "rom_offset": 65738,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32972,
+      "rom_offset": 65740,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32974,
+      "rom_offset": 65742,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32976,
+      "rom_offset": 65744,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32978,
+      "rom_offset": 65746,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32980,
+      "rom_offset": 65748,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32982,
+      "rom_offset": 65750,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32984,
+      "rom_offset": 65752,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32986,
+      "rom_offset": 65754,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32988,
+      "rom_offset": 65756,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32990,
+      "rom_offset": 65758,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32992,
+      "rom_offset": 65760,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32994,
+      "rom_offset": 65762,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32996,
+      "rom_offset": 65764,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 32998,
+      "rom_offset": 65766,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33000,
+      "rom_offset": 65768,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33002,
+      "rom_offset": 65770,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33004,
+      "rom_offset": 65772,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33006,
+      "rom_offset": 65774,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33008,
+      "rom_offset": 65776,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33010,
+      "rom_offset": 65778,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33012,
+      "rom_offset": 65780,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33014,
+      "rom_offset": 65782,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33016,
+      "rom_offset": 65784,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33018,
+      "rom_offset": 65786,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33020,
+      "rom_offset": 65788,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33022,
+      "rom_offset": 65790,
+      "bytes": "eda3",
+      "asm": "OUTI",
+      "op": "OUTI",
+      "executions": 61341,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33197,
+      "rom_offset": 98733,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 524,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 33803,
+      "rom_offset": 99339,
+      "bytes": "edb3",
+      "asm": "OTIR",
+      "op": "OTIR",
+      "executions": 600,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 34081,
+      "rom_offset": 99617,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 7437,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 34091,
+      "rom_offset": 99627,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 7437,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 34120,
+      "rom_offset": 99656,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 28717,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 34380,
+      "rom_offset": 99916,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 8802,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 34520,
+      "rom_offset": 100056,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 1250,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 34736,
+      "rom_offset": 100272,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 7,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 34752,
+      "rom_offset": 100288,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 7,
+      "evidence": "instrumented execution"
+    },
+    {
+      "address": 34881,
+      "rom_offset": 100417,
+      "bytes": "d37f",
+      "asm": "OUT (0x007f),A",
+      "op": "OUT",
+      "executions": 254,
+      "evidence": "instrumented execution"
+    }
+  ],
+  "edges": [
+    {
+      "from": 29584,
+      "to": 8410,
+      "kind": "CALL"
+    },
+    {
+      "from": 29598,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 29616,
+      "to": 29306,
+      "kind": "CALL"
+    },
+    {
+      "from": 29627,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 29637,
+      "to": 24,
+      "kind": "RST"
+    },
+    {
+      "from": 29638,
+      "to": 8410,
+      "kind": "CALL"
+    },
+    {
+      "from": 29641,
+      "to": 5871,
+      "kind": "CALL"
+    },
+    {
+      "from": 29644,
+      "to": 7650,
+      "kind": "CALL"
+    },
+    {
+      "from": 7650,
+      "to": 8825,
+      "kind": "CALL"
+    },
+    {
+      "from": 7653,
+      "to": 7758,
+      "kind": "CALL"
+    },
+    {
+      "from": 7656,
+      "to": 8860,
+      "kind": "CALL"
+    },
+    {
+      "from": 7677,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 7685,
+      "to": 7700,
+      "kind": "JR"
+    },
+    {
+      "from": 7692,
+      "to": 7700,
+      "kind": "JR"
+    },
+    {
+      "from": 7705,
+      "to": 7708,
+      "kind": "JR"
+    },
+    {
+      "from": 10,
+      "to": 13,
+      "kind": "JR"
+    },
+    {
+      "from": 8864,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 8885,
+      "to": 8883,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8888,
+      "to": 8883,
+      "kind": "JP"
+    },
+    {
+      "from": 2993,
+      "to": 2989,
+      "kind": "JR"
+    },
+    {
+      "from": 7769,
+      "to": 3070,
+      "kind": "CALL"
+    },
+    {
+      "from": 7787,
+      "to": 7777,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7798,
+      "to": 29527,
+      "kind": "CALL"
+    },
+    {
+      "from": 7805,
+      "to": 7841,
+      "kind": "CALL"
+    },
+    {
+      "from": 7809,
+      "to": 7803,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7822,
+      "to": 7816,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7849,
+      "to": 24,
+      "kind": "RST"
+    },
+    {
+      "from": 26,
+      "to": 29,
+      "kind": "JR"
+    },
+    {
+      "from": 29532,
+      "to": 29530,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 29540,
+      "to": 29543,
+      "kind": "JR"
+    },
+    {
+      "from": 29544,
+      "to": 29527,
+      "kind": "JR"
+    },
+    {
+      "from": 3077,
+      "to": 3114,
+      "kind": "JR"
+    },
+    {
+      "from": 3079,
+      "to": 3099,
+      "kind": "JP"
+    },
+    {
+      "from": 3091,
+      "to": 3094,
+      "kind": "JR"
+    },
+    {
+      "from": 3094,
+      "to": 3085,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 3097,
+      "to": 3075,
+      "kind": "JR"
+    },
+    {
+      "from": 3106,
+      "to": 3109,
+      "kind": "JR"
+    },
+    {
+      "from": 3109,
+      "to": 3101,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 3112,
+      "to": 3075,
+      "kind": "JR"
+    },
+    {
+      "from": 3118,
+      "to": 3073,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8836,
+      "to": 8930,
+      "kind": "CALL"
+    },
+    {
+      "from": 8847,
+      "to": 8836,
+      "kind": "JR"
+    },
+    {
+      "from": 8853,
+      "to": 8834,
+      "kind": "JR"
+    },
+    {
+      "from": 8958,
+      "to": 8962,
+      "kind": "JR"
+    },
+    {
+      "from": 8964,
+      "to": 8968,
+      "kind": "JR"
+    },
+    {
+      "from": 5891,
+      "to": 810,
+      "kind": "CALL"
+    },
+    {
+      "from": 5899,
+      "to": 3072,
+      "kind": "CALL"
+    },
+    {
+      "from": 5920,
+      "to": 6704,
+      "kind": "CALL"
+    },
+    {
+      "from": 5928,
+      "to": 48760,
+      "kind": "CALL"
+    },
+    {
+      "from": 5936,
+      "to": 33216,
+      "kind": "CALL"
+    },
+    {
+      "from": 5946,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 5957,
+      "to": 3072,
+      "kind": "CALL"
+    },
+    {
+      "from": 5960,
+      "to": 1092,
+      "kind": "CALL"
+    },
+    {
+      "from": 5974,
+      "to": 1082,
+      "kind": "JP"
+    },
+    {
+      "from": 6713,
+      "to": 6736,
+      "kind": "JR"
+    },
+    {
+      "from": 6771,
+      "to": 6461,
+      "kind": "CALL"
+    },
+    {
+      "from": 6774,
+      "to": 6518,
+      "kind": "JP"
+    },
+    {
+      "from": 6518,
+      "to": 7117,
+      "kind": "CALL"
+    },
+    {
+      "from": 6535,
+      "to": 6540,
+      "kind": "JR"
+    },
+    {
+      "from": 6545,
+      "to": 6553,
+      "kind": "JR"
+    },
+    {
+      "from": 6548,
+      "to": 6561,
+      "kind": "JR"
+    },
+    {
+      "from": 6551,
+      "to": 6543,
+      "kind": "JR"
+    },
+    {
+      "from": 6575,
+      "to": 6588,
+      "kind": "JR"
+    },
+    {
+      "from": 6577,
+      "to": 6481,
+      "kind": "CALL"
+    },
+    {
+      "from": 6580,
+      "to": 6780,
+      "kind": "CALL"
+    },
+    {
+      "from": 6791,
+      "to": 24,
+      "kind": "JP"
+    },
+    {
+      "from": 6489,
+      "to": 6494,
+      "kind": "JR"
+    },
+    {
+      "from": 6588,
+      "to": 6481,
+      "kind": "CALL"
+    },
+    {
+      "from": 6591,
+      "to": 6780,
+      "kind": "CALL"
+    },
+    {
+      "from": 6603,
+      "to": 6657,
+      "kind": "JR"
+    },
+    {
+      "from": 6628,
+      "to": 6645,
+      "kind": "JR"
+    },
+    {
+      "from": 6636,
+      "to": 6657,
+      "kind": "JR"
+    },
+    {
+      "from": 6643,
+      "to": 6633,
+      "kind": "JR"
+    },
+    {
+      "from": 6648,
+      "to": 6655,
+      "kind": "JR"
+    },
+    {
+      "from": 6653,
+      "to": 6645,
+      "kind": "JR"
+    },
+    {
+      "from": 6556,
+      "to": 6562,
+      "kind": "JR"
+    },
+    {
+      "from": 7124,
+      "to": 6471,
+      "kind": "CALL"
+    },
+    {
+      "from": 7129,
+      "to": 6476,
+      "kind": "CALL"
+    },
+    {
+      "from": 7132,
+      "to": 7152,
+      "kind": "CALL"
+    },
+    {
+      "from": 7137,
+      "to": 6476,
+      "kind": "CALL"
+    },
+    {
+      "from": 7140,
+      "to": 7159,
+      "kind": "CALL"
+    },
+    {
+      "from": 7145,
+      "to": 6476,
+      "kind": "CALL"
+    },
+    {
+      "from": 7148,
+      "to": 7174,
+      "kind": "CALL"
+    },
+    {
+      "from": 6479,
+      "to": 6494,
+      "kind": "JR"
+    },
+    {
+      "from": 6471,
+      "to": 6476,
+      "kind": "CALL"
+    },
+    {
+      "from": 6461,
+      "to": 6481,
+      "kind": "CALL"
+    },
+    {
+      "from": 818,
+      "to": 848,
+      "kind": "JR"
+    },
+    {
+      "from": 825,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 830,
+      "to": 833,
+      "kind": "JR"
+    },
+    {
+      "from": 837,
+      "to": 840,
+      "kind": "JR"
+    },
+    {
+      "from": 840,
+      "to": 825,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 843,
+      "to": 815,
+      "kind": "JR"
+    },
+    {
+      "from": 846,
+      "to": 815,
+      "kind": "JR"
+    },
+    {
+      "from": 855,
+      "to": 813,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 865,
+      "to": 868,
+      "kind": "JR"
+    },
+    {
+      "from": 8418,
+      "to": 8423,
+      "kind": "JR"
+    },
+    {
+      "from": 8444,
+      "to": 3014,
+      "kind": "CALL"
+    },
+    {
+      "from": 8461,
+      "to": 8459,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8464,
+      "to": 8459,
+      "kind": "JP"
+    },
+    {
+      "from": 3019,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 29311,
+      "to": 3126,
+      "kind": "CALL"
+    },
+    {
+      "from": 29330,
+      "to": 869,
+      "kind": "JP"
+    },
+    {
+      "from": 872,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 884,
+      "to": 888,
+      "kind": "JR"
+    },
+    {
+      "from": 890,
+      "to": 882,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 897,
+      "to": 873,
+      "kind": "JR"
+    },
+    {
+      "from": 3149,
+      "to": 869,
+      "kind": "CALL"
+    },
+    {
+      "from": 3153,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 3173,
+      "to": 3154,
+      "kind": "JR"
+    },
+    {
+      "from": 9599,
+      "to": 7416,
+      "kind": "CALL"
+    },
+    {
+      "from": 9602,
+      "to": 9790,
+      "kind": "CALL"
+    },
+    {
+      "from": 9608,
+      "to": 3176,
+      "kind": "CALL"
+    },
+    {
+      "from": 9617,
+      "to": 2167,
+      "kind": "CALL"
+    },
+    {
+      "from": 9661,
+      "to": 9664,
+      "kind": "JR"
+    },
+    {
+      "from": 9692,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 9704,
+      "to": 9709,
+      "kind": "JR"
+    },
+    {
+      "from": 9707,
+      "to": 9716,
+      "kind": "JR"
+    },
+    {
+      "from": 9711,
+      "to": 9726,
+      "kind": "JR"
+    },
+    {
+      "from": 9714,
+      "to": 9726,
+      "kind": "JR"
+    },
+    {
+      "from": 9729,
+      "to": 9650,
+      "kind": "JR"
+    },
+    {
+      "from": 9740,
+      "to": 9748,
+      "kind": "JR"
+    },
+    {
+      "from": 9755,
+      "to": 9760,
+      "kind": "JR"
+    },
+    {
+      "from": 2204,
+      "to": 2194,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2220,
+      "to": 2223,
+      "kind": "JR"
+    },
+    {
+      "from": 2245,
+      "to": 2235,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2261,
+      "to": 2264,
+      "kind": "JR"
+    },
+    {
+      "from": 2265,
+      "to": 2223,
+      "kind": "JR"
+    },
+    {
+      "from": 2288,
+      "to": 2278,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 3207,
+      "to": 869,
+      "kind": "CALL"
+    },
+    {
+      "from": 3213,
+      "to": 3153,
+      "kind": "CALL"
+    },
+    {
+      "from": 3222,
+      "to": 3185,
+      "kind": "JR"
+    },
+    {
+      "from": 9790,
+      "to": 2877,
+      "kind": "CALL"
+    },
+    {
+      "from": 9831,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 9835,
+      "to": 9809,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 9837,
+      "to": 2766,
+      "kind": "JP"
+    },
+    {
+      "from": 2772,
+      "to": 2782,
+      "kind": "CALL"
+    },
+    {
+      "from": 2775,
+      "to": 2769,
+      "kind": "JR"
+    },
+    {
+      "from": 2777,
+      "to": 2962,
+      "kind": "CALL"
+    },
+    {
+      "from": 2780,
+      "to": 2769,
+      "kind": "JR"
+    },
+    {
+      "from": 2962,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 2804,
+      "to": 2816,
+      "kind": "JR"
+    },
+    {
+      "from": 2806,
+      "to": 2811,
+      "kind": "JR"
+    },
+    {
+      "from": 2809,
+      "to": 2812,
+      "kind": "JR"
+    },
+    {
+      "from": 2818,
+      "to": 2791,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2822,
+      "to": 2825,
+      "kind": "JR"
+    },
+    {
+      "from": 2885,
+      "to": 985,
+      "kind": "JP"
+    },
+    {
+      "from": 986,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 4366,
+      "to": 2899,
+      "kind": "CALL"
+    },
+    {
+      "from": 4369,
+      "to": 7659,
+      "kind": "CALL"
+    },
+    {
+      "from": 4372,
+      "to": 4704,
+      "kind": "CALL"
+    },
+    {
+      "from": 4381,
+      "to": 2167,
+      "kind": "CALL"
+    },
+    {
+      "from": 4390,
+      "to": 2167,
+      "kind": "CALL"
+    },
+    {
+      "from": 4399,
+      "to": 2066,
+      "kind": "CALL"
+    },
+    {
+      "from": 4405,
+      "to": 2066,
+      "kind": "CALL"
+    },
+    {
+      "from": 4411,
+      "to": 2066,
+      "kind": "CALL"
+    },
+    {
+      "from": 4420,
+      "to": 4767,
+      "kind": "CALL"
+    },
+    {
+      "from": 4426,
+      "to": 4767,
+      "kind": "CALL"
+    },
+    {
+      "from": 4432,
+      "to": 4767,
+      "kind": "CALL"
+    },
+    {
+      "from": 4438,
+      "to": 4771,
+      "kind": "CALL"
+    },
+    {
+      "from": 4446,
+      "to": 4790,
+      "kind": "CALL"
+    },
+    {
+      "from": 4454,
+      "to": 4790,
+      "kind": "CALL"
+    },
+    {
+      "from": 4470,
+      "to": 4463,
+      "kind": "JR"
+    },
+    {
+      "from": 4472,
+      "to": 2324,
+      "kind": "CALL"
+    },
+    {
+      "from": 4484,
+      "to": 2724,
+      "kind": "CALL"
+    },
+    {
+      "from": 4487,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 4490,
+      "to": 4801,
+      "kind": "CALL"
+    },
+    {
+      "from": 4493,
+      "to": 4538,
+      "kind": "CALL"
+    },
+    {
+      "from": 4501,
+      "to": 4487,
+      "kind": "JR"
+    },
+    {
+      "from": 4503,
+      "to": 2888,
+      "kind": "CALL"
+    },
+    {
+      "from": 4506,
+      "to": 7659,
+      "kind": "CALL"
+    },
+    {
+      "from": 4517,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 4520,
+      "to": 2724,
+      "kind": "CALL"
+    },
+    {
+      "from": 4532,
+      "to": 29764,
+      "kind": "CALL"
+    },
+    {
+      "from": 4535,
+      "to": 2888,
+      "kind": "JP"
+    },
+    {
+      "from": 2899,
+      "to": 2834,
+      "kind": "CALL"
+    },
+    {
+      "from": 2905,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 2907,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 2920,
+      "to": 919,
+      "kind": "CALL"
+    },
+    {
+      "from": 2932,
+      "to": 919,
+      "kind": "CALL"
+    },
+    {
+      "from": 919,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 922,
+      "to": 925,
+      "kind": "JR"
+    },
+    {
+      "from": 934,
+      "to": 925,
+      "kind": "JR"
+    },
+    {
+      "from": 936,
+      "to": 925,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2849,
+      "to": 2769,
+      "kind": "CALL"
+    },
+    {
+      "from": 2860,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 2876,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 29764,
+      "to": 30619,
+      "kind": "CALL"
+    },
+    {
+      "from": 29767,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 29775,
+      "to": 29767,
+      "kind": "JR"
+    },
+    {
+      "from": 30638,
+      "to": 1316,
+      "kind": "JP"
+    },
+    {
+      "from": 1370,
+      "to": 2167,
+      "kind": "CALL"
+    },
+    {
+      "from": 1390,
+      "to": 1393,
+      "kind": "JR"
+    },
+    {
+      "from": 1394,
+      "to": 1383,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 1403,
+      "to": 1381,
+      "kind": "JR"
+    },
+    {
+      "from": 1408,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 1421,
+      "to": 1417,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 1424,
+      "to": 1413,
+      "kind": "JR"
+    },
+    {
+      "from": 1427,
+      "to": 1411,
+      "kind": "JR"
+    },
+    {
+      "from": 1429,
+      "to": 3014,
+      "kind": "CALL"
+    },
+    {
+      "from": 1432,
+      "to": 2324,
+      "kind": "CALL"
+    },
+    {
+      "from": 1451,
+      "to": 1455,
+      "kind": "JR"
+    },
+    {
+      "from": 1459,
+      "to": 1750,
+      "kind": "JP"
+    },
+    {
+      "from": 1464,
+      "to": 1655,
+      "kind": "JP"
+    },
+    {
+      "from": 1469,
+      "to": 1643,
+      "kind": "JP"
+    },
+    {
+      "from": 1474,
+      "to": 1585,
+      "kind": "JR"
+    },
+    {
+      "from": 1478,
+      "to": 1764,
+      "kind": "JP"
+    },
+    {
+      "from": 1483,
+      "to": 1801,
+      "kind": "JP"
+    },
+    {
+      "from": 1488,
+      "to": 1899,
+      "kind": "JP"
+    },
+    {
+      "from": 1507,
+      "to": 1521,
+      "kind": "JR"
+    },
+    {
+      "from": 1512,
+      "to": 1521,
+      "kind": "JR"
+    },
+    {
+      "from": 1516,
+      "to": 1521,
+      "kind": "JR"
+    },
+    {
+      "from": 1535,
+      "to": 1596,
+      "kind": "JR"
+    },
+    {
+      "from": 1554,
+      "to": 1972,
+      "kind": "CALL"
+    },
+    {
+      "from": 1558,
+      "to": 1553,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 1567,
+      "to": 1550,
+      "kind": "JR"
+    },
+    {
+      "from": 1580,
+      "to": 1638,
+      "kind": "JR"
+    },
+    {
+      "from": 1582,
+      "to": 1441,
+      "kind": "JP"
+    },
+    {
+      "from": 1641,
+      "to": 1650,
+      "kind": "JR"
+    },
+    {
+      "from": 1653,
+      "to": 1732,
+      "kind": "JR"
+    },
+    {
+      "from": 1750,
+      "to": 1926,
+      "kind": "CALL"
+    },
+    {
+      "from": 1757,
+      "to": 1435,
+      "kind": "JP"
+    },
+    {
+      "from": 1931,
+      "to": 3014,
+      "kind": "CALL"
+    },
+    {
+      "from": 1964,
+      "to": 1953,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 1967,
+      "to": 1951,
+      "kind": "JP"
+    },
+    {
+      "from": 1975,
+      "to": 1997,
+      "kind": "CALL"
+    },
+    {
+      "from": 2007,
+      "to": 2010,
+      "kind": "JR"
+    },
+    {
+      "from": 2013,
+      "to": 2016,
+      "kind": "JR"
+    },
+    {
+      "from": 1620,
+      "to": 1984,
+      "kind": "CALL"
+    },
+    {
+      "from": 1627,
+      "to": 1620,
+      "kind": "JR"
+    },
+    {
+      "from": 1634,
+      "to": 1620,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 1636,
+      "to": 1655,
+      "kind": "JR"
+    },
+    {
+      "from": 1666,
+      "to": 1725,
+      "kind": "JR"
+    },
+    {
+      "from": 1671,
+      "to": 2030,
+      "kind": "CALL"
+    },
+    {
+      "from": 1680,
+      "to": 1728,
+      "kind": "JR"
+    },
+    {
+      "from": 1705,
+      "to": 1703,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 1712,
+      "to": 1698,
+      "kind": "JR"
+    },
+    {
+      "from": 1714,
+      "to": 1926,
+      "kind": "CALL"
+    },
+    {
+      "from": 1718,
+      "to": 1677,
+      "kind": "JR"
+    },
+    {
+      "from": 2030,
+      "to": 1926,
+      "kind": "CALL"
+    },
+    {
+      "from": 2038,
+      "to": 3014,
+      "kind": "CALL"
+    },
+    {
+      "from": 2041,
+      "to": 2053,
+      "kind": "CALL"
+    },
+    {
+      "from": 2049,
+      "to": 2038,
+      "kind": "JR"
+    },
+    {
+      "from": 2060,
+      "to": 2063,
+      "kind": "JR"
+    },
+    {
+      "from": 2063,
+      "to": 985,
+      "kind": "JP"
+    },
+    {
+      "from": 1987,
+      "to": 1997,
+      "kind": "CALL"
+    },
+    {
+      "from": 1899,
+      "to": 2030,
+      "kind": "CALL"
+    },
+    {
+      "from": 1902,
+      "to": 1441,
+      "kind": "JP"
+    },
+    {
+      "from": 1846,
+      "to": 1905,
+      "kind": "CALL"
+    },
+    {
+      "from": 1852,
+      "to": 1905,
+      "kind": "CALL"
+    },
+    {
+      "from": 1858,
+      "to": 1905,
+      "kind": "CALL"
+    },
+    {
+      "from": 1864,
+      "to": 1905,
+      "kind": "CALL"
+    },
+    {
+      "from": 1871,
+      "to": 1905,
+      "kind": "CALL"
+    },
+    {
+      "from": 1878,
+      "to": 1435,
+      "kind": "CALL"
+    },
+    {
+      "from": 1896,
+      "to": 1753,
+      "kind": "JP"
+    },
+    {
+      "from": 1908,
+      "to": 1915,
+      "kind": "JR"
+    },
+    {
+      "from": 1913,
+      "to": 1907,
+      "kind": "JR"
+    },
+    {
+      "from": 1799,
+      "to": 1878,
+      "kind": "JR"
+    },
+    {
+      "from": 1593,
+      "to": 1441,
+      "kind": "JP"
+    },
+    {
+      "from": 2346,
+      "to": 2344,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2349,
+      "to": 2344,
+      "kind": "JP"
+    },
+    {
+      "from": 2735,
+      "to": 2949,
+      "kind": "CALL"
+    },
+    {
+      "from": 2746,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 2749,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 2754,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 2765,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 4544,
+      "to": 4551,
+      "kind": "JR"
+    },
+    {
+      "from": 4548,
+      "to": 4618,
+      "kind": "JR"
+    },
+    {
+      "from": 4556,
+      "to": 4618,
+      "kind": "JR"
+    },
+    {
+      "from": 4558,
+      "to": 4628,
+      "kind": "JR"
+    },
+    {
+      "from": 4573,
+      "to": 4576,
+      "kind": "JR"
+    },
+    {
+      "from": 4584,
+      "to": 4587,
+      "kind": "JR"
+    },
+    {
+      "from": 4587,
+      "to": 4775,
+      "kind": "CALL"
+    },
+    {
+      "from": 4595,
+      "to": 2324,
+      "kind": "CALL"
+    },
+    {
+      "from": 4605,
+      "to": 4612,
+      "kind": "JR"
+    },
+    {
+      "from": 4610,
+      "to": 4617,
+      "kind": "JR"
+    },
+    {
+      "from": 4787,
+      "to": 4777,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 4661,
+      "to": 4641,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 4674,
+      "to": 4683,
+      "kind": "JR"
+    },
+    {
+      "from": 4678,
+      "to": 4684,
+      "kind": "JR"
+    },
+    {
+      "from": 4681,
+      "to": 4684,
+      "kind": "JR"
+    },
+    {
+      "from": 4685,
+      "to": 4671,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 4689,
+      "to": 4698,
+      "kind": "JR"
+    },
+    {
+      "from": 4696,
+      "to": 4703,
+      "kind": "JR"
+    },
+    {
+      "from": 4813,
+      "to": 4818,
+      "kind": "JR"
+    },
+    {
+      "from": 4820,
+      "to": 4824,
+      "kind": "JR"
+    },
+    {
+      "from": 4827,
+      "to": 4837,
+      "kind": "JR"
+    },
+    {
+      "from": 4846,
+      "to": 4854,
+      "kind": "JR"
+    },
+    {
+      "from": 4849,
+      "to": 4854,
+      "kind": "JR"
+    },
+    {
+      "from": 4852,
+      "to": 4923,
+      "kind": "JR"
+    },
+    {
+      "from": 4927,
+      "to": 4934,
+      "kind": "JR"
+    },
+    {
+      "from": 4934,
+      "to": 2656,
+      "kind": "CALL"
+    },
+    {
+      "from": 4948,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 4963,
+      "to": 4975,
+      "kind": "JR"
+    },
+    {
+      "from": 4965,
+      "to": 4972,
+      "kind": "JR"
+    },
+    {
+      "from": 4970,
+      "to": 4975,
+      "kind": "JR"
+    },
+    {
+      "from": 4975,
+      "to": 2680,
+      "kind": "CALL"
+    },
+    {
+      "from": 4984,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 4994,
+      "to": 2680,
+      "kind": "CALL"
+    },
+    {
+      "from": 4997,
+      "to": 2424,
+      "kind": "JP"
+    },
+    {
+      "from": 2694,
+      "to": 2690,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2717,
+      "to": 2711,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 4856,
+      "to": 4865,
+      "kind": "JR"
+    },
+    {
+      "from": 4860,
+      "to": 4865,
+      "kind": "JR"
+    },
+    {
+      "from": 4863,
+      "to": 4923,
+      "kind": "JR"
+    },
+    {
+      "from": 4867,
+      "to": 4889,
+      "kind": "JR"
+    },
+    {
+      "from": 4871,
+      "to": 4889,
+      "kind": "JR"
+    },
+    {
+      "from": 4875,
+      "to": 4887,
+      "kind": "JR"
+    },
+    {
+      "from": 4877,
+      "to": 4883,
+      "kind": "JR"
+    },
+    {
+      "from": 4881,
+      "to": 4889,
+      "kind": "JR"
+    },
+    {
+      "from": 4891,
+      "to": 4923,
+      "kind": "JR"
+    },
+    {
+      "from": 4895,
+      "to": 4923,
+      "kind": "JR"
+    },
+    {
+      "from": 4899,
+      "to": 4921,
+      "kind": "JR"
+    },
+    {
+      "from": 4903,
+      "to": 4917,
+      "kind": "JR"
+    },
+    {
+      "from": 4907,
+      "to": 4913,
+      "kind": "JR"
+    },
+    {
+      "from": 4911,
+      "to": 4923,
+      "kind": "JR"
+    },
+    {
+      "from": 4915,
+      "to": 4923,
+      "kind": "JR"
+    },
+    {
+      "from": 4919,
+      "to": 4923,
+      "kind": "JR"
+    },
+    {
+      "from": 4885,
+      "to": 4889,
+      "kind": "JR"
+    },
+    {
+      "from": 4798,
+      "to": 4790,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 4773,
+      "to": 4777,
+      "kind": "JR"
+    },
+    {
+      "from": 4769,
+      "to": 4777,
+      "kind": "JR"
+    },
+    {
+      "from": 2070,
+      "to": 2076,
+      "kind": "JR"
+    },
+    {
+      "from": 2091,
+      "to": 2110,
+      "kind": "JR"
+    },
+    {
+      "from": 2101,
+      "to": 2104,
+      "kind": "JR"
+    },
+    {
+      "from": 2108,
+      "to": 2085,
+      "kind": "JR"
+    },
+    {
+      "from": 2137,
+      "to": 2085,
+      "kind": "JR"
+    },
+    {
+      "from": 4715,
+      "to": 869,
+      "kind": "CALL"
+    },
+    {
+      "from": 4734,
+      "to": 869,
+      "kind": "CALL"
+    },
+    {
+      "from": 4742,
+      "to": 3126,
+      "kind": "CALL"
+    },
+    {
+      "from": 4753,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 4764,
+      "to": 807,
+      "kind": "JP"
+    },
+    {
+      "from": 28914,
+      "to": 8410,
+      "kind": "CALL"
+    },
+    {
+      "from": 28917,
+      "to": 29306,
+      "kind": "CALL"
+    },
+    {
+      "from": 28928,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 28934,
+      "to": 3070,
+      "kind": "CALL"
+    },
+    {
+      "from": 28948,
+      "to": 28953,
+      "kind": "JR"
+    },
+    {
+      "from": 28953,
+      "to": 810,
+      "kind": "CALL"
+    },
+    {
+      "from": 28960,
+      "to": 3070,
+      "kind": "CALL"
+    },
+    {
+      "from": 28970,
+      "to": 29527,
+      "kind": "CALL"
+    },
+    {
+      "from": 28982,
+      "to": 48367,
+      "kind": "CALL"
+    },
+    {
+      "from": 28991,
+      "to": 29277,
+      "kind": "CALL"
+    },
+    {
+      "from": 28998,
+      "to": 29002,
+      "kind": "JR"
+    },
+    {
+      "from": 29002,
+      "to": 29277,
+      "kind": "CALL"
+    },
+    {
+      "from": 29013,
+      "to": 29016,
+      "kind": "JR"
+    },
+    {
+      "from": 29016,
+      "to": 29277,
+      "kind": "CALL"
+    },
+    {
+      "from": 29021,
+      "to": 29011,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 29028,
+      "to": 29277,
+      "kind": "CALL"
+    },
+    {
+      "from": 29036,
+      "to": 29277,
+      "kind": "CALL"
+    },
+    {
+      "from": 29045,
+      "to": 29337,
+      "kind": "CALL"
+    },
+    {
+      "from": 29051,
+      "to": 29337,
+      "kind": "CALL"
+    },
+    {
+      "from": 29057,
+      "to": 29337,
+      "kind": "CALL"
+    },
+    {
+      "from": 29065,
+      "to": 29339,
+      "kind": "CALL"
+    },
+    {
+      "from": 29071,
+      "to": 29333,
+      "kind": "CALL"
+    },
+    {
+      "from": 29077,
+      "to": 29333,
+      "kind": "CALL"
+    },
+    {
+      "from": 29092,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 29096,
+      "to": 2072,
+      "kind": "CALL"
+    },
+    {
+      "from": 29106,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 29110,
+      "to": 2072,
+      "kind": "CALL"
+    },
+    {
+      "from": 29135,
+      "to": 2139,
+      "kind": "CALL"
+    },
+    {
+      "from": 29138,
+      "to": 8860,
+      "kind": "CALL"
+    },
+    {
+      "from": 29147,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 29150,
+      "to": 7670,
+      "kind": "CALL"
+    },
+    {
+      "from": 29153,
+      "to": 2656,
+      "kind": "CALL"
+    },
+    {
+      "from": 29156,
+      "to": 29380,
+      "kind": "CALL"
+    },
+    {
+      "from": 29164,
+      "to": 48171,
+      "kind": "CALL"
+    },
+    {
+      "from": 29167,
+      "to": 2424,
+      "kind": "CALL"
+    },
+    {
+      "from": 29175,
+      "to": 29147,
+      "kind": "JR"
+    },
+    {
+      "from": 29177,
+      "to": 8410,
+      "kind": "CALL"
+    },
+    {
+      "from": 29180,
+      "to": 5871,
+      "kind": "CALL"
+    },
+    {
+      "from": 29189,
+      "to": 13983,
+      "kind": "CALL"
+    },
+    {
+      "from": 29194,
+      "to": 2368,
+      "kind": "CALL"
+    },
+    {
+      "from": 29197,
+      "to": 7650,
+      "kind": "CALL"
+    },
+    {
+      "from": 29200,
+      "to": 29226,
+      "kind": "CALL"
+    },
+    {
+      "from": 29231,
+      "to": 29242,
+      "kind": "JR"
+    },
+    {
+      "from": 29233,
+      "to": 29247,
+      "kind": "JR"
+    },
+    {
+      "from": 29240,
+      "to": 29249,
+      "kind": "JR"
+    },
+    {
+      "from": 29252,
+      "to": 11015,
+      "kind": "CALL"
+    },
+    {
+      "from": 29263,
+      "to": 7437,
+      "kind": "CALL"
+    },
+    {
+      "from": 29274,
+      "to": 807,
+      "kind": "JP"
+    },
+    {
+      "from": 7451,
+      "to": 7454,
+      "kind": "JR"
+    },
+    {
+      "from": 7496,
+      "to": 7494,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7536,
+      "to": 7515,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7545,
+      "to": 7541,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7555,
+      "to": 7551,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7565,
+      "to": 7561,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7575,
+      "to": 7571,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7585,
+      "to": 7513,
+      "kind": "JP"
+    },
+    {
+      "from": 7593,
+      "to": 7596,
+      "kind": "JR"
+    },
+    {
+      "from": 7596,
+      "to": 7476,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 11034,
+      "to": 900,
+      "kind": "JP"
+    },
+    {
+      "from": 900,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 903,
+      "to": 906,
+      "kind": "JR"
+    },
+    {
+      "from": 913,
+      "to": 910,
+      "kind": "JR"
+    },
+    {
+      "from": 916,
+      "to": 910,
+      "kind": "JR"
+    },
+    {
+      "from": 29245,
+      "to": 29249,
+      "kind": "JR"
+    },
+    {
+      "from": 2368,
+      "to": 2656,
+      "kind": "CALL"
+    },
+    {
+      "from": 2376,
+      "to": 2385,
+      "kind": "JR"
+    },
+    {
+      "from": 2383,
+      "to": 2430,
+      "kind": "JR"
+    },
+    {
+      "from": 2404,
+      "to": 2422,
+      "kind": "JR"
+    },
+    {
+      "from": 2413,
+      "to": 2422,
+      "kind": "JR"
+    },
+    {
+      "from": 2417,
+      "to": 2542,
+      "kind": "CALL"
+    },
+    {
+      "from": 2422,
+      "to": 2398,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2552,
+      "to": 2555,
+      "kind": "JR"
+    },
+    {
+      "from": 2566,
+      "to": 2569,
+      "kind": "JR"
+    },
+    {
+      "from": 2601,
+      "to": 2597,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2614,
+      "to": 2640,
+      "kind": "JR"
+    },
+    {
+      "from": 2633,
+      "to": 2622,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2649,
+      "to": 2643,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2448,
+      "to": 2495,
+      "kind": "JR"
+    },
+    {
+      "from": 2456,
+      "to": 2486,
+      "kind": "JR"
+    },
+    {
+      "from": 2466,
+      "to": 2482,
+      "kind": "JR"
+    },
+    {
+      "from": 2484,
+      "to": 2463,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 2500,
+      "to": 2444,
+      "kind": "JP"
+    },
+    {
+      "from": 2516,
+      "to": 2424,
+      "kind": "JP"
+    },
+    {
+      "from": 2534,
+      "to": 2542,
+      "kind": "CALL"
+    },
+    {
+      "from": 2539,
+      "to": 2511,
+      "kind": "JP"
+    },
+    {
+      "from": 13988,
+      "to": 14076,
+      "kind": "JR"
+    },
+    {
+      "from": 13996,
+      "to": 14003,
+      "kind": "JR"
+    },
+    {
+      "from": 14008,
+      "to": 14012,
+      "kind": "JR"
+    },
+    {
+      "from": 14021,
+      "to": 14024,
+      "kind": "JR"
+    },
+    {
+      "from": 14050,
+      "to": 14056,
+      "kind": "JR"
+    },
+    {
+      "from": 14069,
+      "to": 14072,
+      "kind": "JR"
+    },
+    {
+      "from": 14091,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 29393,
+      "to": 29399,
+      "kind": "JR"
+    },
+    {
+      "from": 29396,
+      "to": 29399,
+      "kind": "JR"
+    },
+    {
+      "from": 29401,
+      "to": 29408,
+      "kind": "JR"
+    },
+    {
+      "from": 29405,
+      "to": 29408,
+      "kind": "JR"
+    },
+    {
+      "from": 29415,
+      "to": 29424,
+      "kind": "JR"
+    },
+    {
+      "from": 29418,
+      "to": 29424,
+      "kind": "JR"
+    },
+    {
+      "from": 29426,
+      "to": 29436,
+      "kind": "JR"
+    },
+    {
+      "from": 29430,
+      "to": 29436,
+      "kind": "JR"
+    },
+    {
+      "from": 29441,
+      "to": 29448,
+      "kind": "JR"
+    },
+    {
+      "from": 29459,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 29469,
+      "to": 2680,
+      "kind": "CALL"
+    },
+    {
+      "from": 29490,
+      "to": 29521,
+      "kind": "JR"
+    },
+    {
+      "from": 29495,
+      "to": 29503,
+      "kind": "JR"
+    },
+    {
+      "from": 29499,
+      "to": 29503,
+      "kind": "JR"
+    },
+    {
+      "from": 29501,
+      "to": 29509,
+      "kind": "JR"
+    },
+    {
+      "from": 29518,
+      "to": 29226,
+      "kind": "JP"
+    },
+    {
+      "from": 29507,
+      "to": 29521,
+      "kind": "JR"
+    },
+    {
+      "from": 2141,
+      "to": 2154,
+      "kind": "CALL"
+    },
+    {
+      "from": 2146,
+      "to": 2154,
+      "kind": "CALL"
+    },
+    {
+      "from": 2152,
+      "to": 2162,
+      "kind": "JR"
+    },
+    {
+      "from": 2158,
+      "to": 2156,
+      "kind": "JR"
+    },
+    {
+      "from": 29335,
+      "to": 29339,
+      "kind": "JR"
+    },
+    {
+      "from": 29376,
+      "to": 29346,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 29280,
+      "to": 29293,
+      "kind": "JR"
+    },
+    {
+      "from": 29288,
+      "to": 919,
+      "kind": "CALL"
+    },
+    {
+      "from": 29291,
+      "to": 29296,
+      "kind": "JR"
+    },
+    {
+      "from": 29300,
+      "to": 29303,
+      "kind": "JR"
+    },
+    {
+      "from": 29293,
+      "to": 11015,
+      "kind": "CALL"
+    },
+    {
+      "from": 28354,
+      "to": 9459,
+      "kind": "CALL"
+    },
+    {
+      "from": 28370,
+      "to": 28366,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 28374,
+      "to": 28354,
+      "kind": "JR"
+    },
+    {
+      "from": 28382,
+      "to": 28872,
+      "kind": "CALL"
+    },
+    {
+      "from": 28389,
+      "to": 28884,
+      "kind": "CALL"
+    },
+    {
+      "from": 28397,
+      "to": 28413,
+      "kind": "JR"
+    },
+    {
+      "from": 28401,
+      "to": 28405,
+      "kind": "JR"
+    },
+    {
+      "from": 28408,
+      "to": 9462,
+      "kind": "CALL"
+    },
+    {
+      "from": 28411,
+      "to": 28389,
+      "kind": "JR"
+    },
+    {
+      "from": 9462,
+      "to": 9910,
+      "kind": "CALL"
+    },
+    {
+      "from": 9465,
+      "to": 2368,
+      "kind": "CALL"
+    },
+    {
+      "from": 9468,
+      "to": 7833,
+      "kind": "CALL"
+    },
+    {
+      "from": 9471,
+      "to": 23386,
+      "kind": "CALL"
+    },
+    {
+      "from": 9474,
+      "to": 27036,
+      "kind": "CALL"
+    },
+    {
+      "from": 9477,
+      "to": 7670,
+      "kind": "CALL"
+    },
+    {
+      "from": 9480,
+      "to": 8273,
+      "kind": "CALL"
+    },
+    {
+      "from": 9499,
+      "to": 9508,
+      "kind": "JR"
+    },
+    {
+      "from": 9505,
+      "to": 9514,
+      "kind": "JR"
+    },
+    {
+      "from": 8278,
+      "to": 8472,
+      "kind": "JP"
+    },
+    {
+      "from": 8283,
+      "to": 8523,
+      "kind": "JP"
+    },
+    {
+      "from": 8291,
+      "to": 8298,
+      "kind": "JR"
+    },
+    {
+      "from": 8295,
+      "to": 8365,
+      "kind": "JR"
+    },
+    {
+      "from": 8371,
+      "to": 8609,
+      "kind": "CALL"
+    },
+    {
+      "from": 8374,
+      "to": 8345,
+      "kind": "CALL"
+    },
+    {
+      "from": 8379,
+      "to": 8645,
+      "kind": "CALL"
+    },
+    {
+      "from": 8382,
+      "to": 8800,
+      "kind": "CALL"
+    },
+    {
+      "from": 8394,
+      "to": 8759,
+      "kind": "CALL"
+    },
+    {
+      "from": 8397,
+      "to": 8440,
+      "kind": "CALL"
+    },
+    {
+      "from": 8401,
+      "to": 8394,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8770,
+      "to": 8777,
+      "kind": "JR"
+    },
+    {
+      "from": 8775,
+      "to": 8767,
+      "kind": "JR"
+    },
+    {
+      "from": 8812,
+      "to": 48760,
+      "kind": "CALL"
+    },
+    {
+      "from": 8819,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 8822,
+      "to": 6411,
+      "kind": "CALL"
+    },
+    {
+      "from": 6415,
+      "to": 5983,
+      "kind": "CALL"
+    },
+    {
+      "from": 6439,
+      "to": 3072,
+      "kind": "CALL"
+    },
+    {
+      "from": 6442,
+      "to": 6518,
+      "kind": "CALL"
+    },
+    {
+      "from": 6445,
+      "to": 6658,
+      "kind": "CALL"
+    },
+    {
+      "from": 6658,
+      "to": 6704,
+      "kind": "CALL"
+    },
+    {
+      "from": 6661,
+      "to": 6665,
+      "kind": "CALL"
+    },
+    {
+      "from": 6688,
+      "to": 6693,
+      "kind": "JR"
+    },
+    {
+      "from": 6690,
+      "to": 6684,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 5989,
+      "to": 6012,
+      "kind": "JR"
+    },
+    {
+      "from": 5998,
+      "to": 6012,
+      "kind": "JR"
+    },
+    {
+      "from": 6009,
+      "to": 6012,
+      "kind": "JR"
+    },
+    {
+      "from": 8649,
+      "to": 8662,
+      "kind": "JR"
+    },
+    {
+      "from": 8667,
+      "to": 8679,
+      "kind": "JR"
+    },
+    {
+      "from": 8672,
+      "to": 8679,
+      "kind": "JR"
+    },
+    {
+      "from": 8677,
+      "to": 8682,
+      "kind": "JR"
+    },
+    {
+      "from": 8680,
+      "to": 8717,
+      "kind": "JR"
+    },
+    {
+      "from": 8693,
+      "to": 24,
+      "kind": "JP"
+    },
+    {
+      "from": 8362,
+      "to": 8354,
+      "kind": "JR"
+    },
+    {
+      "from": 8614,
+      "to": 6377,
+      "kind": "CALL"
+    },
+    {
+      "from": 8640,
+      "to": 8638,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8642,
+      "to": 2360,
+      "kind": "JP"
+    },
+    {
+      "from": 6392,
+      "to": 6395,
+      "kind": "JR"
+    },
+    {
+      "from": 6398,
+      "to": 6390,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8304,
+      "to": 8609,
+      "kind": "CALL"
+    },
+    {
+      "from": 8307,
+      "to": 8345,
+      "kind": "CALL"
+    },
+    {
+      "from": 8312,
+      "to": 8645,
+      "kind": "CALL"
+    },
+    {
+      "from": 8315,
+      "to": 8800,
+      "kind": "CALL"
+    },
+    {
+      "from": 8318,
+      "to": 8345,
+      "kind": "CALL"
+    },
+    {
+      "from": 8330,
+      "to": 8759,
+      "kind": "CALL"
+    },
+    {
+      "from": 8333,
+      "to": 8440,
+      "kind": "CALL"
+    },
+    {
+      "from": 8337,
+      "to": 8330,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8529,
+      "to": 8609,
+      "kind": "CALL"
+    },
+    {
+      "from": 8532,
+      "to": 8345,
+      "kind": "CALL"
+    },
+    {
+      "from": 8537,
+      "to": 8651,
+      "kind": "CALL"
+    },
+    {
+      "from": 8540,
+      "to": 8800,
+      "kind": "CALL"
+    },
+    {
+      "from": 8543,
+      "to": 576,
+      "kind": "CALL"
+    },
+    {
+      "from": 8552,
+      "to": 8779,
+      "kind": "CALL"
+    },
+    {
+      "from": 8557,
+      "to": 8573,
+      "kind": "CALL"
+    },
+    {
+      "from": 8562,
+      "to": 8552,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8570,
+      "to": 551,
+      "kind": "JP"
+    },
+    {
+      "from": 8582,
+      "to": 3014,
+      "kind": "CALL"
+    },
+    {
+      "from": 8588,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 8599,
+      "to": 8602,
+      "kind": "JR"
+    },
+    {
+      "from": 8604,
+      "to": 8588,
+      "kind": "JR"
+    },
+    {
+      "from": 8795,
+      "to": 8790,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 589,
+      "to": 563,
+      "kind": "JR"
+    },
+    {
+      "from": 8478,
+      "to": 8609,
+      "kind": "CALL"
+    },
+    {
+      "from": 8481,
+      "to": 8345,
+      "kind": "CALL"
+    },
+    {
+      "from": 8486,
+      "to": 8651,
+      "kind": "CALL"
+    },
+    {
+      "from": 8489,
+      "to": 8800,
+      "kind": "CALL"
+    },
+    {
+      "from": 8492,
+      "to": 576,
+      "kind": "CALL"
+    },
+    {
+      "from": 8501,
+      "to": 8779,
+      "kind": "CALL"
+    },
+    {
+      "from": 8507,
+      "to": 8573,
+      "kind": "CALL"
+    },
+    {
+      "from": 8512,
+      "to": 8501,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8520,
+      "to": 551,
+      "kind": "JP"
+    },
+    {
+      "from": 27040,
+      "to": 27050,
+      "kind": "JR"
+    },
+    {
+      "from": 27049,
+      "to": 24,
+      "kind": "RST"
+    },
+    {
+      "from": 27054,
+      "to": 27064,
+      "kind": "JR"
+    },
+    {
+      "from": 27063,
+      "to": 24,
+      "kind": "RST"
+    },
+    {
+      "from": 27069,
+      "to": 27144,
+      "kind": "JR"
+    },
+    {
+      "from": 27071,
+      "to": 27238,
+      "kind": "JP"
+    },
+    {
+      "from": 27079,
+      "to": 48539,
+      "kind": "CALL"
+    },
+    {
+      "from": 27088,
+      "to": 27143,
+      "kind": "JR"
+    },
+    {
+      "from": 27243,
+      "to": 48574,
+      "kind": "CALL"
+    },
+    {
+      "from": 27252,
+      "to": 27301,
+      "kind": "JR"
+    },
+    {
+      "from": 27262,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 27305,
+      "to": 27336,
+      "kind": "JR"
+    },
+    {
+      "from": 27310,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 27322,
+      "to": 27329,
+      "kind": "JR"
+    },
+    {
+      "from": 27326,
+      "to": 27988,
+      "kind": "CALL"
+    },
+    {
+      "from": 27330,
+      "to": 27320,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 27334,
+      "to": 27347,
+      "kind": "JR"
+    },
+    {
+      "from": 27345,
+      "to": 27361,
+      "kind": "JR"
+    },
+    {
+      "from": 27354,
+      "to": 27358,
+      "kind": "JR"
+    },
+    {
+      "from": 28054,
+      "to": 28057,
+      "kind": "JR"
+    },
+    {
+      "from": 27152,
+      "to": 27155,
+      "kind": "JR"
+    },
+    {
+      "from": 27164,
+      "to": 27176,
+      "kind": "JR"
+    },
+    {
+      "from": 27168,
+      "to": 27176,
+      "kind": "JR"
+    },
+    {
+      "from": 27173,
+      "to": 27988,
+      "kind": "CALL"
+    },
+    {
+      "from": 27177,
+      "to": 27161,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 27185,
+      "to": 27237,
+      "kind": "JR"
+    },
+    {
+      "from": 23395,
+      "to": 23399,
+      "kind": "JR"
+    },
+    {
+      "from": 23411,
+      "to": 23421,
+      "kind": "JR"
+    },
+    {
+      "from": 23416,
+      "to": 23421,
+      "kind": "JP"
+    },
+    {
+      "from": 23425,
+      "to": 23460,
+      "kind": "JR"
+    },
+    {
+      "from": 23442,
+      "to": 23446,
+      "kind": "JR"
+    },
+    {
+      "from": 23456,
+      "to": 23460,
+      "kind": "JR"
+    },
+    {
+      "from": 23464,
+      "to": 23476,
+      "kind": "CALL"
+    },
+    {
+      "from": 23485,
+      "to": 23492,
+      "kind": "JR"
+    },
+    {
+      "from": 23506,
+      "to": 23592,
+      "kind": "JR"
+    },
+    {
+      "from": 23510,
+      "to": 23552,
+      "kind": "JR"
+    },
+    {
+      "from": 23524,
+      "to": 8974,
+      "kind": "CALL"
+    },
+    {
+      "from": 23533,
+      "to": 23638,
+      "kind": "CALL"
+    },
+    {
+      "from": 23544,
+      "to": 23679,
+      "kind": "CALL"
+    },
+    {
+      "from": 23547,
+      "to": 7174,
+      "kind": "CALL"
+    },
+    {
+      "from": 23550,
+      "to": 23630,
+      "kind": "JR"
+    },
+    {
+      "from": 23635,
+      "to": 24208,
+      "kind": "JP"
+    },
+    {
+      "from": 24208,
+      "to": 6518,
+      "kind": "CALL"
+    },
+    {
+      "from": 24211,
+      "to": 7650,
+      "kind": "CALL"
+    },
+    {
+      "from": 23682,
+      "to": 6466,
+      "kind": "CALL"
+    },
+    {
+      "from": 23699,
+      "to": 6466,
+      "kind": "JP"
+    },
+    {
+      "from": 6466,
+      "to": 6494,
+      "kind": "CALL"
+    },
+    {
+      "from": 8996,
+      "to": 8999,
+      "kind": "JR"
+    },
+    {
+      "from": 23564,
+      "to": 8974,
+      "kind": "CALL"
+    },
+    {
+      "from": 23573,
+      "to": 23638,
+      "kind": "CALL"
+    },
+    {
+      "from": 23584,
+      "to": 23656,
+      "kind": "CALL"
+    },
+    {
+      "from": 23587,
+      "to": 7159,
+      "kind": "CALL"
+    },
+    {
+      "from": 23590,
+      "to": 23630,
+      "kind": "JR"
+    },
+    {
+      "from": 23659,
+      "to": 6466,
+      "kind": "CALL"
+    },
+    {
+      "from": 23676,
+      "to": 6466,
+      "kind": "JP"
+    },
+    {
+      "from": 23604,
+      "to": 8974,
+      "kind": "CALL"
+    },
+    {
+      "from": 23613,
+      "to": 23638,
+      "kind": "CALL"
+    },
+    {
+      "from": 23624,
+      "to": 23651,
+      "kind": "CALL"
+    },
+    {
+      "from": 23627,
+      "to": 7152,
+      "kind": "CALL"
+    },
+    {
+      "from": 23653,
+      "to": 6466,
+      "kind": "JP"
+    },
+    {
+      "from": 9925,
+      "to": 10070,
+      "kind": "JP"
+    },
+    {
+      "from": 9928,
+      "to": 9030,
+      "kind": "CALL"
+    },
+    {
+      "from": 9942,
+      "to": 9949,
+      "kind": "JR"
+    },
+    {
+      "from": 9947,
+      "to": 10045,
+      "kind": "JR"
+    },
+    {
+      "from": 10049,
+      "to": 10067,
+      "kind": "JP"
+    },
+    {
+      "from": 10061,
+      "to": 10067,
+      "kind": "JR"
+    },
+    {
+      "from": 10067,
+      "to": 10088,
+      "kind": "CALL"
+    },
+    {
+      "from": 10084,
+      "to": 9921,
+      "kind": "JP"
+    },
+    {
+      "from": 10111,
+      "to": 10202,
+      "kind": "JR"
+    },
+    {
+      "from": 10117,
+      "to": 10126,
+      "kind": "JR"
+    },
+    {
+      "from": 10123,
+      "to": 10191,
+      "kind": "JR"
+    },
+    {
+      "from": 10195,
+      "to": 10198,
+      "kind": "JR"
+    },
+    {
+      "from": 10130,
+      "to": 10139,
+      "kind": "JR"
+    },
+    {
+      "from": 10137,
+      "to": 10186,
+      "kind": "JR"
+    },
+    {
+      "from": 10143,
+      "to": 10146,
+      "kind": "JR"
+    },
+    {
+      "from": 10149,
+      "to": 10243,
+      "kind": "JR"
+    },
+    {
+      "from": 10264,
+      "to": 24,
+      "kind": "RST"
+    },
+    {
+      "from": 10206,
+      "to": 10209,
+      "kind": "JR"
+    },
+    {
+      "from": 10212,
+      "to": 10243,
+      "kind": "JR"
+    },
+    {
+      "from": 9956,
+      "to": 24,
+      "kind": "RST"
+    },
+    {
+      "from": 9961,
+      "to": 10011,
+      "kind": "JP"
+    },
+    {
+      "from": 9992,
+      "to": 9996,
+      "kind": "JR"
+    },
+    {
+      "from": 10015,
+      "to": 10045,
+      "kind": "JR"
+    },
+    {
+      "from": 10024,
+      "to": 10027,
+      "kind": "JR"
+    },
+    {
+      "from": 10030,
+      "to": 10045,
+      "kind": "JR"
+    },
+    {
+      "from": 10039,
+      "to": 10042,
+      "kind": "JR"
+    },
+    {
+      "from": 9113,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9119,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9125,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9131,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9140,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9143,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9146,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9149,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9156,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9159,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9163,
+      "to": 9168,
+      "kind": "JR"
+    },
+    {
+      "from": 9166,
+      "to": 9174,
+      "kind": "JR"
+    },
+    {
+      "from": 9171,
+      "to": 9108,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 9182,
+      "to": 9191,
+      "kind": "JR"
+    },
+    {
+      "from": 9189,
+      "to": 9209,
+      "kind": "JR"
+    },
+    {
+      "from": 9197,
+      "to": 9201,
+      "kind": "JR"
+    },
+    {
+      "from": 9199,
+      "to": 9203,
+      "kind": "JR"
+    },
+    {
+      "from": 28413,
+      "to": 28884,
+      "kind": "CALL"
+    },
+    {
+      "from": 28421,
+      "to": 28437,
+      "kind": "JR"
+    },
+    {
+      "from": 28425,
+      "to": 28429,
+      "kind": "JR"
+    },
+    {
+      "from": 28432,
+      "to": 9462,
+      "kind": "CALL"
+    },
+    {
+      "from": 28435,
+      "to": 28413,
+      "kind": "JR"
+    },
+    {
+      "from": 28439,
+      "to": 7416,
+      "kind": "CALL"
+    },
+    {
+      "from": 28447,
+      "to": 10996,
+      "kind": "CALL"
+    },
+    {
+      "from": 28472,
+      "to": 2360,
+      "kind": "CALL"
+    },
+    {
+      "from": 28505,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 28527,
+      "to": 1102,
+      "kind": "CALL"
+    },
+    {
+      "from": 28540,
+      "to": 1104,
+      "kind": "CALL"
+    },
+    {
+      "from": 28557,
+      "to": 28495,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 28568,
+      "to": 28872,
+      "kind": "CALL"
+    },
+    {
+      "from": 28573,
+      "to": 2360,
+      "kind": "CALL"
+    },
+    {
+      "from": 28576,
+      "to": 28884,
+      "kind": "CALL"
+    },
+    {
+      "from": 28585,
+      "to": 28564,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 28589,
+      "to": 28872,
+      "kind": "CALL"
+    },
+    {
+      "from": 28594,
+      "to": 28872,
+      "kind": "CALL"
+    },
+    {
+      "from": 28599,
+      "to": 7416,
+      "kind": "CALL"
+    },
+    {
+      "from": 28615,
+      "to": 28878,
+      "kind": "CALL"
+    },
+    {
+      "from": 28620,
+      "to": 28609,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 28639,
+      "to": 8860,
+      "kind": "CALL"
+    },
+    {
+      "from": 28647,
+      "to": 3126,
+      "kind": "CALL"
+    },
+    {
+      "from": 28665,
+      "to": 2360,
+      "kind": "CALL"
+    },
+    {
+      "from": 28668,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 28708,
+      "to": 28769,
+      "kind": "CALL"
+    },
+    {
+      "from": 28731,
+      "to": 28734,
+      "kind": "JR"
+    },
+    {
+      "from": 28741,
+      "to": 28769,
+      "kind": "CALL"
+    },
+    {
+      "from": 28744,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 28751,
+      "to": 28711,
+      "kind": "JR"
+    },
+    {
+      "from": 28753,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 28761,
+      "to": 28753,
+      "kind": "JR"
+    },
+    {
+      "from": 28795,
+      "to": 28841,
+      "kind": "JP"
+    },
+    {
+      "from": 28807,
+      "to": 28832,
+      "kind": "JR"
+    },
+    {
+      "from": 28809,
+      "to": 28836,
+      "kind": "JP"
+    },
+    {
+      "from": 28830,
+      "to": 28804,
+      "kind": "JR"
+    },
+    {
+      "from": 28854,
+      "to": 900,
+      "kind": "CALL"
+    },
+    {
+      "from": 28864,
+      "to": 28868,
+      "kind": "JR"
+    },
+    {
+      "from": 28878,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 28881,
+      "to": 28878,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 28872,
+      "to": 28884,
+      "kind": "CALL"
+    },
+    {
+      "from": 28875,
+      "to": 28872,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 28893,
+      "to": 48574,
+      "kind": "CALL"
+    },
+    {
+      "from": 28900,
+      "to": 2965,
+      "kind": "JP"
+    },
+    {
+      "from": 1118,
+      "to": 1121,
+      "kind": "JR"
+    },
+    {
+      "from": 1124,
+      "to": 1128,
+      "kind": "JR"
+    },
+    {
+      "from": 1129,
+      "to": 1132,
+      "kind": "JR"
+    },
+    {
+      "from": 1134,
+      "to": 1137,
+      "kind": "JR"
+    },
+    {
+      "from": 1139,
+      "to": 1142,
+      "kind": "JR"
+    },
+    {
+      "from": 1144,
+      "to": 1147,
+      "kind": "JR"
+    },
+    {
+      "from": 1149,
+      "to": 1152,
+      "kind": "JR"
+    },
+    {
+      "from": 1154,
+      "to": 1157,
+      "kind": "JR"
+    },
+    {
+      "from": 1159,
+      "to": 1162,
+      "kind": "JR"
+    },
+    {
+      "from": 10998,
+      "to": 11015,
+      "kind": "JR"
+    },
+    {
+      "from": 11000,
+      "to": 11037,
+      "kind": "JR"
+    },
+    {
+      "from": 11004,
+      "to": 11051,
+      "kind": "JR"
+    },
+    {
+      "from": 11006,
+      "to": 11051,
+      "kind": "JR"
+    },
+    {
+      "from": 11010,
+      "to": 11052,
+      "kind": "JR"
+    },
+    {
+      "from": 11012,
+      "to": 11068,
+      "kind": "JR"
+    },
+    {
+      "from": 11073,
+      "to": 807,
+      "kind": "JP"
+    },
+    {
+      "from": 11066,
+      "to": 11076,
+      "kind": "JR"
+    },
+    {
+      "from": 11079,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 11085,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 11090,
+      "to": 11078,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 11040,
+      "to": 11076,
+      "kind": "CALL"
+    },
+    {
+      "from": 11043,
+      "to": 11093,
+      "kind": "CALL"
+    },
+    {
+      "from": 11046,
+      "to": 11076,
+      "kind": "CALL"
+    },
+    {
+      "from": 11049,
+      "to": 11093,
+      "kind": "JR"
+    },
+    {
+      "from": 11100,
+      "to": 919,
+      "kind": "CALL"
+    },
+    {
+      "from": 9459,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 9438,
+      "to": 7189,
+      "kind": "CALL"
+    },
+    {
+      "from": 9441,
+      "to": 6016,
+      "kind": "CALL"
+    },
+    {
+      "from": 9444,
+      "to": 11363,
+      "kind": "CALL"
+    },
+    {
+      "from": 9447,
+      "to": 23328,
+      "kind": "CALL"
+    },
+    {
+      "from": 9450,
+      "to": 7343,
+      "kind": "CALL"
+    },
+    {
+      "from": 7348,
+      "to": 7371,
+      "kind": "JR"
+    },
+    {
+      "from": 7350,
+      "to": 7384,
+      "kind": "JR"
+    },
+    {
+      "from": 7365,
+      "to": 7416,
+      "kind": "JR"
+    },
+    {
+      "from": 7369,
+      "to": 7416,
+      "kind": "JR"
+    },
+    {
+      "from": 7395,
+      "to": 7393,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7399,
+      "to": 7409,
+      "kind": "JR"
+    },
+    {
+      "from": 7407,
+      "to": 7416,
+      "kind": "JR"
+    },
+    {
+      "from": 7378,
+      "to": 7416,
+      "kind": "JR"
+    },
+    {
+      "from": 7382,
+      "to": 7416,
+      "kind": "JR"
+    },
+    {
+      "from": 23378,
+      "to": 23385,
+      "kind": "JR"
+    },
+    {
+      "from": 11399,
+      "to": 13983,
+      "kind": "CALL"
+    },
+    {
+      "from": 11402,
+      "to": 11644,
+      "kind": "CALL"
+    },
+    {
+      "from": 11423,
+      "to": 11426,
+      "kind": "JR"
+    },
+    {
+      "from": 11430,
+      "to": 11658,
+      "kind": "CALL"
+    },
+    {
+      "from": 11462,
+      "to": 11466,
+      "kind": "JR"
+    },
+    {
+      "from": 11473,
+      "to": 8974,
+      "kind": "CALL"
+    },
+    {
+      "from": 11503,
+      "to": 11506,
+      "kind": "JR"
+    },
+    {
+      "from": 11506,
+      "to": 11483,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 11519,
+      "to": 11537,
+      "kind": "JR"
+    },
+    {
+      "from": 11529,
+      "to": 11533,
+      "kind": "JR"
+    },
+    {
+      "from": 11535,
+      "to": 11527,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 11542,
+      "to": 11581,
+      "kind": "JR"
+    },
+    {
+      "from": 11544,
+      "to": 11552,
+      "kind": "JR"
+    },
+    {
+      "from": 11550,
+      "to": 11556,
+      "kind": "JR"
+    },
+    {
+      "from": 11556,
+      "to": 14446,
+      "kind": "CALL"
+    },
+    {
+      "from": 11559,
+      "to": 11582,
+      "kind": "JR"
+    },
+    {
+      "from": 11561,
+      "to": 14469,
+      "kind": "CALL"
+    },
+    {
+      "from": 11564,
+      "to": 11582,
+      "kind": "JR"
+    },
+    {
+      "from": 11566,
+      "to": 14469,
+      "kind": "CALL"
+    },
+    {
+      "from": 11569,
+      "to": 11582,
+      "kind": "JR"
+    },
+    {
+      "from": 11571,
+      "to": 14446,
+      "kind": "CALL"
+    },
+    {
+      "from": 11574,
+      "to": 11582,
+      "kind": "JR"
+    },
+    {
+      "from": 11576,
+      "to": 14446,
+      "kind": "CALL"
+    },
+    {
+      "from": 11579,
+      "to": 11582,
+      "kind": "JR"
+    },
+    {
+      "from": 11589,
+      "to": 11643,
+      "kind": "JR"
+    },
+    {
+      "from": 11602,
+      "to": 11643,
+      "kind": "JR"
+    },
+    {
+      "from": 11605,
+      "to": 11628,
+      "kind": "JR"
+    },
+    {
+      "from": 11614,
+      "to": 11620,
+      "kind": "JR"
+    },
+    {
+      "from": 11618,
+      "to": 11622,
+      "kind": "JR"
+    },
+    {
+      "from": 11624,
+      "to": 11612,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 11626,
+      "to": 11643,
+      "kind": "JR"
+    },
+    {
+      "from": 11635,
+      "to": 11639,
+      "kind": "JR"
+    },
+    {
+      "from": 11641,
+      "to": 11633,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 14465,
+      "to": 14504,
+      "kind": "JR"
+    },
+    {
+      "from": 14467,
+      "to": 14489,
+      "kind": "JR"
+    },
+    {
+      "from": 6060,
+      "to": 6053,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 6073,
+      "to": 6103,
+      "kind": "JR"
+    },
+    {
+      "from": 6108,
+      "to": 6068,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 6124,
+      "to": 6142,
+      "kind": "JR"
+    },
+    {
+      "from": 6147,
+      "to": 6122,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 6160,
+      "to": 6158,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 6164,
+      "to": 6201,
+      "kind": "JR"
+    },
+    {
+      "from": 6177,
+      "to": 6201,
+      "kind": "JR"
+    },
+    {
+      "from": 6193,
+      "to": 6201,
+      "kind": "JP"
+    },
+    {
+      "from": 6212,
+      "to": 6215,
+      "kind": "JR"
+    },
+    {
+      "from": 6216,
+      "to": 6210,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 6220,
+      "to": 6224,
+      "kind": "JR"
+    },
+    {
+      "from": 6239,
+      "to": 6356,
+      "kind": "JP"
+    },
+    {
+      "from": 6257,
+      "to": 6269,
+      "kind": "JP"
+    },
+    {
+      "from": 6263,
+      "to": 6350,
+      "kind": "JR"
+    },
+    {
+      "from": 6267,
+      "to": 6256,
+      "kind": "JR"
+    },
+    {
+      "from": 6362,
+      "to": 6234,
+      "kind": "JP"
+    },
+    {
+      "from": 6316,
+      "to": 810,
+      "kind": "CALL"
+    },
+    {
+      "from": 6324,
+      "to": 7437,
+      "kind": "CALL"
+    },
+    {
+      "from": 6348,
+      "to": 6356,
+      "kind": "JR"
+    },
+    {
+      "from": 7193,
+      "to": 7246,
+      "kind": "JR"
+    },
+    {
+      "from": 7198,
+      "to": 7205,
+      "kind": "CALL"
+    },
+    {
+      "from": 7202,
+      "to": 7197,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7216,
+      "to": 7232,
+      "kind": "JR"
+    },
+    {
+      "from": 7232,
+      "to": 1249,
+      "kind": "CALL"
+    },
+    {
+      "from": 7244,
+      "to": 7304,
+      "kind": "JR"
+    },
+    {
+      "from": 1266,
+      "to": 1271,
+      "kind": "JR"
+    },
+    {
+      "from": 7249,
+      "to": 7256,
+      "kind": "CALL"
+    },
+    {
+      "from": 7253,
+      "to": 7248,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 7267,
+      "to": 7283,
+      "kind": "JR"
+    },
+    {
+      "from": 7283,
+      "to": 1249,
+      "kind": "CALL"
+    },
+    {
+      "from": 9398,
+      "to": 5840,
+      "kind": "CALL"
+    },
+    {
+      "from": 9401,
+      "to": 6411,
+      "kind": "CALL"
+    },
+    {
+      "from": 9404,
+      "to": 7650,
+      "kind": "CALL"
+    },
+    {
+      "from": 9407,
+      "to": 9413,
+      "kind": "CALL"
+    },
+    {
+      "from": 9410,
+      "to": 8103,
+      "kind": "JP"
+    },
+    {
+      "from": 8112,
+      "to": 919,
+      "kind": "CALL"
+    },
+    {
+      "from": 8115,
+      "to": 2724,
+      "kind": "CALL"
+    },
+    {
+      "from": 8124,
+      "to": 2962,
+      "kind": "CALL"
+    },
+    {
+      "from": 8138,
+      "to": 8195,
+      "kind": "CALL"
+    },
+    {
+      "from": 8141,
+      "to": 8136,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8150,
+      "to": 8153,
+      "kind": "JR"
+    },
+    {
+      "from": 8153,
+      "to": 8195,
+      "kind": "CALL"
+    },
+    {
+      "from": 8156,
+      "to": 8146,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8163,
+      "to": 8195,
+      "kind": "CALL"
+    },
+    {
+      "from": 8166,
+      "to": 8161,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8175,
+      "to": 8178,
+      "kind": "JR"
+    },
+    {
+      "from": 8178,
+      "to": 8195,
+      "kind": "CALL"
+    },
+    {
+      "from": 8181,
+      "to": 8171,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 8192,
+      "to": 8124,
+      "kind": "JR"
+    },
+    {
+      "from": 8195,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 5840,
+      "to": 5983,
+      "kind": "CALL"
+    },
+    {
+      "from": 5868,
+      "to": 2834,
+      "kind": "CALL"
+    },
+    {
+      "from": 9332,
+      "to": 2834,
+      "kind": "CALL"
+    },
+    {
+      "from": 9343,
+      "to": 9348,
+      "kind": "JR"
+    },
+    {
+      "from": 9348,
+      "to": 12562,
+      "kind": "CALL"
+    },
+    {
+      "from": 9378,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 9389,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 9392,
+      "to": 29209,
+      "kind": "CALL"
+    },
+    {
+      "from": 9395,
+      "to": 29226,
+      "kind": "CALL"
+    },
+    {
+      "from": 29217,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 29220,
+      "to": 29226,
+      "kind": "JR"
+    },
+    {
+      "from": 9315,
+      "to": 7319,
+      "kind": "CALL"
+    },
+    {
+      "from": 244,
+      "to": 25485,
+      "kind": "CALL"
+    },
+    {
+      "from": 253,
+      "to": 2066,
+      "kind": "CALL"
+    },
+    {
+      "from": 256,
+      "to": 8860,
+      "kind": "CALL"
+    },
+    {
+      "from": 259,
+      "to": 288,
+      "kind": "CALL"
+    },
+    {
+      "from": 267,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 274,
+      "to": 267,
+      "kind": "JR"
+    },
+    {
+      "from": 276,
+      "to": 25476,
+      "kind": "CALL"
+    },
+    {
+      "from": 295,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 298,
+      "to": 295,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 25476,
+      "to": 25496,
+      "kind": "CALL"
+    },
+    {
+      "from": 25479,
+      "to": 29209,
+      "kind": "CALL"
+    },
+    {
+      "from": 25482,
+      "to": 7650,
+      "kind": "JP"
+    },
+    {
+      "from": 25519,
+      "to": 2167,
+      "kind": "CALL"
+    },
+    {
+      "from": 25522,
+      "to": 8860,
+      "kind": "JP"
+    },
+    {
+      "from": 25485,
+      "to": 25496,
+      "kind": "CALL"
+    },
+    {
+      "from": 25493,
+      "to": 3126,
+      "kind": "JP"
+    },
+    {
+      "from": 5229,
+      "to": 3224,
+      "kind": "CALL"
+    },
+    {
+      "from": 5232,
+      "to": 2888,
+      "kind": "CALL"
+    },
+    {
+      "from": 5258,
+      "to": 810,
+      "kind": "CALL"
+    },
+    {
+      "from": 5264,
+      "to": 3027,
+      "kind": "CALL"
+    },
+    {
+      "from": 5270,
+      "to": 3027,
+      "kind": "CALL"
+    },
+    {
+      "from": 5282,
+      "to": 5278,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 5324,
+      "to": 900,
+      "kind": "CALL"
+    },
+    {
+      "from": 5327,
+      "to": 591,
+      "kind": "CALL"
+    },
+    {
+      "from": 5330,
+      "to": 2724,
+      "kind": "CALL"
+    },
+    {
+      "from": 5338,
+      "to": 5724,
+      "kind": "CALL"
+    },
+    {
+      "from": 5341,
+      "to": 5788,
+      "kind": "CALL"
+    },
+    {
+      "from": 5347,
+      "to": 5779,
+      "kind": "CALL"
+    },
+    {
+      "from": 5350,
+      "to": 5695,
+      "kind": "CALL"
+    },
+    {
+      "from": 5353,
+      "to": 5661,
+      "kind": "CALL"
+    },
+    {
+      "from": 5670,
+      "to": 5675,
+      "kind": "JR"
+    },
+    {
+      "from": 5678,
+      "to": 5824,
+      "kind": "CALL"
+    },
+    {
+      "from": 5685,
+      "to": 900,
+      "kind": "CALL"
+    },
+    {
+      "from": 5692,
+      "to": 5664,
+      "kind": "JR"
+    },
+    {
+      "from": 5824,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 5837,
+      "to": 5357,
+      "kind": "JP"
+    },
+    {
+      "from": 5357,
+      "to": 2899,
+      "kind": "CALL"
+    },
+    {
+      "from": 5360,
+      "to": 551,
+      "kind": "CALL"
+    },
+    {
+      "from": 5365,
+      "to": 7416,
+      "kind": "CALL"
+    },
+    {
+      "from": 5368,
+      "to": 7659,
+      "kind": "CALL"
+    },
+    {
+      "from": 5371,
+      "to": 4704,
+      "kind": "CALL"
+    },
+    {
+      "from": 5382,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 5391,
+      "to": 2167,
+      "kind": "CALL"
+    },
+    {
+      "from": 5400,
+      "to": 2066,
+      "kind": "CALL"
+    },
+    {
+      "from": 5403,
+      "to": 2324,
+      "kind": "CALL"
+    },
+    {
+      "from": 5406,
+      "to": 2724,
+      "kind": "CALL"
+    },
+    {
+      "from": 5425,
+      "to": 5428,
+      "kind": "JR"
+    },
+    {
+      "from": 5435,
+      "to": 8437,
+      "kind": "CALL"
+    },
+    {
+      "from": 5445,
+      "to": 5459,
+      "kind": "JR"
+    },
+    {
+      "from": 5450,
+      "to": 5459,
+      "kind": "JR"
+    },
+    {
+      "from": 5455,
+      "to": 5472,
+      "kind": "JR"
+    },
+    {
+      "from": 5457,
+      "to": 5435,
+      "kind": "JR"
+    },
+    {
+      "from": 5481,
+      "to": 5489,
+      "kind": "JR"
+    },
+    {
+      "from": 5489,
+      "to": 2899,
+      "kind": "CALL"
+    },
+    {
+      "from": 5492,
+      "to": 29306,
+      "kind": "CALL"
+    },
+    {
+      "from": 5503,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 5506,
+      "to": 7659,
+      "kind": "CALL"
+    },
+    {
+      "from": 5519,
+      "to": 29333,
+      "kind": "CALL"
+    },
+    {
+      "from": 5529,
+      "to": 5514,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 5531,
+      "to": 30786,
+      "kind": "CALL"
+    },
+    {
+      "from": 5540,
+      "to": 2066,
+      "kind": "CALL"
+    },
+    {
+      "from": 5547,
+      "to": 5552,
+      "kind": "JP"
+    },
+    {
+      "from": 5560,
+      "to": 8860,
+      "kind": "CALL"
+    },
+    {
+      "from": 5563,
+      "to": 2724,
+      "kind": "CALL"
+    },
+    {
+      "from": 5566,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 5569,
+      "to": 2656,
+      "kind": "CALL"
+    },
+    {
+      "from": 5572,
+      "to": 30532,
+      "kind": "CALL"
+    },
+    {
+      "from": 5575,
+      "to": 2424,
+      "kind": "CALL"
+    },
+    {
+      "from": 5584,
+      "to": 5357,
+      "kind": "JP"
+    },
+    {
+      "from": 5589,
+      "to": 5566,
+      "kind": "JR"
+    },
+    {
+      "from": 5596,
+      "to": 5357,
+      "kind": "JP"
+    },
+    {
+      "from": 5603,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 5604,
+      "to": 1092,
+      "kind": "CALL"
+    },
+    {
+      "from": 5608,
+      "to": 1082,
+      "kind": "CALL"
+    },
+    {
+      "from": 5613,
+      "to": 5622,
+      "kind": "JR"
+    },
+    {
+      "from": 5620,
+      "to": 5566,
+      "kind": "JR"
+    },
+    {
+      "from": 5622,
+      "to": 1092,
+      "kind": "CALL"
+    },
+    {
+      "from": 5633,
+      "to": 1082,
+      "kind": "CALL"
+    },
+    {
+      "from": 30543,
+      "to": 30549,
+      "kind": "JR"
+    },
+    {
+      "from": 30546,
+      "to": 30549,
+      "kind": "JR"
+    },
+    {
+      "from": 30551,
+      "to": 30557,
+      "kind": "JR"
+    },
+    {
+      "from": 30554,
+      "to": 30557,
+      "kind": "JR"
+    },
+    {
+      "from": 30558,
+      "to": 30568,
+      "kind": "JR"
+    },
+    {
+      "from": 30570,
+      "to": 30577,
+      "kind": "JR"
+    },
+    {
+      "from": 30586,
+      "to": 1175,
+      "kind": "CALL"
+    },
+    {
+      "from": 30602,
+      "to": 2680,
+      "kind": "JP"
+    },
+    {
+      "from": 1181,
+      "to": 1185,
+      "kind": "JR"
+    },
+    {
+      "from": 1186,
+      "to": 1189,
+      "kind": "JR"
+    },
+    {
+      "from": 1191,
+      "to": 1194,
+      "kind": "JR"
+    },
+    {
+      "from": 1196,
+      "to": 1199,
+      "kind": "JR"
+    },
+    {
+      "from": 1201,
+      "to": 1204,
+      "kind": "JR"
+    },
+    {
+      "from": 1206,
+      "to": 1209,
+      "kind": "JR"
+    },
+    {
+      "from": 1211,
+      "to": 1214,
+      "kind": "JR"
+    },
+    {
+      "from": 1216,
+      "to": 1219,
+      "kind": "JR"
+    },
+    {
+      "from": 30789,
+      "to": 29333,
+      "kind": "CALL"
+    },
+    {
+      "from": 30800,
+      "to": 30605,
+      "kind": "CALL"
+    },
+    {
+      "from": 30807,
+      "to": 30810,
+      "kind": "JR"
+    },
+    {
+      "from": 30810,
+      "to": 30800,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 30816,
+      "to": 1092,
+      "kind": "CALL"
+    },
+    {
+      "from": 30824,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 30831,
+      "to": 30835,
+      "kind": "JR"
+    },
+    {
+      "from": 30833,
+      "to": 30828,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 30841,
+      "to": 30849,
+      "kind": "JR"
+    },
+    {
+      "from": 30847,
+      "to": 30845,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 30856,
+      "to": 1082,
+      "kind": "CALL"
+    },
+    {
+      "from": 30866,
+      "to": 8,
+      "kind": "RST"
+    },
+    {
+      "from": 30871,
+      "to": 30605,
+      "kind": "CALL"
+    },
+    {
+      "from": 30876,
+      "to": 30815,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 30610,
+      "to": 2072,
+      "kind": "CALL"
+    },
+    {
+      "from": 5463,
+      "to": 5435,
+      "kind": "JR"
+    },
+    {
+      "from": 5470,
+      "to": 5412,
+      "kind": "JR"
+    },
+    {
+      "from": 5703,
+      "to": 5824,
+      "kind": "CALL"
+    },
+    {
+      "from": 5710,
+      "to": 900,
+      "kind": "CALL"
+    },
+    {
+      "from": 5718,
+      "to": 5721,
+      "kind": "JR"
+    },
+    {
+      "from": 5721,
+      "to": 5703,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 5779,
+      "to": 5824,
+      "kind": "CALL"
+    },
+    {
+      "from": 5785,
+      "to": 5779,
+      "kind": "JR"
+    },
+    {
+      "from": 5804,
+      "to": 5819,
+      "kind": "JR"
+    },
+    {
+      "from": 5806,
+      "to": 2782,
+      "kind": "CALL"
+    },
+    {
+      "from": 5809,
+      "to": 5802,
+      "kind": "JR"
+    },
+    {
+      "from": 5814,
+      "to": 5779,
+      "kind": "CALL"
+    },
+    {
+      "from": 5817,
+      "to": 5802,
+      "kind": "JR"
+    },
+    {
+      "from": 5729,
+      "to": 5761,
+      "kind": "CALL"
+    },
+    {
+      "from": 5735,
+      "to": 5761,
+      "kind": "CALL"
+    },
+    {
+      "from": 5741,
+      "to": 5761,
+      "kind": "CALL"
+    },
+    {
+      "from": 5744,
+      "to": 5726,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 5746,
+      "to": 5776,
+      "kind": "CALL"
+    },
+    {
+      "from": 5758,
+      "to": 900,
+      "kind": "JP"
+    },
+    {
+      "from": 5762,
+      "to": 5776,
+      "kind": "CALL"
+    },
+    {
+      "from": 5771,
+      "to": 939,
+      "kind": "CALL"
+    },
+    {
+      "from": 940,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 947,
+      "to": 944,
+      "kind": "JR"
+    },
+    {
+      "from": 953,
+      "to": 956,
+      "kind": "JR"
+    },
+    {
+      "from": 957,
+      "to": 939,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 604,
+      "to": 563,
+      "kind": "JR"
+    },
+    {
+      "from": 3034,
+      "to": 3060,
+      "kind": "JR"
+    },
+    {
+      "from": 3036,
+      "to": 3050,
+      "kind": "JP"
+    },
+    {
+      "from": 3046,
+      "to": 3042,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 3048,
+      "to": 3031,
+      "kind": "JR"
+    },
+    {
+      "from": 3055,
+      "to": 3052,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 3058,
+      "to": 3031,
+      "kind": "JR"
+    },
+    {
+      "from": 3065,
+      "to": 3070,
+      "kind": "CALL"
+    },
+    {
+      "from": 3224,
+      "to": 2888,
+      "kind": "CALL"
+    },
+    {
+      "from": 3239,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 3247,
+      "to": 3126,
+      "kind": "CALL"
+    },
+    {
+      "from": 3258,
+      "to": 807,
+      "kind": "CALL"
+    },
+    {
+      "from": 3267,
+      "to": 3176,
+      "kind": "CALL"
+    },
+    {
+      "from": 3271,
+      "to": 3266,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 3282,
+      "to": 919,
+      "kind": "CALL"
+    },
+    {
+      "from": 3285,
+      "to": 7659,
+      "kind": "CALL"
+    },
+    {
+      "from": 3293,
+      "to": 2724,
+      "kind": "CALL"
+    },
+    {
+      "from": 3324,
+      "to": 3658,
+      "kind": "CALL"
+    },
+    {
+      "from": 3327,
+      "to": 3344,
+      "kind": "CALL"
+    },
+    {
+      "from": 3330,
+      "to": 4319,
+      "kind": "CALL"
+    },
+    {
+      "from": 3337,
+      "to": 3327,
+      "kind": "JR"
+    },
+    {
+      "from": 3344,
+      "to": 3849,
+      "kind": "CALL"
+    },
+    {
+      "from": 3351,
+      "to": 3344,
+      "kind": "JR"
+    },
+    {
+      "from": 3368,
+      "to": 3376,
+      "kind": "JR"
+    },
+    {
+      "from": 3376,
+      "to": 3437,
+      "kind": "CALL"
+    },
+    {
+      "from": 3379,
+      "to": 3417,
+      "kind": "CALL"
+    },
+    {
+      "from": 3382,
+      "to": 3437,
+      "kind": "CALL"
+    },
+    {
+      "from": 3397,
+      "to": 3407,
+      "kind": "JR"
+    },
+    {
+      "from": 3405,
+      "to": 3388,
+      "kind": "JR"
+    },
+    {
+      "from": 3420,
+      "to": 3884,
+      "kind": "CALL"
+    },
+    {
+      "from": 3432,
+      "to": 900,
+      "kind": "CALL"
+    },
+    {
+      "from": 3884,
+      "to": 3849,
+      "kind": "CALL"
+    },
+    {
+      "from": 3887,
+      "to": 3884,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 3849,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 3855,
+      "to": 3890,
+      "kind": "CALL"
+    },
+    {
+      "from": 3866,
+      "to": 3339,
+      "kind": "JP"
+    },
+    {
+      "from": 3668,
+      "to": 3749,
+      "kind": "CALL"
+    },
+    {
+      "from": 3674,
+      "to": 810,
+      "kind": "CALL"
+    },
+    {
+      "from": 3677,
+      "to": 3627,
+      "kind": "CALL"
+    },
+    {
+      "from": 3683,
+      "to": 3027,
+      "kind": "CALL"
+    },
+    {
+      "from": 3695,
+      "to": 29527,
+      "kind": "CALL"
+    },
+    {
+      "from": 3698,
+      "to": 3834,
+      "kind": "CALL"
+    },
+    {
+      "from": 3720,
+      "to": 3870,
+      "kind": "CALL"
+    },
+    {
+      "from": 3741,
+      "to": 3723,
+      "kind": "JP"
+    },
+    {
+      "from": 3746,
+      "to": 3705,
+      "kind": "JR"
+    },
+    {
+      "from": 3870,
+      "to": 3849,
+      "kind": "CALL"
+    },
+    {
+      "from": 3877,
+      "to": 3873,
+      "kind": "JR"
+    },
+    {
+      "from": 3881,
+      "to": 3873,
+      "kind": "JR"
+    },
+    {
+      "from": 3834,
+      "to": 3870,
+      "kind": "CALL"
+    },
+    {
+      "from": 3846,
+      "to": 900,
+      "kind": "CALL"
+    },
+    {
+      "from": 3631,
+      "to": 40,
+      "kind": "RST"
+    },
+    {
+      "from": 3643,
+      "to": 3631,
+      "kind": "JR"
+    },
+    {
+      "from": 3767,
+      "to": 3834,
+      "kind": "CALL"
+    },
+    {
+      "from": 107,
+      "to": 114,
+      "kind": "JR"
+    },
+    {
+      "from": 60,
+      "to": 606,
+      "kind": "JP"
+    },
+    {
+      "from": 66,
+      "to": 311,
+      "kind": "JP"
+    },
+    {
+      "from": 315,
+      "to": 483,
+      "kind": "JP"
+    },
+    {
+      "from": 353,
+      "to": 32896,
+      "kind": "CALL"
+    },
+    {
+      "from": 362,
+      "to": 32768,
+      "kind": "CALL"
+    },
+    {
+      "from": 365,
+      "to": 15111,
+      "kind": "CALL"
+    },
+    {
+      "from": 368,
+      "to": 8020,
+      "kind": "CALL"
+    },
+    {
+      "from": 375,
+      "to": 409,
+      "kind": "JR"
+    },
+    {
+      "from": 384,
+      "to": 387,
+      "kind": "JR"
+    },
+    {
+      "from": 390,
+      "to": 387,
+      "kind": "JR"
+    },
+    {
+      "from": 407,
+      "to": 405,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 409,
+      "to": 659,
+      "kind": "CALL"
+    },
+    {
+      "from": 418,
+      "to": 32768,
+      "kind": "CALL"
+    },
+    {
+      "from": 425,
+      "to": 433,
+      "kind": "JR"
+    },
+    {
+      "from": 460,
+      "to": 154,
+      "kind": "JP"
+    },
+    {
+      "from": 467,
+      "to": 473,
+      "kind": "JR"
+    },
+    {
+      "from": 179,
+      "to": 176,
+      "kind": "JR"
+    },
+    {
+      "from": 184,
+      "to": 181,
+      "kind": "JR"
+    },
+    {
+      "from": 193,
+      "to": 1028,
+      "kind": "CALL"
+    },
+    {
+      "from": 196,
+      "to": 960,
+      "kind": "CALL"
+    },
+    {
+      "from": 207,
+      "to": 2965,
+      "kind": "CALL"
+    },
+    {
+      "from": 216,
+      "to": 24,
+      "kind": "RST"
+    },
+    {
+      "from": 217,
+      "to": 210,
+      "kind": "JP"
+    },
+    {
+      "from": 979,
+      "to": 969,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 1028,
+      "to": 1092,
+      "kind": "CALL"
+    },
+    {
+      "from": 1041,
+      "to": 1055,
+      "kind": "JR"
+    },
+    {
+      "from": 1045,
+      "to": 1039,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 1053,
+      "to": 1082,
+      "kind": "JR"
+    },
+    {
+      "from": 673,
+      "to": 687,
+      "kind": "JP"
+    },
+    {
+      "from": 676,
+      "to": 759,
+      "kind": "JP"
+    },
+    {
+      "from": 787,
+      "to": 784,
+      "kind": "JP"
+    },
+    {
+      "from": 797,
+      "to": 767,
+      "kind": "JR"
+    },
+    {
+      "from": 804,
+      "to": 668,
+      "kind": "JP"
+    },
+    {
+      "from": 709,
+      "to": 734,
+      "kind": "JP"
+    },
+    {
+      "from": 722,
+      "to": 720,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 725,
+      "to": 718,
+      "kind": "JR"
+    },
+    {
+      "from": 732,
+      "to": 668,
+      "kind": "JR"
+    },
+    {
+      "from": 734,
+      "to": 1092,
+      "kind": "CALL"
+    },
+    {
+      "from": 744,
+      "to": 742,
+      "kind": "DJNZ"
+    },
+    {
+      "from": 747,
+      "to": 740,
+      "kind": "JR"
+    },
+    {
+      "from": 754,
+      "to": 1082,
+      "kind": "CALL"
+    },
+    {
+      "from": 757,
+      "to": 668,
+      "kind": "JR"
+    },
+    {
+      "from": 8053,
+      "to": 32904,
+      "kind": "JP"
+    },
+    {
+      "from": 15203,
+      "to": 15138,
+      "kind": "JP"
+    },
+    {
+      "from": 514,
+      "to": 32768,
+      "kind": "CALL"
+    },
+    {
+      "from": 521,
+      "to": 527,
+      "kind": "JR"
+    },
+    {
+      "from": 3,
+      "to": 137,
+      "kind": "JP"
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "md_sha256": "c5e5c13640de02fda61fb10f16c5857f4265f679b109b78a1ada95cc94bb9755",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "room": 274,
+      "type": 70,
+      "arrival_frames": {
+        "sms": 3467,
+        "md": 3467
+      },
+      "relative_actor_frames_exact": 47,
+      "actor_records_compared": 1,
+      "loaded_pattern_tiles_exact": 20,
+      "pattern_samples": 3,
+      "boss_sat_samples_exact": 3,
+      "boss_sat": {
+        "sms": {
+          "7": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ],
+          "23": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ],
+          "43": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ]
+        },
+        "md": {
+          "7": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ],
+          "23": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ],
+          "43": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "room": 274,
+      "type": 70,
+      "arrival_frames": {
+        "sms": 3461,
+        "md": 3461
+      },
+      "relative_actor_frames_exact": 47,
+      "actor_records_compared": 1,
+      "loaded_pattern_tiles_exact": 20,
+      "pattern_samples": 3,
+      "boss_sat_samples_exact": 3,
+      "boss_sat": {
+        "sms": {
+          "7": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ],
+          "23": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ],
+          "43": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ]
+        },
+        "md": {
+          "7": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ],
+          "23": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ],
+          "43": [
+            [
+              31,
+              208,
+              0
+            ],
+            [
+              31,
+              216,
+              1
+            ],
+            [
+              39,
+              208,
+              2
+            ],
+            [
+              39,
+              216,
+              3
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Normal dungeon doorway entry after exterior relocation; controlled relocation to room111 boundary with cleared actors and passable departure map. Right scroll and actual destination112 scripts/resources/actor loading execute normally.",
+    "Actor timelines aligned to first initialized core frame, not absolute loading cadence; Only first type46 record is compared for47 frames; neighboring44/45 use unaligned random placement and are excluded explicitly. First 20 sprite pattern pixels sampled at three relative frames. Natural travel, full fight, SAT/full framebuffer, audio and full transition timing remain unproved."
+  ]
+}

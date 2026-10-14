@@ -1,0 +1,14 @@
+{
+  "md_sha256": "edc3758a27b634b87579b3049dc1553cba6308cec3a300a0848b3dab89043fa8",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "1539b3114423d3560f7e829c2e2d947d24ad7e7bbb18d6c264cbcd4545b26f4b",
+  "harness_sha256": "6fb7b581a7eeec7b3ba8e3126f6f74c1db73fa30826746542831a2f5414d68b3",
+  "cases": 2704,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Five sourceLD A,R sites use explicit register-preserving input shim (5C/5D decisions share mutually exclusive input3). Original5049/A421/984F/57F8/4859/48F3/4893/4A15 and facing damage filters execute.",
+    "Six even states, all128 spawn candidates and terrain, direction/terrain/bounds,5C nibble thresholds/alignment and5D pursuit/ties. Every hero/enemy cardinal combination and pending damage0/1/7/255 validate the post-AI gate. State0 requires loader animation0.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

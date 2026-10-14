@@ -1,0 +1,38 @@
+{
+  "md_sha256": "ae1a4d11ba67556a51ae203fef6d4872ff225ddef640430717f88ca218c061a3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": 22335,
+  "rom_bytes": 1048576,
+  "aliases_header_verified": true,
+  "world_simulation_body_exactly_preserved": true,
+  "prior_actor_AI_unchanged_since_v0152": true,
+  "changes_confined_to_ending_and_shared_world_helper": true,
+  "source_ending_resources_verified": true,
+  "full_death_records_final_dungeon_defeat_flag": true,
+  "evidence_sha256": {
+    "ending_gameplay_report.json": "9267128ba736fb4a1a41b5cada067b560f054569e292471250760604dca921aa",
+    "ending_credits_unit_report.json": "1a47dc1cc60658048b599eccc2d87c3a7e74ebf00e43832b3b33eb6b31d841cb",
+    "ending_native_terminal_profile.json": "c2fb23f95c94074fc814b48551d141b49fc5e97b2b5108ba6f842e376ec5dbcf",
+    "ending_native_profile.json": "f073c70a1136c954d2719d08d78ac40c7b2df5573c2b745d804466b8fcd3797b",
+    "timing_report.json": "882e37d757ed7aafb8df5cdc125c5953bd0aee5605dcb2933d05dc7159aeb8b3",
+    "timing-pal_report.json": "a17c46e5e9acaa7121cb78b945a5199737e572dc98551c9457f4208d25f3a4b6",
+    "inventory_restore_report.json": "c2d1e24f1c12b31e90ca9f2162ece0031faba40e1a10ee5a16bfe06265c16d21",
+    "start_menu_audio_report.json": "7acc68d48581d43ee6d68ff66dea6cc6e24cfe3be902d809c44bb73976852a15"
+  },
+  "source_files_sha256": {
+    "megadrive\\src\\main.c": "9cf13e6d68a215bba9a84b083dbbefd9786df739b71514c48efc80b398866fa6",
+    "megadrive\\src\\actors.c": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845",
+    "megadrive\\src\\ending.inc": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df",
+    "megadrive\\src\\ending_credits.inc": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22",
+    "megadrive\\src\\ending_data.c": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8",
+    "tools\\validate_ending_gameplay.py": "4a8702f415875d12c620a5ca79e72302816118f38415efa9d8044029f6e49096"
+  },
+  "ending_integrated": true,
+  "full_game_ported": false,
+  "limits": [
+    "Clock-aligned controlled terminal checkpoint verifies all credits steps, gem records and twelve normalized full scene captures. Absolute scene initialization and occasional original NTSC row-work IRQ differ by1..2 frames; the report retains times and aligns images by algorithm tick.",
+    "Full death profile includes native/source particles and final-dungeon defeat flag. Original random stream differs, so final particle drain and subsequent absolute sequence timing are not claimed equal.",
+    "Native28-row source map is displayed with a32-row MD ring and one new row per eight pixels; pixel captures include scroll wrap and late credits.",
+    "Natural complete final dungeon/victory, all intermediate video/audio frames, full music waveforms, source auxiliary objects, global RNG/clock/loading, SMS scanline clipping and hardware remain incomplete or unverified."
+  ]
+}

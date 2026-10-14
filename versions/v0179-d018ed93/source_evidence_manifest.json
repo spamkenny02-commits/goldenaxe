@@ -1,0 +1,1238 @@
+{
+  "version": 179,
+  "md_sha256": "d018ed93a4d25c99fa258d474b70fd36bbd853da13957a451232ef67e2680af4",
+  "files": [
+    {
+      "path": "source/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "path": "source/actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "source/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "path": "source/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "path": "source/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "path": "source/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "path": "source/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "path": "source/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "path": "source/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "path": "source/door_transition.inc",
+      "sha256": "f6e815ff5b3cae5dd3f0487a893a721d4473ff87fd94fc1b886dbc40240a7de2"
+    },
+    {
+      "path": "source/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "path": "source/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "path": "source/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "path": "source/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "path": "source/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "path": "source/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "path": "source/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "path": "source/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "path": "source/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "path": "source/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "path": "source/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "path": "source/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "path": "source/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "path": "source/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "path": "source/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "path": "source/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "path": "source/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "path": "source/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "path": "source/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "path": "source/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "path": "source/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "path": "source/house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "path": "source/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "path": "source/intro.inc",
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    },
+    {
+      "path": "source/intro_data.c",
+      "sha256": "87d7d6d66c54f578c47b44a719e7123221ba278562c29de8afdb2619eda9a4f1"
+    },
+    {
+      "path": "source/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "path": "source/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "path": "source/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "path": "source/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "path": "source/main.c",
+      "sha256": "b7e92abec23e612e65e4e53ff81d1c2ef6382207523a50ba4f552858e16ea86d"
+    },
+    {
+      "path": "source/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "path": "source/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "path": "source/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "path": "source/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "path": "source/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "path": "source/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "path": "source/paid_passage.inc",
+      "sha256": "6a05aa157645ca05748d764e3d55c269058c9b3ab905466edc5c775c17fbbad9"
+    },
+    {
+      "path": "source/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "path": "source/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "path": "source/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "path": "source/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "path": "source/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "path": "source/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "path": "source/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "path": "source/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "path": "source/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "path": "source/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "path": "source/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "path": "source/sound.inc",
+      "sha256": "0b08bcb0b51605cd91fbc3512ff5173ec3e14bfaeebc69ee9e2ed24f66c294ca"
+    },
+    {
+      "path": "source/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "path": "source/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "path": "source/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "path": "source/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    },
+    {
+      "path": "symbol.txt",
+      "sha256": "93eac53fd5c749ede81189b1eb45bc31ef80de22cbf2e1b25a2ed400b71f4214"
+    },
+    {
+      "path": "tools/profile_standard_door_music.py",
+      "sha256": "19a2b7f7e9ad4f957ab450de44e43ee3110382ffd7dd6ae44a5612752b7de60d"
+    },
+    {
+      "path": "tools/validate_standard_door_transitions.py",
+      "sha256": "d6e4f53fa7c7ccdfa39d663cd85e50ca3180d1195d81532f8f45c884f6cfb89c"
+    },
+    {
+      "path": "tools/audit_standard_door_patch.py",
+      "sha256": "ffa1065becfb958322d7941db9db9d06a30cc70df26f51e5c42cabd9da40cdd3"
+    },
+    {
+      "path": "tools/archive_standard_door_milestone.py",
+      "sha256": "f3d9c97439777ab71fd3b79edbf52058474b8793b66908cea333a365f55a407f"
+    },
+    {
+      "path": "tools/validate_dungeon_doors.py",
+      "sha256": "08b91a1cb26fda3e6cfaf652d9ab6b59c707f0b7646c3559524539fbb9a675b4"
+    },
+    {
+      "path": "tools/validate_house_quest_gameplay.py",
+      "sha256": "6ccf4f3411d757e0d25bec9d8c511f69f36ebe47466b1d17d9aab3db43154953"
+    },
+    {
+      "path": "tools/validate_paid_passage_gameplay.py",
+      "sha256": "635090ba522d1d1a8afd2993b6644bb640e9e2b4dee19d5de0e7feccf7dfe4aa"
+    },
+    {
+      "path": "tools/validate_paid_exit_music.py",
+      "sha256": "442937684cfba56b4ad805d3d957678437e42bb9c942c382e690046fcbc72424"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "37c52b1362cb68642f54387ad2cdc70997328f95f63a1a7df4bb12d6db24eb7f"
+    },
+    {
+      "path": "tools/validate_save.py",
+      "sha256": "a68157e907d92cff5d2401384f8d21fe9ab879a79c2af81bffd61d196fb7c06c"
+    },
+    {
+      "path": "tools/validate_paid_passage_native_loading_clock.py",
+      "sha256": "f455921ebba51dbbe2269fe5b550f06cf0d6b1e8eeffa42046710cda0c120bc7"
+    },
+    {
+      "path": "tools/paid_passage_clock_harness.c",
+      "sha256": "b9527b4d90a78ed8e84e031f1d0dba49bc52a66a66ac4a03839f315c90f2b667"
+    },
+    {
+      "path": "tools/build_paid_passage_clock_harness.ps1",
+      "sha256": "da6a74bfc7ea9000660091cc5ee62b4a4aad92857aaccb71106963eb0233d132"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/capture.json",
+      "sha256": "41003d7d281a4ecd60071f15d21d98b1adf17daada6d9539da210033e684ad6c"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/cram_03300.bin",
+      "sha256": "9714a789509979b58def6c08dc21a1a055fc377edbb3b6bbe2326d48720ba0de"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/cram_03600.bin",
+      "sha256": "87ee1bce3d8cb1091c7592e5e442642e81c5194ab6a8571b26acc9aaa63c7906"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/frame_03300.png",
+      "sha256": "f934307767b653f1d9612128fa639626cd6cea7551789867f9b6afaf82bb9723"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/frame_03600.png",
+      "sha256": "baafaa8d97f50e53b959f051594ff3533b256fca065372a1dff59da3bf146455"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/ram_03300.bin",
+      "sha256": "50f779fa10fa3c25485bacd76c1dc1cafb74de7192fd0b13d209152236358bc6"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/ram_03600.bin",
+      "sha256": "05e31eff73c783919e3a0440d7da6b3c664760a691461dd9d94c223be16c9ef7"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/state_03300.bin",
+      "sha256": "b76a98b8955420dd4226f9159073730372e1f99f42ad4b134b1fa5e9de848dba"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/state_03600.bin",
+      "sha256": "95d93d71f51a3356e7ea0f7422407975438fd89f648652968de88e02f94ccf00"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/vdp_regs_03300.bin",
+      "sha256": "e61ca8bf7114c128343bf4dafc81b1c6600bcdd602ae31369cf7437df7c7cfa4"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/vdp_regs_03600.bin",
+      "sha256": "e61ca8bf7114c128343bf4dafc81b1c6600bcdd602ae31369cf7437df7c7cfa4"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/vram_03300.bin",
+      "sha256": "12c333b537af70d2e67f88691c5864552b338f83ae2eee64394fb02814b1ef93"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/md/vram_03600.bin",
+      "sha256": "72ad2cbf659fd79e58d0fa8c44b47118158e09fbea390c55c58d98c09d15c4ef"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/profiles.json",
+      "sha256": "5666805ff4d5212e2730a3fb99ac989c44da5266263a395aca83bc2f6bdbaf06"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/capture.json",
+      "sha256": "132dcd31df44f09673f5ff212b211e07fdb3e8f33463f9b9d32b448ea7e0e2bf"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/cram_03300.bin",
+      "sha256": "12b9d527abfe8016dbd3843cc4a875ebd341954b726e2891f9e3ddfd30ddfb26"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/cram_03600.bin",
+      "sha256": "813f75c97a1781fc499e9005c396e0550729409ce1966ccdb86fe339986426e1"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/frame_03300.png",
+      "sha256": "f51b6f140b32a81ba6ecf0314e32a87b87348808a30d6ca34c86e540357a823e"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/frame_03600.png",
+      "sha256": "bd03f4e651c6785897913eda0280ad66b2408120edce7bf9bebb863ef7d75ae6"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/ram_03300.bin",
+      "sha256": "fb87372835ab821840f7132ca39106ecbbaab865002632715fb789ee046da2b3"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/ram_03600.bin",
+      "sha256": "e41e475caa06490e9067a05c43254fd5eff85ab4f0f67c8411b983bbf01d573c"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/state_03300.bin",
+      "sha256": "fe625f08a27a49d43d6e20482f721b8d5de3f4807632d2c64cd10a76a5bf6b40"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/state_03600.bin",
+      "sha256": "020e2bb6c0f89ea4028e6a71e45e7d1203a9a72147d0cf86307df63979786b18"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/trace_counts.bin",
+      "sha256": "900dd52dd752d32dfb3984a7e269f2449c64e2d46efc545c5d52ae7938796166"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/trace_states.bin",
+      "sha256": "0c232881e82161ed5775b4d10789314dd9e0914b4c7ef8ea309780d70f1238b5"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/trace_windows.bin",
+      "sha256": "aad91f32761845ecefdf56872efc3843d72a9baee2137405b1bd3a37aa8c8431"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/vdp_regs_03300.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/vdp_regs_03600.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/vram_03300.bin",
+      "sha256": "8a3b852a0fa9f0d60ae2a7649f77f5dcbc907c554fa1cec6742680027520bd4b"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/sms/vram_03600.bin",
+      "sha256": "240b5f13bebd7cc149868a6795d714699205d2171d4cc4211559f76340bf4669"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-auto/source-events.json",
+      "sha256": "85a8a18f56b5762aca0299d1085c20e7990d2be4cdb49bd586a70601f196c8db"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/capture.json",
+      "sha256": "f61a73e68f99c2a07035fbbec5a018b8d701c508480d08f008a8ebdc7f0419d3"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/cram_03300.bin",
+      "sha256": "35dd586a8fb5414f0cd1f29a84524e0bc295541ddd343ed9777d23fad86f6c88"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/cram_03600.bin",
+      "sha256": "af8bcfc6d066885fd9341f113a3cf6f209255e1873f796e50c09ecb4c0889ae8"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/frame_03300.png",
+      "sha256": "1d5ee3f8290e2a04acc4c6d146aacf9d72efe08109bab4c5c89849771ff5a10f"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/frame_03600.png",
+      "sha256": "d60adc76fc4dd6a7399307871314e608cdd295e82c2c9d7307524b8a52278c59"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/ram_03300.bin",
+      "sha256": "2bca2f7f1025d6358c4a2c176a7fd7bb81ba7f43157f2c3d03ace1e1f32ce60b"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/ram_03600.bin",
+      "sha256": "506067181935eeaff1dc864d36ffc47770aeb771825bf46f53f3c1e19d8137e3"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/state_03300.bin",
+      "sha256": "fdd1124372ac3700a9fb4317806bafe7f313281bf2090091586308864bad736a"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/state_03600.bin",
+      "sha256": "31282d7342c3dbae2d09608d499898cffa8c2d41c11f172868f1bf02fec73b1d"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/vdp_regs_03300.bin",
+      "sha256": "e61ca8bf7114c128343bf4dafc81b1c6600bcdd602ae31369cf7437df7c7cfa4"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/vdp_regs_03600.bin",
+      "sha256": "e61ca8bf7114c128343bf4dafc81b1c6600bcdd602ae31369cf7437df7c7cfa4"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/vram_03300.bin",
+      "sha256": "084e04490f3b7fd55061597c3f2deb8da6e08d8ead966362aea7e773119b4526"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/md/vram_03600.bin",
+      "sha256": "a11dc4fb5f3d18334269edad73eceaad8f31f8cf84d94d01d6922d5ec742165c"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/profiles.json",
+      "sha256": "2a20e21ca98e96a21b302d7ee2ead46a65c2816f7bba3c4f3ded6a1635ee3a6d"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/capture.json",
+      "sha256": "0bd7da0a8eb2b1fe5aaad2a06197d5a1785f26bd3e19c086fa415e2489e868d1"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/cram_03300.bin",
+      "sha256": "12b9d527abfe8016dbd3843cc4a875ebd341954b726e2891f9e3ddfd30ddfb26"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/cram_03600.bin",
+      "sha256": "b6a7c171c7455ee7f6315d6a987534e6038cf189d17dc899e2e29277956b5c60"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/frame_03300.png",
+      "sha256": "f51b6f140b32a81ba6ecf0314e32a87b87348808a30d6ca34c86e540357a823e"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/frame_03600.png",
+      "sha256": "b829cd9a83011aebe8aefae35d39e9a6d9e872dc95c55439fef2fb0eb09e2bd7"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/ram_03300.bin",
+      "sha256": "c6151a61a377089f7ad005a40664907bb1265642826c8fb0872f0292c29b0fa1"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/ram_03600.bin",
+      "sha256": "7406dbe740bebac592851589f3742bce0d91c4fe223a85532c3132ad599340cf"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/state_03300.bin",
+      "sha256": "adc64f07a8e2d4dd0c8c37477148fff4057b740b9506723247ffd1c13652e292"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/state_03600.bin",
+      "sha256": "a679c525e606f2996efebca43f278ad4dfdc8c31039e155f4c283afa82278e72"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/trace_counts.bin",
+      "sha256": "ec664b7dbbcd1928c08961c4466345ba6f1bd428206a196580a94b68b9715fc5"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/trace_states.bin",
+      "sha256": "6b3325bffb1d2ca10fa27214ec106178389b36da0539330ae2ddafeb153cf05e"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/trace_windows.bin",
+      "sha256": "52709f93b628e7809e0ed8e342bbe6e5e488c7ba0ce1c9d0f54a9766f24d67a1"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/vdp_regs_03300.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/vdp_regs_03600.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/vram_03300.bin",
+      "sha256": "674135e0642ba6fb8f355b37159bef89057bcb43ffd26500c1063369f544e963"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/sms/vram_03600.bin",
+      "sha256": "7ec3060edf9adf8d8470ae7bf9bbbcbc2439a1a6efc297deea401d0aaace3ae2"
+    },
+    {
+      "path": "validation/standard-door-music/dungeon-pal/source-events.json",
+      "sha256": "75f28118c240d5eb51fecca91e97868a40ea9198c5ad711edb5ca5a5149b1465"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/capture.json",
+      "sha256": "537fd7495045e050314287d19c138d6f48f21cf980406812222658aba2609bed"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/cram_03300.bin",
+      "sha256": "67ad4a738d6b835288e3ceb7fc8f37f3fa5fe47616eca33f82392fca28d15272"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/cram_03600.bin",
+      "sha256": "87ee1bce3d8cb1091c7592e5e442642e81c5194ab6a8571b26acc9aaa63c7906"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/frame_03300.png",
+      "sha256": "429dcfeed9b2101074473e29e71bfa6817fe6dbe6b660d23c601759a17efe5f0"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/frame_03600.png",
+      "sha256": "7aa424707b4d0cb23f154ac903fcf484548472e14ef324188e6150245f2dfad2"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/ram_03300.bin",
+      "sha256": "6357374bef36c4285309b867d32509f5cae94fdb2f1ce0babe315669e1a14fa5"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/ram_03600.bin",
+      "sha256": "541610e5b7d7256cbcaaa02a841134079e7b71c67bf07d559f2498606520347e"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/state_03300.bin",
+      "sha256": "d8c2afa656bcbb3e78710ed3c64e955f6a62a13949bb277d4b48ca0ea7185b2b"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/state_03600.bin",
+      "sha256": "3fbe54f98d19e4ee5e5058f8c123494522638a24a0f2382cf98b932c26b7b528"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/vdp_regs_03300.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/vdp_regs_03600.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/vram_03300.bin",
+      "sha256": "ffac1c5400164d3be2a395a6ebaa2f9104e443318fc2ebe4544a6c8060bf46d3"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/md/vram_03600.bin",
+      "sha256": "ee8dac644bde4787728f72340dc4c8a8b66973d759853e15124d0dc455a65286"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/profiles.json",
+      "sha256": "6c4393640afa82088698cf43047b1fc25778d3a2cf56af2e2e909e490ce92a0a"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/capture.json",
+      "sha256": "5e5a55a1b9f68c89289122e7fb989333f975d7eab3e954155a90037fc21b241e"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/cram_03300.bin",
+      "sha256": "abf847533127c9bab6617909b048ac2e8d614fe7450b3233d6b3e9fd1c7f007f"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/cram_03600.bin",
+      "sha256": "3bbdcd7557f68064aca245af0fe14d442b9d05305fd35da544b2927c60737262"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/frame_03300.png",
+      "sha256": "ffce008222e6d267137d2bd7e063c3d98133e9d35af52d1f0782900e12df600a"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/frame_03600.png",
+      "sha256": "b6187d9dba39acbd0160a2c6c85678adf40ab2da7db8f3d7fcd7cd90298973aa"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/ram_03300.bin",
+      "sha256": "ff5e7986afedd9c86cdf7cf1cf2a0eddcf67ff60011c24c7ba19daef8dd9bbb6"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/ram_03600.bin",
+      "sha256": "51fbe488682847fcee8b0e7da877e0ba83b9f82292b1a3e9c12256f35977c057"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/state_03300.bin",
+      "sha256": "9e5d4def8640992ea06686827532dc99d82cc4ecc9dfc8111a40dc1c72597631"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/state_03600.bin",
+      "sha256": "c4b7cdb662002521be75d4ceb68162a15832b5c2114a7cdc4e27739e4b0c13d6"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/trace_counts.bin",
+      "sha256": "9fc6749ca35419c774a982bab49960d1253f60ae2f1cdfdef6669c29a6170085"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/trace_states.bin",
+      "sha256": "9d0100a1047ab60a55e7a5d6cd9902de65f23bd119837ac891c55fa2aadf037c"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/trace_windows.bin",
+      "sha256": "d0050106bfbccb1650db0bba0266f4c055c28e0a2832d2105f6adc864e851d22"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/vdp_regs_03300.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/vdp_regs_03600.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/vram_03300.bin",
+      "sha256": "cccd003bb0922a3fcdb82928b90b1479994534210556161059133975c3680cd3"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/sms/vram_03600.bin",
+      "sha256": "4a790b272b308f7ae850a00ca7f51675659a389a625d3dd27eaebefd3e7a6b41"
+    },
+    {
+      "path": "validation/standard-door-music/house-auto/source-events.json",
+      "sha256": "e8e469bdabd7eb8d2d80bd31aa0d8f020db13b8c04516f921695738031eebd8e"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/capture.json",
+      "sha256": "ef4bab1204c0f609e3c48623ddfacdd006beccb68d2f3611f4ba8010244e87f3"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/cram_03300.bin",
+      "sha256": "81e79d188ad9cb068e40287316cee9c583ef58402ab385c45ada4fc5a55da445"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/cram_03600.bin",
+      "sha256": "af8bcfc6d066885fd9341f113a3cf6f209255e1873f796e50c09ecb4c0889ae8"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/frame_03300.png",
+      "sha256": "f27982f8413540adf6e22c22f762d7d946c796c1f776b686a95f9014c1378fbd"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/frame_03600.png",
+      "sha256": "7aa424707b4d0cb23f154ac903fcf484548472e14ef324188e6150245f2dfad2"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/ram_03300.bin",
+      "sha256": "80c9a0f9400ebd91e97c425e278af194565f83e97b0a612626443f343cfc06f1"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/ram_03600.bin",
+      "sha256": "fa49e9d23c978eb37fc2fc140bcad73537b4fae8d65966360d113cdb3e22717b"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/state_03300.bin",
+      "sha256": "3dd785501e22d414a388ed0d44c84a598c79303e7be86c9b6521e1e40177d9e7"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/state_03600.bin",
+      "sha256": "000b60d2eeef71c5ab87dc45dfbe3cc627e301f5103c774e4219a5fd24113256"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/vdp_regs_03300.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/vdp_regs_03600.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/vram_03300.bin",
+      "sha256": "c28021672fb3b6235a468055791058945cf585fcce1d19d720aaf77f0344dd54"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/md/vram_03600.bin",
+      "sha256": "ee8dac644bde4787728f72340dc4c8a8b66973d759853e15124d0dc455a65286"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/profiles.json",
+      "sha256": "d76f537bb65a5c024a326c82f0e1f42c538c6da1b48d6a36735a725cf07024d6"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/capture.json",
+      "sha256": "0045737697caea1ed1cfa67e2241f028148726c186b4ef54a6a7dc1551591f8c"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/cram_03300.bin",
+      "sha256": "abf847533127c9bab6617909b048ac2e8d614fe7450b3233d6b3e9fd1c7f007f"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/cram_03600.bin",
+      "sha256": "f3eca1c2ce5146ca4d02c3b1d69cb5f23f81e1e7542d6f197b8a135283425b5c"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/frame_03300.png",
+      "sha256": "ffce008222e6d267137d2bd7e063c3d98133e9d35af52d1f0782900e12df600a"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/frame_03600.png",
+      "sha256": "b6187d9dba39acbd0160a2c6c85678adf40ab2da7db8f3d7fcd7cd90298973aa"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/ram_03300.bin",
+      "sha256": "23dddab7de3a0e2a9bafc2dd04c642d94c27dd905f46c02dc47276124243dcf0"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/ram_03600.bin",
+      "sha256": "dea2a95eaa0198d62c226e152ce78b845a8eaf4e32af2b53204ec4011006b31a"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/state_03300.bin",
+      "sha256": "2cde4d0bece485d17195d296fbadfff70a9153b2234871814ba5c63e696acf57"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/state_03600.bin",
+      "sha256": "40b632b06fdf7b723a2519581bc9e5fbdc2a25533e633ad21d89396ad5fad991"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/trace_counts.bin",
+      "sha256": "c8a684e2b1a61be49ccadc58c73d909371c22b041dd2683c722d915733a734af"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/trace_states.bin",
+      "sha256": "36d25fcbf48fb659b840e0a9605bf5c559577fba636307e457fa6b29691e6c39"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/trace_windows.bin",
+      "sha256": "0799c2083911fccd1480c507931d145f1d4bdb910287d38a0a6e0148815174df"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/vdp_regs_03300.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/vdp_regs_03600.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/vram_03300.bin",
+      "sha256": "cccd003bb0922a3fcdb82928b90b1479994534210556161059133975c3680cd3"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/sms/vram_03600.bin",
+      "sha256": "0f6656d3bc3490181f4d8988fc428378714b9719c4331f938a6f7a64d1e6f18a"
+    },
+    {
+      "path": "validation/standard-door-music/house-pal/source-events.json",
+      "sha256": "c408161cb08af03cee1b3c713ab8349b93a3be1aa10c67b771c32ae48fd7fe66"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-00/auto-profiles.json",
+      "sha256": "5a46571b9f2b785d99a28de50e0c02d25e7a78a6371f4776a33c9b4c62f470c0"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-00/auto-summary.json",
+      "sha256": "086bbf559a4d581904af7a5be6fed607bc0be2fc8d14bec3650ebb27ec5f5e00"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-00/pal-profiles.json",
+      "sha256": "6e7798b691ae9c13f002ba8a6fb8dce6c22198cefef16d659ecdc8743dea6dc7"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-00/pal-summary.json",
+      "sha256": "f81944be427ce0ddc75262d67ae708fe54961768592f69ae71c73f02fae62735"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-00/phases_report.json",
+      "sha256": "3e999e8be8737e03a1bd2e4d67e951ad5d753de52a22c12885193fb33c694be4"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-ff/auto-profiles.json",
+      "sha256": "1a08844304d0f941a251ad02140c47d06e83630c880bb7bd2afb77d8893a3de9"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-ff/auto-summary.json",
+      "sha256": "4aa06a7c213661453c162806c732884f06deb9f1b54a406833db4e3ed12fdf40"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-ff/pal-profiles.json",
+      "sha256": "4facef09394484f9a9fee96a614235d914334de4a5df058bff7723fc1f4ba3bc"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-ff/pal-summary.json",
+      "sha256": "559148008cb64677a813fd1b9a4bb55886a3836245fb1f07c6ac7e0d1d5a2407"
+    },
+    {
+      "path": "validation/paid-exit-music/1a-ff/phases_report.json",
+      "sha256": "bb2795def9c2ac1c6d3e2bd714a574d963e850df06a4a5a228d9232bb706e762"
+    },
+    {
+      "path": "validation/paid-exit-music/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "validation/paid-exit-music/36-00/auto-profiles.json",
+      "sha256": "35c48b8803b3cb39cc7726e2ff1f6f1f12b3f954a838f0c1bff61395e272a0c4"
+    },
+    {
+      "path": "validation/paid-exit-music/36-00/auto-summary.json",
+      "sha256": "086bbf559a4d581904af7a5be6fed607bc0be2fc8d14bec3650ebb27ec5f5e00"
+    },
+    {
+      "path": "validation/paid-exit-music/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "validation/paid-exit-music/36-00/pal-profiles.json",
+      "sha256": "24308e96eaf2e7d5e833ead9a0e8777237068d60fce1564065df261d62e99f19"
+    },
+    {
+      "path": "validation/paid-exit-music/36-00/pal-summary.json",
+      "sha256": "f81944be427ce0ddc75262d67ae708fe54961768592f69ae71c73f02fae62735"
+    },
+    {
+      "path": "validation/paid-exit-music/36-00/phases_report.json",
+      "sha256": "90c76cfc13dc7e7095d90e86620abcfe8b2f90d720c9629550d35a7052fdeb8a"
+    },
+    {
+      "path": "validation/paid-exit-music/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "validation/paid-exit-music/36-ff/auto-profiles.json",
+      "sha256": "0b66003a9e3e539e5390b271856499aff1fa5c8115b618fde0d7491da2329ce6"
+    },
+    {
+      "path": "validation/paid-exit-music/36-ff/auto-summary.json",
+      "sha256": "f83217755dceff25442ece26944bb5d8e12e6126602bea7febec0997294c2c2c"
+    },
+    {
+      "path": "validation/paid-exit-music/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "validation/paid-exit-music/36-ff/pal-profiles.json",
+      "sha256": "699e77032948ce46b48d95523642d0f53ceb59ce7bbabbe76ab1a8b26419e622"
+    },
+    {
+      "path": "validation/paid-exit-music/36-ff/pal-summary.json",
+      "sha256": "20c6d0321bc28a529e2fa73c981ce9d3ffd4aded334ef4f1f41e09f2bc099bb0"
+    },
+    {
+      "path": "validation/paid-exit-music/36-ff/phases_report.json",
+      "sha256": "04db36fe49a18dd39cd732b0e305c30c60734b6aef7604e9260e2ef8806b40cd"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-00/auto-profiles.json",
+      "sha256": "ceaf4a61c65aaa2d5568ab79eed1f3f8b51fe5a3365d27c2a77543b5646de0b0"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-00/auto-summary.json",
+      "sha256": "086bbf559a4d581904af7a5be6fed607bc0be2fc8d14bec3650ebb27ec5f5e00"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-00/pal-profiles.json",
+      "sha256": "a4819b29c9a5ab45c91381f74f01e858301c8d01854ccbca4047cf5e3b69366f"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-00/pal-summary.json",
+      "sha256": "f81944be427ce0ddc75262d67ae708fe54961768592f69ae71c73f02fae62735"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-00/phases_report.json",
+      "sha256": "5c0b1dfba5f97878693429114350591f503026569b55206b1903120903d5dd7c"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-ff/auto-profiles.json",
+      "sha256": "2f6b20ee4be684cf5288989c1d1f5a9bc67aa90e6e33507b0a8b7d756142c328"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-ff/auto-summary.json",
+      "sha256": "e8826f519cef540c7b46c9d11cb083bf456a856b09913f95c0c2691b06479802"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-ff/pal-profiles.json",
+      "sha256": "77b656f9837330af1a6f2fcce59acf348d56b354338865cbb4feeb1df5678acf"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-ff/pal-summary.json",
+      "sha256": "3890b91cfdabba626777809b3111cf7f5e899ea98bc99314eb030a0f6dbc74cf"
+    },
+    {
+      "path": "validation/paid-exit-music/3c-ff/phases_report.json",
+      "sha256": "65b3f16f4f5a5e287de5a707521c9a845436c48bd4f2d4918481456a41ea4c03"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-00/auto-profiles.json",
+      "sha256": "4d61259d7dd1cd58be6fe39b51f0f88a9d6a6bbe9f8a1100b993249a5fda03c0"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-00/auto-summary.json",
+      "sha256": "086bbf559a4d581904af7a5be6fed607bc0be2fc8d14bec3650ebb27ec5f5e00"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-00/pal-profiles.json",
+      "sha256": "607fe5ab03d151ac761d01c2d2bd950972f44e718ec4d12f9e20638e9f2c6ea7"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-00/pal-summary.json",
+      "sha256": "f81944be427ce0ddc75262d67ae708fe54961768592f69ae71c73f02fae62735"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-00/phases_report.json",
+      "sha256": "5432f02ffd8e74c09c40e05c3f57f8dd2d145d96ccd7dab629fbe66a62d7dc4f"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-ff/auto-profiles.json",
+      "sha256": "df6511695f0dd33c34a6aec7bc689a2a30cadb573ce294d81bdc2e421310f8aa"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-ff/auto-summary.json",
+      "sha256": "6ad306174d9b7e88eaa243fe7da999923adc39a8048d799436a29065736011c5"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-ff/pal-profiles.json",
+      "sha256": "fe2033af4085c72c99d17dd44cda39fd64d4a627a9852e995b254e5dfeff017d"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-ff/pal-summary.json",
+      "sha256": "af14087649874bb05de7c3a6e5ae08dd52c3cdfc0c212d378484a3c4104bfe96"
+    },
+    {
+      "path": "validation/paid-exit-music/6d-ff/phases_report.json",
+      "sha256": "770ccb6c447b1acd0036d7792c262846f2d8c72f57783d63f65224dc8aa2d3f0"
+    },
+    {
+      "path": "validation/paid-exit-music/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "validation/paid-exit-music/87-00/auto-profiles.json",
+      "sha256": "0b351ea381d73337157cdcf7180cf98d0afe49be6ee3303fa99e27341d3155ad"
+    },
+    {
+      "path": "validation/paid-exit-music/87-00/auto-summary.json",
+      "sha256": "086bbf559a4d581904af7a5be6fed607bc0be2fc8d14bec3650ebb27ec5f5e00"
+    },
+    {
+      "path": "validation/paid-exit-music/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "validation/paid-exit-music/87-00/pal-profiles.json",
+      "sha256": "18619657a57220fa527056a2c0d5f297fafcf19cce42f8b33d8f65377b86149b"
+    },
+    {
+      "path": "validation/paid-exit-music/87-00/pal-summary.json",
+      "sha256": "f81944be427ce0ddc75262d67ae708fe54961768592f69ae71c73f02fae62735"
+    },
+    {
+      "path": "validation/paid-exit-music/87-00/phases_report.json",
+      "sha256": "09f759d5e02aab9aba19eea07faf9d8368cc8e5a0d34e2733a4d58badce050d4"
+    },
+    {
+      "path": "validation/paid-exit-music/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "validation/paid-exit-music/87-ff/auto-profiles.json",
+      "sha256": "a30208772ee758646ca93efc4db9cd4e0b7d94a7aa5101dd4dcded16ccb2500f"
+    },
+    {
+      "path": "validation/paid-exit-music/87-ff/auto-summary.json",
+      "sha256": "3358611e8c11f2632308d85ffd6fa392ce4d3bb56ec09e74d755267b1cb63f3e"
+    },
+    {
+      "path": "validation/paid-exit-music/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "validation/paid-exit-music/87-ff/pal-profiles.json",
+      "sha256": "5f36a344e59fdf1d06db7d8703e7d14c67b9bed4bf57db13f2222669ddf0a989"
+    },
+    {
+      "path": "validation/paid-exit-music/87-ff/pal-summary.json",
+      "sha256": "eef75d86fa277ea17235abc05e12214b52866f10de02d66c3ae362b038765de6"
+    },
+    {
+      "path": "validation/paid-exit-music/87-ff/phases_report.json",
+      "sha256": "fc0626edf0c3e5045f6d2a6ece70e6c7d54c7a521c83c34efce094c37427e622"
+    },
+    {
+      "path": "validation/paid-exit-music/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "validation/paid-exit-music/96-00/auto-profiles.json",
+      "sha256": "5644b4340538c1bb85cbb443dd51e279bdcb44c33adb9c851fd9317184ec9a98"
+    },
+    {
+      "path": "validation/paid-exit-music/96-00/auto-summary.json",
+      "sha256": "086bbf559a4d581904af7a5be6fed607bc0be2fc8d14bec3650ebb27ec5f5e00"
+    },
+    {
+      "path": "validation/paid-exit-music/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "validation/paid-exit-music/96-00/pal-profiles.json",
+      "sha256": "30ea5464fe8352e28dc4263578eda6267ea7e03748739d789d8bfc5ab3f3d001"
+    },
+    {
+      "path": "validation/paid-exit-music/96-00/pal-summary.json",
+      "sha256": "f81944be427ce0ddc75262d67ae708fe54961768592f69ae71c73f02fae62735"
+    },
+    {
+      "path": "validation/paid-exit-music/96-00/phases_report.json",
+      "sha256": "92c4dd7511c7cfea32dce3a2264d6208c38af6e23830e4f15dfc6340085e5e58"
+    },
+    {
+      "path": "validation/paid-exit-music/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "validation/paid-exit-music/96-ff/auto-profiles.json",
+      "sha256": "6151579ea4f3cb0448530557aa6f008085a13fde8a514e2dab01f6492e52e060"
+    },
+    {
+      "path": "validation/paid-exit-music/96-ff/auto-summary.json",
+      "sha256": "019efa57f81456389ac6e447ef0d90e6af8a639a60ac31e23467e9f8c83f9a52"
+    },
+    {
+      "path": "validation/paid-exit-music/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "validation/paid-exit-music/96-ff/pal-profiles.json",
+      "sha256": "bdd9ab670bd80bb019f85cd8cfb2842b26a5ac75997ff6d30fda7d9c681bf9c7"
+    },
+    {
+      "path": "validation/paid-exit-music/96-ff/pal-summary.json",
+      "sha256": "00bef72495cb42a00aed645beaa1f981272bcf836394c38e486e19010823cd55"
+    },
+    {
+      "path": "validation/paid-exit-music/96-ff/phases_report.json",
+      "sha256": "12915341b6bc3240b9bcf1b2ec4e23ce2626526a8a2750dbb5467f37b340eb89"
+    },
+    {
+      "path": "logs/build-paid-clock-v0179.log",
+      "sha256": "b1ad78d1a3a1248dc678ae37d0fff461d8d6ab1a002a9ddfcad030800f2b2d49"
+    },
+    {
+      "path": "logs/build-v0179.log",
+      "sha256": "c6466c253ca6185adf872961e81c47183165050f066eda47dfbc06bf881de90b"
+    },
+    {
+      "path": "logs/dungeon-doors-pal-v0179.log",
+      "sha256": "12af0deb5bd1945112d0af3278e11984db353e0b14c402c4456fdb636e788d7b"
+    },
+    {
+      "path": "logs/dungeon-doors-v0179.log",
+      "sha256": "12af0deb5bd1945112d0af3278e11984db353e0b14c402c4456fdb636e788d7b"
+    },
+    {
+      "path": "logs/house-persistence-v0179.log",
+      "sha256": "55bc5181bdfb99374396fdd665a6732ca6b8e885ef8581c942deb0220e2c1fb3"
+    },
+    {
+      "path": "logs/house-revisit-v0179.log",
+      "sha256": "3c754abf0bdc5b36d6be7fec69985ea305fd60c2640679f5f4219a0daf49cdee"
+    },
+    {
+      "path": "logs/paid-clock-v0179.log",
+      "sha256": "cad58f32c088581a0d1893a314ae3e8eae81d1ee9eea88f0c6958cafe9854bd9"
+    },
+    {
+      "path": "logs/paid-exit-music-v0179.log",
+      "sha256": "e802e091228a2780a0335c071b8613a6aed1f47c47ff4f363272b8654d76dfaa"
+    },
+    {
+      "path": "logs/paid-gameplay-v0179.log",
+      "sha256": "f64393edd339bfbebe62c82647043a87644be36be006fdf61018be7876e7c96e"
+    },
+    {
+      "path": "logs/save-v0179.log",
+      "sha256": "23ee7ebc22b5d85b6dcc5883128bdbd8894161fc296594dc3d731e31c1eb4759"
+    },
+    {
+      "path": "logs/standard-door-v0179.log",
+      "sha256": "3980ab494047625916d7e09c8989f42793720630f2324e67d09888c9a34f6c58"
+    },
+    {
+      "path": "standard_door_milestone.md",
+      "sha256": "3063216d93d7f71dde72ef120618d245e1d2d5568c6f25cc4d42eb9f262794d8"
+    },
+    {
+      "path": "standard_door_music_diagnostic.json",
+      "sha256": "26d76ba8677a84724865db6ac5dbc6c217b4e146654cfe1dae78b2aa3d60c6d3"
+    },
+    {
+      "path": "standard_door_transitions_report.json",
+      "sha256": "67f12501d2ae9805b61d2cd1907776e81a243cc859f976f420374a8729181948"
+    },
+    {
+      "path": "dungeon_doors_report.json",
+      "sha256": "e7ea8b7721b425434dd2a9b43191668770acdb426669c0e086a03e70a54d170b"
+    },
+    {
+      "path": "dungeon_doors-pal_report.json",
+      "sha256": "1fcf1340042a2367ec926c140538aef7c9d44b87a5df2e2d2ea78da9ce1bdc7a"
+    },
+    {
+      "path": "house_quest_persistence_gameplay_report.json",
+      "sha256": "276c9df411af28be383286b6540c9f1f5edef4460a21709a89424ca7939d83fc"
+    },
+    {
+      "path": "house_quest_revisit_gameplay_report.json",
+      "sha256": "3cabd0c1e6d57c2e0cfb0a9bbe9eb499e2d4d653b46ffbd65857cccd06234823"
+    },
+    {
+      "path": "paid_passage_gameplay_report.json",
+      "sha256": "d57fd99cc6c480c6fca11cd24e6b2b2b493e3eb448ae578ede645c493d3c46df"
+    },
+    {
+      "path": "paid_exit_music_report.json",
+      "sha256": "2c4b34dd154357b33fd0367c9e9aef53f0e2119381d1e73dec891d6938f19e93"
+    },
+    {
+      "path": "paid_passage_native_loading_clock_report.json",
+      "sha256": "d6e94d69aab19d1263478517c5ca24e193c4ba49b8a2df7b9e63e633f4c83520"
+    },
+    {
+      "path": "save_report.json",
+      "sha256": "b601e410b340a45faabcc9599688c23d22fea09a99ecf844edbcc36c7105a756"
+    },
+    {
+      "path": "standard_door_patch_report.json",
+      "sha256": "7399ef3aeed55566ffd9c7296e878ce8a86d64982d6f75bcde5034ba5fca869a"
+    }
+  ]
+}

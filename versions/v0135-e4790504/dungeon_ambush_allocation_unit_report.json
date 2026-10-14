@@ -1,0 +1,14 @@
+{
+  "md_sha256": "e4790504a6f3a165285c2cef9402fee56240c32dfe2b4a9f730f08a19fc6d8ae",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "6142745c52e72fa700e46489e85bb95d7954b1cd2b9b57fd1a5dc4c13ec76a35",
+  "harness_sha256": "a7e9730721e06ed6c6acf48bf751369864c8ac672f896d97b3501c01d68f7c48",
+  "cases": 1965,
+  "all_768_actor_bytes_and_magic_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Three sourceLD A,R sites use explicit register-preserving input shim. Original4FD8/9EA5/57F8/3F07 and magic-drain wrapper execute.",
+    "Six even states, all floor trigger combinations, spawn candidates, aimed octants, pause/bounds and contact magic saturation. State0 requires loader animation0.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

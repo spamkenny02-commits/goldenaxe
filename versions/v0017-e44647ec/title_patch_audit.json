@@ -1,0 +1,72 @@
+{
+  "md_sha256": "e44647ecd41ba63bd5977364009b007648912bc0dad489836317da12fd88a831",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "evidence": [
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "bfdd7dd35a839cfff5532e49fcc65306f61037b51a98c5e288688af15ee5a2bb"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "39a3433413b9c7ad33cde8ddb3041fc846734835c8527d501103537c6156d22d"
+    },
+    {
+      "file": "title_cadence-natural_report.json",
+      "sha256": "1b6874e55b79f24d582d7baf8f6e7afef3d30aa3bfa5154217f74d8d9779311e"
+    },
+    {
+      "file": "title_cadence-pal-natural_report.json",
+      "sha256": "38ab153283ae1d8286220d9f11401d0d05e58e214a59ff89ad9e2dbd36a2e882"
+    },
+    {
+      "file": "intro_report.json",
+      "sha256": "55f343c585c46ebc176dd37e8f80e7521c048c928f259866d8d1f3367e5943be"
+    },
+    {
+      "file": "intro-pal_report.json",
+      "sha256": "7f949bb125af8507d3e5b5f6bd6177ed5aa0b1d3ca0a5b27d5febd6348b4d558"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "26cd3c1d79ceb2b63b9f8eba1021999cb436b3d4db9d49795a5d80af7752de5f"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "d4ede836334f5dab5fee728b702cf793b981b7fe38a24485e45736022dc4badc"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "c42f1e971528fdc7cb123d346b0a52a79d4057a54cd9466c22e918c486c9a69e"
+    },
+    {
+      "file": "service_transition_report.json",
+      "sha256": "c522a4cea1991904ddcb906eb43976423fcbf61574a4c9263ef3fd1d8348855b"
+    },
+    {
+      "file": "title_loading_model_report.json",
+      "sha256": "f6fa8afcf127b03c5a50586b0fbf869999ee290ab683807a0521f2bd8b901d75"
+    }
+  ],
+  "title_cadence_cases": 4,
+  "normalized_pixel_checks": 80,
+  "relative_title_animation_cadence_exact": true,
+  "intro_completion_to_first_cape": [
+    {
+      "region": "auto",
+      "source_frames": 86,
+      "native_frames": 86,
+      "absolute_title_start_offset_frames": 12
+    },
+    {
+      "region": "pal",
+      "source_frames": 79,
+      "native_frames": 79,
+      "absolute_title_start_offset_frames": -6
+    }
+  ],
+  "absolute_title_start_exact": false,
+  "remaining": "Absolute title start retains the preceding intro offset. Resource-loading and title cadence after intro completion match the natural reference in both regions."
+}

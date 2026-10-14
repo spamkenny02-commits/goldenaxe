@@ -1,0 +1,73 @@
+{
+  "md_sha256": "27c56ec87e272f87f6d6bf368e5f34bd9b85264956b87932d74e281df5aa5cf5",
+  "region": "auto",
+  "accepted": [
+    {
+      "type": 58,
+      "terrain": 3,
+      "source_frame": 3103,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 58,
+      "terrain": 25,
+      "source_frame": 3103,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 59,
+      "terrain": 3,
+      "source_frame": 3103,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 59,
+      "terrain": 25,
+      "source_frame": 3103,
+      "native_rng_and_clock_controlled": true
+    }
+  ],
+  "rejected": [
+    {
+      "type": 58,
+      "terrain": 0,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 58,
+      "terrain": 87,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 58,
+      "terrain": 8,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 59,
+      "terrain": 0,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 59,
+      "terrain": 87,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 59,
+      "terrain": 8,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    }
+  ],
+  "original_rng_stream_verified": false,
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "md_sha256": "f1537f6f2f7e51da9821629bc119dd1f645829730453b388c1eea748ea54a387",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "type": 79,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 79,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 80,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 80,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 81,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 81,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 80,
+      "segment": "full-charge",
+      "frames": 144,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 24,
+      "segment": "projectile-0",
+      "frames": 100,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 24,
+      "segment": "projectile-1",
+      "frames": 100,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 24,
+      "segment": "projectile-2",
+      "frames": 100,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 24,
+      "segment": "projectile-3",
+      "frames": 100,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 79,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 79,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 80,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 80,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 81,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 81,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 80,
+      "segment": "full-charge",
+      "frames": 144,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 24,
+      "segment": "projectile-0",
+      "frames": 100,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 24,
+      "segment": "projectile-1",
+      "frames": 100,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 24,
+      "segment": "projectile-2",
+      "frames": 100,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 24,
+      "segment": "projectile-3",
+      "frames": 100,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actor and hero records in initial exterior; native clock explicitly aligned to source at fixture start.",
+    "Production actor loop, animation, walking, full16-segment50 charge and all four18 projectile flights/removal execute unchanged. Charge uses a controlled zero collision map and stops at state4 before random selection. Initial pursuit/shoot random choices are direct-routine checks.",
+    "Natural room loads, original RNG/global clock, complete framebuffer/SAT/audio and hardware timing remain unproved."
+  ]
+}

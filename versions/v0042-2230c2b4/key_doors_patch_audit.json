@@ -1,0 +1,58 @@
+{
+  "md_sha256": "2230c2b4badf9c0086cfcd0fd2ca45cea0e8942a79631252ee24306ddd8409ff",
+  "md_size": 524288,
+  "rom_aliases_exact": true,
+  "additive_checksum_valid": true,
+  "source_key_door_cases": 8192,
+  "persistent_room_reconstruction_cases": 8192,
+  "current_targeted_reports": [
+    {
+      "file": "key_doors_report.json",
+      "sha256": "0e8f3f8afaea57cf150031218f2cc4a2f115e9fd3f5749a3f1823bc241fa8b80"
+    },
+    {
+      "file": "room_cells_report.json",
+      "sha256": "3ebc818fdd332ccbb539411d1a7524b5c30ebb7a41dcabce22f96558d26851d9"
+    },
+    {
+      "file": "dungeon_scroll_report.json",
+      "sha256": "2ed00aecc7415894c0bc1b0cf7435d05c9c90007dc8fb38f6b74282dd6f0be73"
+    },
+    {
+      "file": "dungeon_scroll-pal_report.json",
+      "sha256": "73cd66d35c03a5696b9f814835d6df2bcc0a022700dfcce32fe2f2e2e3248ecc"
+    },
+    {
+      "file": "dungeon_doors_report.json",
+      "sha256": "3fa2f2bad767bc8fe4a84d5962bbd1fbe03212d56f314ed25676f363ae79c169"
+    },
+    {
+      "file": "dungeon_doors-pal_report.json",
+      "sha256": "cdbf961e7f666d9b80fcc453dfae350a6480a5af11f1364cc76bbdfccab1f1eb"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "fd16aad31f687ed70f6e6fe5db8ba2315d3d429d7166639cc0c6c2e310f6c7e8"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "725b732cbb2401c00cb8513067925542b8204d57bfa2191a91214dc9d75c4f08"
+    }
+  ],
+  "source_files": {
+    "tools/validate_key_doors.py": "5b2d2d817f0b4c1a3c676e81d9fbbaea9aad1103c6936b02a063bd2331e30191",
+    "tools/validate_room_cells.py": "29ba0b79dbc4a91d35753623267b98642eecf5b55b03024006297bd51fb97c25",
+    "tools/key_doors_harness.c": "2df9993f7ad7281ca736ccb2da807056238c51ca2a6f87323ff9c528a520f892",
+    "tools/build_key_doors_harness.ps1": "20d7c24957b29fb74804449ffe7a1ef5abce39f6f8c822d7ce57070afc852a80",
+    "tools/audit_key_doors_patch.py": "60a88a8cb156174d39d49a20784dc1cfed4337f00ee3123236828d77be568b81",
+    "megadrive/src/main.c": "d659ba3e641f59d252b887902ff10e02129ecd141bc91da363330e3376f2de9e"
+  },
+  "natural_key_door_gameplay_verified": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled inputs and positions call dispatch directly; live controller integration, repeated contacts and re-entry require verification.",
+    "Isolated SMS IRQ wait 0B95 is bypassed; source dispatch and redraw remain unchanged.",
+    "Native sound waveforms and source redraw latency are not compared.",
+    "Room-clear triggers, other puzzles, remaining enemies, bosses and ending remain incomplete."
+  ]
+}

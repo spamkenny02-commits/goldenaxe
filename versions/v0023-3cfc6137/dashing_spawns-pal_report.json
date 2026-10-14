@@ -1,0 +1,61 @@
+{
+  "md_sha256": "3cfc61378ff64ecf311163707de88b6f309892e864693bcedcf849f1bb0b04b3",
+  "region": "pal",
+  "accepted": [
+    {
+      "type": 60,
+      "terrain": 31,
+      "initial_pose": 0,
+      "source_frame": 3102,
+      "next_state": 2,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 60,
+      "terrain": 31,
+      "initial_pose": 3,
+      "source_frame": 3102,
+      "next_state": 4,
+      "native_rng_and_clock_controlled": true
+    }
+  ],
+  "rejected": [
+    {
+      "type": 60,
+      "terrain": 3,
+      "initial_pose": 0,
+      "source_frame": 3102,
+      "next_state": 0,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 60,
+      "terrain": 25,
+      "initial_pose": 0,
+      "source_frame": 3102,
+      "next_state": 0,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 60,
+      "terrain": 87,
+      "initial_pose": 0,
+      "source_frame": 3102,
+      "next_state": 0,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 60,
+      "terrain": 8,
+      "initial_pose": 0,
+      "source_frame": 3102,
+      "next_state": 0,
+      "native_rng_and_clock_controlled": true
+    }
+  ],
+  "original_rng_stream_verified": false,
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ]
+}

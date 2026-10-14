@@ -1,0 +1,15 @@
+{
+  "md_sha256": "e361feb5e2297f2ed87df884a1928e9b81cf2df8dad77035770183d8554c613a",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "773163266209ff848a943a93c0335f0113de74b615072b5aeebc833a01559bac",
+  "harness_sha256": "e3b93dbbd0fc04109c427115c65a20a9eec432647885d6057c2c20f1b3f0e6ec",
+  "cases": 864,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Six LD A,R sites use explicit register-preserving input shim;04E1 supplies explicit gate byte. Other original4D32/4D38/57F8/5878/4A57 and shared motion instructions execute.",
+    "Four types/states, fixed placements,128 spawn candidates and rejected terrain, selection/bounds, pause transitions,49 firing with a full projectile pool (allocation failure), proximity, jump vector/bounds/terrain and ballistic height.",
+    "State0 uses loader-initialized animation0; stale animation3 enters an unrelated out-of-range movement table and is outside the fixture.",
+    "Original RNG/global clock, natural rooms/routes, complete video/audio and hardware timing remain unproved."
+  ]
+}

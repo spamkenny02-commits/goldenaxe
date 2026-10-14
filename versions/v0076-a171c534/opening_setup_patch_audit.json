@@ -1,0 +1,97 @@
+{
+  "md_sha256": "a171c53496510b0e93fde0518fe517243a8fe55f78e310edf968eee53abd1b3d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": "0x3815",
+  "aliases_verified": true,
+  "exact_v0071_restored_by_reverting_opening_prelude_and_font_location": true,
+  "source_files": {
+    "megadrive/src/main.c": "94e3d0b8102d2b63a514c8bcc08935bb85861f9fdc766b45eda03d93b0f0fdfb",
+    "tools/profile_opening_setup.py": "46bb2edd657389b7fb8f8f6e1ef0678a19f4cd733fe09d0bdf978c1c39a27c33",
+    "tools/validate_opening_setup.py": "68e453f66ec749a484a8d9b8a96735ba1d4e9c4964bf95c32489e5967709b9c7",
+    "tools/profile_world_clock.py": "f6b9d2c9014a10664da90c42d9ae2f58e76b93bf998f3c32e39d2f73f8eaf5a6",
+    "tools/audit_opening_setup_patch.py": "c00d8bbac8be9fb6d462977cc4e02339307360442fea1fa5875895c42b238d54",
+    "analysis/opening-setup-baseline-v0071/main.c": "f6a87d2e1faacd96df0d6c6a49832a1f61469a4f24356fcfa9a12cc867381274"
+  },
+  "unchanged_production_assets": {
+    "megadrive/src/healer.inc": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0",
+    "megadrive/src/dialogue_packed_pixels.inc": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84",
+    "megadrive/src/actors.c": "e3606b96a00c4a4f13f075816b4a73ae5a23ad159c21cdd289b6c01ec24e0b21",
+    "megadrive/src/actors.h": "d293c8626dd382a0f9e871b32ac89052da596e42294b1a35bcdc6356aa6d9541",
+    "megadrive/src/actor_data.c": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4",
+    "megadrive/src/doors_data.c": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8",
+    "megadrive/src/healer_data.c": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6",
+    "megadrive/src/intro.inc": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15",
+    "megadrive/src/intro_data.c": "87d7d6d66c54f578c47b44a719e7123221ba278562c29de8afdb2619eda9a4f1",
+    "megadrive/src/inventory_data.c": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c",
+    "megadrive/src/item_rewards.inc": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c",
+    "megadrive/src/item_rewards_data.c": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6",
+    "megadrive/src/key_redraw_cost.inc": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37",
+    "megadrive/src/menu_data.c": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251",
+    "megadrive/src/merchant.inc": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca",
+    "megadrive/src/merchant_data.c": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14",
+    "megadrive/src/rom_header.c": "4b041cca1ae1488a577b0b3c98490c1c45d5609f6e429212c2d5a0ea2df12cd1",
+    "megadrive/src/room_clear.inc": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab",
+    "megadrive/src/room_contact.inc": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134",
+    "megadrive/src/room_portals.inc": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b",
+    "megadrive/src/room_puzzles.inc": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee",
+    "megadrive/src/save.inc": "f4817eebbd8836f0f9f44adf4f1611fc83b789f5e2653634cc6ce95afa174bc3",
+    "megadrive/src/save_data.c": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680",
+    "megadrive/src/sound.inc": "0b08bcb0b51605cd91fbc3512ff5173ec3e14bfaeebc69ee9e2ed24f66c294ca",
+    "megadrive/src/title_data.c": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a",
+    "megadrive/src/world_data.c": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787",
+    "megadrive/src/dungeon_animation_data.c": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+  },
+  "reports": [
+    {
+      "file": "opening_setup_report.json",
+      "sha256": "ea365b6de9efcd1132e60bc183f1ec7292ce0e0556e227cae4b73d00f67905ea"
+    },
+    {
+      "file": "opening_setup_profile.json",
+      "sha256": "e26f69bd7063bb05f3273004cb986baf93c7b65cc4cf21ae6f1c3c44fd44353d"
+    },
+    {
+      "file": "opening_setup-pal_profile.json",
+      "sha256": "a84ed73cc4a78cba839a5d25a5345440394d181f70166573b0dcf55b9a34dd89"
+    },
+    {
+      "file": "dialogue_scroll_report.json",
+      "sha256": "2eda9b6f28f91558cc3ab879cae67fe2cdba3fd4fc44723aa61cf245c4c0c925"
+    },
+    {
+      "file": "final_dialogue_report.json",
+      "sha256": "ef00a1042edae3c43a9cf66cde8bca497b98d2cdd847d80434fe71df751d285a"
+    },
+    {
+      "file": "house_dialogue_report.json",
+      "sha256": "113c0da25edcaa66637e7833cd6e538e4a53ffb25b4cecb755eab95ac1655488"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "831f2836cc62d06b3b44cbafbbdff699db8fb70e054163e85a45faa6cc8075fa"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "cec041a5d37e315a933c568a9792832a2d71a2adaa42d512f11f14d8280c259a"
+    },
+    {
+      "file": "world_clock_profile.json",
+      "sha256": "fb07b0cdf073e2bdcf0319304211e8b81e590d183e66bca25e5423d3f09cd435"
+    },
+    {
+      "file": "world_clock-pal_profile.json",
+      "sha256": "eb82881b32616062150cc796e726b03ab0f5150c9fb8567874bd4300c9b03c51"
+    },
+    {
+      "file": "opening_latency_v0076.json",
+      "sha256": "be1e841e94ca04a9322ff22421bd938c406eb579941a45cc950e378c192198df"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Palette 31 still has global-clock phase differences.",
+    "First page and initial-room timing, whole-dialogue pixels and audio fidelity remain unproven or different.",
+    "Merchant, save and free-night checks were not rerun; evidence remains v0070.",
+    "Natural complete progression, all abilities, quests, full enemy/boss behavior and ending remain unfinished."
+  ]
+}

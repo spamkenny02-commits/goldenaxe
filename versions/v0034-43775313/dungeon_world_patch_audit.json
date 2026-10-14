@@ -1,0 +1,60 @@
+{
+  "md_sha256": "43775313034361956b0446f9709bfbdbcaab0d9980fd50e4174536f2283714df",
+  "md_size": 524288,
+  "room_index_entries": 512,
+  "compiled_room_stream_bytes": 48344,
+  "rom_aliases_exact": true,
+  "additive_checksum_valid": true,
+  "current_targeted_reports": [
+    {
+      "file": "dungeon_world_assets_report.json",
+      "sha256": "3825d916ea2a9686c75e676d8fe9642b8e80615d2f59c8756b5a17c4fd349e97"
+    },
+    {
+      "file": "world_loader_harness_report.json",
+      "sha256": "650cc4137ede412d995f08687ff1206927bbac4a3c0009c0e6ae0b78866c3795"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "24b79948dcb8b6f0e4e99a973065b9a94697baea6aeb420ef727aea7bedf3479"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "2471cb36dbc983953a1836a52806d8a1f3062f74386a27c71ee0d3bc7260557e"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "2eb5da122886e56db3a3e72d76e768eaa44236bb65e49b36e78498d5109e7bdd"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "7f8f993eb272c8c85b9388d1d4498c51da02003d70a881482961fa9cea1ef6c5"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "dbf0499a30ab77b1805015caf1a722b43a5546671a0a44ed82a70d965177bfe4"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "8db7ff3a0abebaf6a77fc9e9fa340ad509386abc0f99d043c0500797521ad1d0"
+    },
+    {
+      "file": "intro_report.json",
+      "sha256": "9e5e5c8a30f237461ab727d75a1563017386b042ec40f6689134f339ed03169d"
+    },
+    {
+      "file": "intro-pal_report.json",
+      "sha256": "1f71732415a273f315f797a94a033d0a268777fdb7d238888476513f8df97dc0"
+    }
+  ],
+  "source_z80_maps_verified": 512,
+  "native_68000_base_room_loads_verified": 512,
+  "full_game_ported": false,
+  "natural_dungeon_entry_verified": false,
+  "limits": [
+    "Class-2 resources and native loader are exercised in a separate harness.",
+    "The production cartridge contains all map streams; unreachable class-2 graphics may be removed by LTO until entrance integration.",
+    "Door conditions, quest-dependent cell edits, dungeon scrolling, puzzles, bosses and natural dungeon progression remain incomplete.",
+    "Source animation initializes 576 bytes; the uninitialized remainder of its 1024-byte scratch copy is not invented."
+  ]
+}

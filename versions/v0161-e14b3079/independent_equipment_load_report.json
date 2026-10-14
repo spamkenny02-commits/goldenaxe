@@ -1,0 +1,65 @@
+{
+  "md_sha256": "e14b30794aa5b1b872628f05f48c50dc0a73c7a31eed74065b02fd00f3c64655",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "basic": 1,
+      "armor": 2,
+      "curse": 1,
+      "loaded_equipment_curse_attack_defense_and_inventory_frames_exact": 21,
+      "sram_payload_sha256": "ce7829b01189abbed8157b4ddb02b1fd8d69f1354273c7748d4323a1bf556207",
+      "normal_cold_Continue": true
+    },
+    {
+      "region": "auto",
+      "basic": 3,
+      "armor": 1,
+      "curse": 0,
+      "loaded_equipment_curse_attack_defense_and_inventory_frames_exact": 21,
+      "sram_payload_sha256": "96c512de06594e0a6000c1cf8ee76f875bba592cc308877954bdfe6db31d6aab",
+      "normal_cold_Continue": true
+    },
+    {
+      "region": "auto",
+      "basic": 2,
+      "armor": 3,
+      "curse": 1,
+      "loaded_equipment_curse_attack_defense_and_inventory_frames_exact": 21,
+      "sram_payload_sha256": "50ce2dc0ecb7a52bce10ab8835ffde11dc7a00c2b74f3477df8b7e7a86799f94",
+      "normal_cold_Continue": true
+    },
+    {
+      "region": "pal",
+      "basic": 1,
+      "armor": 2,
+      "curse": 1,
+      "loaded_equipment_curse_attack_defense_and_inventory_frames_exact": 21,
+      "sram_payload_sha256": "ce7829b01189abbed8157b4ddb02b1fd8d69f1354273c7748d4323a1bf556207",
+      "normal_cold_Continue": true
+    },
+    {
+      "region": "pal",
+      "basic": 3,
+      "armor": 1,
+      "curse": 0,
+      "loaded_equipment_curse_attack_defense_and_inventory_frames_exact": 21,
+      "sram_payload_sha256": "96c512de06594e0a6000c1cf8ee76f875bba592cc308877954bdfe6db31d6aab",
+      "normal_cold_Continue": true
+    },
+    {
+      "region": "pal",
+      "basic": 2,
+      "armor": 3,
+      "curse": 1,
+      "loaded_equipment_curse_attack_defense_and_inventory_frames_exact": 21,
+      "sram_payload_sha256": "50ce2dc0ecb7a52bce10ab8835ffde11dc7a00c2b74f3477df8b7e7a86799f94",
+      "normal_cold_Continue": true
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Identical logical592-byte existing valid save payloads with controlled primary/armor/curse/selected fields. Normal cold-boot Continue reads real native/source SRAM.",
+    "Checks126 loaded frames across six cases, including attack strength and curse-dependent defense. This does not test natural quest-to-save writing or all progression fields."
+  ]
+}

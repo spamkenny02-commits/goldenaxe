@@ -1,0 +1,144 @@
+{
+  "md_sha256": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "type": 91,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 30,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 91,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 32,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 91,
+      "segment": "capture-steal",
+      "frames": 65,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 65,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 91,
+      "segment": "empty-wallet",
+      "frames": 33,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 33,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 91,
+      "segment": "held-direction",
+      "frames": 33,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 33,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 91,
+      "segment": "six-press-escape",
+      "frames": 31,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 31,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 91,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 30,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 91,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 32,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 91,
+      "segment": "capture-steal",
+      "frames": 65,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 65,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 91,
+      "segment": "empty-wallet",
+      "frames": 33,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 33,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 91,
+      "segment": "held-direction",
+      "frames": 33,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 33,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 91,
+      "segment": "six-press-escape",
+      "frames": 31,
+      "all_768_actor_bytes_and_hero_state_gold_xy_sound_exact_except_escape_random_actor_fields": true,
+      "actual_gold_hud_tiles_exact_each_frame": 31,
+      "clock_adjustments": [
+        174
+      ]
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actor and hero records in initial exterior; native clock explicitly aligned to source at fixture start.",
+    "Production actor loop, hero12 immobilization, capture-to-attachment same-frame fallthrough,65-frame capture/gold drain, empty funds, held direction counting once and six distinct directional press escape. Actual gold HUD tiles compare each frame, along with queued95/effect state. Controlled zero collision map. Escape tick chooses a new random actor direction: only its hero side effects and restored actor state/descriptor/counters compare; prior frames compare all768 actor bytes.",
+    "Natural room loads, original RNG/global clock, complete framebuffer/SAT/audio and hardware timing remain unproved."
+  ]
+}

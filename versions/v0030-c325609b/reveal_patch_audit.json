@@ -1,0 +1,61 @@
+{
+  "md_sha256": "c325609b47f43b324624a254be204fd89f59856ace4b2460f4e588f06f05cea1",
+  "rom_bytes": 524288,
+  "aliases_equal": true,
+  "additive_checksum_valid": true,
+  "evidence": [
+    {
+      "file": "analysis/intro_reveal_profile.json",
+      "sha256": "d6edc917a188bb24024a37650da76fade624e469a82a5553d4cd08e0176e326c"
+    },
+    {
+      "file": "validation/intro_report.json",
+      "sha256": "449d9afd3b725d9cccce86425b419a1a8ff86e4c142a42c77defa521411543b3"
+    },
+    {
+      "file": "validation/intro-pal_report.json",
+      "sha256": "af1b4d825c46f4385bbf57dec38c3decf2fb4b89b34aff2148f1c24ca3050b67"
+    },
+    {
+      "file": "validation/title_cadence_report.json",
+      "sha256": "560e96eaf15d6c456533c97edc7259564a35dd43484f37537ffd80ab2c63bd9a"
+    },
+    {
+      "file": "validation/title_cadence-pal_report.json",
+      "sha256": "9a670b67b00cd135b50f02d9b56255729af06a493421fdea156b01405837ffd9"
+    },
+    {
+      "file": "validation/title_cadence-natural_report.json",
+      "sha256": "9a182ae5138703a2ca9824ad67bd63b699fed60396a3e60ad395a8b959875f02"
+    },
+    {
+      "file": "validation/title_cadence-pal-natural_report.json",
+      "sha256": "cf4fd3b1e3bbd3716cbf46e0208de31c1e17fc92d31f028ef8a6eaffa3715871"
+    },
+    {
+      "file": "validation/scroll_objects_report.json",
+      "sha256": "f3f35bdbed155376ada4d4aa0a1a63436c6a4a5cb7dd55c3ff0770cf62d7e375"
+    },
+    {
+      "file": "validation/scroll_objects-pal_report.json",
+      "sha256": "70377ece3a1726509aeb625fc80d98080dddda448160fa69608ad53997f18f26"
+    },
+    {
+      "file": "validation/timing_report.json",
+      "sha256": "9b9444b563edfc3f13f01d3ae25d67e2c5c04193f401f7269f9a05befa725a4f"
+    },
+    {
+      "file": "validation/timing-pal_report.json",
+      "sha256": "6c16a8efa90f037daacb04a2788c1fb915c294fb7dc705bb5633d7e4a2f4c12b"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/intro.inc": "23f08353b0a8c32c33a50c928eb7c10c6e8ac067aeac2ba760bd2d2acd4cef64",
+    "tools/profile_intro_reveal.py": "52e034fd4d64d6bb288c3ef7b4e548c886507661fbe16b687d158e7960042425"
+  },
+  "first_scene_reveal_cadence_verified": true,
+  "partial_frame_patterns_exact": false,
+  "absolute_intro_timing_exact": false,
+  "other_scene_reveal_cadence_verified": false,
+  "full_game_ported": false
+}

@@ -1,0 +1,37 @@
+{
+  "md_sha256": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "type": 8,
+      "steps": 40
+    },
+    {
+      "type": 9,
+      "steps": 40
+    },
+    {
+      "type": 10,
+      "steps": 40
+    },
+    {
+      "type": 11,
+      "steps": 40
+    },
+    {
+      "type": 12,
+      "steps": 40
+    },
+    {
+      "type": 13,
+      "steps": 40
+    }
+  ],
+  "normalized_images_exact": 228,
+  "pickup_frames_exact": 240,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled six loot pickup/freeze fixtures verify336 loot bytes,768 actor bytes, gold/HP/magic/style and228 normalized images.",
+    "Legacy full expiry visual validator is not included in this pickup-only report: its inherited3985 image gap is separately diagnosed againstv0141."
+  ]
+}

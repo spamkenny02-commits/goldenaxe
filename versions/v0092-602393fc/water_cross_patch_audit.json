@@ -1,0 +1,62 @@
+{
+  "md_sha256": "602393fc12173ab1670fbcbc1b58ce4596a6129291437524540118b82d1752f3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_bytes": 1048576,
+  "checksum": "0xb892",
+  "only_declared_pose_preparation_and_transition_changes_from_v0089": true,
+  "source_files": {
+    "megadrive/src/main.c": "01904c312a33b1569e2b3638323fe66ae19bda2d597a20305593d8fb7459504b",
+    "tools/profile_water_cross.py": "8231707990656a728d0a190f60b7461371f9ef9455a926c01c399fdba78db0a3",
+    "tools/validate_water_cross_pose.py": "e7e4d20e40886cf4bbbe2013a1d49345ac3fbf9e523d9bc703e4ec867259191b",
+    "tools/audit_water_cross_patch.py": "d7e5f023c6faf1c939d6d62ba25fe921a4d41a0ec3a73f459622aec43b78eb67",
+    "analysis/water-cross-baseline-v0089/main.c": "c8737613bae1fafe540cf7bf47acf56b6a47082f8c9829b7efb88f8d8063a7e5",
+    "analysis/water-cross-baseline-v0089/water_cross_diagnostic.json": "98a791a2c64db640846715d480766a9b54c5539011a36bab700cce101c9e54d8",
+    "analysis/water_cross_source_timing.json": "3c41144720bc28b39dd9ec89e49e27b91199a0645b6e5413239f360a7d035dd2",
+    "analysis/water_cross_pose_milestone.md": "224c1407ac62a7800fdc0e91e50ca48bc6584dcbb8155a4edb99a84fb4b07705"
+  },
+  "reports": [
+    {
+      "file": "water_cross_pose_report.json",
+      "sha256": "bb4bb23cda7be67da007fd2423b157c044b100e725718852d2564d911a63d711"
+    },
+    {
+      "file": "water_cross_all_diagnostic.json",
+      "sha256": "3f20b29fb0f302e13680fe734574c913ffea86d5094636d25fc8fae62f76c3d3"
+    },
+    {
+      "file": "thrown_axe_report.json",
+      "sha256": "b939be3c609e2f343ce81f0abd431538a08dccdf50f5a0210803ee69dc550fc4"
+    },
+    {
+      "file": "thrown_axe_walk_report.json",
+      "sha256": "3192f438c4b4424ca4eec1956b554e8f183dae7ea3092e1a4b3b92476a32dd36"
+    },
+    {
+      "file": "thrown_axe_walk_fast_report.json",
+      "sha256": "3ae989a8479936a820f986d4ba047bfbabd10848ed24e69477454e6e162fe403"
+    },
+    {
+      "file": "second_spell_report.json",
+      "sha256": "c3063f10819e2de3ff6902ee7604b42980dc83e5d763e327402c3d811fd3ebb0"
+    },
+    {
+      "file": "second_spell_fire_regression_report.json",
+      "sha256": "7847bcde00caaae6474eaa18b22324eabbfc0d76fd810a88fd1ab755d09ba01e"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "ded12d8c2fd99c41808211edc2d1f756c558cd8737cf26b84d7b6c0d820f3bc7"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "1577420fde476e41c4d918cd63124d091a4c3839afda2da84d3dcf7cbee4900a"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Six controlled down/left/right pose cases pass; both up cases still have timing/pose errors. No complete transition equivalence claimed.",
+    "Mutable-cell publication is one frame early NTSC and software-map staging differs. Source instruction timing has been profiled but full CPU/VDP transfer timing is incomplete.",
+    "Only four hero sprites verified during the six passing transitions; enemy sprites after arrival, framebuffer and audio remain unverified.",
+    "Natural water routes/acquisition/combat, other abilities, full enemies/bosses, quests, ending and complete playthrough remain unfinished."
+  ]
+}

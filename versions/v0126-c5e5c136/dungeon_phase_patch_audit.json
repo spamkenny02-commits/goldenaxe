@@ -1,0 +1,22 @@
+{
+  "md_sha256": "c5e5c13640de02fda61fb10f16c5857f4265f679b109b78a1ada95cc94bb9755",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 18574,
+  "aliases_and_header_verified": true,
+  "production_change_since_v0125": "Publish type14 aimed projectile collision descriptor in current frame, as original0940 does; all other actor source and all main source bytes unchanged.",
+  "prior_scope_audit_sha256": "8c519b6f3dd11c422f66df36569b27708f987f5dcac4af7d66191ba9b6b32509",
+  "source_files": {
+    "megadrive\\src\\main.c": "ad73c1956ec480f832dd6c268709f5ad79c753d76e31d48ac8231487631f4329",
+    "megadrive\\src\\actors.c": "763dc27141a8191e685fe63b0534d6d8508acaac10c5f9991c075e72a133b8bb",
+    "tools\\validate_dungeon_phase.py": "60f849fa0ad4ec61dce07972a6c7729fc287519a1665645f518db7bb21c8fc65",
+    "tools\\validate_dungeon_phase_gameplay.py": "676586cef33d43f0d3042dd88727946322c0b8303bfa46b4b4b16af1555862ae",
+    "tools\\validate_dungeon_proximity_entry.py": "de5ba4dfb3b2613ae0a89474f10b8543a8dac8de8a35a7dc26a5110bca453b03"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Controlled segments use explicit initial clock alignment and stop before random choices.",
+    "Actual112 entry compares first46 record, resource pixels and its SAT; random44/45 neighbors excluded.",
+    "Original RNG/global clock, full natural dungeon combat/progression and remaining25 actor types are unfinished."
+  ]
+}

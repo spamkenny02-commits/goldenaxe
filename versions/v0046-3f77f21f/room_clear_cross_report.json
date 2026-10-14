@@ -1,0 +1,90 @@
+{
+  "md_sha256": "3f77f21ff2e22586e66e109201750b237058e9347b9cca84999a3710410d4573",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "region": "auto",
+  "cases": [
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": true,
+      "room": 381,
+      "initial_counter": 1,
+      "particle": true,
+      "expected_passage_flags": 32,
+      "timing": {
+        "sms": {
+          "opening": 3404,
+          "particle_gone": 3404,
+          "reached": 3465,
+          "returned": 3611
+        },
+        "md": {
+          "opening": 3404,
+          "particle_gone": 3404,
+          "reached": 3460,
+          "returned": 3611
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    },
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": true,
+      "room": 284,
+      "initial_counter": 1,
+      "particle": true,
+      "expected_passage_flags": 64,
+      "timing": {
+        "sms": {
+          "opening": 3404,
+          "particle_gone": 3404,
+          "reached": 3470,
+          "returned": 3604
+        },
+        "md": {
+          "opening": 3404,
+          "particle_gone": 3404,
+          "reached": 3470,
+          "returned": 3604
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    },
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": true,
+      "room": 337,
+      "initial_counter": 1,
+      "particle": true,
+      "expected_passage_flags": 128,
+      "timing": {
+        "sms": {
+          "opening": 3404,
+          "particle_gone": 3404,
+          "reached": 3488,
+          "returned": 3603
+        },
+        "md": {
+          "opening": 3404,
+          "particle_gone": 3404,
+          "reached": 3487,
+          "returned": 3603
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    }
+  ],
+  "production_cartridges_unmodified": true,
+  "final_particle_runs_in_live_game_loop": true,
+  "limits": [
+    "Room, hero, actor animation, counter and dungeon animation scan/phase initialized by RAM fixture; defeating every enemy naturally is not verified.",
+    "Cross/return cases set the original hurt guard to FF to isolate passage persistence from enemy attacks.",
+    "Animation phases after returning can differ because room loading resumes on different frames; differences are recorded, not treated as exact.",
+    "Absolute redraw latency, audio waveforms, unrelated script prefixes and full dungeon progression remain unverified."
+  ]
+}

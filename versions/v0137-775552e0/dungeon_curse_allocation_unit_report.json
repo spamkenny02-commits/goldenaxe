@@ -1,0 +1,14 @@
+{
+  "md_sha256": "775552e0c69285001d9763e3c584f26417fb00e36e6dc0471ab63a5c3427973d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "cebea16d0735bb485a5b056cb6ad92d4fa23099b5077c16eb539c8fa7d93994e",
+  "harness_sha256": "103db8a53a0555805f0f9def2fda63c010cb40bdeee80fcb0454f3c2bb837700",
+  "cases": 1176,
+  "all_768_actor_bytes_curse_defense_palette_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Four sourceLD A,R sites use explicit register-preserving input shim. Original4FF3/9F81/57F8/4859/48F3/4A15 and curse wrapper execute. Original2C8D is stopped by a RET at2CA6; original1DF6 executes for palette.",
+    "Six even states; bounds/pursuit/terrain and contact, prior status0/1/255. All armor/shield1..3 and eight clock phases verify original defense and palette. State0 requires loader animation0.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

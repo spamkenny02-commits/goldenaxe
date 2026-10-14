@@ -1,0 +1,76 @@
+{
+  "md_sha256": "d8f2dc050dd1b46f59370599da09c40f444908040bb5a0dcb287f7e89e752ffd",
+  "md_size": 524288,
+  "compiled_exterior_metadata_records": 111,
+  "compiled_dungeon_metadata_records": 73,
+  "original_z80_room_flag_cases_verified": 8192,
+  "transformation_types_verified": 21,
+  "rom_aliases_exact": true,
+  "additive_checksum_valid": true,
+  "current_targeted_reports": [
+    {
+      "file": "room_cells_report.json",
+      "sha256": "6578c02a9196cd81ffc077107d931ae76a149099fa17ea2a38b931c713344074"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "2f13fdf8c9e5f1b90ac066dc602b3f4d17ab263d16913cde9ff0714f56c4e539"
+    },
+    {
+      "file": "dungeon_scroll_report.json",
+      "sha256": "c5126e5379a1cd3a0557d8770dcab5bbcf1e44701d4b1f04d24be1277205c89d"
+    },
+    {
+      "file": "dungeon_scroll-pal_report.json",
+      "sha256": "9d8a5b02c0e451dab477b1bc30654ccc96618b50d798123db7133dbb1f2df14e"
+    },
+    {
+      "file": "dungeon_doors_report.json",
+      "sha256": "5e16ad56d7c7b45e28e1150d7b392ccc3b474332eb3925e55af3e98405910c2f"
+    },
+    {
+      "file": "dungeon_doors-pal_report.json",
+      "sha256": "6f1ed35eb4c2e46f3603e3e356f72fe0bdff4ad90fe238d2e6aa38b6d3ef581a"
+    },
+    {
+      "file": "dungeon_continue_report.json",
+      "sha256": "5da92fcda7b0614fcc54ab21b549440c169aad540ae8a732a688cb90321355d6"
+    },
+    {
+      "file": "dungeon_continue-pal_report.json",
+      "sha256": "4f23809d26c1f259f548fc38892483381f074727477a625177910e418492fdad"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "b732ba4c9eb8552c098e3e6215fa776ab6041da59c20cf4266b026b84227475a"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "b92d77c3fc6a40547ba8f6bdd75c762b64b2edeee81ba9ad0d62ea781b498300"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "d0afe3e43a1495c37ea0e8319467adc5b164e9a639ceaf683ba264765b0b9d9f"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "e9e71d3dc231f4fd06f4353ab765542afa36b1f801d83ce4188bdc6dd779e33f"
+    }
+  ],
+  "source_files": {
+    "tools/extract_world.py": "8575d37d77453328ed48d161ff4ab730ea03f8ffcd8ddd5d8d6956a737baa607",
+    "tools/validate_room_cells.py": "12e52b67d65f4237ba44f448fef1f1d28984d6ccb3e7658936c382e9eddd624d",
+    "tools/room_cells_harness.c": "97584c50c017aa9651f6793cdf11edeadd995d8b44870bd827a373e2b3abacf7",
+    "tools/build_room_cells_harness.ps1": "572a86a7cf6b5c31c7ead701949ed3248ae6a4d38c4fe7b353a5670c6576db4f",
+    "tools/audit_room_cells_patch.py": "ecae10331f15f550800d071f437976e309b53133cd06e436e4fc3d3ebc3ba902",
+    "megadrive/src/main.c": "12e298a5818c063d7f3003d7eaafde234ce3f2f54d88e800711c36ff708e8456"
+  },
+  "full_game_ported": false,
+  "natural_puzzle_activation_verified": false,
+  "limits": [
+    "Persistent flags are supplied by fixtures; puzzle triggers and key consumption remain to port.",
+    "Out-of-playfield scratch/queue writes are excluded from the 160-cell reconstruction comparison.",
+    "Exterior quest/portal processing after 1976, remaining enemies, bosses and ending remain incomplete.",
+    "Dungeon transition timing, lantern activation and full tile animation remain incomplete."
+  ]
+}

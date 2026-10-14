@@ -1,0 +1,1230 @@
+{
+  "md_sha256": "d018ed93a4d25c99fa258d474b70fd36bbd853da13957a451232ef67e2680af4",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 0,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4255,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4249,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4308,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4255,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\1a-00\\auto-profiles.json",
+      "raw_profiles_sha256": "5a46571b9f2b785d99a28de50e0c02d25e7a78a6371f4776a33c9b4c62f470c0"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 0,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4252,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4246,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4305,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4252,
+      "native_fade_frame": 4246,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\1a-00\\pal-profiles.json",
+      "raw_profiles_sha256": "6e7798b691ae9c13f002ba8a6fb8dce6c22198cefef16d659ecdc8743dea6dc7"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 255,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4256,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4249,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4309,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4256,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\1a-ff\\auto-profiles.json",
+      "raw_profiles_sha256": "1a08844304d0f941a251ad02140c47d06e83630c880bb7bd2afb77d8893a3de9"
+    },
+    {
+      "town": 26,
+      "target": 60,
+      "mask": 255,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4253,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4246,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4305,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4253,
+      "native_fade_frame": 4247,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\1a-ff\\pal-profiles.json",
+      "raw_profiles_sha256": "4facef09394484f9a9fee96a614235d914334de4a5df058bff7723fc1f4ba3bc"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 0,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4255,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4249,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4308,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4255,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\36-00\\auto-profiles.json",
+      "raw_profiles_sha256": "35c48b8803b3cb39cc7726e2ff1f6f1f12b3f954a838f0c1bff61395e272a0c4"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 0,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4252,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4246,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4305,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4252,
+      "native_fade_frame": 4246,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\36-00\\pal-profiles.json",
+      "raw_profiles_sha256": "24308e96eaf2e7d5e833ead9a0e8777237068d60fce1564065df261d62e99f19"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 255,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4286,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4250,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4339,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4286,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\36-ff\\auto-profiles.json",
+      "raw_profiles_sha256": "0b66003a9e3e539e5390b271856499aff1fa5c8115b618fde0d7491da2329ce6"
+    },
+    {
+      "town": 54,
+      "target": 135,
+      "mask": 255,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4278,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4247,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4331,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4278,
+      "native_fade_frame": 4247,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\36-ff\\pal-profiles.json",
+      "raw_profiles_sha256": "699e77032948ce46b48d95523642d0f53ceb59ce7bbabbe76ab1a8b26419e622"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 0,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4255,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4249,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4308,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4255,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\6d-00\\auto-profiles.json",
+      "raw_profiles_sha256": "4d61259d7dd1cd58be6fe39b51f0f88a9d6a6bbe9f8a1100b993249a5fda03c0"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 0,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4252,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4246,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4305,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4252,
+      "native_fade_frame": 4246,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\6d-00\\pal-profiles.json",
+      "raw_profiles_sha256": "607fe5ab03d151ac761d01c2d2bd950972f44e718ec4d12f9e20638e9f2c6ea7"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 255,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4281,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4250,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4335,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": [
+          {
+            "frame": 4629,
+            "command": 176
+          },
+          {
+            "frame": 4645,
+            "command": 135
+          }
+        ]
+      },
+      "source_reveal_frame": 4281,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\6d-ff\\auto-profiles.json",
+      "raw_profiles_sha256": "df6511695f0dd33c34a6aec7bc689a2a30cadb573ce294d81bdc2e421310f8aa"
+    },
+    {
+      "town": 109,
+      "target": 150,
+      "mask": 255,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4274,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4247,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4327,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": [
+          {
+            "frame": 4680,
+            "command": 176
+          },
+          {
+            "frame": 4693,
+            "command": 135
+          }
+        ]
+      },
+      "source_reveal_frame": 4274,
+      "native_fade_frame": 4247,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\6d-ff\\pal-profiles.json",
+      "raw_profiles_sha256": "fe2033af4085c72c99d17dd44cda39fd64d4a627a9852e995b254e5dfeff017d"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 0,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4255,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4249,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4308,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4255,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\3c-00\\auto-profiles.json",
+      "raw_profiles_sha256": "ceaf4a61c65aaa2d5568ab79eed1f3f8b51fe5a3365d27c2a77543b5646de0b0"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 0,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4252,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4246,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4305,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4252,
+      "native_fade_frame": 4246,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\3c-00\\pal-profiles.json",
+      "raw_profiles_sha256": "a4819b29c9a5ab45c91381f74f01e858301c8d01854ccbca4047cf5e3b69366f"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 255,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4270,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4250,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4323,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4270,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\3c-ff\\auto-profiles.json",
+      "raw_profiles_sha256": "2f6b20ee4be684cf5288989c1d1f5a9bc67aa90e6e33507b0a8b7d756142c328"
+    },
+    {
+      "town": 60,
+      "target": 26,
+      "mask": 255,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4264,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4247,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4317,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4264,
+      "native_fade_frame": 4247,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\3c-ff\\pal-profiles.json",
+      "raw_profiles_sha256": "77b656f9837330af1a6f2fcce59acf348d56b354338865cbb4feeb1df5678acf"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 0,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4255,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4249,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4308,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4255,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\87-00\\auto-profiles.json",
+      "raw_profiles_sha256": "0b351ea381d73337157cdcf7180cf98d0afe49be6ee3303fa99e27341d3155ad"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 0,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4252,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4246,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4305,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4252,
+      "native_fade_frame": 4246,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\87-00\\pal-profiles.json",
+      "raw_profiles_sha256": "18619657a57220fa527056a2c0d5f297fafcf19cce42f8b33d8f65377b86149b"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 255,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4264,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4249,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4317,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4264,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\87-ff\\auto-profiles.json",
+      "raw_profiles_sha256": "a30208772ee758646ca93efc4db9cd4e0b7d94a7aa5101dd4dcded16ccb2500f"
+    },
+    {
+      "town": 135,
+      "target": 54,
+      "mask": 255,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4260,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4246,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4312,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4260,
+      "native_fade_frame": 4247,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\87-ff\\pal-profiles.json",
+      "raw_profiles_sha256": "5f36a344e59fdf1d06db7d8703e7d14c67b9bed4bf57db13f2222669ddf0a989"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 0,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4255,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4249,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4308,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4255,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\96-00\\auto-profiles.json",
+      "raw_profiles_sha256": "5644b4340538c1bb85cbb443dd51e279bdcb44c33adb9c851fd9317184ec9a98"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 0,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4252,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4246,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4305,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4252,
+      "native_fade_frame": 4246,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\96-00\\pal-profiles.json",
+      "raw_profiles_sha256": "30ea5464fe8352e28dc4263578eda6267ea7e03748739d789d8bfc5ab3f3d001"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 255,
+      "region": "auto",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4260,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4250,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4313,
+        "md": 4301
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4260,
+      "native_fade_frame": 4250,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\96-ff\\auto-profiles.json",
+      "raw_profiles_sha256": "6151579ea4f3cb0448530557aa6f008085a13fde8a514e2dab01f6492e52e060"
+    },
+    {
+      "town": 150,
+      "target": 109,
+      "mask": 255,
+      "region": "pal",
+      "command_sequences": {
+        "sms": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4256,
+            "command": 130
+          }
+        ],
+        "md": [
+          {
+            "frame": 4200,
+            "command": 135
+          },
+          {
+            "frame": 4232,
+            "command": 176
+          },
+          {
+            "frame": 4247,
+            "command": 130
+          }
+        ]
+      },
+      "first_destination_idle_frame": {
+        "sms": 4309,
+        "md": 4298
+      },
+      "later_uncontrolled_music_commands": {
+        "sms": [],
+        "md": []
+      },
+      "source_reveal_frame": 4256,
+      "native_fade_frame": 4247,
+      "fade_command_dispatched_both": true,
+      "world_music_before_reveal_both": true,
+      "raw_profiles_path": "validation\\paid-exit-music\\96-ff\\pal-profiles.json",
+      "raw_profiles_sha256": "bdd9ab670bd80bb019f85cd8cfb2842b26a5ac75997ff6d30fda7d9c681bf9c7"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Actual unpatched source/native paid exits,six routes,empty/full destination masks,PAL/NTSC. Door/hero/initial clock/pre-entry masks controlled;no audio request,state or per-choice RNG injected. Observes sourceC065/DE06/DE0B..0D and native latches/reader fade fields.",
+    "87->B0->82 order,B0 reader dispatch and world-music request before reveal compare on24 paths. Native loader/physical duration differs,so command timestamps and complete PSG waveforms are not asserted equal.",
+    "Ordering assertion stops at first destination idle;later uncontrolled combat/door re-entry commands are retained separately. Other door/loading callers,source audio IRQ cost/phase,full natural progression and whole faithful port remain unproved."
+  ]
+}

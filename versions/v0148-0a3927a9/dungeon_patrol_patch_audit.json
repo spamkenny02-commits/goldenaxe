@@ -1,0 +1,25 @@
+{
+  "md_sha256": "0a3927a93d7ca4ebc06ff8fccf04cd2ca19b7eed1e6462c9d58334209ff1160f",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 55386,
+  "aliases_and_header_verified": true,
+  "main_unchanged_since_v0147": true,
+  "prior_actor_implementations_unchanged_since_v0147": true,
+  "production_changes_confined_to_61_62_and_publication": true,
+  "patrol_velocities_exact_source_A744": true,
+  "evidence_sha256": {
+    "dungeon_patrol_allocation_unit_report.json": "7b97ce6c74621e8635a51146e08b5ca69896b778e0f19c685c1baa257b23d288",
+    "dungeon_patrol_gameplay_report.json": "1ae33159065732d8620345aed36c7f6c7e3bfa2f2313d032ceb996ac04172a35",
+    "dungeon_patrol_61_room_entry_report.json": "57e04c5c5865d58fe0a8a01b9d0928064df80f63f2782436fdb9e3b1c630282e",
+    "dungeon_patrol_62_room_entry_report.json": "657c74371ae8cc1c8f3124915bb3fa9a41e5a64152dc67c64027d960bcbefe88",
+    "dungeon_floor_trap_room_entry_report.json": "92188ce12985913b1d973791faead8076e72077d03d95e8acf11d112de6fd36b",
+    "start_menu_audio_report.json": "eb73fe78a503e0adb95fbb9e4de0033c54fe45bce8382c12382f3ae253c0fba9"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Unit routines have no random reads. Production controlled segments align initial world clocks.",
+    "Actual127/132 patrol rooms use controlled departure and normal right scroll; all768 actor bytes and hero/projectile SAT compare300 frames after initialization in both regions, without post-load injection. Relative alignment does not establish absolute load timing or original global clock.",
+    "Full framebuffer, natural complete travel/combat/progression, remaining quests/audio/ending and hardware remain incomplete or unverified."
+  ]
+}

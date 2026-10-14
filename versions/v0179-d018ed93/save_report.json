@@ -1,0 +1,50 @@
+{
+  "md_sha256": "d018ed93a4d25c99fa258d474b70fd36bbd853da13957a451232ef67e2680af4",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "slot": 1,
+      "payload_bytes_exact": 592,
+      "prompt_playfield_image_exact": true,
+      "slot_selection_images_exact": 2,
+      "entry_frames_display_enabled": 111,
+      "exit_frames_display_enabled": 111,
+      "cold_boot_fields_and_map_frames_exact": 21,
+      "controlled_initial_stats": false,
+      "save_load_reached_by_normal_input": true
+    },
+    {
+      "slot": 2,
+      "payload_bytes_exact": 592,
+      "prompt_playfield_image_exact": true,
+      "slot_selection_images_exact": 2,
+      "entry_frames_display_enabled": 111,
+      "exit_frames_display_enabled": 111,
+      "cold_boot_fields_and_map_frames_exact": 21,
+      "controlled_initial_stats": false,
+      "save_load_reached_by_normal_input": true
+    },
+    {
+      "slot": 3,
+      "payload_bytes_exact": 592,
+      "prompt_playfield_image_exact": true,
+      "slot_selection_images_exact": 2,
+      "entry_frames_display_enabled": 111,
+      "exit_frames_display_enabled": 111,
+      "cold_boot_fields_and_map_frames_exact": 21,
+      "controlled_initial_stats": true,
+      "save_load_reached_by_normal_input": true
+    }
+  ],
+  "cancellation_cases": [
+    "no",
+    "cancel"
+  ],
+  "death_continue_saved_checkpoint_verified": true,
+  "overwrite_preserves_other_slot": true,
+  "occupied_slot_overwrite_verified": true,
+  "empty_continue_and_cancel_verified": true,
+  "absolute_ui_timing_exact": false,
+  "other_villages_and_unported_progression_fields_verified": false,
+  "scope": "Village94 save service, three slots, native SRAM, source-layout records, cold Continue"
+}

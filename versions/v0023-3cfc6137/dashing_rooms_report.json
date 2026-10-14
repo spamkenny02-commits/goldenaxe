@@ -1,0 +1,99 @@
+{
+  "md_sha256": "3cfc61378ff64ecf311163707de88b6f309892e864693bcedcf849f1bb0b04b3",
+  "rows": [
+    {
+      "room": 155,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "60": 8
+      },
+      "states": {
+        "60": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          14
+        ]
+      },
+      "first_dash_events": {
+        "60": 1534
+      }
+    },
+    {
+      "room": 155,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "60": 8
+      },
+      "states": {
+        "60": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          14
+        ]
+      },
+      "first_dash_events": {
+        "60": 1446
+      }
+    },
+    {
+      "room": 156,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "60": 8
+      },
+      "states": {
+        "60": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          14
+        ]
+      },
+      "first_dash_events": {
+        "60": 1469
+      }
+    },
+    {
+      "room": 156,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "60": 8
+      },
+      "states": {
+        "60": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          14
+        ]
+      },
+      "first_dash_events": {
+        "60": 1418
+      }
+    }
+  ],
+  "ram_mutations": false,
+  "controlled_saved_room": true,
+  "two_dashing_rooms_verified": true,
+  "actor_dashes_in_at_least_one_room": true,
+  "absolute_timing_exact": false,
+  "full_progression_verified": false
+}

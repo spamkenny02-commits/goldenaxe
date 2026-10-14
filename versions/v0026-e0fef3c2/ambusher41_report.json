@@ -1,0 +1,103 @@
+{
+  "md_sha256": "e0fef3c26202309e88b6dcb60217ddc6727d4f9a85daf7ef989f25149d454f7e",
+  "region": "auto",
+  "deterministic_cases": 16,
+  "pool_cases": [
+    {
+      "occupied": 0,
+      "births": [
+        8,
+        9
+      ],
+      "parent_counter": 126
+    },
+    {
+      "occupied": 1,
+      "births": [
+        9,
+        10
+      ],
+      "parent_counter": 119
+    },
+    {
+      "occupied": 2,
+      "births": [
+        10,
+        11
+      ],
+      "parent_counter": 124
+    },
+    {
+      "occupied": 3,
+      "births": [
+        11,
+        12
+      ],
+      "parent_counter": 121
+    },
+    {
+      "occupied": 4,
+      "births": [
+        12,
+        13
+      ],
+      "parent_counter": 121
+    },
+    {
+      "occupied": 5,
+      "births": [
+        13,
+        14
+      ],
+      "parent_counter": 126
+    },
+    {
+      "occupied": 6,
+      "births": [
+        14,
+        15
+      ],
+      "parent_counter": 116
+    },
+    {
+      "occupied": 7,
+      "births": [
+        15
+      ],
+      "parent_counter": 0
+    },
+    {
+      "occupied": 8,
+      "births": [],
+      "parent_counter": 0
+    }
+  ],
+  "lob_flight_frames": 100,
+  "lob_landings": [
+    {
+      "slot": 8,
+      "frame": 3165
+    },
+    {
+      "slot": 9,
+      "frame": 3165
+    },
+    {
+      "slot": 10,
+      "frame": 3165
+    },
+    {
+      "slot": 11,
+      "frame": 3165
+    }
+  ],
+  "terrain_cases": 10,
+  "terrain_kills": 2,
+  "record_comparisons": 586,
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ],
+  "original_rng_stream_verified": false,
+  "natural_gameplay_verified": false
+}

@@ -1,0 +1,437 @@
+{
+  "md_sha256": "1dbffe65bf7aef56c4a355f776f4fc89d59acbf3fae1a8bdb99c85a240b8a65f",
+  "md_size": 524288,
+  "checksum_aliases_verified": true,
+  "current_reports": [
+    {
+      "file": "validation\\portals_gameplay_report.json",
+      "sha256": "18d305e6f7ab8c9cd477be9a4beb72c7ac7bdadddefae2e94207ddac3bcd4235"
+    },
+    {
+      "file": "validation\\portals_gameplay-pal_report.json",
+      "sha256": "d32a20af4354c59364e42571f2fed48fb16894f229844c1756e9575bece7d472"
+    },
+    {
+      "file": "validation\\contacts_gameplay_report.json",
+      "sha256": "1ecdeaaef1478e76f055828e825cb1e16194956af301fa85a530587026de1090"
+    },
+    {
+      "file": "validation\\contacts_gameplay-pal_report.json",
+      "sha256": "e0341b2297bec28d58393ac5c8227ded14f7f3714a1f1ed90a04605ec2367b28"
+    },
+    {
+      "file": "validation\\shutters_gameplay_report.json",
+      "sha256": "5a111e9143c0e90fac0f6d6ee4f79140ea9dce8be2d4fa976cd976e0482aa98e"
+    },
+    {
+      "file": "validation\\shutters_gameplay-pal_report.json",
+      "sha256": "cc3943bc719a589cad4bcabe541b11b25d3915c606a5b14fe695cc10134b5c15"
+    },
+    {
+      "file": "validation\\key_door_gameplay_report.json",
+      "sha256": "fb6fd12875cbc41ef087681c28aaba6ed3227188cbac3429c8aab5e9d6bca085"
+    },
+    {
+      "file": "validation\\key_door_gameplay-pal_report.json",
+      "sha256": "ab6d10598114b069c57c3685cb17c91db9ea7672b631a2e37ba366b19b063916"
+    },
+    {
+      "file": "validation\\timing_report.json",
+      "sha256": "c8211cdc2fa6a422d26683f2e5a6fdf2d8fdeef485eed9b500a43ca692aac4e7"
+    },
+    {
+      "file": "validation\\timing-pal_report.json",
+      "sha256": "0f10c5757a0d2e460c93a9e335e37cdb221b20e61d83efe51311415618197a44"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/main.c": "f52fa866bc68fdb7e7f11cc72280861e62928e32060c3e1ce5f9049a69a682b9",
+    "megadrive/src/room_portals.inc": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b",
+    "tools/extract_contact_scripts.py": "ab5a903a25dbcdfdc30919c637241f87b26fd6d344cb818cdab5630a4833d3b9",
+    "tools/validate_portals_gameplay.py": "a3a5b10323868b33195d5058668ed6243e4e0e2efc81dfc09f2758b94c90c66c",
+    "tools/audit_portals_patch.py": "f3955e71b3c2b67d18d6a7b2959742904d817217800dc5b66e44dd5197fd857e",
+    "analysis/baseline-v0051-main.c": "df05362d08e8e7c8b566f061bf4bf578d076983b71700d30d24ef0e3efc28c21"
+  },
+  "prior_contact_audit_sha256": "a303b308de7f6d2ba28152498d88ee0015c3e73e805cd01cf951e1b39c42f441",
+  "source_portal_audit_sha256": "81abdb8d84c2d0bbd7fcf0be0601b4e01983fbfe7deff6bc901ae1a1e981de03",
+  "production_delta_confined_to_portals": true,
+  "source_portal_clear_order_exact": true,
+  "native_portals": 36,
+  "live_portal_cases": 72,
+  "visible_wipe_frames_exact": 1440,
+  "live_contact_regression_cases": 44,
+  "live_combat_door_regression_cases": 20,
+  "live_key_door_regression_cases": 18,
+  "resume_timing": [
+    {
+      "region": "auto",
+      "room": 276,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 281,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 284,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 298,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 312,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 316,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 318,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 331,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 333,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 334,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 339,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 346,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 354,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 359,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 361,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 362,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 364,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 372,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 379,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 402,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 408,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 414,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 419,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 422,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 423,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 424,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 426,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 439,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 456,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 460,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 471,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 476,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 482,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 486,
+      "delta": 1
+    },
+    {
+      "region": "auto",
+      "room": 487,
+      "delta": 0
+    },
+    {
+      "region": "auto",
+      "room": 488,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 276,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 281,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 284,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 298,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 312,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 316,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 318,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 331,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 333,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 334,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 339,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 346,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 354,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 359,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 361,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 362,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 364,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 372,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 379,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 402,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 408,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 414,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 419,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 422,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 423,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 424,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 426,
+      "delta": 1
+    },
+    {
+      "region": "pal",
+      "room": 439,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 456,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 460,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 471,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 476,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 482,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 486,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 487,
+      "delta": 0
+    },
+    {
+      "region": "pal",
+      "room": 488,
+      "delta": 0
+    }
+  ],
+  "resume_exact_cases": 47,
+  "resume_one_frame_late_cases": 25,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled solved-origin flag, source-prepared map, hero and frozen actor after real dungeon entry. Full natural puzzle completion and dungeon routes are unverified.",
+    "Loaded cells/maps/flags/masks/loot and arrival pose match at each system first gameplay-ready frame; actor AI/RNG progression after loading is not established.",
+    "Visible wipe positions match on all twenty frames; hidden VRAM preparation/IRQ phase differs and some resumes are one frame late.",
+    "Loader timing uses dynamic graphics T states plus a shared regional overhead, not per-room frame tables. Actor-history respawn, other puzzles, bosses and ending remain incomplete.",
+    "Full scene pixels, sprite priority edge cases and audio waveforms remain unverified."
+  ]
+}

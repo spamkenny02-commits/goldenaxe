@@ -1,0 +1,23 @@
+{
+  "md_sha256": "8960a965dc1e68ec0304aedc1dbc542ba54068fac07d4be74258e4fcc38900c1",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 63678,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_4A_4B_behavior_dispatch_and_post_loop_collision_publication": true,
+  "main_source_unchanged_since_v0126": true,
+  "literal_table_bytes_exact": 33,
+  "source_files": {
+    "megadrive\\src\\main.c": "ad73c1956ec480f832dd6c268709f5ad79c753d76e31d48ac8231487631f4329",
+    "megadrive\\src\\actors.c": "aa22d061e8958caac227c251beed815eff30c25e26a1abffe5539a94a4a235e3",
+    "megadrive\\src\\dungeon_split_data.c": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1",
+    "tools\\validate_dungeon_split.py": "fd11c0a22947a3c22ae8787fae5377d8981da9d95668f316e9caf007e483f0cd",
+    "tools\\validate_dungeon_split_gameplay.py": "ff79b3928c52f60f52bd60c9e5f0de4058bc1be67d0c6b8eae54d144fc6f661a",
+    "tools\\validate_dungeon_split_entry.py": "790b324bb717671d6d2132c2263bf80675972b35c67bfe67ea1299e3dbc46b7d"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Controlled state/pending-damage injection and initial native clock alignment; natural weapon strikes, full fights and original clock/RNG remain unproved.",
+    "Actual125 first4A appearance excludes random X/Y/direction and other actor records; graphics for all three room types are compared."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "md_sha256": "cc830a8216e7432706dfd53bfafc3deee7c9e73635be09c232523e0aa524efc3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 56114,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_56_59_5A_AI_dispatch_and_collision_publication": true,
+  "prior_actor_and_main_implementations_unchanged_since_v0138_except_correct_17_same_frame_boxes": true,
+  "renderer_does_not_republish_cached_pre_flash_boxes_for_new_teleport_types": true,
+  "original_random_stream_reproduced": false,
+  "evidence_sha256": {
+    "dungeon_teleport_allocation_unit_report.json": "f83b0c87a76caed403f395f06723503178254c2c978f4f4543788c35f7756d1d",
+    "dungeon_teleport_gameplay_report.json": "7ca5db9b6f1b601a03eabc1c5ace9268253b5f169ddbec1ebfaac665b923dd7b",
+    "dungeon_teleport_56_entry_report.json": "e82af1f3b0b145cfbd1ac8362e9f31b6e837173a90b6040a0b2b6d5ade4f5566",
+    "dungeon_teleport_59_entry_report.json": "313c7c6afd295360f8eaaab7ba0658a05025b1c5644cb4fc31527c57e18a0c12",
+    "dungeon_teleport_5a_entry_report.json": "ba2aebebf2e1ab5b03e60c144644488252a8e5e33e68728d172225efa88ebf8e",
+    "dungeon_teleport_cycle_entry_report.json": "3e165d7c30d79394a88e61885e3a56cf6b4a85a62fb4b103dda73e3883e61c39"
+  },
+  "source_files": {
+    "megadrive\\src\\main.c": "c6a8892478e371ad1f230c04ce53793a07500a947e88a5d7985c027899ee3d48",
+    "megadrive\\src\\actors.c": "c2e2d9a899fdb1d06d1f9cbd408b147173edf06c958bee658f6d37d2611983be",
+    "tools\\validate_dungeon_teleport.py": "021ac6c3da4733d23f3c972f4cbc8e8feaf82bdfa4892a427836d8813b75f0c8",
+    "tools\\validate_dungeon_teleport_gameplay.py": "6144a044b271d8f2886230368cb13dbabac3900c354cc785888c7ff274d7e516",
+    "tools\\validate_dungeon_teleport_entry.py": "473e86b958e7043bc8ea4ec2a95264b6d52454427c315e631f9fa11b4fe51c97",
+    "tools\\validate_dungeon_teleport_cycle.py": "c9305ab281a4f6349989c26b8b515ef63f561afa82ee376dc449cb285f455b95"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Initial production clock explicitly aligned for controlled segments; source random reads controlled only in isolated cases. Parent random timer4 excluded for recorded reveal/shot frames.",
+    "Actual room appearance records exclude random X/Y/direction and align to first initialization; other actors and absolute load cadence not compared.",
+    "Controlled actual12C cycle: all768 actor bytes96 frames per region and actual SAT95 frames per region. Injection frame3700 is excluded from SAT comparison and recorded; no timeline shift applied.",
+    "Full natural fights, RNG/global clock, full framebuffer, complete audio and hardware timing remain unproved."
+  ]
+}

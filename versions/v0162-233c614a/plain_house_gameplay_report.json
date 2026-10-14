@@ -1,0 +1,49 @@
+{
+  "long_hint": true,
+  "md_sha256": "233c614a78bfd29a4c7e6404678bb1e11258a01940bb663578e387d9c1ba0d7e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "town": 179,
+      "house": 143,
+      "text_pc": 38720,
+      "request_frames": {
+        "sms": 3430,
+        "md": 3410
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 3,
+      "reward_pattern_tiles_exact": 0,
+      "long_dialogue_bitmap_bytes_exact": 1040,
+      "restored_static_map_words_exact": 636,
+      "animated_map_difference_indices": [
+        240,
+        241
+      ],
+      "normal_door_UP_and_C_return": true,
+      "initial_clock_aligned": true
+    },
+    {
+      "region": "pal",
+      "town": 179,
+      "house": 143,
+      "text_pc": 38720,
+      "request_frames": {
+        "sms": 3430,
+        "md": 3410
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 3,
+      "reward_pattern_tiles_exact": 0,
+      "long_dialogue_bitmap_bytes_exact": 1040,
+      "restored_static_map_words_exact": 636,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "initial_clock_aligned": true
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actual townB3 door/house resources, magic owned and HP capacity24. One-frame UP starts original263-byte mountain/climbing dialogue; C pulses3600/3900 acknowledge intermediate/final pages. Hero fixture and initial clock aligned at3400; no direct dialogue/text/state mutation after setup.",
+    "Stable final1040 bitmap bytes at3850 and restored equipment/room fields at3960/4000 compare in PAL/NTSC. Animated NPC map cells are excluded from static restoration and raw differing word indices retained. Full dialogue publication timing, all intermediate pixels/audio and natural quest progression remain unproved."
+  ]
+}

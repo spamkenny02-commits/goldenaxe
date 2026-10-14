@@ -1,0 +1,13 @@
+{
+  "md_sha256": "cd04a76a8046e85c5efc4c20d575923ef63d9fd85635a1195260aee3d37d7189",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 13992,
+  "towns": 33,
+  "all_256_gold_values": true,
+  "gold_mark_text_sound_count_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "ActualAF25/6497 executes original conditions,193D marking,651C table and gold saturation/loops.050C captures text pointer/count;1E48 returns after real95 request;627A returns instead of waiting/redrawing.",
+    "Isolated decisions exclude live rendering, update timing, SRAM and natural reachability."
+  ]
+}

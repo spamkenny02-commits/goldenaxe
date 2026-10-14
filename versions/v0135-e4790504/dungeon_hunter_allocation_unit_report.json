@@ -1,0 +1,14 @@
+{
+  "md_sha256": "e4790504a6f3a165285c2cef9402fee56240c32dfe2b4a9f730f08a19fc6d8ae",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "aa5707a0b0d778e860782de02f53cd5e5d85602e24f1c6064ece36e41297292f",
+  "harness_sha256": "db141d90bac37c444dd861045e8e3d2731b63342fc4183de30834e343eab0e38",
+  "cases": 1000,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Five sourceLD A,R sites use explicit register-preserving input shim. Original4FD2/9DA6/57F8/4859/48F3/4A15/4893/4965/4029 execute.",
+    "Seven even states, selection/pursuit/terrain, aligned charge, shot allocation and type18 initialization/cull. State0 requires loader animation0.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

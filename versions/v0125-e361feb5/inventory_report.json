@@ -1,0 +1,58 @@
+{
+  "md_sha256": "e361feb5e2297f2ed87df884a1928e9b81cf2df8dad77035770183d8554c613a",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "equipment_cases": [
+    {
+      "armor": 1,
+      "shield": 1,
+      "basic": 1,
+      "secondary": 1,
+      "all_17_owned_icons": true,
+      "keys": 255,
+      "image_exact": true
+    },
+    {
+      "armor": 2,
+      "shield": 2,
+      "basic": 2,
+      "secondary": 2,
+      "all_17_owned_icons": true,
+      "keys": 255,
+      "image_exact": true
+    },
+    {
+      "armor": 3,
+      "shield": 3,
+      "basic": 3,
+      "secondary": 2,
+      "all_17_owned_icons": true,
+      "keys": 255,
+      "image_exact": true
+    }
+  ],
+  "menu_states_exact": 89,
+  "menu_images_exact": 85,
+  "selection_transfer_image_differences": [
+    [
+      2830,
+      116
+    ],
+    [
+      2850,
+      160
+    ],
+    [
+      2870,
+      175
+    ],
+    [
+      2905,
+      182
+    ]
+  ],
+  "selection_transfer_pixels_exact": false,
+  "return_secondary_attack_states_exact": 31,
+  "scope": "Exterior initial room, controlled ownership/keys and one initial clock alignment; fresh presses, bounds, unavailable objects, normal menu close and secondary activation",
+  "global_entry_exit_timing_exact": false,
+  "other_item_behaviors_verified_by_this_test": false
+}

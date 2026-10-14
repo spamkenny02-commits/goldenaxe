@@ -1,0 +1,29 @@
+{
+  "md_sha256": "fa3b3fda81fb8d4aa6ee9241483561895da82738b395743eef88abecc5ea8443",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "0a579680873e9dd2ff25ea0f934e20a9a9e1aec9428a1c8d5e5d5a8a897684c3",
+  "harness_sha256": "01821de7d7da2f0a28b04adf26a5ae78907978287186b6c29692e359f163baea",
+  "cases": 2248,
+  "rooms": 512,
+  "boss_flag_rooms": [
+    277,
+    324,
+    332,
+    355,
+    373,
+    377,
+    384,
+    406,
+    428,
+    451
+  ],
+  "original_complete_loader_executed": "1780..18E1 including 1805..1838 and original RLE/VDP transfers",
+  "actor_records_counts_tile_allocations_and_loaded_planar_patterns_exact": true,
+  "all_production_room_loading_paths_use_progression": true,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled loader calls; all rooms with full persistence and progression 0,1,80,FF; boss-flag rooms additionally use masks 00,A5,80,01 and progress 00,01,7F,80,FF.",
+    "Native wrapper calls production load_current_world_actors, exercising saved actor mask and progression byte lookup at 1E plus the low byte of dungeon number, including index FF.",
+    "Natural boss fights, reward pickup and quest progression, rendered sprites, global loading timing and audio are outside this comparison."
+  ]
+}

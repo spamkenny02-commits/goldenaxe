@@ -1,0 +1,109 @@
+{
+  "md_sha256": "b82289fa4a91003b304285c77c9b41505c93e299a0ac9625641cb79d8138047e",
+  "events": [
+    {
+      "event": "hero_hurt",
+      "command": 145,
+      "evidence": [
+        {
+          "directory": "md-damage-detail",
+          "frame": 3741
+        }
+      ]
+    },
+    {
+      "event": "shield",
+      "command": 152,
+      "evidence": [
+        {
+          "directory": "md-shield-detail",
+          "frame": 3745
+        }
+      ]
+    },
+    {
+      "event": "pickup",
+      "command": 150,
+      "evidence": [
+        {
+          "directory": "md-loot-8",
+          "frame": 3743
+        }
+      ]
+    },
+    {
+      "event": "enemy_hurt",
+      "command": 156,
+      "evidence": [
+        {
+          "directory": "md-enemy-hit-0-8-0-0",
+          "frame": 3745
+        },
+        {
+          "directory": "md-enemy-hit-0-8-0-1",
+          "frame": 3745
+        },
+        {
+          "directory": "md-enemy-hit-0-8-0-2",
+          "frame": 3745
+        },
+        {
+          "directory": "md-enemy-hit-0-8-0-3",
+          "frame": 3745
+        }
+      ]
+    },
+    {
+      "event": "enemy_killed",
+      "command": 160,
+      "evidence": [
+        {
+          "directory": "md-enemy-hit-0-2-0-0",
+          "frame": 3745
+        },
+        {
+          "directory": "md-enemy-hit-0-2-0-1",
+          "frame": 3745
+        },
+        {
+          "directory": "md-enemy-hit-0-2-0-2",
+          "frame": 3745
+        },
+        {
+          "directory": "md-enemy-hit-0-2-0-3",
+          "frame": 3745
+        }
+      ]
+    },
+    {
+      "event": "dialogue",
+      "command": 159,
+      "evidence": [
+        {
+          "directory": "md-house-dialogue-0",
+          "frame": 3600
+        }
+      ]
+    },
+    {
+      "event": "shop",
+      "command": 149,
+      "evidence": [
+        {
+          "directory": "md-merchant-feather",
+          "frame": 4300
+        },
+        {
+          "directory": "md-merchant-key",
+          "frame": 4300
+        },
+        {
+          "directory": "md-merchant-oil",
+          "frame": 4300
+        }
+      ]
+    }
+  ],
+  "scope": "Sound queue/active command in seven current gameplay regression capture sets; not waveform or full event timing equivalence",
+  "all_game_event_hooks_verified": false
+}

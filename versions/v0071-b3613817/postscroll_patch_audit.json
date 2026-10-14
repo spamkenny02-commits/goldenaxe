@@ -1,0 +1,47 @@
+{
+  "md_sha256": "b361381750ac3366da528a8d544864b2b097a6b5fffaf363d935ef5bb068e1f8",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": "0xca60",
+  "aliases_verified": true,
+  "exact_v0070_restored_by_removing_single_postscroll_upload": true,
+  "source_files": {
+    "megadrive/src/main.c": "f6a87d2e1faacd96df0d6c6a49832a1f61469a4f24356fcfa9a12cc867381274",
+    "tools/validate_dialogue_scroll.py": "5cc0735e7b8de20468b872f27e810c49175d00de04baea9c8358ec4ea494ac80",
+    "tools/profile_world_clock.py": "f6b9d2c9014a10664da90c42d9ae2f58e76b93bf998f3c32e39d2f73f8eaf5a6",
+    "tools/audit_postscroll_patch.py": "c0561f0170a90b51aedab00366c2fd5e21190a015bbd5e9a32e64e28eb40d625",
+    "analysis/dialogue-postscroll-baseline-v0070/main.c": "f3527602a8df62946ea61178c0e0bad4151b2eb395ac78a400adeaa8c731bd29"
+  },
+  "reports": [
+    {
+      "file": "dialogue_scroll_report.json",
+      "sha256": "0e2a8018f1aa54cb3aeebf34918a702fa9a08c10bce4872a0bdab2126c39b83e"
+    },
+    {
+      "file": "final_dialogue_report.json",
+      "sha256": "c9fb270c1c1883a70c38065447a7187848fd369b62e63b09e91a86fd71b56377"
+    },
+    {
+      "file": "house_dialogue_report.json",
+      "sha256": "c89460cd22beb4429b9773b29ebc3785010bc71c27436a6cac313f493d304d2a"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "e94fcb426cf25dc8dcc800ceadc2b8ac63f0c9f52e19a6a9f9ed1fa706b2d576"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "fdf063537b1097b0f7aa8eb674f88a2bc628016068394af809c2e5c3179fa291"
+    }
+  ],
+  "diagnostic": {
+    "file": "opening_latency_v0071.json",
+    "sha256": "905696fd4ef773aa7bb5d082f8dc993f216aedfbfdd8497923f1d9d8cc3ee571"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Only complete bitmap poses of the first natural opening scroll have equal frame lists; partial transfer frames and subsequent words are unproven.",
+    "Before-first-page and initial loading timing still differ; diagnostic attached separately.",
+    "Merchant/save/free-night checks remain evidence from v0070 and were not rerun on this change.",
+    "Global clock reset, natural full progression, all abilities, quests, full enemy/boss behavior and ending remain unfinished."
+  ]
+}

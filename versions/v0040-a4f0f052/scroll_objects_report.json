@@ -1,0 +1,135 @@
+{
+  "md_sha256": "a4f0f052ea5cb60c04f60c0dcae01245099b920464fa83e14eb198d2b2743122",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "region": "auto",
+  "source_routine": "21A1..21C2 / 0938",
+  "cases": [
+    {
+      "direction": "left",
+      "checks": {
+        "sms": {
+          "first_transition_frame": 3131,
+          "first_clean_sat_frame": 3137,
+          "last_transition_frame": 3171,
+          "checked_transition_frames": 35,
+          "nonhero_sprites_before_scroll": 10,
+          "nonhero_sprite_errors": 0,
+          "old_object_flags_cleared": true,
+          "primary_living_mask_preserved": true,
+          "hero_sprite_frames": 35,
+          "destination_nonhero_sprite_frames": 56,
+          "gameplay_resumes": true
+        },
+        "md": {
+          "first_transition_frame": 3131,
+          "first_clean_sat_frame": 3131,
+          "last_transition_frame": 3171,
+          "checked_transition_frames": 40,
+          "nonhero_sprites_before_scroll": 10,
+          "nonhero_sprite_errors": 0,
+          "old_object_flags_cleared": true,
+          "primary_living_mask_preserved": true,
+          "hero_sprite_frames": 40,
+          "destination_nonhero_sprite_frames": 57,
+          "gameplay_resumes": true
+        }
+      }
+    },
+    {
+      "direction": "right",
+      "checks": {
+        "sms": {
+          "first_transition_frame": 3131,
+          "first_clean_sat_frame": 3137,
+          "last_transition_frame": 3194,
+          "checked_transition_frames": 58,
+          "nonhero_sprites_before_scroll": 10,
+          "nonhero_sprite_errors": 0,
+          "old_object_flags_cleared": true,
+          "primary_living_mask_preserved": true,
+          "hero_sprite_frames": 58,
+          "destination_nonhero_sprite_frames": 33,
+          "gameplay_resumes": true
+        },
+        "md": {
+          "first_transition_frame": 3131,
+          "first_clean_sat_frame": 3131,
+          "last_transition_frame": 3194,
+          "checked_transition_frames": 63,
+          "nonhero_sprites_before_scroll": 10,
+          "nonhero_sprite_errors": 0,
+          "old_object_flags_cleared": true,
+          "primary_living_mask_preserved": true,
+          "hero_sprite_frames": 63,
+          "destination_nonhero_sprite_frames": 32,
+          "gameplay_resumes": true
+        }
+      }
+    },
+    {
+      "direction": "up",
+      "checks": {
+        "sms": {
+          "first_transition_frame": 3131,
+          "first_clean_sat_frame": 3139,
+          "last_transition_frame": 3160,
+          "checked_transition_frames": 22,
+          "nonhero_sprites_before_scroll": 10,
+          "nonhero_sprite_errors": 0,
+          "old_object_flags_cleared": true,
+          "primary_living_mask_preserved": true,
+          "hero_sprite_frames": 22,
+          "destination_nonhero_sprite_frames": 0,
+          "gameplay_resumes": true
+        },
+        "md": {
+          "first_transition_frame": 3131,
+          "first_clean_sat_frame": 3131,
+          "last_transition_frame": 3155,
+          "checked_transition_frames": 24,
+          "nonhero_sprites_before_scroll": 10,
+          "nonhero_sprite_errors": 0,
+          "old_object_flags_cleared": true,
+          "primary_living_mask_preserved": true,
+          "hero_sprite_frames": 24,
+          "destination_nonhero_sprite_frames": 0,
+          "gameplay_resumes": true
+        }
+      }
+    },
+    {
+      "direction": "down",
+      "checks": {
+        "sms": {
+          "first_transition_frame": 3131,
+          "first_clean_sat_frame": 3137,
+          "last_transition_frame": 3182,
+          "checked_transition_frames": 46,
+          "nonhero_sprites_before_scroll": 10,
+          "nonhero_sprite_errors": 0,
+          "old_object_flags_cleared": true,
+          "primary_living_mask_preserved": true,
+          "hero_sprite_frames": 46,
+          "destination_nonhero_sprite_frames": 41,
+          "gameplay_resumes": true
+        },
+        "md": {
+          "first_transition_frame": 3131,
+          "first_clean_sat_frame": 3131,
+          "last_transition_frame": 3182,
+          "checked_transition_frames": 51,
+          "nonhero_sprites_before_scroll": 10,
+          "nonhero_sprite_errors": 0,
+          "old_object_flags_cleared": true,
+          "primary_living_mask_preserved": true,
+          "hero_sprite_frames": 51,
+          "destination_nonhero_sprite_frames": 43,
+          "gameplay_resumes": true
+        }
+      }
+    }
+  ],
+  "hardware_sat_checked": true,
+  "fixtures": "Two visible frozen actors, including an auxiliary slot, and one dropped coin; real edge crossing. Test-only initial object/edge position RAM writes.",
+  "scope": "Old objects hidden throughout four exterior scroll directions, hero retained, persistence mask retained; all enemy AI and whole-game fidelity remain unproven."
+}

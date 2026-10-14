@@ -1,0 +1,31 @@
+{
+  "md_sha256": "26d75abb554ed062e218a2e3d48fff120abcd08f28b7f9a6a1f220e5cb188b7d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "arrival_frames": {
+        "sms": 3440,
+        "md": 3440
+      },
+      "relative_actor_frames_exact": 47,
+      "loaded_pattern_tiles_exact": 20,
+      "pattern_samples": 3
+    },
+    {
+      "region": "pal",
+      "arrival_frames": {
+        "sms": 3439,
+        "md": 3439
+      },
+      "relative_actor_frames_exact": 47,
+      "loaded_pattern_tiles_exact": 20,
+      "pattern_samples": 3
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Normal dungeon doorway entry after exterior relocation; controlled relocation to room162 boundary with cleared actors and passable departure map. Right scroll and actual destination163 scripts/resources/actor loading execute normally.",
+    "Actor timelines aligned to first initialized core frame, not absolute loading cadence; 47 frames stop before initial movement random selection. First 20 sprite pattern pixels sampled at three relative frames. Natural travel, full fight, SAT/full framebuffer, audio and full transition timing remain unproved."
+  ]
+}

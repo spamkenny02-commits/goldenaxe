@@ -1,0 +1,95 @@
+{
+  "md_sha256": "6aee137328ef55bfb35aa39a33483be1457ab562cd8e3a7ea5a2689cff7efea5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": "0xe818",
+  "md_bytes": 1048576,
+  "aliases_and_header_verified": true,
+  "sram_header_unchanged": true,
+  "exact_v0076_main_restored_by_replacing_renderer_and_removing_publication_helper": true,
+  "source_files": {
+    "megadrive/src/main.c": "c77becae09eda557e4ec0cb4de6458be08a42aef96d6460bbd4bda5ed036bde2",
+    "megadrive/src/rom_header.c": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75",
+    "build.ps1": "df26e117c04fc1129253ecee19714d55612c78cb2d71280657fd9d8b9f69a5e0",
+    "tools/profile_dialogue_preparation.py": "20cb530bdefe25e0320abddbfbb757a2df926e658de69d4063d7d429c7d7600e",
+    "tools/validate_dialogue_publications.py": "91c46e459b8c5f89638f326848694b424c3c8bb2d7b7d4253559826e4d6ef433",
+    "tools/audit_dialogue_publication_patch.py": "7959c9fda95a3acfd37ca002031cf3e57acd91f7583959287b234a079189c346",
+    "analysis/dialogue-publication-baseline-v0076/main.c": "94e3d0b8102d2b63a514c8bcc08935bb85861f9fdc766b45eda03d93b0f0fdfb"
+  },
+  "reports": [
+    {
+      "file": "dialogue_publications_report.json",
+      "sha256": "f7933e55f972486cc1e4bab7f35d1667048be3777e42a6e3365841d7901d29c7"
+    },
+    {
+      "file": "dialogue_preparation_profile.json",
+      "sha256": "7170ca14beff8edac8ab7c29b3b9e24a2fae828265860531c336c58ee0e4a54a"
+    },
+    {
+      "file": "dialogue_preparation-pal_profile.json",
+      "sha256": "75b9cef630adec92599a00d5df590f152376a9790226e5e25e08dc28e019c4f1"
+    },
+    {
+      "file": "opening_setup_report.json",
+      "sha256": "6390e7d71c14ce5b703ae7243353f83bb49a508ca2e38615dd4a7e4dc1dcb3d3"
+    },
+    {
+      "file": "opening_setup_profile.json",
+      "sha256": "1bab5361dafc9da5f4cd037d3d6ed0c61084e3c1980b6b030677d03d04dfa8b7"
+    },
+    {
+      "file": "opening_setup-pal_profile.json",
+      "sha256": "392e2bca9da7094c0ba151b358ec5cf3abb6137b199f4ee85ed418df935e0bb5"
+    },
+    {
+      "file": "dialogue_scroll_report.json",
+      "sha256": "e43a812f02678bf1c92bdbc65094e0177728202311c563401a715ceba2a6403b"
+    },
+    {
+      "file": "final_dialogue_report.json",
+      "sha256": "dfd856b35c150bb78dd0014088f10f2500b20c8dc1cf5ec64140f1758491de98"
+    },
+    {
+      "file": "house_dialogue_report.json",
+      "sha256": "494d2487992fa065b076d4e25dff4f51deeb5a8cba9b2958fbb5b6318d2ed220"
+    },
+    {
+      "file": "all_merchants_report.json",
+      "sha256": "c2866e3ac96c18523333fce0b9d4ce90324c7639c7b0ed1fbf9338759286a458"
+    },
+    {
+      "file": "healer_report.json",
+      "sha256": "9bbd728a18370cad6856e81ae9857d16532fd33134a1947f629482e0dab67118"
+    },
+    {
+      "file": "healer-pal_report.json",
+      "sha256": "9bbd728a18370cad6856e81ae9857d16532fd33134a1947f629482e0dab67118"
+    },
+    {
+      "file": "save_report.json",
+      "sha256": "50e99709a31a5e5803cf4e7800de8ffccd19970572c64f506ded78befd6f205f"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "c739ebd6196998ed0468dbe65c2bcd3c03adec8cb331a8ca718a05f3a3c2bc05"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "04ed490057a293fd53d9e43be03a2d6fa4aeff3362f482e9299ba6fd7cdf953a"
+    },
+    {
+      "file": "world_clock_profile.json",
+      "sha256": "aa0992a0e993903313937b1b5769cfc0aba95c0ebd42737f3875c42d7bf1f0ea"
+    },
+    {
+      "file": "world_clock-pal_profile.json",
+      "sha256": "e7bf7195702017956bdfe44d8cc4a64f5bc19a9a27ee37dcb6f1f2f47baa3cee"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Complete first-page bitmap shapes/order verified, not equal publication dwell times or complete framebuffers.",
+    "First-page wait is nine frames late in the measured PAL/NTSC sequence; first room remains 33/31 frames early.",
+    "Source IRQ-before-transfer ordering is not reproduced by the native publication helper.",
+    "Palette 31 phase, text case/control/substitution edge cases, natural full progression, all abilities, quests, full enemy/boss behavior, ending and audio waveform fidelity remain incomplete or unproven."
+  ]
+}

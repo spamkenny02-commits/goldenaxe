@@ -1,0 +1,34 @@
+{
+  "md_sha256": "398b2f205c89df496ad738275951765f5135e6a6476b14468e4c65dcc6f2e473",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 44120,
+  "aliases_header_verified": true,
+  "source_80_order_indices_exact": true,
+  "prior_AI_unchanged_since_v0149": true,
+  "descriptor_emission_unchanged": true,
+  "changes_confined_to_object_visit_count_rotating_order_scene_composition_and_pre_IRQ_order_context": true,
+  "actual_60_PAL_3702_gap_resolved": true,
+  "evidence_sha256": {
+    "sprite_order_gameplay_report.json": "e7953ca4ceb3a5cff75a85b7610522ebff66d090d7eddee6e0532dc846154871",
+    "sprite_overflow_report.json": "cd3d1a0b651e65d8c9628e5056d83a135ef366c2ecf2f6ba8b6722e178647ae0",
+    "dungeon_melee_attack_5f_entry_report.json": "b33e70a2025b675c7c88cdea57bbf5e9e4ed586bba057250c2a8f331fbbec562",
+    "dungeon_melee_attack_60_entry_report.json": "c8c701ce151fc828e5bc880f5c6c743e86680380abd01eba68daa7db1253e4cf",
+    "dungeon_melee_attack_60_pal_diagnostic.json": "63a7a51e718a252a3f06a7d0f6255c4d3440d9a0374141484fd24d709d41845e",
+    "dungeon_patrol_61_room_entry_report.json": "38e710dec48c0366db68350a6ee3f6832f97837b59876c286540ef98038d7c9a",
+    "dungeon_patrol_62_room_entry_report.json": "bbeb4fca86d3685796350522c689a222204ef32a8f2c8c2b3cbb4dd8b130e2e3",
+    "gem_gameplay_report.json": "c0e878e18e7ac04982b510fb7ea27553d23db033f71377668f9700a88a2a5099",
+    "inventory_restore_report.json": "72354b2ddca5abd384b5dac05cd5c48753b4c7bcf0b85753b352c4c55d5469df",
+    "dungeon_guard_combat_5c_allowed_entry_report.json": "6c95db5bd08e9856ee8436681f1b8d9ae7bc54b91e44dc7798454667443c729f",
+    "dungeon_guard_combat_5c_blocked_entry_report.json": "681539307a5dcdf7fbbc4f0b26fa9e6694fb54c9c258e7aecb2fd3e6e7c92b6e",
+    "dungeon_guard_combat_5d_allowed_entry_report.json": "c49b107a57f501699e55e392c40442f6d0a5f584c6e1b11f3761df5a479bab53",
+    "dungeon_guard_combat_5d_blocked_entry_report.json": "a1c91911c67a38e920e5e13cf729e928b3ed4d2e47de4d284aafb853c0d48c85"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Controlled initial world clocks and object fixtures in ordering matrix; source status and VRAM are not overwritten.",
+    "Actual-room attack cases use controlled combat setup and exclude injection SAT frame. Room appearance alignment does not establish absolute loading cadence.",
+    "Source auxiliary slots2..8 have no native records yet. The MD still draws beyond eight SMS sprites per scanline; source-equivalent pixel clipping/flicker is not established by SAT order/status equality.",
+    "Original RNG/global clock, full framebuffer/audio, progression/quests/ending and a complete natural playthrough remain incomplete or unverified."
+  ]
+}

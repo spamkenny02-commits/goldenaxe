@@ -1,0 +1,24 @@
+{
+  "md_sha256": "aef239654fc2341bc35734d0d1b2c346534ce8038197a0b6e62bd4c571b32f5e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 19283,
+  "aliases_and_header_verified": true,
+  "main_unchanged_since_v0146": true,
+  "prior_actor_implementations_unchanged_since_v0146": true,
+  "production_changes_confined_to_5E_77_and_publication": true,
+  "projectile_template_exact_source_4843": true,
+  "evidence_sha256": {
+    "dungeon_floor_trap_allocation_unit_report.json": "49c6ddff40a8014eab44f28f74d34da4832aacdffa27933e3e8a5f2d794776ec",
+    "dungeon_floor_trap_gameplay_report.json": "5a7e36f67972c7ff3f947d4b2ccb80b34116acd1e3eb76951f44f3e92a07ed72",
+    "dungeon_floor_trap_room_entry_report.json": "37c8076dba89baf8dba071c6494f1b27babd264ee76df645a9abae0f2e0b38a6",
+    "dungeon_emitter_gameplay_report.json": "ba88536d3ff67ff15d720266693b3eafaefad4a75071b31bbd257e57e925f007",
+    "start_menu_audio_report.json": "0677130ad3c6cbc8c32d809b60e98e622283fac871dae842b0a5ab66501a42d2"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Unit routines have no random reads. Production controlled segments align initial world clocks.",
+    "Actual140 uses controlled departure141 and normal left scroll; all768 actor bytes and hero/projectile SAT compare300 frames after initialization in both regions, without post-load injection. Relative alignment does not establish absolute load timing or original global clock.",
+    "Full framebuffer, natural complete travel/combat/progression, remaining quests/audio/ending and hardware remain incomplete or unverified."
+  ]
+}

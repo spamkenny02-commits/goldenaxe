@@ -1,0 +1,98 @@
+{
+  "md_sha256": "94317503805abf9288dd056b64a4f8b61d92dc3c9b2a51227813777879f01fb1",
+  "source_map_loop_tstates_exact": 192686,
+  "cases": [
+    {
+      "direction": "up",
+      "region": "auto",
+      "prior_movement_resume_offset": -4,
+      "movement_resume_offset": -1,
+      "aligned_post_resume_motion_frames_exact": 8
+    },
+    {
+      "direction": "up",
+      "region": "pal",
+      "prior_movement_resume_offset": -3,
+      "movement_resume_offset": 0,
+      "aligned_post_resume_motion_frames_exact": 8
+    },
+    {
+      "direction": "left",
+      "region": "auto",
+      "prior_movement_resume_offset": -4,
+      "movement_resume_offset": -1,
+      "aligned_post_resume_motion_frames_exact": 8
+    },
+    {
+      "direction": "left",
+      "region": "pal",
+      "prior_movement_resume_offset": -3,
+      "movement_resume_offset": 0,
+      "aligned_post_resume_motion_frames_exact": 8
+    },
+    {
+      "direction": "right",
+      "region": "auto",
+      "prior_movement_resume_offset": -4,
+      "movement_resume_offset": -1,
+      "aligned_post_resume_motion_frames_exact": 8
+    },
+    {
+      "direction": "right",
+      "region": "pal",
+      "prior_movement_resume_offset": -3,
+      "movement_resume_offset": 0,
+      "aligned_post_resume_motion_frames_exact": 8
+    }
+  ],
+  "profiles": [
+    {
+      "file": "analysis/key_redraw_profile-up.json",
+      "sha256": "38468588c954a470ec70c9df8f609622fa0f5fba19624d173a23f0ee53d1bfea",
+      "baseline_file": "analysis/key_redraw_baseline-up.json",
+      "baseline_sha256": "0e95475d329a7da32e86f0220762e3247f70d09e1de60f0a3493db3427b7dc7b"
+    },
+    {
+      "file": "analysis/key_redraw_profile-up-pal.json",
+      "sha256": "caa5bc6a28cf7c8a3fb424df3f9c27a7a80711decfc29d60f3f422073ae820ed",
+      "baseline_file": "analysis/key_redraw_baseline-up-pal.json",
+      "baseline_sha256": "f370158fe7aaed2fa4ddfec6c175064cb457615837aef31b8c71f8088db1df3b"
+    },
+    {
+      "file": "analysis/key_redraw_profile-left.json",
+      "sha256": "d6d0166bc67dc6adb5fe87879da13cfd63dca721ede9846f4f37f021fc62ad37",
+      "baseline_file": "analysis/key_redraw_baseline-left.json",
+      "baseline_sha256": "dbfb1b88ca36c02794b4dab98234e3d32cd0b23d0944d7ff77e0f664321b15ca"
+    },
+    {
+      "file": "analysis/key_redraw_profile-left-pal.json",
+      "sha256": "b67c071669bb63ba6ef8e76457957228206cb061b3823445c1f2f8eb7420d500",
+      "baseline_file": "analysis/key_redraw_baseline-left-pal.json",
+      "baseline_sha256": "f03184d0f88e2f5ebff9000a3073d062411c90f6075f5c99085fb72c54bb6286"
+    },
+    {
+      "file": "analysis/key_redraw_profile-right.json",
+      "sha256": "298f4c5aa39c4de38889c940091e982a541f60645fcfa72c0136fdc3aa33cc5b",
+      "baseline_file": "analysis/key_redraw_baseline-right.json",
+      "baseline_sha256": "15529aedca6b2dde7effcc903d660e298c4de2d990ae0e0e8a992cda847794c7"
+    },
+    {
+      "file": "analysis/key_redraw_profile-right-pal.json",
+      "sha256": "c7298bb09df7c5dcf944824672980dcd6f7984fd1fb3a41f4f12d0852b13ad4a",
+      "baseline_file": "analysis/key_redraw_baseline-right-pal.json",
+      "baseline_sha256": "2eeb5039bd44ca15ba33875b83768c796fa372a31fdfac158704ff8ec81c736d"
+    }
+  ],
+  "model": {
+    "map_rebuild_tstates": 192686,
+    "hud_allowance_tstates": 32000,
+    "metadata_allowance_tstates": 5000,
+    "prepare_tstates": 229686,
+    "source_map_loop_cycle_exact": true,
+    "hud_and_irq_phase_cycle_exact": false
+  },
+  "source_rom_unmodified": true,
+  "full_redraw_pixels_verified": false,
+  "all_irq_phases_cycle_exact": false,
+  "full_game_ported": false
+}

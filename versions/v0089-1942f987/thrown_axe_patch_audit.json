@@ -1,0 +1,58 @@
+{
+  "md_sha256": "1942f9874b60a1f63742527016555105c1fb2c8e401164f4b0573ca571ce3109",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_bytes": 1048576,
+  "checksum": "0x643c",
+  "resource_bytes_original_exact": 919,
+  "source_files": {
+    "megadrive/src/main.c": "c8737613bae1fafe540cf7bf47acf56b6a47082f8c9829b7efb88f8d8063a7e5",
+    "megadrive/src/actors.c": "1e7c99659d040e7c6aa84be90c1775fd7a5934be8c26838e5e683d75b6870c8b",
+    "megadrive/src/thrown_axe_data.c": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202",
+    "tools/validate_second_spell.py": "3fe6636d184d5a6a29a2d2a0ff4af1d1e8fd096957a87f3c01650e5320176e20",
+    "tools/extract_thrown_axe.py": "26640d1108e677480399f07d462e6ffc29f29b18504be42d01aa21ef2f5a19e4",
+    "tools/audit_thrown_axe_patch.py": "ccffde9160bbe67ec5cacd70c1cda0ee1e128d5bf9e1fe0647b96c49ffda55dc",
+    "analysis/thrown_axe_resources.json": "4d395095fbbf31b8a4cccefcc112a477da54044c2f66ecb71ed11d692cf25fb7",
+    "analysis/thrown_axe_milestone.md": "e7c79028cb0471c37a7499d3a7327ed03fd794aaed24ed00160e4ec43ac87744",
+    "analysis/thrown-axe-main.c.diff": "cad32f8243751a49b12a3d853045ff84d234dfa1b10b8f0b03a994f216d36f29",
+    "analysis/thrown-axe-actors.c.diff": "b556ef010a8a6449e9a1e10013b417769bd20da212995bc8e735ee3a0f04cb81",
+    "validation/thrown-axe-walk-fast.log": "fdb87ed663ccc0d05ef27ddb153da66ce01608d595f248045bd972d8b0227cd0"
+  },
+  "reports": [
+    {
+      "file": "thrown_axe_report.json",
+      "sha256": "f31d22eca00e97ded5abb2c46b1515e8722c508b3715fc2ccdf6d847913d10ba"
+    },
+    {
+      "file": "thrown_axe_walk_report.json",
+      "sha256": "5d998d336b579b529baf9c20d93b00f7fb44b77915ce4a922e489237f7146e03"
+    },
+    {
+      "file": "thrown_axe_walk_fast_report.json",
+      "sha256": "49d69838298f8a03ddc479bd55b4d0600ea5ef36f68f917de98a96526ba56f8a"
+    },
+    {
+      "file": "second_spell_report.json",
+      "sha256": "1dff7e6b41692c031ba7f2b4d8a664548a3d104e7cece855bb516777b05dbaf6"
+    },
+    {
+      "file": "second_spell_fire_regression_report.json",
+      "sha256": "dce6f400be8260a298adfff7e490beae6ca0cab2be38a9a9afdbadeec8d9f25a"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "d7daea7ece96d04e34d70f1c35d2b809a1386b32a1c8fc1bf10a6dc252e25db1"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "2a9398e12fdd4a14f605b2e51558ece3c2008dfebf8bddc6ec9573dff77d34e7"
+    }
+  ],
+  "controlled_water_cases": 54,
+  "full_game_ported": false,
+  "limits": [
+    "Within-room controlled water map/equipment/position/clock, not natural water arrival, shoreline collisions, combat damage, acquisition, save/re-entry or complete playthrough.",
+    "Longer fast downward exploratory run crosses a room boundary and exposes mutable-cell loading-phase mismatch; preserved in log.",
+    "Other terrain contexts are classified but not fully implemented. Previously observed fire PAL state differences do not recur in these 22 current cases; full fire images have not been revalidated.",
+    "Full enemy/boss behavior, remaining abilities, quests, ending, global timing and audio waveforms remain unfinished."
+  ]
+}

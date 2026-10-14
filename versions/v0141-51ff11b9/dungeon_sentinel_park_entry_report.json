@@ -1,0 +1,93 @@
+{
+  "md_sha256": "51ff11b9c6a5d9ba1321f81c60bc3c4fb9fbc61d4c47514f9f0005dca3aee89e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "room": 348,
+      "type": 88,
+      "arrival_frames": {
+        "sms": 3442,
+        "md": 3442
+      },
+      "relative_first_actor_all_48_bytes_exact": 30,
+      "excluded_random_record_offsets": [],
+      "loaded_pattern_tiles_exact": 44,
+      "pattern_samples": 3,
+      "controlled_cycle_actor_frames_exact": 129,
+      "controlled_cycle_sat_frames_exact": 128,
+      "excluded_fixture_sat_frame": 3700,
+      "fixture_frame_sat": {
+        "sms": [],
+        "md": [
+          [
+            63,
+            120,
+            0
+          ],
+          [
+            63,
+            128,
+            1
+          ],
+          [
+            71,
+            120,
+            2
+          ],
+          [
+            71,
+            128,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "region": "pal",
+      "room": 348,
+      "type": 88,
+      "arrival_frames": {
+        "sms": 3440,
+        "md": 3441
+      },
+      "relative_first_actor_all_48_bytes_exact": 30,
+      "excluded_random_record_offsets": [],
+      "loaded_pattern_tiles_exact": 44,
+      "pattern_samples": 3,
+      "controlled_cycle_actor_frames_exact": 129,
+      "controlled_cycle_sat_frames_exact": 128,
+      "excluded_fixture_sat_frame": 3700,
+      "fixture_frame_sat": {
+        "sms": [],
+        "md": [
+          [
+            63,
+            120,
+            0
+          ],
+          [
+            63,
+            128,
+            1
+          ],
+          [
+            71,
+            120,
+            2
+          ],
+          [
+            71,
+            128,
+            3
+          ]
+        ]
+      }
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Normal dungeon doorway entry after exterior relocation; controlled relocation to room15b boundary with cleared actors and passable departure map. Right scroll and actual destination15c scripts/resources/actor loading execute normally.",
+    "Actor timelines aligned to first initialized core frame, not absolute loading cadence; Thirty first sentinel hidden-state records compare all48 bytes including fixed X/Y/direction. Other actor records are not compared. First 44 sprite pattern pixels sampled at three relative frames. At3700 all actors are replaced by one controlled58 at128,80 (park/counter128), hero224,128. All768 actor bytes compare129 frames. Actual SAT filtered to this8-tile resource compares128 frames3701..3828;3700 retains pre-injection source sprites and immediate native fixture sprites, recorded explicitly. No timeline shift is applied. Natural travel, full fight, full framebuffer, audio and full transition timing remain unproved."
+  ]
+}

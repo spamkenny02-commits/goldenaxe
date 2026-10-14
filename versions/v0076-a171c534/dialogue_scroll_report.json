@@ -1,0 +1,250 @@
+{
+  "md_sha256": "a171c53496510b0e93fde0518fe517243a8fe55f78e310edf968eee53abd1b3d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "poses": [
+        {
+          "cumulative_shift": 2,
+          "bitmap_sha256": "a7d8e0a4fe55dec62b40e4a8c96a957408162eef96ec4cf83de538ff6c1a09c4",
+          "matching_frames": {
+            "sms": {
+              "bitmaps": [
+                2200,
+                2201
+              ],
+              "patterns": [
+                2202,
+                2203
+              ]
+            },
+            "md": {
+              "bitmaps": [
+                2200,
+                2201,
+                2202
+              ],
+              "patterns": [
+                2202,
+                2203
+              ]
+            }
+          }
+        },
+        {
+          "cumulative_shift": 5,
+          "bitmap_sha256": "a0af2fbb1003e499686a7ab85f4e67ad4d4e843f5cac524eabad463692e71243",
+          "matching_frames": {
+            "sms": {
+              "bitmaps": [
+                2203,
+                2204
+              ],
+              "patterns": [
+                2205,
+                2206
+              ]
+            },
+            "md": {
+              "bitmaps": [
+                2203,
+                2204,
+                2205
+              ],
+              "patterns": [
+                2205,
+                2206
+              ]
+            }
+          }
+        },
+        {
+          "cumulative_shift": 8,
+          "bitmap_sha256": "235452a479cd9ae3c0cd1152cf7a74ae1012d6a8ac1c1ffb8fe749a35c97fc4c",
+          "matching_frames": {
+            "sms": {
+              "bitmaps": [
+                2206,
+                2207
+              ],
+              "patterns": [
+                2208,
+                2209
+              ]
+            },
+            "md": {
+              "bitmaps": [
+                2206,
+                2207,
+                2208
+              ],
+              "patterns": [
+                2208,
+                2209
+              ]
+            }
+          }
+        },
+        {
+          "cumulative_shift": 10,
+          "bitmap_sha256": "99da74e69618265a2998193a339301946857916b99378039bcd30871780d5bf1",
+          "matching_frames": {
+            "sms": {
+              "bitmaps": [
+                2209,
+                2210,
+                2211,
+                2212
+              ],
+              "patterns": [
+                2211,
+                2212,
+                2213,
+                2214
+              ]
+            },
+            "md": {
+              "bitmaps": [
+                2209,
+                2210,
+                2211,
+                2212,
+                2213
+              ],
+              "patterns": [
+                2211,
+                2212,
+                2213,
+                2214
+              ]
+            }
+          }
+        }
+      ],
+      "all_native_vram_poses_present": true,
+      "first_presentation_frames_exact": true,
+      "complete_pose_frame_lists_exact": true,
+      "all_pattern_pixel_colors_verified": true
+    },
+    {
+      "region": "pal",
+      "poses": [
+        {
+          "cumulative_shift": 2,
+          "bitmap_sha256": "a7d8e0a4fe55dec62b40e4a8c96a957408162eef96ec4cf83de538ff6c1a09c4",
+          "matching_frames": {
+            "sms": {
+              "bitmaps": [
+                2200,
+                2201
+              ],
+              "patterns": [
+                2202
+              ]
+            },
+            "md": {
+              "bitmaps": [
+                2200,
+                2201
+              ],
+              "patterns": [
+                2202
+              ]
+            }
+          }
+        },
+        {
+          "cumulative_shift": 5,
+          "bitmap_sha256": "a0af2fbb1003e499686a7ab85f4e67ad4d4e843f5cac524eabad463692e71243",
+          "matching_frames": {
+            "sms": {
+              "bitmaps": [
+                2202,
+                2203
+              ],
+              "patterns": [
+                2204
+              ]
+            },
+            "md": {
+              "bitmaps": [
+                2202,
+                2203
+              ],
+              "patterns": [
+                2204
+              ]
+            }
+          }
+        },
+        {
+          "cumulative_shift": 8,
+          "bitmap_sha256": "235452a479cd9ae3c0cd1152cf7a74ae1012d6a8ac1c1ffb8fe749a35c97fc4c",
+          "matching_frames": {
+            "sms": {
+              "bitmaps": [
+                2204,
+                2205
+              ],
+              "patterns": [
+                2206
+              ]
+            },
+            "md": {
+              "bitmaps": [
+                2204,
+                2205
+              ],
+              "patterns": [
+                2206
+              ]
+            }
+          }
+        },
+        {
+          "cumulative_shift": 10,
+          "bitmap_sha256": "99da74e69618265a2998193a339301946857916b99378039bcd30871780d5bf1",
+          "matching_frames": {
+            "sms": {
+              "bitmaps": [
+                2206,
+                2207,
+                2208,
+                2209
+              ],
+              "patterns": [
+                2208,
+                2209,
+                2210
+              ]
+            },
+            "md": {
+              "bitmaps": [
+                2206,
+                2207,
+                2208
+              ],
+              "patterns": [
+                2208,
+                2209,
+                2210
+              ]
+            }
+          }
+        }
+      ],
+      "all_native_vram_poses_present": true,
+      "first_presentation_frames_exact": true,
+      "complete_pose_frame_lists_exact": true,
+      "all_pattern_pixel_colors_verified": true
+    }
+  ],
+  "production_roms_unmodified": true,
+  "ram_injections": false,
+  "full_game_ported": false,
+  "limits": [
+    "Natural first page scroll only; four complete pattern poses including their observed durations, without full framebuffer equivalence.",
+    "Partial upload frames, subsequent word timing, whole dialogue timing and suppressed IRQ counts remain unproven or different."
+  ]
+}

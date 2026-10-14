@@ -1,0 +1,150 @@
+{
+  "md_sha256": "585437724e49ca97f2595072459324a3311708c915f12e2c7532837c15feaae5",
+  "cases": [
+    {
+      "region": "auto",
+      "type": 104,
+      "segment": "appearance",
+      "frames": 80,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 104,
+      "segment": "melee",
+      "frames": 49,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 104,
+      "segment": "windup",
+      "frames": 27,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 104,
+      "segment": "flight",
+      "frames": 20,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 104,
+      "segment": "finish",
+      "frames": 17,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 105,
+      "segment": "appearance",
+      "frames": 80,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 105,
+      "segment": "melee",
+      "frames": 49,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 105,
+      "segment": "windup",
+      "frames": 27,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 105,
+      "segment": "flight",
+      "frames": 20,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "auto",
+      "type": 105,
+      "segment": "finish",
+      "frames": 17,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 104,
+      "segment": "appearance",
+      "frames": 80,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 104,
+      "segment": "melee",
+      "frames": 49,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 104,
+      "segment": "windup",
+      "frames": 27,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 104,
+      "segment": "flight",
+      "frames": 20,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 104,
+      "segment": "finish",
+      "frames": 17,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 105,
+      "segment": "appearance",
+      "frames": 80,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 105,
+      "segment": "melee",
+      "frames": 49,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 105,
+      "segment": "windup",
+      "frames": 27,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 105,
+      "segment": "flight",
+      "frames": 20,
+      "all_768_actor_bytes_exact": true
+    },
+    {
+      "region": "pal",
+      "type": 105,
+      "segment": "finish",
+      "frames": 17,
+      "all_768_actor_bytes_exact": true
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actor/hero records injected in exterior. Production state, integration, animation/flash, collision publication and chase execute unchanged.",
+    "Segments stop before random attack/charge/rebound selection. Shared type68 charge states tested even though its normal choice branch only initiates melee. Natural room travel/combat, complete SAT/framebuffer/audio, inherited E degenerate expiry and hardware timing remain unproved."
+  ]
+}

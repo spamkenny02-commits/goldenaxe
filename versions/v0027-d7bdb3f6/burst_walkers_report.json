@@ -1,0 +1,140 @@
+{
+  "md_sha256": "d7bdb3f6112d2efe06cef2c6ca9cde0159dd35b4f71c643b924428516a2196aa",
+  "deterministic_cases": 32,
+  "controlled_decisions": [
+    {
+      "type": 54,
+      "state": 2,
+      "next_state": 10,
+      "shoot": false,
+      "native_random_controlled": true
+    },
+    {
+      "type": 54,
+      "state": 4,
+      "next_state": 10,
+      "shoot": false,
+      "native_random_controlled": true
+    },
+    {
+      "type": 54,
+      "state": 6,
+      "next_state": 10,
+      "shoot": false,
+      "native_random_controlled": true
+    },
+    {
+      "type": 54,
+      "state": 10,
+      "next_state": 6,
+      "shoot": false,
+      "native_random_controlled": true
+    },
+    {
+      "type": 55,
+      "state": 2,
+      "next_state": 10,
+      "shoot": false,
+      "native_random_controlled": true
+    },
+    {
+      "type": 55,
+      "state": 4,
+      "next_state": 10,
+      "shoot": false,
+      "native_random_controlled": true
+    },
+    {
+      "type": 55,
+      "state": 6,
+      "next_state": 10,
+      "shoot": false,
+      "native_random_controlled": true
+    },
+    {
+      "type": 55,
+      "state": 10,
+      "next_state": 6,
+      "shoot": false,
+      "native_random_controlled": true
+    }
+  ],
+  "aimed1e": [
+    {
+      "x": 120,
+      "y": 16,
+      "free_frames": 108
+    },
+    {
+      "x": 120,
+      "y": 144,
+      "free_frames": 108
+    },
+    {
+      "x": 48,
+      "y": 80,
+      "free_frames": 108
+    },
+    {
+      "x": 208,
+      "y": 80,
+      "free_frames": 108
+    },
+    {
+      "x": 48,
+      "y": 16,
+      "free_frames": 108
+    },
+    {
+      "x": 208,
+      "y": 16,
+      "free_frames": 108
+    },
+    {
+      "x": 48,
+      "y": 144,
+      "free_frames": 108
+    },
+    {
+      "x": 208,
+      "y": 144,
+      "free_frames": 108
+    },
+    {
+      "x": 120,
+      "y": 76,
+      "free_frames": 108
+    },
+    {
+      "x": 116,
+      "y": 72,
+      "free_frames": 108
+    },
+    {
+      "x": 124,
+      "y": 80,
+      "free_frames": 108
+    }
+  ],
+  "projectile19_phases": [
+    {
+      "source_clock_injected": 0,
+      "native_shift": 0,
+      "directions": 4,
+      "free_frames": 108
+    },
+    {
+      "source_clock_injected": 1,
+      "native_shift": 1,
+      "directions": 4,
+      "free_frames": 108
+    }
+  ],
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ],
+  "sprite_overflow_suppression_verified": false,
+  "original_rng_or_clock_stream_verified": false,
+  "natural_gameplay_verified": false
+}

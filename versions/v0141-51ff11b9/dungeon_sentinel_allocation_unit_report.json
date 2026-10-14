@@ -1,0 +1,14 @@
+{
+  "md_sha256": "51ff11b9c6a5d9ba1321f81c60bc3c4fb9fbc61d4c47514f9f0005dca3aee89e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "32364abde2c9e41e5f1fbdc5ef0c0e74414c3cd1a7f428cf7c2dcb998d63a5a0",
+  "harness_sha256": "1716311a1ba49b1bcdda8e751f1003ea3fdcd531a8cfc5480b485dedd87a1be8",
+  "cases": 1760,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Three sourceLD A,R sites use explicit register-preserving input shim. Original5014/A181/5878/4859/48F3/4A15 execute.",
+    "Seven even states; every actual room slot fixed placement; strict24-pixel proximity with hidden/contact flags; direction/terrain/bounds, pursuit/ties/blocked candidates;58 stop decision and resume.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

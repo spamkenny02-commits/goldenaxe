@@ -1,0 +1,118 @@
+{
+  "md_sha256": "3f4dbbc93e4c6db3e688c77c85912be93ed886dd73d0610d75fb77ec4c8f558c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "production_ROM_changed": false,
+  "production_source_changed": false,
+  "controller_exit_reentry_cases": 12,
+  "actual_save_cold_load_cases": 12,
+  "cold_house_no_second_gift_cases": 12,
+  "current_evidence": {
+    "house_quest_revisit_gameplay_report.json": "8ce5390e4da3dd643ac442b97fa70e98b42c1c69ad82c85bf884906abb44d051",
+    "quest_gift_save_report.json": "e54c29bdb990f1f2a8b627ce8b797a0b12594800c7cf0324ae9769ef0cedca02",
+    "house_quest_cold_persistence_gameplay_report.json": "8627f5eb8cec1008e1833d62cd139fc33e9aa062d17e1995699c245df157299b"
+  },
+  "SRAM_files": [
+    {
+      "path": "validation\\quest-gift-save-27-auto-sms.srm",
+      "sha256": "1d0f40cb1613e5c7cf06da2d3955a984e912a5efb1b810b867021793497ef77f"
+    },
+    {
+      "path": "validation\\quest-gift-save-27-auto-md.srm",
+      "sha256": "f646ee02634a7757f2466d4e7cab135f68c81633350e9efa91b708aebd298e84"
+    },
+    {
+      "path": "validation\\quest-gift-save-b1-auto-sms.srm",
+      "sha256": "1bbcbc8f53b034fb1c2fd08c7d3bba9e955cd7394d0a91b8b23cabe17b58f11d"
+    },
+    {
+      "path": "validation\\quest-gift-save-b1-auto-md.srm",
+      "sha256": "0c5cdb759d132322d139f787750b9afb483baa603a442c4fde077d38c6f7845a"
+    },
+    {
+      "path": "validation\\quest-gift-save-50-auto-sms.srm",
+      "sha256": "5b736544720872eb91f48b6352b627e6c997a2c42861ad06d8167564cda8c71a"
+    },
+    {
+      "path": "validation\\quest-gift-save-50-auto-md.srm",
+      "sha256": "0c0afa01e30b3f917210c8f3d092561a63ab29af90179d71e37b305d3aaa1eb1"
+    },
+    {
+      "path": "validation\\quest-gift-save-6a-auto-sms.srm",
+      "sha256": "522d76b5bf646e0647ff62952e1a423e1a9ed2e6416375e06f8976e6c60ca480"
+    },
+    {
+      "path": "validation\\quest-gift-save-6a-auto-md.srm",
+      "sha256": "5959d523a7f85aea18183a213296241c336e7dbb3325bf595ab363edb8635655"
+    },
+    {
+      "path": "validation\\quest-gift-save-92-auto-sms.srm",
+      "sha256": "9081f3923139ffacdc15755a3acea2fbd2f22e5ae3fb6640ac12c8c73b1a8588"
+    },
+    {
+      "path": "validation\\quest-gift-save-92-auto-md.srm",
+      "sha256": "61e826caa8dd83e91cd8e25401a3ce410f2e2b5d02b6befc5fe6b5275c5f3c6a"
+    },
+    {
+      "path": "validation\\quest-gift-save-4c-auto-sms.srm",
+      "sha256": "84c999e595d713d1596375521d14a5e47449c83fa5a3e9220f8a7e274f331788"
+    },
+    {
+      "path": "validation\\quest-gift-save-4c-auto-md.srm",
+      "sha256": "8a7ad917f91703cf851c5aeffdd7954756d2f507d93c23215a9a6ac872165ba7"
+    },
+    {
+      "path": "validation\\quest-gift-save-27-pal-sms.srm",
+      "sha256": "1d0f40cb1613e5c7cf06da2d3955a984e912a5efb1b810b867021793497ef77f"
+    },
+    {
+      "path": "validation\\quest-gift-save-27-pal-md.srm",
+      "sha256": "f646ee02634a7757f2466d4e7cab135f68c81633350e9efa91b708aebd298e84"
+    },
+    {
+      "path": "validation\\quest-gift-save-b1-pal-sms.srm",
+      "sha256": "1bbcbc8f53b034fb1c2fd08c7d3bba9e955cd7394d0a91b8b23cabe17b58f11d"
+    },
+    {
+      "path": "validation\\quest-gift-save-b1-pal-md.srm",
+      "sha256": "0c5cdb759d132322d139f787750b9afb483baa603a442c4fde077d38c6f7845a"
+    },
+    {
+      "path": "validation\\quest-gift-save-50-pal-sms.srm",
+      "sha256": "5b736544720872eb91f48b6352b627e6c997a2c42861ad06d8167564cda8c71a"
+    },
+    {
+      "path": "validation\\quest-gift-save-50-pal-md.srm",
+      "sha256": "0c0afa01e30b3f917210c8f3d092561a63ab29af90179d71e37b305d3aaa1eb1"
+    },
+    {
+      "path": "validation\\quest-gift-save-6a-pal-sms.srm",
+      "sha256": "522d76b5bf646e0647ff62952e1a423e1a9ed2e6416375e06f8976e6c60ca480"
+    },
+    {
+      "path": "validation\\quest-gift-save-6a-pal-md.srm",
+      "sha256": "5959d523a7f85aea18183a213296241c336e7dbb3325bf595ab363edb8635655"
+    },
+    {
+      "path": "validation\\quest-gift-save-92-pal-sms.srm",
+      "sha256": "9081f3923139ffacdc15755a3acea2fbd2f22e5ae3fb6640ac12c8c73b1a8588"
+    },
+    {
+      "path": "validation\\quest-gift-save-92-pal-md.srm",
+      "sha256": "61e826caa8dd83e91cd8e25401a3ce410f2e2b5d02b6befc5fe6b5275c5f3c6a"
+    },
+    {
+      "path": "validation\\quest-gift-save-4c-pal-sms.srm",
+      "sha256": "84c999e595d713d1596375521d14a5e47449c83fa5a3e9220f8a7e274f331788"
+    },
+    {
+      "path": "validation\\quest-gift-save-4c-pal-md.srm",
+      "sha256": "8a7ad917f91703cf851c5aeffdd7954756d2f507d93c23215a9a6ac872165ba7"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Native ROM/source byte-identical to numbered v0177. All six naturally defined gift-house doors,both video regions. Re-entry route uses read-only observations and ordinary buttons after setup;fixtures include world visited1/traversal item and initial cleared exterior actors.",
+    "Actual controller-generated gift fields transferred to established save-point fixture;production slot1 save and fresh-core Continue execute. Full592-byte payload and loaded256 flags/17 items/equipment/curse/story/capacity compare. New cold-house tests inject no gift inventory or flag;only exterior/door/hero relocation and clock alignment after Continue.",
+    "No uninterrupted route from each gift to save point and back from checkpoint,all slots,complete natural progression or exact transition/refresh-RNG fidelity is proved. Static maps exclude remaining NPC animation poses,with differences recorded."
+  ]
+}

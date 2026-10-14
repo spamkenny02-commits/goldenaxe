@@ -1,0 +1,52 @@
+{
+  "md_sha256": "fa9293155842594f13c97566a540bf3940ea0657bd513168a1770e592df16ba5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "type": 106,
+      "frames": 252,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ],
+      "first_eight_shot_burst_and_variant_branch_and_clear_verified": true
+    },
+    {
+      "region": "auto",
+      "type": 107,
+      "frames": 252,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ],
+      "first_eight_shot_burst_and_variant_branch_and_clear_verified": true
+    },
+    {
+      "region": "pal",
+      "type": 106,
+      "frames": 252,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ],
+      "first_eight_shot_burst_and_variant_branch_and_clear_verified": true
+    },
+    {
+      "region": "pal",
+      "type": 107,
+      "frames": 252,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ],
+      "first_eight_shot_burst_and_variant_branch_and_clear_verified": true
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled boss/hero records injected in exterior, initial stats from original; MD world clock explicitly aligned to source at fixture start. Production actor loop, animation-period-zero behavior, eight allocations, projectile flight/pause/variant branch, flash/cull and boss disappearance execute unchanged.",
+    "Without clock alignment NTSC type6B diverges at2977: MD projectile contact/removal is one frame earlier than SMS2978. This actual global-phase difference remains unresolved; this check isolates actor logic and does not prove absolute combat timing.",
+    "Stops before relocation random choices; natural dungeon fight, global clock/RNG, complete sprite/framebuffer/audio and hardware timing remain unproved."
+  ]
+}

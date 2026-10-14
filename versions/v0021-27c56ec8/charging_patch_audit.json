@@ -1,0 +1,76 @@
+{
+  "md_sha256": "27c56ec87e272f87f6d6bf368e5f34bd9b85264956b87932d74e281df5aa5cf5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "original_unchanged": true,
+  "evidence": [
+    {
+      "file": "charging_actors_report.json",
+      "sha256": "aebf7f92601260768e4ca3cb021ae22fb587ecf3f0edb14ecf412ef4ae247cc1"
+    },
+    {
+      "file": "charging_actors-pal_report.json",
+      "sha256": "f066b268d0e7c4907eb0ba007e3742555732640ea4e53f90c730ebe5dc3248ee"
+    },
+    {
+      "file": "charging_spawns_report.json",
+      "sha256": "3577dfec0ae00c6a6259885907964ff03d6465993ef48a06e174586af8f3aeab"
+    },
+    {
+      "file": "charging_spawns-pal_report.json",
+      "sha256": "7eb0d058b68a71bcdaee0ace50da2921206c09c484886c8aa586bb2f39a44cc3"
+    },
+    {
+      "file": "charging_rooms_report.json",
+      "sha256": "19a4cffaec904e5fde00bdc0e0a6a865166ae036b651c0e787324e3e7bf73fb9"
+    },
+    {
+      "file": "bouncing_shooters_report.json",
+      "sha256": "aab9e3cfe39bd3306b4901cb9a4b355e6aa1b425e71d34d3a10c77a463f57f6f"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "b4a036cf22ecf04428337f5b246c1c2f3f081b8249afbf02d31ab91a35356bd2"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "9473415ab261abc22e0d09dad9f8a481751c50be7194dbdca18b30dd4f652cfa"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "6efcbf048267277a8e4b1c5d7714e843f91db3ee789196e791c10ba3c3106844"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "9e1a7deeeb25c2cb55c10d06b57601953f7de9bfc575b847e87ca88346c532bb"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "db33e3771aaf41c6f22a92a72725d235fcc87d24b14c85203455364c469d382a"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "cdcdeca556ed7227f9691eeed50ad1e8faa230ce2e2b6ae841c342aee8262469"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/actors.c": "ea8ed8d262e254a2f73bf858a5f6484237aa7f5de709a1f09a6727ecc540c4f3",
+    "megadrive/src/actor_data.c": "db2e7d91ab574aac21cacdee518a69b6310943bbe3a3972a63812c06bb9a7186",
+    "tools/extract_actors.py": "03020648796d9eaa36774f7755ab867672c4174f46f69e72e0c6afd10db9d65e",
+    "tools/validate_charging_actors.py": "ea79612511d1d128fa76b67a08525f65e70bf25db2153634898cedb657774c23",
+    "tools/validate_charging_spawns.py": "beb366287fb91fde118f0d1f159948553bbfc2f4249a20b7a3dc8679e000bc58",
+    "tools/validate_charging_rooms.py": "c08b2074fc36b517b151626f2eaf4cd789ae6cb067547179fd64312ef34d109b"
+  },
+  "charging_actor_record_comparisons": 8172,
+  "full_game_ported": false,
+  "original_rng_stream_reproduced": false,
+  "full_transition_timing_equivalence": false,
+  "notes": [
+    "Collision-list descriptor bytes27/28 excluded from actor record comparisons",
+    "Cold-load room checkpoints verify walking and charging, not full progression",
+    "Spawn fixtures explicitly control random choices and IRQ phase",
+    "Existing intro startup offsets, quests/dungeons and remaining actors are pending"
+  ]
+}

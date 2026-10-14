@@ -1,0 +1,17 @@
+{
+  "md_sha256": "e7069055e4dca251b0905e83e9d212e55e991321058edb640ebab5c61f851b15",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "b01dac3a1e2389bc50309cd419c68b3b9636dcdf025d570ed2a356446da92706",
+  "harness_sha256": "8c7b99c292b200152cbea17cbd31ab29a3d4f3da72d29ae01360c2e89f7ada0f",
+  "cases": 660,
+  "boss_cases": 211,
+  "projectile_cases": 324,
+  "satellite_cases": 125,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Two LD A,R sites use explicit register-preserving inputs. Other original54D9/577F/5467/4518/46B4 instructions execute.",
+    "Selected ten boss/three shot/three satellite states, chase limits, attraction caps, returning axes, bounce/counter, path end and bounds. Already-full allocation fixtures supply ROM IY8000; inherited RAM IY effects remain unsupported.",
+    "Original RNG/global clock, natural fights/routes, full video/audio and hardware timing remain unproved."
+  ]
+}

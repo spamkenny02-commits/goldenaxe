@@ -1,0 +1,14 @@
+{
+  "md_sha256": "ee2d31fc71c765be4802ec8b5ad7d86b99a6225a2ce7850ea2071e23c721aa73",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "3f7e1a9f4600c0290c92b2a2a75c6cf14268d7c2b9d8095e2eac9776e252239d",
+  "harness_sha256": "bf99f896db439a00c59e04186ea2aed67c013c1698655356a244f5a86fd29ba1",
+  "cases": 848,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Six sourceLD A,R sites use explicit register-preserving input shim. Original4F44/9A1B/57F8/4AB7/48F3/230E execute.",
+    "Eight even states; bounds/terrain, surviving/lethal damage, all parent slots, partial/full free allocation, separation clock/branch/blockage and flash. State0 requires loader animation0.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

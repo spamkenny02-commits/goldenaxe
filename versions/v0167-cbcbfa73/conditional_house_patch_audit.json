@@ -1,0 +1,21 @@
+{
+  "md_sha256": "cbcbfa73d37247540e914aae9cb642aba3f8ae05df60aa51e2f4331590592377",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": 29928,
+  "rom_bytes": 1048576,
+  "aliases_header_verified": true,
+  "main_change_only_conditional_house_include_and_hook": true,
+  "prior_actors_plain_dialogues_gold_minigame_quest_save_unchanged": true,
+  "nine_source_texts_and_four_actual_call_operands_verified": true,
+  "evidence_sha256": {
+    "conditional_house_unit_report.json": "115961995f9e678dd21670536c7bc67984914774b9c4851274494b77256703c8",
+    "conditional_house_gameplay_report.json": "36a1ddd85f95f77381263b5c0466c17e1aa919e713c81cafae0e1a5bf373f408",
+    "house_dialogue_report.json": "3c5df08c3f7050c314ea3a0a0d716203790afb1ba2ca271ceed3f96a440cecac"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "5040 actual room-script/routine comparisons and24 controlled live integrations. Source ROM unpatched for live tests. No original absolute text publication timing claim; animated NPC map words excluded and differences retained.",
+    "Natural acquisition of prerequisites, full SRAM quest progression and complete playthrough remain unproved. Fairy5FC7 and paid gate6036 source handlers are next unported classes to investigate.",
+    "Provisional RNG, global timing, scanline clipping, inherited loot expiry visuals and complete audio/video/hardware fidelity remain incomplete/unverified."
+  ]
+}

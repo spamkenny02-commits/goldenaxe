@@ -1,0 +1,89 @@
+{
+  "md_sha256": "ea5b8434f3606cac37ab1212fd7d8249b29703b3e84be993cd75fb357b7ed1f3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "evidence": [
+    {
+      "file": "sprite_overflow_report.json",
+      "sha256": "7fb543c36b14c6a5e27d8ed49e24f7995153170312e488c9dac0ebd528a3bba6"
+    },
+    {
+      "file": "overflow_allocation_report.json",
+      "sha256": "b122a064642e877a7e33ef6d50d336d0726036af48aca566101abba0b8e98031"
+    },
+    {
+      "file": "overflow_allocation-pal_report.json",
+      "sha256": "b122a064642e877a7e33ef6d50d336d0726036af48aca566101abba0b8e98031"
+    },
+    {
+      "file": "walker40_report.json",
+      "sha256": "bccf791f40d595109feca4a2b11b741b0160110125384733b321c74e50b7e93a"
+    },
+    {
+      "file": "walker40-pal_report.json",
+      "sha256": "e434cff5e027f3736fc59be9d561083cdb038cbf586094be97662d997b96a257"
+    },
+    {
+      "file": "pursuit_shooters_report.json",
+      "sha256": "80b36222263d420b4bacd55c8de267bdd4c07393fe5ff85baa2e57a648a1a45d"
+    },
+    {
+      "file": "pursuit_shooters-pal_report.json",
+      "sha256": "85544d2a04b174279009f22085259755e92ec932b6f01db929925ef45262b3e2"
+    },
+    {
+      "file": "burst_walkers_report.json",
+      "sha256": "e87bb3f015037553a0b81346382a56ac9232814af334d77429eca5bc933084cc"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "1126187fa6257e900d748412351fb4893e437aac717dc98f9034662096bbaf5a"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "a9209957fd47ac3d78c2550d4a723e2206e936feeade8369fdfeac3d5fbb4c43"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "e2795f513f1b23325c971bee9af0d0b2909244f055b718a9cfc323e5b959e8eb"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "4d038a0d13cd8d7cd5a75db1780153e087a5157061319efec53a78a9383bd812"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "5cbd6ca6ec6786b93ab269f82df5ae4de5c1c35bf208d5096be2684ef4d417af"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "ed6df48450e5f7b53b3d64db2f80f307c3854d08399099fa7414f787d4cf3ea0"
+    },
+    {
+      "file": "intro_report.json",
+      "sha256": "bd782aa5ac7a63c8dd1fbf73ee41c59b9cd79b72b79daa8dee141c42f62fd4a0"
+    },
+    {
+      "file": "intro-pal_report.json",
+      "sha256": "cadefa905806417cd7fbab782ad0fa8a562837aa6d9e74da3c4296d36fb0fcda"
+    }
+  ],
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "modeled_sms_status_frame_comparisons": 258,
+  "allocation_record_comparisons": 320,
+  "sms_eight_by_eight_sprite_mode": true,
+  "md_hardware_overflow_used": false,
+  "source_fixture_status_mutations": false,
+  "source_fixture_vram_mutations": false,
+  "all_sprite_layouts_verified": false,
+  "sms_flicker_or_priority_emulated": false,
+  "full_game_ported": false,
+  "source_files": {
+    "megadrive/src/actors.c": "39e61f004b546468250969c5e4552a6d0c94bf4ebe09c88495717b2c3af95b66",
+    "megadrive/src/actors.h": "4910eb2d87b143a153220fce5d2541f05451eb0dc1c163ecae943266989253a5",
+    "megadrive/src/main.c": "ecb7b055690e9c0ad82d98586c6255308f050738a444e4995a4079e74e658d3d",
+    "megadrive/src/sound.inc": "0b08bcb0b51605cd91fbc3512ff5173ec3e14bfaeebc69ee9e2ed24f66c294ca",
+    "tools/validate_sprite_overflow.py": "fd7ad82be882741a4860668639d7a895079ca129991c1f6247165ea3dc9bb0df",
+    "tools/validate_overflow_allocation.py": "c59f1c75397344d39eb18863c46deb173c48bd72ddd3e6d8cf98a8eaac73c22c"
+  }
+}

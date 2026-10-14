@@ -1,0 +1,25 @@
+{
+  "md_sha256": "a41f0e2f59bc338620aab82c6937924cf50b9771a4ceec9c8e4275eee822c415",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 22319,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_4D_4E_behavior_dispatch_collision_publication_and_magic_accessor": true,
+  "prior_actor_and_main_implementations_unchanged_since_v0130": true,
+  "literal_table_bytes_exact": 32,
+  "source_files": {
+    "megadrive\\src\\main.c": "98d35cdef93ca84a3a9da113065cedf3ff34b19a8faa5b8ca6edead9b3c0875f",
+    "megadrive\\src\\actors.c": "279f7db8d2c01d892988491237c47d040bf9e391cd1f4ddb23ba23d66860d0e1",
+    "megadrive\\src\\dungeon_drain_data.c": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001",
+    "tools\\validate_dungeon_drain.py": "474a137270f045c5e6c7769925d58c7cf89854e6d9b8198ccd330a4e242d42bc",
+    "tools\\validate_dungeon_drain_gameplay.py": "e315dae702c480b8dba6e38b95721cc3e8abf8b2f6830a2fbb8722c3b5c917c6",
+    "tools\\validate_dungeon_drain_hud.py": "d70778eeaaff04838136c0c641c6d46d5df4acc5e39468d3dd88cf098adb8705",
+    "tools\\prove_dungeon_drain_bounds.py": "bc1d3250e62a53de90ab97d78308354bdb0f01d5c90c833a2f9d80e67e057134"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Controlled state injection and native initial clock alignment; whole original RNG/global clock not reproduced.",
+    "Natural hero contact after controlled relocation and actual magic HUD tile timing checked. Full natural fights and full framebuffer/SAT/audio remain unproved.",
+    "Interior expiry inherits sourceE; explicit0..3 tested and nonzero-vector bound derived under documented invariant."
+  ]
+}

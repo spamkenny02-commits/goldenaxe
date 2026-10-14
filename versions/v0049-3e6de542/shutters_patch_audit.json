@@ -1,0 +1,97 @@
+{
+  "md_sha256": "3e6de5423466531de424804c834c071f53c757e3a29ee6efa6264912e68e1b14",
+  "md_size": 524288,
+  "checksum_and_aliases_verified": true,
+  "current_reports": [
+    {
+      "file": "validation\\room_clear_report.json",
+      "sha256": "6d7830ed2c53398f6484e4c077f5c92a1b9f940bb325c5715850d971c6f1fb0f"
+    },
+    {
+      "file": "validation\\shutters_report.json",
+      "sha256": "08bb6d812975becd4eddd35af0bedb4ac1e58ad3ef6f9fe552a5af5d71c3b0c4"
+    },
+    {
+      "file": "validation\\key_doors_report.json",
+      "sha256": "478bc0f2cf76c8004e3b037e466234eb2649a41ae67ba6cac72ca2d1e4045f37"
+    },
+    {
+      "file": "validation\\clear_rewards_save_report.json",
+      "sha256": "b1b10d9fbe1902b1b379899afcd245cf2c0470cb3dc13ed829424670eae096dd"
+    },
+    {
+      "file": "validation\\shutters_gameplay_report.json",
+      "sha256": "216286487016649129f7fc5cbd8fe6a4114019fe810ce02630ea5f6e4514f7f4"
+    },
+    {
+      "file": "validation\\shutters_gameplay-pal_report.json",
+      "sha256": "1418df9dff027c1dff92f7086b7ed66f4340ebaa4a3dfa18e6f95c2d6590f736"
+    },
+    {
+      "file": "validation\\clear_rewards_gameplay_report.json",
+      "sha256": "ff87f29a35a254bc0b8103fc506819dad37d451527bfc29796ee1eb666ca4a53"
+    },
+    {
+      "file": "validation\\clear_rewards_gameplay-pal_report.json",
+      "sha256": "fadaf9ab5083e821caec24cc739e311ef678a1d504fe3d2a07cb9eca424fa842"
+    },
+    {
+      "file": "validation\\room_clear_gameplay_report.json",
+      "sha256": "0de166d823c152abc2e3c87af61a302ab11ea539399ff5dfc788790d598a648c"
+    },
+    {
+      "file": "validation\\room_clear_gameplay-pal_report.json",
+      "sha256": "73f8fc24d4e278aa275b54942078df726412654895c2d58eea554041c47826c2"
+    },
+    {
+      "file": "validation\\key_door_gameplay_report.json",
+      "sha256": "e0c19cc4a401bf40f91bc8b55006c8c7865084f1fbe1f4d0bed00f92af6bb29a"
+    },
+    {
+      "file": "validation\\key_door_gameplay-pal_report.json",
+      "sha256": "d91b1e2358e82854ce0b00c278ea62112de08a42b70f0bf5f5eff8f773212d59"
+    },
+    {
+      "file": "validation\\timing_report.json",
+      "sha256": "c76da7b6f8e0b7e2e32d515af05436667878965dab6b0aac27658ea4bec804a1"
+    },
+    {
+      "file": "validation\\timing-pal_report.json",
+      "sha256": "1856b2b1f614c89ac07843e75259c00abb2d350e073a47fdc701fafe339cc696"
+    }
+  ],
+  "room_clear_handlers": 96,
+  "new_completion_handlers": 27,
+  "shutter_handlers": 13,
+  "distinct_script_rooms": 97,
+  "live_shutter_cases": 20,
+  "isolated_clear_shutter_and_key_cases": 24576,
+  "live_reward_cases": 32,
+  "live_clear_regression_cases": 12,
+  "live_key_regression_cases": 18,
+  "cold_load_cases": 2,
+  "source_files": {
+    "megadrive/src/main.c": "2807a7d72c36f7d373c60bac38636d656995e8856a282bb1fca132c3795edc8c",
+    "megadrive/src/actors.c": "e3606b96a00c4a4f13f075816b4a73ae5a23ad159c21cdd289b6c01ec24e0b21",
+    "megadrive/src/actors.h": "d293c8626dd382a0f9e871b32ac89052da596e42294b1a35bcdc6356aa6d9541",
+    "megadrive/src/room_clear.inc": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab",
+    "tools/extract_room_clear.py": "108c09bcfb6c3f5378297eb2f2ea4944ae3a42f8b3ce64ef97b6b3df808c725e",
+    "tools/validate_room_cells.py": "cfb5df5582e45d70f4725665418247a45bf5a1215c18fc6f9869c4ec05b32db5",
+    "tools/room_clear_harness.c": "a022735106b304c8a0fdaa9621db55c0f95dc84f062dbb6dc2671804a3584596",
+    "tools/validate_room_clear.py": "18ca30fca8be734ed401eb2815584f5e6d65df97e703fbc264593dc9dce3981d",
+    "tools/validate_clear_rewards_gameplay.py": "b47d712c21ca52879b0a540562e0e80b345d76d808b29698264b4574fc16e5b4",
+    "tools/validate_clear_rewards_save.py": "fd351d627bfcc5907ab147e6e3c6d7bd3c50e6bce0a06c63f0007a1aae48f477",
+    "tools/shutters_harness.c": "1372ec4b6fa6aa39500ba5b7b0bd7450f76e8fd054be5b6a81e740905c639a4e",
+    "tools/validate_shutters.py": "7151822bdf273a2f3fc515c2a41b69b2c044ed21d3533514b3a8a9f41b766698",
+    "tools/validate_shutters_gameplay.py": "cd3a3bd3a603ad1baff70990e65f69b748389633c440990d5615ac6ce9fcd2f8",
+    "tools/audit_shutters_patch.py": "d085e911fddcfbd7edda8b61bb94ad7136238fdc62c4bade8d73e7f5315fe98c"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Full natural enemy fights, exterior routes and dungeon progression are not verified by controlled fixtures.",
+    "True block pushing, contact prefixes such as 5C96 and room 174 portal 5CFB remain unported; bosses, quests and ending remain incomplete.",
+    "Room 131 collection starts at reward centre; only room 113 pickup uses a tested walking path.",
+    "Save fixtures transfer earned state to the village save route; uninterrupted travel to that save point is unverified.",
+    "Approximate redraw/loading timing, sprite priority/flicker, full scene pixels and audio waveforms remain unresolved."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "md_sha256": "5136310583bcc2eed918f0593c2209d28d5b1b5a32410e4cfbc7afc628acc912",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "name": "first_house",
+      "region": "auto",
+      "room": 0,
+      "source_animation_tile": 61,
+      "frames_compared": 118,
+      "difference_frames": [],
+      "frames_exact": 118
+    },
+    {
+      "name": "second_house",
+      "region": "auto",
+      "room": 2,
+      "source_animation_tile": 61,
+      "frames_compared": 118,
+      "difference_frames": [],
+      "frames_exact": 118
+    },
+    {
+      "name": "first_house",
+      "region": "pal",
+      "room": 0,
+      "source_animation_tile": 61,
+      "frames_compared": 118,
+      "difference_frames": [],
+      "frames_exact": 118
+    },
+    {
+      "name": "second_house",
+      "region": "pal",
+      "room": 2,
+      "source_animation_tile": 61,
+      "frames_compared": 118,
+      "difference_frames": [],
+      "frames_exact": 118
+    }
+  ],
+  "diagnostic_only": false,
+  "full_game_ported": false,
+  "limits": [
+    "Two normal village-house routes PAL/NTSC; one native clock alignment at frame 3300. No ongoing animation injections.",
+    "Four actual animated VRAM tile pixel arrays compared. Complete room framebuffer, all house rooms and global timing remain unverified."
+  ]
+}

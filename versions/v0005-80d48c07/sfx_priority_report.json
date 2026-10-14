@@ -1,0 +1,237 @@
+{
+  "md_sha256": "80d48c07e1c79c94f76438b3e9a7ed365de7390df3c3b71404c34b82f9464d1c",
+  "scenarios": [
+    {
+      "command": "lower_rejected",
+      "events": [
+        [
+          360,
+          8,
+          145
+        ],
+        [
+          362,
+          8,
+          144
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "higher_replaces",
+      "events": [
+        [
+          360,
+          8,
+          144
+        ],
+        [
+          362,
+          8,
+          145
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "equal_replaces",
+      "events": [
+        [
+          360,
+          8,
+          146
+        ],
+        [
+          362,
+          8,
+          147
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "three_queues",
+      "events": [
+        [
+          360,
+          6,
+          144
+        ],
+        [
+          360,
+          7,
+          145
+        ],
+        [
+          360,
+          8,
+          149
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "later_tie",
+      "events": [
+        [
+          360,
+          6,
+          146
+        ],
+        [
+          360,
+          7,
+          147
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "music_effect_same_tick",
+      "events": [
+        [
+          360,
+          6,
+          129
+        ],
+        [
+          360,
+          8,
+          144
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "tone_noise_overlap",
+      "events": [
+        [
+          360,
+          8,
+          145
+        ],
+        [
+          362,
+          8,
+          146
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "noise_tone_overlap",
+      "events": [
+        [
+          360,
+          8,
+          146
+        ],
+        [
+          362,
+          8,
+          145
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "stop_effects",
+      "events": [
+        [
+          360,
+          8,
+          166
+        ],
+        [
+          370,
+          8,
+          178
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "stop_all",
+      "events": [
+        [
+          360,
+          8,
+          166
+        ],
+        [
+          370,
+          8,
+          177
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "fade",
+      "events": [
+        [
+          360,
+          8,
+          176
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    },
+    {
+      "command": "music_reset",
+      "events": [
+        [
+          360,
+          8,
+          166
+        ],
+        [
+          370,
+          6,
+          131
+        ]
+      ],
+      "irq_states_exact": 660,
+      "channel_records": 7,
+      "audible_psg_register_states_exact": 660,
+      "unsupported_commands": 0
+    }
+  ],
+  "scope": "Priority replacement, three queues, music/noise/tone arbitration, stop and fade; controlled commands and compensation phase",
+  "muted_noise_register_excluded": true,
+  "audio_waveform_equivalence_verified": false,
+  "sound_effect_arbitration_ported": true
+}

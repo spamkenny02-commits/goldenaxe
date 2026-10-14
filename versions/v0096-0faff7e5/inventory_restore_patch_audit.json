@@ -1,0 +1,33 @@
+{
+  "md_sha256": "0faff7e5a78478e3c637209c3e380ade74d065c2149824be9598400014baf32c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "only_declared_inventory_background_resource_selection_changed": true,
+  "source_files": {
+    "megadrive/src/main.c": "93cb652b919ee9ec89b2103cd62c9773f01c9f0c0c8de0569330f66dc2954d91",
+    "tools/validate_inventory_restore.py": "e8b1623519ea6d027065b670206b38a99c0ac6b4fa4274611a5b76e288a63aee",
+    "tools/audit_inventory_restore_patch.py": "b7f1da09efa698f881419a0dce29d36261ab07283299a072a462e5592df81e45",
+    "analysis/inventory_restore_milestone.md": "08df09ef756a8d8c5eada0d0441fcaa2251aec60cb8721bc609d143ff886159d",
+    "analysis/inventory-restore-baseline-v0095/main.c": "ee2e4a8d0f402e0d5b02975cf95f700c6c00034e778c8bb3de89380c8408dd7b",
+    "analysis/inventory-restore-baseline-v0095/symbol.txt": "6e188461be446c749a54f1522468db6188d924a9ec6646df0f73a9bc41389c06"
+  },
+  "reports": [
+    {
+      "file": "inventory_restore_report.json",
+      "sha256": "44ad5d23d7ae444be018885c7537eb23c4f2f99148344012caf30aea6af26d98"
+    },
+    {
+      "file": "inventory_report.json",
+      "sha256": "b607fc6c189d70a066f142711d7a4c4d104dec872e92afd6ad4637979380cdf4"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "bb06bafbc2dd5a1d4ff65ebc51565c1d880a62bee468342f3277a5de2cb12a53"
+    }
+  ],
+  "baseline_report_sha256": "7b932b9bcba37f120cb1da5111cf8f93e2bd3139b29b9044ed05e4a3c69c2795",
+  "full_game_ported": false,
+  "limits": [
+    "All static background tiles among the first 124 match source; four animated house tiles are identified by original C9E0 and excluded from static equality. All raw differences remain recorded. Native early restored tiles match its pre-menu tiles. Complete framebuffer and animated phase are outside this check.",
+    "Initial exterior and two village houses reached by normal input; dungeon inventory restoration is not exercised by these routes."
+  ]
+}

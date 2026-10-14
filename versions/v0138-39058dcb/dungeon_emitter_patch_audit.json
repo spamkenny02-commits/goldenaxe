@@ -1,0 +1,25 @@
+{
+  "md_sha256": "39058dcb999456ab4f69b2a5afeaf06077e0148ca4235b02c865b22e9dad3c09",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 29662,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_54_55_AI_71_template_dispatch_and_collision_publication": true,
+  "prior_actor_and_main_implementations_unchanged_since_v0137": true,
+  "literal_bytes_exact": 22,
+  "original_random_stream_reproduced": false,
+  "source_files": {
+    "megadrive\\src\\main.c": "c6a8892478e371ad1f230c04ce53793a07500a947e88a5d7985c027899ee3d48",
+    "megadrive\\src\\actors.c": "71b946a28adf6b42843d40817476f2b88ff71b41a08724f4ae9de86b1f8d3347",
+    "megadrive\\src\\dungeon_emitter_data.c": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422",
+    "tools\\validate_dungeon_emitter.py": "a639ff38df6b14479133415701bf11a4dcd73f88e7aacf6a25594cfff9db6b03",
+    "tools\\validate_dungeon_emitter_gameplay.py": "cf9caeec5f199ffd497e84eae2ff9276acb9d0a622135857a5a51c1a035ba439",
+    "tools\\validate_dungeon_emitter_entry.py": "e2ecbf0a754fabb22aa2c960fbafdd0c2ec66c8eead10508950189f97edbfc7c"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Initial production clock explicitly aligned for controlled segments; source random reads controlled only in isolated cases.",
+    "Actual143/128 scroll/load compares fixed X/Y/direction; initial appearance records exclude random cooldown byte4 and align to first initialization. Other records and absolute loading cadence not compared.",
+    "Full natural fights, RNG/global clock, framebuffer/SAT, complete audio and hardware timing remain unproved."
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "md_sha256": "b2742e8311c22e93fcc49693b9332a5e0d13de95af0a85ca72712419f6d51fd6",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_size": 524288,
+  "checksum": "0xe49e",
+  "checksum_aliases_verified": true,
+  "item_scripts": 10,
+  "source_table_and_assets_exact": true,
+  "all_prior_production_files_except_main_unchanged": true,
+  "baseline_main_v0056_sha256": "ed0e0b12172b4387dd854868e5b19574b6a86bc558152c89907b6eece354fa00",
+  "source_files": {
+    "megadrive/src/main.c": "35efc3e34ebe7563c96745ce909c0ddb7316ca00a4eb94ff931e6bb01809edcd",
+    "megadrive/src/item_rewards.inc": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c",
+    "megadrive/src/item_rewards_data.c": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6",
+    "tools/extract_item_rewards.py": "4d4821aaff8682c5f63435bf66630ef208c8d6b4f8c04bd48002ccd9be154372",
+    "tools/profile_item_rewards.py": "6bbb85f01eb8645c0ad7cd3310d4b10a786e05ba84aafc3961f9c3b4d1dfb2e4",
+    "tools/validate_room_cells.py": "2e85622c54d1eba5d3bd4d0bbf570730494932728fe3f6c8adf5e977d19bfae3",
+    "tools/item_rewards_harness.c": "193782198b7cd63ef05e3fd9cd07a1d5aeb0b7c15e59d4c03a15ec763e8275b0",
+    "tools/build_item_rewards_harness.ps1": "3cbecc52ca4cb88e425384c67d1e80085928d68142a5915e83bdea4d031a5d0b",
+    "tools/validate_item_rewards.py": "0c2b5d8bc91b6cde78414fc2a9260b38f51c22d17d9a76005bd58b7498b691b2",
+    "tools/validate_item_rewards_gameplay.py": "cb3f19669e0b36dff05995c36d1a8a52b8c41a8cdb9f980336989b434427a106",
+    "tools/validate_item_rewards_save.py": "76a13b198eb2212334940f707c7eeac5b63b3bbdd18daaae95796727acede9e1",
+    "tools/audit_item_reward_visuals.py": "73da0fe395eba4f6e08ea55c4d006d6c035bcacfad87530518db13e33a9ca086",
+    "tools/audit_item_rewards_patch.py": "4313ce8a5247b70f1865314bf9d863ffecf1a426c9ec25e599df48dc3923b11e",
+    "analysis/baseline-v0056-main.c": "ed0e0b12172b4387dd854868e5b19574b6a86bc558152c89907b6eece354fa00"
+  },
+  "current_reports": [
+    {
+      "file": "item_rewards_report.json",
+      "sha256": "ee7bbd7d7b76287292a73105965e6adc92a1be3373a2c142b43a1e2315c8a899"
+    },
+    {
+      "file": "item_rewards_gameplay_report.json",
+      "sha256": "7876ffae4fb09646fd20beb3a8244f17f71f714e595fd11304052f38f130b2f0"
+    },
+    {
+      "file": "item_rewards_gameplay-pal_report.json",
+      "sha256": "655797571840c2853d078fca14699d3aa12e0896165ef984d667aeb17e89b5f5"
+    },
+    {
+      "file": "item_rewards_visuals_report.json",
+      "sha256": "a4197c9aad595147c1bd289ecc1ff11656f5adfd6f79391e7f375ab363dccceb"
+    },
+    {
+      "file": "item_rewards_save_report.json",
+      "sha256": "2cf00762d5dbf4cc4b205eed0213fe04e837145a9ef4c0963ab1ae770b9fd4c2"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "ad914f7ffb11aa72b2b6eeac39d048b3f0bc71f8c0974bf6adce46b7b3eeaf4d"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "7b29390adb63131e7e75d86dc92668fdc414fa0b5df3aeec52094869f1d81f70"
+    }
+  ],
+  "known_post_confirmation_floor_differences": [
+    {
+      "region": "auto",
+      "room": 343,
+      "differences": [
+        {
+          "frame": 3900,
+          "cell": 44,
+          "sms": 79,
+          "md": 65
+        }
+      ]
+    },
+    {
+      "region": "auto",
+      "room": 411,
+      "differences": [
+        {
+          "frame": 3900,
+          "cell": 100,
+          "sms": 79,
+          "md": 65
+        },
+        {
+          "frame": 3900,
+          "cell": 101,
+          "sms": 79,
+          "md": 65
+        }
+      ]
+    },
+    {
+      "region": "pal",
+      "room": 411,
+      "differences": [
+        {
+          "frame": 3900,
+          "cell": 100,
+          "sms": 78,
+          "md": 65
+        },
+        {
+          "frame": 3900,
+          "cell": 101,
+          "sms": 78,
+          "md": 65
+        }
+      ]
+    },
+    {
+      "region": "pal",
+      "room": 425,
+      "differences": [
+        {
+          "frame": 3900,
+          "cell": 120,
+          "sms": 80,
+          "md": 78
+        }
+      ]
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "160 selected original/native grant fixtures; 8032 nonselected room setup cases. Modal frontend excluded from unit tests.",
+    "44 live cases compare inventory, flags, nonanimated cells/maps, loot and music commands; complete natural dungeon routes are not established.",
+    "Stable reward windows match VRAM words, tile pixels and sprite entries; full framebuffer sequences, sound waveforms and redraw latency are unverified.",
+    "Ten actual earned inventories and room flags are transferred to the save-point route, then saved/cold-loaded through normal menus. Uninterrupted travel to that save point is unverified.",
+    "Post-confirmation animated floor phase differences remain in the listed rooms. All item abilities, quests, bosses and ending are not complete."
+  ]
+}

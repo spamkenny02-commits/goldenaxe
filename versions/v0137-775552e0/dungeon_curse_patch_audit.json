@@ -1,0 +1,25 @@
+{
+  "md_sha256": "775552e0c69285001d9763e3c584f26417fb00e36e6dc0471ab63a5c3427973d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 27481,
+  "aliases_header_checksum_exact": true,
+  "reviewed_baseline": "v0135-e4790504",
+  "reviewed_changes": [
+    "Type53 hunter movement descriptor/curse wrapper and dispatch/collision publication.",
+    "C0BF status uses existing persistent byte15; armor defense removed while shield defense remains.",
+    "Armor color cycle in world/inventory and conditional consumable2 cure with original one extra blocked video frame/two clock ticks."
+  ],
+  "patch_sha256": "0fcf1c442e8fa5445d0678bd80656c6a077a7683cb37f9302326555de6e16285",
+  "source_files": {
+    "megadrive\\src\\main.c": "c6a8892478e371ad1f230c04ce53793a07500a947e88a5d7985c027899ee3d48",
+    "megadrive\\src\\actors.c": "add6f894ddaa666d07601f7d6dba6cc275acc1289f2fca677adc83a9e24cf669"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Routine and controlled production validation is not a full natural fight/playthrough.",
+    "Cursed inventory color phase and SRAM round trip not independently validated here.",
+    "Source armor upgrade NPCs also clear C0BF; those full quest paths remain to be ported.",
+    "Original RNG and global clock remain different."
+  ]
+}

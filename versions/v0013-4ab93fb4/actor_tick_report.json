@@ -1,0 +1,20 @@
+{
+  "md_sha256": "4ab93fb473e026f95828ceca1d1881cb1d81b2b756bc8bc9871912322782b977",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "emergence_frames": 47,
+  "source_logic_bytes_per_frame": 46,
+  "native_emergence_logic_exact": true,
+  "source_injections": 1,
+  "counter_corner_cases": 8,
+  "counter_corner_cases_exact": true,
+  "includes_movement_fraction_reset": true,
+  "includes_delay_and_hurt_blink": true,
+  "actor_behavior_states_ported": [
+    2,
+    4,
+    6,
+    8
+  ],
+  "actor_behavior_complete": false,
+  "scope": "Common counters only; initial states injected in emulator, spawning/original random/combat dispatch pending"
+}

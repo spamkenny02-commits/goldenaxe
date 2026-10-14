@@ -1,0 +1,24 @@
+{
+  "md_sha256": "c325609b47f43b324624a254be204fd89f59856ace4b2460f4e588f06f05cea1",
+  "evidence": [
+    {
+      "file": "intro_scenes_profile.json",
+      "sha256": "3c14ef24b1f5feaa7c57c918e15e0574cf17b26e21b50f300cddd39481bd4e24"
+    },
+    {
+      "file": "intro_actors_profile.json",
+      "sha256": "3a631f66294ec26fe2f4e71dac3c15fe09dd9f4bb078df9b567d439f94282a6a"
+    }
+  ],
+  "three_scene_completed_patterns_and_cadence_verified": true,
+  "logical_actor_states_consistent_at_matching_phases": true,
+  "hardware_sat_equivalence_verified": false,
+  "hardware_sat_differences_reproduced": true,
+  "absolute_intro_timing_exact": false,
+  "rom_changed": false,
+  "full_game_ported": false,
+  "source_files": {
+    "tools/profile_intro_scenes.py": "a9415b8b20164c12269a72138bb2832ef38700ad539a3b5ebc8143517da4e282",
+    "tools/profile_intro_actors.py": "f44656b22fe891567ae943f2e420b4a98eb7ac27a3a04b0aceeda3169a14e73b"
+  }
+}

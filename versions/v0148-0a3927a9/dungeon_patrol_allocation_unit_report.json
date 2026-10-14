@@ -1,0 +1,14 @@
+{
+  "md_sha256": "0a3927a93d7ca4ebc06ff8fccf04cd2ca19b7eed1e6462c9d58334209ff1160f",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "9374c27100b82d8168bcd9781ba0a0e7aad40c4a9f2512137dbcc9b6457a3665",
+  "harness_sha256": "78cb5440ac2678e0d3b76a15a553045c14c078d7d1717c662b7fc1ac2339fc6e",
+  "cases": 2463,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Original5065/A6C7/5878/48D0/48F3 execute without random-read shims; patrol states have no random inputs.",
+    "Four patrol states, all directions, timer/step rollover, blocked and passable terrain, exact boundary edges and every actual61/62 room slot. Constructor state0 falls through2 and4.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

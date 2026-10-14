@@ -1,0 +1,14 @@
+{
+  "md_sha256": "fa9293155842594f13c97566a540bf3940ea0657bd513168a1770e592df16ba5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "87b39ac559767142840f6a08202c2be8124f679439deb3f3e89cc07755ff70d0",
+  "harness_sha256": "6e74a0d527341b20c4f8e772e6a50105449f0df1f97ec0ce4f4378b19f8accb2",
+  "cases": 870,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Five LD A,R sites replaced with a register-preserving RST30 input shim and explicit formation/position/duration/fire bytes. Other original type67 routines and allocator execute unchanged.",
+    "All twelve states, five apparition slots, three formations, selected waits/damage/random boundaries and occupied projectile pools. Not all possible field combinations.",
+    "Original random/refresh sequence, natural full fight, SAT/framebuffer/audio and hardware timing remain unverified."
+  ]
+}

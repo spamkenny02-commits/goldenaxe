@@ -1,0 +1,65 @@
+{
+  "md_sha256": "d7bdb3f6112d2efe06cef2c6ca9cde0159dd35b4f71c643b924428516a2196aa",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "orbit_assets_source_exact": true,
+  "evidence": [
+    {
+      "file": "orbit_actor_report.json",
+      "sha256": "72e7d1be93d25f248d72fc52d6812ff2ac283315b0efca0eb1c31ca23acfc6d7"
+    },
+    {
+      "file": "orbit_actor-pal_report.json",
+      "sha256": "7c9d685105c7729e8525f5f58255dd8ecce7f31773d97897a887be71b4a18fc3"
+    },
+    {
+      "file": "orbit_rooms_report.json",
+      "sha256": "874fc5dcae14c818283abe500087e46fa97a8071079d987968c162f7fd22a312"
+    },
+    {
+      "file": "burst_walkers_report.json",
+      "sha256": "db1836b644cb5f5c39c277f6db97fce8d4167a6a47f4cb13be0bb0f7aa01945c"
+    },
+    {
+      "file": "bouncing_shooters_report.json",
+      "sha256": "f9194283f1f9b49d692d1b01d7e6d6f0c6ccefebbee1022f0544bb26597ada7f"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "b259bf4249ae6d73b8f76bb565c485bf0e9d5244339272f5464214f653bb9bc3"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "bcb876c6b70d19598e1ab896026fdca21f610d99707452ea96d902bb570c2836"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "5db8c4371e4a45d0a7424879cf89294ae38224d8fc3bd4ed15649471c7396252"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "0ae3f451e4300175578af9ed924a3e659f3833f971c8dae426c694bf02a1b658"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "4579f9528d6a89096be07033acb049fac3ad8c111ed10a47acbe69ccfeb36d53"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "385f1dc5864052b232caa26e9c69eb723fad6116483bf8376174a19cfa2fe0e9"
+    }
+  ],
+  "orbit_record_comparisons": 131638,
+  "clean_scroll_frames": 342,
+  "full_game_ported": false,
+  "source_rng_stream_verified": false,
+  "sprite_overflow_suppression_verified": false,
+  "notes": [
+    "Orbit attack RNG choices are controlled in deterministic tests",
+    "Moving projectile targets use explicit RAM fixtures",
+    "Room checkpoints have 80 HP; cartridge balance is unchanged",
+    "Quests/dungeons, intro offsets and full progression remain pending"
+  ]
+}

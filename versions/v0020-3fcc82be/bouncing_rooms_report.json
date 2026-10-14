@@ -1,0 +1,162 @@
+{
+  "md_sha256": "3fcc82be4c00617bb36be4e1adfd765e8443daa536afa7b61484c4ff1b434748",
+  "rows": [
+    {
+      "room": 21,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "56": 8
+      },
+      "states": {
+        "56": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ]
+      },
+      "first_walking_events": {
+        "56": 1956
+      },
+      "projectile_births": [
+        [
+          1972,
+          8
+        ],
+        [
+          2069,
+          9
+        ]
+      ]
+    },
+    {
+      "room": 21,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "56": 8
+      },
+      "states": {
+        "56": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ]
+      },
+      "first_walking_events": {
+        "56": 1673
+      },
+      "projectile_births": [
+        [
+          1689,
+          8
+        ]
+      ]
+    },
+    {
+      "room": 36,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "56": 8,
+        "57": 8
+      },
+      "states": {
+        "56": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ],
+        "57": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ]
+      },
+      "first_walking_events": {
+        "56": 1541,
+        "57": 1707
+      },
+      "projectile_births": [
+        [
+          1557,
+          8
+        ],
+        [
+          1681,
+          8
+        ],
+        [
+          1723,
+          9
+        ]
+      ]
+    },
+    {
+      "room": 36,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "56": 8,
+        "57": 8
+      },
+      "states": {
+        "56": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "57": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ]
+      },
+      "first_walking_events": {
+        "57": 1444
+      },
+      "projectile_births": [
+        [
+          1460,
+          8
+        ],
+        [
+          1657,
+          8
+        ]
+      ]
+    }
+  ],
+  "ram_mutations": false,
+  "controlled_saved_room": true,
+  "two_bouncing_rooms_verified": true,
+  "both_types_aim_in_at_least_one_room": true,
+  "absolute_timing_exact": false,
+  "full_progression_verified": false
+}

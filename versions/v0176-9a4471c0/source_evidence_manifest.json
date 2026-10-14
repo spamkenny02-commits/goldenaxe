@@ -1,0 +1,466 @@
+{
+  "md_sha256": "9a4471c02bbe93c05bd6c7ab1d4488a575ea1a278ada0fbd6619955f26496ce5",
+  "version": 176,
+  "files": [
+    {
+      "path": "source/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "path": "source/actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "source/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "path": "source/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "path": "source/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "path": "source/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "path": "source/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "path": "source/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "path": "source/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "path": "source/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "path": "source/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "path": "source/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "path": "source/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "path": "source/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "path": "source/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "path": "source/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "path": "source/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "path": "source/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "path": "source/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "path": "source/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "path": "source/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "path": "source/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "path": "source/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "path": "source/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "path": "source/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "path": "source/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "path": "source/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "path": "source/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "path": "source/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "path": "source/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "path": "source/house_quest.inc",
+      "sha256": "ae7804478c605769d7c6f6856d9c63dab400c8cc4a065ff1c39e58a9b38e8650"
+    },
+    {
+      "path": "source/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "path": "source/intro.inc",
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    },
+    {
+      "path": "source/intro_data.c",
+      "sha256": "87d7d6d66c54f578c47b44a719e7123221ba278562c29de8afdb2619eda9a4f1"
+    },
+    {
+      "path": "source/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "path": "source/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "path": "source/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "path": "source/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "path": "source/main.c",
+      "sha256": "62444dc6af22eb7d7a4e4205d40adc47284f5a754d2ef54e7eebaa067acbaf0d"
+    },
+    {
+      "path": "source/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "path": "source/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "path": "source/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "path": "source/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "path": "source/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "path": "source/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "path": "source/paid_passage.inc",
+      "sha256": "12cdd4d67633b4c1865b83ff634cd0b63385a4767d2b651203213f9475487bf0"
+    },
+    {
+      "path": "source/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "path": "source/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "path": "source/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "path": "source/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "path": "source/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "path": "source/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "path": "source/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "path": "source/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "path": "source/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "path": "source/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "path": "source/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "path": "source/sound.inc",
+      "sha256": "0b08bcb0b51605cd91fbc3512ff5173ec3e14bfaeebc69ee9e2ed24f66c294ca"
+    },
+    {
+      "path": "source/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "path": "source/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "path": "source/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "path": "source/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    },
+    {
+      "path": "main.c",
+      "sha256": "62444dc6af22eb7d7a4e4205d40adc47284f5a754d2ef54e7eebaa067acbaf0d"
+    },
+    {
+      "path": "actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "paid_passage.inc",
+      "sha256": "12cdd4d67633b4c1865b83ff634cd0b63385a4767d2b651203213f9475487bf0"
+    },
+    {
+      "path": "symbol.txt",
+      "sha256": "9b784e78b886da163bd9aba5f7cb24c76bcd81615fb6f2982c178936a0265556"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "5528c55b1de9ab42c9522a9881716ac4e9ead1321b7bc8c9f49275a518889874"
+    },
+    {
+      "path": "tools/validate_paid_passage_source_loading_clock.py",
+      "sha256": "7bef45b278345ddcaa1c948ea9fc81b4c91ed1ead02445f7430f55781e69a995"
+    },
+    {
+      "path": "tools/validate_paid_passage_native_loading_clock.py",
+      "sha256": "f455921ebba51dbbe2269fe5b550f06cf0d6b1e8eeffa42046710cda0c120bc7"
+    },
+    {
+      "path": "tools/paid_passage_clock_harness.c",
+      "sha256": "b9527b4d90a78ed8e84e031f1d0dba49bc52a66a66ac4a03839f315c90f2b667"
+    },
+    {
+      "path": "tools/build_paid_passage_clock_harness.ps1",
+      "sha256": "da6a74bfc7ea9000660091cc5ee62b4a4aad92857aaccb71106963eb0233d132"
+    },
+    {
+      "path": "tools/audit_paid_passage_clock_patch.py",
+      "sha256": "de1ec88264e89147db0d274763b704c9229ff2f1cd1ef4c19d40e8abc9d4c232"
+    },
+    {
+      "path": "tools/validate_paid_passage.py",
+      "sha256": "0801fc23d23c4beb26d3bb43677f0fb441c1e74745abdaba9373afefcd64bb94"
+    },
+    {
+      "path": "tools/validate_paid_passage_gameplay.py",
+      "sha256": "635090ba522d1d1a8afd2993b6644bb640e9e2b4dee19d5de0e7feccf7dfe4aa"
+    },
+    {
+      "path": "tools/reveal_loading_cost.py",
+      "sha256": "03e6305c0c284ff599fe16f6472ae305b327cb8410e9fd42bc2405725d89844a"
+    },
+    {
+      "path": "tools/validate_reveal_loading_cost.py",
+      "sha256": "50aaa650fd8e15602944d8a3d6a47813f78e3690a31e26fae31f57d334fb172e"
+    },
+    {
+      "path": "tools/archive_paid_passage_clock_milestone.py",
+      "sha256": "ca3b11dd95e6db106a3eadfe483e0594cc434c5512fbae286d7aae2e90cd7f61"
+    },
+    {
+      "path": "reference/paid_passage_source_loading_clock_report.json",
+      "sha256": "81831dc00a1b4674c35066f1a810be279830e1c18073e9befe9e0866526bdf89"
+    },
+    {
+      "path": "reference/reveal_loading_cost_report.json",
+      "sha256": "1983366f720bc4a666388113a25f0fd34133217bb9bdc9bb8f85881a12cc6c3b"
+    },
+    {
+      "path": "reference/paid-passage-clocks/1a-00/auto-cycle-events.json",
+      "sha256": "8cfb07b57deef5a68b6f9b5737aa0c5c3e23e1b5b5b0966df7fc2380fdea7d09"
+    },
+    {
+      "path": "reference/paid-passage-clocks/1a-00/pal-cycle-events.json",
+      "sha256": "b0859585ae00a6c3ecb22060e7a538fd70fdf5d7325e1dd4a081339f3d8b5559"
+    },
+    {
+      "path": "reference/paid-passage-clocks/1a-ff/auto-cycle-events.json",
+      "sha256": "67419ac9e810ee77bea41ad5415fdffa1e5778ebcbad589adb51f6b1d55be802"
+    },
+    {
+      "path": "reference/paid-passage-clocks/1a-ff/pal-cycle-events.json",
+      "sha256": "f28b95b82ade9562c11ae41bbd19cd9da7fcc1221b7cdd7e7402658570b4c5b2"
+    },
+    {
+      "path": "reference/paid-passage-clocks/36-00/auto-cycle-events.json",
+      "sha256": "b4139af1fedd62058022d69a2c3fe6b7b05e401b1f0a804b3a27a9c34d1081fb"
+    },
+    {
+      "path": "reference/paid-passage-clocks/36-00/pal-cycle-events.json",
+      "sha256": "3be809858a989d4a1ac871dc9c1ffc7def23e2e862e9cd0514a55c36cc34c842"
+    },
+    {
+      "path": "reference/paid-passage-clocks/36-ff/auto-cycle-events.json",
+      "sha256": "a4c568e327ab3b346804bd1ce0d5f84c46155c64befbb8ec8556754f47cc8636"
+    },
+    {
+      "path": "reference/paid-passage-clocks/36-ff/pal-cycle-events.json",
+      "sha256": "c21371e02917d1aafb2350eefc8ed93be65b01a0134e5c5aed494cfc3ed1ba1f"
+    },
+    {
+      "path": "reference/paid-passage-clocks/3c-00/auto-cycle-events.json",
+      "sha256": "ccd107cdd8f18ecd9b69d6166b85f4386813b6488199f477f5c9fe208d2aa745"
+    },
+    {
+      "path": "reference/paid-passage-clocks/3c-00/pal-cycle-events.json",
+      "sha256": "19c9b3fe4bbadd6935126615e600c72b7f06a0f0e0f86b6ad793e099994f9481"
+    },
+    {
+      "path": "reference/paid-passage-clocks/3c-ff/auto-cycle-events.json",
+      "sha256": "44932a89859605cc1c02a56961817c0e0cc22a2a2c97d7bb8cb02435ee24b760"
+    },
+    {
+      "path": "reference/paid-passage-clocks/3c-ff/pal-cycle-events.json",
+      "sha256": "65d6b1dcbcdbe7e513642fd8a37764e04d4f963e60b15430d79570dd69f7e6f1"
+    },
+    {
+      "path": "reference/paid-passage-clocks/6d-00/auto-cycle-events.json",
+      "sha256": "1581bb2dd470ab5a2547516559731b557d5a68e6652cfd21fd4b6c9125ac2516"
+    },
+    {
+      "path": "reference/paid-passage-clocks/6d-00/pal-cycle-events.json",
+      "sha256": "fabad7077fc9d9ea88f0064dae4a82efa6eb491f298842ad90401bb6891d12d2"
+    },
+    {
+      "path": "reference/paid-passage-clocks/6d-ff/auto-cycle-events.json",
+      "sha256": "0ed7dc6d0c08a2290d065fefb37bb099d7d1831f891414ef3b23f2a6363b2136"
+    },
+    {
+      "path": "reference/paid-passage-clocks/6d-ff/pal-cycle-events.json",
+      "sha256": "d3bc4c0af50da0085e0e70a7c5abf1c41408d589fea02651a958ac4ef510a1bb"
+    },
+    {
+      "path": "reference/paid-passage-clocks/87-00/auto-cycle-events.json",
+      "sha256": "5663e9b0a5bc6fbf4282539fe80f7f99d64c7e396a658df72aef69b3c8350c9f"
+    },
+    {
+      "path": "reference/paid-passage-clocks/87-00/pal-cycle-events.json",
+      "sha256": "559b7ddce5d1d62ffffb3dff4496c512f23be58088e3f386718fb89e50a2159c"
+    },
+    {
+      "path": "reference/paid-passage-clocks/87-ff/auto-cycle-events.json",
+      "sha256": "6dd1ef6b6ef7eabb75f302f3de94ec514af426fd162ac2f214f3721bd820fc0d"
+    },
+    {
+      "path": "reference/paid-passage-clocks/87-ff/pal-cycle-events.json",
+      "sha256": "9c38bcbaba240d6013dca6bb7d74246daea2250f95191959034255db3fd8575c"
+    },
+    {
+      "path": "reference/paid-passage-clocks/96-00/auto-cycle-events.json",
+      "sha256": "e9753c390760be2bede1c00a98062ae13b19c41a972da1acb0482cf1a7cd7a1b"
+    },
+    {
+      "path": "reference/paid-passage-clocks/96-00/pal-cycle-events.json",
+      "sha256": "152b02a0346f180b6592d7a764700939b191fac9b9b9744459a81a38418b70b9"
+    },
+    {
+      "path": "reference/paid-passage-clocks/96-ff/auto-cycle-events.json",
+      "sha256": "b547ca02bf22a97b548ac36a856d7a765e04c6e11388ad99e2bf62a48b576668"
+    },
+    {
+      "path": "reference/paid-passage-clocks/96-ff/pal-cycle-events.json",
+      "sha256": "56310e9c0cf0ccbca86230d1b4f29604c588ca98bdb66d016379869a39e14844"
+    },
+    {
+      "path": "logs/build-v0176.log",
+      "sha256": "b0b88cb5c3aee06ae01a5f906c4e9a0da920700a3fd833dd7466745bde78b060"
+    },
+    {
+      "path": "logs/build-paid-passage-clock-harness.log",
+      "sha256": "b8d0b543c6d4306673bae78e5cf7de911986afee1ff5203c3c11947ab7663baf"
+    },
+    {
+      "path": "logs/paid-passage-source-loading-clock.log",
+      "sha256": "aed5861cc92d6699852326564c74d8ed20abeb9075f6039c3bf6baf10683a1ff"
+    },
+    {
+      "path": "logs/paid-passage-native-loading-clock.log",
+      "sha256": "cad58f32c088581a0d1893a314ae3e8eae81d1ee9eea88f0c6958cafe9854bd9"
+    },
+    {
+      "path": "logs/paid-passage-v0176.log",
+      "sha256": "6f2f5e645fb0332588eb097449e172c7c6782992db2cba0a07c59f8d29995f9d"
+    },
+    {
+      "path": "logs/paid-passage-gameplay-v0176.log",
+      "sha256": "f64393edd339bfbebe62c82647043a87644be36be006fdf61018be7876e7c96e"
+    },
+    {
+      "path": "logs/reveal-loading-cost.log",
+      "sha256": "7f4f646415504a88060db313bd0a1ff7a71cb02c249c67256fbb523a53cf44ff"
+    },
+    {
+      "path": "paid_passage_clock_milestone.md",
+      "sha256": "0ec6a54756eb163bea7c5ebaa97009a2bb5a117ae536747f70bcbf91c270e577"
+    },
+    {
+      "path": "paid_passage_native_loading_clock_report.json",
+      "sha256": "cfec7a3043d3bcec77f39a21cb4f3b6f594af997bfe211ab95625b50a201416b"
+    },
+    {
+      "path": "paid_passage_unit_report.json",
+      "sha256": "7c691efb2f3b604135844dc59ce6fedf2c1e40243565110e9c52adcc7bd5a5d4"
+    },
+    {
+      "path": "paid_passage_gameplay_report.json",
+      "sha256": "eb1abdbdbed9b48cea179d6d0471d8ea13baa5f7329fec9ecc350f0f99572bdd"
+    },
+    {
+      "path": "paid_passage_clock_patch_report.json",
+      "sha256": "bc400f43999710cc010bd80f11466cb0c055d99868ee9cd07ab6a05d2c0a4897"
+    }
+  ]
+}

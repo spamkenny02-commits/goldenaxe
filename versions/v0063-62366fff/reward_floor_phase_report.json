@@ -1,0 +1,88 @@
+{
+  "md_sha256": "62366fff149b56f25a62b8e10bdd13615bdef58efa3548362ab3ac857bf2f07b",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "room": 343,
+      "first_floor_step": {
+        "sms": 3712,
+        "md": 3711
+      },
+      "resume_delta": -1,
+      "steady_scan_phase_frame_shift": -1,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "auto",
+      "room": 411,
+      "first_floor_step": {
+        "sms": 3712,
+        "md": 3711
+      },
+      "resume_delta": -1,
+      "steady_scan_phase_frame_shift": -1,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "auto",
+      "room": 425,
+      "first_floor_step": {
+        "sms": 3711,
+        "md": 3711
+      },
+      "resume_delta": 0,
+      "steady_scan_phase_frame_shift": -1,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "pal",
+      "room": 343,
+      "first_floor_step": {
+        "sms": 3709,
+        "md": 3709
+      },
+      "resume_delta": 0,
+      "steady_scan_phase_frame_shift": 0,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "pal",
+      "room": 411,
+      "first_floor_step": {
+        "sms": 3709,
+        "md": 3709
+      },
+      "resume_delta": 0,
+      "steady_scan_phase_frame_shift": 0,
+      "aligned_scan_phase_frames_exact": 180
+    },
+    {
+      "region": "pal",
+      "room": 425,
+      "first_floor_step": {
+        "sms": 3709,
+        "md": 3709
+      },
+      "resume_delta": 0,
+      "steady_scan_phase_frame_shift": 0,
+      "aligned_scan_phase_frames_exact": 180
+    }
+  ],
+  "evidence": [
+    {
+      "file": "reward_floor_phase_profile.json",
+      "sha256": "53d68221786d7e2793f5b27eb9b09c772c4bf0ea57c4e5dd9155fca56d983642"
+    },
+    {
+      "file": "reward_floor_phase-pal_profile.json",
+      "sha256": "eff0149f9328cda0a8e27f40f66bc91b6503ba6c642da0116271527bbca7605e"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Three controlled item-reward rooms per region; confirmation is a single controller press at frame 3700.",
+    "Residual zero/one-frame recovery offsets are reported, not hidden by phase alignment.",
+    "The absolute source/native IRQ clock phase is not synchronized in these runs; full bitmap presentation after reward dismissal remains unverified."
+  ]
+}

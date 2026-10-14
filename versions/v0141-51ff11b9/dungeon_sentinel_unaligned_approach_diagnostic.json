@@ -1,0 +1,20 @@
+{
+  "md_sha256": "51ff11b9c6a5d9ba1321f81c60bc3c4fb9fbc61d4c47514f9f0005dca3aee89e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "unmodified_loaded_actor_approach_passed": false,
+  "failed_case": {
+    "region": "pal",
+    "type": 88,
+    "room": 348,
+    "frame": 3610,
+    "record_offset": 14,
+    "source": 3,
+    "native": 2
+  },
+  "failure_log_sha256": "70acdfd1bb93b3fc00e13816a5374c37acb6047f809a8ed2c75211326cdb43a7",
+  "full_game_ported": false,
+  "limits": [
+    "Initial source/native room loading cadence differs. Hidden actor animation keeps this initial phase difference even when the native global clock is aligned at3599.",
+    "Controlled approach validation now explicitly resets both first-actor animation counters at3600; it does not resolve the underlying absolute loading cadence."
+  ]
+}

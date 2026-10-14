@@ -1,0 +1,161 @@
+{
+  "md_sha256": "e796cfbe1b6d15a67200953b17ab67546d9ce111a15c554da513f7eb15849b3c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "region": "auto",
+  "cases": [
+    {
+      "room": 275,
+      "initial_keys": 2,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 3,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 275,
+      "initial_keys": 98,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 99,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 275,
+      "initial_keys": 99,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 99,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 275,
+      "initial_keys": 255,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 255,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 305,
+      "initial_keys": 2,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 3,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 305,
+      "initial_keys": 98,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 99,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 305,
+      "initial_keys": 99,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 99,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 305,
+      "initial_keys": 255,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 255,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 437,
+      "initial_keys": 2,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 2,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 437,
+      "initial_keys": 98,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 98,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 437,
+      "initial_keys": 99,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 99,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 437,
+      "initial_keys": 255,
+      "already_rewarded": false,
+      "pickup": true,
+      "expected_keys": 255,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 275,
+      "initial_keys": 2,
+      "already_rewarded": true,
+      "pickup": true,
+      "expected_keys": 2,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 305,
+      "initial_keys": 2,
+      "already_rewarded": true,
+      "pickup": true,
+      "expected_keys": 2,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 437,
+      "initial_keys": 2,
+      "already_rewarded": true,
+      "pickup": true,
+      "expected_keys": 2,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": false
+    },
+    {
+      "room": 275,
+      "initial_keys": 2,
+      "already_rewarded": false,
+      "pickup": false,
+      "expected_keys": 2,
+      "settled_cells_maps_flags_loot_counter_keys_exact": true,
+      "key_persists_past_normal_loot_expiry": true
+    }
+  ],
+  "production_cartridges_unmodified": true,
+  "final_particle_runs_in_live_game_loop": true,
+  "controlled_particle_type_66_excludes_random_drops": true,
+  "limits": [
+    "Room, hero, actor animation, counter and animation phase initialized by RAM fixture; complete natural fights/routes are not verified.",
+    "Controlled final particle type 66 has zero drop probabilities, excluding provisional RNG differences.",
+    "Room 113 uses controller UP to collect; room 131 starts the hero at the reward centre because a direct path from Y128 is obstructed.",
+    "One idle case observes the key for 596 frames; key cap and already-rewarded guards are checked.",
+    "Absolute redraw latency, full transition pixels and audio waveforms remain unverified."
+  ]
+}

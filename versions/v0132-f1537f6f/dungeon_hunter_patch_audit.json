@@ -1,0 +1,24 @@
+{
+  "md_sha256": "f1537f6f2f7e51da9821629bc119dd1f645829730453b388c1eea748ea54a387",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 57748,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_4F_50_51_helpers_dispatch_publication_and_projectile18": true,
+  "prior_actor_and_main_implementations_unchanged_since_v0131": true,
+  "new_literal_bytes_exact": 22,
+  "reused_walk_and_charge_bytes_exact": 34,
+  "source_files": {
+    "megadrive\\src\\main.c": "98d35cdef93ca84a3a9da113065cedf3ff34b19a8faa5b8ca6edead9b3c0875f",
+    "megadrive\\src\\actors.c": "e7631c06ae5cd08d61d82481fc0075e3f1e9cf7b41fa98be00e0f758f56d4c8b",
+    "megadrive\\src\\dungeon_hunter_data.c": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff",
+    "tools\\validate_dungeon_hunter.py": "bcb4d5cb7dd9b34faaedf05e4a767dfb74adc15a6c78227c78cb1141b066cefa",
+    "tools\\validate_dungeon_hunter_gameplay.py": "c44b04c1e1b5a93c80cf14e4081121fa52d4d0d35f8452b50e8d3fe1a53d93f4"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actor/hero states and native initial clock alignment. Full charge uses zero collision-map injection.",
+    "Shot allocation/chance/pursuit decisions are direct-routine checks; production tests inject projectile18 and compare flight through removal.",
+    "Actual room appearance checks exclude random X/Y/direction. Whole RNG/global clock and full natural combat remain unproved."
+  ]
+}

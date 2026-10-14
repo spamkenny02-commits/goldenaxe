@@ -1,0 +1,22 @@
+{
+  "md_sha256": "911973c5b764172bc2d1807662778b4eaaa59e15e0517ea2980b31cdb3db52eb",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": 15819,
+  "rom_bytes": 1048576,
+  "aliases_header_verified": true,
+  "main_change_only_paid_passage_include_and_hook": true,
+  "prior_actor_dialogue_fairy_quest_save_gold_minigame_sources_unchanged": true,
+  "six_original_prices_routes_prompt_exact": true,
+  "evidence_sha256": {
+    "paid_passage_unit_report.json": "9eff71f8b606c9529684b349179a1bdf7bef1e53655821c30e0166c1d55366eb",
+    "paid_passage_gameplay_report.json": "e9c2013f8107503bf56bd0aaec2f27a17a87e0a6d14b874ee45ec2aa11d6eb91",
+    "minigame_gameplay_report.json": "105e98b81a2bfe06bfd41487fdd94cb6e51213fd3da88f39eb818b4fc9c77119",
+    "fairy_walk_gameplay_report.json": "4c598bdc80a77bb40faa586ed9d0ea93d3bb08908fe08b0a5e5304c3ca09872a"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "18528 source/native rule cases and20 live controlled passage integrations,16 walking opposite exits and2 menu roundtrips. Original live source unpatched; destination enemy mask0 seeded before entry to isolate encounters. Animated NPC cells excluded and differences retained.",
+    "Uncontrolled6D->96 route encountered native damage/knockback after correct exit; diagnostic retained. Combat RNG/global timing remains unresolved, not claimed fixed by this passage change.",
+    "Absolute fade/load/text cadence, complete natural progression/SRAM/hardware/audio/video equivalence, sprite scanline clipping, auxiliary entities and inherited loot expiry visuals remain incomplete/unverified."
+  ]
+}

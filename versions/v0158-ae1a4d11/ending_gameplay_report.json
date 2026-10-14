@@ -1,0 +1,109 @@
+{
+  "md_sha256": "ae1a4d11ba67556a51ae203fef6d4872ff225ddef640430717f88ca218c061a3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "credits_state_and_vscroll_steps_exact": 7424,
+      "credits_images": [
+        {
+          "tick": 33,
+          "source_frame": 4736,
+          "native_frame": 4735,
+          "normalized_differing_pixels": 0
+        },
+        {
+          "tick": 601,
+          "source_frame": 5304,
+          "native_frame": 5303,
+          "normalized_differing_pixels": 0
+        },
+        {
+          "tick": 2001,
+          "source_frame": 6704,
+          "native_frame": 6703,
+          "normalized_differing_pixels": 0
+        },
+        {
+          "tick": 4001,
+          "source_frame": 8705,
+          "native_frame": 8703,
+          "normalized_differing_pixels": 0
+        },
+        {
+          "tick": 7001,
+          "source_frame": 11705,
+          "native_frame": 11703,
+          "normalized_differing_pixels": 0
+        }
+      ],
+      "nine_gem_all_768_actor_bytes_exact": true,
+      "nine_gem_normalized_image_exact": true,
+      "music_8D_88_request_frames_exact": true,
+      "ending_entered_source": 3700,
+      "ending_entered_native": 3700,
+      "first_credit_tick_source": 4704,
+      "first_credit_tick_native": 4703,
+      "final_credit_tick_source": 12128,
+      "final_credit_tick_native": 12126,
+      "source_credit_stream_frames": 7425,
+      "native_credit_stream_frames": 7424,
+      "returned_after_normal_C": true
+    },
+    {
+      "region": "pal",
+      "credits_state_and_vscroll_steps_exact": 7424,
+      "credits_images": [
+        {
+          "tick": 33,
+          "source_frame": 4736,
+          "native_frame": 4734,
+          "normalized_differing_pixels": 0
+        },
+        {
+          "tick": 601,
+          "source_frame": 5304,
+          "native_frame": 5302,
+          "normalized_differing_pixels": 0
+        },
+        {
+          "tick": 2001,
+          "source_frame": 6704,
+          "native_frame": 6702,
+          "normalized_differing_pixels": 0
+        },
+        {
+          "tick": 4001,
+          "source_frame": 8704,
+          "native_frame": 8702,
+          "normalized_differing_pixels": 0
+        },
+        {
+          "tick": 7001,
+          "source_frame": 11704,
+          "native_frame": 11702,
+          "normalized_differing_pixels": 0
+        }
+      ],
+      "nine_gem_all_768_actor_bytes_exact": true,
+      "nine_gem_normalized_image_exact": true,
+      "music_8D_88_request_frames_exact": true,
+      "ending_entered_source": 3700,
+      "ending_entered_native": 3700,
+      "first_credit_tick_source": 4704,
+      "first_credit_tick_native": 4702,
+      "final_credit_tick_source": 12127,
+      "final_credit_tick_native": 12125,
+      "source_credit_stream_frames": 7424,
+      "native_credit_stream_frames": 7424,
+      "returned_after_normal_C": true
+    }
+  ],
+  "ending_integrated": true,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actual14C entry, terminal boss-death state4 and hero-state12 checkpoint at3700; this avoids unaligned death-particle randomness. Initial native world clock is explicitly aligned to source at3700. Real final death handoff, automatic centering, gem reveal, palette erase, credits and normal C return execute in production.",
+    "Credits compare by original arithmetic tick, not absolute frame; captured source/native frames and stream lengths expose residual initialization/IRQ timing differences. Source NTSC can take one extra display frame during row work. Images normalize MD colors to source and crop its16-pixel borders.",
+    "Separate full death-state0 profile executes particles through ending/return, but original RNG causes different final-particle drain cadence. Natural final dungeon victory, all intermediate framebuffer/audio frames, exact loading/IRQ cadence and hardware remain unproved."
+  ]
+}

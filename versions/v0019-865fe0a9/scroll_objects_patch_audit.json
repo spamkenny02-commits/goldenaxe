@@ -1,0 +1,40 @@
+{
+  "md_sha256": "865fe0a94f2939e9b999b3e3013d532d28ae293de8aba580889d1662dc44a456",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "evidence": [
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "70bae142b2abbac1f6ffe9622ff58c507ba1e5da06de2e015e65dff14f9f70ff"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "4f9bc07ffd343d1524d37ed1fdfa1258c2174e87691ab8356a0591a9b82f35d2"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "0ee08be6ece907c78e0ed779b511d1533faa44c940abefa3d6015811c2174611"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "c519898e91185f7b30abccc3ca18c0e33b2b8bf68e2b8e90b3705ad2b70ef950"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "268a9e70616675e19d5794c52340357dfd7404ee2e2357dd72a88af9b0827f34"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "5b82ac52ab81d0e1437b7d3c919104b3dc19039145117ed54cc9ffef2a76cae9"
+    }
+  ],
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "controlled_scroll_cases": 8,
+  "native_transition_sat_frames_without_old_objects": 342,
+  "hero_retained": true,
+  "destination_actors_reappear": true,
+  "persistence_retained": true,
+  "complete_transition_pixel_and_timing_equivalence": false,
+  "notes": "SMS can retain its old hardware SAT for 5..8 setup frames after state 10 begins; its rebuilt SAT contains only the hero before scrolling. Native hides old objects immediately. Controlled north transition/loading is 4..5 frames shorter; other controlled paths can differ by one frame. Natural timing routes still pass."
+}

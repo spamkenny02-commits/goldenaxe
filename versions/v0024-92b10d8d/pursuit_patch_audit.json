@@ -1,0 +1,68 @@
+{
+  "md_sha256": "92b10d8d94327cafb570d9e00e0f9050de69d53a89e990c9e12676348029a471",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "original_unchanged": true,
+  "projectile1a_template_source_exact": true,
+  "evidence": [
+    {
+      "file": "pursuit_shooters_report.json",
+      "sha256": "82db841ade1e1de067bd2bff3b54b16d27f7e57916339c466c347d1f6576d4a4"
+    },
+    {
+      "file": "pursuit_shooters-pal_report.json",
+      "sha256": "f13e3341359b4e735aaf878785c68f4d3e219a512d7c06157d7455f47d13709f"
+    },
+    {
+      "file": "pursuit_rooms_report.json",
+      "sha256": "cb8c98f1cf1870258807e9cda7fc143f638bdcf033309d7abe32ddf934583d4a"
+    },
+    {
+      "file": "dashing_actor_report.json",
+      "sha256": "25c62c61554970b646f2f51fee8a864cf17dec11efa6af7d821090d7bbb831ef"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "d324eae1f1a11e594096187eb393a13e85b108e59ebd60edf11774f647fd4788"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "89153adfbda0997b9f65fd41f66ed94e33165cebf4d7b9b7d38058a3507a540e"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "6d84f0567a9b1710800807b72b8baef06da9b51b7c2ed03b8144ddb957e15f6f"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "be64e10053a390a7551d2215f2f796054e9fe21857326838e55b6fb489eda6b1"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "34925acdfbe8c62e5b972a65e492356f3e23b77870b68fda1ebad5f53eb7610f"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "2f7147296ba004b62716b123c8ce1969bd916fb4963ee17a205c3997ad3356bc"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/actors.c": "708ae58110016631c4f1821224d931fb18931c97bc6d30381517bf79dc584d0f",
+    "megadrive/src/actor_data.c": "f5873179f508be03453d3a5ee9d46a642a64ba63142bb988c57e0d7924910d4c",
+    "tools/extract_actors.py": "2c17627a5f3bfbb9ea0b9284188f91191f8acc25b01345e625928d9c47e746bd",
+    "tools/validate_pursuit_shooters.py": "be38e03a17b938747de2e7331ca535b83cbee62cfa447086360777973538ece7",
+    "tools/validate_pursuit_rooms.py": "6fef1ebd0bc01de3dce9d285405349abc10223638bb85453746bb769127dd1e9"
+  },
+  "pursuit_actor_record_comparisons": 7520,
+  "full_game_ported": false,
+  "sprite_overflow_suppression_verified": false,
+  "original_rng_stream_reproduced": false,
+  "notes": [
+    "Decision fixtures clear source C01B overflow; source495E suppression is still missing",
+    "Collision-list descriptor bytes27/28 excluded from record comparisons",
+    "Cold-load checkpoints verify activity/shots, not full progression or identical RNG",
+    "Intro startup offsets, quests/dungeons and remaining actors are pending"
+  ]
+}

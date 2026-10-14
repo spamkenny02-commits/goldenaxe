@@ -1,0 +1,14 @@
+{
+  "md_sha256": "fa9293155842594f13c97566a540bf3940ea0657bd513168a1770e592df16ba5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "7aa4a05e3dca858ec10dafe87a18e59a58c0a9e892a84c02e60c0f13d2141584",
+  "harness_sha256": "0f16e4570795604c2aa6024eb7ade500f23ef835528341eaa011eb45ba208899",
+  "cases": 796,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Six LD A,R sites replaced by register-preserving explicit-input shim; 04E1 random byte replaced with fixture input. Other original51AE/577F/3F07 state/aim/bounds arithmetic executes unchanged.",
+    "All ten states and four shared types, selected chase axes/bounds, charge octants/aim modes, rebound choices, counters and inherited E values0..3. Not all field combinations.",
+    "Original RNG/refresh, inherited caller E on degenerate interior128-segment expiry in production, natural fights, full graphics/audio and hardware timing remain unverified."
+  ]
+}

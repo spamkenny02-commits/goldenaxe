@@ -1,0 +1,82 @@
+{
+  "md_sha256": "ece4a6b0c171afb03fb04e680515df12b27601a07755a9f9210a2980622db70c",
+  "md_size": 524288,
+  "compiled_unconditional_dungeon_entrances": 10,
+  "compiled_standard_dungeon_exits": 10,
+  "source_z80_maps_verified": 512,
+  "native_68000_base_room_loads_verified": 512,
+  "controlled_door_and_continue_cases": 40,
+  "current_targeted_reports": [
+    {
+      "file": "dungeon_world_assets_report.json",
+      "sha256": "7d603d621931b56a125dc3bda23d347bf8fe00153596962540ab1916ba39ed11"
+    },
+    {
+      "file": "world_loader_harness_report.json",
+      "sha256": "d83d31e5bba9691fcbba99136cc03dfd0da4ca012255698237c6d52b139b9dda"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "8965830063994a11995a9c9e22cce273a352be12b1bce973a9104635194231ae"
+    },
+    {
+      "file": "dungeon_doors_report.json",
+      "sha256": "52748ee90d427de7723ac6beb0177dc8ff0caca3009b80b7759f4df6a004dfe6"
+    },
+    {
+      "file": "dungeon_doors-pal_report.json",
+      "sha256": "d7b96fdcd6295ea7422b2141c75888552f1e69b1ff6cd03d3b085379f254eeec"
+    },
+    {
+      "file": "dungeon_continue_report.json",
+      "sha256": "bd1ebc6f48d456f3a229f1bd2c815de7e6c62eb6a55053f2097b264b171e5e84"
+    },
+    {
+      "file": "dungeon_continue-pal_report.json",
+      "sha256": "976303516baf0e882527a3ef2b9aa957efe1789426d6299112512e7ee6ff33d8"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "3909f8324980382f676ab98754ed5e2d2e129d6c27eb15a35b9359c24f693843"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "22bc8a17b8fe60ace56dd2ca2377a2f91e083246ff18fbeb8c201797a517df54"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "bdc0a2ad8d0348455ef5291152bd03bd3c395190b2b7b2b5206e0d8ba776a8cb"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "2c7f65c893794c42ec218bb461fa4a5d18ae0253adffed902a92c450096a3bd2"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "1b03728be226d36c3313398570c78de67ad936ff28ad08ea341f2701129dfa43"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "66624dd06993ebcd3084f83a694ab56fb57cedc09b54a59fc8729174e5351217"
+    },
+    {
+      "file": "intro_report.json",
+      "sha256": "b094f150838cbc48b29bb4d76ce72d77d4531b57f84c6fa81166985f03a743ea"
+    },
+    {
+      "file": "intro-pal_report.json",
+      "sha256": "8530222c527771414355140572944bd1c1f6084d5af80be31740edc0e5704d11"
+    }
+  ],
+  "rom_aliases_exact": true,
+  "additive_checksum_valid": true,
+  "full_game_ported": false,
+  "full_natural_dungeon_progression_verified": false,
+  "limits": [
+    "Dungeon scrolling is still disabled.",
+    "Entrance fixtures initialize room maps and positions; natural routes are untested.",
+    "Entry fades, loading latency and animated palette phase are not source exact.",
+    "Conditional cells, keys, puzzles, quests, remaining enemies, bosses and ending are incomplete.",
+    "Dark rooms load unlit; lantern activation and full tile animation remain incomplete."
+  ]
+}

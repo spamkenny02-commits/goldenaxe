@@ -1,0 +1,21 @@
+{
+  "md_sha256": "e361feb5e2297f2ed87df884a1928e9b81cf2df8dad77035770183d8554c613a",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 5597,
+  "aliases_and_header_verified": true,
+  "actor_changes_confined_to_46_49_helpers_dispatch_and_collision_publication": true,
+  "main_changes_confined_to_inventory_and_start_menu_music_since_v0118": true,
+  "source_files": {
+    "megadrive\\src\\main.c": "ad73c1956ec480f832dd6c268709f5ad79c753d76e31d48ac8231487631f4329",
+    "megadrive\\src\\actors.c": "3bfc42d9a155c94afb288db621135fc62c950c32afeaaf5e5c80945e6cc7eb19",
+    "tools\\validate_menu_transitions.py": "58f1ea26b7465f5228006b9952b224582b5ce3d3a97acaaab08444e11f3bd95a",
+    "tools\\validate_start_menu_audio.py": "16290b436d10f62d29f80b4fabcdd7ade74fa72576f8f01432e318bb31187b19",
+    "tools\\validate_dungeon_phase.py": "058ae5c30318d7f4878ff75311df6e9fe9ed5b3ddcc8486adc9ce82c551ba9ab"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "46..49 have864 isolated cases; their natural room/gameplay paths remain unverified.",
+    "Menu timing model retains an approximate reconstruction reserve; six natural routes provide targeted evidence only."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "md_sha256": "39058dcb999456ab4f69b2a5afeaf06077e0148ca4235b02c865b22e9dad3c09",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "0a3dc6684c5ca7d0f8eea8afe1467dbf1f0b01dc8a3fbc886255f7f43af1650d",
+  "harness_sha256": "d0e845b1e963b051f46c3e2b14394e9546eb3bf80bb21cb578c2cb156b82e73e",
+  "cases": 1474,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Six sourceLD A,R sites use explicit register-preserving input shim (both reset delays share input0, mutually exclusive). Original5008/9FFC/5878/4893/4965/43AF execute.",
+    "Six even states, actual room/slot fixed placements, aligned55 trigger despite nonzero timer,54 cooldown choices, full/first-free shot pool, shot/repeat/reset outcomes and71 initialization/cull.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

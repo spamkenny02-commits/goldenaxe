@@ -1,0 +1,61 @@
+{
+  "md_sha256": "7de7d76b234815306e8c91923f5413745ec5678c0697aeb929a3f2a31959da9a",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_bytes": 1048576,
+  "checksum": "0x6839",
+  "baseline_v0082_restored_exactly_outside_declared_spell_changes": true,
+  "original_resource_bytes_exact": 54,
+  "source_files": {
+    "megadrive/src/main.c": "0907841b316fcaaa9c65a837fc2cea006addd943d0c964df3439ec08ba233f20",
+    "megadrive/src/actors.c": "3c0d48e00703abeca5df7dfee1e98ea460adb8a1dce97e9e4a9824809aa3d00d",
+    "megadrive/src/actors.h": "d293c8626dd382a0f9e871b32ac89052da596e42294b1a35bcdc6356aa6d9541",
+    "megadrive/src/second_spell_data.c": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851",
+    "tools/validate_second_spell.py": "40ceb6e8c6d991b7d5a1d4eb85ceeb60f2b5959f1c34dca1d63c991ad7148767",
+    "tools/validate_second_spell_terrain.py": "81de0cac99331b48efec087fd58aa230dc25731e0f6e7d8b9c1c215767b8bc35",
+    "tools/extract_second_spell.py": "1c24bc2083dece4b3c1dc530f8a75a369dc9258e69d6240f0b233f95642fde4e",
+    "tools/audit_second_spell_patch.py": "c6a2175b2874759ede8cf2a719f88fef968ce01f48880ce9809c59ba116dc576",
+    "analysis/second_spell_resources.json": "d4e3ac1288de70aa7ea60b8281eef120f7251940613bcd15d8e55fb361ccfc45",
+    "analysis/second-spell-baseline-v0082/main.c": "bb77077b567dc505e76cd63f562867743af79fea66a7bbbf73d497062494bcfc",
+    "analysis/second-spell-baseline-v0082/actors.c": "e3606b96a00c4a4f13f075816b4a73ae5a23ad159c21cdd289b6c01ec24e0b21",
+    "tools/profile_fire_beam.py": "3b3bfd2035374b6ba01b9fa92f3929146d906c877276752a0125c7d11b40cbc4",
+    "validation/fire_insufficient_baseline_pal-0-1-0.json": "216de7808be283fed0a07f7cd534e7ce3848c9962784621fabd5eb41667d7614",
+    "validation/fire_insufficient_baseline_pal-0-1-7.json": "d11036401175fc7bab629c19931404bc0aef5bf2b1a747762602037d9344d460"
+  },
+  "reports": [
+    {
+      "file": "second_spell_report.json",
+      "sha256": "a175d0facfe3e2fee129753c6ff4aedf71e35ec0aac47502f45a527e9b1db957"
+    },
+    {
+      "file": "second_spell_terrain_report.json",
+      "sha256": "ad4b196d5d8ce1eb2b9cbdf5c338f7ddcd78f4da89a3bf855c617ad2f9db5157"
+    },
+    {
+      "file": "second_spell_terrain_special_report.json",
+      "sha256": "bb52b6143ca58ee91eae38a0fe20f938d19cee730f2c5128a4c94f6dc7f03757"
+    },
+    {
+      "file": "second_spell_fire_regression_report.json",
+      "sha256": "ff471e545262a6faddcce0740d863bfa22ae636d5bf33c222b68442ac329b89c"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "1423cf27018ce7e9fce1ddb61bd4b1978102ac1055d286f43d973455914cd38c"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "f53e863d5d9a7c1797640c1b008f76152466438bdc40a7b5e11f42247d00127e"
+    },
+    {
+      "file": "fire_beam_diagnostic.json",
+      "sha256": "6143b8d71a71d7ac2ebbb60d0b2d15e47a58b6f81a1e67ecca5687bc2a1a20f8"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled ownership/position/clock, terrain fixtures; no natural acquisition, damage, complete dungeon route, save/re-entry or complete playthrough proof.",
+    "Fire insufficient-magic PAL attack-strength update differs on one frame in two cases, also present in exact v0082.",
+    "Fire image comparison remains imperfect: 190 differing normalized pixels at frame 3749 in v0082 and current; current has five additional differences at frame 3751. Diagnostic only.",
+    "Audio waveforms, global scanline timing, complete enemies/bosses, remaining abilities, quests and ending remain unfinished."
+  ]
+}

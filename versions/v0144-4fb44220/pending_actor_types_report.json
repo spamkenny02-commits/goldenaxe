@@ -1,0 +1,142 @@
+{
+  "md_sha256": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "native_actors_source_sha256": "0f021b05074f0d0f397b9d2ecf56f1f9f0dfbd218f84a59bfdb3a154d5b8f39b",
+  "manual_source_review": "tick_world_actors dispatch implements room actor types20..5B then63..6D; no5C..62 behavior branch. This audit enumerates that reviewed gap from source room lists and dispatch table2B63, not all possible port gaps.",
+  "missing_behavior_types": [
+    {
+      "type": 92,
+      "source_dispatch_pc": 20553,
+      "rooms": [
+        362,
+        364,
+        395,
+        396,
+        407,
+        409,
+        423,
+        430,
+        439,
+        471,
+        472,
+        476
+      ],
+      "room_count": 12
+    },
+    {
+      "type": 93,
+      "source_dispatch_pc": 20553,
+      "rooms": [
+        283,
+        297,
+        302,
+        345,
+        364,
+        365,
+        380,
+        381,
+        394,
+        395,
+        396,
+        430,
+        444,
+        476,
+        477,
+        478
+      ],
+      "room_count": 16
+    },
+    {
+      "type": 94,
+      "source_dispatch_pc": 20569,
+      "rooms": [
+        280,
+        309,
+        320,
+        423,
+        442,
+        469,
+        489
+      ],
+      "room_count": 7
+    },
+    {
+      "type": 95,
+      "source_dispatch_pc": 20575,
+      "rooms": [
+        279,
+        288,
+        289,
+        304,
+        305,
+        307,
+        312,
+        321,
+        337,
+        352,
+        359,
+        386,
+        402,
+        403,
+        416,
+        420,
+        432,
+        448,
+        466,
+        483,
+        498
+      ],
+      "room_count": 21
+    },
+    {
+      "type": 96,
+      "source_dispatch_pc": 20575,
+      "rooms": [
+        276,
+        292,
+        310,
+        312,
+        316,
+        359,
+        372,
+        416,
+        419,
+        432,
+        448,
+        455,
+        461,
+        498,
+        509
+      ],
+      "room_count": 15
+    },
+    {
+      "type": 97,
+      "source_dispatch_pc": 20581,
+      "rooms": [
+        295,
+        342,
+        366,
+        400,
+        450,
+        493
+      ],
+      "room_count": 6
+    },
+    {
+      "type": 98,
+      "source_dispatch_pc": 20581,
+      "rooms": [
+        301,
+        306,
+        342,
+        349,
+        413,
+        450,
+        507
+      ],
+      "room_count": 7
+    }
+  ],
+  "full_game_ported": false
+}

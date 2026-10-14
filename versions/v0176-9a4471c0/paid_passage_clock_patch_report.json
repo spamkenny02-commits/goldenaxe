@@ -1,0 +1,29 @@
+{
+  "md_sha256": "9a4471c02bbe93c05bd6c7ab1d4488a575ea1a278ada0fbd6619955f26496ce5",
+  "checksum": "351C",
+  "bytes": 1048576,
+  "only_paid_passage_clock_wrapper_changed": true,
+  "unchanged_archived_source_files": [
+    "actors.c",
+    "fairy.inc",
+    "main.c",
+    "minigame.inc",
+    "paid_passage_data.c",
+    "save.inc"
+  ],
+  "current_evidence": {
+    "paid_passage_native_loading_clock_report.json": "cfec7a3043d3bcec77f39a21cb4f3b6f594af997bfe211ab95625b50a201416b",
+    "paid_passage_unit_report.json": "7c691efb2f3b604135844dc59ce6fedf2c1e40243565110e9c52adcc7bd5a5d4",
+    "paid_passage_gameplay_report.json": "eb1abdbdbed9b48cea179d6d0471d8ea13baa5f7329fec9ecc350f0f99572bdd"
+  },
+  "source_clock_evidence_sha256": "81831dc00a1b4674c35066f1a810be279830e1c18073e9befe9e0866526bdf89",
+  "native_clock_cases": 3072,
+  "rule_cases": 18528,
+  "controlled_gameplay_cases": 20,
+  "full_game_ported": false,
+  "limits": [
+    "Source24 actual PAL/NTSC paid-exit paths demonstrate exactly one logical clock tick during16D0..1FA7; original0137 gates main IRQ work on C02E,while no-wait IRQ audio path01E3 leaves C02F unchanged.",
+    "Native production patch retains one logical tick and removes vtimer ticks consumed by load_house_room. Actors/main and other archived modules unchanged.3072 compiled full-loader clock cases,18528 source/native rules and20 controlled actual payment/exit/menu cases pass on current ROM.",
+    "This does not add the missing physical loading budget,fix reveal cadence,align earlier dialogue clocks,implement source refresh RNG or prove natural encounters/full progression. The uncontrolled baseline profiles remain diagnostic only."
+  ]
+}

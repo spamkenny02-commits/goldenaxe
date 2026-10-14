@@ -1,0 +1,144 @@
+{
+  "md_sha256": "39058dcb999456ab4f69b2a5afeaf06077e0148ca4235b02c865b22e9dad3c09",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "type": 83,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 60,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 83,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 64,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 83,
+      "segment": "curse-flag",
+      "frames": 16,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 32,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 83,
+      "segment": "curse-contact",
+      "frames": 16,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 32,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 83,
+      "segment": "remedy-active",
+      "frames": 36,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 72,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 83,
+      "segment": "remedy-idle",
+      "frames": 36,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 72,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 83,
+      "segment": "appearance",
+      "frames": 30,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 60,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 83,
+      "segment": "walk",
+      "frames": 32,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 64,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 83,
+      "segment": "curse-flag",
+      "frames": 16,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 32,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 83,
+      "segment": "curse-contact",
+      "frames": 16,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 32,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 83,
+      "segment": "remedy-active",
+      "frames": 36,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 72,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 83,
+      "segment": "remedy-idle",
+      "frames": 36,
+      "all_768_actor_bytes_curse_defense_hp_selection_ownership_and_palette_exact": true,
+      "actual_armor_cram_words_exact": 72,
+      "clock_adjustments": [
+        174
+      ]
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actor and hero records in initial exterior; native clock explicitly aligned to source at fixture start.",
+    "Production movement, curse contact, cached defense, armor colors and actual CRAM, plus normal-button remedy activation/retention are tested. Controlled armor/shield3/2 and item2 possession; no magic is spent.",
+    "Natural room loads, original RNG/global clock, complete framebuffer/SAT/audio and hardware timing remain unproved."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "md_sha256": "fa9293155842594f13c97566a540bf3940ea0657bd513168a1770e592df16ba5",
+  "region": "auto",
+  "known_difference": true,
+  "first_actor_difference_frame": 2977,
+  "native_contact_frame": 2977,
+  "source_contact_frame": 2978,
+  "source_minus_native_postframe_clock_mod256": 73,
+  "production_clock_modified": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled6B encounter in initial exterior; preserves unaligned production clocks. Records the unresolved absolute collision-phase difference separately from clock-aligned actor-logic checks."
+  ]
+}

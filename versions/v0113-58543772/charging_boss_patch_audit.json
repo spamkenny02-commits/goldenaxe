@@ -1,0 +1,55 @@
+{
+  "md_sha256": "585437724e49ca97f2595072459324a3311708c915f12e2c7532837c15feaae5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "source_files": {
+    "main.c": "87950f1ae9defe76380cb6a6d0a222ede59fd3f8d633c8474ea2a2d19dbe22be",
+    "actors.c": "51e225f52dc7892da89bda50d34b1c4d400a587b0abb14d68597f95c27e60d76",
+    "charging_boss_data.c": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+  },
+  "only_shared51AE_behavior_dispatch_and_collision_publication_changed": true,
+  "main_and_composite_resources_unchanged": true,
+  "literal_resources_exact": true,
+  "normal_charge_invariant": {
+    "vectors": [
+      [
+        171,
+        -413
+      ],
+      [
+        413,
+        -171
+      ],
+      [
+        171,
+        413
+      ],
+      [
+        413,
+        171
+      ],
+      [
+        -171,
+        -413
+      ],
+      [
+        -413,
+        -171
+      ],
+      [
+        -171,
+        413
+      ],
+      [
+        -413,
+        171
+      ]
+    ],
+    "major_axis_pixels_per_32_tick_segment_at_least": 51,
+    "interior_maximum_axis_width_pixels": 160,
+    "boundary_within_at_most_segments": 4,
+    "initialized_segment_lifetime": 128,
+    "assumptions": "Normal68/69 state16/rebound velocities remain one of eight source vectors; every active tick checks bounds; normal damage flags40 do not apply knockback; freeze suspends integration and counters. This is not a claim about arbitrary externally forced records or future7A/7B spawning."
+  },
+  "original_random_stream_reproduced": false,
+  "full_game_ported": false
+}

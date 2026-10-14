@@ -1,0 +1,80 @@
+{
+  "md_sha256": "e796cfbe1b6d15a67200953b17ab67546d9ce111a15c554da513f7eb15849b3c",
+  "md_size": 524288,
+  "checksum_and_aliases_verified": true,
+  "current_reports": [
+    {
+      "file": "validation\\room_clear_report.json",
+      "sha256": "cc04a310fd10bcef78c4b219e2b4d478c746d129f12aeaacc24d4921e52f64e8"
+    },
+    {
+      "file": "validation\\key_doors_report.json",
+      "sha256": "1dfb218bc0f908451b4468ee88f1fbabf2ffdc75370cfbfb07a9881f5850a430"
+    },
+    {
+      "file": "validation\\clear_rewards_save_report.json",
+      "sha256": "884ed18da9b83ab4af17fa1791aad44889309e51acf24855506fe13e3eef402e"
+    },
+    {
+      "file": "validation\\clear_rewards_gameplay_report.json",
+      "sha256": "0bbcb545521dfc413ddef79e60c20bf8948ef6bdc8f917663c4ca6e3ffc5bdd6"
+    },
+    {
+      "file": "validation\\clear_rewards_gameplay-pal_report.json",
+      "sha256": "c72355c58c36ddcd2348bcb69d9623e4bbf7283f2e0f4811aacb791a24fbb5e7"
+    },
+    {
+      "file": "validation\\room_clear_gameplay_report.json",
+      "sha256": "3f395c6e92b42b47021a9ef4c4e2dac78fe3b3267cdd4c00dd6663b97842b4f2"
+    },
+    {
+      "file": "validation\\room_clear_gameplay-pal_report.json",
+      "sha256": "79680120adf8388544e2b242e7f98ecdf9fbfeaf8f78b4dc5ad831602b2ce515"
+    },
+    {
+      "file": "validation\\key_door_gameplay_report.json",
+      "sha256": "276ed296346e3f6680c86a35239f6abac5c8ea863f347cb1dadc2741d4fb33eb"
+    },
+    {
+      "file": "validation\\key_door_gameplay-pal_report.json",
+      "sha256": "26359f89cd625b0b821ee0ca401d0a57d1ab9b10bba015ad8e05fe0e0ab8abd5"
+    },
+    {
+      "file": "validation\\timing_report.json",
+      "sha256": "f2d5002810ed972662363db4a2c3109ca5266a3b58111f18767826e200105016"
+    },
+    {
+      "file": "validation\\timing-pal_report.json",
+      "sha256": "6d9c7b4e9e3c6f49fe24ac9a67a6015d0db92a9085b0e876d936491b94a8c592"
+    }
+  ],
+  "room_clear_handlers": 69,
+  "new_reward_handlers": 20,
+  "new_exterior_reward_handlers": 9,
+  "isolated_clear_and_key_cases": 16384,
+  "live_reward_cases": 32,
+  "live_clear_regression_cases": 12,
+  "live_key_regression_cases": 18,
+  "cold_load_cases": 2,
+  "source_files": {
+    "megadrive/src/main.c": "a7600a6b96292cecdc056917d348a055fb358908994b90a7ace6be26f9f67e81",
+    "megadrive/src/actors.c": "e3606b96a00c4a4f13f075816b4a73ae5a23ad159c21cdd289b6c01ec24e0b21",
+    "megadrive/src/actors.h": "d293c8626dd382a0f9e871b32ac89052da596e42294b1a35bcdc6356aa6d9541",
+    "megadrive/src/room_clear.inc": "5894db7fb5e5f2e91c7b7b655c6bf606ce21216731c8122ad7cd32a008b9e69e",
+    "tools/extract_room_clear.py": "543e5eb92b6316a76172fa2ec640eed04339c494d1fd6fb2f944c78bdb215e0a",
+    "tools/validate_room_cells.py": "b13c89c925d8efba4c2d1aea1afe65882127d07eb204b96e1adada03f70fd48d",
+    "tools/room_clear_harness.c": "425814df8386a7842a28ea22feb33fb19e569c43ba96be9b3ce7a62137a1dcd7",
+    "tools/validate_room_clear.py": "a0b5980e18c668a284e7fda3c25b32d7a18e1c424b1cc10a46405dd52508092e",
+    "tools/validate_clear_rewards_gameplay.py": "b47d712c21ca52879b0a540562e0e80b345d76d808b29698264b4574fc16e5b4",
+    "tools/validate_clear_rewards_save.py": "fd351d627bfcc5907ab147e6e3c6d7bd3c50e6bce0a06c63f0007a1aae48f477",
+    "tools/audit_clear_rewards_patch.py": "e1fcea8afe8b1202083c94b09431877053ab1c6e1f43f4a008f3c08591fe9258"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Full natural enemy fights, exterior routes and dungeon progression are not verified by controlled fixtures.",
+    "Source 5ECD reward plus push-block passage handling remains unported; bosses, quests and ending remain incomplete.",
+    "Room 131 collection starts at reward centre; only room 113 pickup uses a tested walking path.",
+    "Save fixtures transfer earned state to the village save route; uninterrupted travel to that save point is unverified.",
+    "Approximate redraw/loading timing, sprite priority/flicker, full scene pixels and audio waveforms remain unresolved."
+  ]
+}

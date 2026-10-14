@@ -1,0 +1,20 @@
+{
+  "md_sha256": "82520cf76895fb015494576f4a71275838a3ea6cd7a7e24d9b6166b3d1efc929",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "change_only_original1DEB_foreground_palette_restore_after_paid_exit": true,
+  "prior_main_actors_fairy_minigame_save_unchanged": true,
+  "baseline_v0174_archived_evidence_verified": true,
+  "evidence_sha256": {
+    "paid_passage_unit_report.json": "9c0a3129feda55463833ccccb2831532ae3a64395426cd77ced732038e515d95",
+    "paid_passage_gameplay_report.json": "02eac702ef93b2c08529a0ae9c2492a01715b881d8fad07baa4d607f3454206e"
+  },
+  "rom_bytes": 1048576,
+  "checksum": 10392,
+  "aliases_header_verified": true,
+  "full_game_ported": false,
+  "limits": [
+    "18528 rules and20 controlled PAL/NTSC passage integrations repeated for current ROM;15 static foreground CRAM colors match original in every case, animated31 excluded. Destination enemies cleared in these isolated frontend tests.",
+    "v0174 minigame/fairy regressions remain archived baseline evidence, not claimed rerun for current ROM. Their source plus main/actors is byte-identical.",
+    "Uncontrolled destination combat still differs. Native foreground loading resumes earlier and clocks/spawn coordinates differ; read-only profiles retain this. Original RNG, global timing, full progression and hardware fidelity remain open."
+  ]
+}

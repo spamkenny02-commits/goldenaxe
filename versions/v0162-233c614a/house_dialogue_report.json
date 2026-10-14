@@ -1,0 +1,96 @@
+{
+  "dialogue_entry_exit_frames_without_display_disable": 162,
+  "natural_walk_conversation_and_restore_verified": true,
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_sha256": "233c614a78bfd29a4c7e6404678bb1e11258a01940bb663578e387d9c1ba0d7e",
+  "cases": [
+    {
+      "restored_window_pattern_bytes_exact": 4096,
+      "index": 0,
+      "room": 0,
+      "position": [
+        88,
+        72
+      ],
+      "bitmap_bytes_exact": 1040,
+      "text_window_exact_excluding_blink": true,
+      "restored_fields_exact": true,
+      "controlled_position_injection": true,
+      "confirmation": "action_button"
+    },
+    {
+      "restored_window_pattern_bytes_exact": 4096,
+      "index": 1,
+      "room": 0,
+      "position": [
+        104,
+        88
+      ],
+      "bitmap_bytes_exact": 1040,
+      "text_window_exact_excluding_blink": true,
+      "restored_fields_exact": true,
+      "controlled_position_injection": true,
+      "confirmation": "action_button"
+    },
+    {
+      "restored_window_pattern_bytes_exact": 4096,
+      "index": 2,
+      "room": 0,
+      "position": [
+        184,
+        88
+      ],
+      "bitmap_bytes_exact": 1040,
+      "text_window_exact_excluding_blink": true,
+      "restored_fields_exact": true,
+      "controlled_position_injection": true,
+      "confirmation": "action_button"
+    },
+    {
+      "restored_window_pattern_bytes_exact": 4096,
+      "index": 3,
+      "room": 2,
+      "position": [
+        136,
+        72
+      ],
+      "bitmap_bytes_exact": 1040,
+      "text_window_exact_excluding_blink": true,
+      "restored_fields_exact": true,
+      "controlled_position_injection": true,
+      "confirmation": "action_button"
+    },
+    {
+      "restored_window_pattern_bytes_exact": 4096,
+      "index": 4,
+      "room": 2,
+      "position": [
+        152,
+        88
+      ],
+      "bitmap_bytes_exact": 1040,
+      "text_window_exact_excluding_blink": true,
+      "restored_fields_exact": true,
+      "controlled_position_injection": true,
+      "confirmation": "right_direction"
+    },
+    {
+      "restored_window_pattern_bytes_exact": 4096,
+      "index": 5,
+      "room": 2,
+      "position": [
+        40,
+        104
+      ],
+      "bitmap_bytes_exact": 1040,
+      "text_window_exact_excluding_blink": true,
+      "restored_fields_exact": true,
+      "controlled_position_injection": true,
+      "confirmation": "action_button"
+    }
+  ],
+  "dialogue_timing_exact": false,
+  "village_save_menu_ported": true,
+  "first_village_merchant_ported": true,
+  "all_trade_menus_checked_by_this_test": false
+}

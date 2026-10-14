@@ -1,0 +1,218 @@
+{
+  "md_sha256": "065f144627e9938c4e2af2601214c3c17b25aa84e08a96ad941b27a99156c444",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "production_roms_unmodified": true,
+  "ram_injections": false,
+  "cases": [
+    {
+      "region": "auto",
+      "button": 0,
+      "first_gameplay": {
+        "sms": 2454,
+        "md": 2421
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "auto",
+      "button": 8,
+      "first_gameplay": {
+        "sms": 2454,
+        "md": 2421
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "auto",
+      "button": 4,
+      "first_gameplay": {
+        "sms": 2454,
+        "md": 2421
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "auto",
+      "button": 5,
+      "first_gameplay": {
+        "sms": 2454,
+        "md": 2421
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "auto",
+      "button": 6,
+      "first_gameplay": {
+        "sms": 2454,
+        "md": 2421
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "auto",
+      "button": 7,
+      "first_gameplay": {
+        "sms": 2454,
+        "md": 2421
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "pal",
+      "button": 0,
+      "first_gameplay": {
+        "sms": 2448,
+        "md": 2417
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "pal",
+      "button": 8,
+      "first_gameplay": {
+        "sms": 2448,
+        "md": 2417
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "pal",
+      "button": 4,
+      "first_gameplay": {
+        "sms": 2448,
+        "md": 2417
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "pal",
+      "button": 5,
+      "first_gameplay": {
+        "sms": 2448,
+        "md": 2417
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "pal",
+      "button": 6,
+      "first_gameplay": {
+        "sms": 2448,
+        "md": 2417
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "region": "pal",
+      "button": 7,
+      "first_gameplay": {
+        "sms": 2448,
+        "md": 2417
+      },
+      "held_confirmation_does_not_dismiss_final": true,
+      "stable_final_bitmap_bytes_exact": 1040,
+      "stable_final_marker_exact": true,
+      "native_clock_shift_during_final": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Natural opening story only; six final controller inputs in PAL/NTSC.",
+    "Initial loading timing and natural absolute world-clock phase remain different.",
+    "Inter-page blinking/clock reset and dialogue scrolling timing remain to be corrected."
+  ]
+}

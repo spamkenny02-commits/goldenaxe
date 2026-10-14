@@ -1,0 +1,160 @@
+{
+  "md_sha256": "8639238d6de100f584c6f7daa18c7cb54398a3bd9b217da288c4169c3b80303d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "direction": 0,
+      "source_transition_entry": 2824,
+      "native_transition_entry_before": 2828,
+      "native_transition_entry_after": 2824,
+      "pre_transition_hero_frames_exact": 14,
+      "remaining_differences": {
+        "state": 1,
+        "room": 0,
+        "hero": 1,
+        "animation": 38,
+        "context": 0,
+        "cells": 1,
+        "map": 11,
+        "sprite_entries": 89,
+        "hero_pattern_sha256": 38
+      }
+    },
+    {
+      "region": "auto",
+      "direction": 1,
+      "source_transition_entry": 2832,
+      "native_transition_entry_before": 2838,
+      "native_transition_entry_after": 2832,
+      "pre_transition_hero_frames_exact": 22,
+      "remaining_differences": {
+        "state": 0,
+        "room": 0,
+        "hero": 0,
+        "animation": 27,
+        "context": 0,
+        "cells": 1,
+        "map": 24,
+        "sprite_entries": 75,
+        "hero_pattern_sha256": 27
+      }
+    },
+    {
+      "region": "auto",
+      "direction": 2,
+      "source_transition_entry": 2824,
+      "native_transition_entry_before": 2828,
+      "native_transition_entry_after": 2824,
+      "pre_transition_hero_frames_exact": 14,
+      "remaining_differences": {
+        "state": 0,
+        "room": 0,
+        "hero": 0,
+        "animation": 0,
+        "context": 0,
+        "cells": 1,
+        "map": 36,
+        "sprite_entries": 0,
+        "hero_pattern_sha256": 0
+      }
+    },
+    {
+      "region": "auto",
+      "direction": 3,
+      "source_transition_entry": 2824,
+      "native_transition_entry_before": 2828,
+      "native_transition_entry_after": 2824,
+      "pre_transition_hero_frames_exact": 14,
+      "remaining_differences": {
+        "state": 0,
+        "room": 0,
+        "hero": 0,
+        "animation": 26,
+        "context": 0,
+        "cells": 1,
+        "map": 36,
+        "sprite_entries": 70,
+        "hero_pattern_sha256": 27
+      }
+    },
+    {
+      "region": "pal",
+      "direction": 0,
+      "source_transition_entry": 2824,
+      "native_transition_entry_before": 2828,
+      "native_transition_entry_after": 2824,
+      "pre_transition_hero_frames_exact": 14,
+      "remaining_differences": {
+        "state": 0,
+        "room": 0,
+        "hero": 0,
+        "animation": 31,
+        "context": 0,
+        "cells": 0,
+        "map": 7,
+        "sprite_entries": 77,
+        "hero_pattern_sha256": 30
+      }
+    },
+    {
+      "region": "pal",
+      "direction": 1,
+      "source_transition_entry": 2832,
+      "native_transition_entry_before": 2838,
+      "native_transition_entry_after": 2832,
+      "pre_transition_hero_frames_exact": 22,
+      "remaining_differences": {
+        "state": 1,
+        "room": 0,
+        "hero": 0,
+        "animation": 22,
+        "context": 0,
+        "cells": 0,
+        "map": 23,
+        "sprite_entries": 78,
+        "hero_pattern_sha256": 23
+      }
+    },
+    {
+      "region": "pal",
+      "direction": 2,
+      "source_transition_entry": 2824,
+      "native_transition_entry_before": 2828,
+      "native_transition_entry_after": 2824,
+      "pre_transition_hero_frames_exact": 14,
+      "remaining_differences": {
+        "state": 0,
+        "room": 0,
+        "hero": 0,
+        "animation": 0,
+        "context": 0,
+        "cells": 0,
+        "map": 35,
+        "sprite_entries": 0,
+        "hero_pattern_sha256": 0
+      }
+    },
+    {
+      "region": "pal",
+      "direction": 3,
+      "source_transition_entry": 2824,
+      "native_transition_entry_before": 2828,
+      "native_transition_entry_after": 2824,
+      "pre_transition_hero_frames_exact": 14,
+      "remaining_differences": {
+        "state": 0,
+        "room": 0,
+        "hero": 0,
+        "animation": 22,
+        "context": 0,
+        "cells": 0,
+        "map": 35,
+        "sprite_entries": 74,
+        "hero_pattern_sha256": 22
+      }
+    }
+  ],
+  "diagnostic_only": true,
+  "full_transition_equivalence": false
+}

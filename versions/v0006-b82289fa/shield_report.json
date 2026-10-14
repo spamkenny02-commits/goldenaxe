@@ -1,0 +1,111 @@
+{
+  "md_sha256": "b82289fa4a91003b304285c77c9b41505c93e299a0ac9625641cb79d8138047e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "source_frames_checked": 20,
+  "source_projectile_bytes_per_frame": 48,
+  "source_reflection_frame": 3745,
+  "controlled_native_reflection_and_expiry_exact": true,
+  "edge_cases_checked": [
+    {
+      "name": "direction-0-incoming",
+      "direction": 0,
+      "expected": true
+    },
+    {
+      "name": "direction-0-departing",
+      "direction": 0,
+      "reverse": true,
+      "expected": false
+    },
+    {
+      "name": "direction-1-incoming",
+      "direction": 1,
+      "expected": true
+    },
+    {
+      "name": "direction-1-departing",
+      "direction": 1,
+      "reverse": true,
+      "expected": false
+    },
+    {
+      "name": "direction-2-incoming",
+      "direction": 2,
+      "expected": true
+    },
+    {
+      "name": "direction-2-departing",
+      "direction": 2,
+      "reverse": true,
+      "expected": false
+    },
+    {
+      "name": "direction-3-incoming",
+      "direction": 3,
+      "expected": true
+    },
+    {
+      "name": "direction-3-departing",
+      "direction": 3,
+      "reverse": true,
+      "expected": false
+    },
+    {
+      "name": "weak-shield",
+      "attack": 9,
+      "expected": false
+    },
+    {
+      "name": "equal-strength",
+      "attack": 8,
+      "expected": true
+    },
+    {
+      "name": "strong-shield",
+      "attack": 12,
+      "shield": 2,
+      "expected": true
+    },
+    {
+      "name": "too-strong",
+      "attack": 15,
+      "shield": 3,
+      "expected": false
+    },
+    {
+      "name": "odd-frame",
+      "clock": 171,
+      "expected": false
+    },
+    {
+      "name": "zero-velocity",
+      "zero": true,
+      "expected": false
+    },
+    {
+      "name": "delayed-projectile",
+      "delay": 1,
+      "expected": false
+    },
+    {
+      "name": "collision-disabled",
+      "flags": 17,
+      "expected": false
+    },
+    {
+      "name": "outside-box",
+      "outside": true,
+      "expected": false
+    },
+    {
+      "name": "earlier-contact-blocks-later",
+      "earlier": true,
+      "expected": false
+    }
+  ],
+  "damage_and_knockback_ported": true,
+  "water_and_other_hero_states_ported": false,
+  "shield_inventory_progression_ported": false,
+  "sound_ported": false,
+  "scope": "Successful shield branch; controlled entity and clock, no complete combat or natural timing equivalence claimed"
+}

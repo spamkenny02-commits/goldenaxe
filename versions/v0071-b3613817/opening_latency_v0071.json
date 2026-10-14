@@ -1,0 +1,122 @@
+{
+  "md_sha256": "b361381750ac3366da528a8d544864b2b097a6b5fffaf363d935ef5bb068e1f8",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "diagnostic_only": true,
+  "production_roms_unmodified": true,
+  "ram_injections": false,
+  "cases": [
+    {
+      "region": "auto",
+      "source_story_entry": {
+        "frame": 1490,
+        "pc": 29764,
+        "clock": 66,
+        "hl": 43880,
+        "master_cycles": 1333575930,
+        "irq_master_cycles": 267357420
+      },
+      "native_render_entry": {
+        "frame": 1450,
+        "pc": 108538,
+        "function": "render_dialogue_text",
+        "master_cycles_in_frame": 149372,
+        "sp": 3774872804
+      },
+      "story_entry_delta": -40,
+      "source_page_wait": {
+        "frame": 1596,
+        "pc": 2036,
+        "clock": 104,
+        "hl": 49199,
+        "master_cycles": 1428843510,
+        "irq_master_cycles": 274472400
+      },
+      "native_page_wait": {
+        "frame": 1543,
+        "pc": 51750,
+        "function": "wait_dialog_continue",
+        "master_cycles_in_frame": 136334,
+        "sp": 3774872428
+      },
+      "page_wait_delta": -53,
+      "first_room": {
+        "sms": {
+          "frame": 2454,
+          "clock": 199,
+          "state": 12,
+          "room": 149
+        },
+        "md": {
+          "frame": 2421,
+          "clock": 92,
+          "state": 12,
+          "room": 149,
+          "vtimer": 2396,
+          "shift": 0
+        }
+      },
+      "room_ready_delta": -33,
+      "profile": "world_clock_profile.json",
+      "profile_sha256": "f5d98a12b103b2922d84b5f5cc4e57119bf27df1dede56adc19c0b5478e5dd66"
+    },
+    {
+      "region": "pal",
+      "source_story_entry": {
+        "frame": 1489,
+        "pc": 29764,
+        "clock": 84,
+        "hl": 43880,
+        "master_cycles": 1592065170,
+        "irq_master_cycles": 317379390
+      },
+      "native_render_entry": {
+        "frame": 1450,
+        "pc": 108538,
+        "function": "render_dialogue_text",
+        "master_cycles_in_frame": 142454,
+        "sp": 3774872804
+      },
+      "story_entry_delta": -39,
+      "source_page_wait": {
+        "frame": 1583,
+        "pc": 2036,
+        "clock": 122,
+        "hl": 49199,
+        "master_cycles": 1692779520,
+        "irq_master_cycles": 324397065
+      },
+      "native_page_wait": {
+        "frame": 1535,
+        "pc": 51750,
+        "function": "wait_dialog_continue",
+        "master_cycles_in_frame": 128354,
+        "sp": 3774872428
+      },
+      "page_wait_delta": -48,
+      "first_room": {
+        "sms": {
+          "frame": 2448,
+          "clock": 205,
+          "state": 12,
+          "room": 149
+        },
+        "md": {
+          "frame": 2417,
+          "clock": 91,
+          "state": 12,
+          "room": 149,
+          "vtimer": 2395,
+          "shift": 0
+        }
+      },
+      "room_ready_delta": -31,
+      "profile": "world_clock-pal_profile.json",
+      "profile_sha256": "0fad1f72064478378d67f7ee75d8253ba4f24fd11b736c766b9d3d0ac71fb9d4"
+    }
+  ],
+  "limits": [
+    "One natural new-game input sequence per region.",
+    "Full native ROM PC addresses preserved; RAM accesses alone use low 16 bits. Earlier profile versions masked ROM PCs and could miss functions above 64 KiB.",
+    "These are known discrepancies, not passing synchronization checks."
+  ]
+}

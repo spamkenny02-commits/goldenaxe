@@ -1,0 +1,35 @@
+{
+  "md_sha256": "5136310583bcc2eed918f0593c2209d28d5b1b5a32410e4cfbc7afc628acc912",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "only_house_animation_destination_lookup_changed": true,
+  "source_files": {
+    "megadrive/src/main.c": "ff7d4adeb90cf202689f803cfa6c907ea6d3d942e2b625540b15499516bad208",
+    "tools/validate_house_patterns.py": "c36df6a666c756e855f20ece7d706d0ad3a3511b99a3cb3334b085bc1a00791d",
+    "tools/validate_inventory_restore.py": "a69cc166e7539ae1e3c5b7bc15bccb16f9e74d30e5f2291c8ac77b1611f64e8f",
+    "tools/audit_house_patterns_patch.py": "7dede32eb15cf7e86a8e167f83e20cde3b030bbb953f2c2a3964181e00936af7",
+    "analysis/house_patterns_milestone.md": "20bf9e3674596d8706f1ef8d8f429f008630baa805a46b6c1750cc59bd19ce54",
+    "analysis/house-animation-baseline-v0096/main.c": "93cb652b919ee9ec89b2103cd62c9773f01c9f0c0c8de0569330f66dc2954d91",
+    "analysis/house-animation-baseline-v0096/symbol.txt": "73a1e8654d0914a2e1910d44778ce218ef3aaa5a29b4a0e2352baac7e205aca6"
+  },
+  "reports": [
+    {
+      "file": "house_patterns_report.json",
+      "sha256": "24b22ee0903c16de208487004353ff51eb22ce3620b5abf3c4d4518ba4d039ce"
+    },
+    {
+      "file": "inventory_restore_report.json",
+      "sha256": "fcd3a1716eea31452475bae73b875aad76bfff77dd7d422a851f07df10200e71"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "f540086540ab725f54863f88f0d60530781f31957b74b3e4da961a862c9ae9a6"
+    }
+  ],
+  "baseline_removed_differing_frames": 236,
+  "baseline_report_sha256": "9d34e1186b90001357b74bd108a4b6e459bf5f075ad2bba5cd69e06abbff6ae4",
+  "full_game_ported": false,
+  "limits": [
+    "Four clock-aligned house animation cases, six static inventory-return cases and first-merchant regressions only.",
+    "All houses, complete framebuffers/audio, global phase, full gameplay and scroll timing remain unverified or incomplete."
+  ]
+}

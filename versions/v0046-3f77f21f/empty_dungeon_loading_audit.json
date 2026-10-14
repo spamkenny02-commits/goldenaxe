@@ -1,0 +1,230 @@
+{
+  "md_sha256": "3f77f21ff2e22586e66e109201750b237058e9347b9cca84999a3710410d4573",
+  "rom_size": 524288,
+  "checksum_and_aliases_verified": true,
+  "production_change": "Include cleared dungeons in the existing foreground initialization delay.",
+  "unchanged_routines_validation": {
+    "archived_rom_sha256": "e45374abc29f9db490922d958357cf73ade7682c42e6e12036710987eca194f8",
+    "archived_audit_sha256": "bac1d1b5c7b20fc8a4db3dcd30c6314a7b77e85e7842d6e6a3a48b12d2c438db",
+    "isolated_cases_previously_executed": 24576,
+    "production_source_change_exactly_checked": true,
+    "isolated_cases_rerun_for_this_rom": false
+  },
+  "current_evidence": [
+    {
+      "file": "validation\\dungeon_scroll_report.json",
+      "sha256": "1e6ca1c18dfe2a7594eb40eeedd1ca01f5e6126de454a0283fc4ff059fe351c0"
+    },
+    {
+      "file": "validation\\dungeon_scroll-pal_report.json",
+      "sha256": "be424966134c1ecc5cec9eafa06169e5bdaf5bb63ede1853e53562ee281253dc"
+    },
+    {
+      "file": "validation\\room_clear_gameplay_report.json",
+      "sha256": "29bc0e6d67c2d48db5b64ff88c3710b83ac4dd071775ae0d85cd9f436fb1c452"
+    },
+    {
+      "file": "validation\\room_clear_gameplay-pal_report.json",
+      "sha256": "6c19d37e3393992b1c66e9065ad486b3671174126990e0e526723c52f3fb50a4"
+    },
+    {
+      "file": "validation\\room_clear_cross_report.json",
+      "sha256": "cbc392ade6827cd01dc0773dc493632749bdafebabd7e8ad2b2502a273d8f1d1"
+    },
+    {
+      "file": "validation\\room_clear_cross-pal_report.json",
+      "sha256": "e36bc360fce1a4d3382ffcda5f8911545bf2953246e1cc37ce4420a396dadcf2"
+    },
+    {
+      "file": "validation\\key_door_gameplay_report.json",
+      "sha256": "f0ffc03c0e4366e77d5da3f2d9c9022e5776438fcf12e1274c238c6b5ad08baf"
+    },
+    {
+      "file": "validation\\key_door_gameplay-pal_report.json",
+      "sha256": "e47902df1e10cb3421995a2d2f324d52b90d511c929eafcfe0cdba6329b93e60"
+    },
+    {
+      "file": "validation\\timing_report.json",
+      "sha256": "5a5d5c89275937a852b3997af402e898200f522a937056df74e5c58cbda2e00a"
+    },
+    {
+      "file": "validation\\timing-pal_report.json",
+      "sha256": "b3bcb5d253244cf336e3328816dcdac92ec012e2b41a4fd1e1afb44d2573128d"
+    },
+    {
+      "file": "analysis\\room17d_long_profile.json",
+      "sha256": "e5dad32bd5afadca8da3405d56fb92754e7853066f577ca1df8af59b7b6ef344"
+    },
+    {
+      "file": "analysis\\room17d_long_profile-pal.json",
+      "sha256": "4a279ab59d1ab4e4f067829064be76db901048bd49dcd97fb1decf296ba1dcdf"
+    }
+  ],
+  "source_profiles": [
+    {
+      "region": "ntsc",
+      "source_empty_room_load_tstates": 52075,
+      "source_irq_tstates": 4081,
+      "movement_frames_same_frame_exact": 90,
+      "long_hold_no_extra_scroll": true,
+      "final_floor_cells_exact": true
+    },
+    {
+      "region": "-pal",
+      "source_empty_room_load_tstates": 52075,
+      "source_irq_tstates": 4136,
+      "movement_frames_same_frame_exact": 90,
+      "long_hold_no_extra_scroll": true,
+      "final_floor_cells_exact": true
+    }
+  ],
+  "cross_return_offsets": [
+    {
+      "region": "ntsc",
+      "room": 381,
+      "before": -1,
+      "after": 0
+    },
+    {
+      "region": "ntsc",
+      "room": 284,
+      "before": 0,
+      "after": 0
+    },
+    {
+      "region": "ntsc",
+      "room": 337,
+      "before": -1,
+      "after": 0
+    },
+    {
+      "region": "-pal",
+      "room": 381,
+      "before": -1,
+      "after": 0
+    },
+    {
+      "region": "-pal",
+      "room": 284,
+      "before": -1,
+      "after": 0
+    },
+    {
+      "region": "-pal",
+      "room": 337,
+      "before": 0,
+      "after": 1
+    }
+  ],
+  "dungeon_scroll_offsets": [
+    {
+      "region": "ntsc",
+      "origin": 496,
+      "direction": "left",
+      "offset": 1
+    },
+    {
+      "region": "ntsc",
+      "origin": 496,
+      "direction": "right",
+      "offset": 0
+    },
+    {
+      "region": "ntsc",
+      "origin": 496,
+      "direction": "up",
+      "offset": -3
+    },
+    {
+      "region": "ntsc",
+      "origin": 496,
+      "direction": "down",
+      "offset": 0
+    },
+    {
+      "region": "ntsc",
+      "origin": 504,
+      "direction": "left",
+      "offset": 0
+    },
+    {
+      "region": "ntsc",
+      "origin": 504,
+      "direction": "right",
+      "offset": -1
+    },
+    {
+      "region": "ntsc",
+      "origin": 504,
+      "direction": "up",
+      "offset": -4
+    },
+    {
+      "region": "ntsc",
+      "origin": 504,
+      "direction": "down",
+      "offset": 0
+    },
+    {
+      "region": "-pal",
+      "origin": 496,
+      "direction": "left",
+      "offset": 1
+    },
+    {
+      "region": "-pal",
+      "origin": 496,
+      "direction": "right",
+      "offset": 0
+    },
+    {
+      "region": "-pal",
+      "origin": 496,
+      "direction": "up",
+      "offset": -2
+    },
+    {
+      "region": "-pal",
+      "origin": 496,
+      "direction": "down",
+      "offset": 0
+    },
+    {
+      "region": "-pal",
+      "origin": 504,
+      "direction": "left",
+      "offset": 0
+    },
+    {
+      "region": "-pal",
+      "origin": 504,
+      "direction": "right",
+      "offset": -1
+    },
+    {
+      "region": "-pal",
+      "origin": 504,
+      "direction": "up",
+      "offset": -2
+    },
+    {
+      "region": "-pal",
+      "origin": 504,
+      "direction": "down",
+      "offset": 0
+    }
+  ],
+  "source_files": {
+    "megadrive/src/main.c": "ab957c494ef6c69610f6143ec4216e482b6f7683d5065de8d48199ac28d83a05",
+    "tools/profile_room17d_path.py": "31ddaf751abac5d470cd914eaee13ebc3735cbe34f39c2adb515fbf9da09b0e6",
+    "tools/audit_empty_dungeon_loading.py": "cce5380fc4357aa9d46d330e5aefcb3ba95d0a4f5d7f66a6e536983afffe4a46",
+    "tools/validate_room_clear_gameplay.py": "c8563f8454f02e65936361485c9d8004df1eb7d26654c972f73edc03bd6ee225"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "The generic 20000-T overhead remains approximate; the 52075-T source trace is evidence, not a per-room delay constant.",
+    "Some horizontal loads now resume one frame late; upward loading can still resume up to five frames early in the controlled routes.",
+    "PAL room 151 return is one frame late instead of previously exact; this remains a timing-model limitation.",
+    "Controlled fixtures, not full natural dungeon progression. Sprite pixels, audio waveform, remaining puzzles, bosses and ending are unverified or incomplete."
+  ]
+}

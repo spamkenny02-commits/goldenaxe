@@ -1,0 +1,210 @@
+{
+  "md_sha256": "7ab95bef3e0ecfae795bfc2705f5a316501b6b8f25ce815e2e125e3ece360dc0",
+  "arithmetic_body_cases": 32,
+  "shadow_birth_into_empty_record_verified": true,
+  "appearance_wait_without_shadow_verified": true,
+  "controlled_random_cases": [
+    {
+      "type": 49,
+      "state": 6,
+      "border": 0,
+      "solid_tilemap": false,
+      "observed_next_state": 4,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "state": 8,
+      "border": 0,
+      "solid_tilemap": false,
+      "observed_next_state": 10,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "state": 10,
+      "border": 0,
+      "solid_tilemap": false,
+      "observed_next_state": 10,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "state": 8,
+      "border": 1,
+      "solid_tilemap": false,
+      "observed_next_state": 6,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "state": 8,
+      "border": 2,
+      "solid_tilemap": false,
+      "observed_next_state": 6,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "state": 8,
+      "border": 0,
+      "solid_tilemap": true,
+      "observed_next_state": 6,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "state": 6,
+      "border": 0,
+      "solid_tilemap": false,
+      "observed_next_state": 4,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "state": 8,
+      "border": 0,
+      "solid_tilemap": false,
+      "observed_next_state": 10,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "state": 10,
+      "border": 0,
+      "solid_tilemap": false,
+      "observed_next_state": 10,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "state": 8,
+      "border": 1,
+      "solid_tilemap": false,
+      "observed_next_state": 6,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "state": 8,
+      "border": 2,
+      "solid_tilemap": false,
+      "observed_next_state": 6,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "state": 8,
+      "border": 0,
+      "solid_tilemap": true,
+      "observed_next_state": 6,
+      "native_rng_choice_controlled": true
+    }
+  ],
+  "all_sixteen_vector_cases": [
+    {
+      "type": 49,
+      "vector": 0,
+      "source_frame": 3108,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "vector": 1,
+      "source_frame": 3103,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "vector": 2,
+      "source_frame": 3106,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "vector": 3,
+      "source_frame": 3104,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "vector": 4,
+      "source_frame": 3126,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "vector": 5,
+      "source_frame": 3121,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "vector": 6,
+      "source_frame": 3102,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 49,
+      "vector": 7,
+      "source_frame": 3105,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "vector": 0,
+      "source_frame": 3107,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "vector": 1,
+      "source_frame": 3123,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "vector": 2,
+      "source_frame": 3103,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "vector": 3,
+      "source_frame": 3108,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "vector": 4,
+      "source_frame": 3112,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "vector": 5,
+      "source_frame": 3104,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "vector": 6,
+      "source_frame": 3102,
+      "native_rng_choice_controlled": true
+    },
+    {
+      "type": 50,
+      "vector": 7,
+      "source_frame": 3121,
+      "native_rng_choice_controlled": true
+    }
+  ],
+  "free_body_shadow_frames": 18,
+  "adjacent_shadow_removal_source_exact": true,
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ],
+  "source_rng_stream_reproduced": false,
+  "natural_gameplay_verified": false
+}

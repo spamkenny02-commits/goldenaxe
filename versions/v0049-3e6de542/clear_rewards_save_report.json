@@ -1,0 +1,26 @@
+{
+  "md_sha256": "3e6de5423466531de424804c834c071f53c757e3a29ee6efa6264912e68e1b14",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "inventory": "113",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 3,
+      "master_key_cold_loaded": 0
+    },
+    {
+      "inventory": "131",
+      "slot": 2,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 3,
+      "master_key_cold_loaded": 0
+    }
+  ],
+  "state_provenance": "Actual final-particle, reward and key-pickup snapshots, transferred to save-point route by fixture.",
+  "production_save_and_cold_load_by_normal_input": true,
+  "uninterrupted_dungeon_to_save_point_route_verified": false,
+  "full_game_ported": false
+}

@@ -1,0 +1,15 @@
+{
+  "md_sha256": "f1537f6f2f7e51da9821629bc119dd1f645829730453b388c1eea748ea54a387",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "5284e19052252c77b99ea13cc35a252ae2b6932d7bc476689122291e23c15ff9",
+  "harness_sha256": "0e18726b1e20c15f258402aabe253242728cdc161e8ad3a0c689688bba561ec7",
+  "cases": 1440,
+  "all_768_actor_bytes_and_magic_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Eight sourceLD A,R sites use explicit register-preserving input shim. Original4FB7/9C02/57F8/9C29/9C8D/3F07 and drain wrapper execute.",
+    "Four even states, random/aimed vectors, boundary choices, contact flag and magic saturation. Explicit inherited E tests lifetime-expiry edge selection. State0 requires loader animation0.",
+    "Interior lifetime expiry inherits sourceE; tests supply0..3 explicitly. Natural nonzero vectors reach boundaries long before128 segments; production fallbackE=0 is not a register emulator.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

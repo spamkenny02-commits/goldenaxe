@@ -1,0 +1,14 @@
+{
+  "md_sha256": "cc830a8216e7432706dfd53bfafc3deee7c9e73635be09c232523e0aa524efc3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "abb8ea730d6ea9eb45ad3897e310706b083d24b5c7b7fd34bd9048e046435930",
+  "harness_sha256": "f895190dca4c57763b36aed83f621fe50edd3c7bd2f38980abff256291dca48b",
+  "cases": 2436,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Five sourceLD A,R sites use explicit register-preserving input shim. Original500E/501A/57F8/5020/4965/4006/43AF execute.",
+    "Five states, all128 spawn candidates on three terrains, eight scheduling phases and slots, aimed orientation/ties, timer-vs-flash gates, cooldown outputs, full/first-free shot pool,17/71 initialization and dungeon culling.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

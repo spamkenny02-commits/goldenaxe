@@ -1,0 +1,173 @@
+{
+  "md_sha256": "a72eb3e83e49733761e285e3639ef6c4a344995fd8fd45f7372b3be8d2c60405",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "segment": "appearance",
+      "frames": 65,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "segment": "pursuit",
+      "frames": 32,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "segment": "two-shots",
+      "frames": 120,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "segment": "surviving-hit",
+      "frames": 1,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "segment": "lethal-hit",
+      "frames": 1,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "segment": "path-0",
+      "frames": 147,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "segment": "path-1",
+      "frames": 147,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "segment": "path-2",
+      "frames": 123,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "segment": "path-3",
+      "frames": 123,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "appearance",
+      "frames": 65,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "pursuit",
+      "frames": 32,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "two-shots",
+      "frames": 120,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "surviving-hit",
+      "frames": 1,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "lethal-hit",
+      "frames": 1,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "path-0",
+      "frames": 147,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "path-1",
+      "frames": 147,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "path-2",
+      "frames": 123,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "segment": "path-3",
+      "frames": 123,
+      "all_768_actor_bytes_exact": true,
+      "clock_adjustments": [
+        174
+      ]
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled boss and hero records injected into exterior. Native clock explicitly aligned to source in fixture; production code unchanged. Segments stop before random decisions.",
+    "Appearance, pursuit and two shots compared; four satellite formations injected with explicit path selection to isolate complete path/lifetime logic. Initial random state16 allocation is covered by direct routine tests. Type6C normal choices do not reach satellite states16/18. Natural fights/routes, global clock/RNG, full framebuffer/SAT/audio and hardware timing remain unproved."
+  ]
+}

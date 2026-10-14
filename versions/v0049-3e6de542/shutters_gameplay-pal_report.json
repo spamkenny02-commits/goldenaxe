@@ -1,0 +1,196 @@
+{
+  "md_sha256": "3e6de5423466531de424804c834c071f53c757e3a29ee6efa6264912e68e1b14",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "region": "pal",
+  "cases": [
+    {
+      "room": 297,
+      "occupied": true,
+      "closed_reopened": true,
+      "empty_room_did_not_close": false,
+      "reward_key": false,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": 3414,
+          "opened": 3504
+        },
+        "md": {
+          "closed": 3414,
+          "opened": 3504
+        }
+      }
+    },
+    {
+      "room": 297,
+      "occupied": false,
+      "closed_reopened": false,
+      "empty_room_did_not_close": true,
+      "reward_key": false,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": null,
+          "opened": 3500
+        },
+        "md": {
+          "closed": null,
+          "opened": 3500
+        }
+      }
+    },
+    {
+      "room": 313,
+      "occupied": true,
+      "closed_reopened": true,
+      "empty_room_did_not_close": false,
+      "reward_key": false,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": 3414,
+          "opened": 3504
+        },
+        "md": {
+          "closed": 3414,
+          "opened": 3504
+        }
+      }
+    },
+    {
+      "room": 313,
+      "occupied": false,
+      "closed_reopened": false,
+      "empty_room_did_not_close": true,
+      "reward_key": false,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": null,
+          "opened": 3500
+        },
+        "md": {
+          "closed": null,
+          "opened": 3500
+        }
+      }
+    },
+    {
+      "room": 325,
+      "occupied": true,
+      "closed_reopened": true,
+      "empty_room_did_not_close": false,
+      "reward_key": false,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": 3414,
+          "opened": 3504
+        },
+        "md": {
+          "closed": 3414,
+          "opened": 3504
+        }
+      }
+    },
+    {
+      "room": 325,
+      "occupied": false,
+      "closed_reopened": false,
+      "empty_room_did_not_close": true,
+      "reward_key": false,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": null,
+          "opened": 3500
+        },
+        "md": {
+          "closed": null,
+          "opened": 3500
+        }
+      }
+    },
+    {
+      "room": 352,
+      "occupied": true,
+      "closed_reopened": true,
+      "empty_room_did_not_close": false,
+      "reward_key": true,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": 3414,
+          "opened": 3504
+        },
+        "md": {
+          "closed": 3414,
+          "opened": 3504
+        }
+      }
+    },
+    {
+      "room": 352,
+      "occupied": false,
+      "closed_reopened": false,
+      "empty_room_did_not_close": true,
+      "reward_key": false,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": null,
+          "opened": 3500
+        },
+        "md": {
+          "closed": null,
+          "opened": 3500
+        }
+      }
+    },
+    {
+      "room": 485,
+      "occupied": true,
+      "closed_reopened": true,
+      "empty_room_did_not_close": false,
+      "reward_key": true,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": 3414,
+          "opened": 3504
+        },
+        "md": {
+          "closed": 3414,
+          "opened": 3504
+        }
+      }
+    },
+    {
+      "room": 485,
+      "occupied": false,
+      "closed_reopened": false,
+      "empty_room_did_not_close": true,
+      "reward_key": false,
+      "before_and_after_state_fields_exact": true,
+      "timing": {
+        "sms": {
+          "closed": null,
+          "opened": 3500
+        },
+        "md": {
+          "closed": null,
+          "opened": 3500
+        }
+      }
+    }
+  ],
+  "production_cartridges_unmodified": true,
+  "final_particle_runs_in_live_game_loop": true,
+  "controlled_particle_type_66_excludes_random_drops": true,
+  "limits": [
+    "Controlled real room/entry position and frozen last particle; final death animation is injected at frame 3500, not a natural fight.",
+    "Movement and close predicates run through the production loop; maps/flags/state before and after are compared.",
+    "Reward keys remain uncollected in these cases.",
+    "Full natural routes, unrelated script prefixes, audio waveform and precise redraw latency remain unverified."
+  ]
+}

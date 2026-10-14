@@ -1,0 +1,33 @@
+{
+  "md_sha256": "4ba31d49f9553901b5128ea1172d069b7488bc0ace2471ca4a285b403557fc18",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 34351,
+  "aliases_and_header_verified": true,
+  "main_unchanged_since_v0148": true,
+  "prior_actor_implementations_unchanged_since_v0148": true,
+  "production_changes_confined_to_5F_60_and_publication": true,
+  "evidence_sha256": {
+    "dungeon_melee_allocation_unit_report.json": "1c89e37e73759accb6c30d6928ec832b7893e2ac02f177d15583a36792d9d089",
+    "dungeon_melee_gameplay_report.json": "9279b94a07779b6bfdb975d53d7237a4912e15bc4027a2f71afd6d266d96500c",
+    "dungeon_melee_5f_entry_report.json": "406bea2960ff9b8d588ac30888728ee48ba0acba235530b22a11d3b277ec47b5",
+    "dungeon_melee_60_entry_report.json": "95cf70717183c348e1c1e44b5fdc6766bb2b490d2576f94c45b103eb665a5d28",
+    "dungeon_melee_attack_5f_entry_report.json": "ed6ea0a16caa2bd1450de908d73e687931dbe8caff67b43e27787c6d180c669d",
+    "dungeon_melee_attack_60_auto_diagnostic.json": "8e2fb24c5e5befbff0eb15896b27853680fdb07b9dc26caa6419ef08257dda62",
+    "dungeon_melee_attack_60_pal_diagnostic.json": "44c96608553c47343b29735a8abc639435faf4443d73d1c3f95329a091634368",
+    "dungeon_patrol_61_room_entry_report.json": "50bccc9d22f70a43f3fabbfd51aea3b7edea420b542bd9ca66fa47abd317b01c",
+    "dungeon_patrol_62_room_entry_report.json": "5bf688b459893d368da3012e618f8c317b57b0c356abd494489de2535cd0560b",
+    "start_menu_audio_report.json": "d93407f5b4a2beb3f95fc369903969bf0f0e85f1ecb3a13331b942b751097457"
+  },
+  "full_game_ported": false,
+  "known_actual_attack_sprite_order_discrepancy": {
+    "type": 96,
+    "region": "pal",
+    "frame": 3702
+  },
+  "limits": [
+    "Four original random-read sites use controlled input shims in isolated cases; production deterministic segments align initial world clocks. Original random stream is not reproduced.",
+    "Actual117/138 appearance aligns to initialization and excludes random X/Y/direction. Controlled actual-room attacks compare all actor/hero/effect fields34 frames in each of four room/region cases.5F PAL/NTSC and60 NTSC SAT33 frames match;60 PAL has one retained sprite order mismatch at3702, strict validator fails. Native renderer always sorts by Y; source0940 may instead rotate through objects based on sourceC047/VDP overflow. Root cause requires further renderer investigation.",
+    "Main/older AI unchanged; mismatch is retained, not hidden by timeline shift or assertion relaxation. Full natural progression, global clock/RNG, full framebuffer/audio, quests, ending and hardware remain incomplete or unverified."
+  ]
+}

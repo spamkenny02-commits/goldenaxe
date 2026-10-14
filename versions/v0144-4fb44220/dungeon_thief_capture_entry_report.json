@@ -1,0 +1,267 @@
+{
+  "md_sha256": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "room": 339,
+      "type": 91,
+      "arrival_frames": {
+        "sms": 3523,
+        "md": 3473
+      },
+      "relative_first_actor_frames_except_random_fields_exact": 30,
+      "excluded_random_record_offsets": [
+        10,
+        17,
+        19
+      ],
+      "loaded_pattern_tiles_exact": 40,
+      "pattern_samples": 3,
+      "controlled_cycle_actor_hero_gold_sound_frames_exact": 65,
+      "controlled_cycle_sat_frames_exact": 64,
+      "hero_and_thief_sat_order_compared": true,
+      "explicit_initial_clock_alignment": true,
+      "excluded_fixture_sat_frame": 3700,
+      "fixture_frame_sat": {
+        "sms": [
+          [
+            89,
+            105,
+            0
+          ],
+          [
+            89,
+            113,
+            1
+          ],
+          [
+            97,
+            105,
+            2
+          ],
+          [
+            97,
+            113,
+            3
+          ],
+          [
+            63,
+            8,
+            240
+          ],
+          [
+            63,
+            16,
+            241
+          ],
+          [
+            71,
+            8,
+            242
+          ],
+          [
+            71,
+            16,
+            243
+          ],
+          [
+            47,
+            139,
+            0
+          ],
+          [
+            47,
+            147,
+            1
+          ],
+          [
+            55,
+            139,
+            2
+          ],
+          [
+            55,
+            147,
+            3
+          ]
+        ],
+        "md": [
+          [
+            63,
+            120,
+            240
+          ],
+          [
+            63,
+            128,
+            241
+          ],
+          [
+            71,
+            120,
+            242
+          ],
+          [
+            71,
+            128,
+            243
+          ],
+          [
+            63,
+            120,
+            0
+          ],
+          [
+            63,
+            128,
+            1
+          ],
+          [
+            71,
+            120,
+            2
+          ],
+          [
+            71,
+            128,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "region": "pal",
+      "room": 339,
+      "type": 91,
+      "arrival_frames": {
+        "sms": 3473,
+        "md": 3462
+      },
+      "relative_first_actor_frames_except_random_fields_exact": 30,
+      "excluded_random_record_offsets": [
+        10,
+        17,
+        19
+      ],
+      "loaded_pattern_tiles_exact": 40,
+      "pattern_samples": 3,
+      "controlled_cycle_actor_hero_gold_sound_frames_exact": 65,
+      "controlled_cycle_sat_frames_exact": 64,
+      "hero_and_thief_sat_order_compared": true,
+      "explicit_initial_clock_alignment": true,
+      "excluded_fixture_sat_frame": 3700,
+      "fixture_frame_sat": {
+        "sms": [
+          [
+            82,
+            64,
+            0
+          ],
+          [
+            82,
+            72,
+            1
+          ],
+          [
+            90,
+            64,
+            2
+          ],
+          [
+            90,
+            72,
+            3
+          ],
+          [
+            81,
+            176,
+            0
+          ],
+          [
+            81,
+            184,
+            1
+          ],
+          [
+            89,
+            176,
+            2
+          ],
+          [
+            89,
+            184,
+            3
+          ],
+          [
+            63,
+            8,
+            240
+          ],
+          [
+            63,
+            16,
+            241
+          ],
+          [
+            71,
+            8,
+            242
+          ],
+          [
+            71,
+            16,
+            243
+          ]
+        ],
+        "md": [
+          [
+            63,
+            120,
+            240
+          ],
+          [
+            63,
+            128,
+            241
+          ],
+          [
+            71,
+            120,
+            242
+          ],
+          [
+            71,
+            128,
+            243
+          ],
+          [
+            63,
+            120,
+            0
+          ],
+          [
+            63,
+            128,
+            1
+          ],
+          [
+            71,
+            120,
+            2
+          ],
+          [
+            71,
+            128,
+            3
+          ]
+        ]
+      }
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Normal dungeon doorway entry after exterior relocation; controlled relocation to room152 boundary with cleared actors and passable departure map. Right scroll and actual destination153 scripts/resources/actor loading execute normally.",
+    "Actor timelines aligned to first initialized core frame, not absolute loading cadence; Thirty first hunter appearance frames exclude X/Y high bytes and direction, chosen by unaligned source/native random inputs. Other actor records are not compared. First 40 sprite pattern pixels sampled at three relative frames. At3700 all actors are replaced by one controlled5B state10 at128,80, hero128,80 state1, gold32. Initial native clock explicitly aligned. All768 actor bytes plus hero state/animation/gold/XY/velocities and95 request/effect state compare65 frames. Actual SAT filtered to the thief8 tiles and hero240..255 tiles compares64 frames3701..3764, including ordering/overlap;3700 retains pre-injection source sprites and immediate native fixture sprites, recorded explicitly. No timeline shift is applied. Natural travel, full fight, full framebuffer, audio and full transition timing remain unproved."
+  ]
+}

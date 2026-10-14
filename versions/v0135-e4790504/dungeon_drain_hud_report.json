@@ -1,0 +1,300 @@
+{
+  "md_sha256": "e4790504a6f3a165285c2cef9402fee56240c32dfe2b4a9f730f08a19fc6d8ae",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "type": 77,
+      "segment": "contact",
+      "frames": 12,
+      "all_768_actor_bytes_magic_and_hero_health_exact": true,
+      "actual_magic_hud_tiles_each_frame": {
+        "2800": [
+          400,
+          400,
+          400
+        ],
+        "2801": [
+          400,
+          400,
+          400
+        ],
+        "2802": [
+          400,
+          400,
+          400
+        ],
+        "2803": [
+          400,
+          400,
+          400
+        ],
+        "2804": [
+          400,
+          400,
+          401
+        ],
+        "2805": [
+          400,
+          400,
+          401
+        ],
+        "2806": [
+          400,
+          400,
+          401
+        ],
+        "2807": [
+          400,
+          400,
+          401
+        ],
+        "2808": [
+          400,
+          400,
+          401
+        ],
+        "2809": [
+          400,
+          400,
+          401
+        ],
+        "2810": [
+          400,
+          400,
+          401
+        ],
+        "2811": [
+          400,
+          400,
+          401
+        ]
+      },
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "auto",
+      "type": 78,
+      "segment": "contact",
+      "frames": 12,
+      "all_768_actor_bytes_magic_and_hero_health_exact": true,
+      "actual_magic_hud_tiles_each_frame": {
+        "2800": [
+          400,
+          400,
+          400
+        ],
+        "2801": [
+          400,
+          400,
+          400
+        ],
+        "2802": [
+          400,
+          400,
+          400
+        ],
+        "2803": [
+          400,
+          400,
+          400
+        ],
+        "2804": [
+          400,
+          400,
+          401
+        ],
+        "2805": [
+          400,
+          400,
+          401
+        ],
+        "2806": [
+          400,
+          400,
+          401
+        ],
+        "2807": [
+          400,
+          400,
+          401
+        ],
+        "2808": [
+          400,
+          400,
+          401
+        ],
+        "2809": [
+          400,
+          400,
+          401
+        ],
+        "2810": [
+          400,
+          400,
+          401
+        ],
+        "2811": [
+          400,
+          400,
+          401
+        ]
+      },
+      "clock_adjustments": [
+        183
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 77,
+      "segment": "contact",
+      "frames": 12,
+      "all_768_actor_bytes_magic_and_hero_health_exact": true,
+      "actual_magic_hud_tiles_each_frame": {
+        "2800": [
+          400,
+          400,
+          400
+        ],
+        "2801": [
+          400,
+          400,
+          400
+        ],
+        "2802": [
+          400,
+          400,
+          400
+        ],
+        "2803": [
+          400,
+          400,
+          400
+        ],
+        "2804": [
+          400,
+          400,
+          401
+        ],
+        "2805": [
+          400,
+          400,
+          401
+        ],
+        "2806": [
+          400,
+          400,
+          401
+        ],
+        "2807": [
+          400,
+          400,
+          401
+        ],
+        "2808": [
+          400,
+          400,
+          401
+        ],
+        "2809": [
+          400,
+          400,
+          401
+        ],
+        "2810": [
+          400,
+          400,
+          401
+        ],
+        "2811": [
+          400,
+          400,
+          401
+        ]
+      },
+      "clock_adjustments": [
+        174
+      ]
+    },
+    {
+      "region": "pal",
+      "type": 78,
+      "segment": "contact",
+      "frames": 12,
+      "all_768_actor_bytes_magic_and_hero_health_exact": true,
+      "actual_magic_hud_tiles_each_frame": {
+        "2800": [
+          400,
+          400,
+          400
+        ],
+        "2801": [
+          400,
+          400,
+          400
+        ],
+        "2802": [
+          400,
+          400,
+          400
+        ],
+        "2803": [
+          400,
+          400,
+          400
+        ],
+        "2804": [
+          400,
+          400,
+          401
+        ],
+        "2805": [
+          400,
+          400,
+          401
+        ],
+        "2806": [
+          400,
+          400,
+          401
+        ],
+        "2807": [
+          400,
+          400,
+          401
+        ],
+        "2808": [
+          400,
+          400,
+          401
+        ],
+        "2809": [
+          400,
+          400,
+          401
+        ],
+        "2810": [
+          400,
+          400,
+          401
+        ],
+        "2811": [
+          400,
+          400,
+          401
+        ]
+      },
+      "clock_adjustments": [
+        174
+      ]
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actor and hero records in initial exterior; native clock explicitly aligned to source at fixture start.",
+    "Production actor loop, timer, integration, animation and magic drain execute unchanged. Eight literal trajectories per type, contact flag saturation and natural hero overlap/hurt tested. Random initial/border choices remain isolated routine checks.",
+    "Natural room loads, original RNG/global clock, complete framebuffer/SAT/audio and hardware timing remain unproved."
+  ]
+}

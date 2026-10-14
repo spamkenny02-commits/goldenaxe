@@ -1,0 +1,26 @@
+{
+  "md_sha256": "94317503805abf9288dd056b64a4f8b61d92dc3c9b2a51227813777879f01fb1",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "inventory": "ordinary",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 1,
+      "master_key_cold_loaded": 0
+    },
+    {
+      "inventory": "master",
+      "slot": 2,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 5,
+      "master_key_cold_loaded": 1
+    }
+  ],
+  "state_provenance": "Controller opening/crossing/return snapshots, transferred to save-point route by fixture.",
+  "production_save_and_cold_load_by_normal_input": true,
+  "uninterrupted_dungeon_to_save_point_route_verified": false,
+  "full_game_ported": false
+}

@@ -1,0 +1,1067 @@
+{
+  "long_hint": false,
+  "persistence": true,
+  "revisit": true,
+  "cold": false,
+  "initial_outside_flag": 1,
+  "md_sha256": "d018ed93a4d25c99fa258d474b70fd36bbd853da13957a451232ef67e2680af4",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "town": 39,
+      "house": 79,
+      "item": 22,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 39,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [
+          56
+        ],
+        "3800": [],
+        "3900": [
+          56
+        ],
+        "4250": [
+          56
+        ],
+        "4800": [],
+        "6500": [
+          56
+        ]
+      },
+      "persistence_animated_map_differences": {
+        "4250": [
+          240,
+          241
+        ],
+        "4800": [],
+        "6500": [
+          240,
+          241
+        ]
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5190,
+          "finished_frame": 5363,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            120,
+            96
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5162,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5176,
+          "finished_frame": 5345,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            120,
+            96
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5154,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "auto",
+      "town": 177,
+      "house": 79,
+      "item": 23,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 177,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [
+          56
+        ],
+        "3800": [],
+        "3900": [
+          56
+        ],
+        "4250": [
+          56
+        ],
+        "4800": [],
+        "6500": []
+      },
+      "persistence_animated_map_differences": {
+        "4250": [
+          240,
+          241
+        ],
+        "4800": [],
+        "6500": []
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5184,
+          "finished_frame": 5357,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            88,
+            112
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5162,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5176,
+          "finished_frame": 5345,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            88,
+            112
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5154,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "auto",
+      "town": 80,
+      "house": 79,
+      "item": 2,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 80,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [
+          56
+        ],
+        "3800": [],
+        "3900": [
+          56
+        ],
+        "4250": [
+          56
+        ],
+        "4800": [],
+        "6500": []
+      },
+      "persistence_animated_map_differences": {
+        "4250": [
+          240,
+          241
+        ],
+        "4800": [],
+        "6500": []
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5184,
+          "finished_frame": 5357,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            200,
+            32
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5162,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5176,
+          "finished_frame": 5345,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            200,
+            32
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5154,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "auto",
+      "town": 106,
+      "house": 79,
+      "item": 3,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 106,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [
+          56
+        ],
+        "3800": [],
+        "3900": [
+          56
+        ],
+        "4250": [
+          56
+        ],
+        "4800": [],
+        "6500": []
+      },
+      "persistence_animated_map_differences": {
+        "4250": [
+          240,
+          241
+        ],
+        "4800": [],
+        "6500": []
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5184,
+          "finished_frame": 5357,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            168,
+            64
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5162,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5176,
+          "finished_frame": 5345,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            168,
+            64
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5154,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "auto",
+      "town": 146,
+      "house": 79,
+      "item": 12,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 146,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [
+          56
+        ],
+        "3800": [],
+        "3900": [
+          56
+        ],
+        "4250": [
+          56
+        ],
+        "4800": [],
+        "6500": [
+          56
+        ]
+      },
+      "persistence_animated_map_differences": {
+        "4250": [
+          240,
+          241
+        ],
+        "4800": [],
+        "6500": [
+          240,
+          241
+        ]
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5226,
+          "finished_frame": 5399,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            152,
+            48
+          ],
+          "outside_trial": 1,
+          "outside_trial_start": 5202,
+          "return_direction": 6
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5216,
+          "finished_frame": 5385,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            152,
+            48
+          ],
+          "outside_trial": 1,
+          "outside_trial_start": 5194,
+          "return_direction": 6
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "auto",
+      "town": 76,
+      "house": 9,
+      "item": 26,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 76,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [],
+        "3800": [],
+        "3900": [
+          41
+        ],
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "persistence_animated_map_differences": {
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5087,
+          "reentered_frame": 5203,
+          "finished_frame": 5396,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            168,
+            56
+          ],
+          "last_room": 9,
+          "outside_origin": [
+            40,
+            112
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5181,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5087,
+          "reentered_frame": 5196,
+          "finished_frame": 5385,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            168,
+            56
+          ],
+          "last_room": 9,
+          "outside_origin": [
+            40,
+            112
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5174,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "pal",
+      "town": 39,
+      "house": 79,
+      "item": 22,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 39,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [],
+        "3800": [
+          56
+        ],
+        "3900": [],
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "persistence_animated_map_differences": {
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5186,
+          "finished_frame": 5355,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            120,
+            96
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5158,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5173,
+          "finished_frame": 5339,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            120,
+            96
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5151,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "pal",
+      "town": 177,
+      "house": 79,
+      "item": 23,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 177,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [],
+        "3800": [
+          56
+        ],
+        "3900": [],
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "persistence_animated_map_differences": {
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5180,
+          "finished_frame": 5349,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            88,
+            112
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5158,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5173,
+          "finished_frame": 5339,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            88,
+            112
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5151,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "pal",
+      "town": 80,
+      "house": 79,
+      "item": 2,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 80,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [],
+        "3800": [
+          56
+        ],
+        "3900": [],
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "persistence_animated_map_differences": {
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5180,
+          "finished_frame": 5349,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            200,
+            32
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5158,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5173,
+          "finished_frame": 5339,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            200,
+            32
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5151,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "pal",
+      "town": 106,
+      "house": 79,
+      "item": 3,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 106,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [],
+        "3800": [
+          56
+        ],
+        "3900": [],
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "persistence_animated_map_differences": {
+        "4250": [],
+        "4800": [],
+        "6500": []
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5180,
+          "finished_frame": 5349,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            168,
+            64
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5158,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5173,
+          "finished_frame": 5339,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            168,
+            64
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5151,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "pal",
+      "town": 146,
+      "house": 79,
+      "item": 12,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 146,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [],
+        "3800": [
+          56
+        ],
+        "3900": [],
+        "4250": [],
+        "4800": [],
+        "6500": [
+          56
+        ]
+      },
+      "persistence_animated_map_differences": {
+        "4250": [],
+        "4800": [],
+        "6500": [
+          240,
+          241
+        ]
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5222,
+          "finished_frame": 5391,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            152,
+            48
+          ],
+          "outside_trial": 1,
+          "outside_trial_start": 5198,
+          "return_direction": 6
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5067,
+          "reentered_frame": 5213,
+          "finished_frame": 5379,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            120,
+            72
+          ],
+          "last_room": 79,
+          "outside_origin": [
+            152,
+            48
+          ],
+          "outside_trial": 1,
+          "outside_trial_start": 5191,
+          "return_direction": 6
+        }
+      },
+      "cold_saved_state_only": false
+    },
+    {
+      "region": "pal",
+      "town": 76,
+      "house": 9,
+      "item": 26,
+      "request_frames": {
+        "sms": 3413,
+        "md": 3411
+      },
+      "equipment_inventory_curse_capacity_and_room_samples_exact": 6,
+      "reward_pattern_tiles_exact": 38,
+      "long_dialogue_bitmap_bytes_exact": 0,
+      "restored_static_map_words_exact": null,
+      "animated_map_difference_indices": [],
+      "normal_door_UP_and_C_return": true,
+      "door_town": 76,
+      "outside_context_replaced_after_door": false,
+      "initial_clock_aligned": true,
+      "persistent_flag_and_static_cells_exact": true,
+      "persistence_animated_cell_differences": {
+        "3500": [],
+        "3800": [],
+        "3900": [],
+        "4250": [],
+        "4800": [],
+        "6500": [
+          41
+        ]
+      },
+      "persistence_animated_map_differences": {
+        "4250": [],
+        "4800": [],
+        "6500": [
+          178,
+          179
+        ]
+      },
+      "reward_count": {
+        "sms": 1,
+        "md": 1
+      },
+      "inventory_roundtrip_and_second_UP": true,
+      "controller_walk_exit_reentry": {
+        "sms": {
+          "stage": "finished",
+          "outside_frame": 5087,
+          "reentered_frame": 5200,
+          "finished_frame": 5389,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            168,
+            56
+          ],
+          "last_room": 9,
+          "outside_origin": [
+            40,
+            112
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5178,
+          "return_direction": 4
+        },
+        "md": {
+          "stage": "finished",
+          "outside_frame": 5087,
+          "reentered_frame": 5192,
+          "finished_frame": 5378,
+          "outside_zero_seen": true,
+          "inside_zero_seen": true,
+          "last_position": [
+            168,
+            56
+          ],
+          "last_room": 9,
+          "outside_origin": [
+            40,
+            112
+          ],
+          "outside_trial": 0,
+          "outside_trial_start": 5170,
+          "return_direction": 4
+        }
+      },
+      "cold_saved_state_only": false
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Six controlled real town-door gifts with initial clock alignment; no direct gift or post-setup VRAM mutation.",
+    "Three equipment/curse/room field samples and38 font/icon/hero tiles per gift compare. Complete natural quest progression, full frames/audio and hardware timing remain unproved.",
+    "Static cells/maps compare with only remaining NPC24..2F XOR1 animation poses and their map words excluded;raw differences retained. Gift cell31 is never excluded. Window/route timings and complete natural progression are not asserted.",
+    "Six actual doors;after5000 a read-only RAM observer selects ordinary directional buttons to walk out,step away,re-enter and approach the NPC. No RAM writes after3400. Setup includes already-visited world bit1 and original traversal itemC0EC for the water entrance;these are explicit progression fixtures. SRAM is separate."
+  ]
+}

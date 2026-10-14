@@ -1,0 +1,13 @@
+# v0125 - start-menu music and faithful inventory blank windows
+
+The New Game/Continue frontend now queues music89 at the original14F3/1CF8 hook. Closing inventory no longer queues effectA1: original71F2..71F9 makes no sound request. Inventory blanking now clears only the twenty playfield rows and retains the HUD, as20DA does, instead of disabling the entire display.
+
+Inventory loading includes a Z80 work budget. Entry70F5..71D2 is537891 foreground T states with initial ownership, observed identically in both regions. Exit work selects exterior/house/dungeon resource costs and an approximate290000-T reconstruction reserve. Native elapsed conversion/upload frames count toward the budget; map publication and subsequent icon/hero completion are scheduled separately. The reserve and native map upload allowance are approximate, not a complete cycle-accurate implementation.
+
+Read-only diagnostic core observations and natural controller routes verify six cases: initial exterior and first two village shops, PAL and NTSC. All actual black playfield frames match, the HUD remains visible, exit sound latches stay zero, and gameplay state12 resumes on the same video frame. Entry has11 black frames NTSC /9 PAL. Exit has23/19 exterior and17/14 in the two shops. Entire transition framebuffer, partial pattern transfers, all ownership combinations, other houses and dungeon menus are not proven exact. Existing menu navigation, equipment, secondary attack and static-background restoration checks pass.
+
+Natural boot/controller input verifies track89 active and audible over501 sampled frames in each region. All13 tracks pass1800 controlled IRQ comparisons each for four channel records and audible PSG registers. Natural music start-frame and audio waveform equality are not claimed.
+
+The build also retains ongoing native46..49 dungeon actor work: proximity jumps46 and movement/slowdown/pause47..49.864 isolated cases compare all768 actor bytes against original routines with explicit random inputs. The fixture input table was moved away from source actor indexC046; source4DC4 falls through its decrement, so restarted pause delay is15. State0 uses the loader invariant animation0. Stale animation3 enters an unrelated out-of-range source table and is excluded explicitly. Type49 firing currently exercises allocation failure with a full projectile pool; successful births and natural room/gameplay validation remain pending. Scope audit proves older actor implementations unchanged.
+
+25 loaded room actor types4A..62 still lack native behaviors. Global source clock/RNG, complete audio hooks, ending, complete quests/saves and a full natural playthrough remain incomplete or unverified. This is a targeted milestone, not a complete port.

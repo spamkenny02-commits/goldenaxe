@@ -1,0 +1,3199 @@
+{
+  "md_sha256": "a4972307b03cc976890bda1e45b339767e6611492bb5f0fecce70ad1f83e9e78",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "scenario": "18",
+      "town": 24,
+      "item": 42,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3911,
+            4
+          ],
+          [
+            3913,
+            5
+          ],
+          [
+            3915,
+            6
+          ],
+          [
+            3917,
+            7
+          ],
+          [
+            3919,
+            8
+          ],
+          [
+            3921,
+            9
+          ],
+          [
+            3923,
+            10
+          ],
+          [
+            3925,
+            11
+          ],
+          [
+            3927,
+            12
+          ],
+          [
+            3929,
+            13
+          ],
+          [
+            3931,
+            14
+          ],
+          [
+            3933,
+            15
+          ],
+          [
+            3935,
+            16
+          ],
+          [
+            3937,
+            17
+          ],
+          [
+            3939,
+            18
+          ],
+          [
+            3941,
+            19
+          ],
+          [
+            3943,
+            20
+          ],
+          [
+            3945,
+            21
+          ],
+          [
+            3947,
+            22
+          ],
+          [
+            3949,
+            23
+          ],
+          [
+            3951,
+            24
+          ],
+          [
+            3953,
+            25
+          ],
+          [
+            3955,
+            26
+          ],
+          [
+            3957,
+            27
+          ],
+          [
+            3959,
+            28
+          ],
+          [
+            3961,
+            29
+          ],
+          [
+            3963,
+            30
+          ],
+          [
+            3965,
+            31
+          ],
+          [
+            3967,
+            32
+          ]
+        ],
+        "md": [
+          [
+            3911,
+            4
+          ],
+          [
+            3913,
+            5
+          ],
+          [
+            3915,
+            6
+          ],
+          [
+            3917,
+            7
+          ],
+          [
+            3919,
+            8
+          ],
+          [
+            3921,
+            9
+          ],
+          [
+            3923,
+            10
+          ],
+          [
+            3925,
+            11
+          ],
+          [
+            3927,
+            12
+          ],
+          [
+            3929,
+            13
+          ],
+          [
+            3931,
+            14
+          ],
+          [
+            3933,
+            15
+          ],
+          [
+            3935,
+            16
+          ],
+          [
+            3937,
+            17
+          ],
+          [
+            3939,
+            18
+          ],
+          [
+            3941,
+            19
+          ],
+          [
+            3943,
+            20
+          ],
+          [
+            3945,
+            21
+          ],
+          [
+            3947,
+            22
+          ],
+          [
+            3949,
+            23
+          ],
+          [
+            3951,
+            24
+          ],
+          [
+            3953,
+            25
+          ],
+          [
+            3955,
+            26
+          ],
+          [
+            3957,
+            27
+          ],
+          [
+            3959,
+            28
+          ],
+          [
+            3961,
+            29
+          ],
+          [
+            3963,
+            30
+          ],
+          [
+            3965,
+            31
+          ],
+          [
+            3967,
+            32
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        32,
+        32,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "1d",
+      "town": 29,
+      "item": 42,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3911,
+            4
+          ],
+          [
+            3913,
+            5
+          ],
+          [
+            3915,
+            6
+          ],
+          [
+            3917,
+            7
+          ],
+          [
+            3919,
+            8
+          ],
+          [
+            3921,
+            9
+          ],
+          [
+            3923,
+            10
+          ],
+          [
+            3925,
+            11
+          ],
+          [
+            3927,
+            12
+          ],
+          [
+            3929,
+            13
+          ],
+          [
+            3931,
+            14
+          ],
+          [
+            3933,
+            15
+          ],
+          [
+            3935,
+            16
+          ],
+          [
+            3937,
+            17
+          ],
+          [
+            3939,
+            18
+          ],
+          [
+            3941,
+            19
+          ],
+          [
+            3943,
+            20
+          ],
+          [
+            3945,
+            21
+          ],
+          [
+            3947,
+            22
+          ],
+          [
+            3949,
+            23
+          ],
+          [
+            3951,
+            24
+          ],
+          [
+            3953,
+            25
+          ],
+          [
+            3955,
+            26
+          ],
+          [
+            3957,
+            27
+          ],
+          [
+            3959,
+            28
+          ],
+          [
+            3961,
+            29
+          ],
+          [
+            3963,
+            30
+          ],
+          [
+            3965,
+            31
+          ],
+          [
+            3967,
+            32
+          ]
+        ],
+        "md": [
+          [
+            3911,
+            4
+          ],
+          [
+            3913,
+            5
+          ],
+          [
+            3915,
+            6
+          ],
+          [
+            3917,
+            7
+          ],
+          [
+            3919,
+            8
+          ],
+          [
+            3921,
+            9
+          ],
+          [
+            3923,
+            10
+          ],
+          [
+            3925,
+            11
+          ],
+          [
+            3927,
+            12
+          ],
+          [
+            3929,
+            13
+          ],
+          [
+            3931,
+            14
+          ],
+          [
+            3933,
+            15
+          ],
+          [
+            3935,
+            16
+          ],
+          [
+            3937,
+            17
+          ],
+          [
+            3939,
+            18
+          ],
+          [
+            3941,
+            19
+          ],
+          [
+            3943,
+            20
+          ],
+          [
+            3945,
+            21
+          ],
+          [
+            3947,
+            22
+          ],
+          [
+            3949,
+            23
+          ],
+          [
+            3951,
+            24
+          ],
+          [
+            3953,
+            25
+          ],
+          [
+            3955,
+            26
+          ],
+          [
+            3957,
+            27
+          ],
+          [
+            3959,
+            28
+          ],
+          [
+            3961,
+            29
+          ],
+          [
+            3963,
+            30
+          ],
+          [
+            3965,
+            31
+          ],
+          [
+            3967,
+            32
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        32,
+        32,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "82",
+      "town": 130,
+      "item": 42,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3911,
+            4
+          ],
+          [
+            3913,
+            5
+          ],
+          [
+            3915,
+            6
+          ],
+          [
+            3917,
+            7
+          ],
+          [
+            3919,
+            8
+          ],
+          [
+            3921,
+            9
+          ],
+          [
+            3923,
+            10
+          ],
+          [
+            3925,
+            11
+          ],
+          [
+            3927,
+            12
+          ],
+          [
+            3929,
+            13
+          ],
+          [
+            3931,
+            14
+          ],
+          [
+            3933,
+            15
+          ],
+          [
+            3935,
+            16
+          ],
+          [
+            3937,
+            17
+          ],
+          [
+            3939,
+            18
+          ],
+          [
+            3941,
+            19
+          ],
+          [
+            3943,
+            20
+          ],
+          [
+            3945,
+            21
+          ],
+          [
+            3947,
+            22
+          ],
+          [
+            3949,
+            23
+          ],
+          [
+            3951,
+            24
+          ],
+          [
+            3953,
+            25
+          ],
+          [
+            3955,
+            26
+          ],
+          [
+            3957,
+            27
+          ],
+          [
+            3959,
+            28
+          ],
+          [
+            3961,
+            29
+          ],
+          [
+            3963,
+            30
+          ],
+          [
+            3965,
+            31
+          ],
+          [
+            3967,
+            32
+          ]
+        ],
+        "md": [
+          [
+            3911,
+            4
+          ],
+          [
+            3913,
+            5
+          ],
+          [
+            3915,
+            6
+          ],
+          [
+            3917,
+            7
+          ],
+          [
+            3919,
+            8
+          ],
+          [
+            3921,
+            9
+          ],
+          [
+            3923,
+            10
+          ],
+          [
+            3925,
+            11
+          ],
+          [
+            3927,
+            12
+          ],
+          [
+            3929,
+            13
+          ],
+          [
+            3931,
+            14
+          ],
+          [
+            3933,
+            15
+          ],
+          [
+            3935,
+            16
+          ],
+          [
+            3937,
+            17
+          ],
+          [
+            3939,
+            18
+          ],
+          [
+            3941,
+            19
+          ],
+          [
+            3943,
+            20
+          ],
+          [
+            3945,
+            21
+          ],
+          [
+            3947,
+            22
+          ],
+          [
+            3949,
+            23
+          ],
+          [
+            3951,
+            24
+          ],
+          [
+            3953,
+            25
+          ],
+          [
+            3955,
+            26
+          ],
+          [
+            3957,
+            27
+          ],
+          [
+            3959,
+            28
+          ],
+          [
+            3961,
+            29
+          ],
+          [
+            3963,
+            30
+          ],
+          [
+            3965,
+            31
+          ],
+          [
+            3967,
+            32
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        32,
+        32,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "c9",
+      "town": 201,
+      "item": 42,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3911,
+            4
+          ],
+          [
+            3913,
+            5
+          ],
+          [
+            3915,
+            6
+          ],
+          [
+            3917,
+            7
+          ],
+          [
+            3919,
+            8
+          ],
+          [
+            3921,
+            9
+          ],
+          [
+            3923,
+            10
+          ],
+          [
+            3925,
+            11
+          ],
+          [
+            3927,
+            12
+          ],
+          [
+            3929,
+            13
+          ],
+          [
+            3931,
+            14
+          ],
+          [
+            3933,
+            15
+          ],
+          [
+            3935,
+            16
+          ],
+          [
+            3937,
+            17
+          ],
+          [
+            3939,
+            18
+          ],
+          [
+            3941,
+            19
+          ],
+          [
+            3943,
+            20
+          ],
+          [
+            3945,
+            21
+          ],
+          [
+            3947,
+            22
+          ],
+          [
+            3949,
+            23
+          ],
+          [
+            3951,
+            24
+          ],
+          [
+            3953,
+            25
+          ],
+          [
+            3955,
+            26
+          ],
+          [
+            3957,
+            27
+          ],
+          [
+            3959,
+            28
+          ],
+          [
+            3961,
+            29
+          ],
+          [
+            3963,
+            30
+          ],
+          [
+            3965,
+            31
+          ],
+          [
+            3967,
+            32
+          ]
+        ],
+        "md": [
+          [
+            3911,
+            4
+          ],
+          [
+            3913,
+            5
+          ],
+          [
+            3915,
+            6
+          ],
+          [
+            3917,
+            7
+          ],
+          [
+            3919,
+            8
+          ],
+          [
+            3921,
+            9
+          ],
+          [
+            3923,
+            10
+          ],
+          [
+            3925,
+            11
+          ],
+          [
+            3927,
+            12
+          ],
+          [
+            3929,
+            13
+          ],
+          [
+            3931,
+            14
+          ],
+          [
+            3933,
+            15
+          ],
+          [
+            3935,
+            16
+          ],
+          [
+            3937,
+            17
+          ],
+          [
+            3939,
+            18
+          ],
+          [
+            3941,
+            19
+          ],
+          [
+            3943,
+            20
+          ],
+          [
+            3945,
+            21
+          ],
+          [
+            3947,
+            22
+          ],
+          [
+            3949,
+            23
+          ],
+          [
+            3951,
+            24
+          ],
+          [
+            3953,
+            25
+          ],
+          [
+            3955,
+            26
+          ],
+          [
+            3957,
+            27
+          ],
+          [
+            3959,
+            28
+          ],
+          [
+            3961,
+            29
+          ],
+          [
+            3963,
+            30
+          ],
+          [
+            3965,
+            31
+          ],
+          [
+            3967,
+            32
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        32,
+        32,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "32",
+      "town": 50,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        24,
+        24,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "c0",
+      "town": 192,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        24,
+        24,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "e5",
+      "town": 229,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        24,
+        24,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "ec",
+      "town": 236,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        24,
+        24,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "life-limit",
+      "town": 24,
+      "item": 42,
+      "initial_fields": [
+        100,
+        124,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3911,
+            101
+          ],
+          [
+            3913,
+            102
+          ],
+          [
+            3915,
+            103
+          ],
+          [
+            3917,
+            104
+          ],
+          [
+            3919,
+            105
+          ],
+          [
+            3921,
+            106
+          ],
+          [
+            3923,
+            107
+          ],
+          [
+            3925,
+            108
+          ],
+          [
+            3927,
+            109
+          ],
+          [
+            3929,
+            110
+          ],
+          [
+            3931,
+            111
+          ],
+          [
+            3933,
+            112
+          ],
+          [
+            3935,
+            113
+          ],
+          [
+            3937,
+            114
+          ],
+          [
+            3939,
+            115
+          ],
+          [
+            3941,
+            116
+          ],
+          [
+            3943,
+            117
+          ],
+          [
+            3945,
+            118
+          ],
+          [
+            3947,
+            119
+          ],
+          [
+            3949,
+            120
+          ],
+          [
+            3951,
+            121
+          ],
+          [
+            3953,
+            122
+          ],
+          [
+            3955,
+            123
+          ],
+          [
+            3957,
+            124
+          ],
+          [
+            3959,
+            125
+          ],
+          [
+            3961,
+            126
+          ],
+          [
+            3963,
+            127
+          ],
+          [
+            3965,
+            128
+          ]
+        ],
+        "md": [
+          [
+            3911,
+            101
+          ],
+          [
+            3913,
+            102
+          ],
+          [
+            3915,
+            103
+          ],
+          [
+            3917,
+            104
+          ],
+          [
+            3919,
+            105
+          ],
+          [
+            3921,
+            106
+          ],
+          [
+            3923,
+            107
+          ],
+          [
+            3925,
+            108
+          ],
+          [
+            3927,
+            109
+          ],
+          [
+            3929,
+            110
+          ],
+          [
+            3931,
+            111
+          ],
+          [
+            3933,
+            112
+          ],
+          [
+            3935,
+            113
+          ],
+          [
+            3937,
+            114
+          ],
+          [
+            3939,
+            115
+          ],
+          [
+            3941,
+            116
+          ],
+          [
+            3943,
+            117
+          ],
+          [
+            3945,
+            118
+          ],
+          [
+            3947,
+            119
+          ],
+          [
+            3949,
+            120
+          ],
+          [
+            3951,
+            121
+          ],
+          [
+            3953,
+            122
+          ],
+          [
+            3955,
+            123
+          ],
+          [
+            3957,
+            124
+          ],
+          [
+            3959,
+            125
+          ],
+          [
+            3961,
+            126
+          ],
+          [
+            3963,
+            127
+          ],
+          [
+            3965,
+            128
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        128,
+        128,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "life-full",
+      "town": 24,
+      "item": 42,
+      "initial_fields": [
+        128,
+        128,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        128,
+        128,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "magic-limit",
+      "town": 50,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        124
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        128,
+        128,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "auto",
+      "scenario": "magic-full",
+      "town": 50,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        128,
+        128
+      ],
+      "request_frames": {
+        "sms": 3605,
+        "md": 3607
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        128,
+        128,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "18",
+      "town": 24,
+      "item": 42,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3909,
+            4
+          ],
+          [
+            3911,
+            5
+          ],
+          [
+            3913,
+            6
+          ],
+          [
+            3915,
+            7
+          ],
+          [
+            3917,
+            8
+          ],
+          [
+            3919,
+            9
+          ],
+          [
+            3921,
+            10
+          ],
+          [
+            3923,
+            11
+          ],
+          [
+            3925,
+            12
+          ],
+          [
+            3927,
+            13
+          ],
+          [
+            3929,
+            14
+          ],
+          [
+            3931,
+            15
+          ],
+          [
+            3933,
+            16
+          ],
+          [
+            3935,
+            17
+          ],
+          [
+            3937,
+            18
+          ],
+          [
+            3939,
+            19
+          ],
+          [
+            3941,
+            20
+          ],
+          [
+            3943,
+            21
+          ],
+          [
+            3945,
+            22
+          ],
+          [
+            3947,
+            23
+          ],
+          [
+            3949,
+            24
+          ],
+          [
+            3951,
+            25
+          ],
+          [
+            3953,
+            26
+          ],
+          [
+            3955,
+            27
+          ],
+          [
+            3957,
+            28
+          ],
+          [
+            3959,
+            29
+          ],
+          [
+            3961,
+            30
+          ],
+          [
+            3963,
+            31
+          ],
+          [
+            3965,
+            32
+          ]
+        ],
+        "md": [
+          [
+            3909,
+            4
+          ],
+          [
+            3911,
+            5
+          ],
+          [
+            3913,
+            6
+          ],
+          [
+            3915,
+            7
+          ],
+          [
+            3917,
+            8
+          ],
+          [
+            3919,
+            9
+          ],
+          [
+            3921,
+            10
+          ],
+          [
+            3923,
+            11
+          ],
+          [
+            3925,
+            12
+          ],
+          [
+            3927,
+            13
+          ],
+          [
+            3929,
+            14
+          ],
+          [
+            3931,
+            15
+          ],
+          [
+            3933,
+            16
+          ],
+          [
+            3935,
+            17
+          ],
+          [
+            3937,
+            18
+          ],
+          [
+            3939,
+            19
+          ],
+          [
+            3941,
+            20
+          ],
+          [
+            3943,
+            21
+          ],
+          [
+            3945,
+            22
+          ],
+          [
+            3947,
+            23
+          ],
+          [
+            3949,
+            24
+          ],
+          [
+            3951,
+            25
+          ],
+          [
+            3953,
+            26
+          ],
+          [
+            3955,
+            27
+          ],
+          [
+            3957,
+            28
+          ],
+          [
+            3959,
+            29
+          ],
+          [
+            3961,
+            30
+          ],
+          [
+            3963,
+            31
+          ],
+          [
+            3965,
+            32
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        32,
+        32,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "1d",
+      "town": 29,
+      "item": 42,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3909,
+            4
+          ],
+          [
+            3911,
+            5
+          ],
+          [
+            3913,
+            6
+          ],
+          [
+            3915,
+            7
+          ],
+          [
+            3917,
+            8
+          ],
+          [
+            3919,
+            9
+          ],
+          [
+            3921,
+            10
+          ],
+          [
+            3923,
+            11
+          ],
+          [
+            3925,
+            12
+          ],
+          [
+            3927,
+            13
+          ],
+          [
+            3929,
+            14
+          ],
+          [
+            3931,
+            15
+          ],
+          [
+            3933,
+            16
+          ],
+          [
+            3935,
+            17
+          ],
+          [
+            3937,
+            18
+          ],
+          [
+            3939,
+            19
+          ],
+          [
+            3941,
+            20
+          ],
+          [
+            3943,
+            21
+          ],
+          [
+            3945,
+            22
+          ],
+          [
+            3947,
+            23
+          ],
+          [
+            3949,
+            24
+          ],
+          [
+            3951,
+            25
+          ],
+          [
+            3953,
+            26
+          ],
+          [
+            3955,
+            27
+          ],
+          [
+            3957,
+            28
+          ],
+          [
+            3959,
+            29
+          ],
+          [
+            3961,
+            30
+          ],
+          [
+            3963,
+            31
+          ],
+          [
+            3965,
+            32
+          ]
+        ],
+        "md": [
+          [
+            3909,
+            4
+          ],
+          [
+            3911,
+            5
+          ],
+          [
+            3913,
+            6
+          ],
+          [
+            3915,
+            7
+          ],
+          [
+            3917,
+            8
+          ],
+          [
+            3919,
+            9
+          ],
+          [
+            3921,
+            10
+          ],
+          [
+            3923,
+            11
+          ],
+          [
+            3925,
+            12
+          ],
+          [
+            3927,
+            13
+          ],
+          [
+            3929,
+            14
+          ],
+          [
+            3931,
+            15
+          ],
+          [
+            3933,
+            16
+          ],
+          [
+            3935,
+            17
+          ],
+          [
+            3937,
+            18
+          ],
+          [
+            3939,
+            19
+          ],
+          [
+            3941,
+            20
+          ],
+          [
+            3943,
+            21
+          ],
+          [
+            3945,
+            22
+          ],
+          [
+            3947,
+            23
+          ],
+          [
+            3949,
+            24
+          ],
+          [
+            3951,
+            25
+          ],
+          [
+            3953,
+            26
+          ],
+          [
+            3955,
+            27
+          ],
+          [
+            3957,
+            28
+          ],
+          [
+            3959,
+            29
+          ],
+          [
+            3961,
+            30
+          ],
+          [
+            3963,
+            31
+          ],
+          [
+            3965,
+            32
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        32,
+        32,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "82",
+      "town": 130,
+      "item": 42,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3909,
+            4
+          ],
+          [
+            3911,
+            5
+          ],
+          [
+            3913,
+            6
+          ],
+          [
+            3915,
+            7
+          ],
+          [
+            3917,
+            8
+          ],
+          [
+            3919,
+            9
+          ],
+          [
+            3921,
+            10
+          ],
+          [
+            3923,
+            11
+          ],
+          [
+            3925,
+            12
+          ],
+          [
+            3927,
+            13
+          ],
+          [
+            3929,
+            14
+          ],
+          [
+            3931,
+            15
+          ],
+          [
+            3933,
+            16
+          ],
+          [
+            3935,
+            17
+          ],
+          [
+            3937,
+            18
+          ],
+          [
+            3939,
+            19
+          ],
+          [
+            3941,
+            20
+          ],
+          [
+            3943,
+            21
+          ],
+          [
+            3945,
+            22
+          ],
+          [
+            3947,
+            23
+          ],
+          [
+            3949,
+            24
+          ],
+          [
+            3951,
+            25
+          ],
+          [
+            3953,
+            26
+          ],
+          [
+            3955,
+            27
+          ],
+          [
+            3957,
+            28
+          ],
+          [
+            3959,
+            29
+          ],
+          [
+            3961,
+            30
+          ],
+          [
+            3963,
+            31
+          ],
+          [
+            3965,
+            32
+          ]
+        ],
+        "md": [
+          [
+            3909,
+            4
+          ],
+          [
+            3911,
+            5
+          ],
+          [
+            3913,
+            6
+          ],
+          [
+            3915,
+            7
+          ],
+          [
+            3917,
+            8
+          ],
+          [
+            3919,
+            9
+          ],
+          [
+            3921,
+            10
+          ],
+          [
+            3923,
+            11
+          ],
+          [
+            3925,
+            12
+          ],
+          [
+            3927,
+            13
+          ],
+          [
+            3929,
+            14
+          ],
+          [
+            3931,
+            15
+          ],
+          [
+            3933,
+            16
+          ],
+          [
+            3935,
+            17
+          ],
+          [
+            3937,
+            18
+          ],
+          [
+            3939,
+            19
+          ],
+          [
+            3941,
+            20
+          ],
+          [
+            3943,
+            21
+          ],
+          [
+            3945,
+            22
+          ],
+          [
+            3947,
+            23
+          ],
+          [
+            3949,
+            24
+          ],
+          [
+            3951,
+            25
+          ],
+          [
+            3953,
+            26
+          ],
+          [
+            3955,
+            27
+          ],
+          [
+            3957,
+            28
+          ],
+          [
+            3959,
+            29
+          ],
+          [
+            3961,
+            30
+          ],
+          [
+            3963,
+            31
+          ],
+          [
+            3965,
+            32
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        32,
+        32,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "c9",
+      "town": 201,
+      "item": 42,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3909,
+            4
+          ],
+          [
+            3911,
+            5
+          ],
+          [
+            3913,
+            6
+          ],
+          [
+            3915,
+            7
+          ],
+          [
+            3917,
+            8
+          ],
+          [
+            3919,
+            9
+          ],
+          [
+            3921,
+            10
+          ],
+          [
+            3923,
+            11
+          ],
+          [
+            3925,
+            12
+          ],
+          [
+            3927,
+            13
+          ],
+          [
+            3929,
+            14
+          ],
+          [
+            3931,
+            15
+          ],
+          [
+            3933,
+            16
+          ],
+          [
+            3935,
+            17
+          ],
+          [
+            3937,
+            18
+          ],
+          [
+            3939,
+            19
+          ],
+          [
+            3941,
+            20
+          ],
+          [
+            3943,
+            21
+          ],
+          [
+            3945,
+            22
+          ],
+          [
+            3947,
+            23
+          ],
+          [
+            3949,
+            24
+          ],
+          [
+            3951,
+            25
+          ],
+          [
+            3953,
+            26
+          ],
+          [
+            3955,
+            27
+          ],
+          [
+            3957,
+            28
+          ],
+          [
+            3959,
+            29
+          ],
+          [
+            3961,
+            30
+          ],
+          [
+            3963,
+            31
+          ],
+          [
+            3965,
+            32
+          ]
+        ],
+        "md": [
+          [
+            3909,
+            4
+          ],
+          [
+            3911,
+            5
+          ],
+          [
+            3913,
+            6
+          ],
+          [
+            3915,
+            7
+          ],
+          [
+            3917,
+            8
+          ],
+          [
+            3919,
+            9
+          ],
+          [
+            3921,
+            10
+          ],
+          [
+            3923,
+            11
+          ],
+          [
+            3925,
+            12
+          ],
+          [
+            3927,
+            13
+          ],
+          [
+            3929,
+            14
+          ],
+          [
+            3931,
+            15
+          ],
+          [
+            3933,
+            16
+          ],
+          [
+            3935,
+            17
+          ],
+          [
+            3937,
+            18
+          ],
+          [
+            3939,
+            19
+          ],
+          [
+            3941,
+            20
+          ],
+          [
+            3943,
+            21
+          ],
+          [
+            3945,
+            22
+          ],
+          [
+            3947,
+            23
+          ],
+          [
+            3949,
+            24
+          ],
+          [
+            3951,
+            25
+          ],
+          [
+            3953,
+            26
+          ],
+          [
+            3955,
+            27
+          ],
+          [
+            3957,
+            28
+          ],
+          [
+            3959,
+            29
+          ],
+          [
+            3961,
+            30
+          ],
+          [
+            3963,
+            31
+          ],
+          [
+            3965,
+            32
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        32,
+        32,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "32",
+      "town": 50,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        24,
+        24,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "c0",
+      "town": 192,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        24,
+        24,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "e5",
+      "town": 229,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        24,
+        24,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "ec",
+      "town": 236,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        24,
+        24,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "life-limit",
+      "town": 24,
+      "item": 42,
+      "initial_fields": [
+        100,
+        124,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [
+          [
+            3909,
+            101
+          ],
+          [
+            3911,
+            102
+          ],
+          [
+            3913,
+            103
+          ],
+          [
+            3915,
+            104
+          ],
+          [
+            3917,
+            105
+          ],
+          [
+            3919,
+            106
+          ],
+          [
+            3921,
+            107
+          ],
+          [
+            3923,
+            108
+          ],
+          [
+            3925,
+            109
+          ],
+          [
+            3927,
+            110
+          ],
+          [
+            3929,
+            111
+          ],
+          [
+            3931,
+            112
+          ],
+          [
+            3933,
+            113
+          ],
+          [
+            3935,
+            114
+          ],
+          [
+            3937,
+            115
+          ],
+          [
+            3939,
+            116
+          ],
+          [
+            3941,
+            117
+          ],
+          [
+            3943,
+            118
+          ],
+          [
+            3945,
+            119
+          ],
+          [
+            3947,
+            120
+          ],
+          [
+            3949,
+            121
+          ],
+          [
+            3951,
+            122
+          ],
+          [
+            3953,
+            123
+          ],
+          [
+            3955,
+            124
+          ],
+          [
+            3957,
+            125
+          ],
+          [
+            3959,
+            126
+          ],
+          [
+            3961,
+            127
+          ],
+          [
+            3963,
+            128
+          ]
+        ],
+        "md": [
+          [
+            3909,
+            101
+          ],
+          [
+            3911,
+            102
+          ],
+          [
+            3913,
+            103
+          ],
+          [
+            3915,
+            104
+          ],
+          [
+            3917,
+            105
+          ],
+          [
+            3919,
+            106
+          ],
+          [
+            3921,
+            107
+          ],
+          [
+            3923,
+            108
+          ],
+          [
+            3925,
+            109
+          ],
+          [
+            3927,
+            110
+          ],
+          [
+            3929,
+            111
+          ],
+          [
+            3931,
+            112
+          ],
+          [
+            3933,
+            113
+          ],
+          [
+            3935,
+            114
+          ],
+          [
+            3937,
+            115
+          ],
+          [
+            3939,
+            116
+          ],
+          [
+            3941,
+            117
+          ],
+          [
+            3943,
+            118
+          ],
+          [
+            3945,
+            119
+          ],
+          [
+            3947,
+            120
+          ],
+          [
+            3949,
+            121
+          ],
+          [
+            3951,
+            122
+          ],
+          [
+            3953,
+            123
+          ],
+          [
+            3955,
+            124
+          ],
+          [
+            3957,
+            125
+          ],
+          [
+            3959,
+            126
+          ],
+          [
+            3961,
+            127
+          ],
+          [
+            3963,
+            128
+          ]
+        ]
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        128,
+        128,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "life-full",
+      "town": 24,
+      "item": 42,
+      "initial_fields": [
+        128,
+        128,
+        2,
+        16
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        128,
+        128,
+        2,
+        16,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "magic-limit",
+      "town": 50,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        2,
+        124
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        128,
+        128,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    },
+    {
+      "region": "pal",
+      "scenario": "magic-full",
+      "town": 50,
+      "item": 28,
+      "initial_fields": [
+        3,
+        24,
+        128,
+        128
+      ],
+      "request_frames": {
+        "sms": 3604,
+        "md": 3605
+      },
+      "health_change_frames": {
+        "sms": [],
+        "md": []
+      },
+      "refill_unit_cadence_two_frames_exact": true,
+      "final_fields": [
+        3,
+        24,
+        128,
+        128,
+        2
+      ],
+      "prelude_bitmap_bytes_exact": 1040,
+      "reward_pattern_tiles_exact": 38,
+      "transformed_cells_exact": 160,
+      "restored_static_map_words_exact": 640,
+      "animated_map_difference_indices": [],
+      "final_HUD_visual_words_exact": 128,
+      "no_second_reward": true,
+      "natural_approach_after_door_fixture": false
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Original source ROM unpatched. Controlled actual doors in all eight life/magic contexts, hero setup and initial clock aligned. Automatic trigger without UP; C3600 acknowledges prelude and3900 reward modal. Additional controlled capacity saturation/full cases, including124 boundary fixtures not claimed naturally acquired.",
+    "Stable1040 prelude bitmap,38 held font/icon/hero tiles, capacity/refill/visit fields, health-change values/two-frame cadence,160 transformed cells,128 final HUD visual words (bits0..12) and static restored map compare. Animated map words excluded with differences retained. Full frame/music/hardware timing and natural progression unproved."
+  ]
+}

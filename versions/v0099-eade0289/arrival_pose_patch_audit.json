@@ -1,0 +1,42 @@
+{
+  "md_sha256": "eade02892e01d3eaf7e2df1d3553aed344848a22c06cfeb3277334149647747d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "only_declared_arrival_preparation_changes_from_v0097": true,
+  "source_files": {
+    "megadrive/src/main.c": "458c4116383c5bd2767990fd34f76eb880eca0b3ac18be451fc5a441fe2f464e",
+    "tools/profile_water_cross.py": "e5245509c17bfcaae77fc2cb4fff427b74e8eb68bb9c21ebfa67cea44fabd885",
+    "tools/validate_arrival_pose.py": "3c3a2b4748981602c5dd9eddfc0b3575fcb655fc00997b099fa8ca63e500c5bd",
+    "tools/audit_arrival_pose_patch.py": "0edbb079d3752214870916f461e550570ea2ef22807eef6159a6444efea44820",
+    "analysis/arrival_pose_milestone.md": "4dba5ba3573bb5bdf49114c0880a8034c863536cb25efd21336c68b7dcf37599",
+    "analysis/arrival-pose-baseline-v0097/main.c": "ff7d4adeb90cf202689f803cfa6c907ea6d3d942e2b625540b15499516bad208",
+    "analysis/arrival-pose-baseline-v0097/ground_cross_all_diagnostic.json": "e90dcfaaa096dcf396b47295c2c319f943b2c5d040e57c950d0ac7c0a9f15be4",
+    "analysis/arrival-pose-baseline-v0097/water_cross_all_diagnostic.json": "a25d6ed376a15155c46b58706b3399d2c3ccd71303b631877c2267a68dd1edc0"
+  },
+  "reports": [
+    {
+      "file": "arrival_pose_report.json",
+      "sha256": "a4ad9e0194cbf99af496e985301f376b7063731cf4268fd2cb2e9f99c0f5dcd8"
+    },
+    {
+      "file": "ground_cross_all_diagnostic.json",
+      "sha256": "0135a38e0952e0aa5c3c49164c4a32708fa907c87e5c34253b7e26475235e69c"
+    },
+    {
+      "file": "water_cross_all_diagnostic.json",
+      "sha256": "a14f95de53400a4bd8fa50bea7ccef8985cc985b4be9bc49374c3bca8cf20bcf"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "bde4b9f8020cce961717f53e20953d6c9c651c78677e284b53669f6aaa2479c5"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "4a515beb9b851423dc3d6abb7b24ee11a3aa824e7514ba79efe49d37ee590bb8"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "14 controlled cases pass; two NTSC upward cases remain wrong. Ground upward resumed-state difference increases from one frame to two while pattern preparation improves.",
+    "Ordinary PAL/NTSC timing checks pass; this is not all terrain, all scrolling workloads, complete framebuffer/audio or complete game proof."
+  ]
+}

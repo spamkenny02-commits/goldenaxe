@@ -1,0 +1,65 @@
+{
+  "md_sha256": "28ce141a255dbe91bdd62913e991435adff69719e07f12e6019343668902bfaf",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_bytes": 1048576,
+  "checksum": "0x1986",
+  "only_declared_pose_preparation_and_transition_changes_from_v0089": true,
+  "source_files": {
+    "megadrive/src/main.c": "355b40cba40d39022e6695db5155288fecaff0f2cd6cfc43cf12c55210714dc3",
+    "tools/profile_water_cross.py": "d0f764faa504d39bd0244ed903e5583e375c2018da25ad35b74d0b254eb3c8b2",
+    "tools/validate_water_cross_pose.py": "f4312b86f77c5c0d4f78edb8732ca5711013092c126f2be140f9ba01b9e08ea8",
+    "tools/audit_water_cross_patch.py": "0882b28ee15f2bdc1f46f96e3766ab52fa6c84eb38a1c279f03e97b157ad0cce",
+    "analysis/water-cross-baseline-v0089/main.c": "c8737613bae1fafe540cf7bf47acf56b6a47082f8c9829b7efb88f8d8063a7e5",
+    "analysis/water-cross-baseline-v0089/water_cross_diagnostic.json": "98a791a2c64db640846715d480766a9b54c5539011a36bab700cce101c9e54d8",
+    "analysis/water_cross_source_timing.json": "3c41144720bc28b39dd9ec89e49e27b91199a0645b6e5413239f360a7d035dd2",
+    "analysis/water_cross_pose_milestone.md": "224c1407ac62a7800fdc0e91e50ca48bc6584dcbb8155a4edb99a84fb4b07705",
+    "analysis/up_scroll_transfer_timing.json": "a0a99accc1f3cd06d2147ac818798aaec81dfc7d386e7f9d1b8780e7212474c0",
+    "analysis/up_scroll_milestone.md": "1a8e80c16790411f3aab0331b10c060b0e7414d41a5cd4ef38739380b5ac4f8d",
+    "analysis/up-scroll-baseline-v0092/main.c": "01904c312a33b1569e2b3638323fe66ae19bda2d597a20305593d8fb7459504b"
+  },
+  "reports": [
+    {
+      "file": "water_cross_pose_report.json",
+      "sha256": "950cc6ff826c2344cb762f752e633655d4f14dfbb432f5c2711812d1e9ea9889"
+    },
+    {
+      "file": "water_cross_all_diagnostic.json",
+      "sha256": "7d4fa569b2b8653816a89a3e1210446a0230019c0b1f361813bf9983f890a60f"
+    },
+    {
+      "file": "thrown_axe_report.json",
+      "sha256": "d7944b7fd84006789efb4a6316b17f3df088b40fee8854e09b62b1477b8c8153"
+    },
+    {
+      "file": "thrown_axe_walk_report.json",
+      "sha256": "38947ea288d67649c1d353bc2bda0c73366af33072c13bee4a8ddef53db3e6d0"
+    },
+    {
+      "file": "thrown_axe_walk_fast_report.json",
+      "sha256": "09ca53b46aecda0d94235f1ded947a4a6cbd8812720538742572188a2cbb527e"
+    },
+    {
+      "file": "second_spell_report.json",
+      "sha256": "6c048580d86f30a4c127649c675c4cbb45f30d48848d7bec24fd5dd2a34ddb52"
+    },
+    {
+      "file": "second_spell_fire_regression_report.json",
+      "sha256": "c3ae7b5fa167d0961aeadf884de285f3b9b05d2c83606626909374400e9c9d8e"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "ca24c7a1a742a83d91f171745e6b5e350833034bbe6b903f004565faba12661e"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "0329ee359fb16c20826fe8dc657e247b87bacbc19437d2ef6c1a64b624e09dde"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Seven controlled directional pose cases pass; NTSC up still has timing/pose errors. No complete transition equivalence claimed.",
+    "Mutable-cell publication is one frame early NTSC and software-map staging differs. Source instruction timing has been profiled but full CPU/VDP transfer timing is incomplete.",
+    "Only four hero sprites verified during the seven passing transitions; enemy sprites after arrival, framebuffer and audio remain unverified.",
+    "Natural water routes/acquisition/combat, other abilities, full enemies/bosses, quests, ending and complete playthrough remain unfinished."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "md_sha256": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 33258,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_5B_AI_hero12_grab_glue_and_after_actor_gold_HUD": true,
+  "prior_actor_implementations_unchanged_since_v0141": true,
+  "source_capture_falls_into_attachment_same_tick": true,
+  "source_hero12_animation_display_descriptor_hook_ported": true,
+  "original_random_stream_reproduced": false,
+  "evidence_sha256": {
+    "dungeon_thief_allocation_unit_report.json": "1a327414ac01e412a3df550eab725aa3353be3a77f6cff2661df567ddc7bd2b9",
+    "dungeon_thief_gameplay_report.json": "18c9e85022ee0b4a9d8bf5ceed769ef5123ccd97536ec6333df2fff31064fb49",
+    "dungeon_thief_entry_report.json": "08973b81eb3dab1d1887cc152d5b77489fa1dcae8c2dd01dcffe3631985c6231",
+    "dungeon_thief_capture_entry_report.json": "60a8513ad8c85eed6e7f08446e6202dd39f904274124ad19202908f2052412ac",
+    "loot_pickup_regression_report.json": "3ed9d00701c7beec831058d8ac7f2018d4d412381a65fe989e3e97a785e3f58d",
+    "loot_expiry_regression_diagnostic.json": "3074aa6e26f868d086a38c54eacfd9b97faf064e828d6c3b835372a7ba9a9943",
+    "timing_report.json": "015199f3dcf36cd2c14b86253c55b7e0abdc0d884a3deb73244f6f76e4bbb0af",
+    "timing-pal_report.json": "5a0b20ae5eab150dd56b18cfc0338a20773c61470b0d0b981aaa50be523a15a7",
+    "start_menu_audio_report.json": "5e43038fb88af9156c4dfdebd474ed78021f83fe4c10240e2c6a39ab2d60a632"
+  },
+  "source_files": {
+    "megadrive\\src\\main.c": "59a15286bd985bb4b99d5920c6ad21f6fa93f05a12947814a83a9e009c2df35e",
+    "megadrive\\src\\actors.c": "0f021b05074f0d0f397b9d2ecf56f1f9f0dfbd218f84a59bfdb3a154d5b8f39b",
+    "tools\\validate_dungeon_thief.py": "471497f794008c4f214974e4c912c0437a1f90c1befc43abb5923ab9c8fc490b",
+    "tools\\validate_dungeon_thief_gameplay.py": "67ae6797c505eda6cfb94e34b3612fce316deccfeb5da060a23bc912953bf39a",
+    "tools\\validate_dungeon_thief_entry.py": "4063c115afcd3c8448081cced400adbf9ebf46584aeeafbc74c4795cde6e07fe",
+    "tools\\validate_dungeon_thief_capture.py": "6ca187f9424152c85935c23bb0264032fcea96a36cf5eaf6b432ca720af15b35"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Initial controlled production clocks explicitly aligned; source random reads controlled only in isolated cases.",
+    "Escape event immediately chooses random movement. Prior actor frames compare fully; on the escape frame only restored descriptor/counters/state and hero side effects compare, without claiming equal random motion.",
+    "Actual153 first appearance aligns to initialization and excludes unaligned random X/Y/direction. Controlled capture SAT excludes and records injection frame3700; no timeline shift.",
+    "Legacy full loot expiry visual check still fails at3985 by105 pixels; three baselinev0141/current images match and all370 loot records are exact, so this is an inherited unresolved visual gap. Six pickup fixtures pass independently.",
+    "Full natural fights, RNG/global clock, full framebuffer/audio waveforms and hardware timing remain unproved."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "md_sha256": "585437724e49ca97f2595072459324a3311708c915f12e2c7532837c15feaae5",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "c3956bddb46dca27352f8e35865c721869d37a277436389cd997ce0974822e40",
+  "harness_sha256": "315c4a685cc1ddc2a11e2634d17b3c2a4e8af92f18b3d0e49a26af6dfbe40ee1",
+  "cases": 1138,
+  "core_cases": 888,
+  "satellite_cases": 250,
+  "all_768_actor_bytes_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Three LD A,R instructions use explicit B/C byte inputs; 04E1 random-byte function is replaced with an explicit fixture input. All other core/satellite/chooser/boundary/orbit instructions execute original code.",
+    "Every phase 0..255 exercised; selected extreme radius/direction/pool cases, five core states, 20-segment countdown, source selection branches and satellite wrapping/boundaries. Not all possible input combinations.",
+    "Original random/refresh sequence, natural combat, pixel/SAT equality, complete audio and hardware timing remain unverified."
+  ]
+}

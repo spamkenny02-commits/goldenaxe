@@ -1,0 +1,20 @@
+{
+  "md_sha256": "cd04a76a8046e85c5efc4c20d575923ef63d9fd85635a1195260aee3d37d7189",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": 22968,
+  "rom_bytes": 1048576,
+  "aliases_header_verified": true,
+  "main_change_only_gold_include_and_hook": true,
+  "actors_and_ordinary_dialogue_data_unchanged": true,
+  "all_33_source_amounts_and_both_texts_exact": true,
+  "evidence_sha256": {
+    "house_gold_unit_report.json": "1dda4f631bf00d7a918967311dd85060ef82f32c29a3d9741c013b6a0c3ebe5b",
+    "house_gold_gameplay_report.json": "30c48b68189dd762b82308690e1dab3a23d730de0bf3c92b67df6bf647a4759a",
+    "house_dialogue_report.json": "9c83b4284e6aec88b86b36a5172e47a90ae186e74ba201c05e2dd5c978c86117"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Gold-only controlled scope, not full game completion. Original/live gold arithmetic, visit flag, stable bitmap, HUD restoration and two-frame unit cadence covered.",
+    "Text publication start frames can differ; full audio waveforms, all natural routes, minigame and other quest families, RNG, scanline clipping and hardware remain incomplete/unverified."
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "md_sha256": "92b10d8d94327cafb570d9e00e0f9050de69d53a89e990c9e12676348029a471",
+  "rows": [
+    {
+      "room": 38,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "61": 8
+      },
+      "states": {
+        "61": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "first_walking_events": {
+        "61": 2019
+      },
+      "projectile_births": [
+        [
+          2035,
+          8
+        ],
+        [
+          2068,
+          8
+        ],
+        [
+          2101,
+          9
+        ]
+      ]
+    },
+    {
+      "room": 38,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "61": 8
+      },
+      "states": {
+        "61": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "first_walking_events": {
+        "61": 1507
+      },
+      "projectile_births": [
+        [
+          1523,
+          8
+        ]
+      ]
+    },
+    {
+      "room": 187,
+      "system": "sms",
+      "frames": 4200,
+      "required_states": {
+        "62": 8
+      },
+      "states": {
+        "62": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "first_walking_events": {
+        "62": 1608
+      },
+      "projectile_births": [
+        [
+          1624,
+          8
+        ],
+        [
+          1829,
+          8
+        ]
+      ]
+    },
+    {
+      "room": 187,
+      "system": "md",
+      "frames": 4200,
+      "required_states": {
+        "62": 8
+      },
+      "states": {
+        "62": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ]
+      },
+      "first_walking_events": {
+        "62": 1409
+      },
+      "projectile_births": [
+        [
+          1425,
+          8
+        ],
+        [
+          1722,
+          8
+        ],
+        [
+          1756,
+          8
+        ]
+      ]
+    }
+  ],
+  "ram_mutations": false,
+  "controlled_saved_room": true,
+  "two_pursuit_rooms_verified": true,
+  "both_types_pursue_in_at_least_one_room": true,
+  "absolute_timing_exact": false,
+  "full_progression_verified": false
+}

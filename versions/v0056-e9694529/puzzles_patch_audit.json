@@ -1,0 +1,67 @@
+{
+  "md_sha256": "e969452902935eca93d236542d0a8048a2859e0918693c3b8ae59f19c611147c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "md_size": 524288,
+  "checksum_aliases_verified": true,
+  "stationary_scripts": 31,
+  "dispatch_order_preserved": true,
+  "baseline_main_v0054_sha256": "f52fa866bc68fdb7e7f11cc72280861e62928e32060c3e1ce5f9049a69a682b9",
+  "all_other_production_files_unchanged": true,
+  "source_files": {
+    "megadrive/src/main.c": "ed0e0b12172b4387dd854868e5b19574b6a86bc558152c89907b6eece354fa00",
+    "megadrive/src/room_puzzles.inc": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee",
+    "tools/extract_room_puzzles.py": "646bbac402079163c27e71d4788bd3b847dae12c36c66a4bd322481130d41593",
+    "tools/extract_contact_scripts.py": "64ca1fc2ed629d3fea78d49bce8b53ad6c8c52fc0dd775b490b68e58bead015d",
+    "tools/validate_room_cells.py": "c8756f60685a64e3dd4d38f68eed5636e514fbb1e95ea1258c3fabfd62894246",
+    "tools/puzzles_harness.c": "8d9d5674b936bbdb5f08b5d6f4c2c38aa47d20468c4231c4cd26480bbd5692d1",
+    "tools/build_puzzles_harness.ps1": "a73af993a3bc8dcec7d7e56ac9521f49e64f60e6208f6aa9d49afd1352259f56",
+    "tools/validate_puzzles.py": "0fdced45c87c9709170a88a36000713d37649910af5d2606dcdbbe1fa4a6d5eb",
+    "tools/validate_puzzles_gameplay.py": "f7d39a77bfb27eb3a9784236e29d05767f4078c39c05f0dce3210c9e24ee25c3",
+    "tools/audit_puzzles_patch.py": "52f4b64c2c7b286f29c7ca096272ee672599bb0ba588455f82f35b4a3eb65852",
+    "analysis/baseline-v0054-main.c": "f52fa866bc68fdb7e7f11cc72280861e62928e32060c3e1ce5f9049a69a682b9"
+  },
+  "current_reports": [
+    {
+      "file": "puzzles_report.json",
+      "sha256": "aef88300e06c9d72c4fbe6bdf2aa4acf73005da0cb3a4bce15839198074532a3"
+    },
+    {
+      "file": "puzzles_gameplay_report.json",
+      "sha256": "62b632d78913ab3c339ffe9ac5bd4c618b47f3751c816af69d024987487ca12d"
+    },
+    {
+      "file": "puzzles_gameplay-pal_report.json",
+      "sha256": "e46e5a4cc787f36238ee122a1bc68f395631c644d397c24d33c8395602ad18ae"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "2bd1284d9a5059e28d73c3ab4cfee5b84d33f48ec995dde9989550677248d4ad"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "1291913d890e3b278d00061c35f0ea9fc1edf1302067c10fb21138b0c0e5bf54"
+    },
+    {
+      "file": "portals_gameplay-14b_report.json",
+      "sha256": "3b0c254b15b61d08f53aa9525f0120e52b91a3e79e78563eb95b4ebfee757d1c"
+    },
+    {
+      "file": "portals_gameplay-14b-pal_report.json",
+      "sha256": "584647a240ab7e74ddd8382dc72b2289949290ae841be517d1160d241e265490"
+    },
+    {
+      "file": "portals_gameplay-16c_report.json",
+      "sha256": "efecd32029590048208f84ee6d4dd77890ee839e55538ef5296a046c483c2348"
+    },
+    {
+      "file": "portals_gameplay-16c-pal_report.json",
+      "sha256": "36d4b148d62ff125c07e0b91729e6f1767113058320ef3d3a439cc1c61548892"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "496 selected puzzle fixture cases plus 7696 nonselected setup cases; two script calls per case.",
+    "124 live controller-trigger cases use controlled room/hero/frozen actor setup after a real dungeon entry.",
+    "Complete natural dungeon routes, ten item-message rewards, bosses, ending, full pixels, sound waveforms and redraw latency remain unverified."
+  ]
+}

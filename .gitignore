@@ -1,0 +1,22 @@
+# Generated SGDK output and local emulator captures
+/megadrive/out/
+/validation/
+__pycache__/
+*.pyc
+
+# Large immutable research captures stay on disk. Keep documentation,
+# disassembly, reference tables and source for instrumentation reproducibility.
+/analysis/*/
+!/analysis/**/
+/analysis/**/*
+!/analysis/**/*.txt
+!/analysis/**/*.py
+!/analysis/**/manifest.json
+
+# Retain numbered ROMs and their top-level release reports/documentation.
+# Source snapshots and bulk captures remain available locally.
+/versions/*/**
+!/versions/*/
+!/versions/*/*.bin
+!/versions/*/*.json
+!/versions/*/*.md

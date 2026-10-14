@@ -1,0 +1,17 @@
+{
+  "md_sha256": "ae1a4d11ba67556a51ae203fef6d4872ff225ddef640430717f88ca218c061a3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "0703da2d5b7640daeaf779ecc73d24ea8e444a0c0ea629c99743061c77d6e397",
+  "harness_sha256": "e35fcc9d7270708ef14d5ba29fa56f00854928ee7cb16bd26e0e7ea20f1c5747",
+  "native_module_sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22",
+  "ticks": 7425,
+  "all_8_state_bytes_vscroll_and_64_row_bytes_exact": true,
+  "final_state": "ff010070c07801ce30",
+  "production_scene_covered_by_this_test": false,
+  "module_used_by_production": true,
+  "full_game_ported": false,
+  "limits": [
+    "Original7027 arithmetic and7061 glyph/spacing/row-pointer routines run with original text and glyph map.0384 queue transfer is replaced by copying the same64-byte row into observation RAM;7048 IRQ/outer-loop tail returns after one arithmetic tick. No arithmetic/glyph/random shims.",
+    "Native standalone module executes the full natural text stream until its terminator, including blank-row controls, fractional scroll,28-row wrap and final done flag. Framebuffer, IRQ/VRAM presentation, boss-to-ending integration, music and input return are not covered by this module test."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "md_sha256": "0a14bf9d0383b9af0905d2676f6248c38757a4bd7925e7465ad5acef3a82885a",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "aa113d92e4c4fa11b8617c1b1386a4f4a6db71f4598ac75cec9d6a35dde8cbb1",
+  "harness_sha256": "1e9b3d3b726010a03bc2a44ab13d182b8eb37675e32d1d5d86ba34c850b5c198",
+  "cases": 486,
+  "original_routines_executed": [
+    "21C5..2236",
+    "18E2..190A on successful final exit"
+  ],
+  "all_room_and_progress_results_exact": true,
+  "ordered_production_begin_and_stage_zero_sequence": [
+    [
+      119,
+      1
+    ],
+    [
+      119,
+      2
+    ],
+    [
+      119,
+      3
+    ],
+    [
+      119,
+      4
+    ],
+    [
+      103,
+      5
+    ],
+    [
+      119,
+      0
+    ]
+  ],
+  "production_source_copy_sha256": "46b7077ab9a56c1d3ed431fc0adf0bcbeafc9e3518d502f808f72b03a6e5f6de",
+  "full_game_ported": false,
+  "limits": [
+    "480 controlled exits cover four room words, three graphics classes, five valid maze stages, all four directions and Y=95/96 boundary.",
+    "Six ordered exits use native production begin_room_transition and step_room_transition stage zero, with normal room assets. Original fixture directly calls unchanged exit routines.",
+    "Complete natural route, rendered scrolling, actors, audio, global timing and invalid progress values are outside this check."
+  ]
+}

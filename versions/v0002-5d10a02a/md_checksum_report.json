@@ -1,0 +1,235 @@
+{
+  "md_sha256": "5d10a02a28e07170d10ec9b02354e81c42dc7a6185d1c48c7d636489c021d107",
+  "md_size": 524288,
+  "parent_md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b",
+  "changed_offsets": [
+    398,
+    399
+  ],
+  "md_additive_checksum": 28702,
+  "executable_and_asset_bytes_identical": true,
+  "original_unchanged": true,
+  "rom_aliases_exact": true,
+  "core_scenarios": [
+    {
+      "name": "intro",
+      "frames": 1600,
+      "captures": [
+        120,
+        600,
+        1000,
+        1600
+      ],
+      "identical_files": [
+        "audio.wav",
+        "cram_00120.bin",
+        "cram_00600.bin",
+        "cram_01000.bin",
+        "cram_01600.bin",
+        "frame_00120.png",
+        "frame_00600.png",
+        "frame_01000.png",
+        "frame_01600.png",
+        "ram_00120.bin",
+        "ram_00600.bin",
+        "ram_01000.bin",
+        "ram_01600.bin",
+        "vdp_regs_00120.bin",
+        "vdp_regs_00600.bin",
+        "vdp_regs_01000.bin",
+        "vdp_regs_01600.bin",
+        "vram_00120.bin",
+        "vram_00600.bin",
+        "vram_01000.bin",
+        "vram_01600.bin"
+      ],
+      "test_ram_writes": []
+    },
+    {
+      "name": "title",
+      "frames": 900,
+      "captures": [
+        450,
+        700,
+        800,
+        900
+      ],
+      "identical_files": [
+        "audio.wav",
+        "cram_00450.bin",
+        "cram_00700.bin",
+        "cram_00800.bin",
+        "cram_00900.bin",
+        "frame_00450.png",
+        "frame_00700.png",
+        "frame_00800.png",
+        "frame_00900.png",
+        "ram_00450.bin",
+        "ram_00700.bin",
+        "ram_00800.bin",
+        "ram_00900.bin",
+        "vdp_regs_00450.bin",
+        "vdp_regs_00700.bin",
+        "vdp_regs_00800.bin",
+        "vdp_regs_00900.bin",
+        "vram_00450.bin",
+        "vram_00700.bin",
+        "vram_00800.bin",
+        "vram_00900.bin"
+      ],
+      "test_ram_writes": []
+    },
+    {
+      "name": "gameplay",
+      "frames": 4000,
+      "captures": [
+        2000,
+        2800,
+        3100,
+        3500,
+        4000
+      ],
+      "identical_files": [
+        "audio.wav",
+        "cram_02000.bin",
+        "cram_02800.bin",
+        "cram_03100.bin",
+        "cram_03500.bin",
+        "cram_04000.bin",
+        "frame_02000.png",
+        "frame_02800.png",
+        "frame_03100.png",
+        "frame_03500.png",
+        "frame_04000.png",
+        "ram_02000.bin",
+        "ram_02800.bin",
+        "ram_03100.bin",
+        "ram_03500.bin",
+        "ram_04000.bin",
+        "vdp_regs_02000.bin",
+        "vdp_regs_02800.bin",
+        "vdp_regs_03100.bin",
+        "vdp_regs_03500.bin",
+        "vdp_regs_04000.bin",
+        "vram_02000.bin",
+        "vram_02800.bin",
+        "vram_03100.bin",
+        "vram_03500.bin",
+        "vram_04000.bin"
+      ],
+      "test_ram_writes": []
+    }
+  ],
+  "inherited_parent_reports": [
+    {
+      "report": "trap_walker_report.json",
+      "report_sha256": "27382ba5a93b6840b930e6a48e009f9738db10a1f271480c3c0b5851534e3481",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "trap_room_report.json",
+      "report_sha256": "947f6667e44b968e0db0831cc4297db94c5a679d6769f1bcb6ed10687bed434c",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "water_jump_report.json",
+      "report_sha256": "3a1c0e6b61499123f60650a65361e54f7e4c26ddc6a5cec8d98fe5be2b6cab2c",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "water_rooms_report.json",
+      "report_sha256": "47071f77b50273b7e1ad94d46a417797fca29b3948250ef2f86ec4fb043dec59",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "jumping_actors_report.json",
+      "report_sha256": "489ce45d77746a949892fdec2d8766ba82937d6fa4c4b94605c0df2928b8693e",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "jumping_rooms_report.json",
+      "report_sha256": "7db7437bed0ca64923afacea3a764779b6f6190afe71e76ef2b8f58653dd2573",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "fixed_shooter_report.json",
+      "report_sha256": "c9775924c1a28549e697a8e2c20cb01d321a0c9a3a773da89c4fa13995aebf14",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "fixed_rooms_report.json",
+      "report_sha256": "113e57c0d2b624f7dc7b0fe54656eba2ce9c6eabdd8a72d1c45a0cd242f8724b",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "emerging_actors_report.json",
+      "report_sha256": "f04feaa5b9be013907dcfb356ae0b18f0e4923dde19f39188e0e252ed4a7bf72",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "actor_spawn_report.json",
+      "report_sha256": "0bde1c8eba57ba1764eaa1e3a180ea48533f16d41f3802f218f255c73100934e",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "flying_actors_report.json",
+      "report_sha256": "afeeb5a3ba6fb35114ecb67d92aa1dce5b58f4f4d660ab6bc479feca46ddcd07",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "mobile_actors_report.json",
+      "report_sha256": "79b7152546d08f350deb71f06f921925e051b7d91887c9e1f13f0c2d0ae8d2a8",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "mobile_room52_report.json",
+      "report_sha256": "8b075532b5a22d2a65c4fd033d8b4c9413e302ee23c1b7f7a2072a480eeda1ae",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "actor_ai_report.json",
+      "report_sha256": "7df9e83393e00a1f9e52f02c2ff08161f8b5e6df19e006617049dcee3cc6d37f",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "ranged_report.json",
+      "report_sha256": "548478cc89401a751ce1dd6cbb85beae3a41b4cabc6d4fa3e30fa80d58ea1739",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "shield_report.json",
+      "report_sha256": "ca2fdc593c4e62b872142bbc2e9f8da1c9fb69698fef78fac5a4b17e82334992",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "damage_report.json",
+      "report_sha256": "072b76359fed43bc26b20f3dd27b69085fcf491a0e0f329830b2b04227456690",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "enemy_damage_report.json",
+      "report_sha256": "1a6cb5f75bc372a5689c21b1c81d1234936d0bb0cc2632ed3dc9436a109f545f",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "fire_damage_report.json",
+      "report_sha256": "e25fd4f44c7110f25d338ea7455090f1dc69c96f65014e7781be1b1d5a303537",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    },
+    {
+      "report": "all_save_points_report.json",
+      "report_sha256": "024363c773f8a48e2ac0ba1c35f12868ff9756c673894b2e9a88b162ae2197e3",
+      "md_sha256": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b"
+    }
+  ],
+  "inherited_reports_rerun": false,
+  "full_regression_rerun": false,
+  "full_game_ported": false,
+  "rerun_current_reports": [
+    {
+      "report": "house_dialogue_report.json",
+      "sha256": "aa1e8d1037c0d2db7de22dc760536efbd61b3dd0d6a992027395fdaca7a007ef",
+      "md_sha256": "5d10a02a28e07170d10ec9b02354e81c42dc7a6185d1c48c7d636489c021d107"
+    }
+  ]
+}

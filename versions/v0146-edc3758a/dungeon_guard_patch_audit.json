@@ -1,0 +1,39 @@
+{
+  "md_sha256": "edc3758a27b634b87579b3049dc1553cba6308cec3a300a0848b3dab89043fa8",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 12811,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_5C_5D_AI_damage_gate_dispatch_publication_hero_direction_getter_and_three_A5_secondary_requests": true,
+  "prior_actor_implementations_unchanged_since_v0144": true,
+  "facing_gate_uses_post_AI_facing": true,
+  "source_A5_secondary_queue_corrected": true,
+  "source_half_pixel16_movement_bytes_reused": true,
+  "original_random_stream_reproduced": false,
+  "evidence_sha256": {
+    "dungeon_guard_allocation_unit_report.json": "fc5576c0713ca9e57d161bf8dd544ed5a1edc19a9f2c68e7cd972f8138e0ae84",
+    "dungeon_guard_gameplay_report.json": "14c3c11ad9a0bc9ba2e87f56553cb2945bc9a963594a0193e87181d953e5d977",
+    "dungeon_guard_5c_entry_report.json": "bb3a2e4c7fc3d9e48f32c0be8904f865593cbea0db98cb45acf0c0ae101656a2",
+    "dungeon_guard_5d_entry_report.json": "9a81c97d823d5bc5558464c3aa72af0d0ac8b55d033e42af21229f2f970b966f",
+    "dungeon_guard_combat_5c_allowed_entry_report.json": "99ff1bcdadb74d790e3805fcd0d5f5752f679dd19167da5ee45f1caf69591897",
+    "dungeon_guard_combat_5c_blocked_entry_report.json": "bfcc1cd08a64971844f5640edf1139a470f738851b2d285bf1d9f20daec22015",
+    "dungeon_guard_combat_5d_allowed_entry_report.json": "f769d73f3251f3bb0c87ef9c2906fd94afebca2b6a037ceff68ae1cc630a6c4d",
+    "dungeon_guard_combat_5d_blocked_entry_report.json": "b4aaa633ebe2a1e8f508105ecbe676f77ab499bc86e59fe848ff8b4873fe1a34"
+  },
+  "source_files": {
+    "megadrive\\src\\main.c": "f57ffcdfba42e01d9472c29661f871757acf15316a7b645ffb58dd3bf04def6a",
+    "megadrive\\src\\actors.c": "aa16984504f942287b2154215973625e4c6fdd4937918cfa98d419789135859d",
+    "tools\\validate_dungeon_guard.py": "894f848fafaa39545fe1ddb50985f2c0d02c93c5af308a586c3fffc1e328bf2a",
+    "tools\\validate_dungeon_guard_gameplay.py": "fdd8db4314cd0d8d6275c7138569d527745469c768cb52dda1130cea06422f89",
+    "tools\\validate_dungeon_guard_entry.py": "86a297377c0d739a91f1f536f0e00b8cfc98b553560b75f8797d1a1ef35353c3",
+    "tools\\validate_dungeon_guard_combat.py": "9746e4eaeea877eb327d7f53844a5c571a16d3dd720faa700f6a537ea788ebef"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Initial controlled clocks explicitly aligned; source random reads controlled only in isolated cases.",
+    "Normal C-button attacks from all four sides in passable controlled-map segments; actual16A/129 combat retains room terrain/resources and uses controlled actors/hero.",
+    "Setup hero invulnerability255 protects travel; hero-only relocation at3650 allows foreground door/shutter work to finish before3700 combat injection. Setup A5 request/current effect is compared.",
+    "Eight actual-room combat cases compare256 actor/hero/effect frames and248 hero+guard SAT frames; injection frame3700 excluded and retained, no timeline shift.",
+    "Natural room appearances exclude random X/Y/direction and align to initialization. Full natural fights, original RNG/global clock, full framebuffer/audio waveforms, prior loading-phase/loot presentation issues and hardware timing remain unproved."
+  ]
+}

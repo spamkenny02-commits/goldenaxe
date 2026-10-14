@@ -1,0 +1,76 @@
+{
+  "md_sha256": "e95a6b5bfe9f5e1a714f6042531779e8213fcda3ac41cb142b2b7d4f9d005c58",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "original_unchanged": true,
+  "jump_and_walk_vectors_source_exact": true,
+  "evidence": [
+    {
+      "file": "hopping_actor_report.json",
+      "sha256": "8c2a47d0cf6cde829163334592de03151489131de1c423437424aac3ae8da700"
+    },
+    {
+      "file": "hopping_actor-pal_report.json",
+      "sha256": "c56ac18602690818987d25e6e9e2fa8738e1a84772f24c8970f4e153d1fef32d"
+    },
+    {
+      "file": "hopping_spawns_report.json",
+      "sha256": "ee2a0045fc4405a63b3ebaae82377692821bed8d31f34fb5db8fa5fd192298fc"
+    },
+    {
+      "file": "hopping_spawns-pal_report.json",
+      "sha256": "c04e7767ce39350646d21aedf8eff7578fc221dc7216bacefd15703c646fdd48"
+    },
+    {
+      "file": "hopping_rooms_report.json",
+      "sha256": "c8fb73c039bbdda1e7f7983186b2cfa296f4d9913156ba2baa72c7b072c4f80e"
+    },
+    {
+      "file": "pursuit_shooters_report.json",
+      "sha256": "93ab7c198f01fb7e6b919bcdb0459820d05b3c96a1444d471eea091e3aa9a01c"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "2d5bd9f58400c3e8b62fdd0ed579f5a694c289bbf396d0c7d3c7a352af7981dd"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "52abd396097988f1491e96239927903b2f68fd6d1292809088409eafca7ec62d"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "2eed4fb34cfd96ef72a39633dd62096e493bf6c80cdf0c4043afd980f6c5381d"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "9b07f114a663fe87114db5e9ac8e307bffd47cf64b56e3f69c424bcdea63bc62"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "985aeecb5cf7c57fbd7a741ab01c8099f196cfc4adafa490fa4d3e0eb1fda052"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "a4e302efb2e3483d262ee94d98fe76a8fcfeee41ff1e3a8d13e6f85054e15a1e"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/actors.c": "444eb818d565f6ce1521f575f905dcf8a4c0576a523790c156ccc2a10512a24a",
+    "tools/validate_hopping_actor.py": "8e337c82473694f9810989dfa4f3d6975ab22e12dd432a9e53b127dbe68a21aa",
+    "tools/actor_pair_validation.py": "ad356a32b3bea943e7c046b7de645edb7e5f494fff1b52f10c6bc5ec54e26e70",
+    "tools/validate_hopping_spawns.py": "70c60cded1c769f54968ec35cfa6d221ed6357fed24a0b0ab40c91408359186a",
+    "tools/validate_hopping_rooms.py": "7dafde5116037e50fe4c4bea6c44955a2b4467b25bb16b606b36f172f5e84723"
+  },
+  "hopping_actor_record_comparisons": 16968,
+  "full_game_ported": false,
+  "original_rng_stream_reproduced": false,
+  "sprite_overflow_suppression_verified": false,
+  "notes": [
+    "Random choices and IRQ phase are controlled only in explicit test fixtures",
+    "Collision-list descriptor bytes27/28 excluded from record comparisons",
+    "Cold-load checkpoints verify activity, not natural progression or identical RNG",
+    "Intro startup offsets, overflow495E, quests/dungeons and remaining actors are pending"
+  ]
+}

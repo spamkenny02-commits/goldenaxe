@@ -1,0 +1,54 @@
+{
+  "md_sha256": "9a0227823cbcdfe349e398eaf08cfaae8851d066337b0bbd3c5f623024e2f334",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "evidence": [
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "94c28f1b0faabb3a4c824ad3640910d34a4bc616f7683197bac7eb8bf427ff34"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "b630a99ae601f2a86a65b462342b6513d15cdb04a124b3abd333930453c03523"
+    },
+    {
+      "file": "title_cadence-natural_report.json",
+      "sha256": "89ec3fb1f099f49b17780744c0cac1609b0866369a404afb08a440bc8d110873"
+    },
+    {
+      "file": "title_cadence-pal-natural_report.json",
+      "sha256": "b759785c8120ce14ddf6fec7e8fd0f3e989fffc53b431c345df5366e0e134481"
+    },
+    {
+      "file": "intro_report.json",
+      "sha256": "56114ac68a12cb6e739f4bd65ab73255367db955e65d4eed625ed1ff8c149f80"
+    },
+    {
+      "file": "intro-pal_report.json",
+      "sha256": "3c5f35f32959c5ac7718f1c50a4eaeaf5dcbffc44ae456a74f20ddca74ccd0ec"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "091640b74a2a7a74c5e1a9e489c43db7303479517a6ea34cd6b73abd4f26ab0f"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "cc6a15e62c93e2e14be2268d13bfb02e40ad603feca7023565858fcd81565c3f"
+    },
+    {
+      "file": "merchant_report.json",
+      "sha256": "707bf737ca4b4ad644246c91682aeb85789156d3f2cbd37e1a58ed2da590f80a"
+    },
+    {
+      "file": "service_transition_report.json",
+      "sha256": "c25317f99cf9952a85034b006d5d9a4416c5b96826f5d562e0d20599d6120ac6"
+    }
+  ],
+  "title_cadence_cases": 4,
+  "normalized_pixel_checks": 80,
+  "relative_title_animation_cadence_exact": true,
+  "absolute_title_start_exact": false,
+  "remaining": "Natural title starts 11 NTSC / 26 PAL video frames early; source asset loading and preceding intro timing remain different."
+}

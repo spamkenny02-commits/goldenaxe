@@ -1,0 +1,154 @@
+{
+  "md_sha256": "a171c53496510b0e93fde0518fe517243a8fe55f78e310edf968eee53abd1b3d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "story_entry_frame": 1490,
+      "story_entry_exact": true,
+      "palette_entries_0_to_30_cram_words_exact": 1271,
+      "palette_frames": 41,
+      "font_bytes_exact": 512,
+      "font_tile_pixels_exact": 1024,
+      "font_source_tstates": 70986,
+      "color31_remaining_phase_differences": [
+        {
+          "frame": 1449,
+          "source": 1,
+          "native_internal_cram": 5,
+          "expected_internal_cram": 3
+        },
+        {
+          "frame": 1450,
+          "source": 1,
+          "native_internal_cram": 5,
+          "expected_internal_cram": 3
+        },
+        {
+          "frame": 1451,
+          "source": 0,
+          "native_internal_cram": 3,
+          "expected_internal_cram": 0
+        },
+        {
+          "frame": 1452,
+          "source": 0,
+          "native_internal_cram": 3,
+          "expected_internal_cram": 0
+        },
+        {
+          "frame": 1487,
+          "source": 2,
+          "native_internal_cram": 3,
+          "expected_internal_cram": 5
+        },
+        {
+          "frame": 1488,
+          "source": 2,
+          "native_internal_cram": 3,
+          "expected_internal_cram": 5
+        },
+        {
+          "frame": 1489,
+          "source": 2,
+          "native_internal_cram": 3,
+          "expected_internal_cram": 5
+        }
+      ],
+      "profile": "opening_setup_profile.json",
+      "profile_sha256": "e26f69bd7063bb05f3273004cb986baf93c7b65cc4cf21ae6f1c3c44fd44353d",
+      "capture_hashes": {
+        "sms": {
+          "cram_01460.bin": "df63865f2d9f83436ce0e463ce6265b73160ba070e3a64d98d6298ebd0c7e5a8",
+          "vram_01480.bin": "56a21cd03ff5fb6b0a41928dbb116a3b20009e72f0860596748689a998c71de5",
+          "ram_01480.bin": "49bca85de1463932e35f967047acc0922115f917ff57adad5562d4540a48dc7e"
+        },
+        "md": {
+          "cram_01460.bin": "331edca421edb7b2b90395ba8b97a09d12722587e643495c42954b331d973ce3",
+          "vram_01480.bin": "7050584738c0e290c917505d0ac375269f1453c4d7b422a24c4e745400ab0e3b",
+          "ram_01480.bin": "74eed055003df7cabf155cbd1bc04cc0e1a2e6863806e14b1538831bdd3b8cd5"
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "story_entry_frame": 1489,
+      "story_entry_exact": true,
+      "palette_entries_0_to_30_cram_words_exact": 1271,
+      "palette_frames": 41,
+      "font_bytes_exact": 512,
+      "font_tile_pixels_exact": 1024,
+      "font_source_tstates": 70986,
+      "color31_remaining_phase_differences": [
+        {
+          "frame": 1449,
+          "source": 1,
+          "native_internal_cram": 5,
+          "expected_internal_cram": 3
+        },
+        {
+          "frame": 1450,
+          "source": 1,
+          "native_internal_cram": 5,
+          "expected_internal_cram": 3
+        },
+        {
+          "frame": 1451,
+          "source": 0,
+          "native_internal_cram": 3,
+          "expected_internal_cram": 0
+        },
+        {
+          "frame": 1452,
+          "source": 0,
+          "native_internal_cram": 3,
+          "expected_internal_cram": 0
+        },
+        {
+          "frame": 1486,
+          "source": 1,
+          "native_internal_cram": 5,
+          "expected_internal_cram": 3
+        },
+        {
+          "frame": 1487,
+          "source": 1,
+          "native_internal_cram": 5,
+          "expected_internal_cram": 3
+        },
+        {
+          "frame": 1488,
+          "source": 1,
+          "native_internal_cram": 5,
+          "expected_internal_cram": 3
+        },
+        {
+          "frame": 1489,
+          "source": 1,
+          "native_internal_cram": 5,
+          "expected_internal_cram": 3
+        }
+      ],
+      "profile": "opening_setup-pal_profile.json",
+      "profile_sha256": "a84ed73cc4a78cba839a5d25a5345440394d181f70166573b0dcf55b9a34dd89",
+      "capture_hashes": {
+        "sms": {
+          "cram_01460.bin": "df63865f2d9f83436ce0e463ce6265b73160ba070e3a64d98d6298ebd0c7e5a8",
+          "vram_01480.bin": "56a21cd03ff5fb6b0a41928dbb116a3b20009e72f0860596748689a998c71de5",
+          "ram_01480.bin": "33f22f2ba1d41975352682b69802cc990e0978b52cc290776f9538b5d4be00e4"
+        },
+        "md": {
+          "cram_01460.bin": "331edca421edb7b2b90395ba8b97a09d12722587e643495c42954b331d973ce3",
+          "vram_01480.bin": "7050584738c0e290c917505d0ac375269f1453c4d7b422a24c4e745400ab0e3b",
+          "ram_01480.bin": "a0e2ee52906134eaea98e2836d08f6d025cb7364cb9802ca72620e3b29522418"
+        }
+      }
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "One natural name A and confirmation frame per region.",
+    "Palette color 31 still differs with the global clock phase; all residuals are listed.",
+    "First page wait, subsequent dialogue words, initial-room loading and audio waveforms remain incomplete or unverified."
+  ]
+}

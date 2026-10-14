@@ -1,0 +1,53 @@
+{
+  "md_sha256": "e4790504a6f3a165285c2cef9402fee56240c32dfe2b4a9f730f08a19fc6d8ae",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "room": 281,
+      "type": 82,
+      "inactive_frame3490_verified": true,
+      "actual_floor_trigger_frame3500_verified": true,
+      "arrival_frames": {
+        "sms": 3648,
+        "md": 3521
+      },
+      "relative_first_actor_frames_except_random_fields_exact": 16,
+      "excluded_random_record_offsets": [
+        10,
+        17,
+        19
+      ],
+      "loaded_pattern_tiles_exact": 45,
+      "pattern_samples": 3,
+      "boss_sat_samples_exact": 0,
+      "boss_sat": null
+    },
+    {
+      "region": "pal",
+      "room": 281,
+      "type": 82,
+      "inactive_frame3490_verified": true,
+      "actual_floor_trigger_frame3500_verified": true,
+      "arrival_frames": {
+        "sms": 3520,
+        "md": 3542
+      },
+      "relative_first_actor_frames_except_random_fields_exact": 16,
+      "excluded_random_record_offsets": [
+        10,
+        17,
+        19
+      ],
+      "loaded_pattern_tiles_exact": 45,
+      "pattern_samples": 3,
+      "boss_sat_samples_exact": 0,
+      "boss_sat": null
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Normal dungeon doorway entry after exterior relocation; controlled relocation to room118 boundary with cleared actors and passable departure map. Right scroll and actual destination119 scripts/resources/actor loading execute normally. At3500 hero is relocated onto unchanged destination floor72,80 to trigger52; actors and terrain are not injected at that stage.",
+    "Actor timelines aligned to first initialized core frame, not absolute loading cadence; Sixteen first52 appearance frames exclude X/Y high bytes and direction, chosen by unaligned source/native random inputs. Other actor records are not compared. First 45 sprite pattern pixels sampled at three relative frames. Natural travel, full fight, SAT/full framebuffer, audio and full transition timing remain unproved."
+  ]
+}

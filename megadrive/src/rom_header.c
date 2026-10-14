@@ -1,0 +1,33 @@
+#include <genesis.h>
+
+__attribute__((externally_visible))
+const ROMHeader rom_header = {
+#if (MODULE_MEGAWIFI  && (MEGAWIFI_IMPLEMENTATION == MEGAWIFI_IMPLEMENTATION_MW_CART))
+    "SEGA MEGAWIFI   ",
+#elif (ENABLE_BANK_SWITCH != 0)
+    "SEGA SSF        ",
+#else
+    "SEGA MEGA DRIVE ",
+#endif
+    "(C)SGDK 2026    ",
+    "GOLDEN AXE WARRIOR - NATIVE PORT                 ",
+    "GOLDEN AXE WARRIOR - NATIVE PORT                 ",
+    "GM 00000000-00",
+    0x000,
+    "JD              ",
+    0x00000000,
+#if (ENABLE_BANK_SWITCH != 0)
+    0x003FFFFF,
+#else
+    0x000FFFFF,
+#endif
+    0xE0FF0000,
+    0xE0FFFFFF,
+    "RA",
+    0xF820,
+    0x00200001,
+    0x00203FFF,
+    "            ",
+    "NATIVE 68000 PORT - INTRO PSG MUSIC      ",
+    "JUE             "
+};

@@ -1,0 +1,55 @@
+{
+  "md_sha256": "8639238d6de100f584c6f7daa18c7cb54398a3bd9b217da288c4169c3b80303d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "only_declared_fast_normal_ground_selection_changed_from_v0093": true,
+  "source_files": {
+    "megadrive/src/main.c": "80756ab7d83a2f9ce2ebd2907846527d3ebb099b5a7a7794fd76292e1253a53e",
+    "megadrive/src/fast_ground_data.c": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df",
+    "tools/extract_fast_ground.py": "585e3b781f14b391ec67d71c8fd3529b9dc36e12bf23d461d091123620e7ac10",
+    "tools/validate_ground_walk.py": "a622951c86d9ff14aa5d158b62dfbcd8cff567c92afaa1be7113de1f272f7282",
+    "tools/audit_fast_ground_patch.py": "cd44f13e85e1d10f52a3a07837b9b8de090a738fa3652e998c3ceac99bad4eac",
+    "analysis/fast_ground_resources.json": "c7a49b0e1540906254b5dc411ceeb932ff149ce4c7f33e3e85ca0d62a622bdcf",
+    "analysis/fast_ground_milestone.md": "aef6c7456283994e34cf46e22b82778bcf1b52074304182d9a0eaa5b3c0efff6",
+    "analysis/fast-ground-baseline-v0093/main.c": "355b40cba40d39022e6695db5155288fecaff0f2cd6cfc43cf12c55210714dc3"
+  },
+  "reports": [
+    {
+      "file": "ground_walk_report.json",
+      "sha256": "7ed55e558ae415573e81ae34b1e1330e1a4795043ab9c77f5df5175aea962728"
+    },
+    {
+      "file": "water_cross_pose_report.json",
+      "sha256": "f6664b5603ece5ac8a0f0151b5a30f18b1b64775f8eddf6100995323e18eaa89"
+    },
+    {
+      "file": "water_cross_all_diagnostic.json",
+      "sha256": "5947d8a79980db7ca5ffacee48c8927955b9d4a88f0f513283bdf8df6b94876d"
+    },
+    {
+      "file": "ground_cross_all_diagnostic.json",
+      "sha256": "04691446424bc0a60b2e1dafbfa9e75825f72d1a3db7f9f60e88e171de81f393"
+    },
+    {
+      "file": "thrown_axe_walk_report.json",
+      "sha256": "b9bde542a06be113155b828898df8573d047970629584fb17d049229fc747dc0"
+    },
+    {
+      "file": "thrown_axe_walk_fast_report.json",
+      "sha256": "5f66f59c42fa858cc57e15dbfd94b89cafe4979c6e43f93cdbd5d5a0dbde57d2"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "75b9e8fcd45395460c2068c9210184c6ef4aa138425bc6eead8cd302dd1df71a"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "22aa57e9ac2b0d8bb0cb3b8aae6aa41cd0ea1f4e4e77586e95e72646cc6f9eeb"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled ground movement and water regressions; acquisition, obstacles, combat and other terrain contexts remain unverified.",
+    "Up NTSC transition timing, ground arrival pose/loading phases and software-map staging remain incomplete.",
+    "No complete framebuffer/audio, all enemy AI, boss, quest, ending or complete playthrough proof."
+  ]
+}

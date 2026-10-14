@@ -1,0 +1,85 @@
+{
+  "md_sha256": "7ab95bef3e0ecfae795bfc2705f5a316501b6b8f25ce815e2e125e3ece360dc0",
+  "deterministic_initial_record_cases": 48,
+  "source_core_record_comparisons": 96,
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ],
+  "projectile17_four_direction_births_source_exact": 4,
+  "projectile17_free_motion_compared_frames": 99,
+  "projectile17_source_culls_exact": [
+    {
+      "frame": 3139,
+      "slot": 8
+    },
+    {
+      "frame": 3148,
+      "slot": 9
+    },
+    {
+      "frame": 3167,
+      "slot": 10
+    },
+    {
+      "frame": 3176,
+      "slot": 11
+    }
+  ],
+  "direction_cases": [
+    {
+      "type": 41,
+      "state": 4,
+      "direction": 3,
+      "native_rng_choice_controlled": true,
+      "open_tilemap_controlled": true,
+      "blocked_initial_direction_tested": false
+    },
+    {
+      "type": 42,
+      "state": 4,
+      "direction": 3,
+      "native_rng_choice_controlled": true,
+      "open_tilemap_controlled": true,
+      "blocked_initial_direction_tested": false
+    },
+    {
+      "type": 43,
+      "state": 2,
+      "direction": 3,
+      "native_rng_choice_controlled": true,
+      "open_tilemap_controlled": true,
+      "blocked_initial_direction_tested": false
+    },
+    {
+      "type": 43,
+      "state": 4,
+      "direction": 3,
+      "native_rng_choice_controlled": true,
+      "open_tilemap_controlled": true,
+      "blocked_initial_direction_tested": false
+    },
+    {
+      "type": 41,
+      "state": 6,
+      "direction": 2,
+      "native_rng_choice_controlled": true,
+      "open_tilemap_controlled": false,
+      "blocked_initial_direction_tested": true
+    },
+    {
+      "type": 42,
+      "state": 6,
+      "direction": 2,
+      "native_rng_choice_controlled": true,
+      "open_tilemap_controlled": false,
+      "blocked_initial_direction_tested": true
+    }
+  ],
+  "source_rng_stream_reproduced": false,
+  "terrain_change_verified": true,
+  "terrain_source_frame": 3118,
+  "terrain_native_rng_choice_controlled": true,
+  "terrain_tilemap_bytes_source_exact": 1280,
+  "natural_room52_combat_verified": false
+}

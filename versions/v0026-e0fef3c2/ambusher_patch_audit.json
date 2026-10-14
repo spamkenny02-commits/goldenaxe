@@ -1,0 +1,91 @@
+{
+  "md_sha256": "e0fef3c26202309e88b6dcb60217ddc6727d4f9a85daf7ef989f25149d454f7e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 524288,
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "original_unchanged": true,
+  "projectile1b_and_lob_vectors_source_exact": true,
+  "evidence": [
+    {
+      "file": "walker40_report.json",
+      "sha256": "c616fa124dea3e141393cb2f520693d705f481d06b27bbcb3c2a27b0185026a4"
+    },
+    {
+      "file": "walker40-pal_report.json",
+      "sha256": "92cf73c25deb515af53b3d052319577f2050ee9c1fe65f28daad32d42b5159d6"
+    },
+    {
+      "file": "ambusher41_report.json",
+      "sha256": "22017939e7ccad55f6ccb7a359375573f643dd4509259625b6f9bf890fc1d06b"
+    },
+    {
+      "file": "ambusher41-pal_report.json",
+      "sha256": "fac432a3c315545f9f9fb004bc28cbc7169a4e9dc3c92b12a07e7b469eae2112"
+    },
+    {
+      "file": "ambusher41_spawns_report.json",
+      "sha256": "12db9f8149b44a2cbc575a54652322e00e8f91576597a29e21080f91905e72ab"
+    },
+    {
+      "file": "ambusher41_spawns-pal_report.json",
+      "sha256": "fe9815ca4713006eaa4bb48af5651bff8573758f0ba31813670408285c171b35"
+    },
+    {
+      "file": "actors40_41_rooms_report.json",
+      "sha256": "cb1c148871c6adba5855413ccf92082aaa98e06e1fabe7c49784a5f1703ffe57"
+    },
+    {
+      "file": "pursuit_shooters_report.json",
+      "sha256": "3784bce2735c4409ef57668785efa8b297ae5f0bbe223eff20bf74a3279298f3"
+    },
+    {
+      "file": "hopping_actor_report.json",
+      "sha256": "cea2049fd902c2ba17008da59f55bbfd1d42240a6f63953fed72f10ee989e67a"
+    },
+    {
+      "file": "scroll_objects_report.json",
+      "sha256": "80cd5c1c100c5d7957bcdfa958f7558e9a7d4348d314db2981c40d21f284d49d"
+    },
+    {
+      "file": "scroll_objects-pal_report.json",
+      "sha256": "7fa6afa8ddc862a860c692a737104e6d7497d5694e2a5fe09a5d80177730c6d9"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "8795fa632be9d8f141649daf76bc5f07c18cb31749b7c71d36abfd361b9495bd"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "a96b0fd45fa9a18c1b2299eb1ffb89fe23bb1a59a31fe8d0ab972f92066fd7b2"
+    },
+    {
+      "file": "title_cadence_report.json",
+      "sha256": "73c7a42265460dc3d59aa2f002d9a4a1ca745d8541174c15dbe539e1336b9360"
+    },
+    {
+      "file": "title_cadence-pal_report.json",
+      "sha256": "76a308be9acbaa264ea86d0dcb116edfc196c45351bdc4907d4223180793e81a"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/actors.c": "f677ea650d07b7fe4e9107c57136228586b5687e78c77d4480ff5b23f25ed69a",
+    "megadrive/src/actor_data.c": "0d8386c0f7728ba9bd08112fbc3dae6fa04386212400d504a43886cb7fe2a623",
+    "tools/extract_actors.py": "1750d3c5f304ba30f74476ad3cfe8d16816c18eb6309a1f7d1dcce6142a69660",
+    "tools/validate_walker40.py": "e91d54ad4b84b7c8012c0e267397f23c596988df08028640869b7345ba75bccb",
+    "tools/validate_ambusher41.py": "030697dfda20df956e0bf6ed175295a57feb2c2a7004dc43695b2f8399056db8",
+    "tools/validate_ambusher41_spawns.py": "becad38f922d5ef6b67aad54dde8eedf02e94eba04d0964a014f4a80dbb08c5f",
+    "tools/validate_actors40_41_rooms.py": "b7bcc3c8d4fb597b0d16bc1715700d6fa69cadca68f93914c202af5bbfa7cc46"
+  },
+  "new_actor_record_comparisons": 8564,
+  "full_game_ported": false,
+  "original_rng_stream_reproduced": false,
+  "sprite_overflow_suppression_verified": false,
+  "notes": [
+    "40 fixtures clear source overflow;495E suppression remains absent",
+    "41 uses direct4965 allocation and its partial-failure path is verified",
+    "Collision-list descriptor bytes27/28 excluded from record comparisons",
+    "Checkpoint rooms do not prove full progression or identical RNG",
+    "42/1C, quests/dungeons, intro offsets and other fidelity work remain pending"
+  ]
+}

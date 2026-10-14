@@ -1,0 +1,74 @@
+{
+  "natural_walk_refusal_exit_without_ram_injection": true,
+  "md_sha256": "0faff7e5a78478e3c637209c3e380ade74d065c2149824be9598400014baf32c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "name": "key",
+      "controlled_position_and_initial_stats": true,
+      "selection_by_normal_input": true,
+      "service_initial_pixels_exact": true,
+      "settled_transaction_fields_exact": 2,
+      "transaction_bitmap_vram_bytes_exact": 4160,
+      "entry_exit_visible_hud_frames": 222
+    },
+    {
+      "name": "feather",
+      "controlled_position_and_initial_stats": true,
+      "selection_by_normal_input": true,
+      "service_initial_pixels_exact": true,
+      "settled_transaction_fields_exact": 2,
+      "transaction_bitmap_vram_bytes_exact": 4160,
+      "entry_exit_visible_hud_frames": 222
+    },
+    {
+      "name": "oil",
+      "controlled_position_and_initial_stats": true,
+      "selection_by_normal_input": true,
+      "service_initial_pixels_exact": true,
+      "settled_transaction_fields_exact": 2,
+      "transaction_bitmap_vram_bytes_exact": 4160,
+      "entry_exit_visible_hud_frames": 222
+    },
+    {
+      "name": "poor",
+      "controlled_position_and_initial_stats": true,
+      "selection_by_normal_input": true,
+      "service_initial_pixels_exact": true,
+      "settled_transaction_fields_exact": 2,
+      "transaction_bitmap_vram_bytes_exact": 4160,
+      "entry_exit_visible_hud_frames": 222
+    },
+    {
+      "name": "keys_full",
+      "controlled_position_and_initial_stats": true,
+      "selection_by_normal_input": true,
+      "service_initial_pixels_exact": true,
+      "settled_transaction_fields_exact": 2,
+      "transaction_bitmap_vram_bytes_exact": 4160,
+      "entry_exit_visible_hud_frames": 222
+    },
+    {
+      "name": "feather_owned",
+      "controlled_position_and_initial_stats": true,
+      "selection_by_normal_input": true,
+      "service_initial_pixels_exact": true,
+      "settled_transaction_fields_exact": 2,
+      "transaction_bitmap_vram_bytes_exact": 4160,
+      "entry_exit_visible_hud_frames": 222
+    },
+    {
+      "name": "oil_owned",
+      "controlled_position_and_initial_stats": true,
+      "selection_by_normal_input": true,
+      "service_initial_pixels_exact": true,
+      "settled_transaction_fields_exact": 2,
+      "transaction_bitmap_vram_bytes_exact": 4160,
+      "entry_exit_visible_hud_frames": 222
+    }
+  ],
+  "scope": "First village 94 merchant only; three goods and refusal branches",
+  "absolute_transaction_timing_exact": false,
+  "other_village_merchants_checked_by_this_test": false,
+  "merchant_sound_effects_ported": false
+}

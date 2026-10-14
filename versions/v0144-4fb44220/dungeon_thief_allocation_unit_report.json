@@ -1,0 +1,14 @@
+{
+  "md_sha256": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "c1eda1c1912b9a8d301a972dcc802933aa2d68fcd5a7383842f32a82f2493ab1",
+  "harness_sha256": "db165d4f31efe70680658f129c7f2a832c8008b642a18fbc9b3857575c490215",
+  "cases": 2780,
+  "all_768_actor_bytes_and_hero_state_counter_animation_hp_gold_xy_sound_request_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Four sourceLD A,R sites use explicit register-preserving input shim. Original5043/A302/984F/57F8/4859/48F3/4A15 and gold/escape side effects execute.",
+    "Seven even states; spawn terrain, pursuit, strict9-pixel capture/exclusion for grabbed hero, attachment with HP0/live and hero movement counter, all gold/steal/escape boundaries, directional vs non-directional input and clock-bit1 sway. State0 requires loader animation0.",
+    "Original RNG/global clock, natural rooms/gameplay, complete video/audio and hardware timing remain unproved."
+  ]
+}

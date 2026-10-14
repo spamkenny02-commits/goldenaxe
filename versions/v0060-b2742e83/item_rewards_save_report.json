@@ -1,0 +1,90 @@
+{
+  "md_sha256": "b2742e8311c22e93fcc49693b9332a5e0d13de95af0a85ca72712419f6d51fd6",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "inventory": "110",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0100000100000000000000000000000000"
+    },
+    {
+      "inventory": "112",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0100000000000000000001000000000000"
+    },
+    {
+      "inventory": "11d",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0102000000000000000000000000000000"
+    },
+    {
+      "inventory": "157",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0100000000000000000000000000010000"
+    },
+    {
+      "inventory": "19b",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0100000000000000000000010000000000"
+    },
+    {
+      "inventory": "1a2",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0100000000000000000000000100000000"
+    },
+    {
+      "inventory": "1a9",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0100000000000000000000000000000100"
+    },
+    {
+      "inventory": "1b6",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0101000000000000000000000000000000"
+    },
+    {
+      "inventory": "1d5",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0100000000000000000000000000000001"
+    },
+    {
+      "inventory": "1f4",
+      "slot": 1,
+      "save_payload_bytes_exact": 592,
+      "persistent_room_flag_bytes_cold_loaded": 256,
+      "keys_cold_loaded": 2,
+      "inventory_bytes_cold_loaded": "0100000000000000000000000001000000"
+    }
+  ],
+  "state_provenance": "Actual controller-triggered item reward snapshots, transferred to save-point route by fixture.",
+  "production_save_and_cold_load_by_normal_input": true,
+  "uninterrupted_dungeon_to_save_point_route_verified": false,
+  "full_game_ported": false
+}

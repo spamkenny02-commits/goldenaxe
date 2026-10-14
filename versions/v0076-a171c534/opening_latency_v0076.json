@@ -1,0 +1,121 @@
+{
+  "md_sha256": "a171c53496510b0e93fde0518fe517243a8fe55f78e310edf968eee53abd1b3d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "diagnostic_only": true,
+  "production_roms_unmodified": true,
+  "ram_injections": false,
+  "cases": [
+    {
+      "region": "auto",
+      "source_story_entry": {
+        "frame": 1490,
+        "pc": 29764,
+        "clock": 66,
+        "hl": 43880,
+        "master_cycles": 1333575930,
+        "irq_master_cycles": 267357420
+      },
+      "native_render_entry": {
+        "frame": 1490,
+        "pc": 108378,
+        "function": "render_dialogue_text",
+        "master_cycles_in_frame": 60104,
+        "sp": 3774872660
+      },
+      "story_entry_delta": 0,
+      "source_page_wait": {
+        "frame": 1596,
+        "pc": 2036,
+        "clock": 104,
+        "hl": 49199,
+        "master_cycles": 1428843510,
+        "irq_master_cycles": 274472400
+      },
+      "native_page_wait": {
+        "frame": 1582,
+        "pc": 51738,
+        "function": "wait_dialog_continue",
+        "master_cycles_in_frame": 140408,
+        "sp": 3774872284
+      },
+      "page_wait_delta": -14,
+      "first_room": {
+        "sms": {
+          "frame": 2454,
+          "clock": 199,
+          "state": 12,
+          "room": 149
+        },
+        "md": {
+          "frame": 2421,
+          "clock": 92,
+          "state": 12,
+          "room": 149,
+          "vtimer": 2396,
+          "shift": 0
+        }
+      },
+      "room_ready_delta": -33,
+      "profile": "world_clock_profile.json",
+      "profile_sha256": "fb07b0cdf073e2bdcf0319304211e8b81e590d183e66bca25e5423d3f09cd435"
+    },
+    {
+      "region": "pal",
+      "source_story_entry": {
+        "frame": 1489,
+        "pc": 29764,
+        "clock": 84,
+        "hl": 43880,
+        "master_cycles": 1592065170,
+        "irq_master_cycles": 317379390
+      },
+      "native_render_entry": {
+        "frame": 1489,
+        "pc": 108378,
+        "function": "render_dialogue_text",
+        "master_cycles_in_frame": 50387,
+        "sp": 3774872660
+      },
+      "story_entry_delta": 0,
+      "source_page_wait": {
+        "frame": 1583,
+        "pc": 2036,
+        "clock": 122,
+        "hl": 49199,
+        "master_cycles": 1692779520,
+        "irq_master_cycles": 324397065
+      },
+      "native_page_wait": {
+        "frame": 1574,
+        "pc": 51738,
+        "function": "wait_dialog_continue",
+        "master_cycles_in_frame": 129250,
+        "sp": 3774872284
+      },
+      "page_wait_delta": -9,
+      "first_room": {
+        "sms": {
+          "frame": 2448,
+          "clock": 205,
+          "state": 12,
+          "room": 149
+        },
+        "md": {
+          "frame": 2417,
+          "clock": 91,
+          "state": 12,
+          "room": 149,
+          "vtimer": 2395,
+          "shift": 0
+        }
+      },
+      "room_ready_delta": -31,
+      "profile": "world_clock-pal_profile.json",
+      "profile_sha256": "eb82881b32616062150cc796e726b03ab0f5150c9fb8567874bd4300c9b03c51"
+    }
+  ],
+  "limits": [
+    "One natural scripted name/new-game sequence per region.",
+    "Page and room discrepancies are diagnostic, not passing fidelity checks."
+  ]
+}

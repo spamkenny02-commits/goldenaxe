@@ -1,0 +1,141 @@
+{
+  "md_sha256": "3e6de5423466531de424804c834c071f53c757e3a29ee6efa6264912e68e1b14",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "region": "pal",
+  "cases": [
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": false,
+      "room": 440,
+      "initial_counter": 1,
+      "particle": true,
+      "expected_passage_flags": 224,
+      "timing": {
+        "sms": {
+          "opening": 3404,
+          "particle_gone": 3404
+        },
+        "md": {
+          "opening": 3404,
+          "particle_gone": 3404
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    },
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": false,
+      "room": 284,
+      "initial_counter": 1,
+      "particle": true,
+      "expected_passage_flags": 64,
+      "timing": {
+        "sms": {
+          "opening": 3404,
+          "particle_gone": 3404
+        },
+        "md": {
+          "opening": 3404,
+          "particle_gone": 3404
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    },
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": false,
+      "room": 337,
+      "initial_counter": 1,
+      "particle": true,
+      "expected_passage_flags": 128,
+      "timing": {
+        "sms": {
+          "opening": 3404,
+          "particle_gone": 3404
+        },
+        "md": {
+          "opening": 3404,
+          "particle_gone": 3404
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    },
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": false,
+      "room": 381,
+      "initial_counter": 1,
+      "particle": true,
+      "expected_passage_flags": 32,
+      "timing": {
+        "sms": {
+          "opening": 3404,
+          "particle_gone": 3404
+        },
+        "md": {
+          "opening": 3404,
+          "particle_gone": 3404
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    },
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": false,
+      "room": 440,
+      "initial_counter": 2,
+      "particle": true,
+      "expected_passage_flags": 0,
+      "timing": {
+        "sms": {
+          "opening": null,
+          "particle_gone": 3404
+        },
+        "md": {
+          "opening": null,
+          "particle_gone": 3404
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    },
+    {
+      "settled_cells_exact": true,
+      "settled_map_exact": true,
+      "settled_cell_differences": [],
+      "cross_and_return_verified": false,
+      "room": 440,
+      "initial_counter": 128,
+      "particle": false,
+      "expected_passage_flags": 0,
+      "timing": {
+        "sms": {
+          "opening": null,
+          "particle_gone": 3400
+        },
+        "md": {
+          "opening": null,
+          "particle_gone": 3400
+        }
+      },
+      "settled_flags_count_keys_exact": true
+    }
+  ],
+  "production_cartridges_unmodified": true,
+  "final_particle_runs_in_live_game_loop": true,
+  "limits": [
+    "Room, hero, actor animation, counter and dungeon animation scan/phase initialized by RAM fixture; defeating every enemy naturally is not verified.",
+    "Cross/return cases set the original hurt guard to FF to isolate passage persistence from enemy attacks.",
+    "Animation phases after returning can differ because room loading resumes on different frames; differences are recorded, not treated as exact.",
+    "Absolute redraw latency, audio waveforms, unrelated script prefixes and full dungeon progression remain unverified."
+  ]
+}

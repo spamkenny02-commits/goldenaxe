@@ -1,0 +1,43 @@
+{
+  "md_sha256": "e0fef3c26202309e88b6dcb60217ddc6727d4f9a85daf7ef989f25149d454f7e",
+  "region": "auto",
+  "accepted": [
+    {
+      "type": 65,
+      "terrain": 63,
+      "source_frame": 3103,
+      "native_rng_and_clock_controlled": true
+    }
+  ],
+  "rejected": [
+    {
+      "type": 65,
+      "terrain": 3,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 65,
+      "terrain": 25,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 65,
+      "terrain": 87,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    },
+    {
+      "type": 65,
+      "terrain": 8,
+      "source_frame": 3102,
+      "native_rng_and_clock_controlled": true
+    }
+  ],
+  "original_rng_stream_verified": false,
+  "collision_descriptor_bytes_excluded": [
+    27,
+    28
+  ]
+}

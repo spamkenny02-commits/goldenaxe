@@ -1,0 +1,68 @@
+{
+  "md_sha256": "cec4ef9e9b2a06a66c44e4fc32205613d99dbdb4d2385844eb26721f1d82e371",
+  "baseline_sha256": "c325609b47f43b324624a254be204fd89f59856ace4b2460f4e588f06f05cea1",
+  "baseline_profile_sha256": "3a631f66294ec26fe2f4e71dac3c15fe09dd9f4bb078df9b567d439f94282a6a",
+  "evidence": [
+    {
+      "file": "analysis/intro_actors_profile.json",
+      "sha256": "603be525c4fe823a5c2ccf36abbe56b9ad1d373cc0a5bc21d4349c3097e9a55f"
+    },
+    {
+      "file": "analysis/intro_scenes_profile.json",
+      "sha256": "1fd9955b84f7c3b9650660e34ae1ca83b87816b042cabbee7e6d0befdd411cf5"
+    },
+    {
+      "file": "validation/intro_report.json",
+      "sha256": "e1863ca7333b070704415dff48075e21aaafb2435029b015449e72e4c290b836"
+    },
+    {
+      "file": "validation/intro-pal_report.json",
+      "sha256": "92b57b65d3eccf74058363546e7bfbbf6cf73d85c9e13aaf97f6f460630ff14d"
+    },
+    {
+      "file": "validation/title_cadence_report.json",
+      "sha256": "d7baacedd2913cf377e4689963844484510ec03e49593e3cca8c8442f55227a4"
+    },
+    {
+      "file": "validation/title_cadence-pal_report.json",
+      "sha256": "37a86379ca51e225fd42eab5dc77f135e2e35a20fc4d5eedbac0c8deae7a5463"
+    },
+    {
+      "file": "validation/title_cadence-natural_report.json",
+      "sha256": "125cf375fdc6daf305a85353c825bdd9688041a900dc4ee5550a5f30ac186240"
+    },
+    {
+      "file": "validation/title_cadence-pal-natural_report.json",
+      "sha256": "cd98ccb0a1ea8826521db2db466db610c0070872c9ede05dec73d10120f33970"
+    },
+    {
+      "file": "validation/scroll_objects_report.json",
+      "sha256": "c8152be81898abeef819e6a455ea031ceae3842b5f23068d68497a193f8eb2c5"
+    },
+    {
+      "file": "validation/scroll_objects-pal_report.json",
+      "sha256": "b8477471f7b4888708d1ce19225a5414a2795c80013c477b4e4116e80c43e97d"
+    },
+    {
+      "file": "validation/timing_report.json",
+      "sha256": "7a7477dfd4cfd7053ef085de2c7dbc8af2d27c061be711f96c516564fa089581"
+    },
+    {
+      "file": "validation/timing-pal_report.json",
+      "sha256": "86bb6fb3231bc194e98b9b937b59404e0b9a307b29f29e0f592f673648ea3f35"
+    }
+  ],
+  "additive_checksum_valid": true,
+  "aliases_equal": true,
+  "sat_mismatch_count_before": 229,
+  "sat_mismatch_count_after": 31,
+  "logical_actor_state_comparisons": 7516,
+  "hardware_sat_equivalence_verified": false,
+  "absolute_intro_timing_exact": false,
+  "intro_palette_pipeline_verified": false,
+  "full_game_ported": false,
+  "source_files": {
+    "megadrive/src/intro.inc": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15",
+    "tools/profile_intro_actors.py": "f44656b22fe891567ae943f2e420b4a98eb7ac27a3a04b0aceeda3169a14e73b"
+  }
+}

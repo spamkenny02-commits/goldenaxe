@@ -1,0 +1,41 @@
+{
+  "md_sha256": "51ff11b9c6a5d9ba1321f81c60bc3c4fb9fbc61d4c47514f9f0005dca3aee89e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 24923,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_57_58_AI_dispatch_and_collision_publication": true,
+  "prior_actor_and_main_implementations_unchanged_since_v0140": true,
+  "literal_movement_arrays_reused": [
+    "85D9..85E9",
+    "85EA..85FA"
+  ],
+  "original_random_stream_reproduced": false,
+  "evidence_sha256": {
+    "dungeon_sentinel_allocation_unit_report.json": "f6dbe97e1dd15fc61d6e7e11a9d8cbb29e5b6145fbbc1a560d30e37dd8c4e5a7",
+    "dungeon_sentinel_gameplay_report.json": "2b0316aa3dc2c021860e59c8e011e997e3f5e8a8df2d79a37e3dac8c71652f46",
+    "dungeon_sentinel_57_entry_report.json": "407daff997443266d8f60fcfc111065795144462b8112deafd68d31fb4ad1420",
+    "dungeon_sentinel_58_entry_report.json": "7ce3e723675dc926a88f01e748605b39aaf5af40431fd87cf2b620df50ceb4c5",
+    "dungeon_sentinel_approach_57_entry_report.json": "7fe46352189bd6719f44044a95a574d2a2d40d2536bb4a54de5ba782a8b78b72",
+    "dungeon_sentinel_approach_58_entry_report.json": "56da583792944ebe2b1f1bf22533934ad68363f0e19db97324381c5acd3e8f75",
+    "dungeon_sentinel_park_entry_report.json": "8fe447fce26865b29b91e3593ee25acbe76bf9e2670e6d979fb59ae60c3d8db7",
+    "dungeon_sentinel_unaligned_approach_diagnostic.json": "5da356e1b9b7497e53a6d4b4b1e13a9f7e10fe743469ac1a373ae9f7fc12cfe8"
+  },
+  "source_files": {
+    "megadrive\\src\\main.c": "c6a8892478e371ad1f230c04ce53793a07500a947e88a5d7985c027899ee3d48",
+    "megadrive\\src\\actors.c": "a0e0637314f079cfeba2b90c62617b3563c10ec9be96d61bd194c973c8c60e11",
+    "tools\\validate_dungeon_sentinel.py": "28af687214572d5126f1bb0487f49fdb639273c0c712077f74738709991e8ec9",
+    "tools\\validate_dungeon_sentinel_gameplay.py": "c42c2bbe4ba163832e5f636ced16207b13330d4506160454c8939e8d6b91021b",
+    "tools\\validate_dungeon_sentinel_entry.py": "69bce8d52020629a07dfde75941f08acf4912b71de0d16f6a762d24add99717b",
+    "tools\\validate_dungeon_sentinel_approach.py": "32c7bdae95da2877f5a7618f3252a6fe618cb5d0e7a2ca6840f19b52912bdd08",
+    "tools\\validate_dungeon_sentinel_park.py": "5e094a3c19cec87ff9d87e3c56f3ad74912d31a28e17724c2d3cf0ebfd226f4a"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Initial production clock explicitly aligned; source random reads controlled only in isolated cases.",
+    "Actual181/15C hidden records align to first initialization; absolute load cadence not claimed.",
+    "Unaligned PAL58 approach failed with a one-tick animation difference. Controlled approach explicitly resets both first-sentinel animation counters11/14 at3600; this does not fix the underlying load cadence.",
+    "Actual15C park129 actor frames and128 SAT frames per region; injection frame3700 excluded from SAT and recorded, no timeline shift.",
+    "Full natural fights, RNG/global clock, full framebuffer, complete audio and hardware timing remain unproved."
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "md_sha256": "b82289fa4a91003b304285c77c9b41505c93e299a0ac9625641cb79d8138047e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "continuous_steps_checked": 60,
+  "hero_fields_checked": [
+    "hero_x",
+    "hero_y",
+    "hero_direction",
+    "hero_animation",
+    "hero_counter",
+    "hero_hurt",
+    "hero_state",
+    "hero_flags",
+    "hero_health",
+    "hero_dx",
+    "hero_dy",
+    "hero_defense"
+  ],
+  "actor_bytes_per_frame": 768,
+  "normalized_images_exact": 58,
+  "hud_frames_exact": 60,
+  "source_edge_cases_exact": [
+    {
+      "name": "down"
+    },
+    {
+      "name": "up",
+      "target_y": 83,
+      "direction": 2
+    },
+    {
+      "name": "left",
+      "target_x": 128,
+      "target_direction": 2
+    },
+    {
+      "name": "right",
+      "target_x": 116,
+      "target_direction": 2
+    },
+    {
+      "name": "upper-boundary",
+      "y": 16,
+      "target_y": 20,
+      "direction": 2
+    },
+    {
+      "name": "lower-boundary",
+      "y": 160,
+      "target_y": 152
+    },
+    {
+      "name": "left-boundary",
+      "x": 16,
+      "target_x": 20,
+      "target_direction": 2
+    },
+    {
+      "name": "right-boundary",
+      "x": 240,
+      "target_x": 236,
+      "target_direction": 2
+    },
+    {
+      "name": "wall-up",
+      "target_y": 83,
+      "direction": 2,
+      "wall": 2
+    },
+    {
+      "name": "wall-down",
+      "wall": 10
+    },
+    {
+      "name": "wall-left",
+      "target_x": 128,
+      "target_direction": 2,
+      "wall": 5
+    },
+    {
+      "name": "wall-right",
+      "target_x": 116,
+      "target_direction": 2,
+      "wall": 8
+    },
+    {
+      "name": "already-hurt",
+      "hurt": 6
+    },
+    {
+      "name": "armored",
+      "shield": 2,
+      "armor": 2,
+      "direction": 2
+    },
+    {
+      "name": "defense-exceeds-attack",
+      "shield": 3,
+      "armor": 3,
+      "direction": 2
+    },
+    {
+      "name": "one-damage",
+      "attack": 7,
+      "shield": 2,
+      "armor": 2,
+      "direction": 2
+    },
+    {
+      "name": "zero-attack",
+      "attack": 0,
+      "direction": 2
+    },
+    {
+      "name": "health-clamps-zero",
+      "hp": 1
+    },
+    {
+      "name": "hit-during-walk",
+      "counter": 2,
+      "dx": 410
+    },
+    {
+      "name": "equipment-changed-this-frame",
+      "shield": 2,
+      "armor": 2,
+      "direction": 2,
+      "defense": 0
+    },
+    {
+      "name": "contact-without-projectile-flag",
+      "flags": 3
+    }
+  ],
+  "scope": "Controlled initial hero/projectile states in both emulators; surviving normal-ground hurt branch",
+  "death_animation_and_menu_ported": true,
+  "complete_death_and_respawn_timing_exact": false,
+  "enemy_damage_from_hero_attacks_ported": false,
+  "other_terrain_damage_ported": false,
+  "sound_ported": false
+}

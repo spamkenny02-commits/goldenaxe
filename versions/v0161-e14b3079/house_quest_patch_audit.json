@@ -1,0 +1,35 @@
+{
+  "md_sha256": "e14b30794aa5b1b872628f05f48c50dc0a73c7a31eed74065b02fd00f3c64655",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 51544,
+  "aliases_header_verified": true,
+  "prior_AI_and_ending_unchanged_since_v0158": true,
+  "changes_confined_to_house_quests_custom_reward_labels_dialogue_capacity_and_primary_load_offset": true,
+  "source_strings_verified": true,
+  "independent_primary_armor_load_verified": true,
+  "evidence_sha256": {
+    "house_quest_unit_report.json": "2b3a072db4d8eb566d6a259ac853be81de0bf13d54f153bc665aa06ef2aeb6b0",
+    "house_quest_gameplay_report.json": "8bc7c5f8885c5098b238e2c372f440448174e546cd1f8c82ba2663471d014a83",
+    "house_quest_hint_gameplay_report.json": "56e4ab39157ab700db8c1fe4084e547e7de9fbbbfca7ce7adfe71bec35f6c557",
+    "independent_equipment_load_report.json": "2cb89f24544129fe208202d54064547885ce52fb513500a5612a196a469fc6c9",
+    "save_report.json": "46bef7ed9a60cc65438e4e906c7f1d6856d88fa96e325e6fcc589777802c3688",
+    "house_dialogue_report.json": "20017e2c4507bda2d78d39939a4d1a78d32a6e071af6c722b268360ec5c906bc"
+  },
+  "source_files_sha256": {
+    "megadrive\\src\\main.c": "376c89845ea98df69c90e09fc431f8a4962f3f61e9ec56b5b0d62e6bbafe214e",
+    "megadrive\\src\\save.inc": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a",
+    "megadrive\\src\\house_quest.inc": "ae7804478c605769d7c6f6856d9c63dab400c8cc4a065ff1c39e58a9b38e8650",
+    "megadrive\\src\\house_quest_data.c": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45",
+    "tools\\validate_house_quest.py": "b99a4f3be52ed1fce3b867d2b5f1c05dd6880746e76c0ca86ef50517cc1e5d9d",
+    "tools\\validate_house_quest_gameplay.py": "2bead6a79f1d187f5f7690e14c8046a66b5f1160f1ec240c29571629b7dd86a2",
+    "tools\\validate_independent_equipment_load.py": "e22f894e53bf679aa704dee580798857179b8688555ff361a18b32ff24aa363c"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Actual town door dispatch follows controlled exterior/one-pixel entry fixture; NPC position and native clock align explicitly. Normal UP/C trigger and dismiss gifts/text.",
+    "Long265-byte refusal compares stable1040 bitmap bytes and636 static room words; four animated NPC words are excluded, with actual differences retained. Publication/animation phase and full framebuffer are not claimed equal.",
+    "Cold-load fixtures have identical source/native SRAM payloads with distinct primary/armor/curse fields; complete natural quest-to-save progression is not established.",
+    "Remaining NPC families, natural quest routes/victory, original RNG/global timing, scanline clipping, full audio/video and hardware remain incomplete or unverified."
+  ]
+}

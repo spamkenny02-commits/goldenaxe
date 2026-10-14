@@ -1,0 +1,64 @@
+{
+  "md_sha256": "2230c2b4badf9c0086cfcd0fd2ca45cea0e8942a79631252ee24306ddd8409ff",
+  "production_rom_unchanged": true,
+  "controller_cases_pal_ntsc": 18,
+  "death_continue_cases_pal_ntsc": 18,
+  "save_and_cold_load_cases": 2,
+  "opening_decision_frame_source_exact": true,
+  "first_crossing_resume_offset_frames_min": -8,
+  "first_crossing_resume_offset_frames_max": -3,
+  "current_targeted_reports": [
+    {
+      "file": "key_door_save_report.json",
+      "sha256": "a2158ceddc93afd3660aa4ce51be4ffeba027be0d63a17b171ee9461b91040c1"
+    },
+    {
+      "file": "key_door_gameplay_report.json",
+      "sha256": "ab563c475cedb659ec0c454bbe82ae78902ac4a240e4ec0aa73a89a2759dcc3f"
+    },
+    {
+      "file": "key_door_gameplay-pal_report.json",
+      "sha256": "aee83c790f7c23eaca5b47e7986a91fcd05bd47ca5802c1221591156c358d4b1"
+    },
+    {
+      "file": "key_door_continue_report.json",
+      "sha256": "3a3c4ba22874fdd79f852c1e24d781000364797d4544a19b1238e604c6be2494"
+    },
+    {
+      "file": "key_door_continue-pal_report.json",
+      "sha256": "aed3cfabac202989230cb08f95371f517114e47b4eda267467b979a5b73b04a9"
+    }
+  ],
+  "save_state_provenance": [
+    {
+      "file": "validation/sms-key-gameplay-right-ordinary/ram_03750.bin",
+      "sha256": "276cbd5db00a8a3cae8a9d30b8519f21f1ba384b528525e53391e6e2596beaed"
+    },
+    {
+      "file": "validation/sms-key-gameplay-right-master/ram_03750.bin",
+      "sha256": "5a86336d1c663957ab2c052919106637fa98be986cc11efec92191a8d493ef6e"
+    },
+    {
+      "file": "validation/md-key-gameplay-right-ordinary/ram_03750.bin",
+      "sha256": "c9cb7ffe4ea7b6629e67ec047256a2085fd1db2b7c7b1e96189b9bd701d11fe8"
+    },
+    {
+      "file": "validation/md-key-gameplay-right-master/ram_03750.bin",
+      "sha256": "e2244df9cf639d31667f51158e4919dbe6f1e961de7fc630d8df9cac52a0c29f"
+    }
+  ],
+  "source_files": {
+    "tools/validate_key_door_gameplay.py": "26575bfcc7b8ac0c560042c0688389b780a92b28a40579248845e399c1fdc66a",
+    "tools/validate_key_door_save.py": "9f1480ff94ae1d8d2273cf7a1d9955b32b7b82f9191dcf469a7cb9527bdc533c",
+    "tools/audit_key_gameplay_patch.py": "9b6a5d45ae4a876d24382fa21595feea011cfe534a18b8696c488f5bd4435599",
+    "megadrive/src/main.c": "d659ba3e641f59d252b887902ff10e02129ecd141bc91da363330e3376f2de9e"
+  },
+  "full_game_ported": false,
+  "full_natural_dungeon_progression_verified": false,
+  "limits": [
+    "Starting room/map/position/inventory are controlled; routes to these rooms are not verified.",
+    "Save tests transfer controller-generated door state to the save-point route; uninterrupted travel there is unverified.",
+    "Redraw/transition duration remains faster on MD by 3..8 frames at the first tested crossing.",
+    "Other puzzle scripts, room-clear triggers, remaining enemies, bosses and ending remain incomplete."
+  ]
+}

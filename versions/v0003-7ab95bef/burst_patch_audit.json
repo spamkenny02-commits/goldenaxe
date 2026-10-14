@@ -1,0 +1,66 @@
+{
+  "md_sha256": "7ab95bef3e0ecfae795bfc2705f5a316501b6b8f25ce815e2e125e3ece360dc0",
+  "bytes": 524288,
+  "md_additive_checksum": 60698,
+  "reports": [
+    {
+      "file": "burst_walkers_report.json",
+      "sha256": "1e44dfd750a8af36ddfbe7c5438d70ff59c97a37f2fbb0450cd2983a8a499f0a"
+    },
+    {
+      "file": "burst_pool_report.json",
+      "sha256": "469a5c37e79a3b5f6d9c920cd7a36c8291eeba9c2122a007ba873794a0bf7cb4"
+    },
+    {
+      "file": "burst_rooms_report.json",
+      "sha256": "a206b987f446134a9a4b9187ce5a341ba72dc7062d62d3cb310b3c46bf5ba422"
+    },
+    {
+      "file": "trap_walker_report.json",
+      "sha256": "18fefebe1af0b8f48096319f10c7fab436afef99b6fcc3464c4322a1abf168bc"
+    },
+    {
+      "file": "flying_actors_report.json",
+      "sha256": "273dd17e153e44366f36861f733cd16f2582bce25540038bbcb3d3526a04b316"
+    },
+    {
+      "file": "ranged_report.json",
+      "sha256": "c99569ee2dfdec99e300433e305703d73fa9e5fe0c2879dc64ce8a70e5ec1268"
+    },
+    {
+      "file": "mobile_actors_report.json",
+      "sha256": "124ffa133b2f4bb7a1a0a9cfd5554570324f0e151b1eada402fd0d93b492fd8c"
+    },
+    {
+      "file": "water_jump_report.json",
+      "sha256": "4ba0c8fb7d9f766c96cb827374e266fbfcbc6a8c463a28cf75d20805ffcb2a0d"
+    },
+    {
+      "file": "jumping_actors_report.json",
+      "sha256": "179f5800649205d499a1afd1afb34d0ef03cc6acd6bb40d6ace32916021cf249"
+    },
+    {
+      "file": "house_dialogue_report.json",
+      "sha256": "a9c708832627d7bdd57b0587d15c797cba6d5f2b7afe9a3830ff1e1dcb28f13e"
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "original_unchanged": true,
+  "aliases_identical": true,
+  "source_files": {
+    "megadrive/src/actors.c": "04dd98cad1e6a6ceec4bf71c639960b44b58612ad2e1f7131f5433bfa084959e",
+    "megadrive/src/actor_data.c": "40af970e5e296bed2d8274088bc4c8d5c49814641deef3ccedc6ff38fcd81812",
+    "tools/extract_actors.py": "209c892eb808ab8956607ee812127f5d6dac4bc4e9b2ee594f86e06d2646b023",
+    "tools/version_rom.py": "15a2da4548ee7afb7ba93a9f3fab16f861e693dbbf00b73446c6fe5f040ca84f",
+    "build.ps1": "ccd72e6eecefe02aa5d7b3d70ae9eb14cc2d8531cdcebd4524944bb915f68aff"
+  },
+  "full_regression_rerun": false,
+  "full_game_ported": false,
+  "known_limits": [
+    "Sprite-overflow suppression495E absent",
+    "Original RNG/clock and absolute room timing differ",
+    "Isolated record comparisons exclude collision descriptors27/28",
+    "Checkpoints do not prove complete natural progression",
+    "Remaining actors, quests, dungeons, dialogues, effects and rendering incomplete"
+  ]
+}

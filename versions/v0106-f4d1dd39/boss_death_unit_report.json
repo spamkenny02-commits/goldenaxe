@@ -1,0 +1,20 @@
+{
+  "md_sha256": "f4d1dd390a1c018172fff700ecf17fb17c99f874f16044d6810726d79b564e9c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "e446544418244feedde8241ab2542cd35fd15dfc8c28b49d7dcb1eba48ca4c53",
+  "harness_sha256": "6425f9f4784e0c874c70768c213709bcb0c10ee9c5f16a1f0ac2aa1d91f51011",
+  "cases": 3108,
+  "particle_placement_cases": 3072,
+  "state_cases": 36,
+  "original_routines_executed": [
+    "4C0C..4C3E with explicit A/IX/IY placement inputs",
+    "4BA4..4C5C with occupied transient slots in state 2"
+  ],
+  "all_actor_records_progression_hero_game_state_effect_and_count_fields_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Particle inputs enumerate 256 random-byte values, four interior/boundary positions and first-free transient slots 0,3,7; source fixture provides the corresponding IY slot. Native helper scans the actual occupied pool.",
+    "State cases cover dungeon bytes 1,9,10,FF, states 0,2,4 and counters 1,2,180. Occupied slots suppress particle spawning in state 2 without altering original LD A,R.",
+    "The original random stream, natural boss fights, final ending execution, exact video timing and full rendered particles are not proved."
+  ]
+}

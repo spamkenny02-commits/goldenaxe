@@ -1,0 +1,45 @@
+{
+  "md_sha256": "e4790504a6f3a165285c2cef9402fee56240c32dfe2b4a9f730f08a19fc6d8ae",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_bytes": 1048576,
+  "checksum": 16444,
+  "aliases_and_header_verified": true,
+  "production_changes_confined_to_52_AI_dispatch_publication_and_pre_movement_floor_cache": true,
+  "prior_actor_and_main_implementations_unchanged_since_v0132": true,
+  "literal_bytes_exact": 32,
+  "source_cache_low_offsets": [
+    82,
+    84
+  ],
+  "cache_word_indices": [
+    5,
+    6
+  ],
+  "observed_random_placement_delays": [
+    {
+      "region": "auto",
+      "source": 148,
+      "native": 21
+    },
+    {
+      "region": "pal",
+      "source": 20,
+      "native": 42
+    }
+  ],
+  "original_random_stream_reproduced": false,
+  "source_files": {
+    "megadrive\\src\\main.c": "dda84e2d9f899e796af82061503ccb2bbac2a26200c0b644ef1f9fe05f538d41",
+    "megadrive\\src\\actors.c": "b50f2195ff187ed02f1a30c54685011f639b182a780c9f5025ed7ba6cfe31515",
+    "megadrive\\src\\dungeon_ambush_data.c": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085",
+    "tools\\validate_dungeon_ambush.py": "0c54b032a0ab7930d418602109dc707d09389a2bf70547fe0a65dde8ffcd0a2d",
+    "tools\\validate_dungeon_ambush_gameplay.py": "ad79c824f2db11c85f1345d26072985c5f7a286d94520d396bc5f2cd1c49204b",
+    "tools\\validate_dungeon_ambush_entry.py": "ddaceb4ac757606e4f63a997d48e663300c15247f0a381994d698f813990a22a"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actor/hero/floor state injection and initial native clock alignment; real pre-movement cache order checked by a fractional-position crossing.",
+    "Actual119 remains inactive at3490, triggers at3500 after hero relocation onto unchanged floor72,80, then random placement delays differ as recorded.",
+    "Appearance records align to first initialized state4, exclude random X/Y/direction and do not prove absolute appearance timing. Full natural combat, RNG/global clock and framebuffer/SAT remain unproved."
+  ]
+}

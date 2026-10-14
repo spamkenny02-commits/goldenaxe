@@ -1,0 +1,20 @@
+{
+  "md_sha256": "62366fff149b56f25a62b8e10bdd13615bdef58efa3548362ab3ac857bf2f07b",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "region": "pal",
+  "cases": [
+    {
+      "room": 411,
+      "frames_compared": 93,
+      "tile_pixels_compared": 35712,
+      "source_native_vram_patterns_and_clock_exact": true
+    }
+  ],
+  "production_cartridges_unmodified": true,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled room/hero/frozen actor setup after a real dungeon entry. Stationary puzzle triggers use controller UP at the original required coordinate; repeat guards are tested separately.",
+    "No natural full fight, block destruction or dungeon route is established.",
+    "Source and native clock are synchronized once at frame 3400; natural global clock phase is not proven. Bitmap presentation is compared after the first eight-frame update. Complete pixels, audio waveform and CPU workload remain unverified."
+  ]
+}

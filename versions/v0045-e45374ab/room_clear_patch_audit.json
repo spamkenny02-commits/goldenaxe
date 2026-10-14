@@ -1,0 +1,115 @@
+{
+  "md_sha256": "e45374abc29f9db490922d958357cf73ade7682c42e6e12036710987eca194f8",
+  "md_size": 524288,
+  "rom_checksum_and_aliases_verified": true,
+  "source_clear_rooms": 49,
+  "isolated_cases": 24576,
+  "live_final_particle_cases": 12,
+  "live_cross_return_cases": 6,
+  "key_controller_regression_cases": 18,
+  "evidence": [
+    {
+      "file": "validation\\room_clear_report.json",
+      "sha256": "f298a317acf6a9c7cf0279e113794ea2bf18c364ec6229d606763c78554bdd9e"
+    },
+    {
+      "file": "validation\\dungeon_cells_report.json",
+      "sha256": "0daa8ad0fb8e6e0a2be6c0c9f87e39703a19c319c3d2af7920749ebd7ed1f1e9"
+    },
+    {
+      "file": "validation\\key_doors_report.json",
+      "sha256": "2ecde1d472669ccaff43678e9884e3fc7da5a0ad5f29b6ed75f21ef00e95f3ff"
+    },
+    {
+      "file": "validation\\room_clear_gameplay_report.json",
+      "sha256": "110b4ec1601f23e9e6e7c7c41e674a0fb87a3789f530b47d69b9c231901b5abf"
+    },
+    {
+      "file": "validation\\room_clear_gameplay-pal_report.json",
+      "sha256": "4b70b5890c2dea572b39304ecabe883bba78948082a13da22e162be5301b233b"
+    },
+    {
+      "file": "validation\\room_clear_cross_report.json",
+      "sha256": "fdcf9726db1afd0b328ce3e5b8f887f2ea2bcfc6767dcc18192c51a7894b675e"
+    },
+    {
+      "file": "validation\\room_clear_cross-pal_report.json",
+      "sha256": "8e48dbb7c8773dd628f9ee3b625b6360603752519326625a4dcc8fc968d55568"
+    },
+    {
+      "file": "validation\\key_door_gameplay_report.json",
+      "sha256": "b92a2b06469f75ae8c94b7fff9e401aae3c4b0d265ae88da9142cd0150fe94e8"
+    },
+    {
+      "file": "validation\\key_door_gameplay-pal_report.json",
+      "sha256": "8dc9340010fd7c8779494852b133f2fbbcdfb9ec15af8fa258332ff19fe05385"
+    },
+    {
+      "file": "validation\\timing_report.json",
+      "sha256": "65b2e099496e1798a5aa21cd387f5a1baf14c52b63572a3329da891912906fba"
+    },
+    {
+      "file": "validation\\timing-pal_report.json",
+      "sha256": "8e8c597f54e44a1a1d3881b2794360829991ea3e039505efb8aaeec67a0cd7f0"
+    }
+  ],
+  "source_files": {
+    "megadrive/src/main.c": "15590ab45e909579391a17fd1f52d13134fee1beb296b1dd028de10235c7f113",
+    "megadrive/src/room_clear.inc": "6d0212c61a552eb1eb636fd57380fe6e05c3aeae501e1a2513f968f7d0cf7cfc",
+    "megadrive/src/actors.c": "57482ee07c6314b2b928209e84ae35027280b33ce2b06821de7d81d070f260cb",
+    "analysis/room_clear_reference.json": "7f9bc62461008569ee3cad85b7ba660e73ff9a4ea5fc3fe389c390c88673a736",
+    "tools/extract_room_clear.py": "531905269362b0e72c4ae0ef19c9d905ecd86c985c455189c2310b18ddb3cf1f",
+    "tools/validate_room_cells.py": "5ff3cf18835836940489bf65545ccb08cbb92f426bd79fbad5e4589920d10949",
+    "tools/validate_room_clear.py": "9bda1fa01b00ebc27cab38348557252d4754348a6e00bd481a109c750cea1230",
+    "tools/validate_dungeon_cells.py": "78b1188d938e5919c5cfa249f507a4dd30ac71e0bed6df130acc1f3e5075b604",
+    "tools/validate_room_clear_gameplay.py": "c8563f8454f02e65936361485c9d8004df1eb7d26654c972f73edc03bd6ee225",
+    "tools/room_clear_harness.c": "6af097a11f99644efde2755c6bb82156229ce3dedf2ed92fa25c0b87defa16e3",
+    "tools/dungeon_cells_harness.c": "ae749dfc7eb86f52f81e63f59c783904cbe6d1bbfe3bfdd7d966485e221a662d",
+    "tools/audit_room_clear_patch.py": "1bbadc68abdc4862bc8ccf9655abf343ccb3ffbfc8eabb880a8737d70f8fc249"
+  },
+  "remaining_post_return_animation_differences": [
+    {
+      "region": "-pal",
+      "room": 381,
+      "cells": [
+        {
+          "index": 100,
+          "sms": 79,
+          "md": 78
+        },
+        {
+          "index": 101,
+          "sms": 79,
+          "md": 78
+        },
+        {
+          "index": 102,
+          "sms": 79,
+          "md": 78
+        }
+      ],
+      "timing": {
+        "sms": {
+          "opening": 3404,
+          "particle_gone": 3404,
+          "reached": 3460,
+          "returned": 3610
+        },
+        "md": {
+          "opening": 3404,
+          "particle_gone": 3404,
+          "reached": 3458,
+          "returned": 3609
+        }
+      }
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Fixtures supply rooms, masks, counters and particle state; natural complete fights and dungeon routes are not verified.",
+    "Crossing cases use the original FF hurt guard to exclude enemy attacks.",
+    "Original 6AA5 scan/phase behavior matches in isolation; loading offsets can shift animation phases after returning.",
+    "Dungeon tile bitmap animation 6A66..6AA5, other clear rewards, push-block scripts, bosses and ending remain incomplete.",
+    "Full transition pixels, source redraw IRQ phase and audio waveform remain unverified."
+  ]
+}

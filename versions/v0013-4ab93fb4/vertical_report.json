@@ -1,0 +1,19 @@
+{
+  "md_sha256": "4ab93fb473e026f95828ceca1d1881cb1d81b2b756bc8bc9871912322782b977",
+  "route": "0094 -> 00A4, south",
+  "verified_state_frames": 161,
+  "loading_state_timing_exact": true,
+  "verified_image_frames": 99,
+  "verified_scroll_image_frames": 71,
+  "arrival_map_identical": true,
+  "verified_room_and_hero_state_frames": 161,
+  "first_remaining_state_difference": null,
+  "first_remaining_image_difference": [
+    3099,
+    45
+  ],
+  "remaining_different_state_frames": 0,
+  "remaining_different_image_frames": 62,
+  "remaining_work": "Types20..22 and 26..28 spawn/move natively; ranged types create exterior projectiles10..12. Loading state timing matches on this route. Spawn positions still differ because SGDK random replaces the original R stream; general IRQ/VDP loading budgets, sprite overflow and original randomness remain incomplete.",
+  "whole_vertical_room_entry_complete": false
+}

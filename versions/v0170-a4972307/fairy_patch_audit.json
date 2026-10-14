@@ -1,0 +1,22 @@
+{
+  "md_sha256": "a4972307b03cc976890bda1e45b339767e6611492bb5f0fecce70ad1f83e9e78",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": 62122,
+  "rom_bytes": 1048576,
+  "aliases_header_verified": true,
+  "main_change_only_fairy_include_hook_two_icon_branches": true,
+  "prior_actor_dialogue_quest_save_gold_minigame_sources_unchanged": true,
+  "eight_source_contexts_texts_labels_icons_exact": true,
+  "evidence_sha256": {
+    "fairy_unit_report.json": "dc59c79cf804f26bcac45648ca94db8b4619cf57184d379491f34ab8def3167f",
+    "fairy_gameplay_report.json": "83b3a9c0472e88e879224d7dbc500b16d3f9713159a004160aa85ec0482d83f5",
+    "fairy_walk_gameplay_report.json": "2308abadeb03cd40751e9168385cb2a1ca5499281d71d42807860dd34cfeb8b6",
+    "house_quest_gameplay_report.json": "afdb3a1463ff3a4cb3ef48f7966c8531fd25cf39622092a125492989fc936604"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "11200 actualB205 rule comparisons and24 placed and2 walking live integrations cover source carry/borrow behavior, once-only flag, full byte capacities/refill and controlled frontend restoration. Source ROM unpatched for live checks.",
+    "128 final HUD words compare after masking unused SMS attribute bits13..15. Static room maps exclude animated NPC words and retain differences. Full frame/publication/music timing and natural acquisition/progression remain unproved.",
+    "Paid gate6036/616F is still unported. Provisional RNG, global timing, scanline clipping, inherited loot expiry visuals and complete hardware/audio/video fidelity remain open."
+  ]
+}

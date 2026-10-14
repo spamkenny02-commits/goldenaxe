@@ -1,0 +1,658 @@
+{
+  "md_sha256": "3f4dbbc93e4c6db3e688c77c85912be93ed886dd73d0610d75fb77ec4c8f558c",
+  "version": 177,
+  "files": [
+    {
+      "path": "source/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "path": "source/actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "source/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "path": "source/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "path": "source/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "path": "source/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "path": "source/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "path": "source/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "path": "source/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "path": "source/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "path": "source/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "path": "source/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "path": "source/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "path": "source/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "path": "source/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "path": "source/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "path": "source/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "path": "source/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "path": "source/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "path": "source/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "path": "source/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "path": "source/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "path": "source/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "path": "source/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "path": "source/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "path": "source/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "path": "source/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "path": "source/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "path": "source/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "path": "source/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "path": "source/house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "path": "source/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "path": "source/intro.inc",
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    },
+    {
+      "path": "source/intro_data.c",
+      "sha256": "87d7d6d66c54f578c47b44a719e7123221ba278562c29de8afdb2619eda9a4f1"
+    },
+    {
+      "path": "source/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "path": "source/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "path": "source/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "path": "source/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "path": "source/main.c",
+      "sha256": "62444dc6af22eb7d7a4e4205d40adc47284f5a754d2ef54e7eebaa067acbaf0d"
+    },
+    {
+      "path": "source/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "path": "source/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "path": "source/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "path": "source/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "path": "source/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "path": "source/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "path": "source/paid_passage.inc",
+      "sha256": "12cdd4d67633b4c1865b83ff634cd0b63385a4767d2b651203213f9475487bf0"
+    },
+    {
+      "path": "source/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "path": "source/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "path": "source/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "path": "source/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "path": "source/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "path": "source/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "path": "source/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "path": "source/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "path": "source/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "path": "source/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "path": "source/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "path": "source/sound.inc",
+      "sha256": "0b08bcb0b51605cd91fbc3512ff5173ec3e14bfaeebc69ee9e2ed24f66c294ca"
+    },
+    {
+      "path": "source/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "path": "source/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "path": "source/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "path": "source/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    },
+    {
+      "path": "main.c",
+      "sha256": "62444dc6af22eb7d7a4e4205d40adc47284f5a754d2ef54e7eebaa067acbaf0d"
+    },
+    {
+      "path": "actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "path": "symbol.txt",
+      "sha256": "6fcc32637403c0beb8df37d9a3918b22bc41b2ac8711757ae75d2b19e96b0478"
+    },
+    {
+      "path": "tools/validate_house_quest_gameplay.py",
+      "sha256": "dc7f51e13897c7ccbed24c3f2b78ec5cdd70dd753ba44e14c29013d32c631b3a"
+    },
+    {
+      "path": "tools/validate_house_quest.py",
+      "sha256": "b99a4f3be52ed1fce3b867d2b5f1c05dd6880746e76c0ca86ef50517cc1e5d9d"
+    },
+    {
+      "path": "tools/house_quest_harness.c",
+      "sha256": "309bd10ba516cc1f38430694738848d3973805840806213d241e147a56231e16"
+    },
+    {
+      "path": "tools/build_house_quest_harness.ps1",
+      "sha256": "119641b9341bc4fa639ed7b1d3655d6d075168c9ca5bbf4506c6c5d0754ab140"
+    },
+    {
+      "path": "tools/validate_paid_passage_gameplay.py",
+      "sha256": "635090ba522d1d1a8afd2993b6644bb640e9e2b4dee19d5de0e7feccf7dfe4aa"
+    },
+    {
+      "path": "tools/audit_quest_gift_persistence_patch.py",
+      "sha256": "4a34f82e9da5492ed04d4a64a7317a846316ceb59fedb466b43c22b99b61f9b8"
+    },
+    {
+      "path": "tools/archive_quest_gift_persistence_milestone.py",
+      "sha256": "9c228c881eaf8920f65f5682c43aecb32a018085d8a96e2b61b576a2206a04b7"
+    },
+    {
+      "path": "reference/armor2-baseline.json",
+      "sha256": "08bd6c0ba760ffe7f2997a5a8dc74f4a349272dab344e9b0c9d4074b5a2a5b7a"
+    },
+    {
+      "path": "reference/primary3-baseline.json",
+      "sha256": "8cf860b30ae604d9e2c476d1f749b3cf08c6ba710ff40f8fbdc40f9b4fadd3c0"
+    },
+    {
+      "path": "logs/build-v0177.log",
+      "sha256": "e83d1e3cca97ecb92d57f744456f39c81abeaf67e4b57f27b55cc3f451fd8dad"
+    },
+    {
+      "path": "logs/build-house-quest-harness-v0177.log",
+      "sha256": "401e245ec767e4698a7ba027c299112c4f51ec543488175d8a364f2a67862fb4"
+    },
+    {
+      "path": "logs/house-quest-persistence-baseline-v0176.log",
+      "sha256": "6ecb4cdf3c759b9c4a23f8790e438f4bb2bc030cb4bcd601ae97422ba1040154"
+    },
+    {
+      "path": "logs/house-quest-repeat-baseline-v0176.log",
+      "sha256": "0b9ccdd1bf4d3e48a4d852cf610a4eaa83d0cabe54f0f1021da50531fcf60029"
+    },
+    {
+      "path": "logs/house-quest-persistence-v0177.log",
+      "sha256": "c14372559b7fe40ec12a2510e18bd57e5f6ae45762165f6506c8c4b60ad75941"
+    },
+    {
+      "path": "logs/house-quest-persistence-high-v0177.log",
+      "sha256": "c14372559b7fe40ec12a2510e18bd57e5f6ae45762165f6506c8c4b60ad75941"
+    },
+    {
+      "path": "logs/house-quest-unit-v0177.log",
+      "sha256": "f29237d16c09b74ef784c66a0bb3d43025bef43c5d8623cd53b0c2b117e9c363"
+    },
+    {
+      "path": "logs/house-quest-hint-v0177.log",
+      "sha256": "2c7d9c1e8b72ea6477724265ad0d5fcdcf4b1e8ae9255827065913e17141e734"
+    },
+    {
+      "path": "logs/paid-passage-gameplay-v0177.log",
+      "sha256": "f64393edd339bfbebe62c82647043a87644be36be006fdf61018be7876e7c96e"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/frame_03500.png",
+      "sha256": "72dd4c246b28ad0b4b834fab9d9d7bb9392d4525904919fc80187aae8e531472"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/ram_03500.bin",
+      "sha256": "2d1273f66cfe27647143363f68f26656057be5d1ca4e0801c27362480a801eb9"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/vram_03500.bin",
+      "sha256": "072c2cc5505299adac557056c8d37274dbba9fabcb4eeaa08844040aaaa190a5"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/frame_04250.png",
+      "sha256": "d961ee9d03f3bf632b52f8ce1284560ae0e80f83c6067dc55cd25e7cedb978f5"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/ram_04250.bin",
+      "sha256": "a1c54c823ffc6736fdbd6c0e0b6c9a60965fcf37f3d257249db1093a3ed24380"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/vram_04250.bin",
+      "sha256": "05e4cc0f63c465537a4ffaa206e83c8a47c5e8f739c268e712cdfd456b5007eb"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/frame_04800.png",
+      "sha256": "54bf349f9ba5aa0a561c734db636c96dacf0db09af5a26da07d168aeff91d678"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/ram_04800.bin",
+      "sha256": "653c0df573e8a0dcd626b2636e20b6c26862e9d26a733fd9e6917b3bfbea8cd0"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-sms/vram_04800.bin",
+      "sha256": "3c99981f64fd0ea2fc1878c69c23a4d0e15ca3b36017a73bb29badc7f0ddd8e5"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/frame_03500.png",
+      "sha256": "dd5f4e1c44cb0bfc6992e31fd6e96c3793164e90395d742e866986d57347783d"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/ram_03500.bin",
+      "sha256": "4c89a652a187d057779eabe42be583bb0760e41464f3fd24ae8155e6d6283244"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/vram_03500.bin",
+      "sha256": "754aec6e953b8ee42f800715d344152e11135a038fc0ac2965f46fd64e282752"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/frame_04250.png",
+      "sha256": "cb3cb7acd0c77dc1da77175361966774688187620b7e3fcb3b771b782e9781ad"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/ram_04250.bin",
+      "sha256": "2414f6066325ecb313092987547235caa86d22dea6d2ace5e68866d2476b51a7"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/vram_04250.bin",
+      "sha256": "7d87dcc43bf813b5c49e5a2fc9f024917a3c823c459827be87ae840f038b41ec"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/frame_04800.png",
+      "sha256": "a450382f750313c43bae73d63c29bddc151081efb3496a7c7bb6822b8087e6bf"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/ram_04800.bin",
+      "sha256": "1090e5a738067fcc1f131f555800d4344df1932e59cb22ccc57fc38774af213f"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-auto-md/vram_04800.bin",
+      "sha256": "84cab236acd211f12933c590be8cd8066fc41c587a0187b2f32b03676facff73"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/frame_03500.png",
+      "sha256": "15ebd1d7bbf469eb2a2905bb604e2ec2157b149e4adfc4d90e9315028a99ff4e"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/ram_03500.bin",
+      "sha256": "86ebd58d4f64e105ce1b014c23ba1014e521128d2e8971fe0e007598333197c8"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/vram_03500.bin",
+      "sha256": "3ac5a5c2b4d8ba40557b49437081f14ccd3ef6f7c9cf4b89a6d8832c8227c08a"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/frame_04250.png",
+      "sha256": "892df706a1ecf611a67fcfa8bee737455a1da870448d6b4992a4a8878decdc3e"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/ram_04250.bin",
+      "sha256": "37ab18064655730a954e6964419ccce30ac732190410904fa971f968b02be068"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/vram_04250.bin",
+      "sha256": "11bf8dbc1bf4ae0b9448eeadb27c6e3aa84cb64f6e2bfa7b176979a83c52a029"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/frame_04800.png",
+      "sha256": "54bf349f9ba5aa0a561c734db636c96dacf0db09af5a26da07d168aeff91d678"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/ram_04800.bin",
+      "sha256": "bb172669cacf3d7e7c08519aa5e78cc27c91dd9315bec5d77d9aec7ca168d0ba"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-sms/vram_04800.bin",
+      "sha256": "3c99981f64fd0ea2fc1878c69c23a4d0e15ca3b36017a73bb29badc7f0ddd8e5"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/frame_03500.png",
+      "sha256": "1944ca9c96f33c0a0b5b6f71e1f94dc3823a7458da46bd9f46cdf2e7a6c3b934"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/ram_03500.bin",
+      "sha256": "a0ba42fb8dc28b387bd7a486caa5383702f88747be00305b9fe2a00e86bc4d81"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/vram_03500.bin",
+      "sha256": "4f13f11fd958c7c09c8ab16afb26872fe4078b3b845681cb656aa478adbf8416"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/frame_04250.png",
+      "sha256": "e30b1dc64ba57f5a44b29bf365f539b32f566c20561dafce85d83c5db7d62ef6"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/ram_04250.bin",
+      "sha256": "c96a6ce7fe0967c141ebc69cfe81586c2ef682b114dab246d63657077e9b9b00"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/vram_04250.bin",
+      "sha256": "5c44309b44ab1f33d42906ddf61fc2de804fde237394b5beae29e638fe74eef5"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/frame_04800.png",
+      "sha256": "7e376d8707cf15503b2652d4582948e9d7df80013b63e6f40b0e36f49b59b882"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/ram_04800.bin",
+      "sha256": "54ae8f4d78a8b3d68c07b9e746e03979031d340d7bc217ded4528e7af5e7c147"
+    },
+    {
+      "path": "captures/house-quest-persistence-27-pal-md/vram_04800.bin",
+      "sha256": "fe13158a4bd6c087fd95f1b1c4beab8caebcd32dd277c0f58224bde64b0c7568"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/frame_03500.png",
+      "sha256": "19d80967e6e71c1800e8fce12d97d9658e2ffb12243bde4b74735400c879d118"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/ram_03500.bin",
+      "sha256": "9d6a96ce88869ebe12395ce04cd413d72570d565e588990e28da882e5835a75a"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/vram_03500.bin",
+      "sha256": "29d452b5f45c7e7c37ce64b34183e6797d97ad52471d8d3d01412a7c819ec0b9"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/frame_04250.png",
+      "sha256": "d51bbeadd4b09a18a39f0149f9fc1a092cd80be298bcc86f22c21f6b26ff95ab"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/ram_04250.bin",
+      "sha256": "c5cef82e39e21f05931abbfe612718bfde4f828f42de07961651542fa0738ec4"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/vram_04250.bin",
+      "sha256": "b538c628ccc6dd5ee91850c7b0c5739bfa46f4740bb88b02d86bf902615fcab6"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/frame_04800.png",
+      "sha256": "22b6849f0f65fd18c48b9c5f127a3f64f3cae77d83252f8c8096b22de13df978"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/ram_04800.bin",
+      "sha256": "07ad48f72e77cf336015b4519dc63556c91ad30b9b95de9eb32f0c5157ca1e75"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-sms/vram_04800.bin",
+      "sha256": "c90986c67137065d11bd7136ef514dd689dd815439acb29eb5142857a1ffd342"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/frame_03500.png",
+      "sha256": "d9e3575d89d009705b1470b4e7102f72fb0740d15ba04a9b43e2e9f14d56870b"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/ram_03500.bin",
+      "sha256": "4a9d5a459d3b26e836c7eb3fad92d8b8f4abca0948be9bce5b1c8dae9c110157"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/vram_03500.bin",
+      "sha256": "6179edbc7162d9d72e57b2717b5c97631e056d0a2097ace51f0a6fc901f31ca2"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/frame_04250.png",
+      "sha256": "1f0b607a6e2b0b18d57ea45897a6c14238f76864c16f3bd03c1e118fbde177bb"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/ram_04250.bin",
+      "sha256": "24e3476be3e4a7a3e9b1a9a843567fc63f90b10c495858bbfaa752611b32cba6"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/vram_04250.bin",
+      "sha256": "3e5f6876345dbf5eea8d67e7cf3fb90460f627e40cbc16f232bdef7a8c408535"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/frame_04800.png",
+      "sha256": "0848fff98aa6bd681eac7c034ef2381919f6ad0b925fbea1c17d68523140c371"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/ram_04800.bin",
+      "sha256": "d09c5c4cab850b3d70bc8629ecaaafdc6bd965789a0eaff61b096ceea7ed4a14"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-auto-md/vram_04800.bin",
+      "sha256": "fcbb2118bcc7c5d15990ecd6f864abf900ea3248d772cee23a96f5e4fc23fbd4"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/frame_03500.png",
+      "sha256": "b311a84e82a78ce45c45bbea6c4ea72fa8e21ece401397af00ec29ab6547d454"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/ram_03500.bin",
+      "sha256": "a2b99e52648fc8f0cd6de6c5783d7fd4d87ac386e82ea56bc9bf1aedabd4536e"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/vram_03500.bin",
+      "sha256": "8ec61eade69b1d539ccee8124268530234991769c46e92a59d2c2e246e930e78"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/frame_04250.png",
+      "sha256": "df2a26b68be128e6b58f3efd48e102132cad8ed5036b8644daecc27d2bd0fdd1"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/ram_04250.bin",
+      "sha256": "bbf4e94f931fa55992f490c423c3b78fcf4711c810914d164c62be7da446c84b"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/vram_04250.bin",
+      "sha256": "f801cacceecbfcab4d827fe3cd5b66a41e50a2d49c3f12365069efcc72a45abc"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/frame_04800.png",
+      "sha256": "22b6849f0f65fd18c48b9c5f127a3f64f3cae77d83252f8c8096b22de13df978"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/ram_04800.bin",
+      "sha256": "474913cbe6d87b31be34f8d81753619be13da63a27c7b24bc153e413601ccd0e"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-sms/vram_04800.bin",
+      "sha256": "c90986c67137065d11bd7136ef514dd689dd815439acb29eb5142857a1ffd342"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/frame_03500.png",
+      "sha256": "3426e716f6cb39326ae76a38ea35caee4e7f22080825078679489b1a075a9ed7"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/ram_03500.bin",
+      "sha256": "c7a00febb6a24a6c645ccea68abf4de016a428547d5d1c14d082a15cd671b91e"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/vram_03500.bin",
+      "sha256": "fb2ed7683c620186a6397d1497519fa6a293392f6470947a94f645ccff1f9c96"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/frame_04250.png",
+      "sha256": "0f8210365e86a7957fb31d4e0a4ea39b0a9e3f9dd8be1d4cd1fec539b85e12c1"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/ram_04250.bin",
+      "sha256": "1e75eef96df62b5219f0e4881ebe5af92e07b2baa6c8534df8347de0c0b1425b"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/vram_04250.bin",
+      "sha256": "5ebeee5a80176381adb70bb2b4f5e4309cf711e5816bf9abb62c7b0cbc382500"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/frame_04800.png",
+      "sha256": "645021cf85936bc8f3079814e7cf2c1aa0ddcf155f7e407e8c2861fa2e1f9a0b"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/ram_04800.bin",
+      "sha256": "29320c637607a2800360105d614eb78be644cd093874a513efcf32eac279f5b7"
+    },
+    {
+      "path": "captures/house-quest-persistence-6a-pal-md/vram_04800.bin",
+      "sha256": "818da8a895c1a775bafc75c3c017ee225b227266c9aaf88ac57ab0ae895dfe5e"
+    },
+    {
+      "path": "quest_gift_persistence_milestone.md",
+      "sha256": "c66412525338f2e8edd7d92545f28299608244a752a3eaaf9d5bc79cefdadd4d"
+    },
+    {
+      "path": "house_quest_persistence_gameplay_report.json",
+      "sha256": "5554e2c078cbb4c7dd0dc002ca1bfd50b5322a8d57824c9a96635ca32dc331de"
+    },
+    {
+      "path": "house_quest_persistence_high_gameplay_report.json",
+      "sha256": "c3d0bd45fa28e5bdec40d09b2f0aa6b3177c6d90ac4ce0a2d29687a7b4a3a605"
+    },
+    {
+      "path": "house_quest_unit_report.json",
+      "sha256": "021b9af5813fd9a12837acdababa1fce2e9480b132e47b58cf8136e8f8974fb2"
+    },
+    {
+      "path": "house_quest_hint_gameplay_report.json",
+      "sha256": "b0f9a94be03bb5fefdeb04b6404c61762bfe858e184d756ecac48191f4c00556"
+    },
+    {
+      "path": "paid_passage_gameplay_report.json",
+      "sha256": "d8d8653e2b73e8a78a0fe736d0cb1e2cd62bd89205be84e9d795f905d953e563"
+    },
+    {
+      "path": "quest_gift_persistence_patch_report.json",
+      "sha256": "18c1d134ca09879acf92dc1c7a5803cad647aedba21ffebd13d4ff6593cafe6c"
+    }
+  ]
+}

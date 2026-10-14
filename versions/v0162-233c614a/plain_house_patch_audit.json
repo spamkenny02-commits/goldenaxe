@@ -1,0 +1,21 @@
+{
+  "md_sha256": "233c614a78bfd29a4c7e6404678bb1e11258a01940bb663578e387d9c1ba0d7e",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": 41791,
+  "rom_bytes": 1048576,
+  "aliases_header_verified": true,
+  "changes_confined_to_plain_house_dialogue_selection_and_ROM_text_data": true,
+  "prior_quest_save_AI_unchanged_since_v0161": true,
+  "all_65_source_texts_exact": true,
+  "evidence_sha256": {
+    "plain_house_unit_report.json": "8465452e77953146b2b6f90bb1dcef96536eb97a8b173f37fe4cad81c5013617",
+    "plain_house_gameplay_report.json": "bb132e500c47a21a3792ca0be0fe338e3980936f3f0e82b6eb4ccfd9c3be5f9f",
+    "house_dialogue_report.json": "7a977818f3a9406dc9acfe4395743af01883d61b9b1aca9b3136e885b39282a3"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "1560 original667E selector cases cover all65 exported context rows plus rejected flags/coordinates. No text/condition shim except the observed frontend return.",
+    "Actual townB3/house8F263-byte dialogue uses controlled entry/hero setup and initial clock alignment, normal UP/C, stable bitmap and static restoration. Four animated NPC words remain outside static equality; publication cadence and all natural routes are unproved.",
+    "Six prior village conversations and walking regression pass. Other NPC handlers/minigame/scripts, natural full progression, RNG/global timing, scanline clipping and full audio/video/hardware remain incomplete or unverified."
+  ]
+}

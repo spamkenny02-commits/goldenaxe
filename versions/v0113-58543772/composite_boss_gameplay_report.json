@@ -1,0 +1,101 @@
+{
+  "md_sha256": "585437724e49ca97f2595072459324a3311708c915f12e2c7532837c15feaae5",
+  "cases": [
+    {
+      "region": "auto",
+      "segment": "appearance",
+      "frames": 170,
+      "all_768_actor_bytes_exact": false,
+      "random_appartition_timer_differences": 264,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": true
+    },
+    {
+      "region": "auto",
+      "segment": "idle",
+      "frames": 90,
+      "all_768_actor_bytes_exact": true,
+      "random_appartition_timer_differences": 0,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": false
+    },
+    {
+      "region": "auto",
+      "segment": "hit",
+      "frames": 22,
+      "all_768_actor_bytes_exact": true,
+      "random_appartition_timer_differences": 0,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": false
+    },
+    {
+      "region": "auto",
+      "segment": "death",
+      "frames": 90,
+      "all_768_actor_bytes_exact": true,
+      "random_appartition_timer_differences": 0,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": false
+    },
+    {
+      "region": "auto",
+      "segment": "fade",
+      "frames": 90,
+      "all_768_actor_bytes_exact": true,
+      "random_appartition_timer_differences": 0,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": false
+    },
+    {
+      "region": "pal",
+      "segment": "appearance",
+      "frames": 170,
+      "all_768_actor_bytes_exact": false,
+      "random_appartition_timer_differences": 370,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": true
+    },
+    {
+      "region": "pal",
+      "segment": "idle",
+      "frames": 90,
+      "all_768_actor_bytes_exact": true,
+      "random_appartition_timer_differences": 0,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": false
+    },
+    {
+      "region": "pal",
+      "segment": "hit",
+      "frames": 22,
+      "all_768_actor_bytes_exact": true,
+      "random_appartition_timer_differences": 0,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": false
+    },
+    {
+      "region": "pal",
+      "segment": "death",
+      "frames": 90,
+      "all_768_actor_bytes_exact": true,
+      "random_appartition_timer_differences": 0,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": false
+    },
+    {
+      "region": "pal",
+      "segment": "fade",
+      "frames": 90,
+      "all_768_actor_bytes_exact": true,
+      "random_appartition_timer_differences": 0,
+      "all_other_actor_bytes_exact": true,
+      "random_timer_initial_bounds_and_individual_decrements_checked": false
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled core/phantom records and hero position injected in exterior. Hit/death scenarios inject pending damage. Death scenario occupies eight transient slots after initial boss-death clear to suppress divergent random particles.",
+    "Appearance compares all bytes except random state20 phantom counters; their initial 112..127 bounds and subsequent individual decrements are checked. These counters can differ because original refresh values are not reproduced. Other scenarios compare all 768 bytes.",
+    "Production behavior, spawning, delays, animation, hurt, coordination and removal execute. Segments stop before random formation/position/shot choices. Natural dungeon combat, SAT/framebuffer/audio and hardware timing remain unproved."
+  ]
+}

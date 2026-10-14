@@ -1,0 +1,40 @@
+{
+  "md_sha256": "065f144627e9938c4e2af2601214c3c17b25aa84e08a96ad941b27a99156c444",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": "0xd292",
+  "rom_aliases_verified": true,
+  "exact_previous_main_restored_by_removing_final_wait": true,
+  "prior_production_assets_unchanged": true,
+  "source_files": {
+    "megadrive/src/main.c": "26666bb7cb506b997c1cdf38ebdc151e5510a5ff33807d7173753804085a0b23",
+    "tools/validate_final_dialogue.py": "979d9987b9c31b64c94c51dd4b654b3699da85fe604f09580fe95fa9af15e5e0",
+    "tools/validate_house_dialogue.py": "4951a0d91a58ea5006a87ad3229bb633701bb4f6d18aeb989de6ad1588707136",
+    "tools/audit_final_dialogue_patch.py": "8b638a67bf0c545340fd341840c92db6fe3aeb6a73df81c7deddd516e0b2f021",
+    "analysis/dialogue-waits-baseline-v0063/main.c": "49f1599520ce53a54def1681a5e003c17fb19c87d2b4b405b57ca27ed3a24433"
+  },
+  "reports": [
+    {
+      "file": "final_dialogue_report.json",
+      "sha256": "6a076194b3075058df83613f37a1e92976c9abcb77fe0fa5e05ba636a489cc63"
+    },
+    {
+      "file": "house_dialogue_report.json",
+      "sha256": "377e7f0376b904db04b1cd760fdee29e097d248e95ddc5e4451e93345589936f"
+    },
+    {
+      "file": "timing_report.json",
+      "sha256": "0c0decda7fab3ef16aac9b87606b4c640fdf90637e2dad965b663eb9a4bd2fc2"
+    },
+    {
+      "file": "timing-pal_report.json",
+      "sha256": "e99eade781c76c294d67b84dd098fee3f906710cdc285d5db57905e64877d7af"
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "This patch fixes final acknowledgement inputs and marker only; inter-page clock/reset/rendering still differs.",
+    "Initial room activation remains early by 33 NTSC / 31 PAL frames in the natural opening test.",
+    "Village restoration uses controlled positions in six cases plus one natural walking route; timing is not proven exact.",
+    "All item abilities, quests, enemy/boss behavior and ending remain incomplete or unverified."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "md_sha256": "f3cb9b5b9731933f7ba686412f77702be75872f74daee3d945cd17681d136895",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "checksum": 45233,
+  "rom_bytes": 1048576,
+  "aliases_header_verified": true,
+  "main_change_only_minigame_include_and_hook": true,
+  "actors_ordinary_dialogues_gold_unchanged": true,
+  "original_card_tables_nine_texts_confirmation_font_exact": true,
+  "evidence_sha256": {
+    "minigame_unit_report.json": "310bae767119486e4bd1af6e6673360c74fb72660554c8a11ea1eebccf972bfa",
+    "minigame_gameplay_report.json": "02fe5dbec9a6138fc1d95d47fc75cd38f102565f8b2e35cf33f6b6c4d11e1ecb",
+    "house_gold_gameplay_report.json": "31974428b8df8633eca5e9c2e6c610797c85dd23d3e42125c3b68d563dd202f6",
+    "house_dialogue_report.json": "4be38d2668a06176afbaa3006d5a3f5e96224da18c096b77fbb82d145f0b76db"
+  },
+  "full_game_ported": false,
+  "limits": [
+    "Minigame rules and controlled frontends verified, not original RNG/refresh timing. Production still uses the existing provisional SGDK RNG with original32-way mapping and repeat-special rejection.",
+    "Live source RNG inputs controlled, native randbase seeded. Absolute transition/text cadence and full audio/video/hardware equivalence remain unverified.",
+    "Other conditional quest families, full natural progression, inherited loot expiry visuals and scanline sprite clipping remain incomplete/unverified."
+  ]
+}

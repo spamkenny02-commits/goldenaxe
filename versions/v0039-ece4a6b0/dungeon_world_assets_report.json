@@ -1,0 +1,27 @@
+{
+  "md_sha256": "ece4a6b0c171afb03fb04e680515df12b27601a07755a9f9210a2980622db70c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "f10b6d1454b44d454b09363c4ef2b4951a2becf5c8f8de2006b20a671535b8df",
+  "source_z80_decoders_executed": [
+    "032A",
+    "0C00",
+    "81C0"
+  ],
+  "maps_checked": 512,
+  "map_cell_bytes_compared": 81920,
+  "dungeon_background_bytes": 4096,
+  "dungeon_metatile_bytes": 648,
+  "dungeon_extra_metatile_bytes": 40,
+  "dungeon_animation_bytes": 576,
+  "dungeon_palette_bytes": 16,
+  "first_done_frame": 1550,
+  "compressed_stream_bytes": 48344,
+  "test_only_fixture": true,
+  "natural_dungeon_entry_verified": false,
+  "quest_cell_transformations_verified": false,
+  "files": {
+    "tools/extract_world.py": "9277f824d2cbbce339ba4e7ef5acfbb3cb7db1f56bfe05aa979948e7f8093e9b",
+    "megadrive/src/world_data.c": "79cdbc5fa1e19f1ec864751f6957970b767bad8b8352b19c7f550ef47d57f96e",
+    "tools/validate_dungeon_world_assets.py": "3e772b60b49feb3c71f79b6ca71ec9c03aa55fd400241c5de5c241dcd0acb89b"
+  }
+}

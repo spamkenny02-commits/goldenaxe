@@ -1,0 +1,16 @@
+{
+  "md_sha256": "4ba31d49f9553901b5128ea1172d069b7488bc0ace2471ca4a285b403557fc18",
+  "region": "auto",
+  "type": 96,
+  "room": 312,
+  "all_768_actor_bytes_and_hero_state_animation_gold_HP_hurt_position_velocity_and_effects_exact_frames": 34,
+  "sat_exact_frames": 33,
+  "sat_differences": [],
+  "hero_final_HP": 8,
+  "attack_reset_and_reversal_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actual-room attack, initial clock alignment.",
+    "Sprite order difference retained as unresolved renderer discrepancy; no relaxed SAT assertion."
+  ]
+}

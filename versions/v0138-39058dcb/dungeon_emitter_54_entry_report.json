@@ -1,0 +1,45 @@
+{
+  "md_sha256": "39058dcb999456ab4f69b2a5afeaf06077e0148ca4235b02c865b22e9dad3c09",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "room": 323,
+      "type": 84,
+      "arrival_frames": {
+        "sms": 3462,
+        "md": 3462
+      },
+      "relative_first_actor_frames_except_random_cooldown_exact": 30,
+      "excluded_random_record_offsets": [
+        4
+      ],
+      "loaded_pattern_tiles_exact": 54,
+      "pattern_samples": 3,
+      "boss_sat_samples_exact": 0,
+      "boss_sat": null
+    },
+    {
+      "region": "pal",
+      "room": 323,
+      "type": 84,
+      "arrival_frames": {
+        "sms": 3457,
+        "md": 3457
+      },
+      "relative_first_actor_frames_except_random_cooldown_exact": 30,
+      "excluded_random_record_offsets": [
+        4
+      ],
+      "loaded_pattern_tiles_exact": 54,
+      "pattern_samples": 3,
+      "boss_sat_samples_exact": 0,
+      "boss_sat": null
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Normal dungeon doorway entry after exterior relocation; controlled relocation to room142 boundary with cleared actors and passable departure map. Right scroll and actual destination143 scripts/resources/actor loading execute normally.",
+    "Actor timelines aligned to first initialized emitter frame, not absolute loading cadence; Thirty first emitter appearance frames exclude cooldown byte4, chosen by unaligned source/native random inputs; fixed X/Y and direction are compared. Other actor records are not compared. First 54 sprite pattern pixels sampled at three relative frames. Natural travel, full fight, SAT/full framebuffer, audio and full transition timing remain unproved."
+  ]
+}
