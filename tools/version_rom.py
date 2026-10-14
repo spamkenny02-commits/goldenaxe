@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+from update_readme import refresh_readme_release
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -64,6 +65,7 @@ def main():
         notes = e['notes'].replace('|', '/').replace('\n', ' ')
         lines.append(f"| v{e['version']:04d} | [Telecharger]({e['rom']}) | {e['validation']} | {notes} | `{e['sha256']}` |")
     (archive / 'README.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    refresh_readme_release(ROOT, entry)
     print(f"ROM v{entry['version']:04d}: {target} ({entry['validation']})")
 
 
