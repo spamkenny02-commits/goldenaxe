@@ -29,7 +29,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     profile={};rows={};tiles={};arrival=[None];changes=[];last_gold=[initial_gold];hud=[None];samples={};confirm=[None];previous_hero=[0];audio_events=[];previous_audio=[0]
     live_prefix_records=bytearray();previous_prefix=[0]
     live_envelope_records=bytearray();previous_envelope=[0]
-    wait_records=bytearray();previous_wait=[0]
+    wait_records=bytearray();previous_wait=[0];wait_entries=bytearray()
+    if hasattr(dll,"gaw_wait_entry_events"):dll.gaw_wait_entry_events.restype=c.POINTER(c.c_uint8)
     full_records=bytearray();previous_full=[0];irq_phases=bytearray()
     if hasattr(dll,"gaw_irq_phase_events"):dll.gaw_irq_phase_events.restype=c.POINTER(c.c_uint32)
     if hasattr(dll,"gaw_full_irq_samples"):
@@ -60,6 +61,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
        wait_count=dll.gaw_wait_samples()
        if f>=4200 and wait_count>previous_wait[0]:
         base=c.addressof(dll.gaw_wait_events().contents);wait_records.extend(c.string_at(base+previous_wait[0]*112,(wait_count-previous_wait[0])*112))
+        if hasattr(dll,'gaw_wait_entry_events'):
+         base=c.addressof(dll.gaw_wait_entry_events().contents);wait_entries.extend(c.string_at(base+previous_wait[0]*784,(wait_count-previous_wait[0])*784))
        previous_wait[0]=wait_count
       if hasattr(dll,'gaw_live_envelope_samples'):
        envelope_count=dll.gaw_live_envelope_samples()
@@ -127,6 +130,7 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      if hasattr(dll,'gaw_live_prefix_samples'):(folder/f'{region}-live-prefix-records.bin').write_bytes(live_prefix_records)
      if hasattr(dll,'gaw_irq_phase_events'):(folder/f'{region}-irq-raster-records.bin').write_bytes(irq_phases)
      if hasattr(dll,'gaw_full_irq_samples'):(folder/f'{region}-full-irq-records.bin').write_bytes(full_records)
+     if hasattr(dll,'gaw_wait_entry_events'):(folder/f'{region}-wait-entry-records.bin').write_bytes(wait_entries)
      if hasattr(dll,'gaw_wait_samples'):(folder/f'{region}-save-wait-records.bin').write_bytes(wait_records)
      if hasattr(dll,'gaw_live_envelope_samples'):(folder/f'{region}-live-envelope-records.bin').write_bytes(live_envelope_records)
     assert tag=='sms' or arrival[0] is not None,(region,hex(town),tag,'gold interaction not reached',rows);traces[tag]=rows;patterns[tag]=tiles;births[tag]=arrival[0];gold_changes[tag]=changes;cell_samples[tag]=samples;confirm_maps[tag]=confirm[0];profiles[tag]=profile

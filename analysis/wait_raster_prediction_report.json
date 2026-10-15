@@ -1,0 +1,399 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 13725,
+  "paths": 24,
+  "rows": [
+    {
+      "town": 26,
+      "mask": 0,
+      "target": 60,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 577
+      },
+      "IRQ_sequences": {
+        "full": 577
+      },
+      "cases": 577,
+      "predicted_IRQs": 577,
+      "entry_sha256": "4169bc72ccf3c7effd4cc528d044cc51663f11c0fefd7978d893cbcb655f901a",
+      "wait_sha256": "1c506556655affc7bf83385e01c9c4b3af4b1ab0df37d9d55cac26f5456c3068"
+    },
+    {
+      "town": 26,
+      "mask": 0,
+      "target": 60,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 580
+      },
+      "IRQ_sequences": {
+        "full": 580
+      },
+      "cases": 580,
+      "predicted_IRQs": 580,
+      "entry_sha256": "bce7942b583464c8d7fc50d8b69ac1900a2e3fd3a450a14474bccd27f8334ad2",
+      "wait_sha256": "4bb7b1474e34ecff3a7d239909c4f404b0442a5753f575d81894fff4c0da159f"
+    },
+    {
+      "town": 26,
+      "mask": 255,
+      "target": 60,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 576
+      },
+      "IRQ_sequences": {
+        "full": 576
+      },
+      "cases": 576,
+      "predicted_IRQs": 576,
+      "entry_sha256": "1e35882fbc65c2ba955e3a79bc032207c7da78bf90871e35be5a8b8611d88b56",
+      "wait_sha256": "d6297d46d5d31a70d5d9a45612217d04f5ac26fc3b3a999a859d6a1c2873d963"
+    },
+    {
+      "town": 26,
+      "mask": 255,
+      "target": 60,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 580
+      },
+      "IRQ_sequences": {
+        "full": 580
+      },
+      "cases": 580,
+      "predicted_IRQs": 580,
+      "entry_sha256": "d35173aace0bc5d3319ec690b99ca16a937bbcae3528ece5c05a8aea3d43242b",
+      "wait_sha256": "c0e8cdb75fb0d83135efccbc0f13ff1ae383378ecaf074f9cd4c9ebdc689a575"
+    },
+    {
+      "town": 54,
+      "mask": 0,
+      "target": 135,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 577
+      },
+      "IRQ_sequences": {
+        "full": 577
+      },
+      "cases": 577,
+      "predicted_IRQs": 577,
+      "entry_sha256": "b4f1ca9a1958ef6714d95b0f804c2547f386fab5a0c392a9ca2ca7ad199d6567",
+      "wait_sha256": "9f66fda21077ef2f6f6c02b2486a96af3958864237d7b451e54e90141f751609"
+    },
+    {
+      "town": 54,
+      "mask": 0,
+      "target": 135,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 580
+      },
+      "IRQ_sequences": {
+        "full": 580
+      },
+      "cases": 580,
+      "predicted_IRQs": 580,
+      "entry_sha256": "b6a814ba117634845147a94d6969ee7873875538bbe1458febce61ba4b297a72",
+      "wait_sha256": "58fb2390529c6b6d77f2a56c70ce2cfd1570f1e1f44fc8dff7277bd12c3e59d8"
+    },
+    {
+      "town": 54,
+      "mask": 255,
+      "target": 135,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 546
+      },
+      "IRQ_sequences": {
+        "full": 546
+      },
+      "cases": 546,
+      "predicted_IRQs": 546,
+      "entry_sha256": "6dac4d4dd2bba16aaf9c66214a0e5369e6d5ed7655ef5711863c10174b3cf9a1",
+      "wait_sha256": "42b5f839e6cd9d5f621ea3ca7d09c25026478ddf387f8cb90f4cf152450a2e03"
+    },
+    {
+      "town": 54,
+      "mask": 255,
+      "target": 135,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 554
+      },
+      "IRQ_sequences": {
+        "full": 554
+      },
+      "cases": 554,
+      "predicted_IRQs": 554,
+      "entry_sha256": "2e00735ffdaa051906fa1cdfc4d0771c6676d2f9ed4fc67012782deb94ab8b67",
+      "wait_sha256": "97494928faea3534b7270a4f5fef19f076af5efbb3ace8fcdbf26c9bbc5d1f63"
+    },
+    {
+      "town": 109,
+      "mask": 0,
+      "target": 150,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 577
+      },
+      "IRQ_sequences": {
+        "full": 577
+      },
+      "cases": 577,
+      "predicted_IRQs": 577,
+      "entry_sha256": "9fa5aa518dc6eb4504f91a5416d8fa0be522aaa0d1dd9b9cd8d0711dc92ad6ed",
+      "wait_sha256": "1fb788edfea9e264cf8b05474d1fe2abf9f566ff7152cc47e68de26fec346e9c"
+    },
+    {
+      "town": 109,
+      "mask": 0,
+      "target": 150,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 580
+      },
+      "IRQ_sequences": {
+        "full": 580
+      },
+      "cases": 580,
+      "predicted_IRQs": 580,
+      "entry_sha256": "bd22d8d33001ac4279a22c61b85fed2e0bb2a1c58529056447ef44d64a76c846",
+      "wait_sha256": "496e212ed0d59050df3afc25b45486129447a3c187fa367e8c330869e8a042ae"
+    },
+    {
+      "town": 109,
+      "mask": 255,
+      "target": 150,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 550
+      },
+      "IRQ_sequences": {
+        "full": 550
+      },
+      "cases": 550,
+      "predicted_IRQs": 550,
+      "entry_sha256": "c53aacbb8c5de187cdde15af7a9b7952fc814f97ea59a2b7450626268c2c3200",
+      "wait_sha256": "12b33bffa501cf947784496aa04978673f87af5426b4fee941848728b585e28d"
+    },
+    {
+      "town": 109,
+      "mask": 255,
+      "target": 150,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 558
+      },
+      "IRQ_sequences": {
+        "full": 558
+      },
+      "cases": 558,
+      "predicted_IRQs": 558,
+      "entry_sha256": "aa949d875e9ac59aa351c9b4d05ef3f78e507bd993f01aa5fc107fc42bac551a",
+      "wait_sha256": "ce41ffc3a41d7f62c6842eb393c396dbccf1ef1625de42b3a69d45b4452b85f9"
+    },
+    {
+      "town": 60,
+      "mask": 0,
+      "target": 26,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 577
+      },
+      "IRQ_sequences": {
+        "full": 577
+      },
+      "cases": 577,
+      "predicted_IRQs": 577,
+      "entry_sha256": "1c042557621d3079af66aa7407eb663eee2843c5bc6c47abcaaf1a400bb1ae1f",
+      "wait_sha256": "93a18efd12245ea5448bca0595207822871aeab0bf37602dbba5866a5b97e9f6"
+    },
+    {
+      "town": 60,
+      "mask": 0,
+      "target": 26,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 580
+      },
+      "IRQ_sequences": {
+        "full": 580
+      },
+      "cases": 580,
+      "predicted_IRQs": 580,
+      "entry_sha256": "65d6fce9e0e2bbb8059fdca854bf310a0ed233b3cdc5e6b05bc6de3f71ac71e2",
+      "wait_sha256": "dd3f4023e722408f98b8c840b323e522ae767bb215cb2bb01bd302983742c5c8"
+    },
+    {
+      "town": 60,
+      "mask": 255,
+      "target": 26,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 562
+      },
+      "IRQ_sequences": {
+        "full": 562
+      },
+      "cases": 562,
+      "predicted_IRQs": 562,
+      "entry_sha256": "f965e60404135f8baa6eacb0ee10771ac8c3fa467f59c1eac0f9aae04dd3712f",
+      "wait_sha256": "12d082016a0ab67311d86217a44839c1f7b0e9db255097c09c226352f4b67f0c"
+    },
+    {
+      "town": 60,
+      "mask": 255,
+      "target": 26,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 568
+      },
+      "IRQ_sequences": {
+        "full": 568
+      },
+      "cases": 568,
+      "predicted_IRQs": 568,
+      "entry_sha256": "ca1e22084775c3d9449370aecae223b288157bf1b786adbdb5ab32a98e76e9e6",
+      "wait_sha256": "83e1d75134e509f70a73a24cc5302a23695947c2132a62de51a3d5952c384870"
+    },
+    {
+      "town": 135,
+      "mask": 0,
+      "target": 54,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 577
+      },
+      "IRQ_sequences": {
+        "full": 577
+      },
+      "cases": 577,
+      "predicted_IRQs": 577,
+      "entry_sha256": "0cc684bd36e493c8dd903e5295bc7dd64feea8ec7cce4073a7280606647a09e7",
+      "wait_sha256": "85b3a215b2ecd66e62744fe2a0223e18b87ea21f3fceacafbb7c5b0867b79cd6"
+    },
+    {
+      "town": 135,
+      "mask": 0,
+      "target": 54,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 580
+      },
+      "IRQ_sequences": {
+        "full": 580
+      },
+      "cases": 580,
+      "predicted_IRQs": 580,
+      "entry_sha256": "5173fbceac52e6f8ca520cd1c9e46625d62918d0b3390ba1a2de9291f326aab5",
+      "wait_sha256": "ce18bcc21612cd6c07e5552c496a3fd386af5e743bf9fc0008479a8c3ea2acc3"
+    },
+    {
+      "town": 135,
+      "mask": 255,
+      "target": 54,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 568
+      },
+      "IRQ_sequences": {
+        "full": 568
+      },
+      "cases": 568,
+      "predicted_IRQs": 568,
+      "entry_sha256": "1f6f543d426fcda95afc6ed50bd76d63b0e3c3282974f8313d74be6927c55fcd",
+      "wait_sha256": "a83b96ecef8bcc154d40ea66c46007053bdbc3287175bb3f13154b434d8a520d"
+    },
+    {
+      "town": 135,
+      "mask": 255,
+      "target": 54,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 573
+      },
+      "IRQ_sequences": {
+        "full": 573
+      },
+      "cases": 573,
+      "predicted_IRQs": 573,
+      "entry_sha256": "fc94e1d9cde64a130db84047b7d4362a5b38718c899d0a2c9f21cbd4f8b1ccac",
+      "wait_sha256": "773e271b47eef613e2aa6b5269587b9ed263daf5afc6482ab326919309555524"
+    },
+    {
+      "town": 150,
+      "mask": 0,
+      "target": 109,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 577
+      },
+      "IRQ_sequences": {
+        "full": 577
+      },
+      "cases": 577,
+      "predicted_IRQs": 577,
+      "entry_sha256": "921248ea4e58ad9029f826964bf71a0f210237ec084f1ed22c1cb27ba24abaee",
+      "wait_sha256": "718aeae51d0edded8bc288c5732991d979e50cd640e7b40eb9a6173c020cb563"
+    },
+    {
+      "town": 150,
+      "mask": 0,
+      "target": 109,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 580
+      },
+      "IRQ_sequences": {
+        "full": 580
+      },
+      "cases": 580,
+      "predicted_IRQs": 580,
+      "entry_sha256": "07803a21e46b24613b0f31e3ead1cffe0b3b6370f8eb5f3361304a143060c5cd",
+      "wait_sha256": "c87247cf7b2cf5be90992b2e291963b0a371eaadb62d1e2484ac0121b89ef00e"
+    },
+    {
+      "town": 150,
+      "mask": 255,
+      "target": 109,
+      "region": "auto",
+      "contexts": {
+        "(1, 0, 0)": 572
+      },
+      "IRQ_sequences": {
+        "full": 572
+      },
+      "cases": 572,
+      "predicted_IRQs": 572,
+      "entry_sha256": "76e20653bb94edb03bda64b04d1b20d0da2b991fb84166478fa0a20664dcd7a6",
+      "wait_sha256": "75dbc1e3ffd418147e0d7bf5293b25a267048ff79c820e3a5ae2be12dcab5fc3"
+    },
+    {
+      "town": 150,
+      "mask": 255,
+      "target": 109,
+      "region": "pal",
+      "contexts": {
+        "(1, 0, 0)": 576
+      },
+      "IRQ_sequences": {
+        "full": 576
+      },
+      "cases": 576,
+      "predicted_IRQs": 576,
+      "entry_sha256": "337352f2454fc803033720508a53f88c3649888031a25f22e3f1a0fb8aa53732",
+      "wait_sha256": "23d429a3ac6bf050ba72a714de6b9061b1aa16e93014122afa88ca455acc3287"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "24 controlled paid exits,six routes/two masks,PAL/NTSC. Only post-interrupt-check wait-entry raster,CPU IRQ latch/IFF state,336 RAM bytes and400 driver bytes supplied. Predicts loop decisions,accepted IRQ offsets,costs and total wall time;observed branch counts/IRQ timings are comparison data only.",
+    "Mode4/192 lines,VINT enabled,HINT disabled,no NMI/reset/nested interrupt. VINT asserted at physical line193 per local GPG SMS scheduling. Input-port values affect postIRQ state but not supported nonreset timing;dummy joy0 used.",
+    "Wait-entry state/phase remains observed. Future phase through foreground loading,other modes/R-based controls/unsupported driver paths,native loading integration,hardware/full game remain open."
+  ]
+}
