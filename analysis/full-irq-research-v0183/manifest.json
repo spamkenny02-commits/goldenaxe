@@ -1,0 +1,1226 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/archive_full_irq_research.py",
+      "sha256": "af406a90dfcd0ac8a4dc4d872736a7146a14e988ce81e338c24d47a700f0c089"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "8a86a4b8a4b0c71a84c28a23524901e7ee7d7fa83ce70e994bc11150d4ee263f"
+    },
+    {
+      "path": "tools/validate_key_door_gameplay.py",
+      "sha256": "edaff2a53f041a71d7f231051cabd65dbaa5ae965b281ea6f0d201a878d80d0b"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_actor_tick.py",
+      "sha256": "ff145d9122365949160fb6878987689afd7e9f8d8bc047c0d597067908d94289"
+    },
+    {
+      "path": "tools/actor_tick_reference.py",
+      "sha256": "a5cd64adc2f20330dd20eea3873628195eb3c17c952a66bada4b4ce90820ea76"
+    },
+    {
+      "path": "tools/extract_world.py",
+      "sha256": "8575d37d77453328ed48d161ff4ab730ea03f8ffcd8ddd5d8d6956a737baa607"
+    },
+    {
+      "path": "tools/validate_complete_loading_budget.py",
+      "sha256": "b04abd9a4d8b2ae72376c8f0935cd24c424e6a6e10b53542760f1b2a056e8094"
+    },
+    {
+      "path": "tools/full_irq_cost.py",
+      "sha256": "aa376d2ec9e2c9ee88229cb21fc5fb0120532a62e5d9cff38c91c67049d968a0"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_cost.py",
+      "sha256": "16ea74da99aff9303ce66b9aa2c072e63fbaf093d449891074f5972055470575"
+    },
+    {
+      "path": "tools/paid_exit_foreground_cost.py",
+      "sha256": "70be9323b0beb78d299a60dbe481dd20cde44ab09ddff5655491d713412a4572"
+    },
+    {
+      "path": "tools/reveal_loading_cost.py",
+      "sha256": "bead909555fac7f6d5833268625c79229f099b2bc657d15fb3c9866de03a815b"
+    },
+    {
+      "path": "tools/world_load_tail_cost.py",
+      "sha256": "8f3cd8a7b493188238914c4d38131ecd8c1e0f74bbcb17b2672c0ae841801b3a"
+    },
+    {
+      "path": "tools/hero_initialization_cost.py",
+      "sha256": "7085cf2ac7dfbc1c7b368d33faf9acbaca781c621adbe2ddbd6c35c8e653a598"
+    },
+    {
+      "path": "tools/room_history_loading_cost.py",
+      "sha256": "0c29ec52943b5b48e33980c7c17e6c2b676cf28f94fe9bf70389d53b92f04358"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/full_actor_loading_cost.py",
+      "sha256": "82f55c382239fbc1365f4707a80021aa2f1f4b2ae9544d6dbbdaec715107c093"
+    },
+    {
+      "path": "tools/map_hud_loading_cost.py",
+      "sha256": "0df0cda51baf038a56fe35daf45fde81adcf442f197f17a679aed42b00bd844b"
+    },
+    {
+      "path": "tools/room_map_loading_cost.py",
+      "sha256": "71d8c23c33c355e9126366f3711ee77b217c8b103d28411baed9a66bb0bba046"
+    },
+    {
+      "path": "tools/hud_loading_cost.py",
+      "sha256": "4f64dde90cff9b6f997bf36c52dcd849837cbbd1dd6afc2d1f8bd58caae4e8b5"
+    },
+    {
+      "path": "tools/ram_plane_loading_cost.py",
+      "sha256": "06587f301249f5973af49a7ab6e98e4ba20ac344c8b8ba066a31da0c388bd08a"
+    },
+    {
+      "path": "tools/world_map_loading_cost.py",
+      "sha256": "97b483f05dde6b70289170e29e22441526d7f7e924e86ee45fc5ebe6fae3dedb"
+    },
+    {
+      "path": "tools/class0_graphics_loading_cost.py",
+      "sha256": "c809dd2bd839819c036bd23fe064a08b3c82580b7a2ca72b5d64feba35c39549"
+    },
+    {
+      "path": "tools/audio_reader_cost.py",
+      "sha256": "3593aa2a3c7f8ed2cecae64f716e4daa634b66fc5e171b60ee908dbc3726ba28"
+    },
+    {
+      "path": "tools/audio_noise_channel_cost.py",
+      "sha256": "0f5c3aad31c5cf57a8f1de409d6adaed5d1d5ff53d2d0da30d2a85ea13fa644a"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_cost.py",
+      "sha256": "a234f114d778c594e9129d3dae283498a3f62f473835fd0ea908dee39e32fd42"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/audio_note_sequence_cost.py",
+      "sha256": "9d221240da595448c0e70d23f0f44475ccf23fdbecc93f98761cc880f8e482f8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/save_wait_cost.py",
+      "sha256": "5cfe1ecc542ec4e7429a4c6290e383fbc276a3915618590617d986dfe21fbfa0"
+    },
+    {
+      "path": "tools/validate_full_irq_unit.py",
+      "sha256": "a726f5b599328af7efc32b111a6ab83d4e2945ab6c33db20b2b513b06f31a00b"
+    },
+    {
+      "path": "tools/validate_audio_prefix_cost.py",
+      "sha256": "56f0a1aef26cba4918dd96d86674df979ccc16632d903c37173006a06c38faf7"
+    },
+    {
+      "path": "tools/validate_full_irq_cost.py",
+      "sha256": "55fa371d849a0e688dc10684a50baa39bd1e3ec459427ee75ffa0e07ad61056f"
+    },
+    {
+      "path": "tools/build_full_irq_core.py",
+      "sha256": "37f5f184d7e02f5fce6a02e46c69dc98a2a9bf8b3e4fc82bfb4b54c29b2fefea"
+    },
+    {
+      "path": "z80-full-irq.txt",
+      "sha256": "c84f14443d160f2433db60a71a9c4d73f8410b6bfbb7048ef2725bfcceee01c7"
+    },
+    {
+      "path": "validation/full-irq/1a-00/auto-audio-irq-events.json",
+      "sha256": "91c2c27780ef6c0502b9f9b529452283566cb8a8aa46dcee813daf533c4cdbb1"
+    },
+    {
+      "path": "validation/full-irq/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "validation/full-irq/1a-00/auto-full-irq-records.bin",
+      "sha256": "bb81ca7384d4de627eb155a4592de05f8826f840f4f06941bf65816c7fdf0da8"
+    },
+    {
+      "path": "validation/full-irq/1a-00/auto-hero-001-before.bin",
+      "sha256": "960dddd4cbe14560f957fcbb9f5a4f582e91e6366b202c546350b8e444407b7a"
+    },
+    {
+      "path": "validation/full-irq/1a-00/auto-live-envelope-records.bin",
+      "sha256": "2cafa10d421d2d5d85737b03c94ccbe468824076592e28a56f9cb96d5e546c61"
+    },
+    {
+      "path": "validation/full-irq/1a-00/auto-save-wait-records.bin",
+      "sha256": "1c506556655affc7bf83385e01c9c4b3af4b1ab0df37d9d55cac26f5456c3068"
+    },
+    {
+      "path": "validation/full-irq/1a-00/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/full-irq/1a-00/captures-auto-sms/capture.json",
+      "sha256": "0f0a20ff2404af14a42dde3feb84d12b455fcb88cf54df14824f75b0c296da59"
+    },
+    {
+      "path": "validation/full-irq/1a-00/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/full-irq/1a-00/captures-pal-sms/capture.json",
+      "sha256": "63224d79c32b50119787f12d1b539c18587a6e125b10e0919b3b98e6956cd74a"
+    },
+    {
+      "path": "validation/full-irq/1a-00/pal-audio-irq-events.json",
+      "sha256": "9cc24202d65da7d16b3aff030eef5257a039f9baaf210fef80af63e2f9890e4c"
+    },
+    {
+      "path": "validation/full-irq/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "validation/full-irq/1a-00/pal-full-irq-records.bin",
+      "sha256": "37f6b9e345dc6bcd9d2e4793bf280d93b8aff6885283fd04a32cae4fb8b9c1c4"
+    },
+    {
+      "path": "validation/full-irq/1a-00/pal-hero-001-before.bin",
+      "sha256": "6d89bde6e6badc3ee16dd87e10586b390f37f2ec7827fee161b8f178b13b520f"
+    },
+    {
+      "path": "validation/full-irq/1a-00/pal-live-envelope-records.bin",
+      "sha256": "fb1315a366d280c889bda9f59ea05145d641f1279ff398c5e642bb5ed453b554"
+    },
+    {
+      "path": "validation/full-irq/1a-00/pal-save-wait-records.bin",
+      "sha256": "4bb7b1474e34ecff3a7d239909c4f404b0442a5753f575d81894fff4c0da159f"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/auto-audio-irq-events.json",
+      "sha256": "e1f1f72f29b6e7560a261b77934d18bdeb4af3851ccb344080f239777c7e5e4f"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/auto-full-irq-records.bin",
+      "sha256": "1bc7f688cd1ce1cade75ee511853d85486d0e58b8ed12d50ce1618fe41558911"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/auto-hero-001-before.bin",
+      "sha256": "dec477f72e621b2927c12308e8e6c808ab60cdc719c78cd506e60c0005396e3a"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/auto-live-envelope-records.bin",
+      "sha256": "e105ef0bcce43cf5b1ab8c488dbb6e4a59a89c0d9aa7767f6767163a51ce326f"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/auto-save-wait-records.bin",
+      "sha256": "d6297d46d5d31a70d5d9a45612217d04f5ac26fc3b3a999a859d6a1c2873d963"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/captures-auto-sms/capture.json",
+      "sha256": "0f0a20ff2404af14a42dde3feb84d12b455fcb88cf54df14824f75b0c296da59"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/captures-pal-sms/capture.json",
+      "sha256": "63224d79c32b50119787f12d1b539c18587a6e125b10e0919b3b98e6956cd74a"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/pal-audio-irq-events.json",
+      "sha256": "229576c976aa5423b60def7a6bc6f92e55caf5fb16c5feec6a3652fc518ab550"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/pal-full-irq-records.bin",
+      "sha256": "d4e11a28d8ff48d228a85c2affc0502e251567683706a06e38a47c7d7be4744d"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/pal-hero-001-before.bin",
+      "sha256": "3401e413dd3e1ec0406ab07c8acbb48b5388c2c5248fbee73742fe83fe275452"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/pal-live-envelope-records.bin",
+      "sha256": "28f0a5204d3d01657d8ce8d1f05cfe64dcac3d38387216878b27a880db875259"
+    },
+    {
+      "path": "validation/full-irq/1a-ff/pal-save-wait-records.bin",
+      "sha256": "c0e8cdb75fb0d83135efccbc0f13ff1ae383378ecaf074f9cd4c9ebdc689a575"
+    },
+    {
+      "path": "validation/full-irq/36-00/auto-audio-irq-events.json",
+      "sha256": "0e9531b3ec5b950e20c4a88a14af1f70c8b14a1ea6a5723804db7a86801d2388"
+    },
+    {
+      "path": "validation/full-irq/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "validation/full-irq/36-00/auto-full-irq-records.bin",
+      "sha256": "9e0718e79602c324d009a5bafa8c1914944401a11d597631f3818dad7de39546"
+    },
+    {
+      "path": "validation/full-irq/36-00/auto-hero-001-before.bin",
+      "sha256": "329b1ba315381614fab76855fca94b70844cc0417f30e88a1489db18ab225e3b"
+    },
+    {
+      "path": "validation/full-irq/36-00/auto-live-envelope-records.bin",
+      "sha256": "888fb0668248a704486bc5824194c2fba3348fa968d0c9c5dc1eac3d527f890b"
+    },
+    {
+      "path": "validation/full-irq/36-00/auto-save-wait-records.bin",
+      "sha256": "9f66fda21077ef2f6f6c02b2486a96af3958864237d7b451e54e90141f751609"
+    },
+    {
+      "path": "validation/full-irq/36-00/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/full-irq/36-00/captures-auto-sms/capture.json",
+      "sha256": "9423e8adb832e43c3a03a937967ebc8bc805bad8b7c427ef634a75ff4b426306"
+    },
+    {
+      "path": "validation/full-irq/36-00/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/full-irq/36-00/captures-pal-sms/capture.json",
+      "sha256": "973ab3a82ea32f40429e071a8cecc4cded372bc41e2634ef5d0624a961e03c4e"
+    },
+    {
+      "path": "validation/full-irq/36-00/pal-audio-irq-events.json",
+      "sha256": "0becb1a99763e4ab9854634663f14bccc7cfde442977e8e455594c2d351ec457"
+    },
+    {
+      "path": "validation/full-irq/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "validation/full-irq/36-00/pal-full-irq-records.bin",
+      "sha256": "bec993ff2892e49268e1eb58846807260eb572620118cd7346846dc9d31b0454"
+    },
+    {
+      "path": "validation/full-irq/36-00/pal-hero-001-before.bin",
+      "sha256": "3529a4a597fd5e17158443d8bd41c3132a93eb30a934c70d6cc715ee0f8cae47"
+    },
+    {
+      "path": "validation/full-irq/36-00/pal-live-envelope-records.bin",
+      "sha256": "7e59b5929f7e8fc4d2faf3f681cd6fa6cbfb0af49c5ced50390fa00a0cd48fd3"
+    },
+    {
+      "path": "validation/full-irq/36-00/pal-save-wait-records.bin",
+      "sha256": "58fb2390529c6b6d77f2a56c70ce2cfd1570f1e1f44fc8dff7277bd12c3e59d8"
+    },
+    {
+      "path": "validation/full-irq/36-ff/auto-audio-irq-events.json",
+      "sha256": "da7a99986a572d1e5937bf71b46356ec5aba269b1a9ca347bb9963d5d0325f65"
+    },
+    {
+      "path": "validation/full-irq/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "validation/full-irq/36-ff/auto-full-irq-records.bin",
+      "sha256": "1598bf1ae29629ab8bb0d6165664f7af13b0f68fb3e3fc689091173b03701956"
+    },
+    {
+      "path": "validation/full-irq/36-ff/auto-hero-001-before.bin",
+      "sha256": "8a285920e028e7a2cfdee16a1f585baf9987ad2fbae921fa0bfde303e7e5833f"
+    },
+    {
+      "path": "validation/full-irq/36-ff/auto-live-envelope-records.bin",
+      "sha256": "4941e371280b7e5475f8ecc18802bec554670df6ea43b8985e455d2b48edb8e4"
+    },
+    {
+      "path": "validation/full-irq/36-ff/auto-save-wait-records.bin",
+      "sha256": "42b5f839e6cd9d5f621ea3ca7d09c25026478ddf387f8cb90f4cf152450a2e03"
+    },
+    {
+      "path": "validation/full-irq/36-ff/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/full-irq/36-ff/captures-auto-sms/capture.json",
+      "sha256": "9423e8adb832e43c3a03a937967ebc8bc805bad8b7c427ef634a75ff4b426306"
+    },
+    {
+      "path": "validation/full-irq/36-ff/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/full-irq/36-ff/captures-pal-sms/capture.json",
+      "sha256": "973ab3a82ea32f40429e071a8cecc4cded372bc41e2634ef5d0624a961e03c4e"
+    },
+    {
+      "path": "validation/full-irq/36-ff/pal-audio-irq-events.json",
+      "sha256": "17fe16c08ec931b3b68178315f83d2c3379643bdc8cda287342998c222a19f47"
+    },
+    {
+      "path": "validation/full-irq/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "validation/full-irq/36-ff/pal-full-irq-records.bin",
+      "sha256": "074fbc2f0dbf5567af02bbe13fefe19a705c741d6e2ca469af5ea3e6ac523a6f"
+    },
+    {
+      "path": "validation/full-irq/36-ff/pal-hero-001-before.bin",
+      "sha256": "f6988ce50e0bb945f4047518ef04eff4d6da5b08ca55f60e4733600ef5acc4c4"
+    },
+    {
+      "path": "validation/full-irq/36-ff/pal-live-envelope-records.bin",
+      "sha256": "1638c114d54451a1b4c043916e6d5989ddf9ab5f4defa271691525023543d429"
+    },
+    {
+      "path": "validation/full-irq/36-ff/pal-save-wait-records.bin",
+      "sha256": "97494928faea3534b7270a4f5fef19f076af5efbb3ace8fcdbf26c9bbc5d1f63"
+    },
+    {
+      "path": "validation/full-irq/3c-00/auto-audio-irq-events.json",
+      "sha256": "3f6dcc901ce2a5f3ea9f58db95a8e5f35ae2f65ca05775c4c7d438c4f7300f01"
+    },
+    {
+      "path": "validation/full-irq/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "validation/full-irq/3c-00/auto-full-irq-records.bin",
+      "sha256": "cd9c2f55916ea4c165cf7eaf40d16be7d5880b7fcc2c79b39332cc5276e3f7d2"
+    },
+    {
+      "path": "validation/full-irq/3c-00/auto-hero-001-before.bin",
+      "sha256": "08aa107cee08103564614abf59f9d7e8d8764819bf16f8d4dbcebe70839fc0d9"
+    },
+    {
+      "path": "validation/full-irq/3c-00/auto-live-envelope-records.bin",
+      "sha256": "b0bd97e1d9ddea80a9706cfd53abaf58cdc29fc024ed66e476f22d014b79e0dc"
+    },
+    {
+      "path": "validation/full-irq/3c-00/auto-save-wait-records.bin",
+      "sha256": "93a18efd12245ea5448bca0595207822871aeab0bf37602dbba5866a5b97e9f6"
+    },
+    {
+      "path": "validation/full-irq/3c-00/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/full-irq/3c-00/captures-auto-sms/capture.json",
+      "sha256": "1c2259f84d8ef0d2a54953134a16c68d6d7a734ea2a093b7bee70b71d9f07cfd"
+    },
+    {
+      "path": "validation/full-irq/3c-00/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/full-irq/3c-00/captures-pal-sms/capture.json",
+      "sha256": "3a9ebddecc96c18f3eb290e1fa532388da9db011d5402a138bc6d74c2948c096"
+    },
+    {
+      "path": "validation/full-irq/3c-00/pal-audio-irq-events.json",
+      "sha256": "40314eee31d9ac236a04565638de92ac6e4a9365f3cc873b55eedf0f3f8d3c1c"
+    },
+    {
+      "path": "validation/full-irq/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "validation/full-irq/3c-00/pal-full-irq-records.bin",
+      "sha256": "9ba02debb35444cffc93b85eede03d39df6eec627a3964e53335ef9199233154"
+    },
+    {
+      "path": "validation/full-irq/3c-00/pal-hero-001-before.bin",
+      "sha256": "1ff861e719aaf04b559fda25d3f4001ccfe418176e6b9ea81871d74005dd80cf"
+    },
+    {
+      "path": "validation/full-irq/3c-00/pal-live-envelope-records.bin",
+      "sha256": "384440a6fd2ed4ea574cbd607200929d96b6fad2f2bda6c819f116b025919443"
+    },
+    {
+      "path": "validation/full-irq/3c-00/pal-save-wait-records.bin",
+      "sha256": "dd3f4023e722408f98b8c840b323e522ae767bb215cb2bb01bd302983742c5c8"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/auto-audio-irq-events.json",
+      "sha256": "cc972d3af70af7773d8ac2f39387eead123fa088939115561ff1ec3d9f9fa352"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/auto-full-irq-records.bin",
+      "sha256": "b600574ab0af0721f9980a574c178352a7c5b4dab1fcb7d94a0f616aa2d74dbb"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/auto-hero-001-before.bin",
+      "sha256": "5b8cb3ea1b9ecf3d3a1bbf2568d9282eb873f594376402cbc1294fe77222078e"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/auto-live-envelope-records.bin",
+      "sha256": "94a73e32d7f9c9ec718ccecbac0a8ae8cf8c0b12d60b4a7fe8e467dc8f2fa162"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/auto-save-wait-records.bin",
+      "sha256": "12d082016a0ab67311d86217a44839c1f7b0e9db255097c09c226352f4b67f0c"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/captures-auto-sms/capture.json",
+      "sha256": "1c2259f84d8ef0d2a54953134a16c68d6d7a734ea2a093b7bee70b71d9f07cfd"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/captures-pal-sms/capture.json",
+      "sha256": "3a9ebddecc96c18f3eb290e1fa532388da9db011d5402a138bc6d74c2948c096"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/pal-audio-irq-events.json",
+      "sha256": "8bcdc32198073df81ab758735b93790ed67eb93a2c97581ce28aa98729fe4fc4"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/pal-full-irq-records.bin",
+      "sha256": "703e4dc467dd5be16b8dd36885eff304c9413d2c8298c39e99a395e21cdce8e1"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/pal-hero-001-before.bin",
+      "sha256": "6510e284394d2398204fb2d5a2064ea1ca3b27db8e56475d31d8dbd50273389f"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/pal-live-envelope-records.bin",
+      "sha256": "42d5cd3ae144c05f041953616674f5cc43d191ea563b44f79a65d3dda1d4eac9"
+    },
+    {
+      "path": "validation/full-irq/3c-ff/pal-save-wait-records.bin",
+      "sha256": "83e1d75134e509f70a73a24cc5302a23695947c2132a62de51a3d5952c384870"
+    },
+    {
+      "path": "validation/full-irq/6d-00/auto-audio-irq-events.json",
+      "sha256": "4610fe59f66ee938ac1074375cdf5f04f211723a5a4d1796dd89373c81103da0"
+    },
+    {
+      "path": "validation/full-irq/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "validation/full-irq/6d-00/auto-full-irq-records.bin",
+      "sha256": "def14228074e78c1965048e3e406085c7e3a6b93ffe4eb16cbf3831b1b0fbc6f"
+    },
+    {
+      "path": "validation/full-irq/6d-00/auto-hero-001-before.bin",
+      "sha256": "37000f36fa78d7fd135d2e60084134d118ad6cb1c6fa6fb2e872463cecfc4872"
+    },
+    {
+      "path": "validation/full-irq/6d-00/auto-live-envelope-records.bin",
+      "sha256": "c6e05af23e013c5d322bf705c05e6caf254d4951a335af5f1e6193efef7ff551"
+    },
+    {
+      "path": "validation/full-irq/6d-00/auto-save-wait-records.bin",
+      "sha256": "1fb788edfea9e264cf8b05474d1fe2abf9f566ff7152cc47e68de26fec346e9c"
+    },
+    {
+      "path": "validation/full-irq/6d-00/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/full-irq/6d-00/captures-auto-sms/capture.json",
+      "sha256": "5132e10cbd9cb4f56bc7deeb639c57167a86518a536997e82a4ca36424ca0458"
+    },
+    {
+      "path": "validation/full-irq/6d-00/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/full-irq/6d-00/captures-pal-sms/capture.json",
+      "sha256": "2e02a5584ead959ffd203d833bfbfeb9c0bf0f0dd97d1f3116d7ed30e87ec78f"
+    },
+    {
+      "path": "validation/full-irq/6d-00/pal-audio-irq-events.json",
+      "sha256": "ababacd8808b383cd053b8ff1d741a59923c76cd9456e9c1712017a88ebcd54f"
+    },
+    {
+      "path": "validation/full-irq/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "validation/full-irq/6d-00/pal-full-irq-records.bin",
+      "sha256": "7ee1790c26d2b57cc7e506165f1260bacb7e45b80e8a156aac0aadcb3addc96e"
+    },
+    {
+      "path": "validation/full-irq/6d-00/pal-hero-001-before.bin",
+      "sha256": "3aafc06da35c08ba5d79a528380bc2b889697d12e4a21bff09b59362c27d0a7f"
+    },
+    {
+      "path": "validation/full-irq/6d-00/pal-live-envelope-records.bin",
+      "sha256": "1221330950b6e9bbbb04954f745c7bd4471371cd196e78274823085c2c669321"
+    },
+    {
+      "path": "validation/full-irq/6d-00/pal-save-wait-records.bin",
+      "sha256": "496e212ed0d59050df3afc25b45486129447a3c187fa367e8c330869e8a042ae"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/auto-audio-irq-events.json",
+      "sha256": "53ae0e01677b544dd653fe676306072009ba936af613f873c455f1710776bafd"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/auto-full-irq-records.bin",
+      "sha256": "f837e088bbfd1354f32b9d3d066795ba0aeb6f6db0a369acbf410e7dd4f8feae"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/auto-hero-001-before.bin",
+      "sha256": "99097ce6be59e28e732c2a2a50d9cfbd48be6e12562df35824c32aac4a1a3c72"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/auto-live-envelope-records.bin",
+      "sha256": "6b8f0a2d5d36e396c9f4df10380df328dda4ca142aba7d065c2cd53ac1039b54"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/auto-save-wait-records.bin",
+      "sha256": "12b33bffa501cf947784496aa04978673f87af5426b4fee941848728b585e28d"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/captures-auto-sms/capture.json",
+      "sha256": "5132e10cbd9cb4f56bc7deeb639c57167a86518a536997e82a4ca36424ca0458"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/captures-pal-sms/capture.json",
+      "sha256": "2e02a5584ead959ffd203d833bfbfeb9c0bf0f0dd97d1f3116d7ed30e87ec78f"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/pal-audio-irq-events.json",
+      "sha256": "1b18b0ffd1a3779361c2b67cca19c6256c0760df29d6212872aa065a1c837d0f"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/pal-full-irq-records.bin",
+      "sha256": "dd350ffe6430c6052a6f39eb16a26ecff78c45bbfad42cbb8bcf87b672070464"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/pal-hero-001-before.bin",
+      "sha256": "e560400f64c44d9fd8ada8bfb94a6a1fd242f4696f9826fc0f8db08ea308f7af"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/pal-live-envelope-records.bin",
+      "sha256": "3f78baaeab2e9a790473a995430c598dd545c936d6ed67db2aee8bb520bff83b"
+    },
+    {
+      "path": "validation/full-irq/6d-ff/pal-save-wait-records.bin",
+      "sha256": "ce41ffc3a41d7f62c6842eb393c396dbccf1ef1625de42b3a69d45b4452b85f9"
+    },
+    {
+      "path": "validation/full-irq/87-00/auto-audio-irq-events.json",
+      "sha256": "08be5d7222b1fe402244e0cb79cb75af58b5742cbea0a9e6c0311266c5ffd67d"
+    },
+    {
+      "path": "validation/full-irq/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "validation/full-irq/87-00/auto-full-irq-records.bin",
+      "sha256": "717e427c195260dab97bbebe099487e1c52bfd29f4151e0587193f8203067b00"
+    },
+    {
+      "path": "validation/full-irq/87-00/auto-hero-001-before.bin",
+      "sha256": "4a16f818a89be300145b47798766ec1da26e2be81ac9ac6cde134bae7d3bad57"
+    },
+    {
+      "path": "validation/full-irq/87-00/auto-live-envelope-records.bin",
+      "sha256": "508dbceb6f0d6621a97a4b95d21bf407d86ea51036afcfb8d14600277eb60330"
+    },
+    {
+      "path": "validation/full-irq/87-00/auto-save-wait-records.bin",
+      "sha256": "85b3a215b2ecd66e62744fe2a0223e18b87ea21f3fceacafbb7c5b0867b79cd6"
+    },
+    {
+      "path": "validation/full-irq/87-00/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/full-irq/87-00/captures-auto-sms/capture.json",
+      "sha256": "0be75cf94c4438801f6211d6ef1c13a0d4ffb50717de2e34753ee0534bf4cccd"
+    },
+    {
+      "path": "validation/full-irq/87-00/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/full-irq/87-00/captures-pal-sms/capture.json",
+      "sha256": "41d988e7685ad9f8561a8a7203b638063f7c475d51fe90ff7039f73219401b5b"
+    },
+    {
+      "path": "validation/full-irq/87-00/pal-audio-irq-events.json",
+      "sha256": "e2c8e1fc73e2c3059d2b7ca3ff3ff52e80b52609adede073c541d4483ffd6428"
+    },
+    {
+      "path": "validation/full-irq/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "validation/full-irq/87-00/pal-full-irq-records.bin",
+      "sha256": "29dc6101d93b66eb34ba76c5f56b94992ae1ebd408b5e68be775c4ffc1f59275"
+    },
+    {
+      "path": "validation/full-irq/87-00/pal-hero-001-before.bin",
+      "sha256": "4e6921b3dca331e4143a83f7c00b11ef7a56334f01e12fa6342f90d7ec4f5b89"
+    },
+    {
+      "path": "validation/full-irq/87-00/pal-live-envelope-records.bin",
+      "sha256": "bc83854175defb1d0563bcb69c4654830b9528ece29f4681baf6e875a142ce4e"
+    },
+    {
+      "path": "validation/full-irq/87-00/pal-save-wait-records.bin",
+      "sha256": "ce18bcc21612cd6c07e5552c496a3fd386af5e743bf9fc0008479a8c3ea2acc3"
+    },
+    {
+      "path": "validation/full-irq/87-ff/auto-audio-irq-events.json",
+      "sha256": "de9a71a694c058e482120febb9720d30b2f1560411aefd9f588b71d8bdf20b1a"
+    },
+    {
+      "path": "validation/full-irq/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "validation/full-irq/87-ff/auto-full-irq-records.bin",
+      "sha256": "e3e0f8a8949701b3a5b866aa01daa91154c8f65425e22ed176a7da75959f6d3a"
+    },
+    {
+      "path": "validation/full-irq/87-ff/auto-hero-001-before.bin",
+      "sha256": "402ebe7ca4857d5385a293ae75b32138c74e708019086455ea84740f24234515"
+    },
+    {
+      "path": "validation/full-irq/87-ff/auto-live-envelope-records.bin",
+      "sha256": "99c4cb420540c5b9ffbec0375461c051bd3f23d0bd18ce389d7fe532ded0697c"
+    },
+    {
+      "path": "validation/full-irq/87-ff/auto-save-wait-records.bin",
+      "sha256": "a83b96ecef8bcc154d40ea66c46007053bdbc3287175bb3f13154b434d8a520d"
+    },
+    {
+      "path": "validation/full-irq/87-ff/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/full-irq/87-ff/captures-auto-sms/capture.json",
+      "sha256": "0be75cf94c4438801f6211d6ef1c13a0d4ffb50717de2e34753ee0534bf4cccd"
+    },
+    {
+      "path": "validation/full-irq/87-ff/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/full-irq/87-ff/captures-pal-sms/capture.json",
+      "sha256": "41d988e7685ad9f8561a8a7203b638063f7c475d51fe90ff7039f73219401b5b"
+    },
+    {
+      "path": "validation/full-irq/87-ff/pal-audio-irq-events.json",
+      "sha256": "166aff13a1e258d582ebf0373a2c3bdda9c6dac749a530fbae7e49efa1742af6"
+    },
+    {
+      "path": "validation/full-irq/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "validation/full-irq/87-ff/pal-full-irq-records.bin",
+      "sha256": "f48f4d97b6168bcd0fd314006f4859282b75c54615f0f9bceb9f6c661434e2d8"
+    },
+    {
+      "path": "validation/full-irq/87-ff/pal-hero-001-before.bin",
+      "sha256": "5b6423887736062ee9248991509bd732ba5837a64214401866c9dc6bd54a5a66"
+    },
+    {
+      "path": "validation/full-irq/87-ff/pal-live-envelope-records.bin",
+      "sha256": "6dffd3dcb94b22a6a8afaed1f1e44b481be19a4e11e0650285811706d27af3ce"
+    },
+    {
+      "path": "validation/full-irq/87-ff/pal-save-wait-records.bin",
+      "sha256": "773e271b47eef613e2aa6b5269587b9ed263daf5afc6482ab326919309555524"
+    },
+    {
+      "path": "validation/full-irq/96-00/auto-audio-irq-events.json",
+      "sha256": "5d423da5c04a2e79a77d713497fa5f2f8e308752f37acfae3ef382e0ea561088"
+    },
+    {
+      "path": "validation/full-irq/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "validation/full-irq/96-00/auto-full-irq-records.bin",
+      "sha256": "590f1759e145ac455c9bc8ed746ee042a170d0cc8558b979f5e4face0774e8ff"
+    },
+    {
+      "path": "validation/full-irq/96-00/auto-hero-001-before.bin",
+      "sha256": "f664f50250012c816a3f95a4bb514de5f7a126ff3a16c7421d3753b68f0a38a7"
+    },
+    {
+      "path": "validation/full-irq/96-00/auto-live-envelope-records.bin",
+      "sha256": "2cafa10d421d2d5d85737b03c94ccbe468824076592e28a56f9cb96d5e546c61"
+    },
+    {
+      "path": "validation/full-irq/96-00/auto-save-wait-records.bin",
+      "sha256": "718aeae51d0edded8bc288c5732991d979e50cd640e7b40eb9a6173c020cb563"
+    },
+    {
+      "path": "validation/full-irq/96-00/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/full-irq/96-00/captures-auto-sms/capture.json",
+      "sha256": "c635c54dc2b669540aa09a2441faf7451e3948ba6f4cbd49d19bc7725bcf8adc"
+    },
+    {
+      "path": "validation/full-irq/96-00/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/full-irq/96-00/captures-pal-sms/capture.json",
+      "sha256": "bb6fd95dc170cab703fe3fa9367be1942a01f9549ca8a184e7594a24f6049ff2"
+    },
+    {
+      "path": "validation/full-irq/96-00/pal-audio-irq-events.json",
+      "sha256": "0c4c87eb9b7db58329b10152897d6b826d2cccdd191fd36b1d8aa411efeeefdf"
+    },
+    {
+      "path": "validation/full-irq/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "validation/full-irq/96-00/pal-full-irq-records.bin",
+      "sha256": "3490b4cacd1f335588757b269e29d578ce7adf8d290f85a338f164bdd6d6c32a"
+    },
+    {
+      "path": "validation/full-irq/96-00/pal-hero-001-before.bin",
+      "sha256": "421f0a4455a16e287eb34cba6f649bb0091acbe682d0bd8d2a6e4b3186ee2b33"
+    },
+    {
+      "path": "validation/full-irq/96-00/pal-live-envelope-records.bin",
+      "sha256": "fb1315a366d280c889bda9f59ea05145d641f1279ff398c5e642bb5ed453b554"
+    },
+    {
+      "path": "validation/full-irq/96-00/pal-save-wait-records.bin",
+      "sha256": "c87247cf7b2cf5be90992b2e291963b0a371eaadb62d1e2484ac0121b89ef00e"
+    },
+    {
+      "path": "validation/full-irq/96-ff/auto-audio-irq-events.json",
+      "sha256": "24d4fdc20db7e1238a94e79e0099b137240509b00e55982f12a2e5191cb59092"
+    },
+    {
+      "path": "validation/full-irq/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "validation/full-irq/96-ff/auto-full-irq-records.bin",
+      "sha256": "9a876f1b331c6b86ec3aa9600d57109492930b9b9363bcda4740b5de6c20f415"
+    },
+    {
+      "path": "validation/full-irq/96-ff/auto-hero-001-before.bin",
+      "sha256": "d57aa6b5706146e510d51e8489f82db53ff9b74e592836bd9332fb2d27d2c20c"
+    },
+    {
+      "path": "validation/full-irq/96-ff/auto-live-envelope-records.bin",
+      "sha256": "e37321dbf3fcacecea914aa852cf35b59ccc63a75cd0ed791ea478f8674e60ff"
+    },
+    {
+      "path": "validation/full-irq/96-ff/auto-save-wait-records.bin",
+      "sha256": "75dbc1e3ffd418147e0d7bf5293b25a267048ff79c820e3a5ae2be12dcab5fc3"
+    },
+    {
+      "path": "validation/full-irq/96-ff/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/full-irq/96-ff/captures-auto-sms/capture.json",
+      "sha256": "c635c54dc2b669540aa09a2441faf7451e3948ba6f4cbd49d19bc7725bcf8adc"
+    },
+    {
+      "path": "validation/full-irq/96-ff/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/full-irq/96-ff/captures-pal-sms/capture.json",
+      "sha256": "bb6fd95dc170cab703fe3fa9367be1942a01f9549ca8a184e7594a24f6049ff2"
+    },
+    {
+      "path": "validation/full-irq/96-ff/pal-audio-irq-events.json",
+      "sha256": "92fde6e5fa7f6634cb9506c61292ff85e8dc6bafd1aa8f4b4caf7c1d67487a8b"
+    },
+    {
+      "path": "validation/full-irq/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "validation/full-irq/96-ff/pal-full-irq-records.bin",
+      "sha256": "97d002df8b39f15f289a2ce276dec3a134e8d14ddf65dca83204bb226701e80f"
+    },
+    {
+      "path": "validation/full-irq/96-ff/pal-hero-001-before.bin",
+      "sha256": "896210d8c533a592e24b07d28c4dfbc0718a0ff7a8269bca21f4d9d956c88f74"
+    },
+    {
+      "path": "validation/full-irq/96-ff/pal-live-envelope-records.bin",
+      "sha256": "2a2b4e10cefbc7b7220cce93b99438d9e7c23305f41702c5d349aa10727c8088"
+    },
+    {
+      "path": "validation/full-irq/96-ff/pal-save-wait-records.bin",
+      "sha256": "23d429a3ac6bf050ba72a714de6b9061b1aa16e93014122afa88ca455acc3287"
+    },
+    {
+      "path": "validation/full-irq-unit/full-irq/auto/capture.json",
+      "sha256": "d714b272b33b655a663c4f6f6be2da3cc0e643194a4034fb2d6c65d3a7278502"
+    },
+    {
+      "path": "validation/full-irq-unit/full-irq/auto-records.bin",
+      "sha256": "4dc7d998a95cc0ddf7ac644e53e3ab4007549fb12a1c60ed7932d127fb271eaf"
+    },
+    {
+      "path": "validation/full-irq-unit/full-irq/pal/capture.json",
+      "sha256": "c02974c4ccb4ad17c1e68c9c5c2b0570fabae8fd2871b4c0e4cb8b3a7d995c71"
+    },
+    {
+      "path": "validation/full-irq-unit/full-irq/pal-records.bin",
+      "sha256": "213b65f851853fb2b240e33d03cf3840083c7b160bcba9ab55e26c9d19c06b2b"
+    },
+    {
+      "path": "validation/full-irq-unit/full-irq/source.sms",
+      "sha256": "be9fcdc5ce9d1acaa83b5a91b0a8b3db778e15ee1a2b4f4636af72d5d4daf7a4"
+    },
+    {
+      "path": "reference/live_hero_initialization_cost_report.json",
+      "sha256": "465266232176e3b2e4ef7dbd772cab5d41a07dc591d6290b341259b489f018cf"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/1a-00/auto-hero-001-before.bin",
+      "sha256": "960dddd4cbe14560f957fcbb9f5a4f582e91e6366b202c546350b8e444407b7a"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/1a-00/pal-hero-001-before.bin",
+      "sha256": "6d89bde6e6badc3ee16dd87e10586b390f37f2ec7827fee161b8f178b13b520f"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/1a-ff/auto-hero-001-before.bin",
+      "sha256": "dec477f72e621b2927c12308e8e6c808ab60cdc719c78cd506e60c0005396e3a"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/1a-ff/pal-hero-001-before.bin",
+      "sha256": "3401e413dd3e1ec0406ab07c8acbb48b5388c2c5248fbee73742fe83fe275452"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/36-00/auto-hero-001-before.bin",
+      "sha256": "329b1ba315381614fab76855fca94b70844cc0417f30e88a1489db18ab225e3b"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/36-00/pal-hero-001-before.bin",
+      "sha256": "3529a4a597fd5e17158443d8bd41c3132a93eb30a934c70d6cc715ee0f8cae47"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/36-ff/auto-hero-001-before.bin",
+      "sha256": "8a285920e028e7a2cfdee16a1f585baf9987ad2fbae921fa0bfde303e7e5833f"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/36-ff/pal-hero-001-before.bin",
+      "sha256": "f6988ce50e0bb945f4047518ef04eff4d6da5b08ca55f60e4733600ef5acc4c4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/6d-00/auto-hero-001-before.bin",
+      "sha256": "37000f36fa78d7fd135d2e60084134d118ad6cb1c6fa6fb2e872463cecfc4872"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/6d-00/pal-hero-001-before.bin",
+      "sha256": "3aafc06da35c08ba5d79a528380bc2b889697d12e4a21bff09b59362c27d0a7f"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/6d-ff/auto-hero-001-before.bin",
+      "sha256": "99097ce6be59e28e732c2a2a50d9cfbd48be6e12562df35824c32aac4a1a3c72"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/6d-ff/pal-hero-001-before.bin",
+      "sha256": "e560400f64c44d9fd8ada8bfb94a6a1fd242f4696f9826fc0f8db08ea308f7af"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/3c-00/auto-hero-001-before.bin",
+      "sha256": "08aa107cee08103564614abf59f9d7e8d8764819bf16f8d4dbcebe70839fc0d9"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/3c-00/pal-hero-001-before.bin",
+      "sha256": "1ff861e719aaf04b559fda25d3f4001ccfe418176e6b9ea81871d74005dd80cf"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/3c-ff/auto-hero-001-before.bin",
+      "sha256": "5b8cb3ea1b9ecf3d3a1bbf2568d9282eb873f594376402cbc1294fe77222078e"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/3c-ff/pal-hero-001-before.bin",
+      "sha256": "6510e284394d2398204fb2d5a2064ea1ca3b27db8e56475d31d8dbd50273389f"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/87-00/auto-hero-001-before.bin",
+      "sha256": "4a16f818a89be300145b47798766ec1da26e2be81ac9ac6cde134bae7d3bad57"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/87-00/pal-hero-001-before.bin",
+      "sha256": "4e6921b3dca331e4143a83f7c00b11ef7a56334f01e12fa6342f90d7ec4f5b89"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/87-ff/auto-hero-001-before.bin",
+      "sha256": "402ebe7ca4857d5385a293ae75b32138c74e708019086455ea84740f24234515"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/87-ff/pal-hero-001-before.bin",
+      "sha256": "5b6423887736062ee9248991509bd732ba5837a64214401866c9dc6bd54a5a66"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/96-00/auto-hero-001-before.bin",
+      "sha256": "f664f50250012c816a3f95a4bb514de5f7a126ff3a16c7421d3753b68f0a38a7"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/96-00/pal-hero-001-before.bin",
+      "sha256": "421f0a4455a16e287eb34cba6f649bb0091acbe682d0bd8d2a6e4b3186ee2b33"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/96-ff/auto-hero-001-before.bin",
+      "sha256": "d57aa6b5706146e510d51e8489f82db53ff9b74e592836bd9332fb2d27d2c20c"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "reference/validation/paid-passage-hero-init/96-ff/pal-hero-001-before.bin",
+      "sha256": "896210d8c533a592e24b07d28c4dfbc0718a0ff7a8269bca21f4d9d956c88f74"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "logs/build-full-irq-core.log",
+      "sha256": "fb2ef68149d708b5a79de47005fe659d030d26c9d0d970db7e8bea20a898d8bc"
+    },
+    {
+      "path": "logs/full-irq-core-build.log",
+      "sha256": "a62979444715e0a9d3cee606eb7a070a5491d9ed0acfbe318cda6b6c7ed85826"
+    },
+    {
+      "path": "logs/full-irq-live.log",
+      "sha256": "d53d4ec5e222c09120ee761818c79b1d55538433a0ee833aeeb6b42dd296d2de"
+    },
+    {
+      "path": "logs/full-irq-group1.log",
+      "sha256": "59a67fe57045c6a9aa49142581280795e002dab5798545ea9ee8d278e397ed8a"
+    },
+    {
+      "path": "logs/full-irq-group2.log",
+      "sha256": "cfacb92c44e76619a7977b3c215427279be89151111bd6c6116dfd00d91c2492"
+    },
+    {
+      "path": "logs/full-irq-group3.log",
+      "sha256": "dd5c49e69eae15125d1be24770675a8b103f01f75a60107aa72c8e816adc5dda"
+    },
+    {
+      "path": "logs/full-irq-cost.log",
+      "sha256": "20175a214e6d4789c41f58b6f3f3b39f878bc23d6c6a6842fa5b28074c58b8df"
+    },
+    {
+      "path": "logs/full-irq-unit.log",
+      "sha256": "9366b06d0363d7214f228d5a6149033e0a3a1ce570c8b4c9ed9dffa6f1758785"
+    },
+    {
+      "path": "logs/complete-loading-budget.log",
+      "sha256": "1c5be6312b97651a00f501e0e02e15cb0668e20973398980a914abe47b9e9ec5"
+    },
+    {
+      "path": "full_irq_cost_report.json",
+      "sha256": "b23dd30a913aae80547ec9038918b3b33d96e9b1901c94a4e06d1f82f06e5b02"
+    },
+    {
+      "path": "full_irq_unit_report.json",
+      "sha256": "75f34509f63b9a9cd37325062c782a27c32be9586223b6aea7b1de3f55df170f"
+    },
+    {
+      "path": "complete_loading_budget_report.json",
+      "sha256": "839bbba9a9ba21008089fbdc243e7c519738fecf2f43c359639189d627f27468"
+    },
+    {
+      "path": "full_irq_milestone.md",
+      "sha256": "4dc03edc5fdfdd902e564f5f925dba3fe155b434dfa56a7222ccdf7879854412"
+    },
+    {
+      "path": "genesis_plus_gx_fullirq_libretro.dll",
+      "sha256": "437483705e9a52eb0467b9def3d400a271da9a2f38b87bc52471135bed84a62b"
+    }
+  ]
+}

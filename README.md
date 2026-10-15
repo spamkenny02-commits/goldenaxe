@@ -75,8 +75,11 @@ Les commandes utilisant R, certaines restitutions et les combinaisons
 non couvertes restent à vérifier avant l’intégration aux chargements.
 Le budget hors interruptions du chargement est désormais complet sur
 24 scénarios de passages payants, avec 13 725 attentes VBlank et
-14 424 appels audio contrôlés. La phase future et le travail VDP des
-interruptions complètes restent à calculer pour prédire la durée physique.
+14 424 appels audio contrôlés. Le travail des interruptions complètes
+passe aussi 13 749 appels en jeu et 2 880 cas isolés. Le budget total
+correspond aux 24 chargements contrôlés, avec les boucles et entrées
+observées comme données. La phase future VBlank, les décisions de
+scrutation et les entrées de hasard restent à prédire avant l’intégration.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -99,6 +102,7 @@ et la vérification sur matériel Mega Drive.
 - [Calcul des canaux de tonalité](analysis/audio_tone_channel_milestone.md).
 - [Composition du lecteur audio](analysis/audio_reader_milestone.md).
 - [Attentes VBlank et budget de chargement](analysis/save_wait_milestone.md).
+- [Interruptions vidéo et budget conditionnel complet](analysis/full_irq_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

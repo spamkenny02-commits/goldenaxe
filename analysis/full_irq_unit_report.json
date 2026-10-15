@@ -1,0 +1,24 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "be9fcdc5ce9d1acaa83b5a91b0a8b3db778e15ee1a2b4f4636af72d5d4daf7a4",
+  "cases": 2880,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 1440,
+      "raw_sha256": "4dc7d998a95cc0ddf7ac644e53e3ab4007549fb12a1c60ed7932d127fb271eaf"
+    },
+    {
+      "region": "pal",
+      "cases": 1440,
+      "raw_sha256": "213b65f851853fb2b240e33d03cf3840083c7b160bcba9ab55e26c9d19c06b2b"
+    }
+  ],
+  "production_ROM_changed": false,
+  "limits": [
+    "Original fixedIRQ/banks4/6 unchanged. Custom boot/stub supplies caller AF frame,fullIRQ flag,empty queue andsound80/inactive channels. Hardware IRQ generation disabled;original handler enables CPU interrupts but VDP IRQs stay disabled.",
+    "Palette skip0/1,HUDflags0/1/2/3,pause timer0/1/2/127/255,delay0/1/255,oldbuttons0/255,oldpause0/1/255,compensation0/1;both regions. Captured palette decisions andactual input ports supplied;336-byte state/nine complete stage costs andreader400-byte state/DE/cost compared.",
+    "Not raster-phase prediction,queue boundary exhaustiveness,native equivalence or hardware/full game proof."
+  ]
+}
