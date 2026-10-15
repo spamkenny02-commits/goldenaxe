@@ -87,4 +87,7 @@ affichés en tête de ce README sont actualisés par `tools/version_rom.py`.
 
 Git conserve les sources, outils, rapports principaux et ROMs numérotées.
 Les captures et fichiers temporaires volumineux restent disponibles localement.
-Le dépôt distant est [spamkenny02-commits/goldenaxe](https://github.com/spamkenny02-commits/goldenaxe).
+Le travail reste dans le dépôt Git local, sur la branche `main`, sans dépôt
+distant configuré. Il sera copié vers un nouveau dépôt lorsque demandé.
+L’ancien dépôt GitHub V51 contient un autre arbre de code ; aucun changement
+n’y a été envoyé depuis ce projet.
