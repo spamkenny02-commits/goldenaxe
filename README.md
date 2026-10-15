@@ -63,7 +63,9 @@ et le partage F3 sont vérifiés sur des contextes isolés. Les commandes
 utilisant le registre R, la restitution des canaux et le lecteur complet
 restent à couvrir avant l’intégration aux chargements natifs. La sélection
 des notes de bruit (8679) dispose maintenant d’un modèle de coût vérifié ;
-le traitement complet du canal de bruit (864F) reste à couvrir.
+les notes, enveloppes et boucles F6/F7 du canal de bruit (864F) passent
+39 360 cas isolés et les 1 102 appels d’un parcours en jeu. Les autres
+commandes du bruit et les canaux de tonalité complets restent à couvrir.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -82,6 +84,7 @@ et la vérification sur matériel Mega Drive.
 - [Calcul des enveloppes de volume](analysis/audio_envelope_milestone.md).
 - [Calcul de la hauteur des notes et du vibrato](analysis/audio_pitch_milestone.md).
 - [Calcul des notes et du contrôle des séquences](analysis/audio_note_sequence_milestone.md).
+- [Calcul du canal de bruit](analysis/audio_noise_channel_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

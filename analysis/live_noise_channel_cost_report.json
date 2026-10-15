@@ -1,0 +1,56 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 1102,
+  "rows": [
+    {
+      "region": "auto",
+      "captured_cases": 501,
+      "validated_cases": 501,
+      "unsupported_command_cases": [],
+      "categories": {
+        "held_note": 441,
+        "new_note": 60
+      },
+      "entry_envelope_modes": {
+        "2": 133,
+        "1": 367,
+        "0": 1
+      },
+      "initial_control_commands": {
+        "F7": 1,
+        "F6": 13
+      },
+      "raw_sha256": "50163b401c08688fd2a1fbf4bcdc83264f4673df3d58a3667cc85e6194d03b3c",
+      "source_cycle_array_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "captured_cases": 601,
+      "validated_cases": 601,
+      "unsupported_command_cases": [],
+      "categories": {
+        "held_note": 524,
+        "new_note": 77
+      },
+      "entry_envelope_modes": {
+        "1": 439,
+        "2": 161,
+        "0": 1
+      },
+      "initial_control_commands": {
+        "F7": 1,
+        "F6": 17
+      },
+      "raw_sha256": "231b5af940307c1978e8a47513f152d6702350ce8735d1fb4f318842655fc64a",
+      "source_cycle_array_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Actual controlled6D->96/full-mask paid route PAL/NTSC. Read-only original864F entry/reader continuation805C or full reader exit0205 observations;400 bytes and complete instruction cost predicted. All calls counted;unsupported noise commands retained with record,stream pointer and observed cost.",
+    "Complete source cycle arrays equal archivedv0179. Held-envelope modes/dependencies come from actual entry state includingDE. Passing supported calls is not complete noise sequencer coverage.",
+    "Noise commands other than F6/F7,whole reader/R-dependent controls/restoration8211,futureIRQ/loading prediction and full game progression remain open."
+  ]
+}

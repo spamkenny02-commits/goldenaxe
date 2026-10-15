@@ -1,0 +1,25 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "37f90a624297d98f4c6288a9c6a54fc543fd78e9f134220efe36cca363fe7731",
+  "core_sha256": "97d9b201e19b8821679a2476a874658fae68b31522550be7000158383e4a4a8d",
+  "cases": 39360,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 19680,
+      "results_sha256": "fa8b60520d9340fcb6721849666100f27c9292b4ebf9d4a9b12792a9e259b340"
+    },
+    {
+      "region": "pal",
+      "cases": 19680,
+      "results_sha256": "fa8b60520d9340fcb6721849666100f27c9292b4ebf9d4a9b12792a9e259b340"
+    }
+  ],
+  "production_ROM_changed": false,
+  "limits": [
+    "Original864F and all bank6 helpers/tables unchanged. Custom caller/fixedROM streams,IXDED0,explicit DE8A0B,IRQs disabled. Complete channel instruction cost and400 RAM bytes compared.",
+    "Thirteen note bytes,five following durations,six flags,four scales,four duration counters,three envelope modes andzero initial envelope index. Non-boundary held notes execute854B and volume tail. Duration-only and new-noise notes execute common839B/83A4 reset. F6 jumps,F7 counts0/1/2/255 and prior counters0/1/2/255 tested separately. Many contexts synthetic.",
+    "Only F6/F7 noise sequence controls supported;other commands explicitly unsupported. Other envelope modes/indices,whole reader/futureIRQ/loading and natural progression unproved."
+  ]
+}

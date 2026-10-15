@@ -850,3 +850,5 @@ v0181: actual8357 raw16-bit note path83D1..83EC always jumps839B duration multip
 2026-10-15 v0182: native F3 ownership termination corrected,400 source/native cases (120 prior mismatches,zero after),44340 audio regression snapshots pass.20 deterministic commands59904 source cost cases,F3 ownership3840 cases pass;R-dependent commands,EF data target,restoration8211 and noise/full channels/reader cost remain open. See audio_ownership_milestone.md.
 
 2026-10-15 v0183: borrowed-noise rest preserves PSG output, matching863E.18432 source/model/compiled-native cases:400 RAM bytes/helper Tstates/noise PSG registers exact;baseline144 PSG divergences (RAM already matched).13 music/29 SFX/fade44340 regressions pass. Next864F full noise channel,other channels/reader/IRQ loading costs. See noise_note_milestone.md.
+
+2026-10-15: original864F noise-channel cost composition:39360 unit cases +1102 live6D->96 calls exact400 bytes/Tstates,PAL/NTSC;F6/F7 included,zero ignored live calls,sourcecyclearrays equalv0179. ROMv0183 unchanged. Other noise commands,whole tone channels/reader and physical loading integration remain open. See audio_noise_channel_milestone.md.

@@ -1,0 +1,570 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/audio_noise_channel_cost.py",
+      "sha256": "da2135641d943cc9f47cae2601f53f53fcfb950474d1f84cc09b31bdba6564b3"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "d9ad92780846f57957ef63a896f66adbddc0b85c321194cb28a2a4c1b4991539"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/validate_audio_noise_channel_cost.py",
+      "sha256": "fba3a4179b25b0d895bc6ed40a314df6edc9e9ca519a0bd5d7028385a9ef27ba"
+    },
+    {
+      "path": "tools/validate_live_noise_channel_cost.py",
+      "sha256": "3a1a241ae6d94e9255a5e1e49563b8d4fc7fd31511dacd12d179abb826057de3"
+    },
+    {
+      "path": "tools/validate_audio_prefix_cost.py",
+      "sha256": "56f0a1aef26cba4918dd96d86674df979ccc16632d903c37173006a06c38faf7"
+    },
+    {
+      "path": "tools/build_live_envelope_core.py",
+      "sha256": "72980d1ef660f62fc2e2af9e53249dc814bcf721a2c9803807b1d340ce82ea7c"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "599da8747e1cf6c87aa639430d8a98b803e96f07266b2373c537bd0ad1978409"
+    },
+    {
+      "path": "tools/archive_noise_channel_research.py",
+      "sha256": "a9c72f03a4967a8f08cc1deae28cf46b0cb76e3d42271c492e33d9fdaae4b559"
+    },
+    {
+      "path": "z80-live-noise-channel.txt",
+      "sha256": "ac675c2fbae33e29ecc230c3b38276cb38b6c611850bd8c9c3cf0ef9b82c0395"
+    },
+    {
+      "path": "z80-envelope-unit.txt",
+      "sha256": "fe07b918875ff6bdc2757025ca0abf1b82ecb055ae209bc121ae112836037ff9"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/auto/capture.json",
+      "sha256": "3aec5b013a227a56300a50e58f51a753beaec09e7fe945bcf38f3234863501bf"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/auto/trace_counts.bin",
+      "sha256": "dcee9cb9adfe9615082226450cc852d896aac239c09cabb3a15a64ce5e5d7cb7"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/auto/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/auto/trace_windows.bin",
+      "sha256": "71675642d6afbfc1755048be14e83da83db4a38d67d1a183e520c59daf8ee083"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/auto-results.bin",
+      "sha256": "fa8b60520d9340fcb6721849666100f27c9292b4ebf9d4a9b12792a9e259b340"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/pal/capture.json",
+      "sha256": "f38d3849ebef7966158a8c0fb6d71bb8bf336f5db28e54e7030898f847afc140"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/pal/trace_counts.bin",
+      "sha256": "bb54958536af489c7c78faec75cdfc144071bd1dd045cbe93ca737e876bbafc9"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/pal/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/pal/trace_windows.bin",
+      "sha256": "71675642d6afbfc1755048be14e83da83db4a38d67d1a183e520c59daf8ee083"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/pal-results.bin",
+      "sha256": "fa8b60520d9340fcb6721849666100f27c9292b4ebf9d4a9b12792a9e259b340"
+    },
+    {
+      "path": "validation/audio-noise-channel/noise-channel/source.sms",
+      "sha256": "37f90a624297d98f4c6288a9c6a54fc543fd78e9f134220efe36cca363fe7731"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/auto-audio-irq-events.json",
+      "sha256": "53ae0e01677b544dd653fe676306072009ba936af613f873c455f1710776bafd"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/auto-hero-001-after.bin",
+      "sha256": "e869e833faff024ddf9a5538aaf68bcd0a168d42c18ed8dfaafd9f2f24483620"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/auto-hero-001-before.bin",
+      "sha256": "99097ce6be59e28e732c2a2a50d9cfbd48be6e12562df35824c32aac4a1a3c72"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/auto-live-envelope-records.bin",
+      "sha256": "50163b401c08688fd2a1fbf4bcdc83264f4673df3d58a3667cc85e6194d03b3c"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/auto-profiles.json",
+      "sha256": "c3c244a16ba3aa8b9d2c2fbd93b05804be9ee77fa21caa3248343ecdd2aba277"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/auto-summary.json",
+      "sha256": "42017d3039c537f8dfe40c8cd80dcb844642aa00bc3219028db20381b59c6133"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/cram_03600.bin",
+      "sha256": "81e79d188ad9cb068e40287316cee9c583ef58402ab385c45ada4fc5a55da445"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/cram_04100.bin",
+      "sha256": "67ad4a738d6b835288e3ceb7fc8f37f3fa5fe47616eca33f82392fca28d15272"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/cram_04500.bin",
+      "sha256": "63949bbf5dceb67b9036d3f7ffb0df9dad8b4ad14a56699bad1c86cf3e8fc2f4"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/cram_04800.bin",
+      "sha256": "90bd8f0af11eb699ee548957a8c9c507a9746cf62c65552b303f9630ca7e8a52"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/ram_03600.bin",
+      "sha256": "2b902488f93a552ae42fdb3112c44f3c4337f6b8977b32d06a3cd9ccb308279a"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/ram_04100.bin",
+      "sha256": "f8024489c97c640cf8ba31512a98f6365b970ba2deae94375207b9d1af6456c7"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/ram_04500.bin",
+      "sha256": "30827fdfa896c2694c9d9803023913d79fa959cdecf2a2daa7826fbab8a06ad1"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/ram_04800.bin",
+      "sha256": "4674c6750f10dd9bcad28f40374f2d7e9d9be0425e173853e20505949d0bc1db"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/state_03600.bin",
+      "sha256": "db24dc8bd2a8beb6eb99faf409e0c3258ddf210e4fa7e5ff7e0a9176561556ce"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/state_04100.bin",
+      "sha256": "7267c8c9961a8ae34685d97bdc80fec1489604343ea1677e8181e322b58a45ec"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/state_04500.bin",
+      "sha256": "ba64160ccbb13f10bdae72f44958f9ee4e548cd84762604eed2b2aea40a33cdf"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/state_04800.bin",
+      "sha256": "4aa4c5393a29c6a1008ab1f540f93cf237cb511f2ff00b7b269f5397dc4ce5f8"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/vdp_regs_03600.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/vdp_regs_04100.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/vdp_regs_04500.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/vdp_regs_04800.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/vram_03600.bin",
+      "sha256": "7a3eb150f22c3f3743ea432b365c9116215ac88f2c8d9ff1daa840c8a3737135"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/vram_04100.bin",
+      "sha256": "cb849fe4c899ae62f10bd99be47687c3a2d41b8a3450722369cfa3cc09f78632"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/vram_04500.bin",
+      "sha256": "d878fd8c54dcca9a3a1400c4adfd55e95282a2c191c1f0c22ae38a05c9a6b471"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-md/vram_04800.bin",
+      "sha256": "9d56d08f40d83b69f71365afe20ffed0f9ed0eaccd4b386bfaf243715d06d6b5"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/capture.json",
+      "sha256": "4d1da0b7458a33bd081973f0165867dcc822bd8debf27d5649720caf55300398"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/cram_03600.bin",
+      "sha256": "b984094fd57165b0c441f5d7bd81a9ce814dc7676b0f050b79602e882f0af9d7"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/cram_04100.bin",
+      "sha256": "b984094fd57165b0c441f5d7bd81a9ce814dc7676b0f050b79602e882f0af9d7"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/cram_04500.bin",
+      "sha256": "5c391bc42bb1dc8ad9b4db3c7e52291b2422e04d0d0e960b80f098b236cffb55"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/cram_04800.bin",
+      "sha256": "224f4fa43194d22b814a6ed1e44987ea46e87b3add9eafe06e2dba47ef74034b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/ram_03600.bin",
+      "sha256": "5eefac6207a8bbff0a06da6b6dc084a8d5a9898fb5d3e83f33d420a094a4c04e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/ram_04100.bin",
+      "sha256": "369646209d26fd97f88670bbafe397ec3c489d3ec46fc4c32e463589235af895"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/ram_04500.bin",
+      "sha256": "2d88d2ee4e0a5b8ba53614d56c3111fc563b3fb4d9bb4234582eb01bc1f2c192"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/ram_04800.bin",
+      "sha256": "97c3c6d01f763bc0756a48c1e296c8173f44cab99d2ecbe74c9fca329439a1cd"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/state_03600.bin",
+      "sha256": "11e643bffbcb106d38ed3b1d6bd54de5d38e155438a9961d167ef820b616d2d3"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/state_04100.bin",
+      "sha256": "09203f633f0df22c1bdc9f1194a24c4df0784a131a4f266bf30f4b66fae8f0e5"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/state_04500.bin",
+      "sha256": "b0588e2cc73e1d69faa7e02a4c818f1fed81026008b47780618dfacae08deb03"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/state_04800.bin",
+      "sha256": "5a4a937426e66849579f61fb8921b23271480aad8dfbb071de937e489b7d7f40"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/trace_counts.bin",
+      "sha256": "66049a89364ba995ac9280089f0037b87c66e315746d871bd1f53d4015e7b4c0"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/trace_states.bin",
+      "sha256": "ebaff72aa9f9373cdfb1077ff0bdcefc8a18df1ef5043c8233d65402c736d8d2"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/trace_windows.bin",
+      "sha256": "34007ac60836f1f90b85dad32ceace58a44fe9c0e4501e4056ce49ddee76c985"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/vdp_regs_03600.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/vdp_regs_04100.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/vdp_regs_04500.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/vdp_regs_04800.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/vram_03600.bin",
+      "sha256": "106a3b1209eaa84e2f239668d50b39983d879b0a992789fde46b87c507cf4560"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/vram_04100.bin",
+      "sha256": "2b421d7e2be4f279ac8787bf93187f897f2a0a10b17d86131d19bec4d2ff7028"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/vram_04500.bin",
+      "sha256": "32af070d9d975a7fadac44467f55f307c640f48824df96d05033709941d729ba"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-auto-sms/vram_04800.bin",
+      "sha256": "ad6872f0206f668fd80891c1663afa20621dbf967d11ba9feeacd3815a35aedf"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/cram_03600.bin",
+      "sha256": "67ad4a738d6b835288e3ceb7fc8f37f3fa5fe47616eca33f82392fca28d15272"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/cram_04100.bin",
+      "sha256": "81e79d188ad9cb068e40287316cee9c583ef58402ab385c45ada4fc5a55da445"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/cram_04500.bin",
+      "sha256": "90bd8f0af11eb699ee548957a8c9c507a9746cf62c65552b303f9630ca7e8a52"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/cram_04800.bin",
+      "sha256": "6089785e1ed0e394b29bb1e3fb2d6418d3868a0ced0673e9010e90e867860684"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/ram_03600.bin",
+      "sha256": "cdceca20df6bed241d03750e7273d3abe09863182a1aafbb26835caa11862194"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/ram_04100.bin",
+      "sha256": "52f20c586f05ee4c5328669ac17cf149b52b99082d8677fe8e10578a235e2fa1"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/ram_04500.bin",
+      "sha256": "febd6ef2541fb735090f4d7ba66aea29222c60457dbdf31c24d45fab8dc5d9a2"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/ram_04800.bin",
+      "sha256": "14f6875caa8c415da814b04307b146bff713cb29bbc7e92890a2f03a15b6afd2"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/state_03600.bin",
+      "sha256": "28d59dd2b153f062bff98b3d36daa30f8d78d1df7e5bb1d90f7a63f6a74be82a"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/state_04100.bin",
+      "sha256": "d37b75d7f7a263b0292ffda9a9e0191e7ffcacd9340f672d1fe83891217a2d28"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/state_04500.bin",
+      "sha256": "b53bc177015f781790091152e3cd00e9e66b36e4afa99fa1f6024bbc38b076fa"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/state_04800.bin",
+      "sha256": "7d90d4cc1a77044818e34b9a50c5fcfdad941a229afec0c489fdc947528c5f0b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/vdp_regs_03600.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/vdp_regs_04100.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/vdp_regs_04500.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/vdp_regs_04800.bin",
+      "sha256": "5753a03a13641ffd9c6afb7b1ebeac68a2c9dcc5a227117a4606735fab78710b"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/vram_03600.bin",
+      "sha256": "4aadbf8c4931735aafd518995626aac01e5e3671d77fb89c87ff90bf46f59733"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/vram_04100.bin",
+      "sha256": "9699ceaee7547af5a9f5e73609f22afa98117dd565eae535b7c4cb6d26040cdd"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/vram_04500.bin",
+      "sha256": "78a4a7c5a05d149e41fc5549a2fb49df10cbbf251612e49dc1097be69b2b72a8"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-md/vram_04800.bin",
+      "sha256": "61fc2122d421366e37fef33345ddc8ba4b43bd5dc7b25f9b501182fadbae0982"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/capture.json",
+      "sha256": "3cbc90f6b04a636f019b5e56a7e18235b6f38e64e2db9e5a86c30c2768148184"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/cram_03600.bin",
+      "sha256": "b984094fd57165b0c441f5d7bd81a9ce814dc7676b0f050b79602e882f0af9d7"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/cram_04100.bin",
+      "sha256": "abf847533127c9bab6617909b048ac2e8d614fe7450b3233d6b3e9fd1c7f007f"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/cram_04500.bin",
+      "sha256": "b6a7c171c7455ee7f6315d6a987534e6038cf189d17dc899e2e29277956b5c60"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/cram_04800.bin",
+      "sha256": "813f75c97a1781fc499e9005c396e0550729409ce1966ccdb86fe339986426e1"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/ram_03600.bin",
+      "sha256": "e92d0e69090d45567e9644e6beca13983258626502b6b99631a251dd144d1a67"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/ram_04100.bin",
+      "sha256": "140bf8660f604dfe18199d145010f8602f3d9d886e70e45c4268fc9d0bf570d8"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/ram_04500.bin",
+      "sha256": "cfa1417918e91c196f187f8f3a4a2aa488b61315dde594b6f8f6cfbb63f41c52"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/ram_04800.bin",
+      "sha256": "6dfa398df41e5e220e85dbc3032d1bc714ca5e68c4f77681c1bc0830c1125716"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/state_03600.bin",
+      "sha256": "f287f2ca63c745d7bffcb4e4c8e88463d15cb03332487fe1e107077c40c739ff"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/state_04100.bin",
+      "sha256": "93c54ee2eb4e6bdfff2a3a7013a8106f18aa04713b7de50c5f85928b067e02f8"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/state_04500.bin",
+      "sha256": "c35bbde082dd3c21b283cbfa3b3e080c42ffcde2570fe8b689d71a0f6c9042e1"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/state_04800.bin",
+      "sha256": "ec7cb77335cdfdeea43497807b159793806e5a63f99b69d1115ead590017de18"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/trace_counts.bin",
+      "sha256": "b7326e104cd21570e0ba40f7bad4d239b66c26f0962cb816b5a4b6313bc0aa86"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/trace_states.bin",
+      "sha256": "1708693ceba18bdc2498007af2f31db2a80fe06b3e79337eb15e9d30dbf776d0"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/trace_windows.bin",
+      "sha256": "45f6535a0ab2c923b1fb94cbba2b7de0eeb41409c7c8117a2f1f3731acb463f6"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/vdp_regs_03600.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/vdp_regs_04100.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/vdp_regs_04500.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/vdp_regs_04800.bin",
+      "sha256": "7c4a4f398690b7fca7f5171edd885ae43078f363c618b4b858fc12d85198669e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/vram_03600.bin",
+      "sha256": "fedf550ad45f214534c0f204bc10c29a308f59a6d44d186d66df8b80ba4aaa6c"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/vram_04100.bin",
+      "sha256": "0327dc3eee9b17f8503300fc4910f0dfa5b825b7c635fe9c1267dbe68a08731e"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/vram_04500.bin",
+      "sha256": "d464de6037fcd7b13aed9f868865c5548141c17157a999ae686eeaca1022e5fb"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/captures-pal-sms/vram_04800.bin",
+      "sha256": "bf2349c1835fde6ce007c33df268d6eaa363be9cff7ac00b97885c043d5e5a55"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/pal-audio-irq-events.json",
+      "sha256": "1b18b0ffd1a3779361c2b67cca19c6256c0760df29d6212872aa065a1c837d0f"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/pal-hero-001-after.bin",
+      "sha256": "333268bb24f5e6dd6f3b310fe69c782cc7a6324087a6fd8205e27d2e7e4bf484"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/pal-hero-001-before.bin",
+      "sha256": "e560400f64c44d9fd8ada8bfb94a6a1fd242f4696f9826fc0f8db08ea308f7af"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/pal-live-envelope-records.bin",
+      "sha256": "231b5af940307c1978e8a47513f152d6702350ce8735d1fb4f318842655fc64a"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/pal-profiles.json",
+      "sha256": "90c22250db7e483c4fb9de333b9838639a75ece17527f07b51cbdfd48f0119c5"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/pal-summary.json",
+      "sha256": "7f049faeb471b754dc468c714a0458c1d17f4ccde559090eb2f8fb8ab0e8f567"
+    },
+    {
+      "path": "validation/audio-noise-channel-live/6d-ff/phases_report.json",
+      "sha256": "a9388c072cede3053f31925c901cfdabe721657f68f2004495b37cf5d75d13a2"
+    },
+    {
+      "path": "reference-v0179/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "reference-v0179/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "logs/audio-noise-channel-cost.log",
+      "sha256": "850df20238e639c42355b2f7a2f177e1c9f52b24921794c554f21db42f094e33"
+    },
+    {
+      "path": "logs/audio-noise-channel-live.log",
+      "sha256": "e9ddc646804be4a07e67b0c7aad9c7a12806b803a5b0e25b1f5262e3b2ff60d1"
+    },
+    {
+      "path": "logs/live-noise-channel-cost.log",
+      "sha256": "8f99e84d8211d1e716b6aa387e74ffbaeaae4a040c5f00868c0eb38b3f19f282"
+    },
+    {
+      "path": "logs/build-audio-noise-channel-live-core.log",
+      "sha256": "1c31a986ff08909b0a31b4c11dd6488f0fcf28e1e856ed4c9abb567aadc2da2f"
+    },
+    {
+      "path": "logs/audio-noise-channel-live-core-build.log",
+      "sha256": "7c83cf8aa2a82e66b895f721f1b649cf7c2a8b481a80cefe3dc7464b619fa774"
+    },
+    {
+      "path": "audio_noise_channel_cost_report.json",
+      "sha256": "13d0a2e86982f68f6521df3fa2c6e676eeb28174161ef216f886e1bb878c856e"
+    },
+    {
+      "path": "live_noise_channel_cost_report.json",
+      "sha256": "ad6f9df542138df4f1d4d49ea2f83159259fa97160ed9a4b0d2a5f23c3fdbc68"
+    },
+    {
+      "path": "audio_noise_channel_milestone.md",
+      "sha256": "59c2477cf57b3b5bec2d0e1affb2a8df920edf87f0121a947f40d42425329e17"
+    },
+    {
+      "path": "genesis_plus_gx_tableenvelope_libretro.dll",
+      "sha256": "97d9b201e19b8821679a2476a874658fae68b31522550be7000158383e4a4a8d"
+    },
+    {
+      "path": "genesis_plus_gx_livenoisechannel_libretro.dll",
+      "sha256": "424d2f117ba6cacd4b877b59f37ca160c9b8f472167d6b42d3fa6cb2b0562522"
+    }
+  ]
+}
