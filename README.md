@@ -73,6 +73,10 @@ y compris ses deux sites de retour d’interruption. Les priorités passent
 33 480 cas isolés et les conditions de pause/compensation passent 10 752 cas.
 Les commandes utilisant R, certaines restitutions et les combinaisons
 non couvertes restent à vérifier avant l’intégration aux chargements.
+Le budget hors interruptions du chargement est désormais complet sur
+24 scénarios de passages payants, avec 13 725 attentes VBlank et
+14 424 appels audio contrôlés. La phase future et le travail VDP des
+interruptions complètes restent à calculer pour prédire la durée physique.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -94,6 +98,7 @@ et la vérification sur matériel Mega Drive.
 - [Calcul du canal de bruit](analysis/audio_noise_channel_milestone.md).
 - [Calcul des canaux de tonalité](analysis/audio_tone_channel_milestone.md).
 - [Composition du lecteur audio](analysis/audio_reader_milestone.md).
+- [Attentes VBlank et budget de chargement](analysis/save_wait_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

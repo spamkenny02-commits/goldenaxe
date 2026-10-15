@@ -29,6 +29,9 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     profile={};rows={};tiles={};arrival=[None];changes=[];last_gold=[initial_gold];hud=[None];samples={};confirm=[None];previous_hero=[0];audio_events=[];previous_audio=[0]
     live_prefix_records=bytearray();previous_prefix=[0]
     live_envelope_records=bytearray();previous_envelope=[0]
+    wait_records=bytearray();previous_wait=[0]
+    if hasattr(dll,"gaw_wait_samples"):
+     dll.gaw_wait_samples.restype=c.c_uint;dll.gaw_wait_events.restype=c.POINTER(c.c_uint64);dll.gaw_wait_nested_calls.restype=c.c_uint
     if hasattr(dll,'gaw_live_envelope_samples'):
      dll.gaw_live_envelope_samples.restype=c.c_uint;dll.gaw_live_envelope_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,'gaw_live_prefix_samples'):
@@ -39,7 +42,13 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      dll.gaw_hero_samples.restype=c.c_uint;dll.gaw_hero_entry.restype=c.POINTER(c.c_uint8);dll.gaw_hero_return.restype=c.POINTER(c.c_uint8)
     def observe(f,r):
      if tag=='sms':
-      if f==4199:dll.gaw_timing_reset();previous_event[0]=0;previous_hero[0]=0;previous_audio[0]=0;previous_prefix[0]=0;previous_envelope[0]=0
+      if f==4199:dll.gaw_timing_reset();previous_event[0]=0;previous_hero[0]=0;previous_audio[0]=0;previous_prefix[0]=0;previous_envelope[0]=0;previous_wait[0]=0
+      if hasattr(dll,'gaw_wait_samples'):
+       assert dll.gaw_wait_nested_calls()==0
+       wait_count=dll.gaw_wait_samples()
+       if f>=4200 and wait_count>previous_wait[0]:
+        base=c.addressof(dll.gaw_wait_events().contents);wait_records.extend(c.string_at(base+previous_wait[0]*112,(wait_count-previous_wait[0])*112))
+       previous_wait[0]=wait_count
       if hasattr(dll,'gaw_live_envelope_samples'):
        envelope_count=dll.gaw_live_envelope_samples()
        if f>=4200 and envelope_count>previous_envelope[0]:
@@ -104,6 +113,7 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      (folder/f'{region}-cycle-events.json').write_text(json.dumps(timing)+'\n')
      if hasattr(dll,'gaw_audio_irq_count'):(folder/f'{region}-audio-irq-events.json').write_text(json.dumps(audio_events)+'\n')
      if hasattr(dll,'gaw_live_prefix_samples'):(folder/f'{region}-live-prefix-records.bin').write_bytes(live_prefix_records)
+     if hasattr(dll,'gaw_wait_samples'):(folder/f'{region}-save-wait-records.bin').write_bytes(wait_records)
      if hasattr(dll,'gaw_live_envelope_samples'):(folder/f'{region}-live-envelope-records.bin').write_bytes(live_envelope_records)
     assert tag=='sms' or arrival[0] is not None,(region,hex(town),tag,'gold interaction not reached',rows);traces[tag]=rows;patterns[tag]=tiles;births[tag]=arrival[0];gold_changes[tag]=changes;cell_samples[tag]=samples;confirm_maps[tag]=confirm[0];profiles[tag]=profile
    (folder/f'{region}-profiles.json').write_text(json.dumps(profiles,separators=(',',':'))+'\n')
