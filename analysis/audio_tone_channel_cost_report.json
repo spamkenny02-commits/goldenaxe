@@ -1,0 +1,25 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "76ce551098dc488c93af7ae12ae8088902dea08a522ffb7cc4cad276fb744486",
+  "core_sha256": "97d9b201e19b8821679a2476a874658fae68b31522550be7000158383e4a4a8d",
+  "cases": 20680,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 10340,
+      "results_sha256": "25e539eddeee712cf615bda57ede83388b4b247323068fa1a3c862891d5aa9d3"
+    },
+    {
+      "region": "pal",
+      "cases": 10340,
+      "results_sha256": "25e539eddeee712cf615bda57ede83388b4b247323068fa1a3c862891d5aa9d3"
+    }
+  ],
+  "production_ROM_changed": false,
+  "limits": [
+    "Original84C7/allbank6 helpers/tables unchanged. Custom fixedROM streams/double caller,IXDE40,entryDE8A0B,IRQs disabled.400-byte state/complete channel costs.",
+    "Sampled deterministic product of notes/durations,flags,scales,counters,pitch0/1/128,envelope0/1/128,release0/1,transpose0/128;initial pitch/envelope indices0,explicit vibrato table8A0B. Modulo7 selection bounds fixture size;not natural reachability.",
+    "Other pitch/envelope modes,indices,channel types,command boundaries and whole reader/loading remain unproven by this isolated matrix."
+  ]
+}

@@ -65,7 +65,10 @@ restent à couvrir avant l’intégration aux chargements natifs. La sélection
 des notes de bruit (8679) dispose maintenant d’un modèle de coût vérifié ;
 les notes, enveloppes et boucles F6/F7 du canal de bruit (864F) passent
 39 360 cas isolés et les 1 102 appels d’un parcours en jeu. Les autres
-commandes du bruit et les canaux de tonalité complets restent à couvrir.
+commandes du bruit restent à couvrir. La composition des canaux de tonalité
+(84C7) passe 20 680 cas isolés et les 3 372 appels du parcours observé,
+qui utilise uniquement le vibrato sans modulation (mode 0). Le lecteur
+complet et les combinaisons non couvertes restent à vérifier.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -85,6 +88,7 @@ et la vérification sur matériel Mega Drive.
 - [Calcul de la hauteur des notes et du vibrato](analysis/audio_pitch_milestone.md).
 - [Calcul des notes et du contrôle des séquences](analysis/audio_note_sequence_milestone.md).
 - [Calcul du canal de bruit](analysis/audio_noise_channel_milestone.md).
+- [Calcul des canaux de tonalité](analysis/audio_tone_channel_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

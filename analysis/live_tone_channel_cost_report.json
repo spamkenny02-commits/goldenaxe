@@ -1,0 +1,72 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 3372,
+  "rows": [
+    {
+      "region": "auto",
+      "captured_cases": 1547,
+      "validated_cases": 1547,
+      "unsupported_command_cases": [],
+      "channel_calls": {
+        "DE40": 501,
+        "DE70": 501,
+        "DEA0": 501,
+        "DF00": 22,
+        "DF30": 22
+      },
+      "pitch_modes": {
+        "0": 1547
+      },
+      "envelope_modes": {
+        "16": 501,
+        "6": 68,
+        "8": 501,
+        "7": 433,
+        "2": 44
+      },
+      "categories": {
+        "held_note": 1452,
+        "new_note": 95
+      },
+      "raw_sha256": "9982b0c8f43f37c60f72e7f8d7b179e60b8fdaffe972421a4d07196602f8227e",
+      "source_cycle_array_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "captured_cases": 1825,
+      "validated_cases": 1825,
+      "unsupported_command_cases": [],
+      "channel_calls": {
+        "DE40": 601,
+        "DE70": 601,
+        "DEA0": 601,
+        "DF00": 11,
+        "DF30": 11
+      },
+      "pitch_modes": {
+        "0": 1825
+      },
+      "envelope_modes": {
+        "16": 601,
+        "6": 75,
+        "8": 601,
+        "7": 526,
+        "2": 22
+      },
+      "categories": {
+        "held_note": 1708,
+        "new_note": 117
+      },
+      "raw_sha256": "18a4527a541dbb8824357b3813e16b92b15c775c15cea91a0e7c3a86ce068575",
+      "source_cycle_array_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled6D->96/full-mask paid route PAL/NTSC;read-only84C7 entry and six reader continuations plus0205.400-byte state/complete instruction costs asserted with explicit actualDE. All calls counted,unsupported controls retained explicitly.",
+    "Complete source cycle arrays identical to archivedv0179. This route does not exercise all pitch/envelope/command combinations.",
+    "R-dependent sequencer commands,restoration8211,whole reader/futureIRQ/load timing and natural progression remain open."
+  ]
+}
