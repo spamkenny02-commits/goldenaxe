@@ -5888,5 +5888,36 @@
         "sha256": "346986c1ce770c05c3c4397f855ac0aaadbad60c6f8fdf5af9e4923c088e8fe0"
       }
     ]
+  },
+  {
+    "version": 182,
+    "sha256": "f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-15T19:46:22.485692+00:00",
+    "rom": "v0182-f41db51b/gaw-megadrive-v0182.bin",
+    "notes": "F3 : arret de sequence quand le canal emprunte est actif ; 400 cas source/natif exacts, 13 musiques/29 bruitages/fondus verifies.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "audio_ownership_report.json",
+        "sha256": "e7986436c4449c604d6c3ac212ab02144da4c3a5f08fc9d6c5e2a69401c48d83"
+      },
+      {
+        "file": "audio_ownership_patch_report.json",
+        "sha256": "cd777fc54a0401853bd9bb6eabfcc8077df2312f25c91d99b9f8dd8c17608c93"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "fecad41bf8b8c71173e2601612ca54db7927f7a568515be32868ad433a167411"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "48b72057ba262363d30576471ae4da23f9ddb2a8ec6f321a2f987ff413ca2dc0"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "137c87f5b10b69beec308ad4fe2383b840dda66c675db10d6ded43fbd393c34c"
+      }
+    ]
   }
 ]

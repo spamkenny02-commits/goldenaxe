@@ -1,0 +1,3100 @@
+{
+  "md_sha256": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 400,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 200,
+      "mismatches": 60,
+      "differences": [
+        {
+          "case": 1,
+          "fixture": [
+            0,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 3,
+          "fixture": [
+            0,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 5,
+          "fixture": [
+            0,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 11,
+          "fixture": [
+            0,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 13,
+          "fixture": [
+            0,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 15,
+          "fixture": [
+            0,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 21,
+          "fixture": [
+            0,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 23,
+          "fixture": [
+            0,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 25,
+          "fixture": [
+            0,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 31,
+          "fixture": [
+            0,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 33,
+          "fixture": [
+            0,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 35,
+          "fixture": [
+            0,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 41,
+          "fixture": [
+            4,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 43,
+          "fixture": [
+            4,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 45,
+          "fixture": [
+            4,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 51,
+          "fixture": [
+            4,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 53,
+          "fixture": [
+            4,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 55,
+          "fixture": [
+            4,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 61,
+          "fixture": [
+            4,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 63,
+          "fixture": [
+            4,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 65,
+          "fixture": [
+            4,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 71,
+          "fixture": [
+            4,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 73,
+          "fixture": [
+            4,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 75,
+          "fixture": [
+            4,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 81,
+          "fixture": [
+            64,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 83,
+          "fixture": [
+            64,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 85,
+          "fixture": [
+            64,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 91,
+          "fixture": [
+            64,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 93,
+          "fixture": [
+            64,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 95,
+          "fixture": [
+            64,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 101,
+          "fixture": [
+            64,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 103,
+          "fixture": [
+            64,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 105,
+          "fixture": [
+            64,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 111,
+          "fixture": [
+            64,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 113,
+          "fixture": [
+            64,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 115,
+          "fixture": [
+            64,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 121,
+          "fixture": [
+            128,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 123,
+          "fixture": [
+            128,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 125,
+          "fixture": [
+            128,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 131,
+          "fixture": [
+            128,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 133,
+          "fixture": [
+            128,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 135,
+          "fixture": [
+            128,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 141,
+          "fixture": [
+            128,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 143,
+          "fixture": [
+            128,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 145,
+          "fixture": [
+            128,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 151,
+          "fixture": [
+            128,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 153,
+          "fixture": [
+            128,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 155,
+          "fixture": [
+            128,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 161,
+          "fixture": [
+            196,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 163,
+          "fixture": [
+            196,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 165,
+          "fixture": [
+            196,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 171,
+          "fixture": [
+            196,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 173,
+          "fixture": [
+            196,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 175,
+          "fixture": [
+            196,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 181,
+          "fixture": [
+            196,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 183,
+          "fixture": [
+            196,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 185,
+          "fixture": [
+            196,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 191,
+          "fixture": [
+            196,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 193,
+          "fixture": [
+            196,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 195,
+          "fixture": [
+            196,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        }
+      ]
+    },
+    {
+      "region": "pal",
+      "cases": 200,
+      "mismatches": 60,
+      "differences": [
+        {
+          "case": 1,
+          "fixture": [
+            0,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 3,
+          "fixture": [
+            0,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 5,
+          "fixture": [
+            0,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 11,
+          "fixture": [
+            0,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 13,
+          "fixture": [
+            0,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 15,
+          "fixture": [
+            0,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 21,
+          "fixture": [
+            0,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 23,
+          "fixture": [
+            0,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 25,
+          "fixture": [
+            0,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 31,
+          "fixture": [
+            0,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 33,
+          "fixture": [
+            0,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 35,
+          "fixture": [
+            0,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 41,
+          "fixture": [
+            4,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 43,
+          "fixture": [
+            4,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 45,
+          "fixture": [
+            4,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 51,
+          "fixture": [
+            4,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 53,
+          "fixture": [
+            4,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 55,
+          "fixture": [
+            4,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 61,
+          "fixture": [
+            4,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 63,
+          "fixture": [
+            4,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 65,
+          "fixture": [
+            4,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 71,
+          "fixture": [
+            4,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 73,
+          "fixture": [
+            4,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 75,
+          "fixture": [
+            4,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 81,
+          "fixture": [
+            64,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 83,
+          "fixture": [
+            64,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 85,
+          "fixture": [
+            64,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 91,
+          "fixture": [
+            64,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 93,
+          "fixture": [
+            64,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 95,
+          "fixture": [
+            64,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 101,
+          "fixture": [
+            64,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 103,
+          "fixture": [
+            64,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 105,
+          "fixture": [
+            64,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 111,
+          "fixture": [
+            64,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 113,
+          "fixture": [
+            64,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 115,
+          "fixture": [
+            64,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 121,
+          "fixture": [
+            128,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 123,
+          "fixture": [
+            128,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 125,
+          "fixture": [
+            128,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 131,
+          "fixture": [
+            128,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 133,
+          "fixture": [
+            128,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 135,
+          "fixture": [
+            128,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 141,
+          "fixture": [
+            128,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 143,
+          "fixture": [
+            128,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 145,
+          "fixture": [
+            128,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 151,
+          "fixture": [
+            128,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 153,
+          "fixture": [
+            128,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 155,
+          "fixture": [
+            128,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 161,
+          "fixture": [
+            196,
+            128,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 163,
+          "fixture": [
+            196,
+            128,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 165,
+          "fixture": [
+            196,
+            128,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 171,
+          "fixture": [
+            196,
+            160,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 173,
+          "fixture": [
+            196,
+            160,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 175,
+          "fixture": [
+            196,
+            160,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 181,
+          "fixture": [
+            196,
+            192,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 183,
+          "fixture": [
+            196,
+            192,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 185,
+          "fixture": [
+            196,
+            192,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 191,
+          "fixture": [
+            196,
+            224,
+            0,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 193,
+          "fixture": [
+            196,
+            224,
+            1,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        },
+        {
+          "case": 195,
+          "fixture": [
+            196,
+            224,
+            127,
+            128
+          ],
+          "byte_indices": [
+            15,
+            64,
+            67,
+            74,
+            77,
+            78,
+            85,
+            95,
+            160,
+            208,
+            304
+          ],
+          "source_duration": 195,
+          "native_duration": 0,
+          "source_cursor": "2b9b",
+          "native_cursor": "2e9b"
+        }
+      ]
+    }
+  ],
+  "all_cases_exact": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original8357 and bank6; actual ROM9B2B F3/E7/00 bytes interpreted as control/argument/duration. Custom caller,IRQs disabled. Native harness copies every production source and invokes actual sound_sequence with original assets.",
+    "Five flags,four channel types,five priorities and active/inactive borrowed channel. Compares400 driver bytes; targeted boundaries do not prove natural reachability.",
+    "No full channel execution,PSG waveform or hardware claim."
+  ]
+}

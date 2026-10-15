@@ -5,14 +5,14 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0181 — 1024 Kio.**
+**Version courante : v0182 — 1024 Kio.**
 
-[Télécharger la ROM v0181](versions/v0181-97313b55/gaw-megadrive-v0181.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0182](versions/v0182-f41db51b/gaw-megadrive-v0182.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236`  
-Checksum Mega Drive : `686D`
+SHA-256 : `f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d`  
+Checksum Mega Drive : `8CD4`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
@@ -42,6 +42,8 @@ Le binaire Mega Drive ne contient pas d’interpréteur Z80.
 - v0181 : lecture des durées de notes au format brut 16 bits alignée sur la
   SMS, y compris lorsque le bit haut de la durée est positionné. Les 1 080
   cas ciblés, les 13 musiques et les 29 bruitages passent leurs contrôles.
+- v0182 : arrêt conditionnel de séquence F3 lorsque le canal emprunté est
+  actif, conforme à la SMS. Les 400 cas ciblés et les contrôles audio passent.
 
 ### Travail en cours
 
@@ -53,8 +55,10 @@ modèles de coût vérifiés. Les enveloppes de volume ADSR et sur tables sont
 isolés ; le parcours observé en jeu utilise seulement le mode sans modulation.
 Les notes, durées, silences, boucles, appels et retours de séquence ont
 maintenant des coûts vérifiés en PAL et NTSC. Les arrêts F1/F2 sans restitution
-8211 sont aussi contrôlés. Les autres commandes, la restitution des canaux
-et le lecteur complet restent à couvrir avant l’intégration aux chargements natifs.
+8211 sont aussi contrôlés. Vingt commandes déterministes supplémentaires
+et le partage F3 sont vérifiés sur des contextes isolés. Les commandes
+utilisant le registre R, la restitution des canaux et le lecteur complet
+restent à couvrir avant l’intégration aux chargements natifs.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -66,6 +70,7 @@ et la vérification sur matériel Mega Drive.
 - [Journal des ROMs numérotées](versions/README.md) et [index des versions](versions/index.json).
 - [Corrections v0180](analysis/reveal_wait_milestone.md).
 - [Correction audio v0181](analysis/raw_note_duration_milestone.md).
+- [Correction du partage audio v0182](analysis/audio_ownership_milestone.md).
 - [Mesures des interruptions audio](analysis/audio_irq_milestone.md).
 - [Calcul du traitement des musiques et bruitages](analysis/audio_dispatch_milestone.md).
 - [Calcul des enveloppes de volume](analysis/audio_envelope_milestone.md).

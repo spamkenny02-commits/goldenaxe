@@ -1,0 +1,47 @@
+{
+  "md_sha256": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "6795c8f3a6e5107165056854bedeae125d3d576f53fd10e424508bcb34b6e0ff",
+  "core_sha256": "a208d1d38e0d9d9d5f9e8cf5cf5b653cc8ecc48d1668d41f939f281e7fd293d5",
+  "commands": [
+    "E0",
+    "E1",
+    "E2",
+    "E4",
+    "E5",
+    "E6",
+    "E8",
+    "E9",
+    "EA",
+    "EB",
+    "ED",
+    "EE",
+    "F0",
+    "F4",
+    "F5",
+    "F6",
+    "FA",
+    "FB",
+    "FC",
+    "FD"
+  ],
+  "cases": 59904,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 29952,
+      "results_sha256": "d3ab2382a0396baa1d501cc2dbd1aabcaf956c58d7b86adc6a318f2bb474d799"
+    },
+    {
+      "region": "pal",
+      "cases": 29952,
+      "results_sha256": "d3ab2382a0396baa1d501cc2dbd1aabcaf956c58d7b86adc6a318f2bb474d799"
+    }
+  ],
+  "production_ROM_changed": false,
+  "limits": [
+    "Original8357 and bank6 unchanged,custom fixedROM streams/two-caller-free boot,IXDE40,IRQs disabled.400-byte state/full instruction cost.",
+    "Six operand values0/1/7/127/128/255,four channel types,four flags,four scales,two fade gates,two stereo latches except E2: previous stereo byte and latch zero, preserving SMS cartridge/RAM mapping on mirrored port06. F6 target fixed3E00,EA two-byte arguments,F0 four-byte arguments,E0/E9 five-byte ADSR. Some boundaries are synthetic.",
+    "R-register-dependent commands E3/EC/FE/FF,F3 ownership has a separate fixture,EF invalid table-code target,restoration8211,noise/whole channel/reader/loading remain open."
+  ]
+}

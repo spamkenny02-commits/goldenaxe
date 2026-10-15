@@ -232,6 +232,12 @@ static bool sound_sequence(u8 *c,bool noise)
                     c[0]=0;sound_ram[0x11]=0;PSG_write(c[1]|31);return FALSE;
                 }
                 case 0xf3:
+                    /* 8786..87AE stops this sequence if the borrowed tone is active. */
+                    if(!(sound_ram[0xf]&128) && (value&3)==3 && (sound_ram[0x130]&128))
+                    {
+                        sound_ram[0xd0]=(sound_ram[0xd0]&~4)|16;
+                        c[0]=0;sound_ram[0xf]=255;PSG_write(255);return FALSE;
+                    }
                     PSG_write(value);
                     if((value&3)==3)
                     { PSG_write(0xdf);c[0]&=~64;sound_ram[0xa0]|=4;sound_ram[0x130]|=4; }

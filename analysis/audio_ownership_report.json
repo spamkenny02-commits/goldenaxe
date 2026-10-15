@@ -1,0 +1,26 @@
+{
+  "md_sha256": "f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 400,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 200,
+      "mismatches": 0,
+      "differences": []
+    },
+    {
+      "region": "pal",
+      "cases": 200,
+      "mismatches": 0,
+      "differences": []
+    }
+  ],
+  "all_cases_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original8357 and bank6; actual ROM9B2B F3/E7/00 bytes interpreted as control/argument/duration. Custom caller,IRQs disabled. Native harness copies every production source and invokes actual sound_sequence with original assets.",
+    "Five flags,four channel types,five priorities and active/inactive borrowed channel. Compares400 driver bytes; targeted boundaries do not prove natural reachability.",
+    "No full channel execution,PSG waveform or hardware claim."
+  ]
+}
