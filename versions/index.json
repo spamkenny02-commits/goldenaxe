@@ -5857,5 +5857,36 @@
         "sha256": "235dae9d04ddd6b961439372343e4326f0f21a40427879a5f073e8040ca44861"
       }
     ]
+  },
+  {
+    "version": 181,
+    "sha256": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-15T04:59:42.804149+00:00",
+    "rom": "v0181-97313b55/gaw-megadrive-v0181.bin",
+    "notes": "Durees des notes audio brutes16bits et curseur de sequence corriges selon la SMS.1080 cas source/natif exacts;13 musiques,29 bruitages et fondus verifies sur44340 etats audio. Portage complet encore non valide.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "raw_note_duration_report.json",
+        "sha256": "efa9634c476ed2db4a1a9378faeec9559222e60d68e4cfe55a6e4e0529cb27fa"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "8eebe275f81c7eb5b14643557e708737fc84866204bbddcb30378918fda72f4e"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "be20e94559ef06ff3857cd329404733c605dd7d753eb23ffaca6107a7ecdcbf2"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "191a2ad35d4259cce2bb17e4854941f15691f24f21af31b64964143b84a0dc0d"
+      },
+      {
+        "file": "raw_note_duration_patch_report.json",
+        "sha256": "346986c1ce770c05c3c4397f855ac0aaadbad60c6f8fdf5af9e4923c088e8fe0"
+      }
+    ]
   }
 ]

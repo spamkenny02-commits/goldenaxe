@@ -1,0 +1,26 @@
+{
+  "md_sha256": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 1080,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 540,
+      "mismatches": 0,
+      "differences": []
+    },
+    {
+      "region": "pal",
+      "cases": 540,
+      "mismatches": 0,
+      "differences": []
+    }
+  ],
+  "all_cases_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Original8357/callees andbank6 unchanged;synthetic audio state with raw-mode note bytes read from actual bank6 ROM8421..8423. Custom boot/caller withIRQsdisabled. Native harness copies every production source,invokes actualsound_sequence,FALSE noise,and uses unmodified original assets.",
+    "Flags8/72/136,scale0/1/2/255,transpose0/1/127/128/255,envelope0/1/128,prior duration0/7/255. Compares400 audio state bytes. These are explicit boundary fixtures,not a natural-song reachability proof.",
+    "Does not compare complete channel execution,PSG waveforms,full sequencer command timing or hardware."
+  ]
+}

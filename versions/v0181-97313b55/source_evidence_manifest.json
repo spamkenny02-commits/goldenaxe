@@ -1,0 +1,463 @@
+{
+  "version": 181,
+  "md_sha256": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+  "baseline_manifest_sha256": "491d6d13d4204dfd1ebfd7570e2623d8cde4fc50e883258b82939723962c97eb",
+  "files": [
+    {
+      "path": "source/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "path": "source/actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "source/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "path": "source/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "path": "source/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "path": "source/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "path": "source/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "path": "source/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "path": "source/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "path": "source/door_transition.inc",
+      "sha256": "f6e815ff5b3cae5dd3f0487a893a721d4473ff87fd94fc1b886dbc40240a7de2"
+    },
+    {
+      "path": "source/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "path": "source/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "path": "source/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "path": "source/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "path": "source/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "path": "source/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "path": "source/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "path": "source/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "path": "source/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "path": "source/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "path": "source/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "path": "source/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "path": "source/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "path": "source/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "path": "source/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "path": "source/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "path": "source/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "path": "source/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "path": "source/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "path": "source/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "path": "source/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "path": "source/house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "path": "source/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "path": "source/intro.inc",
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    },
+    {
+      "path": "source/intro_data.c",
+      "sha256": "87d7d6d66c54f578c47b44a719e7123221ba278562c29de8afdb2619eda9a4f1"
+    },
+    {
+      "path": "source/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "path": "source/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "path": "source/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "path": "source/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "path": "source/main.c",
+      "sha256": "58775718de4b209b8d463e2d32b3cce4962afcef67bd2ffb1b553540a23d726d"
+    },
+    {
+      "path": "source/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "path": "source/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "path": "source/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "path": "source/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "path": "source/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "path": "source/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "path": "source/paid_passage.inc",
+      "sha256": "6a05aa157645ca05748d764e3d55c269058c9b3ab905466edc5c775c17fbbad9"
+    },
+    {
+      "path": "source/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "path": "source/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "path": "source/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "path": "source/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "path": "source/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "path": "source/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "path": "source/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "path": "source/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "path": "source/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "path": "source/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "path": "source/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "path": "source/sound.inc",
+      "sha256": "e408acbbb3c83da66b7612f6fc764b9a4911f0cc5a909df80497b019d7813e49"
+    },
+    {
+      "path": "source/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "path": "source/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "path": "source/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "path": "source/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    },
+    {
+      "path": "symbol.txt",
+      "sha256": "2b601b50388a50827d08461f9bd31465e7151ff6ad457e4d56cf9f91184062b9"
+    },
+    {
+      "path": "tools/validate_raw_note_duration.py",
+      "sha256": "937a84b95bd293ed64560484b22eea56f70a241891c43301600c72acee979b58"
+    },
+    {
+      "path": "tools/raw_note_duration_harness.c",
+      "sha256": "0422ff1b1d4964d8d739d48d9aa06ce669518554fc39cd43cf68e718fcd6c939"
+    },
+    {
+      "path": "tools/build_raw_note_duration_harness.ps1",
+      "sha256": "98c27e051e391981f8a2009a277e8e659760134390db1a05bc80d62e25a59b9c"
+    },
+    {
+      "path": "tools/archive_raw_note_baseline.py",
+      "sha256": "e0b91be3138534c4e856530447eb48a65c4eb76548dbc25e1a3fdb158bc72f6d"
+    },
+    {
+      "path": "tools/audit_raw_note_duration_patch.py",
+      "sha256": "904c36ce3dcecdc972e7cadaa267bb15eb4eb424f79d89c3a3c77234b35de4e0"
+    },
+    {
+      "path": "tools/archive_raw_note_duration_milestone.py",
+      "sha256": "2af03eeaf7a3a6aaaee5b2147b936cd1af0c08fd20814767c702a1e14b602bdf"
+    },
+    {
+      "path": "tools/validate_audio_prefix_cost.py",
+      "sha256": "56f0a1aef26cba4918dd96d86674df979ccc16632d903c37173006a06c38faf7"
+    },
+    {
+      "path": "tools/validate_music.py",
+      "sha256": "9f944e8a18b33fe086ed3459961e8cbb845c57dfde778af44eb0007703690782"
+    },
+    {
+      "path": "tools/validate_sfx.py",
+      "sha256": "9b45517deea43ecd47c0dc7466138de2a4bf4df367f888b45d975ff8f5f3b3f5"
+    },
+    {
+      "path": "tools/validate_music_fade_dispatch.py",
+      "sha256": "958d5f35145f210f83e64b1636f0c99bbc1db01db7238df0a8727c2ec140e0f5"
+    },
+    {
+      "path": "validation/raw-note-duration/auto-md-states.bin",
+      "sha256": "c2e5ff270ee89fbb35713ff4ecb04765af92bd3faf50c8a492f7a4410e5d36c4"
+    },
+    {
+      "path": "validation/raw-note-duration/auto-sms-states.bin",
+      "sha256": "c2e5ff270ee89fbb35713ff4ecb04765af92bd3faf50c8a492f7a4410e5d36c4"
+    },
+    {
+      "path": "validation/raw-note-duration/pal-md-states.bin",
+      "sha256": "c2e5ff270ee89fbb35713ff4ecb04765af92bd3faf50c8a492f7a4410e5d36c4"
+    },
+    {
+      "path": "validation/raw-note-duration/pal-sms-states.bin",
+      "sha256": "c2e5ff270ee89fbb35713ff4ecb04765af92bd3faf50c8a492f7a4410e5d36c4"
+    },
+    {
+      "path": "validation/raw-note-duration/cases.inc",
+      "sha256": "2bb53d3fb8e71d6f7b71df2a860151858f3e661cb8708aaffd31223ae5df0e24"
+    },
+    {
+      "path": "validation/raw-note-duration/source-fixture.sms",
+      "sha256": "a12995508a86098b1b7bc9a5971b1f7f995aedf92d19ed08c33d0815c16df492"
+    },
+    {
+      "path": "evidence/native-harness.bin",
+      "sha256": "72b08a6e6627d90f77770ee91992941b66638d8a04ce5b34655844941260f306"
+    },
+    {
+      "path": "validation/music-fade-auto-md/psg-registers.bin",
+      "sha256": "5e8536d0943eaac120298e59456fd75f5599ce4afb34d01b346bb766fe23d635"
+    },
+    {
+      "path": "validation/music-fade-auto-md/reader-records.bin",
+      "sha256": "5e3db62cd30db127115b66fad3d7f27a5bffa92d9cc8322a1a922025530ffd19"
+    },
+    {
+      "path": "validation/music-fade-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/music-fade-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/music-fade-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/music-fade-auto-sms/psg-registers.bin",
+      "sha256": "afff17c6b9ffa3e8afbae953d0472336eb4257d71363a688f10220fd6a527948"
+    },
+    {
+      "path": "validation/music-fade-auto-sms/reader-records.bin",
+      "sha256": "5e3db62cd30db127115b66fad3d7f27a5bffa92d9cc8322a1a922025530ffd19"
+    },
+    {
+      "path": "validation/music-fade-auto-sms/trace_counts.bin",
+      "sha256": "1aefe1f666484e89c352ffafc01fa9079661dd2bf2d2340dff80a8ad5fa1d122"
+    },
+    {
+      "path": "validation/music-fade-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/music-fade-auto-sms/trace_windows.bin",
+      "sha256": "772e11b2ff9808b10793f3c0223a75d347db1af005b4516a1c2b21684d60b9da"
+    },
+    {
+      "path": "validation/music-fade-pal-md/psg-registers.bin",
+      "sha256": "16455553336b1cc8e75393d18af345b563b59c9f98309f71c9406b9737ff724d"
+    },
+    {
+      "path": "validation/music-fade-pal-md/reader-records.bin",
+      "sha256": "1af6cd0b541f182a0bba3a557819c3bdf8475b350ac84886a81639d1e22fd881"
+    },
+    {
+      "path": "validation/music-fade-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/music-fade-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/music-fade-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/music-fade-pal-sms/psg-registers.bin",
+      "sha256": "16455553336b1cc8e75393d18af345b563b59c9f98309f71c9406b9737ff724d"
+    },
+    {
+      "path": "validation/music-fade-pal-sms/reader-records.bin",
+      "sha256": "1af6cd0b541f182a0bba3a557819c3bdf8475b350ac84886a81639d1e22fd881"
+    },
+    {
+      "path": "validation/music-fade-pal-sms/trace_counts.bin",
+      "sha256": "1b9d6bbe3e394f695c5aad1bb9b0f79136278965d37ee56bc9ba14762ed42bfc"
+    },
+    {
+      "path": "validation/music-fade-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/music-fade-pal-sms/trace_windows.bin",
+      "sha256": "988a8c10d706600623a1969e0a6b9d0c86d07d3a1c91680cf81c8a76f2a8d2af"
+    },
+    {
+      "path": "logs/build-raw-duration-v0181.log",
+      "sha256": "7128d7688865edd60b4b3450d33cb1b20497db302d0d275171386535095ac4b1"
+    },
+    {
+      "path": "logs/build-v0181.log",
+      "sha256": "0843914991c8f35301d2e0d5e26e2095f25079120f722888e84d5ee2cdb9e438"
+    },
+    {
+      "path": "logs/music-fade-v0181.log",
+      "sha256": "75ce905ed8876003a18e98a16ce1e481383560c5d2035010bacd2f50c8133f6c"
+    },
+    {
+      "path": "logs/music-v0181.log",
+      "sha256": "fb742a87e78499944a07fecd29b93d5e507b20d21ac60e2164149fa25deb30b3"
+    },
+    {
+      "path": "logs/raw-duration-v0181.log",
+      "sha256": "adde420b7717d7cd9c3996bb120a97d42ffe6f794efbab0eb6d91116a5f1d96e"
+    },
+    {
+      "path": "logs/sfx-v0181.log",
+      "sha256": "81df67a3bd778ef379494c2bf153cf88399ec445061af1db163ccbbdeb406411"
+    },
+    {
+      "path": "raw_note_duration_milestone.md",
+      "sha256": "bea3294652cddad18618470d6ed4c2b87d083636441b174aff6ffd15492279e3"
+    },
+    {
+      "path": "reference/v0180-baseline.json",
+      "sha256": "93db4e221f634a06b5eb411dc1599c9264fd2da42f5ad47ef5a0df1f0018416d"
+    },
+    {
+      "path": "raw_note_duration_report.json",
+      "sha256": "efa9634c476ed2db4a1a9378faeec9559222e60d68e4cfe55a6e4e0529cb27fa"
+    },
+    {
+      "path": "music_report.json",
+      "sha256": "8eebe275f81c7eb5b14643557e708737fc84866204bbddcb30378918fda72f4e"
+    },
+    {
+      "path": "sfx_report.json",
+      "sha256": "be20e94559ef06ff3857cd329404733c605dd7d753eb23ffaca6107a7ecdcbf2"
+    },
+    {
+      "path": "music_fade_dispatch_report.json",
+      "sha256": "191a2ad35d4259cce2bb17e4854941f15691f24f21af31b64964143b84a0dc0d"
+    },
+    {
+      "path": "raw_note_duration_patch_report.json",
+      "sha256": "346986c1ce770c05c3c4397f855ac0aaadbad60c6f8fdf5af9e4923c088e8fe0"
+    }
+  ]
+}

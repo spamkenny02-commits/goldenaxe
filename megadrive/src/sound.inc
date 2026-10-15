@@ -283,7 +283,8 @@ static bool sound_sequence(u8 *c,bool noise)
             }
             note=sound_read(cursor++);
         }
-        if(note&128) { c[10]=c[13];cursor--; }
+        /* 83EC always sends raw16-bit note durations through839B. */
+        if((note&128) && (noise || !(c[0]&8))) { c[10]=c[13];cursor--; }
         else c[10]=c[13]=(u8)(note*c[2]);
         sound_ch_set(c,3,cursor);
         if(!(c[0]&2))

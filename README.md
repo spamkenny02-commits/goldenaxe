@@ -5,14 +5,14 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0180 — 1024 Kio.**
+**Version courante : v0181 — 1024 Kio.**
 
-[Télécharger la ROM v0180](versions/v0180-3f155979/gaw-megadrive-v0180.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0181](versions/v0181-97313b55/gaw-megadrive-v0181.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7`  
-Checksum Mega Drive : `442A`
+SHA-256 : `97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236`  
+Checksum Mega Drive : `686D`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
@@ -39,6 +39,9 @@ Le binaire Mega Drive ne contient pas d’interpréteur Z80.
 - v0180 : attente explicite de la prochaine interruption vidéo avant la
   révélation, même lorsque l’affichage est désactivé. Les huit transitions
   de portes contrôlées ont un fondu d’entrée de 18 images, comme la SMS.
+- v0181 : lecture des durées de notes au format brut 16 bits alignée sur la
+  SMS, y compris lorsque le bit haut de la durée est positionné. Les 1 080
+  cas ciblés, les 13 musiques et les 29 bruitages passent leurs contrôles.
 
 ### Travail en cours
 
@@ -60,6 +63,7 @@ et la vérification sur matériel Mega Drive.
 - [Sources 68000/SGDK](megadrive/src/main.c) et [moteur des acteurs](megadrive/src/actors.c).
 - [Journal des ROMs numérotées](versions/README.md) et [index des versions](versions/index.json).
 - [Corrections v0180](analysis/reveal_wait_milestone.md).
+- [Correction audio v0181](analysis/raw_note_duration_milestone.md).
 - [Mesures des interruptions audio](analysis/audio_irq_milestone.md).
 - [Calcul du traitement des musiques et bruitages](analysis/audio_dispatch_milestone.md).
 - [Calcul des enveloppes de volume](analysis/audio_envelope_milestone.md).
