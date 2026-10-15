@@ -78,8 +78,10 @@ Le budget hors interruptions du chargement est désormais complet sur
 14 424 appels audio contrôlés. Le travail des interruptions complètes
 passe aussi 13 749 appels en jeu et 2 880 cas isolés. Le budget total
 correspond aux 24 chargements contrôlés, avec les boucles et entrées
-observées comme données. La phase future VBlank, les décisions de
-scrutation et les entrées de hasard restent à prédire avant l’intégration.
+observées comme données. Les boucles de palette sont désormais prédites
+depuis la phase d’entrée des 13 749 interruptions ; le compteur vidéo passe
+149 500 positions isolées. La phase future, les attentes VBlank et les
+entrées de hasard restent à prédire avant l’intégration.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -103,6 +105,7 @@ et la vérification sur matériel Mega Drive.
 - [Composition du lecteur audio](analysis/audio_reader_milestone.md).
 - [Attentes VBlank et budget de chargement](analysis/save_wait_milestone.md).
 - [Interruptions vidéo et budget conditionnel complet](analysis/full_irq_milestone.md).
+- [Phase vidéo et prédiction des boucles de palette](analysis/irq_raster_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

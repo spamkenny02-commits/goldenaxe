@@ -30,7 +30,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     live_prefix_records=bytearray();previous_prefix=[0]
     live_envelope_records=bytearray();previous_envelope=[0]
     wait_records=bytearray();previous_wait=[0]
-    full_records=bytearray();previous_full=[0]
+    full_records=bytearray();previous_full=[0];irq_phases=bytearray()
+    if hasattr(dll,"gaw_irq_phase_events"):dll.gaw_irq_phase_events.restype=c.POINTER(c.c_uint32)
     if hasattr(dll,"gaw_full_irq_samples"):
      dll.gaw_full_irq_samples.restype=c.c_uint;dll.gaw_full_irq_records.restype=c.POINTER(c.c_uint8);dll.gaw_full_irq_nested.restype=c.c_uint
     if hasattr(dll,"gaw_wait_samples"):
@@ -51,6 +52,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
        full_count=dll.gaw_full_irq_samples()
        if f>=4200 and full_count>previous_full[0]:
         base=c.addressof(dll.gaw_full_irq_records().contents);full_records.extend(c.string_at(base+previous_full[0]*800,(full_count-previous_full[0])*800))
+        if hasattr(dll,'gaw_irq_phase_events'):
+         base=c.addressof(dll.gaw_irq_phase_events().contents);irq_phases.extend(c.string_at(base+previous_full[0]*32,(full_count-previous_full[0])*32))
        previous_full[0]=full_count
       if hasattr(dll,'gaw_wait_samples'):
        assert dll.gaw_wait_nested_calls()==0
@@ -122,6 +125,7 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      (folder/f'{region}-cycle-events.json').write_text(json.dumps(timing)+'\n')
      if hasattr(dll,'gaw_audio_irq_count'):(folder/f'{region}-audio-irq-events.json').write_text(json.dumps(audio_events)+'\n')
      if hasattr(dll,'gaw_live_prefix_samples'):(folder/f'{region}-live-prefix-records.bin').write_bytes(live_prefix_records)
+     if hasattr(dll,'gaw_irq_phase_events'):(folder/f'{region}-irq-raster-records.bin').write_bytes(irq_phases)
      if hasattr(dll,'gaw_full_irq_samples'):(folder/f'{region}-full-irq-records.bin').write_bytes(full_records)
      if hasattr(dll,'gaw_wait_samples'):(folder/f'{region}-save-wait-records.bin').write_bytes(wait_records)
      if hasattr(dll,'gaw_live_envelope_samples'):(folder/f'{region}-live-envelope-records.bin').write_bytes(live_envelope_records)

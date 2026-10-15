@@ -1,0 +1,808 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 24,
+  "wait_records": 13725,
+  "reader_records": 14424,
+  "rows": [
+    {
+      "town": 26,
+      "mask": 0,
+      "region": "auto",
+      "target": 60,
+      "wait_records": 577,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1380366,
+      "to_reveal_foreground_tstates": 1325625,
+      "loading_waits": [
+        {
+          "start": 48266730,
+          "end": 48583320,
+          "foreground": 8231,
+          "taken": 277,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 51059220,
+          "end": 51331215,
+          "foreground": 1271,
+          "taken": 37,
+          "IRQ_master_cycles": 252930
+        }
+      ],
+      "loading_IRQ_master_cycles": 1714365,
+      "loading_audio_IRQs": 23,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 84554,
+      "full_IRQ_tstates_predicted": 29737,
+      "wall_master_cycles": 22419855,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 26,
+      "mask": 0,
+      "region": "pal",
+      "target": 60,
+      "wait_records": 580,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1443384,
+      "to_reveal_foreground_tstates": 1362572,
+      "loading_waits": [
+        {
+          "start": 53919735,
+          "end": 54829095,
+          "foreground": 45177,
+          "taken": 1551,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 57398535,
+          "end": 58037685,
+          "foreground": 27342,
+          "taken": 936,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 1830030,
+      "loading_audio_IRQs": 20,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 91287,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 23480790,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 26,
+      "mask": 255,
+      "region": "auto",
+      "target": 60,
+      "wait_records": 576,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1432573,
+      "to_reveal_foreground_tstates": 1363535,
+      "loading_waits": [
+        {
+          "start": 48266730,
+          "end": 48583320,
+          "foreground": 8231,
+          "taken": 277,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 51740850,
+          "end": 52170255,
+          "foreground": 15568,
+          "taken": 530,
+          "IRQ_master_cycles": 195885
+        }
+      ],
+      "loading_IRQ_master_cycles": 1770300,
+      "loading_audio_IRQs": 24,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 92086,
+      "full_IRQ_tstates_predicted": 25934,
+      "wall_master_cycles": 23258895,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 26,
+      "mask": 255,
+      "region": "pal",
+      "target": 60,
+      "wait_records": 580,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1457862,
+      "to_reveal_foreground_tstates": 1400482,
+      "loading_waits": [
+        {
+          "start": 53919735,
+          "end": 54829095,
+          "foreground": 45177,
+          "taken": 1551,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 57750015,
+          "end": 58252065,
+          "foreground": 3910,
+          "taken": 128,
+          "IRQ_master_cycles": 443400
+        }
+      ],
+      "loading_IRQ_master_cycles": 1827240,
+      "loading_audio_IRQs": 20,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 76809,
+      "full_IRQ_tstates_predicted": 45007,
+      "wall_master_cycles": 23695170,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 54,
+      "mask": 0,
+      "region": "auto",
+      "target": 135,
+      "wait_records": 577,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1380364,
+      "to_reveal_foreground_tstates": 1326145,
+      "loading_waits": [
+        {
+          "start": 48285765,
+          "end": 48583215,
+          "foreground": 6955,
+          "taken": 233,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 51066810,
+          "end": 51330975,
+          "foreground": 749,
+          "taken": 19,
+          "IRQ_master_cycles": 252930
+        }
+      ],
+      "loading_IRQ_master_cycles": 1714365,
+      "loading_audio_IRQs": 23,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 84554,
+      "full_IRQ_tstates_predicted": 29737,
+      "wall_master_cycles": 22419825,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 54,
+      "mask": 0,
+      "region": "pal",
+      "target": 135,
+      "wait_records": 580,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1443382,
+      "to_reveal_foreground_tstates": 1363092,
+      "loading_waits": [
+        {
+          "start": 53938965,
+          "end": 54829185,
+          "foreground": 43901,
+          "taken": 1507,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 57406320,
+          "end": 58037640,
+          "foreground": 26820,
+          "taken": 918,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 1830030,
+      "loading_audio_IRQs": 20,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 91287,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 23480760,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 54,
+      "mask": 255,
+      "region": "auto",
+      "target": 135,
+      "wait_records": 546,
+      "reader_records": 601,
+      "loading_foreground_tstates": 3119351,
+      "to_reveal_foreground_tstates": 3063914,
+      "loading_waits": [
+        {
+          "start": 48285765,
+          "end": 48583215,
+          "foreground": 6955,
+          "taken": 233,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 78825945,
+          "end": 79051335,
+          "foreground": 1967,
+          "taken": 61,
+          "IRQ_master_cycles": 195885
+        }
+      ],
+      "loading_IRQ_master_cycles": 3349920,
+      "loading_audio_IRQs": 54,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 197394,
+      "full_IRQ_tstates_predicted": 25934,
+      "wall_master_cycles": 50140185,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 54,
+      "mask": 255,
+      "region": "pal",
+      "target": 135,
+      "wait_records": 554,
+      "reader_records": 601,
+      "loading_foreground_tstates": 3199508,
+      "to_reveal_foreground_tstates": 3100861,
+      "loading_waits": [
+        {
+          "start": 53938965,
+          "end": 54829185,
+          "foreground": 43901,
+          "taken": 1507,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 84963180,
+          "end": 85869855,
+          "foreground": 45177,
+          "taken": 1551,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 3320355,
+      "loading_audio_IRQs": 46,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 190642,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 51312975,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 109,
+      "mask": 0,
+      "region": "auto",
+      "target": 150,
+      "wait_records": 577,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1380350,
+      "to_reveal_foreground_tstates": 1326334,
+      "loading_waits": [
+        {
+          "start": 48289575,
+          "end": 48583110,
+          "foreground": 6694,
+          "taken": 224,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 51069870,
+          "end": 51330990,
+          "foreground": 546,
+          "taken": 12,
+          "IRQ_master_cycles": 252930
+        }
+      ],
+      "loading_IRQ_master_cycles": 1714365,
+      "loading_audio_IRQs": 23,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 84554,
+      "full_IRQ_tstates_predicted": 29737,
+      "wall_master_cycles": 22419615,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 109,
+      "mask": 0,
+      "region": "pal",
+      "target": 150,
+      "wait_records": 580,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1443368,
+      "to_reveal_foreground_tstates": 1363281,
+      "loading_waits": [
+        {
+          "start": 53942775,
+          "end": 54829080,
+          "foreground": 43640,
+          "taken": 1498,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 57409380,
+          "end": 58037655,
+          "foreground": 26617,
+          "taken": 911,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 1830030,
+      "loading_audio_IRQs": 20,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 91287,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 23480550,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 109,
+      "mask": 255,
+      "region": "auto",
+      "target": 150,
+      "wait_records": 550,
+      "reader_records": 601,
+      "loading_foreground_tstates": 2895045,
+      "to_reveal_foreground_tstates": 2792512,
+      "loading_waits": [
+        {
+          "start": 48289575,
+          "end": 48583110,
+          "foreground": 6694,
+          "taken": 224,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 74535390,
+          "end": 75467220,
+          "foreground": 49063,
+          "taken": 1685,
+          "IRQ_master_cycles": 195885
+        }
+      ],
+      "loading_IRQ_master_cycles": 3130170,
+      "loading_audio_IRQs": 50,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 182744,
+      "full_IRQ_tstates_predicted": 25934,
+      "wall_master_cycles": 46555845,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 109,
+      "mask": 255,
+      "region": "pal",
+      "target": 150,
+      "wait_records": 558,
+      "reader_records": 601,
+      "loading_foreground_tstates": 2928251,
+      "to_reveal_foreground_tstates": 2829459,
+      "loading_waits": [
+        {
+          "start": 53942775,
+          "end": 54829080,
+          "foreground": 43640,
+          "taken": 1498,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 80678895,
+          "end": 81587745,
+          "foreground": 45322,
+          "taken": 1556,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 3106875,
+      "loading_audio_IRQs": 42,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 176410,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 47030640,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 60,
+      "mask": 0,
+      "region": "auto",
+      "target": 26,
+      "wait_records": 577,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1380368,
+      "to_reveal_foreground_tstates": 1326149,
+      "loading_waits": [
+        {
+          "start": 48336345,
+          "end": 48583335,
+          "foreground": 3591,
+          "taken": 117,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 51066915,
+          "end": 51331080,
+          "foreground": 749,
+          "taken": 19,
+          "IRQ_master_cycles": 252930
+        }
+      ],
+      "loading_IRQ_master_cycles": 1714365,
+      "loading_audio_IRQs": 23,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 84554,
+      "full_IRQ_tstates_predicted": 29737,
+      "wall_master_cycles": 22419885,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 60,
+      "mask": 0,
+      "region": "pal",
+      "target": 26,
+      "wait_records": 580,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1443386,
+      "to_reveal_foreground_tstates": 1363096,
+      "loading_waits": [
+        {
+          "start": 53989515,
+          "end": 54829275,
+          "foreground": 40537,
+          "taken": 1391,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 57406395,
+          "end": 58037715,
+          "foreground": 26820,
+          "taken": 918,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 1830030,
+      "loading_audio_IRQs": 20,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 91287,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 23480820,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 60,
+      "mask": 255,
+      "region": "auto",
+      "target": 26,
+      "wait_records": 562,
+      "reader_records": 601,
+      "loading_foreground_tstates": 2218104,
+      "to_reveal_foreground_tstates": 2131463,
+      "loading_waits": [
+        {
+          "start": 48336345,
+          "end": 48583335,
+          "foreground": 3591,
+          "taken": 117,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 64021470,
+          "end": 64714920,
+          "foreground": 33171,
+          "taken": 1137,
+          "IRQ_master_cycles": 195885
+        }
+      ],
+      "loading_IRQ_master_cycles": 2532165,
+      "loading_audio_IRQs": 38,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 142877,
+      "full_IRQ_tstates_predicted": 25934,
+      "wall_master_cycles": 35803725,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 60,
+      "mask": 255,
+      "region": "pal",
+      "target": 26,
+      "wait_records": 568,
+      "reader_records": 601,
+      "loading_foreground_tstates": 2253311,
+      "to_reveal_foreground_tstates": 2168410,
+      "loading_waits": [
+        {
+          "start": 53989515,
+          "end": 54829275,
+          "foreground": 40537,
+          "taken": 1391,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 70182975,
+          "end": 70883460,
+          "foreground": 31431,
+          "taken": 1077,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 2526900,
+      "loading_audio_IRQs": 32,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 137745,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 36326565,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 135,
+      "mask": 0,
+      "region": "auto",
+      "target": 54,
+      "wait_records": 577,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1380360,
+      "to_reveal_foreground_tstates": 1325619,
+      "loading_waits": [
+        {
+          "start": 48267060,
+          "end": 48583215,
+          "foreground": 8202,
+          "taken": 276,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 51059100,
+          "end": 51331095,
+          "foreground": 1271,
+          "taken": 37,
+          "IRQ_master_cycles": 252930
+        }
+      ],
+      "loading_IRQ_master_cycles": 1714365,
+      "loading_audio_IRQs": 23,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 84554,
+      "full_IRQ_tstates_predicted": 29737,
+      "wall_master_cycles": 22419765,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 135,
+      "mask": 0,
+      "region": "pal",
+      "target": 54,
+      "wait_records": 580,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1443407,
+      "to_reveal_foreground_tstates": 1362566,
+      "loading_waits": [
+        {
+          "start": 53920125,
+          "end": 54829050,
+          "foreground": 45148,
+          "taken": 1550,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 57398475,
+          "end": 58038060,
+          "foreground": 27371,
+          "taken": 937,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 1830030,
+      "loading_audio_IRQs": 20,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 91287,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 23481135,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 135,
+      "mask": 255,
+      "region": "auto",
+      "target": 54,
+      "wait_records": 568,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1879719,
+      "to_reveal_foreground_tstates": 1824630,
+      "loading_waits": [
+        {
+          "start": 48267060,
+          "end": 48583215,
+          "foreground": 8202,
+          "taken": 276,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 59118420,
+          "end": 59338590,
+          "foreground": 1619,
+          "taken": 49,
+          "IRQ_master_cycles": 195885
+        }
+      ],
+      "loading_IRQ_master_cycles": 2231475,
+      "loading_audio_IRQs": 32,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 122831,
+      "full_IRQ_tstates_predicted": 25934,
+      "wall_master_cycles": 30427260,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 135,
+      "mask": 255,
+      "region": "pal",
+      "target": 54,
+      "wait_records": 573,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1929107,
+      "to_reveal_foreground_tstates": 1861577,
+      "loading_waits": [
+        {
+          "start": 53920125,
+          "end": 54829050,
+          "foreground": 45148,
+          "taken": 1550,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 65091180,
+          "end": 65745480,
+          "foreground": 14060,
+          "taken": 478,
+          "IRQ_master_cycles": 443400
+        }
+      ],
+      "loading_IRQ_master_cycles": 2251950,
+      "loading_audio_IRQs": 27,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 105123,
+      "full_IRQ_tstates_predicted": 45007,
+      "wall_master_cycles": 31188555,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 150,
+      "mask": 0,
+      "region": "auto",
+      "target": 109,
+      "wait_records": 577,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1380388,
+      "to_reveal_foreground_tstates": 1326314,
+      "loading_waits": [
+        {
+          "start": 48284865,
+          "end": 48583185,
+          "foreground": 7013,
+          "taken": 235,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 51069345,
+          "end": 51331335,
+          "foreground": 604,
+          "taken": 14,
+          "IRQ_master_cycles": 252930
+        }
+      ],
+      "loading_IRQ_master_cycles": 1714365,
+      "loading_audio_IRQs": 23,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 84554,
+      "full_IRQ_tstates_predicted": 29737,
+      "wall_master_cycles": 22420185,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 150,
+      "mask": 0,
+      "region": "pal",
+      "target": 109,
+      "wait_records": 580,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1443377,
+      "to_reveal_foreground_tstates": 1363232,
+      "loading_waits": [
+        {
+          "start": 53938275,
+          "end": 54828930,
+          "foreground": 43930,
+          "taken": 1508,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 57408630,
+          "end": 58037775,
+          "foreground": 26675,
+          "taken": 913,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 1830030,
+      "loading_audio_IRQs": 20,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 91287,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 23480685,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 150,
+      "mask": 255,
+      "region": "auto",
+      "target": 109,
+      "wait_records": 572,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1653149,
+      "to_reveal_foreground_tstates": 1572569,
+      "loading_waits": [
+        {
+          "start": 48284865,
+          "end": 48583185,
+          "foreground": 7013,
+          "taken": 235,
+          "IRQ_master_cycles": 193125
+        },
+        {
+          "start": 55151805,
+          "end": 55716120,
+          "foreground": 27110,
+          "taken": 928,
+          "IRQ_master_cycles": 157665
+        }
+      ],
+      "loading_IRQ_master_cycles": 2007735,
+      "loading_audio_IRQs": 28,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 110463,
+      "full_IRQ_tstates_predicted": 23386,
+      "wall_master_cycles": 26804970,
+      "unexplained_foreground_master_cycles": 0
+    },
+    {
+      "town": 150,
+      "mask": 255,
+      "region": "pal",
+      "target": 109,
+      "wait_records": 576,
+      "reader_records": 601,
+      "loading_foreground_tstates": 1715007,
+      "to_reveal_foreground_tstates": 1609487,
+      "loading_waits": [
+        {
+          "start": 53938275,
+          "end": 54828930,
+          "foreground": 43930,
+          "taken": 1508,
+          "IRQ_master_cycles": 231705
+        },
+        {
+          "start": 61310055,
+          "end": 62319825,
+          "foreground": 52050,
+          "taken": 1788,
+          "IRQ_master_cycles": 229020
+        }
+      ],
+      "loading_IRQ_master_cycles": 2037630,
+      "loading_audio_IRQs": 24,
+      "loading_full_IRQs": 2,
+      "audio_IRQ_tstates_predicted": 105127,
+      "full_IRQ_tstates_predicted": 30715,
+      "wall_master_cycles": 27762735,
+      "unexplained_foreground_master_cycles": 0
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "24 controlled paid exits,six routes,two actor masks andtwo regions. All source cycle arrays equalv0179;hero input states identical to prior captures. Independent originalforeground instruction models now include both0B95..0BB3 spans. All captured8000 reader calls predict400 bytes/DE/cost. All audio-only and full gatedIRQ work is independently instruction-modeled,including sprites/tiles/HUD/queues/palette/audio/input/timers. Their sum plus foreground reconstructs exact loading wall time.",
+    "Save-wait loop counts,history/RNG inputs and IRQ-entry raster phases are observed inputs. This closes conditional wall-time instruction accounting,not autonomous future frame prediction. Palette-loop decisions are predicted from entry phase and prefix costs without observed loop counts. Input-port values remain observed;future IRQ-entry phase and save-wait decisions are not predicted.",
+    "No native delay integrated,full progression/hardware/PSG waveform unproved. Other graphics classes/story states/R-based controls and unsupported noise/restoration commands remain open."
+  ]
+}
