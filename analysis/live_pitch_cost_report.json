@@ -1,0 +1,34 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 181,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 80,
+      "pitch_modes": {
+        "0": 80
+      },
+      "caller_unwind_cases": 0,
+      "raw_sha256": "9d7196b156ef549d1a46d02443d11544eb75a199ed9081ffc038356d6496cd72",
+      "source_cycle_array_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "cases": 101,
+      "pitch_modes": {
+        "0": 101
+      },
+      "caller_unwind_cases": 0,
+      "raw_sha256": "f0263d73f2a3bdb21701ae2f087e5fa3b81425c89dd4f4d41033ffb2d1cab813",
+      "source_cycle_array_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled actual6D->96/full-mask route,PAL/NTSC,original82C5/read-only observations. Independent cost,400-byte state and returnedHL comparisons. Complete original cycle arrays identical to archivedv0179.",
+    "Only recorded modes/phase states are covered live;isolated suite supplies signed vibrato/wrap and additional table cases. Caller unwind81/82 is modeled but not encountered in original pitch streams in these suites.",
+    "Sequencer/full channel/reader region gating and futureIRQ/load prediction,native audio waveforms and full natural progression remain open."
+  ]
+}

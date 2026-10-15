@@ -46,9 +46,10 @@ Rapprocher les durées de chargement et les animations de la SMS, en calculant
 le travail original et les interruptions audio. Les routines de tempo,
 fondu, arbitrage et traitement des commandes musicales/sonores ont des
 modèles de coût vérifiés. Les enveloppes de volume ADSR et sur tables sont
-également vérifiées. La hauteur des notes, les séquences et le traitement
-complet des canaux restent à couvrir avant l’intégration de ce calcul aux
-chargements natifs.
+également vérifiées. Les calculs de hauteur et de vibrato passent les tests
+isolés ; le parcours observé en jeu utilise seulement le mode sans modulation.
+Les séquences et le traitement complet des canaux restent à couvrir avant
+l’intégration de ce calcul aux chargements natifs.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -62,6 +63,7 @@ et la vérification sur matériel Mega Drive.
 - [Mesures des interruptions audio](analysis/audio_irq_milestone.md).
 - [Calcul du traitement des musiques et bruitages](analysis/audio_dispatch_milestone.md).
 - [Calcul des enveloppes de volume](analysis/audio_envelope_milestone.md).
+- [Calcul de la hauteur des notes et du vibrato](analysis/audio_pitch_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 
@@ -85,4 +87,4 @@ affichés en tête de ce README sont actualisés par `tools/version_rom.py`.
 
 Git conserve les sources, outils, rapports principaux et ROMs numérotées.
 Les captures et fichiers temporaires volumineux restent disponibles localement.
-Aucun dépôt distant n’est actuellement configuré.
+Le dépôt distant est [spamkenny02-commits/goldenaxe](https://github.com/spamkenny02-commits/goldenaxe).

@@ -1,0 +1,27 @@
+{
+  "md_sha256": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "dcd7e2ccbee4fc622e602421cb33990078f7c152a65dbd2ad9e8db2098659135",
+  "cases": 118800,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 59400,
+      "caller_unwind_cases": 0,
+      "results_sha256": "0336af9154ca2c62d1996baf3f5ea7a1f3cecfcc97e2d1a405a82b715972792d"
+    },
+    {
+      "region": "pal",
+      "cases": 59400,
+      "caller_unwind_cases": 0,
+      "results_sha256": "0336af9154ca2c62d1996baf3f5ea7a1f3cecfcc97e2d1a405a82b715972792d"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original82C5/allbank6 unchanged;custom two-level caller,IXDE40,IRQs disabled. Compares400-byte state,returnedHL and cost against independent model. Unwind81/82 is modeled but not encountered in the original table/index ranges used here;it is not validated by a zero unwind count.",
+    "Vibrato:two high-bit modes,eight base boundaries,seven signed delta boundaries,four delay/rate/phase counters,six signed step boundaries. Tables:all8 modes/all256 indices,two explicit ROM-reading base values,four channel flag patterns. Many table indices/base/counter bounds are synthetic.",
+    "Does not establish live pitch,PSG waveforms,complete channel/sequencer cost,native futureIRQ/load scheduling or natural progression."
+  ]
+}
