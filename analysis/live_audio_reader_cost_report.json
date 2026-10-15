@@ -1,0 +1,44 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 1202,
+  "rows": [
+    {
+      "region": "auto",
+      "captured_cases": 601,
+      "validated_cases": 601,
+      "unsupported_command_cases": [],
+      "IRQ_reader_calls": 601,
+      "return_sites": {
+        "01A5": 551,
+        "0205": 50
+      },
+      "min_tstates": 616,
+      "max_tstates": 17472,
+      "raw_sha256": "6b8f0a2d5d36e396c9f4df10380df328dda4ca142aba7d065c2cd53ac1039b54",
+      "source_cycle_array_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "captured_cases": 601,
+      "validated_cases": 601,
+      "unsupported_command_cases": [],
+      "IRQ_reader_calls": 601,
+      "return_sites": {
+        "01A5": 559,
+        "0205": 42
+      },
+      "min_tstates": 2831,
+      "max_tstates": 17414,
+      "raw_sha256": "3f78baaeab2e9a790473a995430c598dd545c936d6ed67db2aee8bb520bff83b",
+      "source_cycle_array_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled6D->96/full-mask paid route PAL/NTSC. Read-only8000 entry/0205-or-01A5 return records;independent complete reader instruction cost,400-byte state and returnedDE predictions. Unsupported commands retained explicitly;not silently ignored.",
+    "Complete source cycle arrays identical to archivedv0179. Includes original gating,priority/tempo/fade/dispatch/priority-effect queue and active channel work. One route is not exhaustive driver or natural progression coverage.",
+    "R-dependent sequencer commands,standalone8211/nonzero restoration paths,other noise commands/invalid dispatch indices,futureIRQ/loading integration and hardware remain open."
+  ]
+}

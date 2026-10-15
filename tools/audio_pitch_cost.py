@@ -12,7 +12,7 @@ def pitch_cost(rom,state,offset=0x40,return_address=0x8507):
   if 0xde00<=a<0xdf90:return r[a-0xde00]
   raise NotImplementedError(f'Uncaptured pitch RAM {a:04X}')
  base=word(11);mode=r[offset+6];cost=19*3+4
- def result(hl,unwind=False):return dict(state=bytes(r),tstates=cost,hl=hl&65535,unwind=unwind)
+ def result(hl,unwind=False):return dict(state=bytes(r),tstates=cost,hl=hl&65535,unwind=unwind,**({"de":base} if 0<mode<128 else {}))
  if not mode:cost+=11;return result(base)
  cost+=5+10
  if mode&128:

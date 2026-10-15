@@ -12,11 +12,12 @@ def tone_channel_cost(rom,state,offset=0x40,de=0x8a0b):
   if a<0xc000:return rom[0x18000+(a&0x3fff)]
   if 0xde00<=a<0xdf90:return r[a-0xde00]
   raise NotImplementedError(f'Uncaptured tone RAM {a:04X}')
- def result():return dict(state=bytes(r),tstates=cost,unwind=False)
+ def result():return dict(state=bytes(r),tstates=cost,unwind=False,de=de)
  r[offset+10]=(r[offset+10]-1)&255;cost=23
  pitch=True
  if not r[offset+10]:
   cost+=7+17;sequence=note_sequence_cost(rom,r,offset);r=bytearray(sequence['state']);cost+=sequence['tstates']
+  de=sequence['de']
   if sequence.get('unwind',False):return result()
   de=int.from_bytes(r[offset+3:offset+5],'little')
   for bit in [16,4]:
@@ -71,14 +72,14 @@ def tone_channel_cost(rom,state,offset=0x40,de=0x8a0b):
   if r[offset]&64:cost+=12
   else:
    cost+=7+17;value=pitch_cost(rom,r,offset);r=bytearray(value['state']);cost+=value['tstates']
-   if value.get('unwind',False):return result()
+   if value.get('unwind',False):de=value['de'];return result()
    transpose=r[offset+0x25];de=transpose if transpose<128 else transpose|0xff00
    cost+=7+19+4+10+(4 if transpose&128 else 0)+4+11+19+7
    cost+=7+7 if r[offset+1]==0xe0 else 12
    cost+=4+4+7+4+11+4+7+4+4*4+11
  cost+=17
- envelope=adsr_cost(r,offset) if r[offset+7]&128 else table_envelope_cost(rom,r,offset,de)
- r=bytearray(envelope['state']);cost+=envelope['tstates']
+ envelope=adsr_cost(r,offset,de) if r[offset+7]&128 else table_envelope_cost(rom,r,offset,de)
+ r=bytearray(envelope['state']);cost+=envelope['tstates'];de=envelope.get('de',de)
  if envelope.get('unwind',False):return result()
  for bit in [4,16]:
   cost+=20

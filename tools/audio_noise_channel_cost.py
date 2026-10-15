@@ -11,12 +11,12 @@ def noise_channel_cost(rom,state,offset=0xd0,de=0x8a0b):
   if a<0xc000:return rom[0x18000+(a&0x3fff)]
   if 0xde00<=a<0xdf90:return r[a-0xde00]
   raise NotImplementedError(f'Uncaptured noise RAM {a:04X}')
- def result():return dict(state=bytes(r),tstates=cost,unwind=False)
+ def result():return dict(state=bytes(r),tstates=cost,unwind=False,de=de)
  r[offset+10]=(r[offset+10]-1)&255;cost=23+10
  if r[offset+10]:
   cost+=17
-  envelope=adsr_cost(r,offset) if r[offset+7]&128 else table_envelope_cost(rom,r,offset,de)
-  r=bytearray(envelope['state']);cost+=envelope['tstates']
+  envelope=adsr_cost(r,offset,de) if r[offset+7]&128 else table_envelope_cost(rom,r,offset,de)
+  r=bytearray(envelope['state']);cost+=envelope['tstates'];de=envelope.get('de',de)
   if envelope.get('unwind',False):return result()
   cost+=20
   if r[offset]&4:cost+=11;return result()
@@ -58,7 +58,7 @@ def noise_channel_cost(rom,state,offset=0xd0,de=0x8a0b):
  else:
   scale=r[offset+2];r[offset+10]=r[offset+13]=(note*scale)&255
   cost+=17+(34 if scale==1 else 37+17*((scale-1)&255))+19+19
- r[offset+3:offset+5]=cursor.to_bytes(2,'little');cost+=19+19+20
+ de=cursor;r[offset+3:offset+5]=cursor.to_bytes(2,'little');cost+=19+19+20
  if r[offset]&2:cost+=11;return result()
  cost+=5+20
  if r[offset]&64:cost+=12

@@ -60,15 +60,19 @@ Les notes, durées, silences, boucles, appels et retours de séquence ont
 maintenant des coûts vérifiés en PAL et NTSC. Les arrêts F1/F2 sans restitution
 8211 sont aussi contrôlés. Vingt commandes déterministes supplémentaires
 et le partage F3 sont vérifiés sur des contextes isolés. Les commandes
-utilisant le registre R, la restitution des canaux et le lecteur complet
-restent à couvrir avant l’intégration aux chargements natifs. La sélection
+utilisant le registre R et certaines restitutions restent à couvrir
+avant une validation générale. La sélection
 des notes de bruit (8679) dispose maintenant d’un modèle de coût vérifié ;
 les notes, enveloppes et boucles F6/F7 du canal de bruit (864F) passent
 39 360 cas isolés et les 1 102 appels d’un parcours en jeu. Les autres
 commandes du bruit restent à couvrir. La composition des canaux de tonalité
 (84C7) passe 20 680 cas isolés et les 3 372 appels du parcours observé,
 qui utilise uniquement le vibrato sans modulation (mode 0). Le lecteur
-complet et les combinaisons non couvertes restent à vérifier.
+complet correspond maintenant aux 1 202 appels du parcours contrôlé,
+y compris ses deux sites de retour d’interruption. Les priorités passent
+33 480 cas isolés et les conditions de pause/compensation passent 10 752 cas.
+Les commandes utilisant R, certaines restitutions et les combinaisons
+non couvertes restent à vérifier avant l’intégration aux chargements.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -89,6 +93,7 @@ et la vérification sur matériel Mega Drive.
 - [Calcul des notes et du contrôle des séquences](analysis/audio_note_sequence_milestone.md).
 - [Calcul du canal de bruit](analysis/audio_noise_channel_milestone.md).
 - [Calcul des canaux de tonalité](analysis/audio_tone_channel_milestone.md).
+- [Composition du lecteur audio](analysis/audio_reader_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

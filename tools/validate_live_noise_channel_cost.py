@@ -24,6 +24,7 @@ def main():
     reason=str(error);assert reason.startswith('Noise command '),('unmodeled memory access',reason)
     unsupported.append(dict(record=n//824,reason=reason,ix=ix,sequence_pointer=int.from_bytes(before[offset+3:offset+5],'little'),observed_tstates=cost,caller_unwind=bool(unwind)));continue
    assert bool(unwind)==predicted.get('unwind',False),(region,n//824,'caller unwind')
+   assert de_after==predicted['de'],(region,n//824,'DE',de_after,predicted['de'])
    assert cost==predicted['tstates'],(region,n//824,cost,predicted['tstates'])
    assert after==predicted['state'],(region,n//824,'RAM')
    checked+=1

@@ -1,0 +1,25 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "4dc027819ad97c44cf1d37c4c93ab8d44071794fcfb2073de8b5e086da63247c",
+  "core_sha256": "97d9b201e19b8821679a2476a874658fae68b31522550be7000158383e4a4a8d",
+  "cases": 33480,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 16740,
+      "results_sha256": "e2f7d5b84722c04e5c62c4b1ffcaed05010fe37150ae8ac85842a8cf41e75a3d"
+    },
+    {
+      "region": "pal",
+      "cases": 16740,
+      "results_sha256": "e2f7d5b84722c04e5c62c4b1ffcaed05010fe37150ae8ac85842a8cf41e75a3d"
+    }
+  ],
+  "production_ROM_changed": false,
+  "limits": [
+    "Original81F8/8211/80AD/81C6 and bank6 unchanged. Custom caller/400-byte patterned state,IRQs disabled;complete helper cost,state and returnedDE independently predicted.",
+    "Requests0/80/all29 valid effect IDs;priorities0/1/127/255;previous active90/94/AC;ownership0/1/127/128/255;DF30/DF60 inactive/active/active-withbit6. Synthetic combinations;invalid effect indices excluded.",
+    "PSG writes/waveforms,native equivalence,standalone8211 callers,whole reader and loading prediction remain unproven here."
+  ]
+}

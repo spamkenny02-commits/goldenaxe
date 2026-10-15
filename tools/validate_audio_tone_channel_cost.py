@@ -16,7 +16,7 @@ def main():
  image[0x3430+0x41]=0x80;image[0x3430+0x50:0x3430+0x52]=(0x8a0b).to_bytes(2,'little');image[0x3430+0x55]=0;image[0x3430+0x5f]=0;rom.write_bytes(image)
  assert image[0x18000:0x1c000]==SOURCE[0x18000:0x1c000]
  core=ROOT.parents[1]/'work/genesis-plus-gx/genesis_plus_gx_tableenvelope_libretro.dll';dll=c.CDLL(str(core))
- dll.gaw_prefix_samples.restype=c.c_uint;dll.gaw_envelope_did_unwind.restype=c.c_uint;dll.gaw_prefix_tstates.restype=c.c_uint64
+ dll.gaw_envelope_return_de.restype=c.c_uint;dll.gaw_prefix_samples.restype=c.c_uint;dll.gaw_envelope_did_unwind.restype=c.c_uint;dll.gaw_prefix_tstates.restype=c.c_uint64
  dll.gaw_prefix_entry.restype=c.POINTER(c.c_uint8);dll.gaw_prefix_return.restype=c.POINTER(c.c_uint8)
  rows=[]
  for region in ['auto','pal']:
@@ -29,6 +29,7 @@ def main():
     before=c.string_at(dll.gaw_prefix_entry(),400);after=c.string_at(dll.gaw_prefix_return(),400);case=int.from_bytes(r[:2],'little')
     predicted=tone_channel_cost(image,before,de=0x8a0b);cost=dll.gaw_prefix_tstates()
     assert bool(dll.gaw_envelope_did_unwind())==predicted['unwind']
+    assert dll.gaw_envelope_return_de()==predicted['de'],(region,case,'DE',dll.gaw_envelope_return_de(),predicted['de'])
     assert cost==predicted['tstates'],(region,case,records[case],cost,predicted['tstates'])
     assert after==predicted['state'],(region,case,'RAM',[(i,a,b) for i,(a,b) in enumerate(zip(after,predicted['state'])) if a!=b][:12])
     checked[case]=cost.to_bytes(4,'little')+hashlib.sha256(after).digest();previous[0]=sample

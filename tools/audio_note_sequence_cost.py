@@ -43,7 +43,7 @@ def note_sequence_cost(rom,state,offset=0x40):
      cost+=10+12;background=0xd0
    r[background]=(r[background]&~4)|16;r[0x11]=0;r[offset]=0
    cost+=15+15+7+11+4+13+19+13+4+12+10+10+10
-   return dict(state=bytes(r),tstates=cost,unwind=True)
+   return dict(state=bytes(r),tstates=cost,unwind=True,de=cursor)
   cost+=sum([10,11,7,10,4,4,7,11,7,6,7,4,7,4])+6+10
   value=read(cursor)
   if note in [0xe0,0xe9]:
@@ -100,7 +100,7 @@ def note_sequence_cost(rom,state,offset=0x40):
      else:
       cost+=7+10+15+15+4+19+4+11+13+10+10+10-16
       r[0xd0]=(r[0xd0]&~4)|16;r[offset]=0;r[0xf]=255
-      return dict(state=bytes(r),tstates=cost,unwind=True)
+      return dict(state=bytes(r),tstates=cost,unwind=True,de=cursor)
    cost+=7+11+10+14+7+4
    if value&3==3:
     cost+=7+7+11+23+15+23+10
@@ -172,11 +172,11 @@ def note_sequence_cost(rom,state,offset=0x40):
    else:
     duration,work=multiply(duration);cost+=17+work+19+19;r[offset+10]=r[offset+13]=duration
  setword(3,cursor);cost+=19+19+20
- if r[offset]&2:return dict(state=bytes(r),tstates=cost+11)
+ if r[offset]&2:return dict(state=bytes(r),tstates=cost+11,de=cursor)
  cost+=5+20
  if r[offset]&64:cost+=12
  else:cost+=7+23;r[offset]&=~32
  cost+=19+19+4+19+20;r[offset+14]=r[offset+15];r[offset+0x15]=0
  if r[offset+7]&128:cost+=11
  else:cost+=5+19+10;r[offset+0x1f]=0
- return dict(state=bytes(r),tstates=cost)
+ return dict(state=bytes(r),tstates=cost,de=cursor)
