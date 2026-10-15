@@ -51,8 +51,10 @@ fondu, arbitrage et traitement des commandes musicales/sonores ont des
 modèles de coût vérifiés. Les enveloppes de volume ADSR et sur tables sont
 également vérifiées. Les calculs de hauteur et de vibrato passent les tests
 isolés ; le parcours observé en jeu utilise seulement le mode sans modulation.
-Les séquences et le traitement complet des canaux restent à couvrir avant
-l’intégration de ce calcul aux chargements natifs.
+Les notes, durées, silences, boucles, appels et retours de séquence ont
+maintenant des coûts vérifiés en PAL et NTSC. Les arrêts F1/F2 sans restitution
+8211 sont aussi contrôlés. Les autres commandes, la restitution des canaux
+et le lecteur complet restent à couvrir avant l’intégration aux chargements natifs.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -68,6 +70,7 @@ et la vérification sur matériel Mega Drive.
 - [Calcul du traitement des musiques et bruitages](analysis/audio_dispatch_milestone.md).
 - [Calcul des enveloppes de volume](analysis/audio_envelope_milestone.md).
 - [Calcul de la hauteur des notes et du vibrato](analysis/audio_pitch_milestone.md).
+- [Calcul des notes et du contrôle des séquences](analysis/audio_note_sequence_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

@@ -1,0 +1,29 @@
+{
+  "md_sha256": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 212,
+  "rows": [
+    {
+      "region": "auto",
+      "captured_cases": 95,
+      "validated_cases": 95,
+      "unsupported_command_cases": [],
+      "raw_sha256": "9d9f40ae6b49fbfceeec90cffd682be617e28f794c395a62d38db9d0b5483b74",
+      "source_cycle_array_identical_to_v0179": true
+    },
+    {
+      "region": "pal",
+      "captured_cases": 117,
+      "validated_cases": 117,
+      "unsupported_command_cases": [],
+      "raw_sha256": "a993216564ec5952ce31b2dbcc07757829a98f943bb739debc58f1dc6cd4f26d",
+      "source_cycle_array_identical_to_v0179": true
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Actual controlled6D->96/full-mask paid route,PAL/NTSC. Original8357 calls observed read-only. Implemented notes/rest/raw/E7/F7/F8/F9 and F1/F2 termination with DE0E=0 paths are asserted against400-byte state/cost predictions;unsupported commands retained with record number,stream pointer and observed cost.",
+    "Every captured call remains in raw824-byte records;complete source cycle arrays equal archivedv0179. Passing supported cases is not complete sequencer coverage. Noise864F,F1/F2 restoration8211 (DE0E!=0),remaining commands,whole channel/reader region gating and futureIRQ/load prediction remain open."
+  ]
+}

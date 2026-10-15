@@ -1,0 +1,26 @@
+{
+  "md_sha256": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "a208d1d38e0d9d9d5f9e8cf5cf5b653cc8ecc48d1668d41f939f281e7fd293d5",
+  "fixture_sha256": "e967b8ceb5716c7e667ef916f7fbd149e94bbfa20593798b2b34c8ce12bf2dfc",
+  "cases": 103424,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 51712,
+      "results_sha256": "447f6ab9db804a3d0ed55fb3c8633e1b780a6d7c857fc7d53ba87f8502cd740f"
+    },
+    {
+      "region": "pal",
+      "cases": 51712,
+      "results_sha256": "447f6ab9db804a3d0ed55fb3c8633e1b780a6d7c857fc7d53ba87f8502cd740f"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original8357/allbank6 callees/tables unchanged. Synthetic streams placed in fixed ROM3600/3C00,custom boot/caller,IXDE40,IRQs disabled.400-byte state and complete helper instruction cost predicted independently.",
+    "Duration-only,note,rest,raw16bit,E7 tie,F7 counted loops,F8 calls,F9 returns;explicit/omitted durations,scale0/1/2/255,transpose sign/wrap,table/ADSR envelope reset,borrowed-channel flags,loop counts0/1/2/255 and initialized channel return stack. Many boundaries are synthetic.",
+    "This fixture covers E7/F7/F8/F9 controls; F1/F2 termination has a separate fixture. Other sequencer commands remain unsupported. Noise864F,PSG waveforms/full reader/futureIRQ/loading prediction remain open."
+  ]
+}
