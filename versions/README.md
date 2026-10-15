@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0183 | [Telecharger](v0183-ec1677f7/gaw-megadrive-v0183.bin) | targeted_checks_passed | Bruit : un silence conserve le PSG lorsque le canal est emprunte ; 18432 cas source/natif et regressions audio verifies. | `ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876` |
 | v0182 | [Telecharger](v0182-f41db51b/gaw-megadrive-v0182.bin) | targeted_checks_passed | F3 : arret de sequence quand le canal emprunte est actif ; 400 cas source/natif exacts, 13 musiques/29 bruitages/fondus verifies. | `f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d` |
 | v0181 | [Telecharger](v0181-97313b55/gaw-megadrive-v0181.bin) | targeted_checks_passed | Durees des notes audio brutes16bits et curseur de sequence corriges selon la SMS.1080 cas source/natif exacts;13 musiques,29 bruitages et fondus verifies sur44340 etats audio. Portage complet encore non valide. | `97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236` |
 | v0180 | [Telecharger](v0180-3f155979/gaw-megadrive-v0180.bin) | targeted_checks_passed | Attente explicite de la prochaine interruption avant revelation, meme affichage coupe. Fondus observes de18 images sur8 transitions; sauvegardes,Continue,contours et passages payants verifies. Synchronisation globale encore incomplete. | `3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7` |

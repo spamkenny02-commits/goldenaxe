@@ -1,0 +1,2623 @@
+{
+  "md_sha256": "f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "56fdbc7455bf4e1ae96e83f3b3f3625b0b199cf0bdf2e74fdbd591c34d2bd663",
+  "cases": 18432,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 9216,
+      "source_cost_and_state_model_exact": true,
+      "mismatches": 72,
+      "differences": [
+        {
+          "case": 9,
+          "fixture": [
+            0,
+            4,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 10,
+          "fixture": [
+            0,
+            4,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 11,
+          "fixture": [
+            0,
+            4,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 12,
+          "fixture": [
+            0,
+            4,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 13,
+          "fixture": [
+            0,
+            4,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 14,
+          "fixture": [
+            0,
+            4,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 15,
+          "fixture": [
+            0,
+            4,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 16,
+          "fixture": [
+            0,
+            4,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 17,
+          "fixture": [
+            0,
+            4,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 27,
+          "fixture": [
+            0,
+            132,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 28,
+          "fixture": [
+            0,
+            132,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 29,
+          "fixture": [
+            0,
+            132,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 30,
+          "fixture": [
+            0,
+            132,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 31,
+          "fixture": [
+            0,
+            132,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 32,
+          "fixture": [
+            0,
+            132,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 33,
+          "fixture": [
+            0,
+            132,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 34,
+          "fixture": [
+            0,
+            132,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 35,
+          "fixture": [
+            0,
+            132,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2313,
+          "fixture": [
+            64,
+            4,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2314,
+          "fixture": [
+            64,
+            4,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2315,
+          "fixture": [
+            64,
+            4,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2316,
+          "fixture": [
+            64,
+            4,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2317,
+          "fixture": [
+            64,
+            4,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2318,
+          "fixture": [
+            64,
+            4,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2319,
+          "fixture": [
+            64,
+            4,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2320,
+          "fixture": [
+            64,
+            4,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2321,
+          "fixture": [
+            64,
+            4,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2331,
+          "fixture": [
+            64,
+            132,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2332,
+          "fixture": [
+            64,
+            132,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2333,
+          "fixture": [
+            64,
+            132,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2334,
+          "fixture": [
+            64,
+            132,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2335,
+          "fixture": [
+            64,
+            132,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2336,
+          "fixture": [
+            64,
+            132,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2337,
+          "fixture": [
+            64,
+            132,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2338,
+          "fixture": [
+            64,
+            132,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2339,
+          "fixture": [
+            64,
+            132,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4617,
+          "fixture": [
+            128,
+            4,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4618,
+          "fixture": [
+            128,
+            4,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4619,
+          "fixture": [
+            128,
+            4,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4620,
+          "fixture": [
+            128,
+            4,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4621,
+          "fixture": [
+            128,
+            4,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4622,
+          "fixture": [
+            128,
+            4,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4623,
+          "fixture": [
+            128,
+            4,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4624,
+          "fixture": [
+            128,
+            4,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4625,
+          "fixture": [
+            128,
+            4,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4635,
+          "fixture": [
+            128,
+            132,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4636,
+          "fixture": [
+            128,
+            132,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4637,
+          "fixture": [
+            128,
+            132,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4638,
+          "fixture": [
+            128,
+            132,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4639,
+          "fixture": [
+            128,
+            132,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4640,
+          "fixture": [
+            128,
+            132,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4641,
+          "fixture": [
+            128,
+            132,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4642,
+          "fixture": [
+            128,
+            132,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4643,
+          "fixture": [
+            128,
+            132,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6921,
+          "fixture": [
+            192,
+            4,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6922,
+          "fixture": [
+            192,
+            4,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6923,
+          "fixture": [
+            192,
+            4,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6924,
+          "fixture": [
+            192,
+            4,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6925,
+          "fixture": [
+            192,
+            4,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6926,
+          "fixture": [
+            192,
+            4,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6927,
+          "fixture": [
+            192,
+            4,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6928,
+          "fixture": [
+            192,
+            4,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6929,
+          "fixture": [
+            192,
+            4,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6939,
+          "fixture": [
+            192,
+            132,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6940,
+          "fixture": [
+            192,
+            132,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6941,
+          "fixture": [
+            192,
+            132,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6942,
+          "fixture": [
+            192,
+            132,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6943,
+          "fixture": [
+            192,
+            132,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6944,
+          "fixture": [
+            192,
+            132,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6945,
+          "fixture": [
+            192,
+            132,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6946,
+          "fixture": [
+            192,
+            132,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6947,
+          "fixture": [
+            192,
+            132,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "region": "pal",
+      "cases": 9216,
+      "source_cost_and_state_model_exact": true,
+      "mismatches": 72,
+      "differences": [
+        {
+          "case": 9,
+          "fixture": [
+            0,
+            4,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 10,
+          "fixture": [
+            0,
+            4,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 11,
+          "fixture": [
+            0,
+            4,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 12,
+          "fixture": [
+            0,
+            4,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 13,
+          "fixture": [
+            0,
+            4,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 14,
+          "fixture": [
+            0,
+            4,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 15,
+          "fixture": [
+            0,
+            4,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 16,
+          "fixture": [
+            0,
+            4,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 17,
+          "fixture": [
+            0,
+            4,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 27,
+          "fixture": [
+            0,
+            132,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 28,
+          "fixture": [
+            0,
+            132,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 29,
+          "fixture": [
+            0,
+            132,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 30,
+          "fixture": [
+            0,
+            132,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 31,
+          "fixture": [
+            0,
+            132,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 32,
+          "fixture": [
+            0,
+            132,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 33,
+          "fixture": [
+            0,
+            132,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 34,
+          "fixture": [
+            0,
+            132,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 35,
+          "fixture": [
+            0,
+            132,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2313,
+          "fixture": [
+            64,
+            4,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2314,
+          "fixture": [
+            64,
+            4,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2315,
+          "fixture": [
+            64,
+            4,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2316,
+          "fixture": [
+            64,
+            4,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2317,
+          "fixture": [
+            64,
+            4,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2318,
+          "fixture": [
+            64,
+            4,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2319,
+          "fixture": [
+            64,
+            4,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2320,
+          "fixture": [
+            64,
+            4,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2321,
+          "fixture": [
+            64,
+            4,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2331,
+          "fixture": [
+            64,
+            132,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2332,
+          "fixture": [
+            64,
+            132,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2333,
+          "fixture": [
+            64,
+            132,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2334,
+          "fixture": [
+            64,
+            132,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2335,
+          "fixture": [
+            64,
+            132,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2336,
+          "fixture": [
+            64,
+            132,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2337,
+          "fixture": [
+            64,
+            132,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2338,
+          "fixture": [
+            64,
+            132,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 2339,
+          "fixture": [
+            64,
+            132,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4617,
+          "fixture": [
+            128,
+            4,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4618,
+          "fixture": [
+            128,
+            4,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4619,
+          "fixture": [
+            128,
+            4,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4620,
+          "fixture": [
+            128,
+            4,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4621,
+          "fixture": [
+            128,
+            4,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4622,
+          "fixture": [
+            128,
+            4,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4623,
+          "fixture": [
+            128,
+            4,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4624,
+          "fixture": [
+            128,
+            4,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4625,
+          "fixture": [
+            128,
+            4,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4635,
+          "fixture": [
+            128,
+            132,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4636,
+          "fixture": [
+            128,
+            132,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4637,
+          "fixture": [
+            128,
+            132,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4638,
+          "fixture": [
+            128,
+            132,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4639,
+          "fixture": [
+            128,
+            132,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4640,
+          "fixture": [
+            128,
+            132,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4641,
+          "fixture": [
+            128,
+            132,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4642,
+          "fixture": [
+            128,
+            132,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 4643,
+          "fixture": [
+            128,
+            132,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6921,
+          "fixture": [
+            192,
+            4,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6922,
+          "fixture": [
+            192,
+            4,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6923,
+          "fixture": [
+            192,
+            4,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6924,
+          "fixture": [
+            192,
+            4,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6925,
+          "fixture": [
+            192,
+            4,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6926,
+          "fixture": [
+            192,
+            4,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6927,
+          "fixture": [
+            192,
+            4,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6928,
+          "fixture": [
+            192,
+            4,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6929,
+          "fixture": [
+            192,
+            4,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6939,
+          "fixture": [
+            192,
+            132,
+            0,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6940,
+          "fixture": [
+            192,
+            132,
+            0,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6941,
+          "fixture": [
+            192,
+            132,
+            0,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6942,
+          "fixture": [
+            192,
+            132,
+            15,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6943,
+          "fixture": [
+            192,
+            132,
+            15,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6944,
+          "fixture": [
+            192,
+            132,
+            15,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6945,
+          "fixture": [
+            192,
+            132,
+            255,
+            0
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6946,
+          "fixture": [
+            192,
+            132,
+            255,
+            3
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        },
+        {
+          "case": 6947,
+          "fixture": [
+            192,
+            132,
+            255,
+            255
+          ],
+          "ram_byte_indices": [],
+          "source_psg": [
+            230,
+            2800
+          ],
+          "native_psg": [
+            230,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "all_cases_exact": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original8679..86DA/863E and bank6 unchanged. Custom boot/stub loads explicitA and initializes PSG E6/F0 before calling helper. Stub cost59T subtracted;400 bytes and complete helper cost predicted independently;IRQs disabled.",
+    "All256 note bytes,flags0/4/128/132,global volume0/15/255 and noise offset0/3/255. Native harness copies production sources,invokes actualsound_noise_note,compares400 RAM bytes and noise PSG control/volume registers (including muted frequency). Synthetic boundaries;no natural-event reachability or waveform assertion.",
+    "Whole noise channel,commands,reader and physical loading prediction remain incomplete."
+  ]
+}

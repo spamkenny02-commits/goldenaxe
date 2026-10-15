@@ -5919,5 +5919,36 @@
         "sha256": "137c87f5b10b69beec308ad4fe2383b840dda66c675db10d6ded43fbd393c34c"
       }
     ]
+  },
+  {
+    "version": 183,
+    "sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-15T19:56:00.157351+00:00",
+    "rom": "v0183-ec1677f7/gaw-megadrive-v0183.bin",
+    "notes": "Bruit : un silence conserve le PSG lorsque le canal est emprunte ; 18432 cas source/natif et regressions audio verifies.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "noise_note_report.json",
+        "sha256": "e7389d0151f8bd5dd4482811890191fd1872c7d962b758d1021657899d0f0035"
+      },
+      {
+        "file": "noise_note_patch_report.json",
+        "sha256": "3c0b59b8a5879f82a6d3b95eb94e7794bb873bf008bd88c986ef412ce9ed7b14"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "8dba2f18c4fcdb675be28ff21513e6ad4a0eaa5c7e875fab6d0490b87ace63de"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "61bf31dae33fb7adbd248f8321e353c365b1de33aa7a7030de445739471095da"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "113b87f0032f836ab2320695f17202b2f6a9d3bbc5eabbbc10d727fbf16c3ff1"
+      }
+    ]
   }
 ]

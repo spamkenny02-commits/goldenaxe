@@ -187,7 +187,8 @@ static void sound_noise_note(u8 *c,u8 note)
     else if(note&8) { mode=2;volume=3;noise=0xe5; }
     else if(note&16) { mode=3;volume=3;noise=0xe6; }
     else if(note&32) { mode=4;volume=4;noise=0xe4; }
-    else { c[0]|=16;PSG_write(c[1]+31);return; }
+    /* 863E keeps the borrowed channel's PSG output when marking a rest. */
+    else { c[0]|=16;if(!(c[0]&4)) PSG_write(c[1]+31);return; }
     c[7]=mode;c[8]=sound_ram[0x18]+volume;
     if(!(c[0]&4)) { sound_ram[0x13]=noise+sound_ram[0x17];PSG_write(sound_ram[0x13]); }
 }

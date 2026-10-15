@@ -1,0 +1,29 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "56fdbc7455bf4e1ae96e83f3b3f3625b0b199cf0bdf2e74fdbd591c34d2bd663",
+  "cases": 18432,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 9216,
+      "source_cost_and_state_model_exact": true,
+      "mismatches": 0,
+      "differences": []
+    },
+    {
+      "region": "pal",
+      "cases": 9216,
+      "source_cost_and_state_model_exact": true,
+      "mismatches": 0,
+      "differences": []
+    }
+  ],
+  "all_cases_exact": true,
+  "full_game_ported": false,
+  "limits": [
+    "Original8679..86DA/863E and bank6 unchanged. Custom boot/stub loads explicitA and initializes PSG E6/F0 before calling helper. Stub cost59T subtracted;400 bytes and complete helper cost predicted independently;IRQs disabled.",
+    "All256 note bytes,flags0/4/128/132,global volume0/15/255 and noise offset0/3/255. Native harness copies production sources,invokes actualsound_noise_note,compares400 RAM bytes and noise PSG control/volume registers (including muted frequency). Synthetic boundaries;no natural-event reachability or waveform assertion.",
+    "Whole noise channel,commands,reader and physical loading prediction remain incomplete."
+  ]
+}

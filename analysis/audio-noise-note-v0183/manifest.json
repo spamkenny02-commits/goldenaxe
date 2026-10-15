@@ -1,0 +1,782 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "source-v0183/actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "source-v0183/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "path": "source-v0183/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "path": "source-v0183/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "path": "source-v0183/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "path": "source-v0183/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "path": "source-v0183/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "path": "source-v0183/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "path": "source-v0183/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "path": "source-v0183/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "path": "source-v0183/door_transition.inc",
+      "sha256": "f6e815ff5b3cae5dd3f0487a893a721d4473ff87fd94fc1b886dbc40240a7de2"
+    },
+    {
+      "path": "source-v0183/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "path": "source-v0183/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "path": "source-v0183/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "path": "source-v0183/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "path": "source-v0183/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "path": "source-v0183/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "path": "source-v0183/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "path": "source-v0183/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "path": "source-v0183/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "path": "source-v0183/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "path": "source-v0183/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "path": "source-v0183/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "path": "source-v0183/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "path": "source-v0183/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "path": "source-v0183/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "path": "source-v0183/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "path": "source-v0183/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "path": "source-v0183/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "path": "source-v0183/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "path": "source-v0183/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "path": "source-v0183/house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "path": "source-v0183/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "path": "source-v0183/intro.inc",
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    },
+    {
+      "path": "source-v0183/intro_data.c",
+      "sha256": "87d7d6d66c54f578c47b44a719e7123221ba278562c29de8afdb2619eda9a4f1"
+    },
+    {
+      "path": "source-v0183/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "path": "source-v0183/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "path": "source-v0183/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "path": "source-v0183/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "path": "source-v0183/main.c",
+      "sha256": "58775718de4b209b8d463e2d32b3cce4962afcef67bd2ffb1b553540a23d726d"
+    },
+    {
+      "path": "source-v0183/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "path": "source-v0183/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "path": "source-v0183/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "path": "source-v0183/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "path": "source-v0183/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "path": "source-v0183/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "path": "source-v0183/paid_passage.inc",
+      "sha256": "6a05aa157645ca05748d764e3d55c269058c9b3ab905466edc5c775c17fbbad9"
+    },
+    {
+      "path": "source-v0183/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "path": "source-v0183/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "path": "source-v0183/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "path": "source-v0183/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "path": "source-v0183/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "path": "source-v0183/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "path": "source-v0183/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "path": "source-v0183/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "path": "source-v0183/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "path": "source-v0183/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "path": "source-v0183/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "path": "source-v0183/sound.inc",
+      "sha256": "ec65e50d1a409ab95773ad111e39f797a6b7dca7a441983be36e8a7431b98b6f"
+    },
+    {
+      "path": "source-v0183/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "path": "source-v0183/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "path": "source-v0183/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "path": "source-v0183/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    },
+    {
+      "path": "source-v0182/sound.inc",
+      "sha256": "f1d177dcf9d3693eee2a3c02e3ae6945a64f1541ca1ba64ffffa0d539437760d"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/validate_audio_noise_note.py",
+      "sha256": "0c9f5b197e20cfcddee9298b79e034eddfed08e6ac228aa92fb9ebad97ff5d8f"
+    },
+    {
+      "path": "tools/validate_audio_prefix_cost.py",
+      "sha256": "56f0a1aef26cba4918dd96d86674df979ccc16632d903c37173006a06c38faf7"
+    },
+    {
+      "path": "tools/audio_noise_note_harness.c",
+      "sha256": "376da5204c57f05b711dcec520e43ec0d551b9ee30720d50edd6f6ad4acf220e"
+    },
+    {
+      "path": "tools/build_audio_noise_note_harness.ps1",
+      "sha256": "421dc8e2ef4070c892516a2d1d236959fede2ee0615cd1a8075f171a6ccb477d"
+    },
+    {
+      "path": "tools/audit_noise_note_patch.py",
+      "sha256": "7430043c7ea9339f78d1cbb628fb1ed03f668f65516ad223196fdca835b0c2ad"
+    },
+    {
+      "path": "tools/archive_noise_note_milestone.py",
+      "sha256": "07f3542b3a9cf8c3dd4eb29361bdb5b0494d9a777e454071d1bbf5d549661032"
+    },
+    {
+      "path": "z80-prefix-snapshots.txt",
+      "sha256": "c5b80cde60d45a291828f3f751952597d0e0135cd5ab9b7dd3ce2eeecab8145c"
+    },
+    {
+      "path": "noise_note_baseline_report.json",
+      "sha256": "298be1873e73b2b60f454e3a811efbac38b0183927f1698b4c3f3a3b0b985bc0"
+    },
+    {
+      "path": "noise_note_report.json",
+      "sha256": "e7389d0151f8bd5dd4482811890191fd1872c7d962b758d1021657899d0f0035"
+    },
+    {
+      "path": "noise_note_milestone.md",
+      "sha256": "cedab83af56cb350210d42b7f7adef9ec14a42be7a43aa2d3527d3e48e6c51aa"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-baseline-costs.bin",
+      "sha256": "6917722b7c407fc96ea9f34e7048c2f5f1352cccbb06a96a65e88f62d6dabc5f"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-baseline-md-psg.bin",
+      "sha256": "6becfaf1226406c19f4661bb5d7bc6dae7e84aded54d1ada21298a3eb3430707"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-baseline-md-states.bin",
+      "sha256": "799b5e948d213c2b16d7e8bf3b71c824471ab9925490f554540163cf978fc368"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-baseline-sms-psg.bin",
+      "sha256": "46261a50702e4ac02749b2c5a8f3b455cb3aabef9dbf91e5bb6f708db2771073"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-baseline-sms-states.bin",
+      "sha256": "799b5e948d213c2b16d7e8bf3b71c824471ab9925490f554540163cf978fc368"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-costs.bin",
+      "sha256": "6917722b7c407fc96ea9f34e7048c2f5f1352cccbb06a96a65e88f62d6dabc5f"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-md/capture.json",
+      "sha256": "8947dca72e713e0e5ea3e83c0126200b1575d4953b8831445d79d53e43a6845e"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-md-psg.bin",
+      "sha256": "46261a50702e4ac02749b2c5a8f3b455cb3aabef9dbf91e5bb6f708db2771073"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-md-states.bin",
+      "sha256": "799b5e948d213c2b16d7e8bf3b71c824471ab9925490f554540163cf978fc368"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-sms/capture.json",
+      "sha256": "c99182efd9048466d007f752e7562b8348391a7b619ffad54ff8b862acc462ac"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-sms/trace_counts.bin",
+      "sha256": "b7f52fdf1bc63950e0386ef6463460ae30aa1ab46118af08db9c3bb75e3de2bf"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-sms/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-sms/trace_windows.bin",
+      "sha256": "6a20692e4ac5a72b60fb7b35169284d652971aed97c8a8474f3a5cfccccf08eb"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-sms-psg.bin",
+      "sha256": "46261a50702e4ac02749b2c5a8f3b455cb3aabef9dbf91e5bb6f708db2771073"
+    },
+    {
+      "path": "validation/audio-noise-note/auto-sms-states.bin",
+      "sha256": "799b5e948d213c2b16d7e8bf3b71c824471ab9925490f554540163cf978fc368"
+    },
+    {
+      "path": "validation/audio-noise-note/cases.inc",
+      "sha256": "fb399fefbb079b0729443c106c4da3e61e810a61cd9a15b64ac2ff85415dbaed"
+    },
+    {
+      "path": "validation/audio-noise-note/helper/source.sms",
+      "sha256": "56fdbc7455bf4e1ae96e83f3b3f3625b0b199cf0bdf2e74fdbd591c34d2bd663"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-baseline-costs.bin",
+      "sha256": "6917722b7c407fc96ea9f34e7048c2f5f1352cccbb06a96a65e88f62d6dabc5f"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-baseline-md-psg.bin",
+      "sha256": "6becfaf1226406c19f4661bb5d7bc6dae7e84aded54d1ada21298a3eb3430707"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-baseline-md-states.bin",
+      "sha256": "799b5e948d213c2b16d7e8bf3b71c824471ab9925490f554540163cf978fc368"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-baseline-sms-psg.bin",
+      "sha256": "46261a50702e4ac02749b2c5a8f3b455cb3aabef9dbf91e5bb6f708db2771073"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-baseline-sms-states.bin",
+      "sha256": "799b5e948d213c2b16d7e8bf3b71c824471ab9925490f554540163cf978fc368"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-costs.bin",
+      "sha256": "6917722b7c407fc96ea9f34e7048c2f5f1352cccbb06a96a65e88f62d6dabc5f"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-md/capture.json",
+      "sha256": "e1564093ad29abbfa32780003a0dfec7e1be4fc0a44258ffc9331cf49263b410"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-md-psg.bin",
+      "sha256": "46261a50702e4ac02749b2c5a8f3b455cb3aabef9dbf91e5bb6f708db2771073"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-md-states.bin",
+      "sha256": "799b5e948d213c2b16d7e8bf3b71c824471ab9925490f554540163cf978fc368"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-sms/capture.json",
+      "sha256": "9a5d68df48f9ef547b3cffd16c3130e036b46b11ede1481924d63980e1371915"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-sms/trace_counts.bin",
+      "sha256": "2095d00a70f5fd03391b342cad4834f6de10c34306a1ea6f03ed5d93ab3c94c0"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-sms/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-sms/trace_windows.bin",
+      "sha256": "6a20692e4ac5a72b60fb7b35169284d652971aed97c8a8474f3a5cfccccf08eb"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-sms-psg.bin",
+      "sha256": "46261a50702e4ac02749b2c5a8f3b455cb3aabef9dbf91e5bb6f708db2771073"
+    },
+    {
+      "path": "validation/audio-noise-note/pal-sms-states.bin",
+      "sha256": "799b5e948d213c2b16d7e8bf3b71c824471ab9925490f554540163cf978fc368"
+    },
+    {
+      "path": "validation/noise-note-baseline.log",
+      "sha256": "7f7bdfe836238580452c50a97b107cee596f6aac59142fbe822ce0e279a49c88"
+    },
+    {
+      "path": "validation/noise-note-fixed.log",
+      "sha256": "cd09a81b168ec8fc7790c5d44a71afd961f0ab491943a7f9327771ac94b6bd2e"
+    },
+    {
+      "path": "validation/build-noise-note-baseline.log",
+      "sha256": "b876b54df6c11e0830ed052b8ebea43919d4ac4e7ee25d47a53df25f1767355f"
+    },
+    {
+      "path": "validation/build-noise-note-fixed.log",
+      "sha256": "71b90a9ce4bcfcd8a61a4abb5d2b54148b52c05fb63c79521108a8f362560b04"
+    },
+    {
+      "path": "validation/build-v0183.log",
+      "sha256": "2cdc8e4530cb43361b8504bf6c315965b339653f1b13f9bb9d68d57f339b27c1"
+    },
+    {
+      "path": "validation/music-v0183.log",
+      "sha256": "fb742a87e78499944a07fecd29b93d5e507b20d21ac60e2164149fa25deb30b3"
+    },
+    {
+      "path": "validation/sfx-v0183.log",
+      "sha256": "81df67a3bd778ef379494c2bf153cf88399ec445061af1db163ccbbdeb406411"
+    },
+    {
+      "path": "validation/music-fade-v0183.log",
+      "sha256": "75ce905ed8876003a18e98a16ce1e481383560c5d2035010bacd2f50c8133f6c"
+    },
+    {
+      "path": "validation/noise_note_patch_report.json",
+      "sha256": "3c0b59b8a5879f82a6d3b95eb94e7794bb873bf008bd88c986ef412ce9ed7b14"
+    },
+    {
+      "path": "validation/music_report.json",
+      "sha256": "8dba2f18c4fcdb675be28ff21513e6ad4a0eaa5c7e875fab6d0490b87ace63de"
+    },
+    {
+      "path": "validation/sfx_report.json",
+      "sha256": "61bf31dae33fb7adbd248f8321e353c365b1de33aa7a7030de445739471095da"
+    },
+    {
+      "path": "validation/music_fade_dispatch_report.json",
+      "sha256": "113b87f0032f836ab2320695f17202b2f6a9d3bbc5eabbbc10d727fbf16c3ff1"
+    },
+    {
+      "path": "genesis_plus_gx_prefix_libretro.dll",
+      "sha256": "a208d1d38e0d9d9d5f9e8cf5cf5b653cc8ecc48d1668d41f939f281e7fd293d5"
+    },
+    {
+      "path": "genesis_plus_gx_libretro.dll",
+      "sha256": "f0e6f1723602c278d7520b627b1ed96132a8ed48fe1d14704e9cdb6c6c876e7c"
+    },
+    {
+      "path": "native-harness/src/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "path": "native-harness/src/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "path": "native-harness/src/actors.inc",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "native-harness/src/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "path": "native-harness/src/cases.inc",
+      "sha256": "fb399fefbb079b0729443c106c4da3e61e810a61cd9a15b64ac2ff85415dbaed"
+    },
+    {
+      "path": "native-harness/src/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "path": "native-harness/src/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "path": "native-harness/src/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "path": "native-harness/src/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "path": "native-harness/src/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "path": "native-harness/src/door_transition.inc",
+      "sha256": "f6e815ff5b3cae5dd3f0487a893a721d4473ff87fd94fc1b886dbc40240a7de2"
+    },
+    {
+      "path": "native-harness/src/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "path": "native-harness/src/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "path": "native-harness/src/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "path": "native-harness/src/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "path": "native-harness/src/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "path": "native-harness/src/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "path": "native-harness/src/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "path": "native-harness/src/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "path": "native-harness/src/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "path": "native-harness/src/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "path": "native-harness/src/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "path": "native-harness/src/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "path": "native-harness/src/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "path": "native-harness/src/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "path": "native-harness/src/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "path": "native-harness/src/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "path": "native-harness/src/game_main.inc",
+      "sha256": "58775718de4b209b8d463e2d32b3cce4962afcef67bd2ffb1b553540a23d726d"
+    },
+    {
+      "path": "native-harness/src/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "path": "native-harness/src/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "path": "native-harness/src/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "path": "native-harness/src/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "path": "native-harness/src/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "path": "native-harness/src/house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "path": "native-harness/src/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "path": "native-harness/src/intro.inc",
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    },
+    {
+      "path": "native-harness/src/intro_data.c",
+      "sha256": "87d7d6d66c54f578c47b44a719e7123221ba278562c29de8afdb2619eda9a4f1"
+    },
+    {
+      "path": "native-harness/src/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "path": "native-harness/src/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "path": "native-harness/src/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "path": "native-harness/src/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "path": "native-harness/src/main.c",
+      "sha256": "376da5204c57f05b711dcec520e43ec0d551b9ee30720d50edd6f6ad4acf220e"
+    },
+    {
+      "path": "native-harness/src/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "path": "native-harness/src/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "path": "native-harness/src/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "path": "native-harness/src/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "path": "native-harness/src/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "path": "native-harness/src/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "path": "native-harness/src/paid_passage.inc",
+      "sha256": "6a05aa157645ca05748d764e3d55c269058c9b3ab905466edc5c775c17fbbad9"
+    },
+    {
+      "path": "native-harness/src/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "path": "native-harness/src/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "path": "native-harness/src/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "path": "native-harness/src/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "path": "native-harness/src/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "path": "native-harness/src/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "path": "native-harness/src/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "path": "native-harness/src/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "path": "native-harness/src/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "path": "native-harness/src/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "path": "native-harness/src/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "path": "native-harness/src/sound.inc",
+      "sha256": "ec65e50d1a409ab95773ad111e39f797a6b7dca7a441983be36e8a7431b98b6f"
+    },
+    {
+      "path": "native-harness/src/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "path": "native-harness/src/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "path": "native-harness/src/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "path": "native-harness/src/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    },
+    {
+      "path": "native-harness/rom.bin",
+      "sha256": "0467fa13003ed05dd3eae7bcd4b53e09a87f9ae50740ee541a441601b0ad9dd2"
+    },
+    {
+      "path": "native-harness/symbol.txt",
+      "sha256": "b8a37104a5bb6686d8c9f18633c2cd9692e4d03067822a839225155deae008e4"
+    }
+  ]
+}

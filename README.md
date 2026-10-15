@@ -5,14 +5,14 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0182 — 1024 Kio.**
+**Version courante : v0183 — 1024 Kio.**
 
-[Télécharger la ROM v0182](versions/v0182-f41db51b/gaw-megadrive-v0182.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0183](versions/v0183-ec1677f7/gaw-megadrive-v0183.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d`  
-Checksum Mega Drive : `8CD4`
+SHA-256 : `ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876`  
+Checksum Mega Drive : `CAAA`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
@@ -45,6 +45,9 @@ Le binaire Mega Drive ne contient pas d’interpréteur Z80.
 - v0182 : arrêt conditionnel de séquence F3 lorsque le canal emprunté est
   actif, conforme à la SMS. Les 400 cas ciblés et les contrôles audio passent.
 
+- v0183 : un silence du canal de bruit emprunté conserve la sortie PSG,
+  comme sur SMS. Les 18 432 cas ciblés et les contrôles audio passent.
+
 ### Travail en cours
 
 Rapprocher les durées de chargement et les animations de la SMS, en calculant
@@ -58,7 +61,9 @@ maintenant des coûts vérifiés en PAL et NTSC. Les arrêts F1/F2 sans restitut
 8211 sont aussi contrôlés. Vingt commandes déterministes supplémentaires
 et le partage F3 sont vérifiés sur des contextes isolés. Les commandes
 utilisant le registre R, la restitution des canaux et le lecteur complet
-restent à couvrir avant l’intégration aux chargements natifs.
+restent à couvrir avant l’intégration aux chargements natifs. La sélection
+des notes de bruit (8679) dispose maintenant d’un modèle de coût vérifié ;
+le traitement complet du canal de bruit (864F) reste à couvrir.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -71,6 +76,7 @@ et la vérification sur matériel Mega Drive.
 - [Corrections v0180](analysis/reveal_wait_milestone.md).
 - [Correction audio v0181](analysis/raw_note_duration_milestone.md).
 - [Correction du partage audio v0182](analysis/audio_ownership_milestone.md).
+- [Correction du silence du bruit emprunté v0183](analysis/noise_note_milestone.md).
 - [Mesures des interruptions audio](analysis/audio_irq_milestone.md).
 - [Calcul du traitement des musiques et bruitages](analysis/audio_dispatch_milestone.md).
 - [Calcul des enveloppes de volume](analysis/audio_envelope_milestone.md).
