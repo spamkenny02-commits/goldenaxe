@@ -6,7 +6,7 @@ from source_rng_refresh import advance_refresh
 from graphics_prefix_phase import predict_graphics_prefix
 
 def audited_fetches(ticks,effect=None):
- assert ticks in [4,5,6,7,8,10,11,12,13,14,15,16,17,19,20,21]
+ assert ticks in [4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21]
  return 1 if effect=='M1_1' else (2 if ticks in [14,16,19,20,21] or effect=='M1_2' else 1)
 
 class GraphicsPrefixRefreshPhase(ForegroundPhase):

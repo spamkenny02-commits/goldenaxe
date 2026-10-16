@@ -115,7 +115,10 @@ aussi R et les lectures des interruptions : 13 725 appels en jeu et
 6 156 cas synthétiques correspondent. Le HUD est maintenant raccordé
 depuis l’entrée du chargement jusqu’au retour 24BF : 384 comparaisons
 sur les 24 scénarios, transfert et palette compris. Les jauges passent
-aussi 18 042 cas isolés. Acteurs et historique restent à raccorder.
+aussi 18 042 cas isolés. L’historique est maintenant raccordé jusqu’à
+l’entrée des acteurs : les 72 tirages aléatoires, leurs graines et R sont
+prédits depuis l’état initial, avec 720 comparaisons sur les 24 parcours.
+Acteurs, héros et fin du chargement restent à enchaîner avant intégration.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -221,3 +224,5 @@ n’y a été envoyé depuis ce projet.
 - [Registre R pendant les attentes VBlank](analysis/wait_refresh_milestone.md).
 
 - [Registre R jusqu’à la sortie du HUD](analysis/map_hud_refresh_milestone.md).
+
+- [Tirages de l’historique depuis le début du chargement](analysis/history_refresh_phase_milestone.md).
