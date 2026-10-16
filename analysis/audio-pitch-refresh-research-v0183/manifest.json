@@ -1,0 +1,130 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/archive_audio_pitch_refresh_research.py",
+      "sha256": "48fd480d9a0c2c3a60991fe7c7989fcc7d9fbc7b7410429842cfc2f6ea093bd6"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/validate_audio_pitch_refresh.py",
+      "sha256": "0bc046666e68f47f4f47fd4c1cdc6723f3381787c67ed4f116cdc2e4d8d80a08"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_audio_prefix_cost.py",
+      "sha256": "56f0a1aef26cba4918dd96d86674df979ccc16632d903c37173006a06c38faf7"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/audio_pitch_refresh.py",
+      "sha256": "231e6efcb8a9c4c29b3b4a2f4e7b5fc4b8a1fac24019276be78c85ffd7a54dd9"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/build_audio_pitch_refresh_core.py",
+      "sha256": "0243ea3bba62c3728ede24ffe71efe39fa81997b138f4a9b09aa6a3921b660a0"
+    },
+    {
+      "path": "z80-pitch-refresh.txt",
+      "sha256": "589bdf4f5147c19051ad889b0fb0dc085a9707311541781276c84c35b3323a11"
+    },
+    {
+      "path": "reference/bank_06.asm",
+      "sha256": "c8f23eaa40858fafba0460b2876d1345e2f03c9b92f8e18e092452588c5ff71c"
+    },
+    {
+      "path": "validation/audio-pitch-refresh/pitch/source.sms",
+      "sha256": "61869d0046bfe13bc39d91080e62704982c1958bec6be2fe5612332e780550c3"
+    },
+    {
+      "path": "validation/audio-pitch-refresh/pitch/auto-results.bin",
+      "sha256": "fd9e5b746920f3941a3ebe9e2db836cb4338402880ef1ee9e49712a263546f7a"
+    },
+    {
+      "path": "validation/audio-pitch-refresh/pitch/auto/capture.json",
+      "sha256": "b00134f659c2eca42f5b5d610029345adfcfadf591053657ccfc33c654df53cb"
+    },
+    {
+      "path": "validation/audio-pitch-refresh/pitch/pal-results.bin",
+      "sha256": "d2e843bae668e91413e5af12ee4ed0d868b6ce5f8ed2182cfba8491f4636db95"
+    },
+    {
+      "path": "validation/audio-pitch-refresh/pitch/pal/capture.json",
+      "sha256": "b0485f5e3fcb06ee6329b3f71f794c06956bdfddef4f6d16e83053cf34657d67"
+    },
+    {
+      "path": "logs/build-audio-pitch-refresh.log",
+      "sha256": "1ed08db087376206d39ba8e4d67562238e4b68e18b4cf3081519b82dd88862aa"
+    },
+    {
+      "path": "logs/audio-pitch-refresh-core-build.log",
+      "sha256": "c7389da5c0fa1fae8f97589cf72786b9fa19a7741751644fbc4042dde973278a"
+    },
+    {
+      "path": "logs/audio-pitch-refresh.log",
+      "sha256": "88fdb5f16624b3b9f2ccb4d029db94aa1910ec9b04c78fd3225ccaf92079a588"
+    },
+    {
+      "path": "audio_pitch_refresh_report.json",
+      "sha256": "05cb92c1f6d10fb95a81020d9262f22ed4797ad82538a00114553908aadc37ad"
+    },
+    {
+      "path": "audio_pitch_refresh_milestone.md",
+      "sha256": "9ddfd175499a49dffdce75dc21f2c84c8b67d06decb4f98b25723a722f3416f3"
+    },
+    {
+      "path": "genesis_plus_gx_pitchrefresh_libretro.dll",
+      "sha256": "cd3a2180bc92c78ec26ee465dc9a8676cd7c0a8093c22c2d77bb342acee2750a"
+    }
+  ]
+}
