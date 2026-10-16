@@ -1,0 +1,103 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 3372,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 1547,
+      "M1_histogram": {
+        "64": 749,
+        "54": 81,
+        "53": 533,
+        "183": 30,
+        "190": 2,
+        "186": 38,
+        "228": 3,
+        "61": 48,
+        "78": 7,
+        "263": 2,
+        "81": 1,
+        "6": 41,
+        "178": 2,
+        "179": 2,
+        "88": 3,
+        "51": 2,
+        "58": 2,
+        "341": 1
+      },
+      "channels": {
+        "DE40": 501,
+        "DE70": 501,
+        "DEA0": 501,
+        "DF00": 22,
+        "DF30": 22
+      },
+      "pitch_modes": {
+        "0": 1547
+      },
+      "envelope_modes": {
+        "16": 501,
+        "6": 68,
+        "8": 501,
+        "7": 433,
+        "2": 44
+      },
+      "state_cost_sha256": "9982b0c8f43f37c60f72e7f8d7b179e60b8fdaffe972421a4d07196602f8227e",
+      "M1_R_sha256": "64ab889150e681e6c247dd2c3f370dca4e52cd419634ac650207972064dbc543"
+    },
+    {
+      "region": "pal",
+      "cases": 1825,
+      "M1_histogram": {
+        "53": 665,
+        "64": 857,
+        "183": 45,
+        "78": 10,
+        "54": 123,
+        "190": 3,
+        "186": 43,
+        "228": 3,
+        "61": 43,
+        "263": 2,
+        "81": 2,
+        "341": 1,
+        "6": 20,
+        "178": 1,
+        "179": 1,
+        "133": 1,
+        "91": 1,
+        "51": 1,
+        "58": 1,
+        "222": 1,
+        "335": 1
+      },
+      "channels": {
+        "DE40": 601,
+        "DE70": 601,
+        "DEA0": 601,
+        "DF00": 11,
+        "DF30": 11
+      },
+      "pitch_modes": {
+        "0": 1825
+      },
+      "envelope_modes": {
+        "16": 601,
+        "6": 75,
+        "8": 601,
+        "7": 526,
+        "2": 22
+      },
+      "state_cost_sha256": "18a4527a541dbb8824357b3813e16b92b15c775c15cea91a0e7c3a86ce068575",
+      "M1_R_sha256": "a362c8ad11db71e0cb14075ef85fd5d328522340d95d154eb9525d7b7e2a47f2"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled6D->96/full-mask paid exit PAL/NTSC. Read-only live84C7 opcode/R observer;old824-byte state/cost records byte-identical andsource cycles identical to v0179. All captured tone calls predicted without unsupported skips.",
+    "Observed channel/pitch/envelope modes reported;live route only pitch0. R at helper entry is still observed,not predicted from16D0;helper R delta follows independently composed M1 count.",
+    "Other routes/contexts,noise/whole reader/IRQ fetch composition,unsupported commands/restoration,load-entry R/native RNG replacement,waveform/hardware/full progression remain open."
+  ]
+}

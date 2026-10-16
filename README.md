@@ -114,8 +114,11 @@ prises en charge. Les enveloppes ADSR et sur tables passent maintenant
 Les hauteurs et le vibrato passent aussi 118 832 cas, dont 32 dépilages
 d’appel exercés avec des contextes synthétiques. Les notes et commandes
 de séquence prises en charge passent 167 552 cas, dont 816 dépilages.
-Les commandes utilisant R, certaines restitutions, les canaux complets
-et le code qui encadre les interruptions restent à couvrir pour ce comptage.
+La composition des canaux de tonalité passe 20 680 cas isolés et les
+3 372 appels d’un parcours en jeu, dont les anciennes captures restent
+identiques. Les commandes utilisant R, certaines restitutions, le canal
+de bruit et le lecteur complet avec son interruption restent à couvrir
+pour ce comptage.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -152,6 +155,7 @@ et la vérification sur matériel Mega Drive.
 - [Lectures d’opcodes des enveloppes audio](analysis/audio_envelope_refresh_milestone.md).
 - [Lectures d’opcodes des hauteurs et du vibrato](analysis/audio_pitch_refresh_milestone.md).
 - [Lectures d’opcodes des notes et commandes de séquence](analysis/audio_note_sequence_refresh_milestone.md).
+- [Composition des lectures d’opcodes des canaux de tonalité](analysis/audio_tone_channel_refresh_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 
