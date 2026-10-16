@@ -6004,5 +6004,40 @@
         "sha256": "6b9b609d5a145d59d62c383853ece53e778084e79d4aee2b7ce7f0da27fe668a"
       }
     ]
+  },
+  {
+    "version": 186,
+    "sha256": "83a88ce9e663a49944e1f729e4529f446c4e8997c195b3ef55907657aac66734",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T18:31:20.215764+00:00",
+    "rom": "v0186-83a88ce9/gaw-megadrive-v0186.bin",
+    "notes": "Dispatch audio80FF traduit en C natif et raccorde au lecteur : 2304 cas hote/68000 PAL-NTSC ; 34 etats source/ROM exacts. Regressions13 musiques,29 bruitages,fondu et menu valides. Horloge/R non encore raccordes.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "production_audio_dispatch_report.json",
+        "sha256": "6e4df8dde76b09e05d5a5814b79e38216b7fc34ca8c6b446454e3d6969fd502c"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "c356b362c1c0e7e6d006a4fd1bb5ff14cb360f819509e2c2c6598c2dea0dbfa1"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "2a438d6343ddc7bc91034a4e89700818bd2488998ec9adb400bf5a4159b789b3"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "8fc27dce0cd015bef32a331704e5e923150029d3b6a6b0b204f73c98385fce63"
+      },
+      {
+        "file": "start_menu_audio_report.json",
+        "sha256": "cfc1507cdba7306477409bc9ea0c15d837445d67f203f8a47ad42c1a5509a1b3"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "ed3fb9a49cdc08f00b75a4bd9f52a584100024e1e5e4fc26d85e16df8d3daa30"
+      }
+    ]
   }
 ]

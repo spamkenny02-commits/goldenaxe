@@ -5,17 +5,24 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0185 — 1024 Kio.**
+**Version courante : v0186 — 1024 Kio.**
 
-[Télécharger la ROM v0185](versions/v0185-1a34d6f6/gaw-megadrive-v0185.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0186](versions/v0186-83a88ce9/gaw-megadrive-v0186.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `1a34d6f67efb5b3ca2dbdcfc4611ab51a6cadf1055fcf1752a96967b77fb73c7`  
-Checksum Mega Drive : `B8A9`
+SHA-256 : `83a88ce9e663a49944e1f729e4529f446c4e8997c195b3ef55907657aac66734`  
+Checksum Mega Drive : `C045`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0186 raccorde le dispatch audio natif vérifié (musique, bruitages et
+commandes de contrôle). Les 2 304 cas de composant passent sur hôte et
+en code 68000 PAL/NTSC ; 34 états contrôlés de la ROM jouable correspondent
+aux 400 octets du lecteur SMS. Les coûts Z80/M1 sont désormais disponibles
+pour cette routine, mais ne pilotent pas encore l'horloge du jeu.
+Voir le [détail et les limites](analysis/native_audio_dispatch_milestone.md).
 
 La v0185 rétablit les bruitages du menu Nouveau jeu/Continue : `$95` quand
 le curseur change de ligne et `$AB` à la validation. Les parcours avec les

@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "region": "auto",
+      "frame": 591,
+      "done": 1,
+      "cases": 2304,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 495,
+      "done": 1,
+      "cases": 2304,
+      "failures": 0
+    }
+  ],
+  "test_ROM_sha256": "036eebba293c4d566c7d24a7c72cab3b1b956c6842072f054cef21bf2a14b4f2",
+  "helper_sha256": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018",
+  "limits": [
+    "Isolated compiled68000 execution under GPG; all400 bytes, T/M1 and explicit PSG decisions compared.",
+    "No full game or hardware proof; unaudited commands reject without mutation."
+  ]
+}

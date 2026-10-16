@@ -1,0 +1,13 @@
+{
+  "cases": 2304,
+  "rejected_cases": 48,
+  "compared_RAM_bytes": 400,
+  "helper_sha256": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018",
+  "original_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "production_integrated": false,
+  "limits": [
+    "Host compiled C vs previously audited Python source state/T/M1 models.",
+    "PSG mute/write decisions derived from source branches; waveforms and full reader clock not covered.",
+    "Six unaudited commands reject without mutation; their source paths remain to be implemented."
+  ]
+}

@@ -1,6 +1,7 @@
 /* Native PSG music reader, bank 6:8000..897D. Original sequence/envelope
  * data are read directly; this is not a Z80 CPU or a recorded audio stream. */
 #include "source_audio_prefix.h"
+#include "source_audio_dispatch.h"
 extern const u8 intro_bank6[],sound_low_rom[];
 static u8 sound_ram[0x190];
 static volatile u16 sound_unhandled_command;
@@ -20,70 +21,19 @@ static void sound_stop(void)
 {
     SourceClockWork work;source_audio_stop(sound_ram,&work);sound_mute();
 }
-static void sound_start(u16 command)
-{
-    u16 index,header,n;
-    sound_stop();sound_current_track=command;
-    if(command<0x81 || command>0x8d) return;
-    index=command-0x81;sound_ram[1]=sound_ram[2]=sound_read(0x8b09+index);
-    header=sound_word(0x8b16+index*2);
-    for(n=0;n<sound_read(header) && n<4;n++)
-    {
-        u8 *c=sound_ram+0x40+n*0x30;u16 j;
-        for(j=0;j<9;j++) c[j]=sound_read(header+1+n*9+j);
-        c[9]=0x30;c[10]=1;
-    }
-}
 /* 8097/80A8: three source queues share a priority latch; later ties win. */
 static void sound_arbitrate(void)
 {
     SourceClockWork work;source_audio_arbitrate(sound_ram,intro_bank6,&work);
 }
-static void sound_load_channel(u16 offset,u16 header)
-{
-    u8 *c=sound_ram+offset;u16 n;
-    for(n=0;n<9;n++) c[n]=sound_read(header+n);
-    c[9]=0x30;c[10]=1;c[0x27]=c[0x28]=c[0x29]=0;
-}
-/* 817C..81F7: effects borrow music channels; tone3 can also own noise. */
-static void sound_start_effect(u16 command)
-{
-    u16 header=sound_word(0x8b30+(command-0x90)*2),n,count=sound_read(header++);
-    sound_ram[0xf]=command;
-    for(n=0;n<count && n<3;n++,header+=9)
-    {
-        u16 channel=sound_read(header+1),offset,background;
-        if(channel==0xa0) { offset=0x100;background=0x70; }
-        else if(channel==0xc0)
-        {
-            if(!(sound_ram[0x160]&64)) { sound_ram[0x160]|=4;PSG_write(0xff); }
-            offset=0x130;background=0xa0;
-        }
-        else { offset=0x160;background=0xd0; }
-        sound_ram[background]|=4;sound_load_channel(offset,header);
-    }
-    sound_ram[5]=0x80;
-}
 static void sound_dispatch(void)
 {
-    u16 command=sound_ram[5],n;
-    if(command==0x80) return;
-    if(command>=0x81 && command<=0x8d) { sound_start(command);return; }
-    if(command>=0x90 && command<=0xac) { sound_start_effect(command);return; }
-    if(command==0xb0) { sound_ram[0xb]=12;sound_ram[0xc]=sound_ram[0xd]=18;sound_ram[5]=0x80;return; }
-    if(command==0xb2)
-    {
-        for(n=0;n<3;n++) sound_ch_set(sound_ram+0x100+n*0x30,3,0x814e);
-        return;
-    }
-    if(command==0xb3)
-    {
-        u16 offset=sound_ram[0xf]?0x160:0x130;
-        sound_ram[0xe]=0;
-        if(!(sound_ram[0xf]&128)) { sound_ram[offset]=sound_ram[0xf];PSG_write(sound_ram[offset+1]+31); }
-        sound_ram[5]=0x80;return;
-    }
-    sound_stop();
+    u16 command=sound_ram[5],n;SourceClockWork work;SourceAudioDispatchOutput output;
+    if(!source_audio_dispatch(sound_ram,intro_bank6,&work,&output))
+    { sound_stop();return; } /* Retain existing fallback for unaudited commands. */
+    if(command>=0x81 && command<=0x8d) sound_current_track=command;
+    if(output.mute) sound_mute();
+    for(n=0;n<output.count;n++) PSG_write(output.writes[n]);
 }
 void sound_effect(u16 command) { sound_effect_request=command; }
 void sound_effect_main(u16 command) { sound_request=command; }

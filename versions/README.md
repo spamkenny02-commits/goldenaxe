@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0186 | [Telecharger](v0186-83a88ce9/gaw-megadrive-v0186.bin) | targeted_checks_passed | Dispatch audio80FF traduit en C natif et raccorde au lecteur : 2304 cas hote/68000 PAL-NTSC ; 34 etats source/ROM exacts. Regressions13 musiques,29 bruitages,fondu et menu valides. Horloge/R non encore raccordes. | `83a88ce9e663a49944e1f729e4529f446c4e8997c195b3ef55907657aac66734` |
 | v0185 | [Telecharger](v0185-1a34d6f6/gaw-megadrive-v0185.bin) | targeted_checks_passed | Menu Nouveau jeu/Continue : bruitage95 au changement de ligne etAB a la validation, comme SMS ; aucun son sur une ligne deja selectionnee. Parcours naturels PAL/NTSC, canaux effets audibles et musique du menu verifies. | `1a34d6f67efb5b3ca2dbdcfc4611ab51a6cadf1055fcf1752a96967b77fb73c7` |
 | v0184 | [Telecharger](v0184-67010959/gaw-megadrive-v0184.bin) | targeted_checks_passed | Prefixe audio natif : tempo, priorites, arret et fondu ; correction du debordement volume et des requetes hautes. Controles cibles musiques, bruitages, fondu, menu et 24 cas limites. | `67010959a2ab6fbaf409426ca2e06d645040c73d7f7cd99a01c4debb49fedc1e` |
 | v0183 | [Telecharger](v0183-ec1677f7/gaw-megadrive-v0183.bin) | targeted_checks_passed | Bruit : un silence conserve le PSG lorsque le canal est emprunte ; 18432 cas source/natif et regressions audio verifies. | `ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876` |
