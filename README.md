@@ -116,9 +116,9 @@ d’appel exercés avec des contextes synthétiques. Les notes et commandes
 de séquence prises en charge passent 167 552 cas, dont 816 dépilages.
 La composition des canaux de tonalité passe 20 680 cas isolés et les
 3 372 appels d’un parcours en jeu, dont les anciennes captures restent
-identiques. Les commandes utilisant R, certaines restitutions, le canal
-de bruit et le lecteur complet avec son interruption restent à couvrir
-pour ce comptage.
+identiques. Le canal de bruit passe aussi 39 360 cas isolés et 1 102 appels
+en jeu. Les commandes utilisant R, certaines restitutions et le lecteur
+complet avec son interruption restent à couvrir pour ce comptage.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -156,6 +156,7 @@ et la vérification sur matériel Mega Drive.
 - [Lectures d’opcodes des hauteurs et du vibrato](analysis/audio_pitch_refresh_milestone.md).
 - [Lectures d’opcodes des notes et commandes de séquence](analysis/audio_note_sequence_refresh_milestone.md).
 - [Composition des lectures d’opcodes des canaux de tonalité](analysis/audio_tone_channel_refresh_milestone.md).
+- [Composition des lectures d’opcodes du canal de bruit](analysis/audio_noise_channel_refresh_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

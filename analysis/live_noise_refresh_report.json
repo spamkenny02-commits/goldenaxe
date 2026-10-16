@@ -1,0 +1,62 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": 1102,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 501,
+      "M1_histogram": {
+        "53": 200,
+        "50": 239,
+        "72": 17,
+        "129": 1,
+        "43": 2,
+        "82": 16,
+        "79": 13,
+        "109": 13
+      },
+      "channels": {
+        "DED0": 501
+      },
+      "envelope_modes": {
+        "2": 133,
+        "1": 367,
+        "0": 1
+      },
+      "state_cost_sha256": "50163b401c08688fd2a1fbf4bcdc83264f4673df3d58a3667cc85e6194d03b3c",
+      "M1_R_sha256": "3a3483c7e8d5677fdefc48c14d581e40f474ddda32c6ac275dc252cfaa40ea63"
+    },
+    {
+      "region": "pal",
+      "cases": 601,
+      "M1_histogram": {
+        "53": 249,
+        "50": 273,
+        "82": 21,
+        "72": 21,
+        "129": 1,
+        "43": 2,
+        "79": 17,
+        "109": 17
+      },
+      "channels": {
+        "DED0": 601
+      },
+      "envelope_modes": {
+        "1": 439,
+        "2": 161,
+        "0": 1
+      },
+      "state_cost_sha256": "231b5af940307c1978e8a47513f152d6702350ce8735d1fb4f318842655fc64a",
+      "M1_R_sha256": "855a6091a7a2845fa6138c282e0484f2bb9724e4b912dffff894de7129c72c73"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled6D->96/full-mask paid exit PAL/NTSC. Read-only live864F opcode/R observer;old824-byte state/cost records byte-identical andsource cycles identical to v0179. All captured noise calls predicted without unsupported skips.",
+    "Observed noise/envelope modes reported;F6/F7 are supported andother noise controls remain outside scope. R at helper entry is still observed,not predicted from16D0;helper R delta follows independently composed M1 count.",
+    "Other routes/contexts,other noise commands/whole reader/IRQ fetch composition,unsupported commands/restoration,load-entry R/native RNG replacement,waveform/hardware/full progression remain open."
+  ]
+}
