@@ -128,7 +128,10 @@ propre état d’entrée : 24 parcours et 13 150 cas isolés correspondent,
 avec 475 octets d’état vérifiés. Ce raccordement est maintenant fait
 depuis la RAM initiale du chargement : carte de collision et entrée du
 héros sont reconstruites, avec 1 080 comparaisons jusqu’au retour 24E7.
-Scripts, musique et retour/révélation restent à raccorder avant intégration.
+Les scripts, la demande musicale et la préparation de révélation sont
+maintenant raccordés jusqu’à la réactivation de l’affichage (0ACE), avec
+1 320 comparaisons sur les 24 parcours. Le fondu/contours suivants, les
+autres contextes et l’intégration native restent à vérifier.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -244,3 +247,5 @@ n’y a été envoyé depuis ce projet.
 - [Phases et registre R de l’initialisation du héros](analysis/hero_refresh_phase_milestone.md).
 
 - [Chargement raccordé jusqu’au héros](analysis/loader_hero_refresh_milestone.md).
+
+- [Chargement jusqu’à la réactivation de l’écran](analysis/loader_tail_refresh_milestone.md).

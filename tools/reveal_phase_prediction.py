@@ -20,7 +20,8 @@ def clear_prefix(cpu):
  cpu.execute(10);cpu.execute(17);cpu.checkpoint()
 
 def prepare_prefix(cpu):
- for t in [10,10,10]+[21]*31+[16,17,10,10,10,7]+[21]*30+[16,10,13,4,7,8]:cpu.execute(t)
+ for t in [10,10,10]+[21]*31+[16,17,10,10,10,7]+[21]*30+[16,10,13,4,7]:cpu.execute(t)
+ cpu.execute(8,'M1_2') #SET 5,E; unlike an 8T terminal DJNZ.
  rst28(cpu,1,cpu.ram[0x11]|32)
  cpu.execute(11,'status');cpu.execute(17);cpu.checkpoint()
 
@@ -28,7 +29,7 @@ def restore_and_enable(cpu):
  for t in [10,13,14,14,10,10,10,10,4,4,10,10,10,10,10]:cpu.execute(t)
  cpu.checkpoint();restored=cpu.result()
  #AC0: E was saved by0B95 afterSET5 from the prior shadow register.
- value=cpu.ram[0x11]|32|64;cpu.execute(8);rst28(cpu,1,value);cpu.execute(4);cpu.execute(13);cpu.ram[0x11]=value
+ value=cpu.ram[0x11]|32|64;cpu.execute(8,'M1_2');rst28(cpu,1,value);cpu.execute(4);cpu.execute(13);cpu.ram[0x11]=value
  for t in [13,4,7]:cpu.execute(t)
  rst28(cpu,0,cpu.ram[0x10]);cpu.checkpoint();return restored
 
