@@ -1,0 +1,14 @@
+{
+  "seed_cases": 65536,
+  "output_cases": 196608,
+  "refresh_cases": 66816,
+  "compiled_68000": true,
+  "executed_68000": false,
+  "source_sha256": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+  "object_sha256": "d851c66717fe1a066306cc46b6e151d2094e4896cae9bbe9705923d050e86981",
+  "production_ROM_changed": false,
+  "production_RNG_replaced": false,
+  "limits": [
+    "Native helper C tested on host andcross-compiled with SGDK68000 compiler. Clock integration is deliberately absent:sampled R must come from verified instruction timing,not MD frame/random approximation."
+  ]
+}

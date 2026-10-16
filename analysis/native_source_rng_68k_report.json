@@ -1,0 +1,27 @@
+{
+  "rows": [
+    {
+      "region": "auto",
+      "frame": 1200,
+      "seeds": 65536,
+      "outputs": 196608,
+      "refresh": 66816,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 1200,
+      "seeds": 65536,
+      "outputs": 196608,
+      "refresh": 66816,
+      "failures": 0
+    }
+  ],
+  "executed_68000": true,
+  "test_ROM_sha256": "bc66db499a93d6ba4a1a37e074b960da497d1fac6f0681abadf22da97dcdcc1a",
+  "production_ROM_changed": false,
+  "production_RNG_replaced": false,
+  "limits": [
+    "Separate test cartridge; original C source included unchanged. SGDK68000 code runs under local Genesis Plus GX PAL/NTSC. Production gameplay clock/RNG integration andphysical hardware not proved."
+  ]
+}

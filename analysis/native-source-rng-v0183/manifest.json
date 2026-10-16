@@ -1,0 +1,109 @@
+{
+  "production_md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "files": [
+    {
+      "path": "megadrive/src/source_rng.c",
+      "sha256": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f"
+    },
+    {
+      "path": "megadrive/src/source_rng.h",
+      "sha256": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f"
+    },
+    {
+      "path": "tools/validate_native_source_rng.py",
+      "sha256": "8b6efcb6a7a3e2028faac304e27aeb3d8cd4dd642b8effb4f3ac9669b2f9c313"
+    },
+    {
+      "path": "tools/validate_native_source_rng_68k.py",
+      "sha256": "34e7ad5c02375a81b80df66e73b3bc89a8d7c5bd2a43566e9fc40b6e283997a5"
+    },
+    {
+      "path": "tools/archive_native_source_rng.py",
+      "sha256": "bf0c1a9a2d9969b5ff7e0d0b304274be3b8c2061bf4e0293a61960a53e54f440"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "analysis/native_source_rng_report.json",
+      "sha256": "55a87d775337e02c354dcd96ffbab07514529442384f5c9ac898f98c848ca61d"
+    },
+    {
+      "path": "analysis/native_source_rng_68k_report.json",
+      "sha256": "560dc27eceb9dadb855ea9f5a539d2f28f1374874f7238bca64eb6d229851fcd"
+    },
+    {
+      "path": "analysis/native_source_rng_milestone.md",
+      "sha256": "d6d9e9005a136c167998902cca55c754d72e488b30afb70b3f96c6426f2c8ac1"
+    },
+    {
+      "path": "validation/native-source-rng.log",
+      "sha256": "127d5d630dc0e8cae67f27582c22e515fdbf4d16d0971bf4803d6f5d70e327b2"
+    },
+    {
+      "path": "validation/native-source-rng-68k.log",
+      "sha256": "bfc1a20d8eecdbdb7fa150d5a0be2626a24809247a754819270f499e82f88f47"
+    },
+    {
+      "path": "validation/native-source-rng/compile.log",
+      "sha256": "dba5166ad9db9ba648c1032ebbd34dcd0d085b50023b839ef5c68ca1db93a563"
+    },
+    {
+      "path": "validation/native-source-rng/source_rng.dll",
+      "sha256": "ec8df3f6ec2f59ce84e3a15a4e3096ac7b2d26f7e7fc480ea18b4223e16a4801"
+    },
+    {
+      "path": "validation/native-source-rng/source_rng.o",
+      "sha256": "d851c66717fe1a066306cc46b6e151d2094e4896cae9bbe9705923d050e86981"
+    },
+    {
+      "path": "validation/native-source-rng/source_rng.s",
+      "sha256": "8be4461927e5e1111288e85632902f8dabd58911b89abf206a682cd4672e1f01"
+    },
+    {
+      "path": "validation/native-rng-68k/src/expected.h",
+      "sha256": "ecef9a5036bf4299ba2ead8d012a1d4e6cd9d3f80394ff6cc55cb003f25be15a"
+    },
+    {
+      "path": "validation/native-rng-68k/src/main.c",
+      "sha256": "cf1c3e7cca5bc3e20a028fa68cf5de00b1ac4dd8469195405ed99d0ba9b8f802"
+    },
+    {
+      "path": "validation/native-rng-68k/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-rng-68k/src/source_rng.c",
+      "sha256": "03da42ffcd083829a73d7b338b4a008811e791f7b1cf5c050f7f267e25a94f53"
+    },
+    {
+      "path": "validation/native-rng-68k/build.log",
+      "sha256": "ab157918826462498e38d695ed6168dc74515ee858c4b99bb888e9ea637ce0a8"
+    },
+    {
+      "path": "validation/native-rng-68k/out/release/rom.bin",
+      "sha256": "bc66db499a93d6ba4a1a37e074b960da497d1fac6f0681abadf22da97dcdcc1a"
+    },
+    {
+      "path": "validation/native-rng-68k/out/release/symbol.txt",
+      "sha256": "0c10a4e7f0601502bc1334ea02968bc2fb815206cf8d6993efe6431bd4dd38e0"
+    },
+    {
+      "path": "validation/native-rng-68k/auto/capture.json",
+      "sha256": "8b1e3a2ba4dcf9b3ba4551b9b3c8de19d86683ad69a5f410678bc41334f9526c"
+    },
+    {
+      "path": "validation/native-rng-68k/pal/capture.json",
+      "sha256": "a47c29307d03932abfff73da3ddbff98b80cf22718b513a6a879259c03094f88"
+    }
+  ]
+}

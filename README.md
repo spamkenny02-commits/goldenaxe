@@ -131,7 +131,11 @@ héros sont reconstruites, avec 1 080 comparaisons jusqu’au retour 24E7.
 Les scripts, la demande musicale et la préparation de révélation sont
 maintenant raccordés jusqu’à la réactivation de l’affichage (0ACE), avec
 1 320 comparaisons sur les 24 parcours. Le fondu/contours suivants, les
-autres contextes et l’intégration native restent à vérifier.
+autres contextes et l’intégration native restent à vérifier. La récurrence
+aléatoire et la progression de R sont maintenant traduites en C 68000 :
+65 536 graines, 196 608 sorties et 66 816 progressions passent sur hôte
+et dans une cartouche SGDK de test PAL/NTSC. Ces helpers attendent encore
+le suivi natif de R ; le jeu utilise toujours le hasard SGDK provisoire.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -249,3 +253,5 @@ n’y a été envoyé depuis ce projet.
 - [Chargement raccordé jusqu’au héros](analysis/loader_hero_refresh_milestone.md).
 
 - [Chargement jusqu’à la réactivation de l’écran](analysis/loader_tail_refresh_milestone.md).
+
+- [Routines aléatoires traduites en C 68000](analysis/native_source_rng_milestone.md).
