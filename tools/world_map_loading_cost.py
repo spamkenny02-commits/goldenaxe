@@ -25,7 +25,7 @@ def world_map_cost(rom,room,flags=1):
  if rom[p]:metadata+=7+4+7+4+12+6;record=rom[p+1:p+4]
  else:metadata+=7+4+12+10+12;record=rom[0x199e:0x19a1]
  metadata+=10+3*16+13+4+12
- #1951/195E selects bit0 of this class0 room's flags through C04D=1.
+ #1951/195E selects bit0 through ROM004D=1 (LD DE,004D;LD A,(DE)).
  metadata+=17+sum([16,13,7,12,7,10,4,4,7,4,7,4,4,7,10])
  if flags&1:
   metadata+=17+sum([20,4,7,4,10,10,4,4,12,7,6,7,4,4])
@@ -48,4 +48,4 @@ def world_map_cost(rom,room,flags=1):
  terrain=sum([13,4,5,13,4,7,10,10,10,11,11,163,10,10,10,163,10])
  parts['terrain_and_special_room']=17+(17+terrain)+17+sum([20,10,4,15,11])+10
  parts['clear_queue_and_return']=10+10+16+4*10+10
- return dict(foreground_tstates=sum(parts.values()),components=parts,metadata=list(record),scope='Six paid-exit destinations,class0,C0AC0,C041!=5,C04D1; all room flag bytes. Real map bytes determine secondary cell transform.')
+ return dict(foreground_tstates=sum(parts.values()),components=parts,metadata=list(record),scope='Six paid-exit destinations,class0,C0AC0,C041!=5,ROM004D1; all room flag bytes. Real map bytes determine secondary cell transform.')
