@@ -2,6 +2,7 @@
  * data are read directly; this is not a Z80 CPU or a recorded audio stream. */
 #include "source_audio_prefix.h"
 #include "source_audio_dispatch.h"
+#include "source_audio_priority.h"
 extern const u8 intro_bank6[],sound_low_rom[];
 static u8 sound_ram[0x190];
 static volatile u16 sound_unhandled_command;
@@ -33,6 +34,20 @@ static void sound_dispatch(void)
     { sound_stop();return; } /* Retain existing fallback for unaudited commands. */
     if(command>=0x81 && command<=0x8d) sound_current_track=command;
     if(output.mute) sound_mute();
+    for(n=0;n<output.count;n++) PSG_write(output.writes[n]);
+}
+static void sound_priority_effect(void)
+{
+    u16 n,de=0;SourceClockWork work;SourceAudioDispatchOutput output;
+    if(!source_audio_priority(sound_ram,intro_bank6,&de,&work,&output))
+    { sound_unhandled_command=0x200|sound_ram[9];return; }
+    for(n=0;n<output.count;n++) PSG_write(output.writes[n]);
+}
+static void sound_restore_priority(u16 de)
+{
+    u16 n;SourceClockWork work;SourceAudioDispatchOutput output;
+    if(!source_audio_restore(sound_ram,intro_bank6,sound_ram[14],&de,&work,&output))
+    { sound_unhandled_command=0x300|sound_ram[14];return; }
     for(n=0;n<output.count;n++) PSG_write(output.writes[n]);
 }
 void sound_effect(u16 command) { sound_effect_request=command; }
@@ -161,6 +176,7 @@ static bool sound_sequence(u8 *c,bool noise)
                 case 0xf1:case 0xf2:
                 {
                     u16 offset;
+                    if(note==0xf1) sound_ram[0x12]=128; /* Source GG stereo latch. */
                     if(c[1]==0xa0) offset=0x70;
                     else if(c[1]==0xc0) offset=(sound_ram[0x160]&128)?0x160:0xa0;
                     else
@@ -170,7 +186,9 @@ static bool sound_sequence(u8 *c,bool noise)
                         offset=0xd0;
                     }
                     sound_ram[offset]=(sound_ram[offset]&~4)|16;
-                    c[0]=0;sound_ram[0x11]=0;PSG_write(c[1]|31);return FALSE;
+                    c[0]=0;sound_ram[0x11]=0;PSG_write(c[1]|31);
+                    if(sound_ram[14]) sound_restore_priority(cursor); /* 8850: CALL8211. */
+                    return FALSE;
                 }
                 case 0xf3:
                     /* 8786..87AE stops this sequence if the borrowed tone is active. */
@@ -298,6 +316,7 @@ static void sound_tick(void)
     source_audio_fade(sound_ram,&prefix_work);
     if(fade_stopping) sound_mute();
     sound_dispatch();
+    sound_priority_effect(); /* 8018: process DE09 before compensation/channels. */
     if(sound_ram[3]) { sound_ram[4]=(sound_ram[4]+1)%6;if(!sound_ram[4]) return; }
     for(n=0;n<7;n++)
     {

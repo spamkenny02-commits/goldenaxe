@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "region": "auto",
+      "frame": 5789,
+      "done": 1,
+      "cases": 21975,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 4844,
+      "done": 1,
+      "cases": 21975,
+      "failures": 0
+    }
+  ],
+  "test_ROM_sha256": "e96b5594868591389d77adc3aa3bf0254cacfaf7bfea88a1fa46d01d3ef3b39c",
+  "helper_sha256": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+  "limits": [
+    "Compiled68000 under GPG; all400 bytes, T/M1/DE and explicit PSG decisions.",
+    "15 invalid paths reject without mutation. Not a physical-console or full game proof."
+  ]
+}

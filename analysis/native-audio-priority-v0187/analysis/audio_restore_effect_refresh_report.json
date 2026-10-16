@@ -1,0 +1,22 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "66fb9503ac111e2d4560427d5a1972b6a66da60c75f89057c5a178e0bf9ee419",
+  "core_sha256": "3859fed54e06ffc089e423a79d7e1753282718b8a3e27462af7ede168f82104a",
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 5220,
+      "raw_sha256": "afd05ca64a8f703270d9b202cdb659b6e5b7e39bf5ce3fbd0eb19a8f397f7d98"
+    },
+    {
+      "region": "pal",
+      "cases": 5220,
+      "raw_sha256": "90626259a7d230b9b24981957a6e8512a4b696fe60d254f853667d86a0a1d4cc"
+    }
+  ],
+  "limits": [
+    "Original8211 andbank6 unmodified; custom DI caller loads A/currentcommand andDE.",
+    "29 effect IDs, ownership and active/bit6 flags, four DE values; synthetic state combinations.",
+    "Does not prove PSG waveform or full reader integration."
+  ]
+}

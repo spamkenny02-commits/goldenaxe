@@ -5,17 +5,24 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0186 — 1024 Kio.**
+**Version courante : v0187 — 1024 Kio.**
 
-[Télécharger la ROM v0186](versions/v0186-83a88ce9/gaw-megadrive-v0186.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0187](versions/v0187-af8dcbee/gaw-megadrive-v0187.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `83a88ce9e663a49944e1f729e4529f446c4e8997c195b3ef55907657aac66734`  
-Checksum Mega Drive : `C045`
+SHA-256 : `af8dcbee838485e2ab8a403bf1bb6f434a4a30c346dc9aa83ca9f82d688405f5`  
+Checksum Mega Drive : `ADE6`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0187 ajoute la file des effets prioritaires et la restauration des
+canaux après un bruitage. Les routines SMS 81F8/8211 sont raccordées au
+lecteur natif : 21 975 cas de composant passent sur hôte et en 68000,
+puis 40 600 états de la ROM jouable correspondent à la SMS en PAL/NTSC
+(399 octets hors routage GG et registres PSG audibles).
+Voir les [preuves et limites](analysis/native_audio_priority_milestone.md).
 
 La v0186 raccorde le dispatch audio natif vérifié (musique, bruitages et
 commandes de contrôle). Les 2 304 cas de composant passent sur hôte et

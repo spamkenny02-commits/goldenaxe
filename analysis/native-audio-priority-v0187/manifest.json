@@ -1,0 +1,3406 @@
+{
+  "production_md_sha256": "af8dcbee838485e2ab8a403bf1bb6f434a4a30c346dc9aa83ca9f82d688405f5",
+  "source_sms_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "source-v0187/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "path": "source-v0187/actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "source-v0187/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "path": "source-v0187/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "path": "source-v0187/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "path": "source-v0187/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "path": "source-v0187/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "path": "source-v0187/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "path": "source-v0187/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "path": "source-v0187/door_transition.inc",
+      "sha256": "f6e815ff5b3cae5dd3f0487a893a721d4473ff87fd94fc1b886dbc40240a7de2"
+    },
+    {
+      "path": "source-v0187/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "path": "source-v0187/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "path": "source-v0187/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "path": "source-v0187/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "path": "source-v0187/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "path": "source-v0187/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "path": "source-v0187/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "path": "source-v0187/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "path": "source-v0187/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "path": "source-v0187/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "path": "source-v0187/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "path": "source-v0187/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "path": "source-v0187/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "path": "source-v0187/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "path": "source-v0187/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "path": "source-v0187/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "path": "source-v0187/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "path": "source-v0187/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "path": "source-v0187/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "path": "source-v0187/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "path": "source-v0187/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "path": "source-v0187/house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "path": "source-v0187/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "path": "source-v0187/intro.inc",
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    },
+    {
+      "path": "source-v0187/intro_data.c",
+      "sha256": "87d7d6d66c54f578c47b44a719e7123221ba278562c29de8afdb2619eda9a4f1"
+    },
+    {
+      "path": "source-v0187/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "path": "source-v0187/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "path": "source-v0187/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "path": "source-v0187/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "path": "source-v0187/main.c",
+      "sha256": "f3a2eccfed268c83f30d616fbcbf527ebe6e7485b8b05b62e678e7da4bfa5c43"
+    },
+    {
+      "path": "source-v0187/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "path": "source-v0187/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "path": "source-v0187/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "path": "source-v0187/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "path": "source-v0187/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "path": "source-v0187/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "path": "source-v0187/paid_passage.inc",
+      "sha256": "6a05aa157645ca05748d764e3d55c269058c9b3ab905466edc5c775c17fbbad9"
+    },
+    {
+      "path": "source-v0187/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "path": "source-v0187/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "path": "source-v0187/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "path": "source-v0187/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "path": "source-v0187/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "path": "source-v0187/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "path": "source-v0187/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "path": "source-v0187/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "path": "source-v0187/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "path": "source-v0187/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "path": "source-v0187/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "path": "source-v0187/sound.inc",
+      "sha256": "9ebc666ac7d11755ad87a396c61615287dc4cbc5f084b775f8ad76b29f9d7ce1"
+    },
+    {
+      "path": "source-v0187/source_audio_dispatch.c",
+      "sha256": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018"
+    },
+    {
+      "path": "source-v0187/source_audio_dispatch.h",
+      "sha256": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960"
+    },
+    {
+      "path": "source-v0187/source_audio_prefix.c",
+      "sha256": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39"
+    },
+    {
+      "path": "source-v0187/source_audio_prefix.h",
+      "sha256": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9"
+    },
+    {
+      "path": "source-v0187/source_audio_priority.c",
+      "sha256": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396"
+    },
+    {
+      "path": "source-v0187/source_audio_priority.h",
+      "sha256": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb"
+    },
+    {
+      "path": "source-v0187/source_clock.c",
+      "sha256": "8f374f6864fd8c46e2ecc8f8f499dac5bb2f7c1c93134081394ec60baec9b0ab"
+    },
+    {
+      "path": "source-v0187/source_clock.h",
+      "sha256": "3294eadaf25902ca3c0de1c10a23ceca2e65e74b27f0eb92535a899695ced2ee"
+    },
+    {
+      "path": "source-v0187/source_rng.c",
+      "sha256": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f"
+    },
+    {
+      "path": "source-v0187/source_rng.h",
+      "sha256": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f"
+    },
+    {
+      "path": "source-v0187/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "path": "source-v0187/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "path": "source-v0187/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "path": "source-v0187/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    },
+    {
+      "path": "source-v0186-sound.inc",
+      "sha256": "fb433adb7cc36fa81d1223805fad6f2764def9d75f6c3164b52a0869f39ad454"
+    },
+    {
+      "path": "tools/archive_native_audio_priority.py",
+      "sha256": "936f9dc88700e4000017c683d8520b57293b23158cf5a77960b2ce07654238a8"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/validate_start_menu_sfx.py",
+      "sha256": "4c1981762b2f9bd4b51fe5b8cf9fe8c385b7e6bc563d537000b8655713e58dc1"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_start_menu_audio.py",
+      "sha256": "16290b436d10f62d29f80b4fabcdd7ade74fa72576f8f01432e318bb31187b19"
+    },
+    {
+      "path": "tools/validate_music_fade_dispatch.py",
+      "sha256": "958d5f35145f210f83e64b1636f0c99bbc1db01db7238df0a8727c2ec140e0f5"
+    },
+    {
+      "path": "tools/validate_sfx.py",
+      "sha256": "9b45517deea43ecd47c0dc7466138de2a4bf4df367f888b45d975ff8f5f3b3f5"
+    },
+    {
+      "path": "tools/validate_music.py",
+      "sha256": "9f944e8a18b33fe086ed3459961e8cbb845c57dfde778af44eb0007703690782"
+    },
+    {
+      "path": "tools/validate_production_audio_priority.py",
+      "sha256": "071f561d1f9163927183ae4431bcdd99e8695db734229404e3683ed162c8a7b0"
+    },
+    {
+      "path": "tools/validate_audio_restore_effect_refresh.py",
+      "sha256": "d46d42b79759567fe0377a689f6dcf77eaf5c44f68b3fb00ec8e3c24c4ed6dbf"
+    },
+    {
+      "path": "tools/validate_audio_prefix_cost.py",
+      "sha256": "56f0a1aef26cba4918dd96d86674df979ccc16632d903c37173006a06c38faf7"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/audio_restore_effect_refresh.py",
+      "sha256": "bb2872906f4275bbc921bb43e58f6c6b14993cf62f5753f37232bed3b05ae3bd"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/validate_native_audio_priority_68k.py",
+      "sha256": "1622d1396328e453b47675e9d03095d7a6bccd18e445140788c76d973097c454"
+    },
+    {
+      "path": "tools/validate_native_audio_priority.py",
+      "sha256": "259e5deaaaa0156aefc37dab82e99a121851cfac03f3a19f47f5d8c16fa01294"
+    },
+    {
+      "path": "tools/validate_native_audio_dispatch.py",
+      "sha256": "842400e893c42fb6b61f4ff0e9343b3e67d95b7aee752f0846b3565d907c23b9"
+    },
+    {
+      "path": "tools/validate_native_audio_prefix.py",
+      "sha256": "bd843ddeb7a081c336cb46111b529b032b8742079bec0aa020229b1e96d22c9e"
+    },
+    {
+      "path": "tools/audio_reader_refresh.py",
+      "sha256": "ff49979d10a86cd94c37b9a1439917db88a7e90e1bd514911d4321809e66af1b"
+    },
+    {
+      "path": "tools/audio_noise_channel_refresh.py",
+      "sha256": "6bc5f50b60af38b77ee3804d11d3f680fd09e5c5d5ea7c9723618747a8caf1fd"
+    },
+    {
+      "path": "tools/audio_note_sequence_refresh.py",
+      "sha256": "49c42ba46c06d248e75c54da2de41669eabcd829c078a672d8dd9bfcf1105c15"
+    },
+    {
+      "path": "tools/audio_envelope_refresh.py",
+      "sha256": "c1f08558f909187c5ce6dce91ba55aaa36ac35627e1785670de95767c5a33568"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_refresh.py",
+      "sha256": "899964546d7d9f0c36f78b0ef67c5c59009c5d7a300e772101617b2b198086d2"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_refresh.py",
+      "sha256": "b10d1e8a33cb764a1913f5d5f0e2d3891e639fe0ba917a3036171fa8df4bcfe7"
+    },
+    {
+      "path": "tools/audio_pitch_refresh.py",
+      "sha256": "231e6efcb8a9c4c29b3b4a2f4e7b5fc4b8a1fac24019276be78c85ffd7a54dd9"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/audio_priority_effect_refresh.py",
+      "sha256": "c4f696eb775fe4e3b9458039d9b8dec7e87984e92a59a547b23bfabab07bd2d8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "analysis/native_audio_priority_report.json",
+      "sha256": "e38018d9c70b9098d75acbda41ed91e264ad3309b44d5e7e825c5ed5c1a14bdf"
+    },
+    {
+      "path": "analysis/native_audio_priority_68k_report.json",
+      "sha256": "dec86b3a768f6d004af90e77ec5699f035d95d046de3cded4ca4a5d95154a534"
+    },
+    {
+      "path": "analysis/audio_restore_effect_refresh_report.json",
+      "sha256": "90a2cbf635ba99dd41e51707256b83c07ff4f9898767cdc5e8da51097c63c710"
+    },
+    {
+      "path": "analysis/native_audio_priority_milestone.md",
+      "sha256": "1b1dc17d172f8e56c939938e5fdc2f216a79c201848d55e19b587ae120fbccb5"
+    },
+    {
+      "path": "analysis/audio_priority_effect_refresh_report.json",
+      "sha256": "26d62a312974f5f2163d5af58ecafc3a6d7d62f101408d818b57902e1b0792b6"
+    },
+    {
+      "path": "analysis/audio_priority_effect_cost_report.json",
+      "sha256": "2dbc3307feb278335e9715287dc40d750a1aa4ebdea852e08223b605b4229329"
+    },
+    {
+      "path": "reports/production_audio_priority_auto_report.json",
+      "sha256": "66a237efb651ef7caf787d2a0d18bdda66057a31c3e6fc09810a5daf8823c718"
+    },
+    {
+      "path": "reports/production_audio_priority_pal_report.json",
+      "sha256": "746542f6714d3166fe9e7ba3452588a632f68a9599260d5de2b4b7ff6c4e8e57"
+    },
+    {
+      "path": "reports/music_report.json",
+      "sha256": "a0fa0e9c167b2dd39414b0113035ffa98b0b3be0ea53ef9c02e7527ea3f609dc"
+    },
+    {
+      "path": "reports/sfx_report.json",
+      "sha256": "1a615dc5569e99df38698a937273450c9fa819c535e9561ffceed8665181f4c3"
+    },
+    {
+      "path": "reports/music_fade_dispatch_report.json",
+      "sha256": "011241577c28f050d3d072b5c067d42f6c2449ff4625b9751eddbe0d3edd12a9"
+    },
+    {
+      "path": "reports/start_menu_audio_report.json",
+      "sha256": "7be34c81ec1012cac14695d90a25a0b26456d17f5274489e1241a04b1d6b3878"
+    },
+    {
+      "path": "reports/natural_start_menu_sfx_report.json",
+      "sha256": "f703c11bcd0f88f96c16bd3eda7177828a932f75e2c0f727ac8c9cc6086685eb"
+    },
+    {
+      "path": "logs/native-audio-priority.log",
+      "sha256": "cc9a4d59ad16b805af1593c84fdb9c4962bd50992ceba63a92b259c5f64aa7ee"
+    },
+    {
+      "path": "logs/native-audio-priority-68k.log",
+      "sha256": "8c5d66dbf0d3fbeed830b1aed8d9897e8bf5d08297865f494c2c39a99d56647e"
+    },
+    {
+      "path": "logs/audio-restore-effect-refresh.log",
+      "sha256": "29c39f1b21e8ebfb49aac6783a5d8daff18495cd03018bccb04f1d01a59927c5"
+    },
+    {
+      "path": "logs/build-v0187.log",
+      "sha256": "490f47071105f16215b1d041d128b772e4e45843ac5236ab470b1681536249f6"
+    },
+    {
+      "path": "logs/production-audio-priority-auto-v0187.log",
+      "sha256": "134969e33b0a1997149c5479e630b9ca33b7e7d9750beb0481a1c38abf137181"
+    },
+    {
+      "path": "logs/production-audio-priority-pal-v0187.log",
+      "sha256": "70897f83205d5d3795425d72a72a603f5d05e69ade79ec84fee64c0714ca25a8"
+    },
+    {
+      "path": "logs/music-v0187.log",
+      "sha256": "fb742a87e78499944a07fecd29b93d5e507b20d21ac60e2164149fa25deb30b3"
+    },
+    {
+      "path": "logs/sfx-v0187.log",
+      "sha256": "81df67a3bd778ef379494c2bf153cf88399ec445061af1db163ccbbdeb406411"
+    },
+    {
+      "path": "logs/music-fade-v0187.log",
+      "sha256": "75ce905ed8876003a18e98a16ce1e481383560c5d2035010bacd2f50c8133f6c"
+    },
+    {
+      "path": "logs/start-menu-v0187.log",
+      "sha256": "f4951ba57c977e31d2f9c4fbac34233986cf4d375211538d85143c6dba661bc7"
+    },
+    {
+      "path": "logs/start-menu-sfx-v0187.log",
+      "sha256": "9d706dc723df66157d6e9b25412983022720b1f2380b9c4d5b20dae8207ba483"
+    },
+    {
+      "path": "validation/native-audio-priority/cases.json",
+      "sha256": "6f81be6fe3e854202f0deddcf6dd013b4307b4d8d9f8e2a7ccb789c8f22047bd"
+    },
+    {
+      "path": "validation/native-audio-priority/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "validation/native-audio-priority/source_audio_priority.dll",
+      "sha256": "4962e9b4f9790bfedb0da4f9a6c46a2034d1c4a89c1393de437748d0f5bd8525"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/src/expected.h",
+      "sha256": "ff71f3ce4cb7636fcc19beef8568d9b1786c394d1e446b6b9bb9311f42a6c8de"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/src/main.c",
+      "sha256": "61fee070d0920382dea42095440c4bd26307cf535ff04a1fd38e4ff5d29c02ee"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/src/source_audio_priority.c",
+      "sha256": "ca787bd3a6b5b2912694ff5d7c488c8b452e1ad105296500c28cb04bdbffb6c2"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/build.log",
+      "sha256": "a21b86e9e4d4be3826a3f7101454062bc46ff3fa520c27bb5de23efabada6d92"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/out/release/rom.bin",
+      "sha256": "e96b5594868591389d77adc3aa3bf0254cacfaf7bfea88a1fa46d01d3ef3b39c"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/out/release/symbol.txt",
+      "sha256": "9dd86118035f3158946082ebfe0a17ca88aacacbd615e379120529ab9ac9fc2e"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/auto/capture.json",
+      "sha256": "0193b3a30d407e1ca39f3fdbe36bf522554ae928a67ff13e16b87e63c69b3884"
+    },
+    {
+      "path": "validation/native-audio-priority-68k/pal/capture.json",
+      "sha256": "753e8d8a9f5c824869383d43b88192c5ee1b2dddf5125b3377b1e5ceadf1a17e"
+    },
+    {
+      "path": "validation/audio-restore-effect-refresh/restore/source.sms",
+      "sha256": "66fb9503ac111e2d4560427d5a1972b6a66da60c75f89057c5a178e0bf9ee419"
+    },
+    {
+      "path": "validation/audio-restore-effect-refresh/restore/auto-results.bin",
+      "sha256": "afd05ca64a8f703270d9b202cdb659b6e5b7e39bf5ce3fbd0eb19a8f397f7d98"
+    },
+    {
+      "path": "validation/audio-restore-effect-refresh/restore/pal-results.bin",
+      "sha256": "90626259a7d230b9b24981957a6e8512a4b696fe60d254f853667d86a0a1d4cc"
+    },
+    {
+      "path": "validation/audio-restore-effect-refresh/restore/auto/capture.json",
+      "sha256": "a61ed9f94cc5a28c4261b256a9ffca54e4c441ee8ebb2a0c4a2173d2f44d9de0"
+    },
+    {
+      "path": "validation/audio-restore-effect-refresh/restore/pal/capture.json",
+      "sha256": "dc734e86ab2a5b694ead91df2c51980a96b54e0e122537cd68437b59b40aa137"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-md/psg.json",
+      "sha256": "7388e6720700139ca21711243914b62e153ed984fe15c8a6deadfbf5e99fed68"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-md/reader-records.bin",
+      "sha256": "755d6011682b0762119c8bcc544e0be3ffa28679d03c6d94a2299433c80bdb51"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-sms/psg.json",
+      "sha256": "0e0447c1908b0577e1b914cbf0064fd441f4272c80bf08b24f2475a37fbd380d"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-sms/reader-records.bin",
+      "sha256": "755d6011682b0762119c8bcc544e0be3ffa28679d03c6d94a2299433c80bdb51"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-sms/trace_counts.bin",
+      "sha256": "92e64051cf3a8de02cdc09b857cde640bf77e2451956822e2bc578981ea86deb"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/90-auto-sms/trace_windows.bin",
+      "sha256": "cd0d9eb27a033675924ebbe4dc32797b6c71da3b32b148212ddf99189e511e64"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-md/psg.json",
+      "sha256": "13f207cb0ee8fb4dc472465941661703af562e6b999f4672e28380311b5badbf"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-md/reader-records.bin",
+      "sha256": "b23705e03dad105322f6e7f7802af64fc752d2f5226e67b2499bf07eb178d0e3"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-sms/psg.json",
+      "sha256": "dc57750734d767af242a25a488af5c14c2d271539b34c1d3418b925e4789883c"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-sms/reader-records.bin",
+      "sha256": "b23705e03dad105322f6e7f7802af64fc752d2f5226e67b2499bf07eb178d0e3"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-sms/trace_counts.bin",
+      "sha256": "e9b3ea1fa4ae844d778f6225b05d898eb8e60529cb0ebe3c2a8872736c2b9d80"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/90-pal-sms/trace_windows.bin",
+      "sha256": "af7cdf610c3a1aeabb388bb228288427c5994eb5a52be6de576f62de77f4f734"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-md/psg.json",
+      "sha256": "ec1480ba4b32817beb5b024f6577301979bbf01f876017ebe2a42652ce327c1e"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-md/reader-records.bin",
+      "sha256": "4c3d6badbce65f5017daa3bb15213c4178279de5f1468292c0abb3c43c843757"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-sms/psg.json",
+      "sha256": "33fb9f5e5af833115b08c862204d8ab8e498af05a66dede9321eaca8d3c880a9"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-sms/reader-records.bin",
+      "sha256": "4c3d6badbce65f5017daa3bb15213c4178279de5f1468292c0abb3c43c843757"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-sms/trace_counts.bin",
+      "sha256": "e0cc752222d9c3340d694dd696f29744f4ae5af122e4424c1574fa40acdbc132"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/91-auto-sms/trace_windows.bin",
+      "sha256": "b725bd58ad0d4a1ca98626aed4e7daf95bc1ec8f641bd8ebe382b244dc7a9a1a"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-md/psg.json",
+      "sha256": "4aca721ead8c477b835a68952a13405f03e605778856029d277afb382a2bce03"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-md/reader-records.bin",
+      "sha256": "91eb760a20096f5f90eb5dfa64802ca72909dd4719fc1e2f67c6c204c4169314"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-sms/psg.json",
+      "sha256": "4e9bf05aeb3f684c54ca6c42231798beb3d066eeea2092cf9bc45fee4757fd06"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-sms/reader-records.bin",
+      "sha256": "91eb760a20096f5f90eb5dfa64802ca72909dd4719fc1e2f67c6c204c4169314"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-sms/trace_counts.bin",
+      "sha256": "de1fa656819686b8c445d4972f2d5228ac874d46ddd1603e1e4593edca37e196"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/91-pal-sms/trace_windows.bin",
+      "sha256": "684e0202131a4552369830a54f930ae61de7544477808fa92f4e9b743490c070"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-md/psg.json",
+      "sha256": "95a94c12e17435243b19dad0a4bd52b82846e3c7c7ad17c557262d08c3ab0441"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-md/reader-records.bin",
+      "sha256": "e8c0f5a89d873cd5beec19887e36271098119a05b56aab4ee9ef0d3edad9bfab"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-sms/psg.json",
+      "sha256": "2c7b7e196c5e81881fe9650a966e0cf35a5068b7d859dc9bbf17d37d96537533"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-sms/reader-records.bin",
+      "sha256": "e8c0f5a89d873cd5beec19887e36271098119a05b56aab4ee9ef0d3edad9bfab"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-sms/trace_counts.bin",
+      "sha256": "328926b1aa6a7d2c0285ceb4db7a037a8177fdda47f613759de27f8f77f11f9b"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/92-auto-sms/trace_windows.bin",
+      "sha256": "b005a8b0a9d051ecc3e3a140946e94a635ccf5275424fb814becdec3455861e5"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-md/psg.json",
+      "sha256": "d7d65f903532e4eae90a1e14fb5cddf1cc77bf2c12c639c3c3460e27b9dc7dad"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-md/reader-records.bin",
+      "sha256": "b05f346d30b121110628fe8f55c8f1af248e62cb5f11aff1a5fb3527cad95adb"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-sms/psg.json",
+      "sha256": "e37f627566a661f258ac29ce9089a2019eb5e296d88953e0b03cfec7f352d14d"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-sms/reader-records.bin",
+      "sha256": "b05f346d30b121110628fe8f55c8f1af248e62cb5f11aff1a5fb3527cad95adb"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-sms/trace_counts.bin",
+      "sha256": "cee2d243fae8c438b7fd007e800b9ab4a295c1f3012d6baa09ff1b82daf99f04"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/92-pal-sms/trace_windows.bin",
+      "sha256": "e7ef72c38639e93edf3668e31fb62cd65ba884a88c214c573a109347fa195b4e"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-md/psg.json",
+      "sha256": "64e540b5ad591cb6ec109ac01e72264d21255c76f25044554c853d8f6028182a"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-md/reader-records.bin",
+      "sha256": "caf810d61c1fb15afbd6691cd7d4b9213ef03d3384c917002b4a30ca765dcb44"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-sms/psg.json",
+      "sha256": "e2bd2fd4a98125186f5285604954b429db20ac70ee9261621ef98290ac838934"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-sms/reader-records.bin",
+      "sha256": "caf810d61c1fb15afbd6691cd7d4b9213ef03d3384c917002b4a30ca765dcb44"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-sms/trace_counts.bin",
+      "sha256": "2aec50eafcd45879530d65933a36e3455e5f072d94d1c53f1194f12ad5f783ba"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/93-auto-sms/trace_windows.bin",
+      "sha256": "8865376685fdc8a62b397581811e35657d38203bc8580575b2693554b3002b3c"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-md/psg.json",
+      "sha256": "e0ee748a0dd10476938ac9b9813744262c1d0da2a4ba09325df4a20cc3042580"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-md/reader-records.bin",
+      "sha256": "da284c55f792fc638b7764d390536f9383ab78b3ac3df47caa5263dbba9948fc"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-sms/psg.json",
+      "sha256": "f9c4baa97732a1f9840843d442e09b21d4de9c8610832f5d912ddda6ad38cae7"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-sms/reader-records.bin",
+      "sha256": "da284c55f792fc638b7764d390536f9383ab78b3ac3df47caa5263dbba9948fc"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-sms/trace_counts.bin",
+      "sha256": "a56b17216e4ba6451a2960053e42837f091dfdde6b8c94017b52384663a2926f"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/93-pal-sms/trace_windows.bin",
+      "sha256": "94f400bb67578fd0cd867b6f9ed6ec546713e1b505ab1debaff11b46ee765c1d"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-md/psg.json",
+      "sha256": "98688ebe1250d41c54b2a99130ec67e6b2e1566fdc365a36c8d229d93deaa038"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-md/reader-records.bin",
+      "sha256": "50f6fdbbbd9180439307af925d5f4d1c3b29efee11c8d7f3926036649767d8c8"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-sms/psg.json",
+      "sha256": "19dfc259f11e30ec7369d7030797962c932c4af516f8d94cb889863a051af9c6"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-sms/reader-records.bin",
+      "sha256": "50f6fdbbbd9180439307af925d5f4d1c3b29efee11c8d7f3926036649767d8c8"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-sms/trace_counts.bin",
+      "sha256": "5c657409576baa51f2111a643898253e7957e8a08f2062b9cca40bd86a90ac4a"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/94-auto-sms/trace_windows.bin",
+      "sha256": "cd0d9eb27a033675924ebbe4dc32797b6c71da3b32b148212ddf99189e511e64"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-md/psg.json",
+      "sha256": "20fb1ed56fbe4ee2e95a3cd893577bf6ee63787c032d9031debe5b5fc035b6d9"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-md/reader-records.bin",
+      "sha256": "2f1048563ed900a90651b0a6a5f41b2885dfbe91a76a223f793849c3919dbb7e"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-sms/psg.json",
+      "sha256": "f861918d9113a35905e621c4d92870783467f672b99058d900d62b350137d594"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-sms/reader-records.bin",
+      "sha256": "2f1048563ed900a90651b0a6a5f41b2885dfbe91a76a223f793849c3919dbb7e"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-sms/trace_counts.bin",
+      "sha256": "4166bd406d5ce5c3e5e57540b12a3ff932712717a60879b09d56da894cb992c8"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/94-pal-sms/trace_windows.bin",
+      "sha256": "af7cdf610c3a1aeabb388bb228288427c5994eb5a52be6de576f62de77f4f734"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-md/psg.json",
+      "sha256": "ffaa6788399a6cbbc909e9cdfe2e0e4d999c3df7199bc5ba12353b41897a1617"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-md/reader-records.bin",
+      "sha256": "f6d32d3833dd832ffed57b2c325a02091dd4b1fef099abada6f265cd9d826193"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-sms/psg.json",
+      "sha256": "5fb6dcf00c62b72b89f67a05fbbab86a31e4c445fd431dee4deb19034d9aa557"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-sms/reader-records.bin",
+      "sha256": "f6d32d3833dd832ffed57b2c325a02091dd4b1fef099abada6f265cd9d826193"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-sms/trace_counts.bin",
+      "sha256": "18457b1689f2cc2b2988865e21ba52d5572e507f48971961373da513bba6ce4f"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/95-auto-sms/trace_windows.bin",
+      "sha256": "301768eb9639ac9db4a81aa38a57a45db508eb60d17e6b016d477d75c4a0f78c"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-md/psg.json",
+      "sha256": "e02661d3ac8ebd90f9b65e74675f0cdd2e8579994e964f389bbd31b88d6f2f13"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-md/reader-records.bin",
+      "sha256": "6e00d1aca4fa065cd77b3bad7e88774b1614620a30e0f910a699c7f053c948f2"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-sms/psg.json",
+      "sha256": "e019138699f5085ecf34095ebe49b810fc6e2897309ed196d76ea4fe17ba185e"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-sms/reader-records.bin",
+      "sha256": "6e00d1aca4fa065cd77b3bad7e88774b1614620a30e0f910a699c7f053c948f2"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-sms/trace_counts.bin",
+      "sha256": "1e575be4fb7da3660b23240b63a589185d5ed182673591c04b8a7756ddcc093b"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/95-pal-sms/trace_windows.bin",
+      "sha256": "93b29f56b98bd3cba9ab6a5a51ac5c0ba84398d0065dca7a6322f0eb0e8333ef"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-md/psg.json",
+      "sha256": "60269bf6170a9cf8e3b49f2ac3ac842638ee60c701a96d39432915894aa59b6c"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-md/reader-records.bin",
+      "sha256": "13ef9ca1f41a9f8436466c7a7695c4089c7cf9ff6a7b610b5fe6c98a95a7efe2"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-sms/psg.json",
+      "sha256": "fc1f8fa219b681e71b06fb3f28a093c1da180825244d5a8441d1b73c0082f47c"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-sms/reader-records.bin",
+      "sha256": "13ef9ca1f41a9f8436466c7a7695c4089c7cf9ff6a7b610b5fe6c98a95a7efe2"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-sms/trace_counts.bin",
+      "sha256": "44dde8fba9af65ed4dfb7ee824d94a0023013f4238014e0f658fdb0616220ba1"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/96-auto-sms/trace_windows.bin",
+      "sha256": "b725bd58ad0d4a1ca98626aed4e7daf95bc1ec8f641bd8ebe382b244dc7a9a1a"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-md/psg.json",
+      "sha256": "ca110c6854cc78e08f57a2299fb32116ac403270e3910f32c0aa7398c1714172"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-md/reader-records.bin",
+      "sha256": "b00ba37750d3e6fb056461b913357eb1098b1315d50954c232e00444234f5fe6"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-sms/psg.json",
+      "sha256": "687eded67bb0bcefb798b70a1f544305d107699135c67e1fd26a97a38b88167e"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-sms/reader-records.bin",
+      "sha256": "b00ba37750d3e6fb056461b913357eb1098b1315d50954c232e00444234f5fe6"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-sms/trace_counts.bin",
+      "sha256": "0ced24112f265b6f3a24e0c2d8566959b4ae1a102504913662344a03bae81e97"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/96-pal-sms/trace_windows.bin",
+      "sha256": "684e0202131a4552369830a54f930ae61de7544477808fa92f4e9b743490c070"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-md/psg.json",
+      "sha256": "208d4204193115804de154b20abda400c57c7ebf0da7227655da0a8bb9f03c95"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-md/reader-records.bin",
+      "sha256": "26ac612b573373701ab6a59d646af15c8702615abc3b7b129d1226ebbc8de723"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-sms/psg.json",
+      "sha256": "0602bcde0f9257198c603559576d8ffd100352a1eef0d1d666e5e2eb9564ee61"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-sms/reader-records.bin",
+      "sha256": "26ac612b573373701ab6a59d646af15c8702615abc3b7b129d1226ebbc8de723"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-sms/trace_counts.bin",
+      "sha256": "dc055ef4cc71b2984e8a5df99f3158ade16c67e855bd29ad13e17305ecb3e717"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/97-auto-sms/trace_windows.bin",
+      "sha256": "0860104ac7cb9ee318e20392f5ff66e59474cfb5d5b70325a71513ef60a68ca7"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-md/psg.json",
+      "sha256": "91538548991cf4d908c3dc48ac9ce023c41d5dfc84af10d91bf38752c4dfd3d0"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-md/reader-records.bin",
+      "sha256": "b50e33dd9051e157354f3599760c9db95a84cac3b7ccd8a33bc186fb15f3196a"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-sms/psg.json",
+      "sha256": "487f7b078075f10c51e07c8834c9a28f873c72c9df01531550de63018c858232"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-sms/reader-records.bin",
+      "sha256": "b50e33dd9051e157354f3599760c9db95a84cac3b7ccd8a33bc186fb15f3196a"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-sms/trace_counts.bin",
+      "sha256": "575ea6743c215628946aa4a3310bcb344d53b8fa3fb2818820ad77ffd7dd02a1"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/97-pal-sms/trace_windows.bin",
+      "sha256": "a6638e4959b14b00b11addfdc5e92229e1514a5f7ab76fb4c578295ab2950268"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-md/psg.json",
+      "sha256": "34063b447c662bda934abec85d0c8539c7c87a08a71b3b182e312215389a2517"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-md/reader-records.bin",
+      "sha256": "2ddfbd41f0913667463b3a5b20b646eeb2d86e03d384dfd780cdca6c0506507a"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-sms/psg.json",
+      "sha256": "6f63af363af6f3c9029e6d350bd8d247a68d436390a3a4a5e6d05e5785bf7a08"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-sms/reader-records.bin",
+      "sha256": "2ddfbd41f0913667463b3a5b20b646eeb2d86e03d384dfd780cdca6c0506507a"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-sms/trace_counts.bin",
+      "sha256": "4dcd3013f556431d5fd07c769f8848c21d67f35c8dc79837e72abf27fbc54b60"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/98-auto-sms/trace_windows.bin",
+      "sha256": "b0a29723a37b4015c19ed4561a9bb93101ae6b606c88c887cefd6bd7f43de910"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-md/psg.json",
+      "sha256": "ff1f234e268c9e796de2440351cd96f838bd88a8c4630e7d14c66e60caada2c0"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-md/reader-records.bin",
+      "sha256": "bd22a3bb08b1af274b23403d18786ea1996d22882d9983c258c3ee34a67b339c"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-sms/psg.json",
+      "sha256": "d727253adedc1c90deb667e874dcfccf08f5c6a4e3914d7daeab6b5cfef527c4"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-sms/reader-records.bin",
+      "sha256": "bd22a3bb08b1af274b23403d18786ea1996d22882d9983c258c3ee34a67b339c"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-sms/trace_counts.bin",
+      "sha256": "6026f482ee62680e06dbf0c3dfa49da7a8603ab790487bb4d4764c8a1bd494f8"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/98-pal-sms/trace_windows.bin",
+      "sha256": "dfc8f245b4767517badf1dc6d245c566028ef320892d3bbe36aba1f5a11a4fe2"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-md/psg.json",
+      "sha256": "9f95560c5f0d0241e08366d7e59167c956d75e798501e8b75b138cfce8c1578b"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-md/reader-records.bin",
+      "sha256": "b4bbb76b9cac12f0c7cd7166b76d295083a04c47eff6bcbfd4260a01e61b99f3"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-sms/psg.json",
+      "sha256": "bcb35521d79ffd476e5f417813d1ca23cb7c6f61685d0d12ec2b6ccbf8a18de4"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-sms/reader-records.bin",
+      "sha256": "b4bbb76b9cac12f0c7cd7166b76d295083a04c47eff6bcbfd4260a01e61b99f3"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-sms/trace_counts.bin",
+      "sha256": "a49d451705b5a73cb0ed937b39ecfe372dae12a8cc1b49baa67867e004e3a780"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/99-auto-sms/trace_windows.bin",
+      "sha256": "7e2b829547e871b7cade8ca9ecc10dae4835de423b50728a87321136b3caf23b"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-md/psg.json",
+      "sha256": "f7599f179d4bab757df20b186ee6441dceface2088255c2996afc1efd87f5708"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-md/reader-records.bin",
+      "sha256": "d068e4b7d4c6b0fe66468f88a26d6a2e858ab76e160b343676e5aa9a7a5e7f6c"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-sms/psg.json",
+      "sha256": "eb78aa9df68fabfcd92600e1ab23706a68cca14c53965e2e7d52254bc028f9bc"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-sms/reader-records.bin",
+      "sha256": "d068e4b7d4c6b0fe66468f88a26d6a2e858ab76e160b343676e5aa9a7a5e7f6c"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-sms/trace_counts.bin",
+      "sha256": "fdd6bd7f66efbf9c4b32f16e8fce572237ba6b7e3e323e5b8d744f3730a63b71"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/99-pal-sms/trace_windows.bin",
+      "sha256": "a2b2df03d6da025b978c73f4f571a39b35a02bffec25d54ffb4b31bf0646813c"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-md/psg.json",
+      "sha256": "0750fe2155a4e5488df9465949a293c356ca016066cda826d9e43b40d7f0c6d3"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-md/reader-records.bin",
+      "sha256": "cbf1cd63bd6c320f8221b3ff89cc7d4973784ba0b6ede39a9e924c5879d57930"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-sms/psg.json",
+      "sha256": "e034dc47c47f53f2d85d61f345299d137506a882e201ab085b274270b1f41e09"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-sms/reader-records.bin",
+      "sha256": "cbf1cd63bd6c320f8221b3ff89cc7d4973784ba0b6ede39a9e924c5879d57930"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-sms/trace_counts.bin",
+      "sha256": "0175fe0d6acd6ecf44dc324c06f45087bd05f2995553f3994c480ddb650c8b20"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-auto-sms/trace_windows.bin",
+      "sha256": "952c874b8c2d5259c04ded1cdf42b11052d2c390f5facf5f2d1648b0937a06e4"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-md/psg.json",
+      "sha256": "4992100a89e29f61848d7fa408bd5aef402b78013c0370eb8eab03bf02be8360"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-md/reader-records.bin",
+      "sha256": "4ba768fce6f4143d83bd74e7da26aee7456134f932f7ba691455b45e4e7af33e"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-sms/psg.json",
+      "sha256": "172d8cf9d342be991e78e457f6179659769d58f8971890a4607dc050b6592b19"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-sms/reader-records.bin",
+      "sha256": "4ba768fce6f4143d83bd74e7da26aee7456134f932f7ba691455b45e4e7af33e"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-sms/trace_counts.bin",
+      "sha256": "f184ced432ddd6b232cb65b834087f0d9e0a2e87dcc16fce4a1f149ee6cf8804"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9a-pal-sms/trace_windows.bin",
+      "sha256": "8f3f350c946808fa4a875424450f5e1591629552dff6a1d34137566c2d5b52b1"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-md/psg.json",
+      "sha256": "d9c62172a5e2789ecffb81ef8173bdc14f040c3143a34de7dd5c2ee62d23d13a"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-md/reader-records.bin",
+      "sha256": "d77bbc5433676ae3bae3e56de0645741ba71ff34d7eb8e0d4f6616fc3ee60328"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-sms/psg.json",
+      "sha256": "b6286d3870fa79116dcb4665ae26240ac1bc532a177d3ba3ddaefc60395de226"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-sms/reader-records.bin",
+      "sha256": "d77bbc5433676ae3bae3e56de0645741ba71ff34d7eb8e0d4f6616fc3ee60328"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-sms/trace_counts.bin",
+      "sha256": "226511053543b89ceeb2e4fc655e59251803111273e1449e17fa0ed8cb9e9620"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-auto-sms/trace_windows.bin",
+      "sha256": "958f963442d6dde392bdaecd18bca468512ab2eb6aa76bc077985293df25f2a9"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-md/psg.json",
+      "sha256": "69d8d17b1895205701b7db84952569ab7f770412ef612f822f3b0c7e1bb6e86d"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-md/reader-records.bin",
+      "sha256": "5f684bfcbcbcd527619d4c39078067010d92393c63cf9a45c692a1b1453296c3"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-sms/psg.json",
+      "sha256": "b4160481693db755514499ebf32769005fe4cd6dfdc7aa90df668570ab60be4c"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-sms/reader-records.bin",
+      "sha256": "5f684bfcbcbcd527619d4c39078067010d92393c63cf9a45c692a1b1453296c3"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-sms/trace_counts.bin",
+      "sha256": "5d29f4a1e2783f1e700c8981839d8edde53ee0d15ba26adc4c75d99cb41e19c1"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9b-pal-sms/trace_windows.bin",
+      "sha256": "f0f9b6f77590bf6caf1effdf331f2a03d403c9d9a425798399718ce40c9e8362"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-md/psg.json",
+      "sha256": "a5fc75eaba8a758c910925d503d76c43470c07cd2091139f04756a34a362120d"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-md/reader-records.bin",
+      "sha256": "3a75a7cb9442346eaa6cce54e9b87522c2540c4ed9e472a6bea94c2c78ea85aa"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-sms/psg.json",
+      "sha256": "692affb4b4622c1b5f7f821cb5aa1f5856a340b99b2179d8f13372344bbaf43c"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-sms/reader-records.bin",
+      "sha256": "3a75a7cb9442346eaa6cce54e9b87522c2540c4ed9e472a6bea94c2c78ea85aa"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-sms/trace_counts.bin",
+      "sha256": "a237f5276177cbfc556e124c82a4388ca9c647155d4c3f5a68f18124aec851c6"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-auto-sms/trace_windows.bin",
+      "sha256": "b2204c69d567ef45c907c318cc5209766272ba0a7912d99dbb6699240bcc4b4c"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-md/psg.json",
+      "sha256": "035ca9049d7ffaff6ee2d89defc8360668980f734f9a50066ff6e9c098f67d18"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-md/reader-records.bin",
+      "sha256": "0084dcf769c2556ae3fd625efb4d85b3361d2926f1f730d11d02f8aa9d8c189b"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-sms/psg.json",
+      "sha256": "f07e1588d50adef7de699f88d4d4488cfb2ccf9200b593a76ba18646472f1b3e"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-sms/reader-records.bin",
+      "sha256": "0084dcf769c2556ae3fd625efb4d85b3361d2926f1f730d11d02f8aa9d8c189b"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-sms/trace_counts.bin",
+      "sha256": "11e20c0da87be9937c0b5ac0af92e8ce1c16820ad76ece8503e1167e01c20685"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9c-pal-sms/trace_windows.bin",
+      "sha256": "66e3c848c60c03a5115f2e45225cad447ffe9bb6974d196acdadf9130893b8a8"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-md/psg.json",
+      "sha256": "34023fcfab966a65834fafcf6217deee3da2ee473362d1e030a1fbfe07cdd491"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-md/reader-records.bin",
+      "sha256": "962b5bc68eb0ab91dc408bc3fa45a0cfa31c784bec934f9d2ef541e6ffacb12f"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-sms/psg.json",
+      "sha256": "7c6dde0f311f6040203998d8cfdac85dfb72b684881f85ee6cacd0786d9ea43f"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-sms/reader-records.bin",
+      "sha256": "962b5bc68eb0ab91dc408bc3fa45a0cfa31c784bec934f9d2ef541e6ffacb12f"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-sms/trace_counts.bin",
+      "sha256": "f1268be1e6d53018fc266e589d606ff9bc307b2895544f81a36f06fabd3be251"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-auto-sms/trace_windows.bin",
+      "sha256": "53e58963d5159b1120daa5ab991161b344e094c3d28ab72dd51dc9dde460f1e9"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-md/psg.json",
+      "sha256": "6cf08a9baa455264742402abff7cccd04c774e88ac58c5977eb42280f9b39756"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-md/reader-records.bin",
+      "sha256": "291c56b64695abab09c97f07489b3e4958b88640ec3f12830a8e51decc0ac3ab"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-sms/psg.json",
+      "sha256": "481ec2e2760da57fdb6c9270e504993a7836647ae573591622a08d1ed7882c2e"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-sms/reader-records.bin",
+      "sha256": "291c56b64695abab09c97f07489b3e4958b88640ec3f12830a8e51decc0ac3ab"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-sms/trace_counts.bin",
+      "sha256": "cf713afe4a4be44d0354970e289ff120fa6566efff3ac722a9a34bcd0a04e8ed"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9d-pal-sms/trace_windows.bin",
+      "sha256": "8d5a6c057141df152bcf0ffa1019503b6f0d6ff744b07c5e10bd85bd13a7e57f"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-md/psg.json",
+      "sha256": "66ed73bbdbd9bcd433c04f3739fe3f84867a9ac74b69bec1ed6d279b377f2cca"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-md/reader-records.bin",
+      "sha256": "09bfd5a96c39dc4bd16e3a11e56f98a592df643735982518a17f0d5585d08cc2"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-sms/psg.json",
+      "sha256": "a9369cb4b55317121db66816661d40731c374b6c7424eb42da4c1dfeb688170f"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-sms/reader-records.bin",
+      "sha256": "09bfd5a96c39dc4bd16e3a11e56f98a592df643735982518a17f0d5585d08cc2"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-sms/trace_counts.bin",
+      "sha256": "939ae63020c995a318daffd66692186e370786aa5631cbe6e1ef2bbe6e9540b2"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-auto-sms/trace_windows.bin",
+      "sha256": "a348f463a2cee767525dec669bbe4480c916c32ac6d9bf3664e9737e77d99c94"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-md/psg.json",
+      "sha256": "6312571ff2dc29ec99b31bba46ebb10543a9e00fe4a70052d65534d6837cba9e"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-md/reader-records.bin",
+      "sha256": "68e87153ae28a123396f4776db9aa8207fd6f23a441ad2a44de312679d5202b2"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-sms/psg.json",
+      "sha256": "93b5027d1f6f3406bf2c50caf7b1a413f1ac4ebcf0cc0955444dd030c6245e6f"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-sms/reader-records.bin",
+      "sha256": "68e87153ae28a123396f4776db9aa8207fd6f23a441ad2a44de312679d5202b2"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-sms/trace_counts.bin",
+      "sha256": "ad81d47486f976bf74d7bdd3266b62aaea9e73c761a8d91b950a0476b9d73e2e"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9e-pal-sms/trace_windows.bin",
+      "sha256": "75da021b49275e3ab71caf57f53c4a6de794cf2cb2ce90977a525127a0b90ad8"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-md/psg.json",
+      "sha256": "334df50a5ba8c300f6300c21dcf8c2c74732e5a3dd9865eef7f25c90a5822e2c"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-md/reader-records.bin",
+      "sha256": "03deab127233da63be645c6e4d8f6845904559a38d965fa865110f2ddf9c0eb8"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-sms/psg.json",
+      "sha256": "2283255b400c6ab097e832349ece298b14939f5c80bcc0a08d5365c9b40d5a85"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-sms/reader-records.bin",
+      "sha256": "03deab127233da63be645c6e4d8f6845904559a38d965fa865110f2ddf9c0eb8"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-sms/trace_counts.bin",
+      "sha256": "be997744f03200895e1b64e784d838aa88b96e756efd41d663f9e267d1806662"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-auto-sms/trace_windows.bin",
+      "sha256": "53e58963d5159b1120daa5ab991161b344e094c3d28ab72dd51dc9dde460f1e9"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-md/psg.json",
+      "sha256": "071d7e599beb417f1ec591883cb015ef50329ebae5d47fea2e47cbd59ca885d6"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-md/reader-records.bin",
+      "sha256": "e873ca1031c4b762cf7c8bae69f592558195ff8a527b11a6a9ea3ef8868f203c"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-sms/psg.json",
+      "sha256": "a26dfcbdd30fae951c05f6cf0121c73d7fbd37f3cb68fd430361ce7a8dc91df2"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-sms/reader-records.bin",
+      "sha256": "e873ca1031c4b762cf7c8bae69f592558195ff8a527b11a6a9ea3ef8868f203c"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-sms/trace_counts.bin",
+      "sha256": "3f917f4901f3746961e6da40e376eb6236741a4b06ffdb19e3fcec03d9cb26d6"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/9f-pal-sms/trace_windows.bin",
+      "sha256": "8d5a6c057141df152bcf0ffa1019503b6f0d6ff744b07c5e10bd85bd13a7e57f"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-md/psg.json",
+      "sha256": "f33fd61ee7bbae16f5a1eefc7910beb34ddcdfdd41d2ea9734aaf6e5afd40dc3"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-md/reader-records.bin",
+      "sha256": "951ff14015f8b5af83e01b6af538b2b2c2b3867e89205a8e97faf189a15aa02f"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-sms/psg.json",
+      "sha256": "7054cfb81f4dfa76da62accfa2e6420effff0e3596cb33e9c5ecd1b076068422"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-sms/reader-records.bin",
+      "sha256": "951ff14015f8b5af83e01b6af538b2b2c2b3867e89205a8e97faf189a15aa02f"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-sms/trace_counts.bin",
+      "sha256": "cae36c314b04ff6f308f1d77b075406da66091c7d1f1acdbae893a233addb664"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-auto-sms/trace_windows.bin",
+      "sha256": "b2204c69d567ef45c907c318cc5209766272ba0a7912d99dbb6699240bcc4b4c"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-md/psg.json",
+      "sha256": "4e458b848899d4ca50d3a26681f8fb12212e033d8919e300fa55fddf82ee5149"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-md/reader-records.bin",
+      "sha256": "f721ffc62d533db7d88f0365b75d600f860eafa3be2892675e1945e0e98fdd90"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-sms/psg.json",
+      "sha256": "7a2517630c285d645036689853baed5b2ea03260d529286f4d4dac6a7f57ce14"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-sms/reader-records.bin",
+      "sha256": "f721ffc62d533db7d88f0365b75d600f860eafa3be2892675e1945e0e98fdd90"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-sms/trace_counts.bin",
+      "sha256": "2e1a3e900cda8f03354853cf84a489f288edd0c6a914cab7a8a641190ae1bdc7"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a0-pal-sms/trace_windows.bin",
+      "sha256": "8d34d862abcd6df0d15f5812e9deb8d9386326509a106962d1b8300f2a2fbff1"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-md/psg.json",
+      "sha256": "021fd032f995e11c9da9534f75411489b2466f19b40d310fddc945c74aa301f7"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-md/reader-records.bin",
+      "sha256": "80730be9f04b49f411f31b40f66d1da01281cbc65f32d186680dc6079d3a96c9"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-sms/psg.json",
+      "sha256": "5772eb6ab52dc755e08a1d8318f06f76f01ca854eea999311d2513c0747f76a4"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-sms/reader-records.bin",
+      "sha256": "80730be9f04b49f411f31b40f66d1da01281cbc65f32d186680dc6079d3a96c9"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-sms/trace_counts.bin",
+      "sha256": "157b13258962d0113a81b593ba03505ddc4c44fae3d7a3e2f4ef08763491ee8a"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-auto-sms/trace_windows.bin",
+      "sha256": "b4d9ab04651a5b961db989169544d2a0229681bac649c755289150575c721dd7"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-md/psg.json",
+      "sha256": "81b14a72fd7bbd83404fa11d487d9823cff44544dd0f7771ae4c85c02f4e946c"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-md/reader-records.bin",
+      "sha256": "46694e889e3b644856f180cc654a184dc8721faa79979b41ca6a30659ff4d499"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-sms/psg.json",
+      "sha256": "e8a4dd15d0516dbd32619808cd2e85f225e9b1e2171dbffeabfda9c8bf3b6370"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-sms/reader-records.bin",
+      "sha256": "46694e889e3b644856f180cc654a184dc8721faa79979b41ca6a30659ff4d499"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-sms/trace_counts.bin",
+      "sha256": "37710f9748845efe448b03debdb321de62538156875687ac44f8457304b43749"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a1-pal-sms/trace_windows.bin",
+      "sha256": "c3f9f9cbdac2ab66e7dbf2c60f5b2995e5c97544f9cf15a25d634ea95dfa3cd3"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-md/psg.json",
+      "sha256": "867a3269670f560d09a79aa197770495b39900886ca3b3e05ba00571dd0974c3"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-md/reader-records.bin",
+      "sha256": "5553ce16194a6265c62e6ff292a15f11bd43237a457e0254f259cfb8083fe7a4"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-sms/psg.json",
+      "sha256": "c835a8666d75a4498fda05c3f557865602ce2eba70f12e96084acbe3f519013b"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-sms/reader-records.bin",
+      "sha256": "5553ce16194a6265c62e6ff292a15f11bd43237a457e0254f259cfb8083fe7a4"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-sms/trace_counts.bin",
+      "sha256": "b7fae2afa762d2d66ad6afa35486b70cbd0473bea9b2009b5feea3fdf540a644"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-auto-sms/trace_windows.bin",
+      "sha256": "b6646bd0e9553575e8c8409cd9b96a7e65c9817ca8dfc07296a4fabb8aa00f32"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-md/psg.json",
+      "sha256": "82582db6528c3fb0c1b6f0b9b2f5e6fe4583ba5e0f936395b864b2bdefed15b0"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-md/reader-records.bin",
+      "sha256": "0d724f97c72fcf175eb819fc8f43cb1626b9129cb1594e6ac2bf9835d6759d78"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-sms/psg.json",
+      "sha256": "994916815c4a5af28fc9ee7162d64b47b4d7ae21885d0637d21dc4ea295b70e7"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-sms/reader-records.bin",
+      "sha256": "0d724f97c72fcf175eb819fc8f43cb1626b9129cb1594e6ac2bf9835d6759d78"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-sms/trace_counts.bin",
+      "sha256": "6cac4a419eb5170435f4380cd507418bfeb6354d5516e2dc9708e76c4b525862"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a2-pal-sms/trace_windows.bin",
+      "sha256": "355dd21c0508da3b9f467ff9d3345e8e26b2ea2457540d961d54fbec848b2e31"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-md/psg.json",
+      "sha256": "c97af2bd066288e6ff475676bcb16190c1d80f00ed2707f8d7d2ee585b7a8816"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-md/reader-records.bin",
+      "sha256": "0b0aaae7a33a0ba516f05eedeb89f32913396d8910486d2d00c792f8ea873893"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-sms/psg.json",
+      "sha256": "4558cbff9d36fb5e0632f3ff7e51f3ec57ef1f1c4c11ec92c2de4d485a8685ac"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-sms/reader-records.bin",
+      "sha256": "0b0aaae7a33a0ba516f05eedeb89f32913396d8910486d2d00c792f8ea873893"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-sms/trace_counts.bin",
+      "sha256": "bc1212ed4342edf39bf9d9d2302ecf0fb12daaebdb553141cb52f45471029558"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-auto-sms/trace_windows.bin",
+      "sha256": "53e58963d5159b1120daa5ab991161b344e094c3d28ab72dd51dc9dde460f1e9"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-md/psg.json",
+      "sha256": "fb0d33a616d21b305309b1dd39ec932eee1b13b164432fb325a743da4db893c1"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-md/reader-records.bin",
+      "sha256": "cb0e139fa68d8dd18b462f01abdd9f1f1a3dfd4c079c720a7bcc6b85edb83c5a"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-sms/psg.json",
+      "sha256": "8ada449ee3e9d5cdb4449e5bc484c64af45257d23c2345a95455f1a588389e66"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-sms/reader-records.bin",
+      "sha256": "cb0e139fa68d8dd18b462f01abdd9f1f1a3dfd4c079c720a7bcc6b85edb83c5a"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-sms/trace_counts.bin",
+      "sha256": "7ae30558b11a6f8155bde49528568a043a8b0d74cee2130002094cab4bbed8ab"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a3-pal-sms/trace_windows.bin",
+      "sha256": "8d5a6c057141df152bcf0ffa1019503b6f0d6ff744b07c5e10bd85bd13a7e57f"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-md/psg.json",
+      "sha256": "c428685c9870b82b8302c71919137109c6105b815f57d06b8a863267c9669a7f"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-md/reader-records.bin",
+      "sha256": "bf1747938aba91fe42d6746e546067cff832b8cb5b2ae6757e0cf90c545cb69d"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-sms/psg.json",
+      "sha256": "d6530b15dfe8f91b50f5037ae51b29e320d6546682184875c7f02343fc4c773c"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-sms/reader-records.bin",
+      "sha256": "bf1747938aba91fe42d6746e546067cff832b8cb5b2ae6757e0cf90c545cb69d"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-sms/trace_counts.bin",
+      "sha256": "3825f766f4d666b06bee00a55fe890fab4fd618a31ea26a5a651fabc4fdba245"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-auto-sms/trace_windows.bin",
+      "sha256": "37e946a5fd2ea9d486ea793062b7f47d6b3f4262cc266451c22832b8660b8572"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-md/psg.json",
+      "sha256": "c96f68bf9d7651c1d8ccceb87d9704e528236b49848d3140813b298b2d29e900"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-md/reader-records.bin",
+      "sha256": "0c618713434f457b3f4bc46bd3688748818702920e5dd204b5adae5d5493d0b2"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-sms/psg.json",
+      "sha256": "f08d32f55c347f67a54c95bbca1f486fac5df123dd2318ea7bae07f90a138975"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-sms/reader-records.bin",
+      "sha256": "0c618713434f457b3f4bc46bd3688748818702920e5dd204b5adae5d5493d0b2"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-sms/trace_counts.bin",
+      "sha256": "d2a7dd8fb1afa5e1948af7cf62e76f4d3adc711a346e6eb99f946a12373332c6"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a4-pal-sms/trace_windows.bin",
+      "sha256": "0f9775c2d78e7c5c1c741637d5c86377ecc9f7b3964705e6b8f56a6ea5d8f286"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-md/psg.json",
+      "sha256": "c1223d3224590c4cb0c29951abcccf83880023a516d55748ee43bf2d2d4968c7"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-md/reader-records.bin",
+      "sha256": "1197034650d271dcfbcdb5d38893d6c677c52cca6618d5f7796245618caa8631"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-sms/psg.json",
+      "sha256": "ec64120b3da66508e7fb5abd94b0120afff7829b2240d3a5afa8906cd2b3ba4c"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-sms/reader-records.bin",
+      "sha256": "1197034650d271dcfbcdb5d38893d6c677c52cca6618d5f7796245618caa8631"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-sms/trace_counts.bin",
+      "sha256": "5ad16a82e6be896a55548be38edd06182150b9bd055a6c264db066c1d07b81e8"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-auto-sms/trace_windows.bin",
+      "sha256": "4254e3c71eda7eb9b3d7b817efb8a85a6d37367452197c3503beb60c1a8b63be"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-md/psg.json",
+      "sha256": "6905ecbdc342dbf9e1f4cfc7f39d3b5f6bde498ff936d37c796487bdc9edea41"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-md/reader-records.bin",
+      "sha256": "3b5ab9d21abc0e0bf53cf7648f0e97e7cd5597ddf97f8b8fd9148c6fb63ea512"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-sms/psg.json",
+      "sha256": "48bf6683af79c6fa962651d10f40cec807c7fba6bf3ed3a18abdb3c6dacc5608"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-sms/reader-records.bin",
+      "sha256": "3b5ab9d21abc0e0bf53cf7648f0e97e7cd5597ddf97f8b8fd9148c6fb63ea512"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-sms/trace_counts.bin",
+      "sha256": "26e86b06920916a195493ef5a6e82c47289a78b18a565b8f46a0a917c956347c"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a5-pal-sms/trace_windows.bin",
+      "sha256": "64684934ae91194d5aceda1800d2c3b74dfbbf5e09f599a7a8a7fc56f07499ed"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-md/psg.json",
+      "sha256": "092adba81a311338773dcb6e95fc60d3f38c5a7e436c95a73df2804e095e83c3"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-md/reader-records.bin",
+      "sha256": "a1edd82b758a0ea691f8b0afd9f18f3142560c0f6204d39cd99eb9a7de489cf6"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-sms/psg.json",
+      "sha256": "7b9b5d9c1e39371df4cc1d5443819c579f49bc807c65fad4567459ac65cf602b"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-sms/reader-records.bin",
+      "sha256": "a1edd82b758a0ea691f8b0afd9f18f3142560c0f6204d39cd99eb9a7de489cf6"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-sms/trace_counts.bin",
+      "sha256": "953a0643af1551afdcbcc511a8e5e95c90575d7d15e2d10e9c6df365b84b487d"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-auto-sms/trace_windows.bin",
+      "sha256": "d244abd8ee31c2bb723f59c07c6ed575b53a918a13ffc1dbb95932e85a499e39"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-md/psg.json",
+      "sha256": "1d1a3496c46c53543ead40721bcbefa3397b9ea310a688073788eb227cfbe84e"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-md/reader-records.bin",
+      "sha256": "083124f1724bae535c8c2e2d50354b0e47da37dde6bab57c4d739cc92e1a0793"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-sms/psg.json",
+      "sha256": "1e78a681289a8cb75700837598e84cf88cb0ccd2a8b48556c2cc8214eb8acb9e"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-sms/reader-records.bin",
+      "sha256": "083124f1724bae535c8c2e2d50354b0e47da37dde6bab57c4d739cc92e1a0793"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-sms/trace_counts.bin",
+      "sha256": "f5bb109bccd228fb248456d0eb99efd75ed82df85919454a2c9007419eac457f"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a6-pal-sms/trace_windows.bin",
+      "sha256": "be29ab5d86693c9a01feaaf9656847a44166b492bbac3aad48e8506b9b573aa0"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-md/psg.json",
+      "sha256": "d444af08d354efea76fd68020ed7ad9d4217848cd5e46d9cd26fa16c4b394cd1"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-md/reader-records.bin",
+      "sha256": "791fbca958b50962cfeb753eac9f076a1c8af5ef29ecfcc2095b858e06e39bea"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-sms/psg.json",
+      "sha256": "27890d6cbb10ce96cfa9ac09379c914309112945c47f04ccb17297fad2bd7a33"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-sms/reader-records.bin",
+      "sha256": "791fbca958b50962cfeb753eac9f076a1c8af5ef29ecfcc2095b858e06e39bea"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-sms/trace_counts.bin",
+      "sha256": "eca15beb17c5c14e541f3303c353161a54f87e16534484ada225512c3a278b08"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-auto-sms/trace_windows.bin",
+      "sha256": "301768eb9639ac9db4a81aa38a57a45db508eb60d17e6b016d477d75c4a0f78c"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-md/psg.json",
+      "sha256": "9b1b05a151880df8af46c2d2da9b47a8370392a1e318cbd2c51a003fc084c04f"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-md/reader-records.bin",
+      "sha256": "aad9abeb3c8f42c70f09775c519fa90f756858bbc4cdcf58d3a7a5a883acca72"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-sms/psg.json",
+      "sha256": "f2b3fe5f2d44263468006fbaafbbe73b3e0d351587569f7493ddaccd87e4e296"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-sms/reader-records.bin",
+      "sha256": "aad9abeb3c8f42c70f09775c519fa90f756858bbc4cdcf58d3a7a5a883acca72"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-sms/trace_counts.bin",
+      "sha256": "ba5635a74816a2804e9b4fbc664074ba1a1d14346f4caa33a9790caab329ae3d"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a7-pal-sms/trace_windows.bin",
+      "sha256": "93b29f56b98bd3cba9ab6a5a51ac5c0ba84398d0065dca7a6322f0eb0e8333ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-md/psg.json",
+      "sha256": "14370e0b36034b26fd6cf2f68f29310ddc5c7d5531415afbafacd316d3231df6"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-md/reader-records.bin",
+      "sha256": "4fa40366a593fae251ed648d616232c7108a2c05c4a050a9b364ab562eb33f41"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-sms/psg.json",
+      "sha256": "cd774283579d27b357931e84ef522c3074cfedaf552a1502bc2cb1141df088f1"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-sms/reader-records.bin",
+      "sha256": "4fa40366a593fae251ed648d616232c7108a2c05c4a050a9b364ab562eb33f41"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-sms/trace_counts.bin",
+      "sha256": "eef1847071988eb1ba87a23f0d874c1abde2ec9da3bdc39eac101dd1b0724130"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-auto-sms/trace_windows.bin",
+      "sha256": "b0a29723a37b4015c19ed4561a9bb93101ae6b606c88c887cefd6bd7f43de910"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-md/psg.json",
+      "sha256": "c39eb7dc40a4177289846594466a56049be156fee52d70b63c3cb51dc77c1d3c"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-md/reader-records.bin",
+      "sha256": "c90c425d494a3845da0ec789635bf5ff40961d926b3317a756c2d8a27a18e227"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-sms/psg.json",
+      "sha256": "ef016a9a255feeaebbadfdcf3c1701befaffccc74535c112685089d668aabc0f"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-sms/reader-records.bin",
+      "sha256": "c90c425d494a3845da0ec789635bf5ff40961d926b3317a756c2d8a27a18e227"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-sms/trace_counts.bin",
+      "sha256": "bf89582c6c1cb2ab149f6f73f245512e5abca2a6bab3c51da95372eb102e990b"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a8-pal-sms/trace_windows.bin",
+      "sha256": "3b39b0e333cfd27b25b8786ce2a88f5dddd5e07db0561ee53b4556414486eb95"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-md/psg.json",
+      "sha256": "32bb10be26a1860dc87767392d054d7d5287537dcd5f27ab5de46196e86c211e"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-md/reader-records.bin",
+      "sha256": "37a4688e2d3a61ba3ba062e2fc28176989db1787967f537d41e8a8891f8cd3f3"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-sms/psg.json",
+      "sha256": "682b3bcb0bb555b10f2ead82978676c2319fcf8f3320ce10da1be84ad20ba9de"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-sms/reader-records.bin",
+      "sha256": "37a4688e2d3a61ba3ba062e2fc28176989db1787967f537d41e8a8891f8cd3f3"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-sms/trace_counts.bin",
+      "sha256": "6e268baa0a8598b857f2ab63b11b240d38da0fd83d858ecfe770b6e5cdcb4b7d"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-auto-sms/trace_windows.bin",
+      "sha256": "12c83ba160f31d0fd870e02d79290ffffab0b9ddc0cdd479c7cebb9eafe6dfda"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-md/psg.json",
+      "sha256": "43dae844a9e90a73c6de638893fc77e386b201e62cd528e5df86ee8ded3da189"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-md/reader-records.bin",
+      "sha256": "fafc308eab55abf7a61ecb9bddc186c138fe902ce99b879b82fb93321110870e"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-sms/psg.json",
+      "sha256": "d1e208c03462deebd677e3781f8da899d01dc13af9fac4eada4a5846a3d891be"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-sms/reader-records.bin",
+      "sha256": "fafc308eab55abf7a61ecb9bddc186c138fe902ce99b879b82fb93321110870e"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-sms/trace_counts.bin",
+      "sha256": "60cd2bef374373ee3b0ac6bd94d4f0db3cba7bc4420648110c871bc4d5f936b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/a9-pal-sms/trace_windows.bin",
+      "sha256": "b0fc583d7421d8a70c0e238853942cb823660a8463419f2f3fec7e4c499e3aab"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-md/psg.json",
+      "sha256": "93256a17ba87dfdf6019317eb479f69fc569b0e8531b0804ac48827e9bfb8ad4"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-md/reader-records.bin",
+      "sha256": "8ffce42074737ea5030ebb2d34c17d9394ca702f0588320d6d62d6b8f6d68d07"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-sms/psg.json",
+      "sha256": "0afea90fd5b9caecd7aa242f618525717e3cbd3950c9d88403c4a20b74662e1f"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-sms/reader-records.bin",
+      "sha256": "8ffce42074737ea5030ebb2d34c17d9394ca702f0588320d6d62d6b8f6d68d07"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-sms/trace_counts.bin",
+      "sha256": "3d39833fcfc75e2f2666fdb3975c90179d82c7d5c3dcaad345d3d3404080e497"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-auto-sms/trace_windows.bin",
+      "sha256": "958f963442d6dde392bdaecd18bca468512ab2eb6aa76bc077985293df25f2a9"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-md/psg.json",
+      "sha256": "3673179196855825d50a531d929d480b6c0f5d19df425759e2fb6bdfacfbdba6"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-md/reader-records.bin",
+      "sha256": "ed8c7c0831b1f0fb4df4b5774c3a4fbe14d0a6cf00061f9c9f28b2f85aaac7c6"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-sms/psg.json",
+      "sha256": "81495f54bc9aa62279c3c6cca7c1c3752caf2057d32c614bd0d9c2845dc50714"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-sms/reader-records.bin",
+      "sha256": "ed8c7c0831b1f0fb4df4b5774c3a4fbe14d0a6cf00061f9c9f28b2f85aaac7c6"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-sms/trace_counts.bin",
+      "sha256": "099356248cc845bcb4b05dabc37280e022748dc8895efdf10c1953d996c7c5f2"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/aa-pal-sms/trace_windows.bin",
+      "sha256": "f0f9b6f77590bf6caf1effdf331f2a03d403c9d9a425798399718ce40c9e8362"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-md/psg.json",
+      "sha256": "aca8c7a45ade54bb5a5e280dec7e0cd42d0305a25edc62d03778e7ce9453709c"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-md/reader-records.bin",
+      "sha256": "f529866c6f0fd677a65366284117ed0eecf0f8a5f3b38248a60bd20bea2a04dc"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-sms/psg.json",
+      "sha256": "2e9554bb09e4284cb41176e3979804a00825974f28ce25032c6a67288759241b"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-sms/reader-records.bin",
+      "sha256": "f529866c6f0fd677a65366284117ed0eecf0f8a5f3b38248a60bd20bea2a04dc"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-sms/trace_counts.bin",
+      "sha256": "43b3dbf065e6a47c01d355cccff7ac62ff372dea1e7589871d59b809e383d8df"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-auto-sms/trace_windows.bin",
+      "sha256": "b0a29723a37b4015c19ed4561a9bb93101ae6b606c88c887cefd6bd7f43de910"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-md/psg.json",
+      "sha256": "f990039eca466a5096e09ccff52d92af64569ecfbc18bf2e75d076ecc4d15e3e"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-md/reader-records.bin",
+      "sha256": "6460e2bccdae56973a77b4ad3b0c2b23c05208fb9762b4709ed309409cb25c62"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-sms/psg.json",
+      "sha256": "4c2e39ac3433e0beb2a3a4d2e43b0dc48f16c64b97e2d91c00742353b07532af"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-sms/reader-records.bin",
+      "sha256": "6460e2bccdae56973a77b4ad3b0c2b23c05208fb9762b4709ed309409cb25c62"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-sms/trace_counts.bin",
+      "sha256": "1ae8f09c7c004e4f445f751dd18c0eeb680ef0c359f19dc794a184b16919a74f"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/ab-pal-sms/trace_windows.bin",
+      "sha256": "dfc8f245b4767517badf1dc6d245c566028ef320892d3bbe36aba1f5a11a4fe2"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-md/capture.json",
+      "sha256": "e4dd43dbbdab467cd13b9955474ec29cf60692a7110da6cef15196f22e927127"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-md/psg.json",
+      "sha256": "2b83765a8950ab57da9770f7188f2be433bdb483f5ed088af0cc17e7f871f4ca"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-md/reader-records.bin",
+      "sha256": "ab4030aa86cd36c0362e27100924d61c8a3313e076d830788bcd53df7c3be6b4"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-sms/capture.json",
+      "sha256": "fc31dc7fd6a8572aebc364b92207d5aa81612e7cfbba358f56d4564cf242075b"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-sms/psg.json",
+      "sha256": "9adadbd4867be0ce21e4b7515b52e6119787a56b1e0eb0cb90e0bc613993d38d"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-sms/reader-records.bin",
+      "sha256": "ab4030aa86cd36c0362e27100924d61c8a3313e076d830788bcd53df7c3be6b4"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-sms/trace_counts.bin",
+      "sha256": "51b56accf46f2ee5f9b2b7899a8562b5832af677270f6ad1b4de851d6c55d45c"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-auto-sms/trace_windows.bin",
+      "sha256": "07a4f9603b45e70182fee19a3200a5e468b04eebed988c2b1dc5fe3ce58fa284"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-md/capture.json",
+      "sha256": "0400dbfb650a150899c6a5755d0a369bfcdbc1208da609df767eaa418f7226c5"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-md/psg.json",
+      "sha256": "485f0ebef3cdbdcda60608d2da2d0816e2d253232385c437f5991381be16d5cc"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-md/reader-records.bin",
+      "sha256": "a0f388551fd2a0c1acefbf7c9d130253e4f2239cc903528d6865c568f5108bc1"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-md/trace_counts.bin",
+      "sha256": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-md/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-md/trace_windows.bin",
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-sms/capture.json",
+      "sha256": "e0291f73ed85dd755eadf7c2d2099c1f3ef3c76e23702093a54518b186089295"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-sms/psg.json",
+      "sha256": "70f8bb2bcb4efb316c0b84f10d6b555737a040e6b8e8769e6be6707530463a2a"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-sms/reader-records.bin",
+      "sha256": "a0f388551fd2a0c1acefbf7c9d130253e4f2239cc903528d6865c568f5108bc1"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-sms/trace_counts.bin",
+      "sha256": "a3b6359ff7e8ea622c95e64166ea6afaecd3d7d15891f4a0d2921a3d9c65cb68"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-sms/trace_states.bin",
+      "sha256": "91fd9dbe4d5a5fd8a32c47425d44e07358443d88ddc196ecd52b491fd32382b9"
+    },
+    {
+      "path": "validation/production-audio-priority/ac-pal-sms/trace_windows.bin",
+      "sha256": "85303834c6deeeb452b3e8f67fc219bb656bd1b3b0e66a7063ac1698bc550be6"
+    }
+  ]
+}
