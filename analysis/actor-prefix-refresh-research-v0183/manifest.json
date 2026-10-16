@@ -1,0 +1,1398 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/archive_actor_prefix_refresh_research.py",
+      "sha256": "5f36d99f823feba6175fdd2c9b3dddfc5e02bcf0315cd1f48edc2084821973dd"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "0876f99d9fedc1c6662314885e93d4a1165f6066601aa13e1459ae8722942b10"
+    },
+    {
+      "path": "tools/validate_key_door_gameplay.py",
+      "sha256": "edaff2a53f041a71d7f231051cabd65dbaa5ae965b281ea6f0d201a878d80d0b"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_actor_tick.py",
+      "sha256": "ff145d9122365949160fb6878987689afd7e9f8d8bc047c0d597067908d94289"
+    },
+    {
+      "path": "tools/actor_tick_reference.py",
+      "sha256": "a5cd64adc2f20330dd20eea3873628195eb3c17c952a66bada4b4ce90820ea76"
+    },
+    {
+      "path": "tools/extract_world.py",
+      "sha256": "8575d37d77453328ed48d161ff4ab730ea03f8ffcd8ddd5d8d6956a737baa607"
+    },
+    {
+      "path": "tools/validate_actor_prefix_refresh_unit.py",
+      "sha256": "ceea3121543459357e6400dc47d6568a49713d4c3364c4709a087c238e679848"
+    },
+    {
+      "path": "tools/validate_full_actor_loading_cost.py",
+      "sha256": "4a86185dfdd387726598f3d528c0b0e77f18bfac768069711e8d71a7dbe58205"
+    },
+    {
+      "path": "tools/full_actor_loading_cost.py",
+      "sha256": "82f55c382239fbc1365f4707a80021aa2f1f4b2ae9544d6dbbdaec715107c093"
+    },
+    {
+      "path": "tools/graphics_prefix_refresh.py",
+      "sha256": "b36d6363f23857568614cb507f9d0cbd0ee013673f07ce47156b4a2b86f66535"
+    },
+    {
+      "path": "tools/graphics_prefix_phase.py",
+      "sha256": "a120c1901c2e68a4a30039b84f98675f5774a7c2e597d2ed5bfda4d5ae7dae55"
+    },
+    {
+      "path": "tools/class0_graphics_loading_cost.py",
+      "sha256": "c809dd2bd839819c036bd23fe064a08b3c82580b7a2ca72b5d64feba35c39549"
+    },
+    {
+      "path": "tools/ram_plane_loading_cost.py",
+      "sha256": "06587f301249f5973af49a7ab6e98e4ba20ac344c8b8ba066a31da0c388bd08a"
+    },
+    {
+      "path": "tools/reveal_phase_prediction.py",
+      "sha256": "2684d51012fd820f8accea443c237d695a75fb6bd5b16e90b3803e957409a1fe"
+    },
+    {
+      "path": "tools/wait_raster_prediction.py",
+      "sha256": "e42b7a48721ba96a0fff3c35a9bce5409ca2c6d8bb2731e38b6501426d439c0d"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/full_irq_refresh.py",
+      "sha256": "3387fa015ce13b5ee8a9b61ad1c87dec41c8173594ec0286515fdf584fc789fb"
+    },
+    {
+      "path": "tools/full_irq_cost.py",
+      "sha256": "aa376d2ec9e2c9ee88229cb21fc5fb0120532a62e5d9cff38c91c67049d968a0"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_refresh.py",
+      "sha256": "77297690be7d2e9ca2f77cf9afd6846ef2ca26a4cfec44c6e3fb2f2a6e6356a6"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_cost.py",
+      "sha256": "16ea74da99aff9303ce66b9aa2c072e63fbaf093d449891074f5972055470575"
+    },
+    {
+      "path": "tools/audio_reader_refresh.py",
+      "sha256": "ff49979d10a86cd94c37b9a1439917db88a7e90e1bd514911d4321809e66af1b"
+    },
+    {
+      "path": "tools/audio_noise_channel_refresh.py",
+      "sha256": "6bc5f50b60af38b77ee3804d11d3f680fd09e5c5d5ea7c9723618747a8caf1fd"
+    },
+    {
+      "path": "tools/audio_note_sequence_refresh.py",
+      "sha256": "49c42ba46c06d248e75c54da2de41669eabcd829c078a672d8dd9bfcf1105c15"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/audio_envelope_refresh.py",
+      "sha256": "c1f08558f909187c5ce6dce91ba55aaa36ac35627e1785670de95767c5a33568"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_refresh.py",
+      "sha256": "899964546d7d9f0c36f78b0ef67c5c59009c5d7a300e772101617b2b198086d2"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_refresh.py",
+      "sha256": "b10d1e8a33cb764a1913f5d5f0e2d3891e639fe0ba917a3036171fa8df4bcfe7"
+    },
+    {
+      "path": "tools/audio_pitch_refresh.py",
+      "sha256": "231e6efcb8a9c4c29b3b4a2f4e7b5fc4b8a1fac24019276be78c85ffd7a54dd9"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/audio_priority_effect_refresh.py",
+      "sha256": "c4f696eb775fe4e3b9458039d9b8dec7e87984e92a59a547b23bfabab07bd2d8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "tools/irq_raster_phase.py",
+      "sha256": "66609173a811ffbeb148d4ebe9d061c2a8e9d0e2caf655b9c4b6fa0c3e0e5f3b"
+    },
+    {
+      "path": "tools/audio_reader_cost.py",
+      "sha256": "3593aa2a3c7f8ed2cecae64f716e4daa634b66fc5e171b60ee908dbc3726ba28"
+    },
+    {
+      "path": "tools/audio_noise_channel_cost.py",
+      "sha256": "0f5c3aad31c5cf57a8f1de409d6adaed5d1d5ff53d2d0da30d2a85ea13fa644a"
+    },
+    {
+      "path": "tools/audio_tone_channel_cost.py",
+      "sha256": "a234f114d778c594e9129d3dae283498a3f62f473835fd0ea908dee39e32fd42"
+    },
+    {
+      "path": "tools/audio_note_sequence_cost.py",
+      "sha256": "9d221240da595448c0e70d23f0f44475ccf23fdbecc93f98761cc880f8e482f8"
+    },
+    {
+      "path": "tools/foreground_phase.py",
+      "sha256": "687d30447dfd7dbab172467c739715fd1c7e7928a793b5c44e7e081c480e7263"
+    },
+    {
+      "path": "tools/actor_prefix_refresh_phase.py",
+      "sha256": "19a51fc8543d3fe87dc61560685af191036846635c59cb3ca207bc99a693d742"
+    },
+    {
+      "path": "tools/graphics_load_phase.py",
+      "sha256": "0d1ab45a70d4180ae49b88677aaa6c6a6b1c14a1a1d2f9eb01700ee2358ae58f"
+    },
+    {
+      "path": "tools/history_refresh_phase.py",
+      "sha256": "27fab720292d2e2fb1e8222080aad5d7f6a70a8940e871b27f5c611a31f5f817"
+    },
+    {
+      "path": "tools/map_hud_phase.py",
+      "sha256": "c8a813d8f2466f5810f0d8436a014f482a6acd0caca750650eeb9ee385adbd10"
+    },
+    {
+      "path": "tools/world_map_refresh.py",
+      "sha256": "7a97ddec73422740f04f420390c93627cf4247f1dfb90a55f84519768db23d29"
+    },
+    {
+      "path": "tools/world_map_phase.py",
+      "sha256": "2d41643471d1f589376005c61eb166254df5586bfd82f5867136e35c371b6bce"
+    },
+    {
+      "path": "tools/world_map_loading_cost.py",
+      "sha256": "bb460ce9b38a1af240d8b4d11ef547920201df51ac95298f8483c0a01cf511cc"
+    },
+    {
+      "path": "tools/graphics_load_refresh.py",
+      "sha256": "c69764c72756ed74151675cebba57ce0f6e4b23dac67555ca0d3568ed3f864aa"
+    },
+    {
+      "path": "tools/map_hud_loading_cost.py",
+      "sha256": "0df0cda51baf038a56fe35daf45fde81adcf442f197f17a679aed42b00bd844b"
+    },
+    {
+      "path": "tools/room_map_loading_cost.py",
+      "sha256": "71d8c23c33c355e9126366f3711ee77b217c8b103d28411baed9a66bb0bba046"
+    },
+    {
+      "path": "tools/hud_loading_cost.py",
+      "sha256": "4f64dde90cff9b6f997bf36c52dcd849837cbbd1dd6afc2d1f8bd58caae4e8b5"
+    },
+    {
+      "path": "tools/validate_actor_prefix_refresh.py",
+      "sha256": "f028b669e875c1b87cc534de981ae6f499fb98fbc768cf4304546c91a3576bc6"
+    },
+    {
+      "path": "tools/validate_reveal_phase_prediction.py",
+      "sha256": "9af2331d2d2ddbd3669f1fa5391cf31ea8bd58bb4b3f745af44710fa3ceeeae7"
+    },
+    {
+      "path": "tools/build_actor_prefix_refresh_core.py",
+      "sha256": "3c4e77a6a1b55602ae310c7fad58d6ec2f654403b35870bc8d335c1a8a7186db"
+    },
+    {
+      "path": "z80-actor-prefix-refresh.txt",
+      "sha256": "74206b07e42250110fdbb0529c6e010537c8bc3ed6db6ed9642064bd1ae763a0"
+    },
+    {
+      "path": "emulator-source/system.c",
+      "sha256": "9c0f6a042a1f5abce540d3aa69d4fcfa3fae2c66ca7d667e6f2a81a7f8af0d79"
+    },
+    {
+      "path": "emulator-source/vdp_ctrl.c",
+      "sha256": "34aa4da65cfadf9da528dd387929c4ad5d52ec9bb3d83e379f9c2070ce33542a"
+    },
+    {
+      "path": "reference/bank_00.asm",
+      "sha256": "7fb3b3a94556558cd5df98d6d1d207a0a47c0861ba13856036fb91fafd53d2ee"
+    },
+    {
+      "path": "reference/bank_02.asm",
+      "sha256": "8aa867ce1d0125555374f71c27b1cd492c517eabfaaa06aea27556289044651a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/auto-actor-load-context-records.bin",
+      "sha256": "19c0e8fd36e07df98a83135b8dcff9ddbdcbc316492b01937077f092823aab2b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/auto-audio-irq-events.json",
+      "sha256": "91c2c27780ef6c0502b9f9b529452283566cb8a8aa46dcee813daf533c4cdbb1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/auto-foreground-m1-records.bin",
+      "sha256": "fec90a7d7a68ed1106d5c11b72f4c6a6db10ccd93d696158cc8fcc937ed01c4d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/auto-foreground-phase-records.bin",
+      "sha256": "7724e7c86796643c70183323f4a211842b0ad7385b5e372871bceff46b4d2652"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/auto-history-context-records.bin",
+      "sha256": "6b39358ad8295f9a4d5e93a9f8c87058cdd3ca8b1d3a189e023e6efef6ebfd86"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/auto-hud-context-records.bin",
+      "sha256": "01f3a7af0ceec80d4bf0910dda97589137e0a67d86035e646142a7d10f2fa00e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/captures-auto-sms/capture.json",
+      "sha256": "e97c5e34acb52365109009d9a9cbbc4cc61859a32cdb1e1dc4e2bd86242a4c05"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/captures-pal-sms/capture.json",
+      "sha256": "9dfb8fa93e0c37270fb9b08cc7ab73a42a2247e7442bb05d03eb4d60d11c52d9"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/pal-actor-load-context-records.bin",
+      "sha256": "4c9b8fe1db8c95e889e159a30d34eda562fd43ba1ba3620148300a08080a2f47"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/pal-audio-irq-events.json",
+      "sha256": "9cc24202d65da7d16b3aff030eef5257a039f9baaf210fef80af63e2f9890e4c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/pal-foreground-m1-records.bin",
+      "sha256": "6ef018ae17b0ce36fa3501729a30e97cff3f095bca3d7721a8af3acf5bc5e722"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/pal-foreground-phase-records.bin",
+      "sha256": "f7fd305355d5d2110d39e64a5e24cd6210050cfc5d9bcb73c147ef310edbdd09"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/pal-history-context-records.bin",
+      "sha256": "f60592c1eef788340546531c594d40e3ae23c724ae41b02400995703ca78d9a6"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-00/pal-hud-context-records.bin",
+      "sha256": "cfde37cb946583e3fae27d9c5c1e5fceffc01e812cddf6169abd176955004c40"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/auto-actor-load-context-records.bin",
+      "sha256": "922c4d34caf708c64b499424b0361c7587553606fda2dd864aa25cb891234ce0"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/auto-audio-irq-events.json",
+      "sha256": "e1f1f72f29b6e7560a261b77934d18bdeb4af3851ccb344080f239777c7e5e4f"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/auto-foreground-m1-records.bin",
+      "sha256": "0cbf176185581e997f3df3fc2cc5026c6dd773403499b2ba2646e9f233f67019"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/auto-foreground-phase-records.bin",
+      "sha256": "00577c8bca4e4405874bb6bcdab54fc92edb9abcd32f1dcd4f85adae1aaf2fa0"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/auto-history-context-records.bin",
+      "sha256": "198889841bbface306fb70f086168b72015e89144660a04e7e84260d1dd981f6"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/auto-hud-context-records.bin",
+      "sha256": "16a9ca7bec5557ef4e35b42d618b9c19ab4725ac8216d1bfcea13688d811be42"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/captures-auto-sms/capture.json",
+      "sha256": "e97c5e34acb52365109009d9a9cbbc4cc61859a32cdb1e1dc4e2bd86242a4c05"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/captures-pal-sms/capture.json",
+      "sha256": "9dfb8fa93e0c37270fb9b08cc7ab73a42a2247e7442bb05d03eb4d60d11c52d9"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/pal-actor-load-context-records.bin",
+      "sha256": "6fa1949cefccf2b639e3f74c6bbbc7ce316a7f4cf8078a69071c27dd58b39700"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/pal-audio-irq-events.json",
+      "sha256": "229576c976aa5423b60def7a6bc6f92e55caf5fb16c5feec6a3652fc518ab550"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/pal-foreground-m1-records.bin",
+      "sha256": "8099f982d355775f9e52f56a80854d0aaa0a2132d827c1da0f17f1d2bd894890"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/pal-foreground-phase-records.bin",
+      "sha256": "ba332842943931e41eeb514cf86bd463042ceacaee257a5a88091f80455f3a82"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/pal-history-context-records.bin",
+      "sha256": "95ff2952997087a51af8d3aaafe949765be090e87dc849031d99443ebbd6bc53"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/1a-ff/pal-hud-context-records.bin",
+      "sha256": "cfde37cb946583e3fae27d9c5c1e5fceffc01e812cddf6169abd176955004c40"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/auto-actor-load-context-records.bin",
+      "sha256": "fab32dd93ecd0388f1570c08b4d0380dc1aaae8ab03c62584e0765d482ba1b3d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/auto-audio-irq-events.json",
+      "sha256": "0e9531b3ec5b950e20c4a88a14af1f70c8b14a1ea6a5723804db7a86801d2388"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/auto-foreground-m1-records.bin",
+      "sha256": "7c8237da102531faed1899dfab4491cd3dcae86e0018e0674b6d095c44eb47bc"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/auto-foreground-phase-records.bin",
+      "sha256": "af438ceee2f86998ae067c49b17c7b868366e02aa61f13fb665ca927d27aa50a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/auto-history-context-records.bin",
+      "sha256": "0d4fb2c42dacc0cea5fc03fc5d35558dd3aec2ffd380fbee1a177f5345ed717d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/auto-hud-context-records.bin",
+      "sha256": "01f3a7af0ceec80d4bf0910dda97589137e0a67d86035e646142a7d10f2fa00e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/captures-auto-sms/capture.json",
+      "sha256": "04a28991fd8c183bd018a042886dacab8a9ed0c0bf595bfca24e8b8ee83a9133"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/captures-pal-sms/capture.json",
+      "sha256": "be347823cb613dc243a82de14f00030f2be12a5075af06add3cb47958a4f8aa1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/pal-actor-load-context-records.bin",
+      "sha256": "f99bc8eb8a2812c66a2403d41d0d496f7908e80bd88d929b8b1ee3a9b31326e3"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/pal-audio-irq-events.json",
+      "sha256": "0becb1a99763e4ab9854634663f14bccc7cfde442977e8e455594c2d351ec457"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/pal-foreground-m1-records.bin",
+      "sha256": "12a93d464ce7441e6079c1a813ba956690f0b8fb7b607553f9713fd03ec60eb1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/pal-foreground-phase-records.bin",
+      "sha256": "dd250ebdeb8b31dc43da76fcee6d65026d35fa442ed98bc89a0cb1c33a872a84"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/pal-history-context-records.bin",
+      "sha256": "7f79d64bee8e08dc2aba1525f403a5978992f44a3b3745d3919e6dbac3b9c046"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-00/pal-hud-context-records.bin",
+      "sha256": "cfde37cb946583e3fae27d9c5c1e5fceffc01e812cddf6169abd176955004c40"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/auto-actor-load-context-records.bin",
+      "sha256": "62b2bed7e1b7830481b850877d27d28afd146bfd2b0c60a3f1f8e8a55176df89"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/auto-audio-irq-events.json",
+      "sha256": "da7a99986a572d1e5937bf71b46356ec5aba269b1a9ca347bb9963d5d0325f65"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/auto-foreground-m1-records.bin",
+      "sha256": "187766681ea129d0edab37d29f66f811e7369943e3b6fa68ce28d3fcc497730c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/auto-foreground-phase-records.bin",
+      "sha256": "a2da6e9f0a1bca749677542c3882b7346333e29650cb1ad623bf2aaa2d88ce67"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/auto-history-context-records.bin",
+      "sha256": "06ace4c50bd2f0294322af11105b6ca7fdd7df9785d3ca5ff08f237de2ccadae"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/auto-hud-context-records.bin",
+      "sha256": "f7d6770f3a0d60d5f84457de09aacb4adbd87658b904b948edb0605716f40b1e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/captures-auto-sms/capture.json",
+      "sha256": "04a28991fd8c183bd018a042886dacab8a9ed0c0bf595bfca24e8b8ee83a9133"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/captures-pal-sms/capture.json",
+      "sha256": "be347823cb613dc243a82de14f00030f2be12a5075af06add3cb47958a4f8aa1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/pal-actor-load-context-records.bin",
+      "sha256": "3cbcad00b8cafeba1a36ff79e7ed06f799dc1dbde69f90bc53815c5341199bba"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/pal-audio-irq-events.json",
+      "sha256": "17fe16c08ec931b3b68178315f83d2c3379643bdc8cda287342998c222a19f47"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/pal-foreground-m1-records.bin",
+      "sha256": "4860d47a13c3786f60b400cf2b55f46dc44b0a1edbeab8f0de365cfc1e74c5f6"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/pal-foreground-phase-records.bin",
+      "sha256": "9ed23e4ef37ecb3da1fc26696809314a3871ae97f7ff18f25714c9e6574960be"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/pal-history-context-records.bin",
+      "sha256": "7112e5b945e690a1230a4af4d89be216337a64e39fb794668527570c144accc7"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/36-ff/pal-hud-context-records.bin",
+      "sha256": "4d26de505593cfcbe51790308682b0329f89875b7e1ed43b29772d290942559a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/auto-actor-load-context-records.bin",
+      "sha256": "4b4730cd5918102ff437b634fea15bee6d170a469f653132f88d4b6869ede25f"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/auto-audio-irq-events.json",
+      "sha256": "3f6dcc901ce2a5f3ea9f58db95a8e5f35ae2f65ca05775c4c7d438c4f7300f01"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/auto-foreground-m1-records.bin",
+      "sha256": "7abb783009d598b44d561cde469307936f5c26ff36b7124ff11831735079b93b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/auto-foreground-phase-records.bin",
+      "sha256": "29f0daf1a4d1e78f4428b148a2ea0d1ece806505d5ba86b3352cce3f9754ac86"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/auto-history-context-records.bin",
+      "sha256": "99e948b8c8b800ae57ea867a4023e79f27d4bde04808ef90540f31148b85ef47"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/auto-hud-context-records.bin",
+      "sha256": "01f3a7af0ceec80d4bf0910dda97589137e0a67d86035e646142a7d10f2fa00e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/captures-auto-sms/capture.json",
+      "sha256": "ca2fd679b5ccebd949c08cfd5053246676af4fd3a7b9645e615508d4a2cc2c38"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/captures-pal-sms/capture.json",
+      "sha256": "681d4fe919f5d2f12d3a213d2f50fded7b328975e9d493487425cd5a91e6a628"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/pal-actor-load-context-records.bin",
+      "sha256": "b64f718a5ef93696c4e58a2ec6bcb23ad918d8bba80a0b7663da657b35679348"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/pal-audio-irq-events.json",
+      "sha256": "40314eee31d9ac236a04565638de92ac6e4a9365f3cc873b55eedf0f3f8d3c1c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/pal-foreground-m1-records.bin",
+      "sha256": "91b6d06d92e3a84a84cb9d2e365d4cf742205a786323982bbf63ba272480cf07"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/pal-foreground-phase-records.bin",
+      "sha256": "d97853ee490de8cdf30713b9b9014cdcf2d08631785d084dbec397fde662f79b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/pal-history-context-records.bin",
+      "sha256": "8b71b7d7a210505cb8d0ad8fa3190a13bcfb8e53aed13424a1ee508e17156d22"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-00/pal-hud-context-records.bin",
+      "sha256": "cfde37cb946583e3fae27d9c5c1e5fceffc01e812cddf6169abd176955004c40"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/auto-actor-load-context-records.bin",
+      "sha256": "1b75e5db0c9089e4a53ec26ff82a595f9563b45083bbaa41bdfd50f99af20836"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/auto-audio-irq-events.json",
+      "sha256": "cc972d3af70af7773d8ac2f39387eead123fa088939115561ff1ec3d9f9fa352"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/auto-foreground-m1-records.bin",
+      "sha256": "6fcd7e853cd1d700b22b55388d23e97d2b358286f4a41f2a2af9b33af435ceb8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/auto-foreground-phase-records.bin",
+      "sha256": "770b18fb94eb02733c9fa2ab42dce29052f0cc9b30601427712cbf5d84eb3d4d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/auto-history-context-records.bin",
+      "sha256": "bda5354095be5f5e5e9923f40f863dd11776878740c22cd45ccdbcefbe34f3df"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/auto-hud-context-records.bin",
+      "sha256": "210ef119529e6c7f02a3486c9e164f118f98feaf472ef4262c412bec786cbad6"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/captures-auto-sms/capture.json",
+      "sha256": "ca2fd679b5ccebd949c08cfd5053246676af4fd3a7b9645e615508d4a2cc2c38"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/captures-pal-sms/capture.json",
+      "sha256": "681d4fe919f5d2f12d3a213d2f50fded7b328975e9d493487425cd5a91e6a628"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/pal-actor-load-context-records.bin",
+      "sha256": "d839ff7133b1761aea32e6144854d388389b35679383b4dbb0bdab904f7371da"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/pal-audio-irq-events.json",
+      "sha256": "8bcdc32198073df81ab758735b93790ed67eb93a2c97581ce28aa98729fe4fc4"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/pal-foreground-m1-records.bin",
+      "sha256": "db98638a3dd414dac8f20eeb73bf42378e2fd61b22805079d1fe213d920265d8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/pal-foreground-phase-records.bin",
+      "sha256": "f6d46df541ca8be16942076a87d61f5dacfa0dbc349ad127b2963349b7794b67"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/pal-history-context-records.bin",
+      "sha256": "4eb6c6a8448185079ac6ac7c22e0d05a7566013dad386a03a57583ed54aecd6a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/3c-ff/pal-hud-context-records.bin",
+      "sha256": "ea2916d1bd5908fa5d5d5547ed15540aec6daaf7cd0e94bf428510046ee56f5b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/auto-actor-load-context-records.bin",
+      "sha256": "1db7f1827f1eca102664994069fb3be5fe9e1022321bf46434af77baeb0866f8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/auto-audio-irq-events.json",
+      "sha256": "4610fe59f66ee938ac1074375cdf5f04f211723a5a4d1796dd89373c81103da0"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/auto-foreground-m1-records.bin",
+      "sha256": "caa1290185ba799f45fd6ff249f6fb3d8e3c5a81857aeb4dce472fe91c845bb1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/auto-foreground-phase-records.bin",
+      "sha256": "b1f599005d744b73cdbd14d5baaf4add893044830be988beb8b3cc47c7a691cd"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/auto-history-context-records.bin",
+      "sha256": "943d47853f3f80cae395379fd3e4c88bff7ebc0d4583069769febcfdd27d0e95"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/auto-hud-context-records.bin",
+      "sha256": "01f3a7af0ceec80d4bf0910dda97589137e0a67d86035e646142a7d10f2fa00e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/captures-auto-sms/capture.json",
+      "sha256": "ddb67fb34c60f9601fdf56b94503261bae3108edf4f7d7885c4edec4152908fb"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/captures-pal-sms/capture.json",
+      "sha256": "952f886cb5ad3f32e223d1114594d1fdc6b666e4cedb2b43319b4d75e5a8c452"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/pal-actor-load-context-records.bin",
+      "sha256": "8cf4257339ff8f0a01c8c3c3941ae82f9434b16ef0079628124ce9dc98772791"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/pal-audio-irq-events.json",
+      "sha256": "ababacd8808b383cd053b8ff1d741a59923c76cd9456e9c1712017a88ebcd54f"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/pal-foreground-m1-records.bin",
+      "sha256": "7b1a40145319be7285fb73eb6cddc1956010ce273fc772a35cb79e20f28605a0"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/pal-foreground-phase-records.bin",
+      "sha256": "addc1a126274217da4911e7e2e8d5ea1b30faaa06f14870cece5a69d6d0275f8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/pal-history-context-records.bin",
+      "sha256": "4d9b9613d885e7489b4332b52897691d4352f2d3a1607c46b7e19e3e27f3a2ab"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-00/pal-hud-context-records.bin",
+      "sha256": "cfde37cb946583e3fae27d9c5c1e5fceffc01e812cddf6169abd176955004c40"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/auto-actor-load-context-records.bin",
+      "sha256": "31cd351eb6187464cbe5b6fcd1a6d56163fae70a350af3a59e88f5648a8197c9"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/auto-audio-irq-events.json",
+      "sha256": "53ae0e01677b544dd653fe676306072009ba936af613f873c455f1710776bafd"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/auto-foreground-m1-records.bin",
+      "sha256": "33bf5d0ee0bc5dc1d81a9230cafe183f7a3f199465040c0060a7c252737b7a09"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/auto-foreground-phase-records.bin",
+      "sha256": "d13989be358f0990054b2bc476a916bc9dd7102b6abbfa34cfd71678896929a0"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/auto-history-context-records.bin",
+      "sha256": "b1fe9578ad7614074177922ca0dba546460b3919723ebd5a20ed111a13d23131"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/auto-hud-context-records.bin",
+      "sha256": "7e0ccc9b1f84acc02cb2e8af7e3439031831aedb14633474c09559c481365c6b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/captures-auto-sms/capture.json",
+      "sha256": "ddb67fb34c60f9601fdf56b94503261bae3108edf4f7d7885c4edec4152908fb"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/captures-pal-sms/capture.json",
+      "sha256": "952f886cb5ad3f32e223d1114594d1fdc6b666e4cedb2b43319b4d75e5a8c452"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/pal-actor-load-context-records.bin",
+      "sha256": "e9dd4a300a671325232c00e21a1a616ccea4d510c7974f76887a72de5060503c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/pal-audio-irq-events.json",
+      "sha256": "1b18b0ffd1a3779361c2b67cca19c6256c0760df29d6212872aa065a1c837d0f"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/pal-foreground-m1-records.bin",
+      "sha256": "156e12ba19467627f6610c14b13f4a5d8034222ca5b7e77efe734e659ba6f60d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/pal-foreground-phase-records.bin",
+      "sha256": "4a6d6c404e18a43ff85690b9fff9ad3b81c5fce459ab71cf3a3a9413709be096"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/pal-history-context-records.bin",
+      "sha256": "cce90e718e452bbf4f5bff189e9fdb97323864f30b38af5ea5b9c5a86fdceded"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/6d-ff/pal-hud-context-records.bin",
+      "sha256": "7c7943053e4d61b148e6c46f2f2d4a523092207628a096ab9caa0806be5d3d0c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/auto-actor-load-context-records.bin",
+      "sha256": "18fa16677c41bf482c1a780a89cb79b3f44eb088877142ede22da6a57aa41f17"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/auto-audio-irq-events.json",
+      "sha256": "08be5d7222b1fe402244e0cb79cb75af58b5742cbea0a9e6c0311266c5ffd67d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/auto-foreground-m1-records.bin",
+      "sha256": "c135a2eae927a8f882587db6558a5ee2570225a70e3b2b74876b6a88ec1b145f"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/auto-foreground-phase-records.bin",
+      "sha256": "f978c6a7d53fb8bee20d8508a6cf8491a8d1832b5cb2dd6c5f6963854f558428"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/auto-history-context-records.bin",
+      "sha256": "85a396b2331aca81e59204d1b8596f272897e03571abe1534732291b48ac7d89"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/auto-hud-context-records.bin",
+      "sha256": "01f3a7af0ceec80d4bf0910dda97589137e0a67d86035e646142a7d10f2fa00e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/captures-auto-sms/capture.json",
+      "sha256": "92f2feb12a0e5d8ce0c81475067770eae9db70da5c1dd8200c3b5cca31b80455"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/captures-pal-sms/capture.json",
+      "sha256": "744a7c38519736a965156b0a011a8ee2eaaa7ab976c7e01bbb00a4d2dbc6ef3b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/pal-actor-load-context-records.bin",
+      "sha256": "5dd3428fb4adeb4cf132929c64e3a92aeb3d85fbeda0e794a713b7763bca4692"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/pal-audio-irq-events.json",
+      "sha256": "e2c8e1fc73e2c3059d2b7ca3ff3ff52e80b52609adede073c541d4483ffd6428"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/pal-foreground-m1-records.bin",
+      "sha256": "cc0bf26fd48b593851746ae176c2a0e3cd35c3d12f17b7fe965fc0cc6b778135"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/pal-foreground-phase-records.bin",
+      "sha256": "bd61790798f5d5ff45929708b829848080aae401a581e434ef2185a0dabcb761"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/pal-history-context-records.bin",
+      "sha256": "8740dc2be6747ef988d458e44b4fb9da143359e00fe307c389f07eaa4da1d69f"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-00/pal-hud-context-records.bin",
+      "sha256": "cfde37cb946583e3fae27d9c5c1e5fceffc01e812cddf6169abd176955004c40"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/auto-actor-load-context-records.bin",
+      "sha256": "7f808062a38102dea1029e7a675e0a3a2f2ba0627c75d51ea653dbcc3e90b5fd"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/auto-audio-irq-events.json",
+      "sha256": "de9a71a694c058e482120febb9720d30b2f1560411aefd9f588b71d8bdf20b1a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/auto-foreground-m1-records.bin",
+      "sha256": "9a86bcf8dbbf5de506ef76cc95c8c11ebd44f040dcbbc07322ef39ef5fc4001e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/auto-foreground-phase-records.bin",
+      "sha256": "7451be12d549aa456790f415aad47daa99ecf79273a1362ef57c97cb73f3a766"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/auto-history-context-records.bin",
+      "sha256": "29405be9d144373c287d215dcf1404eafb82b2eeb096861f4e95f91eab2958e2"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/auto-hud-context-records.bin",
+      "sha256": "1f7da8833755ee90103b1f927fd1a15b0e2b475d761d5c7584c8f1c2240fd424"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/captures-auto-sms/capture.json",
+      "sha256": "92f2feb12a0e5d8ce0c81475067770eae9db70da5c1dd8200c3b5cca31b80455"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/captures-pal-sms/capture.json",
+      "sha256": "744a7c38519736a965156b0a011a8ee2eaaa7ab976c7e01bbb00a4d2dbc6ef3b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/pal-actor-load-context-records.bin",
+      "sha256": "fef27a2735d0d40b49287b7a1c36c0b9d93b8efe7cc93027f210c61dd3274f1a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/pal-audio-irq-events.json",
+      "sha256": "166aff13a1e258d582ebf0373a2c3bdda9c6dac749a530fbae7e49efa1742af6"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/pal-foreground-m1-records.bin",
+      "sha256": "01c90713c54a4bc83a7be10565b53417dc11470d8cf8b80a016b623dedce41be"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/pal-foreground-phase-records.bin",
+      "sha256": "cf751e76ba1ad054634a58bd897c7d6a814f8f152a8e1eca9bf89a1f97c6fef1"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/pal-history-context-records.bin",
+      "sha256": "c13c0a9f18fe51d5614aeb249f089dde8a10312279f71ccba9750deeb0f96952"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/87-ff/pal-hud-context-records.bin",
+      "sha256": "686b9e2d5531073ecdf0b99362a65002ef21ea0da031027680901cbbf59b852c"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/auto-actor-load-context-records.bin",
+      "sha256": "66a56a703571b83a7d9661c90b6f22c6edababf3c24c50e4bcf7b86f2f9f6790"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/auto-audio-irq-events.json",
+      "sha256": "5d423da5c04a2e79a77d713497fa5f2f8e308752f37acfae3ef382e0ea561088"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/auto-foreground-m1-records.bin",
+      "sha256": "87d0b31890143f1e8ca4ee1b96dbb61bac4d191db775b384200d8823a1c5da31"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/auto-foreground-phase-records.bin",
+      "sha256": "333aecefed902a6908353a3accd08c157d34f4a7dfe199b49279fbedb1aac706"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/auto-history-context-records.bin",
+      "sha256": "64ac64b56d77c34a2373f967f05d739f2ff962373d1d9a0d6316827f3a86bb8f"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/auto-hud-context-records.bin",
+      "sha256": "01f3a7af0ceec80d4bf0910dda97589137e0a67d86035e646142a7d10f2fa00e"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/captures-auto-sms/capture.json",
+      "sha256": "6896aa3860547b305ca8f5a8abadec783a3d677c55bf3ecfe949adc91730b6ea"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/captures-pal-sms/capture.json",
+      "sha256": "11a90e1cfd2e56ee6a9254d07309ebe3c51784822f6c0751a077c112992ebd4d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/pal-actor-load-context-records.bin",
+      "sha256": "40ddace25c4c4a8a87622eecd6d1bbdce6c93cbb3b9c18c30359b96edd64d384"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/pal-audio-irq-events.json",
+      "sha256": "0c4c87eb9b7db58329b10152897d6b826d2cccdd191fd36b1d8aa411efeeefdf"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/pal-foreground-m1-records.bin",
+      "sha256": "81e0efe1b799d108d739f2a38ad950ac4a6397664a24575cc19cbe94f4843324"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/pal-foreground-phase-records.bin",
+      "sha256": "708d576c427008ed4318daa092e9de6e7357711f723312b22e702ef5d2299faa"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/pal-history-context-records.bin",
+      "sha256": "eba9efce40a288052fffb2815acfac10c791182cb1af98c13e28a20fce7e0bb8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-00/pal-hud-context-records.bin",
+      "sha256": "cfde37cb946583e3fae27d9c5c1e5fceffc01e812cddf6169abd176955004c40"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/auto-actor-load-context-records.bin",
+      "sha256": "4a37227815a2e2761f6c7b518071d32e5a22a4f59f04d08b66fa0a238a2e140d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/auto-audio-irq-events.json",
+      "sha256": "24d4fdc20db7e1238a94e79e0099b137240509b00e55982f12a2e5191cb59092"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/auto-foreground-m1-records.bin",
+      "sha256": "f5297f83f6fc14b9badcd29065e30b708916046cfc397c73649ac421c784e377"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/auto-foreground-phase-records.bin",
+      "sha256": "d6b7493b4e74a4c70c9ba7e1a57d55151b8c83e91d3e51cc8790f413b928d808"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/auto-history-context-records.bin",
+      "sha256": "9bb1ce63dd9c8f196fdeaca4fabebb7fada50e650f950de9f42db1f447d85004"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/auto-hud-context-records.bin",
+      "sha256": "0aff665636b04c9a10acae93977f7139ec4eb6942b0001db7b756344960c06e8"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/captures-auto-sms/capture.json",
+      "sha256": "6896aa3860547b305ca8f5a8abadec783a3d677c55bf3ecfe949adc91730b6ea"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/captures-pal-sms/capture.json",
+      "sha256": "11a90e1cfd2e56ee6a9254d07309ebe3c51784822f6c0751a077c112992ebd4d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/pal-actor-load-context-records.bin",
+      "sha256": "bceffb6e82d65c2580beed002eea259b5ebaaf981929b978c49de79bc1c7f5f2"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/pal-audio-irq-events.json",
+      "sha256": "92fde6e5fa7f6634cb9506c61292ff85e8dc6bafd1aa8f4b4caf7c1d67487a8b"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/pal-foreground-m1-records.bin",
+      "sha256": "33dfaf09afc4b56577d1b15ee28c3416ccf9c70f41d799eb9f7bf4d2d718fc5d"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/pal-foreground-phase-records.bin",
+      "sha256": "481ad52fca8ae9904579fd1c5262c07b8614382da3dd817822d5c05cf8ff2009"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/pal-history-context-records.bin",
+      "sha256": "3f1eb4c7254d61bb72da1c9fd7b04571024f80e43ead9e48540dff8563318742"
+    },
+    {
+      "path": "validation/actor-prefix-refresh/96-ff/pal-hud-context-records.bin",
+      "sha256": "bbda9f8888ff2707e1981b165ac86be1391976b8cfc1a7dfd84b50dd6591bc00"
+    },
+    {
+      "path": "reference/paid_passage_reference.json",
+      "sha256": "bd0c92c79ddc2afc96a03634ea2ea5f9c83ef12f16973509b3a29123c85f5e55"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/1a-00/auto-foreground-phase-records.bin",
+      "sha256": "0a9988934067d78fb5aaa434a03304e1a49f0d71887e0573fb66496163427c42"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/1a-00/pal-foreground-phase-records.bin",
+      "sha256": "44fd9e733a2949c58e1c48d299e285a1921014b6f27a0df49ad88ed2488e5827"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/1a-ff/auto-foreground-phase-records.bin",
+      "sha256": "56085790490c61a2f9005675b1eaef047bbf127929c560cf23429fcbf889bd8b"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/1a-ff/pal-foreground-phase-records.bin",
+      "sha256": "dcec0fe86c765a0ba5d032eeea57d90227989f5c10f796802baa63985c254e91"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/36-00/auto-foreground-phase-records.bin",
+      "sha256": "35f9d63ac7c1151833edf86db1ec5eaecb2e2f2e7909455d06ea156c85944a26"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/36-00/pal-foreground-phase-records.bin",
+      "sha256": "abe61be9e6d0e455143d01b14a4f999fed9413d85e569d9e5f9f8a80d912bda4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/36-ff/auto-foreground-phase-records.bin",
+      "sha256": "28a4f289593b3a7ff960b55307eef6e2d798c01a4ec7d1f6df7aa4301e387959"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/36-ff/pal-foreground-phase-records.bin",
+      "sha256": "3c4265244e6f78d20c06bdce1247776091a60ca21666f1c6dfab3c5fe270d06a"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/6d-00/auto-foreground-phase-records.bin",
+      "sha256": "d2982b22d47dd6d845e893aa52d3975a4367875704194216bed120958a514ee9"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/6d-00/pal-foreground-phase-records.bin",
+      "sha256": "ba963fbf080701705967ef5f22e98895f3b29c48f4c3fffb9a88856de605c8e4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/6d-ff/auto-foreground-phase-records.bin",
+      "sha256": "731d8e16f43cf7a5187da53fc0f2ab60246844d2cf7b0ad31d87f0491ea98181"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/6d-ff/pal-foreground-phase-records.bin",
+      "sha256": "2023e3f0bf929d35fc8813941b2a50d33e7fdc9b07ec30f69a5e9f82278f4f83"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/3c-00/auto-foreground-phase-records.bin",
+      "sha256": "19c350d2e5f27a733dc3c7c03cd7feeaeee5484037408706ff480a84b5283e14"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/3c-00/pal-foreground-phase-records.bin",
+      "sha256": "b476fd89db44022487d40fef955b1143330f3f64d4e53098b4f720c52d832ccc"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/3c-ff/auto-foreground-phase-records.bin",
+      "sha256": "57563a7eddd346f53a6ba025a6e85e53b6b37affda019a5ed3ccb86b3baa15fe"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/3c-ff/pal-foreground-phase-records.bin",
+      "sha256": "5a00797d649d766b3174ba1059dd24fcd922d924519fda90afe3aef3169890da"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/87-00/auto-foreground-phase-records.bin",
+      "sha256": "962b88f76bcc7514bcf53f0aa558e5833b03aa17003aba96ae29f55ad0bc90ad"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/87-00/pal-foreground-phase-records.bin",
+      "sha256": "a825ef0ca793b9d6bb8ccff986a7bcbd27dbbfd6dd2534a0e0578d919cc363fb"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/87-ff/auto-foreground-phase-records.bin",
+      "sha256": "a8f8e139f9a6709963e71a551a32dbac972f2e4a2ec0e2825d211138b061ee95"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/87-ff/pal-foreground-phase-records.bin",
+      "sha256": "9243770b2b283f9412657bd50b932f15ac67179b39c43c51a5e381cb27bbe2f0"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/96-00/auto-foreground-phase-records.bin",
+      "sha256": "a142da3f1425d9ff3dcdabdd89d25168a315e96d65d9f7a8a356ae6fac1f9a02"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/96-00/pal-foreground-phase-records.bin",
+      "sha256": "e943572d96845e09a0668dbdb5a05d7312683e9c466733ec6d17776d1bb0e604"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/96-ff/auto-foreground-phase-records.bin",
+      "sha256": "7908536a791e7f0b3836cfe8337666b5f8bfd4b9b8feaaceaca2876a6279ebda"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/96-ff/pal-foreground-phase-records.bin",
+      "sha256": "25f8dbb83dfc1575aee46e3edfb28fc58f4d7ac7fb2a76bfa1b90f97700f614d"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "logs/actor-prefix-refresh-validation.log",
+      "sha256": "7a3894245b19623b034587c4470dfa298ce5a84847d52ee3a827ceedc0b74f5d"
+    },
+    {
+      "path": "logs/build-actor-prefix-refresh.log",
+      "sha256": "8923a41a31494c749428fc8aca81592b0d4af5949a04124948e0cbdcb3806f20"
+    },
+    {
+      "path": "logs/actor-prefix-refresh-core-build.log",
+      "sha256": "608e0ab4ae4156ad46430a27fb43b288185a7d1faf70d0f03c3b8dd44353d55b"
+    },
+    {
+      "path": "logs/actor-prefix-refresh-6d-ff.log",
+      "sha256": "f47c0c4470c7cde9c5ae3053b0aa648d070018884195ec5cb7cbb6b1dbd6932d"
+    },
+    {
+      "path": "logs/actor-prefix-refresh-group0.log",
+      "sha256": "5989d60a27696c0932c818b6878976888b526f89d3bb5ad40191cd42af884548"
+    },
+    {
+      "path": "logs/actor-prefix-refresh-group1.log",
+      "sha256": "c419de001e7f84d2fe134a08edcc31551acef39f2c98f7a46190cd53a1e9e200"
+    },
+    {
+      "path": "logs/actor-prefix-refresh-group2.log",
+      "sha256": "21ed25d206ef1af0c810e4e7c3668f6e23441c577cb384cf6b70c06d39fdaabe"
+    },
+    {
+      "path": "logs/actor-prefix-refresh-unit.log",
+      "sha256": "2bed44e7603b9b82a7bb0b6dec52dcfc8533150d6cd57a6905091e16a6ae3c3c"
+    },
+    {
+      "path": "actor_prefix_refresh_report.json",
+      "sha256": "0702b96b9067c8b0e594722cc7574e79700efaab85dac812b61909128ffbb205"
+    },
+    {
+      "path": "actor_prefix_refresh_milestone.md",
+      "sha256": "39d82b949a4f534d76bd7a5568966ecb202e59355e1e702aa6283495a0b48ecd"
+    },
+    {
+      "path": "fixture/source.sms",
+      "sha256": "be45e0f250c4929798fc6c6d00a26afe39b860c89da30ff12c8a4f5864c32820"
+    },
+    {
+      "path": "unit/m1.bin",
+      "sha256": "f2ea5c82660c7909e94e31c632280150f4c346a9976d573f2e6d2a1315378a33"
+    },
+    {
+      "path": "actor_prefix_refresh_unit_report.json",
+      "sha256": "17fee616f9a460f54671e4ca702744e9b8496f92456526a00b5073410c7b1e86"
+    },
+    {
+      "path": "genesis_plus_gx_actorprefixrefresh_libretro.dll",
+      "sha256": "c8c92c1f25579a89625555b80c8fe4428a8b646ae479f39d7c523a22826e3f3d"
+    }
+  ]
+}

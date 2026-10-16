@@ -33,7 +33,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     if hasattr(dll,'gaw_live_envelope_m1_events'):dll.gaw_live_envelope_m1_events.restype=c.POINTER(c.c_uint8)
     wait_records=bytearray();previous_wait=[0];wait_entries=bytearray();foreground_phases=bytearray();foreground_extra=bytearray();previous_fore=[0]
     if hasattr(dll,'gaw_map_extra_events'):dll.gaw_map_extra_events.restype=c.POINTER(c.c_uint8)
-    hud_context=bytearray();foreground_m1=bytearray();history_context=bytearray()
+    hud_context=bytearray();foreground_m1=bytearray();history_context=bytearray();actor_load_context=bytearray()
+    if hasattr(dll,'gaw_actor_load_context_events'):dll.gaw_actor_load_context_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,'gaw_history_context_events'):dll.gaw_history_context_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,'gaw_foreground_m1_events'):dll.gaw_foreground_m1_events.restype=c.POINTER(c.c_uint8)
     rng_refresh=bytearray();previous_rng=[0]
@@ -70,6 +71,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
        fore_count=dll.gaw_foreground_phase_samples()
        if f>=4200 and fore_count>previous_fore[0]:
         base=c.addressof(dll.gaw_foreground_phase_events().contents);foreground_phases.extend(c.string_at(base+previous_fore[0]*800,(fore_count-previous_fore[0])*800))
+        if hasattr(dll,'gaw_actor_load_context_events'):
+         base=c.addressof(dll.gaw_actor_load_context_events().contents);actor_load_context.extend(c.string_at(base+previous_fore[0]*769,(fore_count-previous_fore[0])*769))
         if hasattr(dll,'gaw_history_context_events'):
          base=c.addressof(dll.gaw_history_context_events().contents);history_context.extend(c.string_at(base+previous_fore[0]*277,(fore_count-previous_fore[0])*277))
         if hasattr(dll,'gaw_foreground_m1_events'):
@@ -173,6 +176,7 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      if hasattr(dll,'gaw_map_extra_events'):(folder/f'{region}-map-extra-records.bin').write_bytes(foreground_extra)
      if hasattr(dll,'gaw_foreground_m1_events'):(folder/f'{region}-foreground-m1-records.bin').write_bytes(foreground_m1)
      if hasattr(dll,'gaw_history_context_events'):(folder/f'{region}-history-context-records.bin').write_bytes(history_context)
+     if hasattr(dll,'gaw_actor_load_context_events'):(folder/f'{region}-actor-load-context-records.bin').write_bytes(actor_load_context)
      if hasattr(dll,'gaw_hud_context_events'):(folder/f'{region}-hud-context-records.bin').write_bytes(hud_context)
      if hasattr(dll,'gaw_rng_refresh_samples'):(folder/f'{region}-rng-refresh-records.bin').write_bytes(rng_refresh)
      if hasattr(dll,'gaw_wait_entry_events'):(folder/f'{region}-wait-entry-records.bin').write_bytes(wait_entries)
