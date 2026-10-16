@@ -3,13 +3,20 @@
 #include "source_audio_prefix.h"
 #include "source_audio_dispatch.h"
 #include "source_audio_priority.h"
+#include "source_audio_envelope.h"
 extern const u8 intro_bank6[],sound_low_rom[];
 static u8 sound_ram[0x190];
 static volatile u16 sound_unhandled_command;
 static u16 sound_current_track;
+static u16 sound_source_de; /* Original reader DE, carried between channels. */
 static volatile u16 sound_request;
 static volatile u16 sound_effect_request;
-static u8 sound_read(u16 address) { return address<=0x400?sound_low_rom[address]:intro_bank6[(address-0x8000)&0x3fff]; }
+static u8 sound_read(u16 address)
+{
+    if(address<0x8000) return sound_low_rom[address];
+    if(address>=0xde00 && address<0xdf90) return sound_ram[address-0xde00];
+    return intro_bank6[(address-0x8000)&0x3fff];
+}
 static u16 sound_word(u16 address) { return sound_read(address)|((u16)sound_read(address+1)<<8); }
 static u16 sound_ch_word(u8 *c,u16 offset) { return c[offset]|((u16)c[offset+1]<<8); }
 static void sound_ch_set(u8 *c,u16 offset,u16 value) { c[offset]=value;c[offset+1]=value>>8; }
@@ -38,15 +45,15 @@ static void sound_dispatch(void)
 }
 static void sound_priority_effect(void)
 {
-    u16 n,de=0;SourceClockWork work;SourceAudioDispatchOutput output;
-    if(!source_audio_priority(sound_ram,intro_bank6,&de,&work,&output))
+    u16 n;SourceClockWork work;SourceAudioDispatchOutput output;
+    if(!source_audio_priority(sound_ram,intro_bank6,&sound_source_de,&work,&output))
     { sound_unhandled_command=0x200|sound_ram[9];return; }
     for(n=0;n<output.count;n++) PSG_write(output.writes[n]);
 }
-static void sound_restore_priority(u16 de)
+static void sound_restore_priority(void)
 {
     u16 n;SourceClockWork work;SourceAudioDispatchOutput output;
-    if(!source_audio_restore(sound_ram,intro_bank6,sound_ram[14],&de,&work,&output))
+    if(!source_audio_restore(sound_ram,intro_bank6,sound_ram[14],&sound_source_de,&work,&output))
     { sound_unhandled_command=0x300|sound_ram[14];return; }
     for(n=0;n<output.count;n++) PSG_write(output.writes[n]);
 }
@@ -60,52 +67,12 @@ static void sound_release(u8 *c)
 }
 static u8 sound_envelope(u8 *c)
 {
-    u16 value,table,index,guard;
-    if(!c[7]) return 0;
-    if(c[7]&128)
-    {
-        value=c[0x1f];
-        if(c[0x1d]&16)
-        {
-            value=value<c[0x20]?0:value-c[0x20];
-            if(!value) c[0x1d]^=0x30;
-        }
-        else if(c[0x1d]&32)
-        {
-            value+=c[0x21];if(value>c[0x22]) value=c[0x22];
-            if(value==c[0x22]) c[0x1d]^=(c[0x1d]&8)?0x30:0x60;
-        }
-        else if(c[0x1d]&64)
-        {
-            value+=c[0x23];if(value>255) value=255;
-            if(value==255) c[0x1d]&=0x8f;
-        }
-        else
-        {
-            value+=c[0x24];
-            if(value>255)
-            {
-                value=255;c[0x1d]&=15;c[0]|=16;
-                if(!(c[0]&4)) PSG_write(c[1]+31);
-            }
-        }
-        c[0x1f]=value;return value>>4;
-    }
-    table=sound_word(0x897f+(c[7]-1)*2);
-    for(guard=0;guard<64;guard++)
-    {
-        index=c[0x1f];value=sound_read(table+index);
-        if(value<128) { c[0x1f]++;return value; }
-        if(value==0x80) c[0x1f]=0;
-        else if(value==0x81 || value==0x82)
-        {
-            c[0]|=16;
-            if(value==0x82 && !(c[0]&4)) PSG_write(c[1]+31);
-            return value;
-        }
-        else c[0x1f]=sound_read(table+index+1);
-    }
-    sound_unhandled_command=0x100;return 15;
+    SourceClockWork work;SourceAudioEnvelopeOutput output;
+    if(!source_audio_envelope(sound_ram,(u16)(c-sound_ram),sound_low_rom,0x8000,
+                              intro_bank6,&sound_source_de,&work,&output))
+    { sound_unhandled_command=0x100;return 15; }
+    if(output.write) PSG_write(output.psg);
+    return output.accumulator;
 }
 static u16 sound_pitch(u8 *c)
 {
@@ -123,10 +90,11 @@ static u16 sound_pitch(u8 *c)
         return base;
     }
     table=sound_word(0x8a52+(mode-1)*2);
+    sound_source_de=base;
     for(guard=0;guard<64;guard++)
     {
         index=c[0x15];value=sound_read(table+index);
-        if(value==0x83) { base++;c[0x15]=sound_read(base); }
+        if(value==0x83) { base++;sound_source_de=base;c[0x15]=sound_read(base); }
         else if(value==0x80) c[0x15]=0;
         else if(value==0x81 || value==0x82) { c[0]|=32;return table; }
         else { c[0x15]++;return base+(s8)value; }
@@ -187,7 +155,8 @@ static bool sound_sequence(u8 *c,bool noise)
                     }
                     sound_ram[offset]=(sound_ram[offset]&~4)|16;
                     c[0]=0;sound_ram[0x11]=0;PSG_write(c[1]|31);
-                    if(sound_ram[14]) sound_restore_priority(cursor); /* 8850: CALL8211. */
+                    sound_source_de=cursor;
+                    if(sound_ram[14]) sound_restore_priority(); /* 8850: CALL8211. */
                     return FALSE;
                 }
                 case 0xf3:
@@ -195,7 +164,7 @@ static bool sound_sequence(u8 *c,bool noise)
                     if(!(sound_ram[0xf]&128) && (value&3)==3 && (sound_ram[0x130]&128))
                     {
                         sound_ram[0xd0]=(sound_ram[0xd0]&~4)|16;
-                        c[0]=0;sound_ram[0xf]=255;PSG_write(255);return FALSE;
+                        c[0]=0;sound_ram[0xf]=255;sound_source_de=cursor;PSG_write(255);return FALSE;
                     }
                     PSG_write(value);
                     if((value&3)==3)
@@ -258,7 +227,7 @@ static bool sound_sequence(u8 *c,bool noise)
             c[14]=c[15];c[0x15]=0;
             if(!(c[7]&128)) c[0x1f]=0;
         }
-        return TRUE;
+        sound_source_de=cursor;return TRUE;
     }
     sound_unhandled_command=0x102;return FALSE;
 }
@@ -275,6 +244,7 @@ static void sound_channel(u8 *c,bool noise)
             {
                 table=sound_ch_word(c,0x10);for(n=0;n<3;n++) c[0x14+n]=sound_read(table+n);
                 c[0x17]=sound_read(table+3)>>1;c[0x12]=c[0x13]=0;
+                sound_source_de=0xde00+(u16)(c-sound_ram)+0x17;
             }
             if((c[7]&128) && !(c[0]&2) && !(c[0x1d]&128)) { c[0x1f]=255;c[0x1d]=16|c[0x1e]; }
         }
@@ -286,7 +256,10 @@ static void sound_channel(u8 *c,bool noise)
     }
     if(!noise && (new_note || c[6]) && !(c[0]&96))
     {
-        frequency=sound_pitch(c)+(s8)c[0x25];
+        frequency=sound_pitch(c);
+        if(c[0]&32) return; /* 8334: table termination unwinds its caller. */
+        sound_source_de=(u16)(s16)(s8)c[0x25];
+        frequency+=(s8)c[0x25];
         PSG_write((c[1]==0xe0?0xc0:c[1])|(frequency&15));
         PSG_write((u8)(((frequency&0xf0)|(frequency>>8))<<4 | ((frequency&0xf0)|(frequency>>8))>>4));
     }

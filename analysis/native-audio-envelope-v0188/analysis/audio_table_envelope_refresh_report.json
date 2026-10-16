@@ -1,0 +1,46 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "08e451a79a352ba9d12844f06b9efd4f6e8df23b14d5ec64a81653e0fffdd869",
+  "cases": 26800,
+  "kind": "table",
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 13400,
+      "caller_unwind_cases": 1080,
+      "M1_histogram": {
+        "33": 11736,
+        "46": 252,
+        "41": 252,
+        "38": 576,
+        "56": 72,
+        "4": 512
+      },
+      "raw_sha256": "2ada0842d2615caffbbca90bfe69d4be9a13375aaa79a63462b1effad862d2cb",
+      "fixture_sha256": "ddbbfd3e4a1cedf8d9a943eb611c2bf0772b0fafafc0c7b102b22b2a866edb42"
+    },
+    {
+      "region": "pal",
+      "cases": 13400,
+      "caller_unwind_cases": 1080,
+      "M1_histogram": {
+        "33": 11736,
+        "46": 252,
+        "41": 252,
+        "38": 576,
+        "56": 72,
+        "4": 512
+      },
+      "raw_sha256": "961e55c1f4485f4a0e7afcbb80e01b7ce26dea8da109469746481cb6554fb022",
+      "fixture_sha256": "ddbbfd3e4a1cedf8d9a943eb611c2bf0772b0fafafc0c7b102b22b2a866edb42"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original854B/8602/863E/bank6 tables. Custom DI caller andIXDE40;explicit DE input. Read-only absolute M1 counter,R,cost/all400 sound bytes,A/DE/unwind compare.",
+    "ADSR:all256 values,step/limit boundaries,phase/bounce/high-bit flags,termination ownership/four PSG types;dimensions not full Cartesian. Table:all16 tables/everyoffset,six channel flags,four PSG types/three DE inputs;zero mode separately.",
+    "Invalid table indices/arbitrary uncaptured RAM DE excluded. No complete channel/sequence/IRQ fetch composition orfull-load R prediction/native RNG replacement/waveform/hardware/full progression proof."
+  ]
+}

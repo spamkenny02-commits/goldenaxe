@@ -6078,5 +6078,52 @@
         "sha256": "f703c11bcd0f88f96c16bd3eda7177828a932f75e2c0f727ac8c9cc6086685eb"
       }
     ]
+  },
+  {
+    "version": 188,
+    "sha256": "6ebb6a08f01d543131fbf6bdafbbcff5f55726c8342a582247da173726c57b60",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T18:55:38.013622+00:00",
+    "rom": "v0188-6ebb6a08/gaw-megadrive-v0188.bin",
+    "notes": "Enveloppes854B ADSR/tables natives et DE conserve entre canaux ; commande83 et terminaisons de hauteur corrigees. 53600 cas hote/68000,22400 retoursDE et48 cas limites source/MD valides. Regressions audio/menus valides. ROM1Mio ; horloge/R encore a raccorder.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "production_audio_de_report.json",
+        "sha256": "20394835674b6d0e95bd31525340dd90c8ffb7521b45e8a55870aa9fd4204aa9"
+      },
+      {
+        "file": "production_audio_envelope_report.json",
+        "sha256": "974aee84139df3d73255ccd7e87ca3d614f7b74b38f9f88d4b452ee7f1d1c867"
+      },
+      {
+        "file": "production_audio_priority_auto_report.json",
+        "sha256": "444bc6707b9677de67485886cf0927e1e4cc9e1ddde778b8bb7b6ff969e1ee05"
+      },
+      {
+        "file": "production_audio_priority_pal_report.json",
+        "sha256": "dcf9e733e0276306322cc7ac2b467cd973e64d92e961fb6e3ad01cd67e913992"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "3750f7649c2f1defbd4b5bc5dee4e4ecc6ef31479e1c8c9e44698dbca886eef9"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "ee3f92d645bea1d4d064f86fd6be6b7f0f96dc87cb6df447a6002056726f3015"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "afa8748af2d340c03693c1e503897593ee9a2ff38838c1fe21242dd136f8b94d"
+      },
+      {
+        "file": "start_menu_audio_report.json",
+        "sha256": "92fa76aac4bc8dd2e223a917fefd91bd6560b73de79136ac685d1e25653a96ff"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "8022474f6ada1c8a13de8811ebd1d4064f8b9b7d959e46cea4900b9f234e8086"
+      }
+    ]
   }
 ]

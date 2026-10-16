@@ -7,7 +7,7 @@ def main():
     rom=(ROOT/'input/original.sms').read_bytes();vram=bytearray(0x4000)
     end,_=rle_planes(rom,0x127d0,vram,0x3400,4)
     arrays={'intro_bank6':rom[0x18000:0x1c000],
-            'sound_low_rom':rom[:0x401],
+            'sound_low_rom':rom[:0x8000],
             'world_music_rooms':rom[0x1d02:0x1d0d],
             'intro_fixed':rom[0xf95:0x10df],
             'intro_mono_font':rom[0xc7c6:0xc8d6],

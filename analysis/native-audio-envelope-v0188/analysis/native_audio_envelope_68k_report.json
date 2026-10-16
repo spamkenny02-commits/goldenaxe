@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "region": "auto",
+      "frame": 12734,
+      "done": 1,
+      "cases": 53600,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 10654,
+      "done": 1,
+      "cases": 53600,
+      "failures": 0
+    }
+  ],
+  "test_ROM_sha256": "a456187edd60d633c5e39fc641a87982f9a3f7daacce0be5cdd85181abc6abfa",
+  "helper_sha256": "9d447c6e74026e4388454eb0e2a9022e455168a99dfed1f8c377d07597e78f6e",
+  "limits": [
+    "Compiled68000 under GPG; all400 bytes,T/M1,A/DE,unwind andPSG decisions.",
+    "Eight invalid-read cases reject without mutation; not a physical-console or full-game proof."
+  ]
+}

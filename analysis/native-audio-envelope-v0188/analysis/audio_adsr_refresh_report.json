@@ -1,0 +1,58 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "08e451a79a352ba9d12844f06b9efd4f6e8df23b14d5ec64a81653e0fffdd869",
+  "cases": 80384,
+  "kind": "adsr",
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 40192,
+      "caller_unwind_cases": 0,
+      "M1_histogram": {
+        "30": 5664,
+        "32": 5480,
+        "33": 6424,
+        "43": 1982,
+        "44": 1934,
+        "38": 80,
+        "26": 5648,
+        "39": 5144,
+        "34": 1776,
+        "41": 2098,
+        "42": 1914,
+        "4": 2048
+      },
+      "raw_sha256": "0868987520ba8313a91ef3945094b44b66c33f559a76d52fc27cd984685dba0a",
+      "fixture_sha256": "48f6f474da0c17d8e9e9b42c4164aa84b7c48dc48b5866f2f75a2c63e6ccf01e"
+    },
+    {
+      "region": "pal",
+      "cases": 40192,
+      "caller_unwind_cases": 0,
+      "M1_histogram": {
+        "30": 5664,
+        "32": 5480,
+        "33": 6424,
+        "43": 1982,
+        "44": 1934,
+        "38": 80,
+        "26": 5648,
+        "39": 5144,
+        "34": 1776,
+        "41": 2098,
+        "42": 1914,
+        "4": 2048
+      },
+      "raw_sha256": "2fd95abae3bf7d47f93163c1ffc7114e222b0d91e4571d2a8711865a16682169",
+      "fixture_sha256": "48f6f474da0c17d8e9e9b42c4164aa84b7c48dc48b5866f2f75a2c63e6ccf01e"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original854B/8602/863E/bank6 tables. Custom DI caller andIXDE40;explicit DE input. Read-only absolute M1 counter,R,cost/all400 sound bytes,A/DE/unwind compare.",
+    "ADSR:all256 values,step/limit boundaries,phase/bounce/high-bit flags,termination ownership/four PSG types;dimensions not full Cartesian. Table:all16 tables/everyoffset,six channel flags,four PSG types/three DE inputs;zero mode separately.",
+    "Invalid table indices/arbitrary uncaptured RAM DE excluded. No complete channel/sequence/IRQ fetch composition orfull-load R prediction/native RNG replacement/waveform/hardware/full progression proof."
+  ]
+}

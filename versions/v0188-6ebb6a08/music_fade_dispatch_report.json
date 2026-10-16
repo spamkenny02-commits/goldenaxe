@@ -1,0 +1,49 @@
+{
+  "md_sha256": "6ebb6a08f01d543131fbf6bdafbbcff5f55726c8342a582247da173726c57b60",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "IRQ_records_exact": 900,
+      "compared_reader_bytes": 344,
+      "audible_PSG_register_states_exact": 900,
+      "normal_fade_steps": 12,
+      "fade_period": 18,
+      "unsupported_commands": 0,
+      "retained_tables": {
+        "sms": {
+          "reader_sha256": "5e3db62cd30db127115b66fad3d7f27a5bffa92d9cc8322a1a922025530ffd19",
+          "PSG_sha256": "afff17c6b9ffa3e8afbae953d0472336eb4257d71363a688f10220fd6a527948"
+        },
+        "md": {
+          "reader_sha256": "5e3db62cd30db127115b66fad3d7f27a5bffa92d9cc8322a1a922025530ffd19",
+          "PSG_sha256": "5e8536d0943eaac120298e59456fd75f5599ce4afb34d01b346bb766fe23d635"
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "IRQ_records_exact": 900,
+      "compared_reader_bytes": 344,
+      "audible_PSG_register_states_exact": 900,
+      "normal_fade_steps": 12,
+      "fade_period": 18,
+      "unsupported_commands": 0,
+      "retained_tables": {
+        "sms": {
+          "reader_sha256": "1af6cd0b541f182a0bba3a557819c3bdf8475b350ac84886a81639d1e22fd881",
+          "PSG_sha256": "16455553336b1cc8e75393d18af345b563b59c9f98309f71c9406b9737ff724d"
+        },
+        "md": {
+          "reader_sha256": "1af6cd0b541f182a0bba3a557819c3bdf8475b350ac84886a81639d1e22fd881",
+          "PSG_sha256": "16455553336b1cc8e75393d18af345b563b59c9f98309f71c9406b9737ff724d"
+        }
+      }
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled equal-time requests87 at300,B0 at500 and82 at800;60Hz compensation phase aligned at300. Original source ROM unpatched;current production native reader. Fade state,seven channel records and audible PSG registers compare900 IRQ snapshots per region.",
+    "Muted noise frequency register excluded as inaudible. No audio waveform/hardware assertion. Actual paid-exit command order is separately tested;its unequal physical loading duration is not normalized by this driver test."
+  ]
+}
