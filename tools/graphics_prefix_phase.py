@@ -14,7 +14,9 @@ def pattern_rle(cpu,source,destination):
    command=cpu.rom[source];source+=1
    for t in [7,6,4]:cpu.execute(t)
    if not command:cpu.execute(12);break
-   for t in [7,4,8,4,4]:cpu.execute(t)
+   for t in [7,4]:cpu.execute(t)
+   cpu.execute(8,'M1_2') #RES 7,B; distinguish from an 8T terminal DJNZ.
+   for t in [4,4]:cpu.execute(t)
    literal=bool(command&128);count=(command&127) or 256
    for n in range(count):
     rst28(cpu)
@@ -39,8 +41,8 @@ def pattern_rle(cpu,source,destination):
  assert cpu.foreground_tstates-before==expected['tstates'] and source==expected['source_end']
  return source
 
-def predict_graphics_prefix(rom,phase,ram,sound):
- cpu=ForegroundPhase(rom,phase,ram,sound)
+def predict_graphics_prefix(rom,phase,ram,sound,cpu_class=ForegroundPhase):
+ cpu=cpu_class(rom,phase,ram,sound)
  assert not ram[0x11]&64
  #175F class0 ordinary world room. Room class/bank-change are scoped inputs.
  for t in [17,13,4,7,7,13,7,7,7,13,7,7,7,7,4,13]:cpu.execute(t)

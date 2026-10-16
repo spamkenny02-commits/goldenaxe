@@ -101,7 +101,10 @@ restent à prédire avant l’intégration aux timings natifs. Ces recherches
 ne modifient pas encore la ROM v0183. Les lectures d’opcodes et le registre R
 des interruptions vidéo passent désormais les 13 749 appels et 2 880 cas
 isolés, sur leurs neuf étapes. Les files graphiques, motifs, HUD et lecteur
-audio sont composés ; la propagation de R hors interruptions reste à faire.
+audio sont composés. Le premier trajet hors interruptions, du début du
+chargement à la fin des motifs (16D0–1706), prédit maintenant R sur les
+24 scénarios, avec 122 703 lectures d’opcodes et les interruptions audio
+calculées. La suite du chargement doit encore propager R.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -197,3 +200,5 @@ L’ancien dépôt GitHub V51 contient un autre arbre de code ; aucun changement
 n’y a été envoyé depuis ce projet.
 
 - [Lectures d’opcodes des interruptions vidéo complètes](analysis/full_irq_refresh_milestone.md).
+
+- [Registre R pendant le chargement des motifs](analysis/graphics_prefix_refresh_milestone.md).
