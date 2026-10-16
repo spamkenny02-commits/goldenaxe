@@ -1,0 +1,71 @@
+{
+  "rows": [
+    {
+      "kind": "compensation",
+      "region": "auto",
+      "cases": 2048,
+      "raw_sha256": "184c0035d7d70252069f72d48b0c7093999a9b936da66602624a6e6c98ee0f4c"
+    },
+    {
+      "kind": "compensation",
+      "region": "pal",
+      "cases": 2048,
+      "raw_sha256": "a22f97d836a5257e69adfcb140525dcf50557a94c49cc9220c6ec38594ad5ca8"
+    },
+    {
+      "kind": "dispatch",
+      "region": "auto",
+      "cases": 1000,
+      "raw_sha256": "cfe792046d6e0df37497d68b77d494b4c07e21eb0fa142cb2714456a9b5ba117"
+    },
+    {
+      "kind": "dispatch",
+      "region": "pal",
+      "cases": 1000,
+      "raw_sha256": "8d49dc3993c06d10519e32ce24744683d26a287a6279b40ad603e01a98dec75f"
+    },
+    {
+      "kind": "priority",
+      "region": "auto",
+      "cases": 1116,
+      "raw_sha256": "a9d48505b91e7b8d892f74ebe3591eecac7f3364a83b1729f37d6f89a70a8c1a"
+    },
+    {
+      "kind": "priority",
+      "region": "pal",
+      "cases": 1116,
+      "raw_sha256": "b86ede3b7812870f4178b94328954dfc3cf91a21e3613f3a53c2fd95b4836ebb"
+    },
+    {
+      "kind": "channels",
+      "region": "auto",
+      "cases": 1536,
+      "raw_sha256": "b5f92b00d9da9f020c375a11ffe06b8fef2a5f2c8d31a956c7d33256cd2c6473"
+    },
+    {
+      "kind": "channels",
+      "region": "pal",
+      "cases": 1536,
+      "raw_sha256": "c11f8e2494d5293c914e710a58abd78a3994dfcefa5b7bdd9bcbbaaca04009a1"
+    },
+    {
+      "kind": "noise-exits",
+      "region": "auto",
+      "cases": 144,
+      "raw_sha256": "c6290f97f2eb1ffdd11bcbbb7b4c9ab703c5220444b68e661ce700b724ac6e29"
+    },
+    {
+      "kind": "noise-exits",
+      "region": "pal",
+      "cases": 144,
+      "raw_sha256": "ee8927d61c7670f17029a8ac415628f6dd1e5e04decf21def7174ba3803acd4d"
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "reader_helper_sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+  "limits": [
+    "Original8000/bank6 intact, custom DI caller. All256 compensation phases, supported dispatch, priorities, all128 active-slot masks andnoise reader exits.",
+    "All400 bytes,T/M1,DE directly compared; R delta checked. Synthetic states, not natural reachability.",
+    "PSG writes/full IRQ clock/waveform/hardware/full progression remain outside this component fixture."
+  ]
+}

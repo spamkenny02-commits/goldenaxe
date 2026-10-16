@@ -1,0 +1,970 @@
+{
+  "md_sha256": "2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143",
+  "cases": [
+    {
+      "region": "auto",
+      "name": "exit-f1-128-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f1-132-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f1-192-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f1-128-90",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f1-128-91",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f1-128-ac",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f2-128-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f2-132-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f2-192-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f2-128-90",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f2-128-91",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "exit-f2-128-ac",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "ownership-e3-0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "auto",
+      "name": "ownership-e3-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "ownership-e4-0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "ownership-e6-0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-80-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-80-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-81-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-81-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-82-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-82-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-84-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-84-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-88-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-88-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-90-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-90-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-a0-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-a0-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-bf-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-bf-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-c0-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-c0-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-df-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "noise-df-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-e0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-e1",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-e2",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-e4",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-e5",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-e6",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-e8",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-e9",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-ea",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-eb",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-ed",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-ee",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-f0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-f4",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-f5",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-f6",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-fa",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-fb",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-fc",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "command-fd",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "mirror-de80",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "mirror-fe80",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "mirror-df80",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "auto",
+      "name": "mirror-ff80",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "exit-f1-128-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f1-132-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f1-192-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f1-128-90",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f1-128-91",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f1-128-ac",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f2-128-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f2-132-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f2-192-00",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f2-128-90",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f2-128-91",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "exit-f2-128-ac",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "ownership-e3-0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": true
+    },
+    {
+      "region": "pal",
+      "name": "ownership-e3-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "ownership-e4-0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "ownership-e6-0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-80-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-80-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-81-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-81-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-82-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-82-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-84-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-84-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-88-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-88-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-90-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-90-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-a0-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-a0-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-bf-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-bf-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-c0-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-c0-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-df-128",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "noise-df-132",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-e0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-e1",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-e2",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-e4",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-e5",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-e6",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-e8",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-e9",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-ea",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-eb",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-ed",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-ee",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-f0",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-f4",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-f5",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-f6",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-fa",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-fb",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-fc",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "command-fd",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "mirror-de80",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "mirror-fe80",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "mirror-df80",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    },
+    {
+      "region": "pal",
+      "name": "mirror-ff80",
+      "reader_states_exact": 3,
+      "compared_RAM_bytes": 400,
+      "audible_PSG_states_exact": 3,
+      "whole_reader_exit": false
+    }
+  ],
+  "limits": [
+    "Controlled noise/music/effect states and audible PSG seed; real source/native readers on three IRQs.",
+    "F1/F2/F3 reader exits, simultaneous effects, borrowed rests, six selector bits, shared controls andRAM mirrors.",
+    "Muted noise register excluded; E2 GG routing startsneutral. No waveform/hardware/full-progression proof."
+  ]
+}

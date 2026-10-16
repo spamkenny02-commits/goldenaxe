@@ -1,0 +1,14 @@
+{
+  "failed_md_sha256": "e610215d8a1b41e65e6b9b94e3bc2a105f57a9d66f745dd7a39378f83ee01604",
+  "fixed_md_sha256": "2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143",
+  "failed_version": 193,
+  "fixed_version": 194,
+  "failed_bss_end": "0xE0FFED4C",
+  "fixed_bss_end": "0xE0FFDF2C",
+  "v0192_bss_end": "0xE0FFE124",
+  "failed_physical_bytes_above_bss": 4788,
+  "fixed_physical_bytes_above_bss": 8404,
+  "static_RAM_saved_against_v0192": 504,
+  "failed_capture": "validation/reader-boot-diagnostic/frame_00300.png",
+  "scope": "Failed v0193 boot black and zero audio callback work; streaming removes global capture buffer. Fixed boot/audio/menu/inventory regressions separately validated. Physical bytes above BSS include heap and stack, not free heap."
+}

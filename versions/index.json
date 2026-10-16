@@ -6337,5 +6337,78 @@
         "sha256": "df12511d74136eed45ac1adf5314869296fd26acf50ff02479e0ce6078d76281"
       }
     ]
+  },
+  {
+    "version": 193,
+    "sha256": "e610215d8a1b41e65e6b9b94e3bc2a105f57a9d66f745dd7a39378f83ee01604",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T21:31:34.642182+00:00",
+    "rom": "v0193-e610215d/gaw-megadrive-v0193.bin",
+    "notes": "Compilation de recherche non jouable : tampon audio global trop volumineux, ecran noir au demarrage. Remplacee par v0194 avec sortie PSG par canal.",
+    "validation": "boot_failed",
+    "reports": []
+  },
+  {
+    "version": 194,
+    "sha256": "2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T21:36:30.222839+00:00",
+    "rom": "v0194-2fceb892/gaw-megadrive-v0194.bin",
+    "notes": "Lecteur 8000 natif complet et couts T/M1 par IRQ ; compensation 8 bits corrigee. 25644 vecteurs 68000 PAL/NTSC et 33788 etats jouables verifies ; regressions audio/menus/inventaire passees. Horloge du jeu encore a raccorder.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "production_audio_reader_report.json",
+        "sha256": "a5e6a2fdd35f73432e9bc279778d447ae4c1e84bda37ce773d309c9c84c1ea3a"
+      },
+      {
+        "file": "production_audio_tone_report.json",
+        "sha256": "09df2fe567f7ceb87cdf0cc4f8c1560dc0ead927723b5ce15154f4196ec85e17"
+      },
+      {
+        "file": "production_audio_sequence_report.json",
+        "sha256": "26baa79e8ba05d54b60eb10785f3381bd1d63b0eb6dca8da6ef1453c5a04070c"
+      },
+      {
+        "file": "production_audio_noise_report.json",
+        "sha256": "130f722f7584496247e9e47623b701138cdc8e66e638123b7f9e2261d8ab524d"
+      },
+      {
+        "file": "production_audio_de_report.json",
+        "sha256": "d90127a60610fdc5ae117e3f634a47e07983f7592e0a7247bb848f70c984e608"
+      },
+      {
+        "file": "production_audio_priority_auto_report.json",
+        "sha256": "baecc9be7264fe54de23e74f861d414404e5be5d325e48a456b248156ff394b4"
+      },
+      {
+        "file": "production_audio_priority_pal_report.json",
+        "sha256": "8d1f459cdfbff994f3c3cf414aeba71162f53ac2108b01d61bbc0dbcc0e6c17d"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "b21470b7119e8b27b7b97b94b7ac294dba055da5dcf8682ee06bfb62abb0f6cd"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "22d45dd495307698358dcdf4a807b54ec9f6c64a6ade31a717d041d90476cf84"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "dae8602080ef7d37b0cdbdfd656babb9b0cfec8ac09ede6d8d475695e58f3ecb"
+      },
+      {
+        "file": "start_menu_audio_report.json",
+        "sha256": "eabdebc36636d3dfe7261fae7ceb8625dab0c6a7eeef9e0b3aa28fecc6ed3945"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "6c97c006cb6fae17a7f7a5738bbd5dc6d796d6aee1db26f491ce36f9ca23fab6"
+      },
+      {
+        "file": "inventory_restore_report.json",
+        "sha256": "29dfbc9790d0a6404d03bdd0c3c492a23066950ac331620d9bd2f361adb56a52"
+      }
+    ]
   }
 ]

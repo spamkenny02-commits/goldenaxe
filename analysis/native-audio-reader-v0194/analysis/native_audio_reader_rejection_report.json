@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "kind": "dispatch",
+      "error": 398,
+      "stream_writes_published": 0,
+      "capture_rollback": true
+    },
+    {
+      "kind": "priority",
+      "error": 513,
+      "stream_writes_published": 0,
+      "capture_rollback": true
+    },
+    {
+      "kind": "later-channel",
+      "error": 1763,
+      "stream_writes_published": 3,
+      "capture_rollback": true
+    }
+  ],
+  "reader_helper_sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+  "limits": [
+    "Host C rejection contracts only; unsupported source paths are not claimed emulated. Streaming keeps earlier successful effects."
+  ]
+}

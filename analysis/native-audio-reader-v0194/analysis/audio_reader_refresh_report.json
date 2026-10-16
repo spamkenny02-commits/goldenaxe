@@ -1,0 +1,42 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "08e451a79a352ba9d12844f06b9efd4f6e8df23b14d5ec64a81653e0fffdd869",
+  "fixture_sha256": "ff7bf2010023ce53fa5544ed3c938b55be0097b7c602ae1fe448e428fca102b9",
+  "cases": 10752,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 5376,
+      "M1_histogram": {
+        "97": 7,
+        "104": 6,
+        "69": 6,
+        "68": 2,
+        "5": 2667,
+        "38": 2688
+      },
+      "raw_sha256": "bf7a822dba6775c483dec2492fa61e79bcb25c85d6474399a823047517faad9f"
+    },
+    {
+      "region": "pal",
+      "cases": 5376,
+      "M1_histogram": {
+        "97": 7,
+        "104": 6,
+        "69": 6,
+        "68": 2,
+        "5": 2667,
+        "38": 2688
+      },
+      "raw_sha256": "1d762847cc2faf0b17a4d3537cb294e7672cc0331f41c2646cb90110d4a8c0f0"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Exact previous gates fixture hash replayed;original8000/bank6 intact. Custom DI caller,DE8A0B;zero sound state apart from gates/context. All prefix/channel M1 submodels composed with audited8000 wrapper instructions. Raw M1,R,cost/all400 bytes,DE/unwind compare.",
+    "All256 pause bytes,three compensation flags,seven phase counters;inactive channels when normal path proceeds. Synthetic boundaries,not natural reachability.",
+    "Active channel/control combinations andunsupported R-based commands/restoration/IRQ fetch composition,load-entry R/native RNG replacement/waveform/hardware/full progression remain open."
+  ]
+}

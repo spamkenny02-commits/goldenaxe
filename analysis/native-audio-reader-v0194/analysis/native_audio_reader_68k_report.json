@@ -1,0 +1,154 @@
+{
+  "cases": 25644,
+  "results": [
+    {
+      "part": 0,
+      "region": "auto",
+      "ROM_sha256": "3412a662f2e9f24efd446dff34bf3652c7c9409a297525b8de372184d51263a3",
+      "frame": 879,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 0,
+      "region": "pal",
+      "ROM_sha256": "3412a662f2e9f24efd446dff34bf3652c7c9409a297525b8de372184d51263a3",
+      "frame": 736,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "auto",
+      "ROM_sha256": "4777defc5a486fe36c3ca75cace225d9457ec98924a8aa0da5c7e5a9a5f2ad2d",
+      "frame": 1283,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "pal",
+      "ROM_sha256": "4777defc5a486fe36c3ca75cace225d9457ec98924a8aa0da5c7e5a9a5f2ad2d",
+      "frame": 1074,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 2,
+      "region": "auto",
+      "ROM_sha256": "6b9e959da8c1fcd2708d4034bbf3bdcbc56caef4d7e5c7032f9e1f23dfc9b7fb",
+      "frame": 1745,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 2,
+      "region": "pal",
+      "ROM_sha256": "6b9e959da8c1fcd2708d4034bbf3bdcbc56caef4d7e5c7032f9e1f23dfc9b7fb",
+      "frame": 1460,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 3,
+      "region": "auto",
+      "ROM_sha256": "db123bcfcbf7c9225bdb72535e06e7a92e55afca2c05f21b2da54525e69af4ec",
+      "frame": 1747,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 3,
+      "region": "pal",
+      "ROM_sha256": "db123bcfcbf7c9225bdb72535e06e7a92e55afca2c05f21b2da54525e69af4ec",
+      "frame": 1462,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 4,
+      "region": "auto",
+      "ROM_sha256": "d92edcada0f65e84ac601288257aebe99df47c1c38e8eb1203b1bcdaf5bc83ef",
+      "frame": 1747,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 4,
+      "region": "pal",
+      "ROM_sha256": "d92edcada0f65e84ac601288257aebe99df47c1c38e8eb1203b1bcdaf5bc83ef",
+      "frame": 1463,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 5,
+      "region": "auto",
+      "ROM_sha256": "56b5793444736baac80f6ba6115e35374d8b1198a5f5107bb9addd21ebf8755c",
+      "frame": 1504,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 5,
+      "region": "pal",
+      "ROM_sha256": "56b5793444736baac80f6ba6115e35374d8b1198a5f5107bb9addd21ebf8755c",
+      "frame": 1259,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 6,
+      "region": "auto",
+      "ROM_sha256": "980d9430d217204ca05ab13b4eba1a3c0e5af734492ef04393720707fe80d187",
+      "frame": 1318,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 6,
+      "region": "pal",
+      "ROM_sha256": "980d9430d217204ca05ab13b4eba1a3c0e5af734492ef04393720707fe80d187",
+      "frame": 1103,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 7,
+      "region": "auto",
+      "ROM_sha256": "111b9e2c190576cd704bb4a83ba6208ff467e8be809b2ae015f4d2552cdbfb2e",
+      "frame": 586,
+      "done": 1,
+      "cases": 1144,
+      "failures": 0
+    },
+    {
+      "part": 7,
+      "region": "pal",
+      "ROM_sha256": "111b9e2c190576cd704bb4a83ba6208ff467e8be809b2ae015f4d2552cdbfb2e",
+      "frame": 491,
+      "done": 1,
+      "cases": 1144,
+      "failures": 0
+    }
+  ],
+  "reader_helper_sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+  "limits": [
+    "Compiled68000, full400/T/M1/DE from hashed source captures and source-verified gates.",
+    "PSG writes/full IRQ clock/waveform/hardware/natural full progression require separate evidence."
+  ]
+}

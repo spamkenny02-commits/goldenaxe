@@ -5,17 +5,27 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0192 — 1024 Kio.**
+**Version courante : v0194 — 1024 Kio.**
 
-[Télécharger la ROM v0192](versions/v0192-a30af8ee/gaw-megadrive-v0192.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0194](versions/v0194-2fceb892/gaw-megadrive-v0194.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `a30af8eeb4748ebffb980c74213df2d87b469e69e947d43f08830593f60d3db4`  
-Checksum Mega Drive : `8882`
+SHA-256 : `2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143`  
+Checksum Mega Drive : `CA2E`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0194 raccorde le lecteur audio complet 8000 au code natif vérifié,
+avec les coûts Z80/M1 conservés à chaque interruption. Les 25 644 vecteurs
+passent en 68000 PAL/NTSC ; 33 788 états de la ROM jouable correspondent
+à la SMS pour les 400 octets du lecteur et ses coûts d'exécution.
+Le compteur de compensation suit désormais le débordement sur huit bits
+du Z80, y compris hors de sa plage habituelle. Les régressions audio,
+menus et inventaire passent. La v0193, défaillante au démarrage, reste
+archivée et identifiée comme telle. L'horloge complète du jeu reste à intégrer.
+Voir les [preuves et limites](analysis/native_audio_reader_milestone.md).
 
 La v0192 raccorde la composition tonale 84C7 au code natif vérifié :
 enchaînement des notes, relâchement, modulation et enveloppes, avec leurs
