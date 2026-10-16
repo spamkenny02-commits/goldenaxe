@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "region": "auto",
+      "frame": 14369,
+      "done": 1,
+      "cases": 59852,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 12023,
+      "done": 1,
+      "cases": 59852,
+      "failures": 0
+    }
+  ],
+  "test_ROM_sha256": "e192ac6af006e47954a714e39252efcf8351bb7283ea95d76f5f9774549a65ce",
+  "helper_sha256": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
+  "limits": [
+    "Actual compiled68000 under GPG; all400 bytes,T/M1,HL/DE/unwind compared directly.",
+    "Three unavailable-memory reads reject without mutation; other source RAM,hardware/full-game timing remain open."
+  ]
+}

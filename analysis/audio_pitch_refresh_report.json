@@ -1,19 +1,19 @@
 {
-  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "md_sha256": "6ebb6a08f01d543131fbf6bdafbbcff5f55726c8342a582247da173726c57b60",
   "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
   "core_sha256": "cd3a2180bc92c78ec26ee465dc9a8676cd7c0a8093c22c2d77bb342acee2750a",
-  "cases": 118832,
+  "cases": 119696,
   "rows": [
     {
       "region": "auto",
-      "cases": 59416,
+      "cases": 59848,
       "caller_unwind_cases": 16,
       "M1_histogram": {
-        "12": 32256,
-        "34": 6048,
-        "45": 7648,
-        "51": 2016,
-        "62": 2520,
+        "12": 32544,
+        "34": 6112,
+        "45": 7680,
+        "51": 2048,
+        "62": 2536,
         "41": 8784,
         "81": 12,
         "60": 96,
@@ -21,19 +21,19 @@
         "8": 8,
         "44": 16
       },
-      "raw_sha256": "fd9e5b746920f3941a3ebe9e2db836cb4338402880ef1ee9e49712a263546f7a",
-      "fixture_sha256": "61869d0046bfe13bc39d91080e62704982c1958bec6be2fe5612332e780550c3"
+      "raw_sha256": "338cb18d0078f47aa2a4fa3930a888f89f65a8dfbbc52498ff044bb965b8bac3",
+      "fixture_sha256": "10618e76d604e433ca6e1065617e3ef9eca499f568209d58a082a288d5434e3e"
     },
     {
       "region": "pal",
-      "cases": 59416,
+      "cases": 59848,
       "caller_unwind_cases": 16,
       "M1_histogram": {
-        "12": 32256,
-        "34": 6048,
-        "45": 7648,
-        "51": 2016,
-        "62": 2520,
+        "12": 32544,
+        "34": 6112,
+        "45": 7680,
+        "51": 2048,
+        "62": 2536,
         "41": 8784,
         "81": 12,
         "60": 96,
@@ -41,8 +41,8 @@
         "8": 8,
         "44": 16
       },
-      "raw_sha256": "d2e843bae668e91413e5af12ee4ed0d868b6ce5f8ed2182cfba8491f4636db95",
-      "fixture_sha256": "61869d0046bfe13bc39d91080e62704982c1958bec6be2fe5612332e780550c3"
+      "raw_sha256": "707fb4eb249423ae4dcb76560011f19a9f3c60b6af9b20917f3d6834241da884",
+      "fixture_sha256": "10618e76d604e433ca6e1065617e3ef9eca499f568209d58a082a288d5434e3e"
     }
   ],
   "synthetic_unwind_modes": {
@@ -60,8 +60,8 @@
   "production_ROM_changed": false,
   "full_game_ported": false,
   "limits": [
-    "Unmodified original82C5/allbank6 andtables. Custom two-level DI caller,IXDE40. Absolute M1,R,cost/all400 state bytes,HL/unwind compared;DE checked for table modes where model exposes it.",
-    "Two high-bit vibrato modes/base/signed delta/delay/rate/phase/step boundaries;all8 pitch tables/all256 indices/two ROM bases/four flags;zero mode. Dimensions sampled,not full Cartesian;some indices/base/counter inputs synthetic.",
+    "Unmodified original82C5/allbank6 andtables. Custom two-level DI caller,IXDE40,entryDE=DF90. Absolute M1,R,cost/all400 state bytes,HL/DE/unwind compared for every case.",
+    "Two high-bit vibrato modes/base/signed delta/delay/rate/phase/step boundaries;all8 pitch tables/all256 indices/two ROM bases/four flags;zero mode and432 mirrored modulation-table cases. Dimensions sampled,not full Cartesian;some indices/base/counter inputs synthetic.",
     "Positive81/82 unwind probes use synthetic modes beyond valid1..8 pointing through existing ROM words to fixed-ROM bytes. They verify source unwind code,not occurrence in natural music. No complete channel/sequence/IRQ fetch composition,full-load R/native RNG replacement,waveform/hardware/full progression proof."
   ]
 }

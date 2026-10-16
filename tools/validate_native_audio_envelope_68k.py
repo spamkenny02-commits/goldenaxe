@@ -17,6 +17,7 @@ def main():
         lines.append('{'+','.join(map(str,values))+',{'+','.join(map(str,r['input']))+'},{'+','.join(map(str,r['expected']))+'},'+str(r['tstates'])+'UL,'+str(r['fetches'])+'UL},')
     lines.append('};');(src/'expected.h').write_text('\n'.join(lines)+'\n')
     (src/'source_audio_envelope.c').write_text('#include "../../../megadrive/src/source_audio_envelope.c"\n')
+    (src/'source_audio_memory.c').write_text('#include "../../../megadrive/src/source_audio_memory.c"\n')
     (src/'main.c').write_text('''#include <genesis.h>
 #include "../../../megadrive/src/source_audio_envelope.h"
 #include "expected.h"

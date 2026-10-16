@@ -1,0 +1,15 @@
+{
+  "cases": 53600,
+  "kinds": {
+    "adsr": 40192,
+    "table": 13400,
+    "rejected": 8
+  },
+  "compared_RAM_bytes": 400,
+  "helper_sha256": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+  "limits": [
+    "Host C vs source-verified854B ADSR/table models; valid fixtures shifted over allseven channel slots.",
+    "Compares all400 bytes,T/M1,A/DE,unwind and explicit PSG decision; invalid read rejects without mutation.",
+    "Standalone component; full native clock and physical waveforms not proven."
+  ]
+}

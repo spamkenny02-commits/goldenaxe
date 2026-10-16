@@ -4,6 +4,8 @@
 #include "source_audio_dispatch.h"
 #include "source_audio_priority.h"
 #include "source_audio_envelope.h"
+#include "source_audio_pitch.h"
+#include "source_audio_memory.h"
 extern const u8 intro_bank6[],sound_low_rom[];
 static u8 sound_ram[0x190];
 static volatile u16 sound_unhandled_command;
@@ -13,9 +15,9 @@ static volatile u16 sound_request;
 static volatile u16 sound_effect_request;
 static u8 sound_read(u16 address)
 {
-    if(address<0x8000) return sound_low_rom[address];
-    if(address>=0xde00 && address<0xdf90) return sound_ram[address-0xde00];
-    return intro_bank6[(address-0x8000)&0x3fff];
+    u8 value;
+    if(source_audio_read(sound_ram,sound_low_rom,0x8000,intro_bank6,address,&value)) return value;
+    sound_unhandled_command=0x400;return 0;
 }
 static u16 sound_word(u16 address) { return sound_read(address)|((u16)sound_read(address+1)<<8); }
 static u16 sound_ch_word(u8 *c,u16 offset) { return c[offset]|((u16)c[offset+1]<<8); }
@@ -76,30 +78,11 @@ static u8 sound_envelope(u8 *c)
 }
 static u16 sound_pitch(u8 *c)
 {
-    u16 base=sound_ch_word(c,11),table,index,guard;
-    u8 mode=c[6],value;
-    if(!mode) return base;
-    if(mode&128)
-    {
-        s16 delta=(s16)sound_ch_word(c,0x12);
-        if(--c[0x14]) return base;
-        c[0x14]++;table=sound_ch_word(c,0x10);
-        if(!--c[0x15]) { c[0x15]=sound_read(table+1);delta+=(s8)c[0x16];sound_ch_set(c,0x12,delta); }
-        base+=delta;
-        if(!--c[0x17]) { c[0x17]=sound_read(table+3);c[0x16]=-c[0x16]; }
-        return base;
-    }
-    table=sound_word(0x8a52+(mode-1)*2);
-    sound_source_de=base;
-    for(guard=0;guard<64;guard++)
-    {
-        index=c[0x15];value=sound_read(table+index);
-        if(value==0x83) { base++;sound_source_de=base;c[0x15]=sound_read(base); }
-        else if(value==0x80) c[0x15]=0;
-        else if(value==0x81 || value==0x82) { c[0]|=32;return table; }
-        else { c[0x15]++;return base+(s8)value; }
-    }
-    sound_unhandled_command=0x101;return base;
+    SourceClockWork work;SourceAudioPitchOutput output;
+    if(!source_audio_pitch(sound_ram,(u16)(c-sound_ram),sound_low_rom,0x8000,
+                           intro_bank6,0x8507,&sound_source_de,&work,&output))
+    {sound_unhandled_command=0x101;return sound_ch_word(c,11);}
+    return output.hl;
 }
 static void sound_noise_note(u8 *c,u8 note)
 {

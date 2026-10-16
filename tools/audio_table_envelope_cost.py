@@ -1,14 +1,10 @@
 """Original854B table envelope,including caller-frame unwind on81/82."""
 from audio_dispatch_cost import POINTER_COST
+from audio_source_memory import read_audio_byte
 
 def table_envelope_cost(rom,state,offset=0x40,de=0x8a0b):
  r=bytearray(state);assert len(r)==400
- def read(address):
-  address&=65535
-  if address<0x8000:return rom[address]
-  if address<0xc000:return rom[0x18000+(address&0x3fff)]
-  if 0xde00<=address<0xdf90:return r[address-0xde00]
-  raise NotImplementedError(f'Uncaptured RAM {address:04X}')
+ def read(address):return read_audio_byte(rom,r,address)
  mode=r[offset+7];cost=19+4
  if not mode:return dict(state=bytes(r),tstates=cost+11,accumulator=0,de=de,unwind=False)
  assert mode<128

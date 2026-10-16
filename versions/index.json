@@ -6125,5 +6125,56 @@
         "sha256": "8022474f6ada1c8a13de8811ebd1d4064f8b9b7d959e46cea4900b9f234e8086"
       }
     ]
+  },
+  {
+    "version": 189,
+    "sha256": "72cdc00261217500cbdbb8a76ed0dedf408e003434e898e13244ce2946ab320a",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T19:15:03.065718+00:00",
+    "rom": "v0189-72cdc002/gaw-megadrive-v0189.bin",
+    "notes": "Hauteurs/modulations82C5 natives et RAM audio partagee avec miroirsDE-FE/DF-FF. 59852 cas natifs,59848 cas source par region ; 116 etats hauteur et60 enveloppe source/MD exacts. Regressions musique,bruitages,DE etmenus valides. ROM1Mio ; horloge/R a raccorder.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "production_audio_pitch_report.json",
+        "sha256": "d1e779b25241b7a89772a547112eff866d95c734cd0e78c55b50f2a0f504b5e4"
+      },
+      {
+        "file": "production_audio_envelope_report.json",
+        "sha256": "2baa5f2b29534df719844a3350ba00ae39ecce9581dce04b9a30166d9e4ca554"
+      },
+      {
+        "file": "production_audio_de_report.json",
+        "sha256": "76385ff59c58b828efb36b9ef4a250ce5fc057163c1346f4b036e8965b292aca"
+      },
+      {
+        "file": "production_audio_priority_auto_report.json",
+        "sha256": "e885bb4a454d2f65c24e6e55fe9a6e54f86b17f61793639807db319d4180ff11"
+      },
+      {
+        "file": "production_audio_priority_pal_report.json",
+        "sha256": "123ad8c3e773c17d923785b9193def325b47dce0dd3a86e7629f8f8582faec2e"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "c91b6d29ccf7886f045fb71951d2b89176a89c1da627620350acc1dea2f33734"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "49743e3c7d3605eda0ec0c3cde848fcf26bbec31b6b7177a62ec4f7814760784"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "442ee2f7e6f0fa1e1f99fe96a4851cf8ec7beebf849090ddc76b0ec8610b39b7"
+      },
+      {
+        "file": "start_menu_audio_report.json",
+        "sha256": "06f55cbd8e3c787a5c3b44d2812f40f3c77bf5bd0befa7ad632b2b7561e14846"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "8a13d6b6556140c0acdb643d1450a507cea382dda0978a11ea23d8d30ba62606"
+      }
+    ]
   }
 ]

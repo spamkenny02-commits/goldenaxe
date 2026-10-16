@@ -5,17 +5,24 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0188 — 1024 Kio.**
+**Version courante : v0189 — 1024 Kio.**
 
-[Télécharger la ROM v0188](versions/v0188-6ebb6a08/gaw-megadrive-v0188.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0189](versions/v0189-72cdc002/gaw-megadrive-v0189.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `6ebb6a08f01d543131fbf6bdafbbcff5f55726c8342a582247da173726c57b60`  
-Checksum Mega Drive : `8DF5`
+SHA-256 : `72cdc00261217500cbdbb8a76ed0dedf408e003434e898e13244ce2946ab320a`  
+Checksum Mega Drive : `5257`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0189 raccorde les hauteurs et modulations audio natives, avec les cycles
+et lectures M1 d'origine. Les 59 852 cas passent sur hôte et 68000 PAL/NTSC.
+Les miroirs de RAM audio sont désormais lus correctement ; 116 cas de
+hauteur et 60 cas d'enveloppe correspondent à la SMS exécutée, en plus des
+régressions audio et menus. La ROM reste à 1 Mio.
+Voir les [preuves et limites](analysis/native_audio_pitch_milestone.md).
 
 La v0188 raccorde les enveloppes ADSR et les 16 tables de volume au lecteur
 natif vérifié. Le registre audio DE est conservé entre les canaux, notamment

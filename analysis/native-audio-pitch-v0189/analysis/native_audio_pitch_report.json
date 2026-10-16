@@ -1,0 +1,12 @@
+{
+  "cases": 59852,
+  "rejected_cases": 3,
+  "caller_unwind_cases": 16,
+  "compared_RAM_bytes": 400,
+  "helper_sha256": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
+  "limits": [
+    "Host native C vs source82C5 state/T/M1/HL/DE/unwind model; seven channel positions.",
+    "Includes mirrored modulation-table RAM, signed/wrap/counter boundaries, four return addresses and synthetic81/82 modes.",
+    "Other source RAM remains uncaptured; no full reader clock or waveform proof."
+  ]
+}

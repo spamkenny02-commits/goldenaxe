@@ -42,7 +42,7 @@ def make_cases():
 def main():
     folder=ROOT/'validation/native-audio-envelope';folder.mkdir(exist_ok=True);sdk=(ROOT.parents[1]/'work/sgdk').resolve()
     env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH']
-    args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-Wall','-Wextra','-Werror','-shared','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src'),str(ROOT/'megadrive/src/source_audio_envelope.c'),'-o',str(folder/'source_audio_envelope.dll')]
+    args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-Wall','-Wextra','-Werror','-shared','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src'),str(ROOT/'megadrive/src/source_audio_envelope.c'),str(ROOT/'megadrive/src/source_audio_memory.c'),'-o',str(folder/'source_audio_envelope.dll')]
     built=subprocess.run(args,env=env,capture_output=True,text=True);(folder/'compile.log').write_text(built.stdout+built.stderr);assert built.returncode==0,built.stderr
     dll=c.CDLL(str(folder/'source_audio_envelope.dll'));function=dll.source_audio_envelope
     function.argtypes=[c.POINTER(c.c_uint8),c.c_uint16,c.POINTER(c.c_uint8),c.c_uint16,c.POINTER(c.c_uint8),c.POINTER(c.c_uint16),c.POINTER(Work),c.POINTER(Output)];function.restype=c.c_uint8

@@ -15,6 +15,10 @@ def main():
         r=bytearray(400);r[5]=128;r[0x40]=128;r[0x41]=0x80;r[0x46]=128;r[0x4a]=2;r[0x4b:0x4d]=bytes([0x20,1]);r[0x54]=2;r[0x65]=transpose
         r[0x70]=128;r[0x71]=0xa0;r[0x77]=9;r[0x7a]=2;r[0x8f]=10
         vectors.append((f'table83-de-{transpose:02x}',r))
+    for transpose,jump in zip([128,129,130,135,140,142],[0,1,2,4,8,0]):
+        r=bytearray(vectors[0][1]);r[0x65]=transpose
+        de=(transpose|0xff00)+1;r[(de&0x1fff)-0x1e00]=jump
+        vectors.append((f'table83-ram-mirror-{transpose:02x}',r))
     for phase,value,step,limit in [(16,1,2,127),(16,255,0,127),(32,250,20,127),(40,127,1,127),(64,254,1,127),(0,255,1,127)]:
         for borrowed in [0,4]:
             r=bytearray(400);r[5]=128;r[0xd0]=128|borrowed;r[0xd1]=0xe0;r[0xd7]=128;r[0xda]=2
@@ -64,7 +68,7 @@ def main():
                 original_sha256=hashlib.sha256(source).hexdigest(),synthetic_state_injection=True,
                 limits=['Single aligned real source/native IRQ; model/all400 bytes/returnedDE compared.',
                         'Table83 after another channel produces ten different low-ROM DE inputs; six ADSR boundaries with/without borrowed noise; two synthetic pitch81/82 unwinds outside eight known pitch tables.',
-                        'Other RAM mirrors/uncaptured memory and waveform/full-game timing remain outside this check.'])
+                        'Also six negative transpositions reading FF81..FF8F audio-RAM mirrors. Other uncaptured RAM and waveform/full-game timing remain outside this check.'])
     (ROOT/'validation/production_audio_envelope_report.json').write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

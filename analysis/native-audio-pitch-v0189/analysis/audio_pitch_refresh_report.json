@@ -1,0 +1,67 @@
+{
+  "md_sha256": "6ebb6a08f01d543131fbf6bdafbbcff5f55726c8342a582247da173726c57b60",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "cd3a2180bc92c78ec26ee465dc9a8676cd7c0a8093c22c2d77bb342acee2750a",
+  "cases": 119696,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 59848,
+      "caller_unwind_cases": 16,
+      "M1_histogram": {
+        "12": 32544,
+        "34": 6112,
+        "45": 7680,
+        "51": 2048,
+        "62": 2536,
+        "41": 8784,
+        "81": 12,
+        "60": 96,
+        "64": 12,
+        "8": 8,
+        "44": 16
+      },
+      "raw_sha256": "338cb18d0078f47aa2a4fa3930a888f89f65a8dfbbc52498ff044bb965b8bac3",
+      "fixture_sha256": "10618e76d604e433ca6e1065617e3ef9eca499f568209d58a082a288d5434e3e"
+    },
+    {
+      "region": "pal",
+      "cases": 59848,
+      "caller_unwind_cases": 16,
+      "M1_histogram": {
+        "12": 32544,
+        "34": 6112,
+        "45": 7680,
+        "51": 2048,
+        "62": 2536,
+        "41": 8784,
+        "81": 12,
+        "60": 96,
+        "64": 12,
+        "8": 8,
+        "44": 16
+      },
+      "raw_sha256": "707fb4eb249423ae4dcb76560011f19a9f3c60b6af9b20917f3d6834241da884",
+      "fixture_sha256": "10618e76d604e433ca6e1065617e3ef9eca499f568209d58a082a288d5434e3e"
+    }
+  ],
+  "synthetic_unwind_modes": {
+    "130": {
+      "mode": 41,
+      "index": 127,
+      "table": 1283
+    },
+    "129": {
+      "mode": 45,
+      "index": 21,
+      "table": 20480
+    }
+  },
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original82C5/allbank6 andtables. Custom two-level DI caller,IXDE40,entryDE=DF90. Absolute M1,R,cost/all400 state bytes,HL/DE/unwind compared for every case.",
+    "Two high-bit vibrato modes/base/signed delta/delay/rate/phase/step boundaries;all8 pitch tables/all256 indices/two ROM bases/four flags;zero mode and432 mirrored modulation-table cases. Dimensions sampled,not full Cartesian;some indices/base/counter inputs synthetic.",
+    "Positive81/82 unwind probes use synthetic modes beyond valid1..8 pointing through existing ROM words to fixed-ROM bytes. They verify source unwind code,not occurrence in natural music. No complete channel/sequence/IRQ fetch composition,full-load R/native RNG replacement,waveform/hardware/full progression proof."
+  ]
+}

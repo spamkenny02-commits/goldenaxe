@@ -1,16 +1,12 @@
 """Original82C5 M1 count for delay/vibrato/table paths andcaller unwinds."""
 from audio_pitch_cost import pitch_cost
 from audio_dispatch_refresh import POINTER_M1
+from audio_source_memory import read_audio_byte
 
-def pitch_refresh(rom,state,offset=0x40,return_address=0x8507):
- output=pitch_cost(rom,state,offset,return_address);r=bytearray(state);mode=r[offset+6];count=7
+def pitch_refresh(rom,state,offset=0x40,return_address=0x8507,de=None):
+ output=pitch_cost(rom,state,offset,return_address,de);r=bytearray(state);mode=r[offset+6];count=7
  def finish():output['m1_fetches']=count;return output
- def read(a):
-  a&=65535
-  if a<0x8000:return rom[a]
-  if a<0xc000:return rom[0x18000+(a&0x3fff)]
-  if 0xde00<=a<0xdf90:return r[a-0xde00]
-  raise NotImplementedError(f'Uncaptured pitch RAM {a:04X}')
+ def read(a):return read_audio_byte(rom,r,a)
  if not mode:count+=1;return finish()
  count+=2
  if mode&128:

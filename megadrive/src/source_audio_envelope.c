@@ -1,14 +1,6 @@
 #include "source_audio_envelope.h"
+#include "source_audio_memory.h"
 #define ADD(t,m) do {work->tstates+=(t);work->fetches+=(m);} while(0)
-
-static u8 read_byte(const u8 *state,const u8 *low,u16 low_bytes,const u8 *bank,u16 address,u8 *value)
-{
-    if(address<low_bytes) *value=low[address];
-    else if(address>=0x8000 && address<0xc000) *value=bank[address-0x8000];
-    else if(address>=0xde00 && address<0xdf90) *value=state[address-0xde00];
-    else return 0;
-    return 1;
-}
 
 static void mute(u8 *channel,SourceClockWork *work,SourceAudioEnvelopeOutput *output)
 {
@@ -97,12 +89,12 @@ u8 source_audio_envelope(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
     }
     old_flags=c[0];old_index=c[0x1f];ADD(125,15);
     pointer=0x897f+(mode-1)*2;
-    if(!read_byte(state,low,low_bytes,bank,pointer,&lo) ||
-       !read_byte(state,low,low_bytes,bank,pointer+1,&hi)) goto reject;
+    if(!source_audio_read(state,low,low_bytes,bank,pointer,&lo) ||
+       !source_audio_read(state,low,low_bytes,bank,pointer+1,&hi)) goto reject;
     table=lo|((u16)hi<<8);
     for(guard=0;guard<256;guard++)
     {
-        if(!read_byte(state,low,low_bytes,bank,(u16)(table+c[0x1f]),&byte)) goto reject;
+        if(!source_audio_read(state,low,low_bytes,bank,(u16)(table+c[0x1f]),&byte)) goto reject;
         ADD(100,11);output->accumulator=byte;
         if(byte<128) {c[0x1f]++;ADD(45,4);return 1;}
         ADD(14,2);
@@ -116,7 +108,7 @@ u8 source_audio_envelope(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
         else
         {
             ADD(32,4);(*de)++;
-            if(!read_byte(state,low,low_bytes,bank,*de,&c[0x1f])) goto reject;
+            if(!source_audio_read(state,low,low_bytes,bank,*de,&c[0x1f])) goto reject;
         }
         ADD(19,2);
     }

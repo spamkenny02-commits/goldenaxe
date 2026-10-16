@@ -2,6 +2,7 @@
 from audio_adsr_cost import adsr_cost
 from audio_table_envelope_cost import table_envelope_cost
 from audio_dispatch_refresh import POINTER_M1
+from audio_source_memory import read_audio_byte
 
 def adsr_refresh(state,offset=0x40,de=0):
  output=adsr_cost(state,offset,de);mode=state[offset+7];count=3
@@ -44,12 +45,7 @@ def adsr_refresh(state,offset=0x40,de=0):
 def table_envelope_refresh(rom,state,offset=0x40,de=0x8a0b):
  output=table_envelope_cost(rom,state,offset,de);r=bytearray(state);mode=r[offset+7];count=3
  def finish():output['m1_fetches']=count;return output
- def read(address):
-  address&=65535
-  if address<0x8000:return rom[address]
-  if address<0xc000:return rom[0x18000+(address&0x3fff)]
-  if 0xde00<=address<0xdf90:return r[address-0xde00]
-  raise NotImplementedError(f'Uncaptured envelope RAM {address:04X}')
+ def read(address):return read_audio_byte(rom,r,address)
  if not mode:count+=1;return finish()
  assert mode<128;count+=5+POINTER_M1+1;pointer=0x897f+(mode-1)*2;table=read(pointer)|(read(pointer+1)<<8)
  for guard in range(256):
