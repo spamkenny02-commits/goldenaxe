@@ -104,7 +104,10 @@ isolés, sur leurs neuf étapes. Les files graphiques, motifs, HUD et lecteur
 audio sont composés. Le premier trajet hors interruptions, du début du
 chargement à la fin des motifs (16D0–1706), prédit maintenant R sur les
 24 scénarios, avec 122 703 lectures d’opcodes et les interruptions audio
-calculées. La suite du chargement doit encore propager R.
+calculées. Ce calcul s’étend désormais jusqu’au retour de la routine
+graphique complète (24B9) : six points de contrôle passent sur chacun
+des 24 scénarios, soit 137 614 lectures hors interruptions, terrain et
+copie SRAM compris. Carte, HUD, acteurs et historique restent à traiter.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -202,3 +205,5 @@ n’y a été envoyé depuis ce projet.
 - [Lectures d’opcodes des interruptions vidéo complètes](analysis/full_irq_refresh_milestone.md).
 
 - [Registre R pendant le chargement des motifs](analysis/graphics_prefix_refresh_milestone.md).
+
+- [Registre R sur la routine graphique complète](analysis/graphics_load_refresh_milestone.md).

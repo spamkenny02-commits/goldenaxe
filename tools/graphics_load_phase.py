@@ -30,11 +30,13 @@ def plane_decode(cpu,source,destination,planes):
  assert cpu.foreground_tstates-before==expected['tstates'] and source==expected['source_end']
  return source
 
-def predict_graphics_load(rom,phase,ram,sound):
- prefix=predict_graphics_prefix(rom,phase,ram,sound)
- cpu=ForegroundPhase(rom,prefix['phase'],prefix['ram'],prefix['sound']);points={0x1706:prefix}
+def predict_graphics_load(rom,phase,ram,sound,cpu_factory=ForegroundPhase,prefix_model=predict_graphics_prefix):
+ prefix=prefix_model(rom,phase,ram,sound)
+ cpu=cpu_factory(rom,prefix['phase'],prefix['ram'],prefix['sound']);points={0x1706:prefix}
  def checkpoint(pc):
   cpu.checkpoint();r=cpu.result();r['wall_master_cycles']+=prefix['wall_master_cycles'];r['foreground_tstates']+=prefix['foreground_tstates'];r['IRQ_tstates']+=prefix['IRQ_tstates']
+  for k in ['foreground_M1','IRQ_M1']:
+   if k in r:r[k]+=prefix[k]
   r['events']=prefix['events']+[dict(e,entry_offset_master=e['entry_offset_master']+prefix['wall_master_cycles']) for e in r['events']];points[pc]=r
  execute(cpu,[10,7,17]);plane_decode(cpu,prefix['source_end'],0xc900,2);checkpoint(0x170e)
  execute(cpu,[10,10,10]);ldir(cpu,8);execute(cpu,[10,7]);ldir(cpu,8);checkpoint(0x1720)
@@ -45,7 +47,7 @@ def predict_graphics_load(rom,phase,ram,sound):
  table=int.from_bytes(rom[0x8259:0x825b],'little');n=0
  while rom[table+n]<128:
   execute(cpu,[7,6,4,10,11,11,4,7,11,11,11,10,11,10]);ldir(cpu,8);execute(cpu,[10,10,4,12]);n+=1
- execute(cpu,[7,6,4,10,10,8,8])
+ execute(cpu,[7,6,4,10,10]);cpu.execute(8,'M1_2');cpu.execute(8,'M1_2') #Two SLA C at 81EC/81EE.
  for _ in range(n*4):execute(cpu,[4,5,7,7,7,7,6,6,6,12])
  execute(cpu,[4,11]);checkpoint(0x1733)
  execute(cpu,[13,4,10]+lookup+[7,13,10,7,17])
