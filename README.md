@@ -112,9 +112,10 @@ prioritaires passent aussi 81 480 cas, avec les restitutions de canaux
 prises en charge. Les enveloppes ADSR et sur tables passent maintenant
 107 184 cas, avec contrôle de l’accumulateur, de DE et du dépilage des appels.
 Les hauteurs et le vibrato passent aussi 118 832 cas, dont 32 dépilages
-d’appel exercés avec des contextes synthétiques. Les canaux complets,
-les commandes de séquence et le code qui encadre les interruptions
-restent à couvrir pour ce comptage.
+d’appel exercés avec des contextes synthétiques. Les notes et commandes
+de séquence prises en charge passent 167 552 cas, dont 816 dépilages.
+Les commandes utilisant R, certaines restitutions, les canaux complets
+et le code qui encadre les interruptions restent à couvrir pour ce comptage.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -150,6 +151,7 @@ et la vérification sur matériel Mega Drive.
 - [Lectures d’opcodes du dispatch et des effets prioritaires](analysis/audio_control_refresh_milestone.md).
 - [Lectures d’opcodes des enveloppes audio](analysis/audio_envelope_refresh_milestone.md).
 - [Lectures d’opcodes des hauteurs et du vibrato](analysis/audio_pitch_refresh_milestone.md).
+- [Lectures d’opcodes des notes et commandes de séquence](analysis/audio_note_sequence_refresh_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

@@ -1,0 +1,52 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "08e451a79a352ba9d12844f06b9efd4f6e8df23b14d5ec64a81653e0fffdd869",
+  "fixture_sha256": "ce7c802ecf6c3940a76b62dc20a4a6ebdf3dccdcb512b03dbaabac2eb069f97b",
+  "reference_report": "audio_note_ownership_cost_report.json",
+  "kind": "ownership",
+  "cases": 3840,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 1920,
+      "caller_unwind_cases": 216,
+      "M1_histogram": {
+        "433": 600,
+        "429": 400,
+        "421": 120,
+        "417": 80,
+        "440": 180,
+        "52": 216,
+        "432": 240,
+        "428": 36,
+        "420": 48
+      },
+      "raw_sha256": "5ab4c33cb613d2815da1888dd23e110ebda1ae0824501ed6ff4136e1b26a1f42"
+    },
+    {
+      "region": "pal",
+      "cases": 1920,
+      "caller_unwind_cases": 216,
+      "M1_histogram": {
+        "433": 600,
+        "429": 400,
+        "421": 120,
+        "417": 80,
+        "440": 180,
+        "52": 216,
+        "432": 240,
+        "428": 36,
+        "420": 48
+      },
+      "raw_sha256": "2303fcef1c05df2b73aeeb651a38fd4177da5f710126b28b14729fb2821525a2"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Exact retained fixture ROM hash equals prior validated cost report;original bank6 helpers/tables intact. Custom DI caller/synthetic fixed-ROM streams,IXDE40. Absolute M1,R,cost/all400 bytes,DE/unwind compare against original execution.",
+    "Generated semantic model adds explicit M1 arithmetic to audited8357 cost plans;duration multiplication uses4 or6+2*((scale-1)&255) fetches. No runtime ROM instruction interpretation. Notes/raw/rest/tie/loops/calls/returns,20 deterministic command families,F1/F2 inactive restoration andF3 ownership covered in separate suites.",
+    "R-dependent command families andF1/F2 restoration8211 nonzero remain unsupported. Full channels/IRQ fetch composition,load-entry R/native RNG replacement,waveform/hardware/full progression remain open."
+  ]
+}

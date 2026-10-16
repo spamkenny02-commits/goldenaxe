@@ -1,0 +1,41 @@
+"""Archive original8357 semantic M1/R/state/timing/DE/unwind checks."""
+import ast,hashlib,json
+from actor_reference import ROOT
+
+def main():
+ folder=ROOT/'analysis/audio-note-sequence-refresh-research-v0183';items=[]
+ def preserve(path,name):
+  data=path.read_bytes();target=folder/name;target.parent.mkdir(parents=True,exist_ok=True)
+  if target.exists():assert target.read_bytes()==data,('immutable evidence differs',name)
+  else:
+   with target.open('xb') as output:output.write(data)
+  items.append(dict(path=str(name).replace('\\','/'),sha256=hashlib.sha256(data).hexdigest()))
+ for p in (ROOT/'megadrive/src').iterdir():
+  if p.is_file():assert p.read_bytes()==(ROOT/'analysis/audio-noise-note-v0183/source-v0183'/p.name).read_bytes(),('production changed',p.name)
+ pending=['generate_note_sequence_refresh','audio_note_sequence_refresh','audio_note_sequence_cost','validate_audio_note_sequence_refresh','build_audio_envelope_refresh_core','validate_audio_note_sequence_cost','validate_audio_note_commands_cost','validate_audio_note_termination_cost','validate_audio_note_ownership_cost','archive_audio_note_sequence_refresh_research'];seen=set()
+ while pending:
+  name=pending.pop();path=ROOT/'tools'/f'{name}.py'
+  if name in seen or not path.exists():continue
+  seen.add(name);preserve(path,'tools/'+path.name)
+  for node in ast.walk(ast.parse(path.read_text())):
+   if isinstance(node,ast.ImportFrom) and node.module:pending.append(node.module.split('.')[0])
+   elif isinstance(node,ast.Import):pending.extend(alias.name.split('.')[0] for alias in node.names)
+ preserve(ROOT/'analysis/audio-envelope-refresh-v0183/z80-envelope-refresh.txt','z80-envelope-refresh.txt');preserve(ROOT/'analysis/bank_06.asm','reference/bank_06.asm')
+ digest=hashlib.sha256((ROOT/'gaw-megadrive.bin').read_bytes()).hexdigest();assert digest=='ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876'
+ for kind,count in [('notes',103424),('commands',59904),('termination',384),('ownership',3840)]:
+  base=ROOT/'validation/audio-note-sequence-refresh'/kind;preserve(base/'source.sms',str((base/'source.sms').relative_to(ROOT)))
+  for region in ['auto','pal']:
+   for p in [base/f'{region}-results.bin',base/region/'capture.json']:preserve(p,str(p.relative_to(ROOT)))
+  name=f'audio_note_{kind}_refresh_report.json';report=json.loads((ROOT/'analysis'/name).read_text());assert report['cases']==count and report['md_sha256']==digest
+  preserve(ROOT/'analysis'/name,name);preserve(ROOT/'analysis'/report['reference_report'],'reference/'+report['reference_report'])
+  preserve(ROOT/'validation'/f'audio-note-{kind}-refresh.log',f'logs/audio-note-{kind}-refresh.log')
+ preserve(ROOT/'analysis/audio_note_sequence_refresh_milestone.md','audio_note_sequence_refresh_milestone.md')
+ preserve(ROOT/'validation/generate-note-sequence-refresh.log','logs/generate-note-sequence-refresh.log')
+ preserve(ROOT.parents[1]/'work/genesis-plus-gx/genesis_plus_gx_enveloperefresh_libretro.dll','genesis_plus_gx_enveloperefresh_libretro.dll')
+ data=(json.dumps(dict(md_sha256=digest,source_sha256=hashlib.sha256((ROOT/'input/original.sms').read_bytes()).hexdigest(),files=items),indent=2)+'\n').encode();target=folder/'manifest.json'
+ if target.exists():assert target.read_bytes()==data
+ else:
+  with target.open('xb') as output:output.write(data)
+ for item in items:assert hashlib.sha256((folder/item['path']).read_bytes()).hexdigest()==item['sha256']
+ print('Audio note/sequence M1/R evidence archived and verified:',len(items),'files')
+if __name__=='__main__':main()
