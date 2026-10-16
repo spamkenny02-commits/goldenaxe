@@ -110,7 +110,10 @@ des 24 scénarios, soit 137 614 lectures hors interruptions, terrain et
 copie SRAM compris. Le calcul atteint maintenant aussi le retour du
 chargement de carte (24BC), avec neuf points par scénario : correctifs
 persistants et file de tuiles sont inclus. HUD, attentes VBlank, acteurs
-et historique restent à traiter.
+et historique restent à traiter. Les attentes VBlank calculent désormais
+aussi R et les lectures des interruptions : 13 725 appels en jeu et
+6 156 cas synthétiques correspondent. Le raccordement au HUD depuis
+l’entrée du chargement reste à faire avant les acteurs et l’historique.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -212,3 +215,5 @@ n’y a été envoyé depuis ce projet.
 - [Registre R sur la routine graphique complète](analysis/graphics_load_refresh_milestone.md).
 
 - [Registre R jusqu’au chargement de la carte](analysis/world_map_refresh_milestone.md).
+
+- [Registre R pendant les attentes VBlank](analysis/wait_refresh_milestone.md).

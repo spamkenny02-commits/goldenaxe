@@ -1,0 +1,27 @@
+{
+  "cases": 6156,
+  "rows": [
+    {
+      "variant": "wait-raster-unit",
+      "region": "auto",
+      "cases": 2304,
+      "M1_sha256": "cec9e66897261a9db8b0b169fec94478e4bb17f1a154613abb6c11ef8fd2a167"
+    },
+    {
+      "variant": "wait-raster-unit",
+      "region": "pal",
+      "cases": 2304,
+      "M1_sha256": "b54f4322fcd8b3cd7bfe45e9e45bacb6395e9a2fc8b9904d4c7953df43eff5fb"
+    },
+    {
+      "variant": "wait-raster-unit-pal",
+      "region": "pal",
+      "cases": 1548,
+      "M1_sha256": "98ca0bb51fbaa8aa9a1f03acf36b610b1de4274819482570cc4e15065da2edf6"
+    }
+  ],
+  "production_ROM_changed": false,
+  "limits": [
+    "Reused fixtures include DI,EI+NOP andEI fallthrough,latched IRQ,skip/compensation andtimer0/1/255. Hardware/other modes/full game not proved."
+  ]
+}
