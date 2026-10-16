@@ -120,8 +120,11 @@ identiques. Le canal de bruit passe aussi 39 360 cas isolés et 1 102 appels
 en jeu. Le lecteur complet compose maintenant ces comptes : 10 752 cas
 de pause/compensation et 14 424 appels sur les 24 parcours passent, avec
 les anciennes captures inchangées. Les commandes utilisant R, certaines
-restitutions, le code autour des interruptions et les instructions du
-chargement restent à couvrir pour calculer R depuis l’entrée.
+restitutions et les instructions du chargement restent à couvrir pour
+calculer R depuis l’entrée. Le code des interruptions audio seules passe
+15 360 cas isolés et 675 interruptions en jeu ; le vecteur et le lecteur
+sont aussi vérifiés sur les 14 424 appels des parcours. Le corps des
+interruptions vidéo complètes reste à composer pour ce comptage.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -161,6 +164,7 @@ et la vérification sur matériel Mega Drive.
 - [Composition des lectures d’opcodes des canaux de tonalité](analysis/audio_tone_channel_refresh_milestone.md).
 - [Composition des lectures d’opcodes du canal de bruit](analysis/audio_noise_channel_refresh_milestone.md).
 - [Composition des lectures d’opcodes du lecteur audio complet](analysis/audio_reader_refresh_milestone.md).
+- [Lectures d’opcodes du vecteur et des interruptions audio seules](analysis/audio_irq_refresh_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

@@ -26,7 +26,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      for f,k,v in [(3100,'hero_gold',initial_gold),(3120,'room_id',town),(3120,'world_graphics_class',0),(3120,'hero_y',door['y']<<8),(3120,'hero_x',(door['x']-1)<<8),(3120,'hero_dy',0),(3120,'hero_dx',256),(3120,'hero_counter',1),(3120,'hero_state',1),(3120,'hero_flags',3),(3120,'hero_direction',0),(3400,'hero_y',y<<8),(3400,'hero_x',x<<8),(3400,'hero_dy',0),(3400,'hero_dx',0),(3400,'hero_state',1),(3400,'hero_flags',3),(3400,'hero_counter',0),(3400,'hero_hurt',0),(3400,'hero_direction',0)]:add(f,k,v)
     if enemy_mask is not None:writes.append((3100,0x200+target if tag=='sms' else sy['game_save_state']+0x150+target,bytes([enemy_mask])))
     timing=[];previous_event=[0];core=ROOT.parents[1]/'work/genesis-plus-gx'/core_name;dll=c.CDLL(str(core));dll.gaw_timing_reset();dll.gaw_timing_count.restype=c.c_uint;dll.gaw_timing_events.restype=c.POINTER(c.c_uint64)
-    profile={};rows={};tiles={};arrival=[None];changes=[];last_gold=[initial_gold];hud=[None];samples={};confirm=[None];previous_hero=[0];audio_events=[];previous_audio=[0]
+    profile={};rows={};tiles={};arrival=[None];changes=[];last_gold=[initial_gold];hud=[None];samples={};confirm=[None];previous_hero=[0];audio_events=[];audio_m1=bytearray();previous_audio=[0]
+    if hasattr(dll,'gaw_audio_irq_m1_events'):dll.gaw_audio_irq_m1_events.restype=c.POINTER(c.c_uint8)
     live_prefix_records=bytearray();previous_prefix=[0]
     live_envelope_records=bytearray();live_envelope_m1=bytearray();previous_envelope=[0]
     if hasattr(dll,'gaw_live_envelope_m1_events'):dll.gaw_live_envelope_m1_events.restype=c.POINTER(c.c_uint8)
@@ -103,6 +104,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
        previous_prefix[0]=prefix_count
       if hasattr(dll,'gaw_audio_irq_count'):
        count_audio=dll.gaw_audio_irq_count();raw_audio=dll.gaw_audio_irq_events()
+       if f>=4200 and count_audio>previous_audio[0] and hasattr(dll,'gaw_audio_irq_m1_events'):
+        base=c.addressof(dll.gaw_audio_irq_m1_events().contents);audio_m1.extend(c.string_at(base+previous_audio[0]*40,(count_audio-previous_audio[0])*40))
        for i in range(previous_audio[0],count_audio):
         if f>=4200:audio_events.append([f]+[raw_audio[i*14+k] for k in range(14)])
        previous_audio[0]=count_audio
@@ -152,6 +155,7 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     if tag=='sms':
      (folder/f'{region}-cycle-events.json').write_text(json.dumps(timing)+'\n')
      if hasattr(dll,'gaw_audio_irq_count'):(folder/f'{region}-audio-irq-events.json').write_text(json.dumps(audio_events)+'\n')
+     if hasattr(dll,'gaw_audio_irq_m1_events'):(folder/f'{region}-audio-irq-m1-records.bin').write_bytes(audio_m1)
      if hasattr(dll,'gaw_live_prefix_samples'):(folder/f'{region}-live-prefix-records.bin').write_bytes(live_prefix_records)
      if hasattr(dll,'gaw_irq_phase_events'):(folder/f'{region}-irq-raster-records.bin').write_bytes(irq_phases)
      if hasattr(dll,'gaw_full_irq_samples'):(folder/f'{region}-full-irq-records.bin').write_bytes(full_records)
