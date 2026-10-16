@@ -1,0 +1,1054 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/archive_world_map_refresh_research.py",
+      "sha256": "7bd17a422bc09df1ea4ab35c44542ca7d5b58b604e08bddd25f3d9556d5376ec"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "a99ee1aa1a70a7c241572de680236a7270fc076e62506dcec619a1b85235097b"
+    },
+    {
+      "path": "tools/validate_key_door_gameplay.py",
+      "sha256": "edaff2a53f041a71d7f231051cabd65dbaa5ae965b281ea6f0d201a878d80d0b"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_actor_tick.py",
+      "sha256": "ff145d9122365949160fb6878987689afd7e9f8d8bc047c0d597067908d94289"
+    },
+    {
+      "path": "tools/actor_tick_reference.py",
+      "sha256": "a5cd64adc2f20330dd20eea3873628195eb3c17c952a66bada4b4ce90820ea76"
+    },
+    {
+      "path": "tools/extract_world.py",
+      "sha256": "8575d37d77453328ed48d161ff4ab730ea03f8ffcd8ddd5d8d6956a737baa607"
+    },
+    {
+      "path": "tools/validate_world_map_refresh.py",
+      "sha256": "d850c088b916f78bf7ab2fa70ad23d1a185811b8c27c862d8c6e9758969719e5"
+    },
+    {
+      "path": "tools/validate_reveal_phase_prediction.py",
+      "sha256": "9af2331d2d2ddbd3669f1fa5391cf31ea8bd58bb4b3f745af44710fa3ceeeae7"
+    },
+    {
+      "path": "tools/reveal_phase_prediction.py",
+      "sha256": "2684d51012fd820f8accea443c237d695a75fb6bd5b16e90b3803e957409a1fe"
+    },
+    {
+      "path": "tools/wait_raster_prediction.py",
+      "sha256": "21c7d7a7883673048cabc91e27b3299b2a907348c4a6686d624750c0dfc3d249"
+    },
+    {
+      "path": "tools/irq_raster_phase.py",
+      "sha256": "66609173a811ffbeb148d4ebe9d061c2a8e9d0e2caf655b9c4b6fa0c3e0e5f3b"
+    },
+    {
+      "path": "tools/full_irq_cost.py",
+      "sha256": "aa376d2ec9e2c9ee88229cb21fc5fb0120532a62e5d9cff38c91c67049d968a0"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_cost.py",
+      "sha256": "16ea74da99aff9303ce66b9aa2c072e63fbaf093d449891074f5972055470575"
+    },
+    {
+      "path": "tools/audio_reader_cost.py",
+      "sha256": "3593aa2a3c7f8ed2cecae64f716e4daa634b66fc5e171b60ee908dbc3726ba28"
+    },
+    {
+      "path": "tools/audio_noise_channel_cost.py",
+      "sha256": "0f5c3aad31c5cf57a8f1de409d6adaed5d1d5ff53d2d0da30d2a85ea13fa644a"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_cost.py",
+      "sha256": "a234f114d778c594e9129d3dae283498a3f62f473835fd0ea908dee39e32fd42"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/audio_note_sequence_cost.py",
+      "sha256": "9d221240da595448c0e70d23f0f44475ccf23fdbecc93f98761cc880f8e482f8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/foreground_phase.py",
+      "sha256": "687d30447dfd7dbab172467c739715fd1c7e7928a793b5c44e7e081c480e7263"
+    },
+    {
+      "path": "tools/world_map_refresh.py",
+      "sha256": "7a97ddec73422740f04f420390c93627cf4247f1dfb90a55f84519768db23d29"
+    },
+    {
+      "path": "tools/world_map_phase.py",
+      "sha256": "2d41643471d1f589376005c61eb166254df5586bfd82f5867136e35c371b6bce"
+    },
+    {
+      "path": "tools/world_map_loading_cost.py",
+      "sha256": "bb460ce9b38a1af240d8b4d11ef547920201df51ac95298f8483c0a01cf511cc"
+    },
+    {
+      "path": "tools/ram_plane_loading_cost.py",
+      "sha256": "06587f301249f5973af49a7ab6e98e4ba20ac344c8b8ba066a31da0c388bd08a"
+    },
+    {
+      "path": "tools/graphics_load_phase.py",
+      "sha256": "0d1ab45a70d4180ae49b88677aaa6c6a6b1c14a1a1d2f9eb01700ee2358ae58f"
+    },
+    {
+      "path": "tools/class0_graphics_loading_cost.py",
+      "sha256": "c809dd2bd839819c036bd23fe064a08b3c82580b7a2ca72b5d64feba35c39549"
+    },
+    {
+      "path": "tools/graphics_prefix_phase.py",
+      "sha256": "a120c1901c2e68a4a30039b84f98675f5774a7c2e597d2ed5bfda4d5ae7dae55"
+    },
+    {
+      "path": "tools/graphics_load_refresh.py",
+      "sha256": "c69764c72756ed74151675cebba57ce0f6e4b23dac67555ca0d3568ed3f864aa"
+    },
+    {
+      "path": "tools/graphics_prefix_refresh.py",
+      "sha256": "4ad12930f6c1e506ba3ea9d21e7dc432eb2b72c7a317da8b7a34cda4314fa85d"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_refresh.py",
+      "sha256": "77297690be7d2e9ca2f77cf9afd6846ef2ca26a4cfec44c6e3fb2f2a6e6356a6"
+    },
+    {
+      "path": "tools/audio_reader_refresh.py",
+      "sha256": "ff49979d10a86cd94c37b9a1439917db88a7e90e1bd514911d4321809e66af1b"
+    },
+    {
+      "path": "tools/audio_noise_channel_refresh.py",
+      "sha256": "6bc5f50b60af38b77ee3804d11d3f680fd09e5c5d5ea7c9723618747a8caf1fd"
+    },
+    {
+      "path": "tools/audio_note_sequence_refresh.py",
+      "sha256": "49c42ba46c06d248e75c54da2de41669eabcd829c078a672d8dd9bfcf1105c15"
+    },
+    {
+      "path": "tools/audio_envelope_refresh.py",
+      "sha256": "c1f08558f909187c5ce6dce91ba55aaa36ac35627e1785670de95767c5a33568"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_noise_note_refresh.py",
+      "sha256": "899964546d7d9f0c36f78b0ef67c5c59009c5d7a300e772101617b2b198086d2"
+    },
+    {
+      "path": "tools/audio_tone_channel_refresh.py",
+      "sha256": "b10d1e8a33cb764a1913f5d5f0e2d3891e639fe0ba917a3036171fa8df4bcfe7"
+    },
+    {
+      "path": "tools/audio_pitch_refresh.py",
+      "sha256": "231e6efcb8a9c4c29b3b4a2f4e7b5fc4b8a1fac24019276be78c85ffd7a54dd9"
+    },
+    {
+      "path": "tools/audio_priority_effect_refresh.py",
+      "sha256": "c4f696eb775fe4e3b9458039d9b8dec7e87984e92a59a547b23bfabab07bd2d8"
+    },
+    {
+      "path": "tools/build_world_map_refresh_core.py",
+      "sha256": "f11c936687b2e6f828197d6a8678fb0b30761819e2de311354b8068f68cac6b7"
+    },
+    {
+      "path": "z80-world-map-refresh.txt",
+      "sha256": "e546a00a64049ecd8b851d8d207cbebc0ee11a10f556e074427c1d479a10bb33"
+    },
+    {
+      "path": "emulator-source/system.c",
+      "sha256": "9c0f6a042a1f5abce540d3aa69d4fcfa3fae2c66ca7d667e6f2a81a7f8af0d79"
+    },
+    {
+      "path": "emulator-source/vdp_ctrl.c",
+      "sha256": "34aa4da65cfadf9da528dd387929c4ad5d52ec9bb3d83e379f9c2070ce33542a"
+    },
+    {
+      "path": "reference/bank_00.asm",
+      "sha256": "7fb3b3a94556558cd5df98d6d1d207a0a47c0861ba13856036fb91fafd53d2ee"
+    },
+    {
+      "path": "reference/bank_02.asm",
+      "sha256": "8aa867ce1d0125555374f71c27b1cd492c517eabfaaa06aea27556289044651a"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/auto-audio-irq-events.json",
+      "sha256": "91c2c27780ef6c0502b9f9b529452283566cb8a8aa46dcee813daf533c4cdbb1"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/auto-foreground-m1-records.bin",
+      "sha256": "7d227f76aa3bc8d34f036b4fd5cc5966e223c1483717f9aaea2df20e38b1f6ce"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/auto-foreground-phase-records.bin",
+      "sha256": "c581050f85c44031db8e46680c65a31e81f23f78dccfa9db7e4294e9fde5ff81"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/captures-auto-sms/capture.json",
+      "sha256": "db3ef0123a5dbfa5bc817358374b2cc0f36bd6fdcc709ca2414ba244e4773514"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/captures-pal-sms/capture.json",
+      "sha256": "b009103076980939cf7f467ae6aed58cc990ec5b570e0bb79b3c07baafe6dc59"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/pal-audio-irq-events.json",
+      "sha256": "9cc24202d65da7d16b3aff030eef5257a039f9baaf210fef80af63e2f9890e4c"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/pal-foreground-m1-records.bin",
+      "sha256": "7b64875f29b20816624e80b54016bc5ff5cb5dd79a3b63148934fdff821660d2"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-00/pal-foreground-phase-records.bin",
+      "sha256": "6fee1219d0ad32f81503110490eb2a0d68a5a6eb207b746585fdd4abfacac7c5"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/auto-audio-irq-events.json",
+      "sha256": "e1f1f72f29b6e7560a261b77934d18bdeb4af3851ccb344080f239777c7e5e4f"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/auto-foreground-m1-records.bin",
+      "sha256": "ed13cc0a10b4ec6254fc3ce428cd3d36071305c65432f15af96268568aa0c354"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/auto-foreground-phase-records.bin",
+      "sha256": "45717bbfaa098e1996bab61eebedcca033a327447b108c25388da986d0cb06c4"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/captures-auto-sms/capture.json",
+      "sha256": "db3ef0123a5dbfa5bc817358374b2cc0f36bd6fdcc709ca2414ba244e4773514"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/captures-pal-sms/capture.json",
+      "sha256": "b009103076980939cf7f467ae6aed58cc990ec5b570e0bb79b3c07baafe6dc59"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/pal-audio-irq-events.json",
+      "sha256": "229576c976aa5423b60def7a6bc6f92e55caf5fb16c5feec6a3652fc518ab550"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/pal-foreground-m1-records.bin",
+      "sha256": "3b67374df2208d7f3c0ae27ac34b7f9e76a1b8bf035ebadfdbbbce18bc223ac1"
+    },
+    {
+      "path": "validation/world-map-refresh/1a-ff/pal-foreground-phase-records.bin",
+      "sha256": "f77a256dc5a0c6fd87211c57613b0f78165eec5f5470adebfdb61f8483003cb7"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/auto-audio-irq-events.json",
+      "sha256": "0e9531b3ec5b950e20c4a88a14af1f70c8b14a1ea6a5723804db7a86801d2388"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/auto-foreground-m1-records.bin",
+      "sha256": "239c04f55a8edb7f44e654ebda67697ebe9889d4d3fd7c788f0fe41e2ffdffd1"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/auto-foreground-phase-records.bin",
+      "sha256": "e0ea0398bbed8bdf8e5b6fb1321c187e3ab38872e8fac61b1101b4ff0ca709cc"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/captures-auto-sms/capture.json",
+      "sha256": "85d8bce89c948b766aad4b8ba0e59cb97051230886c7378417063e8ca6c30325"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/captures-pal-sms/capture.json",
+      "sha256": "e7d26f53717acfa642456fa628c67d82e387d6ee990b2cf12a65dfc4c96fd0c4"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/pal-audio-irq-events.json",
+      "sha256": "0becb1a99763e4ab9854634663f14bccc7cfde442977e8e455594c2d351ec457"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/pal-foreground-m1-records.bin",
+      "sha256": "cdd1f1b595e8b4312e3abc93f8262cba4d2718bb596d379ae0c66c82c6ba8b03"
+    },
+    {
+      "path": "validation/world-map-refresh/36-00/pal-foreground-phase-records.bin",
+      "sha256": "1bd856240872507043d4f2b45ccff10a18a48e35680029d9c6d4f244081be7f1"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/auto-audio-irq-events.json",
+      "sha256": "da7a99986a572d1e5937bf71b46356ec5aba269b1a9ca347bb9963d5d0325f65"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/auto-foreground-m1-records.bin",
+      "sha256": "11f396b08b3d2552b8d15d676da23a2e17186d50c48d8436f7c39933d5df9831"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/auto-foreground-phase-records.bin",
+      "sha256": "12fe927049406c8d95ae094eddd7bf522dd21cbbea42ce42870a79663e454703"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/captures-auto-sms/capture.json",
+      "sha256": "85d8bce89c948b766aad4b8ba0e59cb97051230886c7378417063e8ca6c30325"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/captures-pal-sms/capture.json",
+      "sha256": "e7d26f53717acfa642456fa628c67d82e387d6ee990b2cf12a65dfc4c96fd0c4"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/pal-audio-irq-events.json",
+      "sha256": "17fe16c08ec931b3b68178315f83d2c3379643bdc8cda287342998c222a19f47"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/pal-foreground-m1-records.bin",
+      "sha256": "0409d9a761daa45686f70bd895c22c3ffdcb6f3d00a61e7112e36a7738ec3138"
+    },
+    {
+      "path": "validation/world-map-refresh/36-ff/pal-foreground-phase-records.bin",
+      "sha256": "3140fef1aaa8c8dffcd4ee4b2e74665393cce9ec54febcbb730ae58b84160910"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/auto-audio-irq-events.json",
+      "sha256": "3f6dcc901ce2a5f3ea9f58db95a8e5f35ae2f65ca05775c4c7d438c4f7300f01"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/auto-foreground-m1-records.bin",
+      "sha256": "c3048fdb4838dcb1362729cadf3b91df72f870255cf58efa799e51c0db9b0fa8"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/auto-foreground-phase-records.bin",
+      "sha256": "dde4bc69e5ee34819ff9cdb5feabc67e56eb19b746a7a88c32e321b008fdfba4"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/captures-auto-sms/capture.json",
+      "sha256": "c94bbcff0c5d7b818ab9ff1c8fbfd02fc56df6fd2131aec5f42b87aa0d0a0c70"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/captures-pal-sms/capture.json",
+      "sha256": "15622d6ff90ba8eea287618a4263831d9906e79e41c2f45ec7c4bd4d57dd3b9a"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/pal-audio-irq-events.json",
+      "sha256": "40314eee31d9ac236a04565638de92ac6e4a9365f3cc873b55eedf0f3f8d3c1c"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/pal-foreground-m1-records.bin",
+      "sha256": "f6ca9049f2ad5e1a40a2960680c0c8c255e45e38060f90483263b0a74ceca1a0"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-00/pal-foreground-phase-records.bin",
+      "sha256": "d0e882b098e58857f1764e7db18260a6e3cf7001dde5c9bfcf4cc3dbe60fc9ed"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/auto-audio-irq-events.json",
+      "sha256": "cc972d3af70af7773d8ac2f39387eead123fa088939115561ff1ec3d9f9fa352"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/auto-foreground-m1-records.bin",
+      "sha256": "8afce2b0163903064f97ef0391e0d383e1f1b44a476035d10b58588736a88a55"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/auto-foreground-phase-records.bin",
+      "sha256": "a522140245fe347c4fc5afdca34e5dd01945ca99763d7456488eba3c7f7e14ff"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/captures-auto-sms/capture.json",
+      "sha256": "c94bbcff0c5d7b818ab9ff1c8fbfd02fc56df6fd2131aec5f42b87aa0d0a0c70"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/captures-pal-sms/capture.json",
+      "sha256": "15622d6ff90ba8eea287618a4263831d9906e79e41c2f45ec7c4bd4d57dd3b9a"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/pal-audio-irq-events.json",
+      "sha256": "8bcdc32198073df81ab758735b93790ed67eb93a2c97581ce28aa98729fe4fc4"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/pal-foreground-m1-records.bin",
+      "sha256": "cddd5172fb0258b349eee6e7c755ffe8d5393fc8fa061ea7f501e4351ff3e9e8"
+    },
+    {
+      "path": "validation/world-map-refresh/3c-ff/pal-foreground-phase-records.bin",
+      "sha256": "69de2ae7fcaa218a7e53fe5787f940c5c26f912c06ed7bc2be6eb9313f34eb35"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/auto-audio-irq-events.json",
+      "sha256": "4610fe59f66ee938ac1074375cdf5f04f211723a5a4d1796dd89373c81103da0"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/auto-foreground-m1-records.bin",
+      "sha256": "abf09cf1b4937be1519a62b622fa71d3132f69c30d61933d934c81433b0174fb"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/auto-foreground-phase-records.bin",
+      "sha256": "c25be0cd3ed7e801c919fcb43f1468588dd3845c0cd461296f6093e1121fe820"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/captures-auto-sms/capture.json",
+      "sha256": "29fe2a5f8616c807cf1bb24e6c32f922c838643aca9e1386f01f0780ce78097d"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/captures-pal-sms/capture.json",
+      "sha256": "72befcd0d80e814d8ac1727fb7acfd4335e58538b0d5d2c962e854142556b882"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/pal-audio-irq-events.json",
+      "sha256": "ababacd8808b383cd053b8ff1d741a59923c76cd9456e9c1712017a88ebcd54f"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/pal-foreground-m1-records.bin",
+      "sha256": "ef925977b1277be07458530027b56c6fe395a57f8fdfc3aadfe0a0c3c42632d9"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-00/pal-foreground-phase-records.bin",
+      "sha256": "2c6542495b0b75509c489f0e953b640dc3f5d0bfe8822528a6efcdc3ca7ee0be"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/auto-audio-irq-events.json",
+      "sha256": "53ae0e01677b544dd653fe676306072009ba936af613f873c455f1710776bafd"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/auto-foreground-m1-records.bin",
+      "sha256": "1ecade14955a5801191b8c14600500581ae184738b5e9f79272d9cd26d502ffe"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/auto-foreground-phase-records.bin",
+      "sha256": "57699874cffcc2913367e2d36ee094d61b48390cfdd3d295af6c01ec1e4fa807"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/captures-auto-sms/capture.json",
+      "sha256": "29fe2a5f8616c807cf1bb24e6c32f922c838643aca9e1386f01f0780ce78097d"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/captures-pal-sms/capture.json",
+      "sha256": "72befcd0d80e814d8ac1727fb7acfd4335e58538b0d5d2c962e854142556b882"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/pal-audio-irq-events.json",
+      "sha256": "1b18b0ffd1a3779361c2b67cca19c6256c0760df29d6212872aa065a1c837d0f"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/pal-foreground-m1-records.bin",
+      "sha256": "764f2ab7e07c4ace66413a15ce246172ac5dc63783c280403c87acddfe157033"
+    },
+    {
+      "path": "validation/world-map-refresh/6d-ff/pal-foreground-phase-records.bin",
+      "sha256": "2a681124e137bccfc2453c6ce1276fe342e8f49838cbf998f86c1f2de94d4900"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/auto-audio-irq-events.json",
+      "sha256": "08be5d7222b1fe402244e0cb79cb75af58b5742cbea0a9e6c0311266c5ffd67d"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/auto-foreground-m1-records.bin",
+      "sha256": "3f147703f374e29dc16ff943006c8d1eda4d2eb81187719e22a51e828baf4d21"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/auto-foreground-phase-records.bin",
+      "sha256": "d7e3a26c18e160890cb1f5814eca9e26088917535660af01ae9f26131cd0e7c3"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/captures-auto-sms/capture.json",
+      "sha256": "81310df1cfee728c0d607bdeb65e275f08bc2a5352e4397c0b91bc2af40380e5"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/captures-pal-sms/capture.json",
+      "sha256": "ab1c3c00e2b6cf1651bd12efd044f59a25dbaed14a1872331922b3722c324a3a"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/pal-audio-irq-events.json",
+      "sha256": "e2c8e1fc73e2c3059d2b7ca3ff3ff52e80b52609adede073c541d4483ffd6428"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/pal-foreground-m1-records.bin",
+      "sha256": "5bca7e74998910f5d327f5ba76e4186bb6294d66f4d0183e6341a64f1015dbf3"
+    },
+    {
+      "path": "validation/world-map-refresh/87-00/pal-foreground-phase-records.bin",
+      "sha256": "a2964fe11bd7c4ec1032911b63dbf010e563a43cb305e965eec073f434944aab"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/auto-audio-irq-events.json",
+      "sha256": "de9a71a694c058e482120febb9720d30b2f1560411aefd9f588b71d8bdf20b1a"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/auto-foreground-m1-records.bin",
+      "sha256": "a2ab1f1a08219037fd0bce2da084f69604954e9df8ee14e83039032968e1ac55"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/auto-foreground-phase-records.bin",
+      "sha256": "a7e43e9ccd3e795427610d94b072052ecf53e04bafba6bfdac30e44ffed9b746"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/captures-auto-sms/capture.json",
+      "sha256": "81310df1cfee728c0d607bdeb65e275f08bc2a5352e4397c0b91bc2af40380e5"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/captures-pal-sms/capture.json",
+      "sha256": "ab1c3c00e2b6cf1651bd12efd044f59a25dbaed14a1872331922b3722c324a3a"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/pal-audio-irq-events.json",
+      "sha256": "166aff13a1e258d582ebf0373a2c3bdda9c6dac749a530fbae7e49efa1742af6"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/pal-foreground-m1-records.bin",
+      "sha256": "66985a193e750c847e5d56aa9352efc9e09526eb4cc909930ddf117eed67e243"
+    },
+    {
+      "path": "validation/world-map-refresh/87-ff/pal-foreground-phase-records.bin",
+      "sha256": "8379d3c6004c848b33c303bb4adc863f102321a8cac83617f7cad5ace446bd39"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/auto-audio-irq-events.json",
+      "sha256": "5d423da5c04a2e79a77d713497fa5f2f8e308752f37acfae3ef382e0ea561088"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/auto-foreground-m1-records.bin",
+      "sha256": "352f580891cbe629ab32129b93eacb0eb4e6f6b55443713e21e33e1ac4ab69a9"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/auto-foreground-phase-records.bin",
+      "sha256": "d1aa44b10601ef62be81e7268e93d5b5d88657f61468e28a88b7f291e28f3e2d"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/captures-auto-sms/capture.json",
+      "sha256": "c1652f86f2b482ce1afd4d79875eb95c19ef29b65492eb5b85ec615512018587"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/captures-pal-sms/capture.json",
+      "sha256": "1fc19238e2838b6825a0222cb7bba02e470f17aba5586961b56d790f6cb4f645"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/pal-audio-irq-events.json",
+      "sha256": "0c4c87eb9b7db58329b10152897d6b826d2cccdd191fd36b1d8aa411efeeefdf"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/pal-foreground-m1-records.bin",
+      "sha256": "6045f885b0c8cfbb0146bd97cba13bf57a07ae6402c43b886b85778831deeb19"
+    },
+    {
+      "path": "validation/world-map-refresh/96-00/pal-foreground-phase-records.bin",
+      "sha256": "5be463e2610561db3d69c6c5ad3a556e2ce2da00f18db8a7a6353e566e00e0d4"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/auto-audio-irq-events.json",
+      "sha256": "24d4fdc20db7e1238a94e79e0099b137240509b00e55982f12a2e5191cb59092"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/auto-foreground-m1-records.bin",
+      "sha256": "1b4363931d14ce06f8dd7bd9f2f17ebc3351cc4e33d6091534dcaacc77074a13"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/auto-foreground-phase-records.bin",
+      "sha256": "07f202933c7e5aec17d9c64be06e59a22ce5edb83aaa870c5f45d7e3165b1115"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/captures-auto-sms/capture.json",
+      "sha256": "c1652f86f2b482ce1afd4d79875eb95c19ef29b65492eb5b85ec615512018587"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/captures-pal-sms/capture.json",
+      "sha256": "1fc19238e2838b6825a0222cb7bba02e470f17aba5586961b56d790f6cb4f645"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/pal-audio-irq-events.json",
+      "sha256": "92fde6e5fa7f6634cb9506c61292ff85e8dc6bafd1aa8f4b4caf7c1d67487a8b"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/pal-foreground-m1-records.bin",
+      "sha256": "eed5ce4982283832ec106921ed73e4af8ebbf9815418f78141b18266a522d762"
+    },
+    {
+      "path": "validation/world-map-refresh/96-ff/pal-foreground-phase-records.bin",
+      "sha256": "b6bcb97c4286d871534ca522807efae931279e8734453a8bb9f31a990554612d"
+    },
+    {
+      "path": "reference/paid_passage_reference.json",
+      "sha256": "bd0c92c79ddc2afc96a03634ea2ea5f9c83ef12f16973509b3a29123c85f5e55"
+    },
+    {
+      "path": "reference/validation/world-map-phase/1a-00/auto-foreground-phase-records.bin",
+      "sha256": "c581050f85c44031db8e46680c65a31e81f23f78dccfa9db7e4294e9fde5ff81"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "reference/validation/world-map-phase/1a-00/pal-foreground-phase-records.bin",
+      "sha256": "6fee1219d0ad32f81503110490eb2a0d68a5a6eb207b746585fdd4abfacac7c5"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "reference/validation/world-map-phase/1a-ff/auto-foreground-phase-records.bin",
+      "sha256": "45717bbfaa098e1996bab61eebedcca033a327447b108c25388da986d0cb06c4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "reference/validation/world-map-phase/1a-ff/pal-foreground-phase-records.bin",
+      "sha256": "f77a256dc5a0c6fd87211c57613b0f78165eec5f5470adebfdb61f8483003cb7"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "reference/validation/world-map-phase/36-00/auto-foreground-phase-records.bin",
+      "sha256": "e0ea0398bbed8bdf8e5b6fb1321c187e3ab38872e8fac61b1101b4ff0ca709cc"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "reference/validation/world-map-phase/36-00/pal-foreground-phase-records.bin",
+      "sha256": "1bd856240872507043d4f2b45ccff10a18a48e35680029d9c6d4f244081be7f1"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "reference/validation/world-map-phase/36-ff/auto-foreground-phase-records.bin",
+      "sha256": "12fe927049406c8d95ae094eddd7bf522dd21cbbea42ce42870a79663e454703"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "reference/validation/world-map-phase/36-ff/pal-foreground-phase-records.bin",
+      "sha256": "3140fef1aaa8c8dffcd4ee4b2e74665393cce9ec54febcbb730ae58b84160910"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "reference/validation/world-map-phase/6d-00/auto-foreground-phase-records.bin",
+      "sha256": "c25be0cd3ed7e801c919fcb43f1468588dd3845c0cd461296f6093e1121fe820"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "reference/validation/world-map-phase/6d-00/pal-foreground-phase-records.bin",
+      "sha256": "2c6542495b0b75509c489f0e953b640dc3f5d0bfe8822528a6efcdc3ca7ee0be"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "reference/validation/world-map-phase/6d-ff/auto-foreground-phase-records.bin",
+      "sha256": "57699874cffcc2913367e2d36ee094d61b48390cfdd3d295af6c01ec1e4fa807"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "reference/validation/world-map-phase/6d-ff/pal-foreground-phase-records.bin",
+      "sha256": "2a681124e137bccfc2453c6ce1276fe342e8f49838cbf998f86c1f2de94d4900"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "reference/validation/world-map-phase/3c-00/auto-foreground-phase-records.bin",
+      "sha256": "dde4bc69e5ee34819ff9cdb5feabc67e56eb19b746a7a88c32e321b008fdfba4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "reference/validation/world-map-phase/3c-00/pal-foreground-phase-records.bin",
+      "sha256": "d0e882b098e58857f1764e7db18260a6e3cf7001dde5c9bfcf4cc3dbe60fc9ed"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "reference/validation/world-map-phase/3c-ff/auto-foreground-phase-records.bin",
+      "sha256": "a522140245fe347c4fc5afdca34e5dd01945ca99763d7456488eba3c7f7e14ff"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "reference/validation/world-map-phase/3c-ff/pal-foreground-phase-records.bin",
+      "sha256": "69de2ae7fcaa218a7e53fe5787f940c5c26f912c06ed7bc2be6eb9313f34eb35"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "reference/validation/world-map-phase/87-00/auto-foreground-phase-records.bin",
+      "sha256": "d7e3a26c18e160890cb1f5814eca9e26088917535660af01ae9f26131cd0e7c3"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "reference/validation/world-map-phase/87-00/pal-foreground-phase-records.bin",
+      "sha256": "a2964fe11bd7c4ec1032911b63dbf010e563a43cb305e965eec073f434944aab"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "reference/validation/world-map-phase/87-ff/auto-foreground-phase-records.bin",
+      "sha256": "a7e43e9ccd3e795427610d94b072052ecf53e04bafba6bfdac30e44ffed9b746"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "reference/validation/world-map-phase/87-ff/pal-foreground-phase-records.bin",
+      "sha256": "8379d3c6004c848b33c303bb4adc863f102321a8cac83617f7cad5ace446bd39"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "reference/validation/world-map-phase/96-00/auto-foreground-phase-records.bin",
+      "sha256": "d1aa44b10601ef62be81e7268e93d5b5d88657f61468e28a88b7f291e28f3e2d"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "reference/validation/world-map-phase/96-00/pal-foreground-phase-records.bin",
+      "sha256": "5be463e2610561db3d69c6c5ad3a556e2ce2da00f18db8a7a6353e566e00e0d4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "reference/validation/world-map-phase/96-ff/auto-foreground-phase-records.bin",
+      "sha256": "07f202933c7e5aec17d9c64be06e59a22ce5edb83aaa870c5f45d7e3165b1115"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "reference/validation/world-map-phase/96-ff/pal-foreground-phase-records.bin",
+      "sha256": "b6bcb97c4286d871534ca522807efae931279e8734453a8bb9f31a990554612d"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "logs/build-world-map-refresh.log",
+      "sha256": "8923a41a31494c749428fc8aca81592b0d4af5949a04124948e0cbdcb3806f20"
+    },
+    {
+      "path": "logs/world-map-refresh-core-build.log",
+      "sha256": "740755aa04372bb63c4d6dde01765278f89bb6e46af9a6e7720e0defaaab7cf8"
+    },
+    {
+      "path": "logs/world-map-refresh-6d-ff.log",
+      "sha256": "33883f16d67335f311f1796289ca38d86540c1188d0d1dadbde7d0fbd28645e1"
+    },
+    {
+      "path": "logs/world-map-refresh-group0.log",
+      "sha256": "49ee228f9cf78da680bb1e27d863d78188d23f664f3dbe689971f87a9066a109"
+    },
+    {
+      "path": "logs/world-map-refresh-group1.log",
+      "sha256": "9ba3e4ef030ad494b1d12d894ad88621f6d6dfbb2d4c915cb551d23b957c1c33"
+    },
+    {
+      "path": "logs/world-map-refresh-group2.log",
+      "sha256": "4f4cfb47882b8df4775ae7190bcaa1d85251b32d16bf329e482fb1895e5360ad"
+    },
+    {
+      "path": "logs/world-map-refresh-validation.log",
+      "sha256": "7f203c80d6171df1aee37c3201f9e8a3406e73c7415dfb098a20d0a2254bb244"
+    },
+    {
+      "path": "world_map_refresh_report.json",
+      "sha256": "55506e8a36b601f480a35009371722a9954b29f80ed81b1660bf0b1c15baa2df"
+    },
+    {
+      "path": "world_map_refresh_milestone.md",
+      "sha256": "c0032b3ee8e2b58c8b1e119adea5ed326d5221b1f1defd750c165b2c302abde9"
+    },
+    {
+      "path": "genesis_plus_gx_worldmaprefresh_libretro.dll",
+      "sha256": "a349b5b14d66157a9c4982f204854704c5efcd2b9bcc8848e9d2022dd76a9cad"
+    }
+  ]
+}

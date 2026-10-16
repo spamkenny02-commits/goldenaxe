@@ -107,7 +107,10 @@ chargement à la fin des motifs (16D0–1706), prédit maintenant R sur les
 calculées. Ce calcul s’étend désormais jusqu’au retour de la routine
 graphique complète (24B9) : six points de contrôle passent sur chacun
 des 24 scénarios, soit 137 614 lectures hors interruptions, terrain et
-copie SRAM compris. Carte, HUD, acteurs et historique restent à traiter.
+copie SRAM compris. Le calcul atteint maintenant aussi le retour du
+chargement de carte (24BC), avec neuf points par scénario : correctifs
+persistants et file de tuiles sont inclus. HUD, attentes VBlank, acteurs
+et historique restent à traiter.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -207,3 +210,5 @@ n’y a été envoyé depuis ce projet.
 - [Registre R pendant le chargement des motifs](analysis/graphics_prefix_refresh_milestone.md).
 
 - [Registre R sur la routine graphique complète](analysis/graphics_load_refresh_milestone.md).
+
+- [Registre R jusqu’au chargement de la carte](analysis/world_map_refresh_milestone.md).

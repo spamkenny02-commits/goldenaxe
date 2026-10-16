@@ -22,8 +22,8 @@ class GraphicsPrefixRefreshPhase(ForegroundPhase):
  def execute(self,ticks,effect=None):
   #Specific to this plan:16/21T are LDI/LDIR;20T is ED53/ED5B.
   #8T is terminal DJNZ unless explicitly marked RES 7,B by the plan.
-  assert ticks in [4,5,6,7,8,10,11,12,13,16,17,20,21]
-  fetches=2 if ticks in [16,20,21] or effect=='M1_2' else 1;first=self.first
+  assert ticks in [4,5,6,7,8,10,11,12,13,15,16,17,20,21]
+  fetches=1 if effect=='M1_1' else (2 if ticks in [16,20,21] or effect=='M1_2' else 1);first=self.first
   super().execute(ticks,effect)
   self.foreground_M1+=fetches;self.refresh=advance_refresh(self.refresh,fetches-int(first))
  def checkpoint(self):
