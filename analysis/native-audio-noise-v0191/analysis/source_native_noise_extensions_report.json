@@ -1,0 +1,96 @@
+{
+  "rows": [
+    {
+      "kind": "commands",
+      "region": "auto",
+      "cases": 5760,
+      "raw_sha256": "f913b2b77fd8a6838b7720d5a4171a4440b9f6e0a3b1c69b89b7f22f8e1d7474"
+    },
+    {
+      "kind": "commands",
+      "region": "pal",
+      "cases": 5760,
+      "raw_sha256": "cdd706557a3ffe48321f0aabda38f8b3e46f1759b383328b00daddae1f4f6f20"
+    },
+    {
+      "kind": "termination",
+      "region": "auto",
+      "cases": 3072,
+      "raw_sha256": "906ece92092f4be3f0ccfe2a9c8ae0b04a8c783af7a9eeaed56d10fff1f612d1"
+    },
+    {
+      "kind": "termination",
+      "region": "pal",
+      "cases": 3072,
+      "raw_sha256": "cb66155ecf68ddb99ace13c54c19751d60898298e522c581e4808247bb0e7a41"
+    },
+    {
+      "kind": "ownership",
+      "region": "auto",
+      "cases": 480,
+      "raw_sha256": "d3f68e5c4776ed297be415d5344971cacb58a2590925425baabc0ef0ed577c3e"
+    },
+    {
+      "kind": "ownership",
+      "region": "pal",
+      "cases": 480,
+      "raw_sha256": "a1f35ec41c287be37a9a163fe87905971d74d5b70a4362620fecf2bded797674"
+    },
+    {
+      "kind": "held",
+      "region": "auto",
+      "cases": 1152,
+      "raw_sha256": "fd02d22804bc2dac3b5eb732b75569caa4094ad363a7641c06117c296a931f50"
+    },
+    {
+      "kind": "held",
+      "region": "pal",
+      "cases": 1152,
+      "raw_sha256": "7ff087accc3557d06ff1f3bdd8012dee47338baddceb46c53b6bd9300d7c4882"
+    },
+    {
+      "kind": "mirror-080",
+      "region": "auto",
+      "cases": 128,
+      "raw_sha256": "7efe53ff534528dc15c92871a1b3dcdff522ab928981121d8833a84e6669b9c8"
+    },
+    {
+      "kind": "mirror-080",
+      "region": "pal",
+      "cases": 128,
+      "raw_sha256": "cf25efbd70baf9088bcc70fa127b6a1f646e75f50ef782d57be0acc5229e3721"
+    },
+    {
+      "kind": "mirror-180",
+      "region": "auto",
+      "cases": 128,
+      "raw_sha256": "31965b68163518c14c76484e26a163f452f3db897d57d0348ca397794954ef2b"
+    },
+    {
+      "kind": "mirror-180",
+      "region": "pal",
+      "cases": 128,
+      "raw_sha256": "303b514aca1552428a7eb817caa34ba084b4cb4395c5dcf9e42bfdb9888f438c"
+    },
+    {
+      "kind": "flow",
+      "region": "auto",
+      "cases": 270,
+      "raw_sha256": "66e97f6942c55b2fe7dfb1876be8ea7ef0f024e09b31c85b58eaeb89bc969a9e"
+    },
+    {
+      "kind": "flow",
+      "region": "pal",
+      "cases": 270,
+      "raw_sha256": "e59fe66557735bb57ce1b4411c422f38a8cfae256985538f806c8f0eaac047aa"
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "noise_helper_sha256": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d",
+  "sequence_helper_sha256": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42",
+  "limits": [
+    "Original864F/8679/sharedcommand handlers/bank6 unchanged; custom DI callers, explicitDE.",
+    "All400 bytes,T/M1,DE andwhole-reader exits directly compared; sourceRdelta checked.",
+    "Controlled/synthetic boundaries; native full IRQ clock andwaveforms remain unproven."
+  ]
+}

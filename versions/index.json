@@ -6227,5 +6227,56 @@
         "sha256": "e890896a290e56a6d2695ec49b23915ebc64e5ce4e3e29c4212be11eb9bc9419"
       }
     ]
+  },
+  {
+    "version": 191,
+    "sha256": "4c5ba01eb905c88138fba32a03b2f173cde3bacf8e2316c0982eee8487f86197",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T20:40:02.769522+00:00",
+    "rom": "v0191-4c5ba01e/gaw-megadrive-v0191.bin",
+    "notes": "Canal de bruit 864F/8679 natif et correction de sortie du lecteur audio ; 39886 vecteurs 68000 PAL/NTSC, 120 scenarios de melange et regressions audio/menus/inventaire passes. Horloge complete encore a integrer.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "production_audio_noise_report.json",
+        "sha256": "4c8a66fea45f25f7c9b26a9a126a6f7f578aad69c7898ee3191e53f0daa47ad7"
+      },
+      {
+        "file": "production_audio_de_report.json",
+        "sha256": "38b17ca578653bc26f35f461e888039091665d065605915b7e16c2058359f031"
+      },
+      {
+        "file": "production_audio_priority_auto_report.json",
+        "sha256": "41b79fa92ee0cf6491960ae8db3cea84e4bfe5d6abf4d2041c20d0a0f3998339"
+      },
+      {
+        "file": "production_audio_priority_pal_report.json",
+        "sha256": "827ecdd032d1084455579c5e185849b076ca8d7bf0636ebc81849d6ec84a41b4"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "d18a4cba4a73b911fe5fca3a0664248782b6bbc7097e750a0d5ce220091e0a48"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "86f1e5fe03a9409b8bc845c081e2e2479c2c8e40e946fd942b6edaf33d149309"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "2d561388872876478e67478dbf7bf8daa9ab711b15ffe7a5287f53a2bbb67d4b"
+      },
+      {
+        "file": "start_menu_audio_report.json",
+        "sha256": "ed853fa67f565737306c02ed4f105fd11cff5a83915c81cad4335cb168b31153"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "9f07f53856c26b9b2543562e01ef54c630115554295195721a0a3573dff59967"
+      },
+      {
+        "file": "inventory_restore_report.json",
+        "sha256": "0ec7c618189a32577389331ec4e5a87fd4731108fffce6be67583e79f55a6d23"
+      }
+    ]
   }
 ]

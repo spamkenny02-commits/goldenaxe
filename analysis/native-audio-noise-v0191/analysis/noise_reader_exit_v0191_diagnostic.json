@@ -1,0 +1,19 @@
+{
+  "md_sha256": "4c5ba01eb905c88138fba32a03b2f173cde3bacf8e2316c0982eee8487f86197",
+  "cases": [
+    {
+      "region": "auto",
+      "source_effect_counter": 2,
+      "native_effect_counter": 2,
+      "differences": []
+    },
+    {
+      "region": "pal",
+      "source_effect_counter": 2,
+      "native_effect_counter": 2,
+      "differences": []
+    }
+  ],
+  "controlled_state": true,
+  "scope": "NoiseF2 must return from the whole8000 reader before the next effect channel."
+}

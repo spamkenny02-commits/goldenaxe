@@ -1,0 +1,47 @@
+{
+  "cases": 39886,
+  "results": [
+    {
+      "part": 0,
+      "region": "auto",
+      "ROM_sha256": "b4f48f86b31a9ec9f124d8bbeea1a8c7a9d77b1fb9fc286128ef9408e7ba7233",
+      "frame": 6488,
+      "done": 1,
+      "cases": 30000,
+      "failures": 0
+    },
+    {
+      "part": 0,
+      "region": "pal",
+      "ROM_sha256": "b4f48f86b31a9ec9f124d8bbeea1a8c7a9d77b1fb9fc286128ef9408e7ba7233",
+      "frame": 5429,
+      "done": 1,
+      "cases": 30000,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "auto",
+      "ROM_sha256": "82eba663a045f2e67be3ff595e4b18b38a743c0e0d28274106e1789067f6fa59",
+      "frame": 2628,
+      "done": 1,
+      "cases": 9886,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "pal",
+      "ROM_sha256": "82eba663a045f2e67be3ff595e4b18b38a743c0e0d28274106e1789067f6fa59",
+      "frame": 2200,
+      "done": 1,
+      "cases": 9886,
+      "failures": 0
+    }
+  ],
+  "noise_helper_sha256": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d",
+  "sequence_helper_sha256": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42",
+  "limits": [
+    "Compiled68000 under GPG; all400 bytes,T/M1,DE/reader-exit andselector PSG decisions.",
+    "PGS waveforms, full IRQ clock andnatural full progression remain outside these synthetic component fixtures."
+  ]
+}

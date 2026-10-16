@@ -1,0 +1,16 @@
+{
+  "cases": 83776,
+  "suites": {
+    "notes": 51712,
+    "commands": 29952,
+    "termination": 192,
+    "ownership": 1920
+  },
+  "compared_RAM_bytes": 400,
+  "helper_sha256": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42",
+  "limits": [
+    "Host native C vs retained source-verified8357 models/fixtures; all400 bytes,T/M1,DE/unwind.",
+    "PSG write lists are not independently compared in this component test; actual production PSG regressions required.",
+    "R-dependent commands andsource-restoration nonzero require separate evidence; no full native clock claim."
+  ]
+}

@@ -5,17 +5,26 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0190 — 1024 Kio.**
+**Version courante : v0191 — 1024 Kio.**
 
-[Télécharger la ROM v0190](versions/v0190-ca8975f3/gaw-megadrive-v0190.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0191](versions/v0191-4c5ba01e/gaw-megadrive-v0191.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `ca8975f3df7f563ce2e90927e0bb299f4d86d56807e0b6c97be6e93a0b755eda`  
-Checksum Mega Drive : `1782`
+SHA-256 : `4c5ba01eb905c88138fba32a03b2f173cde3bacf8e2316c0982eee8487f86197`  
+Checksum Mega Drive : `5904`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0191 raccorde le canal de bruit 864F/8679 au code natif vérifié.
+Elle corrige aussi une sortie du lecteur audio : certains arrêts du canal
+de bruit faisaient avancer le bruitage suivant une interruption trop tôt.
+Les 39 886 cas de composant passent en 68000 PAL/NTSC, ainsi que 120
+scénarios de mélange dans la ROM jouable. Les bruitages du curseur et de
+validation de Nouveau jeu/Continue sont présents, audibles et déclenchés
+aux mêmes images que sur SMS dans les quatre parcours testés.
+Voir les [preuves et limites](analysis/native_audio_noise_milestone.md).
 
 La v0190 raccorde les séquences tonales 8357 au lecteur natif : notes,
 durées, commandes, boucles, appels et restauration. EA est prise en charge,

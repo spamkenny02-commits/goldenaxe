@@ -25,24 +25,47 @@ static u8 duration(u8 value,u8 scale,SourceClockWork *work)
     return (u8)(value*scale);
 }
 
-u8 source_audio_sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
-                         const u8 *bank,SourceClockWork *work,SourceAudioSequenceOutput *output)
+static u8 noise_note(u8 *state,u16 offset,u8 note,SourceClockWork *work,SourceAudioSequenceOutput *output)
+{
+    static const u8 settings[6][3]={{1,4,0xe4},{3,6,0xe4},{1,1,0xe6},{2,3,0xe5},{3,3,0xe6},{4,4,0xe4}};
+    u8 *c=state+offset;u16 bit;
+    for(bit=0;bit<6;bit++)
+    {
+        ADD(8,2);
+        if(note&(1<<bit))
+        {
+            ADD(12+21+(bit?12:0),4+(bit?1:0));c[7]=settings[bit][0];c[8]=state[24]+settings[bit][1];ADD(75,8);
+            if(c[0]&4) ADD(11,1);
+            else {ADD(56,6);state[19]=state[23]+settings[bit][2];EMIT(state[19]);}
+            return 1;
+        }
+        ADD(7,1);
+    }
+    c[0]|=16;ADD(53,5);
+    if(c[0]&4) ADD(11,1);
+    else {ADD(52,6);EMIT(c[1]+31);}
+    return 1;
+reject:return 0;
+}
+
+static u8 sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
+                    const u8 *bank,u8 noise,SourceClockWork *work,SourceAudioSequenceOutput *output)
 {
     u8 old[400],*c,note=0xff,value,lo,hi,old_stereo,mask,amount;
     u16 cursor=0,guard,index,stack,target,background,frequency,n;
     SourceClockWork restored;SourceAudioDispatchOutput writes;
     work->tstates=work->fetches=0;output->de=output->count=0;output->unwind=output->error=0;
     if(offset>0x160) {output->error=0xff;return 0;}
-    copy_state(old,state);c=state+offset;cursor=c[3]|((u16)c[4]<<8);c[0]&=(u8)~18;
-    ADD(84,8);
+    copy_state(old,state);c=state+offset;cursor=c[3]|((u16)c[4]<<8);c[0]&=(u8)~(noise?16:18);
+    ADD(noise?61:84,noise?6:8);
     for(guard=0;guard<256;guard++)
     {
-        READ(cursor,note);cursor++;ADD(30,4);
+        READ(cursor,note);cursor++;ADD(noise?20:30,noise?3:4);
         if(note<0xe0) break;
         if(note==0xe3 || note==0xec || note==0xef || note>=0xfe) goto reject;
         if(note==0xf1 || note==0xf2)
         {
-            ADD(99,14);
+            ADD(noise?121:99,noise?16:14);
             if(note==0xf1) {state[0x12]=128;ADD(20,2);}
             ADD(26,3);
             if(c[1]==0xa0) {ADD(22,2);background=0x70;}
@@ -79,9 +102,9 @@ u8 source_audio_sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                 for(n=0;n<writes.count;n++) EMIT(writes.writes[n]);
             }
             else ADD(12,1);
-            ADD(30,3);output->unwind=1;output->de=cursor;return 1;
+            ADD(30,3);output->unwind=noise?2:1;output->de=cursor;return 1;
         }
-        ADD(115,16);READ(cursor,value);
+        ADD(noise?139:115,noise?18:16);READ(cursor,value);
         switch(note)
         {
             case 0xe0:case 0xe9:
@@ -133,9 +156,9 @@ u8 source_audio_sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                         if(!(state[0x130]&128)) ADD(12,1);
                         else
                         {
-                            ADD(7+10+15+15+4+19+4+11+13+10+10+10-16,1+1+2+2+1+2+1+1+1+1+1+1-2);
+                            ADD(7+10+15+15+4+19+4+11+13+10+10+10-(noise?18:16),1+1+2+2+1+2+1+1+1+1+1+1-2);
                             state[0xd0]=(state[0xd0]&(u8)~4)|16;c[0]=0;state[15]=255;
-                            EMIT(255);output->unwind=1;output->de=cursor;return 1;
+                            EMIT(255);output->unwind=noise?2:1;output->de=cursor;return 1;
                         }
                     }
                 }
@@ -175,6 +198,19 @@ u8 source_audio_sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
         }
     }
     if(guard==256) goto reject;
+    if(noise)
+    {
+        ADD(24,3);
+        if(note>=128)
+        {
+            ADD(17,1);if(!noise_note(state,offset,note,work,output)) goto reject;ADD(10,1);
+            READ(cursor,amount);cursor++;ADD(27,4);
+            if(amount&128) {c[10]=c[13];cursor--;ADD(56,6);}
+            else {ADD(17,1);c[10]=c[13]=duration(amount,c[2],work);ADD(38,4);}
+        }
+        else {ADD(17,1);c[10]=c[13]=duration(note,c[2],work);ADD(38,4);}
+        goto store;
+    }
     ADD(30,3);
     if(c[0]&8)
     {
@@ -218,6 +254,7 @@ u8 source_audio_sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
             else {ADD(17,1);c[10]=c[13]=duration(amount,c[2],work);ADD(38,4);}
         }
     }
+store:
     PUT(3,cursor);ADD(58,6);output->de=cursor;
     if(c[0]&2) {ADD(11,1);return 1;}
     ADD(25,3);
@@ -230,4 +267,19 @@ u8 source_audio_sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
 reject:
     copy_state(state,old);work->tstates=work->fetches=0;output->de=output->count=0;
     output->unwind=0;output->error=note;return 0;
+}
+
+u8 source_audio_sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
+                         const u8 *bank,SourceClockWork *work,SourceAudioSequenceOutput *output)
+{return sequence(state,offset,low,low_bytes,bank,0,work,output);}
+
+u8 source_audio_noise_sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
+                               const u8 *bank,SourceClockWork *work,SourceAudioSequenceOutput *output)
+{return sequence(state,offset,low,low_bytes,bank,1,work,output);}
+
+u8 source_audio_noise_note(u8 *state,u16 offset,u8 note,SourceClockWork *work,SourceAudioSequenceOutput *output)
+{
+    work->tstates=work->fetches=0;output->de=output->count=0;output->error=output->unwind=0;
+    if(offset>0x160) {output->error=255;return 0;}
+    return noise_note(state,offset,note,work,output);
 }
