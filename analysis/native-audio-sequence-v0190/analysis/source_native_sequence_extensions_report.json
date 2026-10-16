@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "kind": "restore",
+      "region": "auto",
+      "cases": 1728,
+      "raw_sha256": "dd47f3b09715d615d8a1236f0419a8ec73b344fce4de188901d5805aa6572127"
+    },
+    {
+      "kind": "restore",
+      "region": "pal",
+      "cases": 1728,
+      "raw_sha256": "d1fbbba1423916551d0976a12d6e6a702af08a7c4eec49d615d4d78b64cef5fa"
+    },
+    {
+      "kind": "mirror-080",
+      "region": "auto",
+      "cases": 128,
+      "raw_sha256": "943c2cb72b921ac2914e7178870fe9e17f5cd0bcc314841613bf52964df7100b"
+    },
+    {
+      "kind": "mirror-080",
+      "region": "pal",
+      "cases": 128,
+      "raw_sha256": "db8af6ebd49c368f482f3af7d7ca407154903ae69fcca5cbe7015ea8af42385c"
+    },
+    {
+      "kind": "mirror-180",
+      "region": "auto",
+      "cases": 128,
+      "raw_sha256": "4c0d74fdbba8a16153e0ae1cadb492de4b3023959e37a295363e1d33e26efcb9"
+    },
+    {
+      "kind": "mirror-180",
+      "region": "pal",
+      "cases": 128,
+      "raw_sha256": "b5e0c56b713c36aa1e6c97556eb3f0f67572cb8c2e81cb138384c2351f07232d"
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "native_helper_sha256": "3fdec782e4aa919f7387c9ceed77296dd90436b649f9019f3e89c551039bf6fa",
+  "limits": [
+    "Original8357/bank6 unchanged; custom DI two-level callers. Direct native-vs-source state,T/M1,DE/unwind; Rdelta observed.",
+    "Includes F1/F2 with active8211 restoration and EA enable/disable in DE/FE/DF/FF streams.",
+    "Controlled fixtures; PSG bytes/waveforms andfull game clock not established by this check."
+  ]
+}

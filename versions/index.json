@@ -6176,5 +6176,56 @@
         "sha256": "8a13d6b6556140c0acdb643d1450a507cea382dda0978a11ea23d8d30ba62606"
       }
     ]
+  },
+  {
+    "version": 190,
+    "sha256": "ca8975f3df7f563ce2e90927e0bb299f4d86d56807e0b6c97be6e93a0b755eda",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T19:49:51.724681+00:00",
+    "rom": "v0190-ca8975f3/gaw-megadrive-v0190.bin",
+    "notes": "Sequences tonales8357 natives : EA, durees, boucles, appels/retours et restauration8211. 85760 cas68000 PAL/NTSC,50 scenarios jouables sur2 IRQ exacts. Musiques,bruitages,menus etinventaire valides. Canalbruit/comptagelecteur/horlogeR restent a raccorder.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "production_audio_sequence_report.json",
+        "sha256": "8be590b0a021c9f84c5e9779e69e112dd2b772e7448c8447e5c03f7da260a7b4"
+      },
+      {
+        "file": "production_audio_de_report.json",
+        "sha256": "154cab5fa52015ee325eb504d579b34de61e1e6e95f7fef3d7de5ea37c45e022"
+      },
+      {
+        "file": "production_audio_priority_auto_report.json",
+        "sha256": "5d4de0369253dea5d58163417a48998eb0af90006bad9f7356d62c0578e2978d"
+      },
+      {
+        "file": "production_audio_priority_pal_report.json",
+        "sha256": "8fb4c4edc273abc88b0f07247ddba6a37e570fa0b798b04ff7562cc27473940a"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "0b3494aa13e35236877d09ebf92a4d0be702e84280dfba79dd11dea2c5e1e6f6"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "a561b52c9422803e19a03e75b791905862a1f8d568d7869390aa5404b5859e8a"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "aa5392dfcd0baab083b8d9e1eca8567020b62c2457206b1fbc0559978505b32e"
+      },
+      {
+        "file": "start_menu_audio_report.json",
+        "sha256": "b2f69d128ba00f925f397745341fbe3ffb25f40377385ecd0b65d43a5b3f15ff"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "5afa0a008730e6fecc8f78b61f80e66fb00f1f841ea43f86b342d86d74eaa0be"
+      },
+      {
+        "file": "inventory_restore_report.json",
+        "sha256": "e890896a290e56a6d2695ec49b23915ebc64e5ce4e3e29c4212be11eb9bc9419"
+      }
+    ]
   }
 ]

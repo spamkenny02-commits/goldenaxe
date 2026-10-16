@@ -1,0 +1,56 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "08e451a79a352ba9d12844f06b9efd4f6e8df23b14d5ec64a81653e0fffdd869",
+  "fixture_sha256": "a08880f9b6e545aa5138d873fc0f42e96a5af365f730169b3377337a61e61f3d",
+  "reference_report": "audio_note_termination_cost_report.json",
+  "kind": "termination",
+  "cases": 384,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 192,
+      "caller_unwind_cases": 192,
+      "M1_histogram": {
+        "68": 12,
+        "59": 12,
+        "49": 24,
+        "56": 12,
+        "54": 24,
+        "55": 24,
+        "66": 12,
+        "57": 12,
+        "47": 24,
+        "52": 12,
+        "53": 24
+      },
+      "raw_sha256": "76ef6d5298ad645918a93b0da4c32a6c8142f834cda96bdb60a05f2ea3903bf7"
+    },
+    {
+      "region": "pal",
+      "cases": 192,
+      "caller_unwind_cases": 192,
+      "M1_histogram": {
+        "68": 12,
+        "59": 12,
+        "49": 24,
+        "56": 12,
+        "54": 24,
+        "55": 24,
+        "66": 12,
+        "57": 12,
+        "47": 24,
+        "52": 12,
+        "53": 24
+      },
+      "raw_sha256": "10b1626c6d01d876ac6e4447a5be38f351f7674e2e5b983359b1746533415e57"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Exact retained fixture ROM hash equals prior validated cost report;original bank6 helpers/tables intact. Custom DI caller/synthetic fixed-ROM streams,IXDE40. Absolute M1,R,cost/all400 bytes,DE/unwind compare against original execution.",
+    "Generated semantic model adds explicit M1 arithmetic to audited8357 cost plans;duration multiplication uses4 or6+2*((scale-1)&255) fetches. No runtime ROM instruction interpretation. Notes/raw/rest/tie/loops/calls/returns,20 deterministic command families,F1/F2 inactive restoration andF3 ownership covered in separate suites.",
+    "R-dependent command families andF1/F2 restoration8211 nonzero remain unsupported. Full channels/IRQ fetch composition,load-entry R/native RNG replacement,waveform/hardware/full progression remain open."
+  ]
+}

@@ -6,11 +6,13 @@
 #include "source_audio_envelope.h"
 #include "source_audio_pitch.h"
 #include "source_audio_memory.h"
+#include "source_audio_sequence.h"
 extern const u8 intro_bank6[],sound_low_rom[];
 static u8 sound_ram[0x190];
 static volatile u16 sound_unhandled_command;
 static u16 sound_current_track;
 static u16 sound_source_de; /* Original reader DE, carried between channels. */
+static SourceAudioSequenceOutput sound_sequence_output;
 static volatile u16 sound_request;
 static volatile u16 sound_effect_request;
 static u8 sound_read(u16 address)
@@ -101,7 +103,18 @@ static void sound_noise_note(u8 *c,u8 note)
 static bool sound_sequence(u8 *c,bool noise)
 {
     u16 cursor=sound_ch_word(c,3),guard;
-    c[0]&=noise?~16:~18;
+    if(!noise)
+    {
+        SourceClockWork work;u16 n;
+        if(!source_audio_sequence(sound_ram,(u16)(c-sound_ram),sound_low_rom,0x8000,
+                                  intro_bank6,&work,&sound_sequence_output))
+        {sound_unhandled_command=0x500|sound_sequence_output.error;return FALSE;}
+        sound_source_de=sound_sequence_output.de;
+        for(n=0;n<sound_sequence_output.count;n++) PSG_write(sound_sequence_output.writes[n]);
+        return !sound_sequence_output.unwind;
+    }
+    /* Original864F noise path; its separate timing translation remains. */
+    c[0]&=~16;
     for(guard=0;guard<256;guard++)
     {
         u8 note=sound_read(cursor++),value;
@@ -182,26 +195,8 @@ static bool sound_sequence(u8 *c,bool noise)
             }
             continue;
         }
-        if(noise)
-        {
-            if(note>=128) { sound_noise_note(c,note);note=sound_read(cursor++); }
-        }
-        else if(c[0]&8)
-        {
-            frequency=(note<<8)|sound_read(cursor++);
-            if(frequency) frequency+=(s8)c[5];sound_ch_set(c,11,frequency);note=sound_read(cursor++);
-        }
-        else if(note>=128)
-        {
-            if(note==128) sound_release(c);
-            else
-            {
-                c[0x1d]&=127;frequency=sound_word(0x843d+(u8)((note&127)+c[5])*2);sound_ch_set(c,11,frequency);
-            }
-            note=sound_read(cursor++);
-        }
-        /* 83EC always sends raw16-bit note durations through839B. */
-        if((note&128) && (noise || !(c[0]&8))) { c[10]=c[13];cursor--; }
+        if(note>=128) { sound_noise_note(c,note);note=sound_read(cursor++); }
+        if(note&128) { c[10]=c[13];cursor--; }
         else c[10]=c[13]=(u8)(note*c[2]);
         sound_ch_set(c,3,cursor);
         if(!(c[0]&2))

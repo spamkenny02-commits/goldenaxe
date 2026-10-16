@@ -5,17 +5,25 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0189 — 1024 Kio.**
+**Version courante : v0190 — 1024 Kio.**
 
-[Télécharger la ROM v0189](versions/v0189-72cdc002/gaw-megadrive-v0189.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0190](versions/v0190-ca8975f3/gaw-megadrive-v0190.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `72cdc00261217500cbdbb8a76ed0dedf408e003434e898e13244ce2946ab320a`  
-Checksum Mega Drive : `5257`
+SHA-256 : `ca8975f3df7f563ce2e90927e0bb299f4d86d56807e0b6c97be6e93a0b755eda`  
+Checksum Mega Drive : `1782`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0190 raccorde les séquences tonales 8357 au lecteur natif : notes,
+durées, commandes, boucles, appels et restauration. EA est prise en charge,
+et les limites d'appels/boucles suivent désormais les accès RAM de la SMS.
+Les 85 760 cas passent en 68000 PAL/NTSC ; 50 scénarios de la ROM jouable
+correspondent à la SMS sur deux interruptions chacun. Les régressions audio,
+menus et retour d'inventaire passent aussi.
+Voir les [preuves et limites](analysis/native_audio_sequence_milestone.md).
 
 La v0189 raccorde les hauteurs et modulations audio natives, avec les cycles
 et lectures M1 d'origine. Les 59 852 cas passent sur hôte et 68000 PAL/NTSC.

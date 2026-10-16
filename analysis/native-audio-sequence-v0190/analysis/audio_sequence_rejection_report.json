@@ -1,0 +1,24 @@
+{
+  "host_cases": 3,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 31,
+      "done": 1,
+      "cases": 3,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 27,
+      "done": 1,
+      "cases": 3,
+      "failures": 0
+    }
+  ],
+  "test_ROM_sha256": "20bb2b3c09599834ddba2a68ec27d5561e13135d5961defdfcde5fe0b9340354",
+  "limits": [
+    "API failure contract only: uncaptured RAM, EC after staged PSG/state changes, nonterminating F6.",
+    "All400 bytes restored, no emitted output list orwork committed; not SMS equivalence for unsupported paths."
+  ]
+}

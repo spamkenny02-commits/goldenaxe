@@ -1,0 +1,65 @@
+{
+  "cases": 85760,
+  "results": [
+    {
+      "part": 0,
+      "region": "auto",
+      "ROM_sha256": "4f0fd39b64c59e04a91120dadf29174ec5408e684c2cb5a4ed16c4e30dcb148f",
+      "frame": 8470,
+      "done": 1,
+      "cases": 30000,
+      "failures": 0
+    },
+    {
+      "part": 0,
+      "region": "pal",
+      "ROM_sha256": "4f0fd39b64c59e04a91120dadf29174ec5408e684c2cb5a4ed16c4e30dcb148f",
+      "frame": 7087,
+      "done": 1,
+      "cases": 30000,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "auto",
+      "ROM_sha256": "e4dbe6edc3f367638bda751af37020bfba82ba4d75e34b0be309539b4b546d2e",
+      "frame": 8696,
+      "done": 1,
+      "cases": 30000,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "pal",
+      "ROM_sha256": "e4dbe6edc3f367638bda751af37020bfba82ba4d75e34b0be309539b4b546d2e",
+      "frame": 7276,
+      "done": 1,
+      "cases": 30000,
+      "failures": 0
+    },
+    {
+      "part": 2,
+      "region": "auto",
+      "ROM_sha256": "0621ed3461f94f95f48e14b79b02d3c0d6e3fcb0b28abcf2920a440679a33578",
+      "frame": 7615,
+      "done": 1,
+      "cases": 25760,
+      "failures": 0
+    },
+    {
+      "part": 2,
+      "region": "pal",
+      "ROM_sha256": "0621ed3461f94f95f48e14b79b02d3c0d6e3fcb0b28abcf2920a440679a33578",
+      "frame": 6372,
+      "done": 1,
+      "cases": 25760,
+      "failures": 0
+    }
+  ],
+  "helper_sha256": "3fdec782e4aa919f7387c9ceed77296dd90436b649f9019f3e89c551039bf6fa",
+  "limits": [
+    "Actual compiled68000 under GPG; all400 bytes,T/M1,DE/unwind from independent source fixtures/models.",
+    "PGS write lists not independently compared here; production audio checks remain required.",
+    "Unsupported R/context commands andfull native clock remain open."
+  ]
+}
