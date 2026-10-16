@@ -1,0 +1,23 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "be9fcdc5ce9d1acaa83b5a91b0a8b3db778e15ee1a2b4f4636af72d5d4daf7a4",
+  "cases": 2880,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 1440,
+      "M1_sha256": "8f3be4d183878391154425aba5f1673a6201432df5919dd5642042d61a10ff79"
+    },
+    {
+      "region": "pal",
+      "cases": 1440,
+      "M1_sha256": "bc745dbe47653f0072fe06d4a775f8f74a1f41a705a2b4f213e88df3f1ac0ac8"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Controlled empty queue/tile workload; original fixture unchanged. Nine stages to RET entry, not physical interrupt acknowledgement. Palette decisions independently predicted from entry raster. Final RET and vector outside this sidecar."
+  ]
+}

@@ -17,6 +17,13 @@ Checksum Mega Drive : `CA2E`
 
 ## État du portage
 
+Le travail sur l'horloge dispose maintenant d'une traduction native de
+l'enveloppe d'interruption SMS 0137..0226 : état RAM, compteurs et coûts
+vidéo/audio, avec attente de palette calculée depuis la phase raster.
+Les contrôles de ce composant sont séparés de la ROM jouable ; son
+raccordement à l'horloge du jeu reste à faire. La ROM courante reste v0194.
+Voir les [preuves et limites](analysis/native_source_irq_milestone.md).
+
 La v0194 raccorde le lecteur audio complet 8000 au code natif vérifié,
 avec les coûts Z80/M1 conservés à chaque interruption. Les 25 644 vecteurs
 passent en 68000 PAL/NTSC ; 33 788 états de la ROM jouable correspondent

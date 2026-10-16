@@ -1,0 +1,27 @@
+{
+  "cases": 704,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 352,
+      "records_sha256": "15bd2f9a22c3a2ef399df794b819881a75e3e758dae57fb1a81b1a2779494b56",
+      "m1_sha256": "35ec0345a5800c3561616bf5dd6f65e589b3b42cc2fc535d4bf7ca635994c674",
+      "reader_sha256": "ed260c76c6e8cf1fb36bac1f72af5a12064deb8a78b548219868dd8b58c89319"
+    },
+    {
+      "region": "pal",
+      "cases": 352,
+      "records_sha256": "c83331027ce7bc880506ac552f463857619ab6ef46a5126a23670fe2b5357090",
+      "m1_sha256": "26616094a7a3367b2ca6c417edbbc477ff52e26bd777e8f48fcd7fa4ab8d1377",
+      "reader_sha256": "ed260c76c6e8cf1fb36bac1f72af5a12064deb8a78b548219868dd8b58c89319"
+    }
+  ],
+  "fixture_sha256": "93bf6126b4d9117a44d5724d8aa03636f38fe7a4d0876c46031c69134e9bd5ce",
+  "irq_helper_sha256": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99",
+  "limits": [
+    "Original IRQ/queue/tile/HUD/bank4/bank6 code intact; custom DI caller, queue metadata and fixed-ROM tile assets.",
+    "Tile counts0/1/2/255, linear queue count0/1/2/255 andbank0/4/128/255, rectangle height0/1/2/255 andwidth0/1/127/128/255, mixed queues.",
+    "336 bytes/nine T/M1 stages/palette waits/R deltas/source audio compare. VDP IRQs disabled, so long synthetic cases do not prove nested IRQ scheduling.",
+    "No pixel transfer-value, production IRQ integration, hardware or full progression claim."
+  ]
+}

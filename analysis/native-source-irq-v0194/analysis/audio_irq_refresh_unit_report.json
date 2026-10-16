@@ -1,0 +1,30 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "08e451a79a352ba9d12844f06b9efd4f6e8df23b14d5ec64a81653e0fffdd869",
+  "fixture_sha256": "008d9505b6937bf9f446213311bb59142456ca07a6f7a5d1e5a6417a239e5088",
+  "cases": 15360,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 7680,
+      "zero_timer_cases": 30,
+      "nonzero_timer_cases": 7650,
+      "raw_sha256": "ffd293d20e204c6536c79a9862f98e256b78e53760a272f0f289ed0b0299c53a"
+    },
+    {
+      "region": "pal",
+      "cases": 7680,
+      "zero_timer_cases": 30,
+      "nonzero_timer_cases": 7650,
+      "raw_sha256": "f6bf0724b3bc977627f07b6aaac34a2e98b3fa346b4e6eec31e69d456cec8465"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original0137..0226/bank6 intact. Synthetic balancedPUSHAF/JP caller underVINT-disabled video;not actual interrupt acceptance. All256 C030 counters,five pause values/two compensation flags/three phases. Stub47T/4M1 explicitly excluded from wrapper accounting.",
+    "Read-only M1/R/cost/all400 audio/timer andclock/gate/bank restoration compare;inactive channels when reader proceeds. Vector38..42 andhardware acknowledge require separate live checks.",
+    "No fullIRQ handler/foreground M1 composition,load-entry R/native RNG replacement,waveform/hardware/full progression proof."
+  ]
+}

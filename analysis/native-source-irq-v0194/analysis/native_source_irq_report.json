@@ -1,0 +1,202 @@
+{
+  "cases": 31989,
+  "rows": [
+    {
+      "kind": "full-unit",
+      "region": "auto",
+      "cases": 1440
+    },
+    {
+      "kind": "full-unit",
+      "region": "pal",
+      "cases": 1440
+    },
+    {
+      "kind": "full-live",
+      "town": 26,
+      "mask": 0,
+      "region": "auto",
+      "cases": 578
+    },
+    {
+      "kind": "full-live",
+      "town": 26,
+      "mask": 0,
+      "region": "pal",
+      "cases": 581
+    },
+    {
+      "kind": "full-live",
+      "town": 26,
+      "mask": 255,
+      "region": "auto",
+      "cases": 577
+    },
+    {
+      "kind": "full-live",
+      "town": 26,
+      "mask": 255,
+      "region": "pal",
+      "cases": 581
+    },
+    {
+      "kind": "full-live",
+      "town": 54,
+      "mask": 0,
+      "region": "auto",
+      "cases": 578
+    },
+    {
+      "kind": "full-live",
+      "town": 54,
+      "mask": 0,
+      "region": "pal",
+      "cases": 581
+    },
+    {
+      "kind": "full-live",
+      "town": 54,
+      "mask": 255,
+      "region": "auto",
+      "cases": 547
+    },
+    {
+      "kind": "full-live",
+      "town": 54,
+      "mask": 255,
+      "region": "pal",
+      "cases": 555
+    },
+    {
+      "kind": "full-live",
+      "town": 109,
+      "mask": 0,
+      "region": "auto",
+      "cases": 578
+    },
+    {
+      "kind": "full-live",
+      "town": 109,
+      "mask": 0,
+      "region": "pal",
+      "cases": 581
+    },
+    {
+      "kind": "full-live",
+      "town": 109,
+      "mask": 255,
+      "region": "auto",
+      "cases": 551
+    },
+    {
+      "kind": "full-live",
+      "town": 109,
+      "mask": 255,
+      "region": "pal",
+      "cases": 559
+    },
+    {
+      "kind": "full-live",
+      "town": 60,
+      "mask": 0,
+      "region": "auto",
+      "cases": 578
+    },
+    {
+      "kind": "full-live",
+      "town": 60,
+      "mask": 0,
+      "region": "pal",
+      "cases": 581
+    },
+    {
+      "kind": "full-live",
+      "town": 60,
+      "mask": 255,
+      "region": "auto",
+      "cases": 563
+    },
+    {
+      "kind": "full-live",
+      "town": 60,
+      "mask": 255,
+      "region": "pal",
+      "cases": 569
+    },
+    {
+      "kind": "full-live",
+      "town": 135,
+      "mask": 0,
+      "region": "auto",
+      "cases": 578
+    },
+    {
+      "kind": "full-live",
+      "town": 135,
+      "mask": 0,
+      "region": "pal",
+      "cases": 581
+    },
+    {
+      "kind": "full-live",
+      "town": 135,
+      "mask": 255,
+      "region": "auto",
+      "cases": 569
+    },
+    {
+      "kind": "full-live",
+      "town": 135,
+      "mask": 255,
+      "region": "pal",
+      "cases": 574
+    },
+    {
+      "kind": "full-live",
+      "town": 150,
+      "mask": 0,
+      "region": "auto",
+      "cases": 578
+    },
+    {
+      "kind": "full-live",
+      "town": 150,
+      "mask": 0,
+      "region": "pal",
+      "cases": 581
+    },
+    {
+      "kind": "full-live",
+      "town": 150,
+      "mask": 255,
+      "region": "auto",
+      "cases": 573
+    },
+    {
+      "kind": "full-live",
+      "town": 150,
+      "mask": 255,
+      "region": "pal",
+      "cases": 577
+    },
+    {
+      "kind": "audio-unit",
+      "region": "auto",
+      "cases": 7680
+    },
+    {
+      "kind": "audio-unit",
+      "region": "pal",
+      "cases": 7680
+    }
+  ],
+  "irq_helper_sha256": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99",
+  "reader_helper_sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+  "production_md_sha256": "2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143",
+  "limits": [
+    "Retained hashed original-instruction stage captures; full336 state/T/M1 and palette waits predicted from entry raster.",
+    "Reader work comes from native8000 and is compared to source audio states, not a fixed budget.",
+    "Tile count decoded from original asset. Input R/raster/joy remain observed; reset requested path and other queues need further proof.",
+    "No production IRQ-clock wiring, hardware acknowledgement, video waveform or full natural progression claim."
+  ]
+}
