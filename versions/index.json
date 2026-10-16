@@ -6278,5 +6278,64 @@
         "sha256": "0ec7c618189a32577389331ec4e5a87fd4731108fffce6be67583e79f55a6d23"
       }
     ]
+  },
+  {
+    "version": 192,
+    "sha256": "a30af8eeb4748ebffb980c74213df2d87b469e69e947d43f08830593f60d3db4",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T21:19:02.014250+00:00",
+    "rom": "v0192-a30af8ee/gaw-megadrive-v0192.bin",
+    "notes": "Composition tonale 84C7 native avec couts Z80/M1 ; 20852 vecteurs 68000 PAL/NTSC, 252 scenarios jouables et regressions audio/menus/inventaire passes. Horloge complete encore a integrer.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "production_audio_tone_report.json",
+        "sha256": "5ccb87b034d11d5f26a3f9c68d5ade59ead274e0c812f7a5971a59d1cd9988cf"
+      },
+      {
+        "file": "production_audio_sequence_report.json",
+        "sha256": "3742a507b1e675d9c08c2045dcfaa61f7e96f5201c2bf01d84add2d5b99a0ef1"
+      },
+      {
+        "file": "production_audio_noise_report.json",
+        "sha256": "19631f31a93318e51794383684875eff4e8716eb20ca5085262a21ccab6e2235"
+      },
+      {
+        "file": "production_audio_de_report.json",
+        "sha256": "0e969361be2ca9d3c7f4737c37a4c298101d27b38aad8ebf44293bd283e527d5"
+      },
+      {
+        "file": "production_audio_priority_auto_report.json",
+        "sha256": "b7c5414699f6b748c2cc39634c533a24fa7e30f2dbda0af44eab783cef9186d6"
+      },
+      {
+        "file": "production_audio_priority_pal_report.json",
+        "sha256": "403dbf33ccbd093886a0a44532e92ee0bc8b14ed0d167438fb10776e99d7a996"
+      },
+      {
+        "file": "music_report.json",
+        "sha256": "4f5150af83b97f43b5c75c6630041b5c75d5732fcecc86aae2d8165fd3183c39"
+      },
+      {
+        "file": "sfx_report.json",
+        "sha256": "773049ed20f1f4c118861e7f206204b041b6390d495c57ac8c44a4b16f37e458"
+      },
+      {
+        "file": "music_fade_dispatch_report.json",
+        "sha256": "e3791168f0fdfce0ad1473d150769543bf6149d1df14fe1a23b119c375fe9389"
+      },
+      {
+        "file": "start_menu_audio_report.json",
+        "sha256": "12a00be138d13ec685cd71b668417115f2e544d858583df6dda2ae3007ffe551"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "e0f02016b5673a10b7dd8aa736e972c9891aa057ef6cd211aa07fb24d8e621d2"
+      },
+      {
+        "file": "inventory_restore_report.json",
+        "sha256": "df12511d74136eed45ac1adf5314869296fd26acf50ff02479e0ce6078d76281"
+      }
+    ]
   }
 ]

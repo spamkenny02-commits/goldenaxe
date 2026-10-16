@@ -1,0 +1,28 @@
+{
+  "cases": 20852,
+  "results": [
+    {
+      "part": 0,
+      "region": "auto",
+      "ROM_sha256": "a80d00caa215bded899af58af682d3e583938cc894a36d4924b51735643f73f8",
+      "frame": 5526,
+      "done": 1,
+      "cases": 20852,
+      "failures": 0
+    },
+    {
+      "part": 0,
+      "region": "pal",
+      "ROM_sha256": "a80d00caa215bded899af58af682d3e583938cc894a36d4924b51735643f73f8",
+      "frame": 4624,
+      "done": 1,
+      "cases": 20852,
+      "failures": 0
+    }
+  ],
+  "tone_helper_sha256": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a",
+  "limits": [
+    "Compiled68000 in GPG, state400/T/M1/DE and consumed inner returns.",
+    "PSG writes and real reader composition require production checks; waveforms/full IRQ clock remain open."
+  ]
+}

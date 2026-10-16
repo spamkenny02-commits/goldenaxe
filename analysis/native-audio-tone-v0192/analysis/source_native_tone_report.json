@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "kind": "notes-040",
+      "region": "auto",
+      "cases": 1248,
+      "raw_sha256": "7212cf58a82a1dee9338b94fd619c663b5c5d1c21490a18ff0a10bc6a52ffd40"
+    },
+    {
+      "kind": "notes-040",
+      "region": "pal",
+      "cases": 1248,
+      "raw_sha256": "39b7ac03c7b08dc10e81d5f8a232c8b511e2ff0ae748d10918acafff3ad290ec"
+    },
+    {
+      "kind": "notes-070",
+      "region": "auto",
+      "cases": 1248,
+      "raw_sha256": "301e459715ac9c4499b223785b3655b77fe2adcf0d97cf796e09099801621418"
+    },
+    {
+      "kind": "notes-070",
+      "region": "pal",
+      "cases": 1248,
+      "raw_sha256": "60362e630cfeb8110c2a1a9354ee03b9a5a467ce92d2238bf3036016c57d89e3"
+    },
+    {
+      "kind": "notes-0a0",
+      "region": "auto",
+      "cases": 1248,
+      "raw_sha256": "5197b73e18714bc3b54bfbbcc881ed02ece5f3b83d8071efce6d506c64ba415d"
+    },
+    {
+      "kind": "notes-0a0",
+      "region": "pal",
+      "cases": 1248,
+      "raw_sha256": "8a02c1f0e82f1246ce9088ad651419723679ef69e7f380d76ed6e692c7922a48"
+    },
+    {
+      "kind": "notes-100",
+      "region": "auto",
+      "cases": 1248,
+      "raw_sha256": "0d277badc0264c9d4866ec47ff787a19e4e6f321c5f52a21d74a3a88b6936061"
+    },
+    {
+      "kind": "notes-100",
+      "region": "pal",
+      "cases": 1248,
+      "raw_sha256": "21c96bced033c64cfb8348b488ef8da6f466dfeb6cb591003b568b12fa689187"
+    },
+    {
+      "kind": "notes-130",
+      "region": "auto",
+      "cases": 1248,
+      "raw_sha256": "1097f24c56689d1e6c995f20f2ab326967c69c0a2fc57219b0271e1c2753247d"
+    },
+    {
+      "kind": "notes-130",
+      "region": "pal",
+      "cases": 1248,
+      "raw_sha256": "7d3561ccc094e7e52e43cdc0859eb1fc9fac5dc9fdfff7b013fb38a69ad4df4c"
+    },
+    {
+      "kind": "notes-160",
+      "region": "auto",
+      "cases": 1248,
+      "raw_sha256": "159936b5611133d2c9fb12d68fc9fc8ef209d7f0ce1f082cdbaad8da8a32fa01"
+    },
+    {
+      "kind": "notes-160",
+      "region": "pal",
+      "cases": 1248,
+      "raw_sha256": "908512be7d7bd3eb5bdfb7505a2e1b5c2ffe3229b7904c8449cf7e27b2d19075"
+    },
+    {
+      "kind": "held",
+      "region": "auto",
+      "cases": 3024,
+      "raw_sha256": "d92e6c1c580951b136aa7c0fa5f93bebfecf4defa980e744b49a74f4bcee38be"
+    },
+    {
+      "kind": "held",
+      "region": "pal",
+      "cases": 3024,
+      "raw_sha256": "b699861b05391edbd1716919f01323b683bcdcbb6e77c05bdd1172311a936fed"
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "tone_helper_sha256": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a",
+  "limits": [
+    "Original84C7/bank6 unchanged; custom DI callers, all six tone slots plus held-envelope/pitch cases.",
+    "All400 bytes,T/M1,DE/returns compared directly, sourceR delta checked.",
+    "Synthetic context boundaries; PSG waveform, complete IRQ clock and natural progression remain open."
+  ]
+}

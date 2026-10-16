@@ -5,17 +5,25 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0191 — 1024 Kio.**
+**Version courante : v0192 — 1024 Kio.**
 
-[Télécharger la ROM v0191](versions/v0191-4c5ba01e/gaw-megadrive-v0191.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0192](versions/v0192-a30af8ee/gaw-megadrive-v0192.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `4c5ba01eb905c88138fba32a03b2f173cde3bacf8e2316c0982eee8487f86197`  
-Checksum Mega Drive : `5904`
+SHA-256 : `a30af8eeb4748ebffb980c74213df2d87b469e69e947d43f08830593f60d3db4`  
+Checksum Mega Drive : `8882`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0192 raccorde la composition tonale 84C7 au code natif vérifié :
+enchaînement des notes, relâchement, modulation et enveloppes, avec leurs
+coûts Z80/M1. Les 20 852 vecteurs passent en 68000 PAL/NTSC ; 252 scénarios
+de la ROM jouable concordent avec la SMS sur trois interruptions chacun,
+y compris les registres PSG audibles. Les régressions audio, menus et
+inventaire passent. L'horloge complète du jeu reste à intégrer.
+Voir les [preuves et limites](analysis/native_audio_tone_milestone.md).
 
 La v0191 raccorde le canal de bruit 864F/8679 au code natif vérifié.
 Elle corrige aussi une sortie du lecteur audio : certains arrêts du canal

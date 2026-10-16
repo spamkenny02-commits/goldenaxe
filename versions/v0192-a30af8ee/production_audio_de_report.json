@@ -1,0 +1,203 @@
+{
+  "md_sha256": "a30af8eeb4748ebffb980c74213df2d87b469e69e947d43f08830593f60d3db4",
+  "results": [
+    {
+      "region": "auto",
+      "scenario": "music-81",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-82",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-83",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-84",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-85",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-86",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-87",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-88",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-89",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-8a",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-8b",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-8c",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "music-8d",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "effect-a6",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "priority-91",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "auto",
+      "scenario": "priority-ac",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-81",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-82",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-83",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-84",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-85",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-86",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-87",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-88",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-89",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-8a",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-8b",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-8c",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "music-8d",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "effect-a6",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "priority-91",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    },
+    {
+      "region": "pal",
+      "scenario": "priority-ac",
+      "reader_return_DE_exact": 700,
+      "compared_RAM_bytes": 399
+    }
+  ],
+  "core_sha256": "706b569416c6f35d0784062c2712e83d5f58e2cdb3f69715f9711d0c1d043727",
+  "limits": [
+    "Controlled initial reader RAM and requests; real original reader DE observed at IRQ return.",
+    "13 tracks, ordinaryA6 andtwo priority/restore scenarios PAL/NTSC; GG stereo byte excluded.",
+    "Does not cover every DE-dependent command,whole foreground R/clock,hardware or waveforms."
+  ]
+}

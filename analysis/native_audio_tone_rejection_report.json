@@ -1,0 +1,98 @@
+{
+  "cases": [
+    {
+      "slot": 64,
+      "kind": "stream",
+      "error": 255
+    },
+    {
+      "slot": 64,
+      "kind": "command-after-mutation",
+      "error": 227
+    },
+    {
+      "slot": 64,
+      "kind": "vibrato-after-note",
+      "error": 255
+    },
+    {
+      "slot": 112,
+      "kind": "stream",
+      "error": 255
+    },
+    {
+      "slot": 112,
+      "kind": "command-after-mutation",
+      "error": 227
+    },
+    {
+      "slot": 112,
+      "kind": "vibrato-after-note",
+      "error": 255
+    },
+    {
+      "slot": 160,
+      "kind": "stream",
+      "error": 255
+    },
+    {
+      "slot": 160,
+      "kind": "command-after-mutation",
+      "error": 227
+    },
+    {
+      "slot": 160,
+      "kind": "vibrato-after-note",
+      "error": 255
+    },
+    {
+      "slot": 256,
+      "kind": "stream",
+      "error": 255
+    },
+    {
+      "slot": 256,
+      "kind": "command-after-mutation",
+      "error": 227
+    },
+    {
+      "slot": 256,
+      "kind": "vibrato-after-note",
+      "error": 255
+    },
+    {
+      "slot": 304,
+      "kind": "stream",
+      "error": 255
+    },
+    {
+      "slot": 304,
+      "kind": "command-after-mutation",
+      "error": 227
+    },
+    {
+      "slot": 304,
+      "kind": "vibrato-after-note",
+      "error": 255
+    },
+    {
+      "slot": 352,
+      "kind": "stream",
+      "error": 255
+    },
+    {
+      "slot": 352,
+      "kind": "command-after-mutation",
+      "error": 227
+    },
+    {
+      "slot": 352,
+      "kind": "vibrato-after-note",
+      "error": 255
+    }
+  ],
+  "tone_helper_sha256": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a",
+  "limits": [
+    "Host C only; verifies rollback contract, not source semantics for uncaptured RAM/unsupported commands."
+  ]
+}
