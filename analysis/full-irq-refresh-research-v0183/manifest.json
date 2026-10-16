@@ -1,0 +1,1010 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/archive_full_irq_refresh_research.py",
+      "sha256": "ac008fd1c3ce20a439eda142b116e84bf9aab7dcaccb2727a22daa84b983c309"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "23f4cfd24cbf618fce53a62a86c3162a7fe12ef5a3c0b90074e62270b8fbbc7e"
+    },
+    {
+      "path": "tools/validate_key_door_gameplay.py",
+      "sha256": "edaff2a53f041a71d7f231051cabd65dbaa5ae965b281ea6f0d201a878d80d0b"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_actor_tick.py",
+      "sha256": "ff145d9122365949160fb6878987689afd7e9f8d8bc047c0d597067908d94289"
+    },
+    {
+      "path": "tools/actor_tick_reference.py",
+      "sha256": "a5cd64adc2f20330dd20eea3873628195eb3c17c952a66bada4b4ce90820ea76"
+    },
+    {
+      "path": "tools/extract_world.py",
+      "sha256": "8575d37d77453328ed48d161ff4ab730ea03f8ffcd8ddd5d8d6956a737baa607"
+    },
+    {
+      "path": "tools/validate_live_full_irq_refresh.py",
+      "sha256": "01c0de052c8cf2ff27af01b38c18dff7a739a877e70ab5f193017fb6f64b7ed0"
+    },
+    {
+      "path": "tools/validate_full_irq_refresh.py",
+      "sha256": "22870f3494c80176e2ecd1625b4ad8c1039c32b21d5fad6812470806d95cb82c"
+    },
+    {
+      "path": "tools/irq_raster_phase.py",
+      "sha256": "66609173a811ffbeb148d4ebe9d061c2a8e9d0e2caf655b9c4b6fa0c3e0e5f3b"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/full_irq_refresh.py",
+      "sha256": "3387fa015ce13b5ee8a9b61ad1c87dec41c8173594ec0286515fdf584fc789fb"
+    },
+    {
+      "path": "tools/full_irq_cost.py",
+      "sha256": "aa376d2ec9e2c9ee88229cb21fc5fb0120532a62e5d9cff38c91c67049d968a0"
+    },
+    {
+      "path": "tools/audio_reader_refresh.py",
+      "sha256": "ff49979d10a86cd94c37b9a1439917db88a7e90e1bd514911d4321809e66af1b"
+    },
+    {
+      "path": "tools/audio_noise_channel_refresh.py",
+      "sha256": "6bc5f50b60af38b77ee3804d11d3f680fd09e5c5d5ea7c9723618747a8caf1fd"
+    },
+    {
+      "path": "tools/audio_note_sequence_refresh.py",
+      "sha256": "49c42ba46c06d248e75c54da2de41669eabcd829c078a672d8dd9bfcf1105c15"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/audio_envelope_refresh.py",
+      "sha256": "c1f08558f909187c5ce6dce91ba55aaa36ac35627e1785670de95767c5a33568"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_refresh.py",
+      "sha256": "899964546d7d9f0c36f78b0ef67c5c59009c5d7a300e772101617b2b198086d2"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_refresh.py",
+      "sha256": "b10d1e8a33cb764a1913f5d5f0e2d3891e639fe0ba917a3036171fa8df4bcfe7"
+    },
+    {
+      "path": "tools/audio_pitch_refresh.py",
+      "sha256": "231e6efcb8a9c4c29b3b4a2f4e7b5fc4b8a1fac24019276be78c85ffd7a54dd9"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/audio_priority_effect_refresh.py",
+      "sha256": "c4f696eb775fe4e3b9458039d9b8dec7e87984e92a59a547b23bfabab07bd2d8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "tools/build_full_irq_refresh_core.py",
+      "sha256": "35d467c8efcc8e5fa85eadb8c2b561c4263c8437cdf3e53779f441eba9b92ee3"
+    },
+    {
+      "path": "z80-full-irq-refresh.txt",
+      "sha256": "9b7c6a498276b46981252798401de6cda62539d1d4efcc22ca73080010534837"
+    },
+    {
+      "path": "fixture/source.sms",
+      "sha256": "be9fcdc5ce9d1acaa83b5a91b0a8b3db778e15ee1a2b4f4636af72d5d4daf7a4"
+    },
+    {
+      "path": "reference/bank_00.asm",
+      "sha256": "7fb3b3a94556558cd5df98d6d1d207a0a47c0861ba13856036fb91fafd53d2ee"
+    },
+    {
+      "path": "reference/bank_06.asm",
+      "sha256": "c8f23eaa40858fafba0460b2876d1345e2f03c9b92f8e18e092452588c5ff71c"
+    },
+    {
+      "path": "reference/full_irq_unit_report.json",
+      "sha256": "75f34509f63b9a9cd37325062c782a27c32be9586223b6aea7b1de3f55df170f"
+    },
+    {
+      "path": "reference/paid_passage_reference.json",
+      "sha256": "bd0c92c79ddc2afc96a03634ea2ea5f9c83ef12f16973509b3a29123c85f5e55"
+    },
+    {
+      "path": "unit/auto-records.bin",
+      "sha256": "4dc7d998a95cc0ddf7ac644e53e3ab4007549fb12a1c60ed7932d127fb271eaf"
+    },
+    {
+      "path": "unit/auto-m1.bin",
+      "sha256": "8f3be4d183878391154425aba5f1673a6201432df5919dd5642042d61a10ff79"
+    },
+    {
+      "path": "unit/pal-records.bin",
+      "sha256": "213b65f851853fb2b240e33d03cf3840083c7b160bcba9ab55e26c9d19c06b2b"
+    },
+    {
+      "path": "unit/pal-m1.bin",
+      "sha256": "bc745dbe47653f0072fe06d4a775f8f74a1f41a705a2b4f213e88df3f1ac0ac8"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/auto-audio-irq-events.json",
+      "sha256": "91c2c27780ef6c0502b9f9b529452283566cb8a8aa46dcee813daf533c4cdbb1"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/auto-full-irq-records.bin",
+      "sha256": "bb81ca7384d4de627eb155a4592de05f8826f840f4f06941bf65816c7fdf0da8"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/auto-full-irq-m1-records.bin",
+      "sha256": "a44d5f80f132b3ab842f6f605bd0655368c4fcaa0b6b43d079dcc31d3be6f83f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/auto-live-envelope-records.bin",
+      "sha256": "2cafa10d421d2d5d85737b03c94ccbe468824076592e28a56f9cb96d5e546c61"
+    },
+    {
+      "path": "reference/validation/wait-raster/1a-00/auto-full-irq-records.bin",
+      "sha256": "bb81ca7384d4de627eb155a4592de05f8826f840f4f06941bf65816c7fdf0da8"
+    },
+    {
+      "path": "reference/validation/wait-raster/1a-00/auto-live-envelope-records.bin",
+      "sha256": "2cafa10d421d2d5d85737b03c94ccbe468824076592e28a56f9cb96d5e546c61"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/pal-audio-irq-events.json",
+      "sha256": "9cc24202d65da7d16b3aff030eef5257a039f9baaf210fef80af63e2f9890e4c"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/pal-full-irq-records.bin",
+      "sha256": "37f6b9e345dc6bcd9d2e4793bf280d93b8aff6885283fd04a32cae4fb8b9c1c4"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/pal-full-irq-m1-records.bin",
+      "sha256": "6f2bfcc7786eb7d78ca97a9a2db8fc7160d64ed71a62958f11417bd00291f03e"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-00/pal-live-envelope-records.bin",
+      "sha256": "fb1315a366d280c889bda9f59ea05145d641f1279ff398c5e642bb5ed453b554"
+    },
+    {
+      "path": "reference/validation/wait-raster/1a-00/pal-full-irq-records.bin",
+      "sha256": "37f6b9e345dc6bcd9d2e4793bf280d93b8aff6885283fd04a32cae4fb8b9c1c4"
+    },
+    {
+      "path": "reference/validation/wait-raster/1a-00/pal-live-envelope-records.bin",
+      "sha256": "fb1315a366d280c889bda9f59ea05145d641f1279ff398c5e642bb5ed453b554"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/auto-audio-irq-events.json",
+      "sha256": "e1f1f72f29b6e7560a261b77934d18bdeb4af3851ccb344080f239777c7e5e4f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/auto-full-irq-records.bin",
+      "sha256": "1bc7f688cd1ce1cade75ee511853d85486d0e58b8ed12d50ce1618fe41558911"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/auto-full-irq-m1-records.bin",
+      "sha256": "0f3426ee416d1fd7a47832b6f912a64975281d6e62f4c9b09105d0c751cd8f53"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/auto-live-envelope-records.bin",
+      "sha256": "e105ef0bcce43cf5b1ab8c488dbb6e4a59a89c0d9aa7767f6767163a51ce326f"
+    },
+    {
+      "path": "reference/validation/wait-raster/1a-ff/auto-full-irq-records.bin",
+      "sha256": "1bc7f688cd1ce1cade75ee511853d85486d0e58b8ed12d50ce1618fe41558911"
+    },
+    {
+      "path": "reference/validation/wait-raster/1a-ff/auto-live-envelope-records.bin",
+      "sha256": "e105ef0bcce43cf5b1ab8c488dbb6e4a59a89c0d9aa7767f6767163a51ce326f"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/pal-audio-irq-events.json",
+      "sha256": "229576c976aa5423b60def7a6bc6f92e55caf5fb16c5feec6a3652fc518ab550"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/pal-full-irq-records.bin",
+      "sha256": "d4e11a28d8ff48d228a85c2affc0502e251567683706a06e38a47c7d7be4744d"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/pal-full-irq-m1-records.bin",
+      "sha256": "d8b81ee790280470306ae60074d14d6758677392f5bdd20310cb9c7dd7d517db"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/1a-ff/pal-live-envelope-records.bin",
+      "sha256": "28f0a5204d3d01657d8ce8d1f05cfe64dcac3d38387216878b27a880db875259"
+    },
+    {
+      "path": "reference/validation/wait-raster/1a-ff/pal-full-irq-records.bin",
+      "sha256": "d4e11a28d8ff48d228a85c2affc0502e251567683706a06e38a47c7d7be4744d"
+    },
+    {
+      "path": "reference/validation/wait-raster/1a-ff/pal-live-envelope-records.bin",
+      "sha256": "28f0a5204d3d01657d8ce8d1f05cfe64dcac3d38387216878b27a880db875259"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/auto-audio-irq-events.json",
+      "sha256": "0e9531b3ec5b950e20c4a88a14af1f70c8b14a1ea6a5723804db7a86801d2388"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/auto-full-irq-records.bin",
+      "sha256": "9e0718e79602c324d009a5bafa8c1914944401a11d597631f3818dad7de39546"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/auto-full-irq-m1-records.bin",
+      "sha256": "dfe8436d4cac89fa6d7dae5ce82e9d7f74f938f0d6c34def8d1bb5817d960f0f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/auto-live-envelope-records.bin",
+      "sha256": "888fb0668248a704486bc5824194c2fba3348fa968d0c9c5dc1eac3d527f890b"
+    },
+    {
+      "path": "reference/validation/wait-raster/36-00/auto-full-irq-records.bin",
+      "sha256": "9e0718e79602c324d009a5bafa8c1914944401a11d597631f3818dad7de39546"
+    },
+    {
+      "path": "reference/validation/wait-raster/36-00/auto-live-envelope-records.bin",
+      "sha256": "888fb0668248a704486bc5824194c2fba3348fa968d0c9c5dc1eac3d527f890b"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/pal-audio-irq-events.json",
+      "sha256": "0becb1a99763e4ab9854634663f14bccc7cfde442977e8e455594c2d351ec457"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/pal-full-irq-records.bin",
+      "sha256": "bec993ff2892e49268e1eb58846807260eb572620118cd7346846dc9d31b0454"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/pal-full-irq-m1-records.bin",
+      "sha256": "8bc05deae7311e68611e2e5dc4a908d0d1b5d36bf92909bf5d103e1ff20fe376"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-00/pal-live-envelope-records.bin",
+      "sha256": "7e59b5929f7e8fc4d2faf3f681cd6fa6cbfb0af49c5ced50390fa00a0cd48fd3"
+    },
+    {
+      "path": "reference/validation/wait-raster/36-00/pal-full-irq-records.bin",
+      "sha256": "bec993ff2892e49268e1eb58846807260eb572620118cd7346846dc9d31b0454"
+    },
+    {
+      "path": "reference/validation/wait-raster/36-00/pal-live-envelope-records.bin",
+      "sha256": "7e59b5929f7e8fc4d2faf3f681cd6fa6cbfb0af49c5ced50390fa00a0cd48fd3"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/auto-audio-irq-events.json",
+      "sha256": "da7a99986a572d1e5937bf71b46356ec5aba269b1a9ca347bb9963d5d0325f65"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/auto-full-irq-records.bin",
+      "sha256": "1598bf1ae29629ab8bb0d6165664f7af13b0f68fb3e3fc689091173b03701956"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/auto-full-irq-m1-records.bin",
+      "sha256": "1fe2eb4ea3503c965f86a9acde2fe37b657a4fe1b1af98a8a975ca1856106593"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/auto-live-envelope-records.bin",
+      "sha256": "4941e371280b7e5475f8ecc18802bec554670df6ea43b8985e455d2b48edb8e4"
+    },
+    {
+      "path": "reference/validation/wait-raster/36-ff/auto-full-irq-records.bin",
+      "sha256": "1598bf1ae29629ab8bb0d6165664f7af13b0f68fb3e3fc689091173b03701956"
+    },
+    {
+      "path": "reference/validation/wait-raster/36-ff/auto-live-envelope-records.bin",
+      "sha256": "4941e371280b7e5475f8ecc18802bec554670df6ea43b8985e455d2b48edb8e4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/pal-audio-irq-events.json",
+      "sha256": "17fe16c08ec931b3b68178315f83d2c3379643bdc8cda287342998c222a19f47"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/pal-full-irq-records.bin",
+      "sha256": "074fbc2f0dbf5567af02bbe13fefe19a705c741d6e2ca469af5ea3e6ac523a6f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/pal-full-irq-m1-records.bin",
+      "sha256": "bc03d2a5e5f819457fa8afd78445f380de3eb8b06027a663cc2ad39d30307f76"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/36-ff/pal-live-envelope-records.bin",
+      "sha256": "1638c114d54451a1b4c043916e6d5989ddf9ab5f4defa271691525023543d429"
+    },
+    {
+      "path": "reference/validation/wait-raster/36-ff/pal-full-irq-records.bin",
+      "sha256": "074fbc2f0dbf5567af02bbe13fefe19a705c741d6e2ca469af5ea3e6ac523a6f"
+    },
+    {
+      "path": "reference/validation/wait-raster/36-ff/pal-live-envelope-records.bin",
+      "sha256": "1638c114d54451a1b4c043916e6d5989ddf9ab5f4defa271691525023543d429"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/auto-audio-irq-events.json",
+      "sha256": "4610fe59f66ee938ac1074375cdf5f04f211723a5a4d1796dd89373c81103da0"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/auto-full-irq-records.bin",
+      "sha256": "def14228074e78c1965048e3e406085c7e3a6b93ffe4eb16cbf3831b1b0fbc6f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/auto-full-irq-m1-records.bin",
+      "sha256": "5ed715a9d6d781f8f7bb097cc1fc8828df3bfa8a71d5916ab0162306ecf31ac5"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/auto-live-envelope-records.bin",
+      "sha256": "c6e05af23e013c5d322bf705c05e6caf254d4951a335af5f1e6193efef7ff551"
+    },
+    {
+      "path": "reference/validation/wait-raster/6d-00/auto-full-irq-records.bin",
+      "sha256": "def14228074e78c1965048e3e406085c7e3a6b93ffe4eb16cbf3831b1b0fbc6f"
+    },
+    {
+      "path": "reference/validation/wait-raster/6d-00/auto-live-envelope-records.bin",
+      "sha256": "c6e05af23e013c5d322bf705c05e6caf254d4951a335af5f1e6193efef7ff551"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/pal-audio-irq-events.json",
+      "sha256": "ababacd8808b383cd053b8ff1d741a59923c76cd9456e9c1712017a88ebcd54f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/pal-full-irq-records.bin",
+      "sha256": "7ee1790c26d2b57cc7e506165f1260bacb7e45b80e8a156aac0aadcb3addc96e"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/pal-full-irq-m1-records.bin",
+      "sha256": "299744d7b653aeafaa429612d841542e2ca3834fc4e3f787beabb1f25220ab20"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-00/pal-live-envelope-records.bin",
+      "sha256": "1221330950b6e9bbbb04954f745c7bd4471371cd196e78274823085c2c669321"
+    },
+    {
+      "path": "reference/validation/wait-raster/6d-00/pal-full-irq-records.bin",
+      "sha256": "7ee1790c26d2b57cc7e506165f1260bacb7e45b80e8a156aac0aadcb3addc96e"
+    },
+    {
+      "path": "reference/validation/wait-raster/6d-00/pal-live-envelope-records.bin",
+      "sha256": "1221330950b6e9bbbb04954f745c7bd4471371cd196e78274823085c2c669321"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/auto-audio-irq-events.json",
+      "sha256": "53ae0e01677b544dd653fe676306072009ba936af613f873c455f1710776bafd"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/auto-full-irq-records.bin",
+      "sha256": "f837e088bbfd1354f32b9d3d066795ba0aeb6f6db0a369acbf410e7dd4f8feae"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/auto-full-irq-m1-records.bin",
+      "sha256": "e545e5f4aba69300364586eba1698757465aca9e99bd2e6a46d09764881fa7c3"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/auto-live-envelope-records.bin",
+      "sha256": "6b8f0a2d5d36e396c9f4df10380df328dda4ca142aba7d065c2cd53ac1039b54"
+    },
+    {
+      "path": "reference/validation/wait-raster/6d-ff/auto-full-irq-records.bin",
+      "sha256": "f837e088bbfd1354f32b9d3d066795ba0aeb6f6db0a369acbf410e7dd4f8feae"
+    },
+    {
+      "path": "reference/validation/wait-raster/6d-ff/auto-live-envelope-records.bin",
+      "sha256": "6b8f0a2d5d36e396c9f4df10380df328dda4ca142aba7d065c2cd53ac1039b54"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/pal-audio-irq-events.json",
+      "sha256": "1b18b0ffd1a3779361c2b67cca19c6256c0760df29d6212872aa065a1c837d0f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/pal-full-irq-records.bin",
+      "sha256": "dd350ffe6430c6052a6f39eb16a26ecff78c45bbfad42cbb8bcf87b672070464"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/pal-full-irq-m1-records.bin",
+      "sha256": "b1f19085ebf04fd7b7f8621313a1381beec2cc2fcf66afd117225df5ff6bc7ae"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/6d-ff/pal-live-envelope-records.bin",
+      "sha256": "3f78baaeab2e9a790473a995430c598dd545c936d6ed67db2aee8bb520bff83b"
+    },
+    {
+      "path": "reference/validation/wait-raster/6d-ff/pal-full-irq-records.bin",
+      "sha256": "dd350ffe6430c6052a6f39eb16a26ecff78c45bbfad42cbb8bcf87b672070464"
+    },
+    {
+      "path": "reference/validation/wait-raster/6d-ff/pal-live-envelope-records.bin",
+      "sha256": "3f78baaeab2e9a790473a995430c598dd545c936d6ed67db2aee8bb520bff83b"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/auto-audio-irq-events.json",
+      "sha256": "3f6dcc901ce2a5f3ea9f58db95a8e5f35ae2f65ca05775c4c7d438c4f7300f01"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/auto-full-irq-records.bin",
+      "sha256": "cd9c2f55916ea4c165cf7eaf40d16be7d5880b7fcc2c79b39332cc5276e3f7d2"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/auto-full-irq-m1-records.bin",
+      "sha256": "8c5446fea8906b5f54fce3e8d523463b0ffea58e3cae4df05cdb75c3ab468452"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/auto-live-envelope-records.bin",
+      "sha256": "b0bd97e1d9ddea80a9706cfd53abaf58cdc29fc024ed66e476f22d014b79e0dc"
+    },
+    {
+      "path": "reference/validation/wait-raster/3c-00/auto-full-irq-records.bin",
+      "sha256": "cd9c2f55916ea4c165cf7eaf40d16be7d5880b7fcc2c79b39332cc5276e3f7d2"
+    },
+    {
+      "path": "reference/validation/wait-raster/3c-00/auto-live-envelope-records.bin",
+      "sha256": "b0bd97e1d9ddea80a9706cfd53abaf58cdc29fc024ed66e476f22d014b79e0dc"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/pal-audio-irq-events.json",
+      "sha256": "40314eee31d9ac236a04565638de92ac6e4a9365f3cc873b55eedf0f3f8d3c1c"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/pal-full-irq-records.bin",
+      "sha256": "9ba02debb35444cffc93b85eede03d39df6eec627a3964e53335ef9199233154"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/pal-full-irq-m1-records.bin",
+      "sha256": "64cb0a96ccca3b06ad92fdefac7f716dd5b4010f81834c63cbed939f6d9fe3de"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-00/pal-live-envelope-records.bin",
+      "sha256": "384440a6fd2ed4ea574cbd607200929d96b6fad2f2bda6c819f116b025919443"
+    },
+    {
+      "path": "reference/validation/wait-raster/3c-00/pal-full-irq-records.bin",
+      "sha256": "9ba02debb35444cffc93b85eede03d39df6eec627a3964e53335ef9199233154"
+    },
+    {
+      "path": "reference/validation/wait-raster/3c-00/pal-live-envelope-records.bin",
+      "sha256": "384440a6fd2ed4ea574cbd607200929d96b6fad2f2bda6c819f116b025919443"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/auto-audio-irq-events.json",
+      "sha256": "cc972d3af70af7773d8ac2f39387eead123fa088939115561ff1ec3d9f9fa352"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/auto-full-irq-records.bin",
+      "sha256": "b600574ab0af0721f9980a574c178352a7c5b4dab1fcb7d94a0f616aa2d74dbb"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/auto-full-irq-m1-records.bin",
+      "sha256": "e00f07c42ee696ef0124b5d21532fb8e71fa4bd1b7801dfb9601fb0aef0c0516"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/auto-live-envelope-records.bin",
+      "sha256": "94a73e32d7f9c9ec718ccecbac0a8ae8cf8c0b12d60b4a7fe8e467dc8f2fa162"
+    },
+    {
+      "path": "reference/validation/wait-raster/3c-ff/auto-full-irq-records.bin",
+      "sha256": "b600574ab0af0721f9980a574c178352a7c5b4dab1fcb7d94a0f616aa2d74dbb"
+    },
+    {
+      "path": "reference/validation/wait-raster/3c-ff/auto-live-envelope-records.bin",
+      "sha256": "94a73e32d7f9c9ec718ccecbac0a8ae8cf8c0b12d60b4a7fe8e467dc8f2fa162"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/pal-audio-irq-events.json",
+      "sha256": "8bcdc32198073df81ab758735b93790ed67eb93a2c97581ce28aa98729fe4fc4"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/pal-full-irq-records.bin",
+      "sha256": "703e4dc467dd5be16b8dd36885eff304c9413d2c8298c39e99a395e21cdce8e1"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/pal-full-irq-m1-records.bin",
+      "sha256": "03951465cf4f540c151ca3bf2757099ba7a501e1e6cfc27ef56002efd4929a29"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/3c-ff/pal-live-envelope-records.bin",
+      "sha256": "42d5cd3ae144c05f041953616674f5cc43d191ea563b44f79a65d3dda1d4eac9"
+    },
+    {
+      "path": "reference/validation/wait-raster/3c-ff/pal-full-irq-records.bin",
+      "sha256": "703e4dc467dd5be16b8dd36885eff304c9413d2c8298c39e99a395e21cdce8e1"
+    },
+    {
+      "path": "reference/validation/wait-raster/3c-ff/pal-live-envelope-records.bin",
+      "sha256": "42d5cd3ae144c05f041953616674f5cc43d191ea563b44f79a65d3dda1d4eac9"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/auto-audio-irq-events.json",
+      "sha256": "08be5d7222b1fe402244e0cb79cb75af58b5742cbea0a9e6c0311266c5ffd67d"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/auto-full-irq-records.bin",
+      "sha256": "717e427c195260dab97bbebe099487e1c52bfd29f4151e0587193f8203067b00"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/auto-full-irq-m1-records.bin",
+      "sha256": "72464bf6f3a8b73b50836d5a51d3d2bc51f09f3a242f67ea86dd8d1104581f4c"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/auto-live-envelope-records.bin",
+      "sha256": "508dbceb6f0d6621a97a4b95d21bf407d86ea51036afcfb8d14600277eb60330"
+    },
+    {
+      "path": "reference/validation/wait-raster/87-00/auto-full-irq-records.bin",
+      "sha256": "717e427c195260dab97bbebe099487e1c52bfd29f4151e0587193f8203067b00"
+    },
+    {
+      "path": "reference/validation/wait-raster/87-00/auto-live-envelope-records.bin",
+      "sha256": "508dbceb6f0d6621a97a4b95d21bf407d86ea51036afcfb8d14600277eb60330"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/pal-audio-irq-events.json",
+      "sha256": "e2c8e1fc73e2c3059d2b7ca3ff3ff52e80b52609adede073c541d4483ffd6428"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/pal-full-irq-records.bin",
+      "sha256": "29dc6101d93b66eb34ba76c5f56b94992ae1ebd408b5e68be775c4ffc1f59275"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/pal-full-irq-m1-records.bin",
+      "sha256": "ae88a3fa326e32582f660e87e4ff4714eebbf5aae20fc305c077e8d0655725dd"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-00/pal-live-envelope-records.bin",
+      "sha256": "bc83854175defb1d0563bcb69c4654830b9528ece29f4681baf6e875a142ce4e"
+    },
+    {
+      "path": "reference/validation/wait-raster/87-00/pal-full-irq-records.bin",
+      "sha256": "29dc6101d93b66eb34ba76c5f56b94992ae1ebd408b5e68be775c4ffc1f59275"
+    },
+    {
+      "path": "reference/validation/wait-raster/87-00/pal-live-envelope-records.bin",
+      "sha256": "bc83854175defb1d0563bcb69c4654830b9528ece29f4681baf6e875a142ce4e"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/auto-audio-irq-events.json",
+      "sha256": "de9a71a694c058e482120febb9720d30b2f1560411aefd9f588b71d8bdf20b1a"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/auto-full-irq-records.bin",
+      "sha256": "e3e0f8a8949701b3a5b866aa01daa91154c8f65425e22ed176a7da75959f6d3a"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/auto-full-irq-m1-records.bin",
+      "sha256": "c7b83acb6e0bd4401906b6742e548a173e1ec906730e8e0e2cac0df501994b4f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/auto-live-envelope-records.bin",
+      "sha256": "99c4cb420540c5b9ffbec0375461c051bd3f23d0bd18ce389d7fe532ded0697c"
+    },
+    {
+      "path": "reference/validation/wait-raster/87-ff/auto-full-irq-records.bin",
+      "sha256": "e3e0f8a8949701b3a5b866aa01daa91154c8f65425e22ed176a7da75959f6d3a"
+    },
+    {
+      "path": "reference/validation/wait-raster/87-ff/auto-live-envelope-records.bin",
+      "sha256": "99c4cb420540c5b9ffbec0375461c051bd3f23d0bd18ce389d7fe532ded0697c"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/pal-audio-irq-events.json",
+      "sha256": "166aff13a1e258d582ebf0373a2c3bdda9c6dac749a530fbae7e49efa1742af6"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/pal-full-irq-records.bin",
+      "sha256": "f48f4d97b6168bcd0fd314006f4859282b75c54615f0f9bceb9f6c661434e2d8"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/pal-full-irq-m1-records.bin",
+      "sha256": "1d722810471bfcc65189f6efc3330e66f32dfeb14e35c2c714e0b6c7de2355fd"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/87-ff/pal-live-envelope-records.bin",
+      "sha256": "6dffd3dcb94b22a6a8afaed1f1e44b481be19a4e11e0650285811706d27af3ce"
+    },
+    {
+      "path": "reference/validation/wait-raster/87-ff/pal-full-irq-records.bin",
+      "sha256": "f48f4d97b6168bcd0fd314006f4859282b75c54615f0f9bceb9f6c661434e2d8"
+    },
+    {
+      "path": "reference/validation/wait-raster/87-ff/pal-live-envelope-records.bin",
+      "sha256": "6dffd3dcb94b22a6a8afaed1f1e44b481be19a4e11e0650285811706d27af3ce"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/auto-audio-irq-events.json",
+      "sha256": "5d423da5c04a2e79a77d713497fa5f2f8e308752f37acfae3ef382e0ea561088"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/auto-full-irq-records.bin",
+      "sha256": "590f1759e145ac455c9bc8ed746ee042a170d0cc8558b979f5e4face0774e8ff"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/auto-full-irq-m1-records.bin",
+      "sha256": "255af882077d6d79ae76a7b79d8d22742a0f71ef0e4360cdcf1d1bec01815ef6"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/auto-live-envelope-records.bin",
+      "sha256": "2cafa10d421d2d5d85737b03c94ccbe468824076592e28a56f9cb96d5e546c61"
+    },
+    {
+      "path": "reference/validation/wait-raster/96-00/auto-full-irq-records.bin",
+      "sha256": "590f1759e145ac455c9bc8ed746ee042a170d0cc8558b979f5e4face0774e8ff"
+    },
+    {
+      "path": "reference/validation/wait-raster/96-00/auto-live-envelope-records.bin",
+      "sha256": "2cafa10d421d2d5d85737b03c94ccbe468824076592e28a56f9cb96d5e546c61"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/pal-audio-irq-events.json",
+      "sha256": "0c4c87eb9b7db58329b10152897d6b826d2cccdd191fd36b1d8aa411efeeefdf"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/pal-full-irq-records.bin",
+      "sha256": "3490b4cacd1f335588757b269e29d578ce7adf8d290f85a338f164bdd6d6c32a"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/pal-full-irq-m1-records.bin",
+      "sha256": "1428ae052dcd241c6ec531b0bf67d5e8ecbadab34f2284dfe3bcc3f9b30157df"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-00/pal-live-envelope-records.bin",
+      "sha256": "fb1315a366d280c889bda9f59ea05145d641f1279ff398c5e642bb5ed453b554"
+    },
+    {
+      "path": "reference/validation/wait-raster/96-00/pal-full-irq-records.bin",
+      "sha256": "3490b4cacd1f335588757b269e29d578ce7adf8d290f85a338f164bdd6d6c32a"
+    },
+    {
+      "path": "reference/validation/wait-raster/96-00/pal-live-envelope-records.bin",
+      "sha256": "fb1315a366d280c889bda9f59ea05145d641f1279ff398c5e642bb5ed453b554"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/auto-audio-irq-events.json",
+      "sha256": "24d4fdc20db7e1238a94e79e0099b137240509b00e55982f12a2e5191cb59092"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/auto-full-irq-records.bin",
+      "sha256": "9a876f1b331c6b86ec3aa9600d57109492930b9b9363bcda4740b5de6c20f415"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/auto-full-irq-m1-records.bin",
+      "sha256": "86406c3cb7eab29598b13a8e839ac6cab7c21cf706a7059460f18b5b4796335b"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/auto-live-envelope-records.bin",
+      "sha256": "e37321dbf3fcacecea914aa852cf35b59ccc63a75cd0ed791ea478f8674e60ff"
+    },
+    {
+      "path": "reference/validation/wait-raster/96-ff/auto-full-irq-records.bin",
+      "sha256": "9a876f1b331c6b86ec3aa9600d57109492930b9b9363bcda4740b5de6c20f415"
+    },
+    {
+      "path": "reference/validation/wait-raster/96-ff/auto-live-envelope-records.bin",
+      "sha256": "e37321dbf3fcacecea914aa852cf35b59ccc63a75cd0ed791ea478f8674e60ff"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/pal-audio-irq-events.json",
+      "sha256": "92fde6e5fa7f6634cb9506c61292ff85e8dc6bafd1aa8f4b4caf7c1d67487a8b"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/pal-full-irq-records.bin",
+      "sha256": "97d002df8b39f15f289a2ce276dec3a134e8d14ddf65dca83204bb226701e80f"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/pal-full-irq-m1-records.bin",
+      "sha256": "21287e773acccb7a3921001b303f3d3617a52fe8c5e2035330c5e2fa0e6f3bd3"
+    },
+    {
+      "path": "validation/full-irq-refresh-live/96-ff/pal-live-envelope-records.bin",
+      "sha256": "2a2b4e10cefbc7b7220cce93b99438d9e7c23305f41702c5d349aa10727c8088"
+    },
+    {
+      "path": "reference/validation/wait-raster/96-ff/pal-full-irq-records.bin",
+      "sha256": "97d002df8b39f15f289a2ce276dec3a134e8d14ddf65dca83204bb226701e80f"
+    },
+    {
+      "path": "reference/validation/wait-raster/96-ff/pal-live-envelope-records.bin",
+      "sha256": "2a2b4e10cefbc7b7220cce93b99438d9e7c23305f41702c5d349aa10727c8088"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "full_irq_refresh_unit_report.json",
+      "sha256": "abbdfbe8907fef3fdd500241ae1fbba68264fd31040ede2754c05a396919c5a6"
+    },
+    {
+      "path": "live_full_irq_refresh_report.json",
+      "sha256": "70b184d4262168597fc79f340c747035565f405a107540390b335ca40968a3fa"
+    },
+    {
+      "path": "full_irq_refresh_milestone.md",
+      "sha256": "12ef202a55c62158c4662a30b23519cf5d009422a353f39078762e6cc53a7429"
+    },
+    {
+      "path": "genesis_plus_gx_fullirqrefresh_libretro.dll",
+      "sha256": "03f56047893740403eeb92f7e000e2aae10c001349225d0d3aa3d6276d7d4621"
+    },
+    {
+      "path": "logs/build-full-irq-refresh.log",
+      "sha256": "a2b2c8e1296889e178bbed9d11575a76682e3b605487b9f7173dc1b55b44fff7"
+    },
+    {
+      "path": "logs/full-irq-refresh-core-build.log",
+      "sha256": "1efe3123d717d4b11f034620841ba30d7036b029a9530795c8fc327af73ba4ee"
+    },
+    {
+      "path": "logs/full-irq-refresh-unit.log",
+      "sha256": "67d04cb3377bc57e0d43a8213e24a45082a4b8b17c9eb1ebedc4fdc185aed0e0"
+    },
+    {
+      "path": "logs/full-irq-refresh-live-6d-ff.log",
+      "sha256": "ce9d8f01cf781671025b452c6865bf061262c21c5b5e6d168236091ed70239a0"
+    },
+    {
+      "path": "logs/full-irq-refresh-live-group0.log",
+      "sha256": "79786d14627fb8a678d27645eb74f28a6033758b23212701afa1222dd0ad23c0"
+    },
+    {
+      "path": "logs/full-irq-refresh-live-group1.log",
+      "sha256": "6671bfacd975015704eca4bfefa9c613065dc78f0c3e2aa9def6d014c3758841"
+    },
+    {
+      "path": "logs/full-irq-refresh-live-group2.log",
+      "sha256": "c4d0f4cfa99e46031706cfda21ec8ba5ac1c153fa3c3822c79e5e86a0ddd4db0"
+    },
+    {
+      "path": "logs/live-full-irq-refresh.log",
+      "sha256": "01884b7141acf335242026b06411d138c021ce91d919cf988c45c7726d3de428"
+    }
+  ]
+}

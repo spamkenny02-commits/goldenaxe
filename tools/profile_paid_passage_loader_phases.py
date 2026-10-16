@@ -41,7 +41,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     if hasattr(dll,"gaw_foreground_phase_samples"):
      dll.gaw_foreground_phase_samples.restype=c.c_uint;dll.gaw_foreground_phase_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,"gaw_wait_entry_events"):dll.gaw_wait_entry_events.restype=c.POINTER(c.c_uint8)
-    full_records=bytearray();previous_full=[0];irq_phases=bytearray()
+    full_records=bytearray();full_m1=bytearray();previous_full=[0];irq_phases=bytearray()
+    if hasattr(dll,'gaw_full_irq_m1_events'):dll.gaw_full_irq_m1_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,"gaw_irq_phase_events"):dll.gaw_irq_phase_events.restype=c.POINTER(c.c_uint32)
     if hasattr(dll,"gaw_full_irq_samples"):
      dll.gaw_full_irq_samples.restype=c.c_uint;dll.gaw_full_irq_records.restype=c.POINTER(c.c_uint8);dll.gaw_full_irq_nested.restype=c.c_uint
@@ -77,6 +78,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
        full_count=dll.gaw_full_irq_samples()
        if f>=4200 and full_count>previous_full[0]:
         base=c.addressof(dll.gaw_full_irq_records().contents);full_records.extend(c.string_at(base+previous_full[0]*800,(full_count-previous_full[0])*800))
+        if hasattr(dll,'gaw_full_irq_m1_events'):
+         base=c.addressof(dll.gaw_full_irq_m1_events().contents);full_m1.extend(c.string_at(base+previous_full[0]*152,(full_count-previous_full[0])*152))
         if hasattr(dll,'gaw_irq_phase_events'):
          base=c.addressof(dll.gaw_irq_phase_events().contents);irq_phases.extend(c.string_at(base+previous_full[0]*32,(full_count-previous_full[0])*32))
        previous_full[0]=full_count
@@ -159,6 +162,7 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      if hasattr(dll,'gaw_live_prefix_samples'):(folder/f'{region}-live-prefix-records.bin').write_bytes(live_prefix_records)
      if hasattr(dll,'gaw_irq_phase_events'):(folder/f'{region}-irq-raster-records.bin').write_bytes(irq_phases)
      if hasattr(dll,'gaw_full_irq_samples'):(folder/f'{region}-full-irq-records.bin').write_bytes(full_records)
+     if hasattr(dll,'gaw_full_irq_m1_events'):(folder/f'{region}-full-irq-m1-records.bin').write_bytes(full_m1)
      if hasattr(dll,'gaw_foreground_phase_samples'):(folder/f'{region}-foreground-phase-records.bin').write_bytes(foreground_phases)
      if hasattr(dll,'gaw_map_extra_events'):(folder/f'{region}-map-extra-records.bin').write_bytes(foreground_extra)
      if hasattr(dll,'gaw_hud_context_events'):(folder/f'{region}-hud-context-records.bin').write_bytes(hud_context)

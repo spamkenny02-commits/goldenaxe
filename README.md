@@ -98,7 +98,10 @@ passent maintenant 16 points de contrôle, avec les compteurs du HUD
 fournis à l’entrée et les interruptions complètes calculées.
 La suite du chargement (acteurs, historique) et les entrées de hasard
 restent à prédire avant l’intégration aux timings natifs. Ces recherches
-ne modifient pas encore la ROM v0183.
+ne modifient pas encore la ROM v0183. Les lectures d’opcodes et le registre R
+des interruptions vidéo passent désormais les 13 749 appels et 2 880 cas
+isolés, sur leurs neuf étapes. Les files graphiques, motifs, HUD et lecteur
+audio sont composés ; la propagation de R hors interruptions reste à faire.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -192,3 +195,5 @@ Le travail reste dans le dépôt Git local, sur la branche `main`, sans dépôt
 distant configuré. Il sera copié vers un nouveau dépôt lorsque demandé.
 L’ancien dépôt GitHub V51 contient un autre arbre de code ; aucun changement
 n’y a été envoyé depuis ce projet.
+
+- [Lectures d’opcodes des interruptions vidéo complètes](analysis/full_irq_refresh_milestone.md).
