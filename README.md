@@ -5,14 +5,14 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0183 — 1024 Kio.**
+**Version courante : v0184 — 1024 Kio.**
 
-[Télécharger la ROM v0183](versions/v0183-ec1677f7/gaw-megadrive-v0183.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0184](versions/v0184-67010959/gaw-megadrive-v0184.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876`  
-Checksum Mega Drive : `CAAA`
+SHA-256 : `67010959a2ab6fbaf409426ca2e06d645040c73d7f7cd99a01c4debb49fedc1e`  
+Checksum Mega Drive : `38CF`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage

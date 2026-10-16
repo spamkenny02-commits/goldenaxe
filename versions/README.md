@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0184 | [Telecharger](v0184-67010959/gaw-megadrive-v0184.bin) | targeted_checks_passed | Prefixe audio natif : tempo, priorites, arret et fondu ; correction du debordement volume et des requetes hautes. Controles cibles musiques, bruitages, fondu, menu et 24 cas limites. | `67010959a2ab6fbaf409426ca2e06d645040c73d7f7cd99a01c4debb49fedc1e` |
 | v0183 | [Telecharger](v0183-ec1677f7/gaw-megadrive-v0183.bin) | targeted_checks_passed | Bruit : un silence conserve le PSG lorsque le canal est emprunte ; 18432 cas source/natif et regressions audio verifies. | `ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876` |
 | v0182 | [Telecharger](v0182-f41db51b/gaw-megadrive-v0182.bin) | targeted_checks_passed | F3 : arret de sequence quand le canal emprunte est actif ; 400 cas source/natif exacts, 13 musiques/29 bruitages/fondus verifies. | `f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d` |
 | v0181 | [Telecharger](v0181-97313b55/gaw-megadrive-v0181.bin) | targeted_checks_passed | Durees des notes audio brutes16bits et curseur de sequence corriges selon la SMS.1080 cas source/natif exacts;13 musiques,29 bruitages et fondus verifies sur44340 etats audio. Portage complet encore non valide. | `97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236` |

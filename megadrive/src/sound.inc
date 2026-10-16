@@ -1,5 +1,6 @@
 /* Native PSG music reader, bank 6:8000..897D. Original sequence/envelope
  * data are read directly; this is not a Z80 CPU or a recorded audio stream. */
+#include "source_audio_prefix.h"
 extern const u8 intro_bank6[],sound_low_rom[];
 static u8 sound_ram[0x190];
 static volatile u16 sound_unhandled_command;
@@ -17,7 +18,7 @@ static void sound_mute(void)
 }
 static void sound_stop(void)
 {
-    memset(sound_ram+5,0,0x18b);sound_ram[5]=0x80;sound_mute();
+    SourceClockWork work;source_audio_stop(sound_ram,&work);sound_mute();
 }
 static void sound_start(u16 command)
 {
@@ -36,18 +37,7 @@ static void sound_start(u16 command)
 /* 8097/80A8: three source queues share a priority latch; later ties win. */
 static void sound_arbitrate(void)
 {
-    u16 n;
-    for(n=6;n<9;n++)
-    {
-        u16 command=sound_ram[n],index=command&127,priority;
-        if(index && index<=0x34)
-        {
-            priority=sound_read(0x8ad5+index-1);
-            if(priority>=sound_ram[0x11])
-            { sound_ram[0x11]=priority&127;sound_ram[5]=command; }
-        }
-        sound_ram[n]=0;
-    }
+    SourceClockWork work;source_audio_arbitrate(sound_ram,intro_bank6,&work);
 }
 static void sound_load_channel(u16 offset,u16 header)
 {
@@ -340,7 +330,7 @@ static void sound_channel(u8 *c,bool noise)
 static void sound_music(u16 command) { sound_request=command;sound_current_track=command; }
 static void sound_tick(void)
 {
-    u16 n;
+    u16 n;SourceClockWork prefix_work;bool fade_stopping;
     /* Source IRQ reads status before uploading the next prepared SAT. */
     world_sms_sprite_overflow=world_sms_sprite_display_overflow;
     world_sms_sprite_display_overflow=world_sms_sprite_prepared_overflow;
@@ -353,20 +343,10 @@ static void sound_tick(void)
         return;
     }
     sound_arbitrate();
-    if(sound_ram[1] && !--sound_ram[1])
-    {
-        sound_ram[1]=sound_ram[2];for(n=0;n<4;n++) sound_ram[0x4a+n*0x30]++;
-    }
-    if(sound_ram[0xb] && !--sound_ram[0xc])
-    {
-        sound_ram[0xc]=sound_ram[0xd];
-        if(!--sound_ram[0xb]) sound_stop();
-        else
-        {
-            for(n=0;n<3;n++) if(sound_ram[0x48+n*0x30]<11) sound_ram[0x48+n*0x30]++;
-            if(sound_ram[0x18]<11) sound_ram[0x18]++;
-        }
-    }
+    source_audio_tempo(sound_ram,&prefix_work);
+    fade_stopping=(sound_ram[0xb]==1 && sound_ram[0xc]==1);
+    source_audio_fade(sound_ram,&prefix_work);
+    if(fade_stopping) sound_mute();
     sound_dispatch();
     if(sound_ram[3]) { sound_ram[4]=(sound_ram[4]+1)%6;if(!sound_ram[4]) return; }
     for(n=0;n<7;n++)

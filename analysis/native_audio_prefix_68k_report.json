@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "region": "auto",
+      "frame": 10582,
+      "done": 1,
+      "cases": 42743,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 8854,
+      "done": 1,
+      "cases": 42743,
+      "failures": 0
+    }
+  ],
+  "test_ROM_sha256": "b72b8722b7bb66a950d677800cab6d93b00714ca55172dd0f8235d8e4896bd67",
+  "production_ROM_changed": false,
+  "production_audio_replaced": false,
+  "limits": [
+    "All host vectors run on actual compiled68000 code under GPG PAL/NTSC. Each400-byte state compared directly from losslessly encoded reference outputs. Semantic work/state only,no PSG writes; reader composition/production integration/hardware remain open."
+  ]
+}

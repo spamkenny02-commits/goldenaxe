@@ -1,0 +1,17 @@
+{
+  "cases": 42743,
+  "kinds": {
+    "tempo": 4096,
+    "stop": 64,
+    "fade": 24576,
+    "arbitration": 10935,
+    "gate": 3072
+  },
+  "source_sha256": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+  "compared_RAM_bytes": 400,
+  "production_ROM_changed": false,
+  "production_audio_replaced": false,
+  "limits": [
+    "Native prefix state/work only; no PSG writes. Dispatch,priority effects,channels,fullIRQ andgame wiring remain. Cases vary independent dimensions,not fullCartesian state space."
+  ]
+}
