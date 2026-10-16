@@ -1,0 +1,162 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/archive_audio_envelope_refresh_research.py",
+      "sha256": "c2aacd33406039e844031bd58db3b54fb0c7016ec6a3f623fd34d2f8b50a6e02"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/validate_audio_envelope_refresh.py",
+      "sha256": "63600bb67f6f6a0fdd83a6edacad79d196fb71e9573c277bd75e7d4248ff120d"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_audio_prefix_cost.py",
+      "sha256": "56f0a1aef26cba4918dd96d86674df979ccc16632d903c37173006a06c38faf7"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/audio_envelope_refresh.py",
+      "sha256": "c1f08558f909187c5ce6dce91ba55aaa36ac35627e1785670de95767c5a33568"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/build_audio_envelope_refresh_core.py",
+      "sha256": "9f1dd14a3c63b75b1f5219ce3dd7f600d0095cba364c19c49110b64a395d897b"
+    },
+    {
+      "path": "z80-envelope-refresh.txt",
+      "sha256": "a7532836918dc1bea4ec7a401c54ac75a1e635ec39981300419dae1834a49ad6"
+    },
+    {
+      "path": "reference/bank_06.asm",
+      "sha256": "c8f23eaa40858fafba0460b2876d1345e2f03c9b92f8e18e092452588c5ff71c"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/adsr/source.sms",
+      "sha256": "48f6f474da0c17d8e9e9b42c4164aa84b7c48dc48b5866f2f75a2c63e6ccf01e"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/adsr/auto-results.bin",
+      "sha256": "0868987520ba8313a91ef3945094b44b66c33f559a76d52fc27cd984685dba0a"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/adsr/auto/capture.json",
+      "sha256": "cc507e1cfa4440583499f69ba177a4214b1a043e844bde74fbb7d5faff56e658"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/adsr/pal-results.bin",
+      "sha256": "2fd95abae3bf7d47f93163c1ffc7114e222b0d91e4571d2a8711865a16682169"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/adsr/pal/capture.json",
+      "sha256": "3243bca6a86d6c7f2ef13f2dd31863530637c63deafd7bc88ffc2ae6cffd53f1"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/table/source.sms",
+      "sha256": "ddbbfd3e4a1cedf8d9a943eb611c2bf0772b0fafafc0c7b102b22b2a866edb42"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/table/auto-results.bin",
+      "sha256": "2ada0842d2615caffbbca90bfe69d4be9a13375aaa79a63462b1effad862d2cb"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/table/auto/capture.json",
+      "sha256": "a76b4cd93ff0ebb48f506b30836559b7c8e461ef6731f0f55be0b6b79804bb77"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/table/pal-results.bin",
+      "sha256": "961e55c1f4485f4a0e7afcbb80e01b7ce26dea8da109469746481cb6554fb022"
+    },
+    {
+      "path": "validation/audio-envelope-refresh/table/pal/capture.json",
+      "sha256": "b6bb91188f68275b6efcf486196b136da70249d95a952be21aab867cdf3583ae"
+    },
+    {
+      "path": "logs/build-audio-envelope-refresh.log",
+      "sha256": "6e4406301d9355a93f5f65363aeca6d58a9bffc307d6a33860cafd28c599783e"
+    },
+    {
+      "path": "logs/audio-envelope-refresh-core-build.log",
+      "sha256": "7f853e491ed52205848ea58e422de783f0916e6128ef9d219b70b533f041dac1"
+    },
+    {
+      "path": "logs/audio-adsr-refresh.log",
+      "sha256": "bda5e913e746706a665526c37768787464c289b27c927065bd4a46ff75c184bf"
+    },
+    {
+      "path": "logs/audio-table-envelope-refresh.log",
+      "sha256": "377b510bb29e9602bf852b6f6cc691947342ff7f48af6f7bc99474dd37983626"
+    },
+    {
+      "path": "audio_adsr_refresh_report.json",
+      "sha256": "19750a847da4784ca3bc3562504b2fd8c3227d8f38fe2fb86ed9439eb6a0a988"
+    },
+    {
+      "path": "audio_table_envelope_refresh_report.json",
+      "sha256": "92f5bf372a1cc3de76b31a224a1895cb2d57332fc1cd328542228a5a1b139a69"
+    },
+    {
+      "path": "audio_envelope_refresh_milestone.md",
+      "sha256": "fb12dabcdec4bb80a6491c4059590bc790bc8b36f1571b1ddf75bd72c44cb73a"
+    },
+    {
+      "path": "genesis_plus_gx_enveloperefresh_libretro.dll",
+      "sha256": "08e451a79a352ba9d12844f06b9efd4f6e8df23b14d5ec64a81653e0fffdd869"
+    }
+  ]
+}
