@@ -1,0 +1,71 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "3859fed54e06ffc089e423a79d7e1753282718b8a3e27462af7ede168f82104a",
+  "cases": 48000,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 24000,
+      "M1_histogram": {
+        "833": 12288,
+        "8": 96,
+        "1036": 1248,
+        "82": 1056,
+        "91": 660,
+        "87": 396,
+        "134": 288,
+        "143": 240,
+        "139": 144,
+        "32": 96,
+        "852": 96,
+        "50": 96,
+        "43": 24,
+        "44": 24,
+        "36": 48,
+        "839": 7200
+      },
+      "raw_sha256": "f03cb5121a93fbd34aa88bc073baf19407be1272d592b0839233112bfa9a1f5b",
+      "fixture_sha256": "706b5b0753229535692acaa795ac001fc7a57db347957ced4297319ea3521b06"
+    },
+    {
+      "region": "pal",
+      "cases": 24000,
+      "M1_histogram": {
+        "833": 12288,
+        "8": 96,
+        "1036": 1248,
+        "82": 1056,
+        "91": 660,
+        "87": 396,
+        "134": 288,
+        "143": 240,
+        "139": 144,
+        "32": 96,
+        "852": 96,
+        "50": 96,
+        "43": 24,
+        "44": 24,
+        "36": 48,
+        "839": 7200
+      },
+      "raw_sha256": "a89a298d68433631693b8e57df92736efddc3448c5e4e3c4b1f39cc4293d3f76",
+      "fixture_sha256": "706b5b0753229535692acaa795ac001fc7a57db347957ced4297319ea3521b06"
+    }
+  ],
+  "excluded_commands": [
+    142,
+    143,
+    173,
+    174,
+    175,
+    180
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original80FF/bank6 helpers/priority tables. Custom DI caller;read-only existing M1 counter andR observations. All13 music starts,29 effects,B0..B3,80idle,defined low/high reset paths compare raw M1,R,cost/all400 state bytes.",
+    "Eight ownership patterns/fourDE0F/threeDE0E. Invalid boundary probes synthetic;six unsupported/out-of-table commands excluded. Not full reader refresh coverage:priority effect,channels,envelopes/commands/IRQ wrapper remain open.",
+    "No full-load R prediction,native RNG replacement,actual PSG waveform orhardware/full progression proof."
+  ]
+}

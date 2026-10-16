@@ -1,0 +1,73 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "3859fed54e06ffc089e423a79d7e1753282718b8a3e27462af7ede168f82104a",
+  "cases": 33480,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 16740,
+      "M1_histogram": {
+        "6": 540,
+        "20": 108,
+        "21": 216,
+        "13": 216,
+        "117": 324,
+        "73": 846,
+        "118": 1944,
+        "110": 648,
+        "66": 1692,
+        "111": 522,
+        "67": 1044,
+        "112": 3264,
+        "104": 1044,
+        "60": 2088,
+        "119": 198,
+        "122": 198,
+        "120": 396,
+        "77": 792,
+        "115": 132,
+        "69": 264,
+        "72": 264
+      },
+      "raw_sha256": "353c6c7e7217cbbc5f92f3379ffb094519765e5c8a5abb0dc1a9bec367e82e90",
+      "fixture_sha256": "4dc027819ad97c44cf1d37c4c93ab8d44071794fcfb2073de8b5e086da63247c"
+    },
+    {
+      "region": "pal",
+      "cases": 16740,
+      "M1_histogram": {
+        "6": 540,
+        "20": 108,
+        "21": 216,
+        "13": 216,
+        "117": 324,
+        "73": 846,
+        "118": 1944,
+        "110": 648,
+        "66": 1692,
+        "111": 522,
+        "67": 1044,
+        "112": 3264,
+        "104": 1044,
+        "60": 2088,
+        "119": 198,
+        "122": 198,
+        "120": 396,
+        "77": 792,
+        "115": 132,
+        "69": 264,
+        "72": 264
+      },
+      "raw_sha256": "c5a78762064e7174134add2b3776b0a9e4b087ee2b02350e837eb793dc57f654",
+      "fixture_sha256": "4dc027819ad97c44cf1d37c4c93ab8d44071794fcfb2073de8b5e086da63247c"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original81F8/bank6 helpers/priority tables. Custom DI caller;read-only existing M1 counter andR observations. Requests0/80/all29 valid effects;priority0/1/127/255 andborrowed channel ownership/active flag boundaries compare raw M1,R,cost/all400 state bytes.",
+    "Ownership0/1/127/128/255 andDF30/DF60 inactive/active/bit6 contexts. Synthetic combinations;invalid request indices andstandalone8211 outside scope. Full channel/envelope/command/IRQ fetch composition remains open.",
+    "No full-load R prediction,native RNG replacement,actual PSG waveform orhardware/full progression proof."
+  ]
+}
