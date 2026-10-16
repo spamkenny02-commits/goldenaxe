@@ -31,6 +31,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     live_envelope_records=bytearray();previous_envelope=[0]
     wait_records=bytearray();previous_wait=[0];wait_entries=bytearray();foreground_phases=bytearray();foreground_extra=bytearray();previous_fore=[0]
     if hasattr(dll,'gaw_map_extra_events'):dll.gaw_map_extra_events.restype=c.POINTER(c.c_uint8)
+    hud_context=bytearray()
+    if hasattr(dll,'gaw_hud_context_events'):dll.gaw_hud_context_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,"gaw_foreground_phase_samples"):
      dll.gaw_foreground_phase_samples.restype=c.c_uint;dll.gaw_foreground_phase_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,"gaw_wait_entry_events"):dll.gaw_wait_entry_events.restype=c.POINTER(c.c_uint8)
@@ -57,6 +59,8 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
         base=c.addressof(dll.gaw_foreground_phase_events().contents);foreground_phases.extend(c.string_at(base+previous_fore[0]*800,(fore_count-previous_fore[0])*800))
         if hasattr(dll,'gaw_map_extra_events'):
          base=c.addressof(dll.gaw_map_extra_events().contents);foreground_extra.extend(c.string_at(base+previous_fore[0]*8,(fore_count-previous_fore[0])*8))
+        if hasattr(dll,'gaw_hud_context_events'):
+         base=c.addressof(dll.gaw_hud_context_events().contents);hud_context.extend(c.string_at(base+previous_fore[0]*16,(fore_count-previous_fore[0])*16))
        previous_fore[0]=fore_count
       if hasattr(dll,'gaw_full_irq_samples'):
        assert dll.gaw_full_irq_nested()==0
@@ -142,6 +146,7 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      if hasattr(dll,'gaw_full_irq_samples'):(folder/f'{region}-full-irq-records.bin').write_bytes(full_records)
      if hasattr(dll,'gaw_foreground_phase_samples'):(folder/f'{region}-foreground-phase-records.bin').write_bytes(foreground_phases)
      if hasattr(dll,'gaw_map_extra_events'):(folder/f'{region}-map-extra-records.bin').write_bytes(foreground_extra)
+     if hasattr(dll,'gaw_hud_context_events'):(folder/f'{region}-hud-context-records.bin').write_bytes(hud_context)
      if hasattr(dll,'gaw_wait_entry_events'):(folder/f'{region}-wait-entry-records.bin').write_bytes(wait_entries)
      if hasattr(dll,'gaw_wait_samples'):(folder/f'{region}-save-wait-records.bin').write_bytes(wait_records)
      if hasattr(dll,'gaw_live_envelope_samples'):(folder/f'{region}-live-envelope-records.bin').write_bytes(live_envelope_records)

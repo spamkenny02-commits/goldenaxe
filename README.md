@@ -92,7 +92,11 @@ de fondu musical B0 et la suspension des interruptions pendant la copie.
 Le chargement de la carte est maintenant enchaîné à cette routine sans
 état intermédiaire mesuré : les 24 parcours passent neuf points de
 contrôle, avec les correctifs persistants et la file de tuiles.
-La suite du chargement (HUD, acteurs) et les entrées de hasard
+Le HUD, son attente VBlank, le transfert vidéo et la restauration de
+palette sont également enchaînés depuis l’état initial : les 24 parcours
+passent maintenant 16 points de contrôle, avec les compteurs du HUD
+fournis à l’entrée et les interruptions complètes calculées.
+La suite du chargement (acteurs, historique) et les entrées de hasard
 restent à prédire avant l’intégration aux timings natifs. Ces recherches
 ne modifient pas encore la ROM v0183.
 
@@ -124,6 +128,7 @@ et la vérification sur matériel Mega Drive.
 - [Phase du début de chargement graphique](analysis/graphics_prefix_phase_milestone.md).
 - [Phase de la routine graphique complète](analysis/graphics_load_phase_milestone.md).
 - [Phase graphique et chargement de carte](analysis/world_map_phase_milestone.md).
+- [Phase graphique, carte, HUD et attente vidéo](analysis/map_hud_phase_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 

@@ -1,0 +1,1194 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/archive_map_hud_phase_research.py",
+      "sha256": "2357df88fa35fc5d7c983d2b94b1e7db58c5d754a40b1740adcfd1ecbcbd5cae"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "b8ee69241d182b875f215569ba7998e04d44d2a918952676187830178ffa49d9"
+    },
+    {
+      "path": "tools/validate_key_door_gameplay.py",
+      "sha256": "edaff2a53f041a71d7f231051cabd65dbaa5ae965b281ea6f0d201a878d80d0b"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_actor_tick.py",
+      "sha256": "ff145d9122365949160fb6878987689afd7e9f8d8bc047c0d597067908d94289"
+    },
+    {
+      "path": "tools/actor_tick_reference.py",
+      "sha256": "a5cd64adc2f20330dd20eea3873628195eb3c17c952a66bada4b4ce90820ea76"
+    },
+    {
+      "path": "tools/extract_world.py",
+      "sha256": "8575d37d77453328ed48d161ff4ab730ea03f8ffcd8ddd5d8d6956a737baa607"
+    },
+    {
+      "path": "tools/validate_map_hud_phase.py",
+      "sha256": "14ee6e67f960937552fbfe5cdc6ed910c965158bdcdc137be2a1f98eba830370"
+    },
+    {
+      "path": "tools/validate_reveal_phase_prediction.py",
+      "sha256": "9af2331d2d2ddbd3669f1fa5391cf31ea8bd58bb4b3f745af44710fa3ceeeae7"
+    },
+    {
+      "path": "tools/reveal_phase_prediction.py",
+      "sha256": "2684d51012fd820f8accea443c237d695a75fb6bd5b16e90b3803e957409a1fe"
+    },
+    {
+      "path": "tools/wait_raster_prediction.py",
+      "sha256": "21c7d7a7883673048cabc91e27b3299b2a907348c4a6686d624750c0dfc3d249"
+    },
+    {
+      "path": "tools/irq_raster_phase.py",
+      "sha256": "66609173a811ffbeb148d4ebe9d061c2a8e9d0e2caf655b9c4b6fa0c3e0e5f3b"
+    },
+    {
+      "path": "tools/full_irq_cost.py",
+      "sha256": "aa376d2ec9e2c9ee88229cb21fc5fb0120532a62e5d9cff38c91c67049d968a0"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_cost.py",
+      "sha256": "16ea74da99aff9303ce66b9aa2c072e63fbaf093d449891074f5972055470575"
+    },
+    {
+      "path": "tools/audio_reader_cost.py",
+      "sha256": "3593aa2a3c7f8ed2cecae64f716e4daa634b66fc5e171b60ee908dbc3726ba28"
+    },
+    {
+      "path": "tools/audio_noise_channel_cost.py",
+      "sha256": "0f5c3aad31c5cf57a8f1de409d6adaed5d1d5ff53d2d0da30d2a85ea13fa644a"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_cost.py",
+      "sha256": "a234f114d778c594e9129d3dae283498a3f62f473835fd0ea908dee39e32fd42"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/audio_note_sequence_cost.py",
+      "sha256": "9d221240da595448c0e70d23f0f44475ccf23fdbecc93f98761cc880f8e482f8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/foreground_phase.py",
+      "sha256": "687d30447dfd7dbab172467c739715fd1c7e7928a793b5c44e7e081c480e7263"
+    },
+    {
+      "path": "tools/map_hud_phase.py",
+      "sha256": "fa0d102b8d7f05079d5834dd16ba5dd2282274e91553eab8704a3bc1c080949c"
+    },
+    {
+      "path": "tools/map_hud_loading_cost.py",
+      "sha256": "0df0cda51baf038a56fe35daf45fde81adcf442f197f17a679aed42b00bd844b"
+    },
+    {
+      "path": "tools/room_map_loading_cost.py",
+      "sha256": "71d8c23c33c355e9126366f3711ee77b217c8b103d28411baed9a66bb0bba046"
+    },
+    {
+      "path": "tools/hud_loading_cost.py",
+      "sha256": "4f64dde90cff9b6f997bf36c52dcd849837cbbd1dd6afc2d1f8bd58caae4e8b5"
+    },
+    {
+      "path": "tools/ram_plane_loading_cost.py",
+      "sha256": "06587f301249f5973af49a7ab6e98e4ba20ac344c8b8ba066a31da0c388bd08a"
+    },
+    {
+      "path": "tools/graphics_load_phase.py",
+      "sha256": "e2c92531cf7797f3149f909627024731ee0ddfcbd4347f6085ccb240556217e1"
+    },
+    {
+      "path": "tools/class0_graphics_loading_cost.py",
+      "sha256": "c809dd2bd839819c036bd23fe064a08b3c82580b7a2ca72b5d64feba35c39549"
+    },
+    {
+      "path": "tools/graphics_prefix_phase.py",
+      "sha256": "8f366f1e32d645c74ccd3fd4320f05c83743e40417f729396943248d561092d5"
+    },
+    {
+      "path": "tools/world_map_phase.py",
+      "sha256": "f690ddd8c8fcb9515cbbab3b4b66aaccbc80ade6faae9203e60a09a159ebb5d3"
+    },
+    {
+      "path": "tools/world_map_loading_cost.py",
+      "sha256": "bb460ce9b38a1af240d8b4d11ef547920201df51ac95298f8483c0a01cf511cc"
+    },
+    {
+      "path": "tools/build_map_hud_phase_core.py",
+      "sha256": "1401c5386bb37c694bed146f52a4f6e5d262f71be83f5ac0c0419e8080f9a123"
+    },
+    {
+      "path": "z80-map-hud-phase.txt",
+      "sha256": "8a96b849a9eff0fea5a2b01e4886b51bd37a5b1a05212eb2476296ded3562756"
+    },
+    {
+      "path": "emulator-source/system.c",
+      "sha256": "9c0f6a042a1f5abce540d3aa69d4fcfa3fae2c66ca7d667e6f2a81a7f8af0d79"
+    },
+    {
+      "path": "emulator-source/vdp_ctrl.c",
+      "sha256": "34aa4da65cfadf9da528dd387929c4ad5d52ec9bb3d83e379f9c2070ce33542a"
+    },
+    {
+      "path": "reference/bank_00.asm",
+      "sha256": "7fb3b3a94556558cd5df98d6d1d207a0a47c0861ba13856036fb91fafd53d2ee"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/auto-audio-irq-events.json",
+      "sha256": "91c2c27780ef6c0502b9f9b529452283566cb8a8aa46dcee813daf533c4cdbb1"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/auto-foreground-phase-records.bin",
+      "sha256": "0a9988934067d78fb5aaa434a03304e1a49f0d71887e0573fb66496163427c42"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/auto-hud-context-records.bin",
+      "sha256": "1450d6fe42799479f8f3d24c719d9e2f0b47ccebfd16dc857bb34fc2df13f528"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/auto-map-extra-records.bin",
+      "sha256": "d7ba9e787ac630c2060ff773f03edc40e0d891e8ada7f9a5151bf62fff96b773"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/auto-save-wait-records.bin",
+      "sha256": "1c506556655affc7bf83385e01c9c4b3af4b1ab0df37d9d55cac26f5456c3068"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/auto-wait-entry-records.bin",
+      "sha256": "4169bc72ccf3c7effd4cc528d044cc51663f11c0fefd7978d893cbcb655f901a"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/captures-auto-sms/capture.json",
+      "sha256": "b9cbff8c18e7c30fd47d6d1f1526f569699be3611177eb18880aab09b9dea7d2"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/captures-pal-sms/capture.json",
+      "sha256": "d2967fc35784a050846a95ec2af2da2b881dcb955dc04286c57232edbdd71663"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/pal-audio-irq-events.json",
+      "sha256": "9cc24202d65da7d16b3aff030eef5257a039f9baaf210fef80af63e2f9890e4c"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/pal-foreground-phase-records.bin",
+      "sha256": "44fd9e733a2949c58e1c48d299e285a1921014b6f27a0df49ad88ed2488e5827"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/pal-hud-context-records.bin",
+      "sha256": "e7ccb872973d57b8ba5a29e16c7666b8583c31da87c60e48a6a3122b3bf9bdbc"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/pal-map-extra-records.bin",
+      "sha256": "41f7d54ca39bd87db3a84949b52452b1306068a5f3038bb917d787c1bd9ce386"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/pal-save-wait-records.bin",
+      "sha256": "4bb7b1474e34ecff3a7d239909c4f404b0442a5753f575d81894fff4c0da159f"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-00/pal-wait-entry-records.bin",
+      "sha256": "bce7942b583464c8d7fc50d8b69ac1900a2e3fd3a450a14474bccd27f8334ad2"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/auto-audio-irq-events.json",
+      "sha256": "e1f1f72f29b6e7560a261b77934d18bdeb4af3851ccb344080f239777c7e5e4f"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/auto-foreground-phase-records.bin",
+      "sha256": "56085790490c61a2f9005675b1eaef047bbf127929c560cf23429fcbf889bd8b"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/auto-hud-context-records.bin",
+      "sha256": "88ea2b4ec86f71bfc44b964847f247f7279b6931eea1651fd6ff75dfb94a0ec3"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/auto-map-extra-records.bin",
+      "sha256": "56d553858039125f133841da349c4bdc91f2cf07f64f1cb5e377382807cd762a"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/auto-save-wait-records.bin",
+      "sha256": "d6297d46d5d31a70d5d9a45612217d04f5ac26fc3b3a999a859d6a1c2873d963"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/auto-wait-entry-records.bin",
+      "sha256": "1e35882fbc65c2ba955e3a79bc032207c7da78bf90871e35be5a8b8611d88b56"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/captures-auto-sms/capture.json",
+      "sha256": "b9cbff8c18e7c30fd47d6d1f1526f569699be3611177eb18880aab09b9dea7d2"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/captures-pal-sms/capture.json",
+      "sha256": "d2967fc35784a050846a95ec2af2da2b881dcb955dc04286c57232edbdd71663"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/pal-audio-irq-events.json",
+      "sha256": "229576c976aa5423b60def7a6bc6f92e55caf5fb16c5feec6a3652fc518ab550"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/pal-foreground-phase-records.bin",
+      "sha256": "dcec0fe86c765a0ba5d032eeea57d90227989f5c10f796802baa63985c254e91"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/pal-hud-context-records.bin",
+      "sha256": "e7ccb872973d57b8ba5a29e16c7666b8583c31da87c60e48a6a3122b3bf9bdbc"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/pal-map-extra-records.bin",
+      "sha256": "41f7d54ca39bd87db3a84949b52452b1306068a5f3038bb917d787c1bd9ce386"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/pal-save-wait-records.bin",
+      "sha256": "c0e8cdb75fb0d83135efccbc0f13ff1ae383378ecaf074f9cd4c9ebdc689a575"
+    },
+    {
+      "path": "validation/map-hud-phase/1a-ff/pal-wait-entry-records.bin",
+      "sha256": "d35173aace0bc5d3319ec690b99ca16a937bbcae3528ece5c05a8aea3d43242b"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/auto-audio-irq-events.json",
+      "sha256": "0e9531b3ec5b950e20c4a88a14af1f70c8b14a1ea6a5723804db7a86801d2388"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/auto-foreground-phase-records.bin",
+      "sha256": "35f9d63ac7c1151833edf86db1ec5eaecb2e2f2e7909455d06ea156c85944a26"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/auto-hud-context-records.bin",
+      "sha256": "1450d6fe42799479f8f3d24c719d9e2f0b47ccebfd16dc857bb34fc2df13f528"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/auto-map-extra-records.bin",
+      "sha256": "d7ba9e787ac630c2060ff773f03edc40e0d891e8ada7f9a5151bf62fff96b773"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/auto-save-wait-records.bin",
+      "sha256": "9f66fda21077ef2f6f6c02b2486a96af3958864237d7b451e54e90141f751609"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/auto-wait-entry-records.bin",
+      "sha256": "b4f1ca9a1958ef6714d95b0f804c2547f386fab5a0c392a9ca2ca7ad199d6567"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/captures-auto-sms/capture.json",
+      "sha256": "2547e664d9fab2bc898cc3c34d598bb8fbd38ef2d89b19ab2c7698b60b53aeb1"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/captures-pal-sms/capture.json",
+      "sha256": "45942fc8e3c923009d8376f650e7861fb6796392a1c531ca813d6b1bec3dcd28"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/pal-audio-irq-events.json",
+      "sha256": "0becb1a99763e4ab9854634663f14bccc7cfde442977e8e455594c2d351ec457"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/pal-foreground-phase-records.bin",
+      "sha256": "abe61be9e6d0e455143d01b14a4f999fed9413d85e569d9e5f9f8a80d912bda4"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/pal-hud-context-records.bin",
+      "sha256": "e7ccb872973d57b8ba5a29e16c7666b8583c31da87c60e48a6a3122b3bf9bdbc"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/pal-map-extra-records.bin",
+      "sha256": "41f7d54ca39bd87db3a84949b52452b1306068a5f3038bb917d787c1bd9ce386"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/pal-save-wait-records.bin",
+      "sha256": "58fb2390529c6b6d77f2a56c70ce2cfd1570f1e1f44fc8dff7277bd12c3e59d8"
+    },
+    {
+      "path": "validation/map-hud-phase/36-00/pal-wait-entry-records.bin",
+      "sha256": "b6a814ba117634845147a94d6969ee7873875538bbe1458febce61ba4b297a72"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/auto-audio-irq-events.json",
+      "sha256": "da7a99986a572d1e5937bf71b46356ec5aba269b1a9ca347bb9963d5d0325f65"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/auto-foreground-phase-records.bin",
+      "sha256": "28a4f289593b3a7ff960b55307eef6e2d798c01a4ec7d1f6df7aa4301e387959"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/auto-hud-context-records.bin",
+      "sha256": "1d64313876732dd84d615d2c73f444b4d318610dae87437fc5ade9d6ddca776d"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/auto-map-extra-records.bin",
+      "sha256": "09aee85cf321f3c5bc0684f99457953037a7d43af43ce5b8c01806a0ab56de39"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/auto-save-wait-records.bin",
+      "sha256": "42b5f839e6cd9d5f621ea3ca7d09c25026478ddf387f8cb90f4cf152450a2e03"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/auto-wait-entry-records.bin",
+      "sha256": "6dac4d4dd2bba16aaf9c66214a0e5369e6d5ed7655ef5711863c10174b3cf9a1"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/captures-auto-sms/capture.json",
+      "sha256": "2547e664d9fab2bc898cc3c34d598bb8fbd38ef2d89b19ab2c7698b60b53aeb1"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/captures-pal-sms/capture.json",
+      "sha256": "45942fc8e3c923009d8376f650e7861fb6796392a1c531ca813d6b1bec3dcd28"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/pal-audio-irq-events.json",
+      "sha256": "17fe16c08ec931b3b68178315f83d2c3379643bdc8cda287342998c222a19f47"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/pal-foreground-phase-records.bin",
+      "sha256": "3c4265244e6f78d20c06bdce1247776091a60ca21666f1c6dfab3c5fe270d06a"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/pal-hud-context-records.bin",
+      "sha256": "121588563f9b1f5fbd8dd4ff4c4ec68e4bcd647c2033aba88cd32f30b0b61979"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/pal-map-extra-records.bin",
+      "sha256": "b0fcd10c5421605052f3ae1d58b30b1d4be566d5e6e2c7d2e9116799a56129d4"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/pal-save-wait-records.bin",
+      "sha256": "97494928faea3534b7270a4f5fef19f076af5efbb3ace8fcdbf26c9bbc5d1f63"
+    },
+    {
+      "path": "validation/map-hud-phase/36-ff/pal-wait-entry-records.bin",
+      "sha256": "2e00735ffdaa051906fa1cdfc4d0771c6676d2f9ed4fc67012782deb94ab8b67"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/auto-audio-irq-events.json",
+      "sha256": "3f6dcc901ce2a5f3ea9f58db95a8e5f35ae2f65ca05775c4c7d438c4f7300f01"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/auto-foreground-phase-records.bin",
+      "sha256": "19c350d2e5f27a733dc3c7c03cd7feeaeee5484037408706ff480a84b5283e14"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/auto-hud-context-records.bin",
+      "sha256": "1450d6fe42799479f8f3d24c719d9e2f0b47ccebfd16dc857bb34fc2df13f528"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/auto-map-extra-records.bin",
+      "sha256": "d7ba9e787ac630c2060ff773f03edc40e0d891e8ada7f9a5151bf62fff96b773"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/auto-save-wait-records.bin",
+      "sha256": "93a18efd12245ea5448bca0595207822871aeab0bf37602dbba5866a5b97e9f6"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/auto-wait-entry-records.bin",
+      "sha256": "1c042557621d3079af66aa7407eb663eee2843c5bc6c47abcaaf1a400bb1ae1f"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/captures-auto-sms/capture.json",
+      "sha256": "946f3374c90711350a6df9d19073b2828730bc1e124e934289d5f3b73bb2e965"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/captures-pal-sms/capture.json",
+      "sha256": "3e6cbfb6db1b228ddfe60cb59414a7ee6e2f24ca88a0dc96c8cf1f827a6f0bde"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/pal-audio-irq-events.json",
+      "sha256": "40314eee31d9ac236a04565638de92ac6e4a9365f3cc873b55eedf0f3f8d3c1c"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/pal-foreground-phase-records.bin",
+      "sha256": "b476fd89db44022487d40fef955b1143330f3f64d4e53098b4f720c52d832ccc"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/pal-hud-context-records.bin",
+      "sha256": "e7ccb872973d57b8ba5a29e16c7666b8583c31da87c60e48a6a3122b3bf9bdbc"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/pal-map-extra-records.bin",
+      "sha256": "41f7d54ca39bd87db3a84949b52452b1306068a5f3038bb917d787c1bd9ce386"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/pal-save-wait-records.bin",
+      "sha256": "dd3f4023e722408f98b8c840b323e522ae767bb215cb2bb01bd302983742c5c8"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-00/pal-wait-entry-records.bin",
+      "sha256": "65d6fce9e0e2bbb8059fdca854bf310a0ed233b3cdc5e6b05bc6de3f71ac71e2"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/auto-audio-irq-events.json",
+      "sha256": "cc972d3af70af7773d8ac2f39387eead123fa088939115561ff1ec3d9f9fa352"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/auto-foreground-phase-records.bin",
+      "sha256": "57563a7eddd346f53a6ba025a6e85e53b6b37affda019a5ed3ccb86b3baa15fe"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/auto-hud-context-records.bin",
+      "sha256": "994d587e7df9a051b4c70e913f75e073488b6891775bd29df09c3269d8280917"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/auto-map-extra-records.bin",
+      "sha256": "6b97ea66e4a3d1dbe5235349e4240f068b1ff786d3460f2531f9e96a17933476"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/auto-save-wait-records.bin",
+      "sha256": "12d082016a0ab67311d86217a44839c1f7b0e9db255097c09c226352f4b67f0c"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/auto-wait-entry-records.bin",
+      "sha256": "f965e60404135f8baa6eacb0ee10771ac8c3fa467f59c1eac0f9aae04dd3712f"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/captures-auto-sms/capture.json",
+      "sha256": "946f3374c90711350a6df9d19073b2828730bc1e124e934289d5f3b73bb2e965"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/captures-pal-sms/capture.json",
+      "sha256": "3e6cbfb6db1b228ddfe60cb59414a7ee6e2f24ca88a0dc96c8cf1f827a6f0bde"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/pal-audio-irq-events.json",
+      "sha256": "8bcdc32198073df81ab758735b93790ed67eb93a2c97581ce28aa98729fe4fc4"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/pal-foreground-phase-records.bin",
+      "sha256": "5a00797d649d766b3174ba1059dd24fcd922d924519fda90afe3aef3169890da"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/pal-hud-context-records.bin",
+      "sha256": "34abd3885fd8a862d415888d3213904ed117a3a573b17f61ac3d1ff46fe7c439"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/pal-map-extra-records.bin",
+      "sha256": "cbeaf7c196c9d06f9928189540cba545facef4b6f60a15569dfd7df45b448c3d"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/pal-save-wait-records.bin",
+      "sha256": "83e1d75134e509f70a73a24cc5302a23695947c2132a62de51a3d5952c384870"
+    },
+    {
+      "path": "validation/map-hud-phase/3c-ff/pal-wait-entry-records.bin",
+      "sha256": "ca1e22084775c3d9449370aecae223b288157bf1b786adbdb5ab32a98e76e9e6"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/auto-audio-irq-events.json",
+      "sha256": "4610fe59f66ee938ac1074375cdf5f04f211723a5a4d1796dd89373c81103da0"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/auto-foreground-phase-records.bin",
+      "sha256": "d2982b22d47dd6d845e893aa52d3975a4367875704194216bed120958a514ee9"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/auto-hud-context-records.bin",
+      "sha256": "1450d6fe42799479f8f3d24c719d9e2f0b47ccebfd16dc857bb34fc2df13f528"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/auto-map-extra-records.bin",
+      "sha256": "d7ba9e787ac630c2060ff773f03edc40e0d891e8ada7f9a5151bf62fff96b773"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/auto-save-wait-records.bin",
+      "sha256": "1fb788edfea9e264cf8b05474d1fe2abf9f566ff7152cc47e68de26fec346e9c"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/auto-wait-entry-records.bin",
+      "sha256": "9fa5aa518dc6eb4504f91a5416d8fa0be522aaa0d1dd9b9cd8d0711dc92ad6ed"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/captures-auto-sms/capture.json",
+      "sha256": "08daa012b7a93adcb21ed3187871713341f19c018b7ff12023c63c4dd245de0f"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/captures-pal-sms/capture.json",
+      "sha256": "0ffc2ef7e81c7cba982a5f8f2a8fc6c7d91b8c62634c6b761f24bc70b87e147c"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/pal-audio-irq-events.json",
+      "sha256": "ababacd8808b383cd053b8ff1d741a59923c76cd9456e9c1712017a88ebcd54f"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/pal-foreground-phase-records.bin",
+      "sha256": "ba963fbf080701705967ef5f22e98895f3b29c48f4c3fffb9a88856de605c8e4"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/pal-hud-context-records.bin",
+      "sha256": "e7ccb872973d57b8ba5a29e16c7666b8583c31da87c60e48a6a3122b3bf9bdbc"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/pal-map-extra-records.bin",
+      "sha256": "41f7d54ca39bd87db3a84949b52452b1306068a5f3038bb917d787c1bd9ce386"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/pal-save-wait-records.bin",
+      "sha256": "496e212ed0d59050df3afc25b45486129447a3c187fa367e8c330869e8a042ae"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-00/pal-wait-entry-records.bin",
+      "sha256": "bd22d8d33001ac4279a22c61b85fed2e0bb2a1c58529056447ef44d64a76c846"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/auto-audio-irq-events.json",
+      "sha256": "53ae0e01677b544dd653fe676306072009ba936af613f873c455f1710776bafd"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/auto-foreground-phase-records.bin",
+      "sha256": "731d8e16f43cf7a5187da53fc0f2ab60246844d2cf7b0ad31d87f0491ea98181"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/auto-hud-context-records.bin",
+      "sha256": "9e85e15441645f2f77271098ce60c0588997bcafbb60a3af8bca86c3f6c9d1d1"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/auto-map-extra-records.bin",
+      "sha256": "6e0765380a66d1dfd42b21ad902962931823812518116e72558616333f2ac35f"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/auto-save-wait-records.bin",
+      "sha256": "12b33bffa501cf947784496aa04978673f87af5426b4fee941848728b585e28d"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/auto-wait-entry-records.bin",
+      "sha256": "c53aacbb8c5de187cdde15af7a9b7952fc814f97ea59a2b7450626268c2c3200"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/captures-auto-sms/capture.json",
+      "sha256": "08daa012b7a93adcb21ed3187871713341f19c018b7ff12023c63c4dd245de0f"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/captures-pal-sms/capture.json",
+      "sha256": "0ffc2ef7e81c7cba982a5f8f2a8fc6c7d91b8c62634c6b761f24bc70b87e147c"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/pal-audio-irq-events.json",
+      "sha256": "1b18b0ffd1a3779361c2b67cca19c6256c0760df29d6212872aa065a1c837d0f"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/pal-foreground-phase-records.bin",
+      "sha256": "2023e3f0bf929d35fc8813941b2a50d33e7fdc9b07ec30f69a5e9f82278f4f83"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/pal-hud-context-records.bin",
+      "sha256": "152b91d47ca608b5ccf9f4cea320a1690e5e0ca97ebab91a07fe3d2077ff8d27"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/pal-map-extra-records.bin",
+      "sha256": "ce1a7900a869aeafa1de7816fce37abd613fb5961c9c784a70716501256410ab"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/pal-save-wait-records.bin",
+      "sha256": "ce41ffc3a41d7f62c6842eb393c396dbccf1ef1625de42b3a69d45b4452b85f9"
+    },
+    {
+      "path": "validation/map-hud-phase/6d-ff/pal-wait-entry-records.bin",
+      "sha256": "aa949d875e9ac59aa351c9b4d05ef3f78e507bd993f01aa5fc107fc42bac551a"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/auto-audio-irq-events.json",
+      "sha256": "08be5d7222b1fe402244e0cb79cb75af58b5742cbea0a9e6c0311266c5ffd67d"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/auto-foreground-phase-records.bin",
+      "sha256": "962b88f76bcc7514bcf53f0aa558e5833b03aa17003aba96ae29f55ad0bc90ad"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/auto-hud-context-records.bin",
+      "sha256": "1450d6fe42799479f8f3d24c719d9e2f0b47ccebfd16dc857bb34fc2df13f528"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/auto-map-extra-records.bin",
+      "sha256": "d7ba9e787ac630c2060ff773f03edc40e0d891e8ada7f9a5151bf62fff96b773"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/auto-save-wait-records.bin",
+      "sha256": "85b3a215b2ecd66e62744fe2a0223e18b87ea21f3fceacafbb7c5b0867b79cd6"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/auto-wait-entry-records.bin",
+      "sha256": "0cc684bd36e493c8dd903e5295bc7dd64feea8ec7cce4073a7280606647a09e7"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/captures-auto-sms/capture.json",
+      "sha256": "91de9eb70b0da063a7692a6b0d8657c2548cb70559a8681ca7c80a42bd9defdf"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/captures-pal-sms/capture.json",
+      "sha256": "4cc4df6fc9727a384fb5609eb5e63c94619a14b563a6ae1c344a249322615b50"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/pal-audio-irq-events.json",
+      "sha256": "e2c8e1fc73e2c3059d2b7ca3ff3ff52e80b52609adede073c541d4483ffd6428"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/pal-foreground-phase-records.bin",
+      "sha256": "a825ef0ca793b9d6bb8ccff986a7bcbd27dbbfd6dd2534a0e0578d919cc363fb"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/pal-hud-context-records.bin",
+      "sha256": "e7ccb872973d57b8ba5a29e16c7666b8583c31da87c60e48a6a3122b3bf9bdbc"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/pal-map-extra-records.bin",
+      "sha256": "41f7d54ca39bd87db3a84949b52452b1306068a5f3038bb917d787c1bd9ce386"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/pal-save-wait-records.bin",
+      "sha256": "ce18bcc21612cd6c07e5552c496a3fd386af5e743bf9fc0008479a8c3ea2acc3"
+    },
+    {
+      "path": "validation/map-hud-phase/87-00/pal-wait-entry-records.bin",
+      "sha256": "5173fbceac52e6f8ca520cd1c9e46625d62918d0b3390ba1a2de9291f326aab5"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/auto-audio-irq-events.json",
+      "sha256": "de9a71a694c058e482120febb9720d30b2f1560411aefd9f588b71d8bdf20b1a"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/auto-foreground-phase-records.bin",
+      "sha256": "a8f8e139f9a6709963e71a551a32dbac972f2e4a2ec0e2825d211138b061ee95"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/auto-hud-context-records.bin",
+      "sha256": "c9e71d324d047cfd536d868c710462f340ea912eea29433bde90ad703525f708"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/auto-map-extra-records.bin",
+      "sha256": "cbeaf7c196c9d06f9928189540cba545facef4b6f60a15569dfd7df45b448c3d"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/auto-save-wait-records.bin",
+      "sha256": "a83b96ecef8bcc154d40ea66c46007053bdbc3287175bb3f13154b434d8a520d"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/auto-wait-entry-records.bin",
+      "sha256": "1f6f543d426fcda95afc6ed50bd76d63b0e3c3282974f8313d74be6927c55fcd"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/captures-auto-sms/capture.json",
+      "sha256": "91de9eb70b0da063a7692a6b0d8657c2548cb70559a8681ca7c80a42bd9defdf"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/captures-pal-sms/capture.json",
+      "sha256": "4cc4df6fc9727a384fb5609eb5e63c94619a14b563a6ae1c344a249322615b50"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/pal-audio-irq-events.json",
+      "sha256": "166aff13a1e258d582ebf0373a2c3bdda9c6dac749a530fbae7e49efa1742af6"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/pal-foreground-phase-records.bin",
+      "sha256": "9243770b2b283f9412657bd50b932f15ac67179b39c43c51a5e381cb27bbe2f0"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/pal-hud-context-records.bin",
+      "sha256": "dc685755b175825d44bc0b89210170df831900fa573c06e92b4b5eb2178ada8b"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/pal-map-extra-records.bin",
+      "sha256": "ba71302e06aecc4e69dda5f22ce37f081b32796e5a42c80775c0f830031761ba"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/pal-save-wait-records.bin",
+      "sha256": "773e271b47eef613e2aa6b5269587b9ed263daf5afc6482ab326919309555524"
+    },
+    {
+      "path": "validation/map-hud-phase/87-ff/pal-wait-entry-records.bin",
+      "sha256": "fc94e1d9cde64a130db84047b7d4362a5b38718c899d0a2c9f21cbd4f8b1ccac"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/auto-audio-irq-events.json",
+      "sha256": "5d423da5c04a2e79a77d713497fa5f2f8e308752f37acfae3ef382e0ea561088"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/auto-foreground-phase-records.bin",
+      "sha256": "a142da3f1425d9ff3dcdabdd89d25168a315e96d65d9f7a8a356ae6fac1f9a02"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/auto-hud-context-records.bin",
+      "sha256": "1450d6fe42799479f8f3d24c719d9e2f0b47ccebfd16dc857bb34fc2df13f528"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/auto-map-extra-records.bin",
+      "sha256": "d7ba9e787ac630c2060ff773f03edc40e0d891e8ada7f9a5151bf62fff96b773"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/auto-save-wait-records.bin",
+      "sha256": "718aeae51d0edded8bc288c5732991d979e50cd640e7b40eb9a6173c020cb563"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/auto-wait-entry-records.bin",
+      "sha256": "921248ea4e58ad9029f826964bf71a0f210237ec084f1ed22c1cb27ba24abaee"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/captures-auto-sms/capture.json",
+      "sha256": "14580c4326bb959b7c4671c9339d3c170d95caf2f8db86cd806bb3ffc028da8c"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/captures-pal-sms/capture.json",
+      "sha256": "53b82d21a5cb0cc1299e21d36daca61fd01f2dbee899f3c37b9d34f277bc35e4"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/pal-audio-irq-events.json",
+      "sha256": "0c4c87eb9b7db58329b10152897d6b826d2cccdd191fd36b1d8aa411efeeefdf"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/pal-foreground-phase-records.bin",
+      "sha256": "e943572d96845e09a0668dbdb5a05d7312683e9c466733ec6d17776d1bb0e604"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/pal-hud-context-records.bin",
+      "sha256": "e7ccb872973d57b8ba5a29e16c7666b8583c31da87c60e48a6a3122b3bf9bdbc"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/pal-map-extra-records.bin",
+      "sha256": "41f7d54ca39bd87db3a84949b52452b1306068a5f3038bb917d787c1bd9ce386"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/pal-save-wait-records.bin",
+      "sha256": "c87247cf7b2cf5be90992b2e291963b0a371eaadb62d1e2484ac0121b89ef00e"
+    },
+    {
+      "path": "validation/map-hud-phase/96-00/pal-wait-entry-records.bin",
+      "sha256": "07803a21e46b24613b0f31e3ead1cffe0b3b6370f8eb5f3361304a143060c5cd"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/auto-audio-irq-events.json",
+      "sha256": "24d4fdc20db7e1238a94e79e0099b137240509b00e55982f12a2e5191cb59092"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/auto-foreground-phase-records.bin",
+      "sha256": "7908536a791e7f0b3836cfe8337666b5f8bfd4b9b8feaaceaca2876a6279ebda"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/auto-hud-context-records.bin",
+      "sha256": "1c0cf838741284bceeafbeb40867a3215672c16873653f1a08e6f27f3ef7b439"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/auto-map-extra-records.bin",
+      "sha256": "6caab2c6d43f113a6da86d9f1ebe8259fa5478e1cae046bafba1b13ba60c0d43"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/auto-save-wait-records.bin",
+      "sha256": "75dbc1e3ffd418147e0d7bf5293b25a267048ff79c820e3a5ae2be12dcab5fc3"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/auto-wait-entry-records.bin",
+      "sha256": "76e20653bb94edb03bda64b04d1b20d0da2b991fb84166478fa0a20664dcd7a6"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/captures-auto-sms/capture.json",
+      "sha256": "14580c4326bb959b7c4671c9339d3c170d95caf2f8db86cd806bb3ffc028da8c"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/captures-pal-sms/capture.json",
+      "sha256": "53b82d21a5cb0cc1299e21d36daca61fd01f2dbee899f3c37b9d34f277bc35e4"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/pal-audio-irq-events.json",
+      "sha256": "92fde6e5fa7f6634cb9506c61292ff85e8dc6bafd1aa8f4b4caf7c1d67487a8b"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/pal-foreground-phase-records.bin",
+      "sha256": "25f8dbb83dfc1575aee46e3edfb28fc58f4d7ac7fb2a76bfa1b90f97700f614d"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/pal-hud-context-records.bin",
+      "sha256": "47edcd9b25a0316851416a08503119b8107adcd1ca8662874245714638c7df54"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/pal-map-extra-records.bin",
+      "sha256": "56d553858039125f133841da349c4bdc91f2cf07f64f1cb5e377382807cd762a"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/pal-save-wait-records.bin",
+      "sha256": "23d429a3ac6bf050ba72a714de6b9061b1aa16e93014122afa88ca455acc3287"
+    },
+    {
+      "path": "validation/map-hud-phase/96-ff/pal-wait-entry-records.bin",
+      "sha256": "337352f2454fc803033720508a53f88c3649888031a25f22e3f1a0fb8aa53732"
+    },
+    {
+      "path": "reference/paid_passage_reference.json",
+      "sha256": "bd0c92c79ddc2afc96a03634ea2ea5f9c83ef12f16973509b3a29123c85f5e55"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "logs/build-map-hud-phase.log",
+      "sha256": "a9a6ad1a8b0d0f94c373d41cd844f7c2c4082aa8454d002feffcbb3f9031b917"
+    },
+    {
+      "path": "logs/map-hud-phase-core-build.log",
+      "sha256": "229dbdcb43def99af4fe1e27a509506933203be16787c7a4efaef08bc1478d0b"
+    },
+    {
+      "path": "logs/map-hud-phase-live.log",
+      "sha256": "2f830199c4fd49d076ce18c787dd509db1188d3eba5e4f976a8a2193cf1c0e82"
+    },
+    {
+      "path": "logs/map-hud-phase-group1.log",
+      "sha256": "5cf5f207dc383b79233bcb9ff0e31d9401034d3cfa48188c453c589ee22d122d"
+    },
+    {
+      "path": "logs/map-hud-phase-group2.log",
+      "sha256": "106d7afc71506054aba84aadf2e4cd31a2d0de954f68a5daadeed9faabed4981"
+    },
+    {
+      "path": "logs/map-hud-phase-group3.log",
+      "sha256": "c56df1ba76ea17a1763931c83bc65777a48c8d4dcb804e0f9fb4b64b1837f0ec"
+    },
+    {
+      "path": "logs/map-hud-phase-prediction.log",
+      "sha256": "f5547a08462ad1addc78b7e46ee8a8fbc4caabacf1cd17b04e0e936206579204"
+    },
+    {
+      "path": "map_hud_phase_report.json",
+      "sha256": "b40a1987dc8ca162dc85d467cb29e6daf291c5626d0bd7d17ed7b7d6a87b131c"
+    },
+    {
+      "path": "map_hud_phase_milestone.md",
+      "sha256": "5619c07116fe8df880024f528e3576b22b8329c36a8a9fa66d3f1acf1bccfd88"
+    },
+    {
+      "path": "genesis_plus_gx_maphudphase_libretro.dll",
+      "sha256": "29a35d49e7ba1326546e260c79c27c153d7706cfeadd032e1711ef8c9dbbe79c"
+    }
+  ]
+}
