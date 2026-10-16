@@ -85,10 +85,11 @@ prédites depuis leur état d’entrée, avec 6 156 cas synthétiques supplémen
 La séquence de révélation est désormais prédite depuis un seul état
 d’entrée : effacement, préparation, attente VBlank et réactivation de
 l’affichage correspondent sur les 24 parcours et 7 220 cas isolés.
-Le début du chargement graphique, jusqu’à la fin de la décompression des
-motifs, est également prédit depuis un seul état sur les 24 parcours,
-y compris les interruptions audio et la demande de fondu musical B0.
-La suite du chargement avant la révélation et les entrées de hasard
+La routine graphique complète est également prédite depuis un seul état
+sur les 24 parcours : motifs, métatuiles, terrain et copie SRAM, avec
+six points de contrôle. Cela inclut les interruptions audio, la demande
+de fondu musical B0 et la suspension des interruptions pendant la copie.
+La suite du chargement (carte, HUD, acteurs) et les entrées de hasard
 restent à prédire avant l’intégration aux timings natifs. Ces recherches
 ne modifient pas encore la ROM v0183.
 
@@ -118,6 +119,7 @@ et la vérification sur matériel Mega Drive.
 - [Prédiction des attentes VBlank](analysis/wait_raster_milestone.md).
 - [Prédiction de la révélation depuis un seul état](analysis/reveal_phase_milestone.md).
 - [Phase du début de chargement graphique](analysis/graphics_prefix_phase_milestone.md).
+- [Phase de la routine graphique complète](analysis/graphics_load_phase_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 
