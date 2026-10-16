@@ -1,0 +1,36 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "5f214f381b7b3d0c3b9a6f9eb599400760191224efb5e09f0b2050f94ddf4ac6",
+  "cases": 2520,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 1260,
+      "stats": {
+        "status_suppressions": 7,
+        "vector_coalescences": 0,
+        "prewait_audio_IRQs": 1469,
+        "postwait_audio_IRQs": 0
+      },
+      "raw_sha256": "cabfba547da96ad2e9df8ec677a83de42fadaa9125894a4ce0e91fb4747dab07"
+    },
+    {
+      "region": "pal",
+      "cases": 1260,
+      "stats": {
+        "status_suppressions": 0,
+        "vector_coalescences": 0,
+        "prewait_audio_IRQs": 1177,
+        "postwait_audio_IRQs": 0
+      },
+      "raw_sha256": "8405668e3fc6354398c89568961c02c3719aadbacbcb4f37c176347b987e66cb"
+    }
+  ],
+  "production_ROM_changed": false,
+  "limits": [
+    "Custom callers andunused-byte1FA6 EI entry;stops atACE/1FB6 RET after predicted target. Actual1FA7..1FB6,AA4..ACE,0397 and0B95 code/banks4/6 unchanged. Empty queue,inactive audio80 andzero palettes.",
+    "DI/EI/latched contexts,busy-delay phases,palette skip/compensation/delay counter boundaries;status-sweep mode targets fine phase differences. Five checkpoint phases,331 RAM bytes,400 sound bytes,wait decisions andall IRQ offsets assert independently against execution.",
+    "Palette/VRAM byte outputs,statusC01B/inputC020..23,native/hardware andfull game not proved. Entry state supplied;earlier load phase remains open."
+  ]
+}

@@ -47,4 +47,4 @@ def predict_save_wait(rom,phase,ram,sound):
   else:execute(7);boundary();break
  else:raise ValueError('Wait loop exceeds frame-scale bound')
  foreground=174+taken*29+24;assert time-started==(foreground+irq_tstates)*15
- return dict(taken=taken,exits=1,foreground_tstates=foreground,IRQ_tstates=irq_tstates,wall_master_cycles=time-started,events=events,gate=r[0x2e],clock=r[0x2f])
+ return dict(taken=taken,exits=1,foreground_tstates=foreground,IRQ_tstates=irq_tstates,wall_master_cycles=time-started,events=events,gate=r[0x2e],clock=r[0x2f],phase=(time%3420,(time//3420)%lines,0,lines,overflow,0,reg1,hardware,int(enabled),int(blocked),int(pending),reg0),ram=bytes(r),sound=audio)

@@ -1,0 +1,55 @@
+"""Preserve the single-entry reveal phase prediction and its original execution evidence."""
+import ast,hashlib,json
+from actor_reference import ROOT
+
+def main():
+ folder=ROOT/'analysis/reveal-phase-research-v0183';items=[]
+ def preserve(path,name):
+  data=path.read_bytes();target=folder/name;target.parent.mkdir(parents=True,exist_ok=True)
+  if target.exists():assert target.read_bytes()==data,('immutable evidence differs',name)
+  else:
+   with target.open('xb') as output:output.write(data)
+  items.append(dict(path=str(name).replace('\\','/'),sha256=hashlib.sha256(data).hexdigest()))
+ for p in (ROOT/'megadrive/src').iterdir():
+  if p.is_file():assert p.read_bytes()==(ROOT/'analysis/audio-noise-note-v0183/source-v0183'/p.name).read_bytes(),('production changed',p.name)
+ pending=['build_reveal_phase_core','foreground_phase','reveal_phase_prediction','validate_reveal_phase_prediction','validate_reveal_phase_unit','profile_paid_passage_loader_phases','archive_reveal_phase_research'];seen=set()
+ while pending:
+  name=pending.pop();path=ROOT/'tools'/f'{name}.py'
+  if name in seen or not path.exists():continue
+  seen.add(name);preserve(path,'tools/'+path.name)
+  for node in ast.walk(ast.parse(path.read_text())):
+   if isinstance(node,ast.ImportFrom) and node.module:pending.append(node.module.split('.')[0])
+   elif isinstance(node,ast.Import):pending.extend(alias.name.split('.')[0] for alias in node.names)
+ preserve(ROOT/'analysis/reveal-phase-v0183/z80-reveal-phase.txt','z80-reveal-phase.txt')
+ for name in ['system.c','vdp_ctrl.c']:
+  path=ROOT.parents[1]/'work/genesis-plus-gx/core'/name
+  if not path.exists():path=ROOT.parents[1]/'work/genesis-plus-gx/core/vdp_ctrl.c'
+  preserve(path,'emulator-source/'+name)
+ suffixes=['-cycle-events.json','-audio-irq-events.json','-foreground-phase-records.bin','-save-wait-records.bin','-wait-entry-records.bin']
+ for p in sorted((ROOT/'validation/reveal-phase').rglob('*')):
+  if p.is_file() and (any(p.name.endswith(s) for s in suffixes) or p.name=='capture.json'):preserve(p,str(p.relative_to(ROOT)))
+ routes=json.loads((ROOT/'analysis/paid_passage_reference.json').read_text());preserve(ROOT/'analysis/paid_passage_reference.json','reference/paid_passage_reference.json')
+ for town,*_ in routes['routes']:
+  for mask in [0,255]:
+   for region in ['auto','pal']:
+    p=ROOT/f'versions/v0179-d018ed93/validation/paid-exit-music/{town:02x}-{mask:02x}/{region}-cycle-events.json';preserve(p,'reference/'+str(p.relative_to(ROOT)))
+ for name in ['reveal-phase-unit','reveal-phase-status-unit','reveal-phase-coalescence-unit']:
+  base=ROOT/'validation'/name/'reveal';preserve(base/'source.sms',str((base/'source.sms').relative_to(ROOT)))
+  for region in ['auto','pal']:
+   for suffix in ['foreground.bin','waits.bin','entries.bin','irq-offsets.json']:
+    p=base/f'{region}-{suffix}';preserve(p,str(p.relative_to(ROOT)))
+   p=base/region/'capture.json';preserve(p,str(p.relative_to(ROOT)))
+ for name in ['build-reveal-phase-core.log','reveal-phase-core-build.log','reveal-phase-live.log','reveal-phase-group1.log','reveal-phase-group2.log','reveal-phase-group3.log','reveal-phase-prediction.log','reveal-phase-unit.log','reveal-phase-status-unit.log','reveal-phase-coalescence-unit.log']:preserve(ROOT/'validation'/name,'logs/'+name)
+ reports=['reveal_phase_prediction_report.json','reveal_phase_unit_report.json','reveal_phase_status_unit_report.json','reveal_phase_coalescence_unit_report.json']
+ digest=hashlib.sha256((ROOT/'gaw-megadrive.bin').read_bytes()).hexdigest();assert digest=='ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876'
+ for name,count in zip(reports,[24,2520,3608,1092]):
+  report=json.loads((ROOT/'analysis'/name).read_text());assert report['cases']==count and report['md_sha256']==digest;preserve(ROOT/'analysis'/name,name)
+ preserve(ROOT/'analysis/reveal_phase_milestone.md','reveal_phase_milestone.md')
+ preserve(ROOT.parents[1]/'work/genesis-plus-gx/genesis_plus_gx_revealphase_libretro.dll','genesis_plus_gx_revealphase_libretro.dll')
+ data=(json.dumps(dict(md_sha256=digest,source_sha256=hashlib.sha256((ROOT/'input/original.sms').read_bytes()).hexdigest(),files=items),indent=2)+'\n').encode();target=folder/'manifest.json'
+ if target.exists():assert target.read_bytes()==data
+ else:
+  with target.open('xb') as output:output.write(data)
+ for item in items:assert hashlib.sha256((folder/item['path']).read_bytes()).hexdigest()==item['sha256']
+ print('Single-entry reveal evidence archived and verified:',len(items),'files')
+if __name__=='__main__':main()

@@ -82,8 +82,12 @@ observées comme données. Les boucles de palette sont désormais prédites
 depuis la phase d’entrée des 13 749 interruptions ; le compteur vidéo passe
 149 500 positions isolées. Les 13 725 attentes VBlank sont maintenant
 prédites depuis leur état d’entrée, avec 6 156 cas synthétiques supplémentaires.
-La phase entre ces attentes et les entrées de hasard restent à prédire
-avant l’intégration aux timings natifs.
+La séquence de révélation est désormais prédite depuis un seul état
+d’entrée : effacement, préparation, attente VBlank et réactivation de
+l’affichage correspondent sur les 24 parcours et 7 220 cas isolés.
+La phase du chargement avant cette séquence et les entrées de hasard
+restent à prédire avant l’intégration aux timings natifs. Ces recherches
+ne modifient pas encore la ROM v0183.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -109,6 +113,7 @@ et la vérification sur matériel Mega Drive.
 - [Interruptions vidéo et budget conditionnel complet](analysis/full_irq_milestone.md).
 - [Phase vidéo et prédiction des boucles de palette](analysis/irq_raster_milestone.md).
 - [Prédiction des attentes VBlank](analysis/wait_raster_milestone.md).
+- [Prédiction de la révélation depuis un seul état](analysis/reveal_phase_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 
