@@ -1,0 +1,278 @@
+{
+  "production_md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sms_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "megadrive/src/source_rng.c",
+      "sha256": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f"
+    },
+    {
+      "path": "megadrive/src/source_rng.h",
+      "sha256": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f"
+    },
+    {
+      "path": "megadrive/src/source_clock.c",
+      "sha256": "8f374f6864fd8c46e2ecc8f8f499dac5bb2f7c1c93134081394ec60baec9b0ab"
+    },
+    {
+      "path": "megadrive/src/source_clock.h",
+      "sha256": "3294eadaf25902ca3c0de1c10a23ceca2e65e74b27f0eb92535a899695ced2ee"
+    },
+    {
+      "path": "tools/archive_native_source_clock.py",
+      "sha256": "ef82908bc5fc44dca7a4e5c16ae20484024dd51080e07fc28a51875228b937c1"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/validate_native_source_clock_68k.py",
+      "sha256": "dd51af3ac126b19763614ad5758904f5151b92dec409aeeca6628c8002984c91"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_native_source_clock.py",
+      "sha256": "537d90b62d049dc54e0d02e0992245238fd03d42d656f4e9ea3543ae21d1bfe6"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_refresh.py",
+      "sha256": "77297690be7d2e9ca2f77cf9afd6846ef2ca26a4cfec44c6e3fb2f2a6e6356a6"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_cost.py",
+      "sha256": "16ea74da99aff9303ce66b9aa2c072e63fbaf093d449891074f5972055470575"
+    },
+    {
+      "path": "tools/audio_reader_refresh.py",
+      "sha256": "ff49979d10a86cd94c37b9a1439917db88a7e90e1bd514911d4321809e66af1b"
+    },
+    {
+      "path": "tools/audio_noise_channel_refresh.py",
+      "sha256": "6bc5f50b60af38b77ee3804d11d3f680fd09e5c5d5ea7c9723618747a8caf1fd"
+    },
+    {
+      "path": "tools/audio_note_sequence_refresh.py",
+      "sha256": "49c42ba46c06d248e75c54da2de41669eabcd829c078a672d8dd9bfcf1105c15"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/audio_envelope_refresh.py",
+      "sha256": "c1f08558f909187c5ce6dce91ba55aaa36ac35627e1785670de95767c5a33568"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_refresh.py",
+      "sha256": "899964546d7d9f0c36f78b0ef67c5c59009c5d7a300e772101617b2b198086d2"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_refresh.py",
+      "sha256": "b10d1e8a33cb764a1913f5d5f0e2d3891e639fe0ba917a3036171fa8df4bcfe7"
+    },
+    {
+      "path": "tools/audio_pitch_refresh.py",
+      "sha256": "231e6efcb8a9c4c29b3b4a2f4e7b5fc4b8a1fac24019276be78c85ffd7a54dd9"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/audio_priority_effect_refresh.py",
+      "sha256": "c4f696eb775fe4e3b9458039d9b8dec7e87984e92a59a547b23bfabab07bd2d8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "tools/graphics_prefix_refresh.py",
+      "sha256": "b36d6363f23857568614cb507f9d0cbd0ee013673f07ce47156b4a2b86f66535"
+    },
+    {
+      "path": "tools/graphics_prefix_phase.py",
+      "sha256": "a120c1901c2e68a4a30039b84f98675f5774a7c2e597d2ed5bfda4d5ae7dae55"
+    },
+    {
+      "path": "tools/class0_graphics_loading_cost.py",
+      "sha256": "c809dd2bd839819c036bd23fe064a08b3c82580b7a2ca72b5d64feba35c39549"
+    },
+    {
+      "path": "tools/ram_plane_loading_cost.py",
+      "sha256": "06587f301249f5973af49a7ab6e98e4ba20ac344c8b8ba066a31da0c388bd08a"
+    },
+    {
+      "path": "tools/reveal_phase_prediction.py",
+      "sha256": "2164429fed638603d1ffea1f32096c47c4a46bdc3fa64073a599c8ea762e2499"
+    },
+    {
+      "path": "tools/wait_raster_prediction.py",
+      "sha256": "e42b7a48721ba96a0fff3c35a9bce5409ca2c6d8bb2731e38b6501426d439c0d"
+    },
+    {
+      "path": "tools/full_irq_refresh.py",
+      "sha256": "3387fa015ce13b5ee8a9b61ad1c87dec41c8173594ec0286515fdf584fc789fb"
+    },
+    {
+      "path": "tools/full_irq_cost.py",
+      "sha256": "aa376d2ec9e2c9ee88229cb21fc5fb0120532a62e5d9cff38c91c67049d968a0"
+    },
+    {
+      "path": "tools/irq_raster_phase.py",
+      "sha256": "66609173a811ffbeb148d4ebe9d061c2a8e9d0e2caf655b9c4b6fa0c3e0e5f3b"
+    },
+    {
+      "path": "tools/audio_reader_cost.py",
+      "sha256": "3593aa2a3c7f8ed2cecae64f716e4daa634b66fc5e171b60ee908dbc3726ba28"
+    },
+    {
+      "path": "tools/audio_noise_channel_cost.py",
+      "sha256": "0f5c3aad31c5cf57a8f1de409d6adaed5d1d5ff53d2d0da30d2a85ea13fa644a"
+    },
+    {
+      "path": "tools/audio_tone_channel_cost.py",
+      "sha256": "a234f114d778c594e9129d3dae283498a3f62f473835fd0ea908dee39e32fd42"
+    },
+    {
+      "path": "tools/audio_note_sequence_cost.py",
+      "sha256": "9d221240da595448c0e70d23f0f44475ccf23fdbecc93f98761cc880f8e482f8"
+    },
+    {
+      "path": "tools/foreground_phase.py",
+      "sha256": "687d30447dfd7dbab172467c739715fd1c7e7928a793b5c44e7e081c480e7263"
+    },
+    {
+      "path": "analysis/native_source_clock_report.json",
+      "sha256": "13567567f07ad7acc627660a091e0f1a031aa0a87289bca79bc15a0e542cae22"
+    },
+    {
+      "path": "analysis/native_source_clock_68k_report.json",
+      "sha256": "16050e3b22395e2f5c3d18ae3b49405229f327dd0471c740ab1023da98ce0868"
+    },
+    {
+      "path": "analysis/native_source_clock_milestone.md",
+      "sha256": "1061b43c236372305ec3dd7606c7c6f13c4a361c8f6816f1a8e205c6f781ac81"
+    },
+    {
+      "path": "logs/native-source-clock.log",
+      "sha256": "8fe4135b04b8ed4b807988c50eb8009c4da6744f7559ebc716fa1dc27efbcb02"
+    },
+    {
+      "path": "logs/native-source-clock-68k.log",
+      "sha256": "826ed4e78af853f6c35b40430541dc1f3cd5a38f6324affa8ce1b7b897719b83"
+    },
+    {
+      "path": "validation/native-source-clock/cases.json",
+      "sha256": "72d01166af003b36bd37fa975fe5960dcc97fd94241dbb70a2ba058537ae1d7f"
+    },
+    {
+      "path": "validation/native-source-clock/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "validation/native-source-clock/source_clock.dll",
+      "sha256": "cd5b5c9607aebdcc11c734f9f071331ac38b952cf4ebc7eb2d4b970e27260e9c"
+    },
+    {
+      "path": "validation/native-source-clock/wrapper.c",
+      "sha256": "3c29787a21b7ac84e060a111c9876b97b2d2c3937bf7dd0aa04fdcea34627ee8"
+    },
+    {
+      "path": "validation/native-clock-68k/src/expected.h",
+      "sha256": "42f14a3021c8c847cedc76c9d2b77c615ef2ae7684d937bc4416c768f79bc1fa"
+    },
+    {
+      "path": "validation/native-clock-68k/src/main.c",
+      "sha256": "031c9f243e49db945306e4731fb821155e29c60bd4d80e45b46f27309ff4be42"
+    },
+    {
+      "path": "validation/native-clock-68k/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-clock-68k/src/source_clock.c",
+      "sha256": "0fb5ada94cca534b74c33a3439a784538e09a55d3953865a18dc2c744bf18eb3"
+    },
+    {
+      "path": "validation/native-clock-68k/src/source_rng.c",
+      "sha256": "03da42ffcd083829a73d7b338b4a008811e791f7b1cf5c050f7f267e25a94f53"
+    },
+    {
+      "path": "validation/native-clock-68k/src/wrapper.c",
+      "sha256": "e0da402042cdc511ae8842f3d8da69ccc792c7f4d611e2366652f31c0b5575ce"
+    },
+    {
+      "path": "validation/native-clock-68k/build.log",
+      "sha256": "1e89c3976e05522f56e4a06c1cc269157003065bd2a90aa2daceec753f35e032"
+    },
+    {
+      "path": "validation/native-clock-68k/out/release/rom.bin",
+      "sha256": "102d55daafd03cde6846dc04e315968b7f03794f0e6f0087a8e2ebbcc9576bb7"
+    },
+    {
+      "path": "validation/native-clock-68k/out/release/symbol.txt",
+      "sha256": "c69af4fce0de58233a92ba60245b68fd1f0451a40c25f8fbf20aaf5e298f6453"
+    },
+    {
+      "path": "validation/native-clock-68k/auto/capture.json",
+      "sha256": "4f89312fb484c3ddbc6a38d51671d11e35020940489d0183c6bd1a20300f0923"
+    },
+    {
+      "path": "validation/native-clock-68k/pal/capture.json",
+      "sha256": "521eb7a71c3817a0f2c10416525ed56302f2bc1658cc439ca21d81838f7a8357"
+    }
+  ]
+}

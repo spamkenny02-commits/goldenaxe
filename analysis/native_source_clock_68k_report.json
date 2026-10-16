@@ -1,0 +1,26 @@
+{
+  "rows": [
+    {
+      "region": "auto",
+      "frame": 7924,
+      "done": 1,
+      "cases": 7669,
+      "failures": 0,
+      "rejections": 5
+    },
+    {
+      "region": "pal",
+      "frame": 6629,
+      "done": 1,
+      "cases": 7669,
+      "failures": 0,
+      "rejections": 5
+    }
+  ],
+  "test_ROM_sha256": "102d55daafd03cde6846dc04e315968b7f03794f0e6f0087a8e2ebbcc9576bb7",
+  "production_ROM_changed": false,
+  "production_clock_integrated": false,
+  "limits": [
+    "Original native source_clock/source_rng C included unchanged in isolated SGDK cartridge. CPU code executed under GPG PAL/NTSC with synthetic instruction plans andconstant modeled audio IRQ work. Dynamic native RAM/audio callback,production wiring,real hardware/full game remain open."
+  ]
+}

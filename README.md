@@ -135,7 +135,11 @@ autres contextes et l’intégration native restent à vérifier. La récurrence
 aléatoire et la progression de R sont maintenant traduites en C 68000 :
 65 536 graines, 196 608 sorties et 66 816 progressions passent sur hôte
 et dans une cartouche SGDK de test PAL/NTSC. Ces helpers attendent encore
-le suivi natif de R ; le jeu utilise toujours le hasard SGDK provisoire.
+le suivi natif de R. Le mécanisme d’horloge est maintenant aussi traduit
+en C 68000 : 7 664 scénarios correspondent et cinq cas invalides sont
+rejetés sur hôte et cartouche SGDK PAL/NTSC. Le callback audio dynamique
+et le branchement au jeu restent à faire ; le hasard SGDK et les budgets
+fixes sont encore utilisés en production.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -255,3 +259,5 @@ n’y a été envoyé depuis ce projet.
 - [Chargement jusqu’à la réactivation de l’écran](analysis/loader_tail_refresh_milestone.md).
 
 - [Routines aléatoires traduites en C 68000](analysis/native_source_rng_milestone.md).
+
+- [Horloge d’instructions en C 68000](analysis/native_source_clock_milestone.md).

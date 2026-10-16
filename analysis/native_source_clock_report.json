@@ -1,0 +1,13 @@
+{
+  "cases": 7669,
+  "rejected_cases": 5,
+  "source_sha256": "8f374f6864fd8c46e2ecc8f8f499dac5bb2f7c1c93134081394ec60baec9b0ab",
+  "suppression_cases": 480,
+  "coalescence_cases": 340,
+  "IRQ_cases": 3752,
+  "production_ROM_changed": false,
+  "production_clock_integrated": false,
+  "limits": [
+    "Constant independently composed paused-reader audio IRQ callback; dynamic audio/fullIRQ cost production remains to port. Mode4/192,VINT-only andlocal GPG acknowledge convention. Native host code checked against Python scheduler; real hardware/full game not proved."
+  ]
+}
