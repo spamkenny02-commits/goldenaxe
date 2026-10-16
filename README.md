@@ -5,17 +5,24 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0184 — 1024 Kio.**
+**Version courante : v0185 — 1024 Kio.**
 
-[Télécharger la ROM v0184](versions/v0184-67010959/gaw-megadrive-v0184.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0185](versions/v0185-1a34d6f6/gaw-megadrive-v0185.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `67010959a2ab6fbaf409426ca2e06d645040c73d7f7cd99a01c4debb49fedc1e`  
-Checksum Mega Drive : `38CF`
+SHA-256 : `1a34d6f67efb5b3ca2dbdcfc4611ab51a6cadf1055fcf1752a96967b77fb73c7`  
+Checksum Mega Drive : `B8A9`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0185 rétablit les bruitages du menu Nouveau jeu/Continue : `$95` quand
+le curseur change de ligne et `$AB` à la validation. Les parcours avec les
+deux choix passent en PAL et en NTSC, avec des déclenchements aux mêmes
+images que sur SMS et un canal d'effet audible. Appuyer vers le choix déjà
+sélectionné reste silencieux. Ces contrôles ne remplacent pas une partie
+complète ni une comparaison des formes d'onde audio.
 
 Le portage est jouable mais reste incomplet. Les sources natives couvrent
 l’intro avant le titre, le titre, les menus et dialogues, l’exploration,

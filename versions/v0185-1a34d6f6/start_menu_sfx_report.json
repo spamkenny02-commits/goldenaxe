@@ -1,0 +1,198 @@
+{
+  "md_sha256": "1a34d6f67efb5b3ca2dbdcfc4611ab51a6cadf1055fcf1752a96967b77fb73c7",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "region": "auto",
+      "choice": "new",
+      "results": {
+        "sms": {
+          "events": [
+            [
+              1101,
+              149
+            ],
+            [
+              1301,
+              149
+            ],
+            [
+              1601,
+              171
+            ]
+          ],
+          "frames": 701,
+          "audible_effects": true
+        },
+        "md": {
+          "events": [
+            [
+              1101,
+              149
+            ],
+            [
+              1301,
+              149
+            ],
+            [
+              1601,
+              171
+            ]
+          ],
+          "frames": 701,
+          "audible_effects": true
+        }
+      }
+    },
+    {
+      "region": "auto",
+      "choice": "continue",
+      "results": {
+        "sms": {
+          "events": [
+            [
+              1101,
+              149
+            ],
+            [
+              1301,
+              149
+            ],
+            [
+              1501,
+              149
+            ],
+            [
+              1601,
+              171
+            ]
+          ],
+          "frames": 701,
+          "audible_effects": true
+        },
+        "md": {
+          "events": [
+            [
+              1101,
+              149
+            ],
+            [
+              1301,
+              149
+            ],
+            [
+              1501,
+              149
+            ],
+            [
+              1601,
+              171
+            ]
+          ],
+          "frames": 701,
+          "audible_effects": true
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "choice": "new",
+      "results": {
+        "sms": {
+          "events": [
+            [
+              1101,
+              149
+            ],
+            [
+              1301,
+              149
+            ],
+            [
+              1601,
+              171
+            ]
+          ],
+          "frames": 701,
+          "audible_effects": true
+        },
+        "md": {
+          "events": [
+            [
+              1101,
+              149
+            ],
+            [
+              1301,
+              149
+            ],
+            [
+              1601,
+              171
+            ]
+          ],
+          "frames": 701,
+          "audible_effects": true
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "choice": "continue",
+      "results": {
+        "sms": {
+          "events": [
+            [
+              1101,
+              149
+            ],
+            [
+              1301,
+              149
+            ],
+            [
+              1501,
+              149
+            ],
+            [
+              1601,
+              171
+            ]
+          ],
+          "frames": 701,
+          "audible_effects": true
+        },
+        "md": {
+          "events": [
+            [
+              1101,
+              149
+            ],
+            [
+              1301,
+              149
+            ],
+            [
+              1501,
+              149
+            ],
+            [
+              1601,
+              171
+            ]
+          ],
+          "frames": 701,
+          "audible_effects": true
+        }
+      }
+    }
+  ],
+  "natural_controller_input": true,
+  "ram_injections": false,
+  "same_choice_presses_silent": true,
+  "full_game_ported": false,
+  "limits": [
+    "Checks natural effect dispatch and audible PSG with music in PAL/NTSC.",
+    "Exact effect sequences are covered separately by validate_sfx; waveform equivalence is not claimed."
+  ]
+}

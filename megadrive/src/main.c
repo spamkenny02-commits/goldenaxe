@@ -2941,8 +2941,19 @@ reset_start_menu:
     {
         u16 pressed;
         wait_frame(); pressed=input&~previous; previous=input;
-        if(pressed&BUTTON_UP) { menu_selection=0; update_menu_selection(); }
-        if(pressed&BUTTON_DOWN) { menu_selection=1; update_menu_selection(); }
+        /* 1553..155E: only a changed choice requests cursor effect $95. */
+        if(pressed&BUTTON_UP)
+        {
+            if(menu_selection!=0) sound_effect(0x95);
+            menu_selection=0; update_menu_selection();
+        }
+        else if(pressed&BUTTON_DOWN)
+        {
+            if(menu_selection!=1) sound_effect(0x95);
+            menu_selection=1; update_menu_selection();
+        }
+        /* 1560..1562: confirmation on either New Game or Continue. */
+        else if(pressed&(BUTTON_A|BUTTON_B|BUTTON_C|BUTTON_START)) sound_effect(0xab);
         if((pressed&(BUTTON_A|BUTTON_B|BUTTON_C|BUTTON_START)) && menu_selection==0) enter_character_name();
         if(return_to_title) return;
         if((pressed&(BUTTON_A|BUTTON_B|BUTTON_C|BUTTON_START)) && menu_selection==1)

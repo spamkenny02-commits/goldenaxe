@@ -5981,5 +5981,28 @@
         "sha256": "1f1b186bc4aa4fb3651bf4c50bb64e8b9abae6c4ed55ba1580af56390e9d1a7d"
       }
     ]
+  },
+  {
+    "version": 185,
+    "sha256": "1a34d6f67efb5b3ca2dbdcfc4611ab51a6cadf1055fcf1752a96967b77fb73c7",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-16T18:07:19.031006+00:00",
+    "rom": "v0185-1a34d6f6/gaw-megadrive-v0185.bin",
+    "notes": "Menu Nouveau jeu/Continue : bruitage95 au changement de ligne etAB a la validation, comme SMS ; aucun son sur une ligne deja selectionnee. Parcours naturels PAL/NTSC, canaux effets audibles et musique du menu verifies.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "start_menu_sfx_report.json",
+        "sha256": "6b9b609d5a145d59d62c383853ece53e778084e79d4aee2b7ce7f0da27fe668a"
+      },
+      {
+        "file": "start_menu_audio_report.json",
+        "sha256": "9ea5e13be4ca724b7838a8e944db113572b4310f5fba533c334e8c61cc7fc312"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "6b9b609d5a145d59d62c383853ece53e778084e79d4aee2b7ce7f0da27fe668a"
+      }
+    ]
   }
 ]
