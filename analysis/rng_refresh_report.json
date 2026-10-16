@@ -1,0 +1,50 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "d6414d7b55899f989b299049a9ba1db7dcdaf654fc636e18861cabc8cd3d3e99",
+  "cases": 135168,
+  "rows": [
+    {
+      "kind": "all-seeds",
+      "region": "auto",
+      "cases": 65536,
+      "fallback_cases": 1,
+      "high_bit_samples": 32768,
+      "raw_sha256": "31f30b5c563d2b7f41ca2115c090cc650f6c618fd5e7d8645e87becd8b978334",
+      "fixture_sha256": "794909617dd78c7335e7c831b10432a445f5ea58b8b91a8f3679f6f7e0c660e5"
+    },
+    {
+      "kind": "all-seeds",
+      "region": "pal",
+      "cases": 65536,
+      "fallback_cases": 1,
+      "high_bit_samples": 32768,
+      "raw_sha256": "93fcd0a1da026d5ff18784c2ccc073c3c991f6242e347ca108c996325a980be2",
+      "fixture_sha256": "794909617dd78c7335e7c831b10432a445f5ea58b8b91a8f3679f6f7e0c660e5"
+    },
+    {
+      "kind": "R-sweep",
+      "region": "auto",
+      "cases": 2048,
+      "fallback_cases": 256,
+      "high_bit_samples": 1024,
+      "raw_sha256": "a695e18a7042bc1869102afc06e7517973d516a0f3aeee574912438451b3d97f",
+      "fixture_sha256": "f17ba4dde5d957fe48cc99896302c45fc7d173f8a9b0d5ab8588ff1a3d8dc631"
+    },
+    {
+      "kind": "R-sweep",
+      "region": "pal",
+      "cases": 2048,
+      "fallback_cases": 256,
+      "high_bit_samples": 1024,
+      "raw_sha256": "9e5725fa0975eab1ac5795847c934eed7c8be0ffb3782482149fdc56e7308a03",
+      "fixture_sha256": "f17ba4dde5d957fe48cc99896302c45fc7d173f8a9b0d5ab8588ff1a3d8dc631"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Original04E1 bytes unchanged. DI callers deliberately set R before CALL. Entry observer occurs after first M1 fetch; ED prefix second fetch is included in LD A,R output. All65536 seeds plus all256 R inputs for eight seeds,PAL/NTSC.",
+    "No IRQ inside helper. This validates local helper fetch counts and output,not R evolution from load entry or IRQ audio reader fetch counts. Initial R supplied; native SGDK RNG remains provisional. Hardware IRQ acknowledgement behavior not proved by this local GPG core."
+  ]
+}
