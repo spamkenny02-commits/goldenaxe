@@ -1,0 +1,121 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "3859fed54e06ffc089e423a79d7e1753282718b8a3e27462af7ede168f82104a",
+  "cases": 66530,
+  "rows": [
+    {
+      "kind": "tempo",
+      "region": "auto",
+      "cases": 1024,
+      "M1_histogram": {
+        "4": 4,
+        "24": 4,
+        "6": 1016
+      },
+      "raw_sha256": "8f04f44031b89664eccc9e28cf8bef9209e7314903b504f6c854180904a0443c",
+      "fixture_sha256": "bed0c65b50518ae67f8271fb57916d2c46cced6ddc2e727b7668e0693b02c6c3"
+    },
+    {
+      "kind": "tempo",
+      "region": "pal",
+      "cases": 1024,
+      "M1_histogram": {
+        "4": 4,
+        "24": 4,
+        "6": 1016
+      },
+      "raw_sha256": "63f6134b3759866bf671304c3c54bab45fb21244a44913a0196127796b39f26a",
+      "fixture_sha256": "bed0c65b50518ae67f8271fb57916d2c46cced6ddc2e727b7668e0693b02c6c3"
+    },
+    {
+      "kind": "fade",
+      "region": "auto",
+      "cases": 4096,
+      "M1_histogram": {
+        "3": 1024,
+        "8": 2304,
+        "841": 256,
+        "49": 162,
+        "47": 216,
+        "45": 108,
+        "43": 24,
+        "41": 2
+      },
+      "raw_sha256": "23c3995de7940b126365d3ff6ea9f9531d0790b8389cacaf15b5b1a3a4074eb6",
+      "fixture_sha256": "ccceb4cf1bd9cc8db9458de2118b3b0f0edd4898f0e08090f90faaa5f77a6b59"
+    },
+    {
+      "kind": "fade",
+      "region": "pal",
+      "cases": 4096,
+      "M1_histogram": {
+        "3": 1024,
+        "8": 2304,
+        "841": 256,
+        "49": 162,
+        "47": 216,
+        "45": 108,
+        "43": 24,
+        "41": 2
+      },
+      "raw_sha256": "70973f918e81e310d2fc0b080d45e37c060189e8a77545be0646bdf8244de3c2",
+      "fixture_sha256": "ccceb4cf1bd9cc8db9458de2118b3b0f0edd4898f0e08090f90faaa5f77a6b59"
+    },
+    {
+      "kind": "stop",
+      "region": "auto",
+      "cases": 1,
+      "M1_histogram": {
+        "829": 1
+      },
+      "raw_sha256": "a3ecd6e12eb1196ddac44e4283e361bbdda1cb6bce252d4c0e677eeae10609ad",
+      "fixture_sha256": "57cd1c04e48afcd0b05d6f415f2f1be7ecd433af8ac7e23f0aaa0d29b1c315a5"
+    },
+    {
+      "kind": "stop",
+      "region": "pal",
+      "cases": 1,
+      "M1_histogram": {
+        "829": 1
+      },
+      "raw_sha256": "a3ecd6e12eb1196ddac44e4283e361bbdda1cb6bce252d4c0e677eeae10609ad",
+      "fixture_sha256": "57cd1c04e48afcd0b05d6f415f2f1be7ecd433af8ac7e23f0aaa0d29b1c315a5"
+    },
+    {
+      "kind": "arbitration",
+      "region": "auto",
+      "cases": 28144,
+      "M1_histogram": {
+        "28": 24,
+        "43": 2946,
+        "37": 1626,
+        "73": 13300,
+        "67": 10248
+      },
+      "raw_sha256": "b2860d84ea0bf6f0422e6c36bda91d8d28a0c5b376d5ddbe9f093dea2247aba0",
+      "fixture_sha256": "7e4ed17961a70a9c2f9e91cd73627117f01cc5e70ba7d0ddaeb4af338fc03b4e"
+    },
+    {
+      "kind": "arbitration",
+      "region": "pal",
+      "cases": 28144,
+      "M1_histogram": {
+        "28": 24,
+        "43": 2946,
+        "37": 1626,
+        "73": 13300,
+        "67": 10248
+      },
+      "raw_sha256": "b28b9df3bc12887f983200376355d8fb5335a2a1cabd2ebd630d1610d5d36216",
+      "fixture_sha256": "7e4ed17961a70a9c2f9e91cd73627117f01cc5e70ba7d0ddaeb4af338fc03b4e"
+    }
+  ],
+  "production_ROM_changed": false,
+  "full_game_ported": false,
+  "limits": [
+    "Unmodified original bank6 tempo/fade/stop/arbitration andpriority table. Read-only counter follows each existing R++ and optimized-loop R increment; CPU state/cycles unchanged. Raw M1 counts,logical R delta,cost andall400 sound bytes verified under DI.",
+    "Tempo counters/reloads,fade counters/four volumes,stop LDIR/OTIR,request/priority orders/boundaries covered. Some request/volume/priority values are synthetic. Not full reader refresh coverage:dispatch,channels andIRQ wrapper remain open.",
+    "Counter does not add hardware interrupt acknowledge increment missing from local core; isolated fixtures have no IRQ. Full load R prediction,native RNG replacement,PSG waveform andfull game not proved."
+  ]
+}

@@ -105,6 +105,9 @@ produit à partir du registre R : 135 168 cas isolés et les 72 appels
 d’historique des parcours contrôlés passent. La valeur de R à l’entrée
 de la routine reste fournie ; son évolution depuis le début du chargement
 et dans les interruptions reste à calculer avant de remplacer le hasard SGDK.
+Le comptage des lectures d’opcodes du tempo, du fondu, de l’arrêt musical
+et de l’arbitrage passe maintenant 66 530 cas isolés, avec contrôle de R,
+des durées et de l’état audio. Le dispatch et les canaux restent à couvrir.
 
 Restent aussi la fidélité du hasard au registre Z80 R, les différences de
 combat et d’affichage encore ouvertes, la progression naturelle complète
@@ -136,6 +139,7 @@ et la vérification sur matériel Mega Drive.
 - [Phase graphique et chargement de carte](analysis/world_map_phase_milestone.md).
 - [Phase graphique, carte, HUD et attente vidéo](analysis/map_hud_phase_milestone.md).
 - [Sortie du hasard original et registre R](analysis/rng_refresh_milestone.md).
+- [Lectures d’opcodes des préfixes audio](analysis/audio_prefix_refresh_milestone.md).
 - [Travail restant et notes techniques](analysis/world_next.md).
 - [Ancien README conservé comme historique](analysis/README_historique_avant_v0180.md).
 
