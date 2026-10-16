@@ -1,0 +1,1706 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "tools/archive_hero_refresh_research.py",
+      "sha256": "e5d36f2a1af7d09ad3455bedec4697449c351794a7659df6a598aacee612b04b"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/profile_paid_passage_loader_phases.py",
+      "sha256": "512f51b331756654daeb27e15d4a3400bf0ae356790482624a1066ccb298d838"
+    },
+    {
+      "path": "tools/validate_key_door_gameplay.py",
+      "sha256": "edaff2a53f041a71d7f231051cabd65dbaa5ae965b281ea6f0d201a878d80d0b"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "c4a87debea42bd4fee24d18ba0dcbb67fa9924692d62b2d93ddc0b9d1741de06"
+    },
+    {
+      "path": "tools/validate_actor_tick.py",
+      "sha256": "ff145d9122365949160fb6878987689afd7e9f8d8bc047c0d597067908d94289"
+    },
+    {
+      "path": "tools/actor_tick_reference.py",
+      "sha256": "a5cd64adc2f20330dd20eea3873628195eb3c17c952a66bada4b4ce90820ea76"
+    },
+    {
+      "path": "tools/extract_world.py",
+      "sha256": "8575d37d77453328ed48d161ff4ab730ea03f8ffcd8ddd5d8d6956a737baa607"
+    },
+    {
+      "path": "tools/validate_hero_refresh_unit.py",
+      "sha256": "8b0b7ca0d0491147d313ca5a3ae6ec6ec6f9f870a08a534cf96bbe1fa43b8f62"
+    },
+    {
+      "path": "tools/validate_actor_prefix_refresh_unit.py",
+      "sha256": "ceea3121543459357e6400dc47d6568a49713d4c3364c4709a087c238e679848"
+    },
+    {
+      "path": "tools/validate_full_actor_loading_cost.py",
+      "sha256": "4a86185dfdd387726598f3d528c0b0e77f18bfac768069711e8d71a7dbe58205"
+    },
+    {
+      "path": "tools/full_actor_loading_cost.py",
+      "sha256": "82f55c382239fbc1365f4707a80021aa2f1f4b2ae9544d6dbbdaec715107c093"
+    },
+    {
+      "path": "tools/graphics_prefix_refresh.py",
+      "sha256": "b36d6363f23857568614cb507f9d0cbd0ee013673f07ce47156b4a2b86f66535"
+    },
+    {
+      "path": "tools/graphics_prefix_phase.py",
+      "sha256": "a120c1901c2e68a4a30039b84f98675f5774a7c2e597d2ed5bfda4d5ae7dae55"
+    },
+    {
+      "path": "tools/class0_graphics_loading_cost.py",
+      "sha256": "c809dd2bd839819c036bd23fe064a08b3c82580b7a2ca72b5d64feba35c39549"
+    },
+    {
+      "path": "tools/ram_plane_loading_cost.py",
+      "sha256": "06587f301249f5973af49a7ab6e98e4ba20ac344c8b8ba066a31da0c388bd08a"
+    },
+    {
+      "path": "tools/reveal_phase_prediction.py",
+      "sha256": "2684d51012fd820f8accea443c237d695a75fb6bd5b16e90b3803e957409a1fe"
+    },
+    {
+      "path": "tools/wait_raster_prediction.py",
+      "sha256": "e42b7a48721ba96a0fff3c35a9bce5409ca2c6d8bb2731e38b6501426d439c0d"
+    },
+    {
+      "path": "tools/source_rng_refresh.py",
+      "sha256": "d2362f6e648d93c50d08834fe2ca66dbd322664b3f68377a8f1448151ac77d8e"
+    },
+    {
+      "path": "tools/source_rng_reference.py",
+      "sha256": "d921a8eefe17f84b3e9e1ab8ef5167ea07d17f776bf9e908d94c0da013d58b00"
+    },
+    {
+      "path": "tools/full_irq_refresh.py",
+      "sha256": "3387fa015ce13b5ee8a9b61ad1c87dec41c8173594ec0286515fdf584fc789fb"
+    },
+    {
+      "path": "tools/full_irq_cost.py",
+      "sha256": "aa376d2ec9e2c9ee88229cb21fc5fb0120532a62e5d9cff38c91c67049d968a0"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_refresh.py",
+      "sha256": "77297690be7d2e9ca2f77cf9afd6846ef2ca26a4cfec44c6e3fb2f2a6e6356a6"
+    },
+    {
+      "path": "tools/audio_irq_wrapper_cost.py",
+      "sha256": "16ea74da99aff9303ce66b9aa2c072e63fbaf093d449891074f5972055470575"
+    },
+    {
+      "path": "tools/audio_reader_refresh.py",
+      "sha256": "ff49979d10a86cd94c37b9a1439917db88a7e90e1bd514911d4321809e66af1b"
+    },
+    {
+      "path": "tools/audio_noise_channel_refresh.py",
+      "sha256": "6bc5f50b60af38b77ee3804d11d3f680fd09e5c5d5ea7c9723618747a8caf1fd"
+    },
+    {
+      "path": "tools/audio_note_sequence_refresh.py",
+      "sha256": "49c42ba46c06d248e75c54da2de41669eabcd829c078a672d8dd9bfcf1105c15"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/audio_envelope_refresh.py",
+      "sha256": "c1f08558f909187c5ce6dce91ba55aaa36ac35627e1785670de95767c5a33568"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "45088ce7543a7ebd6f7b3c034a717e9a616029cf3f69eb1e4a63819f6adbb6b0"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_refresh.py",
+      "sha256": "899964546d7d9f0c36f78b0ef67c5c59009c5d7a300e772101617b2b198086d2"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_refresh.py",
+      "sha256": "b10d1e8a33cb764a1913f5d5f0e2d3891e639fe0ba917a3036171fa8df4bcfe7"
+    },
+    {
+      "path": "tools/audio_pitch_refresh.py",
+      "sha256": "231e6efcb8a9c4c29b3b4a2f4e7b5fc4b8a1fac24019276be78c85ffd7a54dd9"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "35584e794be7cf474905985f91d5ebb6369909ca0e56948d643edb3937960a6e"
+    },
+    {
+      "path": "tools/audio_priority_effect_refresh.py",
+      "sha256": "c4f696eb775fe4e3b9458039d9b8dec7e87984e92a59a547b23bfabab07bd2d8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "tools/irq_raster_phase.py",
+      "sha256": "66609173a811ffbeb148d4ebe9d061c2a8e9d0e2caf655b9c4b6fa0c3e0e5f3b"
+    },
+    {
+      "path": "tools/audio_reader_cost.py",
+      "sha256": "3593aa2a3c7f8ed2cecae64f716e4daa634b66fc5e171b60ee908dbc3726ba28"
+    },
+    {
+      "path": "tools/audio_noise_channel_cost.py",
+      "sha256": "0f5c3aad31c5cf57a8f1de409d6adaed5d1d5ff53d2d0da30d2a85ea13fa644a"
+    },
+    {
+      "path": "tools/audio_tone_channel_cost.py",
+      "sha256": "a234f114d778c594e9129d3dae283498a3f62f473835fd0ea908dee39e32fd42"
+    },
+    {
+      "path": "tools/audio_note_sequence_cost.py",
+      "sha256": "9d221240da595448c0e70d23f0f44475ccf23fdbecc93f98761cc880f8e482f8"
+    },
+    {
+      "path": "tools/foreground_phase.py",
+      "sha256": "687d30447dfd7dbab172467c739715fd1c7e7928a793b5c44e7e081c480e7263"
+    },
+    {
+      "path": "tools/actor_prefix_refresh_phase.py",
+      "sha256": "19a51fc8543d3fe87dc61560685af191036846635c59cb3ca207bc99a693d742"
+    },
+    {
+      "path": "tools/graphics_load_phase.py",
+      "sha256": "0d1ab45a70d4180ae49b88677aaa6c6a6b1c14a1a1d2f9eb01700ee2358ae58f"
+    },
+    {
+      "path": "tools/history_refresh_phase.py",
+      "sha256": "27fab720292d2e2fb1e8222080aad5d7f6a70a8940e871b27f5c611a31f5f817"
+    },
+    {
+      "path": "tools/map_hud_phase.py",
+      "sha256": "c8a813d8f2466f5810f0d8436a014f482a6acd0caca750650eeb9ee385adbd10"
+    },
+    {
+      "path": "tools/world_map_refresh.py",
+      "sha256": "7a97ddec73422740f04f420390c93627cf4247f1dfb90a55f84519768db23d29"
+    },
+    {
+      "path": "tools/world_map_phase.py",
+      "sha256": "2d41643471d1f589376005c61eb166254df5586bfd82f5867136e35c371b6bce"
+    },
+    {
+      "path": "tools/world_map_loading_cost.py",
+      "sha256": "bb460ce9b38a1af240d8b4d11ef547920201df51ac95298f8483c0a01cf511cc"
+    },
+    {
+      "path": "tools/graphics_load_refresh.py",
+      "sha256": "c69764c72756ed74151675cebba57ce0f6e4b23dac67555ca0d3568ed3f864aa"
+    },
+    {
+      "path": "tools/map_hud_loading_cost.py",
+      "sha256": "0df0cda51baf038a56fe35daf45fde81adcf442f197f17a679aed42b00bd844b"
+    },
+    {
+      "path": "tools/room_map_loading_cost.py",
+      "sha256": "71d8c23c33c355e9126366f3711ee77b217c8b103d28411baed9a66bb0bba046"
+    },
+    {
+      "path": "tools/hud_loading_cost.py",
+      "sha256": "4f64dde90cff9b6f997bf36c52dcd849837cbbd1dd6afc2d1f8bd58caae4e8b5"
+    },
+    {
+      "path": "tools/validate_hero_initialization_cost.py",
+      "sha256": "669341612673e118d6030b664d1597678efe3875c25f645f7392306b6f92add5"
+    },
+    {
+      "path": "tools/hero_initialization_cost.py",
+      "sha256": "7085cf2ac7dfbc1c7b368d33faf9acbaca781c621adbe2ddbd6c35c8e653a598"
+    },
+    {
+      "path": "tools/hero_refresh_phase.py",
+      "sha256": "77d752085a405c2e7caa5cb0436434712abcf1ca7225999f7be38c6c465dae08"
+    },
+    {
+      "path": "tools/validate_hero_refresh_phase.py",
+      "sha256": "2494c266a084653061315ee6b0159f06b0ca91c2f01ba9d3643bb861642e1d4a"
+    },
+    {
+      "path": "tools/validate_reveal_phase_prediction.py",
+      "sha256": "9af2331d2d2ddbd3669f1fa5391cf31ea8bd58bb4b3f745af44710fa3ceeeae7"
+    },
+    {
+      "path": "tools/build_hero_refresh_core.py",
+      "sha256": "5cd334c83106f845cc4141398a7bc3011b36088b1ac0bd808a8452806c1f808c"
+    },
+    {
+      "path": "z80-hero-refresh.txt",
+      "sha256": "eab56bb670d9f0c4158f46b3fe2ad597ef71f23b6c9247a009b495a1a458777d"
+    },
+    {
+      "path": "emulator-source/system.c",
+      "sha256": "9c0f6a042a1f5abce540d3aa69d4fcfa3fae2c66ca7d667e6f2a81a7f8af0d79"
+    },
+    {
+      "path": "emulator-source/vdp_ctrl.c",
+      "sha256": "34aa4da65cfadf9da528dd387929c4ad5d52ec9bb3d83e379f9c2070ce33542a"
+    },
+    {
+      "path": "reference/bank_00.asm",
+      "sha256": "7fb3b3a94556558cd5df98d6d1d207a0a47c0861ba13856036fb91fafd53d2ee"
+    },
+    {
+      "path": "reference/bank_02.asm",
+      "sha256": "8aa867ce1d0125555374f71c27b1cd492c517eabfaaa06aea27556289044651a"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-actor-graphics-records.bin",
+      "sha256": "9d2bd51865197467f2b730084b793a08386d28de18ef931442afce5c6c14fc9b"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-actor-load-context-records.bin",
+      "sha256": "ad50eb0f8521cb37e564d6d12aed5e01370058ebc7e2eb2bf27ecb62642feb86"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-audio-irq-events.json",
+      "sha256": "91c2c27780ef6c0502b9f9b529452283566cb8a8aa46dcee813daf533c4cdbb1"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-foreground-m1-records.bin",
+      "sha256": "bae93befc57393c39aa3d5a04acc6d60fdacc5b057f90ed15219a31006f4a9a0"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-foreground-phase-records.bin",
+      "sha256": "b09a78b8bd31f0df515a150357ee68bcab5f260984cbc2b6c1d5e2fa2a532664"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-hero-001-after.bin",
+      "sha256": "ed6a58d508cf8366acaef008c24ac31ff688780730c338843be709e3034b20aa"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-hero-001-before.bin",
+      "sha256": "960dddd4cbe14560f957fcbb9f5a4f582e91e6366b202c546350b8e444407b7a"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-history-context-records.bin",
+      "sha256": "cd510731d7595fc8d7f0285a8e06b48abf6dbdec89204eee248771f0f2642759"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/auto-hud-context-records.bin",
+      "sha256": "3eb448306e7bd6e03139afacb1188e8a54d862bfd0282abe904eda2c9f7c1e3d"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/captures-auto-sms/capture.json",
+      "sha256": "8b62c196453f9ce5e02e5bdd703531f07d5460dabbea3c180e8856833d4eb26c"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/captures-pal-sms/capture.json",
+      "sha256": "ab4dac0d6fa72136f64d26840bba276d3095fc82d3eb30b1a1b0884528d0d780"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-actor-graphics-records.bin",
+      "sha256": "f363f624a20328b696090afdbf249701f4a27416f1b1860b445261e857e9b2f4"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-actor-load-context-records.bin",
+      "sha256": "adea5265859a833d0d0d59392f543fcd86a5ff1e6af4a6611a90de437aa5a8b5"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-audio-irq-events.json",
+      "sha256": "9cc24202d65da7d16b3aff030eef5257a039f9baaf210fef80af63e2f9890e4c"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-foreground-m1-records.bin",
+      "sha256": "65041637ca3cdc600a3eba789065811dc7a9da212bd6e1505382b31f7e37bfff"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-foreground-phase-records.bin",
+      "sha256": "51db4dfe1de96a49573124bc12d4062e948f0fa85af4473a2236d5eb5e0724d0"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-hero-001-after.bin",
+      "sha256": "35ddf83fd2c0f3baa5c8075f93ea8b0ce96db6339f0ac4629f03bbed63eeef40"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-hero-001-before.bin",
+      "sha256": "6d89bde6e6badc3ee16dd87e10586b390f37f2ec7827fee161b8f178b13b520f"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-history-context-records.bin",
+      "sha256": "a0413076ec3cb2e9c8eb11d71d0bc4db26309ade261271dfc5267dab9b31ef13"
+    },
+    {
+      "path": "validation/hero-refresh/1a-00/pal-hud-context-records.bin",
+      "sha256": "ebb1e90a166f21f035bab15f6255cb73222cfa48767b3ad595ce1668e89bf838"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-actor-graphics-records.bin",
+      "sha256": "1750c5aea3d5d2b851594eecccb4442d3cdf806d5d9a06cb9fa9cdcfb0385848"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-actor-load-context-records.bin",
+      "sha256": "55eb0ac7839c15eb0cd7ac2a9b7f00c239e2939cec551f5c896c0ffa4d8a3c65"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-audio-irq-events.json",
+      "sha256": "e1f1f72f29b6e7560a261b77934d18bdeb4af3851ccb344080f239777c7e5e4f"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-foreground-m1-records.bin",
+      "sha256": "725d003cfed2e33dfcea46005f72ea235a927ab2c728c6bbc0360eee86fe3a93"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-foreground-phase-records.bin",
+      "sha256": "b2e7e2a5615e5ab5e991caf1c5c0360e9ad0a72d9616b9eda54839891ab190c0"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-hero-001-after.bin",
+      "sha256": "c0c111e829cc241cc2cd5d4b0211ddfb10dd5540155e9a2d8c87ab030483f4de"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-hero-001-before.bin",
+      "sha256": "dec477f72e621b2927c12308e8e6c808ab60cdc719c78cd506e60c0005396e3a"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-history-context-records.bin",
+      "sha256": "0a80c51d71de2b36382bbde6113092c303e4d5b8092a125296a3b160189540a7"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/auto-hud-context-records.bin",
+      "sha256": "4c48c75da56d3d90e0c7ff83cc496c1c9810859edfc2fd12bbf3a33549cc9f51"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/captures-auto-md/capture.json",
+      "sha256": "6c17e6419259ecaca555cf321e7cae52ca40c5bb11dc72a85fc182e1e6e29f7b"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/captures-auto-sms/capture.json",
+      "sha256": "8b62c196453f9ce5e02e5bdd703531f07d5460dabbea3c180e8856833d4eb26c"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/captures-pal-md/capture.json",
+      "sha256": "474c6973df59ad0af9815e0b6bd598ec8b9a8a6e9d069b6ca782e92b902e484a"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/captures-pal-sms/capture.json",
+      "sha256": "ab4dac0d6fa72136f64d26840bba276d3095fc82d3eb30b1a1b0884528d0d780"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-actor-graphics-records.bin",
+      "sha256": "34226730ada3fa94c4e47293e342ce4a7d11b5248944de6f5824782da6a3ac02"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-actor-load-context-records.bin",
+      "sha256": "d8a642718d9e1e04b675c6aceca9acfcd300e4890841a1eaf96a159670b583bc"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-audio-irq-events.json",
+      "sha256": "229576c976aa5423b60def7a6bc6f92e55caf5fb16c5feec6a3652fc518ab550"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-foreground-m1-records.bin",
+      "sha256": "2e97792a4cfe836276410a4f07d7897dd1c7f61962ee11c297cd2b2d218d2a8b"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-foreground-phase-records.bin",
+      "sha256": "ce4d62c32dd60f168b4dce2e542043c38148b4e1e9db1e42716322f9eaf62a89"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-hero-001-after.bin",
+      "sha256": "b254ff39488b5acff2346c40bd171d9e3a3a58fd711d1aae809be9d8be6f379f"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-hero-001-before.bin",
+      "sha256": "3401e413dd3e1ec0406ab07c8acbb48b5388c2c5248fbee73742fe83fe275452"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-history-context-records.bin",
+      "sha256": "9e5c681f65729c3a1860aa16e03332e7e0e93d37b5f15ebe80180aec00b23d56"
+    },
+    {
+      "path": "validation/hero-refresh/1a-ff/pal-hud-context-records.bin",
+      "sha256": "67df1e831289c8a98801ad7233d9d8d49bc18151d0182671132679fd2b66cc16"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-actor-graphics-records.bin",
+      "sha256": "50041f84c84eafeb25d14e74482a4e9361d296a531d30b0543990a49829b4e6b"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-actor-load-context-records.bin",
+      "sha256": "bb52b3dbcae166ea330dcf7f0074730aa33d973291af5816fee876ef35169673"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-audio-irq-events.json",
+      "sha256": "0e9531b3ec5b950e20c4a88a14af1f70c8b14a1ea6a5723804db7a86801d2388"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-foreground-m1-records.bin",
+      "sha256": "bafec6c95050c3721ccd769c0269ab186cb67d77c81fbd25df6a4da6ed0ef074"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-foreground-phase-records.bin",
+      "sha256": "07eaf2666aa3d67be7954272a55524158960f160d05dfb47a91a84bf731f7d74"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-hero-001-after.bin",
+      "sha256": "1c4588721cd9f315df7d39acd870f58e4f2bbbfdb3ace0722a43fd5718a685d6"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-hero-001-before.bin",
+      "sha256": "329b1ba315381614fab76855fca94b70844cc0417f30e88a1489db18ab225e3b"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-history-context-records.bin",
+      "sha256": "d007938eee567593e12ef99beff7f9dc47cd538c04b96404bb5ecb502b69acbb"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/auto-hud-context-records.bin",
+      "sha256": "3eb448306e7bd6e03139afacb1188e8a54d862bfd0282abe904eda2c9f7c1e3d"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/captures-auto-sms/capture.json",
+      "sha256": "0f5e894cb792916067b690d0e74a96d8703d7dcb422523ced93b9a2899353ffb"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/captures-pal-sms/capture.json",
+      "sha256": "30355c0516d16fec30a3e9593da730463cf224b69a59e124753e2fda3cfa8c0a"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-actor-graphics-records.bin",
+      "sha256": "6fdf3f017185f45f750c607c2687478ccfbc04b5fc25410e2ef136d77a42ec3b"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-actor-load-context-records.bin",
+      "sha256": "e0cc94116be955e3f55e531f904acb7078dcc8e25226a805ca887832a6aa38b3"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-audio-irq-events.json",
+      "sha256": "0becb1a99763e4ab9854634663f14bccc7cfde442977e8e455594c2d351ec457"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-foreground-m1-records.bin",
+      "sha256": "47e472e370858a94059668cdfaaedc900e3b8dd16d5d9984c2a984ce99adb981"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-foreground-phase-records.bin",
+      "sha256": "a9442dfcce008658abfeb909eb0aac0f6e84be9ba18a635fe350d19b62a46820"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-hero-001-after.bin",
+      "sha256": "a81eed81daa7d9e90245b8e88ed91f5ac19556c785b66f091ebc129578981161"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-hero-001-before.bin",
+      "sha256": "3529a4a597fd5e17158443d8bd41c3132a93eb30a934c70d6cc715ee0f8cae47"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-history-context-records.bin",
+      "sha256": "f74887ac1c5e85ae775dddfe42a44d863748e548c9f992628dbd37e2fa3672e1"
+    },
+    {
+      "path": "validation/hero-refresh/36-00/pal-hud-context-records.bin",
+      "sha256": "ebb1e90a166f21f035bab15f6255cb73222cfa48767b3ad595ce1668e89bf838"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-actor-graphics-records.bin",
+      "sha256": "a3eb1910843c72d6ab91cd4122370004628840dbd7a37d1adc6d03e129eaf359"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-actor-load-context-records.bin",
+      "sha256": "9789426eb3c6ae6032e50e9171d0ada2a36597d5fb5f47f24811b52cc7ff3b44"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-audio-irq-events.json",
+      "sha256": "da7a99986a572d1e5937bf71b46356ec5aba269b1a9ca347bb9963d5d0325f65"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-foreground-m1-records.bin",
+      "sha256": "47dc381b2a0cadf73285d13d06f8b7b6aaf8e990763577cb43a16f93b999c9f6"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-foreground-phase-records.bin",
+      "sha256": "b95a2fba1f06b2cc00df8680441a92037a7233738ff5434d0ea986ac904e396e"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-hero-001-after.bin",
+      "sha256": "75d17c510d1ca4d3b781f15151b0f46dd23ec71d3193ca9e0fe6654aa359440b"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-hero-001-before.bin",
+      "sha256": "8a285920e028e7a2cfdee16a1f585baf9987ad2fbae921fa0bfde303e7e5833f"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-history-context-records.bin",
+      "sha256": "1ba3244ebdb3cda0833cf479f973d40537d88062231d6fb8e7ef6e804ac66ef2"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/auto-hud-context-records.bin",
+      "sha256": "1aa9990654e84252be248c8f04008856c26c48cf4bb90d1a39600b3443abea07"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/captures-auto-md/capture.json",
+      "sha256": "0119c5df9adcd8ff28af666f3d367c4a1923178af67b1efd11cfb6231ca00ba1"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/captures-auto-sms/capture.json",
+      "sha256": "0f5e894cb792916067b690d0e74a96d8703d7dcb422523ced93b9a2899353ffb"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/captures-pal-md/capture.json",
+      "sha256": "57d060e940c31db943e0f14691a0c529d8383052901be564cd369767a5cf2a92"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/captures-pal-sms/capture.json",
+      "sha256": "30355c0516d16fec30a3e9593da730463cf224b69a59e124753e2fda3cfa8c0a"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-actor-graphics-records.bin",
+      "sha256": "abcb6c459b611611f1907e575d94f75b222d093535b28fca5be1c1aee008f033"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-actor-load-context-records.bin",
+      "sha256": "357998d99db819f9c44d71c105c0838b1ef39936fadf065027dece793bb017a8"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-audio-irq-events.json",
+      "sha256": "17fe16c08ec931b3b68178315f83d2c3379643bdc8cda287342998c222a19f47"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-foreground-m1-records.bin",
+      "sha256": "22b404dbd4d586fde4a33597a98e9f1588d80571281d96c95fb499bd9e9089c5"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-foreground-phase-records.bin",
+      "sha256": "0ca85a5a894df2136ed3a216b3df5876fe9741ccda9374f642ca87173c7b6019"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-hero-001-after.bin",
+      "sha256": "39c0c713a718da98966792d5de5418bf2dc98d0553cb2ebf1a0988aef3c7859f"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-hero-001-before.bin",
+      "sha256": "f6988ce50e0bb945f4047518ef04eff4d6da5b08ca55f60e4733600ef5acc4c4"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-history-context-records.bin",
+      "sha256": "1c659aadd0be29f213cffeac886205055f8d3722f41d039f1d5629b22e266dac"
+    },
+    {
+      "path": "validation/hero-refresh/36-ff/pal-hud-context-records.bin",
+      "sha256": "fe7f97a10a6dcc3880463152d430f0950e2b5647474fa4ea44d38549c0d50692"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-actor-graphics-records.bin",
+      "sha256": "176df608783c45a4153b72b23b4c1a8d873c642e4d57f861532accf4332e6118"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-actor-load-context-records.bin",
+      "sha256": "338f9a3154024abb9c7a6c46299ea4c1766ce274fd95de1dced3d65221c7e9f5"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-audio-irq-events.json",
+      "sha256": "3f6dcc901ce2a5f3ea9f58db95a8e5f35ae2f65ca05775c4c7d438c4f7300f01"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-foreground-m1-records.bin",
+      "sha256": "88713eb861927d636812604f0552b88914a91a0a96daaa00155f0dcda17ef2ff"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-foreground-phase-records.bin",
+      "sha256": "30331fc63427357121b601dd75b387ce9d6aebd1993d0fae685f0f4d1c63a584"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-hero-001-after.bin",
+      "sha256": "ea3611a1993628a3638ced04753f7ef6f53438a376003473ea1b3738476e4fae"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-hero-001-before.bin",
+      "sha256": "08aa107cee08103564614abf59f9d7e8d8764819bf16f8d4dbcebe70839fc0d9"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-history-context-records.bin",
+      "sha256": "fc85541aa6725c1347642b2c74327571dfbb520eeeb0cf72a2e6b7f6ea513bd7"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/auto-hud-context-records.bin",
+      "sha256": "3eb448306e7bd6e03139afacb1188e8a54d862bfd0282abe904eda2c9f7c1e3d"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/captures-auto-sms/capture.json",
+      "sha256": "b013c82877f313349374ac17c9c0ff3aaf4cc6ccffeb7a7044f4fc873e11c97b"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/captures-pal-sms/capture.json",
+      "sha256": "67f804d91565195636949f982b726d02bc7c100f4911d60aa0ee77de78491741"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-actor-graphics-records.bin",
+      "sha256": "9153c9b631606627d020926389810076569df9847dcc34692c1dbb070c4099b7"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-actor-load-context-records.bin",
+      "sha256": "2c6fd77716843a8caa7aeb2ce5173c7d2b6a4d673686abdfba513b82b33f99c5"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-audio-irq-events.json",
+      "sha256": "40314eee31d9ac236a04565638de92ac6e4a9365f3cc873b55eedf0f3f8d3c1c"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-foreground-m1-records.bin",
+      "sha256": "0ed68b07129236b0034d6253a54d02be74267ff5596b9c09508b887dd7aaad56"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-foreground-phase-records.bin",
+      "sha256": "9261c4036908b692f788e4ea1bfd3584fa4fd667448a4658bebe744a0b68e54f"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-hero-001-after.bin",
+      "sha256": "5c1e713e002ef8c40631d1b47a677331f98b058ccb234de5dcff2449cccf90b6"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-hero-001-before.bin",
+      "sha256": "1ff861e719aaf04b559fda25d3f4001ccfe418176e6b9ea81871d74005dd80cf"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-history-context-records.bin",
+      "sha256": "c1a3123fe2308e7b42712f90e675caa925e6a73087924bf6a0ebc0fabed99332"
+    },
+    {
+      "path": "validation/hero-refresh/3c-00/pal-hud-context-records.bin",
+      "sha256": "ebb1e90a166f21f035bab15f6255cb73222cfa48767b3ad595ce1668e89bf838"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-actor-graphics-records.bin",
+      "sha256": "ef8b3dd9ca11ce2535949e1b06b39d043ab75b905832e95ebf8a547b466299c0"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-actor-load-context-records.bin",
+      "sha256": "4cb74c40e6ce56864759d64e5056bfc6544ee11006f77e899d6eec8ce9927cb4"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-audio-irq-events.json",
+      "sha256": "cc972d3af70af7773d8ac2f39387eead123fa088939115561ff1ec3d9f9fa352"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-foreground-m1-records.bin",
+      "sha256": "55e372115c56709e7f5ab415e3af60dab853a2a5c0e6dabdbe7c32f9e03601c3"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-foreground-phase-records.bin",
+      "sha256": "0e3460cee3d1c2ecef62daf05315fb9465e173d063c8d4e5c3550126e869605c"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-hero-001-after.bin",
+      "sha256": "06fbf8336bcf5e0f9dacb27facd01330ee42520a58be6d2f46f21bbebcbf4b1f"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-hero-001-before.bin",
+      "sha256": "5b8cb3ea1b9ecf3d3a1bbf2568d9282eb873f594376402cbc1294fe77222078e"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-history-context-records.bin",
+      "sha256": "a4659dd2441bd2b7a1c6d9260fcdd052da178424299fdcd270b706002156d1af"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/auto-hud-context-records.bin",
+      "sha256": "0c93d0573b5dff27281f36b7df14e54d11ac855141e04c5ae090d0d1a008f10a"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/captures-auto-md/capture.json",
+      "sha256": "e15942d87553e09652aaa23eb6cf2f278fdc329ac66981be1f353edb136da57c"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/captures-auto-sms/capture.json",
+      "sha256": "b013c82877f313349374ac17c9c0ff3aaf4cc6ccffeb7a7044f4fc873e11c97b"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/captures-pal-md/capture.json",
+      "sha256": "ef9f2c5d1219f7cdabf974f8751f95bf887baff361bf90f16ed6c51ed5ecc0d8"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/captures-pal-sms/capture.json",
+      "sha256": "67f804d91565195636949f982b726d02bc7c100f4911d60aa0ee77de78491741"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-actor-graphics-records.bin",
+      "sha256": "2c1b3d1e8ea5e0c9b0a8d41ba364929d333d4e049041a149445aba415b897c17"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-actor-load-context-records.bin",
+      "sha256": "6225b431a76ab0199b6c117deafb11174d2f4d5b617d4627a8faa9541cb09baa"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-audio-irq-events.json",
+      "sha256": "8bcdc32198073df81ab758735b93790ed67eb93a2c97581ce28aa98729fe4fc4"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-foreground-m1-records.bin",
+      "sha256": "90246ddc006c28a79c202ff7e8d1e3c7434ce13b847863369033d54f37b971d8"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-foreground-phase-records.bin",
+      "sha256": "46275738dc4c4564b8ddba1a6adf5c4737e9354f38a5eff4d9851a12f0443ca2"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-hero-001-after.bin",
+      "sha256": "6316e910b29f9473b4ac0505415b5002f484c113c720b211551da996be6ee63b"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-hero-001-before.bin",
+      "sha256": "6510e284394d2398204fb2d5a2064ea1ca3b27db8e56475d31d8dbd50273389f"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-history-context-records.bin",
+      "sha256": "8a76af04671283b9574ef0ecf05caf9301a2158951289867b25e8bab5e16aae6"
+    },
+    {
+      "path": "validation/hero-refresh/3c-ff/pal-hud-context-records.bin",
+      "sha256": "04e6721578220e01a3f6c3c131f0552c572039b36f09783a6f1e3caa10673533"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-actor-graphics-records.bin",
+      "sha256": "68f16c02f06ea8f6e1bfc0327e58a15b6245e4207e7a0203f43af6e7e5651bf4"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-actor-load-context-records.bin",
+      "sha256": "335845bc418883dba8442315bd93c68b0fc0318b8d1030436dedc3b70e7677c9"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-audio-irq-events.json",
+      "sha256": "4610fe59f66ee938ac1074375cdf5f04f211723a5a4d1796dd89373c81103da0"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-foreground-m1-records.bin",
+      "sha256": "3911673b8b31e4984902c3ba3893de2da680728d30001718cd67c5c2c1961799"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-foreground-phase-records.bin",
+      "sha256": "67eb48f875cc68ea6853f655ea6a6bb7258992492a81f6aa7a9294f8c76fa4df"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-hero-001-after.bin",
+      "sha256": "83886d74eb2fca804f0ce703336ee9b0acf3f99c13fd5d9802d13075e9d0e2c3"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-hero-001-before.bin",
+      "sha256": "37000f36fa78d7fd135d2e60084134d118ad6cb1c6fa6fb2e872463cecfc4872"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-history-context-records.bin",
+      "sha256": "c42346a4247d9afe45f02c574c0cc73ff9a6748086191c4d225b774f3a7d1c79"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/auto-hud-context-records.bin",
+      "sha256": "3eb448306e7bd6e03139afacb1188e8a54d862bfd0282abe904eda2c9f7c1e3d"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/captures-auto-sms/capture.json",
+      "sha256": "af9df4687e2a93884587df3a449ddd441b4cd44a0a207d1e063a07bfa0874231"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/captures-pal-sms/capture.json",
+      "sha256": "878b8532b03c26322676f20f72f9d85633bda73a1faf1234fba081513e1d7396"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-actor-graphics-records.bin",
+      "sha256": "155e5805e90ec9761ce00a17bb5eb79b52aca668a1224b64c3cb30cdb984e52d"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-actor-load-context-records.bin",
+      "sha256": "24f9a6da4544bd7a1a15dc35bf5ca5745f0e2633f050c0f6dce73699ef035738"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-audio-irq-events.json",
+      "sha256": "ababacd8808b383cd053b8ff1d741a59923c76cd9456e9c1712017a88ebcd54f"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-foreground-m1-records.bin",
+      "sha256": "a97b3e675428636729e26adf0409f15fd93920500081d6bc4395a25708f660c9"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-foreground-phase-records.bin",
+      "sha256": "88e0bf253d43611bf4dd906df4700d25352d40f448aff4573ac5f41cfd7ac8ee"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-hero-001-after.bin",
+      "sha256": "03c74875d4da09b7da2cb2cc92bcaaa09f601e8866b62f2795a92ef3401361d2"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-hero-001-before.bin",
+      "sha256": "3aafc06da35c08ba5d79a528380bc2b889697d12e4a21bff09b59362c27d0a7f"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-history-context-records.bin",
+      "sha256": "0e42ea40c6bb865e6ffea89ba40a90366887233ca24c0ddfa22115f101c5e4d1"
+    },
+    {
+      "path": "validation/hero-refresh/6d-00/pal-hud-context-records.bin",
+      "sha256": "ebb1e90a166f21f035bab15f6255cb73222cfa48767b3ad595ce1668e89bf838"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-actor-graphics-records.bin",
+      "sha256": "d28ca2a6a54bebe867670322c2327f2f4e13c4629cfc122d6c0850d9b0680f6f"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-actor-load-context-records.bin",
+      "sha256": "5e7ed936bd720448b8fc8d9e000be7f17bea29ed71ea776a835f981447faecfb"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-audio-irq-events.json",
+      "sha256": "53ae0e01677b544dd653fe676306072009ba936af613f873c455f1710776bafd"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-foreground-m1-records.bin",
+      "sha256": "05f634493d407976a07d22047a2cc978e736225c9f5dd32d83161f9106367923"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-foreground-phase-records.bin",
+      "sha256": "e9478ff2cb6c016dc8879d137ed31cd2919137aab0436d0b14b74b251d28ae4b"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-hero-001-after.bin",
+      "sha256": "e869e833faff024ddf9a5538aaf68bcd0a168d42c18ed8dfaafd9f2f24483620"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-hero-001-before.bin",
+      "sha256": "99097ce6be59e28e732c2a2a50d9cfbd48be6e12562df35824c32aac4a1a3c72"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-history-context-records.bin",
+      "sha256": "861c2fe9fac0dcd40a8022177822288d98d60d58e79346f458c021b74b4d4e15"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/auto-hud-context-records.bin",
+      "sha256": "266e9edc90b4d7074d5f850c6e12be381ada7a5502315349b5b90955cc980919"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/captures-auto-md/capture.json",
+      "sha256": "d6aac39745421f93c75a755f1c7dfcbb685e1fec5b54f5a7a6d32f0e214a4aed"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/captures-auto-sms/capture.json",
+      "sha256": "af9df4687e2a93884587df3a449ddd441b4cd44a0a207d1e063a07bfa0874231"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/captures-pal-md/capture.json",
+      "sha256": "4024cbebe34585b4055368caacb8900fad7477d4419ed66a4f5b604ff48687cf"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/captures-pal-sms/capture.json",
+      "sha256": "878b8532b03c26322676f20f72f9d85633bda73a1faf1234fba081513e1d7396"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-actor-graphics-records.bin",
+      "sha256": "870f4930aad6e4fd52c4b29ca8d353565aaae3fade26d5daf9dd560df26e3e2d"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-actor-load-context-records.bin",
+      "sha256": "87c508db81580642bc097aaf601f9889b437feb969dfebbee169e6e0b36903eb"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-audio-irq-events.json",
+      "sha256": "1b18b0ffd1a3779361c2b67cca19c6256c0760df29d6212872aa065a1c837d0f"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-foreground-m1-records.bin",
+      "sha256": "996cf89e4befc18a8983a6d23b0035911e5058215565d7ee545a6aca88796014"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-foreground-phase-records.bin",
+      "sha256": "a758a893dcbf60e66ccda974d8bd3dedcaba7d6d37439daff27be8ef5aa0ca83"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-hero-001-after.bin",
+      "sha256": "333268bb24f5e6dd6f3b310fe69c782cc7a6324087a6fd8205e27d2e7e4bf484"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-hero-001-before.bin",
+      "sha256": "e560400f64c44d9fd8ada8bfb94a6a1fd242f4696f9826fc0f8db08ea308f7af"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-history-context-records.bin",
+      "sha256": "c0b17e3d2df81937de5988546a1f4806c9bf0c77f55743b67e889008ae192444"
+    },
+    {
+      "path": "validation/hero-refresh/6d-ff/pal-hud-context-records.bin",
+      "sha256": "0dcf98b703e6a07118bd6aab02b5e7985d79fe2845c332d05516b540d005e6ad"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-actor-graphics-records.bin",
+      "sha256": "25da6081579c11e3fb31cd2ed649bf9c7016a6e4cc773099d0c811bfa1adf5c8"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-actor-load-context-records.bin",
+      "sha256": "7468ef2425e7797c4bab8f6d8a38099ec174de22c2d6cd6bea2524f82d77f8dc"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-audio-irq-events.json",
+      "sha256": "08be5d7222b1fe402244e0cb79cb75af58b5742cbea0a9e6c0311266c5ffd67d"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-foreground-m1-records.bin",
+      "sha256": "ad679abf6f4b092d212a4b1f8fcbfe6bf03d02750225ad5a286c73bea3f56e58"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-foreground-phase-records.bin",
+      "sha256": "50fade9b41273144970233ffb3cdc0b111569229d9a1e1f8ae46b628655ba3bb"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-hero-001-after.bin",
+      "sha256": "995039c5933a9cdf50321108cd6a82c90152025dfa4cfcd8bf3e835b9101a5f6"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-hero-001-before.bin",
+      "sha256": "4a16f818a89be300145b47798766ec1da26e2be81ac9ac6cde134bae7d3bad57"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-history-context-records.bin",
+      "sha256": "72bde14a009243d57bd8f7f74e92c5c6e2ce2aba539c7ebe1ef622501efdc5b0"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/auto-hud-context-records.bin",
+      "sha256": "3eb448306e7bd6e03139afacb1188e8a54d862bfd0282abe904eda2c9f7c1e3d"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/captures-auto-sms/capture.json",
+      "sha256": "83011962044008281795f70ff00df16d6d241ada53fc07834e4e7fdd9a7fab78"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/captures-pal-sms/capture.json",
+      "sha256": "ce905215a25ac27857e883d9d7c914748f653443c7d0d73d544dfecb6c54fbb6"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-actor-graphics-records.bin",
+      "sha256": "49ef7a727e325e6a354180988ad36175e03d6c18984eb86793f349f52d2c69d0"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-actor-load-context-records.bin",
+      "sha256": "6039fd69eb39c351e70710d75509458855928947f0cfee5f07f727e496a62674"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-audio-irq-events.json",
+      "sha256": "e2c8e1fc73e2c3059d2b7ca3ff3ff52e80b52609adede073c541d4483ffd6428"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-foreground-m1-records.bin",
+      "sha256": "b93f63e30b8fc4125e61de8e87d1a9d62d868b54d66d3a9b3bec0e298fba0206"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-foreground-phase-records.bin",
+      "sha256": "b9ffbca06754db8662e841ecda9455cfb2941722f38221a5d6d6dc358674bf0b"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-hero-001-after.bin",
+      "sha256": "b67cbaa3e466493e1720a57344479c748c2430633a991ae177ed67d5459b4047"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-hero-001-before.bin",
+      "sha256": "4e6921b3dca331e4143a83f7c00b11ef7a56334f01e12fa6342f90d7ec4f5b89"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-history-context-records.bin",
+      "sha256": "b9dab499bc4243ab30d8131ba249d98d051ec8e1ee070161d740f4752d01e500"
+    },
+    {
+      "path": "validation/hero-refresh/87-00/pal-hud-context-records.bin",
+      "sha256": "ebb1e90a166f21f035bab15f6255cb73222cfa48767b3ad595ce1668e89bf838"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-actor-graphics-records.bin",
+      "sha256": "c291abfee7030806653642070533a541c5ba91c07ce316e368aeef0c763f6f6d"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-actor-load-context-records.bin",
+      "sha256": "08de972d88f08399160475875332ca7b25a19ab7016039a292c011ccacde7c37"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-audio-irq-events.json",
+      "sha256": "de9a71a694c058e482120febb9720d30b2f1560411aefd9f588b71d8bdf20b1a"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-foreground-m1-records.bin",
+      "sha256": "b9c1c41512f41275b46f8ebaa38ba91bf2182269b66f4037942b9bbaa9662b2d"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-foreground-phase-records.bin",
+      "sha256": "5ec3b0b490f77efb5f563f15684f5c543a28ed01750f937b267bc67dd636609c"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-hero-001-after.bin",
+      "sha256": "8433f830ea54610c230f5e5820165b2fc1f9339a78e35e010d8b75fdcb6f6bef"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-hero-001-before.bin",
+      "sha256": "402ebe7ca4857d5385a293ae75b32138c74e708019086455ea84740f24234515"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-history-context-records.bin",
+      "sha256": "f9a890d87736f3cf87e680707becf37c02e56313224b9cac1468bab0fac8df26"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/auto-hud-context-records.bin",
+      "sha256": "56aea26ac27825991c88371237104829622bcb0820badd1a1476d72deddcaabd"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/captures-auto-md/capture.json",
+      "sha256": "55f9f809a4780a7cebb5a217363692552f9de38b8a95d04f8e5b0746aaa6c8b8"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/captures-auto-sms/capture.json",
+      "sha256": "83011962044008281795f70ff00df16d6d241ada53fc07834e4e7fdd9a7fab78"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/captures-pal-md/capture.json",
+      "sha256": "5988700954a43268f6b289c4706940c24c72759bb2b44e98fd316ffca16ace46"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/captures-pal-sms/capture.json",
+      "sha256": "ce905215a25ac27857e883d9d7c914748f653443c7d0d73d544dfecb6c54fbb6"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-actor-graphics-records.bin",
+      "sha256": "b280dda13ef018782c626b1c9797829949e1e41bfe0b910dda041a4f331f8c7f"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-actor-load-context-records.bin",
+      "sha256": "000bd5ff98d839d652d4c912142bb49d40540c416e8659f88def959bc817f267"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-audio-irq-events.json",
+      "sha256": "166aff13a1e258d582ebf0373a2c3bdda9c6dac749a530fbae7e49efa1742af6"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-foreground-m1-records.bin",
+      "sha256": "9860a8201c61821e2e7132ae26db7144e96945d2d2797e1269181ebf90df9f0e"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-foreground-phase-records.bin",
+      "sha256": "84bd0733693f54878f92760daf547670c981c299e7ccc4ffd20df7cbaf9f7961"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-hero-001-after.bin",
+      "sha256": "bc1bbae47965ce70e1258872fbbe6859e88d53a8ccda99fc2d4de607aaa6d846"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-hero-001-before.bin",
+      "sha256": "5b6423887736062ee9248991509bd732ba5837a64214401866c9dc6bd54a5a66"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-history-context-records.bin",
+      "sha256": "6b71937f91ee0ff4dac5bbc8c63c84c49bf37c772db95e4d36010dc3b00c4928"
+    },
+    {
+      "path": "validation/hero-refresh/87-ff/pal-hud-context-records.bin",
+      "sha256": "8cfb7ac456dc41978dccffba4c5ca65a562e859a5e2cf3d0018ddabdc551ba8c"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-actor-graphics-records.bin",
+      "sha256": "2248c4e20da91dcb9e0b08d932b787e3f81fba080fcae6dc04f4448185eb1e3f"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-actor-load-context-records.bin",
+      "sha256": "02c4dbfa77140550898a8484b3f7db5636eb0d08662b8c6f18882142901494bd"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-audio-irq-events.json",
+      "sha256": "5d423da5c04a2e79a77d713497fa5f2f8e308752f37acfae3ef382e0ea561088"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-foreground-m1-records.bin",
+      "sha256": "7bfefab9fd2bc1069827e4c53328b7ad731586a87e86ac88ad713127a09c8e18"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-foreground-phase-records.bin",
+      "sha256": "9efd7f85219e05a3361dc029a5e09967abc5964dcb884ace7a6f9fd30513b320"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-hero-001-after.bin",
+      "sha256": "1e3d003925bad063959670f29f5fec7ee02afebf1686a63222d3e216a378580c"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-hero-001-before.bin",
+      "sha256": "f664f50250012c816a3f95a4bb514de5f7a126ff3a16c7421d3753b68f0a38a7"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-history-context-records.bin",
+      "sha256": "60505b35b835db3d40a99596b95b2246869e559985eece69a3e6d3ef6ac23c47"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/auto-hud-context-records.bin",
+      "sha256": "3eb448306e7bd6e03139afacb1188e8a54d862bfd0282abe904eda2c9f7c1e3d"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/captures-auto-sms/capture.json",
+      "sha256": "91e2689870af69c8cac11264b13b2f073937ec98c8d8f16623885114dc5a6fff"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/captures-pal-sms/capture.json",
+      "sha256": "e1bb0bd387adec0e2d18cbde3f7ad24d1a43c29f5debd776367570bda4d952e0"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-actor-graphics-records.bin",
+      "sha256": "a3f0c998ea2f2a34b7c96c68f7c0e2abb63b19145b12d3729c0f6881f56915e3"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-actor-load-context-records.bin",
+      "sha256": "9434ca40785c9fb74129c72436cf6722eb1d324447e0d8c83a380484b6e8e1dd"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-audio-irq-events.json",
+      "sha256": "0c4c87eb9b7db58329b10152897d6b826d2cccdd191fd36b1d8aa411efeeefdf"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-foreground-m1-records.bin",
+      "sha256": "730359860899add7b30bdbc052f0af6f338aaa52cba534740cbbf78326acd85f"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-foreground-phase-records.bin",
+      "sha256": "16899622b74863bdb270097facf5ef2b5d59136188ae5acfc60b32f9948461fc"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-hero-001-after.bin",
+      "sha256": "74b819f8e6ab8c9fe63078ce51cf7676dd6901ad7437e532ef40600bb856d7f1"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-hero-001-before.bin",
+      "sha256": "421f0a4455a16e287eb34cba6f649bb0091acbe682d0bd8d2a6e4b3186ee2b33"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-history-context-records.bin",
+      "sha256": "97c9c48badf34becca587594bd3a376f6a404395edf766157df76c9bc0af0a7d"
+    },
+    {
+      "path": "validation/hero-refresh/96-00/pal-hud-context-records.bin",
+      "sha256": "ebb1e90a166f21f035bab15f6255cb73222cfa48767b3ad595ce1668e89bf838"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-actor-graphics-records.bin",
+      "sha256": "bb877f76d9fe0dad849ac228522905f1500975ef505fd4f3661fb70725311828"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-actor-load-context-records.bin",
+      "sha256": "43b2d25b0d3dd7ca9e692a18d0b837813d91bf434dbfa1b41313cf32dcc6a3fb"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-audio-irq-events.json",
+      "sha256": "24d4fdc20db7e1238a94e79e0099b137240509b00e55982f12a2e5191cb59092"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-foreground-m1-records.bin",
+      "sha256": "465940d22c682356af57137633d5691bc993e79bdc48d91f3f509e4bbeb19299"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-foreground-phase-records.bin",
+      "sha256": "8a0337621d20e6428d92c31426a5e2e93c51c67b9dea86bd438f9212ef109347"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-hero-001-after.bin",
+      "sha256": "5fe471e1cf5490a40b355ce7ce4eb9d4e06ad7221827f0ff80817873811b2dee"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-hero-001-before.bin",
+      "sha256": "d57aa6b5706146e510d51e8489f82db53ff9b74e592836bd9332fb2d27d2c20c"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-history-context-records.bin",
+      "sha256": "b97c33f9f2b8b175e171c2d82142163847000fcb422b20c801143c766d573aa9"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/auto-hud-context-records.bin",
+      "sha256": "9e25ed589274ba5d4c7f0bb5a144744f09a748f6db10f7749f97926f234760fb"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/captures-auto-md/capture.json",
+      "sha256": "e2b9704baa84abdfb82e44a0dc959df41e2b4ae24192e23f5ed465bafc4a94eb"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/captures-auto-sms/capture.json",
+      "sha256": "91e2689870af69c8cac11264b13b2f073937ec98c8d8f16623885114dc5a6fff"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/captures-pal-md/capture.json",
+      "sha256": "a2580920d6a5cd91e0897a11a35fed58e8c46499921d01e3654f975284200eec"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/captures-pal-sms/capture.json",
+      "sha256": "e1bb0bd387adec0e2d18cbde3f7ad24d1a43c29f5debd776367570bda4d952e0"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-actor-graphics-records.bin",
+      "sha256": "c0aee8ce66b76a86c3a69b1955c89803e8bb57b8820a0f9e2857dcc591499261"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-actor-load-context-records.bin",
+      "sha256": "66a6618142ba2f46454891c92fc3ba96fb0ffffc8462c9df37762e3682808197"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-audio-irq-events.json",
+      "sha256": "92fde6e5fa7f6634cb9506c61292ff85e8dc6bafd1aa8f4b4caf7c1d67487a8b"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-foreground-m1-records.bin",
+      "sha256": "4b6b6c9d34c4cdca208003304408fb6c1c38200a876fea6307c0dc0d26a0706f"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-foreground-phase-records.bin",
+      "sha256": "dd0a8732b084baffdc68656119b689c893c6d91142fa602700a5ef922817e2d3"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-hero-001-after.bin",
+      "sha256": "a5770130fe5050bcf901c4246abc67e5f360d03bc8ec837665488d3a82800d3c"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-hero-001-before.bin",
+      "sha256": "896210d8c533a592e24b07d28c4dfbc0718a0ff7a8269bca21f4d9d956c88f74"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-history-context-records.bin",
+      "sha256": "8970bad7a9e5e7c1fbdd54bebb3bf033ed62b3df114f08808319a6824ef23397"
+    },
+    {
+      "path": "validation/hero-refresh/96-ff/pal-hud-context-records.bin",
+      "sha256": "71e108deb913b5d24f3347751a59cf0fd7b5c0dc9817dd7d7aed37656ce8c223"
+    },
+    {
+      "path": "reference/paid_passage_reference.json",
+      "sha256": "bd0c92c79ddc2afc96a03634ea2ea5f9c83ef12f16973509b3a29123c85f5e55"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/1a-00/auto-foreground-phase-records.bin",
+      "sha256": "0a9988934067d78fb5aaa434a03304e1a49f0d71887e0573fb66496163427c42"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/1a-00/pal-foreground-phase-records.bin",
+      "sha256": "44fd9e733a2949c58e1c48d299e285a1921014b6f27a0df49ad88ed2488e5827"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/1a-ff/auto-foreground-phase-records.bin",
+      "sha256": "56085790490c61a2f9005675b1eaef047bbf127929c560cf23429fcbf889bd8b"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/1a-ff/pal-foreground-phase-records.bin",
+      "sha256": "dcec0fe86c765a0ba5d032eeea57d90227989f5c10f796802baa63985c254e91"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/36-00/auto-foreground-phase-records.bin",
+      "sha256": "35f9d63ac7c1151833edf86db1ec5eaecb2e2f2e7909455d06ea156c85944a26"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/36-00/pal-foreground-phase-records.bin",
+      "sha256": "abe61be9e6d0e455143d01b14a4f999fed9413d85e569d9e5f9f8a80d912bda4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/36-ff/auto-foreground-phase-records.bin",
+      "sha256": "28a4f289593b3a7ff960b55307eef6e2d798c01a4ec7d1f6df7aa4301e387959"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/36-ff/pal-foreground-phase-records.bin",
+      "sha256": "3c4265244e6f78d20c06bdce1247776091a60ca21666f1c6dfab3c5fe270d06a"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/6d-00/auto-foreground-phase-records.bin",
+      "sha256": "d2982b22d47dd6d845e893aa52d3975a4367875704194216bed120958a514ee9"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/6d-00/pal-foreground-phase-records.bin",
+      "sha256": "ba963fbf080701705967ef5f22e98895f3b29c48f4c3fffb9a88856de605c8e4"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/6d-ff/auto-foreground-phase-records.bin",
+      "sha256": "731d8e16f43cf7a5187da53fc0f2ab60246844d2cf7b0ad31d87f0491ea98181"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/6d-ff/pal-foreground-phase-records.bin",
+      "sha256": "2023e3f0bf929d35fc8813941b2a50d33e7fdc9b07ec30f69a5e9f82278f4f83"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/3c-00/auto-foreground-phase-records.bin",
+      "sha256": "19c350d2e5f27a733dc3c7c03cd7feeaeee5484037408706ff480a84b5283e14"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/3c-00/pal-foreground-phase-records.bin",
+      "sha256": "b476fd89db44022487d40fef955b1143330f3f64d4e53098b4f720c52d832ccc"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/3c-ff/auto-foreground-phase-records.bin",
+      "sha256": "57563a7eddd346f53a6ba025a6e85e53b6b37affda019a5ed3ccb86b3baa15fe"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/3c-ff/pal-foreground-phase-records.bin",
+      "sha256": "5a00797d649d766b3174ba1059dd24fcd922d924519fda90afe3aef3169890da"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/87-00/auto-foreground-phase-records.bin",
+      "sha256": "962b88f76bcc7514bcf53f0aa558e5833b03aa17003aba96ae29f55ad0bc90ad"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/87-00/pal-foreground-phase-records.bin",
+      "sha256": "a825ef0ca793b9d6bb8ccff986a7bcbd27dbbfd6dd2534a0e0578d919cc363fb"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/87-ff/auto-foreground-phase-records.bin",
+      "sha256": "a8f8e139f9a6709963e71a551a32dbac972f2e4a2ec0e2825d211138b061ee95"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/87-ff/pal-foreground-phase-records.bin",
+      "sha256": "9243770b2b283f9412657bd50b932f15ac67179b39c43c51a5e381cb27bbe2f0"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/96-00/auto-foreground-phase-records.bin",
+      "sha256": "a142da3f1425d9ff3dcdabdd89d25168a315e96d65d9f7a8a356ae6fac1f9a02"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/96-00/pal-foreground-phase-records.bin",
+      "sha256": "e943572d96845e09a0668dbdb5a05d7312683e9c466733ec6d17776d1bb0e604"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/96-ff/auto-foreground-phase-records.bin",
+      "sha256": "7908536a791e7f0b3836cfe8337666b5f8bfd4b9b8feaaceaca2876a6279ebda"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "reference/validation/map-hud-phase/96-ff/pal-foreground-phase-records.bin",
+      "sha256": "25f8dbb83dfc1575aee46e3edfb28fc58f4d7ac7fb2a76bfa1b90f97700f614d"
+    },
+    {
+      "path": "reference/versions/v0179-d018ed93/validation/paid-exit-music/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "logs/hero-refresh-validation.log",
+      "sha256": "fc446a1fc633b6a8530eff9cd32b8a8337f82e07e0a58f5cc083459f21273940"
+    },
+    {
+      "path": "logs/build-hero-refresh.log",
+      "sha256": "8923a41a31494c749428fc8aca81592b0d4af5949a04124948e0cbdcb3806f20"
+    },
+    {
+      "path": "logs/hero-refresh-core-build.log",
+      "sha256": "1b2b43e7814fb4dae6d958795d842d8bebee2b6b1f242eade85d5b636d9dbda6"
+    },
+    {
+      "path": "logs/hero-refresh-6d-ff.log",
+      "sha256": "39cf0a1d3d7636e17763036baef641ff5c9d3759f40dcc99e2dfeda69563653f"
+    },
+    {
+      "path": "logs/hero-refresh-group0.log",
+      "sha256": "53bf5abf37b4ac5f71ac3cf35f240cd5b1ed177c2e5f87de36488c8d53d00bcd"
+    },
+    {
+      "path": "logs/hero-refresh-group1.log",
+      "sha256": "fb351f9783d26d64189000a5a34d7b5fcea9edc73cb87308a5ee0a5567d936a7"
+    },
+    {
+      "path": "logs/hero-refresh-group2.log",
+      "sha256": "7fa57a4bf04252d46caa623e99e86c0531fbfb9b6e5a24acafa39c694083c256"
+    },
+    {
+      "path": "logs/hero-refresh-unit.log",
+      "sha256": "8b02c587a5652cf252aa9ee92fc83f3fc3115baa4258629302f52b45088c4496"
+    },
+    {
+      "path": "hero_refresh_phase_report.json",
+      "sha256": "c43e84454822b03a28fc61b3ef92d518c1003ff2067f12d1373e296177529bad"
+    },
+    {
+      "path": "hero_refresh_phase_milestone.md",
+      "sha256": "d1c96b02078f5692fd789511d3e22f5f233035d767ebcfb8008c23c7e940d9b3"
+    },
+    {
+      "path": "fixture/source.sms",
+      "sha256": "b6486d541765a140ca016c312d775a5810732e5eebc583d0b10d88ba99a87c33"
+    },
+    {
+      "path": "unit/auto-m1.bin",
+      "sha256": "a0cd158282edaf6f37cbfd29c17ba750e0499fefe45b4861e41cd285e4e849c4"
+    },
+    {
+      "path": "unit/pal-m1.bin",
+      "sha256": "ccc8340256dfd1c2a1d216183dbdf9dd9f6177982ef70431cab859a6821c5822"
+    },
+    {
+      "path": "hero_refresh_unit_report.json",
+      "sha256": "124ed6381c1ea5351ed21ee06929745d5b2b5ed7f1e9fafc296f5e6e22c63fbd"
+    },
+    {
+      "path": "genesis_plus_gx_herorefresh_libretro.dll",
+      "sha256": "1a9d3b84b546412c6dee172c68e36b0a058e9d62b7f221f61f8377c20cc2ebdf"
+    }
+  ]
+}

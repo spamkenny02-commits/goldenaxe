@@ -123,7 +123,10 @@ persistance et compte actif correspondent sur les 24 parcours et les
 1 536 combinaisons salle/masque. Le calcul couvre désormais aussi leurs
 motifs, allocations partagées et conversions de palette jusqu’au retour
 18E1 : R, timings, état des acteurs et motifs VRAM écrits correspondent.
-Héros et fin du chargement restent à enchaîner avant intégration native.
+Les routines du héros calculent maintenant R et la phase depuis leur
+propre état d’entrée : 24 parcours et 13 150 cas isolés correspondent,
+avec 475 octets d’état vérifiés. Leur raccordement depuis le début du
+chargement reste à faire, puis les scripts, la musique et le retour.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -235,3 +238,5 @@ n’y a été envoyé depuis ce projet.
 - [Initialisation des acteurs et registre R](analysis/actor_prefix_refresh_milestone.md).
 
 - [Graphismes des acteurs et registre R](analysis/actor_graphics_refresh_milestone.md).
+
+- [Phases et registre R de l’initialisation du héros](analysis/hero_refresh_phase_milestone.md).
