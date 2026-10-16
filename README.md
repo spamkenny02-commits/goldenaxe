@@ -112,8 +112,10 @@ chargement de carte (24BC), avec neuf points par scénario : correctifs
 persistants et file de tuiles sont inclus. HUD, attentes VBlank, acteurs
 et historique restent à traiter. Les attentes VBlank calculent désormais
 aussi R et les lectures des interruptions : 13 725 appels en jeu et
-6 156 cas synthétiques correspondent. Le raccordement au HUD depuis
-l’entrée du chargement reste à faire avant les acteurs et l’historique.
+6 156 cas synthétiques correspondent. Le HUD est maintenant raccordé
+depuis l’entrée du chargement jusqu’au retour 24BF : 384 comparaisons
+sur les 24 scénarios, transfert et palette compris. Les jauges passent
+aussi 18 042 cas isolés. Acteurs et historique restent à raccorder.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -217,3 +219,5 @@ n’y a été envoyé depuis ce projet.
 - [Registre R jusqu’au chargement de la carte](analysis/world_map_refresh_milestone.md).
 
 - [Registre R pendant les attentes VBlank](analysis/wait_refresh_milestone.md).
+
+- [Registre R jusqu’à la sortie du HUD](analysis/map_hud_refresh_milestone.md).

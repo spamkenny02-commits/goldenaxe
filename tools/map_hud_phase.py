@@ -8,16 +8,18 @@ from hud_loading_cost import hud_cost,health_gauge_cost,magic_gauge_cost,gem_gau
 from map_hud_loading_cost import map_hud_cost
 
 def room_map(cpu):
- before=cpu.foreground_tstates;execute(cpu,[11]*4+[10,7])
+ def emit(seq):
+  for t in seq:cpu.execute(t,'M1_2' if t==8 else None)
+ before=cpu.foreground_tstates;emit([11]*4+[10,7])
  for y in range(20):
   cpu.execute(7)
   for x in range(32):
-   execute(cpu,[17,11,4,8,4,7,4,4,4,4,4,7,10,11,7,4,11,11,11,10,8])
-   execute(cpu,[12] if not y&1 else [7,8]);cpu.execute(8)
-   execute(cpu,[12] if not x&1 else [7,8])
-   execute(cpu,[11,7,6,7,10,10,7,6,7,6,4,4,7,12 if x<31 else 7])
-  execute(cpu,[4,4,7,12 if y<19 else 7])
- execute(cpu,[10]*5);assert cpu.foreground_tstates-before==room_map_cost()['foreground_tstates']
+   emit([17,11,4,8,4,7,4,4,4,4,4,7,10,11,7,4,11,11,11,10,8])
+   emit([12] if not y&1 else [7,8]);cpu.execute(8,'M1_2')
+   emit([12] if not x&1 else [7,8])
+   emit([11,7,6,7,10,10,7,6,7,6,4,4,7,12 if x<31 else 7])
+  emit([4,4,7,12 if y<19 else 7])
+ emit([10]*5);assert cpu.foreground_tstates-before==room_map_cost()['foreground_tstates']
 
 def gauge(cpu,value,maximum,magic=False):
  before=cpu.foreground_tstates;original=value
@@ -34,7 +36,7 @@ def gauge(cpu,value,maximum,magic=False):
     cpu.execute(4)
     for m in range(n,count):execute(cpu,[7,6,7,6,13 if m+1<count else 8])
    else:
-    execute(cpu,[7,8,7,8,7,6,7,6,13 if n+1<count else 8])
+    cpu.execute(7);cpu.execute(8,'M1_2');cpu.execute(7);cpu.execute(8,'M1_2');execute(cpu,[7,6,7,6,13 if n+1<count else 8])
     for m in range(n+1,count):execute(cpu,[10,6,7,6,13 if m+1<count else 8])
    cpu.execute(10);break
  assert cpu.foreground_tstates-before==(magic_gauge_cost if magic else health_gauge_cost)(original,maximum)
@@ -51,14 +53,14 @@ def hud(cpu,context):
   execute(cpu,[10,10,7,4,4,12,4,12 if row==0 else 7])
  cpu.execute(10);cpu.execute(7)
  for number in range(4):
-  execute(cpu,[11,4,17,7,4,10,15,11,4,4,12,7,6,7,4,4])
+  execute(cpu,[11,4,17,7,4,10]);cpu.execute(15,'M1_2');execute(cpu,[11,4,4,12,7,6,7,4,4])
   body_before=cpu.foreground_tstates
   if number==0:
    execute(cpu,[10,14,7])
    for n in range(9):
-    cpu.execute(12)
+    cpu.execute(12,'M1_2') #BIT 7,(HL).
     execute(cpu,[7,7,19,19,11,14,19,19] if gems&(1<<n) else [12])
-    execute(cpu,[6,10,10,13 if n<8 else 8])
+    cpu.execute(6);cpu.execute(10,'M1_2');cpu.execute(10,'M1_2');cpu.execute(13 if n<8 else 8)
    cpu.execute(10);assert cpu.foreground_tstates-body_before==gem_gauge_cost(gems)
   elif number==1:
    execute(cpu,[13,10,10,7,17]);hundreds,rest=divmod(gold,100)
@@ -75,28 +77,41 @@ def hud(cpu,context):
  for n in range(128):execute(cpu,[7,7,7,6,6,13 if n<127 else 8])
  cpu.execute(10);assert cpu.foreground_tstates-before==hud_cost(cpu.rom,health,hmax,magic,mmax,gold,gems)['foreground_tstates']
 
-def predict_map_hud(rom,phase,ram,sound,room,context):
+def predict_map_hud(rom,phase,ram,sound,room,context,refresh=None):
  assert len(context)==16 and context[15]<4
- points=predict_world_map(rom,phase,ram,sound,room);base=points[0x24bc]
- cpu=ForegroundPhase(rom,base['phase'],base['ram'],base['sound'])
+ if refresh is None:points=predict_world_map(rom,phase,ram,sound,room)
+ else:
+  from world_map_refresh import predict_world_map_refresh
+  points=predict_world_map_refresh(rom,phase,ram,sound,room,refresh)
+ base=points[0x24bc]
+ def make_cpu(base):
+  if refresh is None:return ForegroundPhase(rom,base['phase'],base['ram'],base['sound'])
+  from graphics_prefix_refresh import GraphicsPrefixRefreshPhase
+  class ScopedPhase(GraphicsPrefixRefreshPhase):entry_refresh=base['refresh']
+  return ScopedPhase(rom,base['phase'],base['ram'],base['sound'])
+ cpu=make_cpu(base)
  def combine(r,b):
-  r=dict(r);r['wall_master_cycles']+=b['wall_master_cycles'];r['foreground_tstates']+=b['foreground_tstates'];r['IRQ_tstates']+=b['IRQ_tstates'];r['events']=b['events']+[dict(e,entry_offset_master=e['entry_offset_master']+b['wall_master_cycles']) for e in r['events']];return r
+  r=dict(r);r['wall_master_cycles']+=b['wall_master_cycles'];r['foreground_tstates']+=b['foreground_tstates'];r['IRQ_tstates']+=b['IRQ_tstates'];r['events']=b['events']+[dict(e,entry_offset_master=e['entry_offset_master']+b['wall_master_cycles']) for e in r['events']]
+  for k in ['foreground_M1','IRQ_M1']:
+   if k in r:r[k]+=b[k]
+  return r
  def checkpoint(pc):cpu.checkpoint();points[pc]=combine(cpu.result(),base)
  execute(cpu,[17,17]);room_map(cpu);checkpoint(0x1de5)
  cpu.execute(17);hud(cpu,context);checkpoint(0x1de8)
  execute(cpu,[17,11,11,11,11,17]);checkpoint(0xb95)
- wait=predict_save_wait(rom,cpu.phase(),cpu.ram,cpu.sound);points[0xbb3]=combine(wait,points[0xb95]);base=points[0xbb3]
- cpu=ForegroundPhase(rom,base['phase'],base['ram'],base['sound'])
+ wait=predict_save_wait(rom,cpu.phase(),cpu.ram,cpu.sound,None if refresh is None else cpu.refresh);points[0xbb3]=combine(wait,points[0xb95]);base=points[0xbb3]
+ cpu=make_cpu(base)
  execute(cpu,[10,13,14,14,10,10,10,10,4,4,10,10,10,10,10]);checkpoint(0x22a3)
  cpu.execute(4,'DI');execute(cpu,[4,11,7,11,10,10,7])
  for row in range(12):
   for col in range(128):execute(cpu,[16,13 if col<127 else 8])
   execute(cpu,[4,10])
  cpu.execute(11,'status');cpu.execute(4,'EI');execute(cpu,[10]*5);checkpoint(0x1deb)
- execute(cpu,[10,10,10]);ldir(cpu,16);execute(cpu,[13,4,10,11,4,4,12,7,6,7,4,10,16,13,4])
+ execute(cpu,[10,10,10]);ldir(cpu,16);execute(cpu,[13,4,10,11,4,4,12,7,6,7,4,10]);cpu.execute(16,'M1_1');execute(cpu,[13,4])
  if not context[14]:cpu.execute(12)
  else:
-  execute(cpu,[7,13,4,4]);execute(cpu,[12] if cpu.ram[0x2f]&2 else [7,10,16])
+  execute(cpu,[7,13,4,4]);execute(cpu,[12] if cpu.ram[0x2f]&2 else [7,10]);
+  if not cpu.ram[0x2f]&2:cpu.execute(16,'M1_1')
  execute(cpu,[13,7]);execute(cpu,[12] if cpu.ram[0x2f]&2 else [7,4]);execute(cpu,[13,10]);checkpoint(0x24bf)
  h,hm,m,mm,g=context[:5];gems=sum((1<<n) if context[5+n]&128 else 0 for n in range(9))
  expected=17+map_hud_cost(rom,h,hm,m,mm,g,gems,base['ram'][0x2f],context[14])['foreground_excluding_wait_save_spin']+wait['foreground_tstates']

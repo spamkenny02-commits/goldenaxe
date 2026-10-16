@@ -1,0 +1,20 @@
+{
+  "cases": 18042,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 9021,
+      "M1_sha256": "f5c4cc4e09045d7eb91258d50633610b98b302db9db6ae48f7ff565dd4970795"
+    },
+    {
+      "region": "pal",
+      "cases": 9021,
+      "M1_sha256": "facf68115c3ac0369aeb6adad7504030b2082478d903e2e29c376356467a4913"
+    }
+  ],
+  "fixture_sha256": "1738b8e718a145e7ab87e67264809352f2126093d14ff4e93881ef3128b9cff5",
+  "production_ROM_changed": false,
+  "limits": [
+    "Existing HUD fixture, interrupts disabled. Gauges varied independently; not full Cartesian product. Hardware/full game unproved."
+  ]
+}
