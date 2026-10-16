@@ -33,7 +33,9 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
     if hasattr(dll,'gaw_live_envelope_m1_events'):dll.gaw_live_envelope_m1_events.restype=c.POINTER(c.c_uint8)
     wait_records=bytearray();previous_wait=[0];wait_entries=bytearray();foreground_phases=bytearray();foreground_extra=bytearray();previous_fore=[0]
     if hasattr(dll,'gaw_map_extra_events'):dll.gaw_map_extra_events.restype=c.POINTER(c.c_uint8)
-    hud_context=bytearray();foreground_m1=bytearray();history_context=bytearray();actor_load_context=bytearray()
+    hud_context=bytearray();foreground_m1=bytearray();history_context=bytearray();actor_load_context=bytearray();actor_graphics=bytearray();previous_graphics=[0]
+    if hasattr(dll,'gaw_actor_graphics_samples'):
+     dll.gaw_actor_graphics_samples.restype=c.c_uint;dll.gaw_actor_graphics_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,'gaw_actor_load_context_events'):dll.gaw_actor_load_context_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,'gaw_history_context_events'):dll.gaw_history_context_events.restype=c.POINTER(c.c_uint8)
     if hasattr(dll,'gaw_foreground_m1_events'):dll.gaw_foreground_m1_events.restype=c.POINTER(c.c_uint8)
@@ -61,7 +63,12 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      dll.gaw_hero_samples.restype=c.c_uint;dll.gaw_hero_entry.restype=c.POINTER(c.c_uint8);dll.gaw_hero_return.restype=c.POINTER(c.c_uint8)
     def observe(f,r):
      if tag=='sms':
-      if f==4199:dll.gaw_timing_reset();previous_event[0]=0;previous_hero[0]=0;previous_audio[0]=0;previous_prefix[0]=0;previous_envelope[0]=0;previous_wait[0]=0;previous_full[0]=0;previous_fore[0]=0;previous_rng[0]=0
+      if f==4199:dll.gaw_timing_reset();previous_event[0]=0;previous_hero[0]=0;previous_audio[0]=0;previous_prefix[0]=0;previous_envelope[0]=0;previous_wait[0]=0;previous_full[0]=0;previous_fore[0]=0;previous_rng[0]=0;previous_graphics[0]=0
+      if hasattr(dll,'gaw_actor_graphics_samples'):
+       count=dll.gaw_actor_graphics_samples()
+       if f>=4200 and count>previous_graphics[0]:
+        base=c.addressof(dll.gaw_actor_graphics_events().contents);actor_graphics.extend(c.string_at(base+previous_graphics[0]*8208,(count-previous_graphics[0])*8208))
+       previous_graphics[0]=count
       if hasattr(dll,'gaw_rng_refresh_samples'):
        count=dll.gaw_rng_refresh_samples()
        if f>=4200 and count>previous_rng[0]:
@@ -177,6 +184,7 @@ def main(town_id=0x6d,enemy_mask=None,output_name='paid-passage-loader',core_nam
      if hasattr(dll,'gaw_foreground_m1_events'):(folder/f'{region}-foreground-m1-records.bin').write_bytes(foreground_m1)
      if hasattr(dll,'gaw_history_context_events'):(folder/f'{region}-history-context-records.bin').write_bytes(history_context)
      if hasattr(dll,'gaw_actor_load_context_events'):(folder/f'{region}-actor-load-context-records.bin').write_bytes(actor_load_context)
+     if hasattr(dll,'gaw_actor_graphics_samples'):(folder/f'{region}-actor-graphics-records.bin').write_bytes(actor_graphics)
      if hasattr(dll,'gaw_hud_context_events'):(folder/f'{region}-hud-context-records.bin').write_bytes(hud_context)
      if hasattr(dll,'gaw_rng_refresh_samples'):(folder/f'{region}-rng-refresh-records.bin').write_bytes(rng_refresh)
      if hasattr(dll,'gaw_wait_entry_events'):(folder/f'{region}-wait-entry-records.bin').write_bytes(wait_entries)

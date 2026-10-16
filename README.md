@@ -120,8 +120,10 @@ l’entrée des acteurs : les 72 tirages aléatoires, leurs graines et R sont
 prédits depuis l’état initial, avec 720 comparaisons sur les 24 parcours.
 L’initialisation des acteurs atteint maintenant 1853 : types, statistiques,
 persistance et compte actif correspondent sur les 24 parcours et les
-1 536 combinaisons salle/masque. Motifs des acteurs, héros et fin du
-chargement restent à enchaîner avant intégration native.
+1 536 combinaisons salle/masque. Le calcul couvre désormais aussi leurs
+motifs, allocations partagées et conversions de palette jusqu’au retour
+18E1 : R, timings, état des acteurs et motifs VRAM écrits correspondent.
+Héros et fin du chargement restent à enchaîner avant intégration native.
 
 La routine aléatoire originale est désormais vérifiée jusqu’à l’octet
 produit à partir du registre R : 135 168 cas isolés et les 72 appels
@@ -231,3 +233,5 @@ n’y a été envoyé depuis ce projet.
 - [Tirages de l’historique depuis le début du chargement](analysis/history_refresh_phase_milestone.md).
 
 - [Initialisation des acteurs et registre R](analysis/actor_prefix_refresh_milestone.md).
+
+- [Graphismes des acteurs et registre R](analysis/actor_graphics_refresh_milestone.md).
