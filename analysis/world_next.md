@@ -931,3 +931,5 @@ v0181: actual8357 raw16-bit note path83D1..83EC always jumps839B duration multip
 2026-10-17: superseded intermediate v0195 (one-frame inventory exit regression) with v0196; fast decode path omits accounting in inner loop.
 2026-10-17: baseline recheck corrects diagnosis: v0194 already begins inventory exit black at3402 instead of source3401 NTSC. v0197 publishes blank before VBlank wait; v0195/v0196 intermediate checks retained.
 2026-10-17: v0198 fixes NTSC close blank publication; PAL keeps prior order. Strict PAL transition test remains unsatisfied (baseline v0194 has same one-frame endpoints); do not claim global timing solved.
+
+2026-10-17: native16D0..1706 class0 prefix with per-instruction clock/DI/EI/dynamic IRQ/audio matches24 source entries and compiled68000 PAL/NTSC. Pattern work corrected by+5M1 (fourED53,oneED5B); old test shared miscount. Rebuilt game bytes unchanged v0198. Next translate1706..24B9 with native RAM-plane loader and retain one entry across span, then later foreground chain; do not inject room phase tables.

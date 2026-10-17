@@ -49,3 +49,9 @@ de la transition reste calculee depuis le meme instant. Les versions
 intermediaires v0195/v0196/v0197 sont conservees avec le controle non satisfait.
 Le chemin rapide sans comptage evite aussi les calculs de mesure dans
 la boucle interne du decodeur utilisee par le jeu.
+
+Suite : l audit du chemin chronometre a corrige cinq lectures M1 manquantes
+(quatre ED53 et un ED5B). Les rapports racine et les 515 vecteurs corriges
+font autorite ; l archive precedente reste historique. Le premier chemin
+16D0..1706 retrouve maintenant les captures SMS avec son horloge et ses
+interruptions dynamiques. Voir native_graphics_prefix_milestone.md.

@@ -68,12 +68,12 @@ const u8 *source_pattern_decode(const u8 *source,u8 *destination,u16 address,
             }
         }
         last=cursor;
-        if(work) { work->tstates+=46+(plane<3?13:8);work->fetches+=5; }
+        if(work) { work->tstates+=46+(plane<3?13:8);work->fetches+=6; }
     }
     if(work)
     {
         work->tstates+=48+(((last+1)&255)>=4?12:11);
-        work->fetches+=(((last+1)&255)>=4)?7:8;
+        work->fetches+=(((last+1)&255)>=4)?8:9;
     }
     return source;
 }

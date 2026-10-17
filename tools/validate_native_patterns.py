@@ -8,6 +8,7 @@ import random
 import subprocess
 from actor_reference import ROOT
 from graphics_prefix_phase import pattern_rle
+from graphics_prefix_refresh import audited_fetches
 
 class Trace:
     def __init__(self,rom):
@@ -15,7 +16,7 @@ class Trace:
         self.foreground_tstates=0;self.fetches=0
     def execute(self,t,effect=None):
         self.foreground_tstates+=t
-        self.fetches+=2 if effect=='M1_2' else 1
+        self.fetches+=audited_fetches(t,effect)
 
 class Work(c.Structure):
     _fields_=[('tstates',c.c_uint32),('fetches',c.c_uint32)]

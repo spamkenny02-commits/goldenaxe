@@ -17,6 +17,14 @@ Checksum Mega Drive : `4A0A`
 
 ## État du portage
 
+Le premier chargement graphique 16D0..1706 dispose maintenant d’une
+traduction native avec horloge et interruptions audio dynamiques. Les
+24 contextes SMS retrouvent phase, R, M1, RAM/audio et instants d’interruption ;
+ils passent aussi en 68000 PAL/NTSC. L’audit corrige cinq lectures M1 manquantes
+dans le compteur du décodeur précédent. La ROM jouable reste exactement v0198 ;
+la suite du chargement et le raccordement global restent à faire.
+Voir les [preuves et limites](analysis/native_graphics_prefix_milestone.md).
+
 La v0198 partage le décodeur natif des graphismes à quatre plans entre
 le jeu et les contrôles : 515 vecteurs passent en C et en 68000 PAL/NTSC,
 y compris les coûts Z80 T/M1. Elle corrige le début du noir à la fermeture
