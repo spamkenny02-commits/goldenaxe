@@ -3,7 +3,12 @@
 #define S(t,m) do { if(!source_clock_execute(clock,t,m,SOURCE_CLOCK_NONE,source_irq_interrupt,context)) return 0; } while(0)
 static u8 seq(SourceClock *clock,SourceIrqContext *context,const u8 *ticks,u16 count)
 {
-    u16 n;u8 t;
+    u16 n,total=0;u8 t,fetches=0;
+    if(clock->iff && !clock->first && !clock->pending && !clock->blocked)
+    {
+        for(n=0;n<count;n++) {t=ticks[n];total+=t;fetches+=(t==8 || t==14 || t==19 || t==20 || t==21)?2:1;}
+        if(source_clock_block(clock,total,fetches)) return 1;
+    }
     for(n=0;n<count;n++) { t=ticks[n];S(t,(t==8 || t==14 || t==19 || t==20 || t==21)?2:1); }
     return 1;
 }
@@ -30,6 +35,22 @@ static u8 room_map(SourceClock *clock,SourceIrqContext *context,const u8 *tiles,
         S(7,1);
         for(x=0;x<32;x++)
         {
+            u16 pairs,k;
+            /* Two ordinary columns:597T/84M1 on even rows,603T/88M1 on
+             * odd rows. Leave the final two columns for their exit branch.
+             * The mirror writes are committed before the next IRQ boundary. */
+            pairs=0;
+            if(!(x&1) && x<30)
+                pairs=source_clock_repeat(clock,(y&1)?603:597,(y&1)?88:84,(30-x)>>1);
+            if(pairs)
+            {
+                for(k=0;k<pairs*2;k++)
+                {
+                    index=map->cells[(y>>1)*16+((x+k)>>1)]*8+(y&1)*4+((x+k)&1)*2;
+                    map->tilemap[destination++]=tiles[index];map->tilemap[destination++]=tiles[index+1];
+                }
+                x+=pairs*2-1;continue;
+            }
             SEQ(lookup);
             if(!(y&1)) S(12,1);else { S(7,1);S(8,2); }
             S(8,2);

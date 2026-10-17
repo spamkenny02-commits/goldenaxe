@@ -8,14 +8,31 @@ static u8 step(SourceClock *clock,SourceIrqContext *context,u16 ticks,u8 m1,u8 e
 #define S(t,m) do { if(!step(clock,context,t,m,SOURCE_CLOCK_NONE)) return 0; } while(0)
 static u8 sequence(SourceClock *clock,SourceIrqContext *context,const u8 *ticks,u16 count)
 {
-    u16 n;for(n=0;n<count;n++) S(ticks[n],1);return 1;
+    u16 n,total=0;
+    if(clock->iff && !clock->first && !clock->pending && !clock->blocked)
+    {
+        for(n=0;n<count;n++) total+=ticks[n];
+        if(source_clock_block(clock,total,(u8)count)) return 1;
+    }
+    for(n=0;n<count;n++) S(ticks[n],1);
+    return 1;
 }
 #define SEQ(a) do { if(!sequence(clock,context,a,sizeof(a))) return 0; } while(0)
 
 static u8 copy(SourceClock *clock,SourceIrqContext *context,const u8 *source,u8 *destination,u16 count)
 {
-    u16 n;
-    for(n=0;n<count;n++) { S(n+1<count?21:16,2);destination[n]=source[n]; }
+    u16 n,batch,k;
+    for(n=0;n<count;n++)
+    {
+        batch=clock->iff?source_clock_repeat(clock,21,2,count-n-1):
+                          source_clock_repeat_disabled(clock,21,2,count-n-1);
+        if(batch)
+        {
+            for(k=0;k<batch;k++) destination[n+k]=source[n+k];
+            n+=batch-1;continue;
+        }
+        S(n+1<count?21:16,2);destination[n]=source[n];
+    }
     return 1;
 }
 #define COPY(s,d,n) do { if(!copy(clock,context,s,d,n)) return 0; } while(0)

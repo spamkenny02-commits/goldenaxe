@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "region": "auto",
+      "frame": 140,
+      "done": 1,
+      "cases": 4480,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 118,
+      "done": 1,
+      "cases": 4480,
+      "failures": 0
+    }
+  ],
+  "kernel_sha256": "3212750551e8069544fdd080c55d54c37fdacf4fded5b77e5f84316c4b33e3db",
+  "cases_sha256": "a3a36ce26e8fcf44caeab1f9002bff58bd0c8fd536414647b2ef9a7fdf294be0",
+  "helpers": {
+    "source_clock.c": "4cf6afab6dda5d9dd3d2a46c144511e554b89b37e573b11ec8a23e3a25f2f5c4",
+    "source_clock.h": "9c58897e7f4f85393903cb8519a3d3c67da818c3345da295f53a3af38392292e"
+  }
+}

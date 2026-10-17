@@ -3,7 +3,14 @@
 #define S(t,m) do { if(!source_clock_execute(clock,t,m,SOURCE_CLOCK_NONE,source_irq_interrupt,context)) return 0; } while(0)
 static u8 seq(SourceClock *clock,SourceIrqContext *context,const u8 *ticks,u16 count)
 {
-    u16 n;for(n=0;n<count;n++) S(ticks[n],ticks[n]==20?2:1);return 1;
+    u16 n,total=0;u8 fetches=0;
+    if(clock->iff && !clock->first && !clock->pending && !clock->blocked)
+    {
+        for(n=0;n<count;n++) {total+=ticks[n];fetches+=ticks[n]==20?2:1;}
+        if(source_clock_block(clock,total,fetches)) return 1;
+    }
+    for(n=0;n<count;n++) S(ticks[n],ticks[n]==20?2:1);
+    return 1;
 }
 #define SEQ(a) do { if(!seq(clock,context,a,sizeof(a))) return 0; } while(0)
 static u8 *memory(SourceIrqContext *context,SourceWorldMapData *map,u16 address)

@@ -1,6 +1,19 @@
 #include "source_clock.h"
 #include "source_rng.h"
 
+/* The 68000 has a native unsigned16x16 multiply. Both operands here are
+ * bounded to16 bits; avoid the compiler's general32-bit helper. */
+static inline u32 product(u16 a,u16 b)
+{
+#ifdef SGDK_GCC
+    u32 result=a;
+    __asm__("mulu.w %1,%0" : "+d"(result) : "d"(b) : "cc");
+    return result;
+#else
+    return (u32)a*b;
+#endif
+}
+
 static u32 advance(SourceClock *clock,u32 master)
 {
     u32 crossings=0;
@@ -97,16 +110,31 @@ u8 source_clock_checkpoint(SourceClock *clock,SourceClockInterrupt interrupt,voi
 
 u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions)
 {
-    u32 count,master;
+    u32 candidate,master,ticks;u16 count;
     if(!tstates || !fetches || !repetitions || clock->first || clock->blocked ||
        clock->pending || !clock->iff) return 0;
-    master=(u32)tstates*15;count=clock->until_vint/master;
-    if(count>repetitions) count=repetitions;
+    master=(u32)tstates*15;
+    /* Most callers fit their entire block. Avoid a software32-bit divide
+     * in that common case, especially for a single basic block. */
+    ticks=product(tstates,repetitions);
+    if(ticks<=0xffffffffUL/15 && ticks*15<=clock->until_vint) count=repetitions;
+    else
+    {
+        candidate=clock->until_vint/master;
+        count=candidate>repetitions?repetitions:(u16)candidate;
+        ticks=product(tstates,count);
+    }
     if(!count) return 0;
-    advance(clock,count*master);
-    clock->foreground_tstates+=count*tstates;clock->foreground_m1+=count*fetches;
-    clock->refresh=source_refresh_advance(clock->refresh,count*fetches);
-    return (u16)count;
+    /* Accepted spans never pass VINT, and until_vint<=period. */
+    master=ticks*15;
+    clock->elapsed+=master;clock->raster+=master;
+    if(clock->raster>=clock->period) clock->raster-=clock->period;
+    clock->until_vint-=master;
+    if(!clock->until_vint) {clock->until_vint=clock->period;clock->pending=1;}
+    candidate=product(count,fetches);
+    clock->foreground_tstates+=ticks;clock->foreground_m1+=candidate;
+    clock->refresh=source_refresh_advance(clock->refresh,candidate);
+    return count;
 }
 
 u16 source_clock_repeat_disabled(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions)

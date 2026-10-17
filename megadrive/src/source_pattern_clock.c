@@ -1,7 +1,7 @@
 #include "source_pattern_clock.h"
 
-/* Every call is one original instruction boundary, including the DI/EI in
- * each RST28. ED memory operations and LDI/LDIR fetch both opcode bytes. */
+/* Detailed instruction boundaries are retained near interrupts. Interior
+ * bytes may batch only before VINT with IFF/EI-delay restored at byte end. */
 static u8 step(SourceClock *clock,SourceIrqContext *context,u16 ticks,u8 fetches,u8 effect)
 {
     return source_clock_execute(clock,ticks,fetches,effect,source_irq_interrupt,context);
@@ -21,21 +21,40 @@ static u8 patterns032a(SourceClock *clock,SourceIrqContext *context,
 {
     u16 plane,cursor=0x4000;
     const u8 *src=*source;
-    S(7,1);S(4,1);
+    if(!source_clock_block(clock,11,2)) {S(7,1);S(4,1);}
     for(plane=0;plane<4;plane++)
     {
         u8 *write=destination+plane;
-        cursor=0x4000+plane;S(11,1);S(11,1);
+        cursor=0x4000+plane;
+        if(!source_clock_block(clock,22,2)) {S(11,1);S(11,1);}
         for(;;)
         {
             u16 command=*src++,count,n;
             u8 literal;
-            S(7,1);S(6,1);S(4,1);
-            if(!command) { S(12,1);break; }
-            S(7,1);S(4,1);S(8,2);S(4,1);S(4,1);
+            if(!command)
+            {
+                if(!source_clock_block(clock,29,4)) {S(7,1);S(6,1);S(4,1);S(12,1);}
+                break;
+            }
+            if(!source_clock_block(clock,44,9))
+            {S(7,1);S(6,1);S(4,1);S(7,1);S(4,1);S(8,2);S(4,1);S(4,1);}
             literal=command&128;count=command&127;if(!count) count=256;
             for(n=0;n<count;n++)
             {
+                u16 limit,batch,k,ticks=literal?135:134;u8 fetches=literal?19:18;
+                /* A regular byte is135T/19M1 literal,134T/18M1 repeat.
+                 * Carry costs one fewer T/one more M1; terminal DJNZ saves5T.
+                 * RST28's DI/EI delay has expired at every byte boundary. */
+                limit=(255-(cursor&255))>>2;
+                if(!limit) {limit=1;ticks--;fetches++;}
+                else if(limit>count-n-1) limit=count-n-1;
+                if(n+1==count) {limit=1;ticks-=5;}
+                batch=source_clock_repeat(clock,ticks,fetches,limit);
+                if(batch)
+                {
+                    for(k=0;k<batch;k++) { *write=*src;write+=4;if(literal) src++; }
+                    cursor+=batch*4;n+=batch-1;continue;
+                }
                 if(!rst28(clock,context)) return 0;
                 S(7,1);S(11,1);S(4,1);S(literal?7:12,1);
                 *write=*src;write+=4;
@@ -45,17 +64,28 @@ static u8 patterns032a(SourceClock *clock,SourceIrqContext *context,
                 else { S(7,1);S(4,1); }
                 cursor+=4;S(n+1<count?13:8,1);
             }
-            S(4,1);
-            if(literal) S(12,1);
-            else { S(7,1);S(6,1);S(12,1);src++; }
+            if(!source_clock_block(clock,literal?16:29,literal?2:4))
+            {
+                S(4,1);
+                if(literal) S(12,1);else {S(7,1);S(6,1);S(12,1);}
+            }
+            if(!literal) src++;
         }
-        S(20,2);context->ram[0x31]=cursor;context->ram[0x32]=cursor>>8;
-        S(10,1);S(6,1);S(10,1);S(plane<3?13:8,1);
+        if(source_clock_block(clock,plane<3?59:54,6))
+        {context->ram[0x31]=cursor;context->ram[0x32]=cursor>>8;}
+        else
+        {
+            S(20,2);context->ram[0x31]=cursor;context->ram[0x32]=cursor>>8;
+            S(10,1);S(6,1);S(10,1);S(plane<3?13:8,1);
+        }
     }
-    S(20,2);S(6,1);S(4,1);S(4,1);S(4,1);
-    if(((cursor+1)&255)>=4) S(12,1);
-    else { S(7,1);S(4,1); }
-    S(10,1);*source=src;return 1;
+    if(!source_clock_block(clock,((cursor+1)&255)>=4?60:59,((cursor+1)&255)>=4?8:9))
+    {
+        S(20,2);S(6,1);S(4,1);S(4,1);S(4,1);
+        if(((cursor+1)&255)>=4) S(12,1);else {S(7,1);S(4,1);}
+        S(10,1);
+    }
+    *source=src;return 1;
 }
 
 u8 source_graphics_prefix_class0(SourceClock *clock,SourceIrqContext *context,
