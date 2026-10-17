@@ -60,3 +60,8 @@ Les noyaux de controle incluent journaux, hashes et comparaisons. Leur
 execution ne prouve pas le budget temps reel du jeu. Le raccordement doit
 etre profile et les boucles d horloge doivent pouvoir regrouper le travail
 sans interruption avant activation, tout en conservant les points source.
+
+Suite : la chaine va maintenant a24BF avec attente/restauration/transfert/
+palette, seize points source, capturesVRAM1536 etpalette16, plus2048 cas de
+palette source/68000 et640 controles de regroupementIRQoff. Voir
+native_room_finish_milestone.md ; le raccordement temps reel reste ouvert.

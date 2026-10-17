@@ -17,13 +17,21 @@ Checksum Mega Drive : `4A0A`
 
 ## État du portage
 
+La chaîne native couvre désormais graphismes, cartes, HUD, attente,
+transfert et préparation de palette jusqu’à 24BF, avec une seule horloge.
+Les 24 contextes retrouvent 16 points SMS et passent en 68000 PAL/NTSC ;
+les données VRAM/palette sont aussi comparées directement. Les 2 048 cas
+de palette et 640 cas de regroupement sans IRQ passent dans les deux régions.
+Le raccordement au jeu, les autres branches et le budget temps réel restent
+à traiter. La ROM jouable reste exactement v0198.
+Voir les [preuves et limites](analysis/native_room_finish_milestone.md).
+
 La conversion complète des cartes et la préparation du HUD sont traduites
 avec l’horloge native jusqu’à 1DE8. Les 24 contextes retrouvent onze points
 SMS, ainsi que les 1 536 octets de carte/HUD, et passent en 68000 PAL/NTSC.
 Les 9 021 cas de jauges, or et gemmes concordent aussi avec la SMS sur les
-octets et cycles, puis passent en 68000 dans les deux régions. Restent
-l’attente, le transfert vidéo et la palette, puis le raccordement global
-avec contrôle du budget réel d’exécution. La ROM jouable reste v0198.
+octets et cycles, puis passent en 68000 dans les deux régions. L’attente, le transfert et la palette sont désormais couverts par le jalon
+suivant ; le raccordement global et le budget réel restent à traiter. La ROM jouable reste v0198.
 Voir les [preuves et limites](analysis/native_room_hud_milestone.md).
 
 La préparation native des cartes 190B est enchaînée au chargement graphique,

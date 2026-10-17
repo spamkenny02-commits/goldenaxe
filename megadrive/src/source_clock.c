@@ -108,3 +108,16 @@ u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetition
     clock->refresh=source_refresh_advance(clock->refresh,count*fetches);
     return (u16)count;
 }
+
+u16 source_clock_repeat_disabled(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions)
+{
+    u32 ticks,m1;
+    if(!clock || !tstates || !fetches || !repetitions || clock->first || clock->blocked || clock->iff) return 0;
+    ticks=(u32)tstates*repetitions;
+    if(ticks>0xffffffffUL/15) return 0;
+    m1=(u32)fetches*repetitions;
+    advance(clock,ticks*15);
+    clock->foreground_tstates+=ticks;clock->foreground_m1+=m1;
+    clock->refresh=source_refresh_advance(clock->refresh,m1);
+    return repetitions;
+}

@@ -1,0 +1,19 @@
+{
+  "cases": 2048,
+  "regions": [
+    {
+      "region": "auto",
+      "cases": 2048
+    },
+    {
+      "region": "pal",
+      "cases": 2048
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "6c74b14d4d33a638331cfb0b6c22c22faf75687c2c63dac330a43f9d4ee9e3c0",
+  "limits": [
+    "Original palette instructions1DEB unchanged; controlled return to24BF RET marker. Direct16-byte palette and foreground T/M1/R source comparisons.",
+    "2048 blink/selection/counter combinations,IRQ disabled; full live IRQ and preceding loading covered separately by24-entry chain."
+  ]
+}

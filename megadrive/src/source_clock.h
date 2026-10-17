@@ -26,5 +26,9 @@ u8 source_clock_checkpoint(SourceClock *clock,SourceClockInterrupt interrupt,voi
  * Blocks have no DI/EI/status effects or RAM writes. Stops at/before VINT;
  * returning zero means use ordinary execution, with no state changed. */
 u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions);
+/* Stable blocks with IRQs disabled; may cross VINT(s), preserving pending.
+ * No DI/EI/status or observable RAM effects inside the block. Returns zero
+ * without mutation for prefetched/blocked/enabled/overflowing inputs. */
+u16 source_clock_repeat_disabled(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions);
 
 #endif
