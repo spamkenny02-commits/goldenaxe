@@ -164,18 +164,31 @@ static u8 patterns032a(SourceClock *clock,SourceIrqContext *context,
     *source=src;return 1;
 }
 
-u8 source_graphics_prefix_class0_planned(SourceClock *clock,SourceIrqContext *context,
+u8 source_graphics_prefix_changed(SourceClock *clock,SourceIrqContext *context,u16 room,
                                  const u8 *patterns,u8 *destination,const u8 **end,const SourcePatternPlan *plan)
 {
-    static const u8 classify[]={17,13,4,7,7,13,7,7,7,13,7,7,7,7,4,13};
     static const u8 palette[]={10,7,7,10,7,7,5,7,13,13};
     static const u8 before_copy[]={13,7,10,13,13,10,10,10};
-    u16 n;
+    u16 n;u8 graphics;
     if(!clock || !context || !context->ram || !context->audio || !patterns ||
        !destination || !end || context->ram[0x2e] || (context->ram[0x11]&64) ||
        clock->period!=(u32)context->input.lines*3420) return 0;
-    for(n=0;n<sizeof(classify);n++) S(classify[n],1);
-    context->ram[0x40]=0;S(10,1);
+    /* 175F: high room byte selects dungeons, then low<10 or low nibbleF
+     * selects houses. Preserve the different taken-branch T/M1 costs. */
+    S(17,1);S(13,1);S(4,1);S(7,1);
+    if(room>>8) {S(12,1);graphics=2;}
+    else
+    {
+        S(7,1);S(13,1);S(7,1);S(7,1);
+        if((room&255)<16) {S(12,1);graphics=1;}
+        else
+        {
+            S(7,1);S(13,1);S(7,1);S(7,1);S(7,1);
+            if((room&15)==15) {S(12,1);graphics=1;}
+            else {S(7,1);S(4,1);graphics=0;}
+        }
+    }
+    S(13,1);context->ram[0x40]=graphics;S(10,1);
     for(n=0;n<sizeof(palette);n++) S(palette[n],1);
     context->audio[6]=0xb0;
     for(n=0;n<sizeof(before_copy);n++) S(before_copy[n],1);
@@ -185,6 +198,9 @@ u8 source_graphics_prefix_class0_planned(SourceClock *clock,SourceIrqContext *co
     *end=patterns;
     return source_clock_checkpoint(clock,source_irq_interrupt,context);
 }
+u8 source_graphics_prefix_class0_planned(SourceClock *clock,SourceIrqContext *context,
+                                 const u8 *patterns,u8 *destination,const u8 **end,const SourcePatternPlan *plan)
+{return source_graphics_prefix_changed(clock,context,0x10,patterns,destination,end,plan);}
 u8 source_graphics_prefix_class0(SourceClock *clock,SourceIrqContext *context,
                                  const u8 *patterns,u8 *destination,const u8 **end)
 {return source_graphics_prefix_class0_planned(clock,context,patterns,destination,end,0);}

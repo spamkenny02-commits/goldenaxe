@@ -22,4 +22,10 @@ u8 source_graphics_prefix_class0(SourceClock *clock,SourceIrqContext *context,
 u8 source_graphics_prefix_class0_planned(SourceClock *clock,SourceIrqContext *context,
                                  const u8 *patterns,u8 *destination,const u8 **end,
                                  const SourcePatternPlan *plan);
+/* Original175F classification for a changed bank, display already off.
+ * room selects class0/1/2; patterns must start at that bank's8010. The
+ * optional verified plan must describe exactly those pattern bytes. */
+u8 source_graphics_prefix_changed(SourceClock *clock,SourceIrqContext *context,u16 room,
+                                 const u8 *patterns,u8 *destination,const u8 **end,
+                                 const SourcePatternPlan *plan);
 #endif
