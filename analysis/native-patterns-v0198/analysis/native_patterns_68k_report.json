@@ -1,0 +1,25 @@
+{
+  "cases": 515,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 48484,
+      "done": 1,
+      "cases": 515,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 40564,
+      "done": 1,
+      "cases": 515,
+      "failures": 0
+    }
+  ],
+  "module_sha256": "38f4b02c4b4501a23d55ecf234782e1544c2baffd8750058a4243ff9011937a5",
+  "kernel_sha256": "cc2e6bdd09d82d092730663a6a2a73e6eb49a4d5b4fa491c80bd0e55716339fe",
+  "limits": [
+    "Decoder bytes checked via FNV32 and source pointer; work against existing instruction model.",
+    "Does not prove live source IRQ/clock integration or full game fidelity."
+  ]
+}

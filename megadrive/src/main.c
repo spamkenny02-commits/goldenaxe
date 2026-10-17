@@ -1,4 +1,5 @@
 #include <genesis.h>
+#include "source_pattern.h"
 #include "actors.h"
 #include "key_redraw_cost.inc"
 #include "room_clear.inc"
@@ -130,6 +131,9 @@ static u16 world_metatiles_md[0x220],world_old_md[640],world_new_md[640];
 static const u8 *decode_planes(const u8 *src, u8 *dst, u16 stride)
 {
     u16 plane;
+    /* Production renders into the SMS VRAM mirror. Source work is available
+       separately; a live source clock still needs its loader entry context. */
+    if(stride==4) return source_pattern_decode(src,dst,0,0);
     for (plane=0; plane<stride; plane++)
     {
         u8 *write=dst+plane;
@@ -2349,8 +2353,12 @@ static void show_inventory(void)
         if(pressed&BUTTON_B) break; /* 71F2..71F9: closing has no sound command. */
     }
     /* 71F9 ->20DA publishes a blank map on the following IRQ. */
-    menu_started=vtimer;wait_frame();
-    blank_inventory_playfield();memcpy(sms_vram+0x3800,animation_map,0x500);
+    menu_started=vtimer;
+    /* PAL reaches this path earlier in the active scan; retain its following
+       IRQ publication. NTSC must publish before waiting to avoid a late blank. */
+    if(SYS_isPAL()) { wait_frame();blank_inventory_playfield(); }
+    else { blank_inventory_playfield();wait_frame(); }
+    memcpy(sms_vram+0x3800,animation_map,0x500);
     decode_planes(world_graphics_class==2?world_dungeon_background_rle:
         world_graphics_class==1?world_house_background_rle:world_background_rle,sms_vram,4);
     inventory_hud_icon();hero_loaded_pose=65535;prepare_hero_patterns();

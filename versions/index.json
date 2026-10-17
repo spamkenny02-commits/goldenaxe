@@ -6410,5 +6410,54 @@
         "sha256": "29dfbc9790d0a6404d03bdd0c3c492a23066950ac331620d9bd2f361adb56a52"
       }
     ]
+  },
+  {
+    "version": 195,
+    "sha256": "dfe79f9e67bdba470a08a424540f253b4f87230743ca71fc9c48241e105e2393",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T08:25:41.611865+00:00",
+    "rom": "v0195-dfe79f9e/gaw-megadrive-v0195.bin",
+    "notes": "Compilation intermediaire du decodeur032A ; controle naturel detecte un noir de sortie inventaire retarde d une image, egalement reproduit sur v0194. Remplacee par v0197.",
+    "validation": "transition_check_failed",
+    "reports": []
+  },
+  {
+    "version": 196,
+    "sha256": "478294fe3caf3254d3076455e281eede4c7867a139f174064e5d89e6593a6044",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T08:27:13.992156+00:00",
+    "rom": "v0196-478294fe/gaw-megadrive-v0196.bin",
+    "notes": "Compilation intermediaire du decodeur032A ; controle naturel detecte un noir de sortie inventaire retarde d une image, egalement reproduit sur v0194. Remplacee par v0197.",
+    "validation": "transition_check_failed",
+    "reports": []
+  },
+  {
+    "version": 197,
+    "sha256": "07917ec03c9b861d3bf71df1860104c72482e1c08bb068eff047d7c3707b6033",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T08:29:08.417278+00:00",
+    "rom": "v0197-07917ec0/gaw-megadrive-v0197.bin",
+    "notes": "Compilation intermediaire : fermeture inventaire corrigee NTSC mais noir trop precoce PAL. Remplacee par v0198 qui conserve la publication PAL.",
+    "validation": "transition_check_failed",
+    "reports": []
+  },
+  {
+    "version": 198,
+    "sha256": "c7d010987bee974547b25d5d5734c666c2f684603972b1e4159a8dd584087818",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T08:30:41.164232+00:00",
+    "rom": "v0198-c7d01098/gaw-megadrive-v0198.bin",
+    "notes": "Decodeur032A partage avec le jeu,515 vecteurs C/68000 PAL-NTSC ; noir fermeture inventaire corrige NTSC. Bruitages menu et3 transitions NTSC valides;3 captures PAL identiques v0194, ecart fin chargement PAL encore ouvert.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "324a74a37d15b4ac346b63673fbdb439dd29a2e4cd749b237acf36d561033684"
+      },
+      {
+        "file": "pattern_production_report.json",
+        "sha256": "9bf1ad346a246c5437eb06a3e33d20def5003cb684988c0ddf11c2264073e346"
+      }
+    ]
   }
 ]

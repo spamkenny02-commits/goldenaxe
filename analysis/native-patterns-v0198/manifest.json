@@ -1,0 +1,87 @@
+[
+  {
+    "file": "megadrive/src/source_pattern.c",
+    "bytes": 2639,
+    "sha256": "38f4b02c4b4501a23d55ecf234782e1544c2baffd8750058a4243ff9011937a5"
+  },
+  {
+    "file": "megadrive/src/source_pattern.h",
+    "bytes": 459,
+    "sha256": "1c94019d1f1b9154a5a069c8bed39bd7b9ff1873e9684bcb2cd2aa3f0ac4a410"
+  },
+  {
+    "file": "tools/validate_native_patterns.py",
+    "bytes": 3984,
+    "sha256": "d060dd0d70240eb504f70852d87ee695e495bfe34fb34679e0daeabe0cce341f"
+  },
+  {
+    "file": "tools/validate_pattern_production.py",
+    "bytes": 3449,
+    "sha256": "4009a35aaeec6481ad6847c97e200c722959e9e13febfe328b8bb7ae2fc9e200"
+  },
+  {
+    "file": "tools/validate_native_patterns_68k.py",
+    "bytes": 4191,
+    "sha256": "365ebf5225e8118987cb424a50f3e4d05123c27961c048f3bfc30205233e1d9e"
+  },
+  {
+    "file": "tools/graphics_prefix_phase.py",
+    "bytes": 2375,
+    "sha256": "a120c1901c2e68a4a30039b84f98675f5774a7c2e597d2ed5bfda4d5ae7dae55"
+  },
+  {
+    "file": "tools/actor_loading_cost.py",
+    "bytes": 2561,
+    "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+  },
+  {
+    "file": "analysis/native_patterns_report.json",
+    "bytes": 341,
+    "sha256": "19909b85f5d526bf45592ad47b3de0e9995b44d0e5e5df820af4d963170c11f6"
+  },
+  {
+    "file": "analysis/native_patterns_68k_report.json",
+    "bytes": 665,
+    "sha256": "43507dfc58adca5f9cb9ade8b2174eda384f0bf541a4087805a8db9c046da123"
+  },
+  {
+    "file": "analysis/native_patterns_milestone.md",
+    "bytes": 3030,
+    "sha256": "77a972c2c2c4c26037fb9d28ee5fb7858969c8ddf183cf81ba291cdad361f206"
+  },
+  {
+    "file": "validation/native-patterns/vectors.json",
+    "bytes": 97765,
+    "sha256": "252ff520a251faf7c40450f1440ce9611d6b45e22888e426515839c47ba36ffb"
+  },
+  {
+    "file": "validation/native-patterns/baseline_close_report.json",
+    "bytes": 594,
+    "sha256": "dff9b6bebc9a55cff8e36d04a3e6d3736e911ab6ab9e0f6e4caef50dc2498644"
+  },
+  {
+    "file": "validation/natural_start_menu_sfx_report.json",
+    "bytes": 3913,
+    "sha256": "324a74a37d15b4ac346b63673fbdb439dd29a2e4cd749b237acf36d561033684"
+  },
+  {
+    "file": "validation/pattern_production_report.json",
+    "bytes": 7025,
+    "sha256": "9bf1ad346a246c5437eb06a3e33d20def5003cb684988c0ddf11c2264073e346"
+  },
+  {
+    "file": "validation/native-patterns/kernel/src/main.c",
+    "bytes": 966,
+    "sha256": "938ec57e3eb74b7047b5736723abbcc8f6ec0ca426f211a50438a9909a14b7c1"
+  },
+  {
+    "file": "validation/native-patterns/kernel/src/expected.h",
+    "bytes": 1389849,
+    "sha256": "2c56abd98c32aebd044b21ac03b59b2d3083dbed09865c0d4ef52e0dbd47711c"
+  },
+  {
+    "file": "validation/native-patterns/kernel/out/release/rom.bin",
+    "bytes": 524288,
+    "sha256": "cc2e6bdd09d82d092730663a6a2a73e6eb49a4d5b4fa491c80bd0e55716339fe"
+  }
+]

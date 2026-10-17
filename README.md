@@ -5,17 +5,27 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0194 — 1024 Kio.**
+**Version courante : v0198 — 1024 Kio.**
 
-[Télécharger la ROM v0194](versions/v0194-2fceb892/gaw-megadrive-v0194.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0198](versions/v0198-c7d01098/gaw-megadrive-v0198.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143`  
-Checksum Mega Drive : `CA2E`
+SHA-256 : `c7d010987bee974547b25d5d5734c666c2f684603972b1e4159a8dd584087818`  
+Checksum Mega Drive : `4A0A`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La v0198 partage le décodeur natif des graphismes à quatre plans entre
+le jeu et les contrôles : 515 vecteurs passent en C et en 68000 PAL/NTSC,
+y compris les coûts Z80 T/M1. Elle corrige le début du noir à la fermeture
+de l’inventaire en NTSC. Les bruitages du menu passent dans les deux régions.
+Trois parcours NTSC concordent avec les fenêtres noires et la reprise SMS ;
+en PAL, les images restent identiques à v0194, avec un écart d’une image
+face à la SMS aux fins de chargement. Le contrôle strict PAL reste ouvert.
+Le raccordement du chargement à l’horloge reste à réaliser.
+Voir les [preuves et limites](analysis/native_patterns_milestone.md).
 
 L'attente native couvre désormais 0B95..0BC5 et le retour réel au caller,
 avec l'horloge, le lecteur audio et les interruptions dynamiques. Les
