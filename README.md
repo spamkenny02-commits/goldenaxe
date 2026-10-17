@@ -17,6 +17,14 @@ Checksum Mega Drive : `4A0A`
 
 ## État du portage
 
+La préparation native des cartes 190B est enchaînée au chargement graphique,
+sur une seule horloge jusqu’à 24BC. Les 24 contextes retrouvent neuf points
+SMS et passent en 68000 PAL/NTSC. Des captures indépendantes confirment les
+cases et attributs modifiés, y compris les écritures de la coordonnée FF
+dans la file vidéo. La conversion complète des cases, le HUD et le
+raccordement global restent à faire ; la ROM jouable reste v0198.
+Voir les [preuves et limites](analysis/native_world_map_milestone.md).
+
 Le chargement graphique natif couvre désormais 16D0..24B9 avec une seule
 horloge et des interruptions audio dynamiques. Les 24 parcours retrouvent
 les six points de contrôle SMS et passent en 68000 PAL/NTSC. De nouvelles

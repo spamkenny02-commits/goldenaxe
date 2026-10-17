@@ -52,3 +52,8 @@ observees ; le demarrage, les autres classes et la suite cartes/HUD/acteurs
 doivent transmettre leur propre etat logique avant activation globale.
 Les uploads physiques VDP et le mapper ne sont pas emules par cette API.
 La recompilation du jeu conserve les octets exacts de la ROM v0198.
+
+Suite : le decodeur RAM est partage avec la preparation native190B.
+La chaine conserve son horloge jusqu a24BC avec neuf points source.
+Les controles graphiques hote/68000 sont repasses apres extraction.
+Voir native_world_map_milestone.md ; la conversion complete/HUD reste ouverte.

@@ -1,4 +1,5 @@
 #include "source_graphics_load.h"
+#include "source_ram_planes.h"
 
 static u8 step(SourceClock *clock,SourceIrqContext *context,u16 ticks,u8 m1,u8 effect)
 {
@@ -19,39 +20,6 @@ static u8 copy(SourceClock *clock,SourceIrqContext *context,const u8 *source,u8 
 }
 #define COPY(s,d,n) do { if(!copy(clock,context,s,d,n)) return 0; } while(0)
 
-static u8 planes(SourceClock *clock,SourceIrqContext *context,const u8 **source,u8 *destination,u16 address,u8 stride)
-{
-    u16 plane;const u8 *src=*source;
-    S(4,1);
-    for(plane=0;plane<stride;plane++)
-    {
-        u16 cursor=address+plane;u8 *write=destination+plane;
-        S(11,1);S(11,1);
-        for(;;)
-        {
-            u16 command=*src++,count,n;u8 literal;
-            S(7,1);S(4,1);
-            if(!command) { S(12,1);break; }
-            S(7,1);S(10,1);literal=command&128;count=command&127;if(!count) count=256;
-            if(literal) { S(7,1);S(4,1); }
-            else { S(4,1);S(6,1); }
-            for(n=0;n<count;n++)
-            {
-                /* HL increments before each literal read in0C0D. */
-                if(literal) S(6,1);
-                S(7,1);S(7,1);*write=*src;write+=stride;if(literal) src++;
-                S(4,1);S(4,1);S(4,1);
-                if((cursor&255)+stride<256) S(12,1);
-                else { S(7,1);S(4,1); }
-                cursor+=stride;S(n+1<count?13:8,1);
-            }
-            if(!literal) src++;
-            S(6,1);S(12,1);
-        }
-        S(10,1);S(10,1);S(6,1);S(6,1);S(plane+1<stride?13:8,1);
-    }
-    S(10,1);*source=src;return 1;
-}
 
 static u8 point(SourceClock *clock,SourceIrqContext *context,u16 pc,
                 SourceGraphicsCheckpoint checkpoint,void *user)
@@ -82,7 +50,7 @@ u8 source_graphics_load_class0(SourceClock *clock,SourceIrqContext *context,
     /* Prefix already checkpoints at1706; do not fetch it twice. */
     if(checkpoint && !checkpoint(user,0x1706,clock,context)) return 0;
     S(10,1);S(7,1);S(17,1);
-    if(!planes(clock,context,&source,data->metatiles,0xc900,2)) return 0;
+    if(!source_ram_planes(clock,context,&source,data->metatiles,0xc900,2)) return 0;
     POINT(0x170e);
     SEQ(backup_prefix);COPY(data->metatiles+0x1c0,data->backup,8);
     SEQ(backup_second);COPY(data->metatiles+0x1f0,data->backup+8,8);POINT(0x1720);
@@ -109,7 +77,7 @@ u8 source_graphics_load_class0(SourceClock *clock,SourceIrqContext *context,
     SEQ(terrain_prefix);SEQ(lookup);SEQ(terrain_call);
     terrain_address=(u16)context->low[0x1759]|((u16)context->low[0x175a]<<8);
     source=bank11+(terrain_address&0x3fff);
-    if(!planes(clock,context,&source,data->terrain,0xd100,4)) return 0;
+    if(!source_ram_planes(clock,context,&source,data->terrain,0xd100,4)) return 0;
     POINT(0x1748);
     S(17,1);
     if(!step(clock,context,4,1,SOURCE_CLOCK_DI)) return 0;

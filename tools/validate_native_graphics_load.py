@@ -8,7 +8,7 @@ import subprocess
 from actor_reference import ROOT
 from validate_native_graphics_prefix import MODULES as PREFIX_MODULES
 
-MODULES=['source_graphics_load',*PREFIX_MODULES]
+MODULES=['source_ram_planes','source_graphics_load',*PREFIX_MODULES]
 PCS=[0x1706,0x170e,0x1720,0x1733,0x1748,0x24b9]
 WRAPPER='''#include "source_graphics_load.h"
 typedef struct {u32 count,points;u32 *events,*snapshots;u8 *states;SourceIrqContext *irq;} LoadTrace;
