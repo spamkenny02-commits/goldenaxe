@@ -14,10 +14,10 @@ def main():
  reference=(ROOT/'validation/clock-repeat-fast/reference.c').read_text()
  for name in ['source_clock','source_rng']:reference=reference.replace('#include "'+name+'.h"','#include "../../../megadrive/src/'+name+'.h"')
  (src/'reference.c').write_text(reference)
- (src/'wrapper.c').write_text(WRAPPER.replace('#include "source_clock.h"','#include "../../../megadrive/src/source_clock.h"'))
+ (src/'wrapper.c').write_text(WRAPPER.replace('#include "source_clock.h"','#include "../../../megadrive/src/source_clock.h"').replace('#include "source_rng.h"','#include "../../../megadrive/src/source_rng.h"'))
  (src/'main.c').write_text('''#include <genesis.h>
 #include "expected.h"
-u8 repeat_pair(u16,u32,u8,u8,u8,u8,u8,u16,u8,u16,u32*);
+u8 repeat_pair(u16,u32,u8,u8,u8,u8,u8,u16,u16,u16,u32*);
 volatile u32 gaw_repeat_cases,gaw_repeat_failures;volatile u16 gaw_repeat_done;
 static u32 output[34];
 int main(bool hard_reset)

@@ -3,6 +3,7 @@
 
 static u8 step(SourceClock *clock,SourceIrqContext *context,u16 ticks,u8 m1,u8 effect)
 {
+    if(effect==SOURCE_CLOCK_NONE && source_clock_block(clock,ticks,m1)) return 1;
     return source_clock_execute(clock,ticks,m1,effect,source_irq_interrupt,context);
 }
 #define S(t,m) do { if(!step(clock,context,t,m,SOURCE_CLOCK_NONE)) return 0; } while(0)

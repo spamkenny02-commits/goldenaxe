@@ -1,0 +1,11 @@
+{
+  "cases": 7040,
+  "reference_sha256": "5d832ade4cf38634611cdf21ffa17915db3f67cf5139e11a4fc3273a6dfb67e0",
+  "header_sha256": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8",
+  "module_sha256": "4cf6afab6dda5d9dd3d2a46c144511e554b89b37e573b11ec8a23e3a25f2f5c4",
+  "limits": [
+    "Host bitwise state/return parity with immutable pre-optimization repeat; all guard classes,frame/VINT boundaries,counter/R wrap,max16-bit arithmetic.",
+    "Repetition marker65534 selects ordinary instruction fast-path versus immutable execute,including failed pending-IRQ callbacks; block fetch counts extend to65535.",
+    "Independent original source and compiled68000 loading chain comparisons remain separate."
+  ]
+}

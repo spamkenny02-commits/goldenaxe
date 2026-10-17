@@ -3,27 +3,27 @@
   "results": [
     {
       "region": "auto",
-      "frame": 3768,
+      "frame": 3149,
       "done": 1,
       "cases": 24,
       "failures": 0
     },
     {
       "region": "pal",
-      "frame": 3153,
+      "frame": 2635,
       "done": 1,
       "cases": 24,
       "failures": 0
     }
   ],
   "helpers": {
-    "source_room_finish": "594c3af3266259a8290b90694df0d619738ae2f38befbba1edfd6b0cb3b81dd7",
+    "source_room_finish": "fdc31ff91f4e161b7bc486d8fccf5a9c1627affebb8c53c279448083e843b2ab",
     "source_wait_restore": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
-    "source_room_hud": "1f2cdf63f8560a620f7ed474656eeb14ca7749ee1505da35a5b2bbb9a398e3cb",
-    "source_world_map": "27efeb352960750300b0cab6f2d68b10ab6dd8925f643df860ebe7a0f7ddfc81",
-    "source_ram_planes": "f3ceb8bee8199c84ac459dbb3b7de130cf2d799494b460d011dba2717e170c27",
-    "source_graphics_load": "36e6036053cb60142dd4b6911022489f179894729a22366e12e9b44b5706da12",
-    "source_pattern_clock": "8719fc0ba7cd088617d4b8c08ec7f6809b524ba2745346db954e53b6b6c9f457",
+    "source_room_hud": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "source_world_map": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489",
+    "source_ram_planes": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
+    "source_graphics_load": "f02cdddb55593539a34936063c55407feaf920d134d028a8f5984c777dbb9754",
+    "source_pattern_clock": "decd3117fdda4dec0b2a9d9e072c37f6f26b03ba16ae6e2bf9ca00b282bca4ca",
     "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
     "source_irq_context": "ec7601406cbfe70fa913507caaea53cc71565f8fd4e2a7410bc42164efc526a4",
     "source_irq": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99",
@@ -41,7 +41,7 @@
     "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
   },
   "source_case_sha256": "420e894bcb04dd20b4c50b29ec8ef57b5ab88686ab000fdc6165091cd240c9cf",
-  "kernel_sha256": "e68349eab5dc6e75956870c1eb08618a75c1dd233d406cbb1fc6d84bcbd31f06",
+  "kernel_sha256": "6a3318c8d5304362ffbc9d00dce5a094cc72f9257e5f487bd383f7a4e04097c2",
   "production_clock_wired": false,
   "limits": [
     "Compiled68000 sixteen-checkpoint vectors retain source phase/R/M1/331RAM/400audio/IRQ-offset assertions; other fields are host parity.",

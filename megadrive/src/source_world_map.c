@@ -1,6 +1,6 @@
 #include "source_world_map.h"
 #include "source_ram_planes.h"
-#define S(t,m) do { if(!source_clock_execute(clock,t,m,SOURCE_CLOCK_NONE,source_irq_interrupt,context)) return 0; } while(0)
+#define S(t,m) do { if(!source_clock_plain(clock,t,m,source_irq_interrupt,context)) return 0; } while(0)
 static u8 seq(SourceClock *clock,SourceIrqContext *context,const u8 *ticks,u16 count)
 {
     u16 n,total=0;u8 fetches=0;

@@ -32,7 +32,7 @@ u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetition
 /* One stable block, under the same contract as repeat. Inlining avoids
  * general repetition arithmetic and register spills at constant call sites.
  * Requires a clock initialized by source_clock_init (until_vint<=period). */
-static inline u8 source_clock_block(SourceClock *clock,u16 tstates,u8 fetches)
+static inline u8 source_clock_block(SourceClock *clock,u16 tstates,u16 fetches)
 {
     u32 master=(u32)tstates*15;
     if(!tstates || !fetches || clock->first || clock->blocked ||
@@ -45,6 +45,14 @@ static inline u8 source_clock_block(SourceClock *clock,u16 tstates,u8 fetches)
     clock->foreground_tstates+=tstates;clock->foreground_m1+=fetches;
     clock->refresh=(clock->refresh&128)|((clock->refresh+fetches)&127);
     return 1;
+}
+/* Ordinary instructions retain the full boundary handler whenever a block
+ * cannot run, including prefetched opcodes, EI delay and pending IRQs. */
+static inline u8 source_clock_plain(SourceClock *clock,u16 tstates,u8 fetches,
+                                   SourceClockInterrupt interrupt,void *context)
+{
+    return source_clock_block(clock,tstates,fetches) ||
+           source_clock_execute(clock,tstates,fetches,SOURCE_CLOCK_NONE,interrupt,context);
 }
 /* Stable blocks with IRQs disabled; may cross VINT(s), preserving pending.
  * No DI/EI/status or observable RAM effects inside the block. Returns zero

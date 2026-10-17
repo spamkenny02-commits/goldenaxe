@@ -17,11 +17,11 @@ Checksum Mega Drive : `4A0A`
 
 ## État du portage
 
-La chaîne native de chargement est maintenant traitée par blocs avant les
-interruptions, avec les mêmes résultats aux 16 points SMS et 4 480 cas
-arithmétiques validés aussi en 68000 PAL/NTSC. Son calcul reste environ
-2,4 fois plus coûteux que le budget SMS : elle reste hors du jeu actif.
-La ROM jouable demeure v0198. Voir les [mesures et limites](analysis/native_clock_batching_milestone.md).
+La chaîne native de chargement traite maintenant des commandes RLE et lignes
+vidéo entières avant les interruptions. Les 16 points SMS restent conformes ;
+7 040 cas d’horloge passent aussi en 68000 PAL/NTSC. Le calcul seul demande
+25–27 images NTSC pour un budget SMS de 22,71 : elle reste hors du jeu actif.
+La ROM jouable demeure v0198. Voir les [mesures et limites](analysis/native_command_batching_milestone.md).
 
 La chaîne native couvre désormais graphismes, cartes, HUD, attente,
 transfert et préparation de palette jusqu’à 24BF, avec une seule horloge.

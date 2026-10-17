@@ -1,6 +1,6 @@
 #include "source_room_finish.h"
 #include "source_wait_restore.h"
-#define S(t,m) do { if(!source_clock_execute(clock,t,m,SOURCE_CLOCK_NONE,source_irq_interrupt,context)) goto reject; } while(0)
+#define S(t,m) do { if(!source_clock_plain(clock,t,m,source_irq_interrupt,context)) goto reject; } while(0)
 static u8 point(SourceClock *clock,SourceIrqContext *context,u16 pc,SourceGraphicsCheckpoint checkpoint,void *user,u8 fetched)
 {
     if(!fetched && !source_clock_checkpoint(clock,source_irq_interrupt,context)) return 0;

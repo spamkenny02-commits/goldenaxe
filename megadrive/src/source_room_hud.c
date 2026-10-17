@@ -1,6 +1,6 @@
 #include "source_room_hud.h"
 #include "source_ram_planes.h"
-#define S(t,m) do { if(!source_clock_execute(clock,t,m,SOURCE_CLOCK_NONE,source_irq_interrupt,context)) return 0; } while(0)
+#define S(t,m) do { if(!source_clock_plain(clock,t,m,source_irq_interrupt,context)) return 0; } while(0)
 static u8 seq(SourceClock *clock,SourceIrqContext *context,const u8 *ticks,u16 count)
 {
     u16 n,total=0;u8 t,fetches=0;
@@ -32,6 +32,18 @@ static u8 room_map(SourceClock *clock,SourceIrqContext *context,const u8 *tiles,
     u16 x,y,index,destination=0;SEQ(prefix);
     for(y=0;y<20;y++)
     {
+        /* Include the final column/row branches in a whole-row span when
+         * no IRQ can observe its intermediate tile words. */
+        if(source_clock_block(clock,7+16*((y&1)?603:597)-5+15+(y<19?12:7),
+                              16*((y&1)?88:84)+5))
+        {
+            for(x=0;x<32;x++)
+            {
+                index=map->cells[(y>>1)*16+(x>>1)]*8+(y&1)*4+(x&1)*2;
+                map->tilemap[destination++]=tiles[index];map->tilemap[destination++]=tiles[index+1];
+            }
+            continue;
+        }
         S(7,1);
         for(x=0;x<32;x++)
         {
@@ -119,10 +131,11 @@ u8 source_hud_prepare(SourceClock *clock,SourceIrqContext *context,SourceWorldMa
     SEQ(prefix);
     if(!source_ram_planes(clock,context,&source,output,0xdb00,2)) return 0;
     S(10,1);S(7,1);
-    for(n=0;n<128;n++)
-    {
-        SEQ(offsets);output[n*2]=(u8)(output[n*2]+0xd0);output[n*2+1]|=0x18;S(n<127?13:8,1);
-    }
+    if(source_clock_block(clock,128*67-5,128*9))
+        for(n=0;n<128;n++) {output[n*2]=(u8)(output[n*2]+0xd0);output[n*2+1]|=0x18;}
+    else
+        for(n=0;n<128;n++)
+        {SEQ(offsets);output[n*2]=(u8)(output[n*2]+0xd0);output[n*2+1]|=0x18;S(n<127?13:8,1);}
     SEQ(icon_prefix);
     for(row=0;row<2;row++)
     {
@@ -166,7 +179,10 @@ u8 source_hud_prepare(SourceClock *clock,SourceIrqContext *context,SourceWorldMa
         SEQ(return_gauge);S(number<3?13:8,1);
     }
     S(10,1);S(7,1);
-    for(n=0;n<128;n++) { SEQ(priority);output[n*2+1]|=0x40;S(n<127?13:8,1); }
+    if(source_clock_block(clock,128*46-5,128*6))
+        for(n=0;n<128;n++) output[n*2+1]|=0x40;
+    else
+        for(n=0;n<128;n++) {SEQ(priority);output[n*2+1]|=0x40;S(n<127?13:8,1);}
     S(10,1);return 1;
 }
 static u8 point(SourceClock *clock,SourceIrqContext *context,u16 pc,SourceGraphicsCheckpoint checkpoint,void *user)

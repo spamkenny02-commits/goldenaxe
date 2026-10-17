@@ -1,0 +1,14 @@
+{
+  "cases": 1536,
+  "reference_sha256": "8464cb37cb6b205ae84d6fb2688281db1ca6cc2cd8a581df482047cb1f9bbcf9",
+  "helpers": {
+    "source_clock.h": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8",
+    "source_room_hud.c": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "source_ram_planes.c": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc"
+  },
+  "output_digest": "24d1ad250ffb673f963bb9f92a2e7bd483e801f95e54f45d4ac3880c2efc0449",
+  "limits": [
+    "Host pairwise1536 tilemap bytes,256 cells,336RAM,400audio,full clock andIRQ entry/work traces. All256 health/magic/gold values independently,selected capacity boundaries and gem masks,not Cartesian product.",
+    "Quiet initial audio; varied NTSC/PAL VINT/IFF/pending phases. Full source and compiled68000 chain comparisons remain separate."
+  ]
+}

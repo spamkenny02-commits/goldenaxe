@@ -1,5 +1,5 @@
 #include "source_ram_planes.h"
-#define S(t,m) do { if(!source_clock_execute(clock,t,m,SOURCE_CLOCK_NONE,source_irq_interrupt,context)) return 0; } while(0)
+#define S(t,m) do { if(!source_clock_plain(clock,t,m,source_irq_interrupt,context)) return 0; } while(0)
 u8 source_ram_planes(SourceClock *clock,SourceIrqContext *context,const u8 **source,u8 *destination,u16 address,u8 stride)
 {
     u16 plane;const u8 *src=*source;
@@ -17,6 +17,18 @@ u8 source_ram_planes(SourceClock *clock,SourceIrqContext *context,const u8 **sou
                 break;
             }
             literal=command&128;count=command&127;if(!count) count=256;
+            if(stride==1 || stride==2 || stride==4)
+            {
+                u16 carries=((cursor&255)+count*stride)>>8;
+                u16 ticks=(literal?39:38)+count*(literal?57:51)-carries-5+18;
+                u16 fetches=6+count*(literal?8:7)+carries+2;
+                if(source_clock_block(clock,ticks,fetches))
+                {
+                    for(n=0;n<count;n++) { *write=*src;write+=stride;if(literal) src++; }
+                    if(!literal) src++;
+                    cursor+=count*stride;continue;
+                }
+            }
             if(!source_clock_block(clock,literal?39:38,6))
             {
                 S(7,1);S(4,1);S(7,1);S(10,1);

@@ -1,0 +1,25 @@
+{
+  "cases": 9021,
+  "regions": [
+    {
+      "region": "auto",
+      "cases": 9021,
+      "done_frame": 27067
+    },
+    {
+      "region": "pal",
+      "cases": 9021,
+      "done_frame": 27066
+    }
+  ],
+  "record_bytes": 1560,
+  "vector_sha256": "4a5f634f6396add0d3574b5a4d90f344a58107d34edd55c3584219a7f7d33bbe",
+  "module_sha256": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "1738b8e718a145e7ab87e67264809352f2126093d14ff4e93881ef3128b9cff5",
+  "limits": [
+    "Original1E4E unchanged; custom boot supplies cases,1DE8 RET is a post-call marker. Exact768 DB/DC/DD bytes and foreground T compared with source.",
+    "M1 compared to audited instruction model; disabledIRQ isolated HUD fixture. Live phase/R/IRQ proofs are separate24-entry chain tests.",
+    "All byte health/magic for capacities8..128 step8, selected boundaries0,7,129,255; all256 gold and512 gem masks independently, not Cartesian product."
+  ]
+}

@@ -4,6 +4,7 @@
  * bytes may batch only before VINT with IFF/EI-delay restored at byte end. */
 static u8 step(SourceClock *clock,SourceIrqContext *context,u16 ticks,u8 fetches,u8 effect)
 {
+    if(effect==SOURCE_CLOCK_NONE && source_clock_block(clock,ticks,fetches)) return 1;
     return source_clock_execute(clock,ticks,fetches,effect,source_irq_interrupt,context);
 }
 #define S(t,m) do { if(!step(clock,context,t,m,SOURCE_CLOCK_NONE)) return 0; } while(0)
@@ -36,9 +37,23 @@ static u8 patterns032a(SourceClock *clock,SourceIrqContext *context,
                 if(!source_clock_block(clock,29,4)) {S(7,1);S(6,1);S(4,1);S(12,1);}
                 break;
             }
+            literal=command&128;count=command&127;if(!count) count=256;
+            /* A complete RLE command has no observable intermediate state
+             * if it fits before VINT. Include every page carry and the
+             * final short DJNZ; fall back to byte/instruction boundaries. */
+            {
+                u16 carries=((cursor&255)+count*4)>>8;
+                u16 ticks=44+count*(literal?135:134)-carries-5+(literal?16:29);
+                u16 fetches=9+count*(literal?19:18)+carries+(literal?2:4);
+                if(source_clock_block(clock,ticks,fetches))
+                {
+                    for(n=0;n<count;n++) { *write=*src;write+=4;if(literal) src++; }
+                    if(!literal) src++;
+                    cursor+=count*4;continue;
+                }
+            }
             if(!source_clock_block(clock,44,9))
             {S(7,1);S(6,1);S(4,1);S(7,1);S(4,1);S(8,2);S(4,1);S(4,1);}
-            literal=command&128;count=command&127;if(!count) count=256;
             for(n=0;n<count;n++)
             {
                 u16 limit,batch,k,ticks=literal?135:134;u8 fetches=literal?19:18;
