@@ -1,0 +1,26 @@
+{
+  "md_sha256": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+  "cases": [
+    {
+      "console": "md",
+      "frames": [
+        60,
+        100
+      ],
+      "extracted_files_identical": 10,
+      "optional_state_bytes": 2072576
+    },
+    {
+      "console": "sms",
+      "frames": [
+        60,
+        100
+      ],
+      "extracted_files_identical": 10,
+      "optional_state_bytes": 2072576
+    }
+  ],
+  "default_full_states": false,
+  "optional_states_tested": true,
+  "isolated_core_processes": true
+}

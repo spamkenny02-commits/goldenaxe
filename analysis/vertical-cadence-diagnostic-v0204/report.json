@@ -1,0 +1,103 @@
+{
+  "md_sha256": "566c4798fc9d4773de6d1cb03976111813709e4cdef9917bcf9698c4ba732c57",
+  "scope": "Natural south route, fixed central crop 192x128 pixels, nearest source-palette normalization; includes hero, so small differences are not background-only failures.",
+  "rows": [
+    {
+      "region": "auto",
+      "frame": 3054,
+      "v0203_different_pixels": 123,
+      "v0204_different_pixels": 123
+    },
+    {
+      "region": "auto",
+      "frame": 3055,
+      "v0203_different_pixels": 229,
+      "v0204_different_pixels": 229
+    },
+    {
+      "region": "auto",
+      "frame": 3056,
+      "v0203_different_pixels": 5942,
+      "v0204_different_pixels": 5942
+    },
+    {
+      "region": "auto",
+      "frame": 3057,
+      "v0203_different_pixels": 14797,
+      "v0204_different_pixels": 14797
+    },
+    {
+      "region": "auto",
+      "frame": 3060,
+      "v0203_different_pixels": 13549,
+      "v0204_different_pixels": 13549
+    },
+    {
+      "region": "auto",
+      "frame": 3070,
+      "v0203_different_pixels": 7038,
+      "v0204_different_pixels": 7038
+    },
+    {
+      "region": "auto",
+      "frame": 3071,
+      "v0203_different_pixels": 7038,
+      "v0204_different_pixels": 1995
+    },
+    {
+      "region": "auto",
+      "frame": 3072,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    },
+    {
+      "region": "pal",
+      "frame": 3054,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    },
+    {
+      "region": "pal",
+      "frame": 3055,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    },
+    {
+      "region": "pal",
+      "frame": 3056,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    },
+    {
+      "region": "pal",
+      "frame": 3057,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    },
+    {
+      "region": "pal",
+      "frame": 3060,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    },
+    {
+      "region": "pal",
+      "frame": 3070,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    },
+    {
+      "region": "pal",
+      "frame": 3071,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    },
+    {
+      "region": "pal",
+      "frame": 3072,
+      "v0203_different_pixels": 0,
+      "v0204_different_pixels": 0
+    }
+  ],
+  "conclusion": "Two contiguous row copies do not eliminate the NTSC publication delay. PAL central crops remain unchanged on these samples except the pre-existing hero pose difference. Diagnostic v0204 is not recommended; restore v0203 pending measured renderer/audio scheduling work."
+}

@@ -12,7 +12,7 @@ INPUT=c.CFUNCTYPE(c.c_int16,c.c_uint,c.c_uint,c.c_uint,c.c_uint)
 class Variable(c.Structure): _fields_=[('key',c.c_char_p),('value',c.c_char_p)]
 class Game(c.Structure): _fields_=[('path',c.c_char_p),('data',c.c_void_p),('size',c.c_size_t),('meta',c.c_char_p)]
 
-def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,ram_observer=None,psg_observer=None,audio_out=None,sram_in=None,sram_out=None,core_options=None,vram_observer=None,input_provider=None,stop_when=None):
+def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,ram_observer=None,psg_observer=None,audio_out=None,sram_in=None,sram_out=None,core_options=None,vram_observer=None,input_provider=None,stop_when=None,save_states=False):
     # Gameplay regressions explicitly skip the now-ported intro with normal input.
     # Set skip_intro=False to observe the complete boot story without inputs.
     presses=list(presses)
@@ -118,7 +118,9 @@ def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,
             if ptr and n: (out/f'ram_{frame:05d}.bin').write_bytes(c.string_at(ptr,n))
             state=c.create_string_buffer(dll.retro_serialize_size())
             if dll.retro_serialize(state,len(state)):
-                (out/f'state_{frame:05d}.bin').write_bytes(state.raw)
+                # Full GX states are about 1 MiB each. Regression tools use
+                # the extracted RAM/VDP files, so retain full states on demand.
+                if save_states:(out/f'state_{frame:05d}.bin').write_bytes(state.raw)
                 # Official GX state layout: version, RAM, IO, SAT, VRAM, CRAM, VSRAM, registers.
                 base=16+(0x2000 if Path(rom).suffix.lower()=='.sms' else 0x10000+0x2000+5)+16+0x400
                 (out/f'vram_{frame:05d}.bin').write_bytes(state.raw[base:base+0x10000])
@@ -146,7 +148,7 @@ def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,
         'core':str(Path(core).resolve()) if core else 'official downloaded GX core',
         'frames':frame if stop_when is not None else frames,'captures':captured,'presses':presses,
         'fps':av.timing.fps,'sample_rate':av.timing.sample_rate,'core_options':core_options or {},
-        'sram_input':str(sram_in) if sram_in else None,'sram_output':str(sram_out) if sram_out else None,
+        'sram_input':str(sram_in) if sram_in else None,'sram_output':str(sram_out) if sram_out else None,'save_states':save_states,
         'test_ram_writes':[{'frame':f,'address':a,'byte_count':len(d)} for f,a,d in ram_writes]},indent=2))
     print(json.dumps(captured))
 
@@ -155,4 +157,5 @@ if __name__=='__main__':
     p.add_argument('--out',required=True); p.add_argument('--capture',default='60,120,300,600')
     p.add_argument('--press',action='append',default=[],help='start:end:libretro-button-id (B=0,Start=3,A=8)')
     p.add_argument('--core',help='Optional instrumented core DLL')
-    a=p.parse_args(); run(a.rom,a.frames,a.out,{int(x) for x in a.capture.split(',')},[tuple(map(int,x.split(':'))) for x in a.press],a.core)
+    p.add_argument('--save-states',action='store_true',help='Also retain complete emulator save states (about 1 MiB per capture)')
+    a=p.parse_args(); run(a.rom,a.frames,a.out,{int(x) for x in a.capture.split(',')},[tuple(map(int,x.split(':'))) for x in a.press],a.core,save_states=a.save_states)

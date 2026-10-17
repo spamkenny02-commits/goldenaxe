@@ -23,6 +23,8 @@ sont vérifiés en PAL/NTSC, avec des contrôles verticaux complémentaires.
 Sur 3 004 images comparées à la v0202, seules les trois images du défaut
 reproduit changent ; les états et la cadence des transitions restent identiques.
 Voir les [preuves et limites de la v0203](analysis/scroll_publish_v0203.md).
+La v0204 est un diagnostic de scrolling vertical conservé pour recherche ;
+la ROM recommandée reste la v0203.
 
 La v0202 accélère la conversion des motifs de l’intro, du titre et de
 l’inventaire : environ **39 % de coût CPU en moins pour cette routine**,
