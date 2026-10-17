@@ -5,24 +5,37 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0198 — 1024 Kio.**
+**Version courante : v0202 — 1024 Kio.**
 
-[Télécharger la ROM v0198](versions/v0198-c7d01098/gaw-megadrive-v0198.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0202](versions/v0202-f55643bb/gaw-megadrive-v0202.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `c7d010987bee974547b25d5d5734c666c2f684603972b1e4159a8dd584087818`  
-Checksum Mega Drive : `4A0A`
+SHA-256 : `f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1`  
+Checksum Mega Drive : `225D`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
+
+La **v0202** accélère la conversion des motifs de l’intro, du titre et de
+l’inventaire : environ **39 % de coût CPU en moins pour cette routine**,
+avec les mêmes pixels. La ROM reste à 1 Mio. Les noirs de l’inventaire PAL
+et le premier palier du fondu du guerrier sont corrigés. Les six parcours
+naturels d’inventaire, les bruitages, les 65 lignes/scènes de l’intro et
+quatre variantes de cadence du titre passent en PAL/NTSC.
+Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
+Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
+Le portage complet et la cadence absolue depuis le boot restent à valider.
+
+Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
+qui reste distincte du chargement de la ROM jouable.
 
 La chaîne native de chargement traite maintenant des commandes RLE et lignes
 vidéo entières avant les interruptions. Les 16 points SMS restent conformes ;
 7 040 cas d’horloge passent aussi en 68000 PAL/NTSC. Le calcul seul demande
 23–24 images NTSC sans compteurs internes, pour un budget SMS de 22,71 :
 elle reste hors du jeu actif.
-La ROM jouable demeure v0198. Le calcul direct de l’attente vidéo est vérifié
+Ce jalon de recherche utilisait la v0198. Le calcul direct de l’attente vidéo est vérifié
 sur 3 933 000 positions/seuils ; les 32 693 cas IRQ passent en 68000 PAL/NTSC.
 Le décodeur regroupe plusieurs commandes entre deux interruptions :
 1 460 cas comparés et 16 cas longs supplémentaires en 68000 passent.
@@ -38,7 +51,7 @@ Les 24 contextes retrouvent 16 points SMS et passent en 68000 PAL/NTSC ;
 les données VRAM/palette sont aussi comparées directement. Les 2 048 cas
 de palette et 640 cas de regroupement sans IRQ passent dans les deux régions.
 Le raccordement au jeu, les autres branches et le budget temps réel restent
-à traiter. La ROM jouable reste exactement v0198.
+à traiter. La ROM utilisée pour ces preuves était exactement v0198.
 Voir les [preuves et limites](analysis/native_room_finish_milestone.md).
 
 La conversion complète des cartes et la préparation du HUD sont traduites
@@ -46,7 +59,7 @@ avec l’horloge native jusqu’à 1DE8. Les 24 contextes retrouvent onze points
 SMS, ainsi que les 1 536 octets de carte/HUD, et passent en 68000 PAL/NTSC.
 Les 9 021 cas de jauges, or et gemmes concordent aussi avec la SMS sur les
 octets et cycles, puis passent en 68000 dans les deux régions. L’attente, le transfert et la palette sont désormais couverts par le jalon
-suivant ; le raccordement global et le budget réel restent à traiter. La ROM jouable reste v0198.
+suivant ; le raccordement global et le budget réel restent à traiter. La ROM utilisée pour ces preuves était v0198.
 Voir les [preuves et limites](analysis/native_room_hud_milestone.md).
 
 La préparation native des cartes 190B est enchaînée au chargement graphique,
@@ -54,14 +67,14 @@ sur une seule horloge jusqu’à 24BC. Les 24 contextes retrouvent neuf points
 SMS et passent en 68000 PAL/NTSC. Des captures indépendantes confirment les
 cases et attributs modifiés, y compris les écritures de la coordonnée FF
 dans la file vidéo. La conversion complète et le HUD sont désormais couverts par le jalon
-suivant ; le raccordement global reste à faire. La ROM jouable reste v0198.
+suivant ; le raccordement global reste à faire. La ROM utilisée pour ces preuves était v0198.
 Voir les [preuves et limites](analysis/native_world_map_milestone.md).
 
 Le chargement graphique natif couvre désormais 16D0..24B9 avec une seule
 horloge et des interruptions audio dynamiques. Les 24 parcours retrouvent
 les six points de contrôle SMS et passent en 68000 PAL/NTSC. De nouvelles
 captures confirment aussi les données graphiques, le terrain et les octets
-copiés en SRAM. La ROM jouable reste v0198 : le raccordement global,
+copiés en SRAM. La ROM utilisée pour ces preuves était v0198 : le raccordement global,
 les autres classes et la suite du chargement restent à réaliser.
 Voir les [preuves et limites](analysis/native_graphics_load_milestone.md).
 
@@ -69,7 +82,7 @@ Le premier chargement graphique 16D0..1706 dispose maintenant d’une
 traduction native avec horloge et interruptions audio dynamiques. Les
 24 contextes SMS retrouvent phase, R, M1, RAM/audio et instants d’interruption ;
 ils passent aussi en 68000 PAL/NTSC. L’audit corrige cinq lectures M1 manquantes
-dans le compteur du décodeur précédent. La ROM jouable reste exactement v0198 ;
+dans le compteur du décodeur précédent. La ROM utilisée pour ces preuves était exactement v0198 ;
 la suite du chargement et le raccordement global restent à faire.
 Voir les [preuves et limites](analysis/native_graphics_prefix_milestone.md).
 

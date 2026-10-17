@@ -1,0 +1,510 @@
+{
+  "md_sha256": "f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1",
+  "baseline_commit": "458dc5a55a7762e27b8c48cd5f0eabf7089efb8a",
+  "source_files": {
+    "megadrive/src/main.c": "8c483eb9662fe59910a6f99dc51882927542b78f13c202c8330ac8925980e12d",
+    "megadrive/src/intro.inc": "a3b7ee8bfb69b0bde8bb9efd04ee49cc8181ee490bb3de2d0b9fb18a7190c543",
+    "megadrive/src/pattern_convert.c": "75d273d778824c27de90bed612c72bbacc22aa60b43eedd3a952f0e61b22d90b",
+    "megadrive/src/pattern_convert.h": "754973315bc2a8b501b46b2b51ebec5b6a1b07b6446d0e61a85480f8c8036ca8",
+    "megadrive/src/pattern_pair_lut.inc": "191ca28b3146651daf841eb1835cc062b8ba969c7054f42b3f620eaaf191fc71",
+    "build.ps1": "7da561117d63b37286e24733123a0bc8caff443c7b91f42bbbdd5e1cbfbbed7d",
+    "tools/generate_pattern_pairs.py": "49dce7a4550a0380bdedfedaeac877dfd20e61282b414a1f123cbb4ef3d2f9c1",
+    "tools/validate_pattern_pairs.py": "db62a7d0936d19e7fd3f4cef6a8a478091ead7d5190929c31c21a724541d120b",
+    "tools/validate_title_cadence.py": "6e533f2248431420be74bb9e3b03153da3496065ecb65053e3b06a79cfd35e4e",
+    "tools/audit_pattern_pairs.py": "fb2d0256db62a9211753e179f6fa4388616ba347f51eb2da3b0c19ca73638850"
+  },
+  "unchanged_native_files": [
+    {
+      "file": "megadrive/src/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "file": "megadrive/src/actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "file": "megadrive/src/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "file": "megadrive/src/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "file": "megadrive/src/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "file": "megadrive/src/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "file": "megadrive/src/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "file": "megadrive/src/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "file": "megadrive/src/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "file": "megadrive/src/door_transition.inc",
+      "sha256": "f6e815ff5b3cae5dd3f0487a893a721d4473ff87fd94fc1b886dbc40240a7de2"
+    },
+    {
+      "file": "megadrive/src/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "file": "megadrive/src/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "file": "megadrive/src/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "file": "megadrive/src/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "file": "megadrive/src/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "file": "megadrive/src/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "file": "megadrive/src/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "file": "megadrive/src/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "file": "megadrive/src/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "file": "megadrive/src/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "file": "megadrive/src/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "file": "megadrive/src/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "file": "megadrive/src/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "file": "megadrive/src/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "file": "megadrive/src/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "file": "megadrive/src/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "file": "megadrive/src/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "file": "megadrive/src/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "file": "megadrive/src/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "file": "megadrive/src/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "file": "megadrive/src/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "file": "megadrive/src/house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "file": "megadrive/src/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "file": "megadrive/src/intro_data.c",
+      "sha256": "d571e3fc3181ae64b30c43ce958160c49ad8963eca662e801ec6724ff3587074"
+    },
+    {
+      "file": "megadrive/src/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "file": "megadrive/src/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "file": "megadrive/src/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "file": "megadrive/src/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "file": "megadrive/src/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "file": "megadrive/src/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "file": "megadrive/src/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "file": "megadrive/src/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "file": "megadrive/src/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "file": "megadrive/src/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "file": "megadrive/src/paid_passage.inc",
+      "sha256": "6a05aa157645ca05748d764e3d55c269058c9b3ab905466edc5c775c17fbbad9"
+    },
+    {
+      "file": "megadrive/src/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "file": "megadrive/src/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "file": "megadrive/src/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "file": "megadrive/src/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "file": "megadrive/src/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "file": "megadrive/src/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "file": "megadrive/src/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "file": "megadrive/src/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "file": "megadrive/src/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "file": "megadrive/src/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "file": "megadrive/src/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "file": "megadrive/src/sound.inc",
+      "sha256": "7bcb9bc8a8dad8b5d2e8495e94cab2322182cd68f948709ab1a602a309d78f7d"
+    },
+    {
+      "file": "megadrive/src/source_audio_dispatch.c",
+      "sha256": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018"
+    },
+    {
+      "file": "megadrive/src/source_audio_dispatch.h",
+      "sha256": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960"
+    },
+    {
+      "file": "megadrive/src/source_audio_envelope.c",
+      "sha256": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c"
+    },
+    {
+      "file": "megadrive/src/source_audio_envelope.h",
+      "sha256": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c"
+    },
+    {
+      "file": "megadrive/src/source_audio_memory.c",
+      "sha256": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0"
+    },
+    {
+      "file": "megadrive/src/source_audio_memory.h",
+      "sha256": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9"
+    },
+    {
+      "file": "megadrive/src/source_audio_noise.c",
+      "sha256": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d"
+    },
+    {
+      "file": "megadrive/src/source_audio_noise.h",
+      "sha256": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1"
+    },
+    {
+      "file": "megadrive/src/source_audio_pitch.c",
+      "sha256": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+    },
+    {
+      "file": "megadrive/src/source_audio_pitch.h",
+      "sha256": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2"
+    },
+    {
+      "file": "megadrive/src/source_audio_prefix.c",
+      "sha256": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39"
+    },
+    {
+      "file": "megadrive/src/source_audio_prefix.h",
+      "sha256": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9"
+    },
+    {
+      "file": "megadrive/src/source_audio_priority.c",
+      "sha256": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396"
+    },
+    {
+      "file": "megadrive/src/source_audio_priority.h",
+      "sha256": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb"
+    },
+    {
+      "file": "megadrive/src/source_audio_reader.c",
+      "sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8"
+    },
+    {
+      "file": "megadrive/src/source_audio_reader.h",
+      "sha256": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933"
+    },
+    {
+      "file": "megadrive/src/source_audio_sequence.c",
+      "sha256": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42"
+    },
+    {
+      "file": "megadrive/src/source_audio_sequence.h",
+      "sha256": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c"
+    },
+    {
+      "file": "megadrive/src/source_audio_tone.c",
+      "sha256": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a"
+    },
+    {
+      "file": "megadrive/src/source_audio_tone.h",
+      "sha256": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4"
+    },
+    {
+      "file": "megadrive/src/source_clock.c",
+      "sha256": "4cf6afab6dda5d9dd3d2a46c144511e554b89b37e573b11ec8a23e3a25f2f5c4"
+    },
+    {
+      "file": "megadrive/src/source_clock.h",
+      "sha256": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8"
+    },
+    {
+      "file": "megadrive/src/source_graphics_load.c",
+      "sha256": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39"
+    },
+    {
+      "file": "megadrive/src/source_graphics_load.h",
+      "sha256": "2c5d6c6e1bae96996c3dbfa8afc0b11eb4d03203d2f370aa591fecfa780fa69b"
+    },
+    {
+      "file": "megadrive/src/source_irq.c",
+      "sha256": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534"
+    },
+    {
+      "file": "megadrive/src/source_irq.h",
+      "sha256": "c463a407ad732d2a78e16a6b50b18edb3c0fb941655c5a3aae3acc9df402d658"
+    },
+    {
+      "file": "megadrive/src/source_irq_context.c",
+      "sha256": "193a739e8d14fa83ad93e1e956fe76f44423e1a756e29a5e3c28ac3256b8079f"
+    },
+    {
+      "file": "megadrive/src/source_irq_context.h",
+      "sha256": "b2e4e2ded184ef602c40c192c7ba59d88075463262c06d65569042b26988aafa"
+    },
+    {
+      "file": "megadrive/src/source_pattern.c",
+      "sha256": "5be3906e941d0dc2c329b37ef8d0ab59f181a5bef2299b81caea015ea3ef5873"
+    },
+    {
+      "file": "megadrive/src/source_pattern.h",
+      "sha256": "1c94019d1f1b9154a5a069c8bed39bd7b9ff1873e9684bcb2cd2aa3f0ac4a410"
+    },
+    {
+      "file": "megadrive/src/source_pattern_clock.c",
+      "sha256": "211af2b1a181078289302a016074d60e9ad2baf5a69fc8dfdaa6e33a52542029"
+    },
+    {
+      "file": "megadrive/src/source_pattern_clock.h",
+      "sha256": "f8dc94c6cdc2ca7435d4389956014e7a4fc4b6ab478172cc7846d57a4ca49879"
+    },
+    {
+      "file": "megadrive/src/source_pattern_plan_generated.h",
+      "sha256": "2693a4a38feacdbcc46cd0b8a46b5efdb17007c4d5500b722ec566ccf3d91f2d"
+    },
+    {
+      "file": "megadrive/src/source_ram_planes.c",
+      "sha256": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc"
+    },
+    {
+      "file": "megadrive/src/source_ram_planes.h",
+      "sha256": "ad2f3a5911db9eb8ee263cc689b79805e1fbab7b5bdcf7ff887e414eb25856bc"
+    },
+    {
+      "file": "megadrive/src/source_rng.c",
+      "sha256": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f"
+    },
+    {
+      "file": "megadrive/src/source_rng.h",
+      "sha256": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f"
+    },
+    {
+      "file": "megadrive/src/source_room_finish.c",
+      "sha256": "fdc31ff91f4e161b7bc486d8fccf5a9c1627affebb8c53c279448083e843b2ab"
+    },
+    {
+      "file": "megadrive/src/source_room_finish.h",
+      "sha256": "01bf2987ba187cb1de43a54df1f73f6d0e51f3c4818b1572ca507ffdafb80ee2"
+    },
+    {
+      "file": "megadrive/src/source_room_hud.c",
+      "sha256": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13"
+    },
+    {
+      "file": "megadrive/src/source_room_hud.h",
+      "sha256": "14ee23b14dfb24d3daccc829a2a4f25e2002bd0b950d66cd2273ae3eabea9dae"
+    },
+    {
+      "file": "megadrive/src/source_wait.c",
+      "sha256": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6"
+    },
+    {
+      "file": "megadrive/src/source_wait.h",
+      "sha256": "5b19b3fab702b1401beca02842f9421cc5502cba3876251fb5827debff159dc5"
+    },
+    {
+      "file": "megadrive/src/source_wait_restore.c",
+      "sha256": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28"
+    },
+    {
+      "file": "megadrive/src/source_wait_restore.h",
+      "sha256": "553e0b70c01429b5a645a806ac2a97e8d9ca518a654fd1775370b59593a2acc3"
+    },
+    {
+      "file": "megadrive/src/source_world_map.c",
+      "sha256": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489"
+    },
+    {
+      "file": "megadrive/src/source_world_map.h",
+      "sha256": "50ddb3249e80e1332aa6bc1c1a1bd62ef3cd93e2b398b063a3294865ae5c7c8c"
+    },
+    {
+      "file": "megadrive/src/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "file": "megadrive/src/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "file": "megadrive/src/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "file": "megadrive/src/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    }
+  ],
+  "reports": [
+    {
+      "file": "validation/pattern_pairs_report.json",
+      "sha256": "b8bae1a01e150a7c3ca9c8788e0b810d37fe1dd569f3b0859948e27127e9baf9"
+    },
+    {
+      "file": "validation/menu_transition_report.json",
+      "sha256": "f2d1f8fc00a00a327392d6f8b7d58c182f72a9c996b4f6d8cad03fee6b0eb5f1"
+    },
+    {
+      "file": "validation/inventory_restore_report.json",
+      "sha256": "1c8943832fe522564b2f95c1a19e1f4585ff3d81c51975cd37c3226b874b3dc8"
+    },
+    {
+      "file": "validation/natural_start_menu_sfx_report.json",
+      "sha256": "9a57365c7a20b8f12eca85b5eba1ab9e23787d988ae4ce9091487d101c8f943e"
+    },
+    {
+      "file": "validation/intro_report.json",
+      "sha256": "47984018dd361b0f607f3a2cd4533a13a895c210e5b671d2363ee43838573c6a"
+    },
+    {
+      "file": "validation/intro-pal_report.json",
+      "sha256": "6387dcd13126fbd1a2a6b89cbaece0c5b7336d5c4c07a95bb2c4ff359a6e396d"
+    },
+    {
+      "file": "validation/title_cadence_report.json",
+      "sha256": "b838341a712f2f251a1389b91e142119d25454125ba6f6ad404c5af326e041d4"
+    },
+    {
+      "file": "validation/title_cadence-pal_report.json",
+      "sha256": "6407a8048bcf13334d6dd9d412d60661d1e3e59b24dff96f035a12f19e9f9026"
+    },
+    {
+      "file": "validation/title_cadence-natural_report.json",
+      "sha256": "24a1dc2e71d1a6cd1834a60a2e5d603a0caa3e1311675482818fce06d7c7ad01"
+    },
+    {
+      "file": "validation/title_cadence-pal-natural_report.json",
+      "sha256": "5d12b2c3852f6c15b6258d42fb9032204d3180828b9d2d09a8962281dcbe1878"
+    },
+    {
+      "file": "validation/standard_door_transitions_report.json",
+      "sha256": "dd731f4c6b3808fc4c2fbc3c7a96e9b76a523de111ae2aeaedbc640179ce69f4"
+    }
+  ],
+  "fast_conversion_scope": [
+    "intro",
+    "title",
+    "inventory"
+  ],
+  "unpaced_loaders_keep_old_converter": true,
+  "pal_menu_publication_corrected": true,
+  "title_palette_vblank_publication": true,
+  "full_game_ported": false,
+  "global_source_clock_wired": false,
+  "limits": [
+    "Targeted pixel,cadence and route checks only. Absolute boot phase,all intro sprite phases,all inventory ownerships/dungeon menus,full door loading timing and complete natural progression remain unverified.",
+    "CPU conversion benchmark is not a gameplay FPS improvement claim."
+  ]
+}

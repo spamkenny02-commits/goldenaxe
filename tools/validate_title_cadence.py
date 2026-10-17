@@ -59,7 +59,7 @@ def main():
  for tag,t in traces.items():
   assert [t['maps'][i+1][0]-t['maps'][i][0] for i in range(32)]==[6]*32
   assert [t['maps'][i+1][0]-t['maps'][i][0] for i in range(34,41)]==[1]*7
-  assert [t['colors'][i+1][0]-t['colors'][i][0] for i in list(range(8))+list(range(9,17))]==[2]*8+[6]*8
+  assert [t['colors'][i+1][0]-t['colors'][i][0] for i in list(range(8))+list(range(9,17))]==[2]*8+[6]*8,(tag,[(f,values.hex()) for f,values in t['colors']])
  # Re-run representative real video frames: all cape poses, nine warrior fade
  # steps, and eight logo rows. One following video frame exposes completed VBlank writes.
  picks=list(range(3))+list(range(34,42))

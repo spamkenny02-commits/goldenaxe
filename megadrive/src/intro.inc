@@ -72,7 +72,7 @@ static void intro_wait(u16 frames)
 
 static void intro_upload_patterns(void)
 {
-    convert_patterns_range(0,288);VDP_loadTileData(md_patterns,16,288,CPU);
+    convert_patterns_range_fast(0,288);VDP_loadTileData(md_patterns,16,288,CPU);
 }
 
 static void intro_reveal(void)
@@ -227,7 +227,7 @@ static void intro_sequence(void)
     for(n=0x3800;n<0x3e00;n+=2) { sms_vram[n]=0xfa;sms_vram[n+1]=1; }
     for(n=0;n<16;n++) { sms_palette[n]=0;sms_palette[16+n]=menu_palette[n]; }
     sms_palette[22]=0x2a;sms_palette[23]=0;sms_palette[31]=2;
-    convert_patterns(512);VDP_loadTileData(md_patterns,16,512,CPU);
+    convert_patterns_range_fast(0,512);VDP_loadTileData(md_patterns,16,512,CPU);
     set_palette(sms_palette);draw_map();VDP_setEnable(TRUE);
     sound_music(0x85);
     intro_load_scene(1);

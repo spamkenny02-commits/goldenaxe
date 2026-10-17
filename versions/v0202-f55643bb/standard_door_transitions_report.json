@@ -1,0 +1,317 @@
+{
+  "md_sha256": "f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "cases": [
+    {
+      "name": "house",
+      "region": "auto",
+      "music_after_first_fade": {
+        "sms": [
+          176,
+          135,
+          176,
+          130
+        ],
+        "md": [
+          176,
+          135,
+          176,
+          130
+        ]
+      },
+      "transitions": [
+        {
+          "native_phase_frames": [
+            3120,
+            3138,
+            3158,
+            3176,
+            3208
+          ],
+          "native_fade_out_frames": 18,
+          "native_hidden_load_frames": 20,
+          "native_fade_in_frames": 18,
+          "native_contour_frames": 32,
+          "source_phase_observer_frames": [
+            3120,
+            3138,
+            3158,
+            3176,
+            3208
+          ],
+          "source_clock_durations": [
+            18,
+            18,
+            32
+          ],
+          "nine_color_steps_each_direction": true,
+          "sixteen_contours": true
+        },
+        {
+          "native_phase_frames": [
+            3404,
+            3422,
+            3443,
+            3461,
+            3493
+          ],
+          "native_fade_out_frames": 18,
+          "native_hidden_load_frames": 21,
+          "native_fade_in_frames": 18,
+          "native_contour_frames": 32,
+          "source_phase_observer_frames": [
+            3404,
+            3422,
+            3448,
+            3466,
+            3498
+          ],
+          "source_clock_durations": [
+            18,
+            18,
+            32
+          ],
+          "nine_color_steps_each_direction": true,
+          "sixteen_contours": true
+        }
+      ],
+      "profiles_sha256": "36ae23ea8afbafea5bf2bdf5216661dd11ece75c57fa50f0d35596078554b8f4",
+      "events_sha256": "e8e469bdabd7eb8d2d80bd31aa0d8f020db13b8c04516f921695738031eebd8e"
+    },
+    {
+      "name": "dungeon",
+      "region": "auto",
+      "music_after_first_fade": {
+        "sms": [
+          176,
+          131,
+          176,
+          130
+        ],
+        "md": [
+          176,
+          131,
+          176,
+          130
+        ]
+      },
+      "transitions": [
+        {
+          "native_phase_frames": [
+            3120,
+            3138,
+            3158,
+            3176,
+            3208
+          ],
+          "native_fade_out_frames": 18,
+          "native_hidden_load_frames": 20,
+          "native_fade_in_frames": 18,
+          "native_contour_frames": 32,
+          "source_phase_observer_frames": [
+            3120,
+            3138,
+            3158,
+            3176,
+            3208
+          ],
+          "source_clock_durations": [
+            18,
+            18,
+            32
+          ],
+          "nine_color_steps_each_direction": true,
+          "sixteen_contours": true
+        },
+        {
+          "native_phase_frames": [
+            3403,
+            3421,
+            3442,
+            3460,
+            3492
+          ],
+          "native_fade_out_frames": 18,
+          "native_hidden_load_frames": 21,
+          "native_fade_in_frames": 18,
+          "native_contour_frames": 32,
+          "source_phase_observer_frames": [
+            3403,
+            3421,
+            3450,
+            3468,
+            3500
+          ],
+          "source_clock_durations": [
+            18,
+            18,
+            32
+          ],
+          "nine_color_steps_each_direction": true,
+          "sixteen_contours": true
+        }
+      ],
+      "profiles_sha256": "89a67669f8e6f95702d25dadbbaccb3aae5dccdf086bdc1ac235632d94a1b7f4",
+      "events_sha256": "85a8a18f56b5762aca0299d1085c20e7990d2be4cdb49bd586a70601f196c8db"
+    },
+    {
+      "name": "house",
+      "region": "pal",
+      "music_after_first_fade": {
+        "sms": [
+          176,
+          135,
+          176,
+          130
+        ],
+        "md": [
+          176,
+          135,
+          176,
+          130
+        ]
+      },
+      "transitions": [
+        {
+          "native_phase_frames": [
+            3120,
+            3138,
+            3155,
+            3173,
+            3205
+          ],
+          "native_fade_out_frames": 18,
+          "native_hidden_load_frames": 17,
+          "native_fade_in_frames": 18,
+          "native_contour_frames": 32,
+          "source_phase_observer_frames": [
+            3120,
+            3138,
+            3155,
+            3173,
+            3205
+          ],
+          "source_clock_durations": [
+            18,
+            18,
+            32
+          ],
+          "nine_color_steps_each_direction": true,
+          "sixteen_contours": true
+        },
+        {
+          "native_phase_frames": [
+            3404,
+            3422,
+            3440,
+            3458,
+            3490
+          ],
+          "native_fade_out_frames": 18,
+          "native_hidden_load_frames": 18,
+          "native_fade_in_frames": 18,
+          "native_contour_frames": 32,
+          "source_phase_observer_frames": [
+            3404,
+            3422,
+            3444,
+            3462,
+            3494
+          ],
+          "source_clock_durations": [
+            18,
+            18,
+            32
+          ],
+          "nine_color_steps_each_direction": true,
+          "sixteen_contours": true
+        }
+      ],
+      "profiles_sha256": "e33a4dd317d3c91b5ff0cf0ab0aba7c9f892a5175c6d1621b1f12215eef949c8",
+      "events_sha256": "c408161cb08af03cee1b3c713ab8349b93a3be1aa10c67b771c32ae48fd7fe66"
+    },
+    {
+      "name": "dungeon",
+      "region": "pal",
+      "music_after_first_fade": {
+        "sms": [
+          176,
+          131,
+          176,
+          130
+        ],
+        "md": [
+          176,
+          131,
+          176,
+          130
+        ]
+      },
+      "transitions": [
+        {
+          "native_phase_frames": [
+            3120,
+            3138,
+            3155,
+            3173,
+            3205
+          ],
+          "native_fade_out_frames": 18,
+          "native_hidden_load_frames": 17,
+          "native_fade_in_frames": 18,
+          "native_contour_frames": 32,
+          "source_phase_observer_frames": [
+            3120,
+            3138,
+            3155,
+            3173,
+            3205
+          ],
+          "source_clock_durations": [
+            18,
+            18,
+            32
+          ],
+          "nine_color_steps_each_direction": true,
+          "sixteen_contours": true
+        },
+        {
+          "native_phase_frames": [
+            3403,
+            3421,
+            3439,
+            3457,
+            3489
+          ],
+          "native_fade_out_frames": 18,
+          "native_hidden_load_frames": 18,
+          "native_fade_in_frames": 18,
+          "native_contour_frames": 32,
+          "source_phase_observer_frames": [
+            3403,
+            3421,
+            3445,
+            3463,
+            3495
+          ],
+          "source_clock_durations": [
+            18,
+            18,
+            32
+          ],
+          "nine_color_steps_each_direction": true,
+          "sixteen_contours": true
+        }
+      ],
+      "profiles_sha256": "0c52c456325f0cad7071efe88f0f91ebab2961ee3f611593a146d0520bf18627",
+      "events_sha256": "75f28118c240d5eb51fecca91e97868a40ea9198c5ad711edb5ca5a5149b1465"
+    }
+  ],
+  "full_game_ported": false,
+  "absolute_transition_timing_exact": false,
+  "limits": [
+    "Actual standard house/dungeon doors and normal DOWN exit. Controlled exterior/hero fixture at3120;no interior/exit/audio request/state injection. Source ROM unpatched;read-only source cycle markers retained.",
+    "Diagnostic source/native music ordering and fade bytes,not waveform/full physical duration equality. Initial cleared outside actors and visited flag are explicit fixtures.",
+    "Four controlled door roundtrips only. Native fade-in sampled18 or19 frames;pending VBlank affects phase boundary. Full load duration,intermediate pixels,sprite palette and waveforms are not established by this test."
+  ]
+}

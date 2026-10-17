@@ -1,0 +1,33 @@
+{
+  "exhaustive_pairs": 65536,
+  "each_half_independently": true,
+  "host_pixel_parity": true,
+  "compiled": [
+    {
+      "region": "auto",
+      "frame": 1662,
+      "done": 1,
+      "failures": 0,
+      "old_frames": 276,
+      "new_frames": 169
+    },
+    {
+      "region": "pal",
+      "frame": 1391,
+      "done": 1,
+      "failures": 0,
+      "old_frames": 231,
+      "new_frames": 141
+    }
+  ],
+  "benchmark_repetitions": 32,
+  "benchmark_rows": 4096,
+  "module_sha256": "75d273d778824c27de90bed612c72bbacc22aa60b43eedd3a952f0e61b22d90b",
+  "lut_sha256": "191ca28b3146651daf841eb1835cc062b8ba969c7054f42b3f620eaaf191fc71",
+  "kernel_sha256": "29e1938aa66c12c1a20f33b0f835e7309d00c5c51f9e229de11c149c5844408a",
+  "md_sha256": "31fe30d67b4307a56ab75f6dfd65969d70e9e5efa51db9bbb8a65409208eed48",
+  "limits": [
+    "Pixel oracle expands individual bits; all16-bit pairs tested independently in low/high positions onhost and68000. Zero count and mixed full512-tile buffer verified.",
+    "CPU-only benchmark32 repetitions,display off; not an end-to-end loading time or gameplay FPS claim. Natural menu/door/background regressions are separate."
+  ]
+}

@@ -6459,5 +6459,107 @@
         "sha256": "9bf1ad346a246c5437eb06a3e33d20def5003cb684988c0ddf11c2264073e346"
       }
     ]
+  },
+  {
+    "version": 199,
+    "sha256": "31fe30d67b4307a56ab75f6dfd65969d70e9e5efa51db9bbb8a65409208eed48",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T16:17:33.132104+00:00",
+    "rom": "v0199-31fe30d6/gaw-megadrive-v0199.bin",
+    "notes": "Intermediaire: conversion globale rapide; delai PAL et chargements de portes non preserves. Remplacee par v0202.",
+    "validation": "superseded_diagnostic",
+    "reports": [
+      {
+        "file": "pattern_pairs_report.json",
+        "sha256": "d120f283421f3dfbed6a7ba69c3ea4e7576c3207cf95795682f5a09f99d31e66"
+      },
+      {
+        "file": "inventory_restore_report.json",
+        "sha256": "9c267a90ecece31157c94099b516716a9ccc99fb9ebef3b00793eaca585a404a"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "c1833de9cdab33081b0a962dfb96cbe70690fa9736735e5d85cb40a1ec98f5f9"
+      }
+    ]
+  },
+  {
+    "version": 200,
+    "sha256": "32506b0254c9fcb8ed65827ca62ce2ea4acfe24afe297531727bbc6a3e9339e4",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T16:21:06.435653+00:00",
+    "rom": "v0200-32506b02/gaw-megadrive-v0200.bin",
+    "notes": "Intermediaire: inventaire PAL corrige, mais conversion globale avance les chargements de portes. Remplacee par v0202.",
+    "validation": "superseded_diagnostic",
+    "reports": []
+  },
+  {
+    "version": 201,
+    "sha256": "e6af967f16b4637c4937fc9332c243c394a6b282c484d40ba87879970f655ee4",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T16:24:57.510079+00:00",
+    "rom": "v0201-e6af967f/gaw-megadrive-v0201.bin",
+    "notes": "Intermediaire: acceleration limitee; cadence titre PAL et derive intro NTSC corrigees ensuite en v0202.",
+    "validation": "superseded_diagnostic",
+    "reports": []
+  },
+  {
+    "version": 202,
+    "sha256": "f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T16:29:32.961083+00:00",
+    "rom": "v0202-f55643bb/gaw-megadrive-v0202.bin",
+    "notes": "Conversion intro/titre/inventaire ~39% moins couteuse en CPU; noirs inventaire PAL et premier palier guerrier corriges. Cadences titre,65 lignes intro,menus et bruitages verifies PAL/NTSC.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "pattern_pairs_patch_audit.json",
+        "sha256": "1e53bfb5fa5eefaf00345d849b76c26fedfee6e89c91014026bf1262f34804ee"
+      },
+      {
+        "file": "pattern_pairs_report.json",
+        "sha256": "b8bae1a01e150a7c3ca9c8788e0b810d37fe1dd569f3b0859948e27127e9baf9"
+      },
+      {
+        "file": "menu_transition_report.json",
+        "sha256": "f2d1f8fc00a00a327392d6f8b7d58c182f72a9c996b4f6d8cad03fee6b0eb5f1"
+      },
+      {
+        "file": "inventory_restore_report.json",
+        "sha256": "1c8943832fe522564b2f95c1a19e1f4585ff3d81c51975cd37c3226b874b3dc8"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "9a57365c7a20b8f12eca85b5eba1ab9e23787d988ae4ce9091487d101c8f943e"
+      },
+      {
+        "file": "title_cadence_report.json",
+        "sha256": "b838341a712f2f251a1389b91e142119d25454125ba6f6ad404c5af326e041d4"
+      },
+      {
+        "file": "title_cadence-pal_report.json",
+        "sha256": "6407a8048bcf13334d6dd9d412d60661d1e3e59b24dff96f035a12f19e9f9026"
+      },
+      {
+        "file": "title_cadence-natural_report.json",
+        "sha256": "24a1dc2e71d1a6cd1834a60a2e5d603a0caa3e1311675482818fce06d7c7ad01"
+      },
+      {
+        "file": "title_cadence-pal-natural_report.json",
+        "sha256": "5d12b2c3852f6c15b6258d42fb9032204d3180828b9d2d09a8962281dcbe1878"
+      },
+      {
+        "file": "intro_report.json",
+        "sha256": "47984018dd361b0f607f3a2cd4533a13a895c210e5b671d2363ee43838573c6a"
+      },
+      {
+        "file": "intro-pal_report.json",
+        "sha256": "6387dcd13126fbd1a2a6b89cbaece0c5b7336d5c4c07a95bb2c4ff359a6e396d"
+      },
+      {
+        "file": "standard_door_transitions_report.json",
+        "sha256": "dd731f4c6b3808fc4c2fbc3c7a96e9b76a523de111ae2aeaedbc640179ce69f4"
+      }
+    ]
   }
 ]

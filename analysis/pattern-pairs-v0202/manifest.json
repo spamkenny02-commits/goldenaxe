@@ -1,0 +1,242 @@
+{
+  "md_sha256": "f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1",
+  "baseline_commit": "458dc5a55a7762e27b8c48cd5f0eabf7089efb8a",
+  "files": [
+    {
+      "file": "analysis/pattern_pairs_assets_report.json",
+      "bytes": 161,
+      "sha256": "6be00970dcc7fe49c07a94e7bdfb2727e365ee4bd46c536864b85caabdbaaa3b"
+    },
+    {
+      "file": "analysis/pattern_pairs_milestone.md",
+      "bytes": 3838,
+      "sha256": "fa33a6b2e81972424278d06200812af196fe776a9f7e7e884ad47443e3a7ee3c"
+    },
+    {
+      "file": "analysis/standard_door_music_report.json",
+      "bytes": 6228,
+      "sha256": "7953752e82e0142f299d78f5c9027ed3b4844a3eda8b3278e38e0b4bda321082"
+    },
+    {
+      "file": "build.ps1",
+      "bytes": 1774,
+      "sha256": "7da561117d63b37286e24733123a0bc8caff443c7b91f42bbbdd5e1cbfbbed7d"
+    },
+    {
+      "file": "megadrive/out/release/symbol.txt",
+      "bytes": 38213,
+      "sha256": "78ddae854e1b95cb5a006bbcee52b99059f0c1d3ba4b8201a2e5f771dc4c62eb"
+    },
+    {
+      "file": "megadrive/src/intro.inc",
+      "bytes": 9704,
+      "sha256": "a3b7ee8bfb69b0bde8bb9efd04ee49cc8181ee490bb3de2d0b9fb18a7190c543"
+    },
+    {
+      "file": "megadrive/src/main.c",
+      "bytes": 133726,
+      "sha256": "8c483eb9662fe59910a6f99dc51882927542b78f13c202c8330ac8925980e12d"
+    },
+    {
+      "file": "megadrive/src/pattern_convert.c",
+      "bytes": 705,
+      "sha256": "75d273d778824c27de90bed612c72bbacc22aa60b43eedd3a952f0e61b22d90b"
+    },
+    {
+      "file": "megadrive/src/pattern_convert.h",
+      "bytes": 304,
+      "sha256": "754973315bc2a8b501b46b2b51ebec5b6a1b07b6446d0e61a85480f8c8036ca8"
+    },
+    {
+      "file": "megadrive/src/pattern_pair_lut.inc",
+      "bytes": 868484,
+      "sha256": "191ca28b3146651daf841eb1835cc062b8ba969c7054f42b3f620eaaf191fc71"
+    },
+    {
+      "file": "tools/archive_pattern_pairs.py",
+      "bytes": 2575,
+      "sha256": "ed3bacc5514a6ebbd50139fde327565bfc5b84e955a64170af48f79cf511394a"
+    },
+    {
+      "file": "tools/audit_pattern_pairs.py",
+      "bytes": 4371,
+      "sha256": "fb2d0256db62a9211753e179f6fa4388616ba347f51eb2da3b0c19ca73638850"
+    },
+    {
+      "file": "tools/generate_pattern_pairs.py",
+      "bytes": 1013,
+      "sha256": "49dce7a4550a0380bdedfedaeac877dfd20e61282b414a1f123cbb4ef3d2f9c1"
+    },
+    {
+      "file": "tools/profile_menu_transitions.py",
+      "bytes": 3087,
+      "sha256": "79d436c2e5af0c36046630a699cfca4e9bf9c184bfe6d95b8ab86807fd7c9aa1"
+    },
+    {
+      "file": "tools/profile_standard_door_music.py",
+      "bytes": 5866,
+      "sha256": "19a2b7f7e9ad4f957ab450de44e43ee3110382ffd7dd6ae44a5612752b7de60d"
+    },
+    {
+      "file": "tools/validate_intro.py",
+      "bytes": 3807,
+      "sha256": "a3608aabc44d6bc7d3adc740e66bc48c8e59694a6ecb3985ec54331897b83719"
+    },
+    {
+      "file": "tools/validate_inventory_restore.py",
+      "bytes": 4556,
+      "sha256": "a69cc166e7539ae1e3c5b7bc15bccb16f9e74d30e5f2291c8ac77b1611f64e8f"
+    },
+    {
+      "file": "tools/validate_menu_transitions.py",
+      "bytes": 2874,
+      "sha256": "58f1ea26b7465f5228006b9952b224582b5ce3d3a97acaaab08444e11f3bd95a"
+    },
+    {
+      "file": "tools/validate_pattern_pairs.py",
+      "bytes": 5694,
+      "sha256": "db62a7d0936d19e7fd3f4cef6a8a478091ead7d5190929c31c21a724541d120b"
+    },
+    {
+      "file": "tools/validate_standard_door_transitions.py",
+      "bytes": 3303,
+      "sha256": "d6e4f53fa7c7ccdfa39d663cd85e50ca3180d1195d81532f8f45c884f6cfb89c"
+    },
+    {
+      "file": "tools/validate_start_menu_sfx.py",
+      "bytes": 4060,
+      "sha256": "4c1981762b2f9bd4b51fe5b8cf9fe8c385b7e6bc563d537000b8655713e58dc1"
+    },
+    {
+      "file": "tools/validate_title_cadence.py",
+      "bytes": 5622,
+      "sha256": "6e533f2248431420be74bb9e3b03153da3496065ecb65053e3b06a79cfd35e4e"
+    },
+    {
+      "file": "validation/build-pattern-pairs-paced.log",
+      "bytes": 7473,
+      "sha256": "7012006315120ae625e260773ab88fa82ed0ee7e2fd0bd0e562c492fc13f30f0"
+    },
+    {
+      "file": "validation/build-pattern-pairs-pal.log",
+      "bytes": 7473,
+      "sha256": "42cf1419729b19b014a0446ad2ac9b7c59d9303b047e2baf614a98466f8afee1"
+    },
+    {
+      "file": "validation/build-pattern-pairs-title.log",
+      "bytes": 7473,
+      "sha256": "ab3ea0e31f9ab1af77f4ec482c17e8c50ad6a93c08fdb4b35b6075a4ae2bbba7"
+    },
+    {
+      "file": "validation/build-pattern-pairs.log",
+      "bytes": 7473,
+      "sha256": "45ec793fbdcd9c0942a791b726dbd7ce93620477fc5473b87c1603d4aa275cc9"
+    },
+    {
+      "file": "validation/intro-pal_report.json",
+      "bytes": 20162,
+      "sha256": "6387dcd13126fbd1a2a6b89cbaece0c5b7336d5c4c07a95bb2c4ff359a6e396d"
+    },
+    {
+      "file": "validation/intro_report.json",
+      "bytes": 20094,
+      "sha256": "47984018dd361b0f607f3a2cd4533a13a895c210e5b671d2363ee43838573c6a"
+    },
+    {
+      "file": "validation/inventory_restore_report.json",
+      "bytes": 5078,
+      "sha256": "1c8943832fe522564b2f95c1a19e1f4585ff3d81c51975cd37c3226b874b3dc8"
+    },
+    {
+      "file": "validation/menu_transition_profile.json",
+      "bytes": 604390,
+      "sha256": "6a25a1aaf79ed5b6b771947aafc1335c935ec9e0e87e4df89e8931480b098024"
+    },
+    {
+      "file": "validation/menu_transition_report.json",
+      "bytes": 74548,
+      "sha256": "f2d1f8fc00a00a327392d6f8b7d58c182f72a9c996b4f6d8cad03fee6b0eb5f1"
+    },
+    {
+      "file": "validation/natural_start_menu_sfx_report.json",
+      "bytes": 3913,
+      "sha256": "9a57365c7a20b8f12eca85b5eba1ab9e23787d988ae4ce9091487d101c8f943e"
+    },
+    {
+      "file": "validation/pattern-pairs/build.log",
+      "bytes": 5246,
+      "sha256": "aab7e1a5edeced30a93a5288f972c8ab786d691cbe055751a003420124742bc8"
+    },
+    {
+      "file": "validation/pattern-pairs/out/release/rom.bin",
+      "bytes": 393216,
+      "sha256": "29e1938aa66c12c1a20f33b0f835e7309d00c5c51f9e229de11c149c5844408a"
+    },
+    {
+      "file": "validation/pattern-pairs/out/release/symbol.txt",
+      "bytes": 14779,
+      "sha256": "ebef1bb389f0fb074af00c69e8b29c718a039a9814a0a0ffce820481f4387158"
+    },
+    {
+      "file": "validation/pattern-pairs/src/main.c",
+      "bytes": 1031,
+      "sha256": "ef1d70d4dfa8f8b5d81f869c6a6b453c9126871c625663b06d875e6d16e99db8"
+    },
+    {
+      "file": "validation/pattern-pairs/src/wrapper.c",
+      "bytes": 4248,
+      "sha256": "b71271db9239aa138f0ab12d3796066482146d680880264aa440cd222aaa75ad"
+    },
+    {
+      "file": "validation/pattern_pairs_patch_audit.json",
+      "bytes": 19737,
+      "sha256": "1e53bfb5fa5eefaf00345d849b76c26fedfee6e89c91014026bf1262f34804ee"
+    },
+    {
+      "file": "validation/pattern_pairs_report.json",
+      "bytes": 1188,
+      "sha256": "b8bae1a01e150a7c3ca9c8788e0b810d37fe1dd569f3b0859948e27127e9baf9"
+    },
+    {
+      "file": "validation/standard_door_transitions_report.json",
+      "bytes": 8366,
+      "sha256": "dd731f4c6b3808fc4c2fbc3c7a96e9b76a523de111ae2aeaedbc640179ce69f4"
+    },
+    {
+      "file": "validation/title_cadence-natural_report.json",
+      "bytes": 4664,
+      "sha256": "24a1dc2e71d1a6cd1834a60a2e5d603a0caa3e1311675482818fce06d7c7ad01"
+    },
+    {
+      "file": "validation/title_cadence-pal-natural_report.json",
+      "bytes": 4783,
+      "sha256": "5d12b2c3852f6c15b6258d42fb9032204d3180828b9d2d09a8962281dcbe1878"
+    },
+    {
+      "file": "validation/title_cadence-pal_report.json",
+      "bytes": 4564,
+      "sha256": "6407a8048bcf13334d6dd9d412d60661d1e3e59b24dff96f035a12f19e9f9026"
+    },
+    {
+      "file": "validation/title_cadence_report.json",
+      "bytes": 4565,
+      "sha256": "b838341a712f2f251a1389b91e142119d25454125ba6f6ad404c5af326e041d4"
+    },
+    {
+      "file": "baseline/megadrive/src/main.c",
+      "bytes": 132862,
+      "sha256": "1881433081a1ec4ce86dc8ed3c337d7e0845c10f2e2b06c1b435234adca321da"
+    },
+    {
+      "file": "baseline/megadrive/src/intro.inc",
+      "bytes": 9686,
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    }
+  ],
+  "external_immutable_references": [
+    {
+      "file": "versions/v0202-f55643bb/gaw-megadrive-v0202.bin",
+      "sha256": "f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1"
+    }
+  ]
+}

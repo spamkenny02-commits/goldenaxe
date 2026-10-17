@@ -1,5 +1,7 @@
 param([string]$Sgdk = "$PSScriptRoot\..\..\work\sgdk", [string]$Java = 'D:/jdk-25.0.1/bin/java.exe')
 $ErrorActionPreference = 'Stop'
+& python "$PSScriptRoot/tools/generate_pattern_pairs.py"
+if ($LASTEXITCODE -ne 0) { throw 'Pattern pair table generation failed' }
 & python "$PSScriptRoot/tools/generate_pattern_plan.py"
 if ($LASTEXITCODE -ne 0) { throw 'Pattern asset plan generation failed' }
 $sdkPath = (Resolve-Path -LiteralPath $Sgdk).Path.Replace('\','/')

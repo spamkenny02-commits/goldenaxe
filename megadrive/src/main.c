@@ -1,5 +1,6 @@
 #include <genesis.h>
 #include "source_pattern.h"
+#include "pattern_convert.h"
 #include "actors.h"
 #include "key_redraw_cost.inc"
 #include "room_clear.inc"
@@ -43,7 +44,7 @@ extern const u8 world_dungeon_palettes[],world_dungeon_dark_rooms[],world_dungeo
 extern const u8 world_room_metadata[],world_dungeon_metadata[];
 #define TITLE_TILE_COUNT 449
 
-static u8 sms_vram[0x4000];
+static u8 sms_vram[0x4000] __attribute__((aligned(2)));
 static u8 scratch[0x1000];
 static u8 title_map[0x600], animation_map[0x600];
 static u32 md_patterns[512*8];
@@ -175,7 +176,6 @@ static const u8 *decode_map(const u8 *src, u8 *dst)
     return src;
 }
 
-/* Lookup removes four bit-spreading function calls per SMS pattern row. */
 static const u32 plane_spread[256]={
     0x00000000,0x00000001,0x00000010,0x00000011,0x00000100,0x00000101,0x00000110,0x00000111,
     0x00001000,0x00001001,0x00001010,0x00001011,0x00001100,0x00001101,0x00001110,0x00001111,
@@ -222,6 +222,13 @@ static void convert_patterns_range(u16 first,u16 count)
                 (plane_spread[planes[1]]<<1)|(plane_spread[planes[2]]<<2)|
                 (plane_spread[planes[3]]<<3);
         }
+}
+/* Use the faster conversion where source-work pacing already owns the
+ * presentation deadline. Unpaced loaders retain their existing CPU timing
+ * until their native source-clock integration is complete. */
+static void convert_patterns_range_fast(u16 first,u16 count)
+{
+    pattern_convert(sms_vram+first*32,md_patterns+first*8,count*8);
 }
 static void convert_patterns(u16 count) { convert_patterns_range(0,count); }
 
@@ -300,7 +307,7 @@ static void fade_before_title(void)
  * the later warrior ramp is red/green/blue, six IRQs per step. */
 static void fade_title_palette(bool initial)
 {
-    u16 pass,step,n,target_palette[32];
+    u16 pass,step,n,target_palette[32],next_palette[32];
     for(n=0;n<32;n++)
         target_palette[n]=initial?((n==0 || (n>=12 && n<=14) || n==16 || n==17)?title_bank7[n&15]:0):(n<16?title_bank7[n]:sms_palette[n]);
     for(pass=0;pass<3;pass++)
@@ -309,17 +316,24 @@ static void fade_title_palette(bool initial)
         step=initial?(16>>(pass*2)):(1<<(pass*2));
         do {
             changed=FALSE;
+            memcpy(next_palette,sms_palette,sizeof(next_palette));
             for(n=0;n<32;n++)
             {
                 u16 current=sms_palette[n]&(step*3);
                 u16 target=target_palette[n]&(step*3);
                 if(current!=target)
                 {
-                    sms_palette[n]+=current<target?step:-step;
+                    next_palette[n]+=current<target?step:-step;
                     changed=TRUE;
                 }
             }
-            if(changed) { set_palette(sms_palette); wait_frames(initial?2:6); }
+            if(changed)
+            {
+                /* Match IRQ publication, including the first warrior step.
+                 * Compute privately so RAM and CRAM become visible together. */
+                wait_frame();memcpy(sms_palette,next_palette,sizeof(next_palette));
+                set_palette(sms_palette);wait_frames(initial?1:5);
+            }
         } while(changed && !title_requested);
         if(title_requested) return;
     }
@@ -365,7 +379,7 @@ static void title_sequence(void)
     /* 1499..14A2: select palette 1 for ten entries at the bottom of the map. */
     for(n=0;n<10;n++) title_map[0x5ab+2*n]|=8;
     memcpy(sms_vram+0x3900,title_map,sizeof(title_map));
-    convert_patterns(TITLE_TILE_COUNT);
+    convert_patterns_range_fast(0,TITLE_TILE_COUNT);
     VDP_loadTileData(md_patterns,16,TITLE_TILE_COUNT,CPU);
     memset(sms_palette,0,sizeof(sms_palette));
     set_palette(sms_palette);
@@ -2318,7 +2332,7 @@ static void show_inventory(void)
     sms_vram[0x3b6e]=0xdb;sms_vram[0x3b6f]=0x18;
     for(n=0;n<3;n++) { sms_vram[0x3b70+n*2]=0xf0+(n==0?hero_keys/100:n==1?(hero_keys/10)%10:hero_keys%10);sms_vram[0x3b71+n*2]=0x18; }
     inventory_slot=hero_selected_item;map_origin=0x3800;map_queue=FALSE;
-    convert_patterns_range(0,124);convert_patterns_range(176,32);convert_patterns_range(496,5);
+    convert_patterns_range_fast(0,124);convert_patterns_range_fast(176,32);convert_patterns_range_fast(496,5);
     VDP_loadTileData(md_patterns,16,124,CPU);VDP_loadTileData(md_patterns+176*8,192,32,CPU);VDP_loadTileData(md_patterns+496*8,512,5,CPU);
     if(world_palette_pending) { set_world_palette();world_palette_pending=FALSE; }
     VDP_fillTileMapRect(BG_B,TILE_ATTR_FULL(PAL3,0,0,0,1),0,2,32,24);
@@ -2326,7 +2340,9 @@ static void show_inventory(void)
      * with initial ownership; 20DA adds the first blank upload frame. Native
      * conversion/upload frames already spent count toward this budget. */
     frames=(537891UL+budget-1)/budget+2;
-    while(vtimer-menu_started<frames-(SYS_isPAL()?1:2)) wait_frame();
+    while(vtimer-menu_started<frames-2) wait_frame();
+    /* Publish the map two frames before the budget endpoint in both regions.
+     * PAL otherwise retains one extra black frame; final resume stays below. */
     draw_map();inventory_sprites();
     while(TRUE)
     {
@@ -2362,7 +2378,7 @@ static void show_inventory(void)
     decode_planes(world_graphics_class==2?world_dungeon_background_rle:
         world_graphics_class==1?world_house_background_rle:world_background_rle,sms_vram,4);
     inventory_hud_icon();hero_loaded_pose=65535;prepare_hero_patterns();
-    convert_patterns_range(0,193);VDP_loadTileData(md_patterns,16,193,CPU);
+    convert_patterns_range_fast(0,193);VDP_loadTileData(md_patterns,16,193,CPU);
     VDP_fillTileMapRect(BG_B,TILE_ATTR_FULL(PAL2,0,0,0,1),0,2,32,20);
     VDP_fillTileMapRect(BG_B,TILE_ATTR_FULL(PAL3,0,0,0,1),0,22,32,4);
     /* 16EF reloads class-specific background, metatiles and animation data.
@@ -2371,7 +2387,7 @@ static void show_inventory(void)
      * verify the actual blank frames in both regions. */
     work=(world_graphics_class==2?693284UL:world_graphics_class==1?664703UL:995861UL)+290000UL;
     frames=(work+budget-1)/budget+1;
-    while(vtimer-menu_started<frames-(SYS_isPAL()?1:2)) wait_frame();
+    while(vtimer-menu_started<frames-2) wait_frame();
     draw_map();update_hero_sprites();
     /* 722A icon/remap and hero upload finish after the map becomes visible. */
     frames+=SYS_isPAL()?2:3;
