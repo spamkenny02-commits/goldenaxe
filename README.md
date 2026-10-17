@@ -5,19 +5,26 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0202 — 1024 Kio.**
+**Version courante : v0203 — 1024 Kio.**
 
-[Télécharger la ROM v0202](versions/v0202-f55643bb/gaw-megadrive-v0202.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0203](versions/v0203-7660a4b5/gaw-megadrive-v0203.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1`  
-Checksum Mega Drive : `225D`
+SHA-256 : `7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7`  
+Checksum Mega Drive : `368C`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-La **v0202** accélère la conversion des motifs de l’intro, du titre et de
+La **v0203** corrige le flash d’une image de l’ancienne carte à la fin du
+scrolling horizontal. Les parcours depuis la clairière et le retour du village
+sont vérifiés en PAL/NTSC, avec des contrôles verticaux complémentaires.
+Sur 3 004 images comparées à la v0202, seules les trois images du défaut
+reproduit changent ; les états et la cadence des transitions restent identiques.
+Voir les [preuves et limites de la v0203](analysis/scroll_publish_v0203.md).
+
+La v0202 accélère la conversion des motifs de l’intro, du titre et de
 l’inventaire : environ **39 % de coût CPU en moins pour cette routine**,
 avec les mêmes pixels. La ROM reste à 1 Mio. Les noirs de l’inventaire PAL
 et le premier palier du fondu du guerrier sont corrigés. Les six parcours
@@ -29,6 +36,10 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
+
+Le préfixe de chargement des graphismes couvre les trois classes de pièces :
+56 cas source et 56 cas en 68000 pour chaque région passent. Il reste hors
+du jeu actif ; voir le [jalon des trois classes](analysis/graphics_classes_prefix_milestone.md).
 
 La chaîne native de chargement traite maintenant des commandes RLE et lignes
 vidéo entières avant les interruptions. Les 16 points SMS restent conformes ;

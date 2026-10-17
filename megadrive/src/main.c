@@ -1770,9 +1770,13 @@ static void step_room_transition(void)
     {
         if(transition_direction>=2)
         {
+            /* The hidden half must contain the destination before resetting
+             * line scroll. IRQ audio can push this DMA batch into active
+             * display; resetting first exposes rows of the outgoing map. At
+             * +/-256 both halves show the same destination after this copy. */
+            VDP_setTileMapDataRect(BG_A,world_new_md,0,2,32,20,32,DMA_QUEUE);
             memset(world_hscroll,0,sizeof(world_hscroll));
             VDP_setHorizontalScrollLine(BG_A,0,world_hscroll,224,DMA_QUEUE);
-            VDP_setTileMapDataRect(BG_A,world_new_md,0,2,32,20,32,DMA_QUEUE);
         }
         if(transition_direction==2) hero_x=0xf000;
         else if(transition_direction==3) hero_x=0x1000;

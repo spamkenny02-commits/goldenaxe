@@ -1,0 +1,236 @@
+{
+  "md_sha256": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+  "baseline": false,
+  "cases": [
+    {
+      "region": "auto",
+      "route": "horizontal",
+      "direction": 2,
+      "room": 148,
+      "frames": [
+        2813,
+        2814,
+        2815
+      ],
+      "background_pixels_per_frame": 40600,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": false
+    },
+    {
+      "region": "auto",
+      "route": "horizontal",
+      "direction": 3,
+      "room": 149,
+      "frames": [
+        3113,
+        3114,
+        3115
+      ],
+      "background_pixels_per_frame": 40636,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": false
+    },
+    {
+      "region": "auto",
+      "route": "vertical",
+      "direction": 2,
+      "room": 148,
+      "frames": [
+        2813,
+        2814,
+        2815
+      ],
+      "background_pixels_per_frame": 40600,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": false
+    },
+    {
+      "region": "auto",
+      "route": "vertical",
+      "direction": 1,
+      "room": 164,
+      "frames": [
+        3072,
+        3073,
+        3074
+      ],
+      "background_pixels_per_frame": 40654,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": true
+    },
+    {
+      "region": "auto",
+      "route": "vertical",
+      "direction": 0,
+      "room": 148,
+      "frames": [
+        3252,
+        3253,
+        3254
+      ],
+      "background_pixels_per_frame": 40654,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": true
+    },
+    {
+      "region": "pal",
+      "route": "horizontal",
+      "direction": 2,
+      "room": 148,
+      "frames": [
+        2811,
+        2812,
+        2813
+      ],
+      "background_pixels_per_frame": 40564,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": false
+    },
+    {
+      "region": "pal",
+      "route": "horizontal",
+      "direction": 3,
+      "room": 149,
+      "frames": [
+        3111,
+        3112,
+        3113
+      ],
+      "background_pixels_per_frame": 40636,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": false
+    },
+    {
+      "region": "pal",
+      "route": "vertical",
+      "direction": 2,
+      "room": 148,
+      "frames": [
+        2811,
+        2812,
+        2813
+      ],
+      "background_pixels_per_frame": 40564,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": false
+    },
+    {
+      "region": "pal",
+      "route": "vertical",
+      "direction": 1,
+      "room": 164,
+      "frames": [
+        3070,
+        3071,
+        3072
+      ],
+      "background_pixels_per_frame": 40654,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": false
+    },
+    {
+      "region": "pal",
+      "route": "vertical",
+      "direction": 0,
+      "room": 148,
+      "frames": [
+        3247,
+        3248,
+        3249
+      ],
+      "background_pixels_per_frame": 40618,
+      "different_pixels": [
+        0,
+        0
+      ],
+      "previous_pose_held_one_frame": false
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Natural initial exterior routes; horizontal final pose, origin reset and following frame; vertical stability after final publication. Hardware sprite rectangles excluded. Existing one-frame hold of the penultimate vertical pose in NTSC is reported separately, unchanged. No complete source timing or whole-game claim."
+  ],
+  "baseline_comparisons": [
+    {
+      "region": "auto",
+      "route": "horizontal",
+      "frames": 751,
+      "simulation_states_identical": true,
+      "changed_rendered_frames": [
+        2814,
+        3114
+      ],
+      "evidence": [
+        {
+          "frame": 2814,
+          "before_png_sha256": "579e501d77cfc53fb2487986d9358e9e89c67a8fe5f25fa26f69b77075f61586",
+          "after_png_sha256": "20bfd37972c8b30ac8b7541f80d172d1083380c9ae75267de813abe39ee43325"
+        },
+        {
+          "frame": 3114,
+          "before_png_sha256": "7abe836cbf663736fa7cb6214ae7801d0738e37982d9e48f2a0a21d1a9415903",
+          "after_png_sha256": "dc74c90402e6c07987689032d65ac4473164689865f30b2079a6ffe798bf818e"
+        }
+      ]
+    },
+    {
+      "region": "auto",
+      "route": "vertical",
+      "frames": 751,
+      "simulation_states_identical": true,
+      "changed_rendered_frames": [
+        2814
+      ],
+      "evidence": [
+        {
+          "frame": 2814,
+          "before_png_sha256": "579e501d77cfc53fb2487986d9358e9e89c67a8fe5f25fa26f69b77075f61586",
+          "after_png_sha256": "20bfd37972c8b30ac8b7541f80d172d1083380c9ae75267de813abe39ee43325"
+        }
+      ]
+    },
+    {
+      "region": "pal",
+      "route": "horizontal",
+      "frames": 751,
+      "simulation_states_identical": true,
+      "changed_rendered_frames": [],
+      "evidence": []
+    },
+    {
+      "region": "pal",
+      "route": "vertical",
+      "frames": 751,
+      "simulation_states_identical": true,
+      "changed_rendered_frames": [],
+      "evidence": []
+    }
+  ]
+}

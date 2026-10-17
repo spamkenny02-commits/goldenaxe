@@ -6561,5 +6561,20 @@
         "sha256": "dd731f4c6b3808fc4c2fbc3c7a96e9b76a523de111ae2aeaedbc640179ce69f4"
       }
     ]
+  },
+  {
+    "version": 203,
+    "sha256": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T22:07:54.834592+00:00",
+    "rom": "v0203-7660a4b5/gaw-megadrive-v0203.bin",
+    "notes": "Corrige le flash de l ancienne carte en fin de scrolling horizontal ; 3004 images comparees et dix fins de transition PAL/NTSC verifiees, cadence inchangee sur ces parcours.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "scroll_publish_report.json",
+        "sha256": "d57c702aa4feea5c3b4f95048bed41958a48d84d713308c3e992af1292c3e7ab"
+      }
+    ]
   }
 ]
