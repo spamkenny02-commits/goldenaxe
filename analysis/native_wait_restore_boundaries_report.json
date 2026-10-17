@@ -1,0 +1,56 @@
+{
+  "cases": 18468,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 6912,
+      "IRQs_inside_restore": 1476,
+      "return_sha256": "4dac21d8e11b56675f6690280963ace7ba3eff3605582bb07cde600436c2d688",
+      "fixture": "validation\\wait-restore-boundaries\\restore\\source.sms",
+      "fixture_sha256": "aedae49bd714d70a5ae6d2c3d0cc607ba2c6ceec00086d7fdbcd6ad932607c1e",
+      "variant": "base"
+    },
+    {
+      "region": "pal",
+      "cases": 6912,
+      "IRQs_inside_restore": 0,
+      "return_sha256": "32941d2f46f6c7a5cc8ed6e0b05e00030e1d97d61d0fb4d8c54687140b11a70d",
+      "fixture": "validation\\wait-restore-boundaries\\restore\\source.sms",
+      "fixture_sha256": "aedae49bd714d70a5ae6d2c3d0cc607ba2c6ceec00086d7fdbcd6ad932607c1e",
+      "variant": "base"
+    },
+    {
+      "variant": "pal-latched",
+      "region": "pal",
+      "cases": 4644,
+      "IRQs_inside_restore": 1548,
+      "return_sha256": "8f9194849ae963e4993e8916c04c8a2ad9854aaf00aac1e4ea8e8b0b6c298c8b",
+      "fixture": "validation\\wait-restore-boundaries-pal\\restore\\source.sms",
+      "fixture_sha256": "95bd8bd2fb08eea01705f762e849f67e79430d35ebbf7853590d089e26c15f11"
+    }
+  ],
+  "helper_sha256": {
+    "source_wait_restore": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
+    "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "source_irq_context": "ec7601406cbfe70fa913507caaea53cc71565f8fd4e2a7410bc42164efc526a4",
+    "source_irq": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99",
+    "source_clock": "0dc34eb6af741d67aafb626ee676e9b311e4e9da3b78c6fe67c11e39384bbbab",
+    "source_rng": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_audio_reader": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018",
+    "source_audio_priority": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "source_audio_tone": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a",
+    "source_audio_noise": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d",
+    "source_audio_sequence": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "limits": [
+    "Original0BB3..0BC5/vector/audio/IRQ code intact. Custom balanced register/caller frame, VINT-enabled busy phases and DI/EI/EI-fallthrough contexts.",
+    "Preceding byte0BB2 changed to EI only for boundary fixture; tail itself unchanged. Pauses0/1/128,timers0/1/255,comp0/1,queued music0/84.",
+    "331 IRQ RAM bytes,400 audio,phase/R/M1/duration/IRQ entries compare; source mapper restoration observed separately.",
+    "No production clock wiring, native Z80 register emulation, hardware acknowledgement/waveforms/full natural progression proof."
+  ]
+}

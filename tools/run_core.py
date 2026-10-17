@@ -12,7 +12,7 @@ INPUT=c.CFUNCTYPE(c.c_int16,c.c_uint,c.c_uint,c.c_uint,c.c_uint)
 class Variable(c.Structure): _fields_=[('key',c.c_char_p),('value',c.c_char_p)]
 class Game(c.Structure): _fields_=[('path',c.c_char_p),('data',c.c_void_p),('size',c.c_size_t),('meta',c.c_char_p)]
 
-def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,ram_observer=None,psg_observer=None,audio_out=None,sram_in=None,sram_out=None,core_options=None,vram_observer=None,input_provider=None):
+def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,ram_observer=None,psg_observer=None,audio_out=None,sram_in=None,sram_out=None,core_options=None,vram_observer=None,input_provider=None,stop_when=None):
     # Gameplay regressions explicitly skip the now-ported intro with normal input.
     # Set skip_intro=False to observe the complete boot story without inputs.
     presses=list(presses)
@@ -124,6 +124,7 @@ def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,
                 (out/f'vram_{frame:05d}.bin').write_bytes(state.raw[base:base+0x10000])
                 (out/f'cram_{frame:05d}.bin').write_bytes(state.raw[base+0x10000:base+0x10080])
                 (out/f'vdp_regs_{frame:05d}.bin').write_bytes(state.raw[base+0x10100:base+0x10120])
+        if stop_when is not None and stop_when():break
     if hasattr(dll,'gaw_trace_counts'):
         for name,size in [('counts',0x40000*4),('windows',0x40000),('states',256*4)]:
             f=getattr(dll,'gaw_trace_'+name); f.restype=c.c_void_p
@@ -143,7 +144,7 @@ def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,
     dll.retro_unload_game(); dll.retro_deinit()
     (out/'capture.json').write_text(json.dumps({'rom':str(Path(rom).resolve()),'rom_sha256':hashlib.sha256(raw).hexdigest(),
         'core':str(Path(core).resolve()) if core else 'official downloaded GX core',
-        'frames':frames,'captures':captured,'presses':presses,
+        'frames':frame if stop_when is not None else frames,'captures':captured,'presses':presses,
         'fps':av.timing.fps,'sample_rate':av.timing.sample_rate,'core_options':core_options or {},
         'sram_input':str(sram_in) if sram_in else None,'sram_output':str(sram_out) if sram_out else None,
         'test_ram_writes':[{'frame':f,'address':a,'byte_count':len(d)} for f,a,d in ram_writes]},indent=2))

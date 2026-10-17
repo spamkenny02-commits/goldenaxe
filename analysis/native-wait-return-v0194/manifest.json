@@ -1,0 +1,4097 @@
+{
+  "production_md_sha256": "2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143",
+  "production_ROM_unchanged": true,
+  "existing_native_sources_unchanged": true,
+  "production_clock_integrated": false,
+  "source_sms_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "files": [
+    {
+      "path": "source-v0194-return/actor_data.c",
+      "sha256": "af58ad3abdef845fbceeff2d3d33dbc6a8f251fcb8dd1b94ee41cffb94c5a1e4"
+    },
+    {
+      "path": "source-v0194-return/actors.c",
+      "sha256": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+    },
+    {
+      "path": "source-v0194-return/actors.h",
+      "sha256": "5bb32ef7ce45a78dd9c85d681554287620ffe84432abcf68a313d6d892bb8dd3"
+    },
+    {
+      "path": "source-v0194-return/burst_boss_data.c",
+      "sha256": "ce757b202d92beb3370f573c57dc5faaa2a608ffffea1feb5cfc663e55f77745"
+    },
+    {
+      "path": "source-v0194-return/charging_boss_data.c",
+      "sha256": "bae844c0116b41f5656f9ae17ba3559642dbccf6fa023db1d1d3bfd2368ed0db"
+    },
+    {
+      "path": "source-v0194-return/composite_boss_data.c",
+      "sha256": "7724b51e539360c86df54fe1178bf7a0b504b7de428bcef57b46f4f9e7c57e04"
+    },
+    {
+      "path": "source-v0194-return/conditional_house.inc",
+      "sha256": "61e6b2dad226315ee61149332da221a92e199d163be751d12f09c81a143ef122"
+    },
+    {
+      "path": "source-v0194-return/conditional_house_data.c",
+      "sha256": "75a412f03c36154c7ff8a5881942b0ea79507944de1912b32ddaa148872570a2"
+    },
+    {
+      "path": "source-v0194-return/dialogue_packed_pixels.inc",
+      "sha256": "f5f774c3dcb3c8d8d3aa26fb6acca0d45da4846a6d85e9d0f9202859236aee84"
+    },
+    {
+      "path": "source-v0194-return/door_transition.inc",
+      "sha256": "f6e815ff5b3cae5dd3f0487a893a721d4473ff87fd94fc1b886dbc40240a7de2"
+    },
+    {
+      "path": "source-v0194-return/doors_data.c",
+      "sha256": "5674feaeb14ae5d88d80b0805657625b1bf8bbc3f8e94154116ff8c3bb0b07c8"
+    },
+    {
+      "path": "source-v0194-return/dungeon_ambush_data.c",
+      "sha256": "349b7175f862b6c9755a92a3d057854c3ea04fe3232e277a6f4d4ddb74624085"
+    },
+    {
+      "path": "source-v0194-return/dungeon_animation_data.c",
+      "sha256": "965772cc0408444a0c87fe76ca13f45d4239bdc3cb2a09d9606a694c6105d9b4"
+    },
+    {
+      "path": "source-v0194-return/dungeon_drain_data.c",
+      "sha256": "5230b966cbdba4cd630c670913670c79a8abe6b9638ae10c3eaf41c236a31001"
+    },
+    {
+      "path": "source-v0194-return/dungeon_emitter_data.c",
+      "sha256": "b9c6e7f3816daaca6fc86b032cc3e235373f6d48bc242b62cda01d0fde3bf422"
+    },
+    {
+      "path": "source-v0194-return/dungeon_floor_trap_data.c",
+      "sha256": "52f83488764e2f98e068bc1aae900cde6414b9b10c4fe85d6d01f72afe963454"
+    },
+    {
+      "path": "source-v0194-return/dungeon_hop_data.c",
+      "sha256": "a0d519383d7cbbfa112da9bf5d46ab70eac82fd0bbab344d2786348b601e3d12"
+    },
+    {
+      "path": "source-v0194-return/dungeon_hunter_data.c",
+      "sha256": "71efa386b003b6a5869e43ec8a7624f2db2704e078115f1757123f407ff524ff"
+    },
+    {
+      "path": "source-v0194-return/dungeon_split_data.c",
+      "sha256": "11148e14f685164c219fc369f287766c297bfc94b3e926cd28853b31da8dccf1"
+    },
+    {
+      "path": "source-v0194-return/ending.inc",
+      "sha256": "e2a0ae080b50bc748518633b2a90025808dcd0e7bf5fe3417f4b9977a21c69df"
+    },
+    {
+      "path": "source-v0194-return/ending_credits.inc",
+      "sha256": "994f8b93142c69792cd48a872cb3e02b1ab65cfa4607ee6337b5d84410825b22"
+    },
+    {
+      "path": "source-v0194-return/ending_data.c",
+      "sha256": "7f6c6a2471aa66432b74b8a134d964157f2d050aa181f8f46b240795a4fec8f8"
+    },
+    {
+      "path": "source-v0194-return/fairy.inc",
+      "sha256": "a80ce76ae97a882c38e720d3b199f1009614505795be5143fd00df3bee823eaf"
+    },
+    {
+      "path": "source-v0194-return/fairy_data.c",
+      "sha256": "ffbf4c0444141faf11efe440ee86868f69033a5d0fc1ee1ed387746843cae6c8"
+    },
+    {
+      "path": "source-v0194-return/fast_ground_data.c",
+      "sha256": "878178926be33a3829f01e6885ddfdf068e6edd2c3766b36dac1c98d438898df"
+    },
+    {
+      "path": "source-v0194-return/first_boss_data.c",
+      "sha256": "c826845475c75874bd9af8983d8a3a03b54f8932a0616676e369b38b15d4c8c6"
+    },
+    {
+      "path": "source-v0194-return/gem_data.c",
+      "sha256": "e182e000e962e278c464d8702be2ad424322999f324969db5f52c50d1be2478e"
+    },
+    {
+      "path": "source-v0194-return/healer.inc",
+      "sha256": "28bb6aec1c262009b24b08577a77bd452790c2b249ce1cbc1eab91a815e9a3c0"
+    },
+    {
+      "path": "source-v0194-return/healer_data.c",
+      "sha256": "72490ac67d1d7b91cd56966b25e71533940d9a2bf4f4fe7d9b8055cc151d90c6"
+    },
+    {
+      "path": "source-v0194-return/house_gold.inc",
+      "sha256": "fb0b8543c5a917c19b7aafebfe9247ac50c3ee0f60c0bc057c5dbc2847774b4a"
+    },
+    {
+      "path": "source-v0194-return/house_gold_data.c",
+      "sha256": "eaa8ba8e40d5c5b0f8af007cb4f1ae2571e8a76a5ed38450f4ae8d2c885eb3b8"
+    },
+    {
+      "path": "source-v0194-return/house_quest.inc",
+      "sha256": "d9904ffbb3f649c5a9de051500ef6ab1df495dfbd368ac625092fb80dc380768"
+    },
+    {
+      "path": "source-v0194-return/house_quest_data.c",
+      "sha256": "e1bdd61fd45dafe3b2ec86d3d7efc475fcc8f9186a232bc1d75be4f7ab91de45"
+    },
+    {
+      "path": "source-v0194-return/intro.inc",
+      "sha256": "78d386a9089c5da4cef035af79ba8c8419368263e72d67b773e09f20dd4adc15"
+    },
+    {
+      "path": "source-v0194-return/intro_data.c",
+      "sha256": "d571e3fc3181ae64b30c43ce958160c49ad8963eca662e801ec6724ff3587074"
+    },
+    {
+      "path": "source-v0194-return/inventory_data.c",
+      "sha256": "faf7879a59552b4ef467a53aaf354ab352047b094652b3c6249622ea75427a6c"
+    },
+    {
+      "path": "source-v0194-return/item_rewards.inc",
+      "sha256": "d40b1e0e8b13c6f6b48844066bbfdbf2325d19bb153dc71b3d2b0e0e9d72075c"
+    },
+    {
+      "path": "source-v0194-return/item_rewards_data.c",
+      "sha256": "18f1966eea458e6fa60a738000d78cafeb812693694868571c9b03c485f9e3a6"
+    },
+    {
+      "path": "source-v0194-return/key_redraw_cost.inc",
+      "sha256": "727a94e883587aed690db146a4c271326d81685dc31f3a67c840620b4d396b37"
+    },
+    {
+      "path": "source-v0194-return/main.c",
+      "sha256": "f3a2eccfed268c83f30d616fbcbf527ebe6e7485b8b05b62e678e7da4bfa5c43"
+    },
+    {
+      "path": "source-v0194-return/menu_data.c",
+      "sha256": "4ba1cd43b2f26f332fc877b874824338cf7349f94a1ad178fae3b4e5b9b4c251"
+    },
+    {
+      "path": "source-v0194-return/merchant.inc",
+      "sha256": "2baaaffc915bbe44fb42636c38ffff54234127d7ce38241ecb550e7829feb5ca"
+    },
+    {
+      "path": "source-v0194-return/merchant_data.c",
+      "sha256": "42d96fe12d50da406d544e8217038e8a053fd4ad477c726d1e097da160b4bc14"
+    },
+    {
+      "path": "source-v0194-return/minigame.inc",
+      "sha256": "737af7b63b0abb4ca0605c2251eef724a539ac9bdaa95b0106bad7ce86b54824"
+    },
+    {
+      "path": "source-v0194-return/minigame_core.inc",
+      "sha256": "cb8d0c25a70e5024979dd093cc6afb18ae1db9a7f1868736ee267f4fec7eb675"
+    },
+    {
+      "path": "source-v0194-return/minigame_data.c",
+      "sha256": "a95b73c4d46e22451098da886fb74274e28c729edd8fd919b9f6b10e27818cb2"
+    },
+    {
+      "path": "source-v0194-return/paid_passage.inc",
+      "sha256": "6a05aa157645ca05748d764e3d55c269058c9b3ab905466edc5c775c17fbbad9"
+    },
+    {
+      "path": "source-v0194-return/paid_passage_data.c",
+      "sha256": "2685c7d1358b5212947fb2b207c9d6c009cf781f5dd428a4882ba2fe794f6683"
+    },
+    {
+      "path": "source-v0194-return/plain_house_data.c",
+      "sha256": "96259bccd2ea1a581e357650df826c1bb949e183e10bd59f53e704587463ba1f"
+    },
+    {
+      "path": "source-v0194-return/rom_header.c",
+      "sha256": "f4ab5914b66bfb887c11b54e4dc08633360528bfb65b81de303bd3930dc99b75"
+    },
+    {
+      "path": "source-v0194-return/room_clear.inc",
+      "sha256": "2af8dee9592a3ee86a25393dbda0fbf847947713cdf79c6781c55dae996795ab"
+    },
+    {
+      "path": "source-v0194-return/room_contact.inc",
+      "sha256": "0ea48211099cc49d89ecf8c675222f6ed622159023aeed746d895947a8a59134"
+    },
+    {
+      "path": "source-v0194-return/room_portals.inc",
+      "sha256": "f074cd37cfa8adff16ce63ae196c128bdd3e7c3e63b393f96f5c97cbb29b7e5b"
+    },
+    {
+      "path": "source-v0194-return/room_puzzles.inc",
+      "sha256": "bd361ea422a07e4b284db4b47749ac982aa866b84c49b9bbe9c22b231190f7ee"
+    },
+    {
+      "path": "source-v0194-return/save.inc",
+      "sha256": "37f5cf04625b8e2a0c8cd70451089d58d0ad9abf1f76b8ba14e7235d02346e6a"
+    },
+    {
+      "path": "source-v0194-return/save_data.c",
+      "sha256": "8caf919a00c016cb0f5c16c240bd9c51409d6def7c74bfa7cd14aeba73287680"
+    },
+    {
+      "path": "source-v0194-return/second_boss_data.c",
+      "sha256": "bb3f293dfc855a2bb2ac969691d115ec27f932ea503009318cee3373ec318ea8"
+    },
+    {
+      "path": "source-v0194-return/second_spell_data.c",
+      "sha256": "d6af1435510af8529475617b24f64993fad29b44676b810451ce00a3570bf851"
+    },
+    {
+      "path": "source-v0194-return/sound.inc",
+      "sha256": "7bcb9bc8a8dad8b5d2e8495e94cab2322182cd68f948709ab1a602a309d78f7d"
+    },
+    {
+      "path": "source-v0194-return/source_audio_dispatch.c",
+      "sha256": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018"
+    },
+    {
+      "path": "source-v0194-return/source_audio_dispatch.h",
+      "sha256": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960"
+    },
+    {
+      "path": "source-v0194-return/source_audio_envelope.c",
+      "sha256": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c"
+    },
+    {
+      "path": "source-v0194-return/source_audio_envelope.h",
+      "sha256": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c"
+    },
+    {
+      "path": "source-v0194-return/source_audio_memory.c",
+      "sha256": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0"
+    },
+    {
+      "path": "source-v0194-return/source_audio_memory.h",
+      "sha256": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9"
+    },
+    {
+      "path": "source-v0194-return/source_audio_noise.c",
+      "sha256": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d"
+    },
+    {
+      "path": "source-v0194-return/source_audio_noise.h",
+      "sha256": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1"
+    },
+    {
+      "path": "source-v0194-return/source_audio_pitch.c",
+      "sha256": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+    },
+    {
+      "path": "source-v0194-return/source_audio_pitch.h",
+      "sha256": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2"
+    },
+    {
+      "path": "source-v0194-return/source_audio_prefix.c",
+      "sha256": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39"
+    },
+    {
+      "path": "source-v0194-return/source_audio_prefix.h",
+      "sha256": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9"
+    },
+    {
+      "path": "source-v0194-return/source_audio_priority.c",
+      "sha256": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396"
+    },
+    {
+      "path": "source-v0194-return/source_audio_priority.h",
+      "sha256": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb"
+    },
+    {
+      "path": "source-v0194-return/source_audio_reader.c",
+      "sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8"
+    },
+    {
+      "path": "source-v0194-return/source_audio_reader.h",
+      "sha256": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933"
+    },
+    {
+      "path": "source-v0194-return/source_audio_sequence.c",
+      "sha256": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42"
+    },
+    {
+      "path": "source-v0194-return/source_audio_sequence.h",
+      "sha256": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c"
+    },
+    {
+      "path": "source-v0194-return/source_audio_tone.c",
+      "sha256": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a"
+    },
+    {
+      "path": "source-v0194-return/source_audio_tone.h",
+      "sha256": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4"
+    },
+    {
+      "path": "source-v0194-return/source_clock.c",
+      "sha256": "0dc34eb6af741d67aafb626ee676e9b311e4e9da3b78c6fe67c11e39384bbbab"
+    },
+    {
+      "path": "source-v0194-return/source_clock.h",
+      "sha256": "1a3c651a9618385c151603bd00cd15dd990ec4bbef2d205a56217536a6081333"
+    },
+    {
+      "path": "source-v0194-return/source_irq.c",
+      "sha256": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99"
+    },
+    {
+      "path": "source-v0194-return/source_irq.h",
+      "sha256": "c463a407ad732d2a78e16a6b50b18edb3c0fb941655c5a3aae3acc9df402d658"
+    },
+    {
+      "path": "source-v0194-return/source_irq_context.c",
+      "sha256": "ec7601406cbfe70fa913507caaea53cc71565f8fd4e2a7410bc42164efc526a4"
+    },
+    {
+      "path": "source-v0194-return/source_irq_context.h",
+      "sha256": "b2e4e2ded184ef602c40c192c7ba59d88075463262c06d65569042b26988aafa"
+    },
+    {
+      "path": "source-v0194-return/source_rng.c",
+      "sha256": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f"
+    },
+    {
+      "path": "source-v0194-return/source_rng.h",
+      "sha256": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f"
+    },
+    {
+      "path": "source-v0194-return/source_wait.c",
+      "sha256": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6"
+    },
+    {
+      "path": "source-v0194-return/source_wait.h",
+      "sha256": "5b19b3fab702b1401beca02842f9421cc5502cba3876251fb5827debff159dc5"
+    },
+    {
+      "path": "source-v0194-return/source_wait_restore.c",
+      "sha256": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28"
+    },
+    {
+      "path": "source-v0194-return/source_wait_restore.h",
+      "sha256": "553e0b70c01429b5a645a806ac2a97e8d9ca518a654fd1775370b59593a2acc3"
+    },
+    {
+      "path": "source-v0194-return/sword_boss_data.c",
+      "sha256": "b725f14e90d4f49a709d772cbee4ab28083facab5e48265193b0d96de2ce9944"
+    },
+    {
+      "path": "source-v0194-return/thrown_axe_data.c",
+      "sha256": "1880c8bc9280263843a3c88e07e8bbe0cdafc99eb65f9c658f0f09b7357ba202"
+    },
+    {
+      "path": "source-v0194-return/title_data.c",
+      "sha256": "1632fb8fcdff74b138fddef08f4e9373112c06b15494ae9c143445b0c26afd0a"
+    },
+    {
+      "path": "source-v0194-return/world_data.c",
+      "sha256": "15ed1638b55fd3713639fc1057992710e2901a214fd3f2f1f1e890b5901e5787"
+    },
+    {
+      "path": "tools/validate_native_wait_chain_68k.py",
+      "sha256": "9950e379e08f65eac149ce448e62c4bedd1a5e2f6c8149c78bdb24ef883f83b8"
+    },
+    {
+      "path": "tools/native_wait_return_support.py",
+      "sha256": "09cdeb94c5cd0d31a5b990010a817fd3162450e096a03175e93045c8fab47476"
+    },
+    {
+      "path": "tools/validate_native_source_wait.py",
+      "sha256": "dca0c0497a1a88817be4ac7fd1b4f7573ab864034fdca28e38d7cbb6d7815277"
+    },
+    {
+      "path": "tools/validate_native_audio_reader.py",
+      "sha256": "1b3f13ca7e3dec61a38f08cf1a30c5d8ef811606ba6353ea09b2c3ce7242ca0e"
+    },
+    {
+      "path": "tools/validate_native_audio_prefix.py",
+      "sha256": "bd843ddeb7a081c336cb46111b529b032b8742079bec0aa020229b1e96d22c9e"
+    },
+    {
+      "path": "tools/audio_reader_refresh.py",
+      "sha256": "ff49979d10a86cd94c37b9a1439917db88a7e90e1bd514911d4321809e66af1b"
+    },
+    {
+      "path": "tools/audio_noise_channel_refresh.py",
+      "sha256": "6bc5f50b60af38b77ee3804d11d3f680fd09e5c5d5ea7c9723618747a8caf1fd"
+    },
+    {
+      "path": "tools/audio_note_sequence_refresh.py",
+      "sha256": "49c42ba46c06d248e75c54da2de41669eabcd829c078a672d8dd9bfcf1105c15"
+    },
+    {
+      "path": "tools/audio_dispatch_cost.py",
+      "sha256": "1f3602b444935a9171d0382537caa3419516d7c05bd3e7d7a3c91d2a6cf77ede"
+    },
+    {
+      "path": "tools/audio_prefix_cost.py",
+      "sha256": "359fada9c7fd25a0c3230589ca1ab8c9754e2b170d4490b2b19ba34dcb4a9bfe"
+    },
+    {
+      "path": "tools/audio_envelope_refresh.py",
+      "sha256": "1331ca20fabf7bae2657510b26d04d226596c30d01138060a63a324a76678e10"
+    },
+    {
+      "path": "tools/audio_source_memory.py",
+      "sha256": "acb0c69b7f57f596803fb7c61091409b9dd7b094d5555c35d8b534cb25f24aa3"
+    },
+    {
+      "path": "tools/audio_dispatch_refresh.py",
+      "sha256": "2379791b5718ceb1f0af863b134006db63b18e76bfdf685a616338b80abe9948"
+    },
+    {
+      "path": "tools/audio_prefix_refresh.py",
+      "sha256": "2d4d89324d45acf1742a6eb0609aa5a7e7645b213c20fc2e108b8a36c611d77a"
+    },
+    {
+      "path": "tools/audio_arbitration_cost.py",
+      "sha256": "7fddc6e68a1b76ff3469cae358faf2d35017d144ddcc44e8529ef4f4e4ee74c3"
+    },
+    {
+      "path": "tools/audio_table_envelope_cost.py",
+      "sha256": "98e849919879472a2727cb0c3c1ce703fe7e902c2934cb1655294b91ac811dd5"
+    },
+    {
+      "path": "tools/audio_adsr_cost.py",
+      "sha256": "81b31d477294af46d203bac211e9ec55e8acf8f211e6e5999f7afbf62541cbf5"
+    },
+    {
+      "path": "tools/audio_noise_note_refresh.py",
+      "sha256": "899964546d7d9f0c36f78b0ef67c5c59009c5d7a300e772101617b2b198086d2"
+    },
+    {
+      "path": "tools/audio_noise_note_cost.py",
+      "sha256": "d86799cc0a93f5324550b6b97cc7c272474c86b17d2330a68dd439a3faca017a"
+    },
+    {
+      "path": "tools/audio_tone_channel_refresh.py",
+      "sha256": "b10d1e8a33cb764a1913f5d5f0e2d3891e639fe0ba917a3036171fa8df4bcfe7"
+    },
+    {
+      "path": "tools/audio_pitch_refresh.py",
+      "sha256": "5449c7c71f302c9a9857d419c3041692032967e9afb7eff6566cc69468e18a0a"
+    },
+    {
+      "path": "tools/audio_pitch_cost.py",
+      "sha256": "1571fb802762fafbaaad331de2081089e36436a9a9433359b16efc5541e736f9"
+    },
+    {
+      "path": "tools/audio_priority_effect_refresh.py",
+      "sha256": "c4f696eb775fe4e3b9458039d9b8dec7e87984e92a59a547b23bfabab07bd2d8"
+    },
+    {
+      "path": "tools/audio_priority_effect_cost.py",
+      "sha256": "f7cc97655b3fd400603ddac0043ed07f437a87640178e4377e3e8659f350b1c1"
+    },
+    {
+      "path": "tools/actor_reference.py",
+      "sha256": "b3264e34beeb66b9e965245a8ab0958b8c8f60d012af9c557d2236b78281a092"
+    },
+    {
+      "path": "tools/extract_title.py",
+      "sha256": "8ae28370cc95f22de905eb3373e8ef9654159788581562b4755759e970226b2c"
+    },
+    {
+      "path": "tools/title_loading_cost.py",
+      "sha256": "eeb8d805bf7c242e5dd61c2f10fe497f2ef769ca95af4747f521058735328495"
+    },
+    {
+      "path": "tools/actor_loading_cost.py",
+      "sha256": "bd8e06358ad69e407a3b236b74c9dbaa8061a45e68d23317cc9c5d2535e702a3"
+    },
+    {
+      "path": "tools/run_core.py",
+      "sha256": "499a2feac3d58a52762567f08879b6197d94f749492833ac0a7d7a050f30ac3a"
+    },
+    {
+      "path": "tools/validate_native_wait_chains.py",
+      "sha256": "fe07e8838f173a996d80995c38c6b489d88b0bf1bfda6fc1372aae7e151283c1"
+    },
+    {
+      "path": "tools/validate_native_wait_return_68k.py",
+      "sha256": "34fa89482b58a09c1a113095ffb8cea7f87cb7267c5ba659736d2da31a4be6c8"
+    },
+    {
+      "path": "tools/validate_native_wait_return_live.py",
+      "sha256": "8f4c900d67e045650f3023b0a1860fefbf2b65688e6d9c0f87e0534ac6938888"
+    },
+    {
+      "path": "tools/validate_key_door_gameplay.py",
+      "sha256": "edaff2a53f041a71d7f231051cabd65dbaa5ae965b281ea6f0d201a878d80d0b"
+    },
+    {
+      "path": "tools/validate_actor_tick.py",
+      "sha256": "ff145d9122365949160fb6878987689afd7e9f8d8bc047c0d597067908d94289"
+    },
+    {
+      "path": "tools/actor_tick_reference.py",
+      "sha256": "a5cd64adc2f20330dd20eea3873628195eb3c17c952a66bada4b4ce90820ea76"
+    },
+    {
+      "path": "tools/extract_world.py",
+      "sha256": "8575d37d77453328ed48d161ff4ab730ea03f8ffcd8ddd5d8d6956a737baa607"
+    },
+    {
+      "path": "tools/validate_native_wait_restore_boundaries.py",
+      "sha256": "2c88fd724e5662d71d1f6675da88a57e35c5e3ad5ae45e81e240d9608869ce98"
+    },
+    {
+      "path": "tools/validate_audio_prefix_cost.py",
+      "sha256": "56f0a1aef26cba4918dd96d86674df979ccc16632d903c37173006a06c38faf7"
+    },
+    {
+      "path": "tools/validate_native_wait_return_unit.py",
+      "sha256": "5418080a8547651c022da379a2a6671e091ee16e1c9b03c8670ff2acccccd93c"
+    },
+    {
+      "path": "tools/build_wait_return_core.py",
+      "sha256": "0a9076d17f277dca3f307b4096a074a9945d8a16b881fb4a5ae12bb9f7913f3e"
+    },
+    {
+      "path": "tools/archive_native_wait_return.py",
+      "sha256": "4bf0231d0ca2f46ac8419b5033844df7697fea4969528ed76d3fb43884546d2e"
+    },
+    {
+      "path": "analysis/native_wait_return_unit_report.json",
+      "sha256": "9b5881918ee5620b37ad63031096fac5b487434eb07a1c98d18ab8465535a39e"
+    },
+    {
+      "path": "analysis/native_wait_restore_boundaries_report.json",
+      "sha256": "47858953338ce0c0b06b801a3143a215d7c556987fe68a29ad9d9a1dd4c29fee"
+    },
+    {
+      "path": "analysis/native_wait_return_live_report.json",
+      "sha256": "df63fd17306121d75b20f18b4944527fbf778e90bb8355a1c9d4fffd6b07e54a"
+    },
+    {
+      "path": "analysis/native_wait_return_68k_report.json",
+      "sha256": "7b96c883de60aac26de15f1a8f8ec0cb95707554a348aaf36db8f49ceea8e33a"
+    },
+    {
+      "path": "analysis/native_wait_chain_report.json",
+      "sha256": "8eb7540360c5b2d7ba6d5b57ae7c6912c4b58b93ee25176062a88f7b4e58f87c"
+    },
+    {
+      "path": "analysis/native_wait_chain_68k_report.json",
+      "sha256": "d8c0e770dea3bac628d4b665254f45ae4391a23c76af439a6d6d46a947e11769"
+    },
+    {
+      "path": "analysis/native_wait_return_milestone.md",
+      "sha256": "520cff8d610cbe1e163cb076a52f6b1ced3c6112cdebe4f8a4aa0b0a01d79f89"
+    },
+    {
+      "path": "observer/z80-wait-return-v2.txt",
+      "sha256": "6f28c6e02b6968860920f95323457715d23c4a8fc3162c9251582901e55a1771"
+    },
+    {
+      "path": "observer/base-z80-wait-refresh.txt",
+      "sha256": "7f482c927feab6158af7c969d4b20162e93d22bbfa55eb62c13e837c8693a334"
+    },
+    {
+      "path": "observer/genesis_plus_gx_waitcomplete_libretro.dll",
+      "sha256": "98e1e00776a957ff1adedb837aef99fe808e5cdaccb48b9cb084a240890a9657"
+    },
+    {
+      "path": "logs/build-wait-return-core-v2.log",
+      "sha256": "912ff93d5306f65ff8e395791416804c68872d67c9d5e6cc05da633c325507f6"
+    },
+    {
+      "path": "logs/wait-return-core-build.log",
+      "sha256": "2ee1a08849e557410dbdabd447a88a8e0f4ba7ce7f912a7b80e133dd4222881b"
+    },
+    {
+      "path": "logs/native-wait-return-unit.log",
+      "sha256": "047dcad665ed42630cc2c114b38254a1be2dbd0f44d320b16c28c920239655e4"
+    },
+    {
+      "path": "logs/native-wait-restore-boundaries.log",
+      "sha256": "abeda67d3b890fedc4b989e13e4dea0cff07d16d0c0e9497c134960388a2e202"
+    },
+    {
+      "path": "logs/native-wait-restore-pal-latched.log",
+      "sha256": "0df589a7c63ab45591bb30cb4e33f5b0fc875fe1ecf669277e472611c77e5ed4"
+    },
+    {
+      "path": "logs/native-wait-return-live.log",
+      "sha256": "ec299987c67b8296ab64d3001daad06320024d4270dff24fec1a115e1e99ef88"
+    },
+    {
+      "path": "logs/native-wait-return-68k.log",
+      "sha256": "617b4a391fdb004cf4f2b0d65378d7e05f0b9b85cf7d3345b1cf69108c33326d"
+    },
+    {
+      "path": "logs/native-wait-chains.log",
+      "sha256": "e5605ff56c4140d0ba745b24a58fbcab61c1533b4bc7952f431b822f9a2a66ed"
+    },
+    {
+      "path": "logs/native-wait-chain-68k.log",
+      "sha256": "f4b9c47eaf3257a09c4d66c71ebf60b5c6ac3e33223e3057c31063c999b71f23"
+    },
+    {
+      "path": "validation/native-wait-return/unit-cases.json",
+      "sha256": "ba19df715de282b1b8a3bf8937d482a3a4b0010ed5f769b08293588d84de563d"
+    },
+    {
+      "path": "validation/native-wait-return/restore-cases.json",
+      "sha256": "9e9e3a14bd3d4728492931aab042da498b5584dc51b772d450ad09e2b9c033dc"
+    },
+    {
+      "path": "validation/native-wait-return/live-cases.json",
+      "sha256": "5a9a903747ca29ed39164b981f0b4c7412ae8ffcd4091585765a319009ca906d"
+    },
+    {
+      "path": "validation/native-wait-return/chain-cases.json",
+      "sha256": "82b471cc6b5d8dfe8ae433f8e2d474027e3bad01bad03cb40900ceb2de2a8b55"
+    },
+    {
+      "path": "validation/native-wait-return/wrapper.c",
+      "sha256": "374d5a17ac8528c5aa687615195362bc8a0ce6f674ccd370f28cf7c76d2de96f"
+    },
+    {
+      "path": "validation/native-wait-return/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "validation/native-wait-return/wait_return.dll",
+      "sha256": "557b1d6d863df37f3f9da68125d0dde655d826319f1a89827c3ba11838f4309b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/expected.h",
+      "sha256": "b99d41b80bc6df2b228f1554c07a098fc30850c1d2b18c9cc11a69f5668bebfc"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/build.log",
+      "sha256": "d79664a4cb1c1e1411d8d4e39b84bba58cba33dd56478ccf3297d7ff434b7148"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/out/release/rom.bin",
+      "sha256": "e9d83823d4d80e6eac80ee74c5043041f69a9580a1ac928990b6f72fd6e8b2a2"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/auto/capture.json",
+      "sha256": "31474c75c415b59b60ae435109ccc9d8369fb136f9825d9ed5112a4f6ea996f4"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-0/pal/capture.json",
+      "sha256": "0944f8e7446770307df027041d74146e0f22ed9a898ab803f0942b45bcc4c9fa"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/expected.h",
+      "sha256": "741bfbe91e4496a6ed12f7c11d29a2374de6b9838cebe36740a4a0d7cd4bcf86"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/build.log",
+      "sha256": "74b9478ad861340b1214513b083c244878088bd91bc32cf639f52bd3264c3767"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/out/release/rom.bin",
+      "sha256": "65c19ba60a8a1d3a8b2e8cae9a0519b328e9db30316aea7e931ab6b53f7279a6"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/auto/capture.json",
+      "sha256": "d4187027e2d484a5e463494ad5cd4dfc4af794fbca57361935f7ab5d1b1b614a"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-1/pal/capture.json",
+      "sha256": "0a4db7f378e065aec027cca36f5c2b1c1ee8d1d0b1606680053015830690f24f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/expected.h",
+      "sha256": "c44471184723757f09863e5bf6c1bd7d01c0bc713849be4f998214be83ce2f3e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/build.log",
+      "sha256": "48fdc283278390119d5d1c099398461632382faadae99d3d68fdf4e85fcddc6c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/out/release/rom.bin",
+      "sha256": "af94c92ad054ac37aa358de327854b6e198f07113b05a566629bd5e5df9b0c77"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/auto/capture.json",
+      "sha256": "0e11bfac11a5d680ef27c0f28d2013d2663b360dc5b5587e6824c284e7b5d1e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-10/pal/capture.json",
+      "sha256": "a71e05fde29a8b3aa82e89cfd52d9092d02bbeab261aa186e3e17c365dbad128"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/expected.h",
+      "sha256": "b93167012951eebaf9e41553d91a7d6d79741a8e35c07dfe0395a6b7b5927f44"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/build.log",
+      "sha256": "bde51ae53e3af24906f2b55417746a06199ced6625c0f962f3f1c49e5c3f2983"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/out/release/rom.bin",
+      "sha256": "e4e7ebe9a4f0bf358b832f6872454f765b8878219bad9cf43fbadca77122e691"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/auto/capture.json",
+      "sha256": "62ed19248e6823b9691ea2f44e4ec69a257be4cd13d571aaa56b6f8eee06afb6"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-11/pal/capture.json",
+      "sha256": "3b9b1876a88d7a614ef99028a695896f1ad798a8d663df1a796bc0bf37df8aee"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/expected.h",
+      "sha256": "6cf13f47b5e0ee6b9dc16ae51dd319ef32f3f444c626c9b7dca5d0e1d9d078b3"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/build.log",
+      "sha256": "f7a4d7d31484ceb49ac233939cf7682c6301b1fd482f553690f39d76ddcc1440"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/out/release/rom.bin",
+      "sha256": "361389f63ebaee841607d4e1131fb08dbd88c4a18f440b8f6b47a60d5d900d9b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/auto/capture.json",
+      "sha256": "43139cf4eb574ca60d9f9a691d1cf13c74102c5f87582d1ca7e4514615d970a7"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-12/pal/capture.json",
+      "sha256": "30447873836e294c26282b7ef8fea732f653fedc98b4e39e18e9afb68c27ce6a"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/expected.h",
+      "sha256": "88eddefe345f31d6a5f8704f1b8876ac3dba1ccd3d4737dad53e2e8a3e8bbc6b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/build.log",
+      "sha256": "f3a6f244baab85f50c4ab126644f8391004d57fdd94b7d3de8133cb455f44b3a"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/out/release/rom.bin",
+      "sha256": "af2b885f7f8e051c071335725d00de3c78d7ca31d1bf3c0e796dcd30394666b1"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/auto/capture.json",
+      "sha256": "cf0ace53286622e57caa76f06ceaca3ccd827a0e1e9f3f14e41821f927ec0f89"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-13/pal/capture.json",
+      "sha256": "0c3ceb4b28a69f63244143fae98c776d0cbff1eaa81ae1e43f80eef4fb93e94a"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/expected.h",
+      "sha256": "6752680ae90ec3bd5231e7a65c68c2ac26ce4666070a4e36116094d83a828ef0"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/build.log",
+      "sha256": "a3b894f8a28a8fa899740d17e8ad3a8b5edd5d215c507aa481fda9d5e32c7e06"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/out/release/rom.bin",
+      "sha256": "1e53d9d28610f151b4c807c2b3eef354744e6b8cbf366ed652ceb18a9409030c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/auto/capture.json",
+      "sha256": "11a52b6f7b0ee56cc16cc7bfdee0a480705e4a9ed4aa04361b63fb732d5114c4"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-14/pal/capture.json",
+      "sha256": "ed76303b9a194c5c717bda782ddcdf69f475b7fba6ce57101049fd57feca5530"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/expected.h",
+      "sha256": "5ad80b9a38e104a5ad03bf3dde24009275cf9ef83300a1643279e6d03c2c7831"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/build.log",
+      "sha256": "fcb28a879648c40414a59f5087cf9e66f016bbef28062b15025228718e316489"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/out/release/rom.bin",
+      "sha256": "4579a3d7234fce74e10adf7dd4208a8771f62d6492cea385e7911ed0bb3b217d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/auto/capture.json",
+      "sha256": "b7b835d0db692c42b5a8d935db16e5b20e75b4a06398396095f12180de80e808"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-15/pal/capture.json",
+      "sha256": "3850d2f3a8752effe20750912c0d8429acd49843a27e85fcb5559859406e2a9e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/expected.h",
+      "sha256": "46b9453a8991cb4bd50bb465bed35a3373782ca828b00d4e6fe448dd0cbb29b5"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/build.log",
+      "sha256": "657ae826345068bd7ab9fff4da4083b808a9bb9141aad155d3bea4cf1a8530e6"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/out/release/rom.bin",
+      "sha256": "4698e94bb38aa41d883b707bf09e7f81348e590f24dbb5b4bccdcbf54c1437cd"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/auto/capture.json",
+      "sha256": "708901dc139a1436fdfc071652e66cdb5cc71ac68e653c5045974073a0f4d60e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-16/pal/capture.json",
+      "sha256": "2c3318e27372d49d4418f34683d7c79f9ee096816f1f102cde2b14b44e7ac5b2"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/expected.h",
+      "sha256": "7c0a369a36bb6644d94bbf9650b19985fdec71f3e2a5b5c8f8a81c6320838077"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/build.log",
+      "sha256": "3761a1a6639ec5a936a71eec8b669f431684c92e957d6cceeca53e2c89e7083c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/out/release/rom.bin",
+      "sha256": "0b05478bc8666de8bef2fb7e9e2ee262b07367e3e0f64387a988a44730698414"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/auto/capture.json",
+      "sha256": "06ad2f7d6b5860656274f8dbcf018996d2a98977d999bd35f6d310784aaabfcb"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-17/pal/capture.json",
+      "sha256": "b9c01b46c1bf9e4e9ae6a7b46cc1316cfee2e188622b0fff7b4d6cea1c7c3f9b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/expected.h",
+      "sha256": "c268161316845489be24a7c480322d15800ad07f0b21640332b6596be7502f64"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/build.log",
+      "sha256": "8cd0d3f181872323d1ca7a65e816d166c3f710e6c7556e38d7f830e357becea3"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/out/release/rom.bin",
+      "sha256": "7d8ccc131fc7c407e1a874615b8d2de0a5cd4eb1cdf4e235366755ea7dabe20a"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/auto/capture.json",
+      "sha256": "c7f7e461a68ab3283fcb269accab6b0b75615f1e30ee42bee2d57af318544ebd"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-18/pal/capture.json",
+      "sha256": "1a5d1b1fd360e889b364c839139c85b980365c50aeab8c469c5b94702bf8c69f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/expected.h",
+      "sha256": "f1edcf5c77915492467af4baae5cec631531d8d8fdac7114b000222e13076470"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/build.log",
+      "sha256": "4c949cd33cf3834d0f46e3663992cc3323be0c6ce204db90299414c43de71722"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/out/release/rom.bin",
+      "sha256": "4ea05770a0a805d93f90bf9777c707376f91c351dedfaa82ea007ab0b5373c89"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/out/release/symbol.txt",
+      "sha256": "020a6aad0bf1b13c41e806e139c2b88501d643d9a1f3408e3056c7d1363fecc6"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/auto/capture.json",
+      "sha256": "a6578832ce7b7e2c0d28a74254bf521bdc98e10c98e62c434619e60d564cd156"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-19/pal/capture.json",
+      "sha256": "cfde9ff4ccb3b25bf165921ecdef78a5ec4fb8c571cf980351d973b12c6d141a"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/expected.h",
+      "sha256": "e765ca87f09cece6a5e67900eb3c313090b9f2d2186be48b210b8631a252c1f8"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/build.log",
+      "sha256": "af92e0771080ff85329aeb8da97627a56a781bf7d6b6671464c69b099b9fa7fa"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/out/release/rom.bin",
+      "sha256": "4a379cd3448816c499ab532765a696029664020473df61d889e213b6d167f87a"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/auto/capture.json",
+      "sha256": "8fed9809f8f867f698fb26ab63e367e788cf00f76de3878f43f4cfbb2df8ec92"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-2/pal/capture.json",
+      "sha256": "63484431de489388b8198772a243fa4c2e7ed2ba5f06688ce09d0158cda5bc52"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/expected.h",
+      "sha256": "cbe93e3e55fd848451fe6d764286447fd6beb55c44de02702606b1059abce196"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/build.log",
+      "sha256": "4a4eaa6c71f94daa18b4cf9664c768059446c667c9b69cf978ad77f7336ee7a9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/out/release/rom.bin",
+      "sha256": "f3564a5f2e615359d9386d823f95b1f3f75f99af7fee8cc77d6a1343a76b8f32"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/auto/capture.json",
+      "sha256": "bd860b0a9dc8af3c583cbca7babb7433d5963be2cd50b49e76b69cdd8566b505"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-3/pal/capture.json",
+      "sha256": "ccef412eaa253fcd292f341cb78fc7b8de3156ceefb91be9a412d3a7343168c9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/expected.h",
+      "sha256": "6932aa9fb54a0f8c5500ae771816f486e95380a73180a605fbac87d9f79ff769"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/build.log",
+      "sha256": "7adf5c31623eb7ba1967c39e70c3ef044178dc39670fe2646011395c9738e2e3"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/out/release/rom.bin",
+      "sha256": "05771bc44178a61ee828adcbb2af298ca630123c46e153b828763c29ae8baab6"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/auto/capture.json",
+      "sha256": "a927763f305e8484f5e8cdaed28fdaa39569651307c976c1fe075cc3e9c8f95e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-4/pal/capture.json",
+      "sha256": "04dc4399d937024e3daee587dd0308d85bfbe9999bde70853fecd13bb65bf01b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/expected.h",
+      "sha256": "a4af77af0198b7fc2f12b64d5a16d16e61cf6ca36f2fc5331a720d43a041b534"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/build.log",
+      "sha256": "f13085073fbcebda7707e7d7c81060bd88b3a28a75aba09f42aaf18f75b92b4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/out/release/rom.bin",
+      "sha256": "fd0a139cf01bd2f685cbe601a0bc9530f2a0a5a0e743f7036096ffe7a77e63d6"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/auto/capture.json",
+      "sha256": "e67a382cd39b839d189667b2e28dc127b2be7f3e7475d1ea946a7bd877594a6e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-5/pal/capture.json",
+      "sha256": "95be06498e9ce7620a9340ddaeffe31b03e401999527ac0ce9c2ebcb4fa19f2f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/expected.h",
+      "sha256": "53db5c8cc1f1c6853b5db0010bd314a8a355431e9c9da2003bc9d6f3fd7ea2e3"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/build.log",
+      "sha256": "924a408d0b9d4216129c5051ffc8b554838915c4acc69e81d533e751d8675fe1"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/out/release/rom.bin",
+      "sha256": "6f4685fd260be08e45e9f421e0c019fb23669fe4229915c385bb9db82e181569"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/auto/capture.json",
+      "sha256": "53e677d11074f09fe65401b3f49d9e700b90b02947c3abff3c71281211b4c633"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-6/pal/capture.json",
+      "sha256": "b1be4281ae45bc68a73b2e7c1cc5a49fc5618faefca28f920d0f2a304eac1754"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/expected.h",
+      "sha256": "9d7153ba4c175bbce1b303cb952c786ad5c8d227b6a5bdc8f9a447501386a031"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/build.log",
+      "sha256": "1fe4c5f16b34d9db9ee3b9b705398c843d9acd212e315850412328d9eb159a39"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/out/release/rom.bin",
+      "sha256": "a880304d12c2eb4e9087ae0067807fddb7fccff4c569701950ff457eb3797c6e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/auto/capture.json",
+      "sha256": "55be39524464b9e8432733d3442fad1efe4010b5881252dc9f48e0a822795a28"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-7/pal/capture.json",
+      "sha256": "289916744680dcb4b3318ebcabea532ada932dcd33d2c35e56ed4678287bbd0b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/expected.h",
+      "sha256": "b57fbbcb0f198da51364c662678bb57aa02aaa7a141f33feb6de183fcf863b9e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/build.log",
+      "sha256": "a8a7d8d11f723e73f2fc8528d7a10b7dd7e935c0cba9adb5da22fd8cd5bfbe57"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/out/release/rom.bin",
+      "sha256": "aba6faabb8359d53a29aeb55bda2de6e3b8c7904e12de2e41550578e8ef4adce"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/auto/capture.json",
+      "sha256": "cb07a06bb02ca67201b4ff622e89f9a5c29a03b371f3e26058a6dd3f8001f4e7"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-8/pal/capture.json",
+      "sha256": "9a39297ce65158c8fc1455415adbbdeb693165e063894ce58c9ba39a43e4bcba"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/expected.h",
+      "sha256": "5b89a51f6b49122d2f174b21d3c4bf3c99ed9cd7c760b5f8796eafe431a00a87"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/main.c",
+      "sha256": "1d586e58913777efb8ebeffebf31acd7a89afd384a8c49bd96c97c39592c273c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_dispatch.c",
+      "sha256": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_envelope.c",
+      "sha256": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_memory.c",
+      "sha256": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_noise.c",
+      "sha256": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_pitch.c",
+      "sha256": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_prefix.c",
+      "sha256": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_priority.c",
+      "sha256": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_reader.c",
+      "sha256": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_sequence.c",
+      "sha256": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_audio_tone.c",
+      "sha256": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_clock.c",
+      "sha256": "402f285353517384881d602fedd9cfbc3403f23c11551e3d87016aafe3012962"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_irq.c",
+      "sha256": "25e88d6ea40a974dea1b4c7b817c1a54fada9ffa981d7ac94f59ff7eefd20a4e"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_irq_context.c",
+      "sha256": "66116d7ed1be694430307a3d77cc20c750bfcff0f9adab619a2f06594f3ae107"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_rng.c",
+      "sha256": "a9ef3fc8d6b9104f774da888d3bda57026d4265ff8539fe5523e3cbadda2295b"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_wait.c",
+      "sha256": "aa2939d0d94cdadd551a5885a8c6c86850e14fd8f026a3db1544b27a6c061adf"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/source_wait_restore.c",
+      "sha256": "8d551009d5d8671115fb1d9929f909fdb96ef590ad141b30dd1acc528d42c025"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/src/wrapper.c",
+      "sha256": "9e186e1e8af123c7c35a72784dab2f765eeb1fe4f82d66ab3114ae960b5a465d"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/build.log",
+      "sha256": "98c4df092e73079c90edc70056803c4881f516b10e27764116d2deb3759f3e37"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/out/release/rom.bin",
+      "sha256": "7e08b291fac593edf424304315254561c32b6f987354ca3bf7d5223824282ca5"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/out/release/symbol.txt",
+      "sha256": "2814ace9aaeb5eec5e281e568190768468f6583a5e745d58b035595973cb0967"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/auto/capture.json",
+      "sha256": "2a1e3eacf44e79923feb3f008a7864954eb71ba635c68b278111f84ba7818689"
+    },
+    {
+      "path": "validation/native-wait-return-68k/part-9/pal/capture.json",
+      "sha256": "226675942ecbfcf60f76f37f9e25f155f61688d20f7b5db5843261e267c39b69"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/expected.h",
+      "sha256": "37091dfe668d6315550af3ea9b4b9a9707077914a931a530f43a0488db1f5d8d"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/main.c",
+      "sha256": "19c78a0e246501fab5528f181b7cfd93758e396d3f2423653ca4bf1efecf096a"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/rom_header.c",
+      "sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_dispatch.c",
+      "sha256": "91e57667244510bbfb48df8541d14c9643b65366c65a9328bf27389b6ac27226"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_envelope.c",
+      "sha256": "a1320f027645b5aa8a0e11b51e77107528c9fed3d2ffab7458544f7fc75b5d49"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_memory.c",
+      "sha256": "3b0a0c3905167dff3a5a759303276185c7ac3c295652fc8fd58778dc3c675550"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_noise.c",
+      "sha256": "23e9820071c7d8306a37f59209c4c5931b5d1d0203639acf9e00e31c44fdd6d7"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_pitch.c",
+      "sha256": "ab3110fd23c86b01ae03a47df9218de407aa658eea66781a710ab75de8833f56"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_prefix.c",
+      "sha256": "23eb251cab725b164237146da63efb76a7d2cbe336a786a33e6ee6fac40f7534"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_priority.c",
+      "sha256": "ca787bd3a6b5b2912694ff5d7c488c8b452e1ad105296500c28cb04bdbffb6c2"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_reader.c",
+      "sha256": "81fe32a7576769b3d356251991e17069cc54da26bd4d82fab0680f1d03530c20"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_sequence.c",
+      "sha256": "49f7718acb044ab28710e8d6dae49849b444b5916ddb249530e7f4cab83f9777"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_audio_tone.c",
+      "sha256": "c68b3d1d5ed41c414d593986e1054ebbf330dee7a6f20c131e73d6898e468406"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_clock.c",
+      "sha256": "0fb5ada94cca534b74c33a3439a784538e09a55d3953865a18dc2c744bf18eb3"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_irq.c",
+      "sha256": "b27bd1afb3528e9ca082e3430c8a72d2bccbe8b906f516d47cf2d0ebec25933a"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_irq_context.c",
+      "sha256": "6306280944650809d80e529181513b31affce36b8c00d88575ffff80f8520de0"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_rng.c",
+      "sha256": "03da42ffcd083829a73d7b338b4a008811e791f7b1cf5c050f7f267e25a94f53"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_wait.c",
+      "sha256": "a9c4cecdc2b66679ce99df41c3833e4240250aefd99748628c5cc05a4933dda8"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/source_wait_restore.c",
+      "sha256": "4540bc9982563d87959e6a50703f5b748e87b087c9bcdb7437904af6c4a051f7"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/src/wrapper.c",
+      "sha256": "b30d4374f5718d4ef1e4dfc6d76ba078e997416c5a87aa8821a56b91590c98cc"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/build.log",
+      "sha256": "15146eed2dfd6d56b7aab27d023b83925421e27895bf2d8f6484d533572a116a"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/out/release/rom.bin",
+      "sha256": "53c6729cf75a15534c1e564394122d4f888ed172416042692019fef52e610c9d"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/out/release/symbol.txt",
+      "sha256": "0010926eca945f6cb907c3442d77b6a307791231cf2f954d2d4861769a6de871"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/auto/capture.json",
+      "sha256": "5697874bbf0d4fd104e803ef3460e123f2a5c64726f40e8e9e49c86c06744268"
+    },
+    {
+      "path": "validation/native-wait-chain-68k/pal/capture.json",
+      "sha256": "b0519e96ec19da273e0ae962eec122949e5ca26b14d5024cbdcb20ba1e2eea32"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-auto/capture.json",
+      "sha256": "80fb7e4956373b740e75645c09777ebdb3fccefffd36e410e3ccfe3ab75353e7"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-auto/irq-entries.json",
+      "sha256": "72718e146b94c962ee79b1d1c8165d28fa7bb9de670788bc60abe9cea0e9916f"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-auto/returns.bin",
+      "sha256": "ddbc5c5f29109436fcfca0da4ab6858eeac8a5edcce6c7be04d9c92a7668b0dc"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-auto/trace_counts.bin",
+      "sha256": "f9f48f62fdf972966892989bbaba005cdb54c34230779727a433c622be052514"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-auto/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-auto/trace_windows.bin",
+      "sha256": "291944ce10533915ac5833e1f7ca5966dc65493414e8d9fd9d82bf18fcc9f31a"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal/capture.json",
+      "sha256": "1f21ff59ac48b9a0a989b311c1d46de7bc8d29ecea1b6c50b4c41f5c4101534d"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal/irq-entries.json",
+      "sha256": "e58a08b6cc586d42b7a07b17bb24019e09f84bb64b623bbc814c45c0bb30ab15"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal/returns.bin",
+      "sha256": "3c842899ce972059661a763300aac9982bd9e9b0833d9c2106b36aa6eccb8b09"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal/trace_counts.bin",
+      "sha256": "f382343e64d95b7ac9c0acc1c446e7cdcdc35b3724ac123577c8027f9dec2588"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal/trace_windows.bin",
+      "sha256": "43b63c477606d674f4052f113eb44001aac7dad009f053c9dc4919b8036627a8"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal-pal/capture.json",
+      "sha256": "59f763113b105782e4f7bd1108ef16a0e1b5d542f038cb77d26426ea3ae49790"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal-pal/irq-entries.json",
+      "sha256": "a9f5df0c61ef0f05717369008a6cd488a8ceaea06868946dc85404c92fe4b5d5"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal-pal/returns.bin",
+      "sha256": "e03306a29f0a3ebacb5949ce2efb98794a8fce69c986417895b2433fad6f7c31"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal-pal/trace_counts.bin",
+      "sha256": "b1204ae15da7a1ca2da1237a4273ee3a7f216e3b63769b154f544a8a07496c5e"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal-pal/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/wait-return-unit/wait-raster-unit-pal-pal/trace_windows.bin",
+      "sha256": "291944ce10533915ac5833e1f7ca5966dc65493414e8d9fd9d82bf18fcc9f31a"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/auto/capture.json",
+      "sha256": "224c9954a1fafd482a811c87b941c24cc6fc3c803344464aac93a202e7ec1fe4"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/auto/trace_counts.bin",
+      "sha256": "5b0cc421c0ebff36949ee71ead4917ac548f72fdadfa6df60fca940dadcd1a4d"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/auto/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/auto/trace_windows.bin",
+      "sha256": "a85b4937d6c97b65fee6b6e5338934756237ddd1b24c9f24a40eb9f0976debf4"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/auto-irq-entries.json",
+      "sha256": "9d23aea158038c1c57045faceb4d14633a6e45ed3d9b5cffb09568982d5bbd70"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/auto-returns.bin",
+      "sha256": "4dac21d8e11b56675f6690280963ace7ba3eff3605582bb07cde600436c2d688"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/pal/capture.json",
+      "sha256": "340f540434ec4f6f58264a04c15f7557ba920f1d957963833d593eb35456846c"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/pal/trace_counts.bin",
+      "sha256": "5160deb01b23ad2d0d46930e6b8fcf7619d0139001aa68961c41ecae62523cfd"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/pal/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/pal/trace_windows.bin",
+      "sha256": "74f8ae97729e16be1387814e071978e57fb7f8824253fb86daf7ad318b7438a9"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/pal-irq-entries.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/pal-returns.bin",
+      "sha256": "32941d2f46f6c7a5cc8ed6e0b05e00030e1d97d61d0fb4d8c54687140b11a70d"
+    },
+    {
+      "path": "validation/wait-restore-boundaries/restore/source.sms",
+      "sha256": "aedae49bd714d70a5ae6d2c3d0cc607ba2c6ceec00086d7fdbcd6ad932607c1e"
+    },
+    {
+      "path": "validation/wait-restore-boundaries-pal/restore/pal/capture.json",
+      "sha256": "0f9e19938223203d0635e895d6be301562d5c6627ef2ca6a5d8be1d3cd77825b"
+    },
+    {
+      "path": "validation/wait-restore-boundaries-pal/restore/pal/trace_counts.bin",
+      "sha256": "7fba4e07cf6d622f38f8a9e3fef68c6c441dcee9a70057c2ab5b1519974a81a4"
+    },
+    {
+      "path": "validation/wait-restore-boundaries-pal/restore/pal/trace_states.bin",
+      "sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+    },
+    {
+      "path": "validation/wait-restore-boundaries-pal/restore/pal/trace_windows.bin",
+      "sha256": "a85b4937d6c97b65fee6b6e5338934756237ddd1b24c9f24a40eb9f0976debf4"
+    },
+    {
+      "path": "validation/wait-restore-boundaries-pal/restore/pal-irq-entries.json",
+      "sha256": "d0459a77c555426e1c0f3cab1045d8d907ccef957f5a20434d238422cbfbf373"
+    },
+    {
+      "path": "validation/wait-restore-boundaries-pal/restore/pal-returns.bin",
+      "sha256": "8f9194849ae963e4993e8916c04c8a2ad9854aaf00aac1e4ea8e8b0b6c298c8b"
+    },
+    {
+      "path": "validation/wait-restore-boundaries-pal/restore/source.sms",
+      "sha256": "95bd8bd2fb08eea01705f762e849f67e79430d35ebbf7853590d089e26c15f11"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/auto/capture.json",
+      "sha256": "e73360b6addde1e235f1d5537eb0cb8c70dec73887b09e8cf738ad2ff9ef1a03"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/auto/cycle-events.json",
+      "sha256": "6b73912ffdc292004dc73f1167a65f1d885a13430418532593aee8f0183d136a"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/auto/irq-entries.json",
+      "sha256": "a8eb88d1ce3261e5155c26860abbc486da6eef3e92d901c5cc3b081c408837f3"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/auto/returns.bin",
+      "sha256": "12260f207d68eda0d7fd34d1a1fa0d912d00cadb0fec09045427d7f813510ca8"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/auto/trace_counts.bin",
+      "sha256": "d8edd0ba0d7fb1f08e2d2f958b919272eb93fa04d95d44ca7e42d34955ed1b0d"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/auto/trace_states.bin",
+      "sha256": "e60cbeeb7447ba6c26e38a649a0a631ea8295b316959a2d8ce37a7e5e64ec176"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/auto/trace_windows.bin",
+      "sha256": "2fcec3e73245b49d84437650a85fab2524ea349e4d4851f4f4f4427677b9d5a5"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/pal/capture.json",
+      "sha256": "0ec880ecc731a21a2bc319898e890c757800856e1f0a3702f5ae6dc6c79c7f43"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/pal/cycle-events.json",
+      "sha256": "d521f50422ad65af08743312eac4b741aea9eaf3e16ffb1fa4c74de2fcde64c2"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/pal/irq-entries.json",
+      "sha256": "c37a6889a718d349ce3ca370bcb09aa16ebd1e0efd1525c9e03b07883a80cb8e"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/pal/returns.bin",
+      "sha256": "e423864723af8bfa2b6318188476b356efaa726d12c7fc7899dfde4432f92770"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/pal/trace_counts.bin",
+      "sha256": "41857a14cbfd8d7e3ed41e62b244bb1169c529ce6e25e3d855b34a2899737a40"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/pal/trace_states.bin",
+      "sha256": "0df258ce977c4738952b308775b7c792a50f14a99b527e41231af784b4351174"
+    },
+    {
+      "path": "validation/wait-return-live/1a-00/pal/trace_windows.bin",
+      "sha256": "beb079b422f8cc5b08da5f337d899984dd3084e18edf273fb0dba5523f7f88c3"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/auto/capture.json",
+      "sha256": "e73360b6addde1e235f1d5537eb0cb8c70dec73887b09e8cf738ad2ff9ef1a03"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/auto/cycle-events.json",
+      "sha256": "05b1074c90cc8324dfc2aaf16b9d1814db844c4399317f57bdd11f8e00e74b02"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/auto/irq-entries.json",
+      "sha256": "ac46bca25f53ffaa2e95e0554dc2a84dbd84a7afbb3fedf803b686f1bc279a9b"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/auto/returns.bin",
+      "sha256": "f01fc4c924314215f23d5e08a5ff2979a278dcb9e2f9a485675caa62c2cee9ac"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/auto/trace_counts.bin",
+      "sha256": "6bdda7944c04a5b2276c991301159f50bdf1b0e77299573a5c80f57b4a024c25"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/auto/trace_states.bin",
+      "sha256": "a07c1ce4ac6e363c232ddbed6edb0f0723d9b77f26a5628545ecefdcf4727f81"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/auto/trace_windows.bin",
+      "sha256": "b53c934066050bedd2ccc7e8b4129eca7d76d5bfa5c154cee7df4bccf7a1d128"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/pal/capture.json",
+      "sha256": "0ec880ecc731a21a2bc319898e890c757800856e1f0a3702f5ae6dc6c79c7f43"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/pal/cycle-events.json",
+      "sha256": "a0b18071976f9ce8243e9d7d348d6febb0b939c2d73ea45f31c6f69fa9380f3b"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/pal/irq-entries.json",
+      "sha256": "8e39b8e64e1a21bf213fcc091588920ca245b25a156715ae8da72804ff604c7b"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/pal/returns.bin",
+      "sha256": "bbf935b68699faf097204890bbe2caad19eac341920fa994f4017136f254f01b"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/pal/trace_counts.bin",
+      "sha256": "7c856361c5a25857c03e57c9369f54ebfa7ffadaf997dd54b1c34aab7ed42552"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/pal/trace_states.bin",
+      "sha256": "0df258ce977c4738952b308775b7c792a50f14a99b527e41231af784b4351174"
+    },
+    {
+      "path": "validation/wait-return-live/1a-ff/pal/trace_windows.bin",
+      "sha256": "ed6e208050a59ff34e8b7f481fcb4bf8cd66d9115ea49a8de621b6b340214f53"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/auto/capture.json",
+      "sha256": "7a9b5bc0d4cea6ae718e0ad844e87137d0472f5912d3ed77c9d9bb93eefb2240"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/auto/cycle-events.json",
+      "sha256": "1ef9a697191482db69cdb890f7652b98eafab5aee0d48df4c95b1253f9e76477"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/auto/irq-entries.json",
+      "sha256": "35793de68e6fc413baa3b3e7c60c42cb691dd4df4f9030824a85f162ec22f7ba"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/auto/returns.bin",
+      "sha256": "3b2504652fdd6448bfe03770f24d670b0909fc30a2b11991be5bd89e4dc8b937"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/auto/trace_counts.bin",
+      "sha256": "25e1c5575766e5787b022eb167688e95a9c4bcc7b0287ac28308b1b434315228"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/auto/trace_states.bin",
+      "sha256": "e60cbeeb7447ba6c26e38a649a0a631ea8295b316959a2d8ce37a7e5e64ec176"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/auto/trace_windows.bin",
+      "sha256": "3e888ac5783b5d40aaa7d824027b95c0d0e946d3b0ec39d934e7371802004d25"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/pal/capture.json",
+      "sha256": "b9eef9c7b6f077f9a8c3d2eec6fc7bc0387bfe33d93c02b47dd6ca942d8ed58c"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/pal/cycle-events.json",
+      "sha256": "c0692ea198fa3d6b204df064aee32ce25812437cd7ba0a63e0603145c5210919"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/pal/irq-entries.json",
+      "sha256": "0cae6f3e78fec5ada07fc6ca702913f653957b0ace49fba92e66bea57e9a3377"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/pal/returns.bin",
+      "sha256": "cd51c715b7e5291f076df9acb29bb7710f3fc3366af73d5c613082ca30956c57"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/pal/trace_counts.bin",
+      "sha256": "f7676cd0ebf738eda5bc2393850ad9a96ac74ed4d48522ba4cd0ea007efa9cca"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/pal/trace_states.bin",
+      "sha256": "0df258ce977c4738952b308775b7c792a50f14a99b527e41231af784b4351174"
+    },
+    {
+      "path": "validation/wait-return-live/36-00/pal/trace_windows.bin",
+      "sha256": "42b47420a1380edc188ac14abfe8b8c83f6581416e60cee96a3bd184c87930b8"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/auto/capture.json",
+      "sha256": "7a9b5bc0d4cea6ae718e0ad844e87137d0472f5912d3ed77c9d9bb93eefb2240"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/auto/cycle-events.json",
+      "sha256": "ff2548d2f0710ecf15ca36225d5c8745e00e2fd1c65457c061ee3dc798aba272"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/auto/irq-entries.json",
+      "sha256": "a24ec4d10b62ec22edb295d550c3809619d5557abf53637d0651e1e9af599a42"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/auto/returns.bin",
+      "sha256": "b99ac894fbff8a96d02802411e9618c4cd493af879f6a76917f05638f8a3bb9d"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/auto/trace_counts.bin",
+      "sha256": "cba95f84f463a8274b0a79f4103097091a90ee516623ee1895f1f2998414206c"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/auto/trace_states.bin",
+      "sha256": "4232353e7e123e9f4595d92cd10ac82d56c99090c9ca0b73aef44d38862ea5be"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/auto/trace_windows.bin",
+      "sha256": "55661aba1fa206d00bd6d2fa93e88e293888c2b06c3d8364ee56a21849e8d18f"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/pal/capture.json",
+      "sha256": "b9eef9c7b6f077f9a8c3d2eec6fc7bc0387bfe33d93c02b47dd6ca942d8ed58c"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/pal/cycle-events.json",
+      "sha256": "5ef5702dd2b68f3ebd3fbea53698ee1621311a695aea4e31f4fef175fc5db75d"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/pal/irq-entries.json",
+      "sha256": "9d1ca7ac0504cf11b411c359f8ee67ad0c7e84718943d5d582910e044542a69e"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/pal/returns.bin",
+      "sha256": "4ee0e1f44e10ce34bbdff415658300f2be21bd06c297ebae648c5e72b74fb257"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/pal/trace_counts.bin",
+      "sha256": "f83044196c8e856edbd1577b071cd0aed3f17695560cb7505e255cb81bbbf767"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/pal/trace_states.bin",
+      "sha256": "5ffb68571688213a9c41d9b77adadfa5081e3bdcbf8cf22b47b055fec47b9ad1"
+    },
+    {
+      "path": "validation/wait-return-live/36-ff/pal/trace_windows.bin",
+      "sha256": "5f41d849230318f6a2edcc427002e806335c7384e2e13af347adba166921f49c"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/auto/capture.json",
+      "sha256": "d58c396a14ce3dcbc6928b542ad3623a44ce0d0b94aaeb75fd4a7c2bca7e4040"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/auto/cycle-events.json",
+      "sha256": "001a599733f26eabebfcff306b838c87209185397478abba79ad0cd9ac14d7ab"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/auto/irq-entries.json",
+      "sha256": "b26fe21735d050e43e50cca74435517ae4084cd2ed7c8a35a57d08ce3fa0a693"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/auto/returns.bin",
+      "sha256": "e91aff7a42a56583ed64d670f55c1a9561d12b235e8cbc0296461119a2de5ce8"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/auto/trace_counts.bin",
+      "sha256": "27e530d639ad57f50ba2a15a37199cf050dcb7a61cbc2d99d803e20ccfd76779"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/auto/trace_states.bin",
+      "sha256": "e60cbeeb7447ba6c26e38a649a0a631ea8295b316959a2d8ce37a7e5e64ec176"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/auto/trace_windows.bin",
+      "sha256": "f657a967f2e68ed1660f3d81cfacf11e59c76a867e01ef19c11a271fab556f63"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/pal/capture.json",
+      "sha256": "2291a6c07edf1e40fa9faabdf4237d835416499bf62306bfb97224a0dbb77eaa"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/pal/cycle-events.json",
+      "sha256": "8aa9c44fefa0b47852ade5adc3bb72230c51d97191401e07fd5af03d55d361fa"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/pal/irq-entries.json",
+      "sha256": "8dbe4954f67a26758f95ae348e0b265045579c6400133b2e81edd59968009783"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/pal/returns.bin",
+      "sha256": "6f458e3b75ef20352e1e41db9086740c545a29b8daa75cdeed186d866cf65de7"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/pal/trace_counts.bin",
+      "sha256": "822816de03cc8190233713a46c404502eef4e70850c11830cc4a97743d9c9273"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/pal/trace_states.bin",
+      "sha256": "0df258ce977c4738952b308775b7c792a50f14a99b527e41231af784b4351174"
+    },
+    {
+      "path": "validation/wait-return-live/3c-00/pal/trace_windows.bin",
+      "sha256": "de3e36159b649eb85f228933ef6c03e964ac1def1361e4572fa14bc4ad1e440b"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/auto/capture.json",
+      "sha256": "d58c396a14ce3dcbc6928b542ad3623a44ce0d0b94aaeb75fd4a7c2bca7e4040"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/auto/cycle-events.json",
+      "sha256": "e98c6da095109abef75a52815181f43fbe6837d81d2bef61a775d2b1836ff9c5"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/auto/irq-entries.json",
+      "sha256": "0d4829ed85279681b75e929c620fc8eb3ad85b92e2b4273a8c068955150e96a6"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/auto/returns.bin",
+      "sha256": "c189b191dd1911b823393e1d5715d1d5e46d493773ace67faf8809535f2db38f"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/auto/trace_counts.bin",
+      "sha256": "087a2899a679a6ce2265a2d69b75557d2d388fb1b2153f3913c8b57461d9b01c"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/auto/trace_states.bin",
+      "sha256": "822c48496c30a8f8b6924835bc3635574a06047311e83dc9d6acc7a942d5e46c"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/auto/trace_windows.bin",
+      "sha256": "baf7f3d2b487e7bb2dc1622da377cff58967aa092ec3388383081b4c4a6868bc"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/pal/capture.json",
+      "sha256": "2291a6c07edf1e40fa9faabdf4237d835416499bf62306bfb97224a0dbb77eaa"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/pal/cycle-events.json",
+      "sha256": "0acc821c72185bdde23427766af2ab0922de8ceb09536031bd4aacce7356ff04"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/pal/irq-entries.json",
+      "sha256": "a8f3779e804e7633c93cac205d4af4dc133cb8a4fd949efb34b8f02254c5997b"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/pal/returns.bin",
+      "sha256": "f94f3dfa39c4510e1ca1148f5846b96612a0f261b9dfa1a61e7fd318d1579ce2"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/pal/trace_counts.bin",
+      "sha256": "d24802497da13d66afeda23811788a8cac3bd96577674fe9d792426a1265cc93"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/pal/trace_states.bin",
+      "sha256": "439d7000a5913298acdda20068278bae8d45cc83cf0b61a284cca44dc7d573f6"
+    },
+    {
+      "path": "validation/wait-return-live/3c-ff/pal/trace_windows.bin",
+      "sha256": "f498e3d81eeee717a4b73c66d5c2d0ce9f71458b6edc455c30d45050c6c95e24"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/auto/capture.json",
+      "sha256": "6ac03f2042ca21ce7bc4abe6fab24bf891b88c85b739afe73e11f7b66259f34f"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/auto/cycle-events.json",
+      "sha256": "39a8772b279f7135efd2b6b89105a741dad4ea334d90bcea422973c756643396"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/auto/irq-entries.json",
+      "sha256": "337855b08b75be1ecd36303cb3022f876c10cc8e664a3f4c9a4e663e750d992a"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/auto/returns.bin",
+      "sha256": "2c88b7c54c8ac8157ac976f7e8364048dce9eaa29187a5aa62f6569ceb7ffc2b"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/auto/trace_counts.bin",
+      "sha256": "e15f8f22d938f0a8a9583215cc35da74e87415e7640827893533870756026756"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/auto/trace_states.bin",
+      "sha256": "e60cbeeb7447ba6c26e38a649a0a631ea8295b316959a2d8ce37a7e5e64ec176"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/auto/trace_windows.bin",
+      "sha256": "e362e93d7e21921dafd14d12332689e7729a52197997cd4b7a15e74111077ed1"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/pal/capture.json",
+      "sha256": "a9b4d928d8aa58c5ae3a24738e8632391fb982f98a641ece2b45b31f0e595601"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/pal/cycle-events.json",
+      "sha256": "d64b6031c039ae92a2e16fcc9e795564af12a696c10ccc23f4a67e9db07f5775"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/pal/irq-entries.json",
+      "sha256": "b6bc0ce1c79c2346ce62d671a17cd1d52f3da28bca1473db592ca285f65072b8"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/pal/returns.bin",
+      "sha256": "7894490dbdab255f313a93b5a86bac64578c1edb1ab3ba876e643ff9008f17d2"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/pal/trace_counts.bin",
+      "sha256": "69e9ba64671e72f5c022d9dfc2e8759d74ba4a29736495ce8bc1750401501250"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/pal/trace_states.bin",
+      "sha256": "0df258ce977c4738952b308775b7c792a50f14a99b527e41231af784b4351174"
+    },
+    {
+      "path": "validation/wait-return-live/6d-00/pal/trace_windows.bin",
+      "sha256": "592104567beaca81b2899349da2f6d736af4cbe1541fd4f79d5426642dede906"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/auto/capture.json",
+      "sha256": "6ac03f2042ca21ce7bc4abe6fab24bf891b88c85b739afe73e11f7b66259f34f"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/auto/cycle-events.json",
+      "sha256": "311df9bc12fb52d7bd7833a10501f8d294e7ce98456bf59f89ae2e0968413834"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/auto/irq-entries.json",
+      "sha256": "de7641cfbb11442fc608e9d57404382c37918f9e823f1436117ea05a2e65f20f"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/auto/returns.bin",
+      "sha256": "1d1e898e0853cffa69aa477d4850e21e20f4e60611e92e79b54f84fbc34caa3b"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/auto/trace_counts.bin",
+      "sha256": "66049a89364ba995ac9280089f0037b87c66e315746d871bd1f53d4015e7b4c0"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/auto/trace_states.bin",
+      "sha256": "ebaff72aa9f9373cdfb1077ff0bdcefc8a18df1ef5043c8233d65402c736d8d2"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/auto/trace_windows.bin",
+      "sha256": "34007ac60836f1f90b85dad32ceace58a44fe9c0e4501e4056ce49ddee76c985"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/pal/capture.json",
+      "sha256": "a9b4d928d8aa58c5ae3a24738e8632391fb982f98a641ece2b45b31f0e595601"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/pal/cycle-events.json",
+      "sha256": "4c25c3d65026b8852b5bda9d074c731b166beec4fcc2e6899d3f8567ef3e9043"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/pal/irq-entries.json",
+      "sha256": "44eb24c54f236262e55e58f921e24b05dfa70a78956b8e647eed1ec53fa0566b"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/pal/returns.bin",
+      "sha256": "817cb4c8c322bcea7e777823d0c29e8cd1b0734ced7ef0310de2f35af0bd7191"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/pal/trace_counts.bin",
+      "sha256": "b7326e104cd21570e0ba40f7bad4d239b66c26f0962cb816b5a4b6313bc0aa86"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/pal/trace_states.bin",
+      "sha256": "1708693ceba18bdc2498007af2f31db2a80fe06b3e79337eb15e9d30dbf776d0"
+    },
+    {
+      "path": "validation/wait-return-live/6d-ff/pal/trace_windows.bin",
+      "sha256": "45f6535a0ab2c923b1fb94cbba2b7de0eeb41409c7c8117a2f1f3731acb463f6"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/auto/capture.json",
+      "sha256": "6168157325f7586ef3bbc8ef991fc755a40483a96947dc201cd318d0f4ca05ae"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/auto/cycle-events.json",
+      "sha256": "04e77234ecfb0d8114bde06d6674241a69978ad23697779e8d879d0e22560f23"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/auto/irq-entries.json",
+      "sha256": "5362ffff4fdf90d080a75e834776640f55b13e417e7345fa229271c509866340"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/auto/returns.bin",
+      "sha256": "ba0550ad19b7b5f45c2864578ba2d80adcf30caec3aac99a867e2a9ea753005c"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/auto/trace_counts.bin",
+      "sha256": "3eaaac1a7b44465dfbb851d307affceedcf7f9897b77c029f04bfb377bd3c70a"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/auto/trace_states.bin",
+      "sha256": "e60cbeeb7447ba6c26e38a649a0a631ea8295b316959a2d8ce37a7e5e64ec176"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/auto/trace_windows.bin",
+      "sha256": "660b873affc2e1a2408dc2239644569979ca22c2305a8891f4f1062e6cd589b4"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/pal/capture.json",
+      "sha256": "1828ae3d62190320ce4a1a6ab27e1d4d873d16f8892cab5973aecb2f504673e4"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/pal/cycle-events.json",
+      "sha256": "369b78528bf88d942ffcea6f842472867dc17b6bdc3b63dda8e1fc0951b5b083"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/pal/irq-entries.json",
+      "sha256": "d9f8daf641b798495b329e96c382efda061e695a0621ef9a4cd1b710299b7057"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/pal/returns.bin",
+      "sha256": "405406ab7bbfcb0307011c1633fc592dc95d252908a33b75aca1d3f3bf861776"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/pal/trace_counts.bin",
+      "sha256": "1ade61a00279e4f40fb2884ab919108c75be228ee0557d156fb75a6929c69661"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/pal/trace_states.bin",
+      "sha256": "0df258ce977c4738952b308775b7c792a50f14a99b527e41231af784b4351174"
+    },
+    {
+      "path": "validation/wait-return-live/87-00/pal/trace_windows.bin",
+      "sha256": "213051d66909038b4ea77e0284623b04b8fd44acb23eed29ad10a5ade5007e3c"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/auto/capture.json",
+      "sha256": "6168157325f7586ef3bbc8ef991fc755a40483a96947dc201cd318d0f4ca05ae"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/auto/cycle-events.json",
+      "sha256": "6a27f687c76fcac30db015668013e77ad303b0c5aa81babb256d3e88f8a89657"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/auto/irq-entries.json",
+      "sha256": "fecd08933b1b042c84c03e8a5a27fc99c9b32140b1d7059d4d1da69d8fb0494b"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/auto/returns.bin",
+      "sha256": "1ddc7be098be1c11240c620e787c1a69d87be7dcc4f3d9658aab8a424ca406c9"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/auto/trace_counts.bin",
+      "sha256": "557dfdd8496f63bd6bb4f95ad18fc21ed0ad6ac9e6194a13e045c5951828f33a"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/auto/trace_states.bin",
+      "sha256": "a1cc4dfb582b6461620e71394b2ef5c736a546e5ad382dfe599bd4e813db65fe"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/auto/trace_windows.bin",
+      "sha256": "72284684f8dd44777937d081c466e9ad10cd75e1e2e20614797aeb4d04632ae7"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/pal/capture.json",
+      "sha256": "1828ae3d62190320ce4a1a6ab27e1d4d873d16f8892cab5973aecb2f504673e4"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/pal/cycle-events.json",
+      "sha256": "e876c61882d016bb5ef650f3d0bd8983b4f2b1caeb7f8ef5783432371a3b7447"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/pal/irq-entries.json",
+      "sha256": "a42b31644806dffb01ccd8805c9ea77e80e596e4b16c213463d1a3c9f92a7542"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/pal/returns.bin",
+      "sha256": "6cfa747aebb3ab406dc1805000257db9e2a9652763842aa2d3a6df2da265880d"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/pal/trace_counts.bin",
+      "sha256": "c5e9dc40b5cd62390444ce0c96f4f8b1364f4f9a24912c496097eb03c41a1e95"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/pal/trace_states.bin",
+      "sha256": "c5736d074d1e063e81ff5e60aaa165d5acbb37d6d4a8f50a5973611e383d7809"
+    },
+    {
+      "path": "validation/wait-return-live/87-ff/pal/trace_windows.bin",
+      "sha256": "4409e8aeda9b3fbc17bcfccdbafd95a2d88291ae6c68eaadba8ffa1ebb1a6e46"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/auto/capture.json",
+      "sha256": "3fe1d5b436c7f8caf306b892e2f9b617aa207b0a5c99d8958e2504abb9aec013"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/auto/cycle-events.json",
+      "sha256": "85cc2a5aed76904853809b4be2afb1c11bb8d268de3ce4f82e0d799f9b34de31"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/auto/irq-entries.json",
+      "sha256": "ae69670eb2d9b0a96ee88eeed7d1333212b8ef0a5cb93ef5fa0d981be0fba340"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/auto/returns.bin",
+      "sha256": "a9e7654e8e2eaf1f3ae78dcf7a3a7a9433114a39e3f7029a9282679d314cd474"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/auto/trace_counts.bin",
+      "sha256": "a1a5818ae5d3ca2cf2c61d75d8f1940556c5afea505f44420abb3ac2b9dbf942"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/auto/trace_states.bin",
+      "sha256": "e60cbeeb7447ba6c26e38a649a0a631ea8295b316959a2d8ce37a7e5e64ec176"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/auto/trace_windows.bin",
+      "sha256": "e362e93d7e21921dafd14d12332689e7729a52197997cd4b7a15e74111077ed1"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/pal/capture.json",
+      "sha256": "56b283415d4963357e99f86b95b5b39b83f81db8036e861cb9af1c9b5b477d3d"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/pal/cycle-events.json",
+      "sha256": "422129bd6ad17656c477f11dd8ea597938a263654db06890469b132925a70c52"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/pal/irq-entries.json",
+      "sha256": "803bdfc00b57fe334cdea28bc21263aaa649395ead7ea8be4f5db5363115dbf3"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/pal/returns.bin",
+      "sha256": "f086ddea97671be8eafa266779ea1cc6fd8b1754f5fe7def5b1229fc6544c58e"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/pal/trace_counts.bin",
+      "sha256": "dc75972ca20c015b66d3f89567c241100a9f07da37ee5879dfa6151b03fe5fde"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/pal/trace_states.bin",
+      "sha256": "0df258ce977c4738952b308775b7c792a50f14a99b527e41231af784b4351174"
+    },
+    {
+      "path": "validation/wait-return-live/96-00/pal/trace_windows.bin",
+      "sha256": "592104567beaca81b2899349da2f6d736af4cbe1541fd4f79d5426642dede906"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/auto/capture.json",
+      "sha256": "3fe1d5b436c7f8caf306b892e2f9b617aa207b0a5c99d8958e2504abb9aec013"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/auto/cycle-events.json",
+      "sha256": "3a86231606a5bc6d6270c134981dc652b92b73595d84c4251122db0622863c32"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/auto/irq-entries.json",
+      "sha256": "2f882d0d3ca95456fe81d7287c0ba3f9e4d99e665d91191952bbe51d08057d5e"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/auto/returns.bin",
+      "sha256": "11fff4387507034b35d6db92dbe7c2d0c966274bf64f66b9705cc74f67a2da00"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/auto/trace_counts.bin",
+      "sha256": "73876ddc194f263ffadb8921f7f32af56f79fdece559da93b3b1a889eef7c60d"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/auto/trace_states.bin",
+      "sha256": "eda6bf3e2a7e4803f830ae2f8e77a0b997a2de22b941167214863455e6276b5c"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/auto/trace_windows.bin",
+      "sha256": "4ca7f7d36e89b899908074cb2dc60c3d31be342ba035c17f1f379ce16ab1d854"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/pal/capture.json",
+      "sha256": "56b283415d4963357e99f86b95b5b39b83f81db8036e861cb9af1c9b5b477d3d"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/pal/cycle-events.json",
+      "sha256": "51ea4bdf8cbb79f747003b6bfa73725a9fef2197acfd61b8e1728fa0e35909bf"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/pal/irq-entries.json",
+      "sha256": "1a508dcb5ad49ad09d001f477e76b334fadd2bc7983470dbb8a985920ec84b51"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/pal/returns.bin",
+      "sha256": "324e222eb4203b6efe66545d7efc29fa6092ae2b09b1b085454cf4e2439a42d5"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/pal/trace_counts.bin",
+      "sha256": "0b12b70423dc1e8279a47e132e7618168155cbcf7d00cd50e94e72b208f6ffde"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/pal/trace_states.bin",
+      "sha256": "88d44a0b551b656ecf0e1fd88ce040fc888791c99bb313381b3581cee6cac04f"
+    },
+    {
+      "path": "validation/wait-return-live/96-ff/pal/trace_windows.bin",
+      "sha256": "1f898fa1f03c73d205f95b44c35fcf4cefabb867373378c70926ae8b720a1836"
+    },
+    {
+      "path": "validation/wait-raster-unit/wait/source.sms",
+      "sha256": "745a401604690a42febfd36b19401d320edb11a5ffa906febf23b10ac071285a"
+    },
+    {
+      "path": "validation/wait-raster-unit-pal/wait/source.sms",
+      "sha256": "01c7f62d45d82e70ebbff5902cb9eb2a04a791abf049818871a103cd07413d9b"
+    },
+    {
+      "path": "reference/validation/native-source-wait-unit/wait-raster-unit-auto/m1.bin",
+      "sha256": "cec9e66897261a9db8b0b169fec94478e4bb17f1a154613abb6c11ef8fd2a167"
+    },
+    {
+      "path": "reference/validation/native-source-wait-unit/wait-raster-unit-auto/pairs.bin",
+      "sha256": "329e8de910d91ecc252c20336efae2c5b734608af688d9a5dca3748111f3dfc2"
+    },
+    {
+      "path": "reference/validation/native-source-wait-unit/wait-raster-unit-pal/m1.bin",
+      "sha256": "b54f4322fcd8b3cd7bfe45e9e45bacb6395e9a2fc8b9904d4c7953df43eff5fb"
+    },
+    {
+      "path": "reference/validation/native-source-wait-unit/wait-raster-unit-pal/pairs.bin",
+      "sha256": "f2e95f012bb671eb91edf04014d3906a51bd75f64850ba91b711263e150ec948"
+    },
+    {
+      "path": "reference/validation/native-source-wait-unit/wait-raster-unit-pal-pal/m1.bin",
+      "sha256": "98ca0bb51fbaa8aa9a1f03acf36b610b1de4274819482570cc4e15065da2edf6"
+    },
+    {
+      "path": "reference/validation/native-source-wait-unit/wait-raster-unit-pal-pal/pairs.bin",
+      "sha256": "1d190c6942aa1aeb08b7830d1b47dc859d693656038490a0ec608b4cf9f840e7"
+    },
+    {
+      "path": "reference/wait_refresh_report.json",
+      "sha256": "507e04a04b6640505323718205ecd985b69751b3b96fdfa7fde09a0de016ed5f"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/auto-cycle-events.json",
+      "sha256": "1c8d1e618e99d8895bb7d1e85292acb9774b82c0ec63e3a2eb4df6b3ff00cba3"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/auto-foreground-phase-records.bin",
+      "sha256": "0a9988934067d78fb5aaa434a03304e1a49f0d71887e0573fb66496163427c42"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/auto-foreground-m1-records.bin",
+      "sha256": "3114248c4913031e8adca0db6793b0e4b9265597f97d6f0e499b660d39eb7a08"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/auto-save-wait-records.bin",
+      "sha256": "1c506556655affc7bf83385e01c9c4b3af4b1ab0df37d9d55cac26f5456c3068"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/captures-auto-sms/capture.json",
+      "sha256": "1022eb51d948b88effe79120346396685a0ed77437b29e32e805058c11291b34"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/pal-cycle-events.json",
+      "sha256": "7cbcb62ed6f71ac9f41fb7f7959d69b902ce0a9ffbbc95bf5a714ea9ff8887e2"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/pal-foreground-phase-records.bin",
+      "sha256": "44fd9e733a2949c58e1c48d299e285a1921014b6f27a0df49ad88ed2488e5827"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/pal-foreground-m1-records.bin",
+      "sha256": "7a4aba25e9652901f61fe8959d45285367eb655707f33664729620223ae1e9a0"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/pal-save-wait-records.bin",
+      "sha256": "4bb7b1474e34ecff3a7d239909c4f404b0442a5753f575d81894fff4c0da159f"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-00/captures-pal-sms/capture.json",
+      "sha256": "acf4a1d23442252b9ae0201d79b657894a4b7266d44c0266ca4a8d3eded89eae"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/auto-cycle-events.json",
+      "sha256": "5fc78283daab0c17834c1c75c289f64273eceaba48c121a20c1d7dfc8ca972d3"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/auto-foreground-phase-records.bin",
+      "sha256": "56085790490c61a2f9005675b1eaef047bbf127929c560cf23429fcbf889bd8b"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/auto-foreground-m1-records.bin",
+      "sha256": "d0facfc9edcfc008fe28fb05fa991cb6f6db951d3370e8d7bc348be3615003f4"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/auto-save-wait-records.bin",
+      "sha256": "d6297d46d5d31a70d5d9a45612217d04f5ac26fc3b3a999a859d6a1c2873d963"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/captures-auto-sms/capture.json",
+      "sha256": "1022eb51d948b88effe79120346396685a0ed77437b29e32e805058c11291b34"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/pal-cycle-events.json",
+      "sha256": "065242c4e6977355ea15d01af0653194358328eb52bfef956c125ec2849f69e1"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/pal-foreground-phase-records.bin",
+      "sha256": "dcec0fe86c765a0ba5d032eeea57d90227989f5c10f796802baa63985c254e91"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/pal-foreground-m1-records.bin",
+      "sha256": "3d84e7943d2cd8986aff86f547bb22a03fdd13fb10b1533a29d012f3b0a09614"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/pal-save-wait-records.bin",
+      "sha256": "c0e8cdb75fb0d83135efccbc0f13ff1ae383378ecaf074f9cd4c9ebdc689a575"
+    },
+    {
+      "path": "reference/validation/wait-refresh/1a-ff/captures-pal-sms/capture.json",
+      "sha256": "acf4a1d23442252b9ae0201d79b657894a4b7266d44c0266ca4a8d3eded89eae"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/auto-cycle-events.json",
+      "sha256": "6060026dd4ade0aa723e391197f0867029b6dd92f546f48282d201619a60a712"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/auto-foreground-phase-records.bin",
+      "sha256": "35f9d63ac7c1151833edf86db1ec5eaecb2e2f2e7909455d06ea156c85944a26"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/auto-foreground-m1-records.bin",
+      "sha256": "12930a7f1ec626654c63bc43ab98ba0c6054590809fbf6eb8170e9a59a3ebe67"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/auto-save-wait-records.bin",
+      "sha256": "9f66fda21077ef2f6f6c02b2486a96af3958864237d7b451e54e90141f751609"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/captures-auto-sms/capture.json",
+      "sha256": "27ea40e5052ba5b1cae26ed232865719bb2a3fbe217a815c723fafec66b45a1e"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/pal-cycle-events.json",
+      "sha256": "b0960501966f4e6d783be24b263c94e44eb560067663e9e4b17834137195af43"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/pal-foreground-phase-records.bin",
+      "sha256": "abe61be9e6d0e455143d01b14a4f999fed9413d85e569d9e5f9f8a80d912bda4"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/pal-foreground-m1-records.bin",
+      "sha256": "86040821e3084b9afc01cb8ce90e2b296a09647028da48934ef6a895880df280"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/pal-save-wait-records.bin",
+      "sha256": "58fb2390529c6b6d77f2a56c70ce2cfd1570f1e1f44fc8dff7277bd12c3e59d8"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-00/captures-pal-sms/capture.json",
+      "sha256": "c1734b1c7bdfba032115ecf75a3276b245b81788fc2eba929f7d17370572eb7d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/auto-cycle-events.json",
+      "sha256": "e7535ceace177a980579fdaa2ebfe8b3116cecd50e8fdae2caa08b6b81d50db9"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/auto-foreground-phase-records.bin",
+      "sha256": "28a4f289593b3a7ff960b55307eef6e2d798c01a4ec7d1f6df7aa4301e387959"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/auto-foreground-m1-records.bin",
+      "sha256": "ac7f06fb23b7e89d372f54ebaec4e3ec85d5c512f091b7371b794458367e8b08"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/auto-save-wait-records.bin",
+      "sha256": "42b5f839e6cd9d5f621ea3ca7d09c25026478ddf387f8cb90f4cf152450a2e03"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/captures-auto-sms/capture.json",
+      "sha256": "27ea40e5052ba5b1cae26ed232865719bb2a3fbe217a815c723fafec66b45a1e"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/pal-cycle-events.json",
+      "sha256": "2265041ccbbf7610c431d992b72b52b4ae26361ed7932775fd4989ebabfc20dd"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/pal-foreground-phase-records.bin",
+      "sha256": "3c4265244e6f78d20c06bdce1247776091a60ca21666f1c6dfab3c5fe270d06a"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/pal-foreground-m1-records.bin",
+      "sha256": "07a8c5cded44c225f811c349b16b82d0b734c4dd09eb846332209c8e2efe4657"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/pal-save-wait-records.bin",
+      "sha256": "97494928faea3534b7270a4f5fef19f076af5efbb3ace8fcdbf26c9bbc5d1f63"
+    },
+    {
+      "path": "reference/validation/wait-refresh/36-ff/captures-pal-sms/capture.json",
+      "sha256": "c1734b1c7bdfba032115ecf75a3276b245b81788fc2eba929f7d17370572eb7d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/auto-cycle-events.json",
+      "sha256": "f4e279615fae46dfde234b27d8f9ad3c5367d7ea47d3f1e4719591560189e95c"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/auto-foreground-phase-records.bin",
+      "sha256": "d2982b22d47dd6d845e893aa52d3975a4367875704194216bed120958a514ee9"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/auto-foreground-m1-records.bin",
+      "sha256": "1d83bf913460a74df9a675bbd5ff428233be02cf0585270ef75cdfe5ce3b7d67"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/auto-save-wait-records.bin",
+      "sha256": "1fb788edfea9e264cf8b05474d1fe2abf9f566ff7152cc47e68de26fec346e9c"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/captures-auto-sms/capture.json",
+      "sha256": "b99ec29775654dc2e75fa248b1d8e978f69e9f828a9fc0f3a6ad2c1efa42b9b0"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/pal-cycle-events.json",
+      "sha256": "e7c09d7422c8afacb7858409cbfdbfdfcfc7f007ebd8c65b4d588ec18ca2a6ef"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/pal-foreground-phase-records.bin",
+      "sha256": "ba963fbf080701705967ef5f22e98895f3b29c48f4c3fffb9a88856de605c8e4"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/pal-foreground-m1-records.bin",
+      "sha256": "dbedd616f8940787d144bb2f38ae1da365b45906a8481737c99a431c52fd129c"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/pal-save-wait-records.bin",
+      "sha256": "496e212ed0d59050df3afc25b45486129447a3c187fa367e8c330869e8a042ae"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-00/captures-pal-sms/capture.json",
+      "sha256": "096af472dea2a7aaef802e0a98c377ee4332502b1c0bf66b240b9607166d1f87"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/auto-cycle-events.json",
+      "sha256": "d94d0f053c08c98f423c4d5f05f7e48d8e44d19edb67e950e02e3f03a424b631"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/auto-foreground-phase-records.bin",
+      "sha256": "731d8e16f43cf7a5187da53fc0f2ab60246844d2cf7b0ad31d87f0491ea98181"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/auto-foreground-m1-records.bin",
+      "sha256": "29fa52c47ac85413cdffbeae6c6c71aaf5b4a23c1f7a37213d1971d0f9dc955b"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/auto-save-wait-records.bin",
+      "sha256": "12b33bffa501cf947784496aa04978673f87af5426b4fee941848728b585e28d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/captures-auto-sms/capture.json",
+      "sha256": "b99ec29775654dc2e75fa248b1d8e978f69e9f828a9fc0f3a6ad2c1efa42b9b0"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/pal-cycle-events.json",
+      "sha256": "5ca081b4dcf2b1d6d6c79a950a107a104ce37d6a2ed50dcf4cc5132f2dfd7cdd"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/pal-foreground-phase-records.bin",
+      "sha256": "2023e3f0bf929d35fc8813941b2a50d33e7fdc9b07ec30f69a5e9f82278f4f83"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/pal-foreground-m1-records.bin",
+      "sha256": "ee962600969859906decab9163f06836a7674c5b344ce69c628fe0334d380618"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/pal-save-wait-records.bin",
+      "sha256": "ce41ffc3a41d7f62c6842eb393c396dbccf1ef1625de42b3a69d45b4452b85f9"
+    },
+    {
+      "path": "reference/validation/wait-refresh/6d-ff/captures-pal-sms/capture.json",
+      "sha256": "096af472dea2a7aaef802e0a98c377ee4332502b1c0bf66b240b9607166d1f87"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/auto-cycle-events.json",
+      "sha256": "2fb403a5845fbe7446bf200a91b63fde71d139ce8e1af77422d752533ff49453"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/auto-foreground-phase-records.bin",
+      "sha256": "19c350d2e5f27a733dc3c7c03cd7feeaeee5484037408706ff480a84b5283e14"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/auto-foreground-m1-records.bin",
+      "sha256": "dc854f19d09b2b29f53fb54a48bb83ad236d558e1052db4798b94a446540983c"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/auto-save-wait-records.bin",
+      "sha256": "93a18efd12245ea5448bca0595207822871aeab0bf37602dbba5866a5b97e9f6"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/captures-auto-sms/capture.json",
+      "sha256": "3e658a71e7e355497c119027a0e0f728086514328088331a04bd3bac5dba7f5d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/pal-cycle-events.json",
+      "sha256": "f81fd153cf430cab9338c7b39b902406286782b21b134acfb4f1cb9e613a953e"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/pal-foreground-phase-records.bin",
+      "sha256": "b476fd89db44022487d40fef955b1143330f3f64d4e53098b4f720c52d832ccc"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/pal-foreground-m1-records.bin",
+      "sha256": "46a472902b8a5a592156c9813351d209356cfcc41b206003080eada8eb288db1"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/pal-save-wait-records.bin",
+      "sha256": "dd3f4023e722408f98b8c840b323e522ae767bb215cb2bb01bd302983742c5c8"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-00/captures-pal-sms/capture.json",
+      "sha256": "fc8479ae5502fa004a9783b7fc2b1a3b2500526f72132f1ff60d9b8cc62a2066"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/auto-cycle-events.json",
+      "sha256": "000b388ea97ab3b40c60171a2e7a7943fbecd4fa1832aee4205a886a4074f81c"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/auto-foreground-phase-records.bin",
+      "sha256": "57563a7eddd346f53a6ba025a6e85e53b6b37affda019a5ed3ccb86b3baa15fe"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/auto-foreground-m1-records.bin",
+      "sha256": "2408fe858f7081a2ab39e6aaf395823d2df7754c4d26fb2805a5a061c6bf5687"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/auto-save-wait-records.bin",
+      "sha256": "12d082016a0ab67311d86217a44839c1f7b0e9db255097c09c226352f4b67f0c"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/captures-auto-sms/capture.json",
+      "sha256": "3e658a71e7e355497c119027a0e0f728086514328088331a04bd3bac5dba7f5d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/pal-cycle-events.json",
+      "sha256": "7b609ab3b91aa2d994f693904a3b9660caf8bce862d1b43935d380833ae418cb"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/pal-foreground-phase-records.bin",
+      "sha256": "5a00797d649d766b3174ba1059dd24fcd922d924519fda90afe3aef3169890da"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/pal-foreground-m1-records.bin",
+      "sha256": "1c678196028b96f8a1c23c7a4e1cf5deab493bd4f0e08f7293e2f646eb55c22f"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/pal-save-wait-records.bin",
+      "sha256": "83e1d75134e509f70a73a24cc5302a23695947c2132a62de51a3d5952c384870"
+    },
+    {
+      "path": "reference/validation/wait-refresh/3c-ff/captures-pal-sms/capture.json",
+      "sha256": "fc8479ae5502fa004a9783b7fc2b1a3b2500526f72132f1ff60d9b8cc62a2066"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/auto-cycle-events.json",
+      "sha256": "2339d17294b69f5213359f4abcf030d4b05cb69d141e75d0082ba164e1032bc0"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/auto-foreground-phase-records.bin",
+      "sha256": "962b88f76bcc7514bcf53f0aa558e5833b03aa17003aba96ae29f55ad0bc90ad"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/auto-foreground-m1-records.bin",
+      "sha256": "ccbb8d2fdf3ce23ae2d5b6c74281d413900c6197102d030cad6d74cedeecb597"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/auto-save-wait-records.bin",
+      "sha256": "85b3a215b2ecd66e62744fe2a0223e18b87ea21f3fceacafbb7c5b0867b79cd6"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/captures-auto-sms/capture.json",
+      "sha256": "38ac37cb454054104b540b43f535f3a9a313d3691e86b8bdbba745d7ae7f8e12"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/pal-cycle-events.json",
+      "sha256": "661d9042e15a3a838aa1e3402e26d082c8ffa98b9b1d0845033b956d5f55187b"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/pal-foreground-phase-records.bin",
+      "sha256": "a825ef0ca793b9d6bb8ccff986a7bcbd27dbbfd6dd2534a0e0578d919cc363fb"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/pal-foreground-m1-records.bin",
+      "sha256": "583f6587f7474dd2bffae686c3628540bf9071af905795fe6067971dd712ff2d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/pal-save-wait-records.bin",
+      "sha256": "ce18bcc21612cd6c07e5552c496a3fd386af5e743bf9fc0008479a8c3ea2acc3"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-00/captures-pal-sms/capture.json",
+      "sha256": "f0b0c49328a51872302c774a5d4e7d7c42fa441cbb36606e9ddb06c4a62dbd98"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/auto-cycle-events.json",
+      "sha256": "3c238e277f0ef554ebee8ea2be1d2b0fb644097873d8fa9f85e411b18dc20c1d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/auto-foreground-phase-records.bin",
+      "sha256": "a8f8e139f9a6709963e71a551a32dbac972f2e4a2ec0e2825d211138b061ee95"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/auto-foreground-m1-records.bin",
+      "sha256": "6981be6ed22cb736ee80f7adc35eb2bd00329caab43793fb858dcfbf398ca2e3"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/auto-save-wait-records.bin",
+      "sha256": "a83b96ecef8bcc154d40ea66c46007053bdbc3287175bb3f13154b434d8a520d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/captures-auto-sms/capture.json",
+      "sha256": "38ac37cb454054104b540b43f535f3a9a313d3691e86b8bdbba745d7ae7f8e12"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/pal-cycle-events.json",
+      "sha256": "77a1dafced0ceae164ac1f58eb4425c781109bca6ac8c8a2f531f4a12ee97543"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/pal-foreground-phase-records.bin",
+      "sha256": "9243770b2b283f9412657bd50b932f15ac67179b39c43c51a5e381cb27bbe2f0"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/pal-foreground-m1-records.bin",
+      "sha256": "6f2f32f6db7e0e81ef4344a18546e607bb416932cf07194c342f9de31b036745"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/pal-save-wait-records.bin",
+      "sha256": "773e271b47eef613e2aa6b5269587b9ed263daf5afc6482ab326919309555524"
+    },
+    {
+      "path": "reference/validation/wait-refresh/87-ff/captures-pal-sms/capture.json",
+      "sha256": "f0b0c49328a51872302c774a5d4e7d7c42fa441cbb36606e9ddb06c4a62dbd98"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/auto-cycle-events.json",
+      "sha256": "09cce175c6d84d2953c9fd75a25ca61d5409a1ffc9efe3c161802646f198bcfe"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/auto-foreground-phase-records.bin",
+      "sha256": "a142da3f1425d9ff3dcdabdd89d25168a315e96d65d9f7a8a356ae6fac1f9a02"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/auto-foreground-m1-records.bin",
+      "sha256": "dc4fa94acf7be8a88fdfc7144133053d8958aaa4631474de9439c64308dfd025"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/auto-save-wait-records.bin",
+      "sha256": "718aeae51d0edded8bc288c5732991d979e50cd640e7b40eb9a6173c020cb563"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/captures-auto-sms/capture.json",
+      "sha256": "c75c29c9682ad65354fd4cbe3faeb16538244d412ed8e4a99cc90912a64c3023"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/pal-cycle-events.json",
+      "sha256": "c676d1a59b9d150067ee94baed488d997eb9ef379b29f3fd99b726869327420a"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/pal-foreground-phase-records.bin",
+      "sha256": "e943572d96845e09a0668dbdb5a05d7312683e9c466733ec6d17776d1bb0e604"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/pal-foreground-m1-records.bin",
+      "sha256": "c399e017c21ad7c0328f45eb3ca9dcb5a28be36e443c284025aead7e8fd0590d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/pal-save-wait-records.bin",
+      "sha256": "c87247cf7b2cf5be90992b2e291963b0a371eaadb62d1e2484ac0121b89ef00e"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-00/captures-pal-sms/capture.json",
+      "sha256": "92439373a1803a530a3058af503a2d876cb12c9bbb55791b01c7773547294a2f"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/auto-cycle-events.json",
+      "sha256": "f0d527fc906b73201db05273aa892077b52ac9936d2141bd90e0728030bd18c0"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/auto-foreground-phase-records.bin",
+      "sha256": "7908536a791e7f0b3836cfe8337666b5f8bfd4b9b8feaaceaca2876a6279ebda"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/auto-foreground-m1-records.bin",
+      "sha256": "a8280218cfb30b8d81b03a3aa37c76b0a61c91d1525885d65fb2b02e3c66569e"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/auto-save-wait-records.bin",
+      "sha256": "75dbc1e3ffd418147e0d7bf5293b25a267048ff79c820e3a5ae2be12dcab5fc3"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/captures-auto-sms/capture.json",
+      "sha256": "c75c29c9682ad65354fd4cbe3faeb16538244d412ed8e4a99cc90912a64c3023"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/pal-cycle-events.json",
+      "sha256": "fd87be694aed8e1c2a7161dfcf0596738f07d338527b0c354e8a6ebde49cf668"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/pal-foreground-phase-records.bin",
+      "sha256": "25f8dbb83dfc1575aee46e3edfb28fc58f4d7ac7fb2a76bfa1b90f97700f614d"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/pal-foreground-m1-records.bin",
+      "sha256": "5b51283c582a3a4c1de746c8ddd8870c8857ebe984a50553195be2291a61cf8c"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/pal-save-wait-records.bin",
+      "sha256": "23d429a3ac6bf050ba72a714de6b9061b1aa16e93014122afa88ca455acc3287"
+    },
+    {
+      "path": "reference/validation/wait-refresh/96-ff/captures-pal-sms/capture.json",
+      "sha256": "92439373a1803a530a3058af503a2d876cb12c9bbb55791b01c7773547294a2f"
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 # Attente source, horloge et interruptions dynamiques natives
 
+Suite de cette etape : la [restauration et le retour complet](native_wait_return_milestone.md)
+sont maintenant traduits et verifies. Le document ci-dessous conserve
+le perimetre de l'etape initiale 0B95..0BB3.
+
 `source_irq_context.c/.h` raccorde le lecteur audio natif 8000 et les
 effets/couts de l'interruption video au callback de `source_clock`.
 Les couts T/M1 proviennent du RAM/audio courant, sans budget fixe.
