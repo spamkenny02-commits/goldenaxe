@@ -1,0 +1,45 @@
+{
+  "cases": 24,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 31677,
+      "done": 1,
+      "cases": 24,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 26503,
+      "done": 1,
+      "cases": 24,
+      "failures": 0
+    }
+  ],
+  "helpers": {
+    "source_graphics_load": "1f51059c410e7b6b10bf2cb84cc5421a523e9b304cdba81e71be87bbe1b431e0",
+    "source_pattern_clock": "af2031b49a2dbb5c7f72d59e54df50d2e78ec8d1b372f161d61bdb27c26741e5",
+    "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "source_irq_context": "ec7601406cbfe70fa913507caaea53cc71565f8fd4e2a7410bc42164efc526a4",
+    "source_irq": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99",
+    "source_clock": "0dc34eb6af741d67aafb626ee676e9b311e4e9da3b78c6fe67c11e39384bbbab",
+    "source_rng": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_audio_reader": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018",
+    "source_audio_priority": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "source_audio_tone": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a",
+    "source_audio_noise": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d",
+    "source_audio_sequence": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "source_case_sha256": "939bd4d65eadf055fc2b562934772f0d2ff3684ad9d35cb5a338df4469bb82d2",
+  "kernel_sha256": "2d8ea4b09ad8b99cd9a4e467cae76129cb8bb21de31235d4f27de3ab59dbb23d",
+  "production_clock_wired": false,
+  "limits": [
+    "Compiled68000 six-checkpoint vectors retain source phase/R/M1/331RAM/400audio/IRQ-offset assertions; other fields are host parity.",
+    "Changed class0 load only; physical uploads/contention, all graphics classes and global entry-state propagation remain pending."
+  ]
+}

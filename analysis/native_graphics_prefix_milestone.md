@@ -50,3 +50,7 @@ Portee restante : le reste du chargement, les classes graphiques autres
 que ce changement class0, la propagation de phase depuis le demarrage,
 les uploads physiques/conflits VRAM, puis la boucle globale du jeu.
 Les differences PAL de transitions documentees en v0198 restent ouvertes.
+
+Suite : le chemin class0 couvre maintenant16D0..24B9 sur une seule horloge,
+avec six points source et des captures independantes des donnees graphiques.
+Voir native_graphics_load_milestone.md ; le raccordement global reste ouvert.

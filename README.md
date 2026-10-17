@@ -17,6 +17,14 @@ Checksum Mega Drive : `4A0A`
 
 ## État du portage
 
+Le chargement graphique natif couvre désormais 16D0..24B9 avec une seule
+horloge et des interruptions audio dynamiques. Les 24 parcours retrouvent
+les six points de contrôle SMS et passent en 68000 PAL/NTSC. De nouvelles
+captures confirment aussi les données graphiques, le terrain et les octets
+copiés en SRAM. La ROM jouable reste v0198 : le raccordement global,
+les autres classes et la suite du chargement restent à réaliser.
+Voir les [preuves et limites](analysis/native_graphics_load_milestone.md).
+
 Le premier chargement graphique 16D0..1706 dispose maintenant d’une
 traduction native avec horloge et interruptions audio dynamiques. Les
 24 contextes SMS retrouvent phase, R, M1, RAM/audio et instants d’interruption ;
