@@ -49,3 +49,9 @@ La recompilation produit les octets exacts de v0198. Le chemin d'horloge
 reste separe de la ROM jouable tant que le demarrage et les appels precedents
 ne transmettent pas leur phase logique. Restent notamment 1DE2/HUD, acteurs,
 heros, historique/RNG et revelation, puis leur raccordement global.
+
+Suite : la conversion640 mots de carte et le HUD1E4E sont maintenant
+traduits sur la meme horloge, onze points source jusqu a1DE8, avec captures
+directes des1536 octets et9021 contextes de jauges/gemmes/or verifies source
+puis68000 PAL/NTSC. Voir native_room_hud_milestone.md ; attendre/transfert/
+palette, autres branches et raccordement temps reel restent ouverts.
