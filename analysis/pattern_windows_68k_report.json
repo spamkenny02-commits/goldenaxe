@@ -1,0 +1,26 @@
+{
+  "cases": 16,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 9406,
+      "done": 1,
+      "cases": 16,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 7870,
+      "done": 1,
+      "cases": 16,
+      "failures": 0
+    }
+  ],
+  "reference_sha256": "af2031b49a2dbb5c7f72d59e54df50d2e78ec8d1b372f161d61bdb27c26741e5",
+  "module_sha256": "67fb43576e39e8259e48abdc0d0f12bc80d87983e794d8ae2f3ae5cead3d74fc",
+  "kernel_sha256": "a8c889e0aa6ed0b8e3f640d2772f95aca8cda500a98c0b5d8fb6d1e47ef73695",
+  "limits": [
+    "Compiled68000 pairwise16384 pattern bytes,336RAM,400audio,all clock outputs and completeIRQ traces. Long295/324/325/1024-command planes around frame and65535T limits.",
+    "Both logical regions executed under both physical regions; original source full-chain proof and bare CPU profile are separate."
+  ]
+}

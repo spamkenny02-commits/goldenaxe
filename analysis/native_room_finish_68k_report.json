@@ -3,14 +3,14 @@
   "results": [
     {
       "region": "auto",
-      "frame": 3117,
+      "frame": 3104,
       "done": 1,
       "cases": 24,
       "failures": 0
     },
     {
       "region": "pal",
-      "frame": 2608,
+      "frame": 2597,
       "done": 1,
       "cases": 24,
       "failures": 0
@@ -23,7 +23,7 @@
     "source_world_map": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489",
     "source_ram_planes": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
     "source_graphics_load": "f02cdddb55593539a34936063c55407feaf920d134d028a8f5984c777dbb9754",
-    "source_pattern_clock": "decd3117fdda4dec0b2a9d9e072c37f6f26b03ba16ae6e2bf9ca00b282bca4ca",
+    "source_pattern_clock": "67fb43576e39e8259e48abdc0d0f12bc80d87983e794d8ae2f3ae5cead3d74fc",
     "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
     "source_irq_context": "193a739e8d14fa83ad93e1e956fe76f44423e1a756e29a5e3c28ac3256b8079f",
     "source_irq": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
@@ -41,7 +41,7 @@
     "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
   },
   "source_case_sha256": "420e894bcb04dd20b4c50b29ec8ef57b5ab88686ab000fdc6165091cd240c9cf",
-  "kernel_sha256": "ce8eab598e97d6443e96aad85c0406b9c6da02a02835c298a44437721c3fe574",
+  "kernel_sha256": "920dc250c79434c527e5b0e37cf3e4c910aec312722264f71dc9e959087ae1d2",
   "production_clock_wired": false,
   "limits": [
     "Compiled68000 sixteen-checkpoint vectors retain source phase/R/M1/331RAM/400audio/IRQ-offset assertions; other fields are host parity.",

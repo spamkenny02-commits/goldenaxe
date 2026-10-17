@@ -1,0 +1,827 @@
+{
+  "instrumented": true,
+  "results": [
+    {
+      "region": "auto",
+      "rows": [
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            2,
+            0,
+            1,
+            0,
+            1
+          ],
+          "case": 0,
+          "room": 60,
+          "physical_frames": 24,
+          "source_master": 20349450,
+          "source_frames": 22.71042587384492,
+          "compute_to_source_ratio": 1.0567833528670307,
+          "stages": [
+            16,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 5800,
+          "irq_calls": 22,
+          "clock_calls": [
+            261,
+            119,
+            85,
+            1078
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            2,
+            0,
+            0,
+            1,
+            1
+          ],
+          "case": 2,
+          "room": 60,
+          "physical_frames": 24,
+          "source_master": 20349450,
+          "source_frames": 22.71042587384492,
+          "compute_to_source_ratio": 1.0567833528670307,
+          "stages": [
+            16,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 5595,
+          "irq_calls": 22,
+          "clock_calls": [
+            261,
+            119,
+            85,
+            1078
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            2,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 4,
+          "room": 135,
+          "physical_frames": 24,
+          "source_master": 20349555,
+          "source_frames": 22.710543056113565,
+          "compute_to_source_ratio": 1.0567779000572741,
+          "stages": [
+            16,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 5810,
+          "irq_calls": 22,
+          "clock_calls": [
+            282,
+            122,
+            85,
+            1031
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 6,
+          "room": 135,
+          "physical_frames": 24,
+          "source_master": 20349555,
+          "source_frames": 22.710543056113565,
+          "compute_to_source_ratio": 1.0567779000572741,
+          "stages": [
+            15,
+            2,
+            5,
+            2
+          ],
+          "irq_subticks": 5775,
+          "irq_calls": 22,
+          "clock_calls": [
+            282,
+            122,
+            85,
+            1031
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            2,
+            0,
+            0,
+            1,
+            1
+          ],
+          "case": 8,
+          "room": 150,
+          "physical_frames": 24,
+          "source_master": 20349225,
+          "source_frames": 22.710174768983528,
+          "compute_to_source_ratio": 1.056795037648854,
+          "stages": [
+            16,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 5585,
+          "irq_calls": 22,
+          "clock_calls": [
+            265,
+            119,
+            85,
+            1025
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            2,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 10,
+          "room": 150,
+          "physical_frames": 24,
+          "source_master": 20349225,
+          "source_frames": 22.710174768983528,
+          "compute_to_source_ratio": 1.056795037648854,
+          "stages": [
+            16,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 5945,
+          "irq_calls": 22,
+          "clock_calls": [
+            265,
+            119,
+            85,
+            1025
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 12,
+          "room": 26,
+          "physical_frames": 24,
+          "source_master": 20349630,
+          "source_frames": 22.71062675773403,
+          "compute_to_source_ratio": 1.0567740052276136,
+          "stages": [
+            15,
+            2,
+            5,
+            2
+          ],
+          "irq_subticks": 5745,
+          "irq_calls": 22,
+          "clock_calls": [
+            283,
+            120,
+            84,
+            916
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "case": 14,
+          "room": 26,
+          "physical_frames": 25,
+          "source_master": 20349630,
+          "source_frames": 22.71062675773403,
+          "compute_to_source_ratio": 1.1008062554454308,
+          "stages": [
+            15,
+            2,
+            5,
+            3
+          ],
+          "irq_subticks": 5720,
+          "irq_calls": 22,
+          "clock_calls": [
+            283,
+            120,
+            84,
+            916
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 16,
+          "room": 54,
+          "physical_frames": 23,
+          "source_master": 20349375,
+          "source_frames": 22.710342172224454,
+          "compute_to_source_ratio": 1.0127544457753617,
+          "stages": [
+            15,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 5765,
+          "irq_calls": 22,
+          "clock_calls": [
+            266,
+            120,
+            85,
+            1076
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 18,
+          "room": 54,
+          "physical_frames": 23,
+          "source_master": 20349375,
+          "source_frames": 22.710342172224454,
+          "compute_to_source_ratio": 1.0127544457753617,
+          "stages": [
+            15,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 5640,
+          "irq_calls": 22,
+          "clock_calls": [
+            266,
+            120,
+            85,
+            1076
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "case": 20,
+          "room": 109,
+          "physical_frames": 24,
+          "source_master": 20349525,
+          "source_frames": 22.71050957546538,
+          "compute_to_source_ratio": 1.0567794579971768,
+          "stages": [
+            15,
+            2,
+            5,
+            2
+          ],
+          "irq_subticks": 5745,
+          "irq_calls": 22,
+          "clock_calls": [
+            282,
+            122,
+            85,
+            1034
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            12,
+            2,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 22,
+          "room": 109,
+          "physical_frames": 24,
+          "source_master": 20349525,
+          "source_frames": 22.71050957546538,
+          "compute_to_source_ratio": 1.0567794579971768,
+          "stages": [
+            16,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 5890,
+          "irq_calls": 22,
+          "clock_calls": [
+            282,
+            122,
+            85,
+            1034
+          ]
+        }
+      ],
+      "done": 1,
+      "cases": 12,
+      "failures": 0,
+      "frame": 343
+    },
+    {
+      "region": "pal",
+      "rows": [
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 1,
+          "room": 60,
+          "physical_frames": 20,
+          "source_master": 20949705,
+          "source_frames": 19.570749957961997,
+          "compute_to_source_ratio": 1.021933244406067,
+          "stages": [
+            13,
+            1,
+            4,
+            2
+          ],
+          "irq_subticks": 7944,
+          "irq_calls": 19,
+          "clock_calls": [
+            253,
+            108,
+            76,
+            2322
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 3,
+          "room": 60,
+          "physical_frames": 20,
+          "source_master": 20949705,
+          "source_frames": 19.570749957961997,
+          "compute_to_source_ratio": 1.021933244406067,
+          "stages": [
+            13,
+            1,
+            4,
+            2
+          ],
+          "irq_subticks": 4956,
+          "irq_calls": 19,
+          "clock_calls": [
+            253,
+            108,
+            76,
+            2322
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            9,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 5,
+          "room": 135,
+          "physical_frames": 19,
+          "source_master": 20949810,
+          "source_frames": 19.570848046634158,
+          "compute_to_source_ratio": 0.9708317163735614,
+          "stages": [
+            12,
+            1,
+            4,
+            2
+          ],
+          "irq_subticks": 5610,
+          "irq_calls": 19,
+          "clock_calls": [
+            252,
+            110,
+            78,
+            2261
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            9,
+            2,
+            0,
+            1,
+            0,
+            0
+          ],
+          "case": 7,
+          "room": 135,
+          "physical_frames": 19,
+          "source_master": 20949810,
+          "source_frames": 19.570848046634158,
+          "compute_to_source_ratio": 0.9708317163735614,
+          "stages": [
+            12,
+            2,
+            3,
+            2
+          ],
+          "irq_subticks": 6486,
+          "irq_calls": 19,
+          "clock_calls": [
+            252,
+            110,
+            78,
+            2261
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "case": 9,
+          "room": 150,
+          "physical_frames": 19,
+          "source_master": 20949480,
+          "source_frames": 19.570539767950226,
+          "compute_to_source_ratio": 0.9708470090904404,
+          "stages": [
+            12,
+            2,
+            3,
+            2
+          ],
+          "irq_subticks": 6342,
+          "irq_calls": 19,
+          "clock_calls": [
+            245,
+            107,
+            77,
+            2254
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "case": 11,
+          "room": 150,
+          "physical_frames": 19,
+          "source_master": 20949480,
+          "source_frames": 19.570539767950226,
+          "compute_to_source_ratio": 0.9708470090904404,
+          "stages": [
+            12,
+            2,
+            3,
+            2
+          ],
+          "irq_subticks": 6240,
+          "irq_calls": 19,
+          "clock_calls": [
+            245,
+            107,
+            77,
+            2254
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "case": 13,
+          "room": 26,
+          "physical_frames": 20,
+          "source_master": 20949885,
+          "source_frames": 19.570918109971416,
+          "compute_to_source_ratio": 1.0219244640245042,
+          "stages": [
+            13,
+            2,
+            3,
+            2
+          ],
+          "irq_subticks": 5778,
+          "irq_calls": 19,
+          "clock_calls": [
+            247,
+            109,
+            78,
+            2148
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "case": 15,
+          "room": 26,
+          "physical_frames": 20,
+          "source_master": 20949885,
+          "source_frames": 19.570918109971416,
+          "compute_to_source_ratio": 1.0219244640245042,
+          "stages": [
+            12,
+            2,
+            4,
+            2
+          ],
+          "irq_subticks": 7092,
+          "irq_calls": 19,
+          "clock_calls": [
+            247,
+            109,
+            78,
+            2148
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            9,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 17,
+          "room": 54,
+          "physical_frames": 19,
+          "source_master": 20949630,
+          "source_frames": 19.570679894624742,
+          "compute_to_source_ratio": 0.9708400577957701,
+          "stages": [
+            12,
+            1,
+            4,
+            2
+          ],
+          "irq_subticks": 6168,
+          "irq_calls": 19,
+          "clock_calls": [
+            246,
+            109,
+            77,
+            2322
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            9,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 19,
+          "room": 54,
+          "physical_frames": 18,
+          "source_master": 20949630,
+          "source_frames": 19.570679894624742,
+          "compute_to_source_ratio": 0.9197432126486242,
+          "stages": [
+            12,
+            1,
+            4,
+            1
+          ],
+          "irq_subticks": 5916,
+          "irq_calls": 19,
+          "clock_calls": [
+            246,
+            109,
+            77,
+            2322
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "case": 21,
+          "room": 109,
+          "physical_frames": 20,
+          "source_master": 20949345,
+          "source_frames": 19.570413653943163,
+          "compute_to_source_ratio": 1.0219508056218465,
+          "stages": [
+            13,
+            1,
+            4,
+            2
+          ],
+          "irq_subticks": 8046,
+          "irq_calls": 19,
+          "clock_calls": [
+            242,
+            110,
+            78,
+            2263
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 23,
+          "room": 109,
+          "physical_frames": 20,
+          "source_master": 20949345,
+          "source_frames": 19.570413653943163,
+          "compute_to_source_ratio": 1.0219508056218465,
+          "stages": [
+            13,
+            1,
+            4,
+            2
+          ],
+          "irq_subticks": 6552,
+          "irq_calls": 19,
+          "clock_calls": [
+            242,
+            110,
+            78,
+            2263
+          ]
+        }
+      ],
+      "done": 1,
+      "cases": 12,
+      "failures": 0,
+      "frame": 277
+    }
+  ],
+  "helpers": {
+    "source_room_finish.c": "fdc31ff91f4e161b7bc486d8fccf5a9c1627affebb8c53c279448083e843b2ab",
+    "source_room_finish.h": "01bf2987ba187cb1de43a54df1f73f6d0e51f3c4818b1572ca507ffdafb80ee2",
+    "source_wait_restore.c": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
+    "source_wait_restore.h": "553e0b70c01429b5a645a806ac2a97e8d9ca518a654fd1775370b59593a2acc3",
+    "source_room_hud.c": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "source_room_hud.h": "14ee23b14dfb24d3daccc829a2a4f25e2002bd0b950d66cd2273ae3eabea9dae",
+    "source_world_map.c": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489",
+    "source_world_map.h": "50ddb3249e80e1332aa6bc1c1a1bd62ef3cd93e2b398b063a3294865ae5c7c8c",
+    "source_ram_planes.c": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
+    "source_ram_planes.h": "ad2f3a5911db9eb8ee263cc689b79805e1fbab7b5bdcf7ff887e414eb25856bc",
+    "source_graphics_load.c": "f02cdddb55593539a34936063c55407feaf920d134d028a8f5984c777dbb9754",
+    "source_graphics_load.h": "751985ca2b2ad2e169bb82a20c28e1e3169214a3d83eb6a6007c9ded83028972",
+    "source_pattern_clock.c": "67fb43576e39e8259e48abdc0d0f12bc80d87983e794d8ae2f3ae5cead3d74fc",
+    "source_pattern_clock.h": "8ba6295f13aedf4d6d290a093a7a31e5a2ae6fe48a413eedda0f2e35cfdb378e",
+    "source_wait.c": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "source_wait.h": "5b19b3fab702b1401beca02842f9421cc5502cba3876251fb5827debff159dc5",
+    "source_irq_context.c": "193a739e8d14fa83ad93e1e956fe76f44423e1a756e29a5e3c28ac3256b8079f",
+    "source_irq_context.h": "b2e4e2ded184ef602c40c192c7ba59d88075463262c06d65569042b26988aafa",
+    "source_irq.c": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+    "source_irq.h": "c463a407ad732d2a78e16a6b50b18edb3c0fb941655c5a3aae3acc9df402d658",
+    "source_clock.c": "4cf6afab6dda5d9dd3d2a46c144511e554b89b37e573b11ec8a23e3a25f2f5c4",
+    "source_clock.h": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_rng.h": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f",
+    "source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_reader.h": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933",
+    "source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_prefix.h": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9",
+    "source_audio_dispatch.c": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018",
+    "source_audio_dispatch.h": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960",
+    "source_audio_priority.c": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "source_audio_priority.h": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb",
+    "source_audio_tone.c": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a",
+    "source_audio_tone.h": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4",
+    "source_audio_noise.c": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d",
+    "source_audio_noise.h": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1",
+    "source_audio_sequence.c": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42",
+    "source_audio_sequence.h": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c",
+    "source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_memory.h": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9",
+    "source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_envelope.h": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c",
+    "source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
+    "source_audio_pitch.h": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2"
+  },
+  "cases_sha256": "420e894bcb04dd20b4c50b29ec8ef57b5ab88686ab000fdc6165091cd240c9cf",
+  "clock_call_fields": [
+    "execute",
+    "generic_repeat",
+    "accepted_generic_groups",
+    "generic_repetitions"
+  ],
+  "inline_blocks_counted": false,
+  "kernel_sha256": "028dc9ff1fc696950d62675fdba11dcc5cd9f0000b35185b248939495040bae0",
+  "limits": [
+    "Vtimer delta around four native calls, no hashes/checkpoint snapshots; stage marks and two getSubTick samples perIRQ add a small profiling overhead. Six additional vtimer checkpoints split graphics stages1706/170E/1720/1733/1748/24B9. One-frame stage resolution; IRQ subtick conversion approximate.",
+    "Only matching logical/physical region; controlled input contexts. Buffer initialization and correctness comparisons outside timing.",
+    "Display off,discarded PSG sink,no real renderer/uploads/input pacing; CPU lower-bound profile, not playable frame-rate proof."
+  ]
+}

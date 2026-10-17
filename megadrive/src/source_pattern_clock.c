@@ -17,6 +17,40 @@ static u8 rst28(SourceClock *clock,SourceIrqContext *context)
     S(10,1);return 1;
 }
 
+/* ROM input is immutable. Scan complete commands up to the next VINT,
+ * then commit their decoded bytes before the next clock operation. No
+ * plane-end RAM write is included in this window. */
+static u16 command_window(SourceClock *clock,const u8 **source,u8 **destination,u16 *cursor)
+{
+    const u8 *scan=*source,*src;u8 *write;
+    u32 available;u16 ticks=0,fetches=0,commands=0,position=*cursor;
+    if(clock->first || clock->blocked || clock->pending || !clock->iff) return 0;
+    available=clock->until_vint/15;
+    if(available>65535) available=65535;
+    while(*scan)
+    {
+        u16 command=*scan,count=command&127,carry,cost,m1;u8 literal=command&128;
+        if(!count) count=256;
+        carry=((position&255)+count*4)>>8;
+        cost=44+count*(literal?135:134)-carry-5+(literal?16:29);
+        m1=9+count*(literal?19:18)+carry+(literal?2:4);
+        if(cost>available-ticks) break;
+        ticks+=cost;fetches+=m1;position+=count*4;commands++;
+        scan+=1+(literal?count:1);
+    }
+    if(commands<2 || !source_clock_block(clock,ticks,fetches)) return 0;
+    src=*source;write=*destination;
+    while(src<scan)
+    {
+        u16 command=*src++,count=command&127,n;u8 literal=command&128;
+        if(!count) count=256;
+        for(n=0;n<count;n++) {*write=*src;write+=4;if(literal) src++;}
+        if(!literal) src++;
+    }
+    *source=scan;*destination=write;*cursor=position;
+    return commands;
+}
+
 static u8 patterns032a(SourceClock *clock,SourceIrqContext *context,
                        const u8 **source,u8 *destination)
 {
@@ -30,8 +64,10 @@ static u8 patterns032a(SourceClock *clock,SourceIrqContext *context,
         if(!source_clock_block(clock,22,2)) {S(11,1);S(11,1);}
         for(;;)
         {
-            u16 command=*src++,count,n;
+            u16 command,count,n;
             u8 literal;
+            if(command_window(clock,&src,&write,&cursor)) continue;
+            command=*src++;
             if(!command)
             {
                 if(!source_clock_block(clock,29,4)) {S(7,1);S(6,1);S(4,1);S(12,1);}

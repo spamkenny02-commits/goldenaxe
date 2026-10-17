@@ -20,11 +20,13 @@ Checksum Mega Drive : `4A0A`
 La chaîne native de chargement traite maintenant des commandes RLE et lignes
 vidéo entières avant les interruptions. Les 16 points SMS restent conformes ;
 7 040 cas d’horloge passent aussi en 68000 PAL/NTSC. Le calcul seul demande
-24–25 images NTSC sans compteurs internes, pour un budget SMS de 22,71 :
+23–24 images NTSC sans compteurs internes, pour un budget SMS de 22,71 :
 elle reste hors du jeu actif.
 La ROM jouable demeure v0198. Le calcul direct de l’attente vidéo est vérifié
 sur 3 933 000 positions/seuils ; les 32 693 cas IRQ passent en 68000 PAL/NTSC.
-Voir les [mesures et limites actuelles](analysis/native_irq_poll_fast_milestone.md).
+Le décodeur regroupe plusieurs commandes entre deux interruptions :
+1 460 cas comparés et 16 cas longs supplémentaires en 68000 passent.
+Voir les [mesures et limites actuelles](analysis/native_pattern_windows_milestone.md).
 
 La chaîne native couvre désormais graphismes, cartes, HUD, attente,
 transfert et préparation de palette jusqu’à 24BF, avec une seule horloge.

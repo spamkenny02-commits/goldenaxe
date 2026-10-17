@@ -1,0 +1,439 @@
+{
+  "files": [
+    {
+      "file": "analysis/native_loading_budget_bare_report.json",
+      "bytes": 21993,
+      "sha256": "c65ed6316987055bab5bee48856cbd7e5d4f2dde9d3991b3885cca1d8c6b5fca"
+    },
+    {
+      "file": "analysis/native_loading_budget_report.json",
+      "bytes": 22398,
+      "sha256": "f194a5a3fa7234125a50531c1c92f3c1618ae990d17ec5452912636be89658ea"
+    },
+    {
+      "file": "analysis/native_pattern_windows_milestone.md",
+      "bytes": 2753,
+      "sha256": "46de91d2c6c59d474d51e7eafe5b82b682000aac7fcd5e83ddabf9e25685ff0f"
+    },
+    {
+      "file": "analysis/native_room_finish_68k_report.json",
+      "bytes": 2893,
+      "sha256": "1e05c55671d9f014c4ca33eb12288117ab60c4c2f385cfe775d920c7f249bcf0"
+    },
+    {
+      "file": "analysis/native_room_finish_report.json",
+      "bytes": 9466,
+      "sha256": "0fea3c3ca3a68c5590e8d72af991527afa3f51913692e9095f0e97f7c73b5afa"
+    },
+    {
+      "file": "analysis/pattern_clock_batch_report.json",
+      "bytes": 762,
+      "sha256": "0445e680bd38eff3b831a6e389da9623b61a3c43c3676a4846294957a0d8384e"
+    },
+    {
+      "file": "analysis/pattern_windows_68k_report.json",
+      "bytes": 880,
+      "sha256": "37e584ddb202f5b4989baef55786410aa03ee27326814f567b7ca10988724ef4"
+    },
+    {
+      "file": "megadrive/src/source_audio_dispatch.c",
+      "bytes": 4619,
+      "sha256": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018"
+    },
+    {
+      "file": "megadrive/src/source_audio_dispatch.h",
+      "bytes": 552,
+      "sha256": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960"
+    },
+    {
+      "file": "megadrive/src/source_audio_envelope.c",
+      "bytes": 4169,
+      "sha256": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c"
+    },
+    {
+      "file": "megadrive/src/source_audio_envelope.h",
+      "bytes": 549,
+      "sha256": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c"
+    },
+    {
+      "file": "megadrive/src/source_audio_memory.c",
+      "bytes": 497,
+      "sha256": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0"
+    },
+    {
+      "file": "megadrive/src/source_audio_memory.h",
+      "bytes": 374,
+      "sha256": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9"
+    },
+    {
+      "file": "megadrive/src/source_audio_noise.c",
+      "bytes": 1743,
+      "sha256": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d"
+    },
+    {
+      "file": "megadrive/src/source_audio_noise.h",
+      "bytes": 436,
+      "sha256": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1"
+    },
+    {
+      "file": "megadrive/src/source_audio_pitch.c",
+      "bytes": 2626,
+      "sha256": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+    },
+    {
+      "file": "megadrive/src/source_audio_pitch.h",
+      "bytes": 530,
+      "sha256": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2"
+    },
+    {
+      "file": "megadrive/src/source_audio_prefix.c",
+      "bytes": 2455,
+      "sha256": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39"
+    },
+    {
+      "file": "megadrive/src/source_audio_prefix.h",
+      "bytes": 594,
+      "sha256": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9"
+    },
+    {
+      "file": "megadrive/src/source_audio_priority.c",
+      "bytes": 3351,
+      "sha256": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396"
+    },
+    {
+      "file": "megadrive/src/source_audio_priority.h",
+      "bytes": 547,
+      "sha256": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb"
+    },
+    {
+      "file": "megadrive/src/source_audio_reader.c",
+      "bytes": 3789,
+      "sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8"
+    },
+    {
+      "file": "megadrive/src/source_audio_reader.h",
+      "bytes": 1364,
+      "sha256": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933"
+    },
+    {
+      "file": "megadrive/src/source_audio_sequence.c",
+      "bytes": 11791,
+      "sha256": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42"
+    },
+    {
+      "file": "megadrive/src/source_audio_sequence.h",
+      "bytes": 1108,
+      "sha256": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c"
+    },
+    {
+      "file": "megadrive/src/source_audio_tone.c",
+      "bytes": 4907,
+      "sha256": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a"
+    },
+    {
+      "file": "megadrive/src/source_audio_tone.h",
+      "bytes": 537,
+      "sha256": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4"
+    },
+    {
+      "file": "megadrive/src/source_clock.c",
+      "bytes": 5901,
+      "sha256": "4cf6afab6dda5d9dd3d2a46c144511e554b89b37e573b11ec8a23e3a25f2f5c4"
+    },
+    {
+      "file": "megadrive/src/source_clock.h",
+      "bytes": 3435,
+      "sha256": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8"
+    },
+    {
+      "file": "megadrive/src/source_graphics_load.c",
+      "bytes": 5011,
+      "sha256": "f02cdddb55593539a34936063c55407feaf920d134d028a8f5984c777dbb9754"
+    },
+    {
+      "file": "megadrive/src/source_graphics_load.h",
+      "bytes": 1150,
+      "sha256": "751985ca2b2ad2e169bb82a20c28e1e3169214a3d83eb6a6007c9ded83028972"
+    },
+    {
+      "file": "megadrive/src/source_irq.c",
+      "bytes": 7145,
+      "sha256": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534"
+    },
+    {
+      "file": "megadrive/src/source_irq.h",
+      "bytes": 1104,
+      "sha256": "c463a407ad732d2a78e16a6b50b18edb3c0fb941655c5a3aae3acc9df402d658"
+    },
+    {
+      "file": "megadrive/src/source_irq_context.c",
+      "bytes": 2288,
+      "sha256": "193a739e8d14fa83ad93e1e956fe76f44423e1a756e29a5e3c28ac3256b8079f"
+    },
+    {
+      "file": "megadrive/src/source_irq_context.h",
+      "bytes": 1225,
+      "sha256": "b2e4e2ded184ef602c40c192c7ba59d88075463262c06d65569042b26988aafa"
+    },
+    {
+      "file": "megadrive/src/source_pattern_clock.c",
+      "bytes": 7100,
+      "sha256": "67fb43576e39e8259e48abdc0d0f12bc80d87983e794d8ae2f3ae5cead3d74fc"
+    },
+    {
+      "file": "megadrive/src/source_pattern_clock.h",
+      "bytes": 656,
+      "sha256": "8ba6295f13aedf4d6d290a093a7a31e5a2ae6fe48a413eedda0f2e35cfdb378e"
+    },
+    {
+      "file": "megadrive/src/source_ram_planes.c",
+      "bytes": 3030,
+      "sha256": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc"
+    },
+    {
+      "file": "megadrive/src/source_ram_planes.h",
+      "bytes": 395,
+      "sha256": "ad2f3a5911db9eb8ee263cc689b79805e1fbab7b5bdcf7ff887e414eb25856bc"
+    },
+    {
+      "file": "megadrive/src/source_rng.c",
+      "bytes": 668,
+      "sha256": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f"
+    },
+    {
+      "file": "megadrive/src/source_rng.h",
+      "bytes": 445,
+      "sha256": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f"
+    },
+    {
+      "file": "megadrive/src/source_room_finish.c",
+      "bytes": 3566,
+      "sha256": "fdc31ff91f4e161b7bc486d8fccf5a9c1627affebb8c53c279448083e843b2ab"
+    },
+    {
+      "file": "megadrive/src/source_room_finish.h",
+      "bytes": 959,
+      "sha256": "01bf2987ba187cb1de43a54df1f73f6d0e51f3c4818b1572ca507ffdafb80ee2"
+    },
+    {
+      "file": "megadrive/src/source_room_hud.c",
+      "bytes": 8872,
+      "sha256": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13"
+    },
+    {
+      "file": "megadrive/src/source_room_hud.h",
+      "bytes": 942,
+      "sha256": "14ee23b14dfb24d3daccc829a2a4f25e2002bd0b950d66cd2273ae3eabea9dae"
+    },
+    {
+      "file": "megadrive/src/source_wait.c",
+      "bytes": 1448,
+      "sha256": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6"
+    },
+    {
+      "file": "megadrive/src/source_wait.h",
+      "bytes": 576,
+      "sha256": "5b19b3fab702b1401beca02842f9421cc5502cba3876251fb5827debff159dc5"
+    },
+    {
+      "file": "megadrive/src/source_wait_restore.c",
+      "bytes": 747,
+      "sha256": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28"
+    },
+    {
+      "file": "megadrive/src/source_wait_restore.h",
+      "bytes": 581,
+      "sha256": "553e0b70c01429b5a645a806ac2a97e8d9ca518a654fd1775370b59593a2acc3"
+    },
+    {
+      "file": "megadrive/src/source_world_map.c",
+      "bytes": 5978,
+      "sha256": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489"
+    },
+    {
+      "file": "megadrive/src/source_world_map.h",
+      "bytes": 823,
+      "sha256": "50ddb3249e80e1332aa6bc1c1a1bd62ef3cd93e2b398b063a3294865ae5c7c8c"
+    },
+    {
+      "file": "tools/archive_native_pattern_windows.py",
+      "bytes": 2578,
+      "sha256": "840866a17d56601d7d67a891cf616ac4d613f499858b0bafa97f70a03be652bd"
+    },
+    {
+      "file": "tools/profile_native_loading_budget.py",
+      "bytes": 10791,
+      "sha256": "9e91ffdb7ff43347acdfc5ca023901cfb6f1e9ba71884ec4af9dfef7747b6ac7"
+    },
+    {
+      "file": "tools/validate_native_room_finish.py",
+      "bytes": 16259,
+      "sha256": "8fa55ce7f417c2749044e9cf7192a6b29df75ca1341536c0a1179e0605e13969"
+    },
+    {
+      "file": "tools/validate_native_room_finish_68k.py",
+      "bytes": 6738,
+      "sha256": "eb9b22019c909bb0eecc46d7af8163f1e2f517a09497c30fd69cc62e9e8a1a9c"
+    },
+    {
+      "file": "tools/validate_pattern_clock_batch.py",
+      "bytes": 6318,
+      "sha256": "4ad9e87f353945ad7f097c4bda3217dab9d9c9d432c90807e95425b8736ddcb4"
+    },
+    {
+      "file": "tools/validate_pattern_windows_68k.py",
+      "bytes": 6494,
+      "sha256": "8d06d757b77e9f063bb5d114417dd4292b2fce6b8dd1961cbfc620ef9640e445"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/build.log",
+      "bytes": 39346,
+      "sha256": "bf5ec3f8e0bfaff6161be2b01f2620369eaebe68881a78176cd5e44d8876a54f"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/out/release/rom.bin",
+      "bytes": 655360,
+      "sha256": "c67d9c4dffc260fcac3c747800e589297bb9aead4908c7b4fefd199e45849f77"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/out/release/symbol.txt",
+      "bytes": 19574,
+      "sha256": "550802d7bccf51eb59d376c3ecd2668aa5e8341e0b10b74b884cdbfa22a5f809"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/src/expected.h",
+      "bytes": 1259866,
+      "sha256": "e380bb0a12a97484da14781d2b8b75e30edae01dfe05b621e96c9469333c2b3a"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/src/main.c",
+      "bytes": 3753,
+      "sha256": "5369aea30596d3a602833ed18368a5202be7c0d38a0c37990d7a77f04659a03e"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/src/profile_counters.c",
+      "bytes": 129,
+      "sha256": "dea65d17ea0f1c600ab03ecf7c411a9fb614ce7be889f9cd5b562fef70143476"
+    },
+    {
+      "file": "validation/native-loading-budget/build.log",
+      "bytes": 37887,
+      "sha256": "0d91638e83ab522b5e2ba7c871886e26b36beb09b6050ca11b40715c2f95ef91"
+    },
+    {
+      "file": "validation/native-loading-budget/out/release/rom.bin",
+      "bytes": 655360,
+      "sha256": "028dc9ff1fc696950d62675fdba11dcc5cd9f0000b35185b248939495040bae0"
+    },
+    {
+      "file": "validation/native-loading-budget/out/release/symbol.txt",
+      "bytes": 19660,
+      "sha256": "48d93a880830f4343dc52e67f1409efa166febf89992ccbdc38a4682ae7bffd0"
+    },
+    {
+      "file": "validation/native-loading-budget/src/expected.h",
+      "bytes": 1259866,
+      "sha256": "e380bb0a12a97484da14781d2b8b75e30edae01dfe05b621e96c9469333c2b3a"
+    },
+    {
+      "file": "validation/native-loading-budget/src/main.c",
+      "bytes": 3753,
+      "sha256": "5369aea30596d3a602833ed18368a5202be7c0d38a0c37990d7a77f04659a03e"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/build.log",
+      "bytes": 36154,
+      "sha256": "725d118ab18ea71e4702cbda0dea20c884779e4262cf07251e3158c2d89d5e4b"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/out/release/rom.bin",
+      "bytes": 655360,
+      "sha256": "920dc250c79434c527e5b0e37cf3e4c910aec312722264f71dc9e959087ae1d2"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/out/release/symbol.txt",
+      "bytes": 19434,
+      "sha256": "e4361d2c5f71d839f1eccae959a934af2fb43ac156e50c590f2176671a1edd4a"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/src/expected.h",
+      "bytes": 1259866,
+      "sha256": "e380bb0a12a97484da14781d2b8b75e30edae01dfe05b621e96c9469333c2b3a"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/src/main.c",
+      "bytes": 1526,
+      "sha256": "4c62d6b751721365013e9f0edab5cedbe08ac0510193ce3238057746a4aa521c"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/src/wrapper.c",
+      "bytes": 5030,
+      "sha256": "77aaac733a59b178749b228cab77be61efd8b66f4665d072fdb34ccb38de5bbc"
+    },
+    {
+      "file": "validation/pattern-clock-batch/fast.c",
+      "bytes": 2265,
+      "sha256": "bb13b6c031132ed1bd2096484c1c041f62814507dcd7aace94b8e4d1b9a6a976"
+    },
+    {
+      "file": "validation/pattern-clock-batch/reference.c",
+      "bytes": 3272,
+      "sha256": "e4244039e7fe2622ab27fa1ccb9d1ec4797367c981690054d33b8526bc12b6cd"
+    },
+    {
+      "file": "validation/pattern-clock-batch/scalar.c",
+      "bytes": 2359,
+      "sha256": "c07cb6c5532dcca1abe1af12a7ff1573fb827e78b8ac088a81a2835737bb7621"
+    },
+    {
+      "file": "validation/pattern-windows-68k/build.log",
+      "bytes": 31870,
+      "sha256": "e833c54f8c5912f934ee0a3aaf646edaab9145bf9757f12e7cffc3501e6ca629"
+    },
+    {
+      "file": "validation/pattern-windows-68k/out/release/rom.bin",
+      "bytes": 262144,
+      "sha256": "a8c889e0aa6ed0b8e3f640d2772f95aca8cda500a98c0b5d8fb6d1e47ef73695"
+    },
+    {
+      "file": "validation/pattern-windows-68k/out/release/symbol.txt",
+      "bytes": 17035,
+      "sha256": "0279e96cb85f968a259f161307cf38defc44987ec055139ef56324293d964391"
+    },
+    {
+      "file": "validation/pattern-windows-68k/src/expected.h",
+      "bytes": 288885,
+      "sha256": "4dfc1c61f62371f04c979ca3b0fbc261ceb46a746f10511b4e6b008454ce1e32"
+    },
+    {
+      "file": "validation/pattern-windows-68k/src/fast.c",
+      "bytes": 2234,
+      "sha256": "fb69a6b40d368762c24c398bf21c54e7a4bc3adb82f10c559ab1c8c892db9a82"
+    },
+    {
+      "file": "validation/pattern-windows-68k/src/main.c",
+      "bytes": 1470,
+      "sha256": "b209cf894e2bcfc0f7a859adead308dcf700f49b90e56fcf658df1831b1ba241"
+    },
+    {
+      "file": "validation/pattern-windows-68k/src/reference.c",
+      "bytes": 3295,
+      "sha256": "ac5d5bd87a526b2c8a6d7af074252912322210266e992595a1877b06ec4486e8"
+    },
+    {
+      "file": "validation/pattern-windows-68k/src/scalar.c",
+      "bytes": 2343,
+      "sha256": "2fcdfa7dc9eb15a5d369252118ce4a692b347f38afaab19a8016cef61e96d0db"
+    }
+  ],
+  "external_immutable_references": [
+    {
+      "file": "analysis/native-command-batching-v0198/validation/native-room-finish/cases.json",
+      "sha256": "420e894bcb04dd20b4c50b29ec8ef57b5ab88686ab000fdc6165091cd240c9cf"
+    },
+    {
+      "file": "analysis/native-irq-poll-fast-v0198/analysis/native_loading_budget_bare_report.json",
+      "sha256": "2b6e52952ace961c89ee3ae3f2d1b0063f1d788547e33f464fece708afb75246"
+    }
+  ]
+}

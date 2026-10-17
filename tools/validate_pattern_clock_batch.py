@@ -42,6 +42,18 @@ def main():
                     phase=base['phase'][:];phase[0]=raster%3420;phase[1]=raster//3420;phase[2]=0;phase[8:11]=[iff,blocked,pending]
                     stress.append(dict(base,phase=phase,refresh=refresh))
     streams=list(vectors());real=streams[0][0];checked=0;digest=hashlib.sha256()
+    # Long sequences of short commands exercise windows around the NTSC
+    # frame budget and the65535T PAL cap, with literal/repeat alternation.
+    window_streams=[]
+    for length in [2,127,294,295,296,324,325,512,1024]:
+        for mode in [0,1,2]:
+            packed=bytearray()
+            for plane in range(4):
+                for n in range(length):
+                    literal=mode==1 or (mode==2 and n&1)
+                    packed.extend([0x81 if literal else 1,(n*37+plane)&255])
+                packed.append(0)
+            window_streams.append(bytes(packed))
     def check(row,stream):
         nonlocal checked
         packed=(c.c_uint8*len(stream)).from_buffer_copy(stream);results=[]
@@ -57,10 +69,16 @@ def main():
             row=next(r for r in stress if r['phase'][3]==lines and r['phase'][8]==1 and r['phase'][10]==0)
             phase=row['phase'][:];phase[0]=(193*3420-(n%29+1))%3420;phase[1]=(193*3420-(n%29+1))//3420
             check(dict(row,phase=phase,refresh=n&255),stream)
-    report=dict(cases=checked,live=len(live),phase_stress=len(stress),synthetic_streams=len(streams)-1,
+    for number,stream in enumerate(window_streams):
+        for lines in [262,313]:
+            base=next(row for row in contexts if row['phase'][3]==lines)
+            for raster in [0,193*3420-1,193*3420,lines*3420-1]:
+                phase=base['phase'][:];phase[0]=raster%3420;phase[1]=raster//3420;phase[2]=0
+                check(dict(base,phase=phase,refresh=number*9&255),stream)
+    report=dict(cases=checked,live=len(live),phase_stress=len(stress),command_window_cases=len(window_streams)*8,synthetic_streams=len(streams)-1,
                 reference_sha256=hashlib.sha256(reference.read_bytes()).hexdigest(),module_sha256=hashlib.sha256((ROOT/'megadrive/src/source_pattern_clock.c').read_bytes()).hexdigest(),
                 output_digest=digest.hexdigest(),limits=['Host pairwise comparison with immutable pre-batch scalar C, all16384 pixel bytes,336RAM,400audio,full clock andIRQ log.',
-                'Real class0 input plus generated RLE, page crossings/count256, shifted VINT/pending/IFF/EI-delay/R; full source/68000 chain proof is separate.'])
+                'Real class0 input plus generated RLE, page crossings/count256, shifted VINT/pending/IFF/EI-delay/R; long2..1024-command planes test frame/window caps and alternating modes. Full source/68000 chain proof is separate.'])
     (ROOT/'analysis/pattern_clock_batch_report.json').write_text(json.dumps(report,indent=2)+'\n');print(report)
 
 if __name__=='__main__':main()
