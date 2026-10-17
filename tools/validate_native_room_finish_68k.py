@@ -6,13 +6,16 @@ import json
 import os
 import re
 import subprocess
+import sys
 from actor_reference import ROOT
 from run_core import run
 from validate_native_room_finish import MODULES,WRAPPER
 from validate_native_patterns import decode
 
+PLANNED='--planned' in sys.argv
+
 def main():
-    folder=ROOT/'validation/native-room-finish';cases=json.loads((folder/'cases.json').read_text())
+    folder=ROOT/('validation/native-planned-room-finish' if PLANNED else 'validation/native-room-finish');cases=json.loads((folder/'cases.json').read_text())
     base=folder/'kernel';src=base/'src';src.mkdir(parents=True,exist_ok=True)
     rom=(ROOT/'input/original.sms').read_bytes();_,used=decode(rom[0x3c010:]);max_events=max(len(row['events']) for row in cases)
     for row in cases:
@@ -34,7 +37,7 @@ def main():
                      '},{'+','.join(map(str,row['expected_audio']))+'},{'+','.join(str(v)+'UL' for v in row['expected'])+'},{'+','.join(str(v)+'UL' for v in row['points'])+'},{'+','.join(map(str,row['states']))+'},{'+','.join(str(v)+'UL' for v in events)+'}},')
     lines.append('};');(src/'expected.h').write_text('\n'.join(lines)+'\n')
     for name in MODULES:(src/f'{name}.c').write_text(f'#include "../../../../megadrive/src/{name}.c"\n')
-    (src/'wrapper.c').write_text(WRAPPER.replace('#include "source_room_finish.h"','#include "../../../../megadrive/src/source_room_finish.h"'))
+    (src/'wrapper.c').write_text(WRAPPER.replace('#include "source_room_finish.h"','#include "../../../../megadrive/src/source_room_finish.h"').replace('#include "source_pattern_plan_generated.h"','#include "../../../../megadrive/src/source_pattern_plan_generated.h"'))
     (src/'main.c').write_text('''#include <genesis.h>
 #include "expected.h"
 u8 room_finish_case(const u32 *phase,u8 refresh,u8 *ram,u8 *audio,const u8 *low,const u8 *bank6,u16 room,const u8 *map_bank,const u8 *patterns,const u8 *bank2,const u8 *bank11,const u8 *bank4,const u8 *hud,u32 *out,u32 *events,u32 *points,u8 *states);
@@ -79,11 +82,12 @@ int main(bool hard_reset)
                 core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
         assert observed.get('done') and (observed['cases'],observed['failures'])==(len(cases),0),observed
         results.append(dict(region=region,**observed));print(results[-1],flush=True)
-    report=dict(cases=len(cases),results=results,helpers={name:hashlib.sha256((ROOT/'megadrive/src'/f'{name}.c').read_bytes()).hexdigest() for name in MODULES},
+    report=dict(planned=PLANNED,cases=len(cases),results=results,helpers={name:hashlib.sha256((ROOT/'megadrive/src'/f'{name}.c').read_bytes()).hexdigest() for name in MODULES},
                 source_case_sha256=hashlib.sha256((folder/'cases.json').read_bytes()).hexdigest(),
                 kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),production_clock_wired=False,
                 limits=['Compiled68000 sixteen-checkpoint vectors retain source phase/R/M1/331RAM/400audio/IRQ-offset assertions; other fields are host parity.',
                         'Changed class0 load only; physical uploads/contention, all graphics classes and global entry-state propagation remain pending.'])
-    (ROOT/'analysis/native_room_finish_68k_report.json').write_text(json.dumps(report,indent=2)+'\n')
+    if PLANNED:report['plan_sha256']=hashlib.sha256((ROOT/'megadrive/src/source_pattern_plan_generated.h').read_bytes()).hexdigest()
+    (ROOT/('analysis/native_planned_room_finish_68k_report.json' if PLANNED else 'analysis/native_room_finish_68k_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

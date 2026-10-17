@@ -1,4 +1,5 @@
 {
+  "planned": false,
   "instrumented": false,
   "results": [
     {
@@ -321,8 +322,8 @@
             2,
             0,
             1,
-            0,
-            1
+            1,
+            0
           ],
           "case": 20,
           "room": 109,
@@ -348,7 +349,7 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            12,
+            11,
             2,
             0,
             1,
@@ -357,12 +358,12 @@
           ],
           "case": 22,
           "room": 109,
-          "physical_frames": 24,
+          "physical_frames": 23,
           "source_master": 20349525,
           "source_frames": 22.71050957546538,
-          "compute_to_source_ratio": 1.0567794579971768,
+          "compute_to_source_ratio": 1.0127469805806277,
           "stages": [
-            16,
+            15,
             1,
             5,
             2
@@ -380,7 +381,7 @@
       "done": 1,
       "cases": 12,
       "failures": 0,
-      "frame": 337
+      "frame": 338
     },
     {
       "region": "pal",
@@ -543,7 +544,7 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            9,
+            10,
             1,
             0,
             1,
@@ -552,12 +553,12 @@
           ],
           "case": 11,
           "room": 150,
-          "physical_frames": 18,
+          "physical_frames": 19,
           "source_master": 20949480,
           "source_frames": 19.570539767950226,
-          "compute_to_source_ratio": 0.9197497980856805,
+          "compute_to_source_ratio": 0.9708470090904404,
           "stages": [
-            12,
+            13,
             1,
             4,
             1
@@ -639,8 +640,8 @@
             9,
             2,
             0,
-            1,
             0,
+            1,
             0
           ],
           "case": 17,
@@ -671,8 +672,8 @@
             1,
             0,
             1,
-            1,
-            0
+            0,
+            1
           ],
           "case": 19,
           "room": 54,
@@ -698,11 +699,11 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            10,
-            1,
+            9,
+            2,
+            0,
             0,
             1,
-            0,
             0
           ],
           "case": 21,
@@ -775,10 +776,10 @@
     "source_world_map.h": "50ddb3249e80e1332aa6bc1c1a1bd62ef3cd93e2b398b063a3294865ae5c7c8c",
     "source_ram_planes.c": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
     "source_ram_planes.h": "ad2f3a5911db9eb8ee263cc689b79805e1fbab7b5bdcf7ff887e414eb25856bc",
-    "source_graphics_load.c": "f02cdddb55593539a34936063c55407feaf920d134d028a8f5984c777dbb9754",
-    "source_graphics_load.h": "751985ca2b2ad2e169bb82a20c28e1e3169214a3d83eb6a6007c9ded83028972",
-    "source_pattern_clock.c": "67fb43576e39e8259e48abdc0d0f12bc80d87983e794d8ae2f3ae5cead3d74fc",
-    "source_pattern_clock.h": "8ba6295f13aedf4d6d290a093a7a31e5a2ae6fe48a413eedda0f2e35cfdb378e",
+    "source_graphics_load.c": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
+    "source_graphics_load.h": "2c5d6c6e1bae96996c3dbfa8afc0b11eb4d03203d2f370aa591fecfa780fa69b",
+    "source_pattern_clock.c": "211af2b1a181078289302a016074d60e9ad2baf5a69fc8dfdaa6e33a52542029",
+    "source_pattern_clock.h": "f8dc94c6cdc2ca7435d4389956014e7a4fc4b6ab478172cc7846d57a4ca49879",
     "source_wait.c": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
     "source_wait.h": "5b19b3fab702b1401beca02842f9421cc5502cba3876251fb5827debff159dc5",
     "source_irq_context.c": "193a739e8d14fa83ad93e1e956fe76f44423e1a756e29a5e3c28ac3256b8079f",
@@ -818,7 +819,7 @@
     "generic_repetitions"
   ],
   "inline_blocks_counted": false,
-  "kernel_sha256": "c67d9c4dffc260fcac3c747800e589297bb9aead4908c7b4fefd199e45849f77",
+  "kernel_sha256": "bc6a68034593819367b2cb5c3537ca8f5c3c2c81f12d89d9cae65e582dcab79a",
   "limits": [
     "Vtimer delta around four native calls and six graphics checkpoints only. No per-instruction/repetition counters and no IRQ subtimer; counter fields are zero. One-frame resolution.",
     "Only matching logical/physical region; controlled input contexts. Buffer initialization and correctness comparisons outside timing.",

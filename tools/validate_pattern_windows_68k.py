@@ -1,11 +1,12 @@
 """Bytewise compiled68000 comparison for long multi-command window boundaries."""
-import contextlib,hashlib,io,json,os,re,subprocess
+import contextlib,hashlib,io,json,os,re,subprocess,sys
 from actor_reference import ROOT
 from run_core import run
 from validate_native_graphics_prefix import MODULES
 
 def main():
- base=ROOT/'validation/pattern-windows-68k';src=base/'src';src.mkdir(parents=True,exist_ok=True)
+ planned='--planned' in sys.argv
+ base=ROOT/('validation/pattern-plan-phases-68k' if planned else 'validation/pattern-windows-68k');src=base/'src';src.mkdir(parents=True,exist_ok=True)
  contexts=json.loads((ROOT/'analysis/native-room-finish-v0198/validation/native-room-finish/cases.json').read_text());rom=(ROOT/'input/original.sms').read_bytes()
  lines=['static const u8 low[]={'+','.join(map(str,rom[:32768]))+'};','static const u8 bank6[]={'+','.join(map(str,rom[0x18000:0x1c000]))+'};'];rows=[]
  for case,(length,mode) in enumerate([(295,0),(295,2),(324,1),(324,2),(325,0),(325,1),(1024,0),(1024,2)]):
@@ -13,16 +14,20 @@ def main():
   for plane in range(4):
    for n in range(length):data.extend([0x81 if mode==1 or (mode==2 and n&1) else 1,(n*37+plane)&255])
    data.append(0)
+  if planned:data=rom[0x3c010:0x3c010+json.loads((ROOT/'analysis/pattern_plan_assets_report.json').read_text())['packed']]
   lines.append('static const u8 stream'+str(case)+'[]={'+','.join(map(str,data))+'};')
   for region in [262,313]:
    row=next(r for r in contexts if r['phase'][3]==region);phase=row['phase'][:];raster=193*3420-1 if case&1 else 0;phase[0]=raster%3420;phase[1]=raster//3420;phase[2]=0
+   if planned:
+    raster=[0,193*3420-1,193*3420,193*3420+1,region*3420-1,region*3420-1000,region*1710,193*3420-1000][case]
+    phase[0]=raster%3420;phase[1]=raster//3420;phase[8:11]=[(1,0,0),(1,0,1),(0,0,1),(1,1,1)][case%4]
    rows.append(dict(stream=case,phase=phase,ram=row['ram'],audio=row['audio'],refresh=case*31&255))
  lines+=['typedef struct {const u8 *stream;u32 phase[12];u8 ram[336],audio[400],refresh;} Case;','static const Case cases[]={']
  for row in rows:lines.append('{stream'+str(row['stream'])+',{'+','.join(str(v)+'UL' for v in row['phase'])+'},{'+','.join(map(str,row['ram']))+'},{'+','.join(map(str,row['audio']))+'},'+str(row['refresh'])+'},')
  (src/'expected.h').write_text('\n'.join(lines+['};'])+'\n')
  for name in MODULES:(src/(name+'.c')).write_text('#include "../../../megadrive/src/'+name+'.c"\n')
  for name in ['fast','scalar']:
-  text=(ROOT/'validation/pattern-clock-batch'/(name+'.c')).read_text().replace('#include "source_pattern_clock.h"','#include "../../../megadrive/src/source_pattern_clock.h"\nextern u8 shared_pixels[16384];')
+  text=(ROOT/'validation/pattern-clock-batch'/('planned.c' if planned and name=='fast' else name+'.c')).read_text().replace('prefix_planned_case(', 'prefix_fast_case(').replace('#include "source_pattern_plan_generated.h"','#include "../../../megadrive/src/source_pattern_plan_generated.h"').replace('#include "source_pattern_clock.h"','#include "../../../megadrive/src/source_pattern_clock.h"\nextern u8 shared_pixels[16384];')
   text=text.replace('static u8 pixels[16384];u32 hash=2166136261UL;','u8 *pixels=shared_pixels;')
   text=text.replace('sizeof(pixels)','16384').replace(' for(n=0;n<16384;n++) hash=(hash^pixels[n])*16777619UL;','').replace('out[18]=hash;','out[18]=0;out[19]=0;')
   if name=='scalar':text=text.replace('for(n=0;n<16384;n++) pixel_output[n]=pixels[n];','for(n=0;n<16384;n++) if(pixel_output[n]!=pixels[n]) out[19]=1;')
@@ -68,7 +73,10 @@ int main(bool hard_reset)
   with contextlib.redirect_stdout(io.StringIO()):run(cartridge,150000,base/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
   assert observed.get('done') and (observed['cases'],observed['failures'])==(len(rows),0),observed
   results.append(dict(region=region,**observed));print(results[-1],flush=True)
- report=dict(cases=len(rows),results=results,reference_sha256=hashlib.sha256(reference.read_bytes()).hexdigest(),module_sha256=hashlib.sha256((ROOT/'megadrive/src/source_pattern_clock.c').read_bytes()).hexdigest(),kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),limits=['Compiled68000 pairwise16384 pattern bytes,336RAM,400audio,all clock outputs and completeIRQ traces. Long295/324/325/1024-command planes around frame and65535T limits.','Both logical regions executed under both physical regions; original source full-chain proof and bare CPU profile are separate.'])
- (ROOT/'analysis/pattern_windows_68k_report.json').write_text(json.dumps(report,indent=2)+'\n')
+ report=dict(planned=planned,cases=len(rows),results=results,reference_sha256=hashlib.sha256(reference.read_bytes()).hexdigest(),module_sha256=hashlib.sha256((ROOT/'megadrive/src/source_pattern_clock.c').read_bytes()).hexdigest(),kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),limits=['Compiled68000 pairwise16384 pattern bytes,336RAM,400audio,all clock outputs and completeIRQ traces. Long295/324/325/1024-command planes around frame and65535T limits.','Both logical regions executed under both physical regions; original source full-chain proof and bare CPU profile are separate.'])
+ if planned:
+  report['plan_sha256']=hashlib.sha256((ROOT/'megadrive/src/source_pattern_plan_generated.h').read_bytes()).hexdigest()
+  report['limits']=['Compiled68000 bytewise planned assets versus immutable scalar C:16384 pattern bytes,336RAM,400audio,clock andIRQ traces. Real ROM asset with16 logical-region/phase/IFF/pending/blocked inputs under PAL andNTSC physical consoles.','Original source16-checkpoint chain and bare CPU budget remain separate checks.']
+ (ROOT/('analysis/pattern_plan_phases_68k_report.json' if planned else 'analysis/pattern_windows_68k_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

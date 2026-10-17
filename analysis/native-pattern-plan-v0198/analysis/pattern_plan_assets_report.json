@@ -1,0 +1,45 @@
+{
+  "individual_commands_checked_against_instruction_model": 566,
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "offset": 245776,
+  "packed": 5342,
+  "planes": [
+    {
+      "commands": 92,
+      "decoded": 1544,
+      "packed": 1469,
+      "tstates": 213872,
+      "m1": 30251,
+      "decoded_sha256": "7a7bfa04ae943a4612c469a7509bc913ae8c52eb3c215fa22ffc4df988ee6c6b"
+    },
+    {
+      "commands": 120,
+      "decoded": 1544,
+      "packed": 1330,
+      "tstates": 215449,
+      "m1": 30409,
+      "decoded_sha256": "9941a7f4561268394370a104951316a5263acbe3b4e89a2ff7aa5af910511c68"
+    },
+    {
+      "commands": 221,
+      "decoded": 1544,
+      "packed": 1181,
+      "tstates": 221558,
+      "m1": 31337,
+      "decoded_sha256": "e21e68ff641d3c1de3e8c19e65ff047ffc5cfc1ccf54d50d29d4d3781906cbe3"
+    },
+    {
+      "commands": 133,
+      "decoded": 1544,
+      "packed": 1362,
+      "tstates": 216279,
+      "m1": 30579,
+      "decoded_sha256": "8dbd879cba121ee1457be202e7f086ea8934e7f261070fb276edf3c3d97a20e8"
+    }
+  ],
+  "header_sha256": "2693a4a38feacdbcc46cd0b8a46b5efdb17007c4d5500b722ec566ccf3d91f2d",
+  "limits": [
+    "ROM-derived decoded assets and exact032A command-boundary T/M1 prefix sums only; no captured phases or runtime delays.",
+    "No plane setup,terminator or plane-end costs in command prefix sums; those remain in native execution."
+  ]
+}

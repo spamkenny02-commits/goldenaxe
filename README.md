@@ -26,7 +26,11 @@ La ROM jouable demeure v0198. Le calcul direct de l’attente vidéo est vérifi
 sur 3 933 000 positions/seuils ; les 32 693 cas IRQ passent en 68000 PAL/NTSC.
 Le décodeur regroupe plusieurs commandes entre deux interruptions :
 1 460 cas comparés et 16 cas longs supplémentaires en 68000 passent.
-Voir les [mesures et limites actuelles](analysis/native_pattern_windows_milestone.md).
+Une voie précalculée depuis la ROM valide aussi les 566 commandes et les
+6 176 octets de motifs : elle demande 22–24 images NTSC, encore sans marge
+prouvée pour l’affichage. Les 24 parcours à 16 points SMS passent avec les
+deux voies en 68000 PAL/NTSC. La construction régénère ces assets.
+Voir les [mesures et limites actuelles](analysis/native_pattern_plan_milestone.md).
 
 La chaîne native couvre désormais graphismes, cartes, HUD, attente,
 transfert et préparation de palette jusqu’à 24BF, avec une seule horloge.

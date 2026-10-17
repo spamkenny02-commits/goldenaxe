@@ -1,0 +1,28 @@
+{
+  "planned": true,
+  "cases": 16,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 19072,
+      "done": 1,
+      "cases": 16,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 15957,
+      "done": 1,
+      "cases": 16,
+      "failures": 0
+    }
+  ],
+  "reference_sha256": "af2031b49a2dbb5c7f72d59e54df50d2e78ec8d1b372f161d61bdb27c26741e5",
+  "module_sha256": "211af2b1a181078289302a016074d60e9ad2baf5a69fc8dfdaa6e33a52542029",
+  "kernel_sha256": "edc9d4c203b8d1d7a29db6861e1ca72cb18468d7826bce15fb2c0afb6c6ec4dd",
+  "limits": [
+    "Compiled68000 bytewise planned assets versus immutable scalar C:16384 pattern bytes,336RAM,400audio,clock andIRQ traces. Real ROM asset with16 logical-region/phase/IFF/pending/blocked inputs under PAL andNTSC physical consoles.",
+    "Original source16-checkpoint chain and bare CPU budget remain separate checks."
+  ],
+  "plan_sha256": "2693a4a38feacdbcc46cd0b8a46b5efdb17007c4d5500b722ec566ccf3d91f2d"
+}

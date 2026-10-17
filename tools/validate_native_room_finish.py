@@ -1,5 +1,6 @@
 """Full native graphics/map/HUD/wait/name-table/palette chain16D0..24BF."""
 import ctypes as c
+import sys
 import hashlib,json,os,struct,subprocess
 from actor_reference import ROOT
 from world_map_loading_cost import world_map_cost
@@ -137,7 +138,7 @@ def finish_hashes(rom,room,ram,hud,counter):
     return [fnv(cells),fnv(tiles),fnv(meta)],fnv(tiles[1280:]),fnv(tiles[:1280]),fnv(vram),fnv(palette)
 
 def compile_helper():
-    folder=ROOT/'validation/native-room-finish';folder.mkdir(exist_ok=True)
+    folder=ROOT/('validation/native-planned-room-finish' if PLANNED else 'validation/native-room-finish');folder.mkdir(exist_ok=True)
     (folder/'wrapper.c').write_text(WRAPPER);sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ)
     env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH']
     args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-Wall','-Wextra','-Werror','-shared','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src'),str(folder/'wrapper.c')]
@@ -147,6 +148,12 @@ def compile_helper():
     dll=c.CDLL(str(folder/'finish.dll'));fn=dll.room_finish_case
     fn.argtypes=[c.POINTER(c.c_uint32),c.c_uint8,*([c.POINTER(c.c_uint8)]*4),c.c_uint16,*([c.POINTER(c.c_uint8)]*6),*([c.POINTER(c.c_uint32)]*3),c.POINTER(c.c_uint8)]
     fn.restype=c.c_uint8;return folder,dll,fn
+
+
+PLANNED='--planned' in sys.argv
+if PLANNED:
+    WRAPPER=WRAPPER.replace('#include "source_room_finish.h"','#include "source_room_finish.h"\n#include "source_pattern_plan_generated.h"')
+    WRAPPER=WRAPPER.replace('source_graphics_load_class0(&clock,&ctx,patterns,bank2,bank11,&data,point,&log)','source_graphics_load_class0_planned(&clock,&ctx,patterns,bank2,bank11,&data,point,&log,&gaw_class0_pattern_plan)')
 
 
 def main():
@@ -204,11 +211,12 @@ def main():
                 print(tag,'native16D0..24BF sixteen source checkpoints exact',flush=True)
     assert len(cases)==24
     (folder/'cases.json').write_text(json.dumps(cases,indent=2)+'\n')
-    report=dict(cases=len(cases),rows=rows,helpers={name:hashlib.sha256((ROOT/'megadrive/src'/f'{name}.c').read_bytes()).hexdigest() for name in MODULES},
+    report=dict(planned=PLANNED,cases=len(cases),rows=rows,helpers={name:hashlib.sha256((ROOT/'megadrive/src'/f'{name}.c').read_bytes()).hexdigest() for name in MODULES},
                 source_sha256=hashlib.sha256(rom).hexdigest(),production_clock_wired=False,
                 limits=['Sixteen source checkpoints from one captured16D0 entry each: phase/R/M1/331RAM/400audio/IRQ offsets. No intermediate injection.',
                         'Native buffer hashes checked directly against new source observer over defined written ranges; full buffers/1024-byte copy also checked against separate decoder.',
                         'Changed class0/C0AC0 and six saved-bit0 rooms only; physical VRAM/mapper, global entry propagation and other graphics classes remain pending.'])
-    (ROOT/'analysis/native_room_finish_report.json').write_text(json.dumps(report,indent=2)+'\n')
+    if PLANNED:report['plan_sha256']=hashlib.sha256((ROOT/'megadrive/src/source_pattern_plan_generated.h').read_bytes()).hexdigest()
+    (ROOT/('analysis/native_planned_room_finish_report.json' if PLANNED else 'analysis/native_room_finish_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

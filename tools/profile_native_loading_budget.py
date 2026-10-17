@@ -12,9 +12,9 @@ from run_core import run
 from validate_native_room_finish import MODULES
 
 def main():
-    bare='--bare' in sys.argv
-    base=ROOT/('validation/native-loading-budget-bare' if bare else 'validation/native-loading-budget');src=base/'src';src.mkdir(parents=True,exist_ok=True)
-    header=ROOT/'validation/native-room-finish/kernel/src/expected.h';(src/'expected.h').write_bytes(header.read_bytes())
+    bare='--bare' in sys.argv;planned='--planned' in sys.argv
+    base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
+    header=ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/kernel/src/expected.h');(src/'expected.h').write_bytes(header.read_bytes())
     for name in MODULES:
         if name=='source_irq_context' and not bare:
             body=(ROOT/'megadrive/src/source_irq_context.c').read_text().replace('#include "source_irq_context.h"','#include <genesis.h>\n#include "../../../megadrive/src/source_irq_context.h"')
@@ -88,11 +88,14 @@ int main(bool hard_reset)
  gaw_budget_done=1;while(TRUE) SYS_doVBlankProcess();return 0;
 }
 ''')
+    if planned:
+        main=src/'main.c';body=main.read_text().replace('#include "expected.h"','#include "expected.h"\n#include "../../../megadrive/src/source_pattern_plan_generated.h"')
+        body=body.replace('source_graphics_load_class0(&clock,&ctx,patterns,bank2,bank11,&data,graphics_mark,0)','source_graphics_load_class0_planned(&clock,&ctx,patterns,bank2,bank11,&data,graphics_mark,0,&gaw_class0_pattern_plan)');main.write_text(body)
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH'];path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:]
     built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=base,env=env,capture_output=True,text=True)
     (base/'build.log').write_text(built.stdout+built.stderr);assert built.returncode==0,built.stderr[-2000:]
     symbols={m[2]:int(m[1],16)&65535 for line in (base/'out/release/symbol.txt').read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))};cartridge=base/'out/release/rom.bin'
-    cases=json.loads((ROOT/'validation/native-room-finish/cases.json').read_text());results=[]
+    cases=json.loads((ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/cases.json')).read_text());results=[]
     for region in ['auto','pal']:
         observed={};rows=[]
         def observe(frame,ram):
@@ -107,11 +110,12 @@ int main(bool hard_reset)
         with contextlib.redirect_stdout(io.StringIO()):run(cartridge,60000,base/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
         assert observed.get('done') and (observed['cases'],observed['failures'])==(12,0),observed
         results.append(dict(region=region,rows=rows,**observed));print(region,[(r['physical_frames'],round(r['source_frames'],2),r['stages'],r['graphics_stages'],round(r['irq_subticks']/(1536 if region=='pal' else 1280),2),r['clock_calls']) for r in rows],flush=True)
-    report=dict(instrumented=not bare,results=results,helpers={name+suffix:hashlib.sha256((ROOT/'megadrive/src'/(name+suffix)).read_bytes()).hexdigest() for name in MODULES for suffix in ['.c','.h'] if (ROOT/'megadrive/src'/(name+suffix)).exists()},cases_sha256=hashlib.sha256((ROOT/'validation/native-room-finish/cases.json').read_bytes()).hexdigest(),clock_call_fields=['execute','generic_repeat','accepted_generic_groups','generic_repetitions'],inline_blocks_counted=False,kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),
+    report=dict(planned=planned,instrumented=not bare,results=results,helpers={name+suffix:hashlib.sha256((ROOT/'megadrive/src'/(name+suffix)).read_bytes()).hexdigest() for name in MODULES for suffix in ['.c','.h'] if (ROOT/'megadrive/src'/(name+suffix)).exists()},cases_sha256=hashlib.sha256((ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/cases.json')).read_bytes()).hexdigest(),clock_call_fields=['execute','generic_repeat','accepted_generic_groups','generic_repetitions'],inline_blocks_counted=False,kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),
                 limits=['Vtimer delta around four native calls, no hashes/checkpoint snapshots; stage marks and two getSubTick samples perIRQ add a small profiling overhead. Six additional vtimer checkpoints split graphics stages1706/170E/1720/1733/1748/24B9. One-frame stage resolution; IRQ subtick conversion approximate.',
                         'Only matching logical/physical region; controlled input contexts. Buffer initialization and correctness comparisons outside timing.',
                         'Display off,discarded PSG sink,no real renderer/uploads/input pacing; CPU lower-bound profile, not playable frame-rate proof.'])
+    if planned:report['plan_sha256']=hashlib.sha256((ROOT/'megadrive/src/source_pattern_plan_generated.h').read_bytes()).hexdigest()
     if bare:report['limits'][0]='Vtimer delta around four native calls and six graphics checkpoints only. No per-instruction/repetition counters and no IRQ subtimer; counter fields are zero. One-frame resolution.'
-    (ROOT/('analysis/native_loading_budget_bare_report.json' if bare else 'analysis/native_loading_budget_report.json')).write_text(json.dumps(report,indent=2)+'\n')
+    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

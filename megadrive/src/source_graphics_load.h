@@ -19,4 +19,8 @@ typedef u8 (*SourceGraphicsCheckpoint)(void *user,u16 pc,const SourceClock *cloc
 u8 source_graphics_load_class0(SourceClock *clock,SourceIrqContext *context,
                                const u8 *patterns,const u8 *bank2,const u8 *bank11,
                                SourceGraphicsData *data,SourceGraphicsCheckpoint checkpoint,void *user);
+u8 source_graphics_load_class0_planned(SourceClock *clock,SourceIrqContext *context,
+                               const u8 *patterns,const u8 *bank2,const u8 *bank11,
+                               SourceGraphicsData *data,SourceGraphicsCheckpoint checkpoint,void *user,
+                               const SourcePatternPlan *plan);
 #endif

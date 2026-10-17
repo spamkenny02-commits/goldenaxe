@@ -47,9 +47,9 @@ static u8 point(SourceClock *clock,SourceIrqContext *context,u16 pc,
 }
 #define POINT(pc) do { if(!point(clock,context,pc,checkpoint,user)) return 0; } while(0)
 
-u8 source_graphics_load_class0(SourceClock *clock,SourceIrqContext *context,
+u8 source_graphics_load_class0_planned(SourceClock *clock,SourceIrqContext *context,
                                const u8 *patterns,const u8 *bank2,const u8 *bank11,
-                               SourceGraphicsData *data,SourceGraphicsCheckpoint checkpoint,void *user)
+                               SourceGraphicsData *data,SourceGraphicsCheckpoint checkpoint,void *user,const SourcePatternPlan *plan)
 {
     static const u8 backup_prefix[]={10,10,10},backup_second[]={10,7};
     static const u8 patch_prefix[]={17,13,4,5,13,4,7,10,10,10,11,11};
@@ -64,7 +64,7 @@ u8 source_graphics_load_class0(SourceClock *clock,SourceIrqContext *context,
     const u8 *source,*table;u16 n,count=0,terrain_address;
     if(!data || !bank2 || !bank11 || !data->patterns || !data->metatiles ||
        !data->backup || !data->terrain || !data->saved_terrain) return 0;
-    if(!source_graphics_prefix_class0(clock,context,patterns,data->patterns,&source)) return 0;
+    if(!source_graphics_prefix_class0_planned(clock,context,patterns,data->patterns,&source,plan)) return 0;
     /* Prefix already checkpoints at1706; do not fetch it twice. */
     if(checkpoint && !checkpoint(user,0x1706,clock,context)) return 0;
     S(10,1);S(7,1);S(17,1);
@@ -103,6 +103,10 @@ u8 source_graphics_load_class0(SourceClock *clock,SourceIrqContext *context,
     if(!step(clock,context,4,1,SOURCE_CLOCK_EI)) return 0;
     S(10,1);POINT(0x24b9);return 1;
 }
+u8 source_graphics_load_class0(SourceClock *clock,SourceIrqContext *context,
+                               const u8 *patterns,const u8 *bank2,const u8 *bank11,
+                               SourceGraphicsData *data,SourceGraphicsCheckpoint checkpoint,void *user)
+{return source_graphics_load_class0_planned(clock,context,patterns,bank2,bank11,data,checkpoint,user,0);}
 #undef POINT
 #undef COPY
 #undef SEQ

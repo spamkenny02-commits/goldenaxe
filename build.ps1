@@ -1,5 +1,7 @@
 param([string]$Sgdk = "$PSScriptRoot\..\..\work\sgdk", [string]$Java = 'D:/jdk-25.0.1/bin/java.exe')
 $ErrorActionPreference = 'Stop'
+& python "$PSScriptRoot/tools/generate_pattern_plan.py"
+if ($LASTEXITCODE -ne 0) { throw 'Pattern asset plan generation failed' }
 $sdkPath = (Resolve-Path -LiteralPath $Sgdk).Path.Replace('\','/')
 $sdkUnix = '/' + $sdkPath.Substring(0,1).ToLower() + $sdkPath.Substring(2)
 Push-Location "$PSScriptRoot\megadrive"
