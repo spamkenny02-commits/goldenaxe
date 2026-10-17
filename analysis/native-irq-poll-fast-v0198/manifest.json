@@ -1,0 +1,619 @@
+{
+  "files": [
+    {
+      "file": "analysis/irq_poll_fast_report.json",
+      "bytes": 887,
+      "sha256": "52a19ab379bd023a177dc01552a64e75adf3e31dd64d20a0aac0ebd432f3d4bf"
+    },
+    {
+      "file": "analysis/native_irq_context_boundaries_report.json",
+      "bytes": 1959,
+      "sha256": "6967c339d96ad45295a9d529d620bb621cabf0c5fe20f7219b5e42e09bcd0b09"
+    },
+    {
+      "file": "analysis/native_irq_poll_fast_milestone.md",
+      "bytes": 2934,
+      "sha256": "5ba306aec0b5e5f54c497784ff95268faaddeddb109d76795631f2b1088614a8"
+    },
+    {
+      "file": "analysis/native_loading_budget_bare_report.json",
+      "bytes": 21995,
+      "sha256": "2b6e52952ace961c89ee3ae3f2d1b0063f1d788547e33f464fece708afb75246"
+    },
+    {
+      "file": "analysis/native_loading_budget_report.json",
+      "bytes": 22402,
+      "sha256": "f1127e723afa3f1238a97b770e287219efc46c8b0466dcaf494fa95514e093f1"
+    },
+    {
+      "file": "analysis/native_room_finish_68k_report.json",
+      "bytes": 2893,
+      "sha256": "6502bd0916b6d97cb6523c0d4752e982d7c2de47858fe6ed12289af620e209df"
+    },
+    {
+      "file": "analysis/native_room_finish_report.json",
+      "bytes": 9466,
+      "sha256": "e7f6b22d85ef79dddeaf3bd92cd567a898b74bb996c62d809cfa2f20b06d9683"
+    },
+    {
+      "file": "analysis/native_source_irq_68k_report.json",
+      "bytes": 4592,
+      "sha256": "87ccf36fbd8fb562f5147d3f6e08704c2f37823117db9e00257ccd6bbd76fd2c"
+    },
+    {
+      "file": "analysis/native_source_irq_boundaries_report.json",
+      "bytes": 1949,
+      "sha256": "a67157724b1be0e1e5eeb0e1339eb9bce8f43c79b107c04786c1e6ed6dd772c1"
+    },
+    {
+      "file": "analysis/native_source_irq_report.json",
+      "bytes": 4211,
+      "sha256": "820b8ed049cabaa5bfd07a5a96eff0ea2bf1e2eefd6a57541586cdbc5331e164"
+    },
+    {
+      "file": "megadrive/src/source_clock.c",
+      "bytes": 5901,
+      "sha256": "4cf6afab6dda5d9dd3d2a46c144511e554b89b37e573b11ec8a23e3a25f2f5c4"
+    },
+    {
+      "file": "megadrive/src/source_clock.h",
+      "bytes": 3435,
+      "sha256": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8"
+    },
+    {
+      "file": "megadrive/src/source_irq.c",
+      "bytes": 7145,
+      "sha256": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534"
+    },
+    {
+      "file": "megadrive/src/source_irq.h",
+      "bytes": 1104,
+      "sha256": "c463a407ad732d2a78e16a6b50b18edb3c0fb941655c5a3aae3acc9df402d658"
+    },
+    {
+      "file": "megadrive/src/source_irq_context.c",
+      "bytes": 2288,
+      "sha256": "193a739e8d14fa83ad93e1e956fe76f44423e1a756e29a5e3c28ac3256b8079f"
+    },
+    {
+      "file": "megadrive/src/source_irq_context.h",
+      "bytes": 1225,
+      "sha256": "b2e4e2ded184ef602c40c192c7ba59d88075463262c06d65569042b26988aafa"
+    },
+    {
+      "file": "tools/archive_native_irq_poll_fast.py",
+      "bytes": 3231,
+      "sha256": "41850654b2b360921d57719da608b5e1017496550f93d38e6513a7880df7b09e"
+    },
+    {
+      "file": "tools/profile_native_loading_budget.py",
+      "bytes": 10791,
+      "sha256": "9e91ffdb7ff43347acdfc5ca023901cfb6f1e9ba71884ec4af9dfef7747b6ac7"
+    },
+    {
+      "file": "tools/validate_irq_poll_fast.py",
+      "bytes": 3036,
+      "sha256": "8c668d912d5434de4fd6c9c56799d332da537c1b976b58583f0048b0a3621651"
+    },
+    {
+      "file": "tools/validate_native_irq_context_boundaries.py",
+      "bytes": 4339,
+      "sha256": "47334161a27f59b69d39216ae902303d7b0aea0702a3f912f173f65ffd4a06b0"
+    },
+    {
+      "file": "tools/validate_native_room_finish.py",
+      "bytes": 16259,
+      "sha256": "8fa55ce7f417c2749044e9cf7192a6b29df75ca1341536c0a1179e0605e13969"
+    },
+    {
+      "file": "tools/validate_native_room_finish_68k.py",
+      "bytes": 6738,
+      "sha256": "eb9b22019c909bb0eecc46d7af8163f1e2f517a09497c30fd69cc62e9e8a1a9c"
+    },
+    {
+      "file": "tools/validate_native_source_irq.py",
+      "bytes": 10706,
+      "sha256": "c9e5ee24c827e1ed35cbd84f5643c463dbdc551f234690b9c00351023c205187"
+    },
+    {
+      "file": "tools/validate_native_source_irq_68k.py",
+      "bytes": 5147,
+      "sha256": "4385f9da85a01356d3e552fc56a1e4b5caea3ba877a781ee8914bb03637bfa24"
+    },
+    {
+      "file": "tools/validate_native_source_irq_boundaries.py",
+      "bytes": 3627,
+      "sha256": "8289eff17d472785a73267019259f23ff85c7f8b8f79dd88303e108199af635d"
+    },
+    {
+      "file": "validation/irq-poll-fast/reference.c",
+      "bytes": 6864,
+      "sha256": "5e8d3863de54fef223ea04e8912f64b4d6b4a05f69e3727ce363044d37a5e601"
+    },
+    {
+      "file": "validation/irq-poll-fast/wrapper.c",
+      "bytes": 1057,
+      "sha256": "11bd4dcb115f76e25fe001eadff4b54292145bf488705a9263643e93e205bddb"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/build.log",
+      "bytes": 41072,
+      "sha256": "eb3bf35cc2910ca905669e03c4e47dbfe37293d920b12b285bac1f80045a22d9"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/out/release/rom.bin",
+      "bytes": 655360,
+      "sha256": "453d8732b0388743de26ca9440236235662e0df03cbc110b9fbd9480f0f973bd"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/out/release/symbol.txt",
+      "bytes": 19574,
+      "sha256": "2f69d9eeb3f5649dd9d77fdd3391fd42144b82c63fc657b1d08cb959e72f0e5d"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/src/expected.h",
+      "bytes": 1259866,
+      "sha256": "e380bb0a12a97484da14781d2b8b75e30edae01dfe05b621e96c9469333c2b3a"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/src/main.c",
+      "bytes": 3753,
+      "sha256": "5369aea30596d3a602833ed18368a5202be7c0d38a0c37990d7a77f04659a03e"
+    },
+    {
+      "file": "validation/native-loading-budget-bare/src/profile_counters.c",
+      "bytes": 129,
+      "sha256": "dea65d17ea0f1c600ab03ecf7c411a9fb614ce7be889f9cd5b562fef70143476"
+    },
+    {
+      "file": "validation/native-loading-budget/build.log",
+      "bytes": 37887,
+      "sha256": "246e83ec6143d7dc229e4aec6d870841ab040527511e13cdc2ff1eb61435ff6b"
+    },
+    {
+      "file": "validation/native-loading-budget/out/release/rom.bin",
+      "bytes": 655360,
+      "sha256": "39a2e4f0583d4757b6644ca831b7e2b207924389548a23b9e3052359c5855141"
+    },
+    {
+      "file": "validation/native-loading-budget/out/release/symbol.txt",
+      "bytes": 19660,
+      "sha256": "7222fdf6819847f4b5822dc92081ee3160e91c19c919aa7eabd658c29c040e34"
+    },
+    {
+      "file": "validation/native-loading-budget/src/expected.h",
+      "bytes": 1259866,
+      "sha256": "e380bb0a12a97484da14781d2b8b75e30edae01dfe05b621e96c9469333c2b3a"
+    },
+    {
+      "file": "validation/native-loading-budget/src/main.c",
+      "bytes": 3753,
+      "sha256": "5369aea30596d3a602833ed18368a5202be7c0d38a0c37990d7a77f04659a03e"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/build.log",
+      "bytes": 36154,
+      "sha256": "0917f87acc0f921e7c9d2eda9d93a4b311bae39e7ec13ee012070a44f42bf670"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/out/release/rom.bin",
+      "bytes": 655360,
+      "sha256": "ce8eab598e97d6443e96aad85c0406b9c6da02a02835c298a44437721c3fe574"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/out/release/symbol.txt",
+      "bytes": 19434,
+      "sha256": "b6a32b7912b6c008fbfee1434cbf55af96de975d4e20a829ae942b9b814b31d6"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/src/expected.h",
+      "bytes": 1259866,
+      "sha256": "e380bb0a12a97484da14781d2b8b75e30edae01dfe05b621e96c9469333c2b3a"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/src/main.c",
+      "bytes": 1526,
+      "sha256": "4c62d6b751721365013e9f0edab5cedbe08ac0510193ce3238057746a4aa521c"
+    },
+    {
+      "file": "validation/native-room-finish/kernel/src/wrapper.c",
+      "bytes": 5030,
+      "sha256": "77aaac733a59b178749b228cab77be61efd8b66f4665d072fdb34ccb38de5bbc"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-0/build.log",
+      "bytes": 3943,
+      "sha256": "7637f32fa86679018dcb99f5101658557ea9f2c95be853ccb3dd12623ffcae8d"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-0/out/release/rom.bin",
+      "bytes": 3145728,
+      "sha256": "2bf122816252c3f727fa758f811a01d0ca2dc34ac9d6c699b41dbe23bc125fb3"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-0/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "a4de45b2e72330311aceb0593c7e3ed42b44188d491aefef1c1eea45890ca21b"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-0/src/expected.h",
+      "bytes": 6474119,
+      "sha256": "a69c2ddf335b0463a89e76cc98333954477c22da48491a0723e6758aa4b4a07e"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-0/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-1/build.log",
+      "bytes": 3943,
+      "sha256": "859c5bae3757aaa720e3ef88867fa102a863d11ee5687181d8ec66270202a1b0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-1/out/release/rom.bin",
+      "bytes": 3145728,
+      "sha256": "2b3dabf0ce036555f43c23dba5bc8ab26a7ec9ebc3446a4c1252f76028511638"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-1/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "a4de45b2e72330311aceb0593c7e3ed42b44188d491aefef1c1eea45890ca21b"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-1/src/expected.h",
+      "bytes": 7191144,
+      "sha256": "0710e1e7c6ab301948402b841db1b5b5bc5b72e8e111029334cc77cb923b36bc"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-1/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-2/build.log",
+      "bytes": 3943,
+      "sha256": "278d22c8805e95ae4b641e4ec08b9ba3f8e275b89b854a90eef59fb344e6c8ec"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-2/out/release/rom.bin",
+      "bytes": 3145728,
+      "sha256": "8d2bf9df97e9546e9d30600b5ddda030164ba4fdbe7c7e11db793f3b27aa6c8d"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-2/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "a4de45b2e72330311aceb0593c7e3ed42b44188d491aefef1c1eea45890ca21b"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-2/src/expected.h",
+      "bytes": 7353861,
+      "sha256": "e636dfd81f70e77b2188c503814ff0597fbc7613007fb30093a83af0bba14507"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-2/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-3/build.log",
+      "bytes": 3943,
+      "sha256": "c9d563f69c7ee61ef5bed5112413832fec53d85dc35a0775bb3994e5c5e1486f"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-3/out/release/rom.bin",
+      "bytes": 3145728,
+      "sha256": "909746f68598167adb9b982096f2066224b59286004ec88c7cbbaaa194c2b1d3"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-3/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "a4de45b2e72330311aceb0593c7e3ed42b44188d491aefef1c1eea45890ca21b"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-3/src/expected.h",
+      "bytes": 7184000,
+      "sha256": "bba80bf8d17afd8f96335191308a072fe340c591c2358510ccaef43df06fc303"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-3/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-4/build.log",
+      "bytes": 3943,
+      "sha256": "ecfb7cfd804f96d8a71fe1bdc7849f6ac67d43ef26be41890127a698b8115dc9"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-4/out/release/rom.bin",
+      "bytes": 3145728,
+      "sha256": "5df6fc96a1e29b3f9a3cbcfae99d6f6680b865670c4634aec7877f4d72a952ae"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-4/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "a4de45b2e72330311aceb0593c7e3ed42b44188d491aefef1c1eea45890ca21b"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-4/src/expected.h",
+      "bytes": 6208865,
+      "sha256": "8c0368967f1a1c14698c105b86550876ed142a43c966756f8fb0a0640fadbd37"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-4/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-5/build.log",
+      "bytes": 3943,
+      "sha256": "7f6c8d8f499a0fd77121d65d9cc69c4fe8adda237268e34f0ffbe5a8e78cd65e"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-5/out/release/rom.bin",
+      "bytes": 3145728,
+      "sha256": "066f4eb9aa0504d5d67e7e42c9800ae19a8c3b20a1f669a5954319f724b30a08"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-5/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "a4de45b2e72330311aceb0593c7e3ed42b44188d491aefef1c1eea45890ca21b"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-5/src/expected.h",
+      "bytes": 5986680,
+      "sha256": "5d6f7d31f3ee260195b3574dd9e34f9f2adc6519bc208de85d353df77070f9d7"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-5/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-6/build.log",
+      "bytes": 3943,
+      "sha256": "c14c8dac5853da574373aa4eac8b1347d82acaf0e04364ed154e2d58dd7632ff"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-6/out/release/rom.bin",
+      "bytes": 3145728,
+      "sha256": "7e997184b997c98f8fd7a2965fcfe223221ee598c1da7e28c8e189eb46d42a8f"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-6/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "a4de45b2e72330311aceb0593c7e3ed42b44188d491aefef1c1eea45890ca21b"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-6/src/expected.h",
+      "bytes": 5980036,
+      "sha256": "4962b4556b775cc16d010251dcced106c2985475fecda892b3d41429c979fc91"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-6/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-7/build.log",
+      "bytes": 3943,
+      "sha256": "92c065d803efd20f31f6b3bc839c6677048a5e6beec0d2e320537a5c7a24e8e2"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-7/out/release/rom.bin",
+      "bytes": 3145728,
+      "sha256": "4dea54fd2211287e4e0559f01bbc1ec8953a3dd9ddb43b407d3d20b367609e67"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-7/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "a4de45b2e72330311aceb0593c7e3ed42b44188d491aefef1c1eea45890ca21b"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-7/src/expected.h",
+      "bytes": 5987294,
+      "sha256": "80dcb2cfc49f4118698c0d93b901a29db646e5f39cc78858c2312a9bb911e169"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-7/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-8/build.log",
+      "bytes": 3943,
+      "sha256": "c40a3928180ab99464e77f71f2fa52a19ca3e7d80f4950b4979b68d998a284a9"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-8/out/release/rom.bin",
+      "bytes": 655360,
+      "sha256": "f53d76ddaa7388cb1d111c30d20e1816cdcbceeec2c41cc4cf799431319f0260"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-8/out/release/symbol.txt",
+      "bytes": 16082,
+      "sha256": "b259557b11693a8c984de8160f832ce5e0066da4299645c3124d0347a041673e"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-8/src/expected.h",
+      "bytes": 1082129,
+      "sha256": "7a6d405df52aabf4832e3d4de00c34ebd475bd9a07273316bf36af495f5e11a0"
+    },
+    {
+      "file": "validation/native-source-irq-68k/part-8/src/main.c",
+      "bytes": 1066,
+      "sha256": "a136ee94c894b979e3b4fef4f36abab0698e7f4a1d8d10340f3d9256b55722e0"
+    }
+  ],
+  "external_immutable_references": [
+    {
+      "file": "analysis/native-command-batching-v0198/analysis/native_loading_budget_report.json",
+      "sha256": "c82fc0d6394e2f0272eb356fb0f82c6a0f43ffb05c57cb07565b5fe2d4a020df"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_dispatch.c",
+      "sha256": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_dispatch.h",
+      "sha256": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_envelope.c",
+      "sha256": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_envelope.h",
+      "sha256": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_memory.c",
+      "sha256": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_memory.h",
+      "sha256": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_noise.c",
+      "sha256": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_noise.h",
+      "sha256": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_pitch.c",
+      "sha256": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_pitch.h",
+      "sha256": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_prefix.c",
+      "sha256": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_prefix.h",
+      "sha256": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_priority.c",
+      "sha256": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_priority.h",
+      "sha256": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_reader.c",
+      "sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_reader.h",
+      "sha256": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_sequence.c",
+      "sha256": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_sequence.h",
+      "sha256": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_tone.c",
+      "sha256": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_audio_tone.h",
+      "sha256": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_graphics_load.c",
+      "sha256": "f02cdddb55593539a34936063c55407feaf920d134d028a8f5984c777dbb9754"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_graphics_load.h",
+      "sha256": "751985ca2b2ad2e169bb82a20c28e1e3169214a3d83eb6a6007c9ded83028972"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_irq.c",
+      "sha256": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_pattern_clock.c",
+      "sha256": "decd3117fdda4dec0b2a9d9e072c37f6f26b03ba16ae6e2bf9ca00b282bca4ca"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_pattern_clock.h",
+      "sha256": "8ba6295f13aedf4d6d290a093a7a31e5a2ae6fe48a413eedda0f2e35cfdb378e"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_ram_planes.c",
+      "sha256": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_ram_planes.h",
+      "sha256": "ad2f3a5911db9eb8ee263cc689b79805e1fbab7b5bdcf7ff887e414eb25856bc"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_rng.c",
+      "sha256": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_rng.h",
+      "sha256": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_room_finish.c",
+      "sha256": "fdc31ff91f4e161b7bc486d8fccf5a9c1627affebb8c53c279448083e843b2ab"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_room_finish.h",
+      "sha256": "01bf2987ba187cb1de43a54df1f73f6d0e51f3c4818b1572ca507ffdafb80ee2"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_room_hud.c",
+      "sha256": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_room_hud.h",
+      "sha256": "14ee23b14dfb24d3daccc829a2a4f25e2002bd0b950d66cd2273ae3eabea9dae"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_wait.c",
+      "sha256": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_wait.h",
+      "sha256": "5b19b3fab702b1401beca02842f9421cc5502cba3876251fb5827debff159dc5"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_wait_restore.c",
+      "sha256": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_wait_restore.h",
+      "sha256": "553e0b70c01429b5a645a806ac2a97e8d9ca518a654fd1775370b59593a2acc3"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_world_map.c",
+      "sha256": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489"
+    },
+    {
+      "file": "analysis/native-command-batching-v0198/megadrive/src/source_world_map.h",
+      "sha256": "50ddb3249e80e1332aa6bc1c1a1bd62ef3cd93e2b398b063a3294865ae5c7c8c"
+    },
+    {
+      "file": "analysis/native-source-irq-v0194/validation/native-source-irq/cases.json",
+      "sha256": "01b2329d9e627f86a65f38c07204f81035b03e54de2f035897f49b5da89a209a"
+    },
+    {
+      "file": "analysis/native-source-irq-v0194/validation/native-source-irq/extension-cases.json",
+      "sha256": "073364541f8dc8c71197a0a0ad1b3bacda405916a2761c1ca0236ee8c4df39d3"
+    }
+  ]
+}

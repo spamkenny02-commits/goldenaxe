@@ -33,19 +33,21 @@ static void clear(SourceIrqOutput *output)
 u8 source_irq(u8 *state,const SourceIrqInput *input,const SourceClockWork *reader,SourceIrqOutput *output)
 {
     u8 old[336],value,bank,count_byte,height_byte,width_byte,previous,pause;
-    u16 count,height,width,pointer,iy,guard,n,overflow;u32 t,m,loop,sample,period,prefix,line;
+    u16 count,height,width,pointer,iy,guard,n;u32 t,m,loop,sample,period,prefix,target;
     clear(output);
     if((input->lines!=262 && input->lines!=313) || input->raster>=(u32)input->lines*3420 ||
        input->joy>63 || (input->reset_mask!=0 && input->reset_mask!=16)) return 0;
-    copy_state(old,state);
     if(!state[0x2e])
     {
         t=state[0x30]?454:442;m=state[0x30]?49:47;
+        /* The audio-only path can reject before its sole RAM mutation.
+         * It therefore needs no full rollback snapshot. */
+        if(reader->tstates>0xffffffffUL-t-82 || reader->fetches>0xffffffffUL-m-7) return 0;
         if(state[0x30]) state[0x30]--;
-        if(reader->tstates>0xffffffffUL-t-82 || reader->fetches>0xffffffffUL-m-7) goto reject;
         output->whole.tstates=82+t+reader->tstates;output->whole.fetches=7+m+reader->fetches;
         return 1;
     }
+    copy_state(old,state);
     output->stages[SOURCE_IRQ_SAT64].tstates=27+10+10+3*(16+12)+7+13+4+11+7+11+7+10+17+64*16+10;
     output->stages[SOURCE_IRQ_SAT64].fetches=3+2+3*(2+2)+9+64*2+1;
     output->stages[SOURCE_IRQ_SAT128].tstates=4+11+4+11+17+128*16+10;
@@ -75,16 +77,18 @@ u8 source_irq(u8 *state,const SourceIrqInput *input,const SourceClockWork *reade
     else
     {
         prefix=13+4+7+10+13+4+(input->compensation?12:11);
-        period=(u32)input->lines*3420;overflow=input->lines==262?0xda:0xf2;
+        period=(u32)input->lines*3420;
         t=0;for(n=0;n<SOURCE_IRQ_PALETTE;n++) t+=output->stages[n].tstates;
         sample=(input->raster+(t+prefix+11)*15)%period;
-        for(guard=0;guard<8192;guard++)
-        {
-            line=sample/3420;value=(u8)(line<=overflow?line:line-input->lines);
-            if(value>=(input->compensation?0xe0:0xf0)) break;
-            sample+=27*15;if(sample>=period) sample-=period;
-        }
-        if(guard==8192) goto reject;
+        /* Each failed V-counter poll advances405 master ticks. The accepted
+         * ranges are wider than one polling step, so ceil(distance/405)
+         * gives the identical first successful read without emulating every
+         * division. PAL has an additional accepted range before line243's
+         * counter discontinuity. NTSC's counter wraps at line219. */
+        if(input->lines==262) target=(input->compensation?230UL:246UL)*3420;
+        else if(sample<243UL*3420) target=(input->compensation?224UL:240UL)*3420;
+        else target=(input->compensation?281UL:297UL)*3420;
+        guard=sample<target?(u16)((target-sample+404)/405):0;
         output->palette_taken=guard;
         t=prefix+(u32)guard*27+22+4+11+7+11+10+10+32*(16+13)-5;
         m+=4+(input->compensation?1:2)+(u32)guard*3+3+6+32*3;

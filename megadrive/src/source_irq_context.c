@@ -42,8 +42,9 @@ u8 source_irq_interrupt(void *context,const SourceClockIrq *entry,SourceClockWor
     if(full)
     {
         period=(u32)input.lines*3420;
-        start=(entry->entry_raster+period-72UL*15)%period;
-        ack=(start+35UL*15)%period;
+        start=entry->entry_raster>=72UL*15?entry->entry_raster-72UL*15:
+                                               entry->entry_raster+period-72UL*15;
+        ack=start+35UL*15;if(ack>=period) ack-=period;
         until=ack<193UL*3420?193UL*3420-ack:period-(ack-193UL*3420);
         if(irq.whole.tstates>0xffffffffUL/15 || (irq.whole.tstates-35)*15>=until)
         {ctx->error=SOURCE_IRQ_CONTEXT_NESTED;return 0;}

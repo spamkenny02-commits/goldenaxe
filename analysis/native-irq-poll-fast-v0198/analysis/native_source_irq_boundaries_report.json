@@ -1,0 +1,88 @@
+{
+  "rejections": [
+    {
+      "kind": "lines",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "raster",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "joy",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "reset-mask",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "tile-zero",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "tile-large",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "tile-bank",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "tile-RAM",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "queue-pointer",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "queue-extent",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "reader-T-overflow",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    },
+    {
+      "kind": "reader-M1-overflow",
+      "rejected": true,
+      "all336_bytes_preserved": true
+    }
+  ],
+  "resets": [
+    {
+      "delay": 0,
+      "reset_handoff": true,
+      "whole_T": 4423,
+      "whole_M1": 528
+    },
+    {
+      "delay": 1,
+      "reset_handoff": true,
+      "whole_T": 4423,
+      "whole_M1": 528
+    },
+    {
+      "delay": 255,
+      "reset_handoff": true,
+      "whole_T": 4423,
+      "whole_M1": 528
+    }
+  ],
+  "irq_helper_sha256": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+  "limits": [
+    "Host C rollback contracts and opcode-audited JP009A handoff. Reset branch not directly exercised in source captures; reset target execution not translated here."
+  ]
+}

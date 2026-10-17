@@ -3,14 +3,14 @@
   "results": [
     {
       "region": "auto",
-      "frame": 3149,
+      "frame": 3117,
       "done": 1,
       "cases": 24,
       "failures": 0
     },
     {
       "region": "pal",
-      "frame": 2635,
+      "frame": 2608,
       "done": 1,
       "cases": 24,
       "failures": 0
@@ -25,8 +25,8 @@
     "source_graphics_load": "f02cdddb55593539a34936063c55407feaf920d134d028a8f5984c777dbb9754",
     "source_pattern_clock": "decd3117fdda4dec0b2a9d9e072c37f6f26b03ba16ae6e2bf9ca00b282bca4ca",
     "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
-    "source_irq_context": "ec7601406cbfe70fa913507caaea53cc71565f8fd4e2a7410bc42164efc526a4",
-    "source_irq": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99",
+    "source_irq_context": "193a739e8d14fa83ad93e1e956fe76f44423e1a756e29a5e3c28ac3256b8079f",
+    "source_irq": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
     "source_clock": "4cf6afab6dda5d9dd3d2a46c144511e554b89b37e573b11ec8a23e3a25f2f5c4",
     "source_rng": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
     "source_audio_reader": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
@@ -41,7 +41,7 @@
     "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
   },
   "source_case_sha256": "420e894bcb04dd20b4c50b29ec8ef57b5ab88686ab000fdc6165091cd240c9cf",
-  "kernel_sha256": "6a3318c8d5304362ffbc9d00dce5a094cc72f9257e5f487bd383f7a4e04097c2",
+  "kernel_sha256": "ce8eab598e97d6443e96aad85c0406b9c6da02a02835c298a44437721c3fe574",
   "production_clock_wired": false,
   "limits": [
     "Compiled68000 sixteen-checkpoint vectors retain source phase/R/M1/331RAM/400audio/IRQ-offset assertions; other fields are host parity.",

@@ -1,0 +1,31 @@
+{
+  "rows": [
+    {
+      "lines": 262,
+      "compensation": 0,
+      "cases": 896040
+    },
+    {
+      "lines": 262,
+      "compensation": 128,
+      "cases": 896040
+    },
+    {
+      "lines": 313,
+      "compensation": 0,
+      "cases": 1070460
+    },
+    {
+      "lines": 313,
+      "compensation": 128,
+      "cases": 1070460
+    }
+  ],
+  "cases": 3933000,
+  "reference_sha256": "3b056743e12ce03f460690bb62f740aa4a1298f2c7a7765a3ee06d9119fafa99",
+  "module_sha256": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+  "limits": [
+    "Host exact state,all nine T/M1 stages,total work,palette polling count,reset flag for every raster master tick in PAL/NTSC with both threshold modes. One valid full IRQ queue state.",
+    "Original SMS stage vectors and compiled68000 runs are independent checks; no hardware timing claim."
+  ]
+}

@@ -63,7 +63,7 @@ int main(bool hard_reset)
                 def value(name,n):return int.from_bytes(bytes(ram[(symbols[name]+i)^1] for i in range(n)),'big')
                 observed.update(frame=frame,done=value('gaw_irq_done',2),cases=value('gaw_irq_cases',4),failures=value('gaw_irq_failures',4))
             with contextlib.redirect_stdout(io.StringIO()):
-                run(cartridge,40000,base/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region})
+                run(cartridge,40000,base/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
             assert observed.get('done') and (observed['cases'],observed['failures'])==(len(rows),0),(part,region,observed)
             results.append(dict(part=part,region=region,ROM_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),**observed))
             print(part,region,observed,flush=True)
