@@ -1,0 +1,29 @@
+{
+  "md_sha256": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "01c7f62d45d82e70ebbff5902cb9eb2a04a791abf049818871a103cd07413d9b",
+  "cases": 1548,
+  "rows": [
+    {
+      "region": "pal",
+      "cases": 1548,
+      "contexts": {
+        "(0, 0, 1)": 516,
+        "(1, 0, 0)": 516,
+        "(1, 0, 1)": 516
+      },
+      "IRQ_sequences": {
+        "full": 1032,
+        "audio,full": 516
+      },
+      "wait_sha256": "f61f7488e2b93346814c361633d8b02a5274fe95235a1f247be2f35fee8c5da0",
+      "entry_sha256": "13672793db2e75bba8741c1af064f6d932c0b5aa57e558a841a0c486e6c6a1a9"
+    }
+  ],
+  "production_ROM_changed": false,
+  "limits": [
+    "Custom boot/caller,busy delays,VINT-enabled mode4 with stale VINT status cleared before delay and source0B95 helper/banks4/6 unchanged. Preceding caller byte0B94 changed toEI for one boundary context;not original routine semantics. Sound80/inactive channels andempty queue;palette skip0/1,compensation0/1,delay0/1/255.",
+    "ModesDI-entry,EI+NOP caller,andEI fallthrough at0B94. Capture is after the instruction-boundary interrupt check;model does not repeat that check for the first PUSH. Later EI inhibits the next instruction normally. Latched IRQ,disabled IRQ,prefix audio-only/full sequences and each actual IRQ acceptance offset checked where encountered.",
+    "Synthetic phases/state;not every possible latch/phase/queue/driver combination,native equivalence,hardware or full game validation."
+  ]
+}

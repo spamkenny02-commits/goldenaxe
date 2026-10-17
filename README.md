@@ -17,6 +17,15 @@ Checksum Mega Drive : `CA2E`
 
 ## État du portage
 
+L'horloge native compose désormais le lecteur audio et l'interruption
+vidéo à partir de leur état réel dans les bancs d'attente 0B95..0BB3.
+Les 19 881 cas passent en 68000 PAL/NTSC, avec phase, R, cycles, mémoire
+audio et instants d'interruption comparés à la SMS. Les tours d'attente
+sans interruption possible sont accélérés en conservant leur travail SMS.
+La restauration après 0BB3 et le raccordement à la boucle du jeu restent
+à faire ; la ROM jouable reste v0194.
+Voir les [preuves et limites](analysis/native_source_wait_milestone.md).
+
 Le travail sur l'horloge dispose maintenant d'une traduction native de
 l'enveloppe d'interruption SMS 0137..0226 : état RAM, compteurs et coûts
 vidéo/audio, avec attente de palette calculée depuis la phase raster.

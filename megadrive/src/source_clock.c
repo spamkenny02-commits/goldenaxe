@@ -94,3 +94,17 @@ u8 source_clock_checkpoint(SourceClock *clock,SourceClockInterrupt interrupt,voi
     clock->refresh=source_refresh_advance(clock->refresh,1);
     return 1;
 }
+
+u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions)
+{
+    u32 count,master;
+    if(!tstates || !fetches || !repetitions || clock->first || clock->blocked ||
+       clock->pending || !clock->iff) return 0;
+    master=(u32)tstates*15;count=clock->until_vint/master;
+    if(count>repetitions) count=repetitions;
+    if(!count) return 0;
+    advance(clock,count*master);
+    clock->foreground_tstates+=count*tstates;clock->foreground_m1+=count*fetches;
+    clock->refresh=source_refresh_advance(clock->refresh,count*fetches);
+    return (u16)count;
+}

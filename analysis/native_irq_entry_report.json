@@ -1,0 +1,155 @@
+{
+  "IRQ_entries": 13725,
+  "rows": [
+    {
+      "town": 26,
+      "mask": 0,
+      "region": "auto",
+      "IRQ_entries": 577
+    },
+    {
+      "town": 26,
+      "mask": 0,
+      "region": "pal",
+      "IRQ_entries": 580
+    },
+    {
+      "town": 26,
+      "mask": 255,
+      "region": "auto",
+      "IRQ_entries": 576
+    },
+    {
+      "town": 26,
+      "mask": 255,
+      "region": "pal",
+      "IRQ_entries": 580
+    },
+    {
+      "town": 54,
+      "mask": 0,
+      "region": "auto",
+      "IRQ_entries": 577
+    },
+    {
+      "town": 54,
+      "mask": 0,
+      "region": "pal",
+      "IRQ_entries": 580
+    },
+    {
+      "town": 54,
+      "mask": 255,
+      "region": "auto",
+      "IRQ_entries": 546
+    },
+    {
+      "town": 54,
+      "mask": 255,
+      "region": "pal",
+      "IRQ_entries": 554
+    },
+    {
+      "town": 109,
+      "mask": 0,
+      "region": "auto",
+      "IRQ_entries": 577
+    },
+    {
+      "town": 109,
+      "mask": 0,
+      "region": "pal",
+      "IRQ_entries": 580
+    },
+    {
+      "town": 109,
+      "mask": 255,
+      "region": "auto",
+      "IRQ_entries": 550
+    },
+    {
+      "town": 109,
+      "mask": 255,
+      "region": "pal",
+      "IRQ_entries": 558
+    },
+    {
+      "town": 60,
+      "mask": 0,
+      "region": "auto",
+      "IRQ_entries": 577
+    },
+    {
+      "town": 60,
+      "mask": 0,
+      "region": "pal",
+      "IRQ_entries": 580
+    },
+    {
+      "town": 60,
+      "mask": 255,
+      "region": "auto",
+      "IRQ_entries": 562
+    },
+    {
+      "town": 60,
+      "mask": 255,
+      "region": "pal",
+      "IRQ_entries": 568
+    },
+    {
+      "town": 135,
+      "mask": 0,
+      "region": "auto",
+      "IRQ_entries": 577
+    },
+    {
+      "town": 135,
+      "mask": 0,
+      "region": "pal",
+      "IRQ_entries": 580
+    },
+    {
+      "town": 135,
+      "mask": 255,
+      "region": "auto",
+      "IRQ_entries": 568
+    },
+    {
+      "town": 135,
+      "mask": 255,
+      "region": "pal",
+      "IRQ_entries": 573
+    },
+    {
+      "town": 150,
+      "mask": 0,
+      "region": "auto",
+      "IRQ_entries": 577
+    },
+    {
+      "town": 150,
+      "mask": 0,
+      "region": "pal",
+      "IRQ_entries": 580
+    },
+    {
+      "town": 150,
+      "mask": 255,
+      "region": "auto",
+      "IRQ_entries": 572
+    },
+    {
+      "town": 150,
+      "mask": 255,
+      "region": "pal",
+      "IRQ_entries": 576
+    }
+  ],
+  "clock_helper_sha256": "0dc34eb6af741d67aafb626ee676e9b311e4e9da3b78c6fe67c11e39384bbbab",
+  "context_helper_sha256": "ec7601406cbfe70fa913507caaea53cc71565f8fd4e2a7410bc42164efc526a4",
+  "limits": [
+    "Entry0137 includes its first opcode fetch in GPG observer. Six vector instruction fetches plus first body fetch match native callback convention.",
+    "Exact retained full-IRQ source sidecars on controlled paid routes; physical acknowledgement R increment not claimed."
+  ]
+}

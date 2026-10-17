@@ -1,0 +1,128 @@
+{
+  "cases": [
+    {
+      "kind": 0,
+      "result": [
+        0,
+        2048,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        255,
+        2,
+        0
+      ]
+    },
+    {
+      "kind": 1,
+      "result": [
+        0,
+        398,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        255,
+        1,
+        0
+      ]
+    },
+    {
+      "kind": 2,
+      "result": [
+        0,
+        2049,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        255,
+        1,
+        1
+      ]
+    },
+    {
+      "kind": 3,
+      "result": [
+        0,
+        2050,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        255,
+        1,
+        0
+      ]
+    },
+    {
+      "kind": 4,
+      "result": [
+        1,
+        0,
+        16713,
+        1733,
+        18,
+        1,
+        0,
+        2,
+        1,
+        255,
+        4,
+        0
+      ]
+    },
+    {
+      "kind": 5,
+      "result": [
+        1,
+        0,
+        20199,
+        2166,
+        18,
+        1,
+        0,
+        1,
+        1,
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "kind": 6,
+      "result": [
+        0,
+        2048,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        255,
+        2,
+        0
+      ]
+    }
+  ],
+  "context_helper_sha256": "ec7601406cbfe70fa913507caaea53cc71565f8fd4e2a7410bc42164efc526a4",
+  "limits": [
+    "Host adapter contracts: invalid graphics/region, unsupported audio, reset and nested IRQ diagnostics; full/audio-only successful state and sink/trace publication.",
+    "Errors return invalid zero work and do not fabricate a frame budget. Streaming audio may already have advanced on later failure. Not source reset/nested emulation proof."
+  ]
+}
