@@ -13,7 +13,7 @@ u8 source_room_finish(SourceClock *clock,SourceIrqContext *context,
                        SourceRoomFinish *result,SourceGraphicsCheckpoint checkpoint,void *user)
 {
     static const u8 upload_prefix[]={4,11,7,11,10,10,7};
-    SourceWaitOutput wait;u16 n,row,col,batch;
+    SourceWaitOutput wait;u16 n,row,col,batch;const u8 *source;u8 *destination;
     if(!result) return 0;
     result->wait_taken=result->error=0;
     if(!clock || !context || !graphics || !map || !hud || hud[15]>=4 ||
@@ -34,7 +34,11 @@ u8 source_room_finish(SourceClock *clock,SourceIrqContext *context,
             for(col=0;col<127;col++) { S(16,2);S(13,1); }
         S(16,2);S(8,1);S(4,1);S(10,1);
     }
-    for(n=0;n<1536;n++) graphics->patterns[0x3800+n]=map->tilemap[n];
+    /* Mirror buffers are separate from their descriptor objects. Keep their
+     * pointers in registers during the already-modeled DI transfer. Forward
+     * byte order is retained even if a caller's data buffers overlap. */
+    source=map->tilemap;destination=graphics->patterns+0x3800;
+    for(n=0;n<1536;n++) *destination++=*source++;
     if(!source_clock_execute(clock,11,1,SOURCE_CLOCK_STATUS,source_irq_interrupt,context) ||
        !source_clock_execute(clock,4,1,SOURCE_CLOCK_EI,source_irq_interrupt,context)) goto reject;
     for(n=0;n<5;n++) S(10,1);

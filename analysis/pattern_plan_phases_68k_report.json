@@ -4,22 +4,22 @@
   "results": [
     {
       "region": "auto",
-      "frame": 19072,
+      "frame": 18992,
       "done": 1,
       "cases": 16,
       "failures": 0
     },
     {
       "region": "pal",
-      "frame": 15957,
+      "frame": 15890,
       "done": 1,
       "cases": 16,
       "failures": 0
     }
   ],
   "reference_sha256": "af2031b49a2dbb5c7f72d59e54df50d2e78ec8d1b372f161d61bdb27c26741e5",
-  "module_sha256": "211af2b1a181078289302a016074d60e9ad2baf5a69fc8dfdaa6e33a52542029",
-  "kernel_sha256": "edc9d4c203b8d1d7a29db6861e1ca72cb18468d7826bce15fb2c0afb6c6ec4dd",
+  "module_sha256": "edc157483af29634488799bfa32efac1eb912c53c4774648e35b56943ca1526e",
+  "kernel_sha256": "a6dcb68f1d6ea67219bd0741a905e03986d13a6cfa75ca37c41db08b196286d5",
   "limits": [
     "Compiled68000 bytewise planned assets versus immutable scalar C:16384 pattern bytes,336RAM,400audio,clock andIRQ traces. Real ROM asset with16 logical-region/phase/IFF/pending/blocked inputs under PAL andNTSC physical consoles.",
     "Original source16-checkpoint chain and bare CPU budget remain separate checks."

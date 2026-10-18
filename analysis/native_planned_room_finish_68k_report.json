@@ -4,27 +4,27 @@
   "results": [
     {
       "region": "auto",
-      "frame": 3049,
+      "frame": 2977,
       "done": 1,
       "cases": 24,
       "failures": 0
     },
     {
       "region": "pal",
-      "frame": 2551,
+      "frame": 2491,
       "done": 1,
       "cases": 24,
       "failures": 0
     }
   ],
   "helpers": {
-    "source_room_finish": "fdc31ff91f4e161b7bc486d8fccf5a9c1627affebb8c53c279448083e843b2ab",
+    "source_room_finish": "508dea1362a52d21459103bb73ebc8434d54902107b9d6ecad601fd61ed779f2",
     "source_wait_restore": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
     "source_room_hud": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
     "source_world_map": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489",
     "source_ram_planes": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
     "source_graphics_load": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
-    "source_pattern_clock": "c48d18351268ac82868ec4cc17680867610d35aa10df51b6773023f8898bda86",
+    "source_pattern_clock": "edc157483af29634488799bfa32efac1eb912c53c4774648e35b56943ca1526e",
     "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
     "source_irq_context": "9d423c3750d96318902c2e72f6456e571251357bfb2e6196f4ee3aad0f845b1b",
     "source_irq": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
@@ -43,7 +43,7 @@
     "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
   },
   "source_case_sha256": "420e894bcb04dd20b4c50b29ec8ef57b5ab88686ab000fdc6165091cd240c9cf",
-  "kernel_sha256": "6d219f7cc30273d0ffbeb6c3030218997fced9efaed91c817be10a30a1b2c9a8",
+  "kernel_sha256": "58103382c2f13ee0c5323fc7e5b42296cb74af51ce7ba46ffde89a3c028d2862",
   "production_clock_wired": false,
   "limits": [
     "Compiled68000 sixteen-checkpoint vectors retain source phase/R/M1/331RAM/400audio/IRQ-offset assertions; other fields are host parity.",

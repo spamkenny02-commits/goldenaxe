@@ -50,18 +50,19 @@ Voir le [jalon du lecteur audio horodaté](analysis/reader_timing_milestone.md).
 L'adaptateur d'interruption du prototype convertit aussi ces dates vers
 l'horloge source : les **1 488 écritures des 24 chargements** concordent avec
 la SMS. Le lecteur optimisé passe les mêmes 25 644 appels par région en 68000.
-Son coût reste trop élevé sur **2 des 12 chargements NTSC**, jusqu'à 0,271 image
-de dépassement ; les 12 chargements PAL restent dans leur budget. Une mesure
-supplémentaire de disponibilité des paquets révèle aussi des échéances NTSC
-manquées. Il reste à réduire ce coût et à programmer les sorties physiques.
-Voir les [mesures, preuves et limites](analysis/timed_irq_milestone.md).
+Les **24 chargements testés rentrent désormais dans leur budget**, avec une
+marge minimale de 2,76 images NTSC et 3,73 images PAL. Les 1 488 événements
+PSG sont aussi disponibles avant leurs échéances relatives. Il reste à
+programmer les sorties physiques et à établir la phase globale depuis le boot.
+Voir les [mesures, preuves et limites actuelles](analysis/native_copy_pointers_milestone.md).
 
-Deux divisions bornées utilisent maintenant l'instruction native 68000 :
-le pire dépassement NTSC passe de **106 à 71 lignes vidéo** dans le prototype,
-avec les mêmes états et dates PSG. Les contrôles couvrent 8 000 cas d'horloge,
-plus d'un million de conversions par région et les 24 chargements de référence.
-Le [jalon des divisions natives](analysis/native_divu_loading_milestone.md)
-documente le gain, le profilage et les limites ; l'intégration au jeu reste à faire.
+Le profil instruction par instruction a permis d'optimiser deux copies de
+buffers : le pire chargement du prototype passe de 22,98 à 19,95 images NTSC,
+avec les mêmes états, pixels et dates PSG. Voir le
+[jalon des copies natives](analysis/native_copy_pointers_milestone.md).
+Le [jalon précédent des divisions natives](analysis/native_divu_loading_milestone.md)
+conserve aussi les vérifications arithmétiques. La ROM jouable reste la v0203 ;
+ces gains concernent la chaîne avec horloge encore en cours d'intégration.
 
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de

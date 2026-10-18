@@ -66,7 +66,8 @@ static u16 command_window(SourceClock *clock,const u8 **source,u8 **destination,
 static u16 planned_window(SourceClock *clock,const SourcePatternPlane *plan,u16 *index,
                           const u8 **source,u8 **destination,u16 *cursor)
 {
-    const SourcePatternBoundary *base,*end;u32 available;u16 lo=*index,hi=plan->count,mid,n;
+    const SourcePatternBoundary *base,*end;const u8 *decoded;
+    u32 available;u16 lo=*index,hi=plan->count,mid,n,count;
     u8 *write=*destination;
     if(lo>=hi || clock->first || clock->blocked || clock->pending || !clock->iff) return 0;
     available=window_ticks(clock->until_vint);
@@ -79,7 +80,11 @@ static u16 planned_window(SourceClock *clock,const SourcePatternPlane *plan,u16 
     if(lo==*index) return 0;
     end=plan->boundary+lo;
     if(!source_clock_block(clock,(u16)(end->ticks-base->ticks),(u16)(end->fetches-base->fetches))) return 0;
-    for(n=base->decoded;n<end->decoded;n++) {*write=plan->decoded[n];write+=4;}
+    /* The verified plan is immutable ROM. Cache its bound and stream pointer
+     * before writing the RAM mirror; otherwise alias conservatism reloads
+     * both fields for every decoded byte in the68000 copy loop. */
+    count=end->decoded-base->decoded;decoded=plan->decoded+base->decoded;
+    for(n=0;n<count;n++) {*write=*decoded++;write+=4;}
     *source+=end->source-base->source;*destination=write;
     *cursor+=(end->decoded-base->decoded)*4;*index=lo;
     return 1;
