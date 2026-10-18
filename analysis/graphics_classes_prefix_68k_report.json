@@ -3,14 +3,14 @@
   "results": [
     {
       "region": "auto",
-      "frame": 3058,
+      "frame": 3043,
       "done": 1,
       "cases": 56,
       "failures": 0
     },
     {
       "region": "pal",
-      "frame": 2560,
+      "frame": 2546,
       "done": 1,
       "cases": 56,
       "failures": 0
@@ -19,7 +19,7 @@
   "helpers": {
     "source_pattern_clock": "6b68f60f64a451545b45518da8265f030952a50abcc1c4b103f3fae21a75e2b2",
     "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
-    "source_irq_context": "aa1dd064b3ec351b9a31fab2c01dee90cf720812b354e3eb366c624ee8dfc27d",
+    "source_irq_context": "ad7a0f798abe1c0448d64ce39ab6aab452c122044b438e882d2fda6e58472e02",
     "source_irq": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
     "source_clock": "4cf6afab6dda5d9dd3d2a46c144511e554b89b37e573b11ec8a23e3a25f2f5c4",
     "source_rng": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
@@ -36,7 +36,7 @@
     "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
   },
   "source_case_sha256": "ad92abe48858d1e9b86106c3dabc4e3a4cadb414194ff88feb223be5d55b78bd",
-  "kernel_sha256": "8675c5567c0aa7348a83ac3e2b0bb2d71189e320c2082cfca7af5e3302fa1691",
+  "kernel_sha256": "ffd36e7ab2131d0268db7a47ffe6c176fc868fcce0898cddc40259c47565e265",
   "production_clock_wired": false,
   "limits": [
     "Compiled68000 vectors across classes0/1/2 retain source phase/R/M1/331RAM/400audio/IRQ-offset assertions; pattern hash/end also checked.",

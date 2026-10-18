@@ -13,10 +13,12 @@ from run_core import run
 from validate_native_room_finish import MODULES
 
 def main():
-    bare='--bare' in sys.argv;planned='--planned' in sys.argv;precise='--precise' in sys.argv;baseline_audio='--baseline-audio' in sys.argv
+    rom=(ROOT/'input/original.sms').read_bytes()
+    bare='--bare' in sys.argv;planned='--planned' in sys.argv;precise='--precise' in sys.argv;baseline_audio='--baseline-audio' in sys.argv;physical_video='--physical-video' in sys.argv
     assert not precise or bare,'Precise entry/exit sampling requires --bare'
     assert not baseline_audio or precise,'Baseline audio comparison requires --precise'
-    base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else '')+('-precise' if precise else '')+('-baseline-audio' if baseline_audio else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
+    assert not physical_video or (precise and planned),'Physical video requires --planned --bare --precise'
+    base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else '')+('-precise' if precise else '')+('-baseline-audio' if baseline_audio else '')+('-physical-video' if physical_video else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
     header=ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/kernel/src/expected.h');(src/'expected.h').write_bytes(header.read_bytes())
     for name in MODULES:
         if name=='source_irq_context' and baseline_audio:
@@ -105,6 +107,21 @@ int main(bool hard_reset)
             '__attribute__((noinline,externally_visible)) void gaw_budget_end(void) {__asm__ volatile ("nop; nop":::"memory");}\nint main(bool hard_reset)')
         body=body.replace('  accepted=source_graphics_load_class0','  gaw_budget_begin();\n  accepted=source_graphics_load_class0')
         body=body.replace(';mark4=vtimer;',';gaw_budget_end();mark4=vtimer;');main.write_text(body)
+    if physical_video:
+        from generate_class0_video import generate
+        generate();(src/'source_class0_video.c').write_text('#include "../../../megadrive/src/source_class0_video.c"\n')
+        main=src/'main.c';body=main.read_text().replace('#include "expected.h"','#include "expected.h"\n#include "../../../megadrive/src/source_class0_video.h"')
+        body=body.replace('int main(bool hard_reset)',
+            'u16 gaw_video_map[768],gaw_video_palette[32];\nvolatile u32 gaw_video_psg_writes[24];\n'
+            '__attribute__((noinline,externally_visible)) void gaw_video_convert(void) {__asm__ volatile ("nop; nop; nop":::"memory");}\n'
+            '__attribute__((noinline,externally_visible)) void gaw_video_dma(void) {__asm__ volatile ("nop; nop; nop; nop":::"memory");}\n'
+            'static const u32 guard[8]={0x5aa55aa5UL,0x5aa55aa5UL,0x5aa55aa5UL,0x5aa55aa5UL,0x5aa55aa5UL,0x5aa55aa5UL,0x5aa55aa5UL,0x5aa55aa5UL};\n'
+            'static void physical_psg(void *unused,const u8 *writes,u16 count) {u16 n;(void)unused;gaw_video_psg_writes[profile_row]+=count;for(n=0;n<count;n++) PSG_write(writes[n]);}\nint main(bool hard_reset)')
+        body=body.replace('SYS_enableInts();','SYS_enableInts();VDP_setScreenWidth256();VDP_setPlaneSize(64,32,TRUE);VDP_loadTileData(guard,15,1,DMA);VDP_loadTileData(guard,209,1,DMA);')
+        body=body.replace('ctx.input.reset_mask=16;','ctx.input.reset_mask=16;ctx.sink=physical_psg;')
+        body=body.replace('gaw_budget_end();mark4=vtimer;',
+            'gaw_video_convert();source_class0_video_map(tilemap,gaw_video_map,768);source_class0_video_palette(cells+0xb0,gaw_video_palette);gaw_video_dma();if(!source_class0_video_upload(gaw_video_map,gaw_video_palette)) accepted=0;gaw_budget_end();mark4=vtimer;')
+        body=body.replace('gaw_budget_cases++;','gaw_budget_cases++;SYS_doVBlankProcess();');main.write_text(body)
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH'];path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:]
     built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=base,env=env,capture_output=True,text=True)
     (base/'build.log').write_text(built.stdout+built.stderr);assert built.returncode==0,built.stderr[-2000:]
@@ -115,10 +132,12 @@ int main(bool hard_reset)
         core=ROOT.parents[1]/'work/genesis-plus-gx/genesis_plus_gx_clock_libretro.dll';observer=c.CDLL(str(core))
         full={m[2]:int(m[1],16) for line in (base/'out/release/symbol.txt').read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))}
         begin,end=full['gaw_budget_begin'],full['gaw_budget_end'];assert begin!=end
+        watch_pcs=[begin,end]+([full['gaw_video_convert'],full['gaw_video_dma']] if physical_video else [])
         observer.gaw_md_config.argtypes=[c.c_uint,c.POINTER(c.c_uint)];observer.gaw_md_event_count.restype=c.c_uint;observer.gaw_md_event_data.restype=c.POINTER(c.c_uint)
     for region in ['auto','pal']:
-        observed={};rows=[];events=[];previous=[0];line_count=313 if region=='pal' else 262
-        if precise:observer.gaw_md_config(2,(c.c_uint*2)(begin,end))
+        observed={};rows=[];events=[];previous=[0];line_count=313 if region=='pal' else 262;captures=set();snapshots={};last_completed=[0]
+        matching=[n for n,row in enumerate(cases) if row['phase'][3]==line_count]
+        if precise:observer.gaw_md_config(len(watch_pcs),(c.c_uint*len(watch_pcs))(*watch_pcs))
         def observe(frame,ram):
             if precise:
                 count=observer.gaw_md_event_count();p=observer.gaw_md_event_data();assert count<8192
@@ -126,19 +145,56 @@ int main(bool hard_reset)
                 previous[0]=count
             def value(name,n,offset=0):return int.from_bytes(bytes(ram[(symbols[name]+offset+i)^1] for i in range(n)),'big')
             observed.update(done=value('gaw_budget_done',2),cases=value('gaw_budget_cases',4),failures=value('gaw_budget_failures',4),frame=frame)
+            if physical_video and observed['cases']>last_completed[0]:
+                assert observed['cases']==last_completed[0]+1
+                snapshots[matching[observed['cases']-1]]=frame;captures.add(frame);last_completed[0]=observed['cases']
             if observed['done']:
                 for n,case in enumerate(cases):
                     if not value('gaw_budget',4,n*64+16):continue
                     physical=value('gaw_budget',4,n*64);virtual=value('gaw_budget',4,n*64+4);logical_frames=virtual/(case['phase'][3]*3420)
                     marks=[value('gaw_graphics_marks',4,n*24+k*4) for k in range(6)];deltas=[marks[0]-value('gaw_budget',4,n*64+44)]+[marks[k]-marks[k-1] for k in range(1,6)]
                     rows.append(dict(graphics_return_frames=value('gaw_budget',4,n*64+20)-sum(deltas),graphics_stages=deltas,case=n,room=case['room'],physical_frames=physical,source_master=virtual,source_frames=logical_frames,compute_to_source_ratio=physical/logical_frames,stages=[value('gaw_budget',4,n*64+20+k*4) for k in range(4)],irq_subticks=value('gaw_budget',4,n*64+36),irq_calls=value('gaw_budget',4,n*64+40),clock_calls=[value('gaw_budget',4,n*64+48+k*4) for k in range(4)]))
-        with contextlib.redirect_stdout(io.StringIO()):run(cartridge,60000,base/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
+        with contextlib.redirect_stdout(io.StringIO()):run(cartridge,60000,base/region,captures,[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
         assert observed.get('done') and (observed['cases'],observed['failures'])==(12,0),observed
         if precise:
-            assert len(events)==24 and len(rows)==12,(region,len(events),len(rows))
-            for row,(a,b) in zip(rows,zip(events[::2],events[1::2])):
+            width=4 if physical_video else 2
+            assert len(events)==12*width and len(rows)==12,(region,len(events),len(rows))
+            for index,row in enumerate(rows):
+                chunk=events[index*width:(index+1)*width];a,b=chunk[0],chunk[-1]
                 assert a[0]==begin and b[0]==end and b[1]>=a[1]
                 measured=b[1]-a[1];row.update(measured_master=measured,measured_frames=measured/(line_count*3420),remaining_source_master=row['source_master']-measured)
+                if physical_video:
+                    assert [x[0] for x in chunk]==[begin,full['gaw_video_convert'],full['gaw_video_dma'],end]
+                    row.update(compute_master=chunk[1][1]-a[1],video_conversion_master=chunk[2][1]-chunk[1][1],video_transfer_master=b[1]-chunk[2][1])
+        if physical_video:
+            assert len(snapshots)==12
+            for row in rows:
+                index=row['case'];frame=snapshots[index];folder=base/region
+                raw=(folder/f'ram_{frame:05d}.bin').read_bytes();ram=bytes(raw[i^1] for i in range(len(raw)))
+                def area(name,length):return ram[symbols[name]:symbols[name]+length]
+                v=(folder/f'vram_{frame:05d}.bin').read_bytes();cram=(folder/f'cram_{frame:05d}.bin').read_bytes();regs=(folder/f'vdp_regs_{frame:05d}.bin').read_bytes();plane=(regs[2]&56)<<10
+                assert not regs[12]&0x81,(region,index,'visible width not restored')
+                assert regs[16]&3==1 and not regs[16]&0x30,(region,index,'physical plane is not64x32')
+                assert not regs[1]&0x40,(region,index,'display unexpectedly enabled')
+                def fnv(data):
+                    h=2166136261
+                    for value in data:h=((h^value)*16777619)&0xffffffff
+                    return h
+                sms=area('tilemap',1536);upper=area('cells',256)[0xb0:0xc0]
+                assert fnv(sms)==cases[index]['expected'][37] and fnv(upper)==cases[index]['expected'][38],(region,index,'source endpoint buffers not retained')
+                for n in range(768):
+                    word=int.from_bytes(sms[n*2:n*2+2],'little');expected=16+(word&511)|((word&0x200)<<2)|((word&0x400)<<2)|((word&0x800)<<2)|((word&0x1000)<<3)
+                    pos=plane+(n//32+2)*128+(n%32)*2;assert int.from_bytes(v[pos:pos+2],'little')==expected,(region,index,n,'physical map')
+                from validate_native_patterns import decode
+                from audit_item_reward_visuals import sms_pixels,md_pixels
+                source_pixels,_=decode(rom[0x3c010:])
+                for n in range(193):assert md_pixels(v,n+16)==sms_pixels(source_pixels,n),(region,index,n,'physical pattern')
+                for n in [15,209]:assert md_pixels(v,n)==[5,10,10,5,5,10,10,5]*8,(region,index,'pattern guard',n)
+                levels=[0,3,5,7];sms_colors=bytes(rom[0x3c000:0x3c010])+upper
+                for n,color in enumerate(sms_colors):
+                    expected=0 if not n else levels[color&3]|(levels[(color>>2)&3]<<3)|(levels[(color>>4)&3]<<6)
+                    assert int.from_bytes(cram[n*2:n*2+2],'little')==expected,(region,index,n,'physical palette')
+                row.update(extract_frame=frame,physical_map_words=768,physical_pattern_pixels=193*64,physical_palette_words=32,pattern_guard_tiles=2,display_disabled=True,visible_width_restored=256,physical_plane=[64,32],psg_writes=int.from_bytes(area('gaw_video_psg_writes',96)[index*4:index*4+4],'big'),vram_sha256=hashlib.sha256(v).hexdigest(),cram_sha256=hashlib.sha256(cram).hexdigest())
         results.append(dict(region=region,rows=rows,**observed));print(region,[(r['physical_frames'],round(r['source_frames'],2),r['stages'],r['graphics_stages'],round(r['irq_subticks']/(1536 if region=='pal' else 1280),2),r['clock_calls']) for r in rows],flush=True)
     report=dict(planned=planned,instrumented=not bare,results=results,helpers={name+suffix:hashlib.sha256((ROOT/'megadrive/src'/(name+suffix)).read_bytes()).hexdigest() for name in MODULES for suffix in ['.c','.h'] if (ROOT/'megadrive/src'/(name+suffix)).exists()},cases_sha256=hashlib.sha256((ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/cases.json')).read_bytes()).hexdigest(),clock_call_fields=['execute','generic_repeat','accepted_generic_groups','generic_repetitions'],inline_blocks_counted=False,kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),
                 limits=['Vtimer delta around four native calls, no hashes/checkpoint snapshots; stage marks and two getSubTick samples perIRQ add a small profiling overhead. Six additional vtimer checkpoints split graphics stages1706/170E/1720/1733/1748/24B9. One-frame stage resolution; IRQ subtick conversion approximate.',
@@ -151,6 +207,12 @@ int main(bool hard_reset)
         report['clock_audio_fast']=not baseline_audio
         report['generated_source_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in src.iterdir() if p.suffix in ['.c','.h']}
         report['limits'][0]='Read-only 68000 PC observations at two noinline markers around the four loading calls. Their call/return overhead is included. Vtimer stage marks remain at one-frame resolution; measured_master gives the finer complete-chain duration.'
-    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
+    if physical_video:
+        report['physical_video']=True;report['physical_psg_writes']=True;report['audio_deadline_pacing']=False
+        report['video_module_sha256']=hashlib.sha256((ROOT/'megadrive/src/source_class0_video.c').read_bytes()).hexdigest();report['video_assets_sha256']=hashlib.sha256((ROOT/'megadrive/src/source_class0_video_assets_generated.h').read_bytes()).hexdigest();report['video_header_sha256']=hashlib.sha256((ROOT/'megadrive/src/source_class0_video.h').read_bytes()).hexdigest()
+        report['map_transfer']='CPU port bursts,24 rows of16 longwords';report['pattern_palette_transfer']='DMA with temporary H40 during display-off';report['attribute_lut_bytes']=131072
+        report['limits'][0]='Four read-only 68000 PC markers bracket source computation, video conversion and physical transfers. Marker call/return overhead and PSG write counters are included. Vtimer stage marks remain at one-frame resolution; measured_master gives the finer complete-chain duration.'
+        report['limits'][2]='Display off;193 base-pattern tiles,768 map words and32 palette words physically uploaded after source computations. Actor/hero/HUD font tile uploads and backdrop initialization excluded. PSG bytes physically emitted during virtual IRQ computation without deadline pacing. Raw endpoint VRAM/CRAM verified; no displayed frame or source-relative publication-timing claim.'
+    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+('_physical_video' if physical_video else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

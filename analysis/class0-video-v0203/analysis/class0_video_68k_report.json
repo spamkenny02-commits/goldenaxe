@@ -1,0 +1,38 @@
+{
+  "cases": 65536,
+  "tail_lengths": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "regions": [
+    {
+      "region": "auto",
+      "frame": 128,
+      "done": 1,
+      "words": 65536,
+      "tails": 8,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 108,
+      "done": 1,
+      "words": 65536,
+      "tails": 8,
+      "failures": 0
+    }
+  ],
+  "upload_rejects_null_and_enabled": true,
+  "kernel_sha256": "8bc9bb22561acc5a52c1b08a7aa6f7cc79a4bc24a89f4994567194a2162310e1",
+  "module_sha256": "d573d4bbfffda97233781b29d67784a73a8a270540723f29bd4216d6a67f44dc",
+  "assets_sha256": "75db5ef4c095ab678f85020f376dd72d24fc3dcf8ace975540e61e11c74f1b55",
+  "limits": [
+    "Compiled68000 assembly conversion, guarded output and upload preconditions. Complete physical uploads and source-clock loading are checked by the separate physical-video profile."
+  ]
+}

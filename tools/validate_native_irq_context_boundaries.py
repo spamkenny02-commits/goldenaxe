@@ -28,6 +28,10 @@ u8 context_case(u8 kind,const u8 *low,const u8 *bank,u32 *out)
  if(kind==4) {ram[0x2e]=0;audio[6]=0x81;}
  if(kind==5) audio[6]=0x81;
  if(kind==6) ctx.input.lines=263;
+ if(kind==7) {ram[0x2e]=0;audio[5]=0x8e;}
+ if(kind==8) {ram[0x2e]=0;ctx.input.lines=263;}
+ if(kind==9) {ram[0x2e]=0;ram[0x30]=0;audio[6]=0x81;}
+ if(kind==10) {ram[0x2e]=0;ram[0x30]=255;audio[6]=0x81;}
  accepted=source_irq_interrupt(&ctx,&entry,&work);
  out[0]=accepted;out[1]=ctx.error;out[2]=work.tstates;out[3]=work.fetches;
  out[4]=observer.writes;out[5]=observer.traces;out[6]=ram[0x2e];out[7]=ram[0x1c];
@@ -48,18 +52,20 @@ def main():
     dll=c.CDLL(str(folder/'context.dll'));function=dll.context_case
     function.argtypes=[c.c_uint8,c.POINTER(c.c_uint8),c.POINTER(c.c_uint8),c.POINTER(c.c_uint32)];function.restype=c.c_uint8
     source=(ROOT/'input/original.sms').read_bytes();low=(c.c_uint8*32768).from_buffer_copy(source[:32768]);bank=(c.c_uint8*16384).from_buffer_copy(source[0x18000:0x1c000]);rows=[]
-    for kind in range(7):
+    for kind in range(11):
         output=(c.c_uint32*12)();assert function(kind,low,bank,output)
-        if kind in [0,1,2,3,6]:
-            assert list(output[:4])==[0,{0:0x800,1:0x18e,2:0x801,3:0x802,6:0x800}[kind],0,0]
-            assert not output[5] and output[6]==1 and output[8]==2 and output[9]==255
-            assert output[7]==(1 if kind==2 else 2) and output[10]==(2 if kind in [0,6] else 1)
+        if kind in [0,1,2,3,6,7,8]:
+            assert list(output[:4])==[0,{0:0x800,1:0x18e,2:0x801,3:0x802,6:0x800,7:0x18e,8:0x800}[kind],0,0]
+            assert not output[5] and output[6]==(0 if kind in [7,8] else 1) and output[8]==2 and output[9]==255
+            assert output[7]==(1 if kind==2 else 2) and output[10]==(2 if kind in [0,6,8] else 1)
             assert output[11]==(kind==2)
         else:
             assert output[0]==1 and not output[1] and output[2]>500 and output[3]>50 and output[4] and output[5]==1
-            assert output[6]==0 and output[8]==1 and output[9]==(255 if kind==4 else 0)
-            assert output[7]==(2 if kind==4 else 1)
+            assert output[6]==0 and output[8]==({9:0,10:254}.get(kind,1)) and output[9]==(0 if kind==5 else 255)
+            assert output[7]==(1 if kind==5 else 2)
         rows.append(dict(kind=kind,result=list(output)))
+    assert rows[9]['result'][2]+12==rows[4]['result'][2] and rows[9]['result'][3]+2==rows[4]['result'][3]
+    assert rows[10]['result'][2:4]==rows[4]['result'][2:4]
     report=dict(cases=rows,context_helper_sha256=hashlib.sha256((ROOT/'megadrive/src/source_irq_context.c').read_bytes()).hexdigest(),
                 limits=['Host adapter contracts: invalid graphics/region, unsupported audio, reset and nested IRQ diagnostics; full/audio-only successful state and sink/trace publication.',
                         'Errors return invalid zero work and do not fabricate a frame budget. Streaming audio may already have advanced on later failure. Not source reset/nested emulation proof.'])

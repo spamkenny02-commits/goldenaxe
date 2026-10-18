@@ -1,0 +1,22 @@
+{
+  "attribute_words": 65536,
+  "map_words": 65536,
+  "upper_palette_values": 256,
+  "base_pattern_pixels": 12352,
+  "assets": {
+    "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+    "source_offset": 245776,
+    "source_end": 251118,
+    "tiles": 193,
+    "packed_bytes": 6176,
+    "attribute_words": 65536,
+    "header_sha256": "75db5ef4c095ab678f85020f376dd72d24fc3dcf8ace975540e61e11c74f1b55",
+    "limits": [
+      "ROM-derived base class0 graphics only. Dynamic actor, hero, HUD font and name-table/VRAM alias updates are outside this atlas."
+    ]
+  },
+  "module_sha256": "d573d4bbfffda97233781b29d67784a73a8a270540723f29bd4216d6a67f44dc",
+  "limits": [
+    "Host conversion and ROM atlas only; physical SGDK transfers and complete-loader timing are checked separately."
+  ]
+}

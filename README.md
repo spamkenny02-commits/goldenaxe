@@ -39,6 +39,14 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+Le prototype effectue maintenant les transferts vidéo réels : 193 tuiles,
+768 mots de carte et 32 couleurs sont vérifiés sur 24 contextes, avec des
+écritures PSG effectives. Le total mesuré atteint 21,56–22,704 images NTSC
+pour 22,710 côté SMS. La marge minimale n’est que de 1,64 ligne vidéo :
+la cadence de publication reste à vérifier, avec les autres composants
+d’affichage. La ROM jouable reste inchangée.
+Voir le [jalon vidéo physique et ses limites](analysis/class0_video_milestone.md).
+
 Le préfixe de chargement des graphismes couvre les trois classes de pièces :
 56 cas source et 56 cas en 68000 pour chaque région passent. Il reste hors
 du jeu actif ; voir le [jalon des trois classes](analysis/graphics_classes_prefix_milestone.md).
@@ -46,7 +54,7 @@ du jeu actif ; voir le [jalon des trois classes](analysis/graphics_classes_prefi
 La composition audio du moteur avec calendrier évite désormais les copies
 de sécurité imbriquées. Les 25 644 cas source passent en 68000 PAL/NTSC,
 et 28 644 comparaisons vérifient aussi les commandes PSG et les rejets.
-Le calcul du chargement complet mesuré passe de 22,34–23,51 à 20,87–22,04
+Au jalon audio précédent, le calcul seul passait de 22,34–23,51 à 20,87–22,04
 images NTSC, pour 22,71 côté SMS. Cette mesure exclut les transferts vidéo
 réels et ne prouve pas la cadence du jeu. Le binaire jouable reste exactement
 la v0203. Voir le [jalon audio et ses limites](analysis/audio_stream_fast_milestone.md).

@@ -4,6 +4,8 @@ $ErrorActionPreference = 'Stop'
 if ($LASTEXITCODE -ne 0) { throw 'Pattern pair table generation failed' }
 & python "$PSScriptRoot/tools/generate_pattern_plan.py"
 if ($LASTEXITCODE -ne 0) { throw 'Pattern asset plan generation failed' }
+& python "$PSScriptRoot/tools/generate_class0_video.py"
+if ($LASTEXITCODE -ne 0) { throw 'Class0 video asset generation failed' }
 $sdkPath = (Resolve-Path -LiteralPath $Sgdk).Path.Replace('\','/')
 $sdkUnix = '/' + $sdkPath.Substring(0,1).ToLower() + $sdkPath.Substring(2)
 Push-Location "$PSScriptRoot\megadrive"
