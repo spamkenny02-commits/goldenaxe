@@ -1,5 +1,18 @@
 #include "source_pattern_clock.h"
 
+static inline u32 window_ticks(u32 master)
+{
+    /* Both windows already saturate at65535T. Clamp before DIVU so every
+     * native quotient fits; larger source-master intervals stay saturated. */
+    if(master>=65535UL*15) return 65535;
+#ifdef SGDK_GCC
+    __asm__("divu.w %1,%0" : "+d"(master) : "d"((u16)15) : "cc");
+    return (u16)master;
+#else
+    return master/15;
+#endif
+}
+
 /* Detailed instruction boundaries are retained near interrupts. Interior
  * bytes may batch only before VINT with IFF/EI-delay restored at byte end. */
 static u8 step(SourceClock *clock,SourceIrqContext *context,u16 ticks,u8 fetches,u8 effect)
@@ -25,8 +38,7 @@ static u16 command_window(SourceClock *clock,const u8 **source,u8 **destination,
     const u8 *scan=*source,*src;u8 *write;
     u32 available;u16 ticks=0,fetches=0,commands=0,position=*cursor;
     if(clock->first || clock->blocked || clock->pending || !clock->iff) return 0;
-    available=clock->until_vint/15;
-    if(available>65535) available=65535;
+    available=window_ticks(clock->until_vint);
     while(*scan)
     {
         u16 command=*scan,count=command&127,carry,cost,m1;u8 literal=command&128;
@@ -57,7 +69,7 @@ static u16 planned_window(SourceClock *clock,const SourcePatternPlane *plan,u16 
     const SourcePatternBoundary *base,*end;u32 available;u16 lo=*index,hi=plan->count,mid,n;
     u8 *write=*destination;
     if(lo>=hi || clock->first || clock->blocked || clock->pending || !clock->iff) return 0;
-    available=clock->until_vint/15;if(available>65535) available=65535;
+    available=window_ticks(clock->until_vint);
     base=plan->boundary+lo;
     while(lo<hi)
     {

@@ -14,6 +14,21 @@ static inline u32 product(u16 a,u16 b)
 #endif
 }
 
+static inline u32 quotient(u32 numerator,u32 denominator)
+{
+#ifdef SGDK_GCC
+    /* DIVU accepts a32-bit dividend and16-bit divisor only when its quotient
+     * fits16 bits. Comparing the high dividend word proves that bound and
+     * avoids the general helper's two divisions. Preserve its fallback. */
+    if(denominator<=65535 && (numerator>>16)<denominator)
+    {
+        __asm__("divu.w %1,%0" : "+d"(numerator) : "d"((u16)denominator) : "cc");
+        return (u16)numerator;
+    }
+#endif
+    return numerator/denominator;
+}
+
 static u32 advance(SourceClock *clock,u32 master)
 {
     u32 crossings=0;
@@ -120,7 +135,7 @@ u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetition
     if(ticks<=0xffffffffUL/15 && ticks*15<=clock->until_vint) count=repetitions;
     else
     {
-        candidate=clock->until_vint/master;
+        candidate=quotient(clock->until_vint,master);
         count=candidate>repetitions?repetitions:(u16)candidate;
         ticks=product(tstates,count);
     }

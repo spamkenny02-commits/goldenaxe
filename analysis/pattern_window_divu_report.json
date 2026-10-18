@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "region": "auto",
+      "frame": 5498,
+      "done": 1,
+      "cases": 1070469,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 4601,
+      "done": 1,
+      "cases": 1070469,
+      "failures": 0
+    }
+  ],
+  "kernel_sha256": "36ef5886e0fc0ae4f82060dd077b44c71d36f0e79a279a94ee232c3dcecb66c7",
+  "helper_sha256": "c48d18351268ac82868ec4cc17680867610d35aa10df51b6773023f8898bda86",
+  "limits": [
+    "Compiled68000 canonical private window helper versus independent general C divide-and-clamp for every master tick0..PAL period1070460 inclusive,plus saturation/32-bit boundaries. Native DIVU selected by SGDK_GCC; source-stage state/date equivalence is checked separately."
+  ]
+}

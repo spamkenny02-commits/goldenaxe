@@ -1,0 +1,4256 @@
+{
+  "current": true,
+  "kernel_sha256": "244864e59c6adec7e3fe830ddd3d420cbd3aec29c25abe1241900b91c80b1489",
+  "observer_core_sha256": "cfe8e0c83919acb98e5769408187e9ef2128031f62a2b9ec84f67410c3c46dae",
+  "baseline_report_sha256": "0fbc35ce32fdaba8e063a6bbbce4817c2442d7c7c91e90f7e7370964e3a75b15",
+  "intervals": [
+    "entry_to1706",
+    "1706_to170e",
+    "170e_to1720",
+    "1720_to1733",
+    "1733_to1748",
+    "1748_to24b9",
+    "24b9_to_video_convert",
+    "video_conversion",
+    "physical_transfer"
+  ],
+  "checkpoint_record_pcs": [
+    6964,
+    95588,
+    95830
+  ],
+  "irq_entry_pc": 22798,
+  "irq_return_pcs": [
+    23712,
+    23762
+  ],
+  "clock_entry_pcs": {
+    "35480": "repeat",
+    "35760": "block",
+    "72460": "execute",
+    "78412": "execute",
+    "103620": "__mulsi3",
+    "103656": "__udivsi3",
+    "103748": "__umodsi3"
+  },
+  "results": [
+    {
+      "region": "auto",
+      "rows": [
+        {
+          "case": 0,
+          "room": 60,
+          "whole_master": 19567740,
+          "source_master": 20349450,
+          "intervals_master": [
+            8428595,
+            1387134,
+            54866,
+            610722,
+            715092,
+            191408,
+            7749049,
+            232526,
+            198348
+          ],
+          "irq_master": [
+            1643271,
+            110376,
+            0,
+            0,
+            110376,
+            0,
+            556934,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6785324,
+            1276758,
+            54866,
+            610722,
+            604716,
+            191408,
+            7192115,
+            232526,
+            198348
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 587692,
+              "end_master": 714924,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1148280,
+              "end_master": 1274308,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 1694630,
+              "end_master": 1820616,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2155069,
+              "end_master": 2281055,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2843659,
+              "end_master": 2969687,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 3362989,
+              "end_master": 3393859,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3815357,
+              "end_master": 3941385,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 4438917,
+              "end_master": 4567689,
+              "duration_master": 128772
+            },
+            {
+              "begin_master": 4921539,
+              "end_master": 5039769,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5482498,
+              "end_master": 5609156,
+              "duration_master": 126658
+            },
+            {
+              "begin_master": 6021302,
+              "end_master": 6138734,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6575618,
+              "end_master": 6606488,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 7034622,
+              "end_master": 7144214,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7563836,
+              "end_master": 7674240,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 8083782,
+              "end_master": 8196937,
+              "duration_master": 113155
+            },
+            {
+              "begin_master": 8827287,
+              "end_master": 8937663,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 10898209,
+              "end_master": 11008585,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 12571020,
+              "end_master": 12601904,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 13273974,
+              "end_master": 13387416,
+              "duration_master": 113442
+            },
+            {
+              "begin_master": 14051226,
+              "end_master": 14161602,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 14840595,
+              "end_master": 14950999,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 16728831,
+              "end_master": 16920659,
+              "duration_master": 191828
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 2,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 2,
+          "room": 60,
+          "whole_master": 19567603,
+          "source_master": 20349450,
+          "intervals_master": [
+            8425697,
+            1389990,
+            54866,
+            607950,
+            715127,
+            191408,
+            7748944,
+            232526,
+            201095
+          ],
+          "irq_master": [
+            1640436,
+            110404,
+            0,
+            0,
+            110376,
+            0,
+            562436,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6785261,
+            1279586,
+            54866,
+            607950,
+            604751,
+            191408,
+            7186508,
+            232526,
+            201095
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 584878,
+              "end_master": 712110,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1145557,
+              "end_master": 1271585,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 1694651,
+              "end_master": 1820637,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2152297,
+              "end_master": 2278283,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2840915,
+              "end_master": 2966943,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 3360245,
+              "end_master": 3391115,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3812599,
+              "end_master": 3938627,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 4438924,
+              "end_master": 4564910,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4918760,
+              "end_master": 5036990,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5479670,
+              "end_master": 5606300,
+              "duration_master": 126630
+            },
+            {
+              "begin_master": 6018446,
+              "end_master": 6138622,
+              "duration_master": 120176
+            },
+            {
+              "begin_master": 6572720,
+              "end_master": 6603604,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 7034545,
+              "end_master": 7144137,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7560973,
+              "end_master": 7671377,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 8083649,
+              "end_master": 8194025,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8827175,
+              "end_master": 8937579,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 10895430,
+              "end_master": 11005806,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 12571006,
+              "end_master": 12601890,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 13271174,
+              "end_master": 13387353,
+              "duration_master": 116179
+            },
+            {
+              "begin_master": 14048447,
+              "end_master": 14158823,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 14837767,
+              "end_master": 14948171,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 16725947,
+              "end_master": 16920540,
+              "duration_master": 194593
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 2,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 4,
+          "room": 135,
+          "whole_master": 20121940,
+          "source_master": 20349555,
+          "intervals_master": [
+            8699663,
+            1386616,
+            54866,
+            610694,
+            715715,
+            191408,
+            8032108,
+            232526,
+            198344
+          ],
+          "irq_master": [
+            1640352,
+            110404,
+            0,
+            0,
+            110376,
+            0,
+            556920,
+            0,
+            0
+          ],
+          "foreground_master": [
+            7059311,
+            1276212,
+            54866,
+            610694,
+            605339,
+            191408,
+            7475188,
+            232526,
+            198344
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 601650,
+              "end_master": 728882,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1163344,
+              "end_master": 1289330,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 1717905,
+              "end_master": 1843891,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2220883,
+              "end_master": 2349655,
+              "duration_master": 128772
+            },
+            {
+              "begin_master": 2867753,
+              "end_master": 2993781,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 3524451,
+              "end_master": 3555321,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3973977,
+              "end_master": 4099963,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4585721,
+              "end_master": 4711749,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 5187098,
+              "end_master": 5305272,
+              "duration_master": 118174
+            },
+            {
+              "begin_master": 5744648,
+              "end_master": 5871278,
+              "duration_master": 126630
+            },
+            {
+              "begin_master": 6300140,
+              "end_master": 6417572,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6843298,
+              "end_master": 6874182,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 7301882,
+              "end_master": 7411474,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7852439,
+              "end_master": 7962815,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8370761,
+              "end_master": 8481137,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 9110885,
+              "end_master": 9221289,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 11153639,
+              "end_master": 11264015,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 13118518,
+              "end_master": 13149388,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 13839966,
+              "end_master": 13953352,
+              "duration_master": 113386
+            },
+            {
+              "begin_master": 14576513,
+              "end_master": 14686917,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 15360093,
+              "end_master": 15470497,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 17291421,
+              "end_master": 17483277,
+              "duration_master": 191856
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 2,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 47,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 6,
+          "room": 135,
+          "whole_master": 20122451,
+          "source_master": 20349555,
+          "intervals_master": [
+            8696975,
+            1389374,
+            54866,
+            610526,
+            715715,
+            191408,
+            8032710,
+            232526,
+            198351
+          ],
+          "irq_master": [
+            1640506,
+            110404,
+            0,
+            0,
+            110376,
+            0,
+            556920,
+            0,
+            0
+          ],
+          "foreground_master": [
+            7056469,
+            1278970,
+            54866,
+            610526,
+            605339,
+            191408,
+            7475790,
+            232526,
+            198351
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 598906,
+              "end_master": 729008,
+              "duration_master": 130102
+            },
+            {
+              "begin_master": 1163414,
+              "end_master": 1289400,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 1717933,
+              "end_master": 1843919,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2220911,
+              "end_master": 2346897,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2867767,
+              "end_master": 2993795,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 3524437,
+              "end_master": 3555307,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3973963,
+              "end_master": 4099949,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4585693,
+              "end_master": 4711721,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 5187070,
+              "end_master": 5305300,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5744690,
+              "end_master": 5871348,
+              "duration_master": 126658
+            },
+            {
+              "begin_master": 6300196,
+              "end_master": 6417628,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6840624,
+              "end_master": 6871494,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 7301994,
+              "end_master": 7411586,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7852551,
+              "end_master": 7962927,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8370873,
+              "end_master": 8481249,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 9110955,
+              "end_master": 9221359,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 11153541,
+              "end_master": 11263917,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 13116096,
+              "end_master": 13146966,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 13840344,
+              "end_master": 13953730,
+              "duration_master": 113386
+            },
+            {
+              "begin_master": 14576863,
+              "end_master": 14687267,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 15360443,
+              "end_master": 15470847,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 17291771,
+              "end_master": 17483627,
+              "duration_master": 191856
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 2,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 47,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 8,
+          "room": 150,
+          "whole_master": 19867530,
+          "source_master": 20349225,
+          "intervals_master": [
+            8437317,
+            1389934,
+            54866,
+            607950,
+            715106,
+            191408,
+            8037309,
+            235298,
+            198342
+          ],
+          "irq_master": [
+            1640436,
+            110404,
+            0,
+            0,
+            110376,
+            0,
+            559706,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6796881,
+            1279530,
+            54866,
+            607950,
+            604730,
+            191408,
+            7477603,
+            235298,
+            198342
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 584948,
+              "end_master": 712180,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1145970,
+              "end_master": 1271956,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 1695071,
+              "end_master": 1821057,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2156385,
+              "end_master": 2282371,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2848615,
+              "end_master": 2974643,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 3359013,
+              "end_master": 3389883,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3816715,
+              "end_master": 3942743,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 4443075,
+              "end_master": 4569061,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4922911,
+              "end_master": 5041141,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5483870,
+              "end_master": 5610500,
+              "duration_master": 126630
+            },
+            {
+              "begin_master": 6022646,
+              "end_master": 6140078,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6576962,
+              "end_master": 6607846,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 7035994,
+              "end_master": 7148372,
+              "duration_master": 112378
+            },
+            {
+              "begin_master": 7568848,
+              "end_master": 7679252,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 8095269,
+              "end_master": 8205645,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8838767,
+              "end_master": 8949171,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 10906973,
+              "end_master": 11017349,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 12878362,
+              "end_master": 12909246,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 13604052,
+              "end_master": 13717494,
+              "duration_master": 113442
+            },
+            {
+              "begin_master": 14365379,
+              "end_master": 14475755,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 15070307,
+              "end_master": 15183455,
+              "duration_master": 113148
+            },
+            {
+              "begin_master": 17037083,
+              "end_master": 17228939,
+              "duration_master": 191856
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 2,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 10,
+          "room": 150,
+          "whole_master": 19867117,
+          "source_master": 20349225,
+          "intervals_master": [
+            8439865,
+            1387155,
+            54866,
+            610652,
+            715134,
+            191408,
+            8037281,
+            232526,
+            198230
+          ],
+          "irq_master": [
+            1645973,
+            110376,
+            0,
+            0,
+            113162,
+            0,
+            559748,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6793892,
+            1276779,
+            54866,
+            610652,
+            601972,
+            191408,
+            7477533,
+            232526,
+            198230
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 587699,
+              "end_master": 714931,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1145921,
+              "end_master": 1274707,
+              "duration_master": 128786
+            },
+            {
+              "begin_master": 1695043,
+              "end_master": 1821029,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2159129,
+              "end_master": 2285115,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2848643,
+              "end_master": 2977450,
+              "duration_master": 128807
+            },
+            {
+              "begin_master": 3361820,
+              "end_master": 3392690,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3816736,
+              "end_master": 3945522,
+              "duration_master": 128786
+            },
+            {
+              "begin_master": 4442998,
+              "end_master": 4568984,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4925606,
+              "end_master": 5043836,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5483772,
+              "end_master": 5610402,
+              "duration_master": 126630
+            },
+            {
+              "begin_master": 6025306,
+              "end_master": 6142738,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6579559,
+              "end_master": 6610429,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 7038549,
+              "end_master": 7148141,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7571403,
+              "end_master": 7681807,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 8095017,
+              "end_master": 8205393,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8838557,
+              "end_master": 8948933,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 10906686,
+              "end_master": 11019848,
+              "duration_master": 113162
+            },
+            {
+              "begin_master": 12880805,
+              "end_master": 12911689,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 13603765,
+              "end_master": 13719993,
+              "duration_master": 116228
+            },
+            {
+              "begin_master": 14365113,
+              "end_master": 14475489,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 15072827,
+              "end_master": 15183231,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 17036656,
+              "end_master": 17228512,
+              "duration_master": 191856
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 2,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 12,
+          "room": 26,
+          "whole_master": 20592359,
+          "source_master": 20349630,
+          "intervals_master": [
+            8699663,
+            1386686,
+            54866,
+            610505,
+            716072,
+            191436,
+            8499456,
+            235319,
+            198356
+          ],
+          "irq_master": [
+            1640380,
+            110404,
+            0,
+            0,
+            110404,
+            0,
+            559608,
+            0,
+            0
+          ],
+          "foreground_master": [
+            7059283,
+            1276282,
+            54866,
+            610505,
+            605668,
+            191436,
+            7939848,
+            235319,
+            198356
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 590002,
+              "end_master": 720020,
+              "duration_master": 130018
+            },
+            {
+              "begin_master": 1159718,
+              "end_master": 1285704,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 1714293,
+              "end_master": 1840279,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2217313,
+              "end_master": 2343299,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2864239,
+              "end_master": 2990267,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 3520923,
+              "end_master": 3551793,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3965171,
+              "end_master": 4091199,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 4582200,
+              "end_master": 4708228,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 5183542,
+              "end_master": 5301716,
+              "duration_master": 118174
+            },
+            {
+              "begin_master": 5741106,
+              "end_master": 5867736,
+              "duration_master": 126630
+            },
+            {
+              "begin_master": 6291292,
+              "end_master": 6408724,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6837040,
+              "end_master": 6867910,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 7298354,
+              "end_master": 7407946,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7852495,
+              "end_master": 7962871,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8370789,
+              "end_master": 8481165,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 9108029,
+              "end_master": 9218433,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 11151336,
+              "end_master": 11261740,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 13621188,
+              "end_master": 13652072,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 14360773,
+              "end_master": 14474159,
+              "duration_master": 113386
+            },
+            {
+              "begin_master": 15073835,
+              "end_master": 15184211,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 15857961,
+              "end_master": 15971095,
+              "duration_master": 113134
+            },
+            {
+              "begin_master": 17753428,
+              "end_master": 17945256,
+              "duration_master": 191828
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 2,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 13,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 14,
+          "room": 26,
+          "whole_master": 20591950,
+          "source_master": 20349630,
+          "intervals_master": [
+            8699677,
+            1386700,
+            57610,
+            607964,
+            715981,
+            191408,
+            8501738,
+            232526,
+            198346
+          ],
+          "irq_master": [
+            1643334,
+            110404,
+            0,
+            0,
+            110404,
+            0,
+            556878,
+            0,
+            0
+          ],
+          "foreground_master": [
+            7056343,
+            1276296,
+            57610,
+            607964,
+            605577,
+            191408,
+            7944860,
+            232526,
+            198346
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 592732,
+              "end_master": 720034,
+              "duration_master": 127302
+            },
+            {
+              "begin_master": 1159732,
+              "end_master": 1288490,
+              "duration_master": 128758
+            },
+            {
+              "begin_master": 1714272,
+              "end_master": 1840258,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2220043,
+              "end_master": 2346029,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2864127,
+              "end_master": 2992927,
+              "duration_master": 128800
+            },
+            {
+              "begin_master": 3520839,
+              "end_master": 3551709,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3967845,
+              "end_master": 4093873,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 4582095,
+              "end_master": 4708123,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 5183444,
+              "end_master": 5301674,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5743836,
+              "end_master": 5870494,
+              "duration_master": 126658
+            },
+            {
+              "begin_master": 6291320,
+              "end_master": 6408752,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6839770,
+              "end_master": 6870654,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 7298340,
+              "end_master": 7407932,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7852502,
+              "end_master": 7962878,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8373561,
+              "end_master": 8483965,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 9108057,
+              "end_master": 9218461,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 11154304,
+              "end_master": 11264708,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 13620922,
+              "end_master": 13651806,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 14360472,
+              "end_master": 14473858,
+              "duration_master": 113386
+            },
+            {
+              "begin_master": 15073499,
+              "end_master": 15183875,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 15860397,
+              "end_master": 15970801,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 17753092,
+              "end_master": 17944920,
+              "duration_master": 191828
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 2,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 13,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 16,
+          "room": 54,
+          "whole_master": 19604798,
+          "source_master": 20349375,
+          "intervals_master": [
+            8439627,
+            1383739,
+            54866,
+            607950,
+            737646,
+            191408,
+            7758688,
+            232526,
+            198348
+          ],
+          "irq_master": [
+            1643145,
+            113106,
+            0,
+            0,
+            110404,
+            0,
+            562401,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6796482,
+            1270633,
+            54866,
+            607950,
+            627242,
+            191408,
+            7196287,
+            232526,
+            198348
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 584598,
+              "end_master": 711830,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1145319,
+              "end_master": 1271347,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 1696933,
+              "end_master": 1825733,
+              "duration_master": 128800
+            },
+            {
+              "begin_master": 2213393,
+              "end_master": 2339379,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2853543,
+              "end_master": 2979529,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 3377927,
+              "end_master": 3408797,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3825220,
+              "end_master": 3951206,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4446008,
+              "end_master": 4571994,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4925872,
+              "end_master": 5044102,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5486824,
+              "end_master": 5613454,
+              "duration_master": 126630
+            },
+            {
+              "begin_master": 6025264,
+              "end_master": 6142654,
+              "duration_master": 117390
+            },
+            {
+              "begin_master": 6579314,
+              "end_master": 6610184,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 7038248,
+              "end_master": 7150647,
+              "duration_master": 112399
+            },
+            {
+              "begin_master": 7581917,
+              "end_master": 7692293,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8102787,
+              "end_master": 8213163,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8834623,
+              "end_master": 8947729,
+              "duration_master": 113106
+            },
+            {
+              "begin_master": 10907960,
+              "end_master": 11018364,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 12594680,
+              "end_master": 12625550,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 13318508,
+              "end_master": 13434673,
+              "duration_master": 116165
+            },
+            {
+              "begin_master": 14078603,
+              "end_master": 14188979,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 14867671,
+              "end_master": 14978047,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 16774240,
+              "end_master": 16968854,
+              "duration_master": 194614
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 1,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 18,
+          "room": 54,
+          "whole_master": 19607452,
+          "source_master": 20349375,
+          "intervals_master": [
+            8439536,
+            1383795,
+            54866,
+            610680,
+            734860,
+            194166,
+            7755881,
+            235326,
+            198342
+          ],
+          "irq_master": [
+            1637524,
+            110376,
+            0,
+            0,
+            110404,
+            0,
+            559657,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6802012,
+            1273419,
+            54866,
+            610680,
+            624456,
+            194166,
+            7196224,
+            235326,
+            198342
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 587300,
+              "end_master": 714532,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1145228,
+              "end_master": 1271256,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 1699614,
+              "end_master": 1825600,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2213302,
+              "end_master": 2339288,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2853459,
+              "end_master": 2979445,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 3380615,
+              "end_master": 3411485,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3825129,
+              "end_master": 3951115,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4445945,
+              "end_master": 4571931,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4925809,
+              "end_master": 5044039,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5486705,
+              "end_master": 5613335,
+              "duration_master": 126630
+            },
+            {
+              "begin_master": 6027952,
+              "end_master": 6145342,
+              "duration_master": 117390
+            },
+            {
+              "begin_master": 6579216,
+              "end_master": 6610086,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 7040950,
+              "end_master": 7150542,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7581826,
+              "end_master": 7692202,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8102696,
+              "end_master": 8213072,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8837311,
+              "end_master": 8947687,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 10907869,
+              "end_master": 11018273,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 12594568,
+              "end_master": 12625452,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 13321182,
+              "end_master": 13434568,
+              "duration_master": 113386
+            },
+            {
+              "begin_master": 14081256,
+              "end_master": 14191632,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 14867552,
+              "end_master": 14980707,
+              "duration_master": 113155
+            },
+            {
+              "begin_master": 16776879,
+              "end_master": 16968735,
+              "duration_master": 191856
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 1,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 2
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 20,
+          "room": 109,
+          "whole_master": 20083250,
+          "source_master": 20349525,
+          "intervals_master": [
+            8703163,
+            1380344,
+            54866,
+            610701,
+            709618,
+            191408,
+            7999502,
+            232526,
+            201122
+          ],
+          "irq_master": [
+            1643243,
+            110404,
+            0,
+            0,
+            110404,
+            0,
+            562492,
+            0,
+            0
+          ],
+          "foreground_master": [
+            7059920,
+            1269940,
+            54866,
+            610701,
+            599214,
+            191408,
+            7437010,
+            232526,
+            201122
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 601594,
+              "end_master": 728826,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1163288,
+              "end_master": 1292151,
+              "duration_master": 128863
+            },
+            {
+              "begin_master": 1717891,
+              "end_master": 1843877,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2223613,
+              "end_master": 2349599,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2867683,
+              "end_master": 2993711,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 3524381,
+              "end_master": 3555251,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3976700,
+              "end_master": 4102686,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 4585630,
+              "end_master": 4711658,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 5186972,
+              "end_master": 5305146,
+              "duration_master": 118174
+            },
+            {
+              "begin_master": 5747308,
+              "end_master": 5873938,
+              "duration_master": 126630
+            },
+            {
+              "begin_master": 6300042,
+              "end_master": 6417474,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6843214,
+              "end_master": 6874098,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 7301770,
+              "end_master": 7411362,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7856023,
+              "end_master": 7966399,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8374289,
+              "end_master": 8487465,
+              "duration_master": 113176
+            },
+            {
+              "begin_master": 9105215,
+              "end_master": 9215619,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 11145064,
+              "end_master": 11255468,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 13046138,
+              "end_master": 13077022,
+              "duration_master": 30884
+            },
+            {
+              "begin_master": 13771625,
+              "end_master": 13885011,
+              "duration_master": 113386
+            },
+            {
+              "begin_master": 14552713,
+              "end_master": 14665917,
+              "duration_master": 113204
+            },
+            {
+              "begin_master": 15338463,
+              "end_master": 15448867,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 17258416,
+              "end_master": 17453030,
+              "duration_master": 194614
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 1,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 1
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 22,
+          "room": 109,
+          "whole_master": 20080699,
+          "source_master": 20349525,
+          "intervals_master": [
+            8703289,
+            1380386,
+            54866,
+            610792,
+            709597,
+            191408,
+            7999474,
+            232526,
+            198361
+          ],
+          "irq_master": [
+            1646008,
+            110404,
+            0,
+            0,
+            113169,
+            0,
+            556878,
+            0,
+            0
+          ],
+          "foreground_master": [
+            7057281,
+            1269982,
+            54866,
+            610792,
+            596428,
+            191408,
+            7442596,
+            232526,
+            198361
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 601692,
+              "end_master": 728924,
+              "duration_master": 127232
+            },
+            {
+              "begin_master": 1163386,
+              "end_master": 1289372,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 1717961,
+              "end_master": 1843947,
+              "duration_master": 125986
+            },
+            {
+              "begin_master": 2220925,
+              "end_master": 2349641,
+              "duration_master": 128716
+            },
+            {
+              "begin_master": 2867725,
+              "end_master": 2993753,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 3524409,
+              "end_master": 3555279,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 3973949,
+              "end_master": 4102749,
+              "duration_master": 128800
+            },
+            {
+              "begin_master": 4585679,
+              "end_master": 4711707,
+              "duration_master": 126028
+            },
+            {
+              "begin_master": 5187042,
+              "end_master": 5305272,
+              "duration_master": 118230
+            },
+            {
+              "begin_master": 5744662,
+              "end_master": 5874148,
+              "duration_master": 129486
+            },
+            {
+              "begin_master": 6300238,
+              "end_master": 6417670,
+              "duration_master": 117432
+            },
+            {
+              "begin_master": 6843438,
+              "end_master": 6874308,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 7301952,
+              "end_master": 7411544,
+              "duration_master": 109592
+            },
+            {
+              "begin_master": 7856149,
+              "end_master": 7966525,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 8374415,
+              "end_master": 8484791,
+              "duration_master": 110376
+            },
+            {
+              "begin_master": 9105327,
+              "end_master": 9215731,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 11142537,
+              "end_master": 11255706,
+              "duration_master": 113169
+            },
+            {
+              "begin_master": 13046292,
+              "end_master": 13077162,
+              "duration_master": 30870
+            },
+            {
+              "begin_master": 13768986,
+              "end_master": 13882372,
+              "duration_master": 113386
+            },
+            {
+              "begin_master": 14552825,
+              "end_master": 14663215,
+              "duration_master": 110390
+            },
+            {
+              "begin_master": 15338533,
+              "end_master": 15448937,
+              "duration_master": 110404
+            },
+            {
+              "begin_master": 17258465,
+              "end_master": 17450293,
+              "duration_master": 191828
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 72,
+              "block": 4
+            },
+            {
+              "repeat": 4,
+              "execute": 1,
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 9
+            },
+            {
+              "block": 8,
+              "repeat": 6,
+              "execute": 1
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 14,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        }
+      ],
+      "observed": {
+        "done": 1,
+        "cases": 12,
+        "failures": 0,
+        "frame": 323
+      },
+      "max_observer_events": 51
+    },
+    {
+      "region": "pal",
+      "rows": [
+        {
+          "case": 1,
+          "room": 60,
+          "whole_master": 18946097,
+          "source_master": 20949705,
+          "intervals_master": [
+            8314012,
+            1194977,
+            54866,
+            809193,
+            501907,
+            191408,
+            7448882,
+            232526,
+            198326
+          ],
+          "irq_master": [
+            1731793,
+            0,
+            0,
+            162680,
+            0,
+            0,
+            646534,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6582219,
+            1194977,
+            54866,
+            646513,
+            501907,
+            191408,
+            6802348,
+            232526,
+            198326
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 679294,
+              "end_master": 790468,
+              "duration_master": 111174
+            },
+            {
+              "begin_master": 1332639,
+              "end_master": 1592143,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 2046135,
+              "end_master": 2162629,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2662898,
+              "end_master": 2779392,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3239222,
+              "end_master": 3367595,
+              "duration_master": 128373
+            },
+            {
+              "begin_master": 3836259,
+              "end_master": 3961881,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 4471824,
+              "end_master": 4597446,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5038040,
+              "end_master": 5163662,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5650253,
+              "end_master": 5775875,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6256901,
+              "end_master": 6382453,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 6873874,
+              "end_master": 6999496,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7466564,
+              "end_master": 7594888,
+              "duration_master": 128324
+            },
+            {
+              "begin_master": 8051078,
+              "end_master": 8168846,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9870322,
+              "end_master": 10033002,
+              "duration_master": 162680
+            },
+            {
+              "begin_master": 11743151,
+              "end_master": 11862928,
+              "duration_master": 119777
+            },
+            {
+              "begin_master": 12816300,
+              "end_master": 12928223,
+              "duration_master": 111923
+            },
+            {
+              "begin_master": 13771779,
+              "end_master": 13881721,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 14690900,
+              "end_master": 14800898,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 16111949,
+              "end_master": 16306843,
+              "duration_master": 194894
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 10,
+              "execute": 46,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 3,
+          "room": 60,
+          "whole_master": 18945900,
+          "source_master": 20949705,
+          "intervals_master": [
+            8313907,
+            1195005,
+            54866,
+            809221,
+            499156,
+            194215,
+            7445851,
+            235319,
+            198360
+          ],
+          "irq_master": [
+            1731842,
+            0,
+            0,
+            165487,
+            0,
+            0,
+            640976,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6582065,
+            1195005,
+            54866,
+            643734,
+            499156,
+            194215,
+            6804875,
+            235319,
+            198360
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 679273,
+              "end_master": 790447,
+              "duration_master": 111174
+            },
+            {
+              "begin_master": 1329839,
+              "end_master": 1592122,
+              "duration_master": 262283
+            },
+            {
+              "begin_master": 2046114,
+              "end_master": 2162608,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2662807,
+              "end_master": 2779301,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3239131,
+              "end_master": 3364753,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3836154,
+              "end_master": 3961776,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 4468954,
+              "end_master": 4594576,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5037907,
+              "end_master": 5163529,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5647327,
+              "end_master": 5775672,
+              "duration_master": 128345
+            },
+            {
+              "begin_master": 6256698,
+              "end_master": 6382250,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 6873720,
+              "end_master": 6999342,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7466410,
+              "end_master": 7592032,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 8050973,
+              "end_master": 8168741,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9867466,
+              "end_master": 10032953,
+              "duration_master": 165487
+            },
+            {
+              "begin_master": 11743102,
+              "end_master": 11860086,
+              "duration_master": 116984
+            },
+            {
+              "begin_master": 12816195,
+              "end_master": 12925353,
+              "duration_master": 109158
+            },
+            {
+              "begin_master": 13771688,
+              "end_master": 13881630,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 14690788,
+              "end_master": 14800786,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 16109023,
+              "end_master": 16303917,
+              "duration_master": 194894
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 10,
+              "execute": 46,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 5,
+          "room": 135,
+          "whole_master": 19137804,
+          "source_master": 20949810,
+          "intervals_master": [
+            8309833,
+            1195005,
+            54866,
+            809151,
+            499156,
+            191408,
+            7644672,
+            235263,
+            198450
+          ],
+          "irq_master": [
+            1731926,
+            0,
+            0,
+            162652,
+            0,
+            0,
+            640990,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6577907,
+            1195005,
+            54866,
+            646499,
+            499156,
+            191408,
+            7003682,
+            235263,
+            198450
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 679231,
+              "end_master": 790461,
+              "duration_master": 111230
+            },
+            {
+              "begin_master": 1329839,
+              "end_master": 1589343,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 2046058,
+              "end_master": 2162552,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2660000,
+              "end_master": 2776494,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3239103,
+              "end_master": 3364725,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3832997,
+              "end_master": 3961328,
+              "duration_master": 128331
+            },
+            {
+              "begin_master": 4464810,
+              "end_master": 4590432,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5033707,
+              "end_master": 5159329,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5643169,
+              "end_master": 5768791,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6252582,
+              "end_master": 6378134,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 6866874,
+              "end_master": 6992496,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7462336,
+              "end_master": 7587958,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 8044120,
+              "end_master": 8164709,
+              "duration_master": 120589
+            },
+            {
+              "begin_master": 9863644,
+              "end_master": 10026296,
+              "duration_master": 162652
+            },
+            {
+              "begin_master": 11752748,
+              "end_master": 11869732,
+              "duration_master": 116984
+            },
+            {
+              "begin_master": 13087473,
+              "end_master": 13196659,
+              "duration_master": 109186
+            },
+            {
+              "begin_master": 13919766,
+              "end_master": 14029764,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 14862932,
+              "end_master": 14972874,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 16300851,
+              "end_master": 16495731,
+              "duration_master": 194880
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 12,
+              "execute": 46,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 7,
+          "room": 135,
+          "whole_master": 19137176,
+          "source_master": 20949810,
+          "intervals_master": [
+            8309728,
+            1195019,
+            54866,
+            806414,
+            501879,
+            191408,
+            7644266,
+            232526,
+            201070
+          ],
+          "irq_master": [
+            1731779,
+            0,
+            0,
+            162652,
+            0,
+            0,
+            640990,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6577949,
+            1195019,
+            54866,
+            643762,
+            501879,
+            191408,
+            7003276,
+            232526,
+            201070
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 676466,
+              "end_master": 790440,
+              "duration_master": 113974
+            },
+            {
+              "begin_master": 1329818,
+              "end_master": 1589322,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 2046051,
+              "end_master": 2162545,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2659993,
+              "end_master": 2776487,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3239096,
+              "end_master": 3364718,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3832990,
+              "end_master": 3958542,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4464789,
+              "end_master": 4590411,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5030977,
+              "end_master": 5159308,
+              "duration_master": 128331
+            },
+            {
+              "begin_master": 5643134,
+              "end_master": 5768756,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6252491,
+              "end_master": 6378043,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 6866783,
+              "end_master": 6992405,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7462280,
+              "end_master": 7587902,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 8044064,
+              "end_master": 8161832,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9863553,
+              "end_master": 10026205,
+              "duration_master": 162652
+            },
+            {
+              "begin_master": 11752251,
+              "end_master": 11869235,
+              "duration_master": 116984
+            },
+            {
+              "begin_master": 13086962,
+              "end_master": 13196148,
+              "duration_master": 109186
+            },
+            {
+              "begin_master": 13919269,
+              "end_master": 14029267,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 14862470,
+              "end_master": 14972412,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 16300298,
+              "end_master": 16495178,
+              "duration_master": 194880
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 12,
+              "execute": 46,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 9,
+          "room": 150,
+          "whole_master": 19018933,
+          "source_master": 20949480,
+          "intervals_master": [
+            8178940,
+            1194991,
+            54866,
+            809193,
+            502005,
+            191436,
+            7656740,
+            232526,
+            198236
+          ],
+          "irq_master": [
+            1731828,
+            0,
+            0,
+            162652,
+            0,
+            0,
+            643804,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6447112,
+            1194991,
+            54866,
+            646541,
+            502005,
+            191436,
+            7012936,
+            232526,
+            198236
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 669774,
+              "end_master": 781004,
+              "duration_master": 111230
+            },
+            {
+              "begin_master": 1204553,
+              "end_master": 1464057,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 1918063,
+              "end_master": 2037322,
+              "duration_master": 119259
+            },
+            {
+              "begin_master": 2534728,
+              "end_master": 2651222,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3113859,
+              "end_master": 3239411,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 3708229,
+              "end_master": 3833851,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 4338362,
+              "end_master": 4463914,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4852232,
+              "end_master": 4977854,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5521999,
+              "end_master": 5647621,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6129095,
+              "end_master": 6257496,
+              "duration_master": 128401
+            },
+            {
+              "begin_master": 6737206,
+              "end_master": 6862758,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 7337890,
+              "end_master": 7463512,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7858424,
+              "end_master": 7976220,
+              "duration_master": 117796
+            },
+            {
+              "begin_master": 9735292,
+              "end_master": 9897944,
+              "duration_master": 162652
+            },
+            {
+              "begin_master": 11619286,
+              "end_master": 11736270,
+              "duration_master": 116984
+            },
+            {
+              "begin_master": 12959289,
+              "end_master": 13068475,
+              "duration_master": 109186
+            },
+            {
+              "begin_master": 13811392,
+              "end_master": 13921334,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 14740040,
+              "end_master": 14852824,
+              "duration_master": 112784
+            },
+            {
+              "begin_master": 16193219,
+              "end_master": 16388127,
+              "duration_master": 194908
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 10,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 11,
+          "room": 150,
+          "whole_master": 19021859,
+          "source_master": 20949480,
+          "intervals_master": [
+            8181803,
+            1195033,
+            54866,
+            809193,
+            499156,
+            194215,
+            7656712,
+            232526,
+            198355
+          ],
+          "irq_master": [
+            1726424,
+            0,
+            0,
+            162652,
+            0,
+            0,
+            641074,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6455379,
+            1195033,
+            54866,
+            646541,
+            499156,
+            194215,
+            7015638,
+            232526,
+            198355
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 672609,
+              "end_master": 783839,
+              "duration_master": 111230
+            },
+            {
+              "begin_master": 1207374,
+              "end_master": 1466878,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 1920884,
+              "end_master": 2037378,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2537563,
+              "end_master": 2654057,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3113901,
+              "end_master": 3239523,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3711092,
+              "end_master": 3836714,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 4341183,
+              "end_master": 4466805,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 4855165,
+              "end_master": 4980787,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5524855,
+              "end_master": 5650477,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6131951,
+              "end_master": 6257573,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6740076,
+              "end_master": 6865628,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 7337960,
+              "end_master": 7463582,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7861287,
+              "end_master": 7979083,
+              "duration_master": 117796
+            },
+            {
+              "begin_master": 9738197,
+              "end_master": 9900849,
+              "duration_master": 162652
+            },
+            {
+              "begin_master": 11619328,
+              "end_master": 11736312,
+              "duration_master": 116984
+            },
+            {
+              "begin_master": 12962061,
+              "end_master": 13071247,
+              "duration_master": 109186
+            },
+            {
+              "begin_master": 13811469,
+              "end_master": 13921467,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 14742882,
+              "end_master": 14852880,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 16195998,
+              "end_master": 16390906,
+              "duration_master": 194908
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 10,
+              "execute": 44,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 13,
+          "room": 26,
+          "whole_master": 19646197,
+          "source_master": 20949885,
+          "intervals_master": [
+            8188145,
+            1195019,
+            54866,
+            809221,
+            499156,
+            191408,
+            8274742,
+            232526,
+            201114
+          ],
+          "irq_master": [
+            1731814,
+            0,
+            0,
+            162652,
+            0,
+            0,
+            640906,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6456331,
+            1195019,
+            54866,
+            646569,
+            499156,
+            191408,
+            7633836,
+            232526,
+            201114
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 558705,
+              "end_master": 669935,
+              "duration_master": 111230
+            },
+            {
+              "begin_master": 1200661,
+              "end_master": 1462902,
+              "duration_master": 262241
+            },
+            {
+              "begin_master": 1916880,
+              "end_master": 2033374,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2544283,
+              "end_master": 2660777,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3109911,
+              "end_master": 3235533,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3706619,
+              "end_master": 3832241,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 4350003,
+              "end_master": 4475555,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4908232,
+              "end_master": 5033854,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5517680,
+              "end_master": 5646053,
+              "duration_master": 128373
+            },
+            {
+              "begin_master": 6136053,
+              "end_master": 6261675,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6753222,
+              "end_master": 6878774,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 7351316,
+              "end_master": 7476938,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7925197,
+              "end_master": 8042965,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9741970,
+              "end_master": 9904622,
+              "duration_master": 162652
+            },
+            {
+              "begin_master": 11596529,
+              "end_master": 11713513,
+              "duration_master": 116984
+            },
+            {
+              "begin_master": 13522271,
+              "end_master": 13631429,
+              "duration_master": 109158
+            },
+            {
+              "begin_master": 14336840,
+              "end_master": 14446782,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 15285599,
+              "end_master": 15395541,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 16809226,
+              "end_master": 17004106,
+              "duration_master": 194880
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 12,
+              "execute": 46,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 15,
+          "room": 26,
+          "whole_master": 19643023,
+          "source_master": 20949885,
+          "intervals_master": [
+            8185128,
+            1194991,
+            54866,
+            809151,
+            502005,
+            191436,
+            8274581,
+            232526,
+            198339
+          ],
+          "irq_master": [
+            1728916,
+            0,
+            0,
+            162652,
+            0,
+            0,
+            643699,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6456212,
+            1194991,
+            54866,
+            646499,
+            502005,
+            191436,
+            7630882,
+            232526,
+            198339
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 555940,
+              "end_master": 667170,
+              "duration_master": 111230
+            },
+            {
+              "begin_master": 1200717,
+              "end_master": 1460193,
+              "duration_master": 259476
+            },
+            {
+              "begin_master": 1914171,
+              "end_master": 2030665,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2541560,
+              "end_master": 2658054,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3109911,
+              "end_master": 3235463,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 3703749,
+              "end_master": 3829301,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4349856,
+              "end_master": 4475408,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4905292,
+              "end_master": 5030914,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5517519,
+              "end_master": 5643141,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6133141,
+              "end_master": 6258763,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6750310,
+              "end_master": 6875932,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7348418,
+              "end_master": 7476728,
+              "duration_master": 128310
+            },
+            {
+              "begin_master": 7922180,
+              "end_master": 8039948,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9741662,
+              "end_master": 9904314,
+              "duration_master": 162652
+            },
+            {
+              "begin_master": 11593547,
+              "end_master": 11713324,
+              "duration_master": 119777
+            },
+            {
+              "begin_master": 13519261,
+              "end_master": 13628419,
+              "duration_master": 109158
+            },
+            {
+              "begin_master": 14333858,
+              "end_master": 14443800,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 15282554,
+              "end_master": 15392496,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 16806055,
+              "end_master": 17000935,
+              "duration_master": 194880
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 12,
+              "execute": 46,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 17,
+          "room": 54,
+          "whole_master": 18725827,
+          "source_master": 20949630,
+          "intervals_master": [
+            8188285,
+            1194991,
+            54866,
+            809123,
+            499156,
+            191408,
+            7357126,
+            232526,
+            198346
+          ],
+          "irq_master": [
+            1731898,
+            0,
+            0,
+            162652,
+            0,
+            0,
+            643818,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6456387,
+            1194991,
+            54866,
+            646471,
+            499156,
+            191408,
+            6713308,
+            232526,
+            198346
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 555940,
+              "end_master": 669949,
+              "duration_master": 114009
+            },
+            {
+              "begin_master": 1201025,
+              "end_master": 1460529,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 1917230,
+              "end_master": 2033724,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2541840,
+              "end_master": 2658334,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3110247,
+              "end_master": 3235869,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3704155,
+              "end_master": 3832500,
+              "duration_master": 128345
+            },
+            {
+              "begin_master": 4350248,
+              "end_master": 4475800,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4908477,
+              "end_master": 5034099,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5517897,
+              "end_master": 5643519,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6136312,
+              "end_master": 6261934,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6750646,
+              "end_master": 6876268,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7351498,
+              "end_master": 7477120,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7922586,
+              "end_master": 8040354,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9742082,
+              "end_master": 9904734,
+              "duration_master": 162652
+            },
+            {
+              "begin_master": 11593050,
+              "end_master": 11710048,
+              "duration_master": 116998
+            },
+            {
+              "begin_master": 12704657,
+              "end_master": 12813815,
+              "duration_master": 109158
+            },
+            {
+              "begin_master": 13550124,
+              "end_master": 13660122,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 14459774,
+              "end_master": 14572530,
+              "duration_master": 112756
+            },
+            {
+              "begin_master": 15908459,
+              "end_master": 16103367,
+              "duration_master": 194908
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "execute": 49,
+              "repeat": 11,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 19,
+          "room": 54,
+          "whole_master": 18729182,
+          "source_master": 20949630,
+          "intervals_master": [
+            8188474,
+            1194991,
+            54866,
+            809221,
+            501921,
+            191408,
+            7357532,
+            232526,
+            198243
+          ],
+          "irq_master": [
+            1726396,
+            0,
+            0,
+            162652,
+            0,
+            0,
+            643853,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6462078,
+            1194991,
+            54866,
+            646569,
+            501921,
+            191408,
+            6713679,
+            232526,
+            198243
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 558726,
+              "end_master": 669956,
+              "duration_master": 111230
+            },
+            {
+              "begin_master": 1203839,
+              "end_master": 1463343,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 1917279,
+              "end_master": 2033773,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2544710,
+              "end_master": 2661204,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3110324,
+              "end_master": 3235946,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3707011,
+              "end_master": 3832563,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4353090,
+              "end_master": 4478712,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 4908610,
+              "end_master": 5034232,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5520837,
+              "end_master": 5646459,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6136487,
+              "end_master": 6262109,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6753572,
+              "end_master": 6879194,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7351694,
+              "end_master": 7477316,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7925540,
+              "end_master": 8043308,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9745078,
+              "end_master": 9907730,
+              "duration_master": 162652
+            },
+            {
+              "begin_master": 11593575,
+              "end_master": 11710573,
+              "duration_master": 116998
+            },
+            {
+              "begin_master": 12705126,
+              "end_master": 12814312,
+              "duration_master": 109186
+            },
+            {
+              "begin_master": 13550719,
+              "end_master": 13660717,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 14463176,
+              "end_master": 14573174,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 15909054,
+              "end_master": 16106727,
+              "duration_master": 197673
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "execute": 49,
+              "repeat": 11,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 21,
+          "room": 109,
+          "whole_master": 18976468,
+          "source_master": 20949345,
+          "intervals_master": [
+            8174495,
+            1194977,
+            54866,
+            809151,
+            499156,
+            191408,
+            7618646,
+            235319,
+            198450
+          ],
+          "irq_master": [
+            1729077,
+            0,
+            0,
+            162680,
+            0,
+            0,
+            641004,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6445418,
+            1194977,
+            54866,
+            646471,
+            499156,
+            191408,
+            6977642,
+            235319,
+            198450
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 668927,
+              "end_master": 780157,
+              "duration_master": 111230
+            },
+            {
+              "begin_master": 1200927,
+              "end_master": 1460431,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 1917258,
+              "end_master": 2033752,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 2531158,
+              "end_master": 2647652,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3110303,
+              "end_master": 3235925,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3704729,
+              "end_master": 3833102,
+              "duration_master": 128373
+            },
+            {
+              "begin_master": 4331166,
+              "end_master": 4456718,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4844189,
+              "end_master": 4969811,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5511191,
+              "end_master": 5636813,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6120933,
+              "end_master": 6246555,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6726265,
+              "end_master": 6851817,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 7326942,
+              "end_master": 7452564,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7908740,
+              "end_master": 8026508,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9728026,
+              "end_master": 9890706,
+              "duration_master": 162680
+            },
+            {
+              "begin_master": 11593848,
+              "end_master": 11710846,
+              "duration_master": 116998
+            },
+            {
+              "begin_master": 12926501,
+              "end_master": 13035687,
+              "duration_master": 109186
+            },
+            {
+              "begin_master": 13778527,
+              "end_master": 13888469,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 14701554,
+              "end_master": 14811552,
+              "duration_master": 109998
+            },
+            {
+              "begin_master": 16156189,
+              "end_master": 16351069,
+              "duration_master": 194880
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 12,
+              "execute": 46,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "case": 23,
+          "room": 109,
+          "whole_master": 18973362,
+          "source_master": 20949345,
+          "intervals_master": [
+            8171534,
+            1195005,
+            57631,
+            806414,
+            501921,
+            191408,
+            7618590,
+            232526,
+            198333
+          ],
+          "irq_master": [
+            1729021,
+            0,
+            0,
+            162680,
+            0,
+            0,
+            643720,
+            0,
+            0
+          ],
+          "foreground_master": [
+            6442513,
+            1195005,
+            57631,
+            643734,
+            501921,
+            191408,
+            6974870,
+            232526,
+            198333
+          ],
+          "irq_calls": [
+            {
+              "begin_master": 666092,
+              "end_master": 777322,
+              "duration_master": 111230
+            },
+            {
+              "begin_master": 1200857,
+              "end_master": 1460361,
+              "duration_master": 259504
+            },
+            {
+              "begin_master": 1917132,
+              "end_master": 2033598,
+              "duration_master": 116466
+            },
+            {
+              "begin_master": 2531074,
+              "end_master": 2647568,
+              "duration_master": 116494
+            },
+            {
+              "begin_master": 3110205,
+              "end_master": 3235827,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 3704631,
+              "end_master": 3830253,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 4331152,
+              "end_master": 4456704,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 4841354,
+              "end_master": 4966976,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 5511121,
+              "end_master": 5636743,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 6118063,
+              "end_master": 6246408,
+              "duration_master": 128345
+            },
+            {
+              "begin_master": 6726118,
+              "end_master": 6851670,
+              "duration_master": 125552
+            },
+            {
+              "begin_master": 7326788,
+              "end_master": 7452410,
+              "duration_master": 125622
+            },
+            {
+              "begin_master": 7908586,
+              "end_master": 8026354,
+              "duration_master": 117768
+            },
+            {
+              "begin_master": 9727858,
+              "end_master": 9890538,
+              "duration_master": 162680
+            },
+            {
+              "begin_master": 11593708,
+              "end_master": 11710706,
+              "duration_master": 116998
+            },
+            {
+              "begin_master": 12926347,
+              "end_master": 13035533,
+              "duration_master": 109186
+            },
+            {
+              "begin_master": 13778380,
+              "end_master": 13888322,
+              "duration_master": 109942
+            },
+            {
+              "begin_master": 14698656,
+              "end_master": 14811370,
+              "duration_master": 112714
+            },
+            {
+              "begin_master": 16156035,
+              "end_master": 16350915,
+              "duration_master": 194880
+            }
+          ],
+          "outlined_clock_calls": [
+            {
+              "repeat": 71,
+              "block": 4
+            },
+            {
+              "block": 4
+            },
+            {
+              "repeat": 2
+            },
+            {
+              "repeat": 11
+            },
+            {
+              "block": 8
+            },
+            {},
+            {
+              "block": 7,
+              "repeat": 12,
+              "execute": 46,
+              "__umodsi3": 1,
+              "__udivsi3": 2,
+              "__mulsi3": 1
+            },
+            {},
+            {}
+          ]
+        }
+      ],
+      "observed": {
+        "done": 1,
+        "cases": 12,
+        "failures": 0,
+        "frame": 261
+      },
+      "max_observer_events": 51
+    }
+  ],
+  "limits": [
+    "Unmodified retained kernel with read-only PC observations. Every whole-chain duration equals the previous exact measurement; all six graphics callbacks and every source IRQ are paired,including return SP.",
+    "IRQ duration stops before final RTS (its execution is attributed to foreground); native hardware interrupts inside this interval are included. Foreground is the residual wall cost,not a statistical instruction profile.",
+    "Only source-checked24 retained loading contexts. Six checkpoint record LEAs (outlined callback and two LTO-inlined copies) split near original1706/170E/1720/1733/1748/24B9 with recorder bookkeeping included. The residual includes graphics return,map,HUD,finish and their IRQs. No physical PSG pacing or full gameplay proof.",
+    "Outlined block/execute/repeat call counts only; LTO-inline clock operations are not counted. Observer storage is drained/reset every physical frame and overflow is rejected. This changes host observation only; exact whole-chain durations remain required."
+  ]
+}
