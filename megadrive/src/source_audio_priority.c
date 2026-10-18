@@ -1,4 +1,10 @@
 #include "source_audio_priority.h"
+#ifndef GAW_AUDIO_PREFIX_STAMP
+#define GAW_AUDIO_PREFIX_STAMP(o,t) ((void)0)
+#endif
+#ifndef GAW_AUDIO_PREFIX_REBASE
+#define GAW_AUDIO_PREFIX_REBASE(o,t) ((void)0)
+#endif
 
 static void latch(u8 *state,u8 command,SourceClockWork *work,SourceAudioDispatchOutput *output)
 {
@@ -6,6 +12,7 @@ static void latch(u8 *state,u8 command,SourceClockWork *work,SourceAudioDispatch
     if(!(state[15]&128))
     {
         target=state[15]?0x160:0x130;state[target]=state[15];
+        GAW_AUDIO_PREFIX_STAMP(output,work->tstates+(state[15]?65:60)-14);
         output->writes[output->count++]=(u8)(state[target+1]+31);
         work->tstates+=state[15]?65:60;work->fetches+=state[15]?8:7;
     }
@@ -17,7 +24,7 @@ u8 source_audio_restore(u8 *state,const u8 *bank,u8 command,u16 *de,
     u16 index,header,channel,target,background,n;
     work->tstates=work->fetches=0;output->mute=output->count=0;
     if(command<0x90 || command>0xac) return 0;
-    latch(state,command,work,output);work->tstates+=150;work->fetches+=18;
+    latch(state,command,work,output);GAW_AUDIO_PREFIX_REBASE(output,17);work->tstates+=150;work->fetches+=18;
     index=0xb30+(command-0x90)*2;header=bank[index]|((u16)bank[index+1]<<8);
     channel=bank[header-0x8000+2];header++;
     if(channel!=0xc0)
@@ -65,7 +72,7 @@ u8 source_audio_priority(u8 *state,const u8 *bank,u16 *de,SourceClockWork *work,
     *de=0xde09;work->tstates=24;work->fetches=3;
     if(request==128)
     {
-        latch(state,0,&restored,output);state[9]=0;
+        latch(state,0,&restored,output);GAW_AUDIO_PREFIX_REBASE(output,47);state[9]=0;
         work->tstates+=23+restored.tstates;work->fetches+=3+restored.fetches;return 1;
     }
     work->tstates+=14;work->fetches+=2;
@@ -76,5 +83,6 @@ u8 source_audio_priority(u8 *state,const u8 *bank,u16 *de,SourceClockWork *work,
     {state[16]=priority&127;state[14]=request;work->tstates+=59;work->fetches+=7;}
     state[9]=0;*de=0xde0a;work->tstates+=46;work->fetches+=6;
     source_audio_restore(state,bank,command,de,&restored,output);
+    GAW_AUDIO_PREFIX_REBASE(output,work->tstates);
     work->tstates+=restored.tstates;work->fetches+=restored.fetches;return 1;
 }

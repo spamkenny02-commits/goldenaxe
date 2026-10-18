@@ -2,6 +2,9 @@
 #define GAW_SOURCE_AUDIO_TIMED_H
 #include "source_audio_sequence.h"
 #include "source_audio_envelope.h"
+#include "source_audio_dispatch.h"
+#include "source_audio_priority.h"
+#include "source_audio_reader.h"
 #include "source_psg_queue.h"
 
 /* Original8679 noise selection, with its optional PSG event timestamp.
@@ -40,4 +43,21 @@ u8 source_audio_noise_timed(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
 /* Complete84C7 tonal channel; list times are relative to84C7 entry. */
 u8 source_audio_tone_timed(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                           const u8 *bank,u16 *de,SourceClockWork *work,SourceAudioTimedSequenceOutput *output);
+/* Prefix sidecars retain the ordinary mute/count interface. When mute is
+ * set, the ten8412 table bytes use mute_tstates; ordinary writes use their
+ * own sidecar. All times are relative to the corresponding helper entry. */
+typedef struct {u8 mute,count,writes[4];u32 write_tstates[4],mute_tstates[10];} SourceAudioTimedDispatchOutput;
+u8 source_audio_dispatch_timed(u8 *state,const u8 *bank,SourceClockWork *work,SourceAudioTimedDispatchOutput *output);
+u8 source_audio_priority_timed(u8 *state,const u8 *bank,u16 *de,SourceClockWork *work,SourceAudioTimedDispatchOutput *output);
+u8 source_audio_restore_timed(u8 *state,const u8 *bank,u8 command,u16 *de,SourceClockWork *work,SourceAudioTimedDispatchOutput *output);
+u8 source_audio_gate_timed(u8 *state,SourceClockWork *work,SourceAudioTimedDispatchOutput *output);
+void source_audio_fade_timed(u8 *state,SourceClockWork *work,SourceAudioTimedDispatchOutput *output);
+/* Streaming8000 composition. Emits successful prefix/channel lists with
+ * per-byte completed-OUT offsets in Z80 T states from8000 entry. Earlier
+ * lists remain published on a later failure, as in the ordinary stream API.
+ * Sink must copy any retained data before returning; buffers are temporary. */
+typedef void (*SourceAudioTimedReaderSink)(void *context,const u8 *writes,const u32 *tstates,u16 count);
+u8 source_audio_reader_stream_timed(u8 *state,const u8 *low,u16 low_bytes,const u8 *bank,
+                                    u16 *de,SourceClockWork *work,SourceAudioReaderStatus *status,
+                                    SourceAudioTimedReaderSink sink,void *context);
 #endif

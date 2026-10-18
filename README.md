@@ -39,6 +39,14 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+Le **lecteur audio complet du prototype** produit désormais les horodatages
+PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
+puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,
+priorités, mises en sourdine et sept canaux sont composés. Il reste à mesurer
+le coût et à raccorder cette version à l'horloge physique du jeu ; la v0203
+reste inchangée.
+Voir le [jalon du lecteur audio horodaté](analysis/reader_timing_milestone.md).
+
 Les canaux mélodiques ont aussi leurs événements PSG datés : **20 852 cas
 et 37 260 écritures par région** concordent avec la SMS sur les six emplacements
 de canal, puis passent en 68000 PAL/NTSC. Les deux octets de fréquence, les

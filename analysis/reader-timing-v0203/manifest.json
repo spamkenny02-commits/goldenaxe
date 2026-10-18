@@ -1,0 +1,778 @@
+{
+  "playable_sha256": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+  "production_timed_reader": false,
+  "files": {
+    "megadrive/src/source_audio_reader_timed.c": "140e783c6957f556286c1f7cc1692ca2bf272177f0da1e59b3ddd99a6ce4108c",
+    "megadrive/src/source_audio_prefix_timed.c": "6e66131d2e9daa764ae12eca02b886f25fbf4fcf13a2972d34ccecddfcc12c0d",
+    "megadrive/src/source_audio_tone_timed.c": "7cd41ea9933d6b627322f8ca988de7ee05d5795e839d1462fab3aa5a6a7c0dbf",
+    "megadrive/src/source_audio_noise_timed.c": "e5a538370c3f1632a2fe0014224b62b722f1d64dd6c30b7c1ba79a50c23ac891",
+    "megadrive/src/source_audio_sequence_timed.c": "ace5c4b83ca43928aa453c30fa7c2d72c7e1bd49bfb782407408545e641ea888",
+    "megadrive/src/source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "megadrive/src/source_audio_reader.h": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933",
+    "megadrive/src/source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "megadrive/src/source_audio_prefix.h": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9",
+    "megadrive/src/source_audio_dispatch.c": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "megadrive/src/source_audio_dispatch.h": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960",
+    "megadrive/src/source_audio_priority.c": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "megadrive/src/source_audio_priority.h": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb",
+    "megadrive/src/source_audio_tone.c": "73551d475a0ca1cecb45590b2d0adabab85d694c10b97b4086e0f5e2662ac6dd",
+    "megadrive/src/source_audio_tone.h": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4",
+    "megadrive/src/source_audio_noise.c": "cd3cf09ae5cbd50f178678e68133e8622ef90263f2cbed356e91b6083d379514",
+    "megadrive/src/source_audio_noise.h": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1",
+    "megadrive/src/source_audio_sequence.c": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "megadrive/src/source_audio_sequence.h": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c",
+    "megadrive/src/source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "megadrive/src/source_audio_memory.h": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9",
+    "megadrive/src/source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "megadrive/src/source_audio_envelope.h": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c",
+    "megadrive/src/source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
+    "megadrive/src/source_audio_pitch.h": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2",
+    "megadrive/src/source_audio_timed.c": "4e5788b71cd0c1d694f435ab2229ca60dd4cb5372d33fd4835c2bc7d2e62eb6b",
+    "megadrive/src/source_audio_timed.h": "18735fd1ce2c0d6ccdf38dd8af9be453629b4092f73d7d4e79311144ca56a95c",
+    "megadrive/src/source_psg_queue.c": "3dab403ea133a1ee518c427e2fa1458e3eafe4da9b35350b6c7759d6cf342067",
+    "megadrive/src/source_psg_queue.h": "ae5de1d49bf2963a675773f5dbdfecb563dfa9354bb4ffa0208a36ec52b1bb00",
+    "tools/validate_reader_timing.py": "0787544756094613ab5c5aa5026cb6eb90e2e988818a75d38297591f1bdbcd2a",
+    "tools/validate_reader_timing_68k.py": "36499dc258aa312690feafac1dd8fc98764f066ef9f4ec17921940d6fe914482",
+    "tools/validate_timed_reader_failures.py": "3ec3ab17a4cb577b328328ad4498ec450f652fcf9b12915676eba2ff4379741b",
+    "tools/validate_loading_psg_deadlines.py": "d34bf7e7733a72717af99bc46a058619e0b3ae3cd016c3a969e76c0275eab4f5",
+    "tools/build_audio_ports_core.py": "14b9f3858e3f1be1714d93b824f7ab1554c216674f4594ec8a170d3ff3411f7f",
+    "analysis/reader_timing_report.json": "db9414d8ed0b0bdc9475c641718f1998cc5705974b9565ec547ff8a00e28d0f3",
+    "analysis/reader_timing_68k_report.json": "2b8c6fa4768183a28f5706dbea48634511e897439c7d6efaeee372bbaa8b8a7e",
+    "analysis/timed_reader_failures_report.json": "5c9da29af262e47c4695adcbf9231e55e77791137fc3fd9ea2968cf3094e4b5b",
+    "analysis/reader_timing_milestone.md": "41d1b288c001250b8dd04198747c2225d28efeea9d2a4b06769224223ec2e5d2",
+    "validation/reader-timing-run.log": "b8b198416071cf5d764c05f0c2a6270908717da782f7d30f3fc965a8ee79a215",
+    "validation/reader-timing-68k-run.log": "3a3496f9e4df89ddb707b3a50878d7d24d446eb8d4ef6ef12e70ce0c5a5a0798",
+    "validation/reader-timing-audio-regression.log": "6f1fe54093799f7d924ecae07599fbc846f6d8876b27778c3e90718fd4d11b2b",
+    "validation/reader-timing-game-build.log": "b9755608749c6dd842b6fa16d5d81e7782a3cf74ba930cb81fe27cf2bd701840",
+    "validation/audio_stream_equivalence_report.json": "3ccc8431ef141639f8068d970ee1c043911a6476a9abd93c3666fe8430553def",
+    "validation/reader-timing/z80-observer.txt": "0c48d8ec0a8dc1527973a1e0d9e4af8368755a857e10f5e5a524a53d50583504",
+    "validation/reader-timing/memz80-observer.txt": "9bb4526ad2070797a83929d08b3822e8426b9e3f17cee1afa093d32993721e6f",
+    "validation/reader-timing/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation/reader-timing/kernel-0/src/main.c": "a3289f75ac4cecae85949570c5951916e5d1e3ac974a625726bf1502d2742e91",
+    "validation/reader-timing/kernel-0/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/reader-timing/kernel-0/src/source_audio_dispatch.c": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9",
+    "validation/reader-timing/kernel-0/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/reader-timing/kernel-0/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/reader-timing/kernel-0/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/reader-timing/kernel-0/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/reader-timing/kernel-0/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/reader-timing/kernel-0/src/source_audio_prefix.c": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c",
+    "validation/reader-timing/kernel-0/src/source_audio_prefix_timed.c": "4d6332bf907a54a6ac41de9932448323f81f3923a9951cb435ea8fa84fc73af5",
+    "validation/reader-timing/kernel-0/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/reader-timing/kernel-0/src/source_audio_reader.c": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827",
+    "validation/reader-timing/kernel-0/src/source_audio_reader_timed.c": "69eafe53df8bd66246955eea31ca05ecb34bde133739ad4bd7cd01f9427c6cc0",
+    "validation/reader-timing/kernel-0/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/reader-timing/kernel-0/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/reader-timing/kernel-0/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/reader-timing/kernel-0/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/reader-timing/kernel-0/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/reader-timing/kernel-0/build.log": "d0f3bade0a74b515502b2c302096dabd40800a85451292f8d92d214fc5a69db9",
+    "validation/reader-timing/kernel-0/out/release/symbol.txt": "e4fb37bf8269b2f1d0d5ceae50f30c77dc11b8cdedaac5a5be3439ae8e9762c9",
+    "validation/reader-timing/kernel-1/src/main.c": "a3289f75ac4cecae85949570c5951916e5d1e3ac974a625726bf1502d2742e91",
+    "validation/reader-timing/kernel-1/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/reader-timing/kernel-1/src/source_audio_dispatch.c": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9",
+    "validation/reader-timing/kernel-1/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/reader-timing/kernel-1/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/reader-timing/kernel-1/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/reader-timing/kernel-1/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/reader-timing/kernel-1/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/reader-timing/kernel-1/src/source_audio_prefix.c": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c",
+    "validation/reader-timing/kernel-1/src/source_audio_prefix_timed.c": "4d6332bf907a54a6ac41de9932448323f81f3923a9951cb435ea8fa84fc73af5",
+    "validation/reader-timing/kernel-1/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/reader-timing/kernel-1/src/source_audio_reader.c": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827",
+    "validation/reader-timing/kernel-1/src/source_audio_reader_timed.c": "69eafe53df8bd66246955eea31ca05ecb34bde133739ad4bd7cd01f9427c6cc0",
+    "validation/reader-timing/kernel-1/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/reader-timing/kernel-1/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/reader-timing/kernel-1/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/reader-timing/kernel-1/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/reader-timing/kernel-1/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/reader-timing/kernel-1/build.log": "3a16dd90765a1fb9f033eb43cb2f133af468bed9c79cc9fe783b8c6f0767cf3f",
+    "validation/reader-timing/kernel-1/out/release/symbol.txt": "15a0922c4c63c9bdaf9977cdda386148d65c38740fe4caa69dc64024e161dbe2",
+    "validation/reader-timing/kernel-2/src/main.c": "a3289f75ac4cecae85949570c5951916e5d1e3ac974a625726bf1502d2742e91",
+    "validation/reader-timing/kernel-2/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/reader-timing/kernel-2/src/source_audio_dispatch.c": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9",
+    "validation/reader-timing/kernel-2/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/reader-timing/kernel-2/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/reader-timing/kernel-2/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/reader-timing/kernel-2/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/reader-timing/kernel-2/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/reader-timing/kernel-2/src/source_audio_prefix.c": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c",
+    "validation/reader-timing/kernel-2/src/source_audio_prefix_timed.c": "4d6332bf907a54a6ac41de9932448323f81f3923a9951cb435ea8fa84fc73af5",
+    "validation/reader-timing/kernel-2/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/reader-timing/kernel-2/src/source_audio_reader.c": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827",
+    "validation/reader-timing/kernel-2/src/source_audio_reader_timed.c": "69eafe53df8bd66246955eea31ca05ecb34bde133739ad4bd7cd01f9427c6cc0",
+    "validation/reader-timing/kernel-2/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/reader-timing/kernel-2/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/reader-timing/kernel-2/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/reader-timing/kernel-2/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/reader-timing/kernel-2/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/reader-timing/kernel-2/build.log": "53a929e9f199380eb902cb253448873f545d446d76d450fab11e6157403b9a49",
+    "validation/reader-timing/kernel-2/out/release/symbol.txt": "15a0922c4c63c9bdaf9977cdda386148d65c38740fe4caa69dc64024e161dbe2",
+    "validation/reader-timing/kernel-3/src/main.c": "a3289f75ac4cecae85949570c5951916e5d1e3ac974a625726bf1502d2742e91",
+    "validation/reader-timing/kernel-3/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/reader-timing/kernel-3/src/source_audio_dispatch.c": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9",
+    "validation/reader-timing/kernel-3/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/reader-timing/kernel-3/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/reader-timing/kernel-3/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/reader-timing/kernel-3/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/reader-timing/kernel-3/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/reader-timing/kernel-3/src/source_audio_prefix.c": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c",
+    "validation/reader-timing/kernel-3/src/source_audio_prefix_timed.c": "4d6332bf907a54a6ac41de9932448323f81f3923a9951cb435ea8fa84fc73af5",
+    "validation/reader-timing/kernel-3/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/reader-timing/kernel-3/src/source_audio_reader.c": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827",
+    "validation/reader-timing/kernel-3/src/source_audio_reader_timed.c": "69eafe53df8bd66246955eea31ca05ecb34bde133739ad4bd7cd01f9427c6cc0",
+    "validation/reader-timing/kernel-3/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/reader-timing/kernel-3/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/reader-timing/kernel-3/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/reader-timing/kernel-3/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/reader-timing/kernel-3/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/reader-timing/kernel-3/build.log": "7daf5b916adf8ab022f8cc5b38003ccba2e94c52666b8629d1c77d36ed66d4a3",
+    "validation/reader-timing/kernel-3/out/release/symbol.txt": "15a0922c4c63c9bdaf9977cdda386148d65c38740fe4caa69dc64024e161dbe2",
+    "validation/reader-timing/kernel-4/src/main.c": "a3289f75ac4cecae85949570c5951916e5d1e3ac974a625726bf1502d2742e91",
+    "validation/reader-timing/kernel-4/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/reader-timing/kernel-4/src/source_audio_dispatch.c": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9",
+    "validation/reader-timing/kernel-4/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/reader-timing/kernel-4/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/reader-timing/kernel-4/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/reader-timing/kernel-4/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/reader-timing/kernel-4/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/reader-timing/kernel-4/src/source_audio_prefix.c": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c",
+    "validation/reader-timing/kernel-4/src/source_audio_prefix_timed.c": "4d6332bf907a54a6ac41de9932448323f81f3923a9951cb435ea8fa84fc73af5",
+    "validation/reader-timing/kernel-4/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/reader-timing/kernel-4/src/source_audio_reader.c": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827",
+    "validation/reader-timing/kernel-4/src/source_audio_reader_timed.c": "69eafe53df8bd66246955eea31ca05ecb34bde133739ad4bd7cd01f9427c6cc0",
+    "validation/reader-timing/kernel-4/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/reader-timing/kernel-4/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/reader-timing/kernel-4/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/reader-timing/kernel-4/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/reader-timing/kernel-4/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/reader-timing/kernel-4/build.log": "17b15c7c51646bb9ab2258465f86d89b11e6b9d382e21be0f795f84af8113cf5",
+    "validation/reader-timing/kernel-4/out/release/symbol.txt": "15a0922c4c63c9bdaf9977cdda386148d65c38740fe4caa69dc64024e161dbe2",
+    "validation/reader-timing/kernel-5/src/main.c": "a3289f75ac4cecae85949570c5951916e5d1e3ac974a625726bf1502d2742e91",
+    "validation/reader-timing/kernel-5/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/reader-timing/kernel-5/src/source_audio_dispatch.c": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9",
+    "validation/reader-timing/kernel-5/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/reader-timing/kernel-5/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/reader-timing/kernel-5/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/reader-timing/kernel-5/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/reader-timing/kernel-5/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/reader-timing/kernel-5/src/source_audio_prefix.c": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c",
+    "validation/reader-timing/kernel-5/src/source_audio_prefix_timed.c": "4d6332bf907a54a6ac41de9932448323f81f3923a9951cb435ea8fa84fc73af5",
+    "validation/reader-timing/kernel-5/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/reader-timing/kernel-5/src/source_audio_reader.c": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827",
+    "validation/reader-timing/kernel-5/src/source_audio_reader_timed.c": "69eafe53df8bd66246955eea31ca05ecb34bde133739ad4bd7cd01f9427c6cc0",
+    "validation/reader-timing/kernel-5/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/reader-timing/kernel-5/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/reader-timing/kernel-5/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/reader-timing/kernel-5/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/reader-timing/kernel-5/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/reader-timing/kernel-5/build.log": "c3de5df24831352771d51c6244c817f3eafd6354fe2b368940e7267338b33935",
+    "validation/reader-timing/kernel-5/out/release/symbol.txt": "15a0922c4c63c9bdaf9977cdda386148d65c38740fe4caa69dc64024e161dbe2",
+    "validation/reader-timing/kernel-6/src/main.c": "a3289f75ac4cecae85949570c5951916e5d1e3ac974a625726bf1502d2742e91",
+    "validation/reader-timing/kernel-6/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/reader-timing/kernel-6/src/source_audio_dispatch.c": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9",
+    "validation/reader-timing/kernel-6/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/reader-timing/kernel-6/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/reader-timing/kernel-6/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/reader-timing/kernel-6/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/reader-timing/kernel-6/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/reader-timing/kernel-6/src/source_audio_prefix.c": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c",
+    "validation/reader-timing/kernel-6/src/source_audio_prefix_timed.c": "4d6332bf907a54a6ac41de9932448323f81f3923a9951cb435ea8fa84fc73af5",
+    "validation/reader-timing/kernel-6/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/reader-timing/kernel-6/src/source_audio_reader.c": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827",
+    "validation/reader-timing/kernel-6/src/source_audio_reader_timed.c": "69eafe53df8bd66246955eea31ca05ecb34bde133739ad4bd7cd01f9427c6cc0",
+    "validation/reader-timing/kernel-6/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/reader-timing/kernel-6/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/reader-timing/kernel-6/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/reader-timing/kernel-6/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/reader-timing/kernel-6/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/reader-timing/kernel-6/build.log": "3281fc8d8fd968a44ebf2c4eb9d8a6fc59f45efc19183850c8ff61017231ee66",
+    "validation/reader-timing/kernel-6/out/release/symbol.txt": "15a0922c4c63c9bdaf9977cdda386148d65c38740fe4caa69dc64024e161dbe2",
+    "validation/reader-timing/kernel-7/src/main.c": "a3289f75ac4cecae85949570c5951916e5d1e3ac974a625726bf1502d2742e91",
+    "validation/reader-timing/kernel-7/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/reader-timing/kernel-7/src/source_audio_dispatch.c": "9c3bb529f514538244da13f33eab42b359a760ff3069f94c0df6fa795b5962e9",
+    "validation/reader-timing/kernel-7/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/reader-timing/kernel-7/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/reader-timing/kernel-7/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/reader-timing/kernel-7/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/reader-timing/kernel-7/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/reader-timing/kernel-7/src/source_audio_prefix.c": "ffbdb1e4400ed3d7570ddf30a42d10fbbe333d07da46f9a01e77316f8364724c",
+    "validation/reader-timing/kernel-7/src/source_audio_prefix_timed.c": "4d6332bf907a54a6ac41de9932448323f81f3923a9951cb435ea8fa84fc73af5",
+    "validation/reader-timing/kernel-7/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/reader-timing/kernel-7/src/source_audio_reader.c": "f4d2449bfa46f166d3cf534a632acee05c3d2926965e1f972c6d1e572c474827",
+    "validation/reader-timing/kernel-7/src/source_audio_reader_timed.c": "69eafe53df8bd66246955eea31ca05ecb34bde133739ad4bd7cd01f9427c6cc0",
+    "validation/reader-timing/kernel-7/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/reader-timing/kernel-7/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/reader-timing/kernel-7/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/reader-timing/kernel-7/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/reader-timing/kernel-7/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/reader-timing/kernel-7/build.log": "4b4c9b23dd894346ac5e421d1457017ed1a9c165282405385b1a674098528764",
+    "validation/reader-timing/kernel-7/out/release/symbol.txt": "448301d6e4431519fc1b030091f2f1c88fe38869d1fd4845e0beda33b884c36e"
+  },
+  "compressed": {
+    "validation/reader-timing/gates-0/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/gates-0/auto-calls.bin.gz",
+      "raw_sha256": "b1f38910f40f6bef29a1a16ad4041775d0fa5c0907b161cbb0ce8d645d7c2e86",
+      "stored_sha256": "acad3ae9bddb2cae025317050d8afa32860ed6f941c0f2ebc13b4803d636fed0",
+      "raw_bytes": 3375104,
+      "stored_bytes": 72162
+    },
+    "validation/reader-timing/gates-0/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/gates-0/auto-ports.bin.gz",
+      "raw_sha256": "9bdb3188f12592d2608bbc50d1c75d6354b94fc9d2b82231e7b51e18852624ad",
+      "stored_sha256": "9f10568b4b95667708a4830ab24d981c4fd9ca599a2b3f3112196e54322bc2f2",
+      "raw_bytes": 225280,
+      "stored_bytes": 63052
+    },
+    "validation/reader-timing/gates-0/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/gates-0/auto-calls.bin.gz",
+      "raw_sha256": "b1f38910f40f6bef29a1a16ad4041775d0fa5c0907b161cbb0ce8d645d7c2e86",
+      "stored_sha256": "acad3ae9bddb2cae025317050d8afa32860ed6f941c0f2ebc13b4803d636fed0",
+      "raw_bytes": 3375104,
+      "stored_bytes": 72162
+    },
+    "validation/reader-timing/gates-0/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/gates-0/auto-ports.bin.gz",
+      "raw_sha256": "9bdb3188f12592d2608bbc50d1c75d6354b94fc9d2b82231e7b51e18852624ad",
+      "stored_sha256": "9f10568b4b95667708a4830ab24d981c4fd9ca599a2b3f3112196e54322bc2f2",
+      "raw_bytes": 225280,
+      "stored_bytes": 63052
+    },
+    "validation/reader-timing/gates-1/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/gates-1/auto-calls.bin.gz",
+      "raw_sha256": "789a644b0ae01241cbfadec6ad5775fda672b19942f1d36935eb88f8abd3f7d0",
+      "stored_sha256": "39dd9a06db8d2b70207db93fc54991402cb47795d758d03aa3c6436cd499d001",
+      "raw_bytes": 1054720,
+      "stored_bytes": 23193
+    },
+    "validation/reader-timing/gates-1/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/gates-1/auto-ports.bin.gz",
+      "raw_sha256": "153286b7ffba674d7c32e0342f4df54acab9a0855d16067dbd54786d0e230878",
+      "stored_sha256": "a8c1e145447cb97e6fee43adf3b497c63cfca69afbb21c141e54438414d22bd4",
+      "raw_bytes": 204800,
+      "stored_bytes": 57341
+    },
+    "validation/reader-timing/gates-1/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/gates-1/auto-calls.bin.gz",
+      "raw_sha256": "789a644b0ae01241cbfadec6ad5775fda672b19942f1d36935eb88f8abd3f7d0",
+      "stored_sha256": "39dd9a06db8d2b70207db93fc54991402cb47795d758d03aa3c6436cd499d001",
+      "raw_bytes": 1054720,
+      "stored_bytes": 23193
+    },
+    "validation/reader-timing/gates-1/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/gates-1/auto-ports.bin.gz",
+      "raw_sha256": "153286b7ffba674d7c32e0342f4df54acab9a0855d16067dbd54786d0e230878",
+      "stored_sha256": "a8c1e145447cb97e6fee43adf3b497c63cfca69afbb21c141e54438414d22bd4",
+      "raw_bytes": 204800,
+      "stored_bytes": 57341
+    },
+    "validation/reader-timing/live-0/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/live-0/auto-calls.bin.gz",
+      "raw_sha256": "3e3683574960458cb90f64767e73722eac4a723fe7101976830ee9f8e6deceb0",
+      "stored_sha256": "8f692c7b56767096e927cff35035af4a0bc591d2dedb4d4e43323a775e5b5be8",
+      "raw_bytes": 3375104,
+      "stored_bytes": 139433
+    },
+    "validation/reader-timing/live-0/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/live-0/auto-ports.bin.gz",
+      "raw_sha256": "3bcf727a92cb0e6a47eaa8fdc9c251d0c9a2c01d5377aae114ca0e8364e338f7",
+      "stored_sha256": "82877c8d5d99cfd432009ddc03d708756e56819ca926ffceed5115aa85e04802",
+      "raw_bytes": 182192,
+      "stored_bytes": 64991
+    },
+    "validation/reader-timing/live-0/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/live-0/auto-calls.bin.gz",
+      "raw_sha256": "3e3683574960458cb90f64767e73722eac4a723fe7101976830ee9f8e6deceb0",
+      "stored_sha256": "8f692c7b56767096e927cff35035af4a0bc591d2dedb4d4e43323a775e5b5be8",
+      "raw_bytes": 3375104,
+      "stored_bytes": 139433
+    },
+    "validation/reader-timing/live-0/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/live-0/auto-ports.bin.gz",
+      "raw_sha256": "3bcf727a92cb0e6a47eaa8fdc9c251d0c9a2c01d5377aae114ca0e8364e338f7",
+      "stored_sha256": "82877c8d5d99cfd432009ddc03d708756e56819ca926ffceed5115aa85e04802",
+      "raw_bytes": 182192,
+      "stored_bytes": 64991
+    },
+    "validation/reader-timing/live-1/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/live-1/auto-calls.bin.gz",
+      "raw_sha256": "5d6b69b6ebfc3562ef046205df5871eacc024ed766e977b9adfeac310ceff32d",
+      "stored_sha256": "25f6cf2a0faed3b2b3989bca5ab37df97ad2406a3cefe8991b738fcc52c1cf6a",
+      "raw_bytes": 3375104,
+      "stored_bytes": 141771
+    },
+    "validation/reader-timing/live-1/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/live-1/auto-ports.bin.gz",
+      "raw_sha256": "2832e2dbe7a5d4ae5873c960e912ae9b4525ef2a2676cd96166badbeb6b262b2",
+      "stored_sha256": "c7a9c6daec5d39cab7b2965efdb3aa810e824a481f22999c2b3fe3e160d178f8",
+      "raw_bytes": 185760,
+      "stored_bytes": 66294
+    },
+    "validation/reader-timing/live-1/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/live-1/auto-calls.bin.gz",
+      "raw_sha256": "5d6b69b6ebfc3562ef046205df5871eacc024ed766e977b9adfeac310ceff32d",
+      "stored_sha256": "25f6cf2a0faed3b2b3989bca5ab37df97ad2406a3cefe8991b738fcc52c1cf6a",
+      "raw_bytes": 3375104,
+      "stored_bytes": 141771
+    },
+    "validation/reader-timing/live-1/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/live-1/auto-ports.bin.gz",
+      "raw_sha256": "2832e2dbe7a5d4ae5873c960e912ae9b4525ef2a2676cd96166badbeb6b262b2",
+      "stored_sha256": "c7a9c6daec5d39cab7b2965efdb3aa810e824a481f22999c2b3fe3e160d178f8",
+      "raw_bytes": 185760,
+      "stored_bytes": 66294
+    },
+    "validation/reader-timing/live-2/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/live-2/auto-calls.bin.gz",
+      "raw_sha256": "e9b200ff92b0aa0552dfd6ca20ef4f422401aaac6ec3c87e32b003fe6f5e0fb0",
+      "stored_sha256": "34a3a704790e89a4bcab4edacf1a4c02c5b602eca620b83a17fe5d0068360b1f",
+      "raw_bytes": 3375104,
+      "stored_bytes": 141001
+    },
+    "validation/reader-timing/live-2/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/live-2/auto-ports.bin.gz",
+      "raw_sha256": "369e04b2540d0998b92d76ff8458a166aabb040405f09e38c4ed934b9724b083",
+      "stored_sha256": "ea74eb00de44c82b68a4da59e05f0dd4245bf814d727cb6ca714a737ebdf136b",
+      "raw_bytes": 184944,
+      "stored_bytes": 66005
+    },
+    "validation/reader-timing/live-2/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/live-2/auto-calls.bin.gz",
+      "raw_sha256": "e9b200ff92b0aa0552dfd6ca20ef4f422401aaac6ec3c87e32b003fe6f5e0fb0",
+      "stored_sha256": "34a3a704790e89a4bcab4edacf1a4c02c5b602eca620b83a17fe5d0068360b1f",
+      "raw_bytes": 3375104,
+      "stored_bytes": 141001
+    },
+    "validation/reader-timing/live-2/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/live-2/auto-ports.bin.gz",
+      "raw_sha256": "369e04b2540d0998b92d76ff8458a166aabb040405f09e38c4ed934b9724b083",
+      "stored_sha256": "ea74eb00de44c82b68a4da59e05f0dd4245bf814d727cb6ca714a737ebdf136b",
+      "raw_bytes": 184944,
+      "stored_bytes": 66005
+    },
+    "validation/reader-timing/live-3/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/live-3/auto-calls.bin.gz",
+      "raw_sha256": "dc0a74e6b1b7ba2aa610c92910282a828b26daa0082c59e2a63ee349df578872",
+      "stored_sha256": "1de3f9f06d55b856e6c5035aead9b0a84b1d4ef159dff8d0f235cc24394456a7",
+      "raw_bytes": 1760064,
+      "stored_bytes": 73983
+    },
+    "validation/reader-timing/live-3/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/live-3/auto-ports.bin.gz",
+      "raw_sha256": "ee5802c7bda7e1f72cf021b359ca35373c6fe9900a353cb77d8a81e1b7b39147",
+      "stored_sha256": "9778e7da68f97e6287751514d97118afebf5cea7954f9a804bd6c09bf1427ddd",
+      "raw_bytes": 97712,
+      "stored_bytes": 34870
+    },
+    "validation/reader-timing/live-3/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/live-3/auto-calls.bin.gz",
+      "raw_sha256": "dc0a74e6b1b7ba2aa610c92910282a828b26daa0082c59e2a63ee349df578872",
+      "stored_sha256": "1de3f9f06d55b856e6c5035aead9b0a84b1d4ef159dff8d0f235cc24394456a7",
+      "raw_bytes": 1760064,
+      "stored_bytes": 73983
+    },
+    "validation/reader-timing/live-3/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/live-3/auto-ports.bin.gz",
+      "raw_sha256": "ee5802c7bda7e1f72cf021b359ca35373c6fe9900a353cb77d8a81e1b7b39147",
+      "stored_sha256": "9778e7da68f97e6287751514d97118afebf5cea7954f9a804bd6c09bf1427ddd",
+      "raw_bytes": 97712,
+      "stored_bytes": 34870
+    },
+    "validation/reader-timing/compensation-0/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/compensation-0/auto-calls.bin.gz",
+      "raw_sha256": "bff24fade65b23b48524636f2ceda8d146e211b611965709be44ec70da66ac2c",
+      "stored_sha256": "118658cff2fa8210bb90c717969b9722fb836eb704b91d104a8968f41b819957",
+      "raw_bytes": 1687552,
+      "stored_bytes": 39549
+    },
+    "validation/reader-timing/compensation-0/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/compensation-0/auto-ports.bin.gz",
+      "raw_sha256": "4c9dc1088cbcd464185f1ac99a4a8eab6ae87c6e9ee24e4e9e66fc863eb2e22d",
+      "stored_sha256": "911f75e648cee9f5581d66026e3673dded7e8e1692446295b82f021f74e74463",
+      "raw_bytes": 13008,
+      "stored_bytes": 3735
+    },
+    "validation/reader-timing/compensation-0/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/compensation-0/auto-calls.bin.gz",
+      "raw_sha256": "bff24fade65b23b48524636f2ceda8d146e211b611965709be44ec70da66ac2c",
+      "stored_sha256": "118658cff2fa8210bb90c717969b9722fb836eb704b91d104a8968f41b819957",
+      "raw_bytes": 1687552,
+      "stored_bytes": 39549
+    },
+    "validation/reader-timing/compensation-0/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/compensation-0/auto-ports.bin.gz",
+      "raw_sha256": "4c9dc1088cbcd464185f1ac99a4a8eab6ae87c6e9ee24e4e9e66fc863eb2e22d",
+      "stored_sha256": "911f75e648cee9f5581d66026e3673dded7e8e1692446295b82f021f74e74463",
+      "raw_bytes": 13008,
+      "stored_bytes": 3735
+    },
+    "validation/reader-timing/dispatch-0/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/dispatch-0/auto-calls.bin.gz",
+      "raw_sha256": "1db031e9737edd6743039711a761cec3d7e0ab26ea29f9e23a5c7f3763d4f026",
+      "stored_sha256": "ef88a9c5cffb1322e863bf7d90a4c950948f4168ceec6a2cf2594c015cfc6e3f",
+      "raw_bytes": 824000,
+      "stored_bytes": 18924
+    },
+    "validation/reader-timing/dispatch-0/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/dispatch-0/auto-ports.bin.gz",
+      "raw_sha256": "c3221123fffa35382ba2d2311fe4888f2f6fd8d757ffc171ff0236fd78f748dc",
+      "stored_sha256": "8b4b091efde61507ea0c135cce3c4752889314d816e5cc70924164360f49db1c",
+      "raw_bytes": 151328,
+      "stored_bytes": 42686
+    },
+    "validation/reader-timing/dispatch-0/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/dispatch-0/auto-calls.bin.gz",
+      "raw_sha256": "1db031e9737edd6743039711a761cec3d7e0ab26ea29f9e23a5c7f3763d4f026",
+      "stored_sha256": "ef88a9c5cffb1322e863bf7d90a4c950948f4168ceec6a2cf2594c015cfc6e3f",
+      "raw_bytes": 824000,
+      "stored_bytes": 18924
+    },
+    "validation/reader-timing/dispatch-0/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/dispatch-0/auto-ports.bin.gz",
+      "raw_sha256": "c3221123fffa35382ba2d2311fe4888f2f6fd8d757ffc171ff0236fd78f748dc",
+      "stored_sha256": "8b4b091efde61507ea0c135cce3c4752889314d816e5cc70924164360f49db1c",
+      "raw_bytes": 151328,
+      "stored_bytes": 42686
+    },
+    "validation/reader-timing/priority-0/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/priority-0/auto-calls.bin.gz",
+      "raw_sha256": "8d959b0ca5fe9d193b8f6887f5f1dadaad1e409ce647882615f641d11bc055b0",
+      "stored_sha256": "ca1bb12fa7a529aa5a4fffb18d13d703e7495eace07c8dd538b3df8f1c312b18",
+      "raw_bytes": 919584,
+      "stored_bytes": 22969
+    },
+    "validation/reader-timing/priority-0/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/priority-0/auto-ports.bin.gz",
+      "raw_sha256": "1969201810c5489015dae153dd294f7b1c3f32692350a48852d6f782cf0ae668",
+      "stored_sha256": "89a6719c5c2ef8cf13e5f37707ceb993836b83306e590c180bd616b716f54b87",
+      "raw_bytes": 67136,
+      "stored_bytes": 22728
+    },
+    "validation/reader-timing/priority-0/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/priority-0/auto-calls.bin.gz",
+      "raw_sha256": "8d959b0ca5fe9d193b8f6887f5f1dadaad1e409ce647882615f641d11bc055b0",
+      "stored_sha256": "ca1bb12fa7a529aa5a4fffb18d13d703e7495eace07c8dd538b3df8f1c312b18",
+      "raw_bytes": 919584,
+      "stored_bytes": 22969
+    },
+    "validation/reader-timing/priority-0/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/priority-0/auto-ports.bin.gz",
+      "raw_sha256": "1969201810c5489015dae153dd294f7b1c3f32692350a48852d6f782cf0ae668",
+      "stored_sha256": "89a6719c5c2ef8cf13e5f37707ceb993836b83306e590c180bd616b716f54b87",
+      "raw_bytes": 67136,
+      "stored_bytes": 22728
+    },
+    "validation/reader-timing/channels-0/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/channels-0/auto-calls.bin.gz",
+      "raw_sha256": "e7f72e8d7e869d9fa3ce4ac3b8f2ba7a049b7edd89426958a3910a195b93d9cb",
+      "stored_sha256": "705e69ab2bc81945df2a109471154d2fbb99f9ed2bd14d7c53764707456e5fee",
+      "raw_bytes": 1265664,
+      "stored_bytes": 33296
+    },
+    "validation/reader-timing/channels-0/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/channels-0/auto-ports.bin.gz",
+      "raw_sha256": "1fcca88f5499dcc400d9304cb68a9b2b011b8c04537e1b312138ed77729532d1",
+      "stored_sha256": "391e908f252a98ca55ef8fdd14221e746631bdd48ba8b6c8d8d8bd286fdf9332",
+      "raw_bytes": 101376,
+      "stored_bytes": 31510
+    },
+    "validation/reader-timing/channels-0/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/channels-0/auto-calls.bin.gz",
+      "raw_sha256": "e7f72e8d7e869d9fa3ce4ac3b8f2ba7a049b7edd89426958a3910a195b93d9cb",
+      "stored_sha256": "705e69ab2bc81945df2a109471154d2fbb99f9ed2bd14d7c53764707456e5fee",
+      "raw_bytes": 1265664,
+      "stored_bytes": 33296
+    },
+    "validation/reader-timing/channels-0/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/channels-0/auto-ports.bin.gz",
+      "raw_sha256": "1fcca88f5499dcc400d9304cb68a9b2b011b8c04537e1b312138ed77729532d1",
+      "stored_sha256": "391e908f252a98ca55ef8fdd14221e746631bdd48ba8b6c8d8d8bd286fdf9332",
+      "raw_bytes": 101376,
+      "stored_bytes": 31510
+    },
+    "validation/reader-timing/noise-exits-0/auto-calls.bin.gz": {
+      "stored": "validation/reader-timing/noise-exits-0/auto-calls.bin.gz",
+      "raw_sha256": "09963503d97175fdb52e99b18f3036ddd1be0e3c5c188c76d6ebce06b375df69",
+      "stored_sha256": "41bbf07668217700ed4326e7f6881b962bad49c484d4795aa8fc81000731f030",
+      "raw_bytes": 118656,
+      "stored_bytes": 3081
+    },
+    "validation/reader-timing/noise-exits-0/auto-ports.bin.gz": {
+      "stored": "validation/reader-timing/noise-exits-0/auto-ports.bin.gz",
+      "raw_sha256": "d7a04af91d78555fab57fdf7400dc55e1f5153d926709931f4922ef0e2f087cd",
+      "stored_sha256": "5eed88d59c060a6a5adffdbb8241c158a9e53e6bc63d66ca69f8efbb5b03edc4",
+      "raw_bytes": 13664,
+      "stored_bytes": 4251
+    },
+    "validation/reader-timing/noise-exits-0/pal-calls.bin.gz": {
+      "stored": "validation/reader-timing/noise-exits-0/auto-calls.bin.gz",
+      "raw_sha256": "09963503d97175fdb52e99b18f3036ddd1be0e3c5c188c76d6ebce06b375df69",
+      "stored_sha256": "41bbf07668217700ed4326e7f6881b962bad49c484d4795aa8fc81000731f030",
+      "raw_bytes": 118656,
+      "stored_bytes": 3081
+    },
+    "validation/reader-timing/noise-exits-0/pal-ports.bin.gz": {
+      "stored": "validation/reader-timing/noise-exits-0/auto-ports.bin.gz",
+      "raw_sha256": "d7a04af91d78555fab57fdf7400dc55e1f5153d926709931f4922ef0e2f087cd",
+      "stored_sha256": "5eed88d59c060a6a5adffdbb8241c158a9e53e6bc63d66ca69f8efbb5b03edc4",
+      "raw_bytes": 13664,
+      "stored_bytes": 4251
+    },
+    "validation/reader-timing/gates-0/source.sms": {
+      "stored": "validation/reader-timing/gates-0/source.sms.gz",
+      "raw_sha256": "abd50b03fba15848542080c0b38cc69973363d45d10e6f46a7723c779851fa6d",
+      "stored_sha256": "47cfe33c7f0243046666c278412885577a50885885127236e782ac1d7f91a985",
+      "raw_bytes": 4194304,
+      "stored_bytes": 164639
+    },
+    "validation/reader-timing/gates-1/source.sms": {
+      "stored": "validation/reader-timing/gates-1/source.sms.gz",
+      "raw_sha256": "c7cbd281e2219c20b05a7f1eecc24065d0967952d90300d55ce3b40d915fdc35",
+      "stored_sha256": "047c980468b5f5fcedcc174559ee83b778241eac262cbeb870e67f617ec272e2",
+      "raw_bytes": 4194304,
+      "stored_bytes": 155174
+    },
+    "validation/reader-timing/live-0/source.sms": {
+      "stored": "validation/reader-timing/live-0/source.sms.gz",
+      "raw_sha256": "b224dc07d83996145c74a3b7dfd1f4b5d47f20104c40f6859c2073e1cb16d078",
+      "stored_sha256": "20e92c2c26f8050339bf20ba322a1d55f79935c9e1d27c7863d89aaac63459b7",
+      "raw_bytes": 4194304,
+      "stored_bytes": 224138
+    },
+    "validation/reader-timing/live-1/source.sms": {
+      "stored": "validation/reader-timing/live-1/source.sms.gz",
+      "raw_sha256": "2c022816fe1f3729acffaf5d01dfb336c44c4e8e4a767b2f3d919264f13a1449",
+      "stored_sha256": "e4329f1e2b8f39ad3a10a968ae9f984cc8c2783a463815e4c96b0e815366f274",
+      "raw_bytes": 4194304,
+      "stored_bytes": 225611
+    },
+    "validation/reader-timing/live-2/source.sms": {
+      "stored": "validation/reader-timing/live-2/source.sms.gz",
+      "raw_sha256": "a161b2592ac5a98358d9ec3f3a0e9416d0f5ad57ff0ca4b8b1aff20391d7bb7b",
+      "stored_sha256": "f7279729e46c92bf1447aa7a813d66220cbd97b06d663223c3743cb7c5d1117f",
+      "raw_bytes": 4194304,
+      "stored_bytes": 225213
+    },
+    "validation/reader-timing/live-3/source.sms": {
+      "stored": "validation/reader-timing/live-3/source.sms.gz",
+      "raw_sha256": "6caaba1696fa8f497a6b72675b591a2c62ecca21c1c53458e738b4150be6f69f",
+      "stored_sha256": "201b233e3c9c652ca9f50774ce58a4424a8669f50cba36c65a76bc729cab9fea",
+      "raw_bytes": 4194304,
+      "stored_bytes": 191427
+    },
+    "validation/reader-timing/compensation-0/source.sms": {
+      "stored": "validation/reader-timing/compensation-0/source.sms.gz",
+      "raw_sha256": "0d14ea16a44e4d60294c496289e5c1598464339024ee58c0b9e14b9d6fa7fb4a",
+      "stored_sha256": "542b3a8b918d672c1c35750ff0a5902a79e57c7312131abc4e52065e03a890ad",
+      "raw_bytes": 4194304,
+      "stored_bytes": 156787
+    },
+    "validation/reader-timing/dispatch-0/source.sms": {
+      "stored": "validation/reader-timing/dispatch-0/source.sms.gz",
+      "raw_sha256": "53a6e59468a4218cc4b41077dfe4363fc8aa74e70c031e82abe8c3238ac5aa75",
+      "stored_sha256": "a9dc2824d0b03eb9e1a06b4ee6b976d571fb9df6574b69059037f950ff4eefb7",
+      "raw_bytes": 4194304,
+      "stored_bytes": 153934
+    },
+    "validation/reader-timing/priority-0/source.sms": {
+      "stored": "validation/reader-timing/priority-0/source.sms.gz",
+      "raw_sha256": "a216c8a2ebfb6222628521195d966956abc820b5f8e190b90a064703d63ab9ce",
+      "stored_sha256": "52c1f049085b140d2ff8af0216665faf08f30ac97f298c2944fd1828b0329edd",
+      "raw_bytes": 4194304,
+      "stored_bytes": 154576
+    },
+    "validation/reader-timing/channels-0/source.sms": {
+      "stored": "validation/reader-timing/channels-0/source.sms.gz",
+      "raw_sha256": "1046eca4090445e4e67ad5c1e785df40007f8bea15285d2d72f30efbf9394ba1",
+      "stored_sha256": "f744ed41a520ac923bfdc2386d77741770db3770cdce553b04a1c5d26af42da7",
+      "raw_bytes": 4194304,
+      "stored_bytes": 158665
+    },
+    "validation/reader-timing/noise-exits-0/source.sms": {
+      "stored": "validation/reader-timing/noise-exits-0/source.sms.gz",
+      "raw_sha256": "87f2f1fa1487d8736dc3ce4429b6b821b0ed9d6e4d554c43fe8c39ac70090a3b",
+      "stored_sha256": "3d7492c2f8ece51f1760acb81dd43e019b1f5f3111e364f4b609f51f3c9bb1f5",
+      "raw_bytes": 4194304,
+      "stored_bytes": 150581
+    },
+    "validation/reader-timing/events.json": {
+      "stored": "validation/reader-timing/events.json.gz",
+      "raw_sha256": "b568e022a347b8ad164f91e0b63ce90e0ed8642caece097faee65d243319d239",
+      "stored_sha256": "2f14b70841c89b7cf55000a11966b4d924815f79b7f63e8aa4bb012c3c88e29e",
+      "raw_bytes": 1606751,
+      "stored_bytes": 59916
+    },
+    "validation/native-audio-reader/cases.json": {
+      "stored": "validation/native-audio-reader/cases.json.gz",
+      "raw_sha256": "551baec144c227c7706cdefc38d4ac130a154a0e19858121caddce0d0c4d0129",
+      "stored_sha256": "939c835940489e2f91590afcd863e7b089de7e9995ebe41db4181a7cda2baaa2",
+      "raw_bytes": 35112712,
+      "stored_bytes": 547031
+    },
+    "validation/native-audio-reader/extension-cases.json": {
+      "stored": "validation/native-audio-reader/extension-cases.json.gz",
+      "raw_sha256": "13a9e8196761f25a4de9cd6b8948ba4d6ef7e24170c08081df69c284be2f9683",
+      "stored_sha256": "795f5fa8bd8acf14621620bb63157513e3a5ba5107b0d2ff0de0a42f9d1adaa1",
+      "raw_bytes": 10221160,
+      "stored_bytes": 104898
+    },
+    "validation/reader-timing/kernel-0/src/expected.h": {
+      "stored": "validation/reader-timing/kernel-0/src/expected.h.gz",
+      "raw_sha256": "e87e7cfc963ac3d7db7c3c0ea02c71498ef9a16832bd9db972939d88b58bb22d",
+      "stored_sha256": "0b7f9fa3f8ce23c85826a5f94cd6c81b4d386de376ccacd839b218e7d11d93a2",
+      "raw_bytes": 6678890,
+      "stored_bytes": 239575
+    },
+    "validation/reader-timing/kernel-0/out/release/rom.bin": {
+      "stored": "validation/reader-timing/kernel-0/out/release/rom.bin.gz",
+      "raw_sha256": "c67320a8b25b81e4253c63c697770ddb7f7333bb30422cd6803674417d083a6f",
+      "stored_sha256": "d13624fbaa62ec4dd60a10226c0b7e6e28a5908f6bb2231ecf10757f350b8cb8",
+      "raw_bytes": 3407872,
+      "stored_bytes": 219035
+    },
+    "validation/reader-timing/kernel-1/src/expected.h": {
+      "stored": "validation/reader-timing/kernel-1/src/expected.h.gz",
+      "raw_sha256": "cee2984133b5012e2880e4596fd8dd74d9543a30e5d0576e810a9a9083abc9c5",
+      "stored_sha256": "50d93262eede15c455702c79aae2e246b1b970976e55d2472ecd13fcca78a7b4",
+      "raw_bytes": 7013529,
+      "stored_bytes": 294295
+    },
+    "validation/reader-timing/kernel-1/out/release/rom.bin": {
+      "stored": "validation/reader-timing/kernel-1/out/release/rom.bin.gz",
+      "raw_sha256": "897c575e0b26bf87e0605222e61fadf94a9d2c7b94fafb65113aef4a8abad442",
+      "stored_sha256": "2b05b840b74292ddba2c42e91029d1d3c8d70c8c61056a44fbfe5631141623ff",
+      "raw_bytes": 3538944,
+      "stored_bytes": 261338
+    },
+    "validation/reader-timing/kernel-2/src/expected.h": {
+      "stored": "validation/reader-timing/kernel-2/src/expected.h.gz",
+      "raw_sha256": "81d068154c935d9f86bac165ed023c8df97e9647849262cd9c7bf8a15bc30f4d",
+      "stored_sha256": "57d08050118edf62be9f7ae73da045514ddd5791e70bf4efeffebe470f7243af",
+      "raw_bytes": 7109727,
+      "stored_bytes": 354710
+    },
+    "validation/reader-timing/kernel-2/out/release/rom.bin": {
+      "stored": "validation/reader-timing/kernel-2/out/release/rom.bin.gz",
+      "raw_sha256": "fded44ff0a22dab9f3012ed2bb77aa62b7e349dcae3ff6f4e91a3be69b1ef843",
+      "stored_sha256": "8a962e4cf4e72408b3fd8eb5100cdbddee36b1a1ee93c5973baa7b74f71d2ae4",
+      "raw_bytes": 3538944,
+      "stored_bytes": 312374
+    },
+    "validation/reader-timing/kernel-3/src/expected.h": {
+      "stored": "validation/reader-timing/kernel-3/src/expected.h.gz",
+      "raw_sha256": "02123e4a5dde7058c2b478d921f8a9cc795a1238ca70dc975f0cb953a0bc2ca2",
+      "stored_sha256": "c72a3ca944fdbf202954293c8e1cf661e51a6de16d3f49b7183c4b5387f01ead",
+      "raw_bytes": 7116655,
+      "stored_bytes": 356037
+    },
+    "validation/reader-timing/kernel-3/out/release/rom.bin": {
+      "stored": "validation/reader-timing/kernel-3/out/release/rom.bin.gz",
+      "raw_sha256": "9e694f186d65cf8eb1516abe5de35f957ff518a4f6859bccb4574a02419ee9cb",
+      "stored_sha256": "fd73d38a505c21013bcdbab05b1a86bc9694809a80e24fa3bef238aa0d56151c",
+      "raw_bytes": 3538944,
+      "stored_bytes": 313248
+    },
+    "validation/reader-timing/kernel-4/src/expected.h": {
+      "stored": "validation/reader-timing/kernel-4/src/expected.h.gz",
+      "raw_sha256": "8a9cb0c494281f0e1d081c7c8a1832f2d2ae436b29228211c32cd22bcb09dc07",
+      "stored_sha256": "ba5546e891df8db9dc767d37316d4669429abdef5bbeb4fa92c66eb263730969",
+      "raw_bytes": 7115942,
+      "stored_bytes": 356573
+    },
+    "validation/reader-timing/kernel-4/out/release/rom.bin": {
+      "stored": "validation/reader-timing/kernel-4/out/release/rom.bin.gz",
+      "raw_sha256": "3e52c322056839d1881fe1be6c07f9b1df1b459fb6ff1d3332a0175628950f60",
+      "stored_sha256": "c4664c135af193c8d4b76e444ac9c583ca5f430beff7852b41b0d73fb6d025bb",
+      "raw_bytes": 3538944,
+      "stored_bytes": 313715
+    },
+    "validation/reader-timing/kernel-5/src/expected.h": {
+      "stored": "validation/reader-timing/kernel-5/src/expected.h.gz",
+      "raw_sha256": "fd21b1d6d70ce4caca7c563dae62aafd887c984452abc8cff63570613df9fbd4",
+      "stored_sha256": "cbc00343509ea7a4060bc4d335b4d4fd8c235107337118f5422e3cdbc98aae1e",
+      "raw_bytes": 7006405,
+      "stored_bytes": 323419
+    },
+    "validation/reader-timing/kernel-5/out/release/rom.bin": {
+      "stored": "validation/reader-timing/kernel-5/out/release/rom.bin.gz",
+      "raw_sha256": "b9f0187bc792759e9b500e43d63b4c72c2e18e4676dff885fec391b143a76f11",
+      "stored_sha256": "175b1560c77e28b101632abbadb8e2c4586dc35e5363d42e0b998704242665f0",
+      "raw_bytes": 3538944,
+      "stored_bytes": 283361
+    },
+    "validation/reader-timing/kernel-6/src/expected.h": {
+      "stored": "validation/reader-timing/kernel-6/src/expected.h.gz",
+      "raw_sha256": "255b10f31f3403eec2610393ea72ab184732d26fdf598c4f32782c2676dfd36c",
+      "stored_sha256": "4854efad4395e0c7cde5fa7509960ef836707182aa50de10300fd06152079fea",
+      "raw_bytes": 6957936,
+      "stored_bytes": 277467
+    },
+    "validation/reader-timing/kernel-6/out/release/rom.bin": {
+      "stored": "validation/reader-timing/kernel-6/out/release/rom.bin.gz",
+      "raw_sha256": "cd6d4deeab4a46b339c9c61df2a86db3d48c9ce68e1c12da98275135928ac371",
+      "stored_sha256": "3cc8700c3df671d0c72f236f6ca2dd633c1bfb7cc7d0c85ab45a9c50725c91d3",
+      "raw_bytes": 3538944,
+      "stored_bytes": 233976
+    },
+    "validation/reader-timing/kernel-7/src/expected.h": {
+      "stored": "validation/reader-timing/kernel-7/src/expected.h.gz",
+      "raw_sha256": "dfc3899d8b9804875dd0bc45209c69633eb11a5f39a35cd8bea1e5ea91d84ed6",
+      "stored_sha256": "669b31ab3647a85aa63e004a76492eb25bfa655812ff84ee048d379a424d539f",
+      "raw_bytes": 2845883,
+      "stored_bytes": 235374
+    },
+    "validation/reader-timing/kernel-7/out/release/rom.bin": {
+      "stored": "validation/reader-timing/kernel-7/out/release/rom.bin.gz",
+      "raw_sha256": "03438d6952167613dff9593a1dfc2362b91db9bb7e56ee9d04960141d544296a",
+      "stored_sha256": "848c5f319bdb9af26e4efa3563359149eaa3e1d8217a1dc1d194c6c6ca0ad8a5",
+      "raw_bytes": 1441792,
+      "stored_bytes": 210963
+    }
+  },
+  "removed_verified_generated_roms": [
+    {
+      "path": "validation/reader-timing/gates-0/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/gates-1/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/live-0/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/live-1/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/live-2/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/live-3/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/compensation-0/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/dispatch-0/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/priority-0/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/channels-0/source.sms",
+      "bytes": 4194304
+    },
+    {
+      "path": "validation/reader-timing/noise-exits-0/source.sms",
+      "bytes": 4194304
+    }
+  ]
+}

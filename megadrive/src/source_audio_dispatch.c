@@ -1,4 +1,10 @@
 #include "source_audio_dispatch.h"
+#ifndef GAW_AUDIO_PREFIX_STAMP
+#define GAW_AUDIO_PREFIX_STAMP(o,t) ((void)0)
+#endif
+#ifndef GAW_AUDIO_PREFIX_MUTE
+#define GAW_AUDIO_PREFIX_MUTE(o,t) ((void)0)
+#endif
 
 #define POINTER_T 67
 #define POINTER_M1 9
@@ -20,6 +26,7 @@ static void stop(u8 *state,SourceClockWork *work,SourceAudioDispatchOutput *outp
 {
     SourceClockWork stopped;source_audio_stop(state,&stopped);
     work->tstates+=stopped.tstates;work->fetches+=stopped.fetches;output->mute=1;
+    GAW_AUDIO_PREFIX_MUTE(output,work->tstates-249);
 }
 
 static void finish(u8 *state,SourceClockWork *work)
@@ -74,7 +81,7 @@ u8 source_audio_dispatch(u8 *state,const u8 *bank,SourceClockWork *work,
                     else
                     {
                         work->tstates+=48;work->fetches+=5;state[0x160]|=4;
-                        output->writes[output->count++]=0xff;
+                        GAW_AUDIO_PREFIX_STAMP(output,work->tstates);output->writes[output->count++]=0xff;
                     }
                     work->tstates+=36;work->fetches+=4;offset=0x130;background=0xa0;
                 }
@@ -113,7 +120,7 @@ u8 source_audio_dispatch(u8 *state,const u8 *bank,SourceClockWork *work,
             work->tstates+=10+(state[15]?17:12)+7+6+7+7+11;
             work->fetches+=state[15]?8:7;
             offset=state[15]?0x160:0x130;state[offset]=state[15];
-            output->writes[output->count++]=(u8)(state[offset+1]+31);
+            GAW_AUDIO_PREFIX_STAMP(output,work->tstates);output->writes[output->count++]=(u8)(state[offset+1]+31);
         }
         work->tstates+=24;work->fetches+=3;finish(state,work);
     }

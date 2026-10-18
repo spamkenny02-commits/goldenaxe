@@ -1,0 +1,28 @@
+{
+  "cases": 3000,
+  "accepted": 2911,
+  "rejected": 89,
+  "rejections_after_published_writes": 27,
+  "result_digest": "70d44059e376f5ee792a90e227780269ee8ff198c98bf46840f782fcebdbe65c",
+  "sources": {
+    "source_audio_reader_timed": "140e783c6957f556286c1f7cc1692ca2bf272177f0da1e59b3ddd99a6ce4108c",
+    "source_audio_prefix_timed": "6e66131d2e9daa764ae12eca02b886f25fbf4fcf13a2972d34ccecddfcc12c0d",
+    "source_audio_tone_timed": "7cd41ea9933d6b627322f8ca988de7ee05d5795e839d1462fab3aa5a6a7c0dbf",
+    "source_audio_noise_timed": "e5a538370c3f1632a2fe0014224b62b722f1d64dd6c30b7c1ba79a50c23ac891",
+    "source_audio_sequence_timed": "ace5c4b83ca43928aa453c30fa7c2d72c7e1bd49bfb782407408545e641ea888",
+    "source_audio_reader": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "source_audio_priority": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "source_audio_tone": "73551d475a0ca1cecb45590b2d0adabab85d694c10b97b4086e0f5e2662ac6dd",
+    "source_audio_noise": "cd3cf09ae5cbd50f178678e68133e8622ef90263f2cbed356e91b6083d379514",
+    "source_audio_sequence": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "limits": [
+    "Deterministic mutations compare the timed stream with the ordinary stream,including earlier committed state/PSG lists on a later failure. This is not the outer transactional capture API and does not promise full rollback.",
+    "No source-oracle execution of rejected arbitrary contexts,hardware pacing or waveform proof. Successful source vectors and compiled68000 checks are separate."
+  ]
+}
