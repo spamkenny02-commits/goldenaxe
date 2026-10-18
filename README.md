@@ -39,6 +39,13 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+Les canaux mélodiques ont aussi leurs événements PSG datés : **20 852 cas
+et 37 260 écritures par région** concordent avec la SMS sur les six emplacements
+de canal, puis passent en 68000 PAL/NTSC. Les deux octets de fréquence, les
+volumes et les enveloppes sont inclus. Les commandes globales et le lecteur
+complet restent à composer, puis à relier à la cadence physique du jeu.
+Voir le [jalon des canaux mélodiques horodatés](analysis/tone_channel_timing_milestone.md).
+
 Le canal bruit complet produit ses écritures PSG horodatées : **30 670 cas
 et 23 759 écritures par région** concordent avec la SMS et passent en 68000
 PAL/NTSC, avec les commandes, enveloppes et fins de bruitage. Les fréquences,

@@ -213,8 +213,8 @@
     {
       "part": 0,
       "region": "auto",
-      "kernel_sha256": "be7bb86c13a74826cc64d927c7e9433063d6cd3e38f6840bb040023d18cbf8c2",
-      "frame": 7326,
+      "kernel_sha256": "b17d742c909bc98d9627d8e164e7b7c323c85e38bb85bf1cef872070ab42026a",
+      "frame": 6188,
       "done": 1,
       "cases": 25000,
       "writes": 17592,
@@ -223,8 +223,8 @@
     {
       "part": 0,
       "region": "pal",
-      "kernel_sha256": "be7bb86c13a74826cc64d927c7e9433063d6cd3e38f6840bb040023d18cbf8c2",
-      "frame": 6130,
+      "kernel_sha256": "b17d742c909bc98d9627d8e164e7b7c323c85e38bb85bf1cef872070ab42026a",
+      "frame": 5178,
       "done": 1,
       "cases": 25000,
       "writes": 17592,
@@ -233,8 +233,8 @@
     {
       "part": 1,
       "region": "auto",
-      "kernel_sha256": "c87d3abd89e3d78732ca27b3069a0185c6f634f1948bd59b9633c35b11ef78ac",
-      "frame": 1795,
+      "kernel_sha256": "b6e5220842b2cb6e024c82f6eb9870f98d25f18922526f50d15de87b4c6392fa",
+      "frame": 1546,
       "done": 1,
       "cases": 5670,
       "writes": 6167,
@@ -243,14 +243,15 @@
     {
       "part": 1,
       "region": "pal",
-      "kernel_sha256": "c87d3abd89e3d78732ca27b3069a0185c6f634f1948bd59b9633c35b11ef78ac",
-      "frame": 1503,
+      "kernel_sha256": "b6e5220842b2cb6e024c82f6eb9870f98d25f18922526f50d15de87b4c6392fa",
+      "frame": 1294,
       "done": 1,
       "cases": 5670,
       "writes": 6167,
       "failures": 0
     }
   ],
+  "host_rejection_capacity_cases": 9,
   "core_sha256": "f4b0dbf7e7afc2c3f349aeb2c077a142837eeda28eb2f244739e4ccc5c38ad4a",
   "sources": {
     "source_audio_noise_timed": "e5a538370c3f1632a2fe0014224b62b722f1d64dd6c30b7c1ba79a50c23ac891",
@@ -264,7 +265,6 @@
   },
   "limits": [
     "Original864F fixtures with only caller hold removed. Full source input/all400 output bytes,T,DE/reader exit and actual PSG handler byte/timestamp list compared. M1 uses existing source-verified vectors. Normal native channel also compared to the timed composition.",
-    "Compiled68000 PAL/NTSC checks state/work and source byte/timestamp lists, then queue roundtrips. Covers sequence events through the complete864F noise API; direct8655 API entry is not separately replayed. No full timed8000 reader or physical clock/pacing/waveform proof."
-  ],
-  "host_rejection_capacity_cases": 9
+    "Compiled68000 PAL/NTSC checks state/work and source byte/timestamp lists, then queue roundtrips. No full timed8000 reader or physical clock/pacing/waveform proof."
+  ]
 }

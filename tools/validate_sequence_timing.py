@@ -105,8 +105,9 @@ def main():
     report=dict(results=results,compiled=compiled,host_rejection_capacity_cases=boundary_cases,core_sha256=hashlib.sha256(core.read_bytes()).hexdigest(),sources={name:hashlib.sha256((ROOT/'megadrive/src'/(name+'.c')).read_bytes()).hexdigest() for name in MODULES},limits=['Original8357 fixtures with only custom caller hold removed. All400 bytes,T,DE/unwind and every completed-OUT cycle/data compared; M1 uses retained source vectors. Separate timed composition reuses authoritative C with optional sidecar stores; default semantic outputs also compared.','Compiled68000 PAL/NTSC also checks retained state/work and source-observed byte/timestamp lists, then native queue roundtrips. Noise8655 variant still needs its source oracle. No complete timed8000 reader or physical clock/pacing proof.'])
     (ROOT/'analysis/sequence_timing_report.json').write_text(json.dumps(report,indent=2)+'\n')
 
-def compiled_check(base,suites,events,sdk,env,noise=False,modules=None):
+def compiled_check(base,suites,events,sdk,env,noise=False,modules=None,api='sequence'):
     modules=MODULES if modules is None else modules
+    channel=noise or api=='tone'
     rows=[(index,row,event) for index,suite in enumerate(suites) for row,event in zip(suite['cases'],events[index]['events'])]
     assert all(len(s['cases'])==len(events[n]['events']) and s['kind']==events[n]['kind'] for n,s in enumerate(suites))
     fields=sorted({offset for _,row,_ in rows for offset,value in row['patches']});assert len(fields)<=255
@@ -118,7 +119,7 @@ def compiled_check(base,suites,events,sdk,env,noise=False,modules=None):
     for part,start in enumerate(range(0,len(rows),25000)):
         selected=rows[start:start+25000];kernel=base/f'kernel-{part}';src=kernel/'src';src.mkdir(parents=True,exist_ok=True)
         max_patches=max(len(row['patches']) for _,row,_ in selected)
-        lines=['static const u8 low[][32768]={'+','.join('{'+','.join(map(str,raw))+'}' for raw in lows)+'};','static const u8 seed[][400]={'+','.join('{'+','.join(map(str,raw))+'}' for raw in seeds)+'};','static const u8 bank6[]={'+','.join(map(str,bank))+'};','static const u16 fields[]={'+','.join(map(str,fields))+'};','static const u8 offset_count[]={'+','.join(str(len(s['offsets'])) for s in suites)+'};','static const u16 offsets[][16]={'+','.join('{'+','.join(map(str,s['offsets']))+'}' for s in suites)+'};',f'typedef struct {{u8 suite,patch_count,unwind,count,input[16],patches[{max_patches*2}],writes[{max_events}];u16 de_in,de;u32 tstates,fetches,times[{max_events}];}} TimedCase;','static const TimedCase cases[]={']
+        lines=['static const u8 low[][32768]={'+','.join('{'+','.join(map(str,raw))+'}' for raw in lows)+'};','static const u8 seed[][400]={'+','.join('{'+','.join(map(str,raw))+'}' for raw in seeds)+'};','static const u16 slots[]={'+','.join(str(s.get('offset',0xd0 if noise else 0x40)) for s in suites)+'};','static const u8 bank6[]={'+','.join(map(str,bank))+'};','static const u16 fields[]={'+','.join(map(str,fields))+'};','static const u8 offset_count[]={'+','.join(str(len(s['offsets'])) for s in suites)+'};','static const u16 offsets[][16]={'+','.join('{'+','.join(map(str,s['offsets']))+'}' for s in suites)+'};',f'typedef struct {{u8 suite,patch_count,unwind,count,input[16],patches[{max_patches*2}],writes[{max_events}];u16 de_in,de;u32 tstates,fetches,times[{max_events}];}} TimedCase;','static const TimedCase cases[]={']
         for index,row,event in selected:
             patches=[v for offset,value in row['patches'] for v in [fields.index(offset),value]]
             lines.append('{'+','.join(map(str,[index,len(row['patches']),row['unwind'],len(event['writes'])]))+',{'+','.join(map(str,row['input']))+'},{'+','.join(map(str,patches))+'},{'+','.join(map(str,event['writes']))+'},'+str(row.get('de_in',0))+','+str(row['de'])+','+str(row['tstates'])+'UL,'+str(row['fetches'])+'UL,{'+','.join(str(t)+'UL' for t in event['times'])+'}},')
@@ -160,8 +161,8 @@ int main(bool hard_reset)
  gaw_sequence_done=1;while(TRUE) SYS_doVBlankProcess();return 0;
 }
 '''
-        call='source_audio_noise_timed(state,0xd0,low[p->suite],32768,bank6,&de,&work,&output)' if noise else 'source_audio_sequence_timed(state,0x40,low[p->suite],32768,bank6,&work,&output)'
-        main=main.replace('TIMED_CALL',call).replace('EXTRA_CHECK','|| de!=p->de' if noise else '').replace('QUEUE_CAPACITY',str(queue_capacity)).replace('MAX_EVENTS',str(max_events));(src/'main.c').write_text(main)
+        call='source_audio_tone_timed(state,slots[p->suite],low[p->suite],32768,bank6,&de,&work,&output)' if api=='tone' else 'source_audio_noise_timed(state,slots[p->suite],low[p->suite],32768,bank6,&de,&work,&output)' if noise else 'source_audio_sequence_timed(state,slots[p->suite],low[p->suite],32768,bank6,&work,&output)'
+        main=main.replace('TIMED_CALL',call).replace('EXTRA_CHECK','|| de!=p->de' if channel else '').replace('QUEUE_CAPACITY',str(queue_capacity)).replace('MAX_EVENTS',str(max_events));(src/'main.c').write_text(main)
         path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:];env=dict(env);env['PATH']=str(sdk/'bin')+';'+env['PATH']
         built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=kernel,env=env,capture_output=True,text=True)
         (kernel/'build.log').write_text(built.stdout+built.stderr);assert not built.returncode,built.stderr[-2000:]

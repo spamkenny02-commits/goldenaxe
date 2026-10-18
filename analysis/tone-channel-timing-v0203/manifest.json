@@ -1,0 +1,556 @@
+{
+  "playable_sha256": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+  "production_timed_reader": false,
+  "files": {
+    "megadrive/src/source_audio_tone.c": "73551d475a0ca1cecb45590b2d0adabab85d694c10b97b4086e0f5e2662ac6dd",
+    "megadrive/src/source_audio_tone.h": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4",
+    "megadrive/src/source_audio_tone_timed.c": "7cd41ea9933d6b627322f8ca988de7ee05d5795e839d1462fab3aa5a6a7c0dbf",
+    "megadrive/src/source_audio_sequence.c": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "megadrive/src/source_audio_sequence.h": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c",
+    "megadrive/src/source_audio_sequence_timed.c": "ace5c4b83ca43928aa453c30fa7c2d72c7e1bd49bfb782407408545e641ea888",
+    "megadrive/src/source_audio_timed.c": "4e5788b71cd0c1d694f435ab2229ca60dd4cb5372d33fd4835c2bc7d2e62eb6b",
+    "megadrive/src/source_audio_timed.h": "60b20ab7247e86db54c7f98cd0c73454234ebd28534d228c772007489eeb1850",
+    "megadrive/src/source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "megadrive/src/source_audio_envelope.h": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c",
+    "megadrive/src/source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
+    "megadrive/src/source_audio_pitch.h": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2",
+    "megadrive/src/source_audio_priority.c": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "megadrive/src/source_audio_priority.h": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb",
+    "megadrive/src/source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "megadrive/src/source_audio_memory.h": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9",
+    "megadrive/src/source_psg_queue.c": "3dab403ea133a1ee518c427e2fa1458e3eafe4da9b35350b6c7759d6cf342067",
+    "megadrive/src/source_psg_queue.h": "ae5de1d49bf2963a675773f5dbdfecb563dfa9354bb4ffa0208a36ec52b1bb00",
+    "tools/validate_tone_channel_timing.py": "6e7fc6fcf8210bf2190a5e8cce2a1ef74d1817a479d043cc4659bdccbc24f056",
+    "tools/validate_noise_channel_timing.py": "03fd75a2c87c17f22874c46874d8b4f4a7381e9b646fb605b45308f711d3c31f",
+    "tools/validate_sequence_timing.py": "83c29da0165372c1df178388ee9a3cb53b026a6bfec3460c614a0c0e358dc9d0",
+    "tools/build_audio_ports_core.py": "3664c6356e7296a16a9fe8ff1a29e23059f39870e27f4c49e810e3b74bfb6997",
+    "analysis/tone_channel_timing_report.json": "a56994ca504a7a1e5d865b19be062e2c3d7c3a85a680e228b57f0eead4d65ed7",
+    "analysis/tone_channel_timing_milestone.md": "ddf35ef0409b0d59a45adb218602d549f4ec78f2075ef3fc991f9435ff89f559",
+    "analysis/noise_channel_timing_report.json": "3859ce4b7bf04a15606143d8a5bcf5f9b219640d103449201a1c83f554bf7d62",
+    "validation/tone-channel-timing-run.log": "a9b4fe9d2e3556f41ff0c1d26de955ddab15e99c1fc8e311e5ebc169e30fbbd6",
+    "validation/tone-channel-timing-audio-regression.log": "6f1fe54093799f7d924ecae07599fbc846f6d8876b27778c3e90718fd4d11b2b",
+    "validation/tone-channel-timing-noise-regression.log": "611946c544807d7c22cc6a63414bd99eb8b51d7afc394b8f30a38eb00e0b9135",
+    "validation/tone-channel-timing-game-build.log": "6fe3b1026379839050bea13cccf72e1c6862c56e3909c1dc73671ba1249ec0ca",
+    "validation/audio_stream_equivalence_report.json": "b492428034b230ffb4f87872bdc22526e914ecac2e7ff1671e3d83b0f308eac2",
+    "validation/tone-channel-timing/z80-observer.txt": "4dba25803200aa179bc98ff806b20c1540c0371d5e0855895a3d16a969b1157a",
+    "validation/tone-channel-timing/memz80-observer.txt": "9bb4526ad2070797a83929d08b3822e8426b9e3f17cee1afa093d32993721e6f",
+    "validation/tone-channel-timing/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation/tone-channel-timing/kernel-0/src/main.c": "d45720e0ed61125e9e3eac065132461f757e5c46d59b4ddc9ac799a9bbac69cc",
+    "validation/tone-channel-timing/kernel-0/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/tone-channel-timing/kernel-0/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/tone-channel-timing/kernel-0/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/tone-channel-timing/kernel-0/src/source_audio_pitch.c": "14daab39bfe84dd31a0c303de97cf8cef0eb5173edb444cd5bb3e8693bd85817",
+    "validation/tone-channel-timing/kernel-0/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/tone-channel-timing/kernel-0/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/tone-channel-timing/kernel-0/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/tone-channel-timing/kernel-0/src/source_audio_tone.c": "b0f17d2564119b019d636664f736f1cb14c7cbdd03a99510e94f316a95b9e62e",
+    "validation/tone-channel-timing/kernel-0/src/source_audio_tone_timed.c": "ce4036120b7e088c3a36fb9f29bd51fa8e312ee6ca191eda5412ffadd9a40c78",
+    "validation/tone-channel-timing/kernel-0/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/tone-channel-timing/kernel-0/build.log": "b984b08ea3f00c1ae35de4314c649b4bda88cad61fd5ac66df8e9ea116ee0d65",
+    "validation/tone-channel-timing/kernel-0/out/release/symbol.txt": "12b3b39014af84ea62304cc73eee890526668119188ea2fb92241e1229afc128",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/src/main.c": "dbc0f1087a2599faf10370b067948310c04291fbdc216e33b09207a4afe3cf99",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/build.log": "771af52f898458e3b70cf46dd71df553d0e5fc190dc068950441102b140637d3",
+    "validation/tone-channel-timing/sequence-regression/kernel-0/out/release/symbol.txt": "316f86b68545ecc4b83951222097c5f41bda17a716af545bd6075425ed9facc4",
+    "validation/noise-channel-timing/kernel-0/src/main.c": "cadfec889875315c69bf6ff5959ced858ea7aa6a8f714cfb98b531867949c363",
+    "validation/noise-channel-timing/kernel-0/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/noise-channel-timing/kernel-0/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/noise-channel-timing/kernel-0/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/noise-channel-timing/kernel-0/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/noise-channel-timing/kernel-0/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/noise-channel-timing/kernel-0/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/noise-channel-timing/kernel-0/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/noise-channel-timing/kernel-0/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/noise-channel-timing/kernel-0/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/noise-channel-timing/kernel-0/build.log": "98110096c4155a724a3f77fad6d2b1d18a9f05f63f8277bd3069504cd40b2f0c",
+    "validation/noise-channel-timing/kernel-0/out/release/symbol.txt": "4f2d8709e92a486e258cea5944855cf1f58684b1bc5a6d86d3763840540d41f5",
+    "validation/noise-channel-timing/kernel-1/src/main.c": "cadfec889875315c69bf6ff5959ced858ea7aa6a8f714cfb98b531867949c363",
+    "validation/noise-channel-timing/kernel-1/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/noise-channel-timing/kernel-1/src/source_audio_envelope.c": "3bf85beb0d8fe46269d9a05ddf589ea2633150bb286d89bfc9af49fb1f172784",
+    "validation/noise-channel-timing/kernel-1/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/noise-channel-timing/kernel-1/src/source_audio_noise.c": "b96867866a9fcbb0471237bda9e6c70b2558f025e4031977d2ccb0f7d0e9a27f",
+    "validation/noise-channel-timing/kernel-1/src/source_audio_noise_timed.c": "925fab52e97cfa674a4190852b16bbd3ea632c0fde809b6057f916e4301a5f8e",
+    "validation/noise-channel-timing/kernel-1/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/noise-channel-timing/kernel-1/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/noise-channel-timing/kernel-1/src/source_audio_sequence_timed.c": "092b2e47a9661dbbdcdc72853b07da706843e017495fb87d5cfcc57aebd63454",
+    "validation/noise-channel-timing/kernel-1/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/noise-channel-timing/kernel-1/build.log": "f7e20a8d8a9d01f2b5ad08cf08aa6c7f01708d35ec2f2c3de08f91abeed51e8f",
+    "validation/noise-channel-timing/kernel-1/out/release/symbol.txt": "5137f50322b49a8a63538810bbf88532e002a92f1fad9839c16dc9a0d647f576"
+  },
+  "compressed": {
+    "validation/tone-channel-timing/held-auto-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/held-auto-calls.bin.gz",
+      "raw_sha256": "c7ab92635954c89a619c35d7862b771f18ee307410d633eab0e384195db38dce",
+      "stored_sha256": "a51a319ffdf47b05e39031496ba3611b85920b297cffbaae390eb8b31a21e5ba",
+      "raw_bytes": 2491776,
+      "stored_bytes": 61411
+    },
+    "validation/tone-channel-timing/held-auto-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/held-auto-meta.bin.gz",
+      "raw_sha256": "9b7642d92375a89d003528d689e1c10cb22c5f5bde0a4335bdc437276acdbe11",
+      "stored_sha256": "b4504d8f73a52a8bd69682b0f2c2224c33c9060d847801ba692553dc8c481952",
+      "raw_bytes": 24192,
+      "stored_bytes": 172
+    },
+    "validation/tone-channel-timing/held-auto-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/held-auto-ports.bin.gz",
+      "raw_sha256": "918882315ce1e5a69f56aa972190964410a1cdd2212f82fe2e562c6a02e8e0c2",
+      "stored_sha256": "200dfff44133bec33891cf1bc46405793bebdcdd91dcc2d85ab19516763997ba",
+      "raw_bytes": 85440,
+      "stored_bytes": 29061
+    },
+    "validation/tone-channel-timing/held-pal-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/held-auto-calls.bin.gz",
+      "raw_sha256": "c7ab92635954c89a619c35d7862b771f18ee307410d633eab0e384195db38dce",
+      "stored_sha256": "a51a319ffdf47b05e39031496ba3611b85920b297cffbaae390eb8b31a21e5ba",
+      "raw_bytes": 2491776,
+      "stored_bytes": 61411
+    },
+    "validation/tone-channel-timing/held-pal-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/held-auto-meta.bin.gz",
+      "raw_sha256": "9b7642d92375a89d003528d689e1c10cb22c5f5bde0a4335bdc437276acdbe11",
+      "stored_sha256": "b4504d8f73a52a8bd69682b0f2c2224c33c9060d847801ba692553dc8c481952",
+      "raw_bytes": 24192,
+      "stored_bytes": 172
+    },
+    "validation/tone-channel-timing/held-pal-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/held-auto-ports.bin.gz",
+      "raw_sha256": "918882315ce1e5a69f56aa972190964410a1cdd2212f82fe2e562c6a02e8e0c2",
+      "stored_sha256": "200dfff44133bec33891cf1bc46405793bebdcdd91dcc2d85ab19516763997ba",
+      "raw_bytes": 85440,
+      "stored_bytes": 29061
+    },
+    "validation/tone-channel-timing/notes-040-auto-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-040-auto-calls.bin.gz",
+      "raw_sha256": "dd45d92717cbd60f1a82229c7ceb030d6a51ba98ec675cd8c33465ef9a7ee21a",
+      "stored_sha256": "2a4110ea42f90b4a83dc447f7a07424dc648865d98ee3197cdbf95f67e286810",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24924
+    },
+    "validation/tone-channel-timing/notes-040-auto-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-040-auto-meta.bin.gz",
+      "raw_sha256": "830c1faa7ffc265827fc540d6e9b818a7521380f7f123a8f73d799159ded9f06",
+      "stored_sha256": "1965deb3844c452a1e7c64124369f35f2b0eea60af080977a3666048dde03577",
+      "raw_bytes": 9984,
+      "stored_bytes": 109
+    },
+    "validation/tone-channel-timing/notes-040-auto-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-040-auto-ports.bin.gz",
+      "raw_sha256": "04b8ee72111b61c2b5c0a834097949ccf77a0b9e7ad30e9bb91a620cba0e801b",
+      "stored_sha256": "d9cddff18c202135809ef42d238426216f4442c983b76906e5a3b83bea11ad80",
+      "raw_bytes": 37248,
+      "stored_bytes": 12832
+    },
+    "validation/tone-channel-timing/notes-040-pal-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-040-auto-calls.bin.gz",
+      "raw_sha256": "dd45d92717cbd60f1a82229c7ceb030d6a51ba98ec675cd8c33465ef9a7ee21a",
+      "stored_sha256": "2a4110ea42f90b4a83dc447f7a07424dc648865d98ee3197cdbf95f67e286810",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24924
+    },
+    "validation/tone-channel-timing/notes-040-pal-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-040-auto-meta.bin.gz",
+      "raw_sha256": "830c1faa7ffc265827fc540d6e9b818a7521380f7f123a8f73d799159ded9f06",
+      "stored_sha256": "1965deb3844c452a1e7c64124369f35f2b0eea60af080977a3666048dde03577",
+      "raw_bytes": 9984,
+      "stored_bytes": 109
+    },
+    "validation/tone-channel-timing/notes-040-pal-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-040-auto-ports.bin.gz",
+      "raw_sha256": "04b8ee72111b61c2b5c0a834097949ccf77a0b9e7ad30e9bb91a620cba0e801b",
+      "stored_sha256": "d9cddff18c202135809ef42d238426216f4442c983b76906e5a3b83bea11ad80",
+      "raw_bytes": 37248,
+      "stored_bytes": 12832
+    },
+    "validation/tone-channel-timing/notes-070-auto-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-070-auto-calls.bin.gz",
+      "raw_sha256": "107078e0913b315294ebccada50fbc3730f01be4986f1c8570b40e7aa3f8c435",
+      "stored_sha256": "ec998dbb70ed22911b3a03c37b4ecc615d831e99769d8e3c63622eb05ceccf02",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24143
+    },
+    "validation/tone-channel-timing/notes-070-auto-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-070-auto-meta.bin.gz",
+      "raw_sha256": "937775f710aa4744346668628133f92f22d78f549367385b5a5a1f2b5322ccdb",
+      "stored_sha256": "82518a7efc8429d1b7166f9acfb8a6c4fd01c0a05acceb1acbfcfcaf09785635",
+      "raw_bytes": 9984,
+      "stored_bytes": 121
+    },
+    "validation/tone-channel-timing/notes-070-auto-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-070-auto-ports.bin.gz",
+      "raw_sha256": "ff7be995e9f3fa310f61d838dd8900687c8979e18417f9f04a20985c8d630be2",
+      "stored_sha256": "f643f687e60daf9803b2bceeace6cd9c2204d1be29bb69e907aa28bc0cb82f05",
+      "raw_bytes": 37248,
+      "stored_bytes": 12941
+    },
+    "validation/tone-channel-timing/notes-070-pal-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-070-auto-calls.bin.gz",
+      "raw_sha256": "107078e0913b315294ebccada50fbc3730f01be4986f1c8570b40e7aa3f8c435",
+      "stored_sha256": "ec998dbb70ed22911b3a03c37b4ecc615d831e99769d8e3c63622eb05ceccf02",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24143
+    },
+    "validation/tone-channel-timing/notes-070-pal-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-070-auto-meta.bin.gz",
+      "raw_sha256": "937775f710aa4744346668628133f92f22d78f549367385b5a5a1f2b5322ccdb",
+      "stored_sha256": "82518a7efc8429d1b7166f9acfb8a6c4fd01c0a05acceb1acbfcfcaf09785635",
+      "raw_bytes": 9984,
+      "stored_bytes": 121
+    },
+    "validation/tone-channel-timing/notes-070-pal-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-070-auto-ports.bin.gz",
+      "raw_sha256": "ff7be995e9f3fa310f61d838dd8900687c8979e18417f9f04a20985c8d630be2",
+      "stored_sha256": "f643f687e60daf9803b2bceeace6cd9c2204d1be29bb69e907aa28bc0cb82f05",
+      "raw_bytes": 37248,
+      "stored_bytes": 12941
+    },
+    "validation/tone-channel-timing/notes-0a0-auto-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-0a0-auto-calls.bin.gz",
+      "raw_sha256": "a2559abddcd97b5ed86d7446489a7c635c057d098ea2ad875ffeb27caf18a3da",
+      "stored_sha256": "4fa4ddbd6125be328482e56c052a14e90b1eeb77104bcac4b71e745db6dae6fd",
+      "raw_bytes": 1028352,
+      "stored_bytes": 23802
+    },
+    "validation/tone-channel-timing/notes-0a0-auto-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-0a0-auto-meta.bin.gz",
+      "raw_sha256": "bc5352976fb0f9f2fb83cce15d7cf3654ec87fa7bfc61d680386a659740f912b",
+      "stored_sha256": "87688ee647e16ea0588f84c7efdba3bf3a5b889c9df8328ef09b4a401c2bf840",
+      "raw_bytes": 9984,
+      "stored_bytes": 92
+    },
+    "validation/tone-channel-timing/notes-0a0-auto-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-0a0-auto-ports.bin.gz",
+      "raw_sha256": "1dafbe1ad948f93aba40b5a2fac3b77860b79a39d26c215bf34d6ebe6d79330a",
+      "stored_sha256": "bd6a13d306075bb23344905506340fa719460cec994f378944fab39684728568",
+      "raw_bytes": 37632,
+      "stored_bytes": 12764
+    },
+    "validation/tone-channel-timing/notes-0a0-pal-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-0a0-auto-calls.bin.gz",
+      "raw_sha256": "a2559abddcd97b5ed86d7446489a7c635c057d098ea2ad875ffeb27caf18a3da",
+      "stored_sha256": "4fa4ddbd6125be328482e56c052a14e90b1eeb77104bcac4b71e745db6dae6fd",
+      "raw_bytes": 1028352,
+      "stored_bytes": 23802
+    },
+    "validation/tone-channel-timing/notes-0a0-pal-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-0a0-auto-meta.bin.gz",
+      "raw_sha256": "bc5352976fb0f9f2fb83cce15d7cf3654ec87fa7bfc61d680386a659740f912b",
+      "stored_sha256": "87688ee647e16ea0588f84c7efdba3bf3a5b889c9df8328ef09b4a401c2bf840",
+      "raw_bytes": 9984,
+      "stored_bytes": 92
+    },
+    "validation/tone-channel-timing/notes-0a0-pal-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-0a0-auto-ports.bin.gz",
+      "raw_sha256": "1dafbe1ad948f93aba40b5a2fac3b77860b79a39d26c215bf34d6ebe6d79330a",
+      "stored_sha256": "bd6a13d306075bb23344905506340fa719460cec994f378944fab39684728568",
+      "raw_bytes": 37632,
+      "stored_bytes": 12764
+    },
+    "validation/tone-channel-timing/notes-100-auto-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-100-auto-calls.bin.gz",
+      "raw_sha256": "41d0c5ca6ed416508d8678f6ea8a35e0c1f87af297e895dc7dc6e71dda4cc074",
+      "stored_sha256": "b8becde33f64f1f7879a1cf2c377ef80f26087b67ebbca6264fc85a6f48d697b",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24591
+    },
+    "validation/tone-channel-timing/notes-100-auto-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-100-auto-meta.bin.gz",
+      "raw_sha256": "44b4a602aea52426d2a53873e46f1387a8da7552648ad2b921c23f4990764ccb",
+      "stored_sha256": "942b00fe66cb180494d16e909a1c6094ad486872644f3fde1532ac71a62a688a",
+      "raw_bytes": 9984,
+      "stored_bytes": 95
+    },
+    "validation/tone-channel-timing/notes-100-auto-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-100-auto-ports.bin.gz",
+      "raw_sha256": "49cf36d10658b72ad8612c2fb4a41c15d018d0d38b3d1d84015cb281d76244f0",
+      "stored_sha256": "bce9cb8363fed1c858aca405132a0b6745bf8f48e564fa11c3a0d60b2aae02d1",
+      "raw_bytes": 37248,
+      "stored_bytes": 12690
+    },
+    "validation/tone-channel-timing/notes-100-pal-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-100-auto-calls.bin.gz",
+      "raw_sha256": "41d0c5ca6ed416508d8678f6ea8a35e0c1f87af297e895dc7dc6e71dda4cc074",
+      "stored_sha256": "b8becde33f64f1f7879a1cf2c377ef80f26087b67ebbca6264fc85a6f48d697b",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24591
+    },
+    "validation/tone-channel-timing/notes-100-pal-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-100-auto-meta.bin.gz",
+      "raw_sha256": "44b4a602aea52426d2a53873e46f1387a8da7552648ad2b921c23f4990764ccb",
+      "stored_sha256": "942b00fe66cb180494d16e909a1c6094ad486872644f3fde1532ac71a62a688a",
+      "raw_bytes": 9984,
+      "stored_bytes": 95
+    },
+    "validation/tone-channel-timing/notes-100-pal-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-100-auto-ports.bin.gz",
+      "raw_sha256": "49cf36d10658b72ad8612c2fb4a41c15d018d0d38b3d1d84015cb281d76244f0",
+      "stored_sha256": "bce9cb8363fed1c858aca405132a0b6745bf8f48e564fa11c3a0d60b2aae02d1",
+      "raw_bytes": 37248,
+      "stored_bytes": 12690
+    },
+    "validation/tone-channel-timing/notes-130-auto-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-130-auto-calls.bin.gz",
+      "raw_sha256": "ec12788d044c3455832e99ccc7df60b0f3465a3a3801d5e8f832091a2342d034",
+      "stored_sha256": "90d9feaa503918519b3096aac6e68f894b23c8058ad46742be2f768730a54b8f",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24149
+    },
+    "validation/tone-channel-timing/notes-130-auto-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-130-auto-meta.bin.gz",
+      "raw_sha256": "f5dbefc66af782a5a6abfc0eccd9c41b2da1eb0624f5daf6e057fc52bd46d778",
+      "stored_sha256": "a9e2af218c63a03a96ce1cd2f9a050afe8aa5d04f4bdfc2704c398d38354c129",
+      "raw_bytes": 9984,
+      "stored_bytes": 122
+    },
+    "validation/tone-channel-timing/notes-130-auto-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-130-auto-ports.bin.gz",
+      "raw_sha256": "81fd48011466f5f49464fa882e872ab8fee0a1461bfd256ded63053a88588ab5",
+      "stored_sha256": "0e620e327f7c20e13a3eafd88a58588da136efc1d78db46b6ff518a811e093ba",
+      "raw_bytes": 37248,
+      "stored_bytes": 12999
+    },
+    "validation/tone-channel-timing/notes-130-pal-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-130-auto-calls.bin.gz",
+      "raw_sha256": "ec12788d044c3455832e99ccc7df60b0f3465a3a3801d5e8f832091a2342d034",
+      "stored_sha256": "90d9feaa503918519b3096aac6e68f894b23c8058ad46742be2f768730a54b8f",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24149
+    },
+    "validation/tone-channel-timing/notes-130-pal-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-130-auto-meta.bin.gz",
+      "raw_sha256": "f5dbefc66af782a5a6abfc0eccd9c41b2da1eb0624f5daf6e057fc52bd46d778",
+      "stored_sha256": "a9e2af218c63a03a96ce1cd2f9a050afe8aa5d04f4bdfc2704c398d38354c129",
+      "raw_bytes": 9984,
+      "stored_bytes": 122
+    },
+    "validation/tone-channel-timing/notes-130-pal-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-130-auto-ports.bin.gz",
+      "raw_sha256": "81fd48011466f5f49464fa882e872ab8fee0a1461bfd256ded63053a88588ab5",
+      "stored_sha256": "0e620e327f7c20e13a3eafd88a58588da136efc1d78db46b6ff518a811e093ba",
+      "raw_bytes": 37248,
+      "stored_bytes": 12999
+    },
+    "validation/tone-channel-timing/notes-160-auto-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-160-auto-calls.bin.gz",
+      "raw_sha256": "a06ea8e83ea895c835308dd52a40423e0f0b013d384402665b5283b4422f78c7",
+      "stored_sha256": "c4011ab1e1459121050884bbdeb610840a9245a24778d86ed50f8a4acc1e218d",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24116
+    },
+    "validation/tone-channel-timing/notes-160-auto-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-100-auto-meta.bin.gz",
+      "raw_sha256": "44b4a602aea52426d2a53873e46f1387a8da7552648ad2b921c23f4990764ccb",
+      "stored_sha256": "942b00fe66cb180494d16e909a1c6094ad486872644f3fde1532ac71a62a688a",
+      "raw_bytes": 9984,
+      "stored_bytes": 95
+    },
+    "validation/tone-channel-timing/notes-160-auto-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-160-auto-ports.bin.gz",
+      "raw_sha256": "79a187d852870d603c0e7d608951334c0c05cf9e5ae8b7efcd109187492462e1",
+      "stored_sha256": "45557090676c3d0e64ab163d6c8804168ddaf93b3d253af42076537af93f81d4",
+      "raw_bytes": 37248,
+      "stored_bytes": 12758
+    },
+    "validation/tone-channel-timing/notes-160-pal-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-160-auto-calls.bin.gz",
+      "raw_sha256": "a06ea8e83ea895c835308dd52a40423e0f0b013d384402665b5283b4422f78c7",
+      "stored_sha256": "c4011ab1e1459121050884bbdeb610840a9245a24778d86ed50f8a4acc1e218d",
+      "raw_bytes": 1028352,
+      "stored_bytes": 24116
+    },
+    "validation/tone-channel-timing/notes-160-pal-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-100-auto-meta.bin.gz",
+      "raw_sha256": "44b4a602aea52426d2a53873e46f1387a8da7552648ad2b921c23f4990764ccb",
+      "stored_sha256": "942b00fe66cb180494d16e909a1c6094ad486872644f3fde1532ac71a62a688a",
+      "raw_bytes": 9984,
+      "stored_bytes": 95
+    },
+    "validation/tone-channel-timing/notes-160-pal-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/notes-160-auto-ports.bin.gz",
+      "raw_sha256": "79a187d852870d603c0e7d608951334c0c05cf9e5ae8b7efcd109187492462e1",
+      "stored_sha256": "45557090676c3d0e64ab163d6c8804168ddaf93b3d253af42076537af93f81d4",
+      "raw_bytes": 37248,
+      "stored_bytes": 12758
+    },
+    "validation/tone-channel-timing/retained-auto-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/retained-auto-calls.bin.gz",
+      "raw_sha256": "0005c4b3ac203c30bad15bad9041c1ee556594c885abb420f90c848bcadc9f01",
+      "stored_sha256": "18e4c20c1205802dd5758923034e3c6bc135a760f777c4dae0feeca017bc367e",
+      "raw_bytes": 8520160,
+      "stored_bytes": 251497
+    },
+    "validation/tone-channel-timing/retained-auto-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/retained-auto-meta.bin.gz",
+      "raw_sha256": "d9a2031580992933eda928d0ade81659382f558187e92fb4cbad7411f38a9a37",
+      "stored_sha256": "99c498896af2fae783ae6fdd38fe019bbdcaa9faa18107bfcd4c21554232cabe",
+      "raw_bytes": 82720,
+      "stored_bytes": 1562
+    },
+    "validation/tone-channel-timing/retained-auto-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/retained-auto-ports.bin.gz",
+      "raw_sha256": "3f90663350b5f2377607fe03a8919b5ee6fcc4b86732a86f936e4c530fcf7bc9",
+      "stored_sha256": "dfa6ee7b118e20ed2121e7a15d64525fe73401d7f33499af1337c8fcfd068781",
+      "raw_bytes": 286848,
+      "stored_bytes": 99864
+    },
+    "validation/tone-channel-timing/retained-pal-calls.bin.gz": {
+      "stored": "validation/tone-channel-timing/retained-auto-calls.bin.gz",
+      "raw_sha256": "0005c4b3ac203c30bad15bad9041c1ee556594c885abb420f90c848bcadc9f01",
+      "stored_sha256": "18e4c20c1205802dd5758923034e3c6bc135a760f777c4dae0feeca017bc367e",
+      "raw_bytes": 8520160,
+      "stored_bytes": 251497
+    },
+    "validation/tone-channel-timing/retained-pal-meta.bin.gz": {
+      "stored": "validation/tone-channel-timing/retained-auto-meta.bin.gz",
+      "raw_sha256": "d9a2031580992933eda928d0ade81659382f558187e92fb4cbad7411f38a9a37",
+      "stored_sha256": "99c498896af2fae783ae6fdd38fe019bbdcaa9faa18107bfcd4c21554232cabe",
+      "raw_bytes": 82720,
+      "stored_bytes": 1562
+    },
+    "validation/tone-channel-timing/retained-pal-ports.bin.gz": {
+      "stored": "validation/tone-channel-timing/retained-auto-ports.bin.gz",
+      "raw_sha256": "3f90663350b5f2377607fe03a8919b5ee6fcc4b86732a86f936e4c530fcf7bc9",
+      "stored_sha256": "dfa6ee7b118e20ed2121e7a15d64525fe73401d7f33499af1337c8fcfd068781",
+      "raw_bytes": 286848,
+      "stored_bytes": 99864
+    },
+    "validation/tone-channel-timing/held.sms": {
+      "stored": "validation/tone-channel-timing/held.sms.gz",
+      "raw_sha256": "cfd06d945081993f67724dd14dccfb0a62f958597d0dfc25c1a949f13362f494",
+      "stored_sha256": "de5e61dbc60850d5c042df72203ba902b44085ce87755aad636e28199496ad39",
+      "raw_bytes": 2097152,
+      "stored_bytes": 156997
+    },
+    "validation/tone-channel-timing/notes-040.sms": {
+      "stored": "validation/tone-channel-timing/notes-040.sms.gz",
+      "raw_sha256": "a720008b2002d248ace8541a05bc70ef66e983d3b8856a4d220ff4ef44c5d61c",
+      "stored_sha256": "c704fd35a73b14c3d7fd81fe7cfb0854e4679b74d96b1ee893db6da8fd9cd083",
+      "raw_bytes": 2097152,
+      "stored_bytes": 152028
+    },
+    "validation/tone-channel-timing/notes-070.sms": {
+      "stored": "validation/tone-channel-timing/notes-070.sms.gz",
+      "raw_sha256": "e087254de639507b285c4583cbf5bd7712be8d8052de2d0d7ce75280702edbd6",
+      "stored_sha256": "4a7f2721af76a8c1d5cf492fe57208146e8e5c6c41d1094f7b2e1180d305aba1",
+      "raw_bytes": 2097152,
+      "stored_bytes": 152025
+    },
+    "validation/tone-channel-timing/notes-0a0.sms": {
+      "stored": "validation/tone-channel-timing/notes-0a0.sms.gz",
+      "raw_sha256": "cb2a97bcae4d21bfca645570483345d0e626c13deaab79ebba7f45701d3af118",
+      "stored_sha256": "71b32ac29cb8126983c095a05591810ef2a364ad73a852a81d1a79c4ae79d58b",
+      "raw_bytes": 2097152,
+      "stored_bytes": 152013
+    },
+    "validation/tone-channel-timing/notes-100.sms": {
+      "stored": "validation/tone-channel-timing/notes-100.sms.gz",
+      "raw_sha256": "cae3a5a8a07f7f8e1763a8f253e5b2c8f557281919710985be4a03a16387c2db",
+      "stored_sha256": "f184865aac8755d023e59df8d8eca588c497e780327c18c8e800dc8b73d5b309",
+      "raw_bytes": 2097152,
+      "stored_bytes": 152025
+    },
+    "validation/tone-channel-timing/notes-130.sms": {
+      "stored": "validation/tone-channel-timing/notes-130.sms.gz",
+      "raw_sha256": "53b2d9dc73c06b99a56b34e7e2ae8f58bdc1069dde0b97eff3a5de0ee3eac1f0",
+      "stored_sha256": "f1562d1fdc322fe1017c9788b5efd7e71b4d734d3904d89b158d76497fc303f2",
+      "raw_bytes": 2097152,
+      "stored_bytes": 152028
+    },
+    "validation/tone-channel-timing/notes-160.sms": {
+      "stored": "validation/tone-channel-timing/notes-160.sms.gz",
+      "raw_sha256": "a982a94185f94b8beb9f796f5fd7775d2400419dfa56ef1a77f091aadee1f6d2",
+      "stored_sha256": "1a304a084036a421c8e727e1edaf1f7cf21197f4468a15ad3ecd66a74bb83afa",
+      "raw_bytes": 2097152,
+      "stored_bytes": 152027
+    },
+    "validation/tone-channel-timing/retained.sms": {
+      "stored": "validation/tone-channel-timing/retained.sms.gz",
+      "raw_sha256": "3a7efc97d6b268ba78e8bec469e5ec59dfaa568199fd6358b5d2cb88ee58e30a",
+      "stored_sha256": "95143fd67177168b5db156176bdf321b1cb979e96a0c6439b2888bbb61a0afb1",
+      "raw_bytes": 2097152,
+      "stored_bytes": 179903
+    },
+    "validation/tone-channel-timing/events.json": {
+      "stored": "validation/tone-channel-timing/events.json.gz",
+      "raw_sha256": "e17d53eb7afceb4cdb55c65c1ad75890df6d606f3c7b4d25009a7d6b4ee74a6f",
+      "stored_sha256": "4f37223c086be613af4e1034b556dc2240dc08fab516ed2f0c8b57a0deeb6431",
+      "raw_bytes": 800068,
+      "stored_bytes": 22317
+    },
+    "validation/native-audio-tone/cases.json": {
+      "stored": "validation/native-audio-tone/cases.json.gz",
+      "raw_sha256": "f20384c68e9528e44e3b3742f85c14058f99aa04392d260f8d0d0f88ab5550c5",
+      "stored_sha256": "c06c305f641e521003d38e178542daff39b5a091bdebc514d94241375e19b2a5",
+      "raw_bytes": 1674534,
+      "stored_bytes": 87191
+    },
+    "validation/native-audio-tone/extension-cases.json": {
+      "stored": "validation/native-audio-tone/extension-cases.json.gz",
+      "raw_sha256": "5ee2de1f0692907018274fc3ac282c25562d697a26ac9df8ad9c0afc399bbc99",
+      "stored_sha256": "a21e47c3264d1eb25ac2390705ff0b3e0b8643474694ced355ff85150ca38ad7",
+      "raw_bytes": 1974514,
+      "stored_bytes": 63189
+    },
+    "validation/tone-channel-timing/kernel-0/src/expected.h": {
+      "stored": "validation/tone-channel-timing/kernel-0/src/expected.h.gz",
+      "raw_sha256": "2401753d2619e078df08eba0a7e2eecf99306726590b4bb42b97b83ac388bc50",
+      "stored_sha256": "dfc9f5f8a3a59946904f1c4be7d5e9bdf84e4cbaaabb9d8eb28fafab5572c1a0",
+      "raw_bytes": 3736099,
+      "stored_bytes": 405490
+    },
+    "validation/tone-channel-timing/kernel-0/out/release/rom.bin": {
+      "stored": "validation/tone-channel-timing/kernel-0/out/release/rom.bin.gz",
+      "raw_sha256": "8c280aeac39b852cd672caa07c5750d71657f87430ba0f712898a20a6beff4dc",
+      "stored_sha256": "a8087d1be31c62d22ec4841eedb3ae56b1f0bf2dae042ddc101a979367d49303",
+      "raw_bytes": 2228224,
+      "stored_bytes": 345583
+    },
+    "validation/tone-channel-timing/sequence-regression/kernel-0/src/expected.h": {
+      "stored": "validation/tone-channel-timing/sequence-regression/kernel-0/src/expected.h.gz",
+      "raw_sha256": "490c059970f531d5cc15cac4866c0b413b2dfec83865ff1ed41fc2888cd88e80",
+      "stored_sha256": "32e28df492615a11fd15be9ec9ecf647078c952a56a6f3b4457f11fc0c1be945",
+      "raw_bytes": 941398,
+      "stored_bytes": 123572
+    },
+    "validation/tone-channel-timing/sequence-regression/kernel-0/out/release/rom.bin": {
+      "stored": "validation/tone-channel-timing/sequence-regression/kernel-0/out/release/rom.bin.gz",
+      "raw_sha256": "caf9cda16da5e6d529dcea510bb378110014a79b30e885961886a9d7a318bed0",
+      "stored_sha256": "db27e37163b82907b87848c1b41a2c3758cedb3a4b7910ebdd5148e9d56dd67c",
+      "raw_bytes": 524288,
+      "stored_bytes": 114402
+    },
+    "validation/noise-channel-timing/kernel-0/src/expected.h": {
+      "stored": "validation/noise-channel-timing/kernel-0/src/expected.h.gz",
+      "raw_sha256": "c1f5fc05160e453289bd3857de6e0d6a5ecfa73278482a8cec9632a90a4a3fd2",
+      "stored_sha256": "a7883dbcf1d1f07f8478d5a6f8264977462f94cb3d38c7d7192a1f11384775a5",
+      "raw_bytes": 3837885,
+      "stored_bytes": 347621
+    },
+    "validation/noise-channel-timing/kernel-0/out/release/rom.bin": {
+      "stored": "validation/noise-channel-timing/kernel-0/out/release/rom.bin.gz",
+      "raw_sha256": "b17d742c909bc98d9627d8e164e7b7c323c85e38bb85bf1cef872070ab42026a",
+      "stored_sha256": "1466d33f1c3813bf8ee2bec916d7784ff4409bea670f00ffac12360cf846beea",
+      "raw_bytes": 2359296,
+      "stored_bytes": 309657
+    },
+    "validation/noise-channel-timing/kernel-1/src/expected.h": {
+      "stored": "validation/noise-channel-timing/kernel-1/src/expected.h.gz",
+      "raw_sha256": "a0af4f79bfd100adcf4194b3836d7b33b50a215f0a03d9209744d7f53b36f516",
+      "stored_sha256": "41fbc9bd1a27743941e559edf6d25f9a7faa9cf9153c5eff6301b44991d6023b",
+      "raw_bytes": 1718609,
+      "stored_bytes": 273595
+    },
+    "validation/noise-channel-timing/kernel-1/out/release/rom.bin": {
+      "stored": "validation/noise-channel-timing/kernel-1/out/release/rom.bin.gz",
+      "raw_sha256": "b6e5220842b2cb6e024c82f6eb9870f98d25f18922526f50d15de87b4c6392fa",
+      "stored_sha256": "8480b530c107e8632f9015b0877ef91ad28f80214331d9790c509c9ae5a5f655",
+      "raw_bytes": 917504,
+      "stored_bytes": 234924
+    }
+  }
+}

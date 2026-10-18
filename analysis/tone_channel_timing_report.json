@@ -1,0 +1,273 @@
+{
+  "results": [
+    {
+      "kind": "retained",
+      "region": "auto",
+      "cases": 10340,
+      "writes": 17928,
+      "frames": 1857,
+      "raw_sha256": {
+        "calls": "0005c4b3ac203c30bad15bad9041c1ee556594c885abb420f90c848bcadc9f01",
+        "ports": "3f90663350b5f2377607fe03a8919b5ee6fcc4b86732a86f936e4c530fcf7bc9",
+        "meta": "d9a2031580992933eda928d0ade81659382f558187e92fb4cbad7411f38a9a37"
+      },
+      "fixture_sha256": "3a7efc97d6b268ba78e8bec469e5ec59dfaa568199fd6358b5d2cb88ee58e30a"
+    },
+    {
+      "kind": "retained",
+      "region": "pal",
+      "cases": 10340,
+      "writes": 17928,
+      "frames": 1555,
+      "raw_sha256": {
+        "calls": "0005c4b3ac203c30bad15bad9041c1ee556594c885abb420f90c848bcadc9f01",
+        "ports": "3f90663350b5f2377607fe03a8919b5ee6fcc4b86732a86f936e4c530fcf7bc9",
+        "meta": "d9a2031580992933eda928d0ade81659382f558187e92fb4cbad7411f38a9a37"
+      },
+      "fixture_sha256": "3a7efc97d6b268ba78e8bec469e5ec59dfaa568199fd6358b5d2cb88ee58e30a"
+    },
+    {
+      "kind": "notes-040",
+      "region": "auto",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 229,
+      "raw_sha256": {
+        "calls": "dd45d92717cbd60f1a82229c7ceb030d6a51ba98ec675cd8c33465ef9a7ee21a",
+        "ports": "04b8ee72111b61c2b5c0a834097949ccf77a0b9e7ad30e9bb91a620cba0e801b",
+        "meta": "830c1faa7ffc265827fc540d6e9b818a7521380f7f123a8f73d799159ded9f06"
+      },
+      "fixture_sha256": "a720008b2002d248ace8541a05bc70ef66e983d3b8856a4d220ff4ef44c5d61c"
+    },
+    {
+      "kind": "notes-040",
+      "region": "pal",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 192,
+      "raw_sha256": {
+        "calls": "dd45d92717cbd60f1a82229c7ceb030d6a51ba98ec675cd8c33465ef9a7ee21a",
+        "ports": "04b8ee72111b61c2b5c0a834097949ccf77a0b9e7ad30e9bb91a620cba0e801b",
+        "meta": "830c1faa7ffc265827fc540d6e9b818a7521380f7f123a8f73d799159ded9f06"
+      },
+      "fixture_sha256": "a720008b2002d248ace8541a05bc70ef66e983d3b8856a4d220ff4ef44c5d61c"
+    },
+    {
+      "kind": "notes-070",
+      "region": "auto",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 229,
+      "raw_sha256": {
+        "calls": "107078e0913b315294ebccada50fbc3730f01be4986f1c8570b40e7aa3f8c435",
+        "ports": "ff7be995e9f3fa310f61d838dd8900687c8979e18417f9f04a20985c8d630be2",
+        "meta": "937775f710aa4744346668628133f92f22d78f549367385b5a5a1f2b5322ccdb"
+      },
+      "fixture_sha256": "e087254de639507b285c4583cbf5bd7712be8d8052de2d0d7ce75280702edbd6"
+    },
+    {
+      "kind": "notes-070",
+      "region": "pal",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 192,
+      "raw_sha256": {
+        "calls": "107078e0913b315294ebccada50fbc3730f01be4986f1c8570b40e7aa3f8c435",
+        "ports": "ff7be995e9f3fa310f61d838dd8900687c8979e18417f9f04a20985c8d630be2",
+        "meta": "937775f710aa4744346668628133f92f22d78f549367385b5a5a1f2b5322ccdb"
+      },
+      "fixture_sha256": "e087254de639507b285c4583cbf5bd7712be8d8052de2d0d7ce75280702edbd6"
+    },
+    {
+      "kind": "notes-0a0",
+      "region": "auto",
+      "cases": 1248,
+      "writes": 2352,
+      "frames": 229,
+      "raw_sha256": {
+        "calls": "a2559abddcd97b5ed86d7446489a7c635c057d098ea2ad875ffeb27caf18a3da",
+        "ports": "1dafbe1ad948f93aba40b5a2fac3b77860b79a39d26c215bf34d6ebe6d79330a",
+        "meta": "bc5352976fb0f9f2fb83cce15d7cf3654ec87fa7bfc61d680386a659740f912b"
+      },
+      "fixture_sha256": "cb2a97bcae4d21bfca645570483345d0e626c13deaab79ebba7f45701d3af118"
+    },
+    {
+      "kind": "notes-0a0",
+      "region": "pal",
+      "cases": 1248,
+      "writes": 2352,
+      "frames": 192,
+      "raw_sha256": {
+        "calls": "a2559abddcd97b5ed86d7446489a7c635c057d098ea2ad875ffeb27caf18a3da",
+        "ports": "1dafbe1ad948f93aba40b5a2fac3b77860b79a39d26c215bf34d6ebe6d79330a",
+        "meta": "bc5352976fb0f9f2fb83cce15d7cf3654ec87fa7bfc61d680386a659740f912b"
+      },
+      "fixture_sha256": "cb2a97bcae4d21bfca645570483345d0e626c13deaab79ebba7f45701d3af118"
+    },
+    {
+      "kind": "notes-100",
+      "region": "auto",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 229,
+      "raw_sha256": {
+        "calls": "41d0c5ca6ed416508d8678f6ea8a35e0c1f87af297e895dc7dc6e71dda4cc074",
+        "ports": "49cf36d10658b72ad8612c2fb4a41c15d018d0d38b3d1d84015cb281d76244f0",
+        "meta": "44b4a602aea52426d2a53873e46f1387a8da7552648ad2b921c23f4990764ccb"
+      },
+      "fixture_sha256": "cae3a5a8a07f7f8e1763a8f253e5b2c8f557281919710985be4a03a16387c2db"
+    },
+    {
+      "kind": "notes-100",
+      "region": "pal",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 192,
+      "raw_sha256": {
+        "calls": "41d0c5ca6ed416508d8678f6ea8a35e0c1f87af297e895dc7dc6e71dda4cc074",
+        "ports": "49cf36d10658b72ad8612c2fb4a41c15d018d0d38b3d1d84015cb281d76244f0",
+        "meta": "44b4a602aea52426d2a53873e46f1387a8da7552648ad2b921c23f4990764ccb"
+      },
+      "fixture_sha256": "cae3a5a8a07f7f8e1763a8f253e5b2c8f557281919710985be4a03a16387c2db"
+    },
+    {
+      "kind": "notes-130",
+      "region": "auto",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 229,
+      "raw_sha256": {
+        "calls": "ec12788d044c3455832e99ccc7df60b0f3465a3a3801d5e8f832091a2342d034",
+        "ports": "81fd48011466f5f49464fa882e872ab8fee0a1461bfd256ded63053a88588ab5",
+        "meta": "f5dbefc66af782a5a6abfc0eccd9c41b2da1eb0624f5daf6e057fc52bd46d778"
+      },
+      "fixture_sha256": "53b2d9dc73c06b99a56b34e7e2ae8f58bdc1069dde0b97eff3a5de0ee3eac1f0"
+    },
+    {
+      "kind": "notes-130",
+      "region": "pal",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 192,
+      "raw_sha256": {
+        "calls": "ec12788d044c3455832e99ccc7df60b0f3465a3a3801d5e8f832091a2342d034",
+        "ports": "81fd48011466f5f49464fa882e872ab8fee0a1461bfd256ded63053a88588ab5",
+        "meta": "f5dbefc66af782a5a6abfc0eccd9c41b2da1eb0624f5daf6e057fc52bd46d778"
+      },
+      "fixture_sha256": "53b2d9dc73c06b99a56b34e7e2ae8f58bdc1069dde0b97eff3a5de0ee3eac1f0"
+    },
+    {
+      "kind": "notes-160",
+      "region": "auto",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 229,
+      "raw_sha256": {
+        "calls": "a06ea8e83ea895c835308dd52a40423e0f0b013d384402665b5283b4422f78c7",
+        "ports": "79a187d852870d603c0e7d608951334c0c05cf9e5ae8b7efcd109187492462e1",
+        "meta": "44b4a602aea52426d2a53873e46f1387a8da7552648ad2b921c23f4990764ccb"
+      },
+      "fixture_sha256": "a982a94185f94b8beb9f796f5fd7775d2400419dfa56ef1a77f091aadee1f6d2"
+    },
+    {
+      "kind": "notes-160",
+      "region": "pal",
+      "cases": 1248,
+      "writes": 2328,
+      "frames": 192,
+      "raw_sha256": {
+        "calls": "a06ea8e83ea895c835308dd52a40423e0f0b013d384402665b5283b4422f78c7",
+        "ports": "79a187d852870d603c0e7d608951334c0c05cf9e5ae8b7efcd109187492462e1",
+        "meta": "44b4a602aea52426d2a53873e46f1387a8da7552648ad2b921c23f4990764ccb"
+      },
+      "fixture_sha256": "a982a94185f94b8beb9f796f5fd7775d2400419dfa56ef1a77f091aadee1f6d2"
+    },
+    {
+      "kind": "held",
+      "region": "auto",
+      "cases": 3024,
+      "writes": 5340,
+      "frames": 515,
+      "raw_sha256": {
+        "calls": "c7ab92635954c89a619c35d7862b771f18ee307410d633eab0e384195db38dce",
+        "ports": "918882315ce1e5a69f56aa972190964410a1cdd2212f82fe2e562c6a02e8e0c2",
+        "meta": "9b7642d92375a89d003528d689e1c10cb22c5f5bde0a4335bdc437276acdbe11"
+      },
+      "fixture_sha256": "cfd06d945081993f67724dd14dccfb0a62f958597d0dfc25c1a949f13362f494"
+    },
+    {
+      "kind": "held",
+      "region": "pal",
+      "cases": 3024,
+      "writes": 5340,
+      "frames": 431,
+      "raw_sha256": {
+        "calls": "c7ab92635954c89a619c35d7862b771f18ee307410d633eab0e384195db38dce",
+        "ports": "918882315ce1e5a69f56aa972190964410a1cdd2212f82fe2e562c6a02e8e0c2",
+        "meta": "9b7642d92375a89d003528d689e1c10cb22c5f5bde0a4335bdc437276acdbe11"
+      },
+      "fixture_sha256": "cfd06d945081993f67724dd14dccfb0a62f958597d0dfc25c1a949f13362f494"
+    }
+  ],
+  "compiled": [
+    {
+      "part": 0,
+      "region": "auto",
+      "kernel_sha256": "8c280aeac39b852cd672caa07c5750d71657f87430ba0f712898a20a6beff4dc",
+      "frame": 5923,
+      "done": 1,
+      "cases": 20852,
+      "writes": 37260,
+      "failures": 0
+    },
+    {
+      "part": 0,
+      "region": "pal",
+      "kernel_sha256": "8c280aeac39b852cd672caa07c5750d71657f87430ba0f712898a20a6beff4dc",
+      "frame": 4956,
+      "done": 1,
+      "cases": 20852,
+      "writes": 37260,
+      "failures": 0
+    }
+  ],
+  "host_rejection_capacity_cases": 10,
+  "core_sha256": "ffadf192c7c93bb35a9086fe4c12b088d95d36cab07fa14dce0b3fc911aad81e",
+  "sources": {
+    "source_audio_tone_timed": "7cd41ea9933d6b627322f8ca988de7ee05d5795e839d1462fab3aa5a6a7c0dbf",
+    "source_audio_tone": "73551d475a0ca1cecb45590b2d0adabab85d694c10b97b4086e0f5e2662ac6dd",
+    "source_audio_sequence_timed": "ace5c4b83ca43928aa453c30fa7c2d72c7e1bd49bfb782407408545e641ea888",
+    "source_audio_sequence": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_priority": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
+    "source_psg_queue": "3dab403ea133a1ee518c427e2fa1458e3eafe4da9b35350b6c7759d6cf342067"
+  },
+  "limits": [
+    "Original84C7 fixtures with only caller hold removed. Full source input/all400 output bytes,T,DE/reader exit and actual PSG handler byte/timestamp list compared. M1 uses existing source-verified vectors. Normal native channel also compared to the timed composition.",
+    "Compiled68000 PAL/NTSC checks state/work and source byte/timestamp lists, then queue roundtrips. No full timed8000 reader or physical clock/pacing/waveform proof."
+  ],
+  "sequence_harness_regression": [
+    {
+      "part": 0,
+      "region": "auto",
+      "kernel_sha256": "caf9cda16da5e6d529dcea510bb378110014a79b30e885961886a9d7a318bed0",
+      "frame": 1000,
+      "done": 1,
+      "cases": 3840,
+      "writes": 5208,
+      "failures": 0
+    },
+    {
+      "part": 0,
+      "region": "pal",
+      "kernel_sha256": "caf9cda16da5e6d529dcea510bb378110014a79b30e885961886a9d7a318bed0",
+      "frame": 837,
+      "done": 1,
+      "cases": 3840,
+      "writes": 5208,
+      "failures": 0
+    }
+  ]
+}
