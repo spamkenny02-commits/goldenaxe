@@ -39,6 +39,12 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+Le canal bruit complet produit ses écritures PSG horodatées : **30 670 cas
+et 23 759 écritures par région** concordent avec la SMS et passent en 68000
+PAL/NTSC, avec les commandes, enveloppes et fins de bruitage. Les fréquences,
+les commandes globales et le lecteur complet restent à composer et intégrer.
+Voir le [jalon du canal bruit horodaté](analysis/noise_channel_timing_milestone.md).
+
 Les séquences de notes et commandes produisent maintenant des horodatages
 par octet PSG : **85 760 cas et 5 888 écritures par région** concordent avec
 la SMS, puis passent en 68000 PAL/NTSC avec publication dans la file native.

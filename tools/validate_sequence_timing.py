@@ -105,44 +105,48 @@ def main():
     report=dict(results=results,compiled=compiled,host_rejection_capacity_cases=boundary_cases,core_sha256=hashlib.sha256(core.read_bytes()).hexdigest(),sources={name:hashlib.sha256((ROOT/'megadrive/src'/(name+'.c')).read_bytes()).hexdigest() for name in MODULES},limits=['Original8357 fixtures with only custom caller hold removed. All400 bytes,T,DE/unwind and every completed-OUT cycle/data compared; M1 uses retained source vectors. Separate timed composition reuses authoritative C with optional sidecar stores; default semantic outputs also compared.','Compiled68000 PAL/NTSC also checks retained state/work and source-observed byte/timestamp lists, then native queue roundtrips. Noise8655 variant still needs its source oracle. No complete timed8000 reader or physical clock/pacing proof.'])
     (ROOT/'analysis/sequence_timing_report.json').write_text(json.dumps(report,indent=2)+'\n')
 
-def compiled_check(base,suites,events,sdk,env):
+def compiled_check(base,suites,events,sdk,env,noise=False,modules=None):
+    modules=MODULES if modules is None else modules
     rows=[(index,row,event) for index,suite in enumerate(suites) for row,event in zip(suite['cases'],events[index]['events'])]
     assert all(len(s['cases'])==len(events[n]['events']) and s['kind']==events[n]['kind'] for n,s in enumerate(suites))
     fields=sorted({offset for _,row,_ in rows for offset,value in row['patches']});assert len(fields)<=255
     lows=[(ROOT/s['fixture']).read_bytes()[:32768] for s in suites];bank=(ROOT/'input/original.sms').read_bytes()[0x18000:0x1c000]
+    seeds=[bytes(s.get('seed',[(i*37+17)&255 for i in range(400)])) for s in suites]
+    max_events=max(1,max(len(event['writes']) for _,_,event in rows));queue_capacity=1
+    while queue_capacity<max_events:queue_capacity*=2
     results=[]
     for part,start in enumerate(range(0,len(rows),25000)):
         selected=rows[start:start+25000];kernel=base/f'kernel-{part}';src=kernel/'src';src.mkdir(parents=True,exist_ok=True)
         max_patches=max(len(row['patches']) for _,row,_ in selected)
-        lines=['static const u8 low[][32768]={'+','.join('{'+','.join(map(str,raw))+'}' for raw in lows)+'};','static const u8 bank6[]={'+','.join(map(str,bank))+'};','static const u16 fields[]={'+','.join(map(str,fields))+'};','static const u8 offset_count[]={'+','.join(str(len(s['offsets'])) for s in suites)+'};','static const u16 offsets[][16]={'+','.join('{'+','.join(map(str,s['offsets']))+'}' for s in suites)+'};',f'typedef struct {{u8 suite,patch_count,unwind,count,input[16],patches[{max_patches*2}],writes[2];u16 de;u32 tstates,fetches,times[2];}} TimedCase;','static const TimedCase cases[]={']
+        lines=['static const u8 low[][32768]={'+','.join('{'+','.join(map(str,raw))+'}' for raw in lows)+'};','static const u8 seed[][400]={'+','.join('{'+','.join(map(str,raw))+'}' for raw in seeds)+'};','static const u8 bank6[]={'+','.join(map(str,bank))+'};','static const u16 fields[]={'+','.join(map(str,fields))+'};','static const u8 offset_count[]={'+','.join(str(len(s['offsets'])) for s in suites)+'};','static const u16 offsets[][16]={'+','.join('{'+','.join(map(str,s['offsets']))+'}' for s in suites)+'};',f'typedef struct {{u8 suite,patch_count,unwind,count,input[16],patches[{max_patches*2}],writes[{max_events}];u16 de_in,de;u32 tstates,fetches,times[{max_events}];}} TimedCase;','static const TimedCase cases[]={']
         for index,row,event in selected:
             patches=[v for offset,value in row['patches'] for v in [fields.index(offset),value]]
-            lines.append('{'+','.join(map(str,[index,len(row['patches']),row['unwind'],len(event['writes'])]))+',{'+','.join(map(str,row['input']))+'},{'+','.join(map(str,patches))+'},{'+','.join(map(str,event['writes']))+'},'+str(row['de'])+','+str(row['tstates'])+'UL,'+str(row['fetches'])+'UL,{'+','.join(str(t)+'UL' for t in event['times'])+'}},')
+            lines.append('{'+','.join(map(str,[index,len(row['patches']),row['unwind'],len(event['writes'])]))+',{'+','.join(map(str,row['input']))+'},{'+','.join(map(str,patches))+'},{'+','.join(map(str,event['writes']))+'},'+str(row.get('de_in',0))+','+str(row['de'])+','+str(row['tstates'])+'UL,'+str(row['fetches'])+'UL,{'+','.join(str(t)+'UL' for t in event['times'])+'}},')
         lines.append('};');(src/'expected.h').write_text('\n'.join(lines)+'\n')
-        for name in MODULES:(src/(name+'.c')).write_text('#include "../../../../megadrive/src/'+name+'.c"\n')
-        (src/'main.c').write_text('''#include <genesis.h>
+        for name in modules:(src/(name+'.c')).write_text('#include "../../../../megadrive/src/'+name+'.c"\n')
+        main='''#include <genesis.h>
 #include "../../../../megadrive/src/source_audio_timed.h"
 #include "expected.h"
 volatile u32 gaw_sequence_cases,gaw_sequence_failures,gaw_sequence_writes;volatile u16 gaw_sequence_done;
 static SourceAudioTimedSequenceOutput output;
 int main(bool hard_reset)
 {
- u32 row,epoch;u16 n;u8 state[400],expected[400],value;SourceClockWork work;SourcePsgQueue queue;SourcePsgEvent storage[2],pending[2],delivered;VDP_setEnable(FALSE);
+ u32 row,epoch;u16 n,de;u8 state[400],expected[400];SourceClockWork work;SourcePsgQueue queue;SourcePsgEvent storage[QUEUE_CAPACITY],pending[MAX_EVENTS],delivered;VDP_setEnable(FALSE);
  for(row=0;row<sizeof(cases)/sizeof(cases[0]);row++)
  {
-  const TimedCase *p=cases+row;epoch=0xffff0000UL+row*225;value=17;
-  for(n=0;n<400;n++) {state[n]=value;value+=37;}
+  const TimedCase *p=cases+row;epoch=0xffff0000UL+row*225;de=p->de_in;(void)de;
+  for(n=0;n<400;n++) state[n]=seed[p->suite][n];
   for(n=0;n<offset_count[p->suite];n++) state[offsets[p->suite][n]]=p->input[n];
   for(n=0;n<400;n++) expected[n]=state[n];
   for(n=0;n<p->patch_count;n++) expected[fields[p->patches[n*2]]]=p->patches[n*2+1];
-  if(!source_audio_sequence_timed(state,0x40,low[p->suite],32768,bank6,&work,&output) || output.error || output.count!=p->count || output.de!=p->de || output.unwind!=p->unwind || work.tstates!=p->tstates || work.fetches!=p->fetches) gaw_sequence_failures++;
+  if(!TIMED_CALL || output.error || output.count!=p->count || output.de!=p->de || output.unwind!=p->unwind || work.tstates!=p->tstates || work.fetches!=p->fetches EXTRA_CHECK) gaw_sequence_failures++;
   for(n=0;n<400;n++) if(state[n]!=expected[n]) gaw_sequence_failures++;
   for(n=0;n<p->count;n++)
   {
    if(output.writes[n]!=p->writes[n] || output.write_tstates[n]!=p->times[n]) gaw_sequence_failures++;
    pending[n].due=epoch+output.write_tstates[n]*15;pending[n].value=output.writes[n];
   }
-  source_psg_queue_init(&queue,storage,2);
+  source_psg_queue_init(&queue,storage,QUEUE_CAPACITY);
   if(source_psg_queue_push(&queue,pending,p->count)!=SOURCE_PSG_QUEUE_OK) gaw_sequence_failures++;
   for(n=0;n<p->count;n++)
   {
@@ -155,7 +159,9 @@ int main(bool hard_reset)
  }
  gaw_sequence_done=1;while(TRUE) SYS_doVBlankProcess();return 0;
 }
-''')
+'''
+        call='source_audio_noise_timed(state,0xd0,low[p->suite],32768,bank6,&de,&work,&output)' if noise else 'source_audio_sequence_timed(state,0x40,low[p->suite],32768,bank6,&work,&output)'
+        main=main.replace('TIMED_CALL',call).replace('EXTRA_CHECK','|| de!=p->de' if noise else '').replace('QUEUE_CAPACITY',str(queue_capacity)).replace('MAX_EVENTS',str(max_events));(src/'main.c').write_text(main)
         path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:];env=dict(env);env['PATH']=str(sdk/'bin')+';'+env['PATH']
         built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=kernel,env=env,capture_output=True,text=True)
         (kernel/'build.log').write_text(built.stdout+built.stderr);assert not built.returncode,built.stderr[-2000:]

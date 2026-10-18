@@ -34,4 +34,7 @@ u8 source_audio_sequence_timed(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                                const u8 *bank,SourceClockWork *work,SourceAudioTimedSequenceOutput *output);
 u8 source_audio_noise_sequence_timed(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                                      const u8 *bank,SourceClockWork *work,SourceAudioTimedSequenceOutput *output);
+/* Complete864F noise channel; list times are relative to864F entry. */
+u8 source_audio_noise_timed(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
+                           const u8 *bank,u16 *de,SourceClockWork *work,SourceAudioTimedSequenceOutput *output);
 #endif
