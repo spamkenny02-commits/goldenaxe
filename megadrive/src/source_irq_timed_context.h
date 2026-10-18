@@ -20,4 +20,6 @@ typedef struct {
 u8 source_irq_timed_interrupt(void *context,const SourceClockIrq *entry,SourceClockWork *work);
 /* Same layout/master dates with the fast timed reader's failure contract. */
 u8 source_irq_fast_timed_interrupt(void *context,const SourceClockIrq *entry,SourceClockWork *work);
+/* Identical fast dates/contract, with fused helper-to-master conversion. */
+u8 source_irq_master_interrupt(void *context,const SourceClockIrq *entry,SourceClockWork *work);
 #endif

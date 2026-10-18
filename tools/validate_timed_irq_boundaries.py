@@ -31,7 +31,7 @@ def wrapper(mode):
     code=code.replace('ctx.', 'timed.core.').replace('(&ctx,', '(&timed,')
     code=code.replace('timed.core.sink=', 'timed.sink=').replace('timed.core.sink_context=', 'timed.sink_context=')
     code=code.replace('accepted=source_irq_interrupt',
-        'accepted=source_irq_'+('fast_timed' if mode=='fast' else 'timed')+'_interrupt')
+        'accepted=source_irq_'+('master' if mode=='master' else 'fast_timed' if mode=='fast' else 'timed')+'_interrupt')
     code=code.replace(' return 1;', '''
  out[12]=timed.reader_entry_master;
  {u16 n;for(n=0;n<observer.writes && n<1024;n++) {out[16+n*2]=observer.values[n];out[17+n*2]=observer.dates[n];}}
@@ -41,11 +41,11 @@ def wrapper(mode):
 
 def main():
     folder=ROOT/'validation/timed-irq-boundaries';folder.mkdir(exist_ok=True)
-    for mode in ['base','normal','fast']:(folder/(mode+'.c')).write_text(wrapper(mode))
-    modules=list(dict.fromkeys(MODULES+TIMED_MODULES+['source_irq_timed_context','source_irq_fast_timed_context','source_audio_fast_timed']))
+    for mode in ['base','normal','fast','master']:(folder/(mode+'.c')).write_text(wrapper(mode))
+    modules=list(dict.fromkeys(MODULES+TIMED_MODULES+['source_irq_timed_context','source_irq_fast_timed_context','source_audio_fast_timed','source_audio_reader_master','source_irq_master_context']))
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH']
     args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-Wall','-Wextra','-Werror','-shared','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src')]
-    args += [str(folder/(mode+'.c')) for mode in ['base','normal','fast']]
+    args += [str(folder/(mode+'.c')) for mode in ['base','normal','fast','master']]
     args += [str(ROOT/'megadrive/src'/(n+'.c')) for n in modules]+['-o',str(folder/'boundaries.dll')]
     built=subprocess.run(args,env=env,capture_output=True,text=True);(folder/'compile.log').write_text(built.stdout+built.stderr);assert not built.returncode,built.stderr
     dll=c.CDLL(str(folder/'boundaries.dll'));source=(ROOT/'input/original.sms').read_bytes()
@@ -59,6 +59,8 @@ def main():
         for epoch in [0,0xfffffff0]:
             for sink in [0,1]:
                 base,_=call('base',kind,epoch,sink);normal,events=call('normal',kind,epoch,sink);fast,fast_events=call('fast',kind,epoch,sink)
+                master,master_events=call('master',kind,epoch,sink)
+                assert master==fast and master_events==fast_events,(kind,epoch,sink,'fused master mismatch')
                 assert normal[:12]==fast[:12]==base[:12],(kind,epoch,sink,base,normal,fast)
                 assert normal[13:16]==fast[13:16]==base[13:16],(kind,'DE/state digest mismatch')
                 assert events==fast_events and normal[12]==fast[12]
@@ -72,7 +74,7 @@ def main():
                     assert [t for _,t in events]==[(epoch+(247+116+n*21)*15)&0xffffffff for n in range(10)]
                     assert [b for b,_ in events]==list(source[0x18412:0x1841c])
                 rows.append(dict(kind=kind,epoch=epoch,sink=bool(sink),result=normal,events=events))
-    report=dict(cases=rows,adapter_calls=len(rows)*3,helpers={n:hashlib.sha256((ROOT/'megadrive/src'/(n+'.c')).read_bytes()).hexdigest() for n in modules},
+    report=dict(cases=rows,adapter_calls=len(rows)*4,helpers={n:hashlib.sha256((ROOT/'megadrive/src'/(n+'.c')).read_bytes()).hexdigest() for n in modules},
         limits=['Host diagnostics compare canonical, timed and fast timed adapters: invalid graphics/region, unsupported audio, reset/nested, full/audio-only, absent sinks, timer boundaries and32-bit epoch wrap.',
                 'Fixed audio-only mute dates derive from source247T entry prefix and116T first OUT/21T stride. Loading source oracle and compiled68000 reader tests cover general source times separately. No physical scheduling or full-game proof.'])
     (ROOT/'analysis/timed_irq_boundaries_report.json').write_text(json.dumps(report,indent=2)+'\n')

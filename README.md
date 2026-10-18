@@ -56,6 +56,12 @@ supplémentaire de disponibilité des paquets révèle aussi des échéances NTS
 manquées. Il reste à réduire ce coût et à programmer les sorties physiques.
 Voir les [mesures, preuves et limites](analysis/timed_irq_milestone.md).
 
+Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
+écartée pour l'intégration car elle ralentit les chargements. Les essais de
+contrôle d'horloge sont également revenus au code précédent après mesure.
+Le [compte rendu des essais](analysis/master_reader_research.md) conserve les
+résultats et les pistes déjà écartées ; la v0203 reste la ROM recommandée.
+
 Les canaux mélodiques ont aussi leurs événements PSG datés : **20 852 cas
 et 37 260 écritures par région** concordent avec la SMS sur les six emplacements
 de canal, puis passent en 68000 PAL/NTSC. Les deux octets de fréquence, les

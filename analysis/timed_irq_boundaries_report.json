@@ -1997,7 +1997,7 @@
       ]
     }
   ],
-  "adapter_calls": 156,
+  "adapter_calls": 208,
   "helpers": {
     "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
     "source_irq_context": "9d423c3750d96318902c2e72f6456e571251357bfb2e6196f4ee3aad0f845b1b",
@@ -2015,14 +2015,16 @@
     "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
     "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
     "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
-    "source_audio_reader_timed": "140e783c6957f556286c1f7cc1692ca2bf272177f0da1e59b3ddd99a6ce4108c",
+    "source_audio_reader_timed": "6d578ed0a021ea79c03d320245171704c5bcdbe47b01c09f2b7e52d28b24e6b7",
     "source_audio_prefix_timed": "6e66131d2e9daa764ae12eca02b886f25fbf4fcf13a2972d34ccecddfcc12c0d",
     "source_audio_tone_timed": "7cd41ea9933d6b627322f8ca988de7ee05d5795e839d1462fab3aa5a6a7c0dbf",
     "source_audio_noise_timed": "e5a538370c3f1632a2fe0014224b62b722f1d64dd6c30b7c1ba79a50c23ac891",
     "source_audio_sequence_timed": "ace5c4b83ca43928aa453c30fa7c2d72c7e1bd49bfb782407408545e641ea888",
-    "source_irq_timed_context": "11c5d927e7c2bcbc5264e0ec97d12620e6ec99662e2441e11a71b0d8b83d60bf",
+    "source_irq_timed_context": "a05756c6d8295a0df329a4b4f278ef62dc8369ba8e37acc92275f1c15c006251",
     "source_irq_fast_timed_context": "ecf19d599f0a9aa57427abe2806e8244923fb2fdb085f68a093a63021a0cf434",
-    "source_audio_fast_timed": "7113a7169873d47eea7442c0ca03f66a405db686984f16d52931dfb7d99de8d6"
+    "source_audio_fast_timed": "7113a7169873d47eea7442c0ca03f66a405db686984f16d52931dfb7d99de8d6",
+    "source_audio_reader_master": "12b82a5e815ed93ac3d0e2e2878441897f0e975d5c637fb65f599f9161992f17",
+    "source_irq_master_context": "1b11182a3c10d8ab59ca6708853d6133ebe84423a7e5cbc1388e1ce01fd70d77"
   },
   "limits": [
     "Host diagnostics compare canonical, timed and fast timed adapters: invalid graphics/region, unsupported audio, reset/nested, full/audio-only, absent sinks, timer boundaries and32-bit epoch wrap.",

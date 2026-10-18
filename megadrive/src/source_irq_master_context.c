@@ -1,0 +1,3 @@
+#define GAW_TIMED_READER_MASTER
+#define source_irq_timed_interrupt source_irq_master_interrupt
+#include "source_irq_timed_context.c"

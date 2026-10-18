@@ -12,8 +12,8 @@ from run_core import run
 from validate_reader_timing import MODULES
 
 def main():
-    fast='--fast' in sys.argv;modules=MODULES+(['source_audio_fast_timed'] if fast else [])
-    data_base=ROOT/'validation/reader-timing';base=ROOT/('validation/fast-reader-timing' if fast else 'validation/reader-timing');suites=[s for p in ['cases.json','extension-cases.json'] for s in json.loads((ROOT/'validation/native-audio-reader'/p).read_text())];events=json.loads((data_base/'events.json').read_text());rows=[];lows=[]
+    master='--master' in sys.argv;fast='--fast' in sys.argv or master;modules=MODULES+(['source_audio_fast_timed'] if fast else [])+(['source_audio_reader_master'] if master else [])
+    data_base=ROOT/'validation/reader-timing';base=ROOT/('validation/master-reader-timing' if master else 'validation/fast-reader-timing' if fast else 'validation/reader-timing');suites=[s for p in ['cases.json','extension-cases.json'] for s in json.loads((ROOT/'validation/native-audio-reader'/p).read_text())];events=json.loads((data_base/'events.json').read_text());rows=[];lows=[]
     for index,(suite,observed) in enumerate(zip(suites,events)):
         image=(ROOT/suite['fixture']).read_bytes();assert hashlib.sha256(image).hexdigest()==suite['fixture_sha256']
         assert suite['kind']==observed['kind'] and len(suite['cases'])==len(observed['events'])
@@ -65,7 +65,15 @@ int main(bool hard_reset)
  gaw_reader_done=1;while(TRUE) SYS_doVBlankProcess();return 0;
 }
 '''.replace('source_audio_reader_stream_timed(','source_audio_reader_stream_fast_timed(' if fast else 'source_audio_reader_stream_timed('))
+        if master:
+            main=src/'main.c';body=main.read_text().replace('source_audio_reader_stream_fast_timed(','source_audio_reader_stream_fast_master(')
+            body=body.replace('&status,sink,0','&status,epoch,sink,0').replace('times[n]!=current->times[position]','times[n]!=(u32)(epoch+current->times[position]*15)')
+            body=body.replace('pending[n].due=epoch+times[n]*15;','pending[n].due=times[n];');main.write_text(body)
         path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:]
+        # Keep GCC/MSYS temporary paths absolute with forward slashes. A
+        # backslash TEMP can become a relative c/Users path in nested make.
+        temporary=kernel/'compiler-tmp';temporary.mkdir(exist_ok=True)
+        for key in ['TMPDIR','TMP','TEMP']:env[key]=temporary.resolve().as_posix()
         built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=kernel,env=env,capture_output=True,text=True);(kernel/'build.log').write_text(built.stdout+built.stderr);assert not built.returncode,built.stderr[-2000:]
         sy={m[2]:int(m[1],16)&65535 for line in (kernel/'out/release/symbol.txt').read_text().splitlines() if(m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))};cartridge=kernel/'out/release/rom.bin';assert cartridge.stat().st_size<=4*1024*1024
         for region in ['auto','pal']:
@@ -76,7 +84,7 @@ int main(bool hard_reset)
             with contextlib.redirect_stdout(io.StringIO()):run(cartridge,30000,kernel/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
             assert observed.get('done') and observed['cases']==len(selected) and not observed['failures'] and observed['writes']==sum(len(event['writes']) for _,_,event in selected),(part,region,observed)
             results.append(dict(part=part,region=region,max_events=max_events,queue_capacity=capacity,kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),**observed));print(results[-1],flush=True)
-    report=dict(fast=fast,results=results,sources={name:hashlib.sha256((ROOT/'megadrive/src'/(name+'.c')).read_bytes()).hexdigest() for name in modules},events_sha256=hashlib.sha256((data_base/'events.json').read_bytes()).hexdigest(),limits=['Compiled68000 full8000 stream compares all400 bytes,T/M1,DE/status/track and source-observed byte/timestamp lists. Bounded diagnostic cartridges below4MiB; queue checks early WAIT and exact supplied logical due time, with32-bit epoch wrap.','Temporary stream buffers are copied synchronously by the test sink. No physical pacing clock,live IRQ PSG consumer,global source phase,production CPU budget or full-game fidelity proof.'])
-    (ROOT/('analysis/fast_reader_timing_68k_report.json' if fast else 'analysis/reader_timing_68k_report.json')).write_text(json.dumps(report,indent=2)+'\n')
+    report=dict(fast=fast,fused_master=master,results=results,sources={name:hashlib.sha256((ROOT/'megadrive/src'/(name+'.c')).read_bytes()).hexdigest() for name in modules},events_sha256=hashlib.sha256((data_base/'events.json').read_bytes()).hexdigest(),limits=['Compiled68000 full8000 stream compares all400 bytes,T/M1,DE/status/track and source-observed byte/timestamp lists. Bounded diagnostic cartridges below4MiB; queue checks early WAIT and exact supplied logical due time, with32-bit epoch wrap.','Temporary stream buffers are copied synchronously by the test sink. No physical pacing clock,live IRQ PSG consumer,global source phase,production CPU budget or full-game fidelity proof.'])
+    (ROOT/('analysis/master_reader_timing_68k_report.json' if master else 'analysis/fast_reader_timing_68k_report.json' if fast else 'analysis/reader_timing_68k_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

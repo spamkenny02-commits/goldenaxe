@@ -4387,7 +4387,7 @@
     "source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
     "source_audio_pitch.h": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2",
     "source_irq_fast_timed_context.c": "ecf19d599f0a9aa57427abe2806e8244923fb2fdb085f68a093a63021a0cf434",
-    "source_audio_reader_timed.c": "140e783c6957f556286c1f7cc1692ca2bf272177f0da1e59b3ddd99a6ce4108c",
+    "source_audio_reader_timed.c": "6d578ed0a021ea79c03d320245171704c5bcdbe47b01c09f2b7e52d28b24e6b7",
     "source_audio_prefix_timed.c": "6e66131d2e9daa764ae12eca02b886f25fbf4fcf13a2972d34ccecddfcc12c0d",
     "source_audio_tone_timed.c": "7cd41ea9933d6b627322f8ca988de7ee05d5795e839d1462fab3aa5a6a7c0dbf",
     "source_audio_noise_timed.c": "e5a538370c3f1632a2fe0014224b62b722f1d64dd6c30b7c1ba79a50c23ac891",
@@ -4460,5 +4460,6 @@
   "attribute_lut_bytes": 131072,
   "absolute_source_psg_dates": true,
   "clock_audio_timed": true,
-  "clock_audio_fast_timed": true
+  "clock_audio_fast_timed": true,
+  "clock_audio_fused_master": false
 }

@@ -1,11 +1,17 @@
 #include "source_audio_timed.h"
 #define ADD(t,m) do {work->tstates+=(t);work->fetches+=(m);} while(0)
+#ifndef GAW_AUDIO_EMIT_TIMES
+#define GAW_AUDIO_EMIT_TIMES(times,count,base,context) do {u16 n;for(n=0;n<count;n++) times[n]+=base;} while(0)
+#endif
+#ifndef GAW_AUDIO_EMIT_CONTEXT
+#define GAW_AUDIO_EMIT_CONTEXT(context) (context)
+#endif
 static void emit(SourceAudioReaderStatus *status,SourceAudioTimedReaderSink sink,void *context,
                  const u8 *writes,u32 *times,u16 count,u32 base)
 {
-    u16 n;if(!count) return;
-    for(n=0;n<count;n++) times[n]+=base;
-    sink(context,writes,times,count);status->count+=count;
+    if(!count) return;
+    GAW_AUDIO_EMIT_TIMES(times,count,base,context);
+    sink(GAW_AUDIO_EMIT_CONTEXT(context),writes,times,count);status->count+=count;
 }
 static void prefix(SourceAudioReaderStatus *status,SourceAudioTimedReaderSink sink,void *context,
                    const u8 *bank,SourceAudioTimedDispatchOutput *output,u32 base)

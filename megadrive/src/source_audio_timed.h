@@ -67,4 +67,12 @@ u8 source_audio_reader_stream_timed(u8 *state,const u8 *low,u16 low_bytes,const 
 u8 source_audio_reader_stream_fast_timed(u8 *state,const u8 *low,u16 low_bytes,const u8 *bank,
                                          u16 *de,SourceClockWork *work,SourceAudioReaderStatus *status,
                                          SourceAudioTimedReaderSink sink,void *context);
+/* Diagnostic variant (measured slower in loading; not production-selected).
+ * Same fast stream, directly emitting modulo32-bit master dates at15 master
+ * ticks per source T, relative to the supplied8000-entry epoch. The existing
+ * sink type is reused but its time array is in MASTER TICKS for this API.
+ * Temporary arrays still require synchronous copying; sink must be nonnull. */
+u8 source_audio_reader_stream_fast_master(u8 *state,const u8 *low,u16 low_bytes,const u8 *bank,
+                                         u16 *de,SourceClockWork *work,SourceAudioReaderStatus *status,
+                                         u32 epoch,SourceAudioTimedReaderSink sink,void *context);
 #endif

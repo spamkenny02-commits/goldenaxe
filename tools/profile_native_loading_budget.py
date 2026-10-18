@@ -20,7 +20,11 @@ def main():
     assert not physical_video or (precise and planned),'Physical video requires --planned --bare --precise'
     audio_readiness='--audio-readiness' in sys.argv
     assert not audio_readiness or physical_video,'Audio readiness requires --physical-video'
-    fast_timed_audio='--fast-timed-audio' in sys.argv
+    master_timed_audio='--master-timed-audio' in sys.argv
+    fast_timed_audio='--fast-timed-audio' in sys.argv or master_timed_audio
+    timed_variant='master-timed-audio' if master_timed_audio else 'fast-timed-audio' if fast_timed_audio else 'timed-audio'
+    timed_context='source_irq_master_context' if master_timed_audio else 'source_irq_fast_timed_context' if fast_timed_audio else 'source_irq_timed_context'
+    timed_function='source_irq_master_interrupt' if master_timed_audio else 'source_irq_fast_timed_interrupt' if fast_timed_audio else 'source_irq_timed_interrupt'
     timed_audio='--timed-audio' in sys.argv or fast_timed_audio
     assert not timed_audio or (physical_video and not baseline_audio),'Timed audio requires physical video and its own reader'
     base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else '')+('-precise' if precise else '')+('-baseline-audio' if baseline_audio else '')+('-physical-video' if physical_video else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
@@ -29,8 +33,8 @@ def main():
     modules=MODULES
     if timed_audio:
         from validate_reader_timing import MODULES as TIMED_MODULES
-        modules=list(dict.fromkeys([name for name in MODULES if name!='source_irq_context']+['source_irq_fast_timed_context' if fast_timed_audio else 'source_irq_timed_context']+TIMED_MODULES+(['source_audio_fast_timed'] if fast_timed_audio else [])))
-        base=base.with_name(base.name+('-fast-timed-audio' if fast_timed_audio else '-timed-audio'));src=base/'src';src.mkdir(parents=True,exist_ok=True)
+        modules=list(dict.fromkeys([name for name in MODULES if name!='source_irq_context']+[timed_context]+TIMED_MODULES+(['source_audio_fast_timed'] if fast_timed_audio else [])+(['source_audio_reader_master'] if master_timed_audio else [])))
+        base=base.with_name(base.name+'-'+timed_variant);src=base/'src';src.mkdir(parents=True,exist_ok=True)
     header=ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/kernel/src/expected.h');(src/'expected.h').write_bytes(header.read_bytes())
     for name in modules:
         if name=='source_irq_context' and baseline_audio:
@@ -55,7 +59,7 @@ u8 source_irq_interrupt(void *ctx,const SourceClockIrq *entry,SourceClockWork *w
             body=body.replace('u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions)\n{','u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions)\n{\n    gaw_repeat_calls++;')
             body=body.replace('return count;','gaw_repeat_groups++;gaw_repeat_reps+=count;return count;')
             (src/f'{name}.c').write_text(body)
-        else:(src/f'{name}.c').write_text(('#define source_irq_interrupt '+('source_irq_fast_timed_interrupt' if fast_timed_audio else 'source_irq_timed_interrupt')+'\n' if timed_audio and name not in ['source_irq_timed_context','source_irq_fast_timed_context'] else '')+f'#include "../../../megadrive/src/{name}.c"\n')
+        else:(src/f'{name}.c').write_text(('#define source_irq_interrupt '+timed_function+'\n' if timed_audio and name!=timed_context else '')+f'#include "../../../megadrive/src/{name}.c"\n')
     if bare:(src/'profile_counters.c').write_text('#include <types.h>\nvolatile u32 gaw_irq_ticks,gaw_irq_calls,gaw_exec_calls,gaw_repeat_calls,gaw_repeat_groups,gaw_repeat_reps;\n')
     (src/'main.c').write_text('''#include <genesis.h>
 #include "../../../megadrive/src/source_room_finish.h"
@@ -317,9 +321,10 @@ int main(bool hard_reset)''')
         report['limits'].append('IRQ metadata stores and a fifth marker per IRQ add CPU overhead. PSG function-entry observations mark batch readiness, not individual port-write times. Margins compare a budget-begin-relative epoch to source elapsed time; global physical/source phase alignment is not established. Source IRQ completion is only a necessary last-batch bound, not the deadline of each PSG byte. No publication queue or pacing is enabled.')
     if timed_audio:
         report['absolute_source_psg_dates']=True;report['clock_audio_timed']=True;report['clock_audio_fast_timed']=fast_timed_audio
+        report['clock_audio_fused_master']=master_timed_audio
         report['limits'].append('Separate timed IRQ adapter rebases reader OUT times onto SourceClock.elapsed master ticks. All retained loading dates/bytes are checked against the original-reader oracle. Deadline stores,conversion and immediate actual PSG writes are included in CPU time. No physical scheduling at these dates or global boot phase is enabled; clock_audio_fast_timed identifies the selected snapshot contract.')
         if audio_readiness:
             report['limits'].append('Packet sizes align each source-byte deadline with its packet function-entry readiness. This optimistic availability excludes sink/queue overhead after entry and includes diagnostic packet-size stores. Negative margins demonstrate lateness for this relative epoch; positive margins alone do not prove schedulability or absolute boot alignment.')
-    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+('_physical_video' if physical_video else '')+('_audio_readiness' if audio_readiness else '')+('_fast_timed_audio' if fast_timed_audio else '_timed_audio' if timed_audio else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
+    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+('_physical_video' if physical_video else '')+('_audio_readiness' if audio_readiness else '')+('_'+timed_variant.replace('-','_') if timed_audio else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()
