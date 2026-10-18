@@ -91,6 +91,14 @@ rebouclage 32 bits. Le producteur termine avant ce rejeu bloquant ; il reste
 Un test synthétique révèle aussi un retard entre deux rafales contiguës.
 Voir les [mesures et limites du rejeu continu](analysis/md_psg_replay_milestone.md).
 
+Le prototype prépare désormais les rafales et leur position vidéo avant
+l'attente finale. Le retard maximal des chargements testés passe de 3 145 à
+**2 249 ticks maître**, et la pause entre deux moitiés d'une rafale de huit
+octets est corrigée. **171 000 écritures** supplémentaires vérifient toutes
+les positions d'une ligne en PAL/NTSC. Le fonctionnement simultané avec les
+calculs et les transferts graphiques reste à intégrer et à mesurer.
+Voir le [jalon des rafales et échéances préparées](analysis/md_psg_prepared_milestone.md).
+
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
 contrôle d'horloge sont également revenus au code précédent après mesure.

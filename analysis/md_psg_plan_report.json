@@ -1,0 +1,44 @@
+{
+  "host": {
+    "checks": 101039,
+    "failures": 0,
+    "failure_line": 0,
+    "cases": 21024,
+    "beam_cases": 12650
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 2939,
+      "done": 1,
+      "checks": 44039,
+      "failures": 0,
+      "failure_line": 0,
+      "cases": 2024,
+      "beam_cases": 12650
+    },
+    {
+      "region": "pal",
+      "frame": 2461,
+      "done": 1,
+      "checks": 44039,
+      "failures": 0,
+      "failure_line": 0,
+      "cases": 2024,
+      "beam_cases": 12650
+    }
+  ],
+  "kernel_sha256": "399584b182167e4357cad27d1dfc1b5873b14fdc5b0136be55f40110c551d5b8",
+  "sources": {
+    "source_md_psg_plan.c": "11816a68abe4bdab421cdd191b1f7ac6ae498b7743dc4b6fad792610d7f0ed43",
+    "source_md_psg_plan.h": "1b63172c2717e90f521b7e2a80f6be4233f27b54232359d586232fb17a53323c"
+  },
+  "reference_sha256": {
+    "hvc.h": "f279b184be42eb26f61cb72363626390c06643675bb22f6048b1c2727fe09d6f",
+    "vdp_ctrl.c": "34aa4da65cfadf9da528dd387929c4ad5d52ec9bb3d83e379f9c2070ce33542a"
+  },
+  "limits": [
+    "Reconstruct every original due/value pair from prepared blocks,not just counts. All315/630run lengths1..512 include split and partial tails; random mixed/equal deadlines/u32wrap. Invalid/FULL/order/horizon errors leave count/output bytes intact.",
+    "Host21024cases and2024cases per native region.12650beam-mapping cases per host/native region cover every physical line,11boundaryphases andtwoepochs against core H32/VC tables,plus atomic invalid setup/horizon checks. Actual timing/suffixes are checked separately by validate_md_psg_replay --beam and the beam sweep. No async/fullgame proof."
+  ]
+}

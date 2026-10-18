@@ -1,0 +1,81 @@
+{
+  "kernel_sha256": "9ef0423c6467e68a0dcdfdd99fb109abd25765578977a34e9d29f62fed97620c",
+  "observer_core_sha256": "563912ae0336f8b076fa91be53979618bf36490e158814062b79af3e0017fb40",
+  "sources": {
+    "source_md_psg_plan.c": "11816a68abe4bdab421cdd191b1f7ac6ae498b7743dc4b6fad792610d7f0ed43",
+    "source_md_psg_plan.h": "1b63172c2717e90f521b7e2a80f6be4233f27b54232359d586232fb17a53323c",
+    "source_md_psg_replay.s": "c769941e2f81c8ea426f4318bdb80d47aaf31620f234666020e835ea9820b0e0",
+    "source_md_psg_replay.h": "0ce257410df33cbae9d6bea74dee87c3c86b5e19f60d37fb5cebf079eb2e4055",
+    "source_md_psg_replay_seed.c": "aebae27d1c04d5c4067ef36489525cdabf800d69f29162eb64e7e254c1929827"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 10286,
+      "done": 1,
+      "cases": 10260,
+      "failures": 0,
+      "bytes": 85500,
+      "ram_sha256": "5c4ab9df95a39d557429ab75a214e0eee592cf69ff62df61b541b465aef75f08",
+      "plain_core_identical": true,
+      "poll_gap_master": [
+        1610,
+        9730
+      ],
+      "seed_gap_master": [
+        4984,
+        5264
+      ],
+      "first_errors_master": [
+        296,
+        1889
+      ],
+      "all_errors_master": [
+        264,
+        1889
+      ],
+      "relative_errors_master": [
+        -42,
+        7
+      ],
+      "events_sha256": "1fa882b5bd48f34bd427672f98d3c54c561c23cf96034442de2d8006fe3c0bb0",
+      "rows_sha256": "162478d5dab9063b9c0c0eed93cbdd403d1fbe85078c794fc9619e61b61fe4e5"
+    },
+    {
+      "region": "pal",
+      "frame": 10282,
+      "done": 1,
+      "cases": 10260,
+      "failures": 0,
+      "bytes": 85500,
+      "ram_sha256": "31be88af7dae708fb0b332aab066c5a0d23820b10384f6dd5e88dabf63e3c9a7",
+      "plain_core_identical": true,
+      "poll_gap_master": [
+        1610,
+        9226
+      ],
+      "seed_gap_master": [
+        5138,
+        5418
+      ],
+      "first_errors_master": [
+        294,
+        1875
+      ],
+      "all_errors_master": [
+        263,
+        1875
+      ],
+      "relative_errors_master": [
+        -42,
+        7
+      ],
+      "events_sha256": "663161b00814cb295e7ba3224aeb3c6045a9dec5849730dbddb8764eb93f5409",
+      "rows_sha256": "ab8b28ad95f98ec09c6d56eae2a55f20cadd653e0c982623ea2f7f4be5f22e3e"
+    }
+  ],
+  "limits": [
+    "Every physical deadline phase0..3419 at seedline100+3lines,three kinds(single,315x16,630x8),bothregions,alternating0/FFFF0000logicalepoch. All bytes and every final native clock independently checked against bus observations.",
+    "Prepared producer before seed;masked IRQs/displayoff/noDMA. Frame marker onV90 determines exact physical epoch. Relative burst errors measured across bus refresh;not real hardware/fullgame/asyncproducer proof."
+  ]
+}

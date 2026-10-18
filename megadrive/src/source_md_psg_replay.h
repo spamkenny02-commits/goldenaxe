@@ -13,7 +13,7 @@ u8 source_md_psg_replay_seed(SourceMdPsgReplayClock *clock,u16 lines,u16 hv,u32 
 /* Native68000 synchronous consumer of an already prepared contiguous event
  * array (SourcePsgEvent sizeof6). Caller masks IRQs,prohibits DMA and keeps
  * code/data stable. Events are ordered and all due/now spans<2^31. Clock
- * reads must stay less than two physical lines apart,including the interval
+ * reads must stay less than three physical lines apart,including the interval
  * from the seed sample to entry; missed periods can alias undetectably.
  * Exact630tick pairs/315tick quads are emitted as short fixed bursts.
  * Returns0success,1clockfault; already emitted bytes cannot be rolled back.

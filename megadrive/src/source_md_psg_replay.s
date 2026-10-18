@@ -5,6 +5,7 @@ source_md_psg_replay:
     movem.l %d2-%d7/%a2-%a4,-(%sp)
     move.l 40(%sp),%a2
     move.l 44(%sp),%a0
+    moveq #0,%d7
     move.w 50(%sp),%d7
     tst.w %d7
     beq .Lreplay_empty
@@ -84,7 +85,15 @@ source_md_psg_replay_sample:
     add.l %d1,%d4
     move.l %d4,%d1
     sub.l %d5,%d1
+    bpl .Lreplay_emit
+    tst.l %d7
+    bpl .Lreplay_poll
+    cmpi.l #-3420,%d1
     bmi .Lreplay_poll
+    cmpi.b #0x94,11(%a0)
+    beq .Lreplay_poll
+    bra .Lplanned_near
+.Lreplay_emit:
     jmp (%a4)
 .Lreplay_single:
     move.b 4(%a0),(%a1)
@@ -132,6 +141,133 @@ source_md_psg_replay_sample:
 .Lreplay_return:
     movem.l (%sp)+,%d2-%d7/%a2-%a4
     rts
+    .align 2
+    .global source_md_psg_replay_planned
+source_md_psg_replay_planned:
+    movem.l %d2-%d7/%a2-%a4,-(%sp)
+    move.l 40(%sp),%a2
+    move.l 44(%sp),%a0
+    moveq #0,%d7
+    move.w 50(%sp),%d7
+    tst.w %d7
+    beq .Lreplay_empty
+    tst.w 10(%a2)
+    bne .Lreplay_fault
+    move.l (%a2),%d4
+    move.w 4(%a2),%d2
+    move.w 6(%a2),%d3
+    move.w 8(%a2),%d6
+    subi.w #256,%d6
+    cmpi.w #6,%d6
+    beq .Lplanned_valid
+    cmpi.w #57,%d6
+    bne .Lreplay_fault
+.Lplanned_valid:
+    bset #31,%d7
+    move.l #0xc00011,%a1
+    lea .Lreplay_hphase(%pc),%a3
+.Lplanned_next:
+    move.l (%a0),%d5
+    lea .Lplanned_single(%pc),%a4
+    cmpi.w #315,8(%a0)
+    bne .Lplanned_try630
+    lea .Lplanned315(%pc),%a4
+    bra .Lplanned_select
+.Lplanned_try630:
+    cmpi.w #630,8(%a0)
+    bne .Lreplay_poll
+    lea .Lplanned630(%pc),%a4
+.Lplanned_select:
+    adda.w 4(%a0),%a4
+    bra .Lreplay_poll
+.Lplanned_single:
+    move.b 27(%a0),(%a1)
+    bra .Lplanned_advance
+    .align 2
+.Lplanned315:
+    .set .Lplanned_i,0
+    .rept 15
+    move.b 12+.Lplanned_i(%a0),(%a1)
+    .rept 7
+    nop
+    .endr
+    .set .Lplanned_i,.Lplanned_i+1
+    .endr
+    move.b 27(%a0),(%a1)
+    bra .Lplanned_advance
+    .align 2
+.Lplanned630:
+    .set .Lplanned_i,8
+    .rept 7
+    move.b 12+.Lplanned_i(%a0),(%a1)
+    .rept 18
+    nop
+    .endr
+    .set .Lplanned_i,.Lplanned_i+1
+    .endr
+    move.b 27(%a0),(%a1)
+.Lplanned_advance:
+    move.l (%a0),%d5
+    lea 28(%a0),%a0
+    subq.w #1,%d7
+    bne .Lplanned_next
+    /* Refresh the clock after the last burst as well. The last target is
+     * already due,so the shared poll dispatches directly to the return. */
+    lea .Lreplay_done(%pc),%a4
+    bra .Lreplay_poll
+    /* A recent full clock sample puts the target within one line. Fresh V
+     * classifies an already passed target as late instead of frame-waiting.
+     * Masked IRQs/noDMA and the sampling bound are required for this choice. */
+.Lplanned_near:
+    moveq #0,%d5
+    move.w 10(%a0),%d5
+    move.w %d5,%d0
+    lsr.w #8,%d0
+    moveq #0,%d1
+    move.b 0xc00008,%d1
+    sub.b %d1,%d0
+    andi.w #255,%d0
+    beq .Lplanned_match
+    cmpi.w #2,%d0
+    bls .Lplanned_vstart
+    add.w %d6,%d0
+    andi.w #255,%d0
+    cmpi.w #2,%d0
+    bhi .Lreplay_emit
+.Lplanned_vstart:
+    move.w %d5,%d0
+    lsr.w #8,%d0
+.Lplanned_vwait:
+    cmp.b 0xc00008,%d0
+    bne.s .Lplanned_vwait
+.Lplanned_match:
+    move.w 0xc00008,%d1
+    move.w %d1,%d0
+    eor.w %d5,%d0
+    andi.w #0xff00,%d0
+    bne .Lreplay_emit
+    cmpi.b #133,%d5
+    bcs .Lplanned_last_start
+    cmp.b %d5,%d1
+    bcc .Lreplay_emit
+    cmpi.b #133,%d1
+    bcs .Lreplay_emit
+.Lplanned_negative_read:
+    cmp.b 0xc00009,%d5
+    bgt.s .Lplanned_negative_read
+    bra .Lreplay_emit
+.Lplanned_last_start:
+    cmpi.b #133,%d1
+    bcs .Lplanned_last
+    move.b 0xc00009,%d1
+    bra.s .Lplanned_last_start
+.Lplanned_last:
+    cmp.b %d5,%d1
+    bcc .Lreplay_emit
+.Lplanned_last_read:
+    cmp.b 0xc00009,%d5
+    bhi.s .Lplanned_last_read
+    bra .Lreplay_emit
     .align 2
 .Lreplay_hphase:
     .set .Lreplay_h,0
