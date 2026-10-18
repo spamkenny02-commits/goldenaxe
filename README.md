@@ -72,6 +72,12 @@ lecture garde au moins 2,28 images de marge NTSC et 3,24 en PAL. Le test émet
 encore après le calcul ; le cadencement physique reste à raccorder.
 Voir le [jalon du producteur audio avec file](analysis/queued_audio_milestone.md).
 
+L'horloge vidéo native concorde maintenant avec **16 384 lectures physiques**
+du compteur PAL/NTSC. Des rafales assembleur de diagnostic conservent aussi
+les espacements audio rapprochés à 14 ticks maître près, relativement au premier
+octet. Il reste à placer ce premier octet à sa date source et à raccorder les
+rafales à la file. Voir les [mesures et limites de l'horloge physique](analysis/md_io_clock_milestone.md).
+
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
 contrôle d'horloge sont également revenus au code précédent après mesure.
