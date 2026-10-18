@@ -19,7 +19,7 @@ class Event(c.Structure):_fields_=[('due',c.c_uint32),('value',c.c_uint8)]
 def main():
     rows,_,fixture=setup();base=ROOT/'validation/noise-note-timing';base.mkdir(exist_ok=True)
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH']
-    modules=['source_audio_timed','source_audio_sequence','source_audio_priority','source_audio_memory','source_psg_queue']
+    modules=['source_audio_timed','source_audio_sequence','source_audio_priority','source_audio_memory','source_audio_envelope','source_psg_queue']
     args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-Wall','-Wextra','-Werror','-shared','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src')]+[str(ROOT/'megadrive/src'/(name+'.c')) for name in modules]+['-o',str(base/'timed.dll')]
     built=subprocess.run(args,env=env,capture_output=True,text=True);assert not built.returncode,built.stderr
     native=c.CDLL(str(base/'timed.dll'));fn=native.source_audio_noise_note_timed

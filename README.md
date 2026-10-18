@@ -39,6 +39,13 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+Les enveloppes audio disposent aussi d'événements PSG datés : 40 192 cas ADSR
+et 13 400 cas de tables par région concordent avec les écritures SMS originales.
+Les 53 600 cas natifs, comprenant les rejets, passent en 68000 PAL/NTSC ;
+2 028 événements par région traversent la file avec la bonne échéance logique.
+La cadence physique et le lecteur complet restent à raccorder au jeu.
+Voir le [jalon des enveloppes horodatées](analysis/envelope_timing_milestone.md).
+
 La première routine audio native horodatée est vérifiée : la sélection du
 bruit (SMS8679), sur **9 216 cas par région**, produit le même état et le même
 instant d'écriture PSG que l'original. Les 4 608 événements émis passent aussi

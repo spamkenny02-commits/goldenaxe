@@ -1,0 +1,95 @@
+{
+  "source_regions": [
+    {
+      "kind": "adsr",
+      "region": "auto",
+      "cases": 40192,
+      "writes": 1776,
+      "unwinds": 0,
+      "frames": 6322,
+      "raw_sha256": {
+        "calls": "31f7a68bcf7aca1362c04786f69d35a6d6c7175d7ad694ce27f98da9fc6148a7",
+        "ports": "791ddce0d0e22b819cbc87c14a0feb1e543461d056d23a6c534c1950f40828af",
+        "meta": "3c1fd6559315c62c32f6369b6b0f139439274ea07490b456eee7c72c5b002417"
+      },
+      "fixture_sha256": "7efb80b7de9a5b9a5419f224605833b668bb66cf129db448ec15ed852882ae98"
+    },
+    {
+      "kind": "adsr",
+      "region": "pal",
+      "cases": 40192,
+      "writes": 1776,
+      "unwinds": 0,
+      "frames": 5292,
+      "raw_sha256": {
+        "calls": "31f7a68bcf7aca1362c04786f69d35a6d6c7175d7ad694ce27f98da9fc6148a7",
+        "ports": "791ddce0d0e22b819cbc87c14a0feb1e543461d056d23a6c534c1950f40828af",
+        "meta": "3c1fd6559315c62c32f6369b6b0f139439274ea07490b456eee7c72c5b002417"
+      },
+      "fixture_sha256": "7efb80b7de9a5b9a5419f224605833b668bb66cf129db448ec15ed852882ae98"
+    },
+    {
+      "kind": "table",
+      "region": "auto",
+      "cases": 13400,
+      "writes": 252,
+      "unwinds": 1080,
+      "frames": 2085,
+      "raw_sha256": {
+        "calls": "5f63e51d3739c89a16dc20d06686995e2e3b7acfcb767914ac0fa04af1ec0295",
+        "ports": "f958d2e177aef522c80963a206b79b333df4f0a9f98a70fed9060c3cb48e221f",
+        "meta": "d6fbefbcb772c1c516dbc013970f209d794d624fa844fc581b017e20ae40ac53"
+      },
+      "fixture_sha256": "720d86072382780139d499325265f414c24ce23c9fd5558c27e6feb54ee1fc00"
+    },
+    {
+      "kind": "table",
+      "region": "pal",
+      "cases": 13400,
+      "writes": 252,
+      "unwinds": 1080,
+      "frames": 1746,
+      "raw_sha256": {
+        "calls": "5f63e51d3739c89a16dc20d06686995e2e3b7acfcb767914ac0fa04af1ec0295",
+        "ports": "f958d2e177aef522c80963a206b79b333df4f0a9f98a70fed9060c3cb48e221f",
+        "meta": "d6fbefbcb772c1c516dbc013970f209d794d624fa844fc581b017e20ae40ac53"
+      },
+      "fixture_sha256": "720d86072382780139d499325265f414c24ce23c9fd5558c27e6feb54ee1fc00"
+    }
+  ],
+  "shifted_host_cases": 53600,
+  "compiled_regions": [
+    {
+      "region": "auto",
+      "frame": 14198,
+      "done": 1,
+      "cases": 53600,
+      "queued": 2028,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 11880,
+      "done": 1,
+      "cases": 53600,
+      "queued": 2028,
+      "failures": 0
+    }
+  ],
+  "kernel_sha256": "90a1a604e392805ea57ef2cb86a15f70675905484d395057faaf60dbc392c24d",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "69dce2e7d6599bbbf6821111465535f736cf1d9b70e504a5c4fa9e0247ca2b61",
+  "sources": {
+    "source_audio_timed": "4e5788b71cd0c1d694f435ab2229ca60dd4cb5372d33fd4835c2bc7d2e62eb6b",
+    "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_sequence": "ef9b175697dd07fc8b9a634185d60f46677636762d39c7548df3cbc77c00d4a6",
+    "source_audio_priority": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_psg_queue": "3dab403ea133a1ee518c427e2fa1458e3eafe4da9b35350b6c7759d6cf342067"
+  },
+  "limits": [
+    "Original854B ADSR/table fixtures,all400 state bytes,fullT/A/DE/unwind and actual PSG handler time/data compared. M1 is compared against the previously source-verified model, not a new instruction counter in this observer. Custom DI caller,IXDE40; hold removed only from caller. Table POP unwind closes at3053; normal return at3003.",
+    "Host and compiled68000 also use shifted seven-slot semantic vectors including rejected reads. Timed mute is helperT-10 before final RET. Queue roundtrip uses supplied logical time; no complete timed8000 reader,physical subframe clock,paced PSG writes or full-game proof."
+  ],
+  "invalid_host_cases": 8
+}
