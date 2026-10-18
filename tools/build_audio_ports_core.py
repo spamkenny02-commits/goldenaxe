@@ -42,8 +42,9 @@ static void gaw_port_instruction(unsigned pc)
 def main():
     noise_note='--noise-note' in sys.argv
     envelope='--envelope' in sys.argv
-    assert not (noise_note and envelope)
-    folder=ROOT/('validation/envelope-timing' if envelope else 'validation/noise-note-timing' if noise_note else 'validation/loading-psg-deadlines');folder.mkdir(exist_ok=True)
+    sequence='--sequence' in sys.argv
+    assert sum([noise_note,envelope,sequence])<=1
+    folder=ROOT/('validation/sequence-timing' if sequence else 'validation/envelope-timing' if envelope else 'validation/noise-note-timing' if noise_note else 'validation/loading-psg-deadlines');folder.mkdir(exist_ok=True)
     engine=ROOT.parents[1]/'work/genesis-plus-gx'
     paths=[engine/'core/z80/z80.c',engine/'core/memz80.c']
     original=[p.read_bytes() for p in paths]
@@ -52,8 +53,8 @@ def main():
     assert z80.count(anchor)==1
     declaration=DECLARATION
     if noise_note:declaration=declaration.replace('[2048]','[16384]').replace('<2048','<16384').replace('pc==0x8000','pc==0x8679')
-    if envelope:
-        declaration=declaration.replace('[2048]','[65536]').replace('<2048','<65536').replace('pc==0x8000','pc==0x854b').replace('pc==0x3003 &&','(pc==0x3003 || pc==0x3053) &&')
+    if envelope or sequence:
+        declaration=declaration.replace('[2048]','[65536]').replace('<2048','<65536').replace('pc==0x8000','pc==0x8357' if sequence else 'pc==0x854b').replace('pc==0x3003 &&','(pc==0x3003 || pc==0x3053) &&')
         declaration=declaration.replace('static struct gaw_port_call gaw_port_calls', 'static unsigned gaw_port_metadata[65536][2];\n__declspec(dllexport) const unsigned *gaw_port_meta_data(void) {return &gaw_port_metadata[0][0];}\nstatic struct gaw_port_call gaw_port_calls')
         declaration=declaration.replace('e=&gaw_port_calls[gaw_port_count++];e->end=gaw_elapsed;', 'gaw_port_metadata[gaw_port_count][0]=A;gaw_port_metadata[gaw_port_count][1]=(pc==0x3053);e=&gaw_port_calls[gaw_port_count++];e->end=gaw_elapsed;')
     z80=z80.replace(anchor,declaration+'\n'+anchor)
@@ -70,7 +71,7 @@ def main():
         (folder/name).write_bytes(body)
     try:
         for path,body in zip(paths,modified):path.write_bytes(body)
-        target='genesis_plus_gx_envelopeports_libretro.dll' if envelope else 'genesis_plus_gx_noiseports_libretro.dll' if noise_note else 'genesis_plus_gx_audioports_libretro.dll'
+        target='genesis_plus_gx_sequenceports_libretro.dll' if sequence else 'genesis_plus_gx_envelopeports_libretro.dll' if envelope else 'genesis_plus_gx_noiseports_libretro.dll' if noise_note else 'genesis_plus_gx_audioports_libretro.dll'
         result=subprocess.run([sys.executable,str(ROOT/'tools/build_timing_core.py'),'--target',target],capture_output=True,text=True,cwd=ROOT)
         (folder/'core-build.log').write_text(result.stdout+result.stderr)
         assert result.returncode==0,result.stdout+result.stderr

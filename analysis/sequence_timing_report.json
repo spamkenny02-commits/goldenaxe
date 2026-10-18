@@ -1,0 +1,281 @@
+{
+  "results": [
+    {
+      "kind": "notes",
+      "region": "auto",
+      "cases": 51712,
+      "writes": 680,
+      "frames": 10094,
+      "raw_sha256": {
+        "calls": "a17d6375505b2dfd38bd2f14d4650a82b34acdcf8f35e3dee9c79dfb59edd529",
+        "ports": "fed8394c6cd112b044fefd0f640eacaddf11880268a9aa9e653899d163b568aa",
+        "meta": "c670b6f3ab755acf94574030674878f35cd829d42ff9462820306578944a7e40"
+      },
+      "fixture_sha256": "958b571c171c2c3ce074f82bf919d424acdafa996a056a8722360a39da9e5b0b"
+    },
+    {
+      "kind": "notes",
+      "region": "pal",
+      "cases": 51712,
+      "writes": 680,
+      "frames": 8450,
+      "raw_sha256": {
+        "calls": "a17d6375505b2dfd38bd2f14d4650a82b34acdcf8f35e3dee9c79dfb59edd529",
+        "ports": "fed8394c6cd112b044fefd0f640eacaddf11880268a9aa9e653899d163b568aa",
+        "meta": "c670b6f3ab755acf94574030674878f35cd829d42ff9462820306578944a7e40"
+      },
+      "fixture_sha256": "958b571c171c2c3ce074f82bf919d424acdafa996a056a8722360a39da9e5b0b"
+    },
+    {
+      "kind": "commands",
+      "region": "auto",
+      "cases": 29952,
+      "writes": 0,
+      "frames": 6124,
+      "raw_sha256": {
+        "calls": "6b75353c1bfbc5d46c3548185a9e8099366388404988b60856000b7e95021eb2",
+        "ports": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "meta": "155ec6f051597d74dda2d4e7532cef68cad136471e633363914261da370bd34d"
+      },
+      "fixture_sha256": "773adeeb4e0382a39fad98455e79ce1304fe1de442adf71c8326b6c85ff8a351"
+    },
+    {
+      "kind": "commands",
+      "region": "pal",
+      "cases": 29952,
+      "writes": 0,
+      "frames": 5126,
+      "raw_sha256": {
+        "calls": "6b75353c1bfbc5d46c3548185a9e8099366388404988b60856000b7e95021eb2",
+        "ports": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "meta": "155ec6f051597d74dda2d4e7532cef68cad136471e633363914261da370bd34d"
+      },
+      "fixture_sha256": "773adeeb4e0382a39fad98455e79ce1304fe1de442adf71c8326b6c85ff8a351"
+    },
+    {
+      "kind": "termination",
+      "region": "auto",
+      "cases": 192,
+      "writes": 192,
+      "frames": 35,
+      "raw_sha256": {
+        "calls": "205cefa9d17a3fcec34a9fb617ac7abcd9c1364e965e9b96ea696466bfda0493",
+        "ports": "cd47dcf5e08306f8bfe1f6cf71e199033e9569598a79d4913674d1131c3990f8",
+        "meta": "950c685d8c321c5e0d401aa37f9fb80046a805a95d57b6b6d18d8c868231b447"
+      },
+      "fixture_sha256": "53ae62b67e96846a1a118973fcf88fcebf38e31838aaf10c16a6d743fcba04c9"
+    },
+    {
+      "kind": "termination",
+      "region": "pal",
+      "cases": 192,
+      "writes": 192,
+      "frames": 29,
+      "raw_sha256": {
+        "calls": "205cefa9d17a3fcec34a9fb617ac7abcd9c1364e965e9b96ea696466bfda0493",
+        "ports": "cd47dcf5e08306f8bfe1f6cf71e199033e9569598a79d4913674d1131c3990f8",
+        "meta": "950c685d8c321c5e0d401aa37f9fb80046a805a95d57b6b6d18d8c868231b447"
+      },
+      "fixture_sha256": "53ae62b67e96846a1a118973fcf88fcebf38e31838aaf10c16a6d743fcba04c9"
+    },
+    {
+      "kind": "ownership",
+      "region": "auto",
+      "cases": 1920,
+      "writes": 2424,
+      "frames": 398,
+      "raw_sha256": {
+        "calls": "f5c5b75ea2a6273aa7a11bed662967624010889ea000a53d27a02ae146dd2481",
+        "ports": "2e994acaf6a7b5a41c5bba17f00a4aaee1c9f4a7927bb108b55f389b564281d9",
+        "meta": "fd8f5da444466eb5adeaa25e569e8cef5ee7a037161549a685948ff670d2f561"
+      },
+      "fixture_sha256": "6c458d28dd387c993465cc03d4bf12456e4d0cdcaff86e5e1cf0cdc309049150"
+    },
+    {
+      "kind": "ownership",
+      "region": "pal",
+      "cases": 1920,
+      "writes": 2424,
+      "frames": 333,
+      "raw_sha256": {
+        "calls": "f5c5b75ea2a6273aa7a11bed662967624010889ea000a53d27a02ae146dd2481",
+        "ports": "2e994acaf6a7b5a41c5bba17f00a4aaee1c9f4a7927bb108b55f389b564281d9",
+        "meta": "fd8f5da444466eb5adeaa25e569e8cef5ee7a037161549a685948ff670d2f561"
+      },
+      "fixture_sha256": "6c458d28dd387c993465cc03d4bf12456e4d0cdcaff86e5e1cf0cdc309049150"
+    },
+    {
+      "kind": "restore",
+      "region": "auto",
+      "cases": 1728,
+      "writes": 2592,
+      "frames": 294,
+      "raw_sha256": {
+        "calls": "09cc1666da8d271d8f69d32af8c5038654229d030be928626c2276646cc4aec0",
+        "ports": "57b30850535732cf8bc277ee597aa9de28bc6f6aef03610326e20d4192afc2f9",
+        "meta": "37d7a2626c59b75a2856604c8286bd51f6de24a0ef33eda36e9a34587417a43f"
+      },
+      "fixture_sha256": "dc9a3bb70e7a826c7071a9a32594b89a57383285d7efc117a47db27035dba867"
+    },
+    {
+      "kind": "restore",
+      "region": "pal",
+      "cases": 1728,
+      "writes": 2592,
+      "frames": 246,
+      "raw_sha256": {
+        "calls": "09cc1666da8d271d8f69d32af8c5038654229d030be928626c2276646cc4aec0",
+        "ports": "57b30850535732cf8bc277ee597aa9de28bc6f6aef03610326e20d4192afc2f9",
+        "meta": "37d7a2626c59b75a2856604c8286bd51f6de24a0ef33eda36e9a34587417a43f"
+      },
+      "fixture_sha256": "dc9a3bb70e7a826c7071a9a32594b89a57383285d7efc117a47db27035dba867"
+    },
+    {
+      "kind": "mirror-080",
+      "region": "auto",
+      "cases": 128,
+      "writes": 0,
+      "frames": 30,
+      "raw_sha256": {
+        "calls": "f5fca53e03b1d79ba2f6f15c844fd99d6b0fa8c37ce1dcf07ceb85dbc63043dc",
+        "ports": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "meta": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "fixture_sha256": "f69f8b356e7f1149ac7ce1511ff84b1c7b5934e8e5fff2413ff0d0317f2c5f8a"
+    },
+    {
+      "kind": "mirror-080",
+      "region": "pal",
+      "cases": 128,
+      "writes": 0,
+      "frames": 26,
+      "raw_sha256": {
+        "calls": "f5fca53e03b1d79ba2f6f15c844fd99d6b0fa8c37ce1dcf07ceb85dbc63043dc",
+        "ports": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "meta": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "fixture_sha256": "f69f8b356e7f1149ac7ce1511ff84b1c7b5934e8e5fff2413ff0d0317f2c5f8a"
+    },
+    {
+      "kind": "mirror-180",
+      "region": "auto",
+      "cases": 128,
+      "writes": 0,
+      "frames": 30,
+      "raw_sha256": {
+        "calls": "b38881b7f12e047f3711e45979d8994e89647d3e74446912c52d2e01739a0a37",
+        "ports": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "meta": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "fixture_sha256": "4dedd362ae1c811f2f200a0dac4ea7c5b17d272383c07f7aaa9f5475e7ad189f"
+    },
+    {
+      "kind": "mirror-180",
+      "region": "pal",
+      "cases": 128,
+      "writes": 0,
+      "frames": 26,
+      "raw_sha256": {
+        "calls": "b38881b7f12e047f3711e45979d8994e89647d3e74446912c52d2e01739a0a37",
+        "ports": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "meta": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      },
+      "fixture_sha256": "4dedd362ae1c811f2f200a0dac4ea7c5b17d272383c07f7aaa9f5475e7ad189f"
+    }
+  ],
+  "core_sha256": "8e85975ae2b76a78f170f290b23f1e332c69cf260bcdc8ae586a9dde0fa1e11d",
+  "sources": {
+    "source_audio_sequence_timed": "ace5c4b83ca43928aa453c30fa7c2d72c7e1bd49bfb782407408545e641ea888",
+    "source_audio_sequence": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_priority": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_psg_queue": "3dab403ea133a1ee518c427e2fa1458e3eafe4da9b35350b6c7759d6cf342067"
+  },
+  "limits": [
+    "Original8357 fixtures with only custom caller hold removed. All400 bytes,T,DE/unwind and every completed-OUT cycle/data compared; M1 uses retained source vectors. Separate timed composition reuses authoritative C with optional sidecar stores; default semantic outputs also compared.",
+    "Compiled68000 PAL/NTSC also checks retained state/work and source-observed byte/timestamp lists, then native queue roundtrips. Noise8655 variant still needs its source oracle. No complete timed8000 reader or physical clock/pacing proof."
+  ],
+  "compiled": [
+    {
+      "part": 0,
+      "region": "auto",
+      "kernel_sha256": "6dde8998e95832f4b5dccbd5f173d7265fffec14c0a8001e0629139e1cc62a6d",
+      "frame": 7211,
+      "done": 1,
+      "cases": 25000,
+      "writes": 240,
+      "failures": 0
+    },
+    {
+      "part": 0,
+      "region": "pal",
+      "kernel_sha256": "6dde8998e95832f4b5dccbd5f173d7265fffec14c0a8001e0629139e1cc62a6d",
+      "frame": 6033,
+      "done": 1,
+      "cases": 25000,
+      "writes": 240,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "auto",
+      "kernel_sha256": "c1a507b4dc40b2e8a5c46f4a66f6a06d1eb598e4551efb5a27be8df21393e0d5",
+      "frame": 7235,
+      "done": 1,
+      "cases": 25000,
+      "writes": 440,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "pal",
+      "kernel_sha256": "c1a507b4dc40b2e8a5c46f4a66f6a06d1eb598e4551efb5a27be8df21393e0d5",
+      "frame": 6054,
+      "done": 1,
+      "cases": 25000,
+      "writes": 440,
+      "failures": 0
+    },
+    {
+      "part": 2,
+      "region": "auto",
+      "kernel_sha256": "f3c204e81ae86b1835a63efeb0bac5ec49caddc2e51b9d398723d1367745e886",
+      "frame": 7349,
+      "done": 1,
+      "cases": 25000,
+      "writes": 0,
+      "failures": 0
+    },
+    {
+      "part": 2,
+      "region": "pal",
+      "kernel_sha256": "f3c204e81ae86b1835a63efeb0bac5ec49caddc2e51b9d398723d1367745e886",
+      "frame": 6149,
+      "done": 1,
+      "cases": 25000,
+      "writes": 0,
+      "failures": 0
+    },
+    {
+      "part": 3,
+      "region": "auto",
+      "kernel_sha256": "620bba0e71adaf684ba7f2ed97cd3687fc14f1db7bfb176802dee6854fb5fb15",
+      "frame": 3242,
+      "done": 1,
+      "cases": 10760,
+      "writes": 5208,
+      "failures": 0
+    },
+    {
+      "part": 3,
+      "region": "pal",
+      "kernel_sha256": "620bba0e71adaf684ba7f2ed97cd3687fc14f1db7bfb176802dee6854fb5fb15",
+      "frame": 2713,
+      "done": 1,
+      "cases": 10760,
+      "writes": 5208,
+      "failures": 0
+    }
+  ],
+  "host_rejection_capacity_cases": 9
+}

@@ -23,4 +23,15 @@ u8 source_audio_noise_note_timed(u8 *state,u16 offset,u8 note,u32 source_entry,
 u8 source_audio_envelope_timed(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                               const u8 *bank,u16 *de,u32 source_entry,SourceClockWork *work,
                               SourceAudioEnvelopeOutput *output,SourcePsgEvent *event);
+/* Per-byte completed-OUT times in Z80 T states relative to helper entry.
+ * Same bounded semantics/rollback and unsupported controls as8357/8655.
+ * On failure count is zero; prior timestamp slots are not valid events.
+ * These lists are caller-owned and do not publish or pace PSG writes. */
+typedef struct {
+    u16 de,count;u8 unwind,error,writes[512];u32 write_tstates[512];
+} SourceAudioTimedSequenceOutput;
+u8 source_audio_sequence_timed(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
+                               const u8 *bank,SourceClockWork *work,SourceAudioTimedSequenceOutput *output);
+u8 source_audio_noise_sequence_timed(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
+                                     const u8 *bank,SourceClockWork *work,SourceAudioTimedSequenceOutput *output);
 #endif

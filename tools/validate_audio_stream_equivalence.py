@@ -10,12 +10,13 @@ SINK=c.CFUNCTYPE(None,c.c_void_p,c.POINTER(c.c_uint8),c.c_uint16)
 
 def main():
  folder=ROOT/'validation/audio-stream-equivalence';folder.mkdir(exist_ok=True);sdk=ROOT.parents[1]/'work/sgdk';env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH'];libs=[]
+ baseline_files=set(subprocess.check_output(['git','ls-tree','--name-only',BASELINE+':megadrive/src'],cwd=ROOT).decode().splitlines())
  for tag in ['baseline','current']:
   src=folder/tag;src.mkdir(exist_ok=True)
   for p in list((ROOT/'megadrive/src').glob('*.h'))+[(ROOT/'megadrive/src'/f'{n}.c') for n in MODULES]:
-   if tag=='baseline' and p.stem=='source_audio_fast':continue
+   if tag=='baseline' and p.name not in baseline_files:continue
    raw=subprocess.check_output(['git','show',BASELINE+':megadrive/src/'+p.name],cwd=ROOT) if tag=='baseline' else p.read_bytes();(src/p.name).write_bytes(raw)
-  subprocess.run(['C:/msys64/ucrt64/bin/gcc.exe','-O3','-shared','-Wall','-Wextra','-Werror','-I',str(sdk/'inc'),'-I',str(src),*[str(src/f'{n}.c') for n in MODULES if (src/f'{n}.c').exists()],'-o',str(src/'reader.dll')],env=env,check=True)
+  subprocess.run(['C:/msys64/ucrt64/bin/gcc.exe','-O3','-shared','-Wall','-Wextra','-Werror','-I',str(sdk/'inc'),'-I',str(src),*[str(src/f'{n}.c') for n in MODULES if (src/f'{n}.c').exists() and (tag!='baseline' or n+'.c' in baseline_files)],'-o',str(src/'reader.dll')],env=env,check=True)
   dll=c.CDLL(str(src/'reader.dll'));args=[c.POINTER(c.c_uint8),c.POINTER(c.c_uint8),c.c_uint16,c.POINTER(c.c_uint8),c.POINTER(c.c_uint16),c.POINTER(Work)]
   dll.reader=getattr(dll,'source_audio_reader_fast' if tag=='current' else 'source_audio_reader');dll.stream=getattr(dll,'source_audio_reader_stream_fast' if tag=='current' else 'source_audio_reader_stream')
   dll.reader.argtypes=args+[c.POINTER(Output)];dll.reader.restype=c.c_uint8

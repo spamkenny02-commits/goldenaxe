@@ -8,7 +8,13 @@
 #define READ(a,v) do {if(!source_audio_read(state,low,low_bytes,bank,(u16)(a),&(v))) goto reject;} while(0)
 #define WORD(a,v) do {READ((a),lo);READ((u16)((a)+1),hi);(v)=lo|((u16)hi<<8);} while(0)
 #define PUT(i,v) do {c[(i)]=(u8)(v);c[(i)+1]=(u16)(v)>>8;} while(0)
-#define EMIT(v) do {if(output->count>=512) goto reject;output->writes[output->count++]=(u8)(v);} while(0)
+#ifndef GAW_AUDIO_TIMED_STAMP
+#define GAW_AUDIO_TIMED_STAMP(o,t) ((void)0)
+#endif
+#ifdef EMIT
+#undef EMIT
+#endif
+#define EMIT(v,t) do {if(output->count>=512) goto reject;GAW_AUDIO_TIMED_STAMP(output,t);output->writes[output->count++]=(u8)(v);} while(0)
 
 #ifndef GAW_AUDIO_STREAM_CHANNELS
 static void copy_state(u8 *to,const u8 *from)
@@ -38,14 +44,14 @@ static u8 noise_note(u8 *state,u16 offset,u8 note,SourceClockWork *work,SourceAu
         {
             ADD(12+21+(bit?12:0),4+(bit?1:0));c[7]=settings[bit][0];c[8]=state[24]+settings[bit][1];ADD(75,8);
             if(c[0]&4) ADD(11,1);
-            else {ADD(56,6);state[19]=state[23]+settings[bit][2];EMIT(state[19]);}
+            else {ADD(56,6);state[19]=state[23]+settings[bit][2];EMIT(state[19],work->tstates-10);}
             return 1;
         }
         ADD(7,1);
     }
     c[0]|=16;ADD(53,5);
     if(c[0]&4) ADD(11,1);
-    else {ADD(52,6);EMIT(c[1]+31);}
+    else {ADD(52,6);EMIT(c[1]+31,work->tstates-10);}
     return 1;
 reject:return 0;
 }
@@ -59,6 +65,9 @@ static u8 sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
     u8 *c,note=0xff,value,lo,hi,old_stereo,mask,amount;
     u16 cursor=0,guard,index,stack,target,background,frequency,n;
     SourceClockWork restored;SourceAudioDispatchOutput writes;
+#ifdef GAW_AUDIO_TIMED_SEQUENCE
+    u32 restore_time;
+#endif
     work->tstates=work->fetches=0;output->de=output->count=0;output->unwind=output->error=0;
     if(offset>0x160) {output->error=0xff;return 0;}
 
@@ -101,14 +110,19 @@ static u8 sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                 }
             }
             state[background]=(state[background]&(u8)~4)|16;state[17]=0;c[0]=0;
-            EMIT(c[1]|31);
+            EMIT(c[1]|31,work->tstates+48);
             ADD(15+15+7+11+4+13+19+13+4,2+2+1+1+1+1+2+1+1);
             if(state[14])
             {
                 ADD(7+17,1+1);
+#ifdef GAW_AUDIO_TIMED_SEQUENCE
+                /* 8211 begins CALL8261. The latch's OUT precedes EX AF/RET
+                 * by14T; zero/nonzero DE0F select121/126T from8211 entry. */
+                restore_time=work->tstates+(state[15]?126:121);
+#endif
                 if(!source_audio_restore(state,bank,state[14],&cursor,&restored,&writes)) goto reject;
                 ADD(restored.tstates,restored.fetches);
-                for(n=0;n<writes.count;n++) EMIT(writes.writes[n]);
+                for(n=0;n<writes.count;n++) EMIT(writes.writes[n],restore_time);
             }
             else ADD(12,1);
             ADD(30,3);output->unwind=noise?2:1;output->de=cursor;return 1;
@@ -167,13 +181,15 @@ static u8 sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                         {
                             ADD(7+10+15+15+4+19+4+11+13+10+10+10-(noise?18:16),1+1+2+2+1+2+1+1+1+1+1+1-2);
                             state[0xd0]=(state[0xd0]&(u8)~4)|16;c[0]=0;state[15]=255;
-                            EMIT(255);output->unwind=noise?2:1;output->de=cursor;return 1;
+                            EMIT(255,work->tstates-43);output->unwind=noise?2:1;output->de=cursor;return 1;
                         }
                     }
                 }
-                EMIT(value);ADD(53,7);
+                /* Command dispatch already counts the future INC/JP return
+                 * trampoline (16T tonal,18T noise). OUT is inside F3. */
+                EMIT(value,work->tstates+18-(noise?18:16));ADD(53,7);
                 if((value&3)==3)
-                {ADD(96,10);EMIT(0xdf);c[0]&=(u8)~64;state[0xa0]|=4;state[0x130]|=4;}
+                {ADD(96,10);EMIT(0xdf,work->tstates-71-(noise?18:16));c[0]&=(u8)~64;state[0xa0]|=4;state[0x130]|=4;}
                 else
                 {
                     ADD(55,5);c[0]|=64;
@@ -248,7 +264,7 @@ static u8 sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                     {
                         ADD(43,4);c[0]|=16;
                         if(c[0]&4) ADD(11,1);
-                        else {ADD(52,6);EMIT(c[1]+31);}
+                        else {ADD(52,6);EMIT(c[1]+31,work->tstates-10);}
                     }
                 }
                 ADD(12,1);

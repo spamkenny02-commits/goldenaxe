@@ -39,6 +39,13 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+Les séquences de notes et commandes produisent maintenant des horodatages
+par octet PSG : **85 760 cas et 5 888 écritures par région** concordent avec
+la SMS, puis passent en 68000 PAL/NTSC avec publication dans la file native.
+Les contrôles F1/F2/F3 et la restauration d'un bruitage sont inclus. Le canal
+bruit, les fréquences et le lecteur complet restent à composer et intégrer.
+Voir le [jalon des séquences horodatées](analysis/sequence_timing_milestone.md).
+
 Les enveloppes audio disposent aussi d'événements PSG datés : 40 192 cas ADSR
 et 13 400 cas de tables par région concordent avec les écritures SMS originales.
 Les 53 600 cas natifs, comprenant les rejets, passent en 68000 PAL/NTSC ;
