@@ -6,12 +6,14 @@ import json
 import os
 import re
 import subprocess
+import sys
 from actor_reference import ROOT
 from run_core import run
 from validate_reader_timing import MODULES
 
 def main():
-    base=ROOT/'validation/reader-timing';suites=[s for p in ['cases.json','extension-cases.json'] for s in json.loads((ROOT/'validation/native-audio-reader'/p).read_text())];events=json.loads((base/'events.json').read_text());rows=[];lows=[]
+    fast='--fast' in sys.argv;modules=MODULES+(['source_audio_fast_timed'] if fast else [])
+    data_base=ROOT/'validation/reader-timing';base=ROOT/('validation/fast-reader-timing' if fast else 'validation/reader-timing');suites=[s for p in ['cases.json','extension-cases.json'] for s in json.loads((ROOT/'validation/native-audio-reader'/p).read_text())];events=json.loads((data_base/'events.json').read_text());rows=[];lows=[]
     for index,(suite,observed) in enumerate(zip(suites,events)):
         image=(ROOT/suite['fixture']).read_bytes();assert hashlib.sha256(image).hexdigest()==suite['fixture_sha256']
         assert suite['kind']==observed['kind'] and len(suite['cases'])==len(observed['events'])
@@ -24,7 +26,7 @@ def main():
         for index,row,event in selected:
             lines.append('{'+str(index)+','+str(event['track'])+',{'+','.join(map(str,row['before']))+'},{'+','.join(map(str,row['after']))+'},{'+','.join(map(str,event['writes']))+'},'+str(row['de_in'])+','+str(row['de'])+','+str(len(event['writes']))+','+str(row['tstates'])+'UL,'+str(row['fetches'])+'UL,{'+','.join(str(t)+'UL' for t in event['times'])+'}},')
         lines.append('};');(src/'expected.h').write_text('\n'.join(lines)+'\n')
-        for name in MODULES+['source_psg_queue']:(src/(name+'.c')).write_text('#include "../../../../megadrive/src/'+name+'.c"\n')
+        for name in modules+['source_psg_queue']:(src/(name+'.c')).write_text('#include "../../../../megadrive/src/'+name+'.c"\n')
         (src/'main.c').write_text('''#include <genesis.h>
 #include "../../../../megadrive/src/source_audio_timed.h"
 #include "expected.h"
@@ -62,7 +64,7 @@ int main(bool hard_reset)
  }
  gaw_reader_done=1;while(TRUE) SYS_doVBlankProcess();return 0;
 }
-''')
+'''.replace('source_audio_reader_stream_timed(','source_audio_reader_stream_fast_timed(' if fast else 'source_audio_reader_stream_timed('))
         path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:]
         built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=kernel,env=env,capture_output=True,text=True);(kernel/'build.log').write_text(built.stdout+built.stderr);assert not built.returncode,built.stderr[-2000:]
         sy={m[2]:int(m[1],16)&65535 for line in (kernel/'out/release/symbol.txt').read_text().splitlines() if(m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))};cartridge=kernel/'out/release/rom.bin';assert cartridge.stat().st_size<=4*1024*1024
@@ -74,7 +76,7 @@ int main(bool hard_reset)
             with contextlib.redirect_stdout(io.StringIO()):run(cartridge,30000,kernel/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
             assert observed.get('done') and observed['cases']==len(selected) and not observed['failures'] and observed['writes']==sum(len(event['writes']) for _,_,event in selected),(part,region,observed)
             results.append(dict(part=part,region=region,max_events=max_events,queue_capacity=capacity,kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),**observed));print(results[-1],flush=True)
-    report=dict(results=results,sources={name:hashlib.sha256((ROOT/'megadrive/src'/(name+'.c')).read_bytes()).hexdigest() for name in MODULES},events_sha256=hashlib.sha256((base/'events.json').read_bytes()).hexdigest(),limits=['Compiled68000 full8000 stream compares all400 bytes,T/M1,DE/status/track and source-observed byte/timestamp lists. Bounded diagnostic cartridges below4MiB; queue checks early WAIT and exact supplied logical due time, with32-bit epoch wrap.','Temporary stream buffers are copied synchronously by the test sink. No physical pacing clock,live IRQ PSG consumer,global source phase,production CPU budget or full-game fidelity proof.'])
-    (ROOT/'analysis/reader_timing_68k_report.json').write_text(json.dumps(report,indent=2)+'\n')
+    report=dict(fast=fast,results=results,sources={name:hashlib.sha256((ROOT/'megadrive/src'/(name+'.c')).read_bytes()).hexdigest() for name in modules},events_sha256=hashlib.sha256((data_base/'events.json').read_bytes()).hexdigest(),limits=['Compiled68000 full8000 stream compares all400 bytes,T/M1,DE/status/track and source-observed byte/timestamp lists. Bounded diagnostic cartridges below4MiB; queue checks early WAIT and exact supplied logical due time, with32-bit epoch wrap.','Temporary stream buffers are copied synchronously by the test sink. No physical pacing clock,live IRQ PSG consumer,global source phase,production CPU budget or full-game fidelity proof.'])
+    (ROOT/('analysis/fast_reader_timing_68k_report.json' if fast else 'analysis/reader_timing_68k_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

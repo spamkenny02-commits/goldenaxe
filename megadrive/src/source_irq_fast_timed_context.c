@@ -1,0 +1,3 @@
+#define GAW_TIMED_READER source_audio_reader_stream_fast_timed
+#define source_irq_timed_interrupt source_irq_fast_timed_interrupt
+#include "source_irq_timed_context.c"

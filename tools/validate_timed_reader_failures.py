@@ -6,6 +6,7 @@ import os
 import random
 import struct
 import subprocess
+import sys
 from actor_reference import ROOT
 from validate_reader_timing import MODULES,Status,SINK
 from validate_native_audio_prefix import Work
@@ -13,10 +14,11 @@ from validate_native_audio_prefix import Work
 PLAIN_SINK=c.CFUNCTYPE(None,c.c_void_p,c.POINTER(c.c_uint8),c.c_uint16)
 
 def main():
-    base=ROOT/'validation/timed-reader-failures';base.mkdir(exist_ok=True);sdk=ROOT.parents[1]/'work/sgdk';env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH']
-    args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-shared','-Wall','-Wextra','-Werror','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src')]+[str(ROOT/'megadrive/src'/(name+'.c')) for name in MODULES]+['-o',str(base/'reader.dll')]
+    fast='--fast' in sys.argv;modules=MODULES+(['source_audio_fast_timed','source_audio_fast'] if fast else [])
+    base=ROOT/('validation/fast-timed-reader-failures' if fast else 'validation/timed-reader-failures');base.mkdir(exist_ok=True);sdk=ROOT.parents[1]/'work/sgdk';env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH']
+    args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-shared','-Wall','-Wextra','-Werror','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src')]+[str(ROOT/'megadrive/src'/(name+'.c')) for name in modules]+['-o',str(base/'reader.dll')]
     built=subprocess.run(args,env=env,capture_output=True,text=True);assert not built.returncode,built.stderr
-    dll=c.CDLL(str(base/'reader.dll'));plain=dll.source_audio_reader_stream;timed=dll.source_audio_reader_stream_timed
+    dll=c.CDLL(str(base/'reader.dll'));plain=getattr(dll,'source_audio_reader_stream_fast' if fast else 'source_audio_reader_stream');timed=getattr(dll,'source_audio_reader_stream_fast_timed' if fast else 'source_audio_reader_stream_timed')
     common=[c.POINTER(c.c_uint8),c.POINTER(c.c_uint8),c.c_uint16,c.POINTER(c.c_uint8),c.POINTER(c.c_uint16),c.POINTER(Work),c.POINTER(Status)]
     plain.argtypes=common+[PLAIN_SINK,c.c_void_p];timed.argtypes=common+[SINK,c.c_void_p];plain.restype=timed.restype=c.c_uint8
     image=(ROOT/'input/original.sms').read_bytes();low=(c.c_uint8*32768).from_buffer_copy(image[:32768]);bank=(c.c_uint8*16384).from_buffer_copy(image[0x18000:0x1c000]);suites=json.loads((ROOT/'validation/native-audio-reader/extension-cases.json').read_text());seed=bytes(suites[-1]['cases'][0]['before']);rng=random.Random(0x800084c7);accepted=rejected=partial=0;digest=hashlib.sha256()
@@ -43,7 +45,7 @@ def main():
             if out[8]:partial+=1
         digest.update(out[1]);digest.update(struct.pack('<7I',out[0],*out[2:8]));digest.update(out[8])
     assert rejected and partial
-    report=dict(cases=3000,accepted=accepted,rejected=rejected,rejections_after_published_writes=partial,result_digest=digest.hexdigest(),sources={name:hashlib.sha256((ROOT/'megadrive/src'/(name+'.c')).read_bytes()).hexdigest() for name in MODULES},limits=['Deterministic mutations compare the timed stream with the ordinary stream,including earlier committed state/PSG lists on a later failure. This is not the outer transactional capture API and does not promise full rollback.','No source-oracle execution of rejected arbitrary contexts,hardware pacing or waveform proof. Successful source vectors and compiled68000 checks are separate.'])
-    (ROOT/'analysis/timed_reader_failures_report.json').write_text(json.dumps(report,indent=2)+'\n');print({k:v for k,v in report.items() if k not in ['sources','limits']},flush=True)
+    report=dict(fast=fast,cases=3000,accepted=accepted,rejected=rejected,rejections_after_published_writes=partial,result_digest=digest.hexdigest(),sources={name:hashlib.sha256((ROOT/'megadrive/src'/(name+'.c')).read_bytes()).hexdigest() for name in modules},limits=['Deterministic mutations compare matching timed/untimed stream snapshot contracts,including earlier committed state/PSG lists on a later failure. The fast contract allows failed-channel state changes. No outer transactional rollback is promised.','No source-oracle execution of rejected arbitrary contexts,hardware pacing or waveform proof. Successful source vectors and compiled68000 checks are separate.'])
+    (ROOT/('analysis/fast_timed_reader_failures_report.json' if fast else 'analysis/timed_reader_failures_report.json')).write_text(json.dumps(report,indent=2)+'\n');print({k:v for k,v in report.items() if k not in ['sources','limits']},flush=True)
 
 if __name__=='__main__':main()

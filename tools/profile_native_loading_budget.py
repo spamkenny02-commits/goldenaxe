@@ -20,11 +20,19 @@ def main():
     assert not physical_video or (precise and planned),'Physical video requires --planned --bare --precise'
     audio_readiness='--audio-readiness' in sys.argv
     assert not audio_readiness or physical_video,'Audio readiness requires --physical-video'
+    fast_timed_audio='--fast-timed-audio' in sys.argv
+    timed_audio='--timed-audio' in sys.argv or fast_timed_audio
+    assert not timed_audio or (physical_video and not baseline_audio),'Timed audio requires physical video and its own reader'
     base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else '')+('-precise' if precise else '')+('-baseline-audio' if baseline_audio else '')+('-physical-video' if physical_video else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
     if audio_readiness:
         base=base.with_name(base.name+'-audio-readiness');src=base/'src';src.mkdir(parents=True,exist_ok=True)
+    modules=MODULES
+    if timed_audio:
+        from validate_reader_timing import MODULES as TIMED_MODULES
+        modules=list(dict.fromkeys([name for name in MODULES if name!='source_irq_context']+['source_irq_fast_timed_context' if fast_timed_audio else 'source_irq_timed_context']+TIMED_MODULES+(['source_audio_fast_timed'] if fast_timed_audio else [])))
+        base=base.with_name(base.name+('-fast-timed-audio' if fast_timed_audio else '-timed-audio'));src=base/'src';src.mkdir(parents=True,exist_ok=True)
     header=ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/kernel/src/expected.h');(src/'expected.h').write_bytes(header.read_bytes())
-    for name in MODULES:
+    for name in modules:
         if name=='source_irq_context' and baseline_audio:
             body=(ROOT/'megadrive/src/source_irq_context.c').read_text().replace('#include "source_irq_context.h"','#include "../../../megadrive/src/source_irq_context.h"').replace('#include "source_audio_fast.h"','#include "../../../megadrive/src/source_audio_fast.h"').replace('source_audio_reader_stream_fast(','source_audio_reader_stream(')
             (src/f'{name}.c').write_text(body)
@@ -47,7 +55,7 @@ u8 source_irq_interrupt(void *ctx,const SourceClockIrq *entry,SourceClockWork *w
             body=body.replace('u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions)\n{','u16 source_clock_repeat(SourceClock *clock,u16 tstates,u8 fetches,u16 repetitions)\n{\n    gaw_repeat_calls++;')
             body=body.replace('return count;','gaw_repeat_groups++;gaw_repeat_reps+=count;return count;')
             (src/f'{name}.c').write_text(body)
-        else:(src/f'{name}.c').write_text(f'#include "../../../megadrive/src/{name}.c"\n')
+        else:(src/f'{name}.c').write_text(('#define source_irq_interrupt '+('source_irq_fast_timed_interrupt' if fast_timed_audio else 'source_irq_timed_interrupt')+'\n' if timed_audio and name not in ['source_irq_timed_context','source_irq_fast_timed_context'] else '')+f'#include "../../../megadrive/src/{name}.c"\n')
     if bare:(src/'profile_counters.c').write_text('#include <types.h>\nvolatile u32 gaw_irq_ticks,gaw_irq_calls,gaw_exec_calls,gaw_repeat_calls,gaw_repeat_groups,gaw_repeat_reps;\n')
     (src/'main.c').write_text('''#include <genesis.h>
 #include "../../../megadrive/src/source_room_finish.h"
@@ -126,6 +134,20 @@ int main(bool hard_reset)
         body=body.replace('gaw_budget_end();mark4=vtimer;',
             'gaw_video_convert();source_class0_video_map(tilemap,gaw_video_map,768);source_class0_video_palette(cells+0xb0,gaw_video_palette);gaw_video_dma();if(!source_class0_video_upload(gaw_video_map,gaw_video_palette)) accepted=0;gaw_budget_end();mark4=vtimer;')
         body=body.replace('gaw_budget_cases++;','gaw_budget_cases++;SYS_doVBlankProcess();');main.write_text(body)
+    if timed_audio:
+        main=src/'main.c';body=main.read_text().replace('#include "expected.h"','#include "expected.h"\n#include "../../../megadrive/src/source_irq_timed_context.h"')
+        body=body.replace('SourceIrqContext ctx={0};','SourceTimedIrqContext timed_ctx={0};').replace('ctx.','timed_ctx.core.').replace('&ctx','&timed_ctx.core')
+        body=body.replace('timed_ctx.core.sink=physical_psg;','timed_ctx.sink=physical_psg;')
+        old='static void physical_psg(void *unused,const u8 *writes,u16 count) {u16 n;(void)unused;gaw_video_psg_writes[profile_row]+=count;for(n=0;n<count;n++) PSG_write(writes[n]);}'
+        new='''volatile u32 gaw_psg_deadlines[128];volatile u8 gaw_psg_values[128];volatile u16 gaw_psg_deadline_row;
+static void physical_psg(void *unused,const u8 *writes,const u32 *master,u16 count)
+{
+ u16 n,first=gaw_video_psg_writes[profile_row];(void)unused;gaw_psg_deadline_row=profile_row;
+ if(first+count>128) {gaw_budget_failures++;return;}
+ for(n=0;n<count;n++) {gaw_psg_deadlines[first+n]=master[n];gaw_psg_values[first+n]=writes[n];PSG_write(writes[n]);}
+ gaw_video_psg_writes[profile_row]+=count;
+}'''
+        assert old in body;body=body.replace(old,new);main.write_text(body)
     if audio_readiness:
         main=src/'main.c';body=main.read_text()
         body=body.replace('int main(bool hard_reset)', '''
@@ -142,7 +164,15 @@ static void audio_trace(void *unused,const SourceClockIrq *entry,const SourceClo
  gaw_audio_count[profile_row]=n+1;gaw_audio_ready();
 }
 int main(bool hard_reset)''')
-        body=body.replace('ctx.sink=physical_psg;','ctx.sink=physical_psg;ctx.trace=audio_trace;')
+        if timed_audio:
+            body=body.replace('timed_ctx.sink=physical_psg;','timed_ctx.sink=physical_psg;timed_ctx.core.trace=audio_trace;')
+            body=body.replace('volatile u32 gaw_psg_deadlines[128];',
+                'volatile u16 gaw_audio_packet_sizes[128],gaw_audio_packet_count;\nvolatile u32 gaw_psg_deadlines[128];')
+            body=body.replace('if(first+count>128)',
+                'if(gaw_audio_packet_count>=128) {gaw_budget_failures++;return;}\n gaw_audio_packet_sizes[gaw_audio_packet_count++]=count;\n if(first+count>128)')
+            body=body.replace('  gaw_budget_begin();','  gaw_audio_packet_count=0;gaw_budget_begin();')
+        else:
+            body=body.replace('ctx.sink=physical_psg;','ctx.sink=physical_psg;ctx.trace=audio_trace;')
         main.write_text(body)
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH'];path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:]
     built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=base,env=env,capture_output=True,text=True)
@@ -240,8 +270,32 @@ int main(bool hard_reset)''')
                     expected=0 if not n else levels[color&3]|(levels[(color>>2)&3]<<3)|(levels[(color>>4)&3]<<6)
                     assert int.from_bytes(cram[n*2:n*2+2],'little')==expected,(region,index,n,'physical palette')
                 row.update(extract_frame=frame,physical_map_words=768,physical_pattern_pixels=193*64,physical_palette_words=32,pattern_guard_tiles=2,display_disabled=True,visible_width_restored=256,physical_plane=[64,32],psg_writes=int.from_bytes(area('gaw_video_psg_writes',96)[index*4:index*4+4],'big'),vram_sha256=hashlib.sha256(v).hexdigest(),cram_sha256=hashlib.sha256(cram).hexdigest())
+                if timed_audio:
+                    archive=ROOT/'analysis/loading-psg-v0203';manifest=json.loads((archive/'manifest.json').read_text())
+                    record_path='validation/loading-psg-deadlines/inputs.json';records_raw=(archive/record_path).read_bytes();assert hashlib.sha256(records_raw).hexdigest()==manifest['files'][record_path]
+                    records=json.loads(records_raw);reference=json.loads((ROOT/'analysis/loading_psg_deadlines_report.json').read_text());reference_rows=next(x['rows'] for x in reference['results'] if x['region']==region)
+                    expected_times=[time for item in reference_rows if item['case']==index for time in item['source_psg_master']]
+                    expected_bytes=[byte for item in records if item['case']==index for byte in item['writes']]
+                    count=row['psg_writes'];actual_times=[int.from_bytes(area('gaw_psg_deadlines',512)[n*4:n*4+4],'big') for n in range(count)];actual_bytes=list(area('gaw_psg_values',128)[:count])
+                    assert int.from_bytes(area('gaw_psg_deadline_row',2),'big')==index
+                    assert actual_times==expected_times and actual_bytes==expected_bytes,(region,index,'absolute source PSG dates/bytes')
+                    row.update(source_psg_master=actual_times,source_psg_bytes=actual_bytes,source_psg_dates_verified=True)
+                    if audio_readiness:
+                        packets=row['audio_readiness'];ready=[time for packet in packets for time in packet['batch_ready_master']]
+                        packet_count=int.from_bytes(area('gaw_audio_packet_count',2),'big');sizes_raw=area('gaw_audio_packet_sizes',256)
+                        sizes=[int.from_bytes(sizes_raw[n*2:n*2+2],'big') for n in range(packet_count)]
+                        assert len(ready)==len(sizes) and sum(sizes)==count and all(sizes)
+                        offset=0
+                        for packet in packets:
+                            batch_sizes=sizes[offset:offset+len(packet['batch_ready_master'])];offset+=len(batch_sizes)
+                            assert sum(batch_sizes)==packet['psg_bytes']
+                            packet['batch_sizes']=batch_sizes
+                        byte_ready=[time for time,size in zip(ready,sizes) for _ in range(size)]
+                        margins=[due-available for due,available in zip(actual_times,byte_ready)]
+                        row.update(source_psg_packet_sizes=sizes,source_psg_ready_master=byte_ready,
+                                   source_psg_ready_margins_master=margins,late_source_psg_bytes=sum(m<0 for m in margins))
         results.append(dict(region=region,rows=rows,**observed));print(region,[(r['physical_frames'],round(r['source_frames'],2),r['stages'],r['graphics_stages'],round(r['irq_subticks']/(1536 if region=='pal' else 1280),2),r['clock_calls']) for r in rows],flush=True)
-    report=dict(planned=planned,instrumented=not bare,results=results,helpers={name+suffix:hashlib.sha256((ROOT/'megadrive/src'/(name+suffix)).read_bytes()).hexdigest() for name in MODULES for suffix in ['.c','.h'] if (ROOT/'megadrive/src'/(name+suffix)).exists()},cases_sha256=hashlib.sha256((ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/cases.json')).read_bytes()).hexdigest(),clock_call_fields=['execute','generic_repeat','accepted_generic_groups','generic_repetitions'],inline_blocks_counted=False,kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),
+    report=dict(planned=planned,instrumented=not bare,results=results,helpers={name+suffix:hashlib.sha256((ROOT/'megadrive/src'/(name+suffix)).read_bytes()).hexdigest() for name in modules for suffix in ['.c','.h'] if (ROOT/'megadrive/src'/(name+suffix)).exists()},cases_sha256=hashlib.sha256((ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/cases.json')).read_bytes()).hexdigest(),clock_call_fields=['execute','generic_repeat','accepted_generic_groups','generic_repetitions'],inline_blocks_counted=False,kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),
                 limits=['Vtimer delta around four native calls, no hashes/checkpoint snapshots; stage marks and two getSubTick samples perIRQ add a small profiling overhead. Six additional vtimer checkpoints split graphics stages1706/170E/1720/1733/1748/24B9. One-frame stage resolution; IRQ subtick conversion approximate.',
                         'Only matching logical/physical region; controlled input contexts. Buffer initialization and correctness comparisons outside timing.',
                         'Display off,discarded PSG sink,no real renderer/uploads/input pacing; CPU lower-bound profile, not playable frame-rate proof.'])
@@ -249,7 +303,7 @@ int main(bool hard_reset)''')
     if bare:report['limits'][0]='Vtimer delta around four native calls and six graphics checkpoints only. No per-instruction/repetition counters and no IRQ subtimer; counter fields are zero. One-frame resolution.'
     if precise:
         report['precise_read_only_observer']=True;report['observer_core_sha256']=hashlib.sha256(core.read_bytes()).hexdigest()
-        report['clock_audio_fast']=not baseline_audio
+        report['clock_audio_fast']=(not baseline_audio and not timed_audio) or fast_timed_audio
         report['generated_source_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in src.iterdir() if p.suffix in ['.c','.h']}
         report['limits'][0]='Read-only 68000 PC observations at two noinline markers around the four loading calls. Their call/return overhead is included. Vtimer stage marks remain at one-frame resolution; measured_master gives the finer complete-chain duration.'
     if physical_video:
@@ -261,6 +315,11 @@ int main(bool hard_reset)''')
     if audio_readiness:
         report['audio_readiness']=True
         report['limits'].append('IRQ metadata stores and a fifth marker per IRQ add CPU overhead. PSG function-entry observations mark batch readiness, not individual port-write times. Margins compare a budget-begin-relative epoch to source elapsed time; global physical/source phase alignment is not established. Source IRQ completion is only a necessary last-batch bound, not the deadline of each PSG byte. No publication queue or pacing is enabled.')
-    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+('_physical_video' if physical_video else '')+('_audio_readiness' if audio_readiness else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
+    if timed_audio:
+        report['absolute_source_psg_dates']=True;report['clock_audio_timed']=True;report['clock_audio_fast_timed']=fast_timed_audio
+        report['limits'].append('Separate timed IRQ adapter rebases reader OUT times onto SourceClock.elapsed master ticks. All retained loading dates/bytes are checked against the original-reader oracle. Deadline stores,conversion and immediate actual PSG writes are included in CPU time. No physical scheduling at these dates or global boot phase is enabled; clock_audio_fast_timed identifies the selected snapshot contract.')
+        if audio_readiness:
+            report['limits'].append('Packet sizes align each source-byte deadline with its packet function-entry readiness. This optimistic availability excludes sink/queue overhead after entry and includes diagnostic packet-size stores. Negative margins demonstrate lateness for this relative epoch; positive margins alone do not prove schedulability or absolute boot alignment.')
+    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+('_physical_video' if physical_video else '')+('_audio_readiness' if audio_readiness else '')+('_fast_timed_audio' if fast_timed_audio else '_timed_audio' if timed_audio else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

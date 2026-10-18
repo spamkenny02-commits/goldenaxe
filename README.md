@@ -42,10 +42,19 @@ qui reste distincte du chargement de la ROM jouable.
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,
-priorités, mises en sourdine et sept canaux sont composés. Il reste à mesurer
-le coût et à raccorder cette version à l'horloge physique du jeu ; la v0203
+priorités, mises en sourdine et sept canaux sont composés. Il reste à réaliser
+le raccordement à l'horloge physique du jeu ; la v0203
 reste inchangée.
 Voir le [jalon du lecteur audio horodaté](analysis/reader_timing_milestone.md).
+
+L'adaptateur d'interruption du prototype convertit aussi ces dates vers
+l'horloge source : les **1 488 écritures des 24 chargements** concordent avec
+la SMS. Le lecteur optimisé passe les mêmes 25 644 appels par région en 68000.
+Son coût reste trop élevé sur **2 des 12 chargements NTSC**, jusqu'à 0,405 image
+de dépassement ; les 12 chargements PAL restent dans leur budget. Une mesure
+supplémentaire de disponibilité des paquets révèle aussi des échéances NTSC
+manquées. Il reste à réduire ce coût et à programmer les sorties physiques.
+Voir les [mesures, preuves et limites](analysis/timed_irq_milestone.md).
 
 Les canaux mélodiques ont aussi leurs événements PSG datés : **20 852 cas
 et 37 260 écritures par région** concordent avec la SMS sur les six emplacements

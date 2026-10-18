@@ -13,8 +13,13 @@ static void copy_state(u8 *to,const u8 *from)
 #endif
 }
 
+/* A separately compiled timed adapter substitutes only the reader call while
+ * retaining the same IRQ staging, diagnostics and clock-work publication. */
+#ifndef GAW_SOURCE_IRQ_AUDIO
 static void ignore(void *context,const u8 *writes,u16 count)
 {(void)context;(void)writes;(void)count;}
+#define GAW_SOURCE_IRQ_AUDIO(c,i,w) source_audio_reader_stream_fast((c)->audio,(c)->low,(c)->low_bytes,(c)->bank6,&(c)->audio_de,w,&(c)->last_audio,(c)->sink?(c)->sink:ignore,(c)->sink_context)
+#endif
 
 u8 source_irq_interrupt(void *context,const SourceClockIrq *entry,SourceClockWork *work)
 {
@@ -37,9 +42,7 @@ u8 source_irq_interrupt(void *context,const SourceClockIrq *entry,SourceClockWor
         if(!source_irq(ctx->ram,&input,&zero,&irq)) {ctx->error=SOURCE_IRQ_CONTEXT_INVALID;return 0;}
         timer_after=ctx->ram[0x30];ctx->ram[0x30]=timer_before;
     }
-    if(!source_audio_reader_stream_fast(ctx->audio,ctx->low,ctx->low_bytes,ctx->bank6,
-                                   &ctx->audio_de,&audio,&ctx->last_audio,
-                                   ctx->sink?ctx->sink:ignore,ctx->sink_context))
+    if(!GAW_SOURCE_IRQ_AUDIO(ctx,&irq,&audio))
     {ctx->error=ctx->last_audio.error;return 0;}
     if(audio.tstates>0xffffffffUL-irq.whole.tstates || audio.fetches>0xffffffffUL-irq.whole.fetches)
     {ctx->error=SOURCE_IRQ_CONTEXT_INVALID;return 0;}

@@ -60,4 +60,11 @@ typedef void (*SourceAudioTimedReaderSink)(void *context,const u8 *writes,const 
 u8 source_audio_reader_stream_timed(u8 *state,const u8 *low,u16 low_bytes,const u8 *bank,
                                     u16 *de,SourceClockWork *work,SourceAudioReaderStatus *status,
                                     SourceAudioTimedReaderSink sink,void *context);
+/* Same successful timed lists without nested channel/sequence snapshots.
+ * Rejection may leave the failed channel's state changed, matching the fast
+ * untimed stream contract; its writes remain discarded. Earlier successful
+ * lists/state are retained. This is not an outer transactional capture API. */
+u8 source_audio_reader_stream_fast_timed(u8 *state,const u8 *low,u16 low_bytes,const u8 *bank,
+                                         u16 *de,SourceClockWork *work,SourceAudioReaderStatus *status,
+                                         SourceAudioTimedReaderSink sink,void *context);
 #endif
