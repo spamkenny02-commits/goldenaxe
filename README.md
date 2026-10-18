@@ -39,6 +39,13 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+Une file native de commandes PSG datées est prête pour séparer calcul audio
+et publication : 119 273 commandes passent sur PC et en 68000 PAL/NTSC,
+puis 12 000 commandes par région sont consommées par une interruption vidéo
+pendant que la boucle principale les produit. Les horodatages calculés depuis
+les instructions SMS et la sortie à la cadence exacte restent à raccorder.
+Voir le [jalon de la file audio](analysis/psg_queue_milestone.md).
+
 La préparation audio du prototype est maintenant comparée aux échéances
 de chaque octet PSG du lecteur SMS original : **1 488 octets**, aucun calcul
 en retard sur les 24 contextes retenus. La marge minimale est de 3,58 lignes

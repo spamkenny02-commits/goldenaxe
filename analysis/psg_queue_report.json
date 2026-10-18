@@ -1,0 +1,46 @@
+{
+  "host_checks": 705805,
+  "host_max_capacity_events": 98304,
+  "produced_events": 119273,
+  "regions": [
+    {
+      "region": "auto",
+      "frame": 5147,
+      "done": 1,
+      "checks": 705805,
+      "failures": 0,
+      "failure_line": 0,
+      "produced": 119273,
+      "irq_sent": 12000,
+      "irq_consumed": 12000,
+      "irq_checks": 13589,
+      "irq_failures": 0,
+      "irq_vints": 1589
+    },
+    {
+      "region": "pal",
+      "frame": 4559,
+      "done": 1,
+      "checks": 705805,
+      "failures": 0,
+      "failure_line": 0,
+      "produced": 119273,
+      "irq_sent": 12000,
+      "irq_consumed": 12000,
+      "irq_checks": 13581,
+      "irq_failures": 0,
+      "irq_vints": 1581
+    }
+  ],
+  "kernel_sha256": "730cec3be4503f89e017595b8c7650a6fc0018c83a4c4643d1db35f0c241abbf",
+  "sources": {
+    "source_psg_queue.c": "3dab403ea133a1ee518c427e2fa1458e3eafe4da9b35350b6c7759d6cf342067",
+    "source_psg_queue.h": "ae5de1d49bf2963a675773f5dbdfecb563dfa9354bb4ffa0208a36ec52b1bb00",
+    "test.h": "8d3c9589893f2f724d51a19e102e880f20d54e08446e40783a5f7be680a375eb",
+    "main.c": "f25b6028f11f666489b212c692d5a4931924ad4e30b6ea11811e14f2019bc00b"
+  },
+  "limits": [
+    "FIFO contract: future/exact/late deadlines,32-bit clock wrap,16-bit cursor wrap,capacities1/2/4/8/16,atomic batch rejection,order/capacity/null/corrupt cursor handling and independent linear-FIFO comparison. Maximum32768-entry capacity separately tested on host only; such a buffer exceeds Mega Drive RAM.",
+    "Compiled68000 additionally consumes12000 sequenced events in actual emulated VINT callbacks while the main loop produces variable-sized batches and retries FULL. End-of-batch markers check that an IRQ does not observe a partially published batch. Frame ticks are a test clock only; no physical PSG writes,source-semantic timestamps,subframe delivery latency or real-hardware proof. Playable ROM does not use this queue."
+  ]
+}
