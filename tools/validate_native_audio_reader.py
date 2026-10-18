@@ -9,7 +9,7 @@ from actor_reference import ROOT
 from audio_reader_refresh import reader_refresh
 from validate_native_audio_prefix import Work
 
-MODULES=['source_audio_reader','source_audio_prefix','source_audio_dispatch','source_audio_priority',
+MODULES=['source_audio_fast','source_audio_reader','source_audio_prefix','source_audio_dispatch','source_audio_priority',
          'source_audio_tone','source_audio_noise','source_audio_sequence','source_audio_memory',
          'source_audio_envelope','source_audio_pitch']
 

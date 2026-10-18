@@ -8,7 +8,7 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            11,
+            10,
             2,
             0,
             0,
@@ -17,43 +17,12 @@
           ],
           "case": 0,
           "room": 60,
-          "physical_frames": 23,
+          "physical_frames": 21,
           "source_master": 20349450,
           "source_frames": 22.71042587384492,
-          "compute_to_source_ratio": 1.0127507131642377,
+          "compute_to_source_ratio": 0.9246854337586519,
           "stages": [
-            14,
-            2,
-            4,
-            3
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            11,
-            1,
-            0,
-            1,
-            1,
-            0
-          ],
-          "case": 2,
-          "room": 60,
-          "physical_frames": 22,
-          "source_master": 20349450,
-          "source_frames": 22.71042587384492,
-          "compute_to_source_ratio": 0.9687180734614449,
-          "stages": [
-            14,
+            13,
             1,
             5,
             2
@@ -70,7 +39,38 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            11,
+            9,
+            2,
+            0,
+            0,
+            1,
+            0
+          ],
+          "case": 2,
+          "room": 60,
+          "physical_frames": 20,
+          "source_master": 20349450,
+          "source_frames": 22.71042587384492,
+          "compute_to_source_ratio": 0.880652794055859,
+          "stages": [
+            12,
+            2,
+            4,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
             1,
             0,
             1,
@@ -79,198 +79,12 @@
           ],
           "case": 4,
           "room": 135,
-          "physical_frames": 23,
+          "physical_frames": 21,
           "source_master": 20349555,
           "source_frames": 22.710543056113565,
-          "compute_to_source_ratio": 1.0127454875548876,
+          "compute_to_source_ratio": 0.9246806625501148,
           "stages": [
-            14,
-            2,
-            4,
-            3
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            11,
-            2,
-            0,
-            0,
-            1,
-            0
-          ],
-          "case": 6,
-          "room": 135,
-          "physical_frames": 23,
-          "source_master": 20349555,
-          "source_frames": 22.710543056113565,
-          "compute_to_source_ratio": 1.0127454875548876,
-          "stages": [
-            14,
-            2,
-            5,
-            2
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            11,
-            2,
-            0,
-            0,
-            1,
-            0
-          ],
-          "case": 8,
-          "room": 150,
-          "physical_frames": 23,
-          "source_master": 20349225,
-          "source_frames": 22.710174768983528,
-          "compute_to_source_ratio": 1.0127619110801518,
-          "stages": [
-            14,
-            2,
-            5,
-            2
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            11,
-            2,
-            0,
-            0,
-            1,
-            0
-          ],
-          "case": 10,
-          "room": 150,
-          "physical_frames": 23,
-          "source_master": 20349225,
-          "source_frames": 22.710174768983528,
-          "compute_to_source_ratio": 1.0127619110801518,
-          "stages": [
-            14,
-            2,
-            5,
-            2
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            11,
-            2,
-            0,
-            1,
-            0,
-            1
-          ],
-          "case": 12,
-          "room": 26,
-          "physical_frames": 24,
-          "source_master": 20349630,
-          "source_frames": 22.71062675773403,
-          "compute_to_source_ratio": 1.0567740052276136,
-          "stages": [
-            15,
-            2,
-            5,
-            2
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            11,
-            2,
-            0,
-            0,
-            1,
-            1
-          ],
-          "case": 14,
-          "room": 26,
-          "physical_frames": 24,
-          "source_master": 20349630,
-          "source_frames": 22.71062675773403,
-          "compute_to_source_ratio": 1.0567740052276136,
-          "stages": [
-            15,
-            2,
-            4,
-            3
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            11,
-            1,
-            0,
-            1,
-            1,
-            0
-          ],
-          "case": 16,
-          "room": 54,
-          "physical_frames": 22,
-          "source_master": 20349375,
-          "source_frames": 22.710342172224454,
-          "compute_to_source_ratio": 0.9687216437851286,
-          "stages": [
-            14,
+            13,
             1,
             5,
             2
@@ -294,12 +108,12 @@
             1,
             0
           ],
-          "case": 18,
-          "room": 54,
+          "case": 6,
+          "room": 135,
           "physical_frames": 22,
-          "source_master": 20349375,
-          "source_frames": 22.710342172224454,
-          "compute_to_source_ratio": 0.9687216437851286,
+          "source_master": 20349555,
+          "source_frames": 22.710543056113565,
+          "compute_to_source_ratio": 0.9687130750525013,
           "stages": [
             14,
             1,
@@ -318,21 +132,52 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            11,
+            10,
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "case": 8,
+          "room": 150,
+          "physical_frames": 21,
+          "source_master": 20349225,
+          "source_frames": 22.710174768983528,
+          "compute_to_source_ratio": 0.9246956579427472,
+          "stages": [
+            13,
+            2,
+            4,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            9,
             2,
             0,
             1,
             1,
             0
           ],
-          "case": 20,
-          "room": 109,
-          "physical_frames": 23,
-          "source_master": 20349525,
-          "source_frames": 22.71050957546538,
-          "compute_to_source_ratio": 1.0127469805806277,
+          "case": 10,
+          "room": 150,
+          "physical_frames": 21,
+          "source_master": 20349225,
+          "source_frames": 22.710174768983528,
+          "compute_to_source_ratio": 0.9246956579427472,
           "stages": [
-            15,
+            13,
             1,
             5,
             2
@@ -349,14 +194,138 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            11,
+            10,
+            2,
+            0,
+            1,
+            0,
+            1
+          ],
+          "case": 12,
+          "room": 26,
+          "physical_frames": 22,
+          "source_master": 20349630,
+          "source_frames": 22.71062675773403,
+          "compute_to_source_ratio": 0.968709504791979,
+          "stages": [
+            14,
+            2,
+            4,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
             1,
             0,
             1,
             1,
             0
           ],
-          "case": 22,
+          "case": 14,
+          "room": 26,
+          "physical_frames": 22,
+          "source_master": 20349630,
+          "source_frames": 22.71062675773403,
+          "compute_to_source_ratio": 0.968709504791979,
+          "stages": [
+            13,
+            2,
+            5,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 16,
+          "room": 54,
+          "physical_frames": 21,
+          "source_master": 20349375,
+          "source_frames": 22.710342172224454,
+          "compute_to_source_ratio": 0.9246888417948954,
+          "stages": [
+            13,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 18,
+          "room": 54,
+          "physical_frames": 21,
+          "source_master": 20349375,
+          "source_frames": 22.710342172224454,
+          "compute_to_source_ratio": 0.9246888417948954,
+          "stages": [
+            13,
+            1,
+            5,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            2,
+            0,
+            1,
+            0,
+            1
+          ],
+          "case": 20,
           "room": 109,
           "physical_frames": 22,
           "source_master": 20349525,
@@ -376,12 +345,43 @@
             0,
             0
           ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            10,
+            2,
+            0,
+            0,
+            1,
+            0
+          ],
+          "case": 22,
+          "room": 109,
+          "physical_frames": 22,
+          "source_master": 20349525,
+          "source_frames": 22.71050957546538,
+          "compute_to_source_ratio": 0.9687145031640788,
+          "stages": [
+            13,
+            2,
+            4,
+            3
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
         }
       ],
       "done": 1,
       "cases": 12,
       "failures": 0,
-      "frame": 328
+      "frame": 310
     },
     {
       "region": "pal",
@@ -389,7 +389,7 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            9,
+            8,
             1,
             0,
             1,
@@ -398,15 +398,15 @@
           ],
           "case": 1,
           "room": 60,
-          "physical_frames": 18,
+          "physical_frames": 17,
           "source_master": 20949705,
           "source_frames": 19.570749957961997,
-          "compute_to_source_ratio": 0.9197399199654601,
+          "compute_to_source_ratio": 0.8686432577451568,
           "stages": [
-            12,
+            11,
             1,
-            4,
-            1
+            3,
+            2
           ],
           "irq_subticks": 0,
           "irq_calls": 0,
@@ -420,114 +420,21 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            9,
+            8,
             1,
             0,
             1,
-            1,
+            0,
             0
           ],
           "case": 3,
           "room": 60,
-          "physical_frames": 18,
+          "physical_frames": 17,
           "source_master": 20949705,
           "source_frames": 19.570749957961997,
-          "compute_to_source_ratio": 0.9197399199654601,
+          "compute_to_source_ratio": 0.8686432577451568,
           "stages": [
-            12,
-            1,
-            4,
-            1
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            9,
-            1,
-            0,
-            1,
-            1,
-            0
-          ],
-          "case": 5,
-          "room": 135,
-          "physical_frames": 19,
-          "source_master": 20949810,
-          "source_frames": 19.570848046634158,
-          "compute_to_source_ratio": 0.9708317163735614,
-          "stages": [
-            12,
-            1,
-            4,
-            2
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            8,
-            1,
-            1,
-            0,
-            1,
-            0
-          ],
-          "case": 7,
-          "room": 135,
-          "physical_frames": 18,
-          "source_master": 20949810,
-          "source_frames": 19.570848046634158,
-          "compute_to_source_ratio": 0.9197353102486371,
-          "stages": [
-            11,
-            1,
-            4,
-            2
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            8,
-            2,
-            0,
-            0,
-            1,
-            0
-          ],
-          "case": 9,
-          "room": 150,
-          "physical_frames": 18,
-          "source_master": 20949480,
-          "source_frames": 19.570539767950226,
-          "compute_to_source_ratio": 0.9197497980856805,
-          "stages": [
-            11,
+            10,
             2,
             3,
             2
@@ -544,7 +451,100 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            9,
+            8,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "case": 5,
+          "room": 135,
+          "physical_frames": 17,
+          "source_master": 20949810,
+          "source_frames": 19.570848046634158,
+          "compute_to_source_ratio": 0.8686389041237128,
+          "stages": [
+            10,
+            1,
+            4,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            7,
+            2,
+            0,
+            0,
+            1,
+            0
+          ],
+          "case": 7,
+          "room": 135,
+          "physical_frames": 16,
+          "source_master": 20949810,
+          "source_frames": 19.570848046634158,
+          "compute_to_source_ratio": 0.8175424979987885,
+          "stages": [
+            10,
+            1,
+            4,
+            1
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            8,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "case": 9,
+          "room": 150,
+          "physical_frames": 17,
+          "source_master": 20949480,
+          "source_frames": 19.570539767950226,
+          "compute_to_source_ratio": 0.8686525870809204,
+          "stages": [
+            11,
+            1,
+            3,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            8,
             1,
             0,
             1,
@@ -553,45 +553,14 @@
           ],
           "case": 11,
           "room": 150,
-          "physical_frames": 18,
+          "physical_frames": 17,
           "source_master": 20949480,
           "source_frames": 19.570539767950226,
-          "compute_to_source_ratio": 0.9197497980856805,
+          "compute_to_source_ratio": 0.8686525870809204,
           "stages": [
-            11,
+            10,
             2,
             3,
-            2
-          ],
-          "irq_subticks": 0,
-          "irq_calls": 0,
-          "clock_calls": [
-            0,
-            0,
-            0,
-            0
-          ]
-        },
-        {
-          "graphics_return_frames": 0,
-          "graphics_stages": [
-            9,
-            1,
-            0,
-            1,
-            0,
-            0
-          ],
-          "case": 13,
-          "room": 26,
-          "physical_frames": 19,
-          "source_master": 20949885,
-          "source_frames": 19.570918109971416,
-          "compute_to_source_ratio": 0.9708282408232789,
-          "stages": [
-            11,
-            2,
-            4,
             2
           ],
           "irq_subticks": 0,
@@ -610,7 +579,38 @@
             1,
             0,
             1,
+            0,
+            0
+          ],
+          "case": 13,
+          "room": 26,
+          "physical_frames": 17,
+          "source_master": 20949885,
+          "source_frames": 19.570918109971416,
+          "compute_to_source_ratio": 0.8686357944208285,
+          "stages": [
+            10,
+            2,
+            3,
+            2
+          ],
+          "irq_subticks": 0,
+          "irq_calls": 0,
+          "clock_calls": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "graphics_return_frames": 0,
+          "graphics_stages": [
+            8,
             1,
+            0,
+            1,
+            0,
             0
           ],
           "case": 15,
@@ -620,9 +620,9 @@
           "source_frames": 19.570918109971416,
           "compute_to_source_ratio": 0.9197320176220537,
           "stages": [
-            11,
+            10,
             2,
-            3,
+            4,
             2
           ],
           "irq_subticks": 0,
@@ -637,21 +637,21 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            9,
+            7,
             1,
             0,
             1,
-            0,
-            1
+            1,
+            0
           ],
           "case": 17,
           "room": 54,
-          "physical_frames": 18,
+          "physical_frames": 16,
           "source_master": 20949630,
           "source_frames": 19.570679894624742,
-          "compute_to_source_ratio": 0.9197432126486242,
+          "compute_to_source_ratio": 0.8175495223543326,
           "stages": [
-            12,
+            10,
             1,
             3,
             2
@@ -668,7 +668,7 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            9,
+            8,
             1,
             0,
             1,
@@ -677,15 +677,15 @@
           ],
           "case": 19,
           "room": 54,
-          "physical_frames": 18,
+          "physical_frames": 16,
           "source_master": 20949630,
           "source_frames": 19.570679894624742,
-          "compute_to_source_ratio": 0.9197432126486242,
+          "compute_to_source_ratio": 0.8175495223543326,
           "stages": [
-            11,
-            2,
-            3,
-            2
+            10,
+            1,
+            4,
+            1
           ],
           "irq_subticks": 0,
           "irq_calls": 0,
@@ -699,22 +699,22 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            9,
+            8,
             1,
             0,
             1,
-            0,
+            1,
             0
           ],
           "case": 21,
           "room": 109,
-          "physical_frames": 18,
+          "physical_frames": 17,
           "source_master": 20949345,
           "source_frames": 19.570413653943163,
-          "compute_to_source_ratio": 0.9197557250596619,
+          "compute_to_source_ratio": 0.8686581847785695,
           "stages": [
             11,
-            2,
+            1,
             3,
             2
           ],
@@ -730,7 +730,7 @@
         {
           "graphics_return_frames": 0,
           "graphics_stages": [
-            9,
+            8,
             1,
             0,
             1,
@@ -739,12 +739,12 @@
           ],
           "case": 23,
           "room": 109,
-          "physical_frames": 18,
+          "physical_frames": 17,
           "source_master": 20949345,
           "source_frames": 19.570413653943163,
-          "compute_to_source_ratio": 0.9197557250596619,
+          "compute_to_source_ratio": 0.8686581847785695,
           "stages": [
-            11,
+            10,
             2,
             3,
             2
@@ -762,7 +762,7 @@
       "done": 1,
       "cases": 12,
       "failures": 0,
-      "frame": 264
+      "frame": 248
     }
   ],
   "helpers": {
@@ -778,11 +778,11 @@
     "source_ram_planes.h": "ad2f3a5911db9eb8ee263cc689b79805e1fbab7b5bdcf7ff887e414eb25856bc",
     "source_graphics_load.c": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
     "source_graphics_load.h": "2c5d6c6e1bae96996c3dbfa8afc0b11eb4d03203d2f370aa591fecfa780fa69b",
-    "source_pattern_clock.c": "211af2b1a181078289302a016074d60e9ad2baf5a69fc8dfdaa6e33a52542029",
-    "source_pattern_clock.h": "f8dc94c6cdc2ca7435d4389956014e7a4fc4b6ab478172cc7846d57a4ca49879",
+    "source_pattern_clock.c": "6b68f60f64a451545b45518da8265f030952a50abcc1c4b103f3fae21a75e2b2",
+    "source_pattern_clock.h": "76117f2a6e60f9b25fefd268b530c7df4c141a3a7f10d1360aece6f29bcacac2",
     "source_wait.c": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
     "source_wait.h": "5b19b3fab702b1401beca02842f9421cc5502cba3876251fb5827debff159dc5",
-    "source_irq_context.c": "193a739e8d14fa83ad93e1e956fe76f44423e1a756e29a5e3c28ac3256b8079f",
+    "source_irq_context.c": "aa1dd064b3ec351b9a31fab2c01dee90cf720812b354e3eb366c624ee8dfc27d",
     "source_irq_context.h": "b2e4e2ded184ef602c40c192c7ba59d88075463262c06d65569042b26988aafa",
     "source_irq.c": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
     "source_irq.h": "c463a407ad732d2a78e16a6b50b18edb3c0fb941655c5a3aae3acc9df402d658",
@@ -790,6 +790,8 @@
     "source_clock.h": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8",
     "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
     "source_rng.h": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f",
+    "source_audio_fast.c": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "source_audio_fast.h": "2fdec938642ffcfe22790f5985bc16a74c8d3103d1b41927929b77797f1b3f5a",
     "source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
     "source_audio_reader.h": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933",
     "source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
@@ -798,11 +800,11 @@
     "source_audio_dispatch.h": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960",
     "source_audio_priority.c": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
     "source_audio_priority.h": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb",
-    "source_audio_tone.c": "9544b5e29143f2aaa057edb13afab01e9490f0cae60bd075d0b86b9a08c0205a",
+    "source_audio_tone.c": "334d4a7445670543d39a109694042c0abadcc00f153d373250b9ccbfcb8badbf",
     "source_audio_tone.h": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4",
-    "source_audio_noise.c": "abc6aaccccee8b697a0844ef5298cb5c16a558981c2f82067dee0918edea4c2d",
+    "source_audio_noise.c": "93a8cab954b2ac78aef54bf22def82245f939f6104ff146dd29ac8cc81977dab",
     "source_audio_noise.h": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1",
-    "source_audio_sequence.c": "a1dd90f653d6d35288ec0a058c3afbb0ec247ff4aae6012c9005ea5699c99d42",
+    "source_audio_sequence.c": "ef9b175697dd07fc8b9a634185d60f46677636762d39c7548df3cbc77c00d4a6",
     "source_audio_sequence.h": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c",
     "source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
     "source_audio_memory.h": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9",
@@ -819,7 +821,7 @@
     "generic_repetitions"
   ],
   "inline_blocks_counted": false,
-  "kernel_sha256": "55bf843161c06c426ed9fab88c8b5a401dac85180cb9f0bcea6b06e6e250cfe7",
+  "kernel_sha256": "0ef14eb1e2578d764cbf2fad109c9b3925c28c7f64c5ca6c689bd1672234c8ab",
   "limits": [
     "Vtimer delta around four native calls and six graphics checkpoints only. No per-instruction/repetition counters and no IRQ subtimer; counter fields are zero. One-frame resolution.",
     "Only matching logical/physical region; controlled input contexts. Buffer initialization and correctness comparisons outside timing.",

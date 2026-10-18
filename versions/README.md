@@ -4,6 +4,9 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0207 | [Telecharger](v0207-82875871/gaw-megadrive-v0207.bin) | superseded_diagnostic | Diagnostic de composition audio gardee ; remplace par une voie rapide separee, hors du binaire jouable. Utiliser v0203. | `8287587147c352ca65af331f00edda5827ee3baa84b5a447e86ab73327861d32` |
+| v0206 | [Telecharger](v0206-b3bfbea1/gaw-megadrive-v0206.bin) | superseded_diagnostic | Diagnostic audio rapide global : avance certains chargements et degrade le retour nord PAL. Utiliser v0203. | `b3bfbea127c9e1f21fe42c009662f2b96bd0c68aaa9a845989ebdd44d08af8d4` |
+| v0205 | [Telecharger](v0205-e6708f0c/gaw-megadrive-v0205.bin) | superseded_diagnostic | Diagnostic audio : copies par canal reduites ; le retard vertical NTSC subsiste. Utiliser v0203. | `e6708f0cdc30deae005628e098a8c0510660cc8bc768ec3ed085ee7d29db14d7` |
 | v0204 | [Telecharger](v0204-566c4798/gaw-megadrive-v0204.bin) | superseded_diagnostic | Diagnostic de copie verticale : ne corrige pas le retard NTSC ; utiliser v0203. | `566c4798fc9d4773de6d1cb03976111813709e4cdef9917bcf9698c4ba732c57` |
 | v0203 | [Telecharger](v0203-7660a4b5/gaw-megadrive-v0203.bin) | targeted_checks_passed | Corrige le flash de l ancienne carte en fin de scrolling horizontal ; 3004 images comparees et dix fins de transition PAL/NTSC verifiees, cadence inchangee sur ces parcours. | `7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7` |
 | v0202 | [Telecharger](v0202-f55643bb/gaw-megadrive-v0202.bin) | targeted_checks_passed | Conversion intro/titre/inventaire ~39% moins couteuse en CPU; noirs inventaire PAL et premier palier guerrier corriges. Cadences titre,65 lignes intro,menus et bruitages verifies PAL/NTSC. | `f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1` |

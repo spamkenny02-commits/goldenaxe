@@ -6,13 +6,15 @@ import json
 import os
 import re
 import subprocess
+import sys
 from actor_reference import ROOT
 from run_core import run
 from validate_native_audio_reader import MODULES
 
 
 def main():
-    folder=ROOT/'validation/native-audio-reader-68k';folder.mkdir(exist_ok=True)
+    fast='--fast' in sys.argv
+    folder=ROOT/('validation/native-audio-fast-reader-68k' if fast else 'validation/native-audio-reader-68k');folder.mkdir(exist_ok=True)
     sdk=(ROOT.parents[1]/'work/sgdk').resolve()
     suites=json.loads((ROOT/'validation/native-audio-reader/cases.json').read_text())+json.loads((ROOT/'validation/native-audio-reader/extension-cases.json').read_text())
     lows=[]
@@ -36,6 +38,7 @@ def main():
         for name in MODULES:(src/f'{name}.c').write_text(f'#include "../../../../megadrive/src/{name}.c"\n')
         (src/'main.c').write_text('''#include <genesis.h>
 #include "../../../../megadrive/src/source_audio_reader.h"
+#include "../../../../megadrive/src/source_audio_fast.h"
 #include "expected.h"
 volatile u32 gaw_reader_cases,gaw_reader_failures;
 volatile u16 gaw_reader_done;
@@ -55,7 +58,7 @@ int main(bool hard_reset)
  }
  gaw_reader_done=1;while(TRUE) SYS_doVBlankProcess();return 0;
 }
-''')
+'''.replace('accepted=source_audio_reader(', 'accepted=source_audio_reader_fast(' if fast else 'accepted=source_audio_reader('))
         env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH']
         sdkpath=str(sdk).replace('\\','/');sdkunix='/'+sdkpath[0].lower()+sdkpath[2:]
         args=[str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" "EXTRA_FLAGS=-fno-inline -fno-inline-functions" -j2','build',sdkpath,sdkunix]
@@ -70,15 +73,16 @@ int main(bool hard_reset)
                 def value(name,n):return int.from_bytes(bytes(ram[(symbols[name]+i)^1] for i in range(n)),'big')
                 observed.update(frame=frame,done=value('gaw_reader_done',2),cases=value('gaw_reader_cases',4),failures=value('gaw_reader_failures',4))
             with contextlib.redirect_stdout(io.StringIO()):
-                run(cartridge,40000,base/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region})
+                run(cartridge,40000,base/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
             assert observed.get('done') and (observed['cases'],observed['failures'])==(len(cases),0),(part,region,observed)
             results.append(dict(part=part,region=region,ROM_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),**observed))
             print(part,region,observed,flush=True)
-    report=dict(cases=len(all_cases),results=results,
+    report=dict(fast=fast,cases=len(all_cases),results=results,
+                module_sha256={name:hashlib.sha256((ROOT/'megadrive/src'/f'{name}.c').read_bytes()).hexdigest() for name in MODULES},
                 reader_helper_sha256=hashlib.sha256((ROOT/'megadrive/src/source_audio_reader.c').read_bytes()).hexdigest(),
                 limits=['Compiled68000, full400/T/M1/DE from hashed source captures and source-verified gates.',
                         'PSG writes/full IRQ clock/waveform/hardware/natural full progression require separate evidence.'])
-    (ROOT/'analysis/native_audio_reader_68k_report.json').write_text(json.dumps(report,indent=2)+'\n')
+    (ROOT/('analysis/native_audio_fast_reader_68k_report.json' if fast else 'analysis/native_audio_reader_68k_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 
 if __name__=='__main__':main()

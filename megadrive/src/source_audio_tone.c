@@ -9,6 +9,7 @@
 #define READ(a,v) do {if(!source_audio_read(state,low,low_bytes,bank,(u16)(a),&(v))) goto reject;} while(0)
 #define EMIT(v) do {if(output->count>=512) goto reject;output->writes[output->count++]=(u8)(v);} while(0)
 
+#ifndef GAW_AUDIO_STREAM_CHANNELS
 static void copy_state(u8 *to,const u8 *from)
 {
 #ifdef SGDK_GCC
@@ -17,16 +18,24 @@ static void copy_state(u8 *to,const u8 *from)
     __builtin_memcpy(to,from,400);
 #endif
 }
+#endif
 
 u8 source_audio_tone(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                      const u8 *bank,u16 *de,SourceClockWork *work,
                      SourceAudioSequenceOutput *output)
 {
-    u8 old[400],*c,pitch=1,n,value;u16 original_de=*de,pointer,frequency;
+#ifndef GAW_AUDIO_STREAM_CHANNELS
+    u8 old[400];
+#endif
+    u8 *c,pitch=1,n,value;u16 original_de=*de,pointer,frequency;
     SourceClockWork sub;SourceAudioPitchOutput modulation;SourceAudioEnvelopeOutput envelope;
     work->tstates=work->fetches=0;output->de=*de;output->count=output->error=output->unwind=0;
     if(offset>0x160) {output->error=255;return 0;}
-    copy_state(old,state);c=state+offset;c[10]--;ADD(23,2);
+
+#ifndef GAW_AUDIO_STREAM_CHANNELS
+    copy_state(old,state);
+#endif
+    c=state+offset;c[10]--;ADD(23,2);
     if(!c[10])
     {
         ADD(24,2);
@@ -145,7 +154,11 @@ u8 source_audio_tone(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
 done:
     output->de=*de;return 1;
 reject:
-    copy_state(state,old);*de=original_de;work->tstates=work->fetches=0;
+
+#ifndef GAW_AUDIO_STREAM_CHANNELS
+    copy_state(state,old);
+#endif
+    *de=original_de;work->tstates=work->fetches=0;
     output->de=original_de;output->count=output->unwind=0;
     if(!output->error) output->error=255;
     return 0;

@@ -10,6 +10,7 @@
 #define PUT(i,v) do {c[(i)]=(u8)(v);c[(i)+1]=(u16)(v)>>8;} while(0)
 #define EMIT(v) do {if(output->count>=512) goto reject;output->writes[output->count++]=(u8)(v);} while(0)
 
+#ifndef GAW_AUDIO_STREAM_CHANNELS
 static void copy_state(u8 *to,const u8 *from)
 {
 #ifdef SGDK_GCC
@@ -18,6 +19,7 @@ static void copy_state(u8 *to,const u8 *from)
     __builtin_memcpy(to,from,400);
 #endif
 }
+#endif
 static u8 duration(u8 value,u8 scale,SourceClockWork *work)
 {
     if(scale==1) {work->tstates+=34;work->fetches+=4;}
@@ -51,12 +53,19 @@ reject:return 0;
 static u8 sequence(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                     const u8 *bank,u8 noise,SourceClockWork *work,SourceAudioSequenceOutput *output)
 {
-    u8 old[400],*c,note=0xff,value,lo,hi,old_stereo,mask,amount;
+#ifndef GAW_AUDIO_STREAM_CHANNELS
+    u8 old[400];
+#endif
+    u8 *c,note=0xff,value,lo,hi,old_stereo,mask,amount;
     u16 cursor=0,guard,index,stack,target,background,frequency,n;
     SourceClockWork restored;SourceAudioDispatchOutput writes;
     work->tstates=work->fetches=0;output->de=output->count=0;output->unwind=output->error=0;
     if(offset>0x160) {output->error=0xff;return 0;}
-    copy_state(old,state);c=state+offset;cursor=c[3]|((u16)c[4]<<8);c[0]&=(u8)~(noise?16:18);
+
+#ifndef GAW_AUDIO_STREAM_CHANNELS
+    copy_state(old,state);
+#endif
+    c=state+offset;cursor=c[3]|((u16)c[4]<<8);c[0]&=(u8)~(noise?16:18);
     ADD(noise?61:84,noise?6:8);
     for(guard=0;guard<256;guard++)
     {
@@ -265,7 +274,11 @@ store:
     else {c[0x1f]=0;ADD(34,4);}
     return 1;
 reject:
-    copy_state(state,old);work->tstates=work->fetches=0;output->de=output->count=0;
+
+#ifndef GAW_AUDIO_STREAM_CHANNELS
+    copy_state(state,old);
+#endif
+    work->tstates=work->fetches=0;output->de=output->count=0;
     output->unwind=0;output->error=note;return 0;
 }
 

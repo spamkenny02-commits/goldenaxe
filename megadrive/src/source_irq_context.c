@@ -1,4 +1,5 @@
 #include "source_irq_context.h"
+#include "source_audio_fast.h"
 #ifdef SGDK_GCC
 #include <memory.h>
 #endif
@@ -24,7 +25,7 @@ u8 source_irq_interrupt(void *context,const SourceClockIrq *entry,SourceClockWor
     copy_state(ram,ctx->ram);full=ram[0x2e]!=0;input=ctx->input;
     input.raster=entry->entry_raster;input.compensation=ctx->audio[3];
     if(!source_irq(ram,&input,&zero,&irq)) {ctx->error=SOURCE_IRQ_CONTEXT_INVALID;return 0;}
-    if(!source_audio_reader_stream(ctx->audio,ctx->low,ctx->low_bytes,ctx->bank6,
+    if(!source_audio_reader_stream_fast(ctx->audio,ctx->low,ctx->low_bytes,ctx->bank6,
                                    &ctx->audio_de,&audio,&ctx->last_audio,
                                    ctx->sink?ctx->sink:ignore,ctx->sink_context))
     {ctx->error=ctx->last_audio.error;return 0;}

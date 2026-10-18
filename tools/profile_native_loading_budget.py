@@ -1,5 +1,6 @@
 """Measure bare native loading CPU frames, without proof hashes or snapshots."""
 import contextlib
+import ctypes as c
 import hashlib
 import io
 import json
@@ -12,12 +13,18 @@ from run_core import run
 from validate_native_room_finish import MODULES
 
 def main():
-    bare='--bare' in sys.argv;planned='--planned' in sys.argv
-    base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
+    bare='--bare' in sys.argv;planned='--planned' in sys.argv;precise='--precise' in sys.argv;baseline_audio='--baseline-audio' in sys.argv
+    assert not precise or bare,'Precise entry/exit sampling requires --bare'
+    assert not baseline_audio or precise,'Baseline audio comparison requires --precise'
+    base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else '')+('-precise' if precise else '')+('-baseline-audio' if baseline_audio else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
     header=ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/kernel/src/expected.h');(src/'expected.h').write_bytes(header.read_bytes())
     for name in MODULES:
-        if name=='source_irq_context' and not bare:
+        if name=='source_irq_context' and baseline_audio:
+            body=(ROOT/'megadrive/src/source_irq_context.c').read_text().replace('#include "source_irq_context.h"','#include "../../../megadrive/src/source_irq_context.h"').replace('#include "source_audio_fast.h"','#include "../../../megadrive/src/source_audio_fast.h"').replace('source_audio_reader_stream_fast(','source_audio_reader_stream(')
+            (src/f'{name}.c').write_text(body)
+        elif name=='source_irq_context' and not bare:
             body=(ROOT/'megadrive/src/source_irq_context.c').read_text().replace('#include "source_irq_context.h"','#include <genesis.h>\n#include "../../../megadrive/src/source_irq_context.h"')
+            body=body.replace('#include "source_audio_fast.h"','#include "../../../megadrive/src/source_audio_fast.h"')
             body=body.replace('u8 source_irq_interrupt(', 'static u8 profiled_irq_inner(')
             body+='''
 volatile u32 gaw_irq_ticks,gaw_irq_calls;
@@ -91,14 +98,32 @@ int main(bool hard_reset)
     if planned:
         main=src/'main.c';body=main.read_text().replace('#include "expected.h"','#include "expected.h"\n#include "../../../megadrive/src/source_pattern_plan_generated.h"')
         body=body.replace('source_graphics_load_class0(&clock,&ctx,patterns,bank2,bank11,&data,graphics_mark,0)','source_graphics_load_class0_planned(&clock,&ctx,patterns,bank2,bank11,&data,graphics_mark,0,&gaw_class0_pattern_plan)');main.write_text(body)
+    if precise:
+        main=src/'main.c';body=main.read_text()
+        body=body.replace('int main(bool hard_reset)',
+            '__attribute__((noinline,externally_visible)) void gaw_budget_begin(void) {__asm__ volatile ("nop":::"memory");}\n'
+            '__attribute__((noinline,externally_visible)) void gaw_budget_end(void) {__asm__ volatile ("nop; nop":::"memory");}\nint main(bool hard_reset)')
+        body=body.replace('  accepted=source_graphics_load_class0','  gaw_budget_begin();\n  accepted=source_graphics_load_class0')
+        body=body.replace(';mark4=vtimer;',';gaw_budget_end();mark4=vtimer;');main.write_text(body)
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH'];path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:]
     built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=base,env=env,capture_output=True,text=True)
     (base/'build.log').write_text(built.stdout+built.stderr);assert built.returncode==0,built.stderr[-2000:]
     symbols={m[2]:int(m[1],16)&65535 for line in (base/'out/release/symbol.txt').read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))};cartridge=base/'out/release/rom.bin'
     cases=json.loads((ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/cases.json')).read_text());results=[]
+    core=None;observer=None
+    if precise:
+        core=ROOT.parents[1]/'work/genesis-plus-gx/genesis_plus_gx_clock_libretro.dll';observer=c.CDLL(str(core))
+        full={m[2]:int(m[1],16) for line in (base/'out/release/symbol.txt').read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))}
+        begin,end=full['gaw_budget_begin'],full['gaw_budget_end'];assert begin!=end
+        observer.gaw_md_config.argtypes=[c.c_uint,c.POINTER(c.c_uint)];observer.gaw_md_event_count.restype=c.c_uint;observer.gaw_md_event_data.restype=c.POINTER(c.c_uint)
     for region in ['auto','pal']:
-        observed={};rows=[]
+        observed={};rows=[];events=[];previous=[0];line_count=313 if region=='pal' else 262
+        if precise:observer.gaw_md_config(2,(c.c_uint*2)(begin,end))
         def observe(frame,ram):
+            if precise:
+                count=observer.gaw_md_event_count();p=observer.gaw_md_event_data();assert count<8192
+                for n in range(previous[0],count):events.append((p[n*3],(frame-1)*line_count*3420+p[n*3+1]))
+                previous[0]=count
             def value(name,n,offset=0):return int.from_bytes(bytes(ram[(symbols[name]+offset+i)^1] for i in range(n)),'big')
             observed.update(done=value('gaw_budget_done',2),cases=value('gaw_budget_cases',4),failures=value('gaw_budget_failures',4),frame=frame)
             if observed['done']:
@@ -107,8 +132,13 @@ int main(bool hard_reset)
                     physical=value('gaw_budget',4,n*64);virtual=value('gaw_budget',4,n*64+4);logical_frames=virtual/(case['phase'][3]*3420)
                     marks=[value('gaw_graphics_marks',4,n*24+k*4) for k in range(6)];deltas=[marks[0]-value('gaw_budget',4,n*64+44)]+[marks[k]-marks[k-1] for k in range(1,6)]
                     rows.append(dict(graphics_return_frames=value('gaw_budget',4,n*64+20)-sum(deltas),graphics_stages=deltas,case=n,room=case['room'],physical_frames=physical,source_master=virtual,source_frames=logical_frames,compute_to_source_ratio=physical/logical_frames,stages=[value('gaw_budget',4,n*64+20+k*4) for k in range(4)],irq_subticks=value('gaw_budget',4,n*64+36),irq_calls=value('gaw_budget',4,n*64+40),clock_calls=[value('gaw_budget',4,n*64+48+k*4) for k in range(4)]))
-        with contextlib.redirect_stdout(io.StringIO()):run(cartridge,60000,base/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
+        with contextlib.redirect_stdout(io.StringIO()):run(cartridge,60000,base/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
         assert observed.get('done') and (observed['cases'],observed['failures'])==(12,0),observed
+        if precise:
+            assert len(events)==24 and len(rows)==12,(region,len(events),len(rows))
+            for row,(a,b) in zip(rows,zip(events[::2],events[1::2])):
+                assert a[0]==begin and b[0]==end and b[1]>=a[1]
+                measured=b[1]-a[1];row.update(measured_master=measured,measured_frames=measured/(line_count*3420),remaining_source_master=row['source_master']-measured)
         results.append(dict(region=region,rows=rows,**observed));print(region,[(r['physical_frames'],round(r['source_frames'],2),r['stages'],r['graphics_stages'],round(r['irq_subticks']/(1536 if region=='pal' else 1280),2),r['clock_calls']) for r in rows],flush=True)
     report=dict(planned=planned,instrumented=not bare,results=results,helpers={name+suffix:hashlib.sha256((ROOT/'megadrive/src'/(name+suffix)).read_bytes()).hexdigest() for name in MODULES for suffix in ['.c','.h'] if (ROOT/'megadrive/src'/(name+suffix)).exists()},cases_sha256=hashlib.sha256((ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/cases.json')).read_bytes()).hexdigest(),clock_call_fields=['execute','generic_repeat','accepted_generic_groups','generic_repetitions'],inline_blocks_counted=False,kernel_sha256=hashlib.sha256(cartridge.read_bytes()).hexdigest(),
                 limits=['Vtimer delta around four native calls, no hashes/checkpoint snapshots; stage marks and two getSubTick samples perIRQ add a small profiling overhead. Six additional vtimer checkpoints split graphics stages1706/170E/1720/1733/1748/24B9. One-frame stage resolution; IRQ subtick conversion approximate.',
@@ -116,6 +146,11 @@ int main(bool hard_reset)
                         'Display off,discarded PSG sink,no real renderer/uploads/input pacing; CPU lower-bound profile, not playable frame-rate proof.'])
     if planned:report['plan_sha256']=hashlib.sha256((ROOT/'megadrive/src/source_pattern_plan_generated.h').read_bytes()).hexdigest()
     if bare:report['limits'][0]='Vtimer delta around four native calls and six graphics checkpoints only. No per-instruction/repetition counters and no IRQ subtimer; counter fields are zero. One-frame resolution.'
-    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
+    if precise:
+        report['precise_read_only_observer']=True;report['observer_core_sha256']=hashlib.sha256(core.read_bytes()).hexdigest()
+        report['clock_audio_fast']=not baseline_audio
+        report['generated_source_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in src.iterdir() if p.suffix in ['.c','.h']}
+        report['limits'][0]='Read-only 68000 PC observations at two noinline markers around the four loading calls. Their call/return overhead is included. Vtimer stage marks remain at one-frame resolution; measured_master gives the finer complete-chain duration.'
+    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

@@ -1,0 +1,168 @@
+{
+  "fast": true,
+  "cases": 25644,
+  "results": [
+    {
+      "part": 0,
+      "region": "auto",
+      "ROM_sha256": "4d3231bb67865ef8de106d1953790fecd3b0b201b7db2a95cfcf45ad9e5e2927",
+      "frame": 879,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 0,
+      "region": "pal",
+      "ROM_sha256": "4d3231bb67865ef8de106d1953790fecd3b0b201b7db2a95cfcf45ad9e5e2927",
+      "frame": 736,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "auto",
+      "ROM_sha256": "f1e4357a05342428a869d7ce4d220b83341625508ca5299c266e96e9a8ff804a",
+      "frame": 1153,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 1,
+      "region": "pal",
+      "ROM_sha256": "f1e4357a05342428a869d7ce4d220b83341625508ca5299c266e96e9a8ff804a",
+      "frame": 966,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 2,
+      "region": "auto",
+      "ROM_sha256": "e099fcbf26aeca6b1e0fb7105826ff849580c4e1c073f5b2217906ff344ba34f",
+      "frame": 1458,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 2,
+      "region": "pal",
+      "ROM_sha256": "e099fcbf26aeca6b1e0fb7105826ff849580c4e1c073f5b2217906ff344ba34f",
+      "frame": 1221,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 3,
+      "region": "auto",
+      "ROM_sha256": "9872d9f26e658da0306427e30b621fc93c74409a30247472edc00104018a3fa8",
+      "frame": 1459,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 3,
+      "region": "pal",
+      "ROM_sha256": "9872d9f26e658da0306427e30b621fc93c74409a30247472edc00104018a3fa8",
+      "frame": 1221,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 4,
+      "region": "auto",
+      "ROM_sha256": "a2968aafa36be5b2ab88387806e0896a04aa35d487c5cbb39b967625f9d37a89",
+      "frame": 1460,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 4,
+      "region": "pal",
+      "ROM_sha256": "a2968aafa36be5b2ab88387806e0896a04aa35d487c5cbb39b967625f9d37a89",
+      "frame": 1222,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 5,
+      "region": "auto",
+      "ROM_sha256": "9d382d2e16e9edf5135939dc663a75e299dde1fe0e6dd1ee86dba60eadad3802",
+      "frame": 1307,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 5,
+      "region": "pal",
+      "ROM_sha256": "9d382d2e16e9edf5135939dc663a75e299dde1fe0e6dd1ee86dba60eadad3802",
+      "frame": 1094,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 6,
+      "region": "auto",
+      "ROM_sha256": "8886ab6e7fa3b4e4fea00de6dc927ec8b60a775f336d57be8c14f872c2e2ce67",
+      "frame": 1224,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 6,
+      "region": "pal",
+      "ROM_sha256": "8886ab6e7fa3b4e4fea00de6dc927ec8b60a775f336d57be8c14f872c2e2ce67",
+      "frame": 1025,
+      "done": 1,
+      "cases": 3500,
+      "failures": 0
+    },
+    {
+      "part": 7,
+      "region": "auto",
+      "ROM_sha256": "6eb311c111930d33bd529bb9c95287c65a9208a275b26a2b0f708dcdf8183e56",
+      "frame": 483,
+      "done": 1,
+      "cases": 1144,
+      "failures": 0
+    },
+    {
+      "part": 7,
+      "region": "pal",
+      "ROM_sha256": "6eb311c111930d33bd529bb9c95287c65a9208a275b26a2b0f708dcdf8183e56",
+      "frame": 405,
+      "done": 1,
+      "cases": 1144,
+      "failures": 0
+    }
+  ],
+  "module_sha256": {
+    "source_audio_fast": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "source_audio_reader": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch": "25d250ac1b19df206dfc7dba7f8b00efeb7db514878423b3b030b9cbad48d018",
+    "source_audio_priority": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "source_audio_tone": "334d4a7445670543d39a109694042c0abadcc00f153d373250b9ccbfcb8badbf",
+    "source_audio_noise": "93a8cab954b2ac78aef54bf22def82245f939f6104ff146dd29ac8cc81977dab",
+    "source_audio_sequence": "ef9b175697dd07fc8b9a634185d60f46677636762d39c7548df3cbc77c00d4a6",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "reader_helper_sha256": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+  "limits": [
+    "Compiled68000, full400/T/M1/DE from hashed source captures and source-verified gates.",
+    "PSG writes/full IRQ clock/waveform/hardware/natural full progression require separate evidence."
+  ]
+}

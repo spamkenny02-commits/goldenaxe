@@ -6586,5 +6586,35 @@
     "notes": "Diagnostic de copie verticale : ne corrige pas le retard NTSC ; utiliser v0203.",
     "validation": "superseded_diagnostic",
     "reports": []
+  },
+  {
+    "version": 205,
+    "sha256": "e6708f0cdc30deae005628e098a8c0510660cc8bc768ec3ed085ee7d29db14d7",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T22:20:33.851622+00:00",
+    "rom": "v0205-e6708f0c/gaw-megadrive-v0205.bin",
+    "notes": "Diagnostic audio : copies par canal reduites ; le retard vertical NTSC subsiste. Utiliser v0203.",
+    "validation": "superseded_diagnostic",
+    "reports": []
+  },
+  {
+    "version": 206,
+    "sha256": "b3bfbea127c9e1f21fe42c009662f2b96bd0c68aaa9a845989ebdd44d08af8d4",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T22:22:37.990080+00:00",
+    "rom": "v0206-b3bfbea1/gaw-megadrive-v0206.bin",
+    "notes": "Diagnostic audio rapide global : avance certains chargements et degrade le retour nord PAL. Utiliser v0203.",
+    "validation": "superseded_diagnostic",
+    "reports": []
+  },
+  {
+    "version": 207,
+    "sha256": "8287587147c352ca65af331f00edda5827ee3baa84b5a447e86ab73327861d32",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-17T23:52:59.450594+00:00",
+    "rom": "v0207-82875871/gaw-megadrive-v0207.bin",
+    "notes": "Diagnostic de composition audio gardee ; remplace par une voie rapide separee, hors du binaire jouable. Utiliser v0203.",
+    "validation": "superseded_diagnostic",
+    "reports": []
   }
 ]

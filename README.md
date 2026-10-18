@@ -23,7 +23,7 @@ sont vérifiés en PAL/NTSC, avec des contrôles verticaux complémentaires.
 Sur 3 004 images comparées à la v0202, seules les trois images du défaut
 reproduit changent ; les états et la cadence des transitions restent identiques.
 Voir les [preuves et limites de la v0203](analysis/scroll_publish_v0203.md).
-La v0204 est un diagnostic de scrolling vertical conservé pour recherche ;
+Les v0204 à v0207 sont des diagnostics de scrolling/audio conservés pour recherche ;
 la ROM recommandée reste la v0203.
 
 La v0202 accélère la conversion des motifs de l’intro, du titre et de
@@ -43,17 +43,24 @@ Le préfixe de chargement des graphismes couvre les trois classes de pièces :
 56 cas source et 56 cas en 68000 pour chaque région passent. Il reste hors
 du jeu actif ; voir le [jalon des trois classes](analysis/graphics_classes_prefix_milestone.md).
 
-La chaîne native de chargement traite maintenant des commandes RLE et lignes
+La composition audio du moteur avec calendrier évite désormais les copies
+de sécurité imbriquées. Les 25 644 cas source passent en 68000 PAL/NTSC,
+et 28 644 comparaisons vérifient aussi les commandes PSG et les rejets.
+Le calcul du chargement complet mesuré passe de 22,34–23,51 à 20,87–22,04
+images NTSC, pour 22,71 côté SMS. Cette mesure exclut les transferts vidéo
+réels et ne prouve pas la cadence du jeu. Le binaire jouable reste exactement
+la v0203. Voir le [jalon audio et ses limites](analysis/audio_stream_fast_milestone.md).
+
+Avant cette optimisation audio, la chaîne native traitait déjà les commandes RLE et lignes
 vidéo entières avant les interruptions. Les 16 points SMS restent conformes ;
-7 040 cas d’horloge passent aussi en 68000 PAL/NTSC. Le calcul seul demande
-23–24 images NTSC sans compteurs internes, pour un budget SMS de 22,71 :
-elle reste hors du jeu actif.
+7 040 cas d’horloge passent aussi en 68000 PAL/NTSC. Le calcul seul demandait alors
+23–24 images NTSC sans compteurs internes, pour un budget SMS de 22,71.
 Ce jalon de recherche utilisait la v0198. Le calcul direct de l’attente vidéo est vérifié
 sur 3 933 000 positions/seuils ; les 32 693 cas IRQ passent en 68000 PAL/NTSC.
 Le décodeur regroupe plusieurs commandes entre deux interruptions :
 1 460 cas comparés et 16 cas longs supplémentaires en 68000 passent.
 Une voie précalculée depuis la ROM valide aussi les 566 commandes et les
-6 176 octets de motifs : elle demande 22–24 images NTSC, encore sans marge
+6 176 octets de motifs : elle demandait alors 22–24 images NTSC, encore sans marge
 prouvée pour l’affichage. Les 24 parcours à 16 points SMS passent avec les
 deux voies en 68000 PAL/NTSC. La construction régénère ces assets.
 Voir les [mesures et limites actuelles](analysis/native_pattern_plan_milestone.md).
