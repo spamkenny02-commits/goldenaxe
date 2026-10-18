@@ -84,6 +84,13 @@ sautée. Le retard maximal mesuré du premier octet est de 804 ticks maître ;
 la précision et le raccordement au lecteur complet restent à finaliser.
 Voir le [jalon de l'attente matérielle PSG](analysis/md_psg_wait_milestone.md).
 
+Le lecteur des **24 chargements natifs** alimente maintenant un rejeu continu
+vers les ports PSG : **5 952 écritures source** concordent en PAL/NTSC, avec
+rebouclage 32 bits. Le producteur termine avant ce rejeu bloquant ; il reste
+à réduire la latence et à faire fonctionner calculs et sorties simultanément.
+Un test synthétique révèle aussi un retard entre deux rafales contiguës.
+Voir les [mesures et limites du rejeu continu](analysis/md_psg_replay_milestone.md).
+
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
 contrôle d'horloge sont également revenus au code précédent après mesure.
