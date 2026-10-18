@@ -39,6 +39,14 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+La préparation audio du prototype est maintenant comparée aux échéances
+de chaque octet PSG du lecteur SMS original : **1 488 octets**, aucun calcul
+en retard sur les 24 contextes retenus. La marge minimale est de 3,58 lignes
+NTSC et 13,76 lignes PAL, avant le coût du futur mécanisme de publication.
+La mise en attente, l'émission au bon instant et la phase globale restent
+à intégrer ; la v0203 est inchangée.
+Voir les [mesures audio et leurs limites](analysis/loading_psg_deadlines_milestone.md).
+
 Le prototype effectue maintenant les transferts vidéo réels : 193 tuiles,
 768 mots de carte et 32 couleurs sont vérifiés sur 24 contextes, avec des
 écritures PSG effectives. Le total mesuré atteint 21,56–22,704 images NTSC

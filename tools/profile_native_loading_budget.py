@@ -18,7 +18,11 @@ def main():
     assert not precise or bare,'Precise entry/exit sampling requires --bare'
     assert not baseline_audio or precise,'Baseline audio comparison requires --precise'
     assert not physical_video or (precise and planned),'Physical video requires --planned --bare --precise'
+    audio_readiness='--audio-readiness' in sys.argv
+    assert not audio_readiness or physical_video,'Audio readiness requires --physical-video'
     base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else '')+('-precise' if precise else '')+('-baseline-audio' if baseline_audio else '')+('-physical-video' if physical_video else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
+    if audio_readiness:
+        base=base.with_name(base.name+'-audio-readiness');src=base/'src';src.mkdir(parents=True,exist_ok=True)
     header=ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/kernel/src/expected.h');(src/'expected.h').write_bytes(header.read_bytes())
     for name in MODULES:
         if name=='source_irq_context' and baseline_audio:
@@ -122,6 +126,24 @@ int main(bool hard_reset)
         body=body.replace('gaw_budget_end();mark4=vtimer;',
             'gaw_video_convert();source_class0_video_map(tilemap,gaw_video_map,768);source_class0_video_palette(cells+0xb0,gaw_video_palette);gaw_video_dma();if(!source_class0_video_upload(gaw_video_map,gaw_video_palette)) accepted=0;gaw_budget_end();mark4=vtimer;')
         body=body.replace('gaw_budget_cases++;','gaw_budget_cases++;SYS_doVBlankProcess();');main.write_text(body)
+    if audio_readiness:
+        main=src/'main.c';body=main.read_text()
+        body=body.replace('int main(bool hard_reset)', '''
+volatile u32 gaw_audio_meta[24][32][3];
+volatile u16 gaw_audio_count[24];
+__attribute__((noinline,externally_visible)) void gaw_audio_ready(void) {__asm__ volatile ("nop; nop; nop; nop; nop":::"memory");}
+static void audio_trace(void *unused,const SourceClockIrq *entry,const SourceClockWork *work)
+{
+ u16 n=gaw_audio_count[profile_row];(void)unused;
+ if(n>=32) {gaw_budget_failures++;return;}
+ gaw_audio_meta[profile_row][n][0]=entry->entry_elapsed;
+ gaw_audio_meta[profile_row][n][1]=entry->entry_elapsed+(work->tstates-72)*15;
+ gaw_audio_meta[profile_row][n][2]=gaw_video_psg_writes[profile_row];
+ gaw_audio_count[profile_row]=n+1;gaw_audio_ready();
+}
+int main(bool hard_reset)''')
+        body=body.replace('ctx.sink=physical_psg;','ctx.sink=physical_psg;ctx.trace=audio_trace;')
+        main.write_text(body)
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH'];path=str(sdk).replace('\\','/');unix='/'+path[0].lower()+path[2:]
     built=subprocess.run([str(sdk/'bin/sh.exe'),'-c','export PATH="$2/bin:$PATH"; make -f "$1/makefile.gen" "GDK=$1" -j2','build',path,unix],cwd=base,env=env,capture_output=True,text=True)
     (base/'build.log').write_text(built.stdout+built.stderr);assert built.returncode==0,built.stderr[-2000:]
@@ -133,6 +155,9 @@ int main(bool hard_reset)
         full={m[2]:int(m[1],16) for line in (base/'out/release/symbol.txt').read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))}
         begin,end=full['gaw_budget_begin'],full['gaw_budget_end'];assert begin!=end
         watch_pcs=[begin,end]+([full['gaw_video_convert'],full['gaw_video_dma']] if physical_video else [])
+        if audio_readiness:
+            psg_pc,= [address for name,address in full.items() if name.split('.lto_priv.')[0]=='physical_psg']
+            watch_pcs += [full['gaw_audio_ready'],psg_pc]
         observer.gaw_md_config.argtypes=[c.c_uint,c.POINTER(c.c_uint)];observer.gaw_md_event_count.restype=c.c_uint;observer.gaw_md_event_data.restype=c.POINTER(c.c_uint)
     for region in ['auto','pal']:
         observed={};rows=[];events=[];previous=[0];line_count=313 if region=='pal' else 262;captures=set();snapshots={};last_completed=[0]
@@ -154,18 +179,38 @@ int main(bool hard_reset)
                     physical=value('gaw_budget',4,n*64);virtual=value('gaw_budget',4,n*64+4);logical_frames=virtual/(case['phase'][3]*3420)
                     marks=[value('gaw_graphics_marks',4,n*24+k*4) for k in range(6)];deltas=[marks[0]-value('gaw_budget',4,n*64+44)]+[marks[k]-marks[k-1] for k in range(1,6)]
                     rows.append(dict(graphics_return_frames=value('gaw_budget',4,n*64+20)-sum(deltas),graphics_stages=deltas,case=n,room=case['room'],physical_frames=physical,source_master=virtual,source_frames=logical_frames,compute_to_source_ratio=physical/logical_frames,stages=[value('gaw_budget',4,n*64+20+k*4) for k in range(4)],irq_subticks=value('gaw_budget',4,n*64+36),irq_calls=value('gaw_budget',4,n*64+40),clock_calls=[value('gaw_budget',4,n*64+48+k*4) for k in range(4)]))
+                    if audio_readiness:
+                        count=value('gaw_audio_count',2,n*2)
+                        assert count==case['expected'][7] and count<=32
+                        rows[-1]['irq_metadata']=[[value('gaw_audio_meta',4,(n*32+k)*12+j*4) for j in range(3)] for k in range(count)]
         with contextlib.redirect_stdout(io.StringIO()):run(cartridge,60000,base/region,captures,[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
         assert observed.get('done') and (observed['cases'],observed['failures'])==(12,0),observed
         if precise:
             width=4 if physical_video else 2
-            assert len(events)==12*width and len(rows)==12,(region,len(events),len(rows))
+            timing_events=[event for event in events if event[0] in watch_pcs[:width]]
+            assert len(timing_events)==12*width and len(rows)==12,(region,len(timing_events),len(rows))
             for index,row in enumerate(rows):
-                chunk=events[index*width:(index+1)*width];a,b=chunk[0],chunk[-1]
+                chunk=timing_events[index*width:(index+1)*width];a,b=chunk[0],chunk[-1]
                 assert a[0]==begin and b[0]==end and b[1]>=a[1]
                 measured=b[1]-a[1];row.update(measured_master=measured,measured_frames=measured/(line_count*3420),remaining_source_master=row['source_master']-measured)
                 if physical_video:
                     assert [x[0] for x in chunk]==[begin,full['gaw_video_convert'],full['gaw_video_dma'],end]
                     row.update(compute_master=chunk[1][1]-a[1],video_conversion_master=chunk[2][1]-chunk[1][1],video_transfer_master=b[1]-chunk[2][1])
+                if audio_readiness:
+                    irq_events=[event for event in events if a[1]<=event[1]<=b[1] and event[0] in [psg_pc,full['gaw_audio_ready']]]
+                    packets=[];batch=[];previous_bytes=0
+                    for pc,stamp in irq_events:
+                        if pc==psg_pc:
+                            batch.append(stamp-a[1]);continue
+                        k=len(packets);entry,completion,total=row['irq_metadata'][k]
+                        expected=cases[row['case']]['events'][k*6:k*6+6]
+                        assert entry==expected[0] and completion==entry+(expected[3]-72)*15
+                        byte_count=total-previous_bytes
+                        assert bool(batch)==bool(byte_count),(region,row['case'],k,'PSG batch presence')
+                        packets.append(dict(source_entry_master=entry,source_completion_master=completion,psg_bytes=byte_count,batch_ready_master=batch,irq_ready_master=stamp-a[1],last_batch_margin_master=completion-batch[-1] if batch else None))
+                        batch=[];previous_bytes=total
+                    assert not batch and len(packets)==len(row['irq_metadata'])
+                    row['audio_readiness']=packets
         if physical_video:
             assert len(snapshots)==12
             for row in rows:
@@ -213,6 +258,9 @@ int main(bool hard_reset)
         report['map_transfer']='CPU port bursts,24 rows of16 longwords';report['pattern_palette_transfer']='DMA with temporary H40 during display-off';report['attribute_lut_bytes']=131072
         report['limits'][0]='Four read-only 68000 PC markers bracket source computation, video conversion and physical transfers. Marker call/return overhead and PSG write counters are included. Vtimer stage marks remain at one-frame resolution; measured_master gives the finer complete-chain duration.'
         report['limits'][2]='Display off;193 base-pattern tiles,768 map words and32 palette words physically uploaded after source computations. Actor/hero/HUD font tile uploads and backdrop initialization excluded. PSG bytes physically emitted during virtual IRQ computation without deadline pacing. Raw endpoint VRAM/CRAM verified; no displayed frame or source-relative publication-timing claim.'
-    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+('_physical_video' if physical_video else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
+    if audio_readiness:
+        report['audio_readiness']=True
+        report['limits'].append('IRQ metadata stores and a fifth marker per IRQ add CPU overhead. PSG function-entry observations mark batch readiness, not individual port-write times. Margins compare a budget-begin-relative epoch to source elapsed time; global physical/source phase alignment is not established. Source IRQ completion is only a necessary last-batch bound, not the deadline of each PSG byte. No publication queue or pacing is enabled.')
+    (ROOT/('analysis/native_'+('planned_' if planned else '')+'loading_budget'+('_bare' if bare else '')+('_precise' if precise else '')+('_baseline_audio' if baseline_audio else '')+('_physical_video' if physical_video else '')+('_audio_readiness' if audio_readiness else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()
