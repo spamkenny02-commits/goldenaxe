@@ -49,3 +49,25 @@ u8 source_psg_queue_take(SourcePsgQueue *queue,u32 now,SourcePsgEvent *event)
     *event=*next;BARRIER();queue->read=(u16)(tail+1);
     return SOURCE_PSG_QUEUE_OK;
 }
+
+u8 source_psg_queue_push_bytes(SourcePsgQueue *queue,const u8 *values,const u32 *due,u16 count)
+{
+    u16 head,tail,used,n;u32 previous;
+    if(!valid(queue) || (count && (!values || !due))) return SOURCE_PSG_QUEUE_INVALID;
+    head=queue->write;tail=queue->read;used=(u16)(head-tail);
+    if(used>queue->capacity) return SOURCE_PSG_QUEUE_INVALID;
+    if(count>queue->capacity-used) return SOURCE_PSG_QUEUE_FULL;
+    if(!count) return SOURCE_PSG_QUEUE_OK;
+    BARRIER();previous=used?queue->events[(head-1)&queue->mask].due:due[0];
+    for(n=0;n<count;n++)
+    {
+        if((s32)(due[n]-previous)<0) return SOURCE_PSG_QUEUE_ORDER;
+        previous=due[n];
+    }
+    for(n=0;n<count;n++)
+    {
+        SourcePsgEvent *slot=queue->events+((head+n)&queue->mask);
+        slot->due=due[n];slot->value=values[n];
+    }
+    BARRIER();queue->write=(u16)(head+count);return SOURCE_PSG_QUEUE_OK;
+}

@@ -26,6 +26,10 @@ u8 source_psg_queue_init(SourcePsgQueue *queue,SourcePsgEvent *storage,u16 capac
  * Batches must be ordered against the last pending event; equal times retain
  * insertion order. Empty batches are accepted with a null input pointer. */
 u8 source_psg_queue_push(SourcePsgQueue *queue,const SourcePsgEvent *events,u16 count);
+/* Same atomic batch contract, from separate byte/deadline sidecars. Avoids
+ * allocating a second event array in a timed-reader callback. All input
+ * arrays must remain valid and disjoint from queue storage until return. */
+u8 source_psg_queue_push_bytes(SourcePsgQueue *queue,const u8 *values,const u32 *due,u16 count);
 /* Copy and release one due event. WAIT/EMPTY/INVALID leave output untouched.
  * The caller emits the returned byte and accounts for polling/write latency.
  * This function supplies no physical clock, waiting loop or PSG register IO. */

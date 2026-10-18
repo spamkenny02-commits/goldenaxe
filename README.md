@@ -64,6 +64,14 @@ Le [jalon précédent des divisions natives](analysis/native_divu_loading_milest
 conserve aussi les vérifications arithmétiques. La ROM jouable reste la v0203 ;
 ces gains concernent la chaîne avec horloge encore en cours d'intégration.
 
+Le lecteur horodaté alimente maintenant une **file bornée**, avec attente
+quand elle est pleine et publication des paquets entiers. Les 24 entrées de
+chargement passent dans quatre modes de file/compteurs, en conservant les
+états SMS et les 1 488 écritures de référence. La mesure avec enfilage et
+lecture garde au moins 2,28 images de marge NTSC et 3,24 en PAL. Le test émet
+encore après le calcul ; le cadencement physique reste à raccorder.
+Voir le [jalon du producteur audio avec file](analysis/queued_audio_milestone.md).
+
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
 contrôle d'horloge sont également revenus au code précédent après mesure.

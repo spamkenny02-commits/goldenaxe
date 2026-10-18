@@ -1,0 +1,45 @@
+{
+  "host": {
+    "checks": 980029,
+    "failures": 0,
+    "failure_line": 0,
+    "produced": 90000
+  },
+  "results": [
+    {
+      "region": "auto",
+      "frame": 4171,
+      "done": 1,
+      "checks": 980029,
+      "failures": 0,
+      "failure_line": 0,
+      "produced": 90000,
+      "irq_sent": 12000,
+      "irq_consumed": 12000,
+      "irq_failures": 0,
+      "irq_vints": 1374
+    },
+    {
+      "region": "pal",
+      "frame": 3715,
+      "done": 1,
+      "checks": 980029,
+      "failures": 0,
+      "failure_line": 0,
+      "produced": 90000,
+      "irq_sent": 12000,
+      "irq_consumed": 12000,
+      "irq_failures": 0,
+      "irq_vints": 1373
+    }
+  ],
+  "kernel_sha256": "c89504ea7120b85cd6a42d3968bf29daf1c70f8902107edc4a029942c56d4ba5",
+  "sources": {
+    "source_psg_queue": "691c3f81d1bf4c367d37bccd3f9194d2564eca5853739639e3045580dc1537be",
+    "source_psg_stream": "3f5689d6388159ceb32e36012264e7bcd05d77dbe222a17c835ecb1f18f47276"
+  },
+  "limits": [
+    "Sidecar pushes match retained typed FIFO semantics; stream checks independent byte/deadline order with32-bit deadline and16-bit cursor wrap,whole-packet retry,cancel/sticky faults and invalid setup.",
+    "12000 events additionally pass real emulated VINT consumption while the main producer blocks/retries complete packets. Frame ticks are a test clock only; no physical PSG pacing,source-reader integration or per-byte hardware latency proof."
+  ]
+}

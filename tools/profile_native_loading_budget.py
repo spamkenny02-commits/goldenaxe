@@ -21,10 +21,12 @@ def main():
     audio_readiness='--audio-readiness' in sys.argv
     assert not audio_readiness or physical_video,'Audio readiness requires --physical-video'
     master_timed_audio='--master-timed-audio' in sys.argv
-    fast_timed_audio='--fast-timed-audio' in sys.argv or master_timed_audio
-    timed_variant='master-timed-audio' if master_timed_audio else 'fast-timed-audio' if fast_timed_audio else 'timed-audio'
-    timed_context='source_irq_master_context' if master_timed_audio else 'source_irq_fast_timed_context' if fast_timed_audio else 'source_irq_timed_context'
-    timed_function='source_irq_master_interrupt' if master_timed_audio else 'source_irq_fast_timed_interrupt' if fast_timed_audio else 'source_irq_timed_interrupt'
+    queued_audio='--queued-audio' in sys.argv
+    assert not queued_audio or (not master_timed_audio and not audio_readiness),'Queued profile has its own deferred consumer,not packet readiness sampling'
+    fast_timed_audio='--fast-timed-audio' in sys.argv or master_timed_audio or queued_audio
+    timed_variant='queued-audio' if queued_audio else 'master-timed-audio' if master_timed_audio else 'fast-timed-audio' if fast_timed_audio else 'timed-audio'
+    timed_context='source_irq_queue_context' if queued_audio else 'source_irq_master_context' if master_timed_audio else 'source_irq_fast_timed_context' if fast_timed_audio else 'source_irq_timed_context'
+    timed_function='source_irq_queue_interrupt' if queued_audio else 'source_irq_master_interrupt' if master_timed_audio else 'source_irq_fast_timed_interrupt' if fast_timed_audio else 'source_irq_timed_interrupt'
     timed_audio='--timed-audio' in sys.argv or fast_timed_audio
     assert not timed_audio or (physical_video and not baseline_audio),'Timed audio requires physical video and its own reader'
     base=ROOT/('validation/native-'+('planned-' if planned else '')+'loading-budget'+('-bare' if bare else '')+('-precise' if precise else '')+('-baseline-audio' if baseline_audio else '')+('-physical-video' if physical_video else ''));src=base/'src';src.mkdir(parents=True,exist_ok=True)
@@ -33,7 +35,7 @@ def main():
     modules=MODULES
     if timed_audio:
         from validate_reader_timing import MODULES as TIMED_MODULES
-        modules=list(dict.fromkeys([name for name in MODULES if name!='source_irq_context']+[timed_context]+TIMED_MODULES+(['source_audio_fast_timed'] if fast_timed_audio else [])+(['source_audio_reader_master'] if master_timed_audio else [])))
+        modules=list(dict.fromkeys([name for name in MODULES if name!='source_irq_context']+[timed_context]+TIMED_MODULES+(['source_audio_fast_timed'] if fast_timed_audio else [])+(['source_audio_reader_master'] if master_timed_audio else [])+(['source_psg_queue','source_psg_stream'] if queued_audio else [])))
         base=base.with_name(base.name+'-'+timed_variant);src=base/'src';src.mkdir(parents=True,exist_ok=True)
     header=ROOT/('validation/native-'+('planned-' if planned else '')+'room-finish/kernel/src/expected.h');(src/'expected.h').write_bytes(header.read_bytes())
     for name in modules:
@@ -152,6 +154,30 @@ static void physical_psg(void *unused,const u8 *writes,const u32 *master,u16 cou
  gaw_video_psg_writes[profile_row]+=count;
 }'''
         assert old in body;body=body.replace(old,new);main.write_text(body)
+    if queued_audio:
+        main=src/'main.c';body=main.read_text()
+        body=body.replace('#include "expected.h"','#include "expected.h"\n#include "../../../megadrive/src/source_irq_queue_context.h"')
+        body=body.replace('SourceTimedIrqContext timed_ctx={0};','SourceQueuedIrqContext queued_ctx={0};')
+        body=body.replace('timed_ctx.sink=physical_psg;','')
+        body=body.replace('timed_ctx.core','queued_ctx.timed.core')
+        body=body.replace('volatile u32 gaw_psg_deadlines[128];',
+            'static SourcePsgQueue queued_fifo;static SourcePsgEvent queued_storage[512];\n'
+            'volatile u32 gaw_queue_published[24],gaw_queue_waits[24];\n'
+            'static u8 no_progress(void *unused) {(void)unused;gaw_budget_failures++;return 0;}\nvolatile u32 gaw_psg_deadlines[128];')
+        body=body.replace('int main(bool hard_reset)', '''static void drain_queue(u32 now)
+{
+ SourcePsgEvent event;u8 status;
+ while((status=source_psg_queue_take(&queued_fifo,now,&event))==SOURCE_PSG_QUEUE_OK)
+  physical_psg(0,&event.value,&event.due,1);
+ if(status!=SOURCE_PSG_QUEUE_EMPTY) gaw_budget_failures++;
+}
+int main(bool hard_reset)''')
+        body=body.replace('queued_ctx.timed.core.input.reset_mask=16;',
+            'queued_ctx.timed.core.input.reset_mask=16;\n'
+            '  if(source_psg_queue_init(&queued_fifo,queued_storage,512)!=0 || source_irq_queue_bind(&queued_ctx,&queued_fifo,no_progress,0)!=0) gaw_budget_failures++;')
+        body=body.replace('gaw_video_convert();source_class0_video_map',
+            'gaw_queue_published[profile_row]=queued_ctx.stream.published;gaw_queue_waits[profile_row]=queued_ctx.stream.waits;drain_queue(clock.elapsed);gaw_video_convert();source_class0_video_map')
+        main.write_text(body)
     if audio_readiness:
         main=src/'main.c';body=main.read_text()
         body=body.replace('int main(bool hard_reset)', '''
@@ -284,6 +310,11 @@ int main(bool hard_reset)''')
                     assert int.from_bytes(area('gaw_psg_deadline_row',2),'big')==index
                     assert actual_times==expected_times and actual_bytes==expected_bytes,(region,index,'absolute source PSG dates/bytes')
                     row.update(source_psg_master=actual_times,source_psg_bytes=actual_bytes,source_psg_dates_verified=True)
+                    if queued_audio:
+                        published=int.from_bytes(area('gaw_queue_published',96)[index*4:index*4+4],'big')
+                        waits=int.from_bytes(area('gaw_queue_waits',96)[index*4:index*4+4],'big')
+                        assert published==count and not waits,(region,index,'queue did not retain the full controlled load')
+                        row.update(queue_published=published,queue_waits=waits)
                     if audio_readiness:
                         packets=row['audio_readiness'];ready=[time for packet in packets for time in packet['batch_ready_master']]
                         packet_count=int.from_bytes(area('gaw_audio_packet_count',2),'big');sizes_raw=area('gaw_audio_packet_sizes',256)
@@ -322,6 +353,9 @@ int main(bool hard_reset)''')
     if timed_audio:
         report['absolute_source_psg_dates']=True;report['clock_audio_timed']=True;report['clock_audio_fast_timed']=fast_timed_audio
         report['clock_audio_fused_master']=master_timed_audio
+        if queued_audio:
+            report.update(queued_audio=True,queue_capacity=512,queue_output_deferred_to_end=True)
+            report['limits'].append('Queued reader publishes complete packets into a512-event FIFO. This controlled load fits without pumping. The supplied logical completion clock drains it after all four calls,emitting real PSG bytes before video conversion; every stored source byte/date is checked. Budget includes enqueue/dequeue/port overhead but no deadline-paced consumer or packet readiness claim.')
         report['limits'].append('Separate timed IRQ adapter rebases reader OUT times onto SourceClock.elapsed master ticks. All retained loading dates/bytes are checked against the original-reader oracle. Deadline stores,conversion and immediate actual PSG writes are included in CPU time. No physical scheduling at these dates or global boot phase is enabled; clock_audio_fast_timed identifies the selected snapshot contract.')
         if audio_readiness:
             report['limits'].append('Packet sizes align each source-byte deadline with its packet function-entry readiness. This optimistic availability excludes sink/queue overhead after entry and includes diagnostic packet-size stores. Negative margins demonstrate lateness for this relative epoch; positive margins alone do not prove schedulability or absolute boot alignment.')
