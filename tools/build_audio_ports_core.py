@@ -40,14 +40,17 @@ static void gaw_port_instruction(unsigned pc)
 '''
 
 def main():
-    folder=ROOT/'validation/loading-psg-deadlines';folder.mkdir(exist_ok=True)
+    noise_note='--noise-note' in sys.argv
+    folder=ROOT/('validation/noise-note-timing' if noise_note else 'validation/loading-psg-deadlines');folder.mkdir(exist_ok=True)
     engine=ROOT.parents[1]/'work/genesis-plus-gx'
     paths=[engine/'core/z80/z80.c',engine/'core/memz80.c']
     original=[p.read_bytes() for p in paths]
     z80=original[0].decode()
     anchor='__declspec(dllexport) void gaw_timing_reset(void)'
     assert z80.count(anchor)==1
-    z80=z80.replace(anchor,DECLARATION+'\n'+anchor)
+    declaration=DECLARATION
+    if noise_note:declaration=declaration.replace('[2048]','[16384]').replace('<2048','<16384').replace('pc==0x8000','pc==0x8679')
+    z80=z80.replace(anchor,declaration+'\n'+anchor)
     z80=z80.replace('gaw_elapsed=gaw_irq_elapsed=0;','gaw_port_count=gaw_port_write_count=gaw_port_active=0;gaw_elapsed=gaw_irq_elapsed=0;')
     anchor='gaw_timing_observe(pc);EXEC_INLINE(op,ROP());'
     assert z80.count(anchor)==1
@@ -61,7 +64,8 @@ def main():
         (folder/name).write_bytes(body)
     try:
         for path,body in zip(paths,modified):path.write_bytes(body)
-        result=subprocess.run([sys.executable,str(ROOT/'tools/build_timing_core.py'),'--target','genesis_plus_gx_audioports_libretro.dll'],capture_output=True,text=True,cwd=ROOT)
+        target='genesis_plus_gx_noiseports_libretro.dll' if noise_note else 'genesis_plus_gx_audioports_libretro.dll'
+        result=subprocess.run([sys.executable,str(ROOT/'tools/build_timing_core.py'),'--target',target],capture_output=True,text=True,cwd=ROOT)
         (folder/'core-build.log').write_text(result.stdout+result.stderr)
         assert result.returncode==0,result.stdout+result.stderr
     finally:

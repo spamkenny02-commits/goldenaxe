@@ -39,6 +39,13 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+La première routine audio native horodatée est vérifiée : la sélection du
+bruit (SMS8679), sur **9 216 cas par région**, produit le même état et le même
+instant d'écriture PSG que l'original. Les 4 608 événements émis passent aussi
+par la file native en 68000 PAL/NTSC, avec vérification de l'attente et de la
+libération à l'échéance. Le lecteur audio complet reste à horodater et intégrer.
+Voir le [jalon des horodatages du bruit](analysis/noise_note_timing_milestone.md).
+
 Une file native de commandes PSG datées est prête pour séparer calcul audio
 et publication : 119 273 commandes passent sur PC et en 68000 PAL/NTSC,
 puis 12 000 commandes par région sont consommées par une interruption vidéo

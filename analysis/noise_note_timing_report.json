@@ -1,0 +1,55 @@
+{
+  "source_regions": [
+    {
+      "region": "auto",
+      "cases": 9216,
+      "frames": 27651,
+      "psg_writes": 4608,
+      "calls_sha256": "cb60cc37fe92b7838c1835435069f6839b47ff44619332d2fb7252933972601a",
+      "ports_sha256": "a98e544c9169a0088e7a08412a2f2224bd89028f24d90b19ac05f1f216ca96a3"
+    },
+    {
+      "region": "pal",
+      "cases": 9216,
+      "frames": 27651,
+      "psg_writes": 4608,
+      "calls_sha256": "d5b191693620b528934136c8555d2fc169a92d06a2476cde4568ba584d79e1c8",
+      "ports_sha256": "818a888f6d5991f1c8ec8e954d426a3da7dc7fb9038c0233d61f760498ae28d6"
+    }
+  ],
+  "compiled_regions": [
+    {
+      "region": "auto",
+      "frame": 1889,
+      "done": 1,
+      "cases": 9216,
+      "queued": 4608,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 1581,
+      "done": 1,
+      "cases": 9216,
+      "queued": 4608,
+      "failures": 0
+    }
+  ],
+  "invalid_host_cases": 5,
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "56fdbc7455bf4e1ae96e83f3b3f3625b0b199cf0bdf2e74fdbd591c34d2bd663",
+  "core_sha256": "2d18db503ccba737ecf3a8767a419e3b094a6f14e1ebe8e4e97721060f61dffd",
+  "sources": {
+    "source_audio_timed": "124cbda340360e06ac9464ce4b96f92e5827f0d64a1524dd999d9a4ff94337ea",
+    "source_audio_sequence": "ef9b175697dd07fc8b9a634185d60f46677636762d39c7548df3cbc77c00d4a6",
+    "source_audio_priority": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_psg_queue": "3dab403ea133a1ee518c427e2fa1458e3eafe4da9b35350b6c7759d6cf342067"
+  },
+  "limits": [
+    "Isolated original8679,all256 selectors,flags0/4/128/132,global volume0/15/255 and noise offset0/3/255. Original bank6 unchanged; DI custom caller seeds400 RAM bytes. Actual PSG handler cycles/data,all400 bytes and complete helper work compared.",
+    "Timestamp is source-entry plus(helperT-10)*15 because both writing exits consist of OUT followed by a10T RET. Muted paths leave event untouched. Compiled queue roundtrip checks FULL,early WAIT and release exactly at supplied logical time. No timed whole8000 reader,physical clock/pacing,waveform or full-game proof."
+  ],
+  "kernel_sha256": "98837b1476ecf15d4d247e2d431571ed1c8e762f24698b3091b6f2068a93c746",
+  "queue_roundtrip": true
+}

@@ -1,0 +1,79 @@
+{
+  "playable_sha256": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+  "production_timed_reader": false,
+  "files": {
+    "megadrive/src/source_audio_timed.c": "124cbda340360e06ac9464ce4b96f92e5827f0d64a1524dd999d9a4ff94337ea",
+    "megadrive/src/source_audio_timed.h": "97711749a17623162148fed8da3eab2b7e79d4649e21a393705c62712e39610c",
+    "megadrive/src/source_audio_sequence.c": "ef9b175697dd07fc8b9a634185d60f46677636762d39c7548df3cbc77c00d4a6",
+    "megadrive/src/source_audio_sequence.h": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c",
+    "megadrive/src/source_audio_priority.c": "56729a48ea50e912c32acdb3f921622bd40de6c48ebb9338c9deb41ae86cb396",
+    "megadrive/src/source_audio_priority.h": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb",
+    "megadrive/src/source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "megadrive/src/source_audio_memory.h": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9",
+    "megadrive/src/source_psg_queue.c": "3dab403ea133a1ee518c427e2fa1458e3eafe4da9b35350b6c7759d6cf342067",
+    "megadrive/src/source_psg_queue.h": "ae5de1d49bf2963a675773f5dbdfecb563dfa9354bb4ffa0208a36ec52b1bb00",
+    "tools/build_audio_ports_core.py": "bc34e7586ea75bb669609d5765ea36fce510822394ddfe6938f8e8f131397d00",
+    "tools/validate_noise_note_timing.py": "1c9fe90d5fe91a0f0afaa4685114af9ac4103d4d12d2849dc3230c0a0229a1e4",
+    "analysis/noise_note_timing_report.json": "482fac8b7d0d6890b4d47ba585acdbdaf2ef8ecd99f0ef81ca923209b67bb67d",
+    "analysis/noise_note_timing_milestone.md": "2cb7bbf4524112a7115a97c5abdb4467e4941d2e96b5f523e8dc45a02c6bf539",
+    "validation/noise-note-timing-run.log": "55d42b745b6dcadfb283042cb3a5aff50595a2e0bdee795d5a1b2b3bf627df6c",
+    "validation/noise-note-timing-game-build.log": "9ff74817b601362e3e593d4dcaacc9c82f08ede3b732dac1491c252293fb74cc",
+    "validation/noise-note-timing/kernel/src/expected.h": "f17a649acb5cae5b875a705bcb246f9ac5f3a9845abfff23ad640b75485f078e",
+    "validation/noise-note-timing/kernel/src/main.c": "a3f9bf878ffb46b7690e84082454f8e8addc9bcc9afcd2213cd41b17e94ae756",
+    "validation/noise-note-timing/kernel/src/rom_header.c": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+    "validation/noise-note-timing/kernel/src/source_audio_memory.c": "66abe296eeb454c2f3abf7643194b33045098a85b6a87317d7c59a0034a2d947",
+    "validation/noise-note-timing/kernel/src/source_audio_priority.c": "ad500845292f24e3efcf849451d189d01046fe9dccd788aa19f6e9007a45519f",
+    "validation/noise-note-timing/kernel/src/source_audio_sequence.c": "4ced0e59b1066cb257d7ab4499b1cefdf86a5a16f55e7af8deffc1bb01278a00",
+    "validation/noise-note-timing/kernel/src/source_audio_timed.c": "0b2a2d181868f34b7c578a42806dfaf5b0e46478535f901ba5f268ffe1042b11",
+    "validation/noise-note-timing/kernel/src/source_psg_queue.c": "5817eb65235952cbc246e8c48d25d0b06123eebb27155215a4cffa7a0e816f9f",
+    "validation/noise-note-timing/kernel/out/release/rom.bin": "98837b1476ecf15d4d247e2d431571ed1c8e762f24698b3091b6f2068a93c746",
+    "validation/noise-note-timing/kernel/out/release/symbol.txt": "4e3d40b32a722aa1a402d8e0ff837424f6e807ba7fbd865fd0a6044f5185f1ce",
+    "validation/noise-note-timing/kernel/build.log": "88e9ab03f7043598b9cf91211d1c6a6bd6ad6d3696c2e69ffe781bdea941afa7",
+    "validation/noise-note-timing/z80-observer.txt": "c3418dae8656ee00db4f99836933567209639954ec4f3b99da49e0ae55cb266f",
+    "validation/noise-note-timing/memz80-observer.txt": "9bb4526ad2070797a83929d08b3822e8426b9e3f17cee1afa093d32993721e6f"
+  },
+  "compressed": {
+    "validation/noise-note-timing/auto-calls.bin": {
+      "stored": "validation/noise-note-timing/auto-calls.bin.gz",
+      "raw_sha256": "cb60cc37fe92b7838c1835435069f6839b47ff44619332d2fb7252933972601a",
+      "stored_sha256": "64d4e3992a5224dcc2c09c34c94fb107b58e50cec1d8fb44913d99bf3786ffc7",
+      "raw_bytes": 7593984,
+      "stored_bytes": 190064
+    },
+    "validation/noise-note-timing/auto-ports.bin": {
+      "stored": "validation/noise-note-timing/auto-ports.bin.gz",
+      "raw_sha256": "a98e544c9169a0088e7a08412a2f2224bd89028f24d90b19ac05f1f216ca96a3",
+      "stored_sha256": "1424a85492794147b7bf2044568e72e7c7e7e154961c3b1b503b9679f77aa806",
+      "raw_bytes": 73728,
+      "stored_bytes": 30773
+    },
+    "validation/noise-note-timing/pal-calls.bin": {
+      "stored": "validation/noise-note-timing/pal-calls.bin.gz",
+      "raw_sha256": "d5b191693620b528934136c8555d2fc169a92d06a2476cde4568ba584d79e1c8",
+      "stored_sha256": "3fee062e693b2f3d6f526e8f27e3b736cf8efbdac746c28703c6f8a2df51751d",
+      "raw_bytes": 7593984,
+      "stored_bytes": 190491
+    },
+    "validation/noise-note-timing/pal-ports.bin": {
+      "stored": "validation/noise-note-timing/pal-ports.bin.gz",
+      "raw_sha256": "818a888f6d5991f1c8ec8e954d426a3da7dc7fb9038c0233d61f760498ae28d6",
+      "stored_sha256": "5ee2c5bcb86120c19c19e9ea14892d7483c6a0441e7267491514ddb7b98d61e5",
+      "raw_bytes": 73728,
+      "stored_bytes": 31208
+    },
+    "validation/noise-note-timing/cases.json": {
+      "stored": "validation/noise-note-timing/cases.json.gz",
+      "raw_sha256": "6e09d852a70c273440638ddbb325b45c5c2e828401b9d53b6c1cd791c9030fd9",
+      "stored_sha256": "afef9eaa3d469ae7e4e0fd0d91570a04781930c49979fd0802b09f6203a7ebb6",
+      "raw_bytes": 940995,
+      "stored_bytes": 34887
+    },
+    "validation/audio-noise-note/helper/source.sms": {
+      "stored": "validation/audio-noise-note/helper/source.sms.gz",
+      "raw_sha256": "56fdbc7455bf4e1ae96e83f3b3f3625b0b199cf0bdf2e74fdbd591c34d2bd663",
+      "stored_sha256": "ac41f37910070b320f7334ae41b6e77a681c931cf4421158a94c3820c1388873",
+      "raw_bytes": 2097152,
+      "stored_bytes": 172656
+    }
+  }
+}
