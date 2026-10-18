@@ -75,8 +75,14 @@ Voir le [jalon du producteur audio avec file](analysis/queued_audio_milestone.md
 L'horloge vidéo native concorde maintenant avec **16 384 lectures physiques**
 du compteur PAL/NTSC. Des rafales assembleur de diagnostic conservent aussi
 les espacements audio rapprochés à 14 ticks maître près, relativement au premier
-octet. Il reste à placer ce premier octet à sa date source et à raccorder les
-rafales à la file. Voir les [mesures et limites de l'horloge physique](analysis/md_io_clock_milestone.md).
+octet. Voir les [mesures et limites de l'horloge physique](analysis/md_io_clock_milestone.md).
+
+Un premier chemin assembleur attend maintenant la position vidéo avant
+d'émettre les octets préchargés depuis la file : **47 880 écritures** vérifiées
+sur toutes les positions d'une ligne en PAL/NTSC, sans octet perdu ni image
+sautée. Le retard maximal mesuré du premier octet est de 804 ticks maître ;
+la précision et le raccordement au lecteur complet restent à finaliser.
+Voir le [jalon de l'attente matérielle PSG](analysis/md_psg_wait_milestone.md).
 
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de

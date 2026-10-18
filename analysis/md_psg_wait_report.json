@@ -1,0 +1,360 @@
+{
+  "kernel_sha256": "45dadda5cbd92f61a2eb1b4b9a6cf8deed052ce9d16a1a0083827266b2ec7817",
+  "observer_core_sha256": "563912ae0336f8b076fa91be53979618bf36490e158814062b79af3e0017fb40",
+  "fixture_sha256": "4130aa90a2e1458a3b3996a44fb645c83aa4c52a4caf8dffc8554b0738f17ed0",
+  "source_dates_sha256": "14c87df7dfd6a9714a623ad7a1580f30c68ce44eb1aff62a7cc330f6c13a1593",
+  "sources": {
+    "source_md_psg_wait.s": "f37e4ab2924ef6dd34ef85abdf890169b3fa36f8ef7a8144af12cfe36e531efc",
+    "source_md_psg_wait.h": "07fed523349eee04a668a3e2da24f3b615e052353824cf2c78e20f7c70e61470",
+    "source_psg_queue.c": "691c3f81d1bf4c367d37bccd3f9194d2564eca5853739639e3045580dc1537be",
+    "source_psg_queue.h": "e855fa57abebaee9402a7e775285f5fd786f15e14073b3bb1843da6a4f003573"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 10286,
+      "done": 1,
+      "failures": 0,
+      "groups": 10260,
+      "bytes": 23940,
+      "ram_sha256": "4b291fd9d8b16a7df57e936af95255d51fbd497d9ca4a80bb174025293ad922e",
+      "plain_core_identical": true,
+      "first_error_master": [
+        224,
+        774
+      ],
+      "all_error_master": [
+        218,
+        774
+      ],
+      "rows_sha256": "0a4b9e6a54372aae04ebcaf17c949bbf159b63ed274b3dacb89a8b3a4129c6b3",
+      "worst_rows": [
+        {
+          "kind": 2,
+          "phase": 782,
+          "target": 2127671702,
+          "errors_master": [
+            774,
+            767,
+            774,
+            767
+          ],
+          "relative_errors_master": [
+            0,
+            -7,
+            0,
+            -7
+          ]
+        },
+        {
+          "kind": 2,
+          "phase": 784,
+          "target": 2133047944,
+          "errors_master": [
+            770,
+            763,
+            770,
+            763
+          ],
+          "relative_errors_master": [
+            0,
+            -7,
+            0,
+            -7
+          ]
+        },
+        {
+          "kind": 2,
+          "phase": 791,
+          "target": 2151864791,
+          "errors_master": [
+            763,
+            756,
+            763,
+            756
+          ],
+          "relative_errors_master": [
+            0,
+            -7,
+            0,
+            -7
+          ]
+        },
+        {
+          "kind": 2,
+          "phase": 798,
+          "target": 2170681638,
+          "errors_master": [
+            756,
+            749,
+            756,
+            749
+          ],
+          "relative_errors_master": [
+            0,
+            -7,
+            0,
+            -7
+          ]
+        },
+        {
+          "kind": 2,
+          "phase": 805,
+          "target": 2189498485,
+          "errors_master": [
+            749,
+            742,
+            749,
+            742
+          ],
+          "relative_errors_master": [
+            0,
+            -7,
+            0,
+            -7
+          ]
+        },
+        {
+          "kind": 2,
+          "phase": 812,
+          "target": 2208315332,
+          "errors_master": [
+            742,
+            735,
+            742,
+            735
+          ],
+          "relative_errors_master": [
+            0,
+            -7,
+            0,
+            -7
+          ]
+        },
+        {
+          "kind": 2,
+          "phase": 819,
+          "target": 2227132179,
+          "errors_master": [
+            735,
+            728,
+            735,
+            728
+          ],
+          "relative_errors_master": [
+            0,
+            -7,
+            0,
+            -7
+          ]
+        },
+        {
+          "kind": 2,
+          "phase": 826,
+          "target": 2245949026,
+          "errors_master": [
+            728,
+            721,
+            728,
+            721
+          ],
+          "relative_errors_master": [
+            0,
+            -7,
+            0,
+            -7
+          ]
+        }
+      ],
+      "by_kind": [
+        {
+          "kind": 0,
+          "groups": 3420,
+          "first_error_master": [
+            224,
+            711
+          ]
+        },
+        {
+          "kind": 1,
+          "groups": 3420,
+          "first_error_master": [
+            224,
+            681
+          ]
+        },
+        {
+          "kind": 2,
+          "groups": 3420,
+          "first_error_master": [
+            225,
+            774
+          ]
+        }
+      ],
+      "relative_error_master": [
+        -14,
+        7
+      ]
+    },
+    {
+      "region": "pal",
+      "frame": 10282,
+      "done": 1,
+      "failures": 0,
+      "groups": 10260,
+      "bytes": 23940,
+      "ram_sha256": "016fe1a2a5a07de745f19e0aa049f1d46ffca6081d856c094b079071ebbdf925",
+      "plain_core_identical": true,
+      "first_error_master": [
+        224,
+        804
+      ],
+      "all_error_master": [
+        217,
+        804
+      ],
+      "rows_sha256": "ddca367a3fd4089892a9ebb8f91630aee779b28ece19122cad5563d8a9ed6185",
+      "worst_rows": [
+        {
+          "kind": 1,
+          "phase": 746,
+          "target": 2420957186,
+          "errors_master": [
+            804,
+            804
+          ],
+          "relative_errors_master": [
+            0,
+            0
+          ]
+        },
+        {
+          "kind": 1,
+          "phase": 749,
+          "target": 2430591329,
+          "errors_master": [
+            803,
+            803
+          ],
+          "relative_errors_master": [
+            0,
+            0
+          ]
+        },
+        {
+          "kind": 1,
+          "phase": 752,
+          "target": 2440225472,
+          "errors_master": [
+            802,
+            802
+          ],
+          "relative_errors_master": [
+            0,
+            0
+          ]
+        },
+        {
+          "kind": 1,
+          "phase": 755,
+          "target": 2449859615,
+          "errors_master": [
+            801,
+            801
+          ],
+          "relative_errors_master": [
+            0,
+            0
+          ]
+        },
+        {
+          "kind": 0,
+          "phase": 764,
+          "target": 2477691584,
+          "errors_master": [
+            790
+          ],
+          "relative_errors_master": [
+            0
+          ]
+        },
+        {
+          "kind": 1,
+          "phase": 769,
+          "target": 2494818949,
+          "errors_master": [
+            787,
+            787
+          ],
+          "relative_errors_master": [
+            0,
+            0
+          ]
+        },
+        {
+          "kind": 1,
+          "phase": 762,
+          "target": 2472339282,
+          "errors_master": [
+            780,
+            780
+          ],
+          "relative_errors_master": [
+            0,
+            0
+          ]
+        },
+        {
+          "kind": 1,
+          "phase": 776,
+          "target": 2517298616,
+          "errors_master": [
+            780,
+            780
+          ],
+          "relative_errors_master": [
+            0,
+            0
+          ]
+        }
+      ],
+      "by_kind": [
+        {
+          "kind": 0,
+          "groups": 3420,
+          "first_error_master": [
+            224,
+            790
+          ]
+        },
+        {
+          "kind": 1,
+          "groups": 3420,
+          "first_error_master": [
+            226,
+            804
+          ]
+        },
+        {
+          "kind": 2,
+          "groups": 3420,
+          "first_error_master": [
+            224,
+            716
+          ]
+        }
+      ],
+      "relative_error_master": [
+        -14,
+        7
+      ]
+    }
+  ],
+  "limits": [
+    "Real queued bytes are prefetched at logical due time; actual writes wait for physical line100 and the requested horizontal phase. FIFO cursor/u32 due wrap included. Single blocked producer/consumer; no pressure or reader execution during output.",
+    "Fixed line100 is unambiguous in both regions. Every master-tick phase0..3419 and three output kinds; one group per frame,marker verified on physical line90 and no skipped frames.",
+    "Source630tick frequency pairs use retained original SMS bytes/dates. Four-byte315tick mute bursts are synthetic bus cadence cases. This is not a full original audio stream replay.",
+    "Interrupts/display disabled; first-write poll/IO latency is additional to source deadlines. Not integrated into playable ROM,global epoch,full graphics load,or real hardware."
+  ]
+}
