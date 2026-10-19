@@ -91,6 +91,13 @@ d'environ 5 ms dans ce banc ne représente donc pas un gain à charge vidéo
 exécutée équivalente. Le service régulier et les échéances du rendu restent
 à réaliser ; la ROM jouable est inchangée.
 
+Les [essais de points de service vidéo](analysis/md_z80_video_service_milestone.md)
+montrent que les appels dans les fonctions d'horloge coûtent trop cher, ou
+servent encore trop peu de travaux. Préparer le motif diagnostique une seule
+fois réduit le retard audio de la fixture vers 3,4 ms, mais ne résout pas le
+débit vidéo. Ces essais restent hors de la ROM jouable ; la suite porte sur
+le coût des tentatives et les frontières de service du chargement/rendu.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,

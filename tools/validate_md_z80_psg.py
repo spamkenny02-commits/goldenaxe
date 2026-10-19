@@ -88,6 +88,9 @@ def main():
     parser.add_argument('--bulk-drain',action='store_true',help='Use bounded native FIFO batch take in the publisher callback')
     parser.add_argument('--poll-transfer',type=int,default=0,help='Prepare once for up to this many synchronous bus-transfer attempts')
     parser.add_argument('--video',choices=['off','display','cpu','dma'],default='off',help='Visible raster; CPU uploads or retained jobs for grant-gated32byte DMA')
+    parser.add_argument('--video-service',type=int,default=0,help='Pump DMA every N source-clock function boundaries (power of two)')
+    parser.add_argument('--video-service-kind',choices=['all','repeat-disabled'],default='all',help='Choose all clock functions or only disabled repetition batch boundaries')
+    parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
@@ -102,6 +105,9 @@ def main():
     assert 0<=args.poll_transfer<=65535
     assert not args.poll_transfer or (args.variant and not args.deferred)
     assert args.video=='off' or (args.live_loader and args.variant)
+    assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
+    assert not args.video_cache_pattern or args.video=='dma'
+    assert args.video_service_kind=='all' or args.video_service
     assert not args.live_loader or (args.variant and not args.expect_prefetch and not args.phase_offset)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
@@ -143,7 +149,7 @@ def main():
         (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
     if args.video!='off':
         from md_z80_video_fixture import instrument
-        main=instrument(main,args.video=='cpu',args.video=='dma')
+        main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern)
         (folder/'video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_video_fixture.py').read_bytes())
     (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
@@ -153,26 +159,10 @@ def main():
     for module in modules:
         prefix='#define source_irq_interrupt source_irq_queue_interrupt\n' if module!='source_irq_queue_context' else ''
         (src/(module+'.c')).write_text(prefix+'#include "../../../megadrive/src/'+module+'.c"\n')
-    if args.service:
-        functions=['execute','repeat','repeat_disabled','checkpoint']
-        text=''.join('#define source_clock_'+n+' source_clock_'+n+'_unserviced\n' for n in functions)
-        text+='#include "../../../megadrive/src/source_clock.c"\n'
-        text+=''.join('#undef source_clock_'+n+'\n' for n in functions)
-        text+='''void cooperative_service(void);
-u8 source_clock_execute(SourceClock *c,u16 t,u8 f,u8 e,SourceClockInterrupt irq,void *ctx) {
- u8 ok;cooperative_service();ok=source_clock_execute_unserviced(c,t,f,e,irq,ctx);cooperative_service();return ok;
-}
-u8 source_clock_checkpoint(SourceClock *c,SourceClockInterrupt irq,void *ctx) {
- u8 ok;cooperative_service();ok=source_clock_checkpoint_unserviced(c,irq,ctx);cooperative_service();return ok;
-}
-u16 source_clock_repeat(SourceClock *c,u16 t,u8 f,u16 n) {
- u16 used;cooperative_service();used=source_clock_repeat_unserviced(c,t,f,n);cooperative_service();return used;
-}
-u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
- u16 used;cooperative_service();used=source_clock_repeat_disabled_unserviced(c,t,f,n);cooperative_service();return used;
-}
-'''
-        (src/'source_clock.c').write_text(text)
+    if args.service or args.video_service:
+        from md_clock_service_kernel import source as service_source
+        (src/'source_clock.c').write_text(service_source(bool(args.video_service),args.video_service_kind))
+        (folder/'clock-service.py.snapshot').write_bytes((ROOT/'tools/md_clock_service_kernel.py').read_bytes())
     for name in ['source_room_finish.h','source_irq_queue_context.h','source_pattern_plan_generated.h','source_md_psg_replay.h','md_service_clock.h','source_md_psg_plan.h','md_z80_psg.h']:(src/name).write_text('#include "../../../megadrive/src/'+name+'"\n')
     (src/'md_service_clock_hv.s').write_bytes((ROOT/'megadrive/src/md_service_clock_hv.s').read_bytes())
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH']
@@ -216,6 +206,8 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
             observed.update(frame=frame,done=value('gaw_replay_done',2),cases=value('gaw_replay_cases',4),extra_cases=value('gaw_replay_extra_cases',4),failures=value('gaw_replay_failures',4),bytes=value('gaw_replay_bytes',4),failure_code=value('gaw_z80_failure_code',4),foreground=value('gaw_z80_foreground',4),work_count=value('gaw_z80_work_count',4),queue_full=value('gaw_z80_queue_full',4),grant_wait=value('gaw_z80_grant_wait',4),wrap_head=value('gaw_z80_wrap_head',4),wrap_tail=value('gaw_z80_wrap_tail',4),refresh_counter=value('gaw_z80_refresh_counter',4))
             if args.video!='off':observed['video_updates']=value('gaw_video_updates',4)
             if args.video=='dma':observed.update(video_requests=value('gaw_video_requests',4),video_dma_attempts=value('gaw_video_dma_attempts',4))
+            if args.video_service:observed['video_service_calls']=value('gaw_video_service_calls',4)
+            if args.video_cache_pattern:observed['video_pattern_preparations']=value('gaw_video_pattern_preparations',4)
             for e in events[-size:] if size else []:
                 if e[0]==3 and (64<=e[2]<=89 or 128<=e[2]<176):active[0]=e[2]
             stamp=[ram[(mb+i)^1] for i in range(6)]
@@ -330,6 +322,7 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
             assert colors is not None and len(colors)>=8
             assert observed['video_updates']==1+(sum(x['publisher_callbacks'] for x in rows) if args.video in ['cpu','dma'] else 0)
             if args.video=='dma':assert observed['video_requests']==observed['video_updates']-1 and observed['video_dma_attempts']>=observed['video_requests']
+            if args.video_cache_pattern:assert observed['video_pattern_preparations']==observed['video_requests']
             video_evidence=dict(mode=args.video,updates=observed['video_updates'],colors=len(colors),vram_sha256=sha(vram),registers_sha256=sha(regs),image_sha256=sha((capture/f'frame_{frame:05d}.png').read_bytes()))
         result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw))
         if video_evidence:result['video']=video_evidence
@@ -340,6 +333,9 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
                         'Every315/630intraburst interval exact for original streams and24partial-burst synthetics. Long512command session forces32slot/full-queue pressure,two8bitcursorwraps,16bitlinecounterwrap androlling clock epoch refresh,withu32sourcewrap. Native volatile foreground polynomial checked independently from counted iterations. Every visible even clock stamp checked against last two physically sampled counters. No maximum lateness acceptance gate: initial backend measurement,not production success.'])
     report['polled_transfer_attempts']=args.poll_transfer
     report['video_fixture']=args.video
+    report['video_service_stride']=args.video_service
+    report['video_service_kind']=args.video_service_kind
+    report['video_pattern_cached']=args.video_cache_pattern
     if args.live_loader:
         report['loader_boundary_before_clock_query']=True
         report['deferred_publication']=args.deferred
@@ -356,6 +352,8 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
         if args.poll_transfer:report['limits'].append('Synchronous polled transfer prepares once per call and retries only WAIT up to the configured attempt limit. Diagnostic grant_wait counts exhausted outer calls, not internal transfer attempts; FULL/errors return immediately. No deferred queue or source work runs inside the polling loop.')
         if args.video!='off':report['limits'].append('H32/224 display enabled with a synthetic repeated diagnostic tile and palette, verified against final physical VRAM/registers/image. CPU mode uploads one32byte tile per publisher callback; DMA mode retains jobs for guarded transfers. This is a diagnostic video fixture, not the game renderer, SMS image fidelity, native IRQs, or full-game proof. Callback marker duration includes video work attempted in that callback.')
         if args.video=='dma':report['limits'].append('DMA experiment queues one deterministic diagnostic tile job per callback, tries only with grant/even stamp at most2raw lines old in rawV235..252 (excluding NTSC duplicate range), rechecks after BUSREQ. Precomputed fixed32byte DMA command words issued only inside the granted critical section, source128KiB boundary checked; SGDK auto-increment set before acquisition. Jobs are retained in order and all drained while Z80 clock is still active before stop; some may complete after loader/audio delivery markers. No job frame deadlines or game renderer queue are established; native IRQs remain masked.')
+        if args.video_service:report['limits'].append('Video service experiment wraps the selected source_clock function boundaries (all four or only repeat_disabled) and attempts DMA every configured number of boundaries. Inline source_clock_block and computation inside helpers are not serviced. Adds native cost without changing the logical source clock; no maximum service interval or frame deadline is established.')
+        if args.video_cache_pattern:report['limits'].append('Diagnostic tile payload is prepared once per queued job and remains intact across WAIT, reset after successful DMA. This removes fixture preparation overhead; DMA primitive/control preparation and its guards remain unchanged. No renderer payload/deadline claim.')
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')

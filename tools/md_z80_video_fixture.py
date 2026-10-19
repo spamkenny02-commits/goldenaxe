@@ -19,7 +19,7 @@ static void video_setup(void) {
 '''
 
 
-def instrument(main, cpu_writes, dma=False):
+def instrument(main, cpu_writes, dma=False, service_stride=0, cache_pattern=False):
     video=VIDEO
     if dma:
         video=video.replace('volatile u32 gaw_video_updates;', 'volatile u32 gaw_video_updates,gaw_video_requests,gaw_video_dma_attempts;')
@@ -43,6 +43,21 @@ static void video_flush(void) {
 '''
         # Helpers call the later kernel functions, whose bodies remain intact.
         video='static void fault(u32);static void work(void);\n'+video
+        if cache_pattern:
+            video=video.replace('volatile u32 gaw_video_updates,gaw_video_requests,gaw_video_dma_attempts;', 'volatile u32 gaw_video_updates,gaw_video_requests,gaw_video_dma_attempts,gaw_video_pattern_preparations;\nstatic u8 video_pattern_prepared;')
+            needle=' mask=((gaw_video_updates+1)&1)?0x11111111UL:0;\n for(n=0;n<8;n++) video_pattern[n]=((n&1)?0x76543210UL:0x01234567UL)^mask;'
+            assert video.count(needle)==1
+            video=video.replace(needle,' if(!video_pattern_prepared) {\n'+needle+'\n video_pattern_prepared=1;gaw_video_pattern_preparations++;\n }')
+            video=video.replace(' if(status==MD_Z80_PSG_OK) gaw_video_updates++;', ' if(status==MD_Z80_PSG_OK) {gaw_video_updates++;video_pattern_prepared=0;}')
+        if service_stride:
+            video+='''
+volatile u32 gaw_video_service_calls;
+static u16 video_service_phase;
+void cooperative_video_service(void) {
+ gaw_video_service_calls++;
+ if((++video_service_phase&'''+str(service_stride-1)+''')==0) video_pump();
+}
+'''
         main=main.replace('#include "md_z80_psg.h"','#include "md_z80_psg.h"\n#include "md_z80_video_dma.h"')
     needle='static void work(void)'
     assert main.count(needle)==1
