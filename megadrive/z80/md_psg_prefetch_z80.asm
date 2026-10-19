@@ -46,7 +46,7 @@ loop:   ld a,(0x107)
         call available
         jr nz,fetch
         ld (iy+8),1
-        ld b,8
+        ld b,1
 idle:   djnz idle
         call clock
         jr loop
@@ -76,7 +76,7 @@ coarse: ld e,(ix+0)
         ld a,h
         or l
         jp z,near
-        ld de,7
+        ld de,17
         add hl,de
         bit 7,h
         jr z,close
@@ -115,13 +115,17 @@ grant:  ld (iy+8),1
         jr coaststart
 close:  ld (iy+8),0
 coaststart:
-        ld b,8
+        ld b,1
 coast:  djnz coast
         call clock
         jp coarse
 near:   ld (iy+8),0
         call invalidate
         call sample
+        ; Prepare output registers before the target line, not after it.
+        ; Private clock samples use the main set; EXX preserves this setup.
+        call setupregs
+        exx
         ld b,(ix+2)
 vwait:  ld a,(0x7f08)
         cp b
@@ -138,13 +142,15 @@ vwait:  ld a,(0x7f08)
 latewait:
         ; This path actually waited; only the coarse path can reuse a sample.
         call sample
+        exx
+        jr emit
 late:   ld (iy+8),0
         call invalidate
         ; Coarse/finished just sampled. No grant or wait before this burst.
         call setupregs
         jr emit
 setup:  call sample
-        call setupregs
+        exx
 hwait:  ld a,(0x7f08)
         cp b
         jr nz,emit
@@ -247,6 +253,7 @@ copyvalues:
         ld hl,0x1000
 saveptr:
         ld (readptr),hl
+        call sample
         ld a,(ix+5)
         ld c,a
         ld a,(ix+4)
@@ -323,8 +330,21 @@ finished:
         jr z,readyline
         bit 7,h
         jr z,readyemit
+        inc hl
+        ld a,h
+        or l
+        jr z,readywait
+        inc hl
+        ld a,h
+        or l
+        jr z,readywait
         ld hl,(counter)
         jp coarse
+readywait:
+        call setupregs
+        exx
+        ld b,(ix+2)
+        jp vwait
 readyline:
         call setupregs
         jp hwait

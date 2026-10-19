@@ -78,9 +78,12 @@ def main():
     parser.add_argument('--variant',default='',help='Separate named experiment output; preserves baseline captures/report')
     parser.add_argument('--driver',default='md_psg_output_z80.asm',help='Z80 source basename inside megadrive/z80')
     parser.add_argument('--expect-prefetch',action='store_true',help='Require final stopped session to have prefetched commands (ZRAM011A)')
+    parser.add_argument('--phase-offset',type=int,default=0,help='Physical replay offset in master ticks; source checkpoints stay unchanged')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
+    assert 0<=args.phase_offset<3420
+    assert args.variant or (not args.phase_offset and args.driver=='md_psg_output_z80.asm' and not args.expect_prefetch)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
     frozen=ROOT/'analysis/native-copy-pointers-v0203';m=json.loads((frozen/'manifest.json').read_text());item=m['compressed']['validation/native-planned-room-finish/kernel/src/expected.h']
@@ -92,6 +95,8 @@ def main():
     (src/'psg.h').write_text('static const u16 psg_counts[]={'+','.join(str(len(t)) for t,_ in expected)+'};\n'+'static const u32 psg_due[24][128]={'+','.join('{'+','.join(str(t)+'UL' for t in times)+'}' for times,_ in expected)+'};\n'+'static const u8 psg_values[24][128]={'+','.join('{'+','.join(map(str,v))+'}' for _,v in expected)+'};\n')
     main=MAIN.replace('#include "source_md_psg_replay.h"','#include "source_md_psg_replay.h"\n#include "md_z80_psg.h"\n#include "driver.h"')
     first=main.index('static void synthetic(void)');last=main.index('int main(bool hard_reset)',first);main=main[:first]+OUTPUT+main[last:]
+    if args.phase_offset:
+        main=main.replace('physical_lines,epoch);if(status)', 'physical_lines,epoch-'+str(args.phase_offset)+'UL);if(status)')
     if args.expect_prefetch:
         main=main.replace('if(marker==88) used=512;','if(marker==88) used=512;\n else if(marker==89) used=64;')
         main=main.replace('  spins=0;\n  do {','''  if(marker==89) {
@@ -168,7 +173,7 @@ def main():
                 n=tag-64;count=n+1 if n<16 else n-15;spacing=315 if n<16 else 630;times=[period*2+n*133%3420+k*spacing for k in range(count)];values=[(n*7+k*13)&255 for k in range(count)]
             else:times,values=expected[(tag-128)//2]
             assert [e[2] for e in writes]==values,(region,tag,len(writes),len(values))
-            errors=[e[1]-origin-t for e,t in zip(writes,times)];assert min(errors)>=0,(region,tag,errors)
+            errors=[e[1]-origin-t-args.phase_offset for e,t in zip(writes,times)];assert min(errors)>=0,(region,tag,errors)
             gaps=[b[1]-a[1] for a,b in zip(reads,reads[1:])];assert max(gaps)<17100,(region,tag,max(gaps))
             clocks=[e for e in part if e[0]==6 and e[3]==clock_pc];assert clocks
             advances=[b[1]//3420-a[1]//3420 for a,b in zip(clocks,clocks[1:])];assert min(advances)>=0 and max(advances)<=5,(region,tag,min(advances),max(advances))
@@ -203,7 +208,7 @@ def main():
         with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',20000,folder/(region+'-plain'),set(),[],skip_intro=False,ram_observer=plain_observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(plain.get('done')))
         assert plain=={k:observed[k] for k in plain},(plain,observed)
         result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw));results.append(result);print(region,{k:v for k,v in result.items() if k!='rows'},flush=True)
-    report=dict(kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),driver_sha256=sha(driver),driver_source_sha256=sha(asm.read_bytes()),observer_core_sha256=sha(core.read_bytes()),headers={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_psg.h','md_service_clock.h','source_md_psg_plan.h']},sources={n+'.c':sha((ROOT/'megadrive/src'/(n+'.c')).read_bytes()) for n in modules},results=results,
+    report=dict(physical_phase_offset=args.phase_offset,kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),driver_sha256=sha(driver),driver_source_sha256=sha(asm.read_bytes()),observer_core_sha256=sha(core.read_bytes()),headers={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_psg.h','md_service_clock.h','source_md_psg_plan.h']},sources={n+'.c':sha((ROOT/'megadrive/src'/(n+'.c')).read_bytes()) for n in modules},results=results,
                 limits=['Actual native source loader/IRQ/reader/FIFO checked against all16source checkpoints before output. Producer completes before timed replay; foreground polynomial work runs while native publisher/Z80consumer communicate. No actual loader/audio overlap or full-game/DMA/input/boot proof.',
                         'Separate32descriptor ring in Z80RAM;Z80 cannot read68000RAM. Native writer takes bounded BUSREQ only under a Z80grant;one descriptor per grant,grant revoked by native writer before release. Z80 copies values locally before releasing tail;busy excludes in-flight command from drain. Status/timestamps written to68000RAM. Critical wait/burst keeps publication sequence odd. Internal timer must not advance more than5physical lines between samples;rawVC alias at6is unsupported.',
                         'Every315/630intraburst interval exact for original streams and24partial-burst synthetics. Long512command session forces32slot/full-queue pressure,two8bitcursorwraps,16bitlinecounterwrap androlling clock epoch refresh,withu32sourcewrap. Native volatile foreground polynomial checked independently from counted iterations. Every visible even clock stamp checked against last two physically sampled counters. No maximum lateness acceptance gate: initial backend measurement,not production success.'])
