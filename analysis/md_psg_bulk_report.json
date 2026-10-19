@@ -1,0 +1,40 @@
+{
+  "host": {
+    "cases": 640,
+    "checks": 332166,
+    "failures": 0,
+    "events": 24730,
+    "hash": 473329932
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 1205,
+      "done": 1,
+      "cases": 640,
+      "checks": 332166,
+      "failures": 0,
+      "events": 24730,
+      "hash": 473329932
+    },
+    {
+      "region": "pal",
+      "frame": 1009,
+      "done": 1,
+      "cases": 640,
+      "checks": 332166,
+      "failures": 0,
+      "events": 24730,
+      "hash": 473329932
+    }
+  ],
+  "kernel_sha256": "07d6ad9977fab8f446e0355cd1919a7bdd8afc732518567511c3915d77135f27",
+  "sources": {
+    "source_psg_queue.c": "2d7ad08f911bf5f57f5651da95e401be239679a26194357aa0f23a5b6c72ced4",
+    "source_psg_queue.h": "6dab1b85720e248673999752ff3a61a3aed4c6e3ae82e059d43719e65f01beb8"
+  },
+  "limits": [
+    "640 differential batch/single take cases per native region, capacities1..512, partial/future/empty/zero output capacity, u16cursor/u32dates, preserved output suffix and invalid atomicity. Hash/check/event counts match the same semantic host execution.",
+    "No concurrent host-thread or native IRQ-preemption proof. Live source-loader output timing and checkpoints tested separately."
+  ]
+}

@@ -1045,3 +1045,6 @@ v0181: actual8357 raw16-bit note path83D1..83EC always jumps839B duration multip
 
 
 [2026-10-19] Five native PSG publication trials: one-byte plan, early grant, deferred packets, function-boundary service, inline service. Bare final source states/IRQ/data/5952bytes pass each; all rejected as timing improvements. Deferred publication needs bounded service during quiet source gaps and computation. Worst baseline169395/169605; trials169605/169455,176730/191805,4014570/3928890,1057245/1068015,1343730/1335375. Runtime plan/publisher/clock header restored byte-exact; playablev0203 unchanged. Experimental deferred tools retained, no production integration. See md_z80_psg_publication_trials.md.
+
+
+[2026-10-19] Native bulk FIFO take added: validate once, copy all due events up to output capacity, release cursor after copy. Host4096cases/168179events/8atomicerrors pass; native640cases/24730events/332166checks each region match host hash. Live bulk bare worst166155NTSC/166020PAL (~2pct gain) with source bytes/IRQ/final state; full16checkpoint proof passes separately. Driver copy-one and retained diagnostic FIFO trials rejected; active Z80 restored byte-exact. Default generated kernel unchanged; bulk opt-in --bulk-drain. Playablev0203 unchanged, no production integration or whole-game deadline/waveform proof. See md_psg_bulk_milestone.md. Local Git only.

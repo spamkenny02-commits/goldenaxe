@@ -1,0 +1,14 @@
+{
+  "cases": 4096,
+  "events": 168179,
+  "atomic_invalid_cases": 8,
+  "trace_sha256": "ef8699d43b81e5c3654c35ccff61f462ee48e92501aea945caf04cc034849613",
+  "sources": {
+    "source_psg_queue.c": "2d7ad08f911bf5f57f5651da95e401be239679a26194357aa0f23a5b6c72ced4",
+    "source_psg_queue.h": "6dab1b85720e248673999752ff3a61a3aed4c6e3ae82e059d43719e65f01beb8"
+  },
+  "limits": [
+    "Host ABI differential check against unchanged source_psg_queue_take; capacities1..32768, cursor/u32date wrap, equal dates, future/empty, zero/oversized output capacity, preserved unconsumed output/storage and invalid atomicity.",
+    "No concurrent host thread/IRQ or native timing proof; native live-loader proof and source-state tests are separate."
+  ]
+}

@@ -34,5 +34,10 @@ u8 source_psg_queue_push_bytes(SourcePsgQueue *queue,const u8 *values,const u32 
  * The caller emits the returned byte and accounts for polling/write latency.
  * This function supplies no physical clock, waiting loop or PSG register IO. */
 u8 source_psg_queue_take(SourcePsgQueue *queue,u32 now,SourcePsgEvent *event);
+/* Copy up to capacity due events with one validation/cursor publication.
+ * OK with taken==0 covers EMPTY/WAIT/zero capacity. INVALID preserves the
+ * output array, taken and cursors. Output/taken/storage must be disjoint.
+ * Same single-consumer and signed deadline horizon as take. */
+u8 source_psg_queue_take_many(SourcePsgQueue *queue,u32 now,SourcePsgEvent *events,u16 capacity,u16 *taken);
 
 #endif

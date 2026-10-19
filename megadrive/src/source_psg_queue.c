@@ -50,6 +50,24 @@ u8 source_psg_queue_take(SourcePsgQueue *queue,u32 now,SourcePsgEvent *event)
     return SOURCE_PSG_QUEUE_OK;
 }
 
+u8 source_psg_queue_take_many(SourcePsgQueue *queue,u32 now,SourcePsgEvent *events,u16 capacity,u16 *taken)
+{
+    u16 head,tail,used,n=0;const SourcePsgEvent *next;
+    if(!valid(queue) || !taken || (capacity && !events)) return SOURCE_PSG_QUEUE_INVALID;
+    tail=queue->read;head=queue->write;used=(u16)(head-tail);
+    if(used>queue->capacity) return SOURCE_PSG_QUEUE_INVALID;
+    if(capacity>used) capacity=used;
+    BARRIER();
+    while(n<capacity)
+    {
+        next=queue->events+((tail+n)&queue->mask);
+        if((s32)(now-next->due)<0) break;
+        events[n++]=*next;
+    }
+    BARRIER();queue->read=(u16)(tail+n);*taken=n;
+    return SOURCE_PSG_QUEUE_OK;
+}
+
 u8 source_psg_queue_push_bytes(SourcePsgQueue *queue,const u8 *values,const u32 *due,u16 count)
 {
     u16 head,tail,used,n;u32 previous;

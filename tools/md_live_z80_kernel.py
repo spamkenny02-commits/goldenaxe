@@ -112,14 +112,38 @@ void cooperative_audio(SourceQueuedIrqContext *queued) {
     return text
 
 
-def sources(bare=False, packets=False, deferred=False):
+def sources(bare=False, packets=False, deferred=False, retained_fifo=False, bulk_drain=False):
     main=BASE.replace('#include "md_service_clock.h"','#include "md_service_clock.h"\n#include "md_z80_psg.h"')
     main=main.replace('gaw_live_', 'gaw_replay_')
     main=main.replace('gaw_replay_bytes,gaw_replay_callbacks;', 'gaw_replay_bytes,gaw_replay_callbacks,gaw_replay_extra_cases;')
     main=main.replace('gaw_replay_times[48][2]', 'gaw_replay_clocks[48][3]')
     main=main.replace('static MdServiceStamp stamp;static MdServiceClock service;static SourceMdPsgReplayClock physical;', '')
     a=main.index('static u8 fresh(void)');b=main.index('int main(bool hard_reset)',a)
-    main=main[:a]+(deferred_controller() if deferred else CONTROLLER)+main[b:]
+    controller=deferred_controller() if deferred else CONTROLLER
+    if retained_fifo:
+        controller=controller.replace('static u8 session_failed;', 'static SourcePsgQueue *retained_queue;static u16 retained_origin;\nstatic u8 session_failed;')
+        needle=' gaw_replay_callbacks++;'
+        controller=controller.replace(needle,needle+'''
+ if(!retained_queue) {retained_queue=q;retained_origin=q->read;}
+ if(retained_queue!=q || q->capacity<128 || (u16)(q->write-retained_origin)>q->capacity) {fault(0xd00);return;}
+''')
+        controller=controller.replace('   for(count=0;count<n;count++) captured[captured_count++]=stream[count];', '   captured_count+=n;')
+        needle='u16 n;for(n=0;n<captured_count;n++) {dates[n]=captured[n].due;bytes[n]=captured[n].value;}return captured_count;'
+        assert controller.count(needle)==1
+        controller=controller.replace(needle,'''u16 n;
+ if(!retained_queue || (u16)(retained_queue->write-retained_origin)!=captured_count ||
+    captured_count>retained_queue->capacity) {fault(0xd01);return 0;}
+ for(n=0;n<captured_count;n++) {
+  SourcePsgEvent *e=retained_queue->events+((retained_origin+n)&retained_queue->mask);
+  dates[n]=e->due;bytes[n]=e->value;
+ }
+ return captured_count;''')
+        controller=controller.replace('u8 status;session_failed=0;', 'u8 status;retained_queue=0;retained_origin=0;session_failed=0;')
+    if bulk_drain:
+        needle='  while(n<128 && source_psg_queue_take(q,cutoff,stream+n)==0) n++;'
+        assert controller.count(needle)==1
+        controller=controller.replace(needle,'  if(source_psg_queue_take_many(q,cutoff,stream,128,&n)) fault(0xe00);')
+    main=main[:a]+controller+main[b:]
     main=main.replace(' for(row=0;row<24;row++)', ' gaw_replay_extra_cases=0;gaw_z80_foreground=0x8123905UL;\n for(row=0;row<24;row++)')
     main=main.replace('gaw_replay_times[row*2+mode][1]=output[2];','gaw_replay_clocks[row*2+mode][2]=output[2];')
     if packets:

@@ -63,6 +63,12 @@ conservent les états et octets source, mais aucun n'améliore le pire retard.
 Le report des transferts exige notamment un service plus régulier pendant
 les silences et les calculs. La référence expérimentale huit/vingt est conservée.
 
+Une [lecture groupée de la FIFO](analysis/md_psg_bulk_milestone.md) réduit
+ensuite le maximum mesuré d'environ 2 %, à environ **3,1 ms**, avec le même
+pilote Z80. Les états intermédiaires et octets source concordent en PAL/NTSC ;
+la nouvelle API passe aussi les comparaisons de file sur PC et sur 68000.
+Elle reste au stade du banc et ne change pas la ROM jouable v0203.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,

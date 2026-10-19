@@ -84,6 +84,8 @@ def main():
     parser.add_argument('--packets',action='store_true',help='Publish during reader packet callbacks instead of after complete source IRQs')
     parser.add_argument('--deferred',action='store_true',help='Retry pending descriptors later instead of blocking reader callbacks')
     parser.add_argument('--service',action='store_true',help='Experimental deferred pump at native source-clock function boundaries')
+    parser.add_argument('--retained-fifo',action='store_true',help='Read diagnostic capture from intact bounded FIFO storage after loading')
+    parser.add_argument('--bulk-drain',action='store_true',help='Use bounded native FIFO batch take in the publisher callback')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
@@ -93,6 +95,8 @@ def main():
     assert not args.packets or args.live_loader
     assert not args.deferred or (args.live_loader and args.packets)
     assert not args.service or args.deferred
+    assert not args.retained_fifo or (args.live_loader and args.packets)
+    assert not args.bulk_drain or args.live_loader
     assert not args.live_loader or (args.variant and not args.expect_prefetch and not args.phase_offset)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
@@ -127,7 +131,7 @@ def main():
     body=wrapper()
     if args.live_loader:
         from md_live_z80_kernel import sources
-        main,body=sources(args.bare,args.packets,args.deferred)
+        main,body=sources(args.bare,args.packets,args.deferred,args.retained_fifo,args.bulk_drain)
         (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
     (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
@@ -295,11 +299,15 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
         report['loader_boundary_before_clock_query']=True
         report['deferred_publication']=args.deferred
         report['source_clock_service']=args.service
+        report['retained_fifo_capture']=args.retained_fifo
+        report['bulk_fifo_drain']=args.bulk_drain
         report['limits']=['Actual source loader/IRQ/reader/FIFO publishes per IRQ while the Z80 consumes; no precomputed replay or synthetic foreground substitute. Native source output/state/IRQ logs checked against reference; proof mode also checks all16intermediate state copies; bare mode checks final RAM/audio and hashes without those copies.',
                           'Diagnostic markers delimit publisher callbacks and loader finish before its clock query. Writes before finish/outside publisher show overlap with the live loading call, including remaining diagnostic overhead. The separate query and delivery times are checked against independent native HV reads. No deadline acceptance gate; no DMA/native IRQ/input/boot/full-game/hardware proof. Stop only after drain; no fatal abort implementation.']
         if args.packets:report['limits'][0]=report['limits'][0].replace('per IRQ','during reader packet callbacks')
         if args.deferred:report['limits'].append('Deferred experiment: at most128 pending descriptors for this bounded source fixture; WAIT/FULL ends the callback publication attempt, retried at the next packet or drained after the loader-return marker before querying the shared clock. Not a production queue, quiet-gap pump, or bounded whole-game delivery proof.')
         if args.service:report['limits'].append('Experimental source_clock execute/repeat/repeat_disabled/checkpoint wrappers pump before/after each call. Inline source_clock_block and computation inside a call are not serviced. Publisher callback markers exclude these service attempts; callback duration is not total publisher overhead.')
+        if args.retained_fifo:report['limits'].append('Bounded-fixture diagnostic capture is read after loading from FIFO slots that remain intact: at most128 produced events in512 slots; cursor distance/capacity checked. No per-callback duplicate event capture. Native source enqueue/take/planner/publisher remain active; this is reduced observer overhead, not a production queue optimization or a general retention guarantee.')
+        if args.bulk_drain:report['limits'].append('Publisher consumes due FIFO events with source_psg_queue_take_many: one queue validation and cursor release per batch, original enqueue/plan/transport remain active.')
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
