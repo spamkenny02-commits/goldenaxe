@@ -1,5 +1,6 @@
 """Actual native source loader/reader/FIFO -> independently paced Z80 PSG IO."""
 import contextlib
+import argparse
 import ctypes as c
 import gzip
 import hashlib
@@ -73,7 +74,12 @@ def sha(raw):return hashlib.sha256(raw).hexdigest()
 
 
 def main():
-    folder=ROOT/'validation/md-z80-psg';src=folder/'src';src.mkdir(parents=True,exist_ok=True)
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--variant',default='',help='Separate named experiment output; preserves baseline captures/report')
+    args=parser.parse_args()
+    assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
+    suffix='-'+args.variant if args.variant else ''
+    folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
     frozen=ROOT/'analysis/native-copy-pointers-v0203';m=json.loads((frozen/'manifest.json').read_text());item=m['compressed']['validation/native-planned-room-finish/kernel/src/expected.h']
     encoded=(frozen/item['stored']).read_bytes();assert sha(encoded)==item['stored_sha256'];raw=gzip.decompress(encoded);assert sha(raw)==item['raw_sha256'];(src/'expected.h').write_bytes(raw)
     oracle=ROOT/'analysis/loading-psg-v0203';m=json.loads((oracle/'manifest.json').read_text());name='validation/loading-psg-deadlines/inputs.json';raw=(oracle/name).read_bytes();assert sha(raw)==m['files'][name];inputs=json.loads(raw)
@@ -101,7 +107,7 @@ def main():
     asm=ROOT/'megadrive/z80/md_psg_output_z80.asm';(folder/'driver-source.asm.snapshot').write_bytes(asm.read_bytes())
     built=subprocess.run([str(sdk/'bin/sjasm.exe'),str(asm),str(folder/'driver.bin'),str(folder/'driver.lst')],env=env,capture_output=True,text=True);(folder/'z80-build.log').write_text(built.stdout+built.stderr);assert not built.returncode and 'Errors: 0' in built.stdout,built.stdout+built.stderr
     driver=(folder/'driver.bin').read_bytes();(src/'driver.h').write_text('static const u8 driver[]={'+','.join(map(str,driver))+'};\n')
-    clock_pc=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*clock:\s+ld a,\(0x7f08\)',(folder/'driver.lst').read_text(),re.M)[1],16)+3
+    clock_pc=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*(?:clock|sample):\s+ld a,\(0x7f08\)',(folder/'driver.lst').read_text(),re.M)[1],16)+3
     temporary=folder/'compiler-tmp';temporary.mkdir(exist_ok=True)
     for key in ['TMPDIR','TMP','TEMP']:env[key]=temporary.resolve().as_posix()
     path=sdk.as_posix();unix='/'+path[0].lower()+path[2:]
@@ -178,7 +184,7 @@ def main():
                 limits=['Actual native source loader/IRQ/reader/FIFO checked against all16source checkpoints before output. Producer completes before timed replay; foreground polynomial work runs while native publisher/Z80consumer communicate. No actual loader/audio overlap or full-game/DMA/input/boot proof.',
                         'Separate32descriptor ring in Z80RAM;Z80 cannot read68000RAM. Native writer takes bounded BUSREQ only under a Z80grant;one descriptor per grant,grant revoked by native writer before release. Z80 copies values locally before releasing tail;busy excludes in-flight command from drain. Status/timestamps written to68000RAM. Critical wait/burst keeps publication sequence odd. Internal timer must not advance more than5physical lines between samples;rawVC alias at6is unsupported.',
                         'Every315/630intraburst interval exact for original streams and24partial-burst synthetics. Long512command session forces32slot/full-queue pressure,two8bitcursorwraps,16bitlinecounterwrap androlling clock epoch refresh,withu32sourcewrap. Native volatile foreground polynomial checked independently from counted iterations. Every visible even clock stamp checked against last two physically sampled counters. No maximum lateness acceptance gate: initial backend measurement,not production success.'])
-    (ROOT/'analysis/md_z80_psg_report.json').write_text(json.dumps(report,indent=2)+'\n')
+    (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 
 if __name__=='__main__':main()

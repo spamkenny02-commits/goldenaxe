@@ -52,14 +52,18 @@ idle:   djnz idle
         jr loop
 fetch:  ld (ix+8),0
         ld (ix+9),1
-        call clock
+        ld a,(sequence)
+        inc a
+        ld (ix+0),a
+        ; Sample after revoking grants: a preceding BUSREQ can delay entry.
+        call sample
+        ; Local metadata/value copy is bounded; no mid-copy publication.
         ld hl,(readptr)
         ld de,command
         ld bc,6
-        ldir
-        push hl
-        call clock
-        pop hl
+        rept 6
+        ldi
+        endm
         ld a,(command+5)
         or a
         jp z,fault
@@ -102,9 +106,8 @@ copyvalues:
         ld hl,0x1000
 saveptr:
         ld (readptr),hl
-        call clock
         call prepare
-        call clock
+        call sample
 coarse: ld de,(command)
         or a
         sbc hl,de
@@ -225,10 +228,23 @@ burst630:
         inc l
         ld (de),a
 finished:
-        call clock
+        call sample
         ld (ix+9),0
         jp loop
-clock:  ld a,(0x7f08)
+; Private samples keep the line counter current without six external writes.
+; The public stamp stays odd until the next idle/coast publication.
+clock:  call sample
+        ld a,(sequence)
+        inc a
+        ld (ix+0),a
+        ld (ix+1),b
+        ld (ix+2),h
+        ld (ix+3),l
+        inc a
+        ld (sequence),a
+        ld (ix+0),a
+        ret
+sample: ld a,(0x7f08)
         ld b,a
         ld a,(lastv)
         ld c,a
@@ -248,15 +264,6 @@ delta:  ld e,a
         ld (counter),hl
         ld a,b
         ld (lastv),a
-        ld a,(sequence)
-        inc a
-        ld (ix+0),a
-        ld (ix+1),b
-        ld (ix+2),h
-        ld (ix+3),l
-        inc a
-        ld (sequence),a
-        ld (ix+0),a
         ret
 fault:  ld (ix+5),1
 stopped:

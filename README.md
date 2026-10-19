@@ -119,9 +119,12 @@ Voir les [preuves et les essais écartés](analysis/md_beam_divu_milestone.md).
 Un premier service de **sorties PSG sur le Z80 matériel** fonctionne maintenant
 avec les octets calculés par le lecteur 68000. Les 5 952 octets de chargement,
 la cadence interne des rafales et les rebouclages de la file sont vérifiés en
-PAL/NTSC. Le lancement des rafales reste trop tardif, jusqu'à environ 3,4 ms ;
+PAL/NTSC. La réduction des publications et la copie déroulée des métadonnées
+abaissent le retard maximal mesuré de 3,4 à environ **1,6 ms**. Le lancement
+des rafales reste trop tardif ;
 ce backend reste expérimental et la v0203 est inchangée.
-Voir les [preuves et limites du service PSG](analysis/md_z80_psg_milestone.md).
+Voir les [preuves du service PSG](analysis/md_z80_psg_milestone.md) et la
+[réduction de latence et ses limites](analysis/md_z80_psg_latency_milestone.md).
 
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
