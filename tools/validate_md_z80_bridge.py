@@ -1,4 +1,5 @@
 """Host publisher model: atomic rejection, ring pressure and rolling dates."""
+import argparse
 import ctypes as c
 import hashlib
 import json
@@ -47,7 +48,10 @@ u8 md_service_clock_now(MdServiceClock *clock,SourceMdPsgReplayClock *out) {
 
 
 def main():
-    folder=ROOT/'validation/md-z80-bridge';folder.mkdir(parents=True,exist_ok=True);(folder/'stub.c').write_text(STUB)
+    parser=argparse.ArgumentParser();parser.add_argument('--variant',default='');options=parser.parse_args()
+    assert not options.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',options.variant)
+    suffix='-'+options.variant if options.variant else ''
+    folder=ROOT/('validation/md-z80-bridge'+suffix);folder.mkdir(parents=True,exist_ok=True);(folder/'stub.c').write_text(STUB)
     sdk=ROOT.parents[1]/'work/sgdk';env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH']
     args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-Wall','-Wextra','-Werror','-shared','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src'),str(folder/'stub.c'),str(ROOT/'megadrive/src/md_z80_psg.c'),'-o',str(folder/'bridge.dll')]
     built=subprocess.run(args,env=env,capture_output=True,text=True);(folder/'build.log').write_text(built.stdout+built.stderr);assert not built.returncode,built.stderr
@@ -105,7 +109,7 @@ def main():
     mb=Mailbox();clock=Clock(c.pointer(mb.stamp),epoch,0,0,100,262,0);p=Producer();assert init(c.byref(p),c.byref(mb),c.byref(clock))==0
     clock_mode.value=3;assert refresh(c.byref(p))==4 and p.error;clock_mode.value=0;assert refresh(c.byref(p))==4
     report=dict(checks=checks,rows=rows,sources={n:hashlib.sha256((ROOT/'megadrive/src'/n).read_bytes()).hexdigest()for n in ['md_z80_psg.c','md_z80_psg.h']},reference_sha256={'hvc.h':hashlib.sha256(hvc).hexdigest(),'vdp_ctrl.c':hashlib.sha256(ctrl).hexdigest()},limits=['Host-only C publisher/clock/transport model; no BUSREQ safety or Z80 execution claim.12000ordered descriptors cross ring/full/u8/u16/u32 boundaries; targets checked against independent physical HV tables. Atomic rejected format/order/horizon/FULL/WAIT/fault preserves payload/head/count/lastdue. Native CPU/bus/cadence verified separately.'])
-    (ROOT/'analysis/md_z80_bridge_report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
+    (ROOT/('analysis/md_z80_bridge'+('_'+options.variant.replace('-','_') if options.variant else '')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 
 
 if __name__=='__main__':main()

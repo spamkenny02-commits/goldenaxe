@@ -30,6 +30,12 @@ u8 md_z80_psg_refresh(MdZ80PsgProducer *producer);
  * long-horizon refresh. Copies values before one atomic byte head store.
  * All dates within32760lines of clock base,source order spans<2^31. */
 u8 md_z80_psg_push(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,u16 count);
+/* Synchronous one-descriptor variant. Prepare/validate once, then attempt
+ * the same bounded transfer up to attempts times while it returns WAIT.
+ * attempts must be nonzero. FULL/other errors return immediately. Single
+ * producer/clock owner; block/session must remain intact until return.
+ * WAIT exhaustion leaves publication state unchanged, as with push. */
+u8 md_z80_psg_push_poll(MdZ80PsgProducer *producer,const SourceMdPsgBlock *block,u16 attempts);
 u8 md_z80_psg_start(MdZ80PsgMailbox *mailbox,u16 lines,const u8 *image,u16 bytes);
 u8 md_z80_psg_transfer(MdZ80PsgMailbox *mailbox,const u8 *payload,u8 index,u8 head);
 u8 md_z80_psg_stop(MdZ80PsgMailbox *mailbox);

@@ -59,7 +59,7 @@ static void target(u32 offset,u16 counter,u16 physical,u16 lines,u16 *due_line,u
     index+=133;if(index>=171) index-=171;if(index>=148) index+=85;*h=index;
 }
 
-u8 md_z80_psg_push(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,u16 count)
+static u8 push_polled(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,u16 count,u16 attempts)
 {
     MdZ80PsgMailbox *mailbox;u8 head,used,status,payload[22];u16 n,k,line;u32 previous,last,offset;
     if(!producer || !producer->mailbox || !producer->clock || (count && !blocks) || count>1) return MD_Z80_PSG_INVALID;
@@ -97,7 +97,20 @@ u8 md_z80_psg_push(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,u16
         slot[4]=b->spacing==630?2:b->spacing==315?1:0;slot[5]=b->count;
         for(k=0;k<16;k++) slot[6+k]=b->values[k];
     }
-    BARRIER();status=md_z80_psg_transfer(mailbox,payload,head&31,(u8)(head+1));
+    BARRIER();
+    do {status=md_z80_psg_transfer(mailbox,payload,head&31,(u8)(head+1));}
+    while(status==MD_Z80_PSG_WAIT && --attempts);
     if(status!=MD_Z80_PSG_OK) return status;
     producer->published+=count;producer->last_due=last;return MD_Z80_PSG_OK;
+}
+
+u8 md_z80_psg_push(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,u16 count)
+{
+    return push_polled(producer,blocks,count,1);
+}
+
+u8 md_z80_psg_push_poll(MdZ80PsgProducer *producer,const SourceMdPsgBlock *block,u16 attempts)
+{
+    if(!attempts) return MD_Z80_PSG_INVALID;
+    return push_polled(producer,block,1,attempts);
 }

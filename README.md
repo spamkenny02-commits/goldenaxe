@@ -69,6 +69,12 @@ pilote Z80. Les états intermédiaires et octets source concordent en PAL/NTSC ;
 la nouvelle API passe aussi les comparaisons de file sur PC et sur 68000.
 Elle reste au stade du banc et ne change pas la ROM jouable v0203.
 
+La [préparation unique pendant les attentes de bus](analysis/md_z80_polled_milestone.md)
+réduit encore le maximum du banc à environ **3,0 ms**, contre 3,1 ms avec
+la seule lecture groupée. Les états source et les rejeux de bouclage passent
+en PAL/NTSC. Cette entrée synchrone bornée reste expérimentale, sans intégration
+dans la ROM jouable.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,

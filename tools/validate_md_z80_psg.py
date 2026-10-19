@@ -86,6 +86,7 @@ def main():
     parser.add_argument('--service',action='store_true',help='Experimental deferred pump at native source-clock function boundaries')
     parser.add_argument('--retained-fifo',action='store_true',help='Read diagnostic capture from intact bounded FIFO storage after loading')
     parser.add_argument('--bulk-drain',action='store_true',help='Use bounded native FIFO batch take in the publisher callback')
+    parser.add_argument('--poll-transfer',type=int,default=0,help='Prepare once for up to this many synchronous bus-transfer attempts')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
@@ -97,6 +98,8 @@ def main():
     assert not args.service or args.deferred
     assert not args.retained_fifo or (args.live_loader and args.packets)
     assert not args.bulk_drain or args.live_loader
+    assert 0<=args.poll_transfer<=65535
+    assert not args.poll_transfer or (args.variant and not args.deferred)
     assert not args.live_loader or (args.variant and not args.expect_prefetch and not args.phase_offset)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
@@ -129,9 +132,12 @@ def main():
 '''+main[last:]
     main=main.replace(' synthetic();',' gaw_z80_foreground=0x8123905UL;synthetic();')
     body=wrapper()
+    if args.poll_transfer and not args.live_loader:
+        assert main.count('md_z80_psg_push(&producer,next,1)')==1
+        main=main.replace('md_z80_psg_push(&producer,next,1)','md_z80_psg_push_poll(&producer,next,'+str(args.poll_transfer)+')')
     if args.live_loader:
         from md_live_z80_kernel import sources
-        main,body=sources(args.bare,args.packets,args.deferred,args.retained_fifo,args.bulk_drain)
+        main,body=sources(args.bare,args.packets,args.deferred,args.retained_fifo,args.bulk_drain,args.poll_transfer)
         (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
     (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
@@ -295,6 +301,7 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
                 limits=['Actual native source loader/IRQ/reader/FIFO checked against all16source checkpoints before output. Producer completes before timed replay; foreground polynomial work runs while native publisher/Z80consumer communicate. No actual loader/audio overlap or full-game/DMA/input/boot proof.',
                         'Separate32descriptor ring in Z80RAM;Z80 cannot read68000RAM. Native writer takes bounded BUSREQ only under a Z80grant;one descriptor per grant,grant revoked by native writer before release. Z80 copies values locally before releasing tail;busy excludes in-flight command from drain. Status/timestamps written to68000RAM. Critical wait/burst keeps publication sequence odd. Internal timer must not advance more than5physical lines between samples;rawVC alias at6is unsupported.',
                         'Every315/630intraburst interval exact for original streams and24partial-burst synthetics. Long512command session forces32slot/full-queue pressure,two8bitcursorwraps,16bitlinecounterwrap androlling clock epoch refresh,withu32sourcewrap. Native volatile foreground polynomial checked independently from counted iterations. Every visible even clock stamp checked against last two physically sampled counters. No maximum lateness acceptance gate: initial backend measurement,not production success.'])
+    report['polled_transfer_attempts']=args.poll_transfer
     if args.live_loader:
         report['loader_boundary_before_clock_query']=True
         report['deferred_publication']=args.deferred
@@ -308,7 +315,9 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
         if args.service:report['limits'].append('Experimental source_clock execute/repeat/repeat_disabled/checkpoint wrappers pump before/after each call. Inline source_clock_block and computation inside a call are not serviced. Publisher callback markers exclude these service attempts; callback duration is not total publisher overhead.')
         if args.retained_fifo:report['limits'].append('Bounded-fixture diagnostic capture is read after loading from FIFO slots that remain intact: at most128 produced events in512 slots; cursor distance/capacity checked. No per-callback duplicate event capture. Native source enqueue/take/planner/publisher remain active; this is reduced observer overhead, not a production queue optimization or a general retention guarantee.')
         if args.bulk_drain:report['limits'].append('Publisher consumes due FIFO events with source_psg_queue_take_many: one queue validation and cursor release per batch, original enqueue/plan/transport remain active.')
+        if args.poll_transfer:report['limits'].append('Synchronous polled transfer prepares once per call and retries only WAIT up to the configured attempt limit. Diagnostic grant_wait counts exhausted outer calls, not internal transfer attempts; FULL/errors return immediately. No deferred queue or source work runs inside the polling loop.')
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
+    if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 

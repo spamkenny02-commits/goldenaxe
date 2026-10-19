@@ -112,7 +112,7 @@ void cooperative_audio(SourceQueuedIrqContext *queued) {
     return text
 
 
-def sources(bare=False, packets=False, deferred=False, retained_fifo=False, bulk_drain=False):
+def sources(bare=False, packets=False, deferred=False, retained_fifo=False, bulk_drain=False, poll_transfer=0):
     main=BASE.replace('#include "md_service_clock.h"','#include "md_service_clock.h"\n#include "md_z80_psg.h"')
     main=main.replace('gaw_live_', 'gaw_replay_')
     main=main.replace('gaw_replay_bytes,gaw_replay_callbacks;', 'gaw_replay_bytes,gaw_replay_callbacks,gaw_replay_extra_cases;')
@@ -143,6 +143,10 @@ def sources(bare=False, packets=False, deferred=False, retained_fifo=False, bulk
         needle='  while(n<128 && source_psg_queue_take(q,cutoff,stream+n)==0) n++;'
         assert controller.count(needle)==1
         controller=controller.replace(needle,'  if(source_psg_queue_take_many(q,cutoff,stream,128,&n)) fault(0xe00);')
+    if poll_transfer:
+        needle='md_z80_psg_push(&producer,blocks+k,1)'
+        assert controller.count(needle)==1
+        controller=controller.replace(needle,'md_z80_psg_push_poll(&producer,blocks+k,'+str(poll_transfer)+')')
     main=main[:a]+controller+main[b:]
     main=main.replace(' for(row=0;row<24;row++)', ' gaw_replay_extra_cases=0;gaw_z80_foreground=0x8123905UL;\n for(row=0;row<24;row++)')
     main=main.replace('gaw_replay_times[row*2+mode][1]=output[2];','gaw_replay_clocks[row*2+mode][2]=output[2];')
