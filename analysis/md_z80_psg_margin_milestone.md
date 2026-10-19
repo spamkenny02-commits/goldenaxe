@@ -1,5 +1,10 @@
 # Relevé au passage vers une commande éloignée
 
+Jalon historique : le chargement vivant a ensuite révélé un défaut de la
+comparaison verticale de cette famille. La source est conservée sans modification
+dans `megadrive/research/md_psg_sampled_z80.asm`. Le pilote courant compare les
+lignes absolues ; voir le [nouveau banc et sa correction](md_z80_psg_live_milestone.md).
+
 La variante `megadrive/z80/md_psg_sampled_z80.asm` ajoute un relevé privé après
 la fin d'une rafale, lorsque la prochaine commande préparée arrive dans plus
 de deux lignes. Elle intervient avant de refaire les décisions d'attente et
@@ -66,7 +71,8 @@ n'est pas démontré. `sampled-middle` est conservé comme build échoué avant
 banc complet. Les prochains builds de ce SDK restent séquentiels pendant
 l'analyse de la conversion des chemins temporaires.
 
-La nouvelle variante peut être reprise avec un nom de sortie inédit :
+La commande suivante correspond au banc historique ; la variante est désormais
+retirée du répertoire des pilotes sélectionnables :
 
 ```powershell
 python tools/validate_md_z80_psg.py --variant sampled-proof --driver md_psg_sampled_z80.asm --expect-prefetch --phase-offset 1700

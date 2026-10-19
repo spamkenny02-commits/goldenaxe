@@ -79,11 +79,17 @@ def main():
     parser.add_argument('--driver',default='md_psg_output_z80.asm',help='Z80 source basename inside megadrive/z80')
     parser.add_argument('--expect-prefetch',action='store_true',help='Require final stopped session to have prefetched commands (ZRAM011A)')
     parser.add_argument('--phase-offset',type=int,default=0,help='Physical replay offset in master ticks; source checkpoints stay unchanged')
+    parser.add_argument('--live-loader',action='store_true',help='Run actual native loading while the Z80 consumes per-IRQ publications')
+    parser.add_argument('--bare',action='store_true',help='Live-loader measurement without intermediate diagnostic state copies')
+    parser.add_argument('--packets',action='store_true',help='Publish during reader packet callbacks instead of after complete source IRQs')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
     assert 0<=args.phase_offset<3420
     assert args.variant or (not args.phase_offset and args.driver=='md_psg_output_z80.asm' and not args.expect_prefetch)
+    assert not args.bare or args.live_loader
+    assert not args.packets or args.live_loader
+    assert not args.live_loader or (args.variant and not args.expect_prefetch and not args.phase_offset)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
     frozen=ROOT/'analysis/native-copy-pointers-v0203';m=json.loads((frozen/'manifest.json').read_text());item=m['compressed']['validation/native-planned-room-finish/kernel/src/expected.h']
@@ -114,12 +120,17 @@ def main():
   gaw_replay_clocks[row*2+mode][2]=full_waits;
 '''+main[last:]
     main=main.replace(' synthetic();',' gaw_z80_foreground=0x8123905UL;synthetic();')
-    (src/'main.c').write_text(main);(src/'wrapper.c').write_text(wrapper());(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
+    body=wrapper()
+    if args.live_loader:
+        from md_live_z80_kernel import sources
+        main,body=sources(args.bare,args.packets)
+        (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
+    (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
     for module in modules:
         prefix='#define source_irq_interrupt source_irq_queue_interrupt\n' if module!='source_irq_queue_context' else ''
         (src/(module+'.c')).write_text(prefix+'#include "../../../megadrive/src/'+module+'.c"\n')
-    for name in ['source_room_finish.h','source_irq_queue_context.h','source_pattern_plan_generated.h','source_md_psg_replay.h','md_z80_psg.h']:(src/name).write_text('#include "../../../megadrive/src/'+name+'"\n')
+    for name in ['source_room_finish.h','source_irq_queue_context.h','source_pattern_plan_generated.h','source_md_psg_replay.h','md_service_clock.h','source_md_psg_plan.h','md_z80_psg.h']:(src/name).write_text('#include "../../../megadrive/src/'+name+'"\n')
     (src/'md_service_clock_hv.s').write_bytes((ROOT/'megadrive/src/md_service_clock_hv.s').read_bytes())
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH']
     asm=ROOT/'megadrive/z80'/args.driver;(folder/'driver-source.asm.snapshot').write_bytes(asm.read_bytes())
@@ -168,12 +179,14 @@ def main():
                 observed['z80_pc']=dll.gaw_z80_pc();observed['z80_variables']=list(dll.gaw_z80_ram()[0x100:0x121]);observed['ram_sha256']=sha(bytes(ram));records[:]=[[value('gaw_replay_clocks',4,n*12+i*4) for i in range(3)] for n in range(48)]
         with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',20000,folder/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
         raw=json.dumps(dict(events=events,observed=observed,records=records,publications=publications),separators=(',',':')).encode();(folder/(region+'-events.json')).write_bytes(raw)
-        assert observed.get('done') and not observed['failures'] and observed['cases']==48 and observed['bytes']==2976 and observed['extra_cases']==(26 if args.expect_prefetch else 25) and not observed['wrap_head'] and not observed['wrap_tail'] and observed['refresh_counter']!=100 and observed['queue_full'] and observed['grant_wait'],observed
+        extra_count=0 if args.live_loader else 26 if args.expect_prefetch else 25
+        assert observed.get('done') and not observed['failures'] and observed['cases']==48 and observed['bytes']==2976 and observed['extra_cases']==extra_count,observed
+        if not args.live_loader:assert not observed['wrap_head'] and not observed['wrap_tail'] and observed['refresh_counter']!=100 and observed['queue_full'] and observed['grant_wait'],observed
         if args.expect_prefetch:
             observed['prefetched_commands']=observed['z80_variables'][26]+256*observed['z80_variables'][27]
             observed['max_prefetched_pending']=observed['z80_variables'][28]
             assert observed['prefetched_commands']>0 and observed['max_prefetched_pending']==15,observed
-        markers=[i for i,e in enumerate(events) if e[0]==3 and 64<=e[2]<=89 or e[0]==3 and 128<=e[2]<176];assert len(markers)==(74 if args.expect_prefetch else 73)
+        markers=[i for i,e in enumerate(events) if e[0]==3 and 64<=e[2]<=89 or e[0]==3 and 128<=e[2]<176];assert len(markers)==48+extra_count
         work=0x8123905
         for _ in range(observed['work_count']):work=((work<<1)^(0x04c11db7 if work&0x80000000 else 0))&0xffffffff
         assert observed['work_count']>0 and work==observed['foreground'],observed
@@ -222,8 +235,27 @@ def main():
             # that unmatched final request belongs to the following startup.
             assert (start is None or start>=writes[-1][1]) and holds and max(holds)<6840,(region,tag,start,holds)
             assert not any(a<end and b>begin for a,b in held_ranges for begin,end in bursts),(region,tag,'BUSREQ overlaps burst')
-            rows.append(dict(marker=tag,errors_master=errors,sample_gap_master=[min(gaps),max(gaps)],clock_line_advance=[min(advances),max(advances)],counter_wraps=counter_wraps,clock_publication_checks=checks,fast_target_samples=len(fast_reads),spacing_checks=spacing_checks,bus_holds_master=[min(holds),max(holds)]))
+            row=dict(marker=tag,errors_master=errors,sample_gap_master=[min(gaps),max(gaps)],clock_line_advance=[min(advances),max(advances)],counter_wraps=counter_wraps,clock_publication_checks=checks,fast_target_samples=len(fast_reads),spacing_checks=spacing_checks,bus_holds_master=[min(holds),max(holds)])
+            if args.live_loader:
+                finished=[e for e in part if e[0]==3 and e[2]==0x32];assert len(finished)==1
+                queried=[e for e in part if e[0]==3 and e[2]==0x33];assert len(queried)==1
+                samples=[e for e in part if e[0]==4 and e[3]==symbols['md_service_clock_hv']+6];assert samples
+                first_query=[e for e in samples if finished[0][1]<e[1]<queried[0][1]];assert first_query
+                assert records[ordinal][0]==first_query[-1][1]//20*20-origin
+                assert records[ordinal][1]==samples[-1][1]//20*20-origin
+                callbacks=[];started=None
+                for event in part:
+                    if event[0]==3 and event[2]==0x30:assert started is None;started=event[1]
+                    if event[0]==3 and event[2]==0x31:assert started is not None;callbacks.append((started,event[1]));started=None
+                assert started is None and callbacks
+                overlap=[e for e in writes if e[1]<finished[0][1]]
+                row.update(loader_finish_master=finished[0][1]-origin,loader_query_master=records[ordinal][0],delivery_finish_master=records[ordinal][1],source_finish_master=records[ordinal][2],loader_finish_delta=finished[0][1]-origin-records[ordinal][2],writes_before_loader_finish=len(overlap),writes_outside_publisher=sum(not any(a<=e[1]<=b for a,b in callbacks) for e in overlap),publisher_callbacks=len(callbacks),publisher_total_master=sum(b-a for a,b in callbacks),publisher_peak_master=max(b-a for a,b in callbacks))
+            rows.append(row)
         if fast_setup:assert sum(row['fast_target_samples'] for row in rows)>0
+        if args.live_loader:
+            assert sum(row['writes_before_loader_finish'] for row in rows)>0
+            assert sum(row['writes_outside_publisher'] for row in rows)>0
+            assert all(row['loader_finish_master']<=row['delivery_finish_master'] for row in rows)
         plain={}
         def plain_observe(frame,ram):
             done=int.from_bytes(bytes(ram[(((symbols['gaw_replay_done']&65535)+i)&65535)^1] for i in range(2)),'big');plain.update(frame=frame,done=done)
@@ -231,10 +263,16 @@ def main():
         with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',20000,folder/(region+'-plain'),set(),[],skip_intro=False,ram_observer=plain_observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(plain.get('done')))
         assert plain=={k:observed[k] for k in plain},(plain,observed)
         result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw));results.append(result);print(region,{k:v for k,v in result.items() if k!='rows'},flush=True)
-    report=dict(physical_phase_offset=args.phase_offset,kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),driver_sha256=sha(driver),driver_source_sha256=sha(asm.read_bytes()),observer_core_sha256=sha(core.read_bytes()),headers={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_psg.h','md_service_clock.h','source_md_psg_plan.h']},sources={n+'.c':sha((ROOT/'megadrive/src'/(n+'.c')).read_bytes()) for n in modules},results=results,
+    report=dict(live_loader=args.live_loader,bare=args.bare,packet_publication=args.packets,physical_phase_offset=args.phase_offset,kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),driver_sha256=sha(driver),driver_source_sha256=sha(asm.read_bytes()),observer_core_sha256=sha(core.read_bytes()),headers={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_psg.h','md_service_clock.h','source_md_psg_plan.h']},sources={n+'.c':sha((ROOT/'megadrive/src'/(n+'.c')).read_bytes()) for n in modules},results=results,
                 limits=['Actual native source loader/IRQ/reader/FIFO checked against all16source checkpoints before output. Producer completes before timed replay; foreground polynomial work runs while native publisher/Z80consumer communicate. No actual loader/audio overlap or full-game/DMA/input/boot proof.',
                         'Separate32descriptor ring in Z80RAM;Z80 cannot read68000RAM. Native writer takes bounded BUSREQ only under a Z80grant;one descriptor per grant,grant revoked by native writer before release. Z80 copies values locally before releasing tail;busy excludes in-flight command from drain. Status/timestamps written to68000RAM. Critical wait/burst keeps publication sequence odd. Internal timer must not advance more than5physical lines between samples;rawVC alias at6is unsupported.',
                         'Every315/630intraburst interval exact for original streams and24partial-burst synthetics. Long512command session forces32slot/full-queue pressure,two8bitcursorwraps,16bitlinecounterwrap androlling clock epoch refresh,withu32sourcewrap. Native volatile foreground polynomial checked independently from counted iterations. Every visible even clock stamp checked against last two physically sampled counters. No maximum lateness acceptance gate: initial backend measurement,not production success.'])
+    if args.live_loader:
+        report['loader_boundary_before_clock_query']=True
+        report['limits']=['Actual source loader/IRQ/reader/FIFO publishes per IRQ while the Z80 consumes; no precomputed replay or synthetic foreground substitute. Native source output/state/IRQ logs checked against reference; proof mode also checks all16intermediate state copies; bare mode checks final RAM/audio and hashes without those copies.',
+                          'Diagnostic markers delimit publisher callbacks and loader finish before its clock query. Writes before finish/outside publisher show overlap with the live loading call, including remaining diagnostic overhead. The separate query and delivery times are checked against independent native HV reads. No deadline acceptance gate; no DMA/native IRQ/input/boot/full-game/hardware proof. Stop only after drain; no fatal abort implementation.']
+        if args.packets:report['limits'][0]=report['limits'][0].replace('per IRQ','during reader packet callbacks')
+        report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 

@@ -39,6 +39,15 @@ Le portage complet et la cadence absolue depuis le boot restent à valider.
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
+Le dernier banc associe le **vrai chargement 68000 au service PSG Z80** pendant
+son exécution. Publier chaque paquet dès sa production ramène le retard maximal
+mesuré d'environ 26 à **6,6 ms** sans les grosses copies de diagnostic.
+Les états source et les 5 952 octets concordent en PAL/NTSC. Un défaut d'émission
+anticipée révélé par ce nouveau contexte est corrigé par comparaison des lignes
+absolues. La cadence reste insuffisante pour l'intégration ; le budget de
+publication et l'attente du bus sont maintenant mesurables.
+Voir le [chargement et le son simultanés](analysis/md_z80_psg_live_milestone.md).
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,
@@ -145,7 +154,8 @@ Le [jalon du compteur de ligne reconnue](analysis/md_z80_psg_counter_milestone.m
 documente les contrôles indépendants et les essais non retenus.
 Une [variante de relevé au passage éloigné](analysis/md_z80_psg_margin_milestone.md)
 passe trois phases en PAL/NTSC et réduit un intervalle d'horloge critique. Ses
-retards sonores sont parfois plus élevés ; le prototype précédent reste retenu.
+retards sonores sont parfois plus élevés. Cette ancienne variante est conservée
+en recherche après la découverte du défaut de comparaison verticale au chargement réel.
 
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de

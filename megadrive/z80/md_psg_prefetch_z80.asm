@@ -137,21 +137,19 @@ near:   ld (iy+8),0
         exx
         pop hl
         ld b,(ix+2)
-vwait:  ld a,(0x7f08)
-        cp b
-        jr z,setupcounter
-        sub b
-        cp 5
-        jr c,latewait
-        ld c,a
-        ld a,(0x104)
-        add a,c
-        cp 5
-        jr c,latewait
-        jr vwait
-latewait:
-        ; This path actually waited; only the coarse path can reuse a sample.
+vwait:  push hl
         call sample
+        pop de
+        or a
+        sbc hl,de
+        ex de,hl
+        ld a,d
+        or e
+        jr z,waitmatch
+        bit 7,d
+        jr nz,vwait
+        ; Absolute line is past the deadline. A raw V byte alone cannot
+        ; distinguish future/past across the NTSC duplicated V range.
         exx
         jr emit
 late:   ld (iy+8),0
@@ -159,10 +157,8 @@ late:   ld (iy+8),0
         ; Coarse/finished just sampled. No grant or wait before this burst.
         call setupregs
         jr emit
-        ; Vwait just observed the target V. HL holds its absolute line.
-        ; Commit that physical sample before restoring output registers.
-setupcounter: ld (counter),hl
-        ld (lastv),a
+waitmatch:
+        ; sample already committed the current absolute line and actual V.
         exx
 hwait:  ld a,(0x7f08)
         cp b

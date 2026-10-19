@@ -1,0 +1,19 @@
+{
+  "case": 6,
+  "wrapped_epoch": true,
+  "marker": 141,
+  "byte_index": 4,
+  "value": 149,
+  "expected_master": 1629257370,
+  "actual_master": 1629256680,
+  "error_master": -690,
+  "old_v_read": 35,
+  "target_v": 37,
+  "raw_subtraction": 254,
+  "incorrect_ntsc_correction": 4,
+  "driver_before_sha256": "23143f61b4beb40b43405ac705b283c300645d15b40443e2b3c10c81a07c8b5d",
+  "kernel_before_sha256": "f38aef494df7f6856f7484bdc273ec5676c9cd15e9dfec0c9841678373d7eecd",
+  "events_before_sha256": "6f31cb7137b2bd7ddd24cee26ce58b382cddd5b09937e92a3773e81d0cf5113e",
+  "source_dates_sha256": "14c87df7dfd6a9714a623ad7a1580f30c68ce44eb1aff62a7cc330f6c13a1593",
+  "fixed_by": "Compare refreshed absolute16bit line against absolute due line; rawV cannot decide future versus past"
+}
