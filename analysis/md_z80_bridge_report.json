@@ -1,0 +1,32 @@
+{
+  "checks": 12016,
+  "rows": [
+    {
+      "lines": 262,
+      "descriptors": 6000,
+      "cursor_wraps": 23,
+      "full_rejections": 249,
+      "physical_lines": 370525,
+      "refreshes": 24
+    },
+    {
+      "lines": 313,
+      "descriptors": 6000,
+      "cursor_wraps": 23,
+      "full_rejections": 249,
+      "physical_lines": 366665,
+      "refreshes": 24
+    }
+  ],
+  "sources": {
+    "md_z80_psg.c": "a2ec820c187dc122e6f6225ac0e60de999ad9747cc94c4f122219cb3cb3a872f",
+    "md_z80_psg.h": "7e4cf54bbc26f89dd0ed529a7505b52fe798c06e891ce2b6f231f2bab35141e2"
+  },
+  "reference_sha256": {
+    "hvc.h": "f279b184be42eb26f61cb72363626390c06643675bb22f6048b1c2727fe09d6f",
+    "vdp_ctrl.c": "34aa4da65cfadf9da528dd387929c4ad5d52ec9bb3d83e379f9c2070ce33542a"
+  },
+  "limits": [
+    "Host-only C publisher/clock/transport model; no BUSREQ safety or Z80 execution claim.12000ordered descriptors cross ring/full/u8/u16/u32 boundaries; targets checked against independent physical HV tables. Atomic rejected format/order/horizon/FULL/WAIT/fault preserves payload/head/count/lastdue. Native CPU/bus/cadence verified separately."
+  ]
+}

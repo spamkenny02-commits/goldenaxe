@@ -116,6 +116,13 @@ reste valide. Les essais de service audio coopératif restent trop tardifs et
 ont été retirés du code courant. La v0203 reste inchangée.
 Voir les [preuves et les essais écartés](analysis/md_beam_divu_milestone.md).
 
+Un premier service de **sorties PSG sur le Z80 matériel** fonctionne maintenant
+avec les octets calculés par le lecteur 68000. Les 5 952 octets de chargement,
+la cadence interne des rafales et les rebouclages de la file sont vérifiés en
+PAL/NTSC. Le lancement des rafales reste trop tardif, jusqu'à environ 3,4 ms ;
+ce backend reste expérimental et la v0203 est inchangée.
+Voir les [preuves et limites du service PSG](analysis/md_z80_psg_milestone.md).
+
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
 contrôle d'horloge sont également revenus au code précédent après mesure.
