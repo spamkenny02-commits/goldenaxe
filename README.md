@@ -122,13 +122,16 @@ la cadence interne des rafales et les rebouclages de la file sont vérifiés en
 PAL/NTSC. La réduction des publications et la copie déroulée des métadonnées
 abaissent le retard maximal mesuré de 3,4 à environ 1,6 ms. Un second pilote
 prépare maintenant jusqu'à quinze commandes suivantes dans seize tampons locaux :
-le retard maximal du banc descend à environ **0,63 ms**. Le lancement
+le retard maximal du banc descend à environ 0,63 ms. L'alignement des tampons
+et un passage direct entre commandes déjà prêtes l'abaissent à **0,4 ms**.
+Le lancement
 des rafales reste trop tardif ;
 ce backend reste expérimental et la v0203 est inchangée.
 Voir les [preuves du service PSG](analysis/md_z80_psg_milestone.md) et la
 [réduction de latence et ses limites](analysis/md_z80_psg_latency_milestone.md).
 Le [jalon de préparation anticipée](analysis/md_z80_psg_prefetch_milestone.md)
 détaille les nouveaux tests et ce qui reste à raccorder au jeu.
+Voir aussi le [passage direct et ses limites d'horloge](analysis/md_z80_psg_handoff_milestone.md).
 
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de

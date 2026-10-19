@@ -16,7 +16,7 @@ writeptr:dw commands
 nextready:db 0
 prefetches:dw 0
 maxready:db 0
-        defs 0x140-$,0
+        defs 0x200-$,0
 commands:defs 16*16,0
         defs 0x400-$,0
 start:  di
@@ -128,16 +128,19 @@ vwait:  ld a,(0x7f08)
         jr z,setup
         sub b
         cp 5
-        jr c,late
+        jr c,latewait
         ld c,a
         ld a,(0x104)
         add a,c
         cp 5
-        jr c,late
+        jr c,latewait
         jr vwait
+latewait:
+        ; This path actually waited; only the coarse path can reuse a sample.
+        call sample
 late:   ld (iy+8),0
         call invalidate
-        call sample
+        ; Coarse/finished just sampled. No grant or wait before this burst.
         call setupregs
         jr emit
 setup:  call sample
@@ -166,26 +169,19 @@ advanceix:
         push hl
         push ix
         pop hl
-        call advance
+        ld a,l
+        add a,16
+        ld l,a
         push hl
         pop ix
         pop hl
         ret
 advancewrite:
         ld hl,(writeptr)
-        call advance
-        ld (writeptr),hl
-        ret
-advance:
-        ld de,16
-        add hl,de
-        ld a,h
-        cp 2
-        ret nz
         ld a,l
-        cp 0x40
-        ret nz
-        ld hl,commands
+        add a,16
+        ld l,a
+        ld (writeptr),hl
         ret
 copy:   ld hl,(readptr)
         push ix
@@ -230,7 +226,7 @@ copyvalues:
         push ix
         pop hl
         ld a,l
-        sub 0x30
+        add a,16
         pop hl
         sub c
         ld e,a
@@ -318,7 +314,23 @@ finished:
         dec a
         ld (nextready),a
         call advanceix
+        ; Grant is still revoked, busy remains set and publication stays odd.
+        ; Reuse the finished sample for a ready command on/past its line.
+        ld e,(ix+0)
+        ld d,(ix+1)
+        or a
+        sbc hl,de
+        jr z,readyline
+        bit 7,h
+        jr z,readyemit
+        ld hl,(counter)
         jp coarse
+readyline:
+        call setupregs
+        jp hwait
+readyemit:
+        call setupregs
+        jp emit
 empty:  call advanceix
         ld (iy+9),0
         jp loop
