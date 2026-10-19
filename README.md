@@ -52,6 +52,12 @@ du chargement allégé à environ **3,2 ms**, contre 6,6 ms précédemment. Les
 contrôles d'état source et les régressions PAL/NTSC passent ; ce travail reste
 expérimental. Voir les [fenêtres de transfert séparées](analysis/md_z80_psg_grants_milestone.md).
 
+L'[attribution des retards](analysis/md_z80_psg_publication_latency.md) décompose
+les 5 952 octets capturés : le pire paquet arrive au callback avec déjà environ
+1,8 ms de retard, puis préparation, transfert et restitution ajoutent 1,4 ms.
+La publication synchrone des premiers paquets consomme la marge initiale ;
+le coût natif par paquet et la copie locale restent à réduire avant intégration.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,
