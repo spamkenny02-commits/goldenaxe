@@ -82,6 +82,8 @@ def main():
     parser.add_argument('--live-loader',action='store_true',help='Run actual native loading while the Z80 consumes per-IRQ publications')
     parser.add_argument('--bare',action='store_true',help='Live-loader measurement without intermediate diagnostic state copies')
     parser.add_argument('--packets',action='store_true',help='Publish during reader packet callbacks instead of after complete source IRQs')
+    parser.add_argument('--deferred',action='store_true',help='Retry pending descriptors later instead of blocking reader callbacks')
+    parser.add_argument('--service',action='store_true',help='Experimental deferred pump at native source-clock function boundaries')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
@@ -89,6 +91,8 @@ def main():
     assert args.variant or (not args.phase_offset and args.driver=='md_psg_output_z80.asm' and not args.expect_prefetch)
     assert not args.bare or args.live_loader
     assert not args.packets or args.live_loader
+    assert not args.deferred or (args.live_loader and args.packets)
+    assert not args.service or args.deferred
     assert not args.live_loader or (args.variant and not args.expect_prefetch and not args.phase_offset)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
@@ -123,13 +127,33 @@ def main():
     body=wrapper()
     if args.live_loader:
         from md_live_z80_kernel import sources
-        main,body=sources(args.bare,args.packets)
+        main,body=sources(args.bare,args.packets,args.deferred)
         (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
     (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
     for module in modules:
         prefix='#define source_irq_interrupt source_irq_queue_interrupt\n' if module!='source_irq_queue_context' else ''
         (src/(module+'.c')).write_text(prefix+'#include "../../../megadrive/src/'+module+'.c"\n')
+    if args.service:
+        functions=['execute','repeat','repeat_disabled','checkpoint']
+        text=''.join('#define source_clock_'+n+' source_clock_'+n+'_unserviced\n' for n in functions)
+        text+='#include "../../../megadrive/src/source_clock.c"\n'
+        text+=''.join('#undef source_clock_'+n+'\n' for n in functions)
+        text+='''void cooperative_service(void);
+u8 source_clock_execute(SourceClock *c,u16 t,u8 f,u8 e,SourceClockInterrupt irq,void *ctx) {
+ u8 ok;cooperative_service();ok=source_clock_execute_unserviced(c,t,f,e,irq,ctx);cooperative_service();return ok;
+}
+u8 source_clock_checkpoint(SourceClock *c,SourceClockInterrupt irq,void *ctx) {
+ u8 ok;cooperative_service();ok=source_clock_checkpoint_unserviced(c,irq,ctx);cooperative_service();return ok;
+}
+u16 source_clock_repeat(SourceClock *c,u16 t,u8 f,u16 n) {
+ u16 used;cooperative_service();used=source_clock_repeat_unserviced(c,t,f,n);cooperative_service();return used;
+}
+u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
+ u16 used;cooperative_service();used=source_clock_repeat_disabled_unserviced(c,t,f,n);cooperative_service();return used;
+}
+'''
+        (src/'source_clock.c').write_text(text)
     for name in ['source_room_finish.h','source_irq_queue_context.h','source_pattern_plan_generated.h','source_md_psg_replay.h','md_service_clock.h','source_md_psg_plan.h','md_z80_psg.h']:(src/name).write_text('#include "../../../megadrive/src/'+name+'"\n')
     (src/'md_service_clock_hv.s').write_bytes((ROOT/'megadrive/src/md_service_clock_hv.s').read_bytes())
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH']
@@ -269,9 +293,13 @@ def main():
                         'Every315/630intraburst interval exact for original streams and24partial-burst synthetics. Long512command session forces32slot/full-queue pressure,two8bitcursorwraps,16bitlinecounterwrap androlling clock epoch refresh,withu32sourcewrap. Native volatile foreground polynomial checked independently from counted iterations. Every visible even clock stamp checked against last two physically sampled counters. No maximum lateness acceptance gate: initial backend measurement,not production success.'])
     if args.live_loader:
         report['loader_boundary_before_clock_query']=True
+        report['deferred_publication']=args.deferred
+        report['source_clock_service']=args.service
         report['limits']=['Actual source loader/IRQ/reader/FIFO publishes per IRQ while the Z80 consumes; no precomputed replay or synthetic foreground substitute. Native source output/state/IRQ logs checked against reference; proof mode also checks all16intermediate state copies; bare mode checks final RAM/audio and hashes without those copies.',
                           'Diagnostic markers delimit publisher callbacks and loader finish before its clock query. Writes before finish/outside publisher show overlap with the live loading call, including remaining diagnostic overhead. The separate query and delivery times are checked against independent native HV reads. No deadline acceptance gate; no DMA/native IRQ/input/boot/full-game/hardware proof. Stop only after drain; no fatal abort implementation.']
         if args.packets:report['limits'][0]=report['limits'][0].replace('per IRQ','during reader packet callbacks')
+        if args.deferred:report['limits'].append('Deferred experiment: at most128 pending descriptors for this bounded source fixture; WAIT/FULL ends the callback publication attempt, retried at the next packet or drained after the loader-return marker before querying the shared clock. Not a production queue, quiet-gap pump, or bounded whole-game delivery proof.')
+        if args.service:report['limits'].append('Experimental source_clock execute/repeat/repeat_disabled/checkpoint wrappers pump before/after each call. Inline source_clock_block and computation inside a call are not serviced. Publisher callback markers exclude these service attempts; callback duration is not total publisher overhead.')
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 

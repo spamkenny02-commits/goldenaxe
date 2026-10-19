@@ -58,6 +58,11 @@ les 5 952 octets capturés : le pire paquet arrive au callback avec déjà envir
 La publication synchrone des premiers paquets consomme la marge initiale ;
 le coût natif par paquet et la copie locale restent à réduire avant intégration.
 
+Cinq [essais de publication](analysis/md_z80_psg_publication_trials.md)
+conservent les états et octets source, mais aucun n'améliore le pire retard.
+Le report des transferts exige notamment un service plus régulier pendant
+les silences et les calculs. La référence expérimentale huit/vingt est conservée.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,

@@ -1042,3 +1042,6 @@ v0181: actual8357 raw16-bit note path83D1..83EC always jumps839B duration multip
 
 
 [2026-10-19] Offline live PSG attribution: all5952byte signed decompositions verified against immutable eight/twenty captures. Worst169395NTSC/169605PAL splits into producer-at-entry96730/96893, publisher29064/29218, bus3948/3941, consumer39653/39553. Initial synchronous callbacks consume early producer margin. See md_z80_psg_publication_latency.md; no production integration; playablev0203 unchanged. Local Git only.
+
+
+[2026-10-19] Five native PSG publication trials: one-byte plan, early grant, deferred packets, function-boundary service, inline service. Bare final source states/IRQ/data/5952bytes pass each; all rejected as timing improvements. Deferred publication needs bounded service during quiet source gaps and computation. Worst baseline169395/169605; trials169605/169455,176730/191805,4014570/3928890,1057245/1068015,1343730/1335375. Runtime plan/publisher/clock header restored byte-exact; playablev0203 unchanged. Experimental deferred tools retained, no production integration. See md_z80_psg_publication_trials.md.

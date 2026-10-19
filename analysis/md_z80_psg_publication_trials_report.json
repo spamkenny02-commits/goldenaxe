@@ -1,0 +1,121 @@
+{
+  "results": [
+    {
+      "variant": "single-plan-bare",
+      "region": "ntsc",
+      "maximum": 169605,
+      "mean": 11189.329637096775,
+      "median": 8400.0,
+      "callbacks": 2784,
+      "publisher_marker_time": 106227786,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "single-plan-bare",
+      "region": "pal",
+      "maximum": 169455,
+      "mean": 11237.872983870968,
+      "median": 8490.0,
+      "callbacks": 2784,
+      "publisher_marker_time": 105381388,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "early-grant-bare",
+      "region": "ntsc",
+      "maximum": 176730,
+      "mean": 11832.862903225807,
+      "median": 8580.0,
+      "callbacks": 2784,
+      "publisher_marker_time": 112749448,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "early-grant-bare",
+      "region": "pal",
+      "maximum": 191805,
+      "mean": 11998.860887096775,
+      "median": 8655.0,
+      "callbacks": 2784,
+      "publisher_marker_time": 113725962,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "deferred-bare",
+      "region": "ntsc",
+      "maximum": 4014570,
+      "mean": 365216.3256048387,
+      "median": 10095.0,
+      "callbacks": 2784,
+      "publisher_marker_time": 141811264,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "deferred-bare",
+      "region": "pal",
+      "maximum": 3928890,
+      "mean": 367293.6844758064,
+      "median": 10057.5,
+      "callbacks": 2784,
+      "publisher_marker_time": 142382275,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "deferred-service-bare",
+      "region": "ntsc",
+      "maximum": 1057245,
+      "mean": 21246.980846774193,
+      "median": 8580.0,
+      "callbacks": 2784,
+      "publisher_marker_time": 110804169,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "deferred-service-bare",
+      "region": "pal",
+      "maximum": 1068015,
+      "mean": 21410.655241935485,
+      "median": 8730.0,
+      "callbacks": 2784,
+      "publisher_marker_time": 111377952,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "deferred-inline-bare",
+      "region": "ntsc",
+      "maximum": 1343730,
+      "mean": 27810.927419354837,
+      "median": 8782.5,
+      "callbacks": 2784,
+      "publisher_marker_time": 110180700,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    },
+    {
+      "variant": "deferred-inline-bare",
+      "region": "pal",
+      "maximum": 1335375,
+      "mean": 28240.725806451614,
+      "median": 8790.0,
+      "callbacks": 2784,
+      "publisher_marker_time": 110382923,
+      "source_state_and_bytes_pass": true,
+      "selected": false
+    }
+  ],
+  "selected": "grant-eight-bare / grant-eight-proof unchanged",
+  "production_integration": false,
+  "full_checkpoint_proof_for_trials": false,
+  "limits": [
+    "All five trials are rejected as timing improvements. Bare final state/IRQ/data/audio/byte checks pass; no full sixteen-checkpoint trial proof or replay regression claim.",
+    "Service attempts outside diagnostic callback markers are not counted in publisher_marker_time. Inline trial additionally used its archived source_clock.h snapshot."
+  ]
+}

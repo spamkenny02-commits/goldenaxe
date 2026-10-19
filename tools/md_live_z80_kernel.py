@@ -70,14 +70,56 @@ void cooperative_finish(void) {
 '''
 
 
-def sources(bare=False, packets=False):
+def deferred_controller():
+    text=CONTROLLER.replace('static u8 session_failed;', 'static u8 session_failed;static u16 pending_read,pending_count;')
+    a=text.index('void cooperative_audio(');b=text.index('u16 cooperative_collect(',a)
+    text=text[:a]+r'''
+static void cooperative_publish(void) {
+ u16 k;u8 status;
+ if(!session_failed) for(k=pending_read;k<pending_count;k++) {
+  status=md_z80_psg_push(&producer,blocks+k,1);
+  if(status==MD_Z80_PSG_FULL) gaw_z80_queue_full++;
+  if(status==MD_Z80_PSG_WAIT) gaw_z80_grant_wait++;
+  if(status==MD_Z80_PSG_FULL || status==MD_Z80_PSG_WAIT) break;
+  if(status) {fault(0x400|status);break;}
+  pending_read++;
+ }
+}
+void cooperative_service(void) {if(pending_read!=pending_count) cooperative_publish();}
+void cooperative_audio(SourceQueuedIrqContext *queued) {
+ SourcePsgQueue *q=queued->stream.queue;u16 n=0,count;u32 cutoff;
+ *(volatile u16*)0xc00010=0x30;
+ gaw_replay_callbacks++;
+ if(q->read!=q->write) {
+  cutoff=q->events[(q->write-1)&q->mask].due;
+  while(n<128 && source_psg_queue_take(q,cutoff,stream+n)==0) n++;
+  if(q->read!=q->write || captured_count+n>128) fault(0x200);
+  else {
+   for(count=0;count<n;count++) captured[captured_count++]=stream[count];
+   if(source_md_psg_plan(stream,n,blocks+pending_count,128-pending_count,&count)) fault(0x300);
+   else pending_count+=count;
+  }
+ }
+ cooperative_publish();
+ *(volatile u16*)0xc00010=0x31;
+}
+'''+text[b:]
+    text=text.replace('u8 status;session_failed=0;', 'u8 status;session_failed=0;pending_read=pending_count=0;')
+    text=text.replace(' *(volatile u16*)0xc00010=0x32;', r''' *(volatile u16*)0xc00010=0x32;
+ while(pending_read!=pending_count && !session_failed && ++spins<1000000UL) {cooperative_publish();work();}
+ if(pending_read!=pending_count) {fault(0xc00);return;}
+ spins=0;''')
+    return text
+
+
+def sources(bare=False, packets=False, deferred=False):
     main=BASE.replace('#include "md_service_clock.h"','#include "md_service_clock.h"\n#include "md_z80_psg.h"')
     main=main.replace('gaw_live_', 'gaw_replay_')
     main=main.replace('gaw_replay_bytes,gaw_replay_callbacks;', 'gaw_replay_bytes,gaw_replay_callbacks,gaw_replay_extra_cases;')
     main=main.replace('gaw_replay_times[48][2]', 'gaw_replay_clocks[48][3]')
     main=main.replace('static MdServiceStamp stamp;static MdServiceClock service;static SourceMdPsgReplayClock physical;', '')
     a=main.index('static u8 fresh(void)');b=main.index('int main(bool hard_reset)',a)
-    main=main[:a]+CONTROLLER+main[b:]
+    main=main[:a]+(deferred_controller() if deferred else CONTROLLER)+main[b:]
     main=main.replace(' for(row=0;row<24;row++)', ' gaw_replay_extra_cases=0;gaw_z80_foreground=0x8123905UL;\n for(row=0;row<24;row++)')
     main=main.replace('gaw_replay_times[row*2+mode][1]=output[2];','gaw_replay_clocks[row*2+mode][2]=output[2];')
     if packets:
