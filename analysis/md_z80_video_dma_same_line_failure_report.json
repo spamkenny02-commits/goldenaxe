@@ -1,0 +1,29 @@
+{
+  "status": "failed",
+  "reason": "Same-line public-stamp guard permits no DMA; video flush reaches its retry bound. Not an accepted integration test.",
+  "observed": {
+    "frame": 20000,
+    "done": 0,
+    "cases": 2,
+    "extra_cases": 0,
+    "failures": 2,
+    "bytes": 110,
+    "failure_code": 3856,
+    "foreground": 2265918763,
+    "work_count": 2367150,
+    "queue_full": 0,
+    "grant_wait": 12,
+    "wrap_head": 65,
+    "wrap_tail": 65,
+    "refresh_counter": 100,
+    "video_updates": 1,
+    "video_requests": 171,
+    "video_dma_attempts": 2366271
+  },
+  "events_sha256": "4d91ab2dac6f75f4ce0df28d5ae576449b4b4df3c282023267200b668ae53c48",
+  "kernel_sha256": "816a3b69da716bf9173a96052f13feee2a7552f80aa6f3e560bf8a7e0b24bdbb",
+  "source_snapshots": {
+    "md_z80_video_dma.c": "22574b39c37705f695c51f094cd5933ebf07328fddd491da1e6bf0836b2ad984",
+    "md_z80_video_dma.h": "21c010a7d502717dfda5e96febccffd0ccada377596d7505b5dfdb037dcbc552"
+  }
+}

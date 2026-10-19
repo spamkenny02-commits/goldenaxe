@@ -83,6 +83,14 @@ Z80 du chemin DMA SGDK est identifié dans le code compilé ; sa coordination
 avec le pilote reste à tester. La fixture visuelle est synthétique, distincte
 du rendu du jeu.
 
+Une [première primitive DMA coordonnée](analysis/md_z80_dma_window_milestone.md)
+passe les contrôles source et d'horloge en PAL/NTSC : les transferts de 32 octets
+restent en VBlank et hors des rafales PSG. Le débit reste insuffisant : presque
+tous les travaux vidéo sont encore vidés après le chargement. Le retard audio
+d'environ 5 ms dans ce banc ne représente donc pas un gain à charge vidéo
+exécutée équivalente. Le service régulier et les échéances du rendu restent
+à réaliser ; la ROM jouable est inchangée.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,

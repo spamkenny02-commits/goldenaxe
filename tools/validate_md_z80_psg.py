@@ -87,7 +87,7 @@ def main():
     parser.add_argument('--retained-fifo',action='store_true',help='Read diagnostic capture from intact bounded FIFO storage after loading')
     parser.add_argument('--bulk-drain',action='store_true',help='Use bounded native FIFO batch take in the publisher callback')
     parser.add_argument('--poll-transfer',type=int,default=0,help='Prepare once for up to this many synchronous bus-transfer attempts')
-    parser.add_argument('--video',choices=['off','display','cpu'],default='off',help='Visible diagnostic raster, optionally32byte CPU tile upload per callback')
+    parser.add_argument('--video',choices=['off','display','cpu','dma'],default='off',help='Visible raster; CPU uploads or retained jobs for grant-gated32byte DMA')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
@@ -143,10 +143,13 @@ def main():
         (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
     if args.video!='off':
         from md_z80_video_fixture import instrument
-        main=instrument(main,args.video=='cpu')
+        main=instrument(main,args.video=='cpu',args.video=='dma')
         (folder/'video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_video_fixture.py').read_bytes())
     (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
+    if args.video=='dma':
+        modules.append('md_z80_video_dma')
+        (src/'md_z80_video_dma.h').write_text('#include "../../../megadrive/src/md_z80_video_dma.h"\n')
     for module in modules:
         prefix='#define source_irq_interrupt source_irq_queue_interrupt\n' if module!='source_irq_queue_context' else ''
         (src/(module+'.c')).write_text(prefix+'#include "../../../megadrive/src/'+module+'.c"\n')
@@ -212,6 +215,7 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
             def value(name,width,offset=0):return int.from_bytes(bytes(ram[(((symbols[name]&65535)+offset+i)&65535)^1] for i in range(width)),'big')
             observed.update(frame=frame,done=value('gaw_replay_done',2),cases=value('gaw_replay_cases',4),extra_cases=value('gaw_replay_extra_cases',4),failures=value('gaw_replay_failures',4),bytes=value('gaw_replay_bytes',4),failure_code=value('gaw_z80_failure_code',4),foreground=value('gaw_z80_foreground',4),work_count=value('gaw_z80_work_count',4),queue_full=value('gaw_z80_queue_full',4),grant_wait=value('gaw_z80_grant_wait',4),wrap_head=value('gaw_z80_wrap_head',4),wrap_tail=value('gaw_z80_wrap_tail',4),refresh_counter=value('gaw_z80_refresh_counter',4))
             if args.video!='off':observed['video_updates']=value('gaw_video_updates',4)
+            if args.video=='dma':observed.update(video_requests=value('gaw_video_requests',4),video_dma_attempts=value('gaw_video_dma_attempts',4))
             for e in events[-size:] if size else []:
                 if e[0]==3 and (64<=e[2]<=89 or 128<=e[2]<176):active[0]=e[2]
             stamp=[ram[(mb+i)^1] for i in range(6)]
@@ -274,9 +278,18 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
                 if not e[2] and start is not None:holds.append(e[1]-start);held_ranges.append((start,e[1]));start=None
             # The next session requests the bus immediately before its marker;
             # that unmatched final request belongs to the following startup.
-            assert (start is None or start>=writes[-1][1]) and holds and max(holds)<6840,(region,tag,start,holds)
+            assert (start is None or start>=writes[-1][1]) and holds,(region,tag,start,holds)
+            video_holds=[];transport_holds=holds
+            if args.video=='dma':
+                native_reads=[e[1] for e in part if e[0]==4 and e[3]!=symbols['md_service_clock_hv']+6]
+                video_ranges=[(a,b) for a,b in held_ranges if any(a<t<b for t in native_reads)]
+                video_holds=[b-a for a,b in video_ranges]
+                transport_holds=[b-a for a,b in held_ranges if (a,b) not in video_ranges]
+                assert video_holds and max(video_holds)<17100,(region,tag,'video hold',video_holds)
+            assert transport_holds and max(transport_holds)<6840,(region,tag,'transport hold',transport_holds)
             assert not any(a<end and b>begin for a,b in held_ranges for begin,end in bursts),(region,tag,'BUSREQ overlaps burst')
             row=dict(marker=tag,errors_master=errors,sample_gap_master=[min(gaps),max(gaps)],clock_line_advance=[min(advances),max(advances)],counter_wraps=counter_wraps,clock_publication_checks=checks,fast_target_samples=len(fast_reads),spacing_checks=spacing_checks,bus_holds_master=[min(holds),max(holds)])
+            if args.video=='dma':row.update(video_bus_holds_master=[min(video_holds),max(video_holds)],transport_bus_holds_master=[min(transport_holds),max(transport_holds)])
             if args.live_loader:
                 finished=[e for e in part if e[0]==3 and e[2]==0x32];assert len(finished)==1
                 queried=[e for e in part if e[0]==3 and e[2]==0x33];assert len(queried)==1
@@ -315,7 +328,8 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
             assert all(int.from_bytes(vram[plane+(y*64+x)*2:plane+(y*64+x)*2+2],'little')==1 for y in range(28) for x in range(32))
             image=Image.open(capture/f'frame_{frame:05d}.png');colors=image.convert('RGB').getcolors(image.width*image.height)
             assert colors is not None and len(colors)>=8
-            assert observed['video_updates']==1+(sum(x['publisher_callbacks'] for x in rows) if args.video=='cpu' else 0)
+            assert observed['video_updates']==1+(sum(x['publisher_callbacks'] for x in rows) if args.video in ['cpu','dma'] else 0)
+            if args.video=='dma':assert observed['video_requests']==observed['video_updates']-1 and observed['video_dma_attempts']>=observed['video_requests']
             video_evidence=dict(mode=args.video,updates=observed['video_updates'],colors=len(colors),vram_sha256=sha(vram),registers_sha256=sha(regs),image_sha256=sha((capture/f'frame_{frame:05d}.png').read_bytes()))
         result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw))
         if video_evidence:result['video']=video_evidence
@@ -340,7 +354,8 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
         if args.retained_fifo:report['limits'].append('Bounded-fixture diagnostic capture is read after loading from FIFO slots that remain intact: at most128 produced events in512 slots; cursor distance/capacity checked. No per-callback duplicate event capture. Native source enqueue/take/planner/publisher remain active; this is reduced observer overhead, not a production queue optimization or a general retention guarantee.')
         if args.bulk_drain:report['limits'].append('Publisher consumes due FIFO events with source_psg_queue_take_many: one queue validation and cursor release per batch, original enqueue/plan/transport remain active.')
         if args.poll_transfer:report['limits'].append('Synchronous polled transfer prepares once per call and retries only WAIT up to the configured attempt limit. Diagnostic grant_wait counts exhausted outer calls, not internal transfer attempts; FULL/errors return immediately. No deferred queue or source work runs inside the polling loop.')
-        if args.video!='off':report['limits'].append('H32/224 display enabled with a synthetic repeated diagnostic tile and palette, verified against final physical VRAM/registers/image. CPU mode uploads one32byte tile per publisher callback. This is visible raster/CPU-VRAM coexistence, not the game renderer, SMS image fidelity, DMA, native IRQs, or full-game proof. Callback marker duration includes the video upload.')
+        if args.video!='off':report['limits'].append('H32/224 display enabled with a synthetic repeated diagnostic tile and palette, verified against final physical VRAM/registers/image. CPU mode uploads one32byte tile per publisher callback; DMA mode retains jobs for guarded transfers. This is a diagnostic video fixture, not the game renderer, SMS image fidelity, native IRQs, or full-game proof. Callback marker duration includes video work attempted in that callback.')
+        if args.video=='dma':report['limits'].append('DMA experiment queues one deterministic diagnostic tile job per callback, tries only with grant/even stamp at most2raw lines old in rawV235..252 (excluding NTSC duplicate range), rechecks after BUSREQ. Precomputed fixed32byte DMA command words issued only inside the granted critical section, source128KiB boundary checked; SGDK auto-increment set before acquisition. Jobs are retained in order and all drained while Z80 clock is still active before stop; some may complete after loader/audio delivery markers. No job frame deadlines or game renderer queue are established; native IRQs remain masked.')
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')

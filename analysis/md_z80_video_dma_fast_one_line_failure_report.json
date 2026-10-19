@@ -1,0 +1,29 @@
+{
+  "status": "failed",
+  "reason": "One-line stamp check still prevents DMA completion; flush exhaustion. Not accepted.",
+  "observed": {
+    "frame": 20000,
+    "done": 0,
+    "cases": 2,
+    "extra_cases": 0,
+    "failures": 2,
+    "bytes": 110,
+    "failure_code": 3856,
+    "foreground": 1444942052,
+    "work_count": 2235783,
+    "queue_full": 0,
+    "grant_wait": 12,
+    "wrap_head": 65,
+    "wrap_tail": 65,
+    "refresh_counter": 100,
+    "video_updates": 1,
+    "video_requests": 171,
+    "video_dma_attempts": 2235447
+  },
+  "events_sha256": "003f13fda6c44618e8334fba7dbd3786c589ec95886bda8117541fa4b6097b56",
+  "kernel_sha256": "d3be8f573671a22f743ff440633cbd7ff77cdc2b8b0fe1f7c4bb9a82b604e31d",
+  "source_snapshots": {
+    "md_z80_video_dma.c": "ee657b16c634748190dc2494ab53a965fc0b9e125933c37b834fc18a8e0bd6cf",
+    "md_z80_video_dma.h": "dfeff6181f759ebf17911a3536cdaacb5e29836e6d7eec91a50030195f7ed40f"
+  }
+}
