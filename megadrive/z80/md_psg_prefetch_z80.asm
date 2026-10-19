@@ -121,7 +121,12 @@ recorded:
         jp coarse
 grant:  ld (iy+8),1
         jr coaststart
-close:  ld (iy+8),0
+close:  ; HL is 20 minus remaining lines here (remaining is 6..20).
+        ; Native transfers need a shorter window than the internal prefetch.
+        ld a,l
+        cp 12
+        jr c,grant
+        ld (iy+8),0
 coaststart:
         ld b,1
 coast:  djnz coast

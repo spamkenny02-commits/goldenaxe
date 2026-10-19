@@ -47,6 +47,10 @@ anticipée révélé par ce nouveau contexte est corrigé par comparaison des li
 absolues. La cadence reste insuffisante pour l'intégration ; le budget de
 publication et l'attente du bus sont maintenant mesurables.
 Voir le [chargement et le son simultanés](analysis/md_z80_psg_live_milestone.md).
+La séparation des fenêtres de transfert et de copie ramène ensuite le maximum
+du chargement allégé à environ **3,2 ms**, contre 6,6 ms précédemment. Les
+contrôles d'état source et les régressions PAL/NTSC passent ; ce travail reste
+expérimental. Voir les [fenêtres de transfert séparées](analysis/md_z80_psg_grants_milestone.md).
 
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
