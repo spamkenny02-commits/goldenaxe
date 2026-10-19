@@ -75,6 +75,14 @@ la seule lecture groupée. Les états source et les rejeux de bouclage passent
 en PAL/NTSC. Cette entrée synchrone bornée reste expérimentale, sans intégration
 dans la ROM jouable.
 
+Le [banc avec affichage actif](analysis/md_z80_video_milestone.md) conserve
+les états et octets source en PAL/NTSC. Ajouter des écritures VRAM CPU fait
+cependant monter le pire retard à environ **9 ms** dans cette fixture : les
+3 ms précédents ne valent donc pas encore avec cette charge vidéo. L'arrêt
+Z80 du chemin DMA SGDK est identifié dans le code compilé ; sa coordination
+avec le pilote reste à tester. La fixture visuelle est synthétique, distincte
+du rendu du jeu.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,

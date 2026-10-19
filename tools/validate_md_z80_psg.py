@@ -87,6 +87,7 @@ def main():
     parser.add_argument('--retained-fifo',action='store_true',help='Read diagnostic capture from intact bounded FIFO storage after loading')
     parser.add_argument('--bulk-drain',action='store_true',help='Use bounded native FIFO batch take in the publisher callback')
     parser.add_argument('--poll-transfer',type=int,default=0,help='Prepare once for up to this many synchronous bus-transfer attempts')
+    parser.add_argument('--video',choices=['off','display','cpu'],default='off',help='Visible diagnostic raster, optionally32byte CPU tile upload per callback')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
@@ -100,6 +101,7 @@ def main():
     assert not args.bulk_drain or args.live_loader
     assert 0<=args.poll_transfer<=65535
     assert not args.poll_transfer or (args.variant and not args.deferred)
+    assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.live_loader or (args.variant and not args.expect_prefetch and not args.phase_offset)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
@@ -139,6 +141,10 @@ def main():
         from md_live_z80_kernel import sources
         main,body=sources(args.bare,args.packets,args.deferred,args.retained_fifo,args.bulk_drain,args.poll_transfer)
         (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
+    if args.video!='off':
+        from md_z80_video_fixture import instrument
+        main=instrument(main,args.video=='cpu')
+        (folder/'video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_video_fixture.py').read_bytes())
     (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
     for module in modules:
@@ -205,6 +211,7 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
             size=dll.gaw_io_size();assert not dll.gaw_io_errors();ptr=dll.gaw_io_data();events.extend([[int(ptr[n*4]),(frame-1)*period+int(ptr[n*4+1]),int(ptr[n*4+2]),int(ptr[n*4+3])] for n in range(size)]);dll.gaw_io_reset(1)
             def value(name,width,offset=0):return int.from_bytes(bytes(ram[(((symbols[name]&65535)+offset+i)&65535)^1] for i in range(width)),'big')
             observed.update(frame=frame,done=value('gaw_replay_done',2),cases=value('gaw_replay_cases',4),extra_cases=value('gaw_replay_extra_cases',4),failures=value('gaw_replay_failures',4),bytes=value('gaw_replay_bytes',4),failure_code=value('gaw_z80_failure_code',4),foreground=value('gaw_z80_foreground',4),work_count=value('gaw_z80_work_count',4),queue_full=value('gaw_z80_queue_full',4),grant_wait=value('gaw_z80_grant_wait',4),wrap_head=value('gaw_z80_wrap_head',4),wrap_tail=value('gaw_z80_wrap_tail',4),refresh_counter=value('gaw_z80_refresh_counter',4))
+            if args.video!='off':observed['video_updates']=value('gaw_video_updates',4)
             for e in events[-size:] if size else []:
                 if e[0]==3 and (64<=e[2]<=89 or 128<=e[2]<176):active[0]=e[2]
             stamp=[ram[(mb+i)^1] for i in range(6)]
@@ -294,14 +301,31 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
         def plain_observe(frame,ram):
             done=int.from_bytes(bytes(ram[(((symbols['gaw_replay_done']&65535)+i)&65535)^1] for i in range(2)),'big');plain.update(frame=frame,done=done)
             if done:plain['ram_sha256']=sha(bytes(ram))
-        with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',20000,folder/(region+'-plain'),set(),[],skip_intro=False,ram_observer=plain_observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(plain.get('done')))
+        with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',20000,folder/(region+'-plain'),{observed['frame']} if args.video!='off' else set(),[],skip_intro=False,ram_observer=plain_observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(plain.get('done')))
         assert plain=={k:observed[k] for k in plain},(plain,observed)
-        result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw));results.append(result);print(region,{k:v for k,v in result.items() if k!='rows'},flush=True)
+        video_evidence=None
+        if args.video!='off':
+            from md_z80_video_fixture import expected_pattern
+            from PIL import Image
+            capture=folder/(region+'-plain');frame=observed['frame']
+            vram=(capture/f'vram_{frame:05d}.bin').read_bytes();regs=(capture/f'vdp_regs_{frame:05d}.bin').read_bytes()
+            assert regs[1]&0x40 and not regs[1]&8 and not regs[12]&1
+            assert bytes(vram[(32+n)^1] for n in range(32))==expected_pattern(observed['video_updates'])
+            plane=(regs[2]&0x38)<<10
+            assert all(int.from_bytes(vram[plane+(y*64+x)*2:plane+(y*64+x)*2+2],'little')==1 for y in range(28) for x in range(32))
+            image=Image.open(capture/f'frame_{frame:05d}.png');colors=image.convert('RGB').getcolors(image.width*image.height)
+            assert colors is not None and len(colors)>=8
+            assert observed['video_updates']==1+(sum(x['publisher_callbacks'] for x in rows) if args.video=='cpu' else 0)
+            video_evidence=dict(mode=args.video,updates=observed['video_updates'],colors=len(colors),vram_sha256=sha(vram),registers_sha256=sha(regs),image_sha256=sha((capture/f'frame_{frame:05d}.png').read_bytes()))
+        result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw))
+        if video_evidence:result['video']=video_evidence
+        results.append(result);print(region,{k:v for k,v in result.items() if k!='rows'},flush=True)
     report=dict(live_loader=args.live_loader,bare=args.bare,packet_publication=args.packets,physical_phase_offset=args.phase_offset,kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),driver_sha256=sha(driver),driver_source_sha256=sha(asm.read_bytes()),observer_core_sha256=sha(core.read_bytes()),headers={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_psg.h','md_service_clock.h','source_md_psg_plan.h']},sources={n+'.c':sha((ROOT/'megadrive/src'/(n+'.c')).read_bytes()) for n in modules},results=results,
                 limits=['Actual native source loader/IRQ/reader/FIFO checked against all16source checkpoints before output. Producer completes before timed replay; foreground polynomial work runs while native publisher/Z80consumer communicate. No actual loader/audio overlap or full-game/DMA/input/boot proof.',
                         'Separate32descriptor ring in Z80RAM;Z80 cannot read68000RAM. Native writer takes bounded BUSREQ only under a Z80grant;one descriptor per grant,grant revoked by native writer before release. Z80 copies values locally before releasing tail;busy excludes in-flight command from drain. Status/timestamps written to68000RAM. Critical wait/burst keeps publication sequence odd. Internal timer must not advance more than5physical lines between samples;rawVC alias at6is unsupported.',
                         'Every315/630intraburst interval exact for original streams and24partial-burst synthetics. Long512command session forces32slot/full-queue pressure,two8bitcursorwraps,16bitlinecounterwrap androlling clock epoch refresh,withu32sourcewrap. Native volatile foreground polynomial checked independently from counted iterations. Every visible even clock stamp checked against last two physically sampled counters. No maximum lateness acceptance gate: initial backend measurement,not production success.'])
     report['polled_transfer_attempts']=args.poll_transfer
+    report['video_fixture']=args.video
     if args.live_loader:
         report['loader_boundary_before_clock_query']=True
         report['deferred_publication']=args.deferred
@@ -316,6 +340,7 @@ u16 source_clock_repeat_disabled(SourceClock *c,u16 t,u8 f,u16 n) {
         if args.retained_fifo:report['limits'].append('Bounded-fixture diagnostic capture is read after loading from FIFO slots that remain intact: at most128 produced events in512 slots; cursor distance/capacity checked. No per-callback duplicate event capture. Native source enqueue/take/planner/publisher remain active; this is reduced observer overhead, not a production queue optimization or a general retention guarantee.')
         if args.bulk_drain:report['limits'].append('Publisher consumes due FIFO events with source_psg_queue_take_many: one queue validation and cursor release per batch, original enqueue/plan/transport remain active.')
         if args.poll_transfer:report['limits'].append('Synchronous polled transfer prepares once per call and retries only WAIT up to the configured attempt limit. Diagnostic grant_wait counts exhausted outer calls, not internal transfer attempts; FULL/errors return immediately. No deferred queue or source work runs inside the polling loop.')
+        if args.video!='off':report['limits'].append('H32/224 display enabled with a synthetic repeated diagnostic tile and palette, verified against final physical VRAM/registers/image. CPU mode uploads one32byte tile per publisher callback. This is visible raster/CPU-VRAM coexistence, not the game renderer, SMS image fidelity, DMA, native IRQs, or full-game proof. Callback marker duration includes the video upload.')
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
