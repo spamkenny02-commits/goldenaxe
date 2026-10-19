@@ -143,6 +143,9 @@ Le [jalon de préparation des registres](analysis/md_z80_psg_shadow_milestone.md
 précise la marge d'horloge gagnée et les limites d'intégration.
 Le [jalon du compteur de ligne reconnue](analysis/md_z80_psg_counter_milestone.md)
 documente les contrôles indépendants et les essais non retenus.
+Une [variante de relevé au passage éloigné](analysis/md_z80_psg_margin_milestone.md)
+passe trois phases en PAL/NTSC et réduit un intervalle d'horloge critique. Ses
+retards sonores sont parfois plus élevés ; le prototype précédent reste retenu.
 
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
