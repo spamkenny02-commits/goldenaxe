@@ -99,6 +99,16 @@ les positions d'une ligne en PAL/NTSC. Le fonctionnement simultané avec les
 calculs et les transferts graphiques reste à intégrer et à mesurer.
 Voir le [jalon des rafales et échéances préparées](analysis/md_psg_prepared_milestone.md).
 
+Une horloge auxiliaire sur le Z80 matériel permet maintenant au 68000 de
+retrouver l'heure après plusieurs images de calcul, sans demander le bus Z80.
+Les **2 400 lectures natives PAL/NTSC** concordent avec les dates physiques ;
+le surcoût du banc de calcul descend à **3,86 %**. La logique du jeu, le
+lecteur musical et les sorties PSG restent en 68000.
+Le premier raccordement pendant les chargements conserve les **5 952 octets
+PSG** et les états SMS, mais son attente bloquante provoque encore des retards
+de plusieurs images. Il reste expérimental ; la ROM jouable reste la v0203.
+Voir les [mesures et limites de l'horloge et du raccordement audio](analysis/md_service_clock_milestone.md).
+
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
 contrôle d'horloge sont également revenus au code précédent après mesure.

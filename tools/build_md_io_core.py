@@ -27,7 +27,8 @@ void gaw_io_observe(unsigned kind,unsigned cycles,unsigned value) {
 
 
 def main():
-    folder=ROOT/'validation/md-io-clock';folder.mkdir(exist_ok=True)
+    native_hv='--native-hv' in sys.argv
+    folder=ROOT/('validation/md-service-io-core' if native_hv else 'validation/md-io-clock');folder.mkdir(exist_ok=True)
     core=ROOT.parents[1]/'work/genesis-plus-gx/core'
     paths=[core/'vdp_ctrl.c',core/'mem68k.c']
     originals={p:p.read_bytes() for p in paths}
@@ -41,6 +42,12 @@ def main():
     section=section.replace('return (data);','gaw_io_observe(1,cycles,data);\n  return (data);')
     vdp=vdp[:start]+section+vdp[end:]
     mem=originals[paths[1]].decode()
+    if native_hv:
+        assert mem.count('vdp_hvc_r(m68k.cycles)')==3
+        mem=mem.replace('vdp_hvc_r(m68k.cycles)','gaw_native_hvc(m68k.cycles)')
+        anchor='unsigned int vdp_read_byte(unsigned int address)';assert mem.count(anchor)==1
+        helper='static unsigned gaw_native_hvc(unsigned cycles) {unsigned value=vdp_hvc_r(cycles);gaw_io_observe(4,cycles,value);return value;}\n\n'
+        mem=mem.replace(anchor,helper+anchor)
     for call,kind in [('psg_write(m68k.cycles, data);',2),('psg_write(m68k.cycles, data & 0xFF);',3)]:
         assert mem.count(call)==1
         mem=mem.replace(call,f'gaw_io_observe({kind},m68k.cycles,data & 0xff);\n      '+call)
@@ -49,7 +56,8 @@ def main():
     try:
         for path,raw in modified.items():
             (folder/(path.name+'-observer.txt')).write_bytes(raw);path.write_bytes(raw)
-        result=subprocess.run([sys.executable,str(ROOT/'tools/build_timing_core.py'),'--target','genesis_plus_gx_io_libretro.dll'],cwd=ROOT,capture_output=True,text=True)
+        target='genesis_plus_gx_service_io_libretro.dll' if native_hv else 'genesis_plus_gx_io_libretro.dll'
+        result=subprocess.run([sys.executable,str(ROOT/'tools/build_timing_core.py'),'--target',target],cwd=ROOT,capture_output=True,text=True)
         (folder/'core-build.log').write_text(result.stdout+result.stderr)
         assert not result.returncode,result.stdout+result.stderr
     finally:

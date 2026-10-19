@@ -1,0 +1,73 @@
+{
+  "kernel_sha256": "544669a17cf3cde3f8ecdcd9195e83c2b30f3398f7f335f3cc5b8d7d212035cc",
+  "driver_sha256": "0f8bd7ec75a2ff51193d394efe08c353410a1596d31e8ff8b1962a6eb7384220",
+  "observer_core_sha256": "3b8655f77bc624b9315a57bb5499adae6d0a2f6043a2881652a5908930e2906d",
+  "sources": {
+    "md_service_clock.c": "2c3036b2dea6a9162f99b3ad753a6e06260a3ac04afbfd0d7037e46e0410bc21",
+    "md_service_clock.h": "923e146be0d84a0748830cb0659665252f2a4b7f007fb63f9ff2832b92f1a62f",
+    "md_service_clock_start.c": "ae633ff9eb8d30a340439b3458f2a94cd400644a821f081f172458d2369be0be",
+    "md_service_clock_hv.s": "dbc2acaff2adb73f0b504fc2e0f515ce3dee36aa55fe6cdfe5132bf0d83d03ac",
+    "md_service_clock_z80.asm": "26e48b245201234a75db16c873b4787c501bb71f6f514eeb5ca4520baf1d3b63"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 7096,
+      "done": 1,
+      "count": 1200,
+      "failures": 0,
+      "progress": 1199,
+      "hash_a": 1897626037,
+      "hash_b": 1897626037,
+      "ready": 1,
+      "error": 0,
+      "ram_sha256": "7d03b9919313241a627f2064d07a5e570dc4ef8da9662854ad57eddf91717d61",
+      "plain_core_identical": true,
+      "counter_wraps": 14,
+      "z80_sample_gap_master": [
+        525,
+        8265
+      ],
+      "client_gap_master": [
+        10822,
+        5486768
+      ],
+      "baseline_master": 3072622700,
+      "service_master": 3257951060,
+      "overhead_percent": 6.031601602110137,
+      "events_sha256": "7be05e374d6644c4fcba111dbe14fd4e2489fbd0bcb65bab1647468a1c9aba76"
+    },
+    {
+      "region": "pal",
+      "frame": 5941,
+      "done": 1,
+      "count": 1200,
+      "failures": 0,
+      "progress": 1199,
+      "hash_a": 1897626037,
+      "hash_b": 1897626037,
+      "ready": 1,
+      "error": 0,
+      "ram_sha256": "b3eb6fe275b3fe165e445cf9482f3bb1ac216aef3a5fc21272feae52c725bb93",
+      "plain_core_identical": true,
+      "counter_wraps": 14,
+      "z80_sample_gap_master": [
+        525,
+        8265
+      ],
+      "client_gap_master": [
+        11137,
+        5485676
+      ],
+      "baseline_master": 3072622700,
+      "service_master": 3258103394,
+      "overhead_percent": 6.036559386220763,
+      "events_sha256": "d7fb8db3022988d8bc2785574c3e3a4b832c547a75fa3729da60a30b1d893991"
+    }
+  ],
+  "limits": [
+    "Hardware Z80 publishes a separate byte-sequenced coarse timestamp in68000RAM;native client reads RAM and atomicHV without requesting the Z80 bus after startup. All1200returned times/region match independent native bus reads during longforegroundcalculation,including16bitlinecounter/u32masterwrap.",
+    "Measured wholeloop overhead includes clock client calls,record stores and Z80 bus contention;not the timer cost alone or a whole-game budget. Baseline/service foreground hashes identical.",
+    "Explicit seed on unambiguousV100;not game boot alignment. Exclusive custom Z80 driver. DMA/BUSREQ stalls reaching5lines are unsupported and may alias undetectably;client reads must occur at least once per65535lines,seqlock snapshot below128publications. No source IRQ/PSG producer integration yet."
+  ]
+}

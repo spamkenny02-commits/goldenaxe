@@ -1,0 +1,28 @@
+{
+  "checks": 523639,
+  "results": [
+    {
+      "lines": 262,
+      "cases": 240010,
+      "counter_wraps": 7922,
+      "rejected_cases": 7
+    },
+    {
+      "lines": 313,
+      "cases": 283615,
+      "counter_wraps": 7950,
+      "rejected_cases": 7
+    }
+  ],
+  "sources": {
+    "md_service_clock.c": "2c3036b2dea6a9162f99b3ad753a6e06260a3ac04afbfd0d7037e46e0410bc21",
+    "md_service_clock.h": "923e146be0d84a0748830cb0659665252f2a4b7f007fb63f9ff2832b92f1a62f"
+  },
+  "references": {
+    "hvc.h": "f279b184be42eb26f61cb72363626390c06643675bb22f6048b1c2727fe09d6f",
+    "vdp_ctrl.c": "34aa4da65cfadf9da528dd387929c4ad5d52ec9bb3d83e379f9c2070ce33542a"
+  },
+  "limits": [
+    "Host C arithmetic/client rejection tests use independent emulator H32/VC tables. Hardware concurrency and native ABI are covered separately by validate_md_service_clock; no DMA, interrupt scheduler or full-game claim."
+  ]
+}
