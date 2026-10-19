@@ -126,6 +126,26 @@ def main():
     built=subprocess.run([str(sdk/'bin/sjasm.exe'),str(asm),str(folder/'driver.bin'),str(folder/'driver.lst')],env=env,capture_output=True,text=True);(folder/'z80-build.log').write_text(built.stdout+built.stderr);assert not built.returncode and 'Errors: 0' in built.stdout,built.stdout+built.stderr
     driver=(folder/'driver.bin').read_bytes();(src/'driver.h').write_text('static const u8 driver[]={'+','.join(map(str,driver))+'};\n')
     clock_pc=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*(?:clock|sample):\s+ld a,\(0x7f08\)',(folder/'driver.lst').read_text(),re.M)[1],16)+3
+    listing=(folder/'driver.lst').read_text()
+    fast_setup=re.search(r'^\d+\s+([0-9A-F]+)[^\n]*setupcounter:',listing,re.M)
+    vwait_pc=hwait_pc=None
+    if fast_setup:
+        setup_address=int(fast_setup[1],16)
+        vwait_address=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*vwait:\s+ld a,\(0x7f08\)',listing,re.M)[1],16)
+        hwait_pc=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*hwait:\s+ld a,\(0x7f08\)',listing,re.M)[1],16)+3
+        # Verify the control-flow signature before treating a Vwait read as a
+        # counter update: CP B; JR Z to the two stores, EXX, then Hwait read.
+        assert driver[vwait_address+3:vwait_address+5]==bytes([0xb8,0x28])
+        displacement=driver[vwait_address+5];displacement-=256 if displacement>=128 else 0
+        assert vwait_address+6+displacement==setup_address
+        assert driver[setup_address]==0x22 and driver[setup_address+3]==0x32
+        assert driver[setup_address+6:setup_address+10]==bytes([0xd9,0x3a,0x08,0x7f])
+        counter_address=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*counter:\s*dw',listing,re.M)[1],16)
+        lastv_address=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*lastv:\s*db',listing,re.M)[1],16)
+        assert int.from_bytes(driver[setup_address+1:setup_address+3],'little')==counter_address
+        assert int.from_bytes(driver[setup_address+4:setup_address+6],'little')==lastv_address
+        assert hwait_pc==setup_address+10
+        vwait_pc=vwait_address+3
     temporary=folder/'compiler-tmp';temporary.mkdir(exist_ok=True)
     for key in ['TMPDIR','TMP','TEMP']:env[key]=temporary.resolve().as_posix()
     path=sdk.as_posix();unix='/'+path[0].lower()+path[2:]
@@ -175,7 +195,9 @@ def main():
             assert [e[2] for e in writes]==values,(region,tag,len(writes),len(values))
             errors=[e[1]-origin-t-args.phase_offset for e,t in zip(writes,times)];assert min(errors)>=0,(region,tag,errors)
             gaps=[b[1]-a[1] for a,b in zip(reads,reads[1:])];assert max(gaps)<17100,(region,tag,max(gaps))
-            clocks=[e for e in part if e[0]==6 and e[3]==clock_pc];assert clocks
+            fast_reads=[a for a,b in zip(reads,reads[1:]) if vwait_pc is not None and a[3]==vwait_pc and b[3]==hwait_pc]
+            fast_times={e[1] for e in fast_reads}
+            clocks=[e for e in reads if e[3]==clock_pc or e[1] in fast_times];assert clocks
             advances=[b[1]//3420-a[1]//3420 for a,b in zip(clocks,clocks[1:])];assert min(advances)>=0 and max(advances)<=5,(region,tag,min(advances),max(advances))
             counter_values=[(100+e[1]//3420-origin//3420)&65535 for e in clocks];counter_wraps=sum(b<a for a,b in zip(counter_values,counter_values[1:]))
             if tag==88:assert counter_wraps>=1,(region,tag,counter_wraps)
@@ -200,7 +222,8 @@ def main():
             # that unmatched final request belongs to the following startup.
             assert (start is None or start>=writes[-1][1]) and holds and max(holds)<6840,(region,tag,start,holds)
             assert not any(a<end and b>begin for a,b in held_ranges for begin,end in bursts),(region,tag,'BUSREQ overlaps burst')
-            rows.append(dict(marker=tag,errors_master=errors,sample_gap_master=[min(gaps),max(gaps)],clock_line_advance=[min(advances),max(advances)],counter_wraps=counter_wraps,clock_publication_checks=checks,spacing_checks=spacing_checks,bus_holds_master=[min(holds),max(holds)]))
+            rows.append(dict(marker=tag,errors_master=errors,sample_gap_master=[min(gaps),max(gaps)],clock_line_advance=[min(advances),max(advances)],counter_wraps=counter_wraps,clock_publication_checks=checks,fast_target_samples=len(fast_reads),spacing_checks=spacing_checks,bus_holds_master=[min(holds),max(holds)]))
+        if fast_setup:assert sum(row['fast_target_samples'] for row in rows)>0
         plain={}
         def plain_observe(frame,ram):
             done=int.from_bytes(bytes(ram[(((symbols['gaw_replay_done']&65535)+i)&65535)^1] for i in range(2)),'big');plain.update(frame=frame,done=done)

@@ -127,6 +127,10 @@ et un passage direct entre commandes déjà prêtes l'abaissent à 0,4 ms.
 La préparation des registres avant la ligne cible et une marge de copie accrue
 ramènent le maximum mesuré à environ **0,31 ms**, y compris un décalage de
 restitution de 3 419 ticks près d'une frontière de ligne.
+Un compteur actualisé à partir de la ligne effectivement reconnue et une entrée
+plus tôt dans l'attente abaissent le maximum à environ **0,29 ms**. En phase
+nominale, 1 204 des 5 952 écritures source passent sous une ligne de retard ;
+la marge d'horloge de certains cas reste étroite.
 Le lancement
 des rafales reste trop tardif ;
 ce backend reste expérimental et la v0203 est inchangée.
@@ -137,6 +141,8 @@ détaille les nouveaux tests et ce qui reste à raccorder au jeu.
 Voir aussi le [passage direct et ses limites d'horloge](analysis/md_z80_psg_handoff_milestone.md).
 Le [jalon de préparation des registres](analysis/md_z80_psg_shadow_milestone.md)
 précise la marge d'horloge gagnée et les limites d'intégration.
+Le [jalon du compteur de ligne reconnue](analysis/md_z80_psg_counter_milestone.md)
+documente les contrôles indépendants et les essais non retenus.
 
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de

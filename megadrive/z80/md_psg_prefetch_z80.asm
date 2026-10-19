@@ -76,7 +76,15 @@ coarse: ld e,(ix+0)
         ld a,h
         or l
         jp z,near
-        ld de,17
+        inc hl
+        ld a,h
+        or l
+        jp z,near
+        inc hl
+        ld a,h
+        or l
+        jp z,near
+        ld de,15
         add hl,de
         bit 7,h
         jr z,close
@@ -120,16 +128,18 @@ coast:  djnz coast
         call clock
         jp coarse
 near:   ld (iy+8),0
+        push de
         call invalidate
         call sample
         ; Prepare output registers before the target line, not after it.
         ; Private clock samples use the main set; EXX preserves this setup.
         call setupregs
         exx
+        pop hl
         ld b,(ix+2)
 vwait:  ld a,(0x7f08)
         cp b
-        jr z,setup
+        jr z,setupcounter
         sub b
         cp 5
         jr c,latewait
@@ -149,7 +159,10 @@ late:   ld (iy+8),0
         ; Coarse/finished just sampled. No grant or wait before this burst.
         call setupregs
         jr emit
-setup:  call sample
+        ; Vwait just observed the target V. HL holds its absolute line.
+        ; Commit that physical sample before restoring output registers.
+setupcounter: ld (counter),hl
+        ld (lastv),a
         exx
 hwait:  ld a,(0x7f08)
         cp b
@@ -341,8 +354,10 @@ finished:
         ld hl,(counter)
         jp coarse
 readywait:
+        push de
         call setupregs
         exx
+        pop hl
         ld b,(ix+2)
         jp vwait
 readyline:
