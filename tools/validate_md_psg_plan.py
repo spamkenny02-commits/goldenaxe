@@ -70,6 +70,26 @@ static void beam_tests(void) {
   }
  }
 }
+static void wide_beam_tests(void) {
+ static const u32 offsets[]={0,1,19,20,3419,3420,3420UL*32760-1,3420UL*32760,3420UL*65535-1,3420UL*65535,3420UL*65536-1,3420UL*65536,3420UL*65536+1,0x7ffffff0UL,0x7fffffffUL};
+ u16 pal,lines,seed,k,wrap,line,h;u32 epoch,period,phase,offset;
+ for(pal=0;pal<2;pal++) {
+  lines=pal?313:262;period=(u32)lines*3420;
+  for(wrap=0;wrap<2;wrap++) for(k=0;k<1075;k++) {
+   epoch=wrap?0xffff0000UL:0;
+   if(k<75) {offset=offsets[k/5];seed=k%5==0?0:k%5==1?1:k%5==2?100:k%5==3?234:lines-1;}
+   else {offset=random_word()&0x7fffffffUL;seed=random_word()%lines;}
+   /* Original independent period-first formula, not the optimized split. */
+   phase=offset%period+(u32)seed*3420;if(phase>=period) phase-=period;
+   phase=((phase+19)/20)*20;if(phase>=period) phase-=period;
+   line=phase/3420;h=(phase%3420)/20;
+   blocks[0].due=epoch+offset;blocks[0].target_hv=0xa5a5;
+   CHECK(source_md_psg_plan_beam(blocks,1,lines,seed,epoch)==0);
+   CHECK(blocks[0].target_hv==((pal?v_pal[line]:v_ntsc[line])*256+h_reference[h]));
+   gaw_plan_beam_cases++;
+  }
+ }
+}
 void plan_test(void) {
  static const u16 gaps[]={0,1,314,315,316,629,630,631,5670};
  u16 n,count,spacing,turn,used;u32 time;
@@ -95,7 +115,7 @@ void plan_test(void) {
   for(n=0;n<count;n++) {time+=gaps[(random_word()>>16)%9];events[n].due=time;events[n].value=(u8)random_word();}
   validate(count);
  }
- beam_tests();gaw_plan_done=1;
+ beam_tests();wide_beam_tests();gaw_plan_done=1;
 }
 '''
 
@@ -134,12 +154,12 @@ def main():
             observed.update(frame=frame,done=value('done',2),**{n:value(n,4) for n in ['checks','failures','failure_line','cases','beam_cases']})
         with contextlib.redirect_stdout(io.StringIO()):
             run(folder/'out/release/rom.bin',20000,folder/region,set(),[],skip_intro=False,ram_observer=observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
-        assert observed.get('done') and not observed['failures'] and observed['cases']==2024 and observed['beam_cases']==12650,observed
+        assert observed.get('done') and not observed['failures'] and observed['cases']==2024 and observed['beam_cases']==16950,observed
         results.append(dict(region=region,**observed));print(results[-1],flush=True)
     sha=lambda raw:hashlib.sha256(raw).hexdigest()
     report=dict(host=host,results=results,kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),sources={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['source_md_psg_plan.c','source_md_psg_plan.h']},reference_sha256={'hvc.h':sha(hvc_raw),'vdp_ctrl.c':sha(ctrl_raw)},
         limits=['Reconstruct every original due/value pair from prepared blocks,not just counts. All315/630run lengths1..512 include split and partial tails; random mixed/equal deadlines/u32wrap. Invalid/FULL/order/horizon errors leave count/output bytes intact.',
-                'Host21024cases and2024cases per native region.12650beam-mapping cases per host/native region cover every physical line,11boundaryphases andtwoepochs against core H32/VC tables,plus atomic invalid setup/horizon checks. Actual timing/suffixes are checked separately by validate_md_psg_replay --beam and the beam sweep. No async/fullgame proof.'])
+                'Host21024cases and2024cases per native region.16950beam-mapping cases per host/native region cover all physical lines,11boundaryphases,twoepochs plus4300widehorizon/seed cases around DIVU quotient65535/65536 and2^31-1,against independent period-first formula/coreHV tables. Atomic invalid setup/horizon checks. Actual timing/suffixes checked separately by replay/beam sweep. No async/fullgame proof.'])
     (ROOT/'analysis/md_psg_plan_report.json').write_text(json.dumps(report,indent=2)+'\n')
 
 

@@ -42,18 +42,41 @@ u8 source_md_psg_plan(const SourcePsgEvent *events,u16 count,SourceMdPsgBlock *b
 
 u8 source_md_psg_plan_beam(SourceMdPsgBlock *blocks,u16 count,u16 lines,u16 seed_line,u32 epoch)
 {
-    u16 n,line,h;u32 period,phase,offset;
+    u16 n,line,h,remainder;u32 offset,advance;
     if((count && !blocks) || (lines!=262 && lines!=313) || seed_line>=lines) return SOURCE_PSG_QUEUE_INVALID;
     for(n=0;n<count;n++) if((s32)(blocks[n].due-epoch)<0) return SOURCE_PSG_QUEUE_ORDER;
-    period=(u32)lines*3420;
     for(n=0;n<count;n++)
     {
         offset=blocks[n].due-epoch;
-        phase=offset%period+(u32)seed_line*3420;
-        if(phase>=period) phase-=period;
-        phase=((phase+19)/20)*20;
-        if(phase>=period) phase-=period;
-        line=phase/3420;h=(phase%3420)/20+133;
+#ifdef SGDK_GCC
+        if((offset>>16)<3420)
+        {
+            u32 packed=offset;
+            __asm__("divu.w %1,%0":"+d"(packed):"d"((u16)3420):"cc");
+            advance=(u16)packed;remainder=packed>>16;
+        }
+        else
+#endif
+        {advance=offset/3420;remainder=(u16)(offset%3420);}
+#ifdef SGDK_GCC
+        {
+            u32 packed=(u16)(remainder+19);
+            __asm__("divu.w %1,%0":"+d"(packed):"d"((u16)20):"cc");
+            h=(u16)packed;
+        }
+#else
+        h=(remainder+19)/20;
+#endif
+        if(h==171) {h=0;advance++;}
+        advance+=seed_line;
+#ifdef SGDK_GCC
+        /* offset<2^31 proves advance<628237, hence quotient<2398. */
+        __asm__("divu.w %1,%0":"+d"(advance):"d"(lines):"cc");
+        line=advance>>16;
+#else
+        line=advance%lines;
+#endif
+        h+=133;
         if(h>=171) h-=171;
         if(h>=148) h+=85;
         if(line>(lines==313?258:234)) line+=256-lines;

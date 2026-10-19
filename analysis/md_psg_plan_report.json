@@ -1,36 +1,36 @@
 {
   "host": {
-    "checks": 101039,
+    "checks": 109639,
     "failures": 0,
     "failure_line": 0,
     "cases": 21024,
-    "beam_cases": 12650
+    "beam_cases": 16950
   },
   "results": [
     {
       "region": "ntsc",
-      "frame": 2939,
+      "frame": 2905,
       "done": 1,
-      "checks": 44039,
+      "checks": 52639,
       "failures": 0,
       "failure_line": 0,
       "cases": 2024,
-      "beam_cases": 12650
+      "beam_cases": 16950
     },
     {
       "region": "pal",
-      "frame": 2461,
+      "frame": 2432,
       "done": 1,
-      "checks": 44039,
+      "checks": 52639,
       "failures": 0,
       "failure_line": 0,
       "cases": 2024,
-      "beam_cases": 12650
+      "beam_cases": 16950
     }
   ],
-  "kernel_sha256": "399584b182167e4357cad27d1dfc1b5873b14fdc5b0136be55f40110c551d5b8",
+  "kernel_sha256": "98a9be863740ea4155bcb0201df266ddcfd1f5d8377b9195a63a0f54f7b3098b",
   "sources": {
-    "source_md_psg_plan.c": "11816a68abe4bdab421cdd191b1f7ac6ae498b7743dc4b6fad792610d7f0ed43",
+    "source_md_psg_plan.c": "70757a2faf0f72cb2e465291b24a263d5e3c611f58e2f9e5165af7af222fe724",
     "source_md_psg_plan.h": "1b63172c2717e90f521b7e2a80f6be4233f27b54232359d586232fb17a53323c"
   },
   "reference_sha256": {
@@ -39,6 +39,6 @@
   },
   "limits": [
     "Reconstruct every original due/value pair from prepared blocks,not just counts. All315/630run lengths1..512 include split and partial tails; random mixed/equal deadlines/u32wrap. Invalid/FULL/order/horizon errors leave count/output bytes intact.",
-    "Host21024cases and2024cases per native region.12650beam-mapping cases per host/native region cover every physical line,11boundaryphases andtwoepochs against core H32/VC tables,plus atomic invalid setup/horizon checks. Actual timing/suffixes are checked separately by validate_md_psg_replay --beam and the beam sweep. No async/fullgame proof."
+    "Host21024cases and2024cases per native region.16950beam-mapping cases per host/native region cover all physical lines,11boundaryphases,twoepochs plus4300widehorizon/seed cases around DIVU quotient65535/65536 and2^31-1,against independent period-first formula/coreHV tables. Atomic invalid setup/horizon checks. Actual timing/suffixes checked separately by replay/beam sweep. No async/fullgame proof."
   ]
 }

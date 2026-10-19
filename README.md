@@ -109,6 +109,13 @@ PSG** et les états SMS, mais son attente bloquante provoque encore des retards
 de plusieurs images. Il reste expérimental ; la ROM jouable reste la v0203.
 Voir les [mesures et limites de l'horloge et du raccordement audio](analysis/md_service_clock_milestone.md).
 
+La conversion des dates audio en positions vidéo utilise maintenant les
+divisions matérielles du 68000 lorsque leurs bornes sont prouvées. **16 950 cas
+par plateforme** vérifient le même résultat, et le rejeu des 24 chargements
+reste valide. Les essais de service audio coopératif restent trop tardifs et
+ont été retirés du code courant. La v0203 reste inchangée.
+Voir les [preuves et les essais écartés](analysis/md_beam_divu_milestone.md).
+
 Une conversion fusionnée des dates a aussi été validée contre la SMS, puis
 écartée pour l'intégration car elle ralentit les chargements. Les essais de
 contrôle d'horloge sont également revenus au code précédent après mesure.
