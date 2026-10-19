@@ -76,8 +76,11 @@ def sha(raw):return hashlib.sha256(raw).hexdigest()
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--variant',default='',help='Separate named experiment output; preserves baseline captures/report')
+    parser.add_argument('--driver',default='md_psg_output_z80.asm',help='Z80 source basename inside megadrive/z80')
+    parser.add_argument('--expect-prefetch',action='store_true',help='Require final stopped session to have prefetched commands (ZRAM011A)')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
+    assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-z80-psg'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
     frozen=ROOT/'analysis/native-copy-pointers-v0203';m=json.loads((frozen/'manifest.json').read_text());item=m['compressed']['validation/native-planned-room-finish/kernel/src/expected.h']
@@ -89,6 +92,16 @@ def main():
     (src/'psg.h').write_text('static const u16 psg_counts[]={'+','.join(str(len(t)) for t,_ in expected)+'};\n'+'static const u32 psg_due[24][128]={'+','.join('{'+','.join(str(t)+'UL' for t in times)+'}' for times,_ in expected)+'};\n'+'static const u8 psg_values[24][128]={'+','.join('{'+','.join(map(str,v))+'}' for _,v in expected)+'};\n')
     main=MAIN.replace('#include "source_md_psg_replay.h"','#include "source_md_psg_replay.h"\n#include "md_z80_psg.h"\n#include "driver.h"')
     first=main.index('static void synthetic(void)');last=main.index('int main(bool hard_reset)',first);main=main[:first]+OUTPUT+main[last:]
+    if args.expect_prefetch:
+        main=main.replace('if(marker==88) used=512;','if(marker==88) used=512;\n else if(marker==89) used=64;')
+        main=main.replace('  spins=0;\n  do {','''  if(marker==89) {
+   u16 k,total=n<32?n%16+1:n%8+1,spacing=n<32?315:630;
+   for(k=0;k<total;k++) {stream[k].due=epoch+(u32)physical_lines*6840+(u32)n*136800UL+(u32)k*spacing;stream[k].value=(u8)(n*37+k*13+5);}
+   if(source_md_psg_plan(stream,total,blocks,128,&one) || one!=1) {gaw_replay_failures++;break;}next=blocks;
+  }
+  spins=0;
+  do {''')
+        main=main.replace(' run_z80(0,88,0xffff0000UL);',' run_z80(0,89,0xffff0000UL);gaw_replay_extra_cases++;\n run_z80(0,88,0xffff0000UL);')
     first=main.index('  while((*(volatile u16*)0xc00008>>8)!=90) {}');last=main.index('  gaw_replay_cases++;',first)
     main=main[:first]+'''  run_z80(psg_counts[row],128+row*2+mode,epoch);
   gaw_replay_clocks[row*2+mode][0]=mailbox.head;
@@ -104,7 +117,7 @@ def main():
     for name in ['source_room_finish.h','source_irq_queue_context.h','source_pattern_plan_generated.h','source_md_psg_replay.h','md_z80_psg.h']:(src/name).write_text('#include "../../../megadrive/src/'+name+'"\n')
     (src/'md_service_clock_hv.s').write_bytes((ROOT/'megadrive/src/md_service_clock_hv.s').read_bytes())
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH']
-    asm=ROOT/'megadrive/z80/md_psg_output_z80.asm';(folder/'driver-source.asm.snapshot').write_bytes(asm.read_bytes())
+    asm=ROOT/'megadrive/z80'/args.driver;(folder/'driver-source.asm.snapshot').write_bytes(asm.read_bytes())
     built=subprocess.run([str(sdk/'bin/sjasm.exe'),str(asm),str(folder/'driver.bin'),str(folder/'driver.lst')],env=env,capture_output=True,text=True);(folder/'z80-build.log').write_text(built.stdout+built.stderr);assert not built.returncode and 'Errors: 0' in built.stdout,built.stdout+built.stderr
     driver=(folder/'driver.bin').read_bytes();(src/'driver.h').write_text('static const u8 driver[]={'+','.join(map(str,driver))+'};\n')
     clock_pc=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*(?:clock|sample):\s+ld a,\(0x7f08\)',(folder/'driver.lst').read_text(),re.M)[1],16)+3
@@ -123,15 +136,19 @@ def main():
             def value(name,width,offset=0):return int.from_bytes(bytes(ram[(((symbols[name]&65535)+offset+i)&65535)^1] for i in range(width)),'big')
             observed.update(frame=frame,done=value('gaw_replay_done',2),cases=value('gaw_replay_cases',4),extra_cases=value('gaw_replay_extra_cases',4),failures=value('gaw_replay_failures',4),bytes=value('gaw_replay_bytes',4),failure_code=value('gaw_z80_failure_code',4),foreground=value('gaw_z80_foreground',4),work_count=value('gaw_z80_work_count',4),queue_full=value('gaw_z80_queue_full',4),grant_wait=value('gaw_z80_grant_wait',4),wrap_head=value('gaw_z80_wrap_head',4),wrap_tail=value('gaw_z80_wrap_tail',4),refresh_counter=value('gaw_z80_refresh_counter',4))
             for e in events[-size:] if size else []:
-                if e[0]==3 and (64<=e[2]<=88 or 128<=e[2]<176):active[0]=e[2]
+                if e[0]==3 and (64<=e[2]<=89 or 128<=e[2]<176):active[0]=e[2]
             stamp=[ram[(mb+i)^1] for i in range(6)]
             if active[0] is not None and stamp[4] and not stamp[0]&1:publications.append(dict(tag=active[0],frame=frame,counter=stamp[2]*256+stamp[3],v=stamp[1]))
             if observed['done']:
                 observed['z80_pc']=dll.gaw_z80_pc();observed['z80_variables']=list(dll.gaw_z80_ram()[0x100:0x121]);observed['ram_sha256']=sha(bytes(ram));records[:]=[[value('gaw_replay_clocks',4,n*12+i*4) for i in range(3)] for n in range(48)]
         with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',20000,folder/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
         raw=json.dumps(dict(events=events,observed=observed,records=records,publications=publications),separators=(',',':')).encode();(folder/(region+'-events.json')).write_bytes(raw)
-        assert observed.get('done') and not observed['failures'] and observed['cases']==48 and observed['bytes']==2976 and observed['extra_cases']==25 and not observed['wrap_head'] and not observed['wrap_tail'] and observed['refresh_counter']!=100 and observed['queue_full'] and observed['grant_wait'],observed
-        markers=[i for i,e in enumerate(events) if e[0]==3 and 64<=e[2]<=88 or e[0]==3 and 128<=e[2]<176];assert len(markers)==73
+        assert observed.get('done') and not observed['failures'] and observed['cases']==48 and observed['bytes']==2976 and observed['extra_cases']==(26 if args.expect_prefetch else 25) and not observed['wrap_head'] and not observed['wrap_tail'] and observed['refresh_counter']!=100 and observed['queue_full'] and observed['grant_wait'],observed
+        if args.expect_prefetch:
+            observed['prefetched_commands']=observed['z80_variables'][26]+256*observed['z80_variables'][27]
+            observed['max_prefetched_pending']=observed['z80_variables'][28]
+            assert observed['prefetched_commands']>0 and observed['max_prefetched_pending']==15,observed
+        markers=[i for i,e in enumerate(events) if e[0]==3 and 64<=e[2]<=89 or e[0]==3 and 128<=e[2]<176];assert len(markers)==(74 if args.expect_prefetch else 73)
         work=0x8123905
         for _ in range(observed['work_count']):work=((work<<1)^(0x04c11db7 if work&0x80000000 else 0))&0xffffffff
         assert observed['work_count']>0 and work==observed['foreground'],observed
@@ -141,6 +158,12 @@ def main():
             reads=[e for e in part if e[0]==6];seed=next(e for e in reads if e[2]>>8==100);assert (seed[1]//3420+224)%lines==100;origin=seed[1]//3420*3420
             writes=[e for e in part if e[0]==5];tag=marker[2]
             if tag==88:times=[period*2+n*547200 for n in range(512)];values=[(99+n*13)&255 for n in range(512)]
+            elif tag==89:
+                times=[];values=[]
+                for n in range(64):
+                    count=n%16+1 if n<32 else n%8+1;spacing=315 if n<32 else 630
+                    times.extend(period*2+n*136800+k*spacing for k in range(count))
+                    values.extend((n*37+k*13+5)&255 for k in range(count))
             elif tag<128:
                 n=tag-64;count=n+1 if n<16 else n-15;spacing=315 if n<16 else 630;times=[period*2+n*133%3420+k*spacing for k in range(count)];values=[(n*7+k*13)&255 for k in range(count)]
             else:times,values=expected[(tag-128)//2]
