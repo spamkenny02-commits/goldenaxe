@@ -1,0 +1,28 @@
+{
+  "kernel_sha256": "9d1ffd9ca354d077ae2dc1117c834404642f117c5b250fd0974bede7830ee9a5",
+  "source_report_sha256": "89ea826b90f5b527eaafc7d11da62199496f95e4790dc78cd04f04026a1c0b26",
+  "sources": {
+    "source_sprite_scene.c": "a07f44d66c17d7f69123b7162e92b7aa21164069c3109ef4421fdfda7b9cce27",
+    "source_sprite_scene.h": "1a4e75af4922838b4bb99caeaa12084eff76674178268036e4e814814363cded"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 428,
+      "done": 1,
+      "checks": 133,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 359,
+      "done": 1,
+      "checks": 133,
+      "failures": 0
+    }
+  ],
+  "compared_ram_bytes_per_case": 7934,
+  "limits": [
+    "OriginalZ80 expected records from both regions must match. Native68000 source data/ROM bank pointer translation, all captured/controlled RAM results checked. No IRQ interleaving/source cycle accounting, live actor evolution, whole-game or render deadline proof."
+  ]
+}

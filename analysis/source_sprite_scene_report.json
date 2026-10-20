@@ -1,0 +1,1090 @@
+{
+  "source_rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "26ae0d10d4d3fb31db64dad1b24150cdf5aee7cc5edd3fdb001587a92aedae92",
+  "sources": {
+    "source_sprite_scene.c": "a07f44d66c17d7f69123b7162e92b7aa21164069c3109ef4421fdfda7b9cce27",
+    "source_sprite_scene.h": "1a4e75af4922838b4bb99caeaa12084eff76674178268036e4e814814363cded"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "cases": 133,
+      "records_sha256": "789ccfe72f48faa8a91c5637bf350c67b4f8978f315a19fc39234ac1cd50a454"
+    },
+    {
+      "region": "pal",
+      "cases": 133,
+      "records_sha256": "789ccfe72f48faa8a91c5637bf350c67b4f8978f315a19fc39234ac1cd50a454"
+    }
+  ],
+  "cases": [
+    {
+      "name": "capture-3101",
+      "count": 5,
+      "rotating": 0,
+      "y_end": 56645,
+      "xy_end": 56714,
+      "ram_sha256": "1bc64397dfc58b200e51b81cebcd167cd97e91c8b9077adf4e7e8b681ead5561"
+    },
+    {
+      "name": "capture-3102",
+      "count": 6,
+      "rotating": 0,
+      "y_end": 56646,
+      "xy_end": 56716,
+      "ram_sha256": "a857f535de3d6d4875bb587077db9c5d29603dde4dce627db6eff2cb202a3ec0"
+    },
+    {
+      "name": "capture-3103",
+      "count": 6,
+      "rotating": 0,
+      "y_end": 56646,
+      "xy_end": 56716,
+      "ram_sha256": "accb88d3d3aa70e6eeafa648f9d74dc9279bfac5b1c745b242cc9cb04dc0a067"
+    },
+    {
+      "name": "capture-3104",
+      "count": 7,
+      "rotating": 0,
+      "y_end": 56647,
+      "xy_end": 56718,
+      "ram_sha256": "dddb905947843a964cf2eabd7c9327cefb1bb43c21a1613d368fd6b468405f27"
+    },
+    {
+      "name": "capture-3105",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "92d46cb5c20841ea2f426785d1dcfb921848091f8a38c2641d3fdf817ed1793c"
+    },
+    {
+      "name": "capture-3106",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "8060d464d458f6f1c967fb559a15b442e5e818405d7c12f603977911f39c741a"
+    },
+    {
+      "name": "capture-3107",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "5845990949a3dd18bf8f61dd007c49b8fd4739dc49336e54d6e056e7c935c199"
+    },
+    {
+      "name": "capture-3108",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "eec6ac3d9dc606f2548e4c2111316befa5c16f91ecda1195087aaf45bb96590e"
+    },
+    {
+      "name": "capture-3109",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "5f044b83a8b112a136714778becdd66fd52aac2d76f3c785b2f117c5cbfdbeeb"
+    },
+    {
+      "name": "capture-3110",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "a9ad9fa90ce669e2eeb9abde86bf64f4ba9762c3690b9e2d8b1cd7f82dbfb1bb"
+    },
+    {
+      "name": "capture-3111",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "824731c722ead813a2ab99f7cf7cdb22660d6de7c55cd1d8b8451311a509c76e"
+    },
+    {
+      "name": "capture-3112",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "706712a79e444f7117d4003aa9a95510d0a4e98c7df62076af41f0df718f233e"
+    },
+    {
+      "name": "capture-3113",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "1562661065d0e59f409c2d7698e842c5d2edf47ec23de7cdb48a53a4abe867c6"
+    },
+    {
+      "name": "capture-3114",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "905e34262450fceb184569b04d1d8efbe587b26746d532eb3f70eae3c21e5c28"
+    },
+    {
+      "name": "capture-3115",
+      "count": 8,
+      "rotating": 0,
+      "y_end": 56648,
+      "xy_end": 56720,
+      "ram_sha256": "37461197c437d96ecd2f0077e57e9b3b803bc48e53ae9cdf0136fba1bd270bc3"
+    },
+    {
+      "name": "capture-3116",
+      "count": 11,
+      "rotating": 0,
+      "y_end": 56651,
+      "xy_end": 56726,
+      "ram_sha256": "28950bc357e6cc8935236e1819670e05a9a8409945449aa96758c98b9e621a13"
+    },
+    {
+      "name": "capture-3117",
+      "count": 14,
+      "rotating": 0,
+      "y_end": 56654,
+      "xy_end": 56732,
+      "ram_sha256": "b168fb8d16bb96b69c7209cade9e829d2e71b9ada2f12216ea9926db8db322fc"
+    },
+    {
+      "name": "capture-3118",
+      "count": 14,
+      "rotating": 0,
+      "y_end": 56654,
+      "xy_end": 56732,
+      "ram_sha256": "bb9e9d1a85dfb7841185d270058d15153333aad8637f16e10072730abdc20d12"
+    },
+    {
+      "name": "capture-3119",
+      "count": 17,
+      "rotating": 0,
+      "y_end": 56657,
+      "xy_end": 56738,
+      "ram_sha256": "4ae20df33f127400e221a741bdbf0a4d162e51c768c21a6dc3d76027c0ed8b53"
+    },
+    {
+      "name": "capture-3120",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "a29dc6bda149a7a4ce4bdbb0fbe05225b87bed9014234ab8d9ed6c2a23668514"
+    },
+    {
+      "name": "capture-3121",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "11bcdb0d2542de6d62db6f47cc8538658ec913105b6a8d2319731f7c03ca477c"
+    },
+    {
+      "name": "capture-3122",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "d0e0ba389497a527485ce1364b68ef34f798c4de00e99288dfceb50afc344a9b"
+    },
+    {
+      "name": "capture-3123",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "a471a28fcd67961b5f3016ed34acfd8e7aa60d17b6ad18c9fb5533f74a41ceef"
+    },
+    {
+      "name": "capture-3124",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "4030c594c299785cc2c4bd8e6540ae6656788085d430ae6af322e8764812eb77"
+    },
+    {
+      "name": "capture-3125",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "c84c94b9c1bc3acc41e8f0710920f27979b640dcc009f14ac314d5321bf8c707"
+    },
+    {
+      "name": "capture-3126",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "1bb2d9875890c61f0474e29bec59615481df760d71091a965550874915ceaa5b"
+    },
+    {
+      "name": "capture-3127",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "1891f54c6a913273418e3a8fe8df6e666167500550376e60ca45a24d1311991a"
+    },
+    {
+      "name": "capture-3128",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "28b71b8b06ed2023dd4e1e958ad3e93d05f97e517f57ff9fea4344f9d36529f1"
+    },
+    {
+      "name": "capture-3129",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "ba9709952986184b12fa763075c2181173d7904a10d63e28c6f3d928e7e3ef7f"
+    },
+    {
+      "name": "capture-3130",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "3f9fd1d39d442b651ff372f7f307dd515bb875e813626ead8e841c9f29bda549"
+    },
+    {
+      "name": "capture-3131",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "d6fe2035703737e7cad69d72fbb2020a0944ddf744aed1afced45c36e6a6c94a"
+    },
+    {
+      "name": "capture-3132",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "419721a164bbcb07b0051cd4f436ab1bc91c8596e02cb963dd69d6819776570d"
+    },
+    {
+      "name": "capture-3133",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "8927863b133eb4f5c0a799049a8632bb887c59901edb0b08ee5a45d351d8db4f"
+    },
+    {
+      "name": "capture-3134",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "a3886f0b2e07afdc07ee49c87451da4293ac76b33a02601e1f28c50ff2e9219c"
+    },
+    {
+      "name": "capture-3135",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "c238e5c7c98b2aa09f15dd201a46199e37d649dcc3dd0b9485b56087719272c6"
+    },
+    {
+      "name": "capture-3136",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "376367cd81ba5f3c6a62e1c3bab34fcdb6c569c29726a4bb704959aec64dc894"
+    },
+    {
+      "name": "capture-3137",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "c0a3c236107e6540e369873a2295484b79cb97efb4dc6123d18a72726a87c1cb"
+    },
+    {
+      "name": "capture-3138",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "aa308bfd1e6f655b5609dae82e881d580a0f31e967b161e3802aeeb1f1944ea6"
+    },
+    {
+      "name": "capture-3139",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "91838d763f63e6224e6253935e0cc3730b74b6ddddc6aaa9f736090103e3c574"
+    },
+    {
+      "name": "capture-3140",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "8e31631e3108041be8eeb1d2fb982a53a4117cc86af23d9c8b76a2168848e3fe"
+    },
+    {
+      "name": "capture-3141",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "6202d99dc9ed4460847c1a81a5a654f0c7d036d12fae56bc39d4b0a33855305f"
+    },
+    {
+      "name": "capture-3142",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "6ac89bd5722beef892ffe690411fed4f7e8a431efc9062f9cf42cfcfa6ec59cf"
+    },
+    {
+      "name": "capture-3143",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "0daf8c3521e376676b6ce1a5dc87af2c3f19a3cb94843662d4dd204375b8e944"
+    },
+    {
+      "name": "capture-3144",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "50b5f424ee84d046d9fcb1f4c51a74ac3a8b23e1a317655430174128f3586b5b"
+    },
+    {
+      "name": "capture-3145",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "926e0c65a71b661a2de12537a8df2f335497dd460a06e4b0a7ed86d2909a4051"
+    },
+    {
+      "name": "capture-3146",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "3351080647f118b3dd0e84130b2fb85075e10a5019a60e558411a7512b87a933"
+    },
+    {
+      "name": "capture-3147",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "a8433f1785cfbc857f2e16887dfd68503d443ba8e14e4e4850aa65e9abc9fe31"
+    },
+    {
+      "name": "capture-3148",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "371bcd3a99db65ef5321a78ed1efadc3724c599841c725dd81d0a67ca2b745d9"
+    },
+    {
+      "name": "capture-3149",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "e0251806013d0f6f3a2ecd2f4a7d53ee0a2e9e0eab228a4496f45f7c0cacee54"
+    },
+    {
+      "name": "capture-3150",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "225d7d64ca855ebc23a066239bb68229b92a3382e463198f094f30f950d9273f"
+    },
+    {
+      "name": "capture-3151",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "b93eaa98ff83bdfdc13766ee894c0ac416ae69e875ff9bb88950539482168f66"
+    },
+    {
+      "name": "capture-3152",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "ceda76101bfafdbe422e5ce14814a1e80df20b655f498ecef79a319f78a24ce6"
+    },
+    {
+      "name": "capture-3153",
+      "count": 22,
+      "rotating": 0,
+      "y_end": 56662,
+      "xy_end": 56748,
+      "ram_sha256": "ce0ccc81ea6ba918763acf8e4ffd2ae69707b94a8feb528871855f53e8b0c346"
+    },
+    {
+      "name": "capture-3154",
+      "count": 22,
+      "rotating": 0,
+      "y_end": 56662,
+      "xy_end": 56748,
+      "ram_sha256": "bcfe1c9bdd3142e4ace6d258ae19df1a7e27952b12395efce83480f1fbcfabd9"
+    },
+    {
+      "name": "capture-3155",
+      "count": 22,
+      "rotating": 0,
+      "y_end": 56662,
+      "xy_end": 56748,
+      "ram_sha256": "f23a03858e565330b60c0b95af3d336305fea3eae472e9f00958e8cbebc5d7d9"
+    },
+    {
+      "name": "capture-3156",
+      "count": 22,
+      "rotating": 0,
+      "y_end": 56662,
+      "xy_end": 56748,
+      "ram_sha256": "4865d378d553d781a8cc808882f601477a5d602eae2427ee593ad3816edf35d7"
+    },
+    {
+      "name": "capture-3157",
+      "count": 22,
+      "rotating": 0,
+      "y_end": 56662,
+      "xy_end": 56748,
+      "ram_sha256": "ca7accacd741418da66ef6cb84175f7d3cea523c8aa3cece183ebc8eef23a379"
+    },
+    {
+      "name": "capture-3158",
+      "count": 22,
+      "rotating": 0,
+      "y_end": 56662,
+      "xy_end": 56748,
+      "ram_sha256": "6a23a814147d51fdb3bfaf7216ceb7d60aff12ce8f4c6581605aa01099240f0c"
+    },
+    {
+      "name": "capture-3159",
+      "count": 22,
+      "rotating": 0,
+      "y_end": 56662,
+      "xy_end": 56748,
+      "ram_sha256": "85194146ae7f21e7970b938afb52db353abb22d040a8dd54947bf3b04ab88356"
+    },
+    {
+      "name": "capture-3160",
+      "count": 22,
+      "rotating": 0,
+      "y_end": 56662,
+      "xy_end": 56748,
+      "ram_sha256": "37a683ae0a6c93c700f2b4a6735cc10346e4de98626902bd880f38c756ec30d6"
+    },
+    {
+      "name": "matrix-0-0-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "624439d3517d34acaa122f6edb1c8b67f579139a45ff6eca758a61381198b969"
+    },
+    {
+      "name": "matrix-0-0-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "978d312dead13d15767e3f091760955ad56579aa08029004903444648539883e"
+    },
+    {
+      "name": "matrix-0-1-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "704a3e499eaa40cc69af02669f65733ee3e28d6e18c08808dc745d7c0dce7536"
+    },
+    {
+      "name": "matrix-0-1-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "9053ec38adf01a15b3c94ce586c3b4291dfa7e2308f55fb1aa373f7a765c6087"
+    },
+    {
+      "name": "matrix-0-2-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "f71a5f588c91de007e9669b2454f34156aa857bab416c26075e5e4940170e99b"
+    },
+    {
+      "name": "matrix-0-2-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "7aef548ed0548fe514b31a53c539a8f5dfc6e5bef4a195fca400371b57c8c1ea"
+    },
+    {
+      "name": "matrix-0-3-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "94b7a7ea5d9ecc9376975866bcd3de409b8e10aae98a4eb53a3f03a0c97268d9"
+    },
+    {
+      "name": "matrix-0-3-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "1f0b1ec908cab1f2d76a29ff51e620fbd54d232ee152dd2b4d21392abc954a9c"
+    },
+    {
+      "name": "matrix-1-0-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "37c11c28c5d8565747b8539e18c39a529618fa955b5ef23f475e5f236a118076"
+    },
+    {
+      "name": "matrix-1-0-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "8a0a58b3a698259fcdfead0b1127269cf8ad5a7f859b3ab8b077cb6f7dc9dfed"
+    },
+    {
+      "name": "matrix-1-1-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "ff172d8915334ce2e62cc7741c36f49909461b61876372d2864959a0e8d2f674"
+    },
+    {
+      "name": "matrix-1-1-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "a980a34103e0250f56668332fb3b31abcf36cbb5d0bd6b7836d669a385211707"
+    },
+    {
+      "name": "matrix-1-2-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "1a2b25365e286bf3cb91b61d12ef4ace48dbd25d6d44fc2c53e6c887dd7a5346"
+    },
+    {
+      "name": "matrix-1-2-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "c3656ebe4ce6513adfce608317b5ee64b779317b4a4bf14f73f244f0afd3533e"
+    },
+    {
+      "name": "matrix-1-3-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "ab6fb43c6254151179f9f40b18175aea7d3fc2431104b86d15c4a680c4df32e5"
+    },
+    {
+      "name": "matrix-1-3-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "3eff0702fd2cb02289a1e76961ec55709bb03e4e94c4dd4eb62950b172e837f0"
+    },
+    {
+      "name": "matrix-6-0-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "c89ddef3b637bb8667f32b1f49d6f3812a92a563bb40a17b24d1ad4b456655b7"
+    },
+    {
+      "name": "matrix-6-0-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "99d3760867174cb6df0ae98cb0e93795254d03637895878bb2f49c2dd5c0aae0"
+    },
+    {
+      "name": "matrix-6-1-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "f345f2f88d14d927c83133db63914dde892a00c8e1d88f17e133da155ab7e9b6"
+    },
+    {
+      "name": "matrix-6-1-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "beb91e2b15a0383f97d4fa5300245b12f100e4be7a81e937608a0839bb002fa6"
+    },
+    {
+      "name": "matrix-6-2-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "8996e37c59af492db184f3206b1c924a93b39dc064053d64318d9954384d99f4"
+    },
+    {
+      "name": "matrix-6-2-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "b1eb0ac055d2924ee3cacd3e7e1f35afb506a225d36c29bdf826470ef4d270c8"
+    },
+    {
+      "name": "matrix-6-3-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "6954132d0ba8f66af7a4f0877c4aca07b659ec43f79ac173afc3833141fd030b"
+    },
+    {
+      "name": "matrix-6-3-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "04a69ba9fa13f86655b2b4427a166d94428f99455df07c1b2029e16b3496f6c2"
+    },
+    {
+      "name": "matrix-7-0-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "2fb5d5f27b671220863390359ec335c86574e764a3355ded08aa2b3fa33a9b1c"
+    },
+    {
+      "name": "matrix-7-0-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "b3abd52dfe60caf2e3da48c257ee0221b53e4defdf7e4c739facc39ff373ce05"
+    },
+    {
+      "name": "matrix-7-1-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "1f3e04a66f9b73ba18f795367b2ba0cb96b1730916f6ae6f91db71d954585833"
+    },
+    {
+      "name": "matrix-7-1-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "23871c8b9a6164460e1d85885916a93c9f3bfc2a527a3af410267091da3f8801"
+    },
+    {
+      "name": "matrix-7-2-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "460ef8a0036e981ebf8e9e7d0e0e6a1a451d30fa22c87f3f8ee96c0334784a9b"
+    },
+    {
+      "name": "matrix-7-2-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "652f5b469b20221de7a2d33ce8dea8827b8ea73c1230ef672bdafc18d9c93499"
+    },
+    {
+      "name": "matrix-7-3-0",
+      "count": 16,
+      "rotating": 0,
+      "y_end": 56656,
+      "xy_end": 56736,
+      "ram_sha256": "1677739907ae110f24ad73ecc482b3e621c96d1594712626d922947fed9952f3"
+    },
+    {
+      "name": "matrix-7-3-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "3db75d47402c8bbf988c252e3c9b34efe8eccae622decdb52be96a24aee38567"
+    },
+    {
+      "name": "matrix-8-0-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "6e9e76d0a79c8862bfa0e37f86020c01f40cb01ef3dab9d3957e238b0f359d0d"
+    },
+    {
+      "name": "matrix-8-0-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "60c76642817b902aad2325b1da9a1314fc95719dc96db463a8bb20ac6bd25a0f"
+    },
+    {
+      "name": "matrix-8-1-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "759de7c2604c05309f06e0cf851fdfca3b5f19379a355e737078b1a35eb8a4ec"
+    },
+    {
+      "name": "matrix-8-1-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "66918b327cdb61787ba795f6f8d7fd73330a2da6e70eb5974696150fdec21c96"
+    },
+    {
+      "name": "matrix-8-2-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "10dd36586a219ed31f6046d357ec370ad17cdf34316f86a1facd204b55ff7752"
+    },
+    {
+      "name": "matrix-8-2-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "eee567a5bddabfba1ca1f4c3d27b59d6a45583504c7eb0c61f513422ceea2f4d"
+    },
+    {
+      "name": "matrix-8-3-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "67666c534ac8a32e6794ffddc5896f61a8b37cc15e65b0a190a9876e9c55d576"
+    },
+    {
+      "name": "matrix-8-3-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "41d02645f49f0845d3e3eff02f50f93f5321732d5d9e46d9855b1da63e80e380"
+    },
+    {
+      "name": "matrix-12-0-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "b40674decd9b8fb241892662141d4d75f2e1af7b05a17350685d3c3f765fb26e"
+    },
+    {
+      "name": "matrix-12-0-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "31eb8317c814eb2f5312dbf7956bf0dd1b3f0021447552c130d55cb26ae8e3c5"
+    },
+    {
+      "name": "matrix-12-1-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "9c755a17fca70723badabd70e8bf51ea118bd81d9f991546129e72daa11530df"
+    },
+    {
+      "name": "matrix-12-1-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "912d2879b66c6159ed7ed7cab3cff6ced431f73c9032e594502adc0cb0d5be61"
+    },
+    {
+      "name": "matrix-12-2-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "f99a42781333483d4be999b241c8df100b7c147c455253c757ecde1ea24a6478"
+    },
+    {
+      "name": "matrix-12-2-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "9d789cca43313efb8f26155b259c52ba78c3793fd4f0a040600221f0a68f1dca"
+    },
+    {
+      "name": "matrix-12-3-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "ed18ee169d19a5fb1a00c2d80f3e8e7488386de85640346dc8ef44f58b7e1993"
+    },
+    {
+      "name": "matrix-12-3-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "4e2a0c17dddca3d2a1aa58f5a31c4df9b24f4f24b06a0e932e39558d597340d4"
+    },
+    {
+      "name": "matrix-31-0-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "38ec23a1b805591e14a5d12e514d87f0c45892422250d00b4093f5287ab871f0"
+    },
+    {
+      "name": "matrix-31-0-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "487a69673d5763b154fd8007b948c2872709470a130655a25daec4e79ba681c0"
+    },
+    {
+      "name": "matrix-31-1-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "772048deb37519f0e1091b8429093be5f07a8571da856d32c1a22a783845b08b"
+    },
+    {
+      "name": "matrix-31-1-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "bbd7d934bbbfd9b459cf70dca2af7cb7e4cd8f6a7eef00a6c6cad90ed54c3fa8"
+    },
+    {
+      "name": "matrix-31-2-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "fd7ff3d9ce76a23f62e5201dc5c5d372e6198d995f5baec0d6365f90373e5adb"
+    },
+    {
+      "name": "matrix-31-2-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "36649d2f2b03518246a4e447b43b8ad1e61f82caeb475ca0b113e90beaca4e57"
+    },
+    {
+      "name": "matrix-31-3-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "b179a6074e293f707cb65c44f02ebb67c59365802d199c6a1ffdc1d8c969ca8c"
+    },
+    {
+      "name": "matrix-31-3-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "3945337726fc2687fc47f2acc2da86700f7d3f4558ef4b4b4a3f277ca1e1b220"
+    },
+    {
+      "name": "matrix-32-0-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "d8faccbd4465b28c93e559d0304962839e105249bccb6e2e2da58eb2701e29bd"
+    },
+    {
+      "name": "matrix-32-0-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "a1aa4ecd6c9bfa19d67ff9f732a3bccc64b8b088118fc7be85a7be36672ec351"
+    },
+    {
+      "name": "matrix-32-1-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "9b98695254b08ae54fa4ebedb52e09ab00218ced760161ef239586fd5511d79e"
+    },
+    {
+      "name": "matrix-32-1-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "380ca10aa366775252c91e787691cd2ebe50df1b33f79c9707f6a2170e6d6945"
+    },
+    {
+      "name": "matrix-32-2-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "af4f391541618261c55e1c00f453bb9a8fef094f397a631b896dc494ad469801"
+    },
+    {
+      "name": "matrix-32-2-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "ba1de3c75c3b718d27d0caf310dcf276590a96c0084e037785298b0f8ebbf541"
+    },
+    {
+      "name": "matrix-32-3-0",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "3007d5da83956d259b3624b8a4131d8ee627fd1cc42d6b9ef76ebfbde12a0b20"
+    },
+    {
+      "name": "matrix-32-3-64",
+      "count": 12,
+      "rotating": 1,
+      "y_end": 56652,
+      "xy_end": 56728,
+      "ram_sha256": "6a6cea1a38bf6e8e86ebe55af17f98e9f7ef62d376f7f5bc66b6bbfb8332d133"
+    },
+    {
+      "name": "capacity64-False-0",
+      "count": 64,
+      "rotating": 0,
+      "y_end": 56704,
+      "xy_end": 56832,
+      "ram_sha256": "f8a859f55a863bd7d57e48713dbb0433f732a69418699452e1ecb79352300c78"
+    },
+    {
+      "name": "capacity64-False-1",
+      "count": 64,
+      "rotating": 0,
+      "y_end": 56704,
+      "xy_end": 56832,
+      "ram_sha256": "e79a39d3a88d1ba359d88cb0ffe155ac00eeeeaa699e89d027280809bd200a52"
+    },
+    {
+      "name": "capacity64-False-2",
+      "count": 64,
+      "rotating": 0,
+      "y_end": 56704,
+      "xy_end": 56832,
+      "ram_sha256": "d78f6a05836e9529e1e7ed0dc5e28801908f2f626faea4261faf5a2fbef5f3c8"
+    },
+    {
+      "name": "capacity64-False-3",
+      "count": 64,
+      "rotating": 0,
+      "y_end": 56704,
+      "xy_end": 56832,
+      "ram_sha256": "5f81f25af5ab346a07ae8933e293967aec51ab289d7ae13ca155f9c02913efeb"
+    },
+    {
+      "name": "capacity64-True-0",
+      "count": 64,
+      "rotating": 1,
+      "y_end": 56704,
+      "xy_end": 56832,
+      "ram_sha256": "3ad548576cd672cf2758f8ba541d61d239b2b1e4347adae4d860f70619beb517"
+    },
+    {
+      "name": "capacity64-True-1",
+      "count": 64,
+      "rotating": 1,
+      "y_end": 56704,
+      "xy_end": 56832,
+      "ram_sha256": "266c3746e1805bf6f759e32c7dce6ecc95567e567854499d0db49dbf426fe065"
+    },
+    {
+      "name": "capacity64-True-2",
+      "count": 64,
+      "rotating": 1,
+      "y_end": 56704,
+      "xy_end": 56832,
+      "ram_sha256": "3ac4b99017a9c35ee9d8e34454b2236b205b81a41155701a7e93d05774a7080d"
+    },
+    {
+      "name": "capacity64-True-3",
+      "count": 64,
+      "rotating": 1,
+      "y_end": 56704,
+      "xy_end": 56832,
+      "ram_sha256": "491335a9593c8e6ffec8d937f5e7f449d7b6ce23ec6740bf1039e664eb4cec97"
+    },
+    {
+      "name": "actor-stream-poisoned",
+      "count": 20,
+      "rotating": 0,
+      "y_end": 56660,
+      "xy_end": 56744,
+      "ram_sha256": "9f05872888be4dd0828ea3378c0c858a99afeb64dbdaa555e0082dc87e81a0ce"
+    }
+  ],
+  "invalid_atomic_checks": 7,
+  "limits": [
+    "Original0938..0AA3 plus bank12 unchanged. Custom boot/caller/IRQ and captured or controlled actor inputs.7934 RAM bytes compared per case, excluding only case marker and caller stack page. Source instruction cycle/IRQ interleaving, mapper timing, actor evolution, rendering/full game remain unproved. Native builder rejects invalid descriptors or more than64 accumulated entries atomically."
+  ]
+}

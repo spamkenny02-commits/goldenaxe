@@ -6,7 +6,10 @@ ROOT=Path(__file__).resolve().parents[1]
 def inputs(case=0):
  folder=ROOT/'validation/sms-vertical-check';p=json.loads((folder/'capture.json').read_bytes());assert p['rom_sha256']==hashlib.sha256((ROOT/'input/original.sms').read_bytes()).hexdigest()
  v=(folder/'vram_03120.bin').read_bytes();regs=(folder/'vdp_regs_03120.bin').read_bytes();base=(regs[5]&126)*128;sat=v[base:base+64]+v[base+128:base+256];r0,r1,r6=regs[0],regs[1],regs[6]
- if case:
+ if case==5:
+  from validate_source_sprite_scene import scene_seed,scene_sat
+  rom=(ROOT/'input/original.sms').read_bytes();sat=scene_sat(scene_seed(),rom[0x30000:0x34000])
+ elif case:
   original=sat;sat=bytearray([208]*192)
   if case==1:
    r0|=40
@@ -22,7 +25,12 @@ def inputs(case=0):
 def assets(case=0):
  sat,vram,regs=inputs(case);packed=convert_sms_patterns(vram)
  legend=[n*0x11111111 for n in range(16) for row in range(8)]
- return ('static const u8 sprite8_sat[]={'+','.join(map(str,sat))+'};\nstatic const u8 sprite8_regs[]={'+','.join(map(str,regs))+'};\nstatic const u32 sprite8_patterns[]={'+','.join('0x'+packed[n:n+4].hex()+'UL' for n in range(0,16384,4))+'};\nstatic const u32 sprite8_legend[]={'+','.join(hex(v)+'UL' for v in legend)+'};\n')
+ text=('static const u8 sprite8_sat[]={'+','.join(map(str,sat))+'};\nstatic const u8 sprite8_regs[]={'+','.join(map(str,regs))+'};\nstatic const u32 sprite8_patterns[]={'+','.join('0x'+packed[n:n+4].hex()+'UL' for n in range(0,16384,4))+'};\nstatic const u32 sprite8_legend[]={'+','.join(hex(v)+'UL' for v in legend)+'};\n')
+ if case==5:
+  from validate_source_sprite_scene import scene_seed
+  text=text.replace('static const u8 sprite8_sat[]={'+','.join(map(str,sat))+'};','static u8 sprite8_sat[192];')
+  for name,data in [('seed',scene_seed()),('actor_bank',(ROOT/'input/original.sms').read_bytes()[0x30000:0x34000])]:text+='static const u8 sprite8_'+name+'[]={'+','.join(map(str,data))+'};\n'
+ return text
 HELPER=r'''
 static MdSmsSprite8Stream sprite8;
 volatile u32 gaw_sprite8_jobs,gaw_sprite8_pattern_jobs,gaw_sprite8_sat_jobs,gaw_sprite8_readback_words,gaw_sprite8_readback_errors;
@@ -59,6 +67,10 @@ def instrument(main,case=0):
  needle='static void video_setup(void)';assert main.count(needle)==1;main=main.replace(needle,HELPER.replace('SPRITE_CASE',str(case))+needle)
  needle='gaw_video_updates=1;VDP_setEnable(TRUE);';assert main.count(needle)==1;main=main.replace(needle,'gaw_video_updates=1;sprite8_setup();VDP_setEnable(TRUE);')
  needle=' video_flush();';assert main.count(needle)==1;main=main.replace(needle,needle+'sprite8_flush();')
+ if case==5:
+  main=main.replace('#include "sprite8-input.h"','#include "sprite8-input.h"\n#include "source_sprite_scene.h"\nstatic u8 sprite8_game_ram[8192];volatile u16 gaw_sprite8_builds;')
+  needle=' *(volatile u16*)0xc00010=0x2c;';assert main.count(needle)==1
+  main=main.replace(needle,needle+'\n {SourceSpriteSceneOutput result;memcpy(sprite8_game_ram,sprite8_seed,8192);if(!source_sprite_scene(sprite8_game_ram,sprite8_actor_bank,&result)) {fault(0xe40);return;}memcpy(sprite8_sat,sprite8_game_ram+0x1d40,192);gaw_sprite8_builds++;}')
  return main
 def validate(folder,region,frame,observed,vram,regs,case=0):
  from validate_sms_sprite8 import source_plane
@@ -67,6 +79,7 @@ def validate(folder,region,frame,observed,vram,regs,case=0):
  jobs=(count+3)//4;assert observed['sprite8_jobs']==48*(jobs+4) and observed['sprite8_pattern_jobs']==48*jobs and observed['sprite8_sat_jobs']==192
  assert observed['sprite8_readback_words']==48*(count*16+256) and not observed['sprite8_readback_errors']
  assert observed['sprite8_poisoned']==(48 if case==3 else 0)
+ if case==5:assert observed['sprite8_builds']==48
  physical=bytes(vram[n^1] for n in range(65536));base=(regs[5]&127)<<9
  # Verify the native SAT chain and decode clone pixels independently.
  entries=[physical[base+i*8:base+i*8+8] for i in range(64)]
@@ -90,4 +103,8 @@ def validate(folder,region,frame,observed,vram,regs,case=0):
     xx=x+c;color=(word>>((7-c)*4))&15
     if color and 0<=xx<256:actual[y*256+xx]=color
  assert bytes(actual)==plane,(region,'physical sprite-plane mismatch')
- return dict(case=case,sprites=count,overflow=overflow,plane_sha256=hashlib.sha256(plane).hexdigest(),readback_words=observed['sprite8_readback_words'],input_sat_sha256=hashlib.sha256(sat).hexdigest(),input_patterns_sha256=hashlib.sha256(patterns).hexdigest())
+ result=dict(case=case,sprites=count,overflow=overflow,plane_sha256=hashlib.sha256(plane).hexdigest(),readback_words=observed['sprite8_readback_words'],input_sat_sha256=hashlib.sha256(sat).hexdigest(),input_patterns_sha256=hashlib.sha256(patterns).hexdigest())
+ if case==5:
+  from validate_source_sprite_scene import scene_seed
+  result.update(native_actor_sat=True,scene_seed_sha256=hashlib.sha256(scene_seed()).hexdigest(),scene_bank_sha256=hashlib.sha256((ROOT/'input/original.sms').read_bytes()[0x30000:0x34000]).hexdigest())
+ return result

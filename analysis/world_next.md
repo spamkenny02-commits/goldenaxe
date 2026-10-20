@@ -1142,3 +1142,17 @@ Playable staysv0203; mode4/192 8x8 only. Native actor/SAT producer hookup, sourc
 reveal deadlines, dynamic pattern ownership, fullboot/game/hardware/waveform unproven.
 Next:consume native DD40..DDFF SAT at the correct source publication boundary.
 Evidence:analysis/md_sms_sprite8_milestone.md; lossless archive md-sms-sprite8-v0203.
+
+
+## Native0938 actor-to-SAT builder connected to sprite stream
+133 cases compare7934 RAM bytes against actual original Z80 routine and68000,
+both regions, including eight64-entry cases and poisoned old SAT/workspace.
+Atomic bounded invalid descriptors/capacity reject without changing RAM/output.
+Actor fixture builds20 sprites48times/region, then hidden DMA clones/SAT withPSG.
+768 loader states,186624 background/CRAM plus27648 sprite words exact/region.
+RGB viewport has833 sprite pixels and zero differences;7008+864 DMA spans
+verified;private clocks<17100. Previous renderer assets and reports unchanged.
+Playablev0203 preserved. No native source-instruction/IRQ staging yet: producer
+is atomic and separate actor RAM is captured; patterns still captured.
+Next:source0938 instruction boundaries, DD40 IRQ publication and dynamic patterns.
+Evidence:analysis/source_sprite_scene_milestone.md; archive md-sprite-scene-v0203.

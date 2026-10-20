@@ -103,7 +103,7 @@ def main():
     parser.add_argument('--scene-fresh-grant',action='store_true',help='Use post-resample encoded grant timestamp for hidden small spans')
     parser.add_argument('--psg-native-prep',action='store_true',help='Use the optimized source default in this fixture (otherwise explicitly compile the legacy reference)')
     parser.add_argument('--scene-sprite8',action='store_true',help='Append the native SMS8x8 clone/SAT stream while display remains hidden')
-    parser.add_argument('--scene-sprite8-case',type=int,default=0,choices=[0,1,2,3,4],help='Renderer fixture: real source SAT, overflow, wrap, empty/old-tail clear, or64entry HUD priority')
+    parser.add_argument('--scene-sprite8-case',type=int,default=0,choices=[0,1,2,3,4,5],help='Renderer fixture: real source SAT, overflow, wrap, empty/old-tail clear,64entry HUD priority, or native actor SAT producer')
     parser.add_argument('--scene-hidden',action='store_true',help='Keep display off for whole-frame bounded H32 transfers')
     parser.add_argument('--scene-native-palette',action='store_true',help='Compile default palette path without diagnostic trace hook')
     parser.add_argument('--video-scene',action='store_true',help='Native193tile/map/palette pipeline with ROM resident assets')
@@ -230,6 +230,9 @@ def main():
     if args.scene_sprite8:
         modules += ['source_sms_sprite8','md_sms_sprite8_stream']
         for name in ['source_sms_sprite8','md_sms_sprite8_stream']:(src/(name+'.h')).write_text('#include "../../../megadrive/src/'+name+'.h"\n')
+        if args.scene_sprite8_case==5:
+            modules.append('source_sprite_scene')
+            (src/'source_sprite_scene.h').write_text('#include "../../../megadrive/src/source_sprite_scene.h"\n')
     if args.video_scene:
         modules += ['source_class0_video','md_class0_video_stream','md_z80_video_span']
         for name in ['source_class0_video','md_class0_video_stream']:(src/(name+'.h')).write_text('#include "../../../megadrive/src/'+name+'.h"\n')
@@ -316,6 +319,7 @@ def main():
             if args.scene_sprite8:
                 for name in ['jobs','pattern_jobs','sat_jobs','readback_words','readback_errors']:observed['sprite8_'+name]=value('gaw_sprite8_'+name,4)
                 for name in ['count','overflow','poisoned']:observed['sprite8_'+name]=value('gaw_sprite8_'+name,2)
+                if args.scene_sprite8_case==5:observed['sprite8_builds']=value('gaw_sprite8_builds',2)
             if args.video_grant_backoff:observed['video_grant_skips']=value('gaw_video_grant_skips',4)
             if args.video_source_tiles==8:observed['video_span_sizes']=[value('gaw_video_span_sizes',4,n*4) for n in range(9)]
             if args.video_source_patterns:
@@ -560,7 +564,8 @@ def main():
     if args.scene_preflight_after_prepare:report['limits'].append('Advisory age probe runs after source/length/autoincrement preloads, immediately before requesting the bus; authoritative held guards remain unchanged. WAIT may already have set autoincrement2, as in the original hidden API.')
     if args.scene_fresh_grant:report['limits'].append('Hidden small spans require refresh and fresh-grant capabilities. Held grant encodes post-resample rawV modulo128; reconstruct only the preceding raw V within the same1/2line age gate. Driver must revoke grants before near-target/emit paths; native duplicated-V/display/error and strict independent private-gap checks remain active. No larger transfer or age relaxation.')
     if args.psg_native_prep:report['limits'].append('Optional native preparation uses16x16 multiply for validated descriptor spans and builtin fixed16byte copy into an explicitly word-aligned payload. Format/order/horizon/clock/full/error/retry validation and the22byte bus transfer remain active. Timing gains require compiled-code and live evidence.')
-    if args.scene_sprite8:report['limits'].append('Renderer fixture only: raw SAT and pattern input from SMS frame3120, or explicit overflow/wrap/empty derivatives. No source game RAM/audio state is injected. Native8x8 stream owns row/column masks and MD SAT, uploads clones then all64SAT entries through hidden bounded DMA, with per-span readbacks. Empty fixture seeds an old SAT before overwriting it. Legend outside the192line viewport calibrates actual PAL1 colors. No native SAT/actor producer or gameplay/reveal deadline claim.')
+    if args.scene_sprite8 and args.scene_sprite8_case!=5:report['limits'].append('Renderer fixture only: raw SAT and pattern input from SMS frame3120, or explicit overflow/wrap/empty derivatives. No source game RAM/audio state is injected. Native8x8 stream owns row/column masks and MD SAT, uploads clones then all64SAT entries through hidden bounded DMA, with per-span readbacks. Empty fixture seeds an old SAT before overwriting it. Legend outside the192line viewport calibrates actual PAL1 colors. No native SAT/actor producer or gameplay/reveal deadline claim.')
+    if args.scene_sprite8_case==5:report['limits'].append('Native0938 actor-to-SAT producer feeds the8x8 stream48times per region from a separate8KiB captured actor fixture with poisoned old SAT/sort workspace/collision indices, and original ROM bank12. No prebuilt SAT embedded; independent descriptor oracle checks final layer. The source loader RAM/audio checkpoints remain separate and unchanged. Patterns are still captured renderer input, not native actor-pattern loading/evolution. Source cycle/IRQ publication timing and original reveal deadline remain unproved. RGB proof uses separate palette calibration, excluding the extra legend.')
     if args.scene_hidden:report['limits']=[x.replace('CPU32color publish in guarded blank','CPU32color publish while display is disabled') for x in report['limits']]+['Hidden H32 mode: display disabled before clock start, kept off through all pattern/map/palette jobs, enabled only after successful flush. Hidden small-DMA path excludes duplicated rawV229..234 and retains age/grant/refresh/error guards. No H40 change; timing and display intervals require physical capture. The fixture reveal boundary is not yet the original game enable deadline.']
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')

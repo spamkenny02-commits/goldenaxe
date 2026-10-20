@@ -36,10 +36,16 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+La [production native de la table de sprites](analysis/source_sprite_scene_milestone.md)
+reproduit désormais le tri et les descripteurs du Z80 : 133 cas concordent
+sur Master System et sur 68000, dans les deux régions. Le banc raccordé
+au rendu construit ses sprites depuis les acteurs, avec les mêmes pixels finaux.
+Le placement de cette publication dans le cycle complet du jeu reste à terminer.
+
 Le [nouveau rendu des sprites SMS 8x8](analysis/md_sms_sprite8_milestone.md)
 reproduit la limite de huit sprites par ligne, les bords et le masquage par le HUD.
 Les six variantes PAL/NTSC concordent pixel par pixel sur les captures de test ;
-le raccordement à la production native des acteurs reste à faire.
+le raccordement au cycle complet du jeu reste à faire.
 La ROM jouable reste v0203.
 
 La [préparation native des commandes PSG](analysis/md_psg_native_prep_milestone.md)

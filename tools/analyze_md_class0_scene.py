@@ -93,7 +93,18 @@ def main():
      assert all(e[3]==sprite_end_pc for e in part if e[0]==3 and e[2]==0x2d)
      assert phases[0x3a][0]<sprite_begin<sprite_end<on_tick
      sat_symbol=next((v for k,v in symbols.items() if k.split('.')[0]=='sprite8_sat'),None)
-     if sat_symbol is None:
+     if report['scene_sprite8_case']==5:
+      from validate_source_sprite_scene import scene_sat
+      blobs={}
+      for name,length in [('seed',8192),('actor_bank',16384)]:
+       address=next(v for k,v in symbols.items() if k.split('.')[0]=='sprite8_'+name);assert address+length<=len(kernel)
+       blobs[name]=kernel[address:address+length]
+      assert sha(blobs['seed'])==rr['video']['sprite8']['scene_seed_sha256']
+      assert sha(blobs['actor_bank'])==rr['video']['sprite8']['scene_bank_sha256']
+      assert blobs['actor_bank']==(ROOT/'input/original.sms').read_bytes()[0x30000:0x34000]
+      assert blobs['seed'][0x1d40:0x1e00]==bytes([165])*192 and rr['sprite8_builds']==48
+      raw_sat=scene_sat(blobs['seed'],blobs['actor_bank'])
+     elif sat_symbol is None:
       # Empty input is constant-folded: no SAT object survives in ROM.
       assert report['scene_sprite8_case']==3
       header=read(folder/'src/sprite8-input.h').decode();raw_sat=bytes(map(int,re.search(r'sprite8_sat\[\]=\{([0-9,]+)\}',header)[1].split(',')))
@@ -167,5 +178,6 @@ def main():
  if any(r.get('hidden') for r in results):
   output['limits']=['Hidden DMA commits use unique reviewed native signatures and reviewed display-bit clear/set sequences bound to marker PCs. All commits and traced palette spans lie inside the fixture display-off interval. H32 HV guards, raw duplicated-counter exclusion, FIFO phases, held intervals and strict private Z80 sample gaps independently checked. Default palette path has final CRAM evidence without a physical CPU span trace. Display restoration occurs at fixture flush, not the original game reveal deadline. IRQs masked; sprites/fullboot/fullgame/hardware/waveform and production integration remain unproven.']
  if any(r.get('shared_backend') for r in results):output['limits'].append('Sprite variants use a reviewed shared hidden-backend signature with job-relative command reads and BUSREQ release through A0. Marks2C/2D separate sprite spans from the73background spans; expected sprite count comes from SAT bytes in the actual kernel. Sprite clones and all64MD SAT entries publish before display enable; all held HV/clock bounds independently checked. Snapshot renderer input does not prove native actor/SAT production or original reveal deadline.')
+ if any(v=='class0-sprite8-actors' for v in args.variants):output['limits'].append('Actor producer fixture uses actual ROM-bound seed RAM with poisoned SAT and original descriptor bank12. Independent descriptor reference derives expected SAT; native producer runs48 times per region. This proves actor-input-to-SAT-to-render transport for that fixture, not source instruction timing, IRQ publication boundaries or autonomous actor progression.')
  (ROOT/'analysis'/args.report_name).write_text(json.dumps(output,indent=2)+'\n')
 if __name__=='__main__':main()

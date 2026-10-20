@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "variant": "class0-sprite8-actors",
+      "region": "ntsc",
+      "case": 5,
+      "sprites": 20,
+      "overflow": false,
+      "compared_pixels": 55296,
+      "differences": 0,
+      "painted_sprite_pixels": 833,
+      "priority_hidden_pixels": 0,
+      "actual_image_sha256": "df013c39306b0cfce79d1102ce9aa542ac0a0b0fd5d5e8113da5c58d0a30474f",
+      "expected_viewport_sha256": "f6cc9bb75554a0d88eccc2e2df0489657b207e124d848cccf4aca64615322dbc",
+      "input_sprite_plane_sha256": "27a065396841ba1ece8d79a95db46864df17fc18a1606e54b50c4e0a2e3f85ee"
+    },
+    {
+      "variant": "class0-sprite8-actors",
+      "region": "pal",
+      "case": 5,
+      "sprites": 20,
+      "overflow": false,
+      "compared_pixels": 55296,
+      "differences": 0,
+      "painted_sprite_pixels": 833,
+      "priority_hidden_pixels": 0,
+      "actual_image_sha256": "df013c39306b0cfce79d1102ce9aa542ac0a0b0fd5d5e8113da5c58d0a30474f",
+      "expected_viewport_sha256": "f6cc9bb75554a0d88eccc2e2df0489657b207e124d848cccf4aca64615322dbc",
+      "input_sprite_plane_sha256": "27a065396841ba1ece8d79a95db46864df17fc18a1606e54b50c4e0a2e3f85ee"
+    }
+  ],
+  "limits": [
+    "Physical MD image matches an independent planar SMS sprite oracle composited over a separately verified native class0 background, including background priority. Actual PAL1 colors come from an independently verified calibration ROM with exactly matching CRAM colors. The prototype legend outside the compared viewport is excluded; its generator has been corrected for future kernels. Inputs are renderer fixtures from one source SAT/pattern snapshot or deliberate derivatives, not native actor production or a full-game screenshot equivalence claim. Empty input overwrites a deliberately seeded old64entry SAT.",
+    "Case5 expected SAT is independently derived from captured actor records and original descriptor bank12; native producer starts from a poisoned SAT and runs before the physical stream. No prebuilt SAT is embedded for case5. Source IRQ publication timing and live actor evolution remain unproved."
+  ]
+}

@@ -1,5 +1,5 @@
 """Compare physical MD RGB viewport against the independent SMS sprite-layer oracle."""
-import gzip,hashlib,json
+import argparse,gzip,hashlib,json,re
 from pathlib import Path
 from PIL import Image
 from md_sms_sprite8_fixture import inputs
@@ -10,13 +10,21 @@ def sha(b):return hashlib.sha256(b).hexdigest()
 
 def read(path):
  if path.exists():return path.read_bytes()
- archive=ROOT/'analysis/md-sms-sprite8-v0203';manifest=json.loads((archive/'manifest.json').read_bytes());name=path.relative_to(ROOT).as_posix()
+ name=path.relative_to(ROOT).as_posix()
+ for dirname in ['md-sms-sprite8-v0203','md-sprite-scene-v0203']:
+  archive=ROOT/'analysis'/dirname
+  if not (archive/'manifest.json').exists():continue
+  manifest=json.loads((archive/'manifest.json').read_bytes())
+  if name in manifest['files'] or name in manifest['compressed']:break
+ else:raise FileNotFoundError(path)
  if name in manifest['files']:
   b=(archive/name).read_bytes();assert sha(b)==manifest['files'][name];return b
  item=manifest['compressed'][name];encoded=(archive/item['stored']).read_bytes();assert sha(encoded)==item['stored_sha256'];b=gzip.decompress(encoded);assert sha(b)==item['raw_sha256'] and len(b)==item['raw_bytes'];return b
 def main():
+ parser=argparse.ArgumentParser();parser.add_argument('--variants',nargs='+',default=VARIANTS);parser.add_argument('--report-name',default='md_sms_sprite8_pixel_report.json');args=parser.parse_args()
+ assert re.fullmatch(r'[a-z0-9_]+\.json',args.report_name) and all(re.fullmatch('[a-z0-9-]+',v) for v in args.variants)
  baseline=json.loads((ROOT/'analysis/md_z80_psg_class0_refresh_native_prep_report.json').read_bytes());calibration=json.loads((ROOT/'analysis/md_sprite8_palette_report.json').read_bytes());rows=[]
- for variant in VARIANTS:
+ for variant in args.variants:
   r=json.loads((ROOT/('analysis/md_z80_psg_'+variant.replace('-','_')+'_report.json')).read_bytes());case=r['scene_sprite8_case'];sat,patterns,reg=inputs(case);plane,overflow,count=source_plane(sat,patterns,reg[0],reg[2])
   for rr in r['results']:
    region=rr['region'];old=next(x for x in baseline['results'] if x['region']==region)
@@ -47,5 +55,6 @@ def main():
    rows.append(dict(variant=variant,region=region,case=case,sprites=count,overflow=overflow,compared_pixels=256*216,differences=differences,painted_sprite_pixels=painted,priority_hidden_pixels=priority_hidden,actual_image_sha256=sha(path.read_bytes()),expected_viewport_sha256=sha(b.tobytes()),input_sprite_plane_sha256=sha(plane)))
    print(variant,region,painted,priority_hidden,'zero RGB differences')
  report=dict(results=rows,limits=['Physical MD image matches an independent planar SMS sprite oracle composited over a separately verified native class0 background, including background priority. Actual PAL1 colors come from an independently verified calibration ROM with exactly matching CRAM colors. The prototype legend outside the compared viewport is excluded; its generator has been corrected for future kernels. Inputs are renderer fixtures from one source SAT/pattern snapshot or deliberate derivatives, not native actor production or a full-game screenshot equivalence claim. Empty input overwrites a deliberately seeded old64entry SAT.'])
- (ROOT/'analysis/md_sms_sprite8_pixel_report.json').write_text(json.dumps(report,indent=2)+'\n')
+ if any(x['case']==5 for x in rows):report['limits'].append('Case5 expected SAT is independently derived from captured actor records and original descriptor bank12; native producer starts from a poisoned SAT and runs before the physical stream. No prebuilt SAT is embedded for case5. Source IRQ publication timing and live actor evolution remain unproved.')
+ (ROOT/'analysis'/args.report_name).write_text(json.dumps(report,indent=2)+'\n')
 if __name__=='__main__':main()
