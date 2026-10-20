@@ -105,6 +105,13 @@ et VRAM passent. Presque tous les transferts restent après le chargement :
 les échéances du vrai rendu restent à établir. Ce jalon expérimental ne
 modifie pas la v0203.
 
+Le [banc des vraies données graphiques](analysis/md_z80_source_video_milestone.md)
+transfère maintenant les 512 tuiles issues du miroir SMS de chaque chargement.
+Les quatre exécutions PAL/NTSC vérifient 98 304 transferts et relisent chaque
+mot dans le VDP, sans différence. Les états source et l'audio passent aussi.
+L'affichage reste un atlas de contrôle et les envois suivent la livraison audio :
+scène complète, regroupement des travaux et cadence du rendu restent à intégrer.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,

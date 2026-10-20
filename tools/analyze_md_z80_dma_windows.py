@@ -58,6 +58,10 @@ def main():
             candidates.append(bytes.fromhex('207c00c0000430bc931030bc94003082308130803039')+
                 (job+8).to_bytes(4,'big')+bytes.fromhex('30803039')+
                 (job+10).to_bytes(4,'big')+bytes.fromhex('308032bc0000'))
+        if report.get('video_source_patterns',False):
+            # Reviewed source-atlas LTO form: A2 owns control, source words
+            # spilled in the frame, command read from the job via A0.
+            candidates.append(bytes.fromhex('247c00c0000434bc931034bc940034aefea834aefeaa34aefeac3028000834803028000a348032bc0000'))
         assert sha(kernel)==report['kernel_sha256'] and sum(kernel.count(s) for s in candidates)==1
         selected=next(s for s in candidates if kernel.count(s)==1)
         committed_pc=kernel.index(selected)+len(selected)
@@ -78,7 +82,8 @@ def main():
                         all_ranges.append((start,event[1]))
                         if event[3]==committed_pc:commits.append((start,event[1]))
                         start=None
-                assert len(commits)==reference['publisher_callbacks']
+                expected_commits=512 if report.get('video_source_patterns',False) else reference['publisher_callbacks']
+                assert len(commits)==expected_commits
                 beam_reads=[e for e in part if e[0]==4];beam_times=[e[1] for e in beam_reads]
                 z80_times=[e[1] for e in part if e[0]==6]
                 assert beam_times==sorted(beam_times) and z80_times==sorted(z80_times)
@@ -106,7 +111,8 @@ def main():
                     last_after_loader_master=max(0,last-reference['loader_finish_master']),
                     last_after_delivery_query_master=max(0,last-reference['delivery_finish_master']),
                     last_after_loader_frames=max(0,last-reference['loader_finish_master'])/(lines*3420)))
-            assert sum(r['committed'] for r in rows)==region_report['video_requests']==2784
+            expected_total=48*512 if report.get('video_source_patterns',False) else 2784
+            assert sum(r['committed'] for r in rows)==region_report['video_requests']==expected_total
             pre_reads=sum(r['pre_bus_beam_reads'] for r in rows)
             assert pre_reads<=region_report['video_dma_attempts']
             results.append(dict(variant=variant,region=region,report_sha256=sha(report_raw),events_sha256=sha(raw),
@@ -121,7 +127,7 @@ def main():
             print({k:v for k,v in results[-1].items() if k!='rows'},flush=True)
     output=dict(hvc_sha256=sha(hvc),signature_hex=signature.hex(),results=results,
         limits=['Counts physical successful DMA-path releases by checked native instruction signature, not by counters or duration. Every counted request-to-release range is inside physical VBlank, with its native held-bus beam read independently checked against frame/time/HV tables. No Z80 sample occurs after that guard read before release; an in-flight instruction can finish between BUSREQ and BUSACK.',
-                'All deterministic fixture requests commit in FIFO order; no game-renderer payload or per-frame deadline proof. Many video jobs drain after loader/audio delivery. Delivery query boundary is rounded to20ticks, so after-query counts use a20tick margin.',
+                'All fixture requests commit in FIFO order; payload type and renderer scope are specified in the kernel report. No per-frame deadline proof. Many video jobs drain after loader/audio delivery. Delivery query boundary is rounded to20ticks, so after-query counts use a20tick margin.',
                 'This supplemental analysis establishes the specific DMA path actually executed. Native IRQs remain masked, only32byte jobs tested, no waveform/hardware/whole-game guarantee.'])
     (ROOT/'analysis'/args.report_name).write_text(json.dumps(output,indent=2)+'\n')
 

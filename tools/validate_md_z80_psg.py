@@ -1,6 +1,7 @@
 """Actual native source loader/reader/FIFO -> independently paced Z80 PSG IO."""
 import contextlib
 import argparse
+from bisect import bisect_right
 import ctypes as c
 import gzip
 import hashlib
@@ -92,6 +93,8 @@ def main():
     parser.add_argument('--video-service-kind',choices=['all','repeat-disabled'],default='all',help='Choose all clock functions or only disabled repetition batch boundaries')
     parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
     parser.add_argument('--video-prepared-job',action='store_true',help='Retain prepared DMA control words across retries too')
+    parser.add_argument('--video-source-patterns',action='store_true',help='Upload all512 actual source pattern tiles per loader case, with native VRAM readback')
+    parser.add_argument('--max-frames',type=int,default=20000)
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
@@ -108,6 +111,8 @@ def main():
     assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
     assert not args.video_cache_pattern or args.video=='dma'
+    assert not args.video_source_patterns or (args.video_prepared_job and not args.video_service)
+    assert 20000<=args.max_frames<=100000
     assert not args.video_prepared_job or args.video_cache_pattern
     assert args.video_service_kind=='all' or args.video_service
     assert not args.live_loader or (args.variant and not args.expect_prefetch and not args.phase_offset)
@@ -151,12 +156,20 @@ def main():
         (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
     if args.video!='off':
         from md_z80_video_fixture import instrument
-        main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern,args.video_prepared_job)
+        if args.video_source_patterns:
+            from md_z80_source_video_fixture import instrument_source
+            main,body=instrument_source(main,body)
+            (folder/'source-video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_source_video_fixture.py').read_bytes())
+        else:
+            main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern,args.video_prepared_job)
         (folder/'video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_video_fixture.py').read_bytes())
     (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
     if args.video=='dma':
         modules.append('md_z80_video_dma')
+        if args.video_source_patterns:
+            modules.append('pattern_convert')
+            (src/'pattern_convert.h').write_text('#include "../../../megadrive/src/pattern_convert.h"\n')
         (src/'md_z80_video_dma.h').write_text('#include "../../../megadrive/src/md_z80_video_dma.h"\n')
     for module in modules:
         prefix='#define source_irq_interrupt source_irq_queue_interrupt\n' if module!='source_irq_queue_context' else ''
@@ -211,13 +224,23 @@ def main():
             if args.video_service:observed['video_service_calls']=value('gaw_video_service_calls',4)
             if args.video_cache_pattern:observed['video_pattern_preparations']=value('gaw_video_pattern_preparations',4)
             if args.video_prepared_job:observed['video_job_preparations']=value('gaw_video_job_preparations',4)
+            if args.video_source_patterns:
+                observed.update(video_sources=value('gaw_video_sources',4),video_readback_words=value('gaw_video_readback_words',4),video_readback_errors=value('gaw_video_readback_errors',4))
             for e in events[-size:] if size else []:
                 if e[0]==3 and (64<=e[2]<=89 or 128<=e[2]<176):active[0]=e[2]
             stamp=[ram[(mb+i)^1] for i in range(6)]
             if active[0] is not None and stamp[4] and not stamp[0]&1:publications.append(dict(tag=active[0],frame=frame,counter=stamp[2]*256+stamp[3],v=stamp[1]))
+            if observed['done'] and args.video_source_patterns:
+                source_symbol=next(v for k,v in symbols.items() if k.split('.')[0]=='pixels')
+                source=bytes(ram[(((source_symbol&65535)+i)&65535)^1] for i in range(16384))
+                (folder/(region+'-source-patterns.bin')).write_bytes(source)
+                observed['video_source_sha256']=sha(source)
+                source_hash=2166136261
+                for byte in source:source_hash=((source_hash^byte)*16777619)&0xffffffff
+                assert source_hash==value(next(k for k in symbols if k.split('.')[0]=='output'),4,18*4)
             if observed['done']:
                 observed['z80_pc']=dll.gaw_z80_pc();observed['z80_variables']=list(dll.gaw_z80_ram()[0x100:0x121]);observed['ram_sha256']=sha(bytes(ram));records[:]=[[value('gaw_replay_clocks',4,n*12+i*4) for i in range(3)] for n in range(48)]
-        with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',20000,folder/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
+        with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',args.max_frames,folder/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
         raw=json.dumps(dict(events=events,observed=observed,records=records,publications=publications),separators=(',',':')).encode();(folder/(region+'-events.json')).write_bytes(raw)
         extra_count=0 if args.live_loader else 26 if args.expect_prefetch else 25
         assert observed.get('done') and not observed['failures'] and observed['cases']==48 and observed['bytes']==2976 and observed['extra_cases']==extra_count,observed
@@ -277,9 +300,11 @@ def main():
             video_holds=[];transport_holds=holds
             if args.video=='dma':
                 native_reads=[e[1] for e in part if e[0]==4 and e[3]!=symbols['md_service_clock_hv']+6]
-                video_ranges=[(a,b) for a,b in held_ranges if any(a<t<b for t in native_reads)]
+                assert native_reads==sorted(native_reads)
+                video_ranges=[(a,b) for a,b in held_ranges if (i:=bisect_right(native_reads,a))<len(native_reads) and native_reads[i]<b]
                 video_holds=[b-a for a,b in video_ranges]
-                transport_holds=[b-a for a,b in held_ranges if (a,b) not in video_ranges]
+                video_range_set=set(video_ranges)
+                transport_holds=[b-a for a,b in held_ranges if (a,b) not in video_range_set]
                 assert video_holds and max(video_holds)<17100,(region,tag,'video hold',video_holds)
             assert transport_holds and max(transport_holds)<6840,(region,tag,'transport hold',transport_holds)
             assert not any(a<end and b>begin for a,b in held_ranges for begin,end in bursts),(region,tag,'BUSREQ overlaps burst')
@@ -309,7 +334,7 @@ def main():
         def plain_observe(frame,ram):
             done=int.from_bytes(bytes(ram[(((symbols['gaw_replay_done']&65535)+i)&65535)^1] for i in range(2)),'big');plain.update(frame=frame,done=done)
             if done:plain['ram_sha256']=sha(bytes(ram))
-        with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',20000,folder/(region+'-plain'),{observed['frame']} if args.video!='off' else set(),[],skip_intro=False,ram_observer=plain_observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(plain.get('done')))
+        with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',args.max_frames,folder/(region+'-plain'),{observed['frame']} if args.video!='off' else set(),[],skip_intro=False,ram_observer=plain_observe,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(plain.get('done')))
         assert plain=={k:observed[k] for k in plain},(plain,observed)
         video_evidence=None
         if args.video!='off':
@@ -318,12 +343,22 @@ def main():
             capture=folder/(region+'-plain');frame=observed['frame']
             vram=(capture/f'vram_{frame:05d}.bin').read_bytes();regs=(capture/f'vdp_regs_{frame:05d}.bin').read_bytes()
             assert regs[1]&0x40 and not regs[1]&8 and not regs[12]&1
-            assert bytes(vram[(32+n)^1] for n in range(32))==expected_pattern(observed['video_updates'])
             plane=(regs[2]&0x38)<<10
-            assert all(int.from_bytes(vram[plane+(y*64+x)*2:plane+(y*64+x)*2+2],'little')==1 for y in range(28) for x in range(32))
+            if args.video_source_patterns:
+                from md_z80_source_video_fixture import convert_sms_patterns
+                source=(folder/(region+'-source-patterns.bin')).read_bytes()
+                expected_tiles=convert_sms_patterns(source)
+                actual_tiles=bytes(vram[(512+n)^1] for n in range(16384))
+                assert actual_tiles==expected_tiles
+                assert observed['video_sources']==48 and observed['video_requests']==48*512
+                assert observed['video_readback_words']==48*512*16 and not observed['video_readback_errors']
+                assert all(int.from_bytes(vram[plane+(y*64+x)*2:plane+(y*64+x)*2+2],'little')==(16+y*32+x if y<16 else 1) for y in range(28) for x in range(32))
+            else:
+                assert bytes(vram[(32+n)^1] for n in range(32))==expected_pattern(observed['video_updates'])
+                assert all(int.from_bytes(vram[plane+(y*64+x)*2:plane+(y*64+x)*2+2],'little')==1 for y in range(28) for x in range(32))
+                assert observed['video_updates']==1+(sum(x['publisher_callbacks'] for x in rows) if args.video in ['cpu','dma'] else 0)
             image=Image.open(capture/f'frame_{frame:05d}.png');colors=image.convert('RGB').getcolors(image.width*image.height)
             assert colors is not None and len(colors)>=8
-            assert observed['video_updates']==1+(sum(x['publisher_callbacks'] for x in rows) if args.video in ['cpu','dma'] else 0)
             if args.video=='dma':assert observed['video_requests']==observed['video_updates']-1 and observed['video_dma_attempts']>=observed['video_requests']
             if args.video_cache_pattern:assert observed['video_pattern_preparations']==observed['video_requests']
             if args.video_prepared_job:assert observed['video_job_preparations']==observed['video_requests']
@@ -341,6 +376,8 @@ def main():
     report['video_service_kind']=args.video_service_kind
     report['video_pattern_cached']=args.video_cache_pattern
     report['video_job_prepared']=args.video_prepared_job
+    report['video_source_patterns']=args.video_source_patterns
+    report['max_frames']=args.max_frames
     if args.video=='dma':report['headers']['md_z80_video_dma.h']=sha((ROOT/'megadrive/src/md_z80_video_dma.h').read_bytes())
     if args.live_loader:
         report['loader_boundary_before_clock_query']=True
@@ -363,6 +400,9 @@ def main():
         if args.video_prepared_job:
             report['limits']=[x.replace('grant/even stamp','grant and atomic8bit V stamp') for x in report['limits']]
         if args.video_prepared_job:report['limits'].append('DMA control token prepared once per immutable diagnostic payload, retained across WAIT and consumed on OK. Bus/timestamp/window are rechecked each attempt. Mode/ownership/source lifetime must remain intact; no renderer frame deadline is established.')
+        if args.video_source_patterns:
+            report['limits']=[x for x in report['limits'] if not x.startswith(('H32/224 display enabled with a synthetic','DMA experiment queues one deterministic','Diagnostic tile payload'))]
+        if args.video_source_patterns:report['limits'].append('Actual source-checked16384byte SMS pattern mirror converted into512 MD tiles per case after source loading. Native physical VRAM readback checks every word before payload release; independent planar conversion checks all final tiles. The visible atlas uses a diagnostic palette/map, not the game scene. Uploads begin after source work and drain after audio: no overlap/deadline or production integration claim. Generic one-job-per-callback description does not apply to this mode.')
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
