@@ -36,6 +36,12 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+Le [nouveau rendu des sprites SMS 8x8](analysis/md_sms_sprite8_milestone.md)
+reproduit la limite de huit sprites par ligne, les bords et le masquage par le HUD.
+Les six variantes PAL/NTSC concordent pixel par pixel sur les captures de test ;
+le raccordement à la production native des acteurs reste à faire.
+La ROM jouable reste v0203.
+
 La [préparation native des commandes PSG](analysis/md_psg_native_prep_milestone.md)
 utilise désormais la multiplication 16 bits du 68000 et quatre copies longues.
 Les bancs PAL/NTSC conservent données et états, avec un retard sonore maximal

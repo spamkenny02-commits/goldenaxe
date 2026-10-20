@@ -1,0 +1,32 @@
+{
+  "kernel_sha256": "b5775d0d8a09c6d0de48b587950ccb0d8038803fff0a16e0988219af7093c948",
+  "sources": {
+    "md_sms_sprite8_stream.c": "e11c2d78ae31d1a02af1a0739edac5cfcc7634e815497c17646473079548903f",
+    "md_sms_sprite8_stream.h": "ae5983ab17a0d6dc081102948d2627f6c80eeebc24a2bb531b0ca48be1082dd9",
+    "source_sms_sprite8.c": "16de4c753a60c980d89237a4a57bebaba6264f2cad6d597f82eea5bb4ed48fcd",
+    "source_sms_sprite8.h": "1b16992476ffd9c873455906f63e5b7cab13ba1830e7145a72b44bc961ffee9e",
+    "md_z80_video_span.c": "12963459d4bbb6ece185c5e1ce00067216e9cc955638b5c74622ce1e7d469461",
+    "md_z80_video_span.h": "96ce521c00467db34e52f7e70652f4d633a1ad203d7f3b7aad55612ced97bcb0"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 40,
+      "done": 1,
+      "checks": 25,
+      "failures": 0,
+      "events_sha256": "37adfa90b40245708537e075a9efcb8e1e7701938cd9cdda837accec3e91e34b"
+    },
+    {
+      "region": "pal",
+      "frame": 34,
+      "done": 1,
+      "checks": 25,
+      "failures": 0,
+      "events_sha256": "d039523b5c2a7930aaac830147b8555cbc3226ede17f1176c065489e6d92cdf5"
+    }
+  ],
+  "limits": [
+    "State order, null/misaligned input, owned conversion copies, retained WAIT token, sticky fault and pre-beam/bus rejection only. Successful physical DMA, palette blanking and deadline behavior require the separate live captures."
+  ]
+}

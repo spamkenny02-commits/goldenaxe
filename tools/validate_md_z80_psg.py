@@ -102,6 +102,8 @@ def main():
     parser.add_argument('--scene-preflight-after-prepare',action='store_true',help='Run advisory age gate after control preloads, directly before BUSREQ')
     parser.add_argument('--scene-fresh-grant',action='store_true',help='Use post-resample encoded grant timestamp for hidden small spans')
     parser.add_argument('--psg-native-prep',action='store_true',help='Use the optimized source default in this fixture (otherwise explicitly compile the legacy reference)')
+    parser.add_argument('--scene-sprite8',action='store_true',help='Append the native SMS8x8 clone/SAT stream while display remains hidden')
+    parser.add_argument('--scene-sprite8-case',type=int,default=0,choices=[0,1,2,3,4],help='Renderer fixture: real source SAT, overflow, wrap, empty/old-tail clear, or64entry HUD priority')
     parser.add_argument('--scene-hidden',action='store_true',help='Keep display off for whole-frame bounded H32 transfers')
     parser.add_argument('--scene-native-palette',action='store_true',help='Compile default palette path without diagnostic trace hook')
     parser.add_argument('--video-scene',action='store_true',help='Native193tile/map/palette pipeline with ROM resident assets')
@@ -136,6 +138,8 @@ def main():
     assert not args.scene_preflight_after_prepare or args.scene_admission_preflight
     assert not args.scene_fresh_grant or (args.scene_hidden and args.driver=='md_psg_grant_z80.asm' and not args.scene_admission_preflight)
     assert not args.scene_admission_preflight or args.scene_hidden
+    assert not args.scene_sprite8 or (args.scene_hidden and args.psg_native_prep and args.driver=='md_psg_refresh_z80.asm' and not args.scene_admission_preflight and not args.scene_fresh_grant)
+    assert args.scene_sprite8 or args.scene_sprite8_case==0
     assert not args.scene_hidden or args.video_scene
     assert not args.scene_native_palette or args.video_scene
     assert not args.video_scene or (args.video=='dma' and args.live_loader and args.video_service==1 and args.video_service_kind in ('repeat-disabled','repeat-batches') and args.driver in ('md_psg_refresh_z80.asm','md_psg_grant_z80.asm') and not args.video_source_patterns and not args.video_cache_pattern and not args.video_prepared_job)
@@ -196,6 +200,11 @@ def main():
             main,body=scene_instrument(main,body,verify=not args.video_source_no_readback,proof=not args.bare,hidden=args.scene_hidden,during_delivery=args.video_source_during_delivery,service_attempts=args.scene_service_attempts,service_commits=args.scene_service_commits,service_slack=args.scene_service_slack,grant_backoff=args.scene_grant_backoff)
             (src/'scene-resident.h').write_text(scene_assets((ROOT/'input/original.sms').read_bytes()))
             (folder/'scene-fixture.py.snapshot').write_bytes((ROOT/'tools/md_class0_scene_fixture.py').read_bytes())
+            if args.scene_sprite8:
+                from md_sms_sprite8_fixture import instrument as sprite_instrument,assets as sprite_assets
+                main=sprite_instrument(main,args.scene_sprite8_case)
+                (src/'sprite8-input.h').write_text(sprite_assets(args.scene_sprite8_case))
+                (folder/'sprite8-fixture.py.snapshot').write_bytes((ROOT/'tools/md_sms_sprite8_fixture.py').read_bytes())
         elif args.video_source_patterns:
             from md_z80_source_video_fixture import instrument_source
             main,body=instrument_source(main,body,args.video_source_tiles,not args.video_source_no_readback,args.video_source_during_delivery,args.video_source_refresh,args.video_grant_backoff)
@@ -218,6 +227,9 @@ def main():
                 (src/'md_z80_video_span.h').write_text('#include "../../../megadrive/src/md_z80_video_span.h"\n')
             (src/'pattern_convert.h').write_text('#include "../../../megadrive/src/pattern_convert.h"\n')
         (src/'md_z80_video_dma.h').write_text('#include "../../../megadrive/src/md_z80_video_dma.h"\n')
+    if args.scene_sprite8:
+        modules += ['source_sms_sprite8','md_sms_sprite8_stream']
+        for name in ['source_sms_sprite8','md_sms_sprite8_stream']:(src/(name+'.h')).write_text('#include "../../../megadrive/src/'+name+'.h"\n')
     if args.video_scene:
         modules += ['source_class0_video','md_class0_video_stream','md_z80_video_span']
         for name in ['source_class0_video','md_class0_video_stream']:(src/(name+'.h')).write_text('#include "../../../megadrive/src/'+name+'.h"\n')
@@ -301,6 +313,9 @@ def main():
                 for name in ['sources','maps','palettes','pattern_commits','map_commits','palette_commits','readback_words','readback_errors']:observed['scene_'+name]=value('gaw_scene_'+name,4)
                 observed['scene_upper']=[value('gaw_scene_upper',1,n) for n in range(16)]
                 observed['scene_state_checks']=0 if args.bare else value('gaw_scene_state_checks',4)
+            if args.scene_sprite8:
+                for name in ['jobs','pattern_jobs','sat_jobs','readback_words','readback_errors']:observed['sprite8_'+name]=value('gaw_sprite8_'+name,4)
+                for name in ['count','overflow','poisoned']:observed['sprite8_'+name]=value('gaw_sprite8_'+name,2)
             if args.video_grant_backoff:observed['video_grant_skips']=value('gaw_video_grant_skips',4)
             if args.video_source_tiles==8:observed['video_span_sizes']=[value('gaw_video_span_sizes',4,n*4) for n in range(9)]
             if args.video_source_patterns:
@@ -457,6 +472,9 @@ def main():
             if args.video_prepared_job:assert observed['video_job_preparations']==jobs
             video_evidence=dict(mode=args.video,updates=observed['video_updates'],colors=len(colors),vram_sha256=sha(vram),registers_sha256=sha(regs),image_sha256=sha((capture/f'frame_{frame:05d}.png').read_bytes()))
         if args.video_scene:video_evidence.update(scene_evidence)
+        if args.scene_sprite8:
+            from md_sms_sprite8_fixture import validate as sprite_validate
+            video_evidence['sprite8']=sprite_validate(folder,region,frame,observed,vram,regs,args.scene_sprite8_case)
         result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw))
         if video_evidence:result['video']=video_evidence
         results.append(result);print(region,{k:v for k,v in result.items() if k!='rows'},flush=True)
@@ -468,6 +486,8 @@ def main():
     report['video_fixture']=args.video
     report['video_scene']=args.video_scene
     report['scene_hidden']=args.scene_hidden
+    report['scene_sprite8']=args.scene_sprite8
+    report['scene_sprite8_case']=args.scene_sprite8_case
     report['psg_native_prep']=args.psg_native_prep
     report['scene_fresh_grant']=args.scene_fresh_grant
     report['scene_admission_preflight']=args.scene_admission_preflight
@@ -540,6 +560,7 @@ def main():
     if args.scene_preflight_after_prepare:report['limits'].append('Advisory age probe runs after source/length/autoincrement preloads, immediately before requesting the bus; authoritative held guards remain unchanged. WAIT may already have set autoincrement2, as in the original hidden API.')
     if args.scene_fresh_grant:report['limits'].append('Hidden small spans require refresh and fresh-grant capabilities. Held grant encodes post-resample rawV modulo128; reconstruct only the preceding raw V within the same1/2line age gate. Driver must revoke grants before near-target/emit paths; native duplicated-V/display/error and strict independent private-gap checks remain active. No larger transfer or age relaxation.')
     if args.psg_native_prep:report['limits'].append('Optional native preparation uses16x16 multiply for validated descriptor spans and builtin fixed16byte copy into an explicitly word-aligned payload. Format/order/horizon/clock/full/error/retry validation and the22byte bus transfer remain active. Timing gains require compiled-code and live evidence.')
+    if args.scene_sprite8:report['limits'].append('Renderer fixture only: raw SAT and pattern input from SMS frame3120, or explicit overflow/wrap/empty derivatives. No source game RAM/audio state is injected. Native8x8 stream owns row/column masks and MD SAT, uploads clones then all64SAT entries through hidden bounded DMA, with per-span readbacks. Empty fixture seeds an old SAT before overwriting it. Legend outside the192line viewport calibrates actual PAL1 colors. No native SAT/actor producer or gameplay/reveal deadline claim.')
     if args.scene_hidden:report['limits']=[x.replace('CPU32color publish in guarded blank','CPU32color publish while display is disabled') for x in report['limits']]+['Hidden H32 mode: display disabled before clock start, kept off through all pattern/map/palette jobs, enabled only after successful flush. Hidden small-DMA path excludes duplicated rawV229..234 and retains age/grant/refresh/error guards. No H40 change; timing and display intervals require physical capture. The fixture reveal boundary is not yet the original game enable deadline.']
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')

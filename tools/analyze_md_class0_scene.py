@@ -19,7 +19,7 @@ def main():
  hvc=(ROOT.parents[1]/'work/genesis-plus-gx/core/hvc.h').read_bytes();section=hvc.decode().split('static const uint8 cycle2hc32[3420] =')[1].split('};')[0];h=[int(v,16) for v in re.findall('0x([0-9a-fA-F]+)',section)];assert len(h)==3420
  results=[]
  for variant in args.variants:
-  folder=ROOT/('validation/md-z80-psg-'+variant);raw_report=read(ROOT/('analysis/md_z80_psg_'+variant.replace('-','_')+'_report.json'));report=json.loads(raw_report);assert report['video_scene'];hidden=report.get('scene_hidden',False)
+  folder=ROOT/('validation/md-z80-psg-'+variant);raw_report=read(ROOT/('analysis/md_z80_psg_'+variant.replace('-','_')+'_report.json'));report=json.loads(raw_report);assert report['video_scene'];hidden=report.get('scene_hidden',False);sprite=report.get('scene_sprite8',False)
   symbols={m[2]:int(m[1],16) for line in read(folder/'out/release/symbol.txt').decode().splitlines() if (m:=re.match('([0-9a-fA-F]+) [a-zA-Z] (.+)',line))}
   scene=next(v for k,v in symbols.items() if k.split('.')[0]=='scene');kernel=read(folder/'out/release/rom.bin');assert sha(kernel)==report['kernel_sha256']
   # Reviewed A1 control/D0 length/D4,D3,D1 source/A2 scene address,
@@ -33,19 +33,26 @@ def main():
   hidden_backoff=bytes.fromhex('227c00c00004328132bc9400328a3287328b3039')+(scene+10).to_bytes(4,'big')+bytes.fromhex('32803039')+(scene+12).to_bytes(4,'big')+bytes.fromhex('328030bc0000')
   hidden_prepared=bytes.fromhex('207c00c00004308330bc9400308b308a30853039')+(scene+10).to_bytes(4,'big')+bytes.fromhex('30803039')+(scene+12).to_bytes(4,'big')+bytes.fromhex('308032bc0000')
   hidden_grant=bytes.fromhex('207c00c00004308430bc9400308b308a30863039')+(scene+10).to_bytes(4,'big')+bytes.fromhex('30803039')+(scene+12).to_bytes(4,'big')+bytes.fromhex('308032bc0000')
-  candidates=[hidden_signature,hidden_backoff,hidden_prepared,hidden_grant] if hidden else [signature,alternate];assert sum(kernel.count(v) for v in candidates)==1
+  shared_hidden=bytes.fromhex('227c00c00004328232bc9400328732863285246f0020322a000a3281322a000c328130bc0000')
+  candidates=[shared_hidden] if sprite else [hidden_signature,hidden_backoff,hidden_prepared,hidden_grant] if hidden else [signature,alternate];assert sum(kernel.count(v) for v in candidates)==1
   signature=next(v for v in candidates if kernel.count(v)==1);commit_pc=kernel.index(signature)+len(signature)
   if hidden:
    start_pc=commit_pc-len(signature)
    # Retained A1 (or A0 in backoff allocation) owns BUSREQ in this held path.
-   held_prefix=kernel[start_pc-(112 if signature==hidden_grant else 106):start_pc]
-   assert held_prefix.startswith(bytes.fromhex('207c00a1110030100800000866f2' if signature==hidden_backoff else '227c00a1110030110800000866f2'))
-   assert bytes.fromhex('303900c00008') in held_prefix
-   assert bytes.fromhex('0201007f' if signature==hidden_grant else '0606001b0c060005' if signature in [hidden_backoff,hidden_prepared] else '0607001b0c070005') in held_prefix
+   held_prefix=kernel[start_pc-(98 if sprite else 112 if signature==hidden_grant else 106):start_pc]
+   assert held_prefix.startswith(bytes.fromhex('207c00a1110030100800000866f2' if sprite or signature==hidden_backoff else '227c00a1110030110800000866f2'))
+   assert bytes.fromhex('323900c00008' if sprite else '303900c00008') in held_prefix
+   assert bytes.fromhex('0604001b0c040005' if sprite else '0201007f' if signature==hidden_grant else '0606001b0c060005' if signature in [hidden_backoff,hidden_prepared] else '0607001b0c070005') in held_prefix
    reg=next(v for k,v in symbols.items() if k.split('.')[0]=='regValues')+1
    word=lambda x:x.to_bytes(4,'big')
    off=bytes.fromhex('207c00c0001030801039')+word(reg)+bytes.fromhex('0200ffbf13c0')+word(reg)+bytes.fromhex('024000ff0040810033c000c0000430bc003d')
    on=bytes.fromhex('1039')+word(reg)+bytes.fromhex('0000004013c0')+word(reg)+bytes.fromhex('024000ff0040810033c000c0000433fc003e00c00010')
+   if sprite:
+    on_candidates=[on,bytes.fromhex('1039')+word(reg)+bytes.fromhex('0000004013c0')+word(reg)+bytes.fromhex('024000ff0040810033c000c0000430bc003e')]
+    assert sum(kernel.count(v) for v in on_candidates)==1
+    on=next(v for v in on_candidates if kernel.count(v)==1)
+    sprite_end_signature=bytes.fromhex('207c00c0001030bc002d');assert kernel.count(sprite_end_signature)==1
+    sprite_end_pc=kernel.index(sprite_end_signature)+len(sprite_end_signature)
    assert kernel.count(off)==kernel.count(on)==1
    off_pc=kernel.index(off)+len(off);on_pc=kernel.index(on)+len(on)
   driver=read(folder/'driver.bin');listing=read(folder/'driver.lst').decode();assert sha(driver)==report['driver_sha256']
@@ -64,7 +71,7 @@ def main():
    for n,mark in enumerate(marks):
     part=events[mark+1:marks[n+1] if n+1<len(marks) else len(events)];ref=rr['rows'][n];assert ref['marker']==events[mark][2]
     origin=next(e[1]//3420*3420 for e in part if e[0]==6 and e[2]>>8==100)
-    phases={tag:[e[1] for e in part if e[0]==3 and e[2]==tag] for tag in [0x38,0x39,0x3a,0x3b,0x3c,0x3d,0x3e]}
+    phases={tag:[e[1] for e in part if e[0]==3 and e[2]==tag] for tag in [0x38,0x39,0x3a,0x3b,0x3c,0x3d,0x3e,0x2c,0x2d]}
     assert all(len(phases[tag])==1 for tag in [0x38,0x39,0x3a]);assert phases[0x38][0]<phases[0x39][0]<phases[0x3a][0]<origin+ref['loader_finish_master']
     if hidden:
      assert len(phases[0x3d])==len(phases[0x3e])==1
@@ -79,6 +86,24 @@ def main():
        all_holds.append((start,e[1]))
        if e[3]==commit_pc:commits.append((start,e[1]))
        start=None
+    sprite_commits=[]
+    if sprite:
+     assert len(phases[0x2c])==len(phases[0x2d])==1
+     sprite_begin,sprite_end=phases[0x2c][0],phases[0x2d][0]
+     assert all(e[3]==sprite_end_pc for e in part if e[0]==3 and e[2]==0x2d)
+     assert phases[0x3a][0]<sprite_begin<sprite_end<on_tick
+     sat_symbol=next((v for k,v in symbols.items() if k.split('.')[0]=='sprite8_sat'),None)
+     if sat_symbol is None:
+      # Empty input is constant-folded: no SAT object survives in ROM.
+      assert report['scene_sprite8_case']==3
+      header=read(folder/'src/sprite8-input.h').decode();raw_sat=bytes(map(int,re.search(r'sprite8_sat\[\]=\{([0-9,]+)\}',header)[1].split(',')))
+      assert raw_sat==bytes([208])*192 and rr['video']['sprite8']['sprites']==0
+     else:raw_sat=kernel[sat_symbol:sat_symbol+192]
+     assert sha(raw_sat)==rr['video']['sprite8']['input_sat_sha256']
+     sprite_count=next((i for i,v in enumerate(raw_sat[:64]) if v==208),64);sprite_jobs=(sprite_count+3)//4+4
+     sprite_commits=[(a,b) for a,b in commits if sprite_begin<a<b<sprite_end]
+     commits=[(a,b) for a,b in commits if b<sprite_begin]
+     assert len(sprite_commits)==sprite_jobs
     assert len(commits)==73
     beams=[e for e in part if e[0]==4];bt=[e[1] for e in beams];zt=[e[1] for e in part if e[0]==6];hold=[];guard_values=[]
     for k,(a,b) in enumerate(commits):
@@ -88,6 +113,15 @@ def main():
      v=beam(held[0]);guard_values.append(v);assert not 229<=v<=234 if hidden else (224<=v<=228 or 235<=v<=252)
      assert b-held[0][1]<6840 and b-a<17100
      assert bisect_right(zt,held[0][1])==bisect_left(zt,b);hold.append(b-a)
+    sprite_holds=[]
+    if sprite:
+     for a,b in sprite_commits:
+      assert off_tick<a<b<on_tick
+      held=beams[bisect_right(bt,a):bisect_left(bt,b)];assert len(held)==1
+      assert not 229<=beam(held[0])<=234
+      assert b-held[0][1]<6840 and b-a<17100
+      assert bisect_right(zt,held[0][1])==bisect_left(zt,b)
+      sprite_holds.append(b-a)
     if fresh:
      grants=[e for e in part if e[0]==6 and e[3]==grant_pc];grant_times=[e[1] for e in grants];assert grants
      for k,(a,b) in enumerate(commits):
@@ -108,10 +142,12 @@ def main():
     rows.append(dict(marker=ref['marker'],dma_commits=73,pattern_spans=49,map_rows=24,hold_max=max(hold),private_gap_max=max(gaps),during_loader=sum(b-origin<ref['loader_finish_master'] for a,b in commits),palette_trace_master=palette_ticks,last_dma_after_loader_frames=max(0,commits[-1][1]-origin-ref['loader_finish_master'])/(lines*3420)))
     if hidden:
      rows[-1].update(dma_outside_physical_vblank=sum(not blank(a,b) for a,b in commits),hidden_master=on_tick-off_tick,reveal_after_last_dma_master=on_tick-commits[-1][1])
+    if sprite:
+     rows[-1].update(sprite_dma_commits=len(sprite_commits),sprite_pattern_spans=sprite_jobs-4,sprite_sat_spans=4,sprite_hold_max=max(sprite_holds),sprite_finish_to_reveal_master=on_tick-sprite_end)
     if args.admission_metrics:
      held_checks=[(a,b) for a,b in all_holds if bisect_right(bt,a)<bisect_left(bt,b)]
-     failed_checks=[(a,b) for a,b in held_checks if (a,b) not in commits]
-     assert len(held_checks)==len(failed_checks)+73
+     failed_checks=[(a,b) for a,b in held_checks if (a,b) not in commits and (a,b) not in sprite_commits]
+     assert len(held_checks)==len(failed_checks)+73+len(sprite_commits)
      hold_starts=[a for a,b in all_holds]
      rows[-1].update(successful_guard_raw_v=sorted(set(guard_values)),held_beam_checks=len(held_checks),held_checks_without_commit=len(failed_checks),failed_hold_master_total=sum(b-a for a,b in failed_checks),failed_hold_master_max=max([b-a for a,b in failed_checks] or [0]),beam_reads_outside_holds=sum((i:=bisect_left(hold_starts,e[1])-1)<0 or e[1]>=all_holds[i][1] for e in beams))
     if args.schedule_metrics:
@@ -124,10 +160,12 @@ def main():
       assert begin<end<on_tick
       rows[-1].update(delivery_wait_master=end-begin,dma_during_delivery=sum(begin<a<b<end for a,b in commits))
    results.append(dict(variant=variant,region=region,kernel_sha256=report['kernel_sha256'],report_sha256=sha(raw_report),events_sha256=sha(raw),signature_hex=signature.hex(),commit_pc=commit_pc,dma_commits=sum(r['dma_commits'] for r in rows),during_loader=sum(r['during_loader'] for r in rows),hold_max=max(r['hold_max'] for r in rows),private_gap_max=max(r['private_gap_max'] for r in rows),palette_trace=trace,rows=rows))
+   if sprite:results[-1].update(sprite_dma_commits=sum(r['sprite_dma_commits'] for r in rows),sprite_hold_max=max(r['sprite_hold_max'] for r in rows),shared_backend=True)
    if hidden:results[-1].update(hidden=True,off_pc=off_pc,on_pc=on_pc,dma_outside_physical_vblank=sum(r['dma_outside_physical_vblank'] for r in rows))
    print({k:v for k,v in results[-1].items() if k not in ['rows','signature_hex']},flush=True)
  output=dict(hvc_sha256=sha(hvc),results=results,limits=['Commits identified by unique reviewed native instruction signature, not counters/duration. All DMA holds and native HV guards independently checked in physical VBlank; FIFO49pattern spans then24map rows, phase availability and private clock gaps verified. Palette CPU write/readback span checked only in trace-enabled kernels; default path has final CRAM and native per-case readback evidence, not a physical CPU-span trace. Native IRQs masked, display remains enabled during pipeline, sprites absent. No fullboot/fullgame/real-hardware/frame-deadline/waveform claim.'])
  if any(r.get('hidden') for r in results):
   output['limits']=['Hidden DMA commits use unique reviewed native signatures and reviewed display-bit clear/set sequences bound to marker PCs. All commits and traced palette spans lie inside the fixture display-off interval. H32 HV guards, raw duplicated-counter exclusion, FIFO phases, held intervals and strict private Z80 sample gaps independently checked. Default palette path has final CRAM evidence without a physical CPU span trace. Display restoration occurs at fixture flush, not the original game reveal deadline. IRQs masked; sprites/fullboot/fullgame/hardware/waveform and production integration remain unproven.']
+ if any(r.get('shared_backend') for r in results):output['limits'].append('Sprite variants use a reviewed shared hidden-backend signature with job-relative command reads and BUSREQ release through A0. Marks2C/2D separate sprite spans from the73background spans; expected sprite count comes from SAT bytes in the actual kernel. Sprite clones and all64MD SAT entries publish before display enable; all held HV/clock bounds independently checked. Snapshot renderer input does not prove native actor/SAT production or original reveal deadline.')
  (ROOT/'analysis'/args.report_name).write_text(json.dumps(output,indent=2)+'\n')
 if __name__=='__main__':main()
