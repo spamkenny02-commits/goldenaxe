@@ -1,0 +1,33 @@
+{
+  "kernel_sha256": "d1def8cfaf02fa39cb82e0a7ed13f3e8bc544ad6a5473188ab7bf4a0321d0037",
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 56,
+      "updates": 4,
+      "ram_sha256": "cf3d87e9f8662c2dc2afc1cff09757e919b3e2b477d7752eaf9db06e8bad9f15",
+      "vram_sha256": "26756882a866107709a5c743f8dbf4bcb23b8d0091210385ccd63cf66a9dc689",
+      "registers_sha256": "f70555b7a8eafd5ce85d339caf7cdfbd20254adcd9eabd361e4889e5950a1b09",
+      "prefix_events": 5990,
+      "prefix_sha256": "c8827f1b3d5770d6eec0c234f70ffee450fc07eb207dffbc39a1f5ac4e54e3a1",
+      "original_events_sha256": "d7b625bcb5a1089fcd1127082bdc5f0c79c7e1caab210ce7aeabd1d4e48b1e2d",
+      "image_sha256": "e3dbeeed296a76e3d3743c49efda3ebc6467597993302194f18fafc93aa6e57b"
+    },
+    {
+      "region": "pal",
+      "frame": 48,
+      "updates": 2,
+      "ram_sha256": "3405801f9548cb1a0118b0f28a255cb97e1c9e6d2330eab1325494098573637a",
+      "vram_sha256": "26756882a866107709a5c743f8dbf4bcb23b8d0091210385ccd63cf66a9dc689",
+      "registers_sha256": "f70555b7a8eafd5ce85d339caf7cdfbd20254adcd9eabd361e4889e5950a1b09",
+      "prefix_events": 9056,
+      "prefix_sha256": "c0ecf0f7746324321932518ec6b4354faad243ae40181f78e8e25ab7f36d9569",
+      "original_events_sha256": "e3eac2a2c00b245d5b1143fea851cd2adf93b5d2cd126bc5789efecf417947ef",
+      "image_sha256": "e3dbeeed296a76e3d3743c49efda3ebc6467597993302194f18fafc93aa6e57b"
+    }
+  ],
+  "limits": [
+    "A readonly intermediate snapshot after an even-numbered upload proves tile data differs from initialization and equals the requested DMA pattern. DMA enable/zero remaining length checked; observed IO trace is exactly the original full-run prefix.",
+    "Same frame RAM/VRAM agree with the plain core. This is a targeted positive transfer witness, not every-job payload or renderer/frame-deadline proof."
+  ]
+}

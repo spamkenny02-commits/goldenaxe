@@ -50,8 +50,16 @@ def main():
         report=json.loads(report_raw);kernel=read(folder/'out/release/rom.bin')
         symbols={m[2]:int(m[1],16) for line in read(folder/'out/release/symbol.txt').decode().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))}
         clock_hv_pc=symbols['md_service_clock_hv']+6
-        assert sha(kernel)==report['kernel_sha256'] and sum(kernel.count(s) for s in signatures)==1
-        selected=next(s for s in signatures if kernel.count(s)==1)
+        candidates=list(signatures)
+        if report.get('video_job_prepared',False):
+            # Reviewed LTO form: command words at the caller-owned RAM token,
+            # not the old temporary stack object. Verify both exact addresses.
+            job=symbols['video_job']
+            candidates.append(bytes.fromhex('207c00c0000430bc931030bc94003082308130803039')+
+                (job+8).to_bytes(4,'big')+bytes.fromhex('30803039')+
+                (job+10).to_bytes(4,'big')+bytes.fromhex('308032bc0000'))
+        assert sha(kernel)==report['kernel_sha256'] and sum(kernel.count(s) for s in candidates)==1
+        selected=next(s for s in candidates if kernel.count(s)==1)
         committed_pc=kernel.index(selected)+len(selected)
         for region_report in report['results']:
             region=region_report['region'];lines=262 if region=='ntsc' else 313

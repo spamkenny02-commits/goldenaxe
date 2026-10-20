@@ -98,6 +98,13 @@ fois réduit le retard audio de la fixture vers 3,4 ms, mais ne résout pas le
 débit vidéo. Ces essais restent hors de la ROM jouable ; la suite porte sur
 le coût des tentatives et les frontières de service du chargement/rendu.
 
+Le [transfert vidéo préparé](analysis/md_z80_prepared_video_milestone.md)
+réduit ensuite le pire vidage après chargement de 122 à 37 images NTSC et
+de 68 à 19 images PAL sur cette même fixture. Les contrôles source, audio
+et VRAM passent. Presque tous les transferts restent après le chargement :
+les échéances du vrai rendu restent à établir. Ce jalon expérimental ne
+modifie pas la v0203.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,

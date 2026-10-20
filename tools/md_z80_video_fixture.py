@@ -19,7 +19,7 @@ static void video_setup(void) {
 '''
 
 
-def instrument(main, cpu_writes, dma=False, service_stride=0, cache_pattern=False):
+def instrument(main, cpu_writes, dma=False, service_stride=0, cache_pattern=False, prepared_job=False):
     video=VIDEO
     if dma:
         video=video.replace('volatile u32 gaw_video_updates;', 'volatile u32 gaw_video_updates,gaw_video_requests,gaw_video_dma_attempts;')
@@ -49,6 +49,14 @@ static void video_flush(void) {
             assert video.count(needle)==1
             video=video.replace(needle,' if(!video_pattern_prepared) {\n'+needle+'\n video_pattern_prepared=1;gaw_video_pattern_preparations++;\n }')
             video=video.replace(' if(status==MD_Z80_PSG_OK) gaw_video_updates++;', ' if(status==MD_Z80_PSG_OK) {gaw_video_updates++;video_pattern_prepared=0;}')
+        if prepared_job:
+            video=video.replace('static u8 video_pattern_prepared;', 'static u8 video_pattern_prepared;static MdZ80VideoDmaJob video_job;\nvolatile u32 gaw_video_job_preparations;')
+            needle=' video_pattern_prepared=1;gaw_video_pattern_preparations++;'
+            assert video.count(needle)==1
+            video=video.replace(needle,''' if(md_z80_video_dma_prepare(&video_job,video_pattern,1)) {fault(0xf20);return;}
+ gaw_video_job_preparations++;
+'''+needle)
+            video=video.replace('status=md_z80_video_dma_try(&mailbox,video_pattern,1);','status=md_z80_video_dma_try_prepared(&mailbox,&video_job);')
         if service_stride:
             video+='''
 volatile u32 gaw_video_service_calls;

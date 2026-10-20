@@ -91,6 +91,7 @@ def main():
     parser.add_argument('--video-service',type=int,default=0,help='Pump DMA every N source-clock function boundaries (power of two)')
     parser.add_argument('--video-service-kind',choices=['all','repeat-disabled'],default='all',help='Choose all clock functions or only disabled repetition batch boundaries')
     parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
+    parser.add_argument('--video-prepared-job',action='store_true',help='Retain prepared DMA control words across retries too')
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
@@ -107,6 +108,7 @@ def main():
     assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
     assert not args.video_cache_pattern or args.video=='dma'
+    assert not args.video_prepared_job or args.video_cache_pattern
     assert args.video_service_kind=='all' or args.video_service
     assert not args.live_loader or (args.variant and not args.expect_prefetch and not args.phase_offset)
     suffix='-'+args.variant if args.variant else ''
@@ -149,7 +151,7 @@ def main():
         (folder/'live-kernel.py.snapshot').write_bytes((ROOT/'tools/md_live_z80_kernel.py').read_bytes())
     if args.video!='off':
         from md_z80_video_fixture import instrument
-        main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern)
+        main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern,args.video_prepared_job)
         (folder/'video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_video_fixture.py').read_bytes())
     (src/'main.c').write_text(main);(src/'wrapper.c').write_text(body);(folder/'validator.py.snapshot').write_bytes((ROOT/'tools/validate_md_z80_psg.py').read_bytes())
     modules=list(dict.fromkeys([n for n in MODULES if n!='source_irq_context']+TIMED_MODULES+['source_audio_fast_timed','source_irq_queue_context','source_psg_queue','source_psg_stream','source_md_psg_plan','md_service_clock','md_service_clock_start','md_z80_psg','md_z80_psg_start']))
@@ -208,6 +210,7 @@ def main():
             if args.video=='dma':observed.update(video_requests=value('gaw_video_requests',4),video_dma_attempts=value('gaw_video_dma_attempts',4))
             if args.video_service:observed['video_service_calls']=value('gaw_video_service_calls',4)
             if args.video_cache_pattern:observed['video_pattern_preparations']=value('gaw_video_pattern_preparations',4)
+            if args.video_prepared_job:observed['video_job_preparations']=value('gaw_video_job_preparations',4)
             for e in events[-size:] if size else []:
                 if e[0]==3 and (64<=e[2]<=89 or 128<=e[2]<176):active[0]=e[2]
             stamp=[ram[(mb+i)^1] for i in range(6)]
@@ -323,6 +326,7 @@ def main():
             assert observed['video_updates']==1+(sum(x['publisher_callbacks'] for x in rows) if args.video in ['cpu','dma'] else 0)
             if args.video=='dma':assert observed['video_requests']==observed['video_updates']-1 and observed['video_dma_attempts']>=observed['video_requests']
             if args.video_cache_pattern:assert observed['video_pattern_preparations']==observed['video_requests']
+            if args.video_prepared_job:assert observed['video_job_preparations']==observed['video_requests']
             video_evidence=dict(mode=args.video,updates=observed['video_updates'],colors=len(colors),vram_sha256=sha(vram),registers_sha256=sha(regs),image_sha256=sha((capture/f'frame_{frame:05d}.png').read_bytes()))
         result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw))
         if video_evidence:result['video']=video_evidence
@@ -336,6 +340,8 @@ def main():
     report['video_service_stride']=args.video_service
     report['video_service_kind']=args.video_service_kind
     report['video_pattern_cached']=args.video_cache_pattern
+    report['video_job_prepared']=args.video_prepared_job
+    if args.video=='dma':report['headers']['md_z80_video_dma.h']=sha((ROOT/'megadrive/src/md_z80_video_dma.h').read_bytes())
     if args.live_loader:
         report['loader_boundary_before_clock_query']=True
         report['deferred_publication']=args.deferred
@@ -354,6 +360,9 @@ def main():
         if args.video=='dma':report['limits'].append('DMA experiment queues one deterministic diagnostic tile job per callback, tries only with grant/even stamp at most2raw lines old in rawV235..252 (excluding NTSC duplicate range), rechecks after BUSREQ. Precomputed fixed32byte DMA command words issued only inside the granted critical section, source128KiB boundary checked; SGDK auto-increment set before acquisition. Jobs are retained in order and all drained while Z80 clock is still active before stop; some may complete after loader/audio delivery markers. No job frame deadlines or game renderer queue are established; native IRQs remain masked.')
         if args.video_service:report['limits'].append('Video service experiment wraps the selected source_clock function boundaries (all four or only repeat_disabled) and attempts DMA every configured number of boundaries. Inline source_clock_block and computation inside helpers are not serviced. Adds native cost without changing the logical source clock; no maximum service interval or frame deadline is established.')
         if args.video_cache_pattern:report['limits'].append('Diagnostic tile payload is prepared once per queued job and remains intact across WAIT, reset after successful DMA. This removes fixture preparation overhead; DMA primitive/control preparation and its guards remain unchanged. No renderer payload/deadline claim.')
+        if args.video_prepared_job:
+            report['limits']=[x.replace('grant/even stamp','grant and atomic8bit V stamp') for x in report['limits']]
+        if args.video_prepared_job:report['limits'].append('DMA control token prepared once per immutable diagnostic payload, retained across WAIT and consumed on OK. Bus/timestamp/window are rechecked each attempt. Mode/ownership/source lifetime must remain intact; no renderer frame deadline is established.')
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
