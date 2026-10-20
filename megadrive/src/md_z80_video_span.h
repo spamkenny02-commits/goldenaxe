@@ -35,4 +35,9 @@ u8 md_z80_video_span_try_refresh(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
  * keeps display disabled through the transfer. Same ownership and age gates;
  * no restriction to VBlank, no H40 switch. Timer safety still needs capture. */
 u8 md_z80_video_span_try_hidden(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
+/* Advisory early age rejection only; all held-bus guards remain active. */
+u8 md_z80_video_span_try_hidden_preflight(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
+u8 md_z80_video_span_try_hidden_preflight_prepared(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
+/* Fresh-grant capability required; reconstruct rawV modulo128 within age. */
+u8 md_z80_video_span_try_hidden_grant(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
 #endif

@@ -140,3 +140,92 @@ u8 md_z80_video_span_try_hidden(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job)
     *control=parts[0];*control=parts[1];
     Z80_releaseBus();job->ready=0;return MD_Z80_PSG_OK;
 }
+
+/* Optional preflight variant; the existing hidden API stays unchanged. */
+u8 md_z80_video_span_try_hidden_preflight(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job)
+{
+    u8 v,current,age;u16 low,mid,high,length;
+    volatile u16 *parts,*control=(volatile u16*)VDP_CTRL_PORT;
+    if(!mailbox || !in_ram(job) || (job->ready!=0xd580 && job->ready!=0xd600) ||
+       job->length_low>0x9340 || VDP_isEnable() || VDP_getScreenWidth()!=256 ||
+       VDP_getScreenHeight()!=224) return MD_Z80_PSG_INVALID;
+    if(mailbox->stamp.error) return MD_Z80_PSG_FAULT;
+    if(!mailbox->stamp.ready) return MD_Z80_PSG_WAIT;
+    if(!(mailbox->stamp.ready&MD_Z80_VIDEO_SPAN_REFRESH_CAP)) return MD_Z80_PSG_INVALID;
+    if(!mailbox->grant) return MD_Z80_PSG_WAIT;
+    /* Advisory only: reject a stale offer before seizing the bus. A fresh
+     * publication may race this read; the held checks remain authoritative. */
+    length=job->length_low;age=length==0x9310?2:1;
+    v=mailbox->stamp.v;current=*(volatile u16*)0xc00008>>8;
+    if((v>=229 && v<=234) || (current>=229 && current<=234) || (u8)(current-v)>age)
+        return MD_Z80_PSG_WAIT;
+    VDP_setAutoInc(2);low=job->source_low;mid=job->source_mid;high=job->source_high;
+    length=job->length_low;age=length==0x9310?2:1;parts=(volatile u16*)&job->command;
+    Z80_requestBus(TRUE);
+    if(mailbox->stamp.error) {Z80_releaseBus();return MD_Z80_PSG_FAULT;}
+    v=mailbox->stamp.v;current=*(volatile u16*)0xc00008>>8;
+    if(!mailbox->stamp.ready || !mailbox->grant || VDP_isEnable() ||
+       (v>=229 && v<=234) || (current>=229 && current<=234) || (u8)(current-v)>age)
+    {Z80_releaseBus();return MD_Z80_PSG_WAIT;}
+    *control=length;*control=0x9400;*control=low;*control=mid;*control=high;
+    *control=parts[0];*control=parts[1];
+    Z80_releaseBus();job->ready=0;return MD_Z80_PSG_OK;
+}
+
+/* Preload controls first, then reject stale offers immediately before BUSREQ. */
+u8 md_z80_video_span_try_hidden_preflight_prepared(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job)
+{
+    u8 v,current,age;u16 low,mid,high,length;
+    volatile u16 *parts,*control=(volatile u16*)VDP_CTRL_PORT;
+    if(!mailbox || !in_ram(job) || (job->ready!=0xd580 && job->ready!=0xd600) ||
+       job->length_low>0x9340 || VDP_isEnable() || VDP_getScreenWidth()!=256 ||
+       VDP_getScreenHeight()!=224) return MD_Z80_PSG_INVALID;
+    if(mailbox->stamp.error) return MD_Z80_PSG_FAULT;
+    if(!mailbox->stamp.ready) return MD_Z80_PSG_WAIT;
+    if(!(mailbox->stamp.ready&MD_Z80_VIDEO_SPAN_REFRESH_CAP)) return MD_Z80_PSG_INVALID;
+    if(!mailbox->grant) return MD_Z80_PSG_WAIT;
+    VDP_setAutoInc(2);low=job->source_low;mid=job->source_mid;high=job->source_high;
+    length=job->length_low;age=length==0x9310?2:1;parts=(volatile u16*)&job->command;
+    /* Advisory only: reject a stale offer before seizing the bus. A fresh
+     * publication may race this read; the held checks remain authoritative. */
+    v=mailbox->stamp.v;current=*(volatile u16*)0xc00008>>8;
+    if((v>=229 && v<=234) || (current>=229 && current<=234) || (u8)(current-v)>age)
+        return MD_Z80_PSG_WAIT;
+    Z80_requestBus(TRUE);
+    if(mailbox->stamp.error) {Z80_releaseBus();return MD_Z80_PSG_FAULT;}
+    v=mailbox->stamp.v;current=*(volatile u16*)0xc00008>>8;
+    if(!mailbox->stamp.ready || !mailbox->grant || VDP_isEnable() ||
+       (v>=229 && v<=234) || (current>=229 && current<=234) || (u8)(current-v)>age)
+    {Z80_releaseBus();return MD_Z80_PSG_WAIT;}
+    *control=length;*control=0x9400;*control=low;*control=mid;*control=high;
+    *control=parts[0];*control=parts[1];
+    Z80_releaseBus();job->ready=0;return MD_Z80_PSG_OK;
+}
+
+/* Whole-frame small spans using the fresh post-resample grant stamp. */
+u8 md_z80_video_span_try_hidden_grant(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job)
+{
+    u8 v,current,age,grant;u16 low,mid,high,length;
+    volatile u16 *parts,*control=(volatile u16*)VDP_CTRL_PORT;
+    if(!mailbox || !in_ram(job) || (job->ready!=0xd580 && job->ready!=0xd600) ||
+       job->length_low>0x9340 || VDP_isEnable() || VDP_getScreenWidth()!=256 ||
+       VDP_getScreenHeight()!=224) return MD_Z80_PSG_INVALID;
+    if(mailbox->stamp.error) return MD_Z80_PSG_FAULT;
+    if(!mailbox->stamp.ready) return MD_Z80_PSG_WAIT;
+    if((mailbox->stamp.ready&(MD_Z80_VIDEO_SPAN_REFRESH_CAP|MD_Z80_VIDEO_SPAN_GRANT_CAP))!=(MD_Z80_VIDEO_SPAN_REFRESH_CAP|MD_Z80_VIDEO_SPAN_GRANT_CAP)) return MD_Z80_PSG_INVALID;
+    if(!mailbox->grant) return MD_Z80_PSG_WAIT;
+    VDP_setAutoInc(2);low=job->source_low;mid=job->source_mid;high=job->source_high;
+    length=job->length_low;age=length==0x9310?2:1;parts=(volatile u16*)&job->command;
+    Z80_requestBus(TRUE);
+    if(mailbox->stamp.error) {Z80_releaseBus();return MD_Z80_PSG_FAULT;}
+    grant=mailbox->grant;current=*(volatile u16*)0xc00008>>8;
+    /* Fresh grant carries rawV modulo128. Reconstruct only an offer at most
+     * age lines behind current V; near-target paths revoke grants first. */
+    v=(u8)(current-((current-(grant>>1))&127));
+    if(!(mailbox->stamp.ready&MD_Z80_VIDEO_SPAN_GRANT_CAP) || !grant || VDP_isEnable() ||
+       (v>=229 && v<=234) || (current>=229 && current<=234) || (u8)(current-v)>age)
+    {Z80_releaseBus();return MD_Z80_PSG_WAIT;}
+    *control=length;*control=0x9400;*control=low;*control=mid;*control=high;
+    *control=parts[0];*control=parts[1];
+    Z80_releaseBus();job->ready=0;return MD_Z80_PSG_OK;
+}

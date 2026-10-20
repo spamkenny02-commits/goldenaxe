@@ -98,6 +98,9 @@ def main():
     parser.add_argument('--scene-service-commits',type=int,default=1,help='Bound successful video jobs at each source service/checkpoint')
     parser.add_argument('--scene-service-slack',action='store_true',help='Only batch video when native source logical clock leads physical clock by more than17100 master ticks')
     parser.add_argument('--scene-grant-backoff',action='store_true',help='Skip retained scene WAIT retries until grant and a new publication sequence')
+    parser.add_argument('--scene-admission-preflight',action='store_true',help='Reject stale hidden DMA offers before BUSREQ, retaining held checks')
+    parser.add_argument('--scene-preflight-after-prepare',action='store_true',help='Run advisory age gate after control preloads, directly before BUSREQ')
+    parser.add_argument('--scene-fresh-grant',action='store_true',help='Use post-resample encoded grant timestamp for hidden small spans')
     parser.add_argument('--scene-hidden',action='store_true',help='Keep display off for whole-frame bounded H32 transfers')
     parser.add_argument('--scene-native-palette',action='store_true',help='Compile default palette path without diagnostic trace hook')
     parser.add_argument('--video-scene',action='store_true',help='Native193tile/map/palette pipeline with ROM resident assets')
@@ -128,9 +131,12 @@ def main():
     assert args.video_scene or (args.scene_service_attempts==1 and args.scene_service_commits==1)
     assert not args.scene_service_slack or (args.video_scene and args.scene_service_attempts>1)
     assert not args.scene_grant_backoff or args.video_scene
+    assert not args.scene_preflight_after_prepare or args.scene_admission_preflight
+    assert not args.scene_fresh_grant or (args.scene_hidden and args.driver=='md_psg_grant_z80.asm' and not args.scene_admission_preflight)
+    assert not args.scene_admission_preflight or args.scene_hidden
     assert not args.scene_hidden or args.video_scene
     assert not args.scene_native_palette or args.video_scene
-    assert not args.video_scene or (args.video=='dma' and args.live_loader and args.video_service==1 and args.video_service_kind in ('repeat-disabled','repeat-batches') and args.driver=='md_psg_refresh_z80.asm' and not args.video_source_patterns and not args.video_cache_pattern and not args.video_prepared_job)
+    assert not args.video_scene or (args.video=='dma' and args.live_loader and args.video_service==1 and args.video_service_kind in ('repeat-disabled','repeat-batches') and args.driver in ('md_psg_refresh_z80.asm','md_psg_grant_z80.asm') and not args.video_source_patterns and not args.video_cache_pattern and not args.video_prepared_job)
     assert not args.video_source_phases or (args.video_source_patterns and args.video_service and args.video_service_kind=='repeat-disabled' and args.video_source_tiles==4)
     assert not args.video_grant_backoff or (args.video_source_refresh and args.driver in ('md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
     assert not args.video_source_refresh or (args.video_source_patterns and args.video_source_tiles>1 and args.driver in ('md_psg_refresh_z80.asm','md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
@@ -215,6 +221,8 @@ def main():
         for name in ['source_class0_video','md_class0_video_stream']:(src/(name+'.h')).write_text('#include "../../../megadrive/src/'+name+'.h"\n')
     for module in modules:
         prefix='#define source_irq_interrupt source_irq_queue_interrupt\n' if module!='source_irq_queue_context' else ''
+        if args.scene_fresh_grant and module=='md_class0_video_stream':prefix+='#define md_z80_video_span_try_hidden md_z80_video_span_try_hidden_grant\n'
+        if args.scene_admission_preflight and module=='md_class0_video_stream':prefix+='#define md_z80_video_span_try_hidden md_z80_video_span_try_hidden_preflight'+('_prepared' if args.scene_preflight_after_prepare else '')+'\n'
         if args.video_scene and not args.scene_native_palette and module=='md_class0_video_stream':prefix+='#define MD_CLASS0_PALETTE_TRACE(v) (*(volatile unsigned short*)0xc00010=(v))\n'
         (src/(module+'.c')).write_text(prefix+'#include "../../../megadrive/src/'+module+'.c"\n')
     if args.service or args.video_service:
@@ -457,6 +465,9 @@ def main():
     report['video_fixture']=args.video
     report['video_scene']=args.video_scene
     report['scene_hidden']=args.scene_hidden
+    report['scene_fresh_grant']=args.scene_fresh_grant
+    report['scene_admission_preflight']=args.scene_admission_preflight
+    report['scene_preflight_after_prepare']=args.scene_preflight_after_prepare
     report['scene_service_attempts']=args.scene_service_attempts
     report['scene_service_commits']=args.scene_service_commits
     report['scene_service_slack']=args.scene_service_slack
@@ -521,6 +532,9 @@ def main():
     if args.scene_service_slack:report['limits'].append('Each service batch queries the independently checked Z80/beam clock and steps only while source logical time leads physical time by more than17100 ticks. Clock WAIT ends the batch. A private observer copy of the service clock preserves publisher counter/base ownership; source logical clock state is not modified. This reserve is experimental, not a proven bound for the following unserviced native work or a deadline guarantee.')
     if args.scene_grant_backoff:report['limits'].append('Retained scene WAIT caches the sequence observed before the attempt. Caller skips while grant is absent or that publication sequence is unchanged; errors bypass this skip. All native held-bus/time/display checks still run on a real attempt. Reset per scene and on OK; no cached authorization. Sequence wrap can postpone a retry, not authorize a transfer.')
     if args.video_scene and args.video_source_during_delivery:report['limits'].append('Scene video steps also run inside the final audio queue delivery wait, bracketed by markers35/36. Remaining jobs drain afterwards. This is cooperative fixture scheduling, not original reveal deadline acceptance.')
+    if args.scene_admission_preflight:report['limits'].append('Optional hidden preflight reads the offered V and native HV before BUSREQ and rejects stale/duplicated raw V offers. This check is advisory and never authorizes a transfer: full fresh/error/grant/age/display checks run again while held. Existing hidden API remains distinct.')
+    if args.scene_preflight_after_prepare:report['limits'].append('Advisory age probe runs after source/length/autoincrement preloads, immediately before requesting the bus; authoritative held guards remain unchanged. WAIT may already have set autoincrement2, as in the original hidden API.')
+    if args.scene_fresh_grant:report['limits'].append('Hidden small spans require refresh and fresh-grant capabilities. Held grant encodes post-resample rawV modulo128; reconstruct only the preceding raw V within the same1/2line age gate. Driver must revoke grants before near-target/emit paths; native duplicated-V/display/error and strict independent private-gap checks remain active. No larger transfer or age relaxation.')
     if args.scene_hidden:report['limits']=[x.replace('CPU32color publish in guarded blank','CPU32color publish while display is disabled') for x in report['limits']]+['Hidden H32 mode: display disabled before clock start, kept off through all pattern/map/palette jobs, enabled only after successful flush. Hidden small-DMA path excludes duplicated rawV229..234 and retains age/grant/refresh/error guards. No H40 change; timing and display intervals require physical capture. The fixture reveal boundary is not yet the original game enable deadline.']
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')

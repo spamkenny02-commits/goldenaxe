@@ -81,7 +81,7 @@ int main(bool reset) {
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--variant',default='');parser.add_argument('--window-probe',action='store_true');parser.add_argument('--refresh-profile',action='store_true');parser.add_argument('--hidden-profile',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--variant',default='');parser.add_argument('--window-probe',action='store_true');parser.add_argument('--refresh-profile',action='store_true');parser.add_argument('--hidden-profile',action='store_true');parser.add_argument('--hidden-preflight',action='store_true');parser.add_argument('--preflight-prepared',action='store_true');parser.add_argument('--hidden-grant',action='store_true');args=parser.parse_args();assert not args.hidden_grant or (args.hidden_profile and not args.hidden_preflight);assert not args.hidden_preflight or args.hidden_profile;assert not args.preflight_prepared or args.hidden_preflight
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
     suffix='-'+args.variant if args.variant else ''
     folder=ROOT/('validation/md-video-span-contract'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
@@ -140,6 +140,19 @@ static __attribute__((noinline)) void invalid_refresh(const u32 *source,u16 tile
  check(md_z80_video_span_prepare_refresh(&token,(const u32*)0x1000,0,4)==MD_Z80_PSG_OK);
  retry_hidden(&mailbox,&token,MD_Z80_PSG_WAIT);
  gaw_done=1;''')
+    if args.hidden_grant:
+        needle='mailbox.stamp.ready=3;retry_hidden(&mailbox,&token,MD_Z80_PSG_WAIT);'
+        assert main.count(needle)==1
+        main=main.replace(needle,'mailbox.stamp.ready=3;retry_hidden(&mailbox,&token,MD_Z80_PSG_INVALID);mailbox.stamp.ready=7;retry_hidden(&mailbox,&token,MD_Z80_PSG_WAIT);')
+        main=main.replace('md_z80_video_span_try_hidden(', 'md_z80_video_span_try_hidden_grant(')
+    if args.hidden_preflight:
+        main=main.replace(' gaw_done=1;',''' *(volatile u16*)0xc00010=0x38;
+ mailbox.grant=1;mailbox.stamp.ready=3;mailbox.stamp.error=0;
+ mailbox.stamp.v=(u8)((*(volatile u16*)0xc00008>>8)-8);
+ retry_hidden(&mailbox,&token,MD_Z80_PSG_WAIT);
+ mailbox.stamp.v=229;retry_hidden(&mailbox,&token,MD_Z80_PSG_WAIT);
+ gaw_done=1;''')
+        main=main.replace('md_z80_video_span_try_hidden(', 'md_z80_video_span_try_hidden_preflight'+('_prepared' if args.preflight_prepared else '')+'(')
     (src/'main.c').write_bytes(main.encode())
     for name in ['md_z80_video_span.c','md_z80_video_span.h']:
         text='#include "../../../megadrive/src/'+name+'"\n'
@@ -164,16 +177,20 @@ static __attribute__((noinline)) void invalid_refresh(const u32 *source,u16 tile
             def val(name,width):return int.from_bytes(bytes(ram[(((symbols[name]&65535)+i)&65535)^1] for i in range(width)),'big')
             observed.update(frame=frame,done=val('gaw_done',2),checks=val('gaw_checks',4),failures=val('gaw_failures',4))
         with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',120,folder/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
-        assert observed['done'] and observed['checks']==((300 if args.window_probe else 44)+(309 if args.refresh_profile else 0)+(13 if args.hidden_profile else 0)) and not observed['failures'],observed
+        assert observed['done'] and observed['checks']==((300 if args.window_probe else 44)+(309 if args.refresh_profile else 0)+(13 if args.hidden_profile else 0)+(2 if args.hidden_preflight else 0)+(1 if args.hidden_grant else 0)) and not observed['failures'],observed
         markers=[(i,e[2]) for i,e in enumerate(events) if e[0]==3 and 0x34<=e[2]<=0x37]
         assert [x[1] for x in markers]==list(range(0x34,0x38))
         for a,b in [(markers[0][0],markers[1][0]),(markers[2][0],markers[3][0])]:
             assert not any(e[0] in (4,7) for e in events[a+1:b]),'Early rejection unexpectedly reads beam or takes bus'
         if args.window_probe or args.refresh_profile or args.hidden_profile:
-            assert not any(e[0] in (4,7) for e in events[markers[-1][0]+1:]),'Window/profile checks unexpectedly read beam or take bus'
+            end=next(i for i,e in enumerate(events) if e[0]==3 and e[2]==0x38) if args.hidden_preflight else len(events)
+            assert not any(e[0] in (4,7) for e in events[markers[-1][0]+1:end]),'Window/profile checks unexpectedly read beam or take bus'
+            if args.hidden_preflight:
+                assert not any(e[0]==7 for e in events[end+1:]),'Stale preflight took the bus'
+                assert sum(e[0]==4 for e in events[end+1:])>=3,'Stale probes did not run'
         raw=json.dumps(events,separators=(',',':')).encode();(folder/(region+'-events.json')).write_bytes(raw)
         results.append(dict(region=region,**observed,events_sha256=sha(raw)));print(results[-1],flush=True)
-    report=dict(hidden_profile=args.hidden_profile,window_probe=args.window_probe,refresh_profile=args.refresh_profile,kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),sources={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_video_span.c','md_z80_video_span.h']},results=results,limits=['Native token layout, invalid preparation atomicity and pre-beam WAIT/FAULT retention only. Successful DMA consumption and held-bus safety require separate live capture. No production renderer or waveform proof.'])
+    report=dict(hidden_grant=args.hidden_grant,preflight_prepared=args.preflight_prepared,hidden_preflight=args.hidden_preflight,hidden_profile=args.hidden_profile,window_probe=args.window_probe,refresh_profile=args.refresh_profile,kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),sources={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_video_span.c','md_z80_video_span.h']},results=results,limits=['Native token layout, invalid preparation atomicity and pre-beam WAIT/FAULT retention only. Successful DMA consumption and held-bus safety require separate live capture. No production renderer or waveform proof.'])
     (ROOT/('analysis/md_video_span_contract'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()
