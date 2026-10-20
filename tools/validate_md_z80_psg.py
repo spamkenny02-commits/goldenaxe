@@ -94,6 +94,7 @@ def main():
     parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
     parser.add_argument('--video-prepared-job',action='store_true',help='Retain prepared DMA control words across retries too')
     parser.add_argument('--video-source-patterns',action='store_true',help='Upload all512 actual source pattern tiles per loader case, with native VRAM readback')
+    parser.add_argument('--video-grant-backoff',action='store_true',help='After video WAIT, retry only after the fresh grant byte changes')
     parser.add_argument('--video-source-refresh',action='store_true',help='Use the capability-gated early window with the post-publication-refresh driver')
     parser.add_argument('--video-source-during-delivery',action='store_true',help='Service actual source video while final queued audio is still being delivered')
     parser.add_argument('--video-source-no-readback',action='store_true',help='Measure uploads without per-word diagnostic VRAM reads; final tiles still checked independently')
@@ -115,10 +116,11 @@ def main():
     assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
     assert not args.video_cache_pattern or args.video=='dma'
-    assert not args.video_source_refresh or (args.video_source_patterns and args.video_source_tiles>1 and args.driver in ('md_psg_refresh_z80.asm','md_psg_grant_z80.asm'))
+    assert not args.video_grant_backoff or (args.video_source_refresh and args.driver in ('md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
+    assert not args.video_source_refresh or (args.video_source_patterns and args.video_source_tiles>1 and args.driver in ('md_psg_refresh_z80.asm','md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
     assert not args.video_source_during_delivery or args.video_source_patterns
     assert not args.video_source_no_readback or args.video_source_patterns
-    assert args.video_source_tiles<=4 or (args.video_source_refresh and args.driver=='md_psg_grant_z80.asm')
+    assert args.video_source_tiles<=4 or (args.video_source_refresh and args.driver in ('md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
     assert args.video_source_tiles==1 or args.video_source_patterns
     assert not args.video_source_patterns or (args.video_prepared_job and not args.video_service)
     assert 20000<=args.max_frames<=100000
@@ -167,7 +169,7 @@ def main():
         from md_z80_video_fixture import instrument
         if args.video_source_patterns:
             from md_z80_source_video_fixture import instrument_source
-            main,body=instrument_source(main,body,args.video_source_tiles,not args.video_source_no_readback,args.video_source_during_delivery,args.video_source_refresh)
+            main,body=instrument_source(main,body,args.video_source_tiles,not args.video_source_no_readback,args.video_source_during_delivery,args.video_source_refresh,args.video_grant_backoff)
             (folder/'source-video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_source_video_fixture.py').read_bytes())
         else:
             main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern,args.video_prepared_job)
@@ -253,6 +255,7 @@ def main():
             if args.video_service:observed['video_service_calls']=value('gaw_video_service_calls',4)
             if args.video_cache_pattern:observed['video_pattern_preparations']=value('gaw_video_pattern_preparations',4)
             if args.video_prepared_job:observed['video_job_preparations']=value('gaw_video_job_preparations',4)
+            if args.video_grant_backoff:observed['video_grant_skips']=value('gaw_video_grant_skips',4)
             if args.video_source_tiles==8:observed['video_span_sizes']=[value('gaw_video_span_sizes',4,n*4) for n in range(9)]
             if args.video_source_patterns:
                 observed.update(video_sources=value('gaw_video_sources',4),video_readback_words=value('gaw_video_readback_words',4),video_readback_errors=value('gaw_video_readback_errors',4),video_dma_commits=value('gaw_video_dma_commits',4))
@@ -417,6 +420,7 @@ def main():
     report['video_job_prepared']=args.video_prepared_job
     report['video_source_patterns']=args.video_source_patterns
     report['video_source_tiles']=args.video_source_tiles
+    report['video_grant_backoff']=args.video_grant_backoff
     if args.video_source_tiles>1:report['video_span_split_window']=args.video_source_refresh
     report['post_publication_refresh']=refresh_pc is not None
     report['fresh_grant_stamps']=grant_pc is not None
@@ -450,6 +454,7 @@ def main():
             report['limits']=[x for x in report['limits'] if not x.startswith(('H32/224 display enabled with a synthetic','DMA experiment queues one deterministic','Diagnostic tile payload'))]
         if args.video_source_patterns:report['limits'].append('Actual source-checked16384byte SMS pattern mirror converted into512 MD tiles per case after source loading. Native physical VRAM readback checks every word before payload release; independent planar conversion checks all final tiles. The visible atlas uses a diagnostic palette/map, not the game scene. Uploads begin after source work and drain after audio: no overlap/deadline or production integration claim. Generic one-job-per-callback description does not apply to this mode.')
         if args.video_source_no_readback:report['limits']=[x.replace('Native physical VRAM readback checks every word before payload release;', 'Per-word native VRAM readback disabled for this performance measurement;') for x in report['limits']]
+        if args.video_grant_backoff:report['limits'].append('Caller grant-backoff experiment: after video WAIT retain token/payload and skip attempts until atomic fresh grant byte changes, unless mailbox error is set. Does not cache authorization for a successful transfer; held-bus guards remain active. Skip count is separate from actual DMA API attempts.')
         if args.video_source_refresh:report['limits'].append('Optional post-publication private timer resample capability is required for the early rawV224..228 window; raw229..234 excluded. The original API and driver remain distinct. Timer safety is independently checked, not inferred from ready/grant.')
         if args.video_source_tiles==8:report['limits'].append('Adaptive spans use8tiles only with no pending/in-flight PSG descriptor, otherwise4tiles. Above4tiles requires a fresh encoded grant V stamp of age0; all fresh-grant spans clip the late window at rawV251. Physical private-update gaps remain strictly below17100master ticks. Transfer sizes/counts are observed separately; this does not establish per-frame deadlines.')
         if args.video_source_tiles==3:report['limits'].append('Three-tile stress starts with1tile then2tiles, followed by3tile jobs and a final2tile tail:172 commits per512tiles, exercising1/2/3tile spans in actual DMA.')

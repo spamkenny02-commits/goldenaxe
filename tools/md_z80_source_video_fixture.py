@@ -1,7 +1,7 @@
 """Upload the actual source-checked SMS pattern mirror as an MD tile atlas."""
 from md_z80_video_fixture import instrument
 
-def instrument_source(main,body,tiles=1,readback=True,during_delivery=False,refresh=False):
+def instrument_source(main,body,tiles=1,readback=True,during_delivery=False,refresh=False,grant_backoff=False):
     assert 1<=tiles<=8
     main=instrument(main,False,True,0,True,True)
     main=main.replace('#include "md_z80_video_dma.h"','#include "md_z80_video_dma.h"\n#include "pattern_convert.h"')
@@ -52,6 +52,14 @@ void cooperative_video_source(const u8 *source) {
     if refresh:
         main=main.replace('md_z80_video_span_try(&mailbox,&video_job)','md_z80_video_span_try_refresh(&mailbox,&video_job)')
         main=main.replace('md_z80_video_span_prepare(&video_job,video_pattern,16+video_cursor,video_batch)','md_z80_video_span_prepare_refresh(&video_job,video_pattern,16+video_cursor,video_batch)')
+    if grant_backoff:
+        main=main.replace('static u8 video_pattern_prepared;', 'static u8 video_pattern_prepared;static u8 video_wait_grant,video_last_grant;\nvolatile u32 gaw_video_grant_skips;')
+        needle=' if(gaw_video_updates-1>=gaw_video_requests || session_failed) return;'
+        assert main.count(needle)==1
+        main=main.replace(needle,needle+'\n if(video_wait_grant && video_last_grant==mailbox.grant && !mailbox.stamp.error) {gaw_video_grant_skips++;return;}\n video_wait_grant=0;')
+        needle=' else if(status!=MD_Z80_PSG_WAIT) fault(0xf00|status);'
+        assert main.count(needle)==1
+        main=main.replace(needle,' else if(status==MD_Z80_PSG_WAIT) {video_last_grant=mailbox.grant;video_wait_grant=1;}\n else fault(0xf00|status);')
     needle=' VDP_setEnable(TRUE);'
     assert main.count(needle)==1
     main=main.replace(needle,''' {u16 x,y;for(y=0;y<16;y++) for(x=0;x<32;x++) VDP_setTileMapXY(BG_A,16+y*32+x,x,y);}

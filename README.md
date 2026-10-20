@@ -36,6 +36,10 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+La [comparaison des reprises DMA](analysis/md_z80_grant_backoff_milestone.md)
+réduit les tentatives, mais révèle des gains NTSC et des régressions PAL selon la charge.
+L'attente du renouvellement reste optionnelle ; aucun gain général de cadence du jeu n'est établi.
+
 Le [dernier essai de coexistence vidéo/son](analysis/md_z80_refresh_grants_milestone.md)
 valide des autorisations de transfert datées et des blocs adaptatifs de 128/256 octets.
 Les captures PAL/NTSC vérifient le blanking, les mots vidéo et l'horloge sonore.

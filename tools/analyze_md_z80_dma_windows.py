@@ -78,6 +78,11 @@ def main():
                 candidates.append(bytes.fromhex('207c00c00004308030bc94003084308330823039')+
                     (job+10).to_bytes(4,'big')+bytes.fromhex('30803039')+
                     (job+12).to_bytes(4,'big')+bytes.fromhex('308032bc0000'))
+                # No-readback adaptive8: D2/A1/D1 source and global command,
+                # same absolute BUSREQ release, reviewed in both retry variants.
+                candidates.append(bytes.fromhex('207c00c00004308030bc94003082308930813039')+
+                    (job+10).to_bytes(4,'big')+bytes.fromhex('30803039')+
+                    (job+12).to_bytes(4,'big')+bytes.fromhex('308033fc000000a11100'))
                 # Full16checkpoint fresh-grant proof: A1 control, D2 length,
                 # frame source words and command at A0+10/+12, absolute release.
                 candidates.append(bytes.fromhex('227c00c00004328232bc940032aefea632aefea832aefeaa3028000a32803028000c328033fc000000a11100'))
