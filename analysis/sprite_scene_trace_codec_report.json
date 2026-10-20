@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "interrupts": false,
+      "region": "ntsc",
+      "cases": 133,
+      "points": 110143,
+      "ram_bytes_per_point": 581,
+      "raw_records_sha256": "97ff5679c3530e986276749c9874aaa3e37fc98114bb6eae5aa5d40013adaba2",
+      "native_packed_sha256": "a0690bf439873732e9b924bdfc87cd9d58c205cabac797eedf4112867f4601d6",
+      "kernel_sha256": "0c29e1e1f7578c868488394d398fbabf3d68ea0082d27388d1d1d0cd8f6b8fda"
+    },
+    {
+      "interrupts": false,
+      "region": "pal",
+      "cases": 133,
+      "points": 110143,
+      "ram_bytes_per_point": 581,
+      "raw_records_sha256": "2ef229931a6bac65f0201092b6d9999aea3de4bce5638d053ef78b992ee9c886",
+      "native_packed_sha256": "83dabda245042fabc6275829e162a386f64507a41cd8980f9a363930f4bd51ab",
+      "kernel_sha256": "0c29e1e1f7578c868488394d398fbabf3d68ea0082d27388d1d1d0cd8f6b8fda"
+    },
+    {
+      "interrupts": true,
+      "region": "ntsc",
+      "cases": 133,
+      "points": 110143,
+      "ram_bytes_per_point": 581,
+      "raw_records_sha256": "38168be98e011cb9fbed0f4abe4d1565d12f8469a4b48e4e2e0b24f5dd23a9b9",
+      "native_packed_sha256": "c7e4b56d1af277f15cc8350621605b9462625decb69b89a9333978b3dd762577",
+      "kernel_sha256": "f17d832e583961a898d317ff56ff677a16f49d831fd77b9a4d67be3b6cbd7e62"
+    },
+    {
+      "interrupts": true,
+      "region": "pal",
+      "cases": 133,
+      "points": 110143,
+      "ram_bytes_per_point": 581,
+      "raw_records_sha256": "0488462ea7139bbac86c747fc72f036becb067e097bb0cc6b21af8ac482183d2",
+      "native_packed_sha256": "4f07e6e2534582089d07ef591913eb6b2aca230bff46b030ef5dfba593458c43",
+      "kernel_sha256": "f17d832e583961a898d317ff56ff677a16f49d831fd77b9a4d67be3b6cbd7e62"
+    }
+  ],
+  "limits": [
+    "Every source instruction PC/time/R/IFF and581 RAM bytes reconstructed exactly from native lossless assets. Native linked ROM bytes match these assets. This is evidence recovery/encoding validation; original full IRQ and video deadline remain unproved."
+  ]
+}

@@ -1156,3 +1156,17 @@ Playablev0203 preserved. No native source-instruction/IRQ staging yet: producer
 is atomic and separate actor RAM is captured; patterns still captured.
 Next:source0938 instruction boundaries, DD40 IRQ publication and dynamic patterns.
 Evidence:analysis/source_sprite_scene_milestone.md; archive md-sprite-scene-v0203.
+
+
+## Native0938 instruction boundaries and controlled IRQ SAT snapshots
+Dedicated timed native translation commits each RAM write before the next source
+instruction.133 cases/region/mode;110010 instructions plus133 RET ends exact.
+PC/master/raster/R/IFF and581 RAM bytes verified against original source, then68000.
+Controlled ISR4179T/398M1 acknowledges at35T and snapshots192 SAT bytes:
+84 IRQs/region,10 genuinely partial table snapshots/region,27+ distinct boundaries.
+Plain core parity passes. Native no-trace agrees on8192-byte final RAM/work/R/phase.
+Lossless deltas reconstruct actual native ROM trace assets; no RAM hash substitute.
+Playablev0203 unchanged; original full IRQ SAT64/128 publication, RAM336/audio
+bridge and dynamic actor patterns still need integration. Boot/fullgame/deadlines/
+waveform/hardware unproven. Evidence:analysis/sprite_scene_timed_milestone.md.
+Immutable archive:sprite-scene-timed-v0203; local Git only,207 numbered ROMs kept.

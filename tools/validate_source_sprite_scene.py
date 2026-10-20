@@ -50,11 +50,16 @@ def vectors():
    rows.append((f'capacity64-{rotating}-{phase}',bytes(b)))
  rows.append(('actor-stream-poisoned',scene_seed()))
  return rom,rows
-def fixture(rom,rows):
+def fixture(rom,rows,case_before=False,interrupts=False):
  # Only the boot/vector and unused caller/data area are changed.0938..0AA3
  # and descriptor/order bank12 remain byte-identical to the supplied ROM.
  image=bytearray(2*1024*1024);image[:len(rom)]=rom
  image[:3]=bytes.fromhex('c30010');image[0x38:0x42]=bytes.fromhex('f5dbbff1fbed4d000000')
+ if interrupts:
+  # Read status at35T after accept, preserve all foreground registers,
+  # snapshot the currently produced192 SAT bytes, then EI/RET.
+  irq=bytes.fromhex('f5dbbfc5d5e52140dd1100df01c000edb0e1d1c1f1fbc9')
+  image[0x38:0x38+len(irq)]=irq
  code=bytearray(bytes.fromhex('f331f0dfed56af32fcff32fdff3e0132feff'))
  # Mode4, VINT enabled with display off; custom IRQ just acknowledges VDP.
  code+=bytes.fromhex('3e04d3bf3e80d3bf3ea0d3bf3e81d3bf')
@@ -63,7 +68,13 @@ def fixture(rom,rows):
   assert len(raw)==8192
   bank=16+index//2;address=0x4000+(index%2)*8192;offset=bank*16384+(index%2)*8192;image[offset:offset+8192]=raw
   code+=b'\xf3\x3e'+bytes([bank])+bytes.fromhex('32feff')
-  code+=b'\x21'+address.to_bytes(2,'little')+bytes.fromhex('1100c001001fedb0cd3809')
+  code+=b'\x21'+address.to_bytes(2,'little')+bytes.fromhex('1100c001001fedb0')
+  if case_before:code+=b'\x21'+index.to_bytes(2,'little')+bytes.fromhex('2200c0')
+  if interrupts:
+   target=[0,180,188,190,191,192,200,218][index%8];loop=0x1000+len(code)
+   code+=bytes.fromhex('db7efe')+bytes([target])+b'\xc2'+loop.to_bytes(2,'little')+bytes.fromhex('dbbffb')
+  code+=bytes.fromhex('cd3809')
+  if interrupts:code+=b'\xf3'
   code+=b'\x21'+index.to_bytes(2,'little')+bytes.fromhex('2200c00603')
   loop=0x1000+len(code);code+=bytes.fromhex('dbbfe680ca')+loop.to_bytes(2,'little')+bytes.fromhex('05c2')+loop.to_bytes(2,'little')
  code+=bytes.fromhex('f376c3')+(0x1000+len(code)+1).to_bytes(2,'little')

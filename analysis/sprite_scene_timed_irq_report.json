@@ -1,0 +1,2693 @@
+{
+  "source_rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "2cd9e28ffcfb3dc5a3e0ab7e5e27b66ae091029f1534f5a86e81c804364682d4",
+  "observer_core_sha256": "a30ed3f321357fbf646ec04b82e0cf6a88b429f51e777d8fdf8d1b0cedbde101",
+  "observer_build_sha256": "b848037d0113ad3e665c9db65ab5b68b4eb8e24555e9695563567302bb06f0d7",
+  "sources": {
+    "source_sprite_scene_timed.c": "91528db327f5f448e0ed4c24c9d24719f92e5309aeb4b30d233be750295c524f",
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_sprite_scene_timed.h": "a287a8adc32f42ed4b0059a7a8032645bc0fc562fa339c94bcee13fc7e89e0fc",
+    "source_sprite_scene.h": "1a4e75af4922838b4bb99caeaa12084eff76674178268036e4e814814363cded",
+    "source_clock.h": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8",
+    "source_rng.h": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "instructions": 110010,
+      "records_sha256": "38168be98e011cb9fbed0f4abe4d1565d12f8469a4b48e4e2e0b24f5dd23a9b9"
+    },
+    {
+      "region": "pal",
+      "instructions": 110010,
+      "records_sha256": "0488462ea7139bbac86c747fc72f036becb067e097bb0cc6b21af8ac482183d2"
+    }
+  ],
+  "cases": [
+    {
+      "region": "ntsc",
+      "case": 0,
+      "name": "capture-3101",
+      "instructions": 419,
+      "tstates": 4365,
+      "m1": 538,
+      "sprites": 5,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 1,
+      "name": "capture-3102",
+      "instructions": 514,
+      "tstates": 5310,
+      "m1": 664,
+      "sprites": 6,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 2,
+      "name": "capture-3103",
+      "instructions": 514,
+      "tstates": 5310,
+      "m1": 664,
+      "sprites": 6,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 3,
+      "name": "capture-3104",
+      "instructions": 619,
+      "tstates": 6388,
+      "m1": 806,
+      "sprites": 7,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 4,
+      "name": "capture-3105",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 5,
+      "name": "capture-3106",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 6,
+      "name": "capture-3107",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 7,
+      "name": "capture-3108",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 8,
+      "name": "capture-3109",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 9,
+      "name": "capture-3110",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 10,
+      "name": "capture-3111",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 11,
+      "name": "capture-3112",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 12,
+      "name": "capture-3113",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 13,
+      "name": "capture-3114",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 14,
+      "name": "capture-3115",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 15,
+      "name": "capture-3116",
+      "instructions": 767,
+      "tstates": 7881,
+      "m1": 1000,
+      "sprites": 11,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 16,
+      "name": "capture-3117",
+      "instructions": 800,
+      "tstates": 8163,
+      "m1": 1036,
+      "sprites": 14,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 17,
+      "name": "capture-3118",
+      "instructions": 800,
+      "tstates": 8163,
+      "m1": 1036,
+      "sprites": 14,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 18,
+      "name": "capture-3119",
+      "instructions": 833,
+      "tstates": 8445,
+      "m1": 1072,
+      "sprites": 17,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 19,
+      "name": "capture-3120",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 20,
+      "name": "capture-3121",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 21,
+      "name": "capture-3122",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 22,
+      "name": "capture-3123",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 23,
+      "name": "capture-3124",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 24,
+      "name": "capture-3125",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 25,
+      "name": "capture-3126",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 26,
+      "name": "capture-3127",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 27,
+      "name": "capture-3128",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 28,
+      "name": "capture-3129",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 29,
+      "name": "capture-3130",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 30,
+      "name": "capture-3131",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 31,
+      "name": "capture-3132",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 32,
+      "name": "capture-3133",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 33,
+      "name": "capture-3134",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 34,
+      "name": "capture-3135",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 35,
+      "name": "capture-3136",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 36,
+      "name": "capture-3137",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 37,
+      "name": "capture-3138",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 38,
+      "name": "capture-3139",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 39,
+      "name": "capture-3140",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 40,
+      "name": "capture-3141",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 41,
+      "name": "capture-3142",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 42,
+      "name": "capture-3143",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 43,
+      "name": "capture-3144",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 44,
+      "name": "capture-3145",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 45,
+      "name": "capture-3146",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 46,
+      "name": "capture-3147",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 47,
+      "name": "capture-3148",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 48,
+      "name": "capture-3149",
+      "instructions": 885,
+      "tstates": 8750,
+      "m1": 1120,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 49,
+      "name": "capture-3150",
+      "instructions": 910,
+      "tstates": 8852,
+      "m1": 1142,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 50,
+      "name": "capture-3151",
+      "instructions": 910,
+      "tstates": 8852,
+      "m1": 1142,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 51,
+      "name": "capture-3152",
+      "instructions": 935,
+      "tstates": 8954,
+      "m1": 1164,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 52,
+      "name": "capture-3153",
+      "instructions": 994,
+      "tstates": 9288,
+      "m1": 1220,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 53,
+      "name": "capture-3154",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 54,
+      "name": "capture-3155",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 55,
+      "name": "capture-3156",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 56,
+      "name": "capture-3157",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 57,
+      "name": "capture-3158",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 58,
+      "name": "capture-3159",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 59,
+      "name": "capture-3160",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 60,
+      "name": "matrix-0-0-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 61,
+      "name": "matrix-0-0-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 62,
+      "name": "matrix-0-1-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 63,
+      "name": "matrix-0-1-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 64,
+      "name": "matrix-0-2-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 65,
+      "name": "matrix-0-2-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 66,
+      "name": "matrix-0-3-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 67,
+      "name": "matrix-0-3-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 68,
+      "name": "matrix-1-0-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 69,
+      "name": "matrix-1-0-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 70,
+      "name": "matrix-1-1-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 71,
+      "name": "matrix-1-1-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 72,
+      "name": "matrix-1-2-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 73,
+      "name": "matrix-1-2-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 74,
+      "name": "matrix-1-3-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 75,
+      "name": "matrix-1-3-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 76,
+      "name": "matrix-6-0-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 77,
+      "name": "matrix-6-0-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 78,
+      "name": "matrix-6-1-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 79,
+      "name": "matrix-6-1-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 80,
+      "name": "matrix-6-2-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 81,
+      "name": "matrix-6-2-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 82,
+      "name": "matrix-6-3-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 83,
+      "name": "matrix-6-3-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 84,
+      "name": "matrix-7-0-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 85,
+      "name": "matrix-7-0-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 86,
+      "name": "matrix-7-1-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 87,
+      "name": "matrix-7-1-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 88,
+      "name": "matrix-7-2-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 89,
+      "name": "matrix-7-2-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 90,
+      "name": "matrix-7-3-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 91,
+      "name": "matrix-7-3-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 92,
+      "name": "matrix-8-0-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 93,
+      "name": "matrix-8-0-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 94,
+      "name": "matrix-8-1-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 95,
+      "name": "matrix-8-1-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 96,
+      "name": "matrix-8-2-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 97,
+      "name": "matrix-8-2-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 98,
+      "name": "matrix-8-3-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 99,
+      "name": "matrix-8-3-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 100,
+      "name": "matrix-12-0-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 101,
+      "name": "matrix-12-0-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 102,
+      "name": "matrix-12-1-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 103,
+      "name": "matrix-12-1-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 104,
+      "name": "matrix-12-2-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 105,
+      "name": "matrix-12-2-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 106,
+      "name": "matrix-12-3-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 107,
+      "name": "matrix-12-3-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 108,
+      "name": "matrix-31-0-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 109,
+      "name": "matrix-31-0-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 110,
+      "name": "matrix-31-1-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 111,
+      "name": "matrix-31-1-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 112,
+      "name": "matrix-31-2-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 113,
+      "name": "matrix-31-2-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 114,
+      "name": "matrix-31-3-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 115,
+      "name": "matrix-31-3-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 116,
+      "name": "matrix-32-0-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 117,
+      "name": "matrix-32-0-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 118,
+      "name": "matrix-32-1-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 119,
+      "name": "matrix-32-1-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 120,
+      "name": "matrix-32-2-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 121,
+      "name": "matrix-32-2-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 122,
+      "name": "matrix-32-3-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 123,
+      "name": "matrix-32-3-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 124,
+      "name": "capacity64-False-0",
+      "instructions": 3244,
+      "tstates": 35113,
+      "m1": 4448,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 125,
+      "name": "capacity64-False-1",
+      "instructions": 3244,
+      "tstates": 35113,
+      "m1": 4448,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 126,
+      "name": "capacity64-False-2",
+      "instructions": 3244,
+      "tstates": 35113,
+      "m1": 4448,
+      "sprites": 64,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 127,
+      "name": "capacity64-False-3",
+      "instructions": 3244,
+      "tstates": 35113,
+      "m1": 4448,
+      "sprites": 64,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 128,
+      "name": "capacity64-True-0",
+      "instructions": 1865,
+      "tstates": 17285,
+      "m1": 2201,
+      "sprites": 64,
+      "irq_count": 0
+    },
+    {
+      "region": "ntsc",
+      "case": 129,
+      "name": "capacity64-True-1",
+      "instructions": 1865,
+      "tstates": 17285,
+      "m1": 2201,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 130,
+      "name": "capacity64-True-2",
+      "instructions": 1865,
+      "tstates": 17285,
+      "m1": 2201,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 131,
+      "name": "capacity64-True-3",
+      "instructions": 1865,
+      "tstates": 17285,
+      "m1": 2201,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "ntsc",
+      "case": 132,
+      "name": "actor-stream-poisoned",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 0,
+      "name": "capture-3101",
+      "instructions": 419,
+      "tstates": 4365,
+      "m1": 538,
+      "sprites": 5,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 1,
+      "name": "capture-3102",
+      "instructions": 514,
+      "tstates": 5310,
+      "m1": 664,
+      "sprites": 6,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 2,
+      "name": "capture-3103",
+      "instructions": 514,
+      "tstates": 5310,
+      "m1": 664,
+      "sprites": 6,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 3,
+      "name": "capture-3104",
+      "instructions": 619,
+      "tstates": 6388,
+      "m1": 806,
+      "sprites": 7,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 4,
+      "name": "capture-3105",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 5,
+      "name": "capture-3106",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 6,
+      "name": "capture-3107",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 7,
+      "name": "capture-3108",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 8,
+      "name": "capture-3109",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 9,
+      "name": "capture-3110",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 10,
+      "name": "capture-3111",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 11,
+      "name": "capture-3112",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 12,
+      "name": "capture-3113",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 13,
+      "name": "capture-3114",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 14,
+      "name": "capture-3115",
+      "instructions": 734,
+      "tstates": 7599,
+      "m1": 964,
+      "sprites": 8,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 15,
+      "name": "capture-3116",
+      "instructions": 767,
+      "tstates": 7881,
+      "m1": 1000,
+      "sprites": 11,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 16,
+      "name": "capture-3117",
+      "instructions": 800,
+      "tstates": 8163,
+      "m1": 1036,
+      "sprites": 14,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 17,
+      "name": "capture-3118",
+      "instructions": 800,
+      "tstates": 8163,
+      "m1": 1036,
+      "sprites": 14,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 18,
+      "name": "capture-3119",
+      "instructions": 833,
+      "tstates": 8445,
+      "m1": 1072,
+      "sprites": 17,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 19,
+      "name": "capture-3120",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 20,
+      "name": "capture-3121",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 21,
+      "name": "capture-3122",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 22,
+      "name": "capture-3123",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 23,
+      "name": "capture-3124",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 24,
+      "name": "capture-3125",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 25,
+      "name": "capture-3126",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 26,
+      "name": "capture-3127",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 27,
+      "name": "capture-3128",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 28,
+      "name": "capture-3129",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 29,
+      "name": "capture-3130",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 30,
+      "name": "capture-3131",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 31,
+      "name": "capture-3132",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 32,
+      "name": "capture-3133",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 33,
+      "name": "capture-3134",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 34,
+      "name": "capture-3135",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 35,
+      "name": "capture-3136",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 36,
+      "name": "capture-3137",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 37,
+      "name": "capture-3138",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 38,
+      "name": "capture-3139",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 39,
+      "name": "capture-3140",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 40,
+      "name": "capture-3141",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 41,
+      "name": "capture-3142",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 42,
+      "name": "capture-3143",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 43,
+      "name": "capture-3144",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 44,
+      "name": "capture-3145",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 45,
+      "name": "capture-3146",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 46,
+      "name": "capture-3147",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 47,
+      "name": "capture-3148",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 48,
+      "name": "capture-3149",
+      "instructions": 885,
+      "tstates": 8750,
+      "m1": 1120,
+      "sprites": 20,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 49,
+      "name": "capture-3150",
+      "instructions": 910,
+      "tstates": 8852,
+      "m1": 1142,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 50,
+      "name": "capture-3151",
+      "instructions": 910,
+      "tstates": 8852,
+      "m1": 1142,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 51,
+      "name": "capture-3152",
+      "instructions": 935,
+      "tstates": 8954,
+      "m1": 1164,
+      "sprites": 20,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 52,
+      "name": "capture-3153",
+      "instructions": 994,
+      "tstates": 9288,
+      "m1": 1220,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 53,
+      "name": "capture-3154",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 54,
+      "name": "capture-3155",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 55,
+      "name": "capture-3156",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 56,
+      "name": "capture-3157",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 57,
+      "name": "capture-3158",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 58,
+      "name": "capture-3159",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 59,
+      "name": "capture-3160",
+      "instructions": 988,
+      "tstates": 9209,
+      "m1": 1210,
+      "sprites": 22,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 60,
+      "name": "matrix-0-0-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 61,
+      "name": "matrix-0-0-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 62,
+      "name": "matrix-0-1-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 63,
+      "name": "matrix-0-1-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 64,
+      "name": "matrix-0-2-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 65,
+      "name": "matrix-0-2-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 66,
+      "name": "matrix-0-3-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 67,
+      "name": "matrix-0-3-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 68,
+      "name": "matrix-1-0-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 69,
+      "name": "matrix-1-0-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 70,
+      "name": "matrix-1-1-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 71,
+      "name": "matrix-1-1-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 72,
+      "name": "matrix-1-2-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 73,
+      "name": "matrix-1-2-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 74,
+      "name": "matrix-1-3-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 75,
+      "name": "matrix-1-3-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 76,
+      "name": "matrix-6-0-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 77,
+      "name": "matrix-6-0-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 78,
+      "name": "matrix-6-1-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 79,
+      "name": "matrix-6-1-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 80,
+      "name": "matrix-6-2-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 81,
+      "name": "matrix-6-2-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 82,
+      "name": "matrix-6-3-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 83,
+      "name": "matrix-6-3-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 84,
+      "name": "matrix-7-0-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 85,
+      "name": "matrix-7-0-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 86,
+      "name": "matrix-7-1-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 87,
+      "name": "matrix-7-1-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 88,
+      "name": "matrix-7-2-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 89,
+      "name": "matrix-7-2-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 90,
+      "name": "matrix-7-3-0",
+      "instructions": 706,
+      "tstates": 7076,
+      "m1": 894,
+      "sprites": 16,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 91,
+      "name": "matrix-7-3-64",
+      "instructions": 573,
+      "tstates": 4970,
+      "m1": 632,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 92,
+      "name": "matrix-8-0-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 93,
+      "name": "matrix-8-0-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 94,
+      "name": "matrix-8-1-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 95,
+      "name": "matrix-8-1-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 96,
+      "name": "matrix-8-2-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 97,
+      "name": "matrix-8-2-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 98,
+      "name": "matrix-8-3-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 99,
+      "name": "matrix-8-3-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 100,
+      "name": "matrix-12-0-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 101,
+      "name": "matrix-12-0-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 102,
+      "name": "matrix-12-1-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 103,
+      "name": "matrix-12-1-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 104,
+      "name": "matrix-12-2-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 105,
+      "name": "matrix-12-2-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 106,
+      "name": "matrix-12-3-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 107,
+      "name": "matrix-12-3-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 108,
+      "name": "matrix-31-0-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 109,
+      "name": "matrix-31-0-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 110,
+      "name": "matrix-31-1-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 111,
+      "name": "matrix-31-1-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 112,
+      "name": "matrix-31-2-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 113,
+      "name": "matrix-31-2-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 114,
+      "name": "matrix-31-3-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 115,
+      "name": "matrix-31-3-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 116,
+      "name": "matrix-32-0-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 117,
+      "name": "matrix-32-0-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 118,
+      "name": "matrix-32-1-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 119,
+      "name": "matrix-32-1-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 120,
+      "name": "matrix-32-2-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 121,
+      "name": "matrix-32-2-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 122,
+      "name": "matrix-32-3-0",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 123,
+      "name": "matrix-32-3-64",
+      "instructions": 570,
+      "tstates": 4948,
+      "m1": 629,
+      "sprites": 12,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 124,
+      "name": "capacity64-False-0",
+      "instructions": 3244,
+      "tstates": 35113,
+      "m1": 4448,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 125,
+      "name": "capacity64-False-1",
+      "instructions": 3244,
+      "tstates": 35113,
+      "m1": 4448,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 126,
+      "name": "capacity64-False-2",
+      "instructions": 3244,
+      "tstates": 35113,
+      "m1": 4448,
+      "sprites": 64,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 127,
+      "name": "capacity64-False-3",
+      "instructions": 3244,
+      "tstates": 35113,
+      "m1": 4448,
+      "sprites": 64,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 128,
+      "name": "capacity64-True-0",
+      "instructions": 1865,
+      "tstates": 17285,
+      "m1": 2201,
+      "sprites": 64,
+      "irq_count": 0
+    },
+    {
+      "region": "pal",
+      "case": 129,
+      "name": "capacity64-True-1",
+      "instructions": 1865,
+      "tstates": 17285,
+      "m1": 2201,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 130,
+      "name": "capacity64-True-2",
+      "instructions": 1865,
+      "tstates": 17285,
+      "m1": 2201,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 131,
+      "name": "capacity64-True-3",
+      "instructions": 1865,
+      "tstates": 17285,
+      "m1": 2201,
+      "sprites": 64,
+      "irq_count": 1
+    },
+    {
+      "region": "pal",
+      "case": 132,
+      "name": "actor-stream-poisoned",
+      "instructions": 866,
+      "tstates": 8727,
+      "m1": 1108,
+      "sprites": 20,
+      "irq_count": 1
+    }
+  ],
+  "limits": [
+    "Original0938..0AA3 and bank12 unchanged. Custom snapshot IRQ saves registers, acknowledges VDP at35T, copies192 current SAT bytes to DF00, restores registers/EI/RET:4179T/398M1 including accept. Native callback reproduces its RAM/work. Every foreground instruction PC/master/raster/R/IFF and581 RAM bytes compare exactly, including partial SAT snapshots across IRQs. This verifies callback timing with a controlled ISR; original full game IRQ/SAT-to-VDP publication/audio and source reveal deadlines remain unproved. Stack/foreground register values are not compared."
+  ],
+  "interrupts": true
+}

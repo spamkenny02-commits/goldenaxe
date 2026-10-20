@@ -1,0 +1,46 @@
+{
+  "kernel_sha256": "0c29e1e1f7578c868488394d398fbabf3d68ea0082d27388d1d1d0cd8f6b8fda",
+  "kernel_bytes": 3145728,
+  "source_report_sha256": "23f3e56a903fca2fdcd12463fa9b8a538f949b7cc164f96ac2b117f9e1cdd6b0",
+  "interrupts": false,
+  "sources": {
+    "source_sprite_scene_timed.c": "91528db327f5f448e0ed4c24c9d24719f92e5309aeb4b30d233be750295c524f",
+    "source_sprite_scene_timed.h": "a287a8adc32f42ed4b0059a7a8032645bc0fc562fa339c94bcee13fc7e89e0fc",
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_clock.h": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_rng.h": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f",
+    "source_sprite_scene.h": "1a4e75af4922838b4bb99caeaa12084eff76674178268036e4e814814363cded"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 26573,
+      "done": 1,
+      "checks": 133,
+      "failures": 0,
+      "points": 110143,
+      "irqs": 0,
+      "failure_case": 132,
+      "failure_point": 0,
+      "failure_kind": 0,
+      "packed_bytes": 984441
+    },
+    {
+      "region": "pal",
+      "frame": 22242,
+      "done": 1,
+      "checks": 133,
+      "failures": 0,
+      "points": 110143,
+      "irqs": 0,
+      "failure_case": 132,
+      "failure_point": 0,
+      "failure_kind": 0,
+      "packed_bytes": 984441
+    }
+  ],
+  "limits": [
+    "Actual68000 compares source instruction PC/time/R/IFF/raster and581 exact RAM bytes through lossless state deltas, not hashes. Refresh/M1 and foreground time derive from original opcode bytes/dates. Custom snapshot ISR only; original full game IRQ/video publication remains unproved. Both trace and no-trace native paths agree on complete8192-byte final RAM, work and interrupt count. No full-game/render deadline claim."
+  ]
+}

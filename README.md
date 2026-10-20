@@ -36,6 +36,12 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+La [construction des sprites suit maintenant les frontières des instructions SMS](analysis/sprite_scene_timed_milestone.md).
+Les cycles, le raster, le registre de rafraîchissement et les écritures RAM
+concordent avec le Z80 original sur 133 cas par région, également exécutés
+sur 68000. Les interruptions contrôlées observent les mêmes tables partielles ;
+le raccordement à l’interruption complète du jeu reste à terminer.
+
 La [production native de la table de sprites](analysis/source_sprite_scene_milestone.md)
 reproduit désormais le tri et les descripteurs du Z80 : 133 cas concordent
 sur Master System et sur 68000, dans les deux régions. Le banc raccordé
