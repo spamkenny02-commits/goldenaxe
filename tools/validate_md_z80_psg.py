@@ -94,6 +94,7 @@ def main():
     parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
     parser.add_argument('--video-prepared-job',action='store_true',help='Retain prepared DMA control words across retries too')
     parser.add_argument('--video-source-patterns',action='store_true',help='Upload all512 actual source pattern tiles per loader case, with native VRAM readback')
+    parser.add_argument('--scene-hidden',action='store_true',help='Keep display off for whole-frame bounded H32 transfers')
     parser.add_argument('--scene-native-palette',action='store_true',help='Compile default palette path without diagnostic trace hook')
     parser.add_argument('--video-scene',action='store_true',help='Native193tile/map/palette pipeline with ROM resident assets')
     parser.add_argument('--video-source-phases',action='store_true',help='Release prefix at1706 and tail at1deb; service during actual loading')
@@ -119,6 +120,7 @@ def main():
     assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
     assert not args.video_cache_pattern or args.video=='dma'
+    assert not args.scene_hidden or args.video_scene
     assert not args.scene_native_palette or args.video_scene
     assert not args.video_scene or (args.video=='dma' and args.live_loader and args.video_service==1 and args.video_service_kind=='repeat-disabled' and args.driver=='md_psg_refresh_z80.asm' and not args.video_source_patterns and not args.video_cache_pattern and not args.video_prepared_job)
     assert not args.video_source_phases or (args.video_source_patterns and args.video_service and args.video_service_kind=='repeat-disabled' and args.video_source_tiles==4)
@@ -175,7 +177,7 @@ def main():
         from md_z80_video_fixture import instrument
         if args.video_scene:
             from md_class0_scene_fixture import instrument as scene_instrument,assets as scene_assets
-            main,body=scene_instrument(main,body,verify=not args.video_source_no_readback,proof=not args.bare)
+            main,body=scene_instrument(main,body,verify=not args.video_source_no_readback,proof=not args.bare,hidden=args.scene_hidden)
             (src/'scene-resident.h').write_text(scene_assets((ROOT/'input/original.sms').read_bytes()))
             (folder/'scene-fixture.py.snapshot').write_bytes((ROOT/'tools/md_class0_scene_fixture.py').read_bytes())
         elif args.video_source_patterns:
@@ -446,6 +448,7 @@ def main():
     report['polled_transfer_attempts']=args.poll_transfer
     report['video_fixture']=args.video
     report['video_scene']=args.video_scene
+    report['scene_hidden']=args.scene_hidden
     report['scene_palette_trace']=args.video_scene and not args.scene_native_palette
     report['video_service_stride']=args.video_service
     report['video_service_kind']=args.video_service_kind
@@ -502,6 +505,7 @@ def main():
     if args.video_scene:
         report['limits']=[x for x in report['limits'] if not x.startswith(('H32/224 display enabled with a synthetic','DMA experiment queues one deterministic'))]
         report['limits'].append('Native class0 background pipeline:193ROM patterns in retained1..4tile spans,24translated64byte map rows, CPU32color publish in guarded blank. Resident HUD/menu/icon patterns initialized from native entry ROM resources; all319outside pattern slots must remain intact. Actual source checkpoints1706/1deb/24bf queue owned data. Independent final VRAM/map/CRAM checks; optional native per-word readback is specified by video_source_readback; no sprites/fullboot/whole-game/deadline/waveform proof. CPU palette trace hook enabled only in fixture; default backend emits no PSG diagnostic markers.')
+    if args.scene_hidden:report['limits']=[x.replace('CPU32color publish in guarded blank','CPU32color publish while display is disabled') for x in report['limits']]+['Hidden H32 mode: display disabled before clock start, kept off through all pattern/map/palette jobs, enabled only after successful flush. Hidden small-DMA path excludes duplicated rawV229..234 and retains age/grant/refresh/error guards. No H40 change; timing and display intervals require physical capture. The fixture reveal boundary is not yet the original game enable deadline.']
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 

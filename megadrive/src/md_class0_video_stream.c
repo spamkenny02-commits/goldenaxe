@@ -10,9 +10,17 @@ u8 md_class0_video_stream_begin(MdClass0VideoStream *s,u8 verify)
        VDP_getScreenHeight()!=224 || VDP_getPlaneWidth()!=64 || VDP_getPlaneHeight()!=32)
         return MD_Z80_PSG_INVALID;
     s->pattern_cursor=s->map_row=s->address=s->count=0;
-    s->kind=s->last_kind=s->error=s->done=0;s->job.ready=0;
+    s->kind=s->last_kind=s->error=s->done=s->hidden=0;s->job.ready=0;
     s->ready=1;s->verify=verify;s->readback_words=s->readback_errors=0;
     return MD_Z80_PSG_OK;
+}
+u8 md_class0_video_stream_begin_hidden(MdClass0VideoStream *s,u8 verify)
+{
+    u8 status;
+    if(VDP_isEnable()) return MD_Z80_PSG_INVALID;
+    status=md_class0_video_stream_begin(s,verify);
+    if(!status) s->hidden=1;
+    return status;
 }
 u8 md_class0_video_stream_map(MdClass0VideoStream *s,const u8 *sms)
 {
@@ -32,6 +40,7 @@ u8 md_class0_video_stream_step(MdClass0VideoStream *s,MdZ80PsgMailbox *mailbox)
     if(!mailbox->stamp.ready) return MD_Z80_PSG_WAIT;
     if(!(mailbox->stamp.ready&MD_Z80_VIDEO_SPAN_REFRESH_CAP)) return MD_Z80_PSG_INVALID;
     if(!s->ready || s->done) return MD_Z80_PSG_WAIT;
+    if(s->hidden && VDP_isEnable()) return MD_Z80_PSG_INVALID;
     if(!s->kind) {
         if(s->pattern_cursor<193) {
             const u32 *rom=source_class0_video_patterns()+(u32)s->pattern_cursor*8;
@@ -45,7 +54,7 @@ u8 md_class0_video_stream_step(MdClass0VideoStream *s,MdZ80PsgMailbox *mailbox)
             status=md_z80_video_span_prepare_refresh(&s->job,(const u32*)(s->map+s->map_row*32),s->address/32,2);
         } else if(s->ready==7 && s->map_row==24) {
             v=*(volatile u16*)0xc00008>>8;
-            if(v<235 || v>243) return MD_Z80_PSG_WAIT;
+            if(!s->hidden && (v<235 || v>243)) return MD_Z80_PSG_WAIT;
             /* CPU writes do not seize the Z80 bus; bracket for physical audit. */
             MD_CLASS0_PALETTE_TRACE(0x3b);
             PAL_setColors(0,s->palette,32,CPU);
@@ -61,7 +70,7 @@ u8 md_class0_video_stream_step(MdClass0VideoStream *s,MdZ80PsgMailbox *mailbox)
         } else return MD_Z80_PSG_WAIT;
         if(status) {s->error=1;return status;}
     }
-    status=md_z80_video_span_try_refresh(mailbox,&s->job);
+    status=s->hidden?md_z80_video_span_try_hidden(mailbox,&s->job):md_z80_video_span_try_refresh(mailbox,&s->job);
     if(status!=MD_Z80_PSG_OK) {if(status==MD_Z80_PSG_FAULT) s->error=1;return status;}
     expected=s->kind==1?(const u16*)s->payload:s->map+s->map_row*32;
     if(s->verify) {

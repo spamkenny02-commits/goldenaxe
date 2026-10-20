@@ -77,7 +77,7 @@ static void video_setup(void) {
 }
 '''
 
-def instrument(main,body,verify=True,proof=False):
+def instrument(main,body,verify=True,proof=False,hidden=False):
     # Existing observer copies reserve11776bytes even in bare kernels.
     # Full proof compares each live state directly to immutable reference ROM.
     main=main.replace('states[11776]','states[1]')
@@ -107,6 +107,14 @@ def instrument(main,body,verify=True,proof=False):
     body=body.replace(needle,' log.scene_map=tilemap;log.scene_upper=cells+0xb0;'+needle)
     needle=' p->points++;return 1;';assert body.count(needle)==1
     body=body.replace(needle,' cooperative_scene_phase(pc,p->scene_map,p->scene_upper);\n'+needle)
+    if hidden:
+        main=main.replace('md_class0_video_stream_begin(&scene,','md_class0_video_stream_begin_hidden(&scene,')
+        needle='*(volatile u16*)0xc00010=0x80+gaw_replay_cases;'
+        assert main.count(needle)==1
+        main=main.replace(needle,needle+'VDP_setEnable(FALSE);*(volatile u16*)0xc00010=0x3d;')
+        needle=' video_flush();\n spins=0;do'
+        assert main.count(needle)==1
+        main=main.replace(needle,' video_flush();\n if(!session_failed) {VDP_setEnable(TRUE);*(volatile u16*)0xc00010=0x3e;}\n spins=0;do')
     return main,body
 
 def validate(folder,region,frame,observed,vram,regs,rom,proof=False,verify=True):

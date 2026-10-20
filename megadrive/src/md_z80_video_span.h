@@ -31,4 +31,8 @@ u8 md_z80_video_span_try(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
 #define MD_Z80_VIDEO_SPAN_GRANT_CAP 4
 u8 md_z80_video_span_prepare_refresh(MdZ80VideoSpan *job,const u32 *source,u16 tile,u16 count);
 u8 md_z80_video_span_try_refresh(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
+/* Display-off H32/224 only,1..4tiles, refresh capability required. Caller
+ * keeps display disabled through the transfer. Same ownership and age gates;
+ * no restriction to VBlank, no H40 switch. Timer safety still needs capture. */
+u8 md_z80_video_span_try_hidden(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
 #endif

@@ -36,6 +36,11 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+Le [chargement class0 avec affichage coupé](analysis/md_class0_hidden_milestone.md)
+utilise maintenant les lignes hors VBlank sans changer le mode H32. Les trois bancs
+passent en PAL/NTSC avec les mêmes motifs, carte et couleurs. Le délai de publication
+reste à réduire et à comparer à la SMS avant intégration au jeu ; la ROM reste v0203.
+
 Le [nouveau flux du fond class0](analysis/md_class0_scene_milestone.md)
 transfère les vrais motifs ROM, les lignes de carte MD et les palettes, en conservant le HUD résident.
 Les données et l'horloge passent les contrôles PAL/NTSC. Les sprites, la cadence et l'intégration
@@ -44,7 +49,7 @@ au jeu restent à terminer ; la ROM jouable demeure la v0203.
 Le [service aux phases réelles du chargeur](analysis/md_z80_source_phases_milestone.md)
 effectue désormais des transferts pendant le chargement natif, en PAL/NTSC.
 Les états source, les données vidéo et l'horloge passent les contrôles ciblés.
-Le recouvrement reste faible ; l'atlas de diagnostic doit encore être remplacé par la vraie scène.
+Le recouvrement reste faible ; les bancs class0 suivants utilisent maintenant la vraie scène.
 
 La [comparaison des reprises DMA](analysis/md_z80_grant_backoff_milestone.md)
 réduit les tentatives, mais révèle des gains NTSC et des régressions PAL selon la charge.

@@ -11,10 +11,12 @@ typedef struct {
     u32 payload[32];
     u16 map[768],palette[32];
     u16 pattern_cursor,map_row,address,count;
-    u8 ready,kind,last_kind,error,verify,done;
+    u8 ready,kind,last_kind,error,verify,done,hidden;
     u32 readback_words,readback_errors;
 } MdClass0VideoStream;
 u8 md_class0_video_stream_begin(MdClass0VideoStream *state,u8 verify);
+/* Caller keeps display off until done; this mode never enables it. */
+u8 md_class0_video_stream_begin_hidden(MdClass0VideoStream *state,u8 verify);
 u8 md_class0_video_stream_map(MdClass0VideoStream *state,const u8 *sms);
 u8 md_class0_video_stream_palette(MdClass0VideoStream *state,const u8 *upper);
 /* OK means exactly one pattern span/map row/palette committed; WAIT retains

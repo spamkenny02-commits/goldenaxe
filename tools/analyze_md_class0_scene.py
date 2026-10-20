@@ -19,7 +19,7 @@ def main():
  hvc=(ROOT.parents[1]/'work/genesis-plus-gx/core/hvc.h').read_bytes();section=hvc.decode().split('static const uint8 cycle2hc32[3420] =')[1].split('};')[0];h=[int(v,16) for v in re.findall('0x([0-9a-fA-F]+)',section)];assert len(h)==3420
  results=[]
  for variant in args.variants:
-  folder=ROOT/('validation/md-z80-psg-'+variant);raw_report=read(ROOT/('analysis/md_z80_psg_'+variant.replace('-','_')+'_report.json'));report=json.loads(raw_report);assert report['video_scene']
+  folder=ROOT/('validation/md-z80-psg-'+variant);raw_report=read(ROOT/('analysis/md_z80_psg_'+variant.replace('-','_')+'_report.json'));report=json.loads(raw_report);assert report['video_scene'];hidden=report.get('scene_hidden',False)
   symbols={m[2]:int(m[1],16) for line in read(folder/'out/release/symbol.txt').decode().splitlines() if (m:=re.match('([0-9a-fA-F]+) [a-zA-Z] (.+)',line))}
   scene=next(v for k,v in symbols.items() if k.split('.')[0]=='scene');kernel=read(folder/'out/release/rom.bin');assert sha(kernel)==report['kernel_sha256']
   # Reviewed A1 control/D0 length/D4,D3,D1 source/A2 scene address,
@@ -27,8 +27,24 @@ def main():
   signature=bytes.fromhex('227c00c00004328032bc940032843283328145f9')+scene.to_bytes(4,'big')+bytes.fromhex('3039')+(scene+10).to_bytes(4,'big')+bytes.fromhex('32803039')+(scene+12).to_bytes(4,'big')+bytes.fromhex('328033fc000000a11100')
   # Second reviewed allocation: A0 control/D4,D3,A1 source, then A1 scene.
   alternate=bytes.fromhex('207c00c00004308030bc940030843083308943f9')+scene.to_bytes(4,'big')+bytes.fromhex('3039')+(scene+10).to_bytes(4,'big')+bytes.fromhex('30803039')+(scene+12).to_bytes(4,'big')+bytes.fromhex('308033fc000000a11100')
-  candidates=[signature,alternate];assert sum(kernel.count(v) for v in candidates)==1
+  # Hidden allocation reviewed in all three kernels: A0 control, D1 length,
+  # A2/D6/D5 source, absolute scene command, release through retained A1.
+  hidden_signature=bytes.fromhex('207c00c00004308130bc9400308a308630853039')+(scene+10).to_bytes(4,'big')+bytes.fromhex('30803039')+(scene+12).to_bytes(4,'big')+bytes.fromhex('308032bc0000')
+  candidates=[hidden_signature] if hidden else [signature,alternate];assert sum(kernel.count(v) for v in candidates)==1
   signature=next(v for v in candidates if kernel.count(v)==1);commit_pc=kernel.index(signature)+len(signature)
+  if hidden:
+   start_pc=commit_pc-len(signature)
+   # A1 is BUSREQ throughout this reviewed straight-line held path.
+   held_prefix=kernel[start_pc-106:start_pc]
+   assert held_prefix.startswith(bytes.fromhex('227c00a1110030110800000866f2'))
+   assert bytes.fromhex('303900c00008') in held_prefix
+   assert bytes.fromhex('0607001b0c070005') in held_prefix
+   reg=next(v for k,v in symbols.items() if k.split('.')[0]=='regValues')+1
+   word=lambda x:x.to_bytes(4,'big')
+   off=bytes.fromhex('207c00c0001030801039')+word(reg)+bytes.fromhex('0200ffbf13c0')+word(reg)+bytes.fromhex('024000ff0040810033c000c0000430bc003d')
+   on=bytes.fromhex('1039')+word(reg)+bytes.fromhex('0000004013c0')+word(reg)+bytes.fromhex('024000ff0040810033c000c0000433fc003e00c00010')
+   assert kernel.count(off)==kernel.count(on)==1
+   off_pc=kernel.index(off)+len(off);on_pc=kernel.index(on)+len(on)
   driver=read(folder/'driver.bin');listing=read(folder/'driver.lst').decode();assert sha(driver)==report['driver_sha256']
   sample=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*sample:\s+ld a,\(0x7f08\)',listing,re.M)[1],16);refresh=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*resample:',listing,re.M)[1],16)
   assert driver[sample:sample+3]==driver[refresh:refresh+3]==bytes.fromhex('3a087f');pcs={sample+3,refresh+3}
@@ -41,8 +57,13 @@ def main():
    for n,mark in enumerate(marks):
     part=events[mark+1:marks[n+1] if n+1<len(marks) else len(events)];ref=rr['rows'][n];assert ref['marker']==events[mark][2]
     origin=next(e[1]//3420*3420 for e in part if e[0]==6 and e[2]>>8==100)
-    phases={tag:[e[1] for e in part if e[0]==3 and e[2]==tag] for tag in [0x38,0x39,0x3a,0x3b,0x3c]}
+    phases={tag:[e[1] for e in part if e[0]==3 and e[2]==tag] for tag in [0x38,0x39,0x3a,0x3b,0x3c,0x3d,0x3e]}
     assert all(len(phases[tag])==1 for tag in [0x38,0x39,0x3a]);assert phases[0x38][0]<phases[0x39][0]<phases[0x3a][0]<origin+ref['loader_finish_master']
+    if hidden:
+     assert len(phases[0x3d])==len(phases[0x3e])==1
+     off_tick,on_tick=phases[0x3d][0],phases[0x3e][0]
+     assert off_tick<phases[0x38][0]<phases[0x3a][0]<on_tick
+     assert all(e[3]==(off_pc if e[2]==0x3d else on_pc) for e in part if e[0]==3 and e[2] in [0x3d,0x3e])
     start=None;commits=[]
     for e in part:
      if e[0]==7:
@@ -53,9 +74,10 @@ def main():
     assert len(commits)==73
     beams=[e for e in part if e[0]==4];bt=[e[1] for e in beams];zt=[e[1] for e in part if e[0]==6];hold=[]
     for k,(a,b) in enumerate(commits):
-     assert a>=phases[0x38 if k<49 else 0x39][0] and blank(a,b)
+     assert a>=phases[0x38 if k<49 else 0x39][0]
+     assert off_tick<a<b<on_tick if hidden else blank(a,b)
      held=beams[bisect_right(bt,a):bisect_left(bt,b)];assert len(held)==1
-     v=beam(held[0]);assert 224<=v<=228 or 235<=v<=252
+     v=beam(held[0]);assert not 229<=v<=234 if hidden else (224<=v<=228 or 235<=v<=252)
      assert b-held[0][1]<6840 and b-a<17100
      assert bisect_right(zt,held[0][1])==bisect_left(zt,b);hold.append(b-a)
     private=[e[1] for e in part if e[0]==6 and e[3] in pcs];gaps=[b-a for a,b in zip(private,private[1:])];assert gaps and max(gaps)<17100
@@ -63,12 +85,18 @@ def main():
     trace=report.get('scene_palette_trace',True)
     if trace:
      assert len(phases[0x3b])==len(phases[0x3c])==1;a,b=phases[0x3b][0],phases[0x3c][0]
-     assert a>=phases[0x3a][0] and a>commits[-1][1] and blank(a,b) and 0<b-a<27360
+     assert a>=phases[0x3a][0] and a>commits[-1][1] and (off_tick<a<b<on_tick if hidden else blank(a,b)) and 0<b-a<27360
      assert not any(e[0]==7 and a<=e[1]<=b for e in part)
-     guard=beams[bisect_left(bt,a)-1];assert 235<=beam(guard)<=243;palette_ticks=b-a
+     guard=beams[bisect_left(bt,a)-1];v=beam(guard);assert hidden or 235<=v<=243;palette_ticks=b-a
     else:assert not phases[0x3b] and not phases[0x3c]
     rows.append(dict(marker=ref['marker'],dma_commits=73,pattern_spans=49,map_rows=24,hold_max=max(hold),private_gap_max=max(gaps),during_loader=sum(b-origin<ref['loader_finish_master'] for a,b in commits),palette_trace_master=palette_ticks,last_dma_after_loader_frames=max(0,commits[-1][1]-origin-ref['loader_finish_master'])/(lines*3420)))
-   results.append(dict(variant=variant,region=region,kernel_sha256=report['kernel_sha256'],report_sha256=sha(raw_report),events_sha256=sha(raw),signature_hex=signature.hex(),commit_pc=commit_pc,dma_commits=sum(r['dma_commits'] for r in rows),during_loader=sum(r['during_loader'] for r in rows),hold_max=max(r['hold_max'] for r in rows),private_gap_max=max(r['private_gap_max'] for r in rows),palette_trace=trace,rows=rows));print({k:v for k,v in results[-1].items() if k not in ['rows','signature_hex']},flush=True)
+    if hidden:
+     rows[-1].update(dma_outside_physical_vblank=sum(not blank(a,b) for a,b in commits),hidden_master=on_tick-off_tick,reveal_after_last_dma_master=on_tick-commits[-1][1])
+   results.append(dict(variant=variant,region=region,kernel_sha256=report['kernel_sha256'],report_sha256=sha(raw_report),events_sha256=sha(raw),signature_hex=signature.hex(),commit_pc=commit_pc,dma_commits=sum(r['dma_commits'] for r in rows),during_loader=sum(r['during_loader'] for r in rows),hold_max=max(r['hold_max'] for r in rows),private_gap_max=max(r['private_gap_max'] for r in rows),palette_trace=trace,rows=rows))
+   if hidden:results[-1].update(hidden=True,off_pc=off_pc,on_pc=on_pc,dma_outside_physical_vblank=sum(r['dma_outside_physical_vblank'] for r in rows))
+   print({k:v for k,v in results[-1].items() if k not in ['rows','signature_hex']},flush=True)
  output=dict(hvc_sha256=sha(hvc),results=results,limits=['Commits identified by unique reviewed native instruction signature, not counters/duration. All DMA holds and native HV guards independently checked in physical VBlank; FIFO49pattern spans then24map rows, phase availability and private clock gaps verified. Palette CPU write/readback span checked only in trace-enabled kernels; default path has final CRAM and native per-case readback evidence, not a physical CPU-span trace. Native IRQs masked, display remains enabled during pipeline, sprites absent. No fullboot/fullgame/real-hardware/frame-deadline/waveform claim.'])
+ if any(r.get('hidden') for r in results):
+  output['limits']=['Hidden DMA commits use unique reviewed native signatures and reviewed display-bit clear/set sequences bound to marker PCs. All commits and traced palette spans lie inside the fixture display-off interval. H32 HV guards, raw duplicated-counter exclusion, FIFO phases, held intervals and strict private Z80 sample gaps independently checked. Default palette path has final CRAM evidence without a physical CPU span trace. Display restoration occurs at fixture flush, not the original game reveal deadline. IRQs masked; sprites/fullboot/fullgame/hardware/waveform and production integration remain unproven.']
  (ROOT/'analysis'/args.report_name).write_text(json.dumps(output,indent=2)+'\n')
 if __name__=='__main__':main()

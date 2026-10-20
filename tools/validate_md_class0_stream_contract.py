@@ -47,6 +47,12 @@ int main(bool reset) {
  check(md_class0_video_stream_begin(&scene,0)==MD_Z80_PSG_OK && scene.ready==1 && !scene.kind && !scene.verify && !scene.job.ready);
  scene.done=1;saved=scene;VDP_setScreenWidth320();
  check(md_class0_video_stream_begin(&scene,1)==MD_Z80_PSG_INVALID && same());VDP_setScreenWidth256();
+ VDP_setEnable(TRUE);saved=scene;check(md_class0_video_stream_begin_hidden(&scene,1)==MD_Z80_PSG_INVALID && same());VDP_setEnable(FALSE);
+ check(md_class0_video_stream_begin_hidden(&scene,1)==MD_Z80_PSG_OK && scene.hidden);
+ check(md_class0_video_stream_step(&scene,&mailbox)==MD_Z80_PSG_WAIT && scene.kind==1);
+ saved=scene;check(md_class0_video_stream_step(&scene,&mailbox)==MD_Z80_PSG_WAIT && same());
+ VDP_setEnable(TRUE);check(md_class0_video_stream_step(&scene,&mailbox)==MD_Z80_PSG_INVALID && same());VDP_setEnable(FALSE);
+ check(md_class0_video_stream_begin_hidden(&scene,1)==MD_Z80_PSG_INVALID && same());
  gaw_done=1;while(TRUE) {}return 0;
 }
 '''
@@ -71,7 +77,7 @@ def main():
    def val(name,width):return int.from_bytes(bytes(ram[(((symbols[name]&65535)+i)&65535)^1] for i in range(width)),'big')
    observed.update(frame=frame,done=val('gaw_done',2),checks=val('gaw_checks',4),failures=val('gaw_failures',4))
   with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',120,folder/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
-  assert observed['done'] and observed['checks']==29 and not observed['failures'],observed
+  assert observed['done'] and observed['checks']==35 and not observed['failures'],observed
   start=next(i for i,e in enumerate(events) if e[0]==3 and e[2]==0x34)
   assert not any(e[0] in (4,7) for e in events[start+1:])
   raw=json.dumps(events,separators=(',',':')).encode();(folder/(region+'-events.json')).write_bytes(raw)
