@@ -1,0 +1,49 @@
+{
+  "scene_default_combinations": [
+    {
+      "bare": false,
+      "hidden": false,
+      "verify": false
+    },
+    {
+      "bare": false,
+      "hidden": false,
+      "verify": true
+    },
+    {
+      "bare": false,
+      "hidden": true,
+      "verify": false
+    },
+    {
+      "bare": false,
+      "hidden": true,
+      "verify": true
+    },
+    {
+      "bare": true,
+      "hidden": false,
+      "verify": false
+    },
+    {
+      "bare": true,
+      "hidden": false,
+      "verify": true
+    },
+    {
+      "bare": true,
+      "hidden": true,
+      "verify": false
+    },
+    {
+      "bare": true,
+      "hidden": true,
+      "verify": true
+    }
+  ],
+  "clock_default_combinations": 4,
+  "generated_text_identical": true,
+  "limits": [
+    "Generated kernel text regression against HEAD1652230; does not replace emulator execution for new options."
+  ]
+}

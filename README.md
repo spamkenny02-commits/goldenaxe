@@ -36,6 +36,11 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+La [comparaison des politiques de service vidéo](analysis/md_class0_scheduling_milestone.md)
+mesure aussi le délai total de réaffichage et les retards sonores. Les cinq essais
+ne sont pas retenus : davantage de transferts pendant le chargement ne suffit pas
+à améliorer la cadence. Les options restent désactivées par défaut.
+
 Le [chargement class0 avec affichage coupé](analysis/md_class0_hidden_milestone.md)
 utilise maintenant les lignes hors VBlank sans changer le mode H32. Les trois bancs
 passent en PAL/NTSC avec les mêmes motifs, carte et couleurs. Le délai de publication

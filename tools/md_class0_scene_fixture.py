@@ -77,7 +77,7 @@ static void video_setup(void) {
 }
 '''
 
-def instrument(main,body,verify=True,proof=False,hidden=False):
+def instrument(main,body,verify=True,proof=False,hidden=False,during_delivery=False,service_attempts=1,service_commits=1,service_slack=False,grant_backoff=False):
     # Existing observer copies reserve11776bytes even in bare kernels.
     # Full proof compares each live state directly to immutable reference ROM.
     main=main.replace('states[11776]','states[1]')
@@ -115,6 +115,36 @@ def instrument(main,body,verify=True,proof=False,hidden=False):
         needle=' video_flush();\n spins=0;do'
         assert main.count(needle)==1
         main=main.replace(needle,' video_flush();\n if(!session_failed) {VDP_setEnable(TRUE);*(volatile u16*)0xc00010=0x3e;}\n spins=0;do')
+    if grant_backoff:
+        main=main.replace('static MdClass0VideoStream scene;','static MdClass0VideoStream scene;static u8 scene_waiting,scene_wait_sequence;')
+        main=main.replace(' u8 status;u32 before;',' u8 status,sequence;u32 before;')
+        needle=' gaw_video_dma_attempts++;before=scene.readback_words;';assert main.count(needle)==1
+        main=main.replace(needle,' sequence=mailbox.stamp.sequence;\n if(!mailbox.stamp.error && (!mailbox.grant || (scene_waiting && sequence==scene_wait_sequence))) return;\n'+needle)
+        main=main.replace('  gaw_video_updates++;','  scene_waiting=0;gaw_video_updates++;')
+        needle=' } else if(status!=MD_Z80_PSG_WAIT) fault(0xf00|status);';assert main.count(needle)==1
+        main=main.replace(needle,' } else if(status==MD_Z80_PSG_WAIT) {scene_wait_sequence=sequence;scene_waiting=1;} else fault(0xf00|status);')
+        main=main.replace('  gaw_scene_sources++;gaw_video_requests+=49;','  scene_waiting=0;gaw_scene_sources++;gaw_video_requests+=49;')
+    if service_attempts>1:
+        helper='static void video_service_batch(void) {u16 attempts=0;u32 before=gaw_video_updates;while(attempts++<'+str(service_attempts)+' && gaw_video_updates-before<'+str(service_commits)+' && gaw_video_updates-1<gaw_video_requests && !session_failed) video_pump();}\n'
+        needle='void cooperative_scene_phase(u16 pc,';assert main.count(needle)==1
+        main=main.replace(needle,helper+needle)
+        needle=' video_pump();\n}\nvoid cooperative_video_service(void) {gaw_video_service_calls++;video_pump();}'
+        assert main.count(needle)==1
+        main=main.replace(needle,' video_service_batch();\n}\nvoid cooperative_video_service(void) {gaw_video_service_calls++;video_service_batch();}')
+    if service_slack:
+        assert service_attempts>1
+        main=main.replace('static void video_service_batch(void) {u16', 'static void video_service_batch(u32 due) {MdServiceClock observer=service;SourceMdPsgReplayClock observed;u16')
+        needle=') video_pump();}\nvoid cooperative_scene_phase';assert main.count(needle)==1
+        main=main.replace(needle,') {if(md_service_clock_now(&observer,&observed)!=MD_SERVICE_OK || (s32)(due-observed.master)<=17100) break;video_pump();}}\nvoid cooperative_scene_phase')
+        main=main.replace('cooperative_scene_phase(u16 pc,const u8 *sms,const u8 *upper)', 'cooperative_scene_phase(u16 pc,const u8 *sms,const u8 *upper,u32 due)')
+        main=main.replace(' video_service_batch();\n}', ' video_service_batch(due);\n}')
+        main=main.replace('void cooperative_video_service(void) {gaw_video_service_calls++;video_service_batch();}', 'void cooperative_video_service(const SourceClock *clock) {gaw_video_service_calls++;video_service_batch(clock->elapsed);}')
+        body=body.replace('cooperative_scene_phase(unsigned short,const unsigned char *,const unsigned char *);','cooperative_scene_phase(unsigned short,const unsigned char *,const unsigned char *,unsigned long);')
+        body=body.replace('cooperative_scene_phase(pc,p->scene_map,p->scene_upper);','cooperative_scene_phase(pc,p->scene_map,p->scene_upper,clock->elapsed);')
+    if during_delivery:
+        needle=' while((mailbox.head!=mailbox.tail || mailbox.busy) && !mailbox.stamp.error && ++spins<1000000UL) work();'
+        assert main.count(needle)==1
+        main=main.replace(needle,' *(volatile u16*)0xc00010=0x35;\n'+needle.replace(' work();',' {video_pump();work();}')+'\n *(volatile u16*)0xc00010=0x36;')
     return main,body
 
 def validate(folder,region,frame,observed,vram,regs,rom,proof=False,verify=True):

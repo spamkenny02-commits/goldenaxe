@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def sha(b):return hashlib.sha256(b).hexdigest()
 def main():
- p=argparse.ArgumentParser();p.add_argument('--variants',nargs='+',default=['class0-scene-bounded-proof','class0-scene-bounded-native']);p.add_argument('--archive',default='md-class0-scene-v0203');p.add_argument('--report-name',default='md_class0_scene_physical_report.json');args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--variants',nargs='+',default=['class0-scene-bounded-proof','class0-scene-bounded-native']);p.add_argument('--archive',default='md-class0-scene-v0203');p.add_argument('--report-name',default='md_class0_scene_physical_report.json');p.add_argument('--schedule-metrics',action='store_true');args=p.parse_args()
  assert all(re.fullmatch('[a-z0-9-]+',v) for v in args.variants+[args.archive]);assert re.fullmatch('[a-z0-9_]+.json',args.report_name)
  archive=ROOT/'analysis'/args.archive;manifest=None
  def read(path):
@@ -30,15 +30,16 @@ def main():
   # Hidden allocation reviewed in all three kernels: A0 control, D1 length,
   # A2/D6/D5 source, absolute scene command, release through retained A1.
   hidden_signature=bytes.fromhex('207c00c00004308130bc9400308a308630853039')+(scene+10).to_bytes(4,'big')+bytes.fromhex('30803039')+(scene+12).to_bytes(4,'big')+bytes.fromhex('308032bc0000')
-  candidates=[hidden_signature] if hidden else [signature,alternate];assert sum(kernel.count(v) for v in candidates)==1
+  hidden_backoff=bytes.fromhex('227c00c00004328132bc9400328a3287328b3039')+(scene+10).to_bytes(4,'big')+bytes.fromhex('32803039')+(scene+12).to_bytes(4,'big')+bytes.fromhex('328030bc0000')
+  candidates=[hidden_signature,hidden_backoff] if hidden else [signature,alternate];assert sum(kernel.count(v) for v in candidates)==1
   signature=next(v for v in candidates if kernel.count(v)==1);commit_pc=kernel.index(signature)+len(signature)
   if hidden:
    start_pc=commit_pc-len(signature)
-   # A1 is BUSREQ throughout this reviewed straight-line held path.
+   # Retained A1 (or A0 in backoff allocation) owns BUSREQ in this held path.
    held_prefix=kernel[start_pc-106:start_pc]
-   assert held_prefix.startswith(bytes.fromhex('227c00a1110030110800000866f2'))
+   assert held_prefix.startswith(bytes.fromhex('207c00a1110030100800000866f2' if signature==hidden_backoff else '227c00a1110030110800000866f2'))
    assert bytes.fromhex('303900c00008') in held_prefix
-   assert bytes.fromhex('0607001b0c070005') in held_prefix
+   assert bytes.fromhex('0606001b0c060005' if signature==hidden_backoff else '0607001b0c070005') in held_prefix
    reg=next(v for k,v in symbols.items() if k.split('.')[0]=='regValues')+1
    word=lambda x:x.to_bytes(4,'big')
    off=bytes.fromhex('207c00c0001030801039')+word(reg)+bytes.fromhex('0200ffbf13c0')+word(reg)+bytes.fromhex('024000ff0040810033c000c0000430bc003d')
@@ -92,6 +93,15 @@ def main():
     rows.append(dict(marker=ref['marker'],dma_commits=73,pattern_spans=49,map_rows=24,hold_max=max(hold),private_gap_max=max(gaps),during_loader=sum(b-origin<ref['loader_finish_master'] for a,b in commits),palette_trace_master=palette_ticks,last_dma_after_loader_frames=max(0,commits[-1][1]-origin-ref['loader_finish_master'])/(lines*3420)))
     if hidden:
      rows[-1].update(dma_outside_physical_vblank=sum(not blank(a,b) for a,b in commits),hidden_master=on_tick-off_tick,reveal_after_last_dma_master=on_tick-commits[-1][1])
+    if args.schedule_metrics:
+     assert hidden
+     rows[-1].update(loader_late_master=ref['loader_finish_delta'],reveal_after_source_master=on_tick-origin-ref['source_finish_master'],reveal_after_loader_master=on_tick-origin-ref['loader_finish_master'],source_finish_master=ref['source_finish_master'])
+     if report.get('video_during_delivery'):
+      delivery=[[e for e in part if e[0]==3 and e[2]==tag] for tag in [0x35,0x36]]
+      assert all(len(group)==1 for group in delivery)
+      begin,end=delivery[0][0][1],delivery[1][0][1]
+      assert begin<end<on_tick
+      rows[-1].update(delivery_wait_master=end-begin,dma_during_delivery=sum(begin<a<b<end for a,b in commits))
    results.append(dict(variant=variant,region=region,kernel_sha256=report['kernel_sha256'],report_sha256=sha(raw_report),events_sha256=sha(raw),signature_hex=signature.hex(),commit_pc=commit_pc,dma_commits=sum(r['dma_commits'] for r in rows),during_loader=sum(r['during_loader'] for r in rows),hold_max=max(r['hold_max'] for r in rows),private_gap_max=max(r['private_gap_max'] for r in rows),palette_trace=trace,rows=rows))
    if hidden:results[-1].update(hidden=True,off_pc=off_pc,on_pc=on_pc,dma_outside_physical_vblank=sum(r['dma_outside_physical_vblank'] for r in rows))
    print({k:v for k,v in results[-1].items() if k not in ['rows','signature_hex']},flush=True)

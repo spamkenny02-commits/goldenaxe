@@ -90,10 +90,14 @@ def main():
     parser.add_argument('--poll-transfer',type=int,default=0,help='Prepare once for up to this many synchronous bus-transfer attempts')
     parser.add_argument('--video',choices=['off','display','cpu','dma'],default='off',help='Visible raster; CPU uploads or retained jobs for grant-gated32byte DMA')
     parser.add_argument('--video-service',type=int,default=0,help='Pump DMA every N source-clock function boundaries (power of two)')
-    parser.add_argument('--video-service-kind',choices=['all','repeat-disabled'],default='all',help='Choose all clock functions or only disabled repetition batch boundaries')
+    parser.add_argument('--video-service-kind',choices=['all','repeat-disabled','repeat-batches'],default='all',help='Choose all clock functions or only disabled repetition batch boundaries')
     parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
     parser.add_argument('--video-prepared-job',action='store_true',help='Retain prepared DMA control words across retries too')
     parser.add_argument('--video-source-patterns',action='store_true',help='Upload all512 actual source pattern tiles per loader case, with native VRAM readback')
+    parser.add_argument('--scene-service-attempts',type=int,default=1,help='Bound video attempts at each source service/checkpoint')
+    parser.add_argument('--scene-service-commits',type=int,default=1,help='Bound successful video jobs at each source service/checkpoint')
+    parser.add_argument('--scene-service-slack',action='store_true',help='Only batch video when native source logical clock leads physical clock by more than17100 master ticks')
+    parser.add_argument('--scene-grant-backoff',action='store_true',help='Skip retained scene WAIT retries until grant and a new publication sequence')
     parser.add_argument('--scene-hidden',action='store_true',help='Keep display off for whole-frame bounded H32 transfers')
     parser.add_argument('--scene-native-palette',action='store_true',help='Compile default palette path without diagnostic trace hook')
     parser.add_argument('--video-scene',action='store_true',help='Native193tile/map/palette pipeline with ROM resident assets')
@@ -120,13 +124,17 @@ def main():
     assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
     assert not args.video_cache_pattern or args.video=='dma'
+    assert 1<=args.scene_service_attempts<=256 and 1<=args.scene_service_commits<=8
+    assert args.video_scene or (args.scene_service_attempts==1 and args.scene_service_commits==1)
+    assert not args.scene_service_slack or (args.video_scene and args.scene_service_attempts>1)
+    assert not args.scene_grant_backoff or args.video_scene
     assert not args.scene_hidden or args.video_scene
     assert not args.scene_native_palette or args.video_scene
-    assert not args.video_scene or (args.video=='dma' and args.live_loader and args.video_service==1 and args.video_service_kind=='repeat-disabled' and args.driver=='md_psg_refresh_z80.asm' and not args.video_source_patterns and not args.video_cache_pattern and not args.video_prepared_job)
+    assert not args.video_scene or (args.video=='dma' and args.live_loader and args.video_service==1 and args.video_service_kind in ('repeat-disabled','repeat-batches') and args.driver=='md_psg_refresh_z80.asm' and not args.video_source_patterns and not args.video_cache_pattern and not args.video_prepared_job)
     assert not args.video_source_phases or (args.video_source_patterns and args.video_service and args.video_service_kind=='repeat-disabled' and args.video_source_tiles==4)
     assert not args.video_grant_backoff or (args.video_source_refresh and args.driver in ('md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
     assert not args.video_source_refresh or (args.video_source_patterns and args.video_source_tiles>1 and args.driver in ('md_psg_refresh_z80.asm','md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
-    assert not args.video_source_during_delivery or args.video_source_patterns
+    assert not args.video_source_during_delivery or (args.video_source_patterns or args.video_scene)
     assert not args.video_source_no_readback or (args.video_source_patterns or args.video_scene)
     assert args.video_source_tiles<=4 or (args.video_source_refresh and args.driver in ('md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
     assert args.video_source_tiles==1 or args.video_source_patterns
@@ -177,7 +185,7 @@ def main():
         from md_z80_video_fixture import instrument
         if args.video_scene:
             from md_class0_scene_fixture import instrument as scene_instrument,assets as scene_assets
-            main,body=scene_instrument(main,body,verify=not args.video_source_no_readback,proof=not args.bare,hidden=args.scene_hidden)
+            main,body=scene_instrument(main,body,verify=not args.video_source_no_readback,proof=not args.bare,hidden=args.scene_hidden,during_delivery=args.video_source_during_delivery,service_attempts=args.scene_service_attempts,service_commits=args.scene_service_commits,service_slack=args.scene_service_slack,grant_backoff=args.scene_grant_backoff)
             (src/'scene-resident.h').write_text(scene_assets((ROOT/'input/original.sms').read_bytes()))
             (folder/'scene-fixture.py.snapshot').write_bytes((ROOT/'tools/md_class0_scene_fixture.py').read_bytes())
         elif args.video_source_patterns:
@@ -211,7 +219,7 @@ def main():
         (src/(module+'.c')).write_text(prefix+'#include "../../../megadrive/src/'+module+'.c"\n')
     if args.service or args.video_service:
         from md_clock_service_kernel import source as service_source
-        (src/'source_clock.c').write_text(service_source(bool(args.video_service),args.video_service_kind))
+        (src/'source_clock.c').write_text(service_source(bool(args.video_service),args.video_service_kind,args.scene_service_slack))
         (folder/'clock-service.py.snapshot').write_bytes((ROOT/'tools/md_clock_service_kernel.py').read_bytes())
     for name in ['source_room_finish.h','source_irq_queue_context.h','source_pattern_plan_generated.h','source_md_psg_replay.h','md_service_clock.h','source_md_psg_plan.h','md_z80_psg.h']:(src/name).write_text('#include "../../../megadrive/src/'+name+'"\n')
     (src/'md_service_clock_hv.s').write_bytes((ROOT/'megadrive/src/md_service_clock_hv.s').read_bytes())
@@ -449,6 +457,10 @@ def main():
     report['video_fixture']=args.video
     report['video_scene']=args.video_scene
     report['scene_hidden']=args.scene_hidden
+    report['scene_service_attempts']=args.scene_service_attempts
+    report['scene_service_commits']=args.scene_service_commits
+    report['scene_service_slack']=args.scene_service_slack
+    report['scene_grant_backoff']=args.scene_grant_backoff
     report['scene_palette_trace']=args.video_scene and not args.scene_native_palette
     report['video_service_stride']=args.video_service
     report['video_service_kind']=args.video_service_kind
@@ -485,7 +497,7 @@ def main():
         if args.poll_transfer:report['limits'].append('Synchronous polled transfer prepares once per call and retries only WAIT up to the configured attempt limit. Diagnostic grant_wait counts exhausted outer calls, not internal transfer attempts; FULL/errors return immediately. No deferred queue or source work runs inside the polling loop.')
         if args.video!='off':report['limits'].append('H32/224 display enabled with a synthetic repeated diagnostic tile and palette, verified against final physical VRAM/registers/image. CPU mode uploads one32byte tile per publisher callback; DMA mode retains jobs for guarded transfers. This is a diagnostic video fixture, not the game renderer, SMS image fidelity, native IRQs, or full-game proof. Callback marker duration includes video work attempted in that callback.')
         if args.video=='dma':report['limits'].append('DMA experiment queues one deterministic diagnostic tile job per callback, tries only with grant/even stamp at most2raw lines old in rawV235..252 (excluding NTSC duplicate range), rechecks after BUSREQ. Precomputed fixed32byte DMA command words issued only inside the granted critical section, source128KiB boundary checked; SGDK auto-increment set before acquisition. Jobs are retained in order and all drained while Z80 clock is still active before stop; some may complete after loader/audio delivery markers. No job frame deadlines or game renderer queue are established; native IRQs remain masked.')
-        if args.video_service:report['limits'].append('Video service experiment wraps the selected source_clock function boundaries (all four or only repeat_disabled) and attempts DMA every configured number of boundaries. Inline source_clock_block and computation inside helpers are not serviced. Adds native cost without changing the logical source clock; no maximum service interval or frame deadline is established.')
+        if args.video_service:report['limits'].append('Video service experiment wraps the selected source_clock function boundaries (all four, both repetition functions, or only repeat_disabled) and attempts DMA every configured number of boundaries. Inline source_clock_block and computation inside helpers are not serviced. Adds native cost without changing the logical source clock; no maximum service interval or frame deadline is established.')
         if args.video_cache_pattern:report['limits'].append('Diagnostic tile payload is prepared once per queued job and remains intact across WAIT, reset after successful DMA. This removes fixture preparation overhead; DMA primitive/control preparation and its guards remain unchanged. No renderer payload/deadline claim.')
         if args.video_prepared_job:
             report['limits']=[x.replace('grant/even stamp','grant and atomic8bit V stamp') for x in report['limits']]
@@ -505,6 +517,10 @@ def main():
     if args.video_scene:
         report['limits']=[x for x in report['limits'] if not x.startswith(('H32/224 display enabled with a synthetic','DMA experiment queues one deterministic'))]
         report['limits'].append('Native class0 background pipeline:193ROM patterns in retained1..4tile spans,24translated64byte map rows, CPU32color publish in guarded blank. Resident HUD/menu/icon patterns initialized from native entry ROM resources; all319outside pattern slots must remain intact. Actual source checkpoints1706/1deb/24bf queue owned data. Independent final VRAM/map/CRAM checks; optional native per-word readback is specified by video_source_readback; no sprites/fullboot/whole-game/deadline/waveform proof. CPU palette trace hook enabled only in fixture; default backend emits no PSG diagnostic markers.')
+    if args.video_scene and args.scene_service_attempts>1:report['limits'].append('Bounded scene service batches at source clock boundaries and checkpoints: at most '+str(args.scene_service_attempts)+' attempts or '+str(args.scene_service_commits)+' successful jobs per call; remaining work retained. This changes physical scheduling cost, not logical source dates; fidelity deadlines still need independent measurement.')
+    if args.scene_service_slack:report['limits'].append('Each service batch queries the independently checked Z80/beam clock and steps only while source logical time leads physical time by more than17100 ticks. Clock WAIT ends the batch. A private observer copy of the service clock preserves publisher counter/base ownership; source logical clock state is not modified. This reserve is experimental, not a proven bound for the following unserviced native work or a deadline guarantee.')
+    if args.scene_grant_backoff:report['limits'].append('Retained scene WAIT caches the sequence observed before the attempt. Caller skips while grant is absent or that publication sequence is unchanged; errors bypass this skip. All native held-bus/time/display checks still run on a real attempt. Reset per scene and on OK; no cached authorization. Sequence wrap can postpone a retry, not authorize a transfer.')
+    if args.video_scene and args.video_source_during_delivery:report['limits'].append('Scene video steps also run inside the final audio queue delivery wait, bracketed by markers35/36. Remaining jobs drain afterwards. This is cooperative fixture scheduling, not original reveal deadline acceptance.')
     if args.scene_hidden:report['limits']=[x.replace('CPU32color publish in guarded blank','CPU32color publish while display is disabled') for x in report['limits']]+['Hidden H32 mode: display disabled before clock start, kept off through all pattern/map/palette jobs, enabled only after successful flush. Hidden small-DMA path excludes duplicated rawV229..234 and retains age/grant/refresh/error guards. No H40 change; timing and display intervals require physical capture. The fixture reveal boundary is not yet the original game enable deadline.']
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')

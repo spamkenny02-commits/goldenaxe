@@ -1,0 +1,11 @@
+{
+  "variant": "class0-hidden-slack64",
+  "passed": false,
+  "region": "ntsc",
+  "failure_code": 1025,
+  "kernel_sha256": "83c657f6277a3095d7a1bd6c3260f5a4c2d4453fe86b09867a28607cf263b82e",
+  "events_sha256": "b6c47c8f0b7cab83f85579e6b2cd918a498aa6db5ae269a55f9fb0643b813b25",
+  "log_sha256": "95611c5e8c6c25c4a2a17a48105b914abe573055476bf16cd5a69bb4c914c80c",
+  "cause": "Direct service-clock query advanced the clock counter independently of the producer; producer/clock ownership gate rejected the next publication with INVALID. Replaced by a private observer copy in slack64-owned; the original failing kernel is preserved.",
+  "pal_executed": false
+}

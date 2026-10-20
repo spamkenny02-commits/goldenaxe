@@ -18,12 +18,15 @@ WRAPPERS={
 '''}
 
 
-def source(video=False,kind='all'):
-    assert kind in ('all','repeat-disabled')
-    functions=['execute','repeat','repeat_disabled','checkpoint'] if kind=='all' else ['repeat_disabled']
+def source(video=False,kind='all',clocked=False):
+    assert kind in ('all','repeat-disabled','repeat-batches')
+    functions=['execute','repeat','repeat_disabled','checkpoint'] if kind=='all' else (['repeat','repeat_disabled'] if kind=='repeat-batches' else ['repeat_disabled'])
     text=''.join('#define source_clock_'+n+' source_clock_'+n+'_unserviced\n' for n in functions)
     text+='#include "../../../megadrive/src/source_clock.c"\n'
     text+=''.join('#undef source_clock_'+n+'\n' for n in functions)
     text+='void cooperative_service(void);\n'
     text+=''.join(WRAPPERS[n] for n in ['execute','checkpoint','repeat','repeat_disabled'] if n in functions)
+    if clocked:
+        assert video
+        text=text.replace('void cooperative_service(void);','void cooperative_service(const SourceClock *clock);').replace('cooperative_service();','cooperative_service(c);')
     return text.replace('cooperative_service','cooperative_video_service') if video else text
