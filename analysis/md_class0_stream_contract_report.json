@@ -1,0 +1,33 @@
+{
+  "kernel_sha256": "fac54ba9897f06ed340e9ec652f6cb2af522287fee785bea35506a32409d59e9",
+  "sources": {
+    "md_class0_video_stream.c": "7de3b6c143e8bd42fece17d026acbf630df3fcc3ad623a14a025917007cbeb22",
+    "md_class0_video_stream.h": "c9551cdb85398e084c1bf8032abd4c87ee0b5ac1cbea8d9640dc8fcd11214b23",
+    "source_class0_video.c": "d573d4bbfffda97233781b29d67784a73a8a270540723f29bd4216d6a67f44dc",
+    "source_class0_video.h": "b94f1ab44bc8b12e0afd02896c76e9fcffdc80c261a7e8627964205728e7cdd1",
+    "source_class0_video_assets_generated.h": "75db5ef4c095ab678f85020f376dd72d24fc3dcf8ace975540e61e11c74f1b55",
+    "md_z80_video_span.c": "ae11701e7d1a4bb5cab12333af5750c5ba9e3d769ee02830059f727d03a86d90",
+    "md_z80_video_span.h": "1c0f3a43b51c0fb817bbcc061b02e12b104854d98376348448358cc512db5e39"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 40,
+      "done": 1,
+      "checks": 29,
+      "failures": 0,
+      "events_sha256": "5696cf5c6c61c2f98f3137e736abe1d6dbdddcf7c9288427d75a46ccbf1617e9"
+    },
+    {
+      "region": "pal",
+      "frame": 34,
+      "done": 1,
+      "checks": 29,
+      "failures": 0,
+      "events_sha256": "8852aedc40907210d367dbf08d361e88d4b37cb54f86b7d54133921fe59056a2"
+    }
+  ],
+  "limits": [
+    "State order, null/misaligned input, owned conversion copies, retained WAIT token, sticky fault and pre-beam/bus rejection only. Successful physical DMA, palette blanking and deadline behavior require the separate live captures."
+  ]
+}
