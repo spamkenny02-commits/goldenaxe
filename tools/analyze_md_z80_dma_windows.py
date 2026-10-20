@@ -62,6 +62,18 @@ def main():
             # Reviewed source-atlas LTO form: A2 owns control, source words
             # spilled in the frame, command read from the job via A0.
             candidates.append(bytes.fromhex('247c00c0000434bc931034bc940034aefea834aefeaa34aefeac3028000834803028000a348032bc0000'))
+            if report.get('video_source_tiles',1)>1:
+                # Contiguous span: variable length control word and source
+                # registers preloaded into frame slots, RAM command at10/12.
+                candidates.append(bytes.fromhex('247c00c0000434aefe9634bc940034aefea634aefea834aefeaa3028000a34803028000c348032bc0000'))
+                # Without diagnostic readback GCC retains length in D3 and
+                # uses the same register for the two RAM command words.
+                candidates.append(bytes.fromhex('247c00c00004348334bc940034aefe9a34aefeaa34aefeac3628000a34833628000c348332bc0000'))
+                # Shared helper during pending audio delivery: length in D0,
+                # source in D5/D4/D3, command words from the global RAM job.
+                candidates.append(bytes.fromhex('207c00c00004308030bc94003085308430833039')+
+                    (job+10).to_bytes(4,'big')+bytes.fromhex('30803039')+
+                    (job+12).to_bytes(4,'big')+bytes.fromhex('308032bc0000'))
         assert sha(kernel)==report['kernel_sha256'] and sum(kernel.count(s) for s in candidates)==1
         selected=next(s for s in candidates if kernel.count(s)==1)
         committed_pc=kernel.index(selected)+len(selected)
@@ -82,7 +94,9 @@ def main():
                         all_ranges.append((start,event[1]))
                         if event[3]==committed_pc:commits.append((start,event[1]))
                         start=None
-                expected_commits=512 if report.get('video_source_patterns',False) else reference['publisher_callbacks']
+                tiles=report.get('video_source_tiles',1)
+                jobs=172 if tiles==3 else (512+tiles-1)//tiles
+                expected_commits=jobs if report.get('video_source_patterns',False) else reference['publisher_callbacks']
                 assert len(commits)==expected_commits
                 beam_reads=[e for e in part if e[0]==4];beam_times=[e[1] for e in beam_reads]
                 z80_times=[e[1] for e in part if e[0]==6]
@@ -111,8 +125,15 @@ def main():
                     last_after_loader_master=max(0,last-reference['loader_finish_master']),
                     last_after_delivery_query_master=max(0,last-reference['delivery_finish_master']),
                     last_after_loader_frames=max(0,last-reference['loader_finish_master'])/(lines*3420)))
-            expected_total=48*512 if report.get('video_source_patterns',False) else 2784
-            assert sum(r['committed'] for r in rows)==region_report['video_requests']==expected_total
+                if report.get('video_during_delivery',False):
+                    last_psg=max(e[1] for e in part if e[0]==5)
+                    rows[-1]['before_last_psg']=sum(b<last_psg for a,b in commits)
+            expected_total=48*jobs if report.get('video_source_patterns',False) else 2784
+            assert sum(r['committed'] for r in rows)==expected_total
+            if report.get('video_source_patterns',False):
+                assert region_report['video_requests']==48*512
+                if tiles>1:assert region_report['video_dma_commits']==expected_total
+            else:assert region_report['video_requests']==expected_total
             pre_reads=sum(r['pre_bus_beam_reads'] for r in rows)
             assert pre_reads<=region_report['video_dma_attempts']
             results.append(dict(variant=variant,region=region,report_sha256=sha(report_raw),events_sha256=sha(raw),
@@ -124,6 +145,7 @@ def main():
                 after_delivery_query=sum(r['after_delivery_query'] for r in rows),
                 hold_max=max(r['hold_max'] for r in rows),
                 max_last_after_loader_frames=max(r['last_after_loader_frames'] for r in rows),rows=rows))
+            if report.get('video_during_delivery',False):results[-1]['before_last_psg']=sum(r['before_last_psg'] for r in rows)
             print({k:v for k,v in results[-1].items() if k!='rows'},flush=True)
     output=dict(hvc_sha256=sha(hvc),signature_hex=signature.hex(),results=results,
         limits=['Counts physical successful DMA-path releases by checked native instruction signature, not by counters or duration. Every counted request-to-release range is inside physical VBlank, with its native held-bus beam read independently checked against frame/time/HV tables. No Z80 sample occurs after that guard read before release; an in-flight instruction can finish between BUSREQ and BUSACK.',

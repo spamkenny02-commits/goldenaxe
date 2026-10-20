@@ -94,6 +94,9 @@ def main():
     parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
     parser.add_argument('--video-prepared-job',action='store_true',help='Retain prepared DMA control words across retries too')
     parser.add_argument('--video-source-patterns',action='store_true',help='Upload all512 actual source pattern tiles per loader case, with native VRAM readback')
+    parser.add_argument('--video-source-during-delivery',action='store_true',help='Service actual source video while final queued audio is still being delivered')
+    parser.add_argument('--video-source-no-readback',action='store_true',help='Measure uploads without per-word diagnostic VRAM reads; final tiles still checked independently')
+    parser.add_argument('--video-source-tiles',type=int,default=1,choices=[1,2,3,4],help='Contiguous source tiles per DMA job')
     parser.add_argument('--max-frames',type=int,default=20000)
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
@@ -111,6 +114,9 @@ def main():
     assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
     assert not args.video_cache_pattern or args.video=='dma'
+    assert not args.video_source_during_delivery or args.video_source_patterns
+    assert not args.video_source_no_readback or args.video_source_patterns
+    assert args.video_source_tiles==1 or args.video_source_patterns
     assert not args.video_source_patterns or (args.video_prepared_job and not args.video_service)
     assert 20000<=args.max_frames<=100000
     assert not args.video_prepared_job or args.video_cache_pattern
@@ -158,7 +164,7 @@ def main():
         from md_z80_video_fixture import instrument
         if args.video_source_patterns:
             from md_z80_source_video_fixture import instrument_source
-            main,body=instrument_source(main,body)
+            main,body=instrument_source(main,body,args.video_source_tiles,not args.video_source_no_readback,args.video_source_during_delivery)
             (folder/'source-video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_source_video_fixture.py').read_bytes())
         else:
             main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern,args.video_prepared_job)
@@ -169,6 +175,9 @@ def main():
         modules.append('md_z80_video_dma')
         if args.video_source_patterns:
             modules.append('pattern_convert')
+            if args.video_source_tiles>1:
+                modules.append('md_z80_video_span')
+                (src/'md_z80_video_span.h').write_text('#include "../../../megadrive/src/md_z80_video_span.h"\n')
             (src/'pattern_convert.h').write_text('#include "../../../megadrive/src/pattern_convert.h"\n')
         (src/'md_z80_video_dma.h').write_text('#include "../../../megadrive/src/md_z80_video_dma.h"\n')
     for module in modules:
@@ -225,7 +234,7 @@ def main():
             if args.video_cache_pattern:observed['video_pattern_preparations']=value('gaw_video_pattern_preparations',4)
             if args.video_prepared_job:observed['video_job_preparations']=value('gaw_video_job_preparations',4)
             if args.video_source_patterns:
-                observed.update(video_sources=value('gaw_video_sources',4),video_readback_words=value('gaw_video_readback_words',4),video_readback_errors=value('gaw_video_readback_errors',4))
+                observed.update(video_sources=value('gaw_video_sources',4),video_readback_words=value('gaw_video_readback_words',4),video_readback_errors=value('gaw_video_readback_errors',4),video_dma_commits=value('gaw_video_dma_commits',4))
             for e in events[-size:] if size else []:
                 if e[0]==3 and (64<=e[2]<=89 or 128<=e[2]<176):active[0]=e[2]
             stamp=[ram[(mb+i)^1] for i in range(6)]
@@ -345,13 +354,14 @@ def main():
             assert regs[1]&0x40 and not regs[1]&8 and not regs[12]&1
             plane=(regs[2]&0x38)<<10
             if args.video_source_patterns:
-                from md_z80_source_video_fixture import convert_sms_patterns
+                from md_z80_source_video_fixture import convert_sms_patterns,jobs_per_case
                 source=(folder/(region+'-source-patterns.bin')).read_bytes()
                 expected_tiles=convert_sms_patterns(source)
                 actual_tiles=bytes(vram[(512+n)^1] for n in range(16384))
                 assert actual_tiles==expected_tiles
                 assert observed['video_sources']==48 and observed['video_requests']==48*512
-                assert observed['video_readback_words']==48*512*16 and not observed['video_readback_errors']
+                assert observed['video_dma_commits']==48*jobs_per_case(args.video_source_tiles)
+                assert observed['video_readback_words']==(0 if args.video_source_no_readback else 48*512*16) and not observed['video_readback_errors']
                 assert all(int.from_bytes(vram[plane+(y*64+x)*2:plane+(y*64+x)*2+2],'little')==(16+y*32+x if y<16 else 1) for y in range(28) for x in range(32))
             else:
                 assert bytes(vram[(32+n)^1] for n in range(32))==expected_pattern(observed['video_updates'])
@@ -360,8 +370,9 @@ def main():
             image=Image.open(capture/f'frame_{frame:05d}.png');colors=image.convert('RGB').getcolors(image.width*image.height)
             assert colors is not None and len(colors)>=8
             if args.video=='dma':assert observed['video_requests']==observed['video_updates']-1 and observed['video_dma_attempts']>=observed['video_requests']
-            if args.video_cache_pattern:assert observed['video_pattern_preparations']==observed['video_requests']
-            if args.video_prepared_job:assert observed['video_job_preparations']==observed['video_requests']
+            jobs=observed['video_dma_commits'] if args.video_source_patterns else observed.get('video_requests')
+            if args.video_cache_pattern:assert observed['video_pattern_preparations']==jobs
+            if args.video_prepared_job:assert observed['video_job_preparations']==jobs
             video_evidence=dict(mode=args.video,updates=observed['video_updates'],colors=len(colors),vram_sha256=sha(vram),registers_sha256=sha(regs),image_sha256=sha((capture/f'frame_{frame:05d}.png').read_bytes()))
         result=dict(region=region,**observed,plain_core_identical=True,errors_master=[min(e for r in rows for e in r['errors_master']),max(e for r in rows for e in r['errors_master'])],rows=rows,events_sha256=sha(raw))
         if video_evidence:result['video']=video_evidence
@@ -377,6 +388,10 @@ def main():
     report['video_pattern_cached']=args.video_cache_pattern
     report['video_job_prepared']=args.video_prepared_job
     report['video_source_patterns']=args.video_source_patterns
+    report['video_source_tiles']=args.video_source_tiles
+    report['video_source_readback']=not args.video_source_no_readback
+    report['video_during_delivery']=args.video_source_during_delivery
+    if args.video_source_tiles>1:report['headers']['md_z80_video_span.h']=sha((ROOT/'megadrive/src/md_z80_video_span.h').read_bytes())
     report['max_frames']=args.max_frames
     if args.video=='dma':report['headers']['md_z80_video_dma.h']=sha((ROOT/'megadrive/src/md_z80_video_dma.h').read_bytes())
     if args.live_loader:
@@ -403,6 +418,9 @@ def main():
         if args.video_source_patterns:
             report['limits']=[x for x in report['limits'] if not x.startswith(('H32/224 display enabled with a synthetic','DMA experiment queues one deterministic','Diagnostic tile payload'))]
         if args.video_source_patterns:report['limits'].append('Actual source-checked16384byte SMS pattern mirror converted into512 MD tiles per case after source loading. Native physical VRAM readback checks every word before payload release; independent planar conversion checks all final tiles. The visible atlas uses a diagnostic palette/map, not the game scene. Uploads begin after source work and drain after audio: no overlap/deadline or production integration claim. Generic one-job-per-callback description does not apply to this mode.')
+        if args.video_source_no_readback:report['limits']=[x.replace('Native physical VRAM readback checks every word before payload release;', 'Per-word native VRAM readback disabled for this performance measurement;') for x in report['limits']]
+        if args.video_source_tiles==3:report['limits'].append('Three-tile stress starts with1tile then2tiles, followed by3tile jobs and a final2tile tail:172 commits per512tiles, exercising1/2/3tile spans in actual DMA.')
+        if args.video_source_during_delivery:report['limits']=[x.replace('Uploads begin after source work and drain after audio:', 'Uploads begin after source work; video is also serviced during the final audio delivery wait, with remaining jobs drained afterwards:') for x in report['limits']]
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')

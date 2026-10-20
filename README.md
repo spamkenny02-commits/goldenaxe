@@ -112,6 +112,12 @@ mot dans le VDP, sans différence. Les états source et l'audio passent aussi.
 L'affichage reste un atlas de contrôle et les envois suivent la livraison audio :
 scène complète, regroupement des travaux et cadence du rendu restent à intégrer.
 
+Les [transferts contigus de une à quatre tuiles](analysis/md_z80_video_spans_milestone.md)
+divisent ensuite par quatre le nombre de commandes pour les mêmes données.
+Les contrôles PAL/NTSC passent, y compris les blocs partiels et quelques
+transferts de 128 octets avant la fin d'un flux audio actif. Le débit reste
+insuffisant pour conclure sur le rendu du jeu ; ce jalon ne modifie pas la v0203.
+
 Le **lecteur audio complet du prototype** produit désormais les horodatages
 PSG : **25 644 appels et 89 200 écritures par région** concordent avec la SMS,
 puis passent en 68000 PAL/NTSC avec la file native. Les commandes globales,
