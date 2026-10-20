@@ -36,6 +36,11 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+Le [service aux phases réelles du chargeur](analysis/md_z80_source_phases_milestone.md)
+effectue désormais des transferts pendant le chargement natif, en PAL/NTSC.
+Les états source, les données vidéo et l'horloge passent les contrôles ciblés.
+Le recouvrement reste faible ; l'atlas de diagnostic doit encore être remplacé par la vraie scène.
+
 La [comparaison des reprises DMA](analysis/md_z80_grant_backoff_milestone.md)
 réduit les tentatives, mais révèle des gains NTSC et des régressions PAL selon la charge.
 L'attente du renouvellement reste optionnelle ; aucun gain général de cadence du jeu n'est établi.

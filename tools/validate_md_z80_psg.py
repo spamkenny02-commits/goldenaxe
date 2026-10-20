@@ -94,6 +94,7 @@ def main():
     parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
     parser.add_argument('--video-prepared-job',action='store_true',help='Retain prepared DMA control words across retries too')
     parser.add_argument('--video-source-patterns',action='store_true',help='Upload all512 actual source pattern tiles per loader case, with native VRAM readback')
+    parser.add_argument('--video-source-phases',action='store_true',help='Release prefix at1706 and tail at1deb; service during actual loading')
     parser.add_argument('--video-grant-backoff',action='store_true',help='After video WAIT, retry only after the fresh grant byte changes')
     parser.add_argument('--video-source-refresh',action='store_true',help='Use the capability-gated early window with the post-publication-refresh driver')
     parser.add_argument('--video-source-during-delivery',action='store_true',help='Service actual source video while final queued audio is still being delivered')
@@ -116,13 +117,14 @@ def main():
     assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
     assert not args.video_cache_pattern or args.video=='dma'
+    assert not args.video_source_phases or (args.video_source_patterns and args.video_service and args.video_service_kind=='repeat-disabled' and args.video_source_tiles==4)
     assert not args.video_grant_backoff or (args.video_source_refresh and args.driver in ('md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
     assert not args.video_source_refresh or (args.video_source_patterns and args.video_source_tiles>1 and args.driver in ('md_psg_refresh_z80.asm','md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
     assert not args.video_source_during_delivery or args.video_source_patterns
     assert not args.video_source_no_readback or args.video_source_patterns
     assert args.video_source_tiles<=4 or (args.video_source_refresh and args.driver in ('md_psg_grant_z80.asm','md_psg_idle_grant_z80.asm'))
     assert args.video_source_tiles==1 or args.video_source_patterns
-    assert not args.video_source_patterns or (args.video_prepared_job and not args.video_service)
+    assert not args.video_source_patterns or (args.video_prepared_job and (not args.video_service or args.video_source_phases))
     assert 20000<=args.max_frames<=100000
     assert not args.video_prepared_job or args.video_cache_pattern
     assert args.video_service_kind=='all' or args.video_service
@@ -171,6 +173,10 @@ def main():
             from md_z80_source_video_fixture import instrument_source
             main,body=instrument_source(main,body,args.video_source_tiles,not args.video_source_no_readback,args.video_source_during_delivery,args.video_source_refresh,args.video_grant_backoff)
             (folder/'source-video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_source_video_fixture.py').read_bytes())
+            if args.video_source_phases:
+                from md_z80_phase_video_fixture import instrument as phase_instrument
+                main,body=phase_instrument(main,body,args.video_service,not args.bare)
+                (folder/'phase-video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_phase_video_fixture.py').read_bytes())
         else:
             main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern,args.video_prepared_job)
         (folder/'video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_video_fixture.py').read_bytes())
@@ -255,6 +261,8 @@ def main():
             if args.video_service:observed['video_service_calls']=value('gaw_video_service_calls',4)
             if args.video_cache_pattern:observed['video_pattern_preparations']=value('gaw_video_pattern_preparations',4)
             if args.video_prepared_job:observed['video_job_preparations']=value('gaw_video_job_preparations',4)
+            if args.video_source_phases:
+                observed['video_prefix_ready']=value('gaw_video_prefix_ready',4);observed['video_tail_ready']=value('gaw_video_tail_ready',4);observed['video_service_calls']=value('gaw_video_service_calls',4)
             if args.video_grant_backoff:observed['video_grant_skips']=value('gaw_video_grant_skips',4)
             if args.video_source_tiles==8:observed['video_span_sizes']=[value('gaw_video_span_sizes',4,n*4) for n in range(9)]
             if args.video_source_patterns:
@@ -308,7 +316,7 @@ def main():
             fast_times={e[1] for e in fast_reads}
             clocks=[e for e in reads if e[3] in (clock_pc,refresh_pc) or e[1] in fast_times];assert clocks
             publication_basis=[e for e in clocks if e[3]!=refresh_pc]
-            if grant_pc is not None:assert max(b[1]-a[1] for a,b in zip(clocks,clocks[1:]))<17100,(region,tag,'private sample gap')
+            if refresh_pc is not None:assert max(b[1]-a[1] for a,b in zip(clocks,clocks[1:]))<17100,(region,tag,'private sample gap')
             advances=[b[1]//3420-a[1]//3420 for a,b in zip(clocks,clocks[1:])];assert min(advances)>=0 and max(advances)<=5,(region,tag,min(advances),max(advances))
             counter_values=[(100+e[1]//3420-origin//3420)&65535 for e in clocks];counter_wraps=sum(b<a for a,b in zip(counter_values,counter_values[1:]))
             if tag==88:assert counter_wraps>=1,(region,tag,counter_wraps)
@@ -359,7 +367,7 @@ def main():
                 assert started is None and callbacks
                 overlap=[e for e in writes if e[1]<finished[0][1]]
                 row.update(loader_finish_master=finished[0][1]-origin,loader_query_master=records[ordinal][0],delivery_finish_master=records[ordinal][1],source_finish_master=records[ordinal][2],loader_finish_delta=finished[0][1]-origin-records[ordinal][2],writes_before_loader_finish=len(overlap),writes_outside_publisher=sum(not any(a<=e[1]<=b for a,b in callbacks) for e in overlap),publisher_callbacks=len(callbacks),publisher_total_master=sum(b-a for a,b in callbacks),publisher_peak_master=max(b-a for a,b in callbacks))
-            if grant_pc is not None:row['private_sample_gap_master']=[min(b[1]-a[1] for a,b in zip(clocks,clocks[1:])),max(b[1]-a[1] for a,b in zip(clocks,clocks[1:]))]
+            if refresh_pc is not None:row['private_sample_gap_master']=[min(b[1]-a[1] for a,b in zip(clocks,clocks[1:])),max(b[1]-a[1] for a,b in zip(clocks,clocks[1:]))]
             if refresh_pc is not None:row['post_publication_samples']=sum(e[3]==refresh_pc for e in reads)
             rows.append(row)
         if fast_setup:assert sum(row['fast_target_samples'] for row in rows)>0
@@ -388,6 +396,7 @@ def main():
                 actual_tiles=bytes(vram[(512+n)^1] for n in range(16384))
                 assert actual_tiles==expected_tiles
                 assert observed['video_sources']==48 and observed['video_requests']==48*512
+                if args.video_source_phases:assert observed['video_prefix_ready']==observed['video_tail_ready']==48 and observed['video_service_calls']>0
                 if args.video_source_tiles==8:
                     sizes=observed['video_span_sizes'];assert sum(sizes)==observed['video_dma_commits'] and sum(n*x for n,x in enumerate(sizes))==48*512
                     assert all(not sizes[n] for n in [0,1,2,3,5,6,7]) and 48*64<=observed['video_dma_commits']<=48*128
@@ -421,6 +430,8 @@ def main():
     report['video_source_patterns']=args.video_source_patterns
     report['video_source_tiles']=args.video_source_tiles
     report['video_grant_backoff']=args.video_grant_backoff
+    report['video_source_phases']=args.video_source_phases
+    report['video_prefix_immutable_hash_checked']=args.video_source_phases and not args.bare
     if args.video_source_tiles>1:report['video_span_split_window']=args.video_source_refresh
     report['post_publication_refresh']=refresh_pc is not None
     report['fresh_grant_stamps']=grant_pc is not None
@@ -454,6 +465,8 @@ def main():
             report['limits']=[x for x in report['limits'] if not x.startswith(('H32/224 display enabled with a synthetic','DMA experiment queues one deterministic','Diagnostic tile payload'))]
         if args.video_source_patterns:report['limits'].append('Actual source-checked16384byte SMS pattern mirror converted into512 MD tiles per case after source loading. Native physical VRAM readback checks every word before payload release; independent planar conversion checks all final tiles. The visible atlas uses a diagnostic palette/map, not the game scene. Uploads begin after source work and drain after audio: no overlap/deadline or production integration claim. Generic one-job-per-callback description does not apply to this mode.')
         if args.video_source_no_readback:report['limits']=[x.replace('Native physical VRAM readback checks every word before payload release;', 'Per-word native VRAM readback disabled for this performance measurement;') for x in report['limits']]
+        if args.video_source_phases:report['limits']=[x.replace('Upload'+ 's begin after source work and drain after audio:', 'Uploads release in two actual loader phases and drain remaining jobs afterwards:') for x in report['limits']]
+        if args.video_source_phases:report['limits'].append('Actual loader checkpoints release prefix0..0x37ff at1706 and tail0x3800..0x3fff at1deb. Native service at repeat_disabled boundaries plus checkpoints. Prefix is not modified by intervening source routines; proof mode also compares its14336byte hash at both boundaries. Atlas remains diagnostic; no scene/palette/sprite/deadline proof. Uploads can begin during loading; physical captures must count actual overlap.')
         if args.video_grant_backoff:report['limits'].append('Caller grant-backoff experiment: after video WAIT retain token/payload and skip attempts until atomic fresh grant byte changes, unless mailbox error is set. Does not cache authorization for a successful transfer; held-bus guards remain active. Skip count is separate from actual DMA API attempts.')
         if args.video_source_refresh:report['limits'].append('Optional post-publication private timer resample capability is required for the early rawV224..228 window; raw229..234 excluded. The original API and driver remain distinct. Timer safety is independently checked, not inferred from ready/grant.')
         if args.video_source_tiles==8:report['limits'].append('Adaptive spans use8tiles only with no pending/in-flight PSG descriptor, otherwise4tiles. Above4tiles requires a fresh encoded grant V stamp of age0; all fresh-grant spans clip the late window at rawV251. Physical private-update gaps remain strictly below17100master ticks. Transfer sizes/counts are observed separately; this does not establish per-frame deadlines.')

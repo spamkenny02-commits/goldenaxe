@@ -101,6 +101,14 @@ def main():
         assert sha(kernel)==report['kernel_sha256'] and sum(kernel.count(s) for s in candidates)==1
         selected=next(s for s in candidates if kernel.count(s)==1)
         committed_pc=kernel.index(selected)+len(selected)
+        if report.get('video_source_phases',False):
+            listing=read(folder/'driver.lst').decode();driver=read(folder/'driver.bin')
+            assert sha(driver)==report['driver_sha256'] and 'setupcounter:' not in listing
+            sample=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*sample:\s+ld a,\(0x7f08\)',listing,re.M)[1],16)
+            refresh=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*resample:',listing,re.M)[1],16)
+            assert driver[sample:sample+3]==driver[refresh:refresh+3]==bytes.fromhex('3a087f')
+            private_pcs={sample+3,refresh+3}
+
         for region_report in report['results']:
             region=region_report['region'];lines=262 if region=='ntsc' else 313
             raw=read(folder/(region+'-events.json'));assert sha(raw)==region_report['events_sha256']
@@ -158,6 +166,19 @@ def main():
                     last_after_loader_master=max(0,last-reference['loader_finish_master']),
                     last_after_delivery_query_master=max(0,last-reference['delivery_finish_master']),
                     last_after_loader_frames=max(0,last-reference['loader_finish_master'])/(lines*3420)))
+                if report.get('video_source_phases',False):
+                    prefix=[e[1] for e in part if e[0]==3 and e[2]==0x38]
+                    tail=[e[1] for e in part if e[0]==3 and e[2]==0x39]
+                    assert len(prefix)==len(tail)==1 and prefix[0]<tail[0]<origin+reference['loader_finish_master']
+                    assert tiles==4 and all(a>=prefix[0] for a,b in commits)
+                    assert all(a>=tail[0] for a,b in commits[112:])
+                    private=[e[1] for e in part if e[0]==6 and e[3] in private_pcs]
+                    gaps=[b-a for a,b in zip(private,private[1:])]
+                    assert gaps and max(gaps)<17100
+                    assert all(b//3420-a//3420<=5 for a,b in zip(private,private[1:]))
+                    rows[-1]['private_sample_gap_max']=max(gaps)
+                    rows[-1].update(prefix_ready_master=prefix[0]-origin,tail_ready_master=tail[0]-origin,
+                        before_tail_ready=sum(b<tail[0] for a,b in commits))
                 if report.get('video_during_delivery',False):
                     last_psg=max(e[1] for e in part if e[0]==5)
                     rows[-1]['before_last_psg']=sum(b<last_psg for a,b in commits)
@@ -179,6 +200,8 @@ def main():
                 after_delivery_query=sum(r['after_delivery_query'] for r in rows),
                 hold_max=max(r['hold_max'] for r in rows),
                 max_last_after_loader_frames=max(r['last_after_loader_frames'] for r in rows),rows=rows))
+            if report.get('video_source_phases',False):results[-1]['before_tail_ready']=sum(r['before_tail_ready'] for r in rows)
+            if report.get('video_source_phases',False):results[-1]['private_sample_gap_max']=max(r['private_sample_gap_max'] for r in rows)
             if report.get('video_during_delivery',False):results[-1]['before_last_psg']=sum(r['before_last_psg'] for r in rows)
             if report.get('video_span_split_window',False):results[-1].update(early_commits=sum(r['early_commits'] for r in rows),beam_to_release_max=max(r['beam_to_release_max'] for r in rows))
             print({k:v for k,v in results[-1].items() if k!='rows'},flush=True)
