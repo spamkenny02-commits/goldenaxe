@@ -1,0 +1,77 @@
+{
+  "legacy_control_kernel_sha256": "3e6e88755a495d268acfbd255ddce6e36ed3abcb5085644d462d7d8c642e1661",
+  "legacy_reference_kernel_sha256": "3e6e88755a495d268acfbd255ddce6e36ed3abcb5085644d462d7d8c642e1661",
+  "legacy_control_identical": true,
+  "source_sha256": "0dd64fed7a8d6d62694cdd7dca62bfd88f5e8fa0e24e0bdeac8f01eed6a2d99e",
+  "results": [
+    {
+      "variant": "class0-grant-native-prep",
+      "kernel_sha256": "8d9d67cfe3b1f681b4cc93b75d6983b21a5ee770e877d1ee6e61e846cc293245",
+      "disassembly_sha256": "4cd320cfc1b995c8e3b991ac40d12083c69aed14e13cd3494dd4c3cbe2219f20",
+      "packet_instruction_records_bound_to_rom": 811,
+      "packet_mulsi3_calls": 0,
+      "payload_long_copy_paths": [
+        [
+          "    607e:\t2f6e 000c 0044 \tmovel %fp@(12),%sp@(68)",
+          "    6084:\t2f6e 0010 0048 \tmovel %fp@(16),%sp@(72)",
+          "    608a:\t2f6e 0014 004c \tmovel %fp@(20),%sp@(76)",
+          "    6090:\t2f6e 0018 0050 \tmovel %fp@(24),%sp@(80)"
+        ],
+        [
+          "    632a:\t2f6e 000c 0044 \tmovel %fp@(12),%sp@(68)",
+          "    6330:\t2f6e 0010 0048 \tmovel %fp@(16),%sp@(72)",
+          "    6336:\t2f6e 0014 004c \tmovel %fp@(20),%sp@(76)",
+          "    633c:\t2f6e 0018 0050 \tmovel %fp@(24),%sp@(80)"
+        ]
+      ],
+      "word_aligned_destination": true
+    },
+    {
+      "variant": "class0-refresh-native-prep",
+      "kernel_sha256": "1216ac69db10781e64b2f5db2488228876f0785074bdebf4bfa7ac4d1ee7415f",
+      "disassembly_sha256": "bb132bffb6b17ae619eb4c04fa82104bd1aa4124a4d32e495d2eb6644152fe92",
+      "packet_instruction_records_bound_to_rom": 811,
+      "packet_mulsi3_calls": 0,
+      "payload_long_copy_paths": [
+        [
+          "    607e:\t2f6e 000c 0044 \tmovel %fp@(12),%sp@(68)",
+          "    6084:\t2f6e 0010 0048 \tmovel %fp@(16),%sp@(72)",
+          "    608a:\t2f6e 0014 004c \tmovel %fp@(20),%sp@(76)",
+          "    6090:\t2f6e 0018 0050 \tmovel %fp@(24),%sp@(80)"
+        ],
+        [
+          "    632a:\t2f6e 000c 0044 \tmovel %fp@(12),%sp@(68)",
+          "    6330:\t2f6e 0010 0048 \tmovel %fp@(16),%sp@(72)",
+          "    6336:\t2f6e 0014 004c \tmovel %fp@(20),%sp@(76)",
+          "    633c:\t2f6e 0018 0050 \tmovel %fp@(24),%sp@(80)"
+        ]
+      ],
+      "word_aligned_destination": true
+    },
+    {
+      "variant": "class0-refresh-native-prep-proof",
+      "kernel_sha256": "1c8039952a7987d415ce0029eb32a44d8159763d08f395cd916f58b9d3dd888e",
+      "disassembly_sha256": "c0a353231a7a0cb5d331fe52974b0d1d70aebd80361e2feb08f192936f42c86f",
+      "packet_instruction_records_bound_to_rom": 811,
+      "packet_mulsi3_calls": 0,
+      "payload_long_copy_paths": [
+        [
+          "    6076:\t2f6e 000c 0044 \tmovel %fp@(12),%sp@(68)",
+          "    607c:\t2f6e 0010 0048 \tmovel %fp@(16),%sp@(72)",
+          "    6082:\t2f6e 0014 004c \tmovel %fp@(20),%sp@(76)",
+          "    6088:\t2f6e 0018 0050 \tmovel %fp@(24),%sp@(80)"
+        ],
+        [
+          "    6322:\t2f6e 000c 0044 \tmovel %fp@(12),%sp@(68)",
+          "    6328:\t2f6e 0010 0048 \tmovel %fp@(16),%sp@(72)",
+          "    632e:\t2f6e 0014 004c \tmovel %fp@(20),%sp@(76)",
+          "    6334:\t2f6e 0018 0050 \tmovel %fp@(24),%sp@(80)"
+        ]
+      ],
+      "word_aligned_destination": true
+    }
+  ],
+  "limits": [
+    "Compiled native preparation uses four long copies and hardware16x16 multiply; unchanged legacy control reproduces the archived kernel byte-for-byte. This is code-generation evidence, not whole-game CPU speed or a hard publication-deadline guarantee."
+  ]
+}

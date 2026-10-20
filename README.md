@@ -36,6 +36,12 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+La [préparation native des commandes PSG](analysis/md_psg_native_prep_milestone.md)
+utilise désormais la multiplication 16 bits du 68000 et quatre copies longues.
+Les bancs PAL/NTSC conservent données et états, avec un retard sonore maximal
+réduit de 54 % / 48 % dans le banc de référence allégé. Cette optimisation est
+sélectionnée dans les sources natives ; la ROM jouable reste v0203.
+
 L'[admission DMA avec autorisation récente](analysis/md_class0_admission_milestone.md)
 réduit les refus de transfert et le délai de réaffichage dans les bancs PAL/NTSC.
 Les données et les états concordent, mais certains retards sonores augmentent :

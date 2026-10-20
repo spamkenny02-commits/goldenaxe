@@ -101,6 +101,7 @@ def main():
     parser.add_argument('--scene-admission-preflight',action='store_true',help='Reject stale hidden DMA offers before BUSREQ, retaining held checks')
     parser.add_argument('--scene-preflight-after-prepare',action='store_true',help='Run advisory age gate after control preloads, directly before BUSREQ')
     parser.add_argument('--scene-fresh-grant',action='store_true',help='Use post-resample encoded grant timestamp for hidden small spans')
+    parser.add_argument('--psg-native-prep',action='store_true',help='Use the optimized source default in this fixture (otherwise explicitly compile the legacy reference)')
     parser.add_argument('--scene-hidden',action='store_true',help='Keep display off for whole-frame bounded H32 transfers')
     parser.add_argument('--scene-native-palette',action='store_true',help='Compile default palette path without diagnostic trace hook')
     parser.add_argument('--video-scene',action='store_true',help='Native193tile/map/palette pipeline with ROM resident assets')
@@ -116,6 +117,7 @@ def main():
     assert re.fullmatch(r'[a-z0-9_]+\.asm',args.driver)
     assert 0<=args.phase_offset<3420
     assert args.variant or (not args.phase_offset and args.driver=='md_psg_output_z80.asm' and not args.expect_prefetch)
+    assert not args.psg_native_prep or (args.live_loader and args.variant)
     assert not args.bare or args.live_loader
     assert not args.packets or args.live_loader
     assert not args.deferred or (args.live_loader and args.packets)
@@ -221,6 +223,7 @@ def main():
         for name in ['source_class0_video','md_class0_video_stream']:(src/(name+'.h')).write_text('#include "../../../megadrive/src/'+name+'.h"\n')
     for module in modules:
         prefix='#define source_irq_interrupt source_irq_queue_interrupt\n' if module!='source_irq_queue_context' else ''
+        if module=='md_z80_psg':prefix+='#define MD_PSG_NATIVE_PREP '+str(int(args.psg_native_prep))+'\n'
         if args.scene_fresh_grant and module=='md_class0_video_stream':prefix+='#define md_z80_video_span_try_hidden md_z80_video_span_try_hidden_grant\n'
         if args.scene_admission_preflight and module=='md_class0_video_stream':prefix+='#define md_z80_video_span_try_hidden md_z80_video_span_try_hidden_preflight'+('_prepared' if args.scene_preflight_after_prepare else '')+'\n'
         if args.video_scene and not args.scene_native_palette and module=='md_class0_video_stream':prefix+='#define MD_CLASS0_PALETTE_TRACE(v) (*(volatile unsigned short*)0xc00010=(v))\n'
@@ -465,6 +468,7 @@ def main():
     report['video_fixture']=args.video
     report['video_scene']=args.video_scene
     report['scene_hidden']=args.scene_hidden
+    report['psg_native_prep']=args.psg_native_prep
     report['scene_fresh_grant']=args.scene_fresh_grant
     report['scene_admission_preflight']=args.scene_admission_preflight
     report['scene_preflight_after_prepare']=args.scene_preflight_after_prepare
@@ -535,6 +539,7 @@ def main():
     if args.scene_admission_preflight:report['limits'].append('Optional hidden preflight reads the offered V and native HV before BUSREQ and rejects stale/duplicated raw V offers. This check is advisory and never authorizes a transfer: full fresh/error/grant/age/display checks run again while held. Existing hidden API remains distinct.')
     if args.scene_preflight_after_prepare:report['limits'].append('Advisory age probe runs after source/length/autoincrement preloads, immediately before requesting the bus; authoritative held guards remain unchanged. WAIT may already have set autoincrement2, as in the original hidden API.')
     if args.scene_fresh_grant:report['limits'].append('Hidden small spans require refresh and fresh-grant capabilities. Held grant encodes post-resample rawV modulo128; reconstruct only the preceding raw V within the same1/2line age gate. Driver must revoke grants before near-target/emit paths; native duplicated-V/display/error and strict independent private-gap checks remain active. No larger transfer or age relaxation.')
+    if args.psg_native_prep:report['limits'].append('Optional native preparation uses16x16 multiply for validated descriptor spans and builtin fixed16byte copy into an explicitly word-aligned payload. Format/order/horizon/clock/full/error/retry validation and the22byte bus transfer remain active. Timing gains require compiled-code and live evidence.')
     if args.scene_hidden:report['limits']=[x.replace('CPU32color publish in guarded blank','CPU32color publish while display is disabled') for x in report['limits']]+['Hidden H32 mode: display disabled before clock start, kept off through all pattern/map/palette jobs, enabled only after successful flush. Hidden small-DMA path excludes duplicated rawV229..234 and retains age/grant/refresh/error guards. No H40 change; timing and display intervals require physical capture. The fixture reveal boundary is not yet the original game enable deadline.']
     if args.poll_transfer and not args.live_loader:report['limits'].append('Precomputed replay uses the bounded polled API; configured attempt count applies to WAIT only. grant_wait counts exhausted outer calls, not internal attempts.')
     (ROOT/('analysis/md_z80_psg'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')

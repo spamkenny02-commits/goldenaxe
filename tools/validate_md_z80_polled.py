@@ -1,4 +1,5 @@
 """Host checks for bounded retries of an immutable prepared PSG descriptor."""
+import argparse,re
 import ctypes as c
 import hashlib
 import json
@@ -11,12 +12,15 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def main():
-    root=ROOT/'validation/md-z80-polled';root.mkdir(exist_ok=True)
+    parser=argparse.ArgumentParser();parser.add_argument('--variant',default='');parser.add_argument('--native-prep',action='store_true');options=parser.parse_args();assert not options.variant or re.fullmatch('[a-z0-9-]+',options.variant);assert not options.native_prep or options.variant
+    suffix='-'+options.variant if options.variant else ''
+    root=ROOT/('validation/md-z80-polled'+suffix);root.mkdir(exist_ok=True)
     stub=STUB.replace('u32 test_now_line,','u32 test_attempts,test_waits;\nu32 test_now_line,')
     stub=stub.replace(' u16 n;if(test_mode)', ' u16 n;test_attempts++;if(test_waits) {test_waits--;return MD_Z80_PSG_WAIT;}if(test_mode)')
     (root/'stub.c').write_text(stub)
     sdk=ROOT.parents[1]/'work/sgdk';env=dict(os.environ);env['PATH']='C:/msys64/ucrt64/bin;'+env['PATH']
     args=['C:/msys64/ucrt64/bin/gcc.exe','-O3','-Wall','-Wextra','-Werror','-shared','-I',str(sdk/'inc'),'-I',str(ROOT/'megadrive/src'),str(root/'stub.c'),str(ROOT/'megadrive/src/md_z80_psg.c'),'-o',str(root/'polled.dll')]
+    args.insert(1,'-DMD_PSG_NATIVE_PREP='+str(int(options.native_prep)))
     built=subprocess.run(args,env=env,capture_output=True,text=True);(root/'build.log').write_text(built.stdout+built.stderr);assert not built.returncode,built.stderr
     dll=c.CDLL(str(root/'polled.dll'))
     init=dll.md_z80_psg_init;init.argtypes=[c.POINTER(Producer),c.POINTER(Mailbox),c.POINTER(Clock)];init.restype=c.c_uint8
@@ -69,8 +73,8 @@ def main():
     assert poll(c.byref(p),c.byref(b),8)==0 and p.published==1 and attempts.value==10;checks+=1
     mb,clock,p=fresh();waits.value=2
     assert push(c.byref(p),c.byref(b),1)==5 and attempts.value==1 and not p.published;checks+=1
-    report=dict(checks=checks,rows=rows,sources={n:hashlib.sha256((ROOT/'megadrive/src'/n).read_bytes()).hexdigest() for n in ['md_z80_psg.c','md_z80_psg.h']},limits=['Host stub counts exact synchronous attempts/exhaustion and publication atomicity, compares all22payload bytes with one-attempt push for five descriptor shapes. Limits0/1/2/8/128/65535, success after waits, immediate other errors, format/order/FULL/fault/clock rejection and exhaustion retry.', 'No native bus safety claim here; live instrumented kernels check real BUSREQ/grants and original source bytes/deadlines separately.'])
-    (ROOT/'analysis/md_z80_polled_report.json').write_text(json.dumps(report,indent=2)+'\n');print(checks,'polled host checks')
+    report=dict(native_prep=options.native_prep,checks=checks,rows=rows,sources={n:hashlib.sha256((ROOT/'megadrive/src'/n).read_bytes()).hexdigest() for n in ['md_z80_psg.c','md_z80_psg.h']},limits=['Host stub counts exact synchronous attempts/exhaustion and publication atomicity, compares all22payload bytes with one-attempt push for five descriptor shapes. Limits0/1/2/8/128/65535, success after waits, immediate other errors, format/order/FULL/fault/clock rejection and exhaustion retry.', 'No native bus safety claim here; live instrumented kernels check real BUSREQ/grants and original source bytes/deadlines separately.'])
+    (ROOT/('analysis/md_z80_polled'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n');print(checks,'polled host checks')
 
 
 if __name__=='__main__':main()

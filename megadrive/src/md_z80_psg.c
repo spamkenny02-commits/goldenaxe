@@ -1,4 +1,21 @@
 #include "md_z80_psg.h"
+#ifndef MD_PSG_NATIVE_PREP
+#define MD_PSG_NATIVE_PREP 1
+#endif
+#if MD_PSG_NATIVE_PREP
+/* Validated descriptors have count1..16 and spacing0/315/630. The span
+ * fits16bits; use the native16x16 product rather than a32bit helper. */
+static inline __attribute__((always_inline)) u32 block_span(u16 count,u16 spacing)
+{
+    u32 result=(u16)(count-1);
+#ifdef SGDK_GCC
+    __asm__("mulu.w %1,%0" : "+d"(result) : "d"(spacing) : "cc");
+    return result;
+#else
+    return result*spacing;
+#endif
+}
+#endif
 #define BARRIER() __asm__ volatile ("":::"memory")
 typedef char mailbox_size_must_be_10[(sizeof(MdZ80PsgMailbox)==10)?1:-1];
 
@@ -61,7 +78,13 @@ static void target(u32 offset,u16 counter,u16 physical,u16 lines,u16 *due_line,u
 
 static u8 push_polled(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,u16 count,u16 attempts)
 {
-    MdZ80PsgMailbox *mailbox;u8 head,used,status,payload[22];u16 n,k,line;u32 previous,last,offset;
+    MdZ80PsgMailbox *mailbox;u8 head,used,status;
+#if MD_PSG_NATIVE_PREP
+    u8 payload[22] __attribute__((aligned(2)));u16 n,line;
+#else
+    u8 payload[22];u16 n,k,line;
+#endif
+    u32 previous,last,offset;
     if(!producer || !producer->mailbox || !producer->clock || (count && !blocks) || count>1) return MD_Z80_PSG_INVALID;
     mailbox=producer->mailbox;
     if(producer->counter!=producer->clock->counter) return MD_Z80_PSG_INVALID;
@@ -78,7 +101,11 @@ static u8 push_polled(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,
            (!b->spacing && b->count!=1) || (b->spacing==630 && b->count>8) ||
            b->skip!=(b->spacing==315?(16-b->count)*18:b->spacing==630?(8-b->count)*40:0)) return MD_Z80_PSG_INVALID;
         if((s32)(b->due-previous)<0) return MD_Z80_PSG_ORDER;
+#if MD_PSG_NATIVE_PREP
+        previous=b->due+block_span(b->count,b->spacing);
+#else
         previous=b->due+(u32)(b->count-1)*b->spacing;
+#endif
     }
     last=previous;
     if(last-producer->clock->base>=16384UL*3420)
@@ -87,7 +114,11 @@ static u8 push_polled(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,
     }
     for(n=0;n<count;n++)
         if(blocks[n].due-producer->clock->base>=32760UL*3420 ||
+#if MD_PSG_NATIVE_PREP
+           blocks[n].due+block_span(blocks[n].count,blocks[n].spacing)-producer->clock->base>=32760UL*3420) return MD_Z80_PSG_ORDER;
+#else
            blocks[n].due+(u32)(blocks[n].count-1)*blocks[n].spacing-producer->clock->base>=32760UL*3420) return MD_Z80_PSG_ORDER;
+#endif
     for(n=0;n<count;n++)
     {
         const SourceMdPsgBlock *b=blocks+n;u8 v,h,*slot=payload;
@@ -95,7 +126,13 @@ static u8 push_polled(MdZ80PsgProducer *producer,const SourceMdPsgBlock *blocks,
         target(offset,producer->counter,producer->physical_line,producer->clock->lines,&line,&v,&h);
         slot[0]=line;slot[1]=line>>8;slot[2]=v;slot[3]=h;
         slot[4]=b->spacing==630?2:b->spacing==315?1:0;slot[5]=b->count;
+#if MD_PSG_NATIVE_PREP
+        /* Fixed-size copy, word-aligned stack destination and struct source.
+         * Builtin memcpy avoids aliasing casts and preserves all16 bytes. */
+        __builtin_memcpy(slot+6,b->values,16);
+#else
         for(k=0;k<16;k++) slot[6+k]=b->values[k];
+#endif
     }
     BARRIER();
     do {status=md_z80_psg_transfer(mailbox,payload,head&31,(u8)(head+1));}
