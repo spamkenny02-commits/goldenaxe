@@ -1,4 +1,5 @@
 """Native 68000 contiguous1..4tile DMA token bounds and retry/error contracts."""
+import argparse
 import contextlib
 import ctypes as c
 import hashlib
@@ -80,10 +81,54 @@ int main(bool reset) {
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 
 def main():
-    folder=ROOT/'validation/md-video-span-contract';src=folder/'src';src.mkdir(parents=True,exist_ok=True)
-    (src/'main.c').write_bytes(MAIN.encode())
+    parser=argparse.ArgumentParser();parser.add_argument('--variant',default='');parser.add_argument('--window-probe',action='store_true');parser.add_argument('--refresh-profile',action='store_true');args=parser.parse_args()
+    assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
+    suffix='-'+args.variant if args.variant else ''
+    folder=ROOT/('validation/md-video-span-contract'+suffix);src=folder/'src';src.mkdir(parents=True,exist_ok=True)
+    main=MAIN
+    if args.window_probe:
+        main=main.replace('#include "md_z80_video_span.h"','#include "md_z80_video_span.h"\nu8 gaw_span_window_probe(u8);')
+        main=main.replace(' gaw_done=1;', ' for(n=0;n<256;n++) check((gaw_span_window_probe((u8)n)!=0)==((n>=224 && n<=228)||(n>=235 && n<=252)));\n gaw_done=1;')
+    if args.refresh_profile:
+        helpers='''static __attribute__((noinline)) void retry_refresh(MdZ80PsgMailbox *mb,MdZ80VideoSpan *job,u8 wanted) {save();check(md_z80_video_span_try_refresh(mb,job)==wanted && same());}
+static __attribute__((noinline)) void invalid_refresh(const u32 *source,u16 tile,u16 count) {save();check(md_z80_video_span_prepare_refresh(&token,source,tile,count)==MD_Z80_PSG_INVALID && same());}
+'''
+        main=main.replace('#include "md_z80_video_span.h"','#include "md_z80_video_span.h"\nu8 gaw_span_window_large_probe(u8);')
+        main=main.replace('int main(bool reset)',helpers+'int main(bool reset)')
+        main=main.replace(' gaw_done=1;', ''' token.ready=0xd580;mailbox.stamp.error=0;mailbox.grant=0;
+ retry_refresh(0,&token,MD_Z80_PSG_INVALID);retry_refresh(&mailbox,0,MD_Z80_PSG_INVALID);
+ mailbox.stamp.ready=1;retry_refresh(&mailbox,&token,MD_Z80_PSG_INVALID);
+ mailbox.stamp.ready=0;retry_refresh(&mailbox,&token,MD_Z80_PSG_WAIT);
+ mailbox.stamp.ready=3;retry_refresh(&mailbox,&token,MD_Z80_PSG_WAIT);
+ mailbox.stamp.error=1;retry_refresh(&mailbox,&token,MD_Z80_PSG_FAULT);
+ {u16 k;for(k=1;k<=8;k++) {
+  u32 address=0x20000UL-(u32)k*32;
+  check(md_z80_video_span_prepare_refresh(&token,(const u32*)address,2048-k,k)==MD_Z80_PSG_OK);
+  check(token.source_low==(0x9500|(256-k*16)) && token.source_mid==0x96ff && token.source_high==0x9700 && token.length_low==0x9300+k*16 && token.ready==0xd600 && token.command==VDP_DMA_VRAM_ADDR(65536UL-(u32)k*32));
+  invalid_refresh((const u32*)(address+2),2048-k,k);invalid_refresh((const u32*)0x1000,2049-k,k);
+ }
+ invalid_refresh((const u32*)0x1000,0,0);invalid_refresh((const u32*)0x1000,0,9);
+ }
+ mailbox.stamp.error=0;retry(&mailbox,&token,MD_Z80_PSG_INVALID);
+ retry_refresh(&mailbox,&token,MD_Z80_PSG_INVALID);
+ mailbox.stamp.ready=7;retry_refresh(&mailbox,&token,MD_Z80_PSG_WAIT);
+ mailbox.grant=0xc1;mailbox.busy=1;retry_refresh(&mailbox,&token,MD_Z80_PSG_WAIT);
+ mailbox.busy=0;mailbox.head=1;mailbox.tail=0;retry_refresh(&mailbox,&token,MD_Z80_PSG_WAIT);
+ mailbox.head=0;mailbox.grant=0;mailbox.stamp.error=1;
+ retry_refresh(&mailbox,&token,MD_Z80_PSG_FAULT);
+ invalid_refresh(0,0,8);invalid_refresh((const u32*)0x1001,0,8);invalid_refresh((const u32*)&token,0,8);
+ save();check(md_z80_video_span_prepare_refresh(0,(const u32*)0x1000,0,8)==MD_Z80_PSG_INVALID && same());
+ save();check(md_z80_video_span_prepare_refresh((MdZ80VideoSpan*)((u8*)&token+1),(const u32*)0x1000,0,8)==MD_Z80_PSG_INVALID && same());
+ VDP_setScreenWidth320();invalid_refresh((const u32*)0x1000,0,8);VDP_setScreenWidth256();
+ VDP_setScreenHeight240();if(SYS_isPAL()) invalid_refresh((const u32*)0x1000,0,8);else check(VDP_getScreenHeight()==224);VDP_setScreenHeight224();
+ for(n=0;n<256;n++) check((gaw_span_window_large_probe((u8)n)!=0)==((n>=224 && n<=228)||(n>=235 && n<=251)));
+ gaw_done=1;''')
+    (src/'main.c').write_bytes(main.encode())
     for name in ['md_z80_video_span.c','md_z80_video_span.h']:
-        (src/name).write_text('#include "../../../megadrive/src/'+name+'"\n')
+        text='#include "../../../megadrive/src/'+name+'"\n'
+        if name.endswith('.c') and args.window_probe:text+='u8 gaw_span_window_probe(u8 v) {return in_window(v); }\n'
+        if name.endswith('.c') and args.refresh_profile:text+='u8 gaw_span_window_large_probe(u8 v) {return in_window_mask(v,0x0ffff81fUL); }\n'
+        (src/name).write_text(text)
     sdk=(ROOT.parents[1]/'work/sgdk').resolve();env=dict(os.environ);env['PATH']=str(sdk/'bin')+';'+env['PATH']
     temporary=folder/'compiler-tmp';temporary.mkdir(exist_ok=True)
     for key in ['TMPDIR','TMP','TEMP']:env[key]=temporary.resolve().as_posix()
@@ -102,14 +147,16 @@ def main():
             def val(name,width):return int.from_bytes(bytes(ram[(((symbols[name]&65535)+i)&65535)^1] for i in range(width)),'big')
             observed.update(frame=frame,done=val('gaw_done',2),checks=val('gaw_checks',4),failures=val('gaw_failures',4))
         with contextlib.redirect_stdout(io.StringIO()):run(folder/'out/release/rom.bin',120,folder/region,set(),[],skip_intro=False,ram_observer=observe,core=core,core_options={'genesis_plus_gx_region_detect':region},stop_when=lambda:bool(observed.get('done')))
-        assert observed['done'] and observed['checks']==44 and not observed['failures'],observed
+        assert observed['done'] and observed['checks']==((300 if args.window_probe else 44)+(309 if args.refresh_profile else 0)) and not observed['failures'],observed
         markers=[(i,e[2]) for i,e in enumerate(events) if e[0]==3 and 0x34<=e[2]<=0x37]
         assert [x[1] for x in markers]==list(range(0x34,0x38))
         for a,b in [(markers[0][0],markers[1][0]),(markers[2][0],markers[3][0])]:
             assert not any(e[0] in (4,7) for e in events[a+1:b]),'Early rejection unexpectedly reads beam or takes bus'
+        if args.window_probe or args.refresh_profile:
+            assert not any(e[0] in (4,7) for e in events[markers[-1][0]+1:]),'Window/profile checks unexpectedly read beam or take bus'
         raw=json.dumps(events,separators=(',',':')).encode();(folder/(region+'-events.json')).write_bytes(raw)
         results.append(dict(region=region,**observed,events_sha256=sha(raw)));print(results[-1],flush=True)
-    report=dict(kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),sources={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_video_span.c','md_z80_video_span.h']},results=results,limits=['Native token layout, invalid preparation atomicity and pre-beam WAIT/FAULT retention only. Successful DMA consumption and held-bus safety require separate live capture. No production renderer or waveform proof.'])
-    (ROOT/'analysis/md_video_span_contract_report.json').write_text(json.dumps(report,indent=2)+'\n')
+    report=dict(window_probe=args.window_probe,refresh_profile=args.refresh_profile,kernel_sha256=sha((folder/'out/release/rom.bin').read_bytes()),sources={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['md_z80_video_span.c','md_z80_video_span.h']},results=results,limits=['Native token layout, invalid preparation atomicity and pre-beam WAIT/FAULT retention only. Successful DMA consumption and held-bus safety require separate live capture. No production renderer or waveform proof.'])
+    (ROOT/('analysis/md_video_span_contract'+suffix.replace('-','_')+'_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

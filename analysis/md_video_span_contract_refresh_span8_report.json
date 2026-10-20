@@ -1,0 +1,30 @@
+{
+  "window_probe": true,
+  "refresh_profile": true,
+  "kernel_sha256": "5d858d81323a9c83a51d5e3bf144210a62bfcf162525e79e6ec54a501d95e2ef",
+  "sources": {
+    "md_z80_video_span.c": "31bd09933db4b18df23aa59608ceb6100b6d5600014451d68390a2f78c459283",
+    "md_z80_video_span.h": "81e853ebeba46f51741a31ea3197bbfa4391b4e5a6ec4df0435445637341cb26"
+  },
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 27,
+      "done": 1,
+      "checks": 350,
+      "failures": 0,
+      "events_sha256": "9dc1e7c977c31c24160d2bb1e49c7f9114ca1e5ff25db462eef9ecf89c97d95e"
+    },
+    {
+      "region": "pal",
+      "frame": 24,
+      "done": 1,
+      "checks": 350,
+      "failures": 0,
+      "events_sha256": "196d2808d203d9c9e4f865d57f9258e2a862417d806b074045edf46df5b476ab"
+    }
+  ],
+  "limits": [
+    "Native token layout, invalid preparation atomicity and pre-beam WAIT/FAULT retention only. Successful DMA consumption and held-bus safety require separate live capture. No production renderer or waveform proof."
+  ]
+}

@@ -94,9 +94,10 @@ def main():
     parser.add_argument('--video-cache-pattern',action='store_true',help='Prepare each queued diagnostic pattern once, retain across WAIT')
     parser.add_argument('--video-prepared-job',action='store_true',help='Retain prepared DMA control words across retries too')
     parser.add_argument('--video-source-patterns',action='store_true',help='Upload all512 actual source pattern tiles per loader case, with native VRAM readback')
+    parser.add_argument('--video-source-refresh',action='store_true',help='Use the capability-gated early window with the post-publication-refresh driver')
     parser.add_argument('--video-source-during-delivery',action='store_true',help='Service actual source video while final queued audio is still being delivered')
     parser.add_argument('--video-source-no-readback',action='store_true',help='Measure uploads without per-word diagnostic VRAM reads; final tiles still checked independently')
-    parser.add_argument('--video-source-tiles',type=int,default=1,choices=[1,2,3,4],help='Contiguous source tiles per DMA job')
+    parser.add_argument('--video-source-tiles',type=int,default=1,choices=[1,2,3,4,8],help='Contiguous source tiles per DMA job')
     parser.add_argument('--max-frames',type=int,default=20000)
     args=parser.parse_args()
     assert not args.variant or re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',args.variant)
@@ -114,8 +115,10 @@ def main():
     assert args.video=='off' or (args.live_loader and args.variant)
     assert not args.video_service or (args.video=='dma' and not args.service and 1<=args.video_service<=1024 and not args.video_service&(args.video_service-1))
     assert not args.video_cache_pattern or args.video=='dma'
+    assert not args.video_source_refresh or (args.video_source_patterns and args.video_source_tiles>1 and args.driver in ('md_psg_refresh_z80.asm','md_psg_grant_z80.asm'))
     assert not args.video_source_during_delivery or args.video_source_patterns
     assert not args.video_source_no_readback or args.video_source_patterns
+    assert args.video_source_tiles<=4 or (args.video_source_refresh and args.driver=='md_psg_grant_z80.asm')
     assert args.video_source_tiles==1 or args.video_source_patterns
     assert not args.video_source_patterns or (args.video_prepared_job and not args.video_service)
     assert 20000<=args.max_frames<=100000
@@ -164,7 +167,7 @@ def main():
         from md_z80_video_fixture import instrument
         if args.video_source_patterns:
             from md_z80_source_video_fixture import instrument_source
-            main,body=instrument_source(main,body,args.video_source_tiles,not args.video_source_no_readback,args.video_source_during_delivery)
+            main,body=instrument_source(main,body,args.video_source_tiles,not args.video_source_no_readback,args.video_source_during_delivery,args.video_source_refresh)
             (folder/'source-video-fixture.py.snapshot').write_bytes((ROOT/'tools/md_z80_source_video_fixture.py').read_bytes())
         else:
             main=instrument(main,args.video=='cpu',args.video=='dma',args.video_service,args.video_cache_pattern,args.video_prepared_job)
@@ -195,6 +198,23 @@ def main():
     driver=(folder/'driver.bin').read_bytes();(src/'driver.h').write_text('static const u8 driver[]={'+','.join(map(str,driver))+'};\n')
     clock_pc=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*(?:clock|sample):\s+ld a,\(0x7f08\)',(folder/'driver.lst').read_text(),re.M)[1],16)+3
     listing=(folder/'driver.lst').read_text()
+    refresh_sample=re.search(r'^\d+\s+([0-9A-F]+)[^\n]*resample:',listing,re.M)
+    refresh_pc=int(refresh_sample[1],16)+3 if refresh_sample else None
+    if refresh_pc is not None:
+        refresh_entry=refresh_pc-3
+        assert driver[refresh_entry:refresh_entry+4]==bytes.fromhex('3a087fc3')
+        assert int.from_bytes(driver[refresh_entry+4:refresh_entry+6],'little')==clock_pc
+        assert driver[clock_pc]==0x47  # Shared private update begins LD B,A.
+        sequence_address=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*sequence:\s*db',listing,re.M)[1],16)
+        publication_end=bytes([0x32])+sequence_address.to_bytes(2,'little')+bytes.fromhex('fd7700cd')+refresh_entry.to_bytes(2,'little')+bytes([0xc9])
+        assert driver.count(publication_end)==1 and sum(driver.count(bytes.fromhex(x)) for x in ['fd360403','fd360407'])==1
+    grant_sample=re.search(r'^\d+\s+([0-9A-F]+)[^\n]*grant_stamp:',listing,re.M)
+    grant_pc=int(grant_sample[1],16)+3 if grant_sample else None
+    if grant_pc is not None:
+        assert driver[grant_pc-3:grant_pc+7]==bytes.fromhex('3a087f87f601fd7708c9')
+        assert driver.count(bytes.fromhex('fd360407'))==1
+        publication_entry=int(re.search(r'^\d+\s+([0-9A-F]+)[^\n]*clock:\s+call sample',listing,re.M)[1],16)
+        assert driver[grant_pc-6:grant_pc-3]==bytes([0xcd])+publication_entry.to_bytes(2,'little')
     fast_setup=re.search(r'^\d+\s+([0-9A-F]+)[^\n]*setupcounter:',listing,re.M)
     vwait_pc=hwait_pc=None
     if fast_setup:
@@ -233,6 +253,7 @@ def main():
             if args.video_service:observed['video_service_calls']=value('gaw_video_service_calls',4)
             if args.video_cache_pattern:observed['video_pattern_preparations']=value('gaw_video_pattern_preparations',4)
             if args.video_prepared_job:observed['video_job_preparations']=value('gaw_video_job_preparations',4)
+            if args.video_source_tiles==8:observed['video_span_sizes']=[value('gaw_video_span_sizes',4,n*4) for n in range(9)]
             if args.video_source_patterns:
                 observed.update(video_sources=value('gaw_video_sources',4),video_readback_words=value('gaw_video_readback_words',4),video_readback_errors=value('gaw_video_readback_errors',4),video_dma_commits=value('gaw_video_dma_commits',4))
             for e in events[-size:] if size else []:
@@ -282,13 +303,15 @@ def main():
             gaps=[b[1]-a[1] for a,b in zip(reads,reads[1:])];assert max(gaps)<17100,(region,tag,max(gaps))
             fast_reads=[a for a,b in zip(reads,reads[1:]) if vwait_pc is not None and a[3]==vwait_pc and b[3]==hwait_pc]
             fast_times={e[1] for e in fast_reads}
-            clocks=[e for e in reads if e[3]==clock_pc or e[1] in fast_times];assert clocks
+            clocks=[e for e in reads if e[3] in (clock_pc,refresh_pc) or e[1] in fast_times];assert clocks
+            publication_basis=[e for e in clocks if e[3]!=refresh_pc]
+            if grant_pc is not None:assert max(b[1]-a[1] for a,b in zip(clocks,clocks[1:]))<17100,(region,tag,'private sample gap')
             advances=[b[1]//3420-a[1]//3420 for a,b in zip(clocks,clocks[1:])];assert min(advances)>=0 and max(advances)<=5,(region,tag,min(advances),max(advances))
             counter_values=[(100+e[1]//3420-origin//3420)&65535 for e in clocks];counter_wraps=sum(b<a for a,b in zip(counter_values,counter_values[1:]))
             if tag==88:assert counter_wraps>=1,(region,tag,counter_wraps)
             checks=0
             for pub in (p for p in publications if p['tag']==tag):
-                candidates=[e for e in clocks if e[1]//period+1<=pub['frame']][-2:]
+                candidates=[e for e in publication_basis if e[1]//period+1<=pub['frame']][-2:]
                 assert any(pub['counter']==(100+e[1]//3420-origin//3420)&65535 and pub['v']==e[2]>>8 for e in candidates),(region,tag,pub,candidates)
                 checks+=1
             first=0;spacing_checks=0;bursts=[]
@@ -333,6 +356,8 @@ def main():
                 assert started is None and callbacks
                 overlap=[e for e in writes if e[1]<finished[0][1]]
                 row.update(loader_finish_master=finished[0][1]-origin,loader_query_master=records[ordinal][0],delivery_finish_master=records[ordinal][1],source_finish_master=records[ordinal][2],loader_finish_delta=finished[0][1]-origin-records[ordinal][2],writes_before_loader_finish=len(overlap),writes_outside_publisher=sum(not any(a<=e[1]<=b for a,b in callbacks) for e in overlap),publisher_callbacks=len(callbacks),publisher_total_master=sum(b-a for a,b in callbacks),publisher_peak_master=max(b-a for a,b in callbacks))
+            if grant_pc is not None:row['private_sample_gap_master']=[min(b[1]-a[1] for a,b in zip(clocks,clocks[1:])),max(b[1]-a[1] for a,b in zip(clocks,clocks[1:]))]
+            if refresh_pc is not None:row['post_publication_samples']=sum(e[3]==refresh_pc for e in reads)
             rows.append(row)
         if fast_setup:assert sum(row['fast_target_samples'] for row in rows)>0
         if args.live_loader:
@@ -360,7 +385,10 @@ def main():
                 actual_tiles=bytes(vram[(512+n)^1] for n in range(16384))
                 assert actual_tiles==expected_tiles
                 assert observed['video_sources']==48 and observed['video_requests']==48*512
-                assert observed['video_dma_commits']==48*jobs_per_case(args.video_source_tiles)
+                if args.video_source_tiles==8:
+                    sizes=observed['video_span_sizes'];assert sum(sizes)==observed['video_dma_commits'] and sum(n*x for n,x in enumerate(sizes))==48*512
+                    assert all(not sizes[n] for n in [0,1,2,3,5,6,7]) and 48*64<=observed['video_dma_commits']<=48*128
+                else:assert observed['video_dma_commits']==48*jobs_per_case(args.video_source_tiles)
                 assert observed['video_readback_words']==(0 if args.video_source_no_readback else 48*512*16) and not observed['video_readback_errors']
                 assert all(int.from_bytes(vram[plane+(y*64+x)*2:plane+(y*64+x)*2+2],'little')==(16+y*32+x if y<16 else 1) for y in range(28) for x in range(32))
             else:
@@ -389,6 +417,9 @@ def main():
     report['video_job_prepared']=args.video_prepared_job
     report['video_source_patterns']=args.video_source_patterns
     report['video_source_tiles']=args.video_source_tiles
+    if args.video_source_tiles>1:report['video_span_split_window']=args.video_source_refresh
+    report['post_publication_refresh']=refresh_pc is not None
+    report['fresh_grant_stamps']=grant_pc is not None
     report['video_source_readback']=not args.video_source_no_readback
     report['video_during_delivery']=args.video_source_during_delivery
     if args.video_source_tiles>1:report['headers']['md_z80_video_span.h']=sha((ROOT/'megadrive/src/md_z80_video_span.h').read_bytes())
@@ -419,6 +450,8 @@ def main():
             report['limits']=[x for x in report['limits'] if not x.startswith(('H32/224 display enabled with a synthetic','DMA experiment queues one deterministic','Diagnostic tile payload'))]
         if args.video_source_patterns:report['limits'].append('Actual source-checked16384byte SMS pattern mirror converted into512 MD tiles per case after source loading. Native physical VRAM readback checks every word before payload release; independent planar conversion checks all final tiles. The visible atlas uses a diagnostic palette/map, not the game scene. Uploads begin after source work and drain after audio: no overlap/deadline or production integration claim. Generic one-job-per-callback description does not apply to this mode.')
         if args.video_source_no_readback:report['limits']=[x.replace('Native physical VRAM readback checks every word before payload release;', 'Per-word native VRAM readback disabled for this performance measurement;') for x in report['limits']]
+        if args.video_source_refresh:report['limits'].append('Optional post-publication private timer resample capability is required for the early rawV224..228 window; raw229..234 excluded. The original API and driver remain distinct. Timer safety is independently checked, not inferred from ready/grant.')
+        if args.video_source_tiles==8:report['limits'].append('Adaptive spans use8tiles only with no pending/in-flight PSG descriptor, otherwise4tiles. Above4tiles requires a fresh encoded grant V stamp of age0; all fresh-grant spans clip the late window at rawV251. Physical private-update gaps remain strictly below17100master ticks. Transfer sizes/counts are observed separately; this does not establish per-frame deadlines.')
         if args.video_source_tiles==3:report['limits'].append('Three-tile stress starts with1tile then2tiles, followed by3tile jobs and a final2tile tail:172 commits per512tiles, exercising1/2/3tile spans in actual DMA.')
         if args.video_source_during_delivery:report['limits']=[x.replace('Uploads begin after source work and drain after audio:', 'Uploads begin after source work; video is also serviced during the final audio delivery wait, with remaining jobs drained afterwards:') for x in report['limits']]
         report['limits'].append('Native PSG-word diagnostic markers add writes outside the checked Z80 source-byte stream; these kernels measure source-byte transport/timing and do not establish an unmodified audio waveform.')

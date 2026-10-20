@@ -17,4 +17,18 @@ typedef struct {
 } MdZ80VideoSpan;
 u8 md_z80_video_span_prepare(MdZ80VideoSpan *job,const u32 *source,u16 tile,u16 count);
 u8 md_z80_video_span_try(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
+/* Optional early-window path requires the refresh driver capability in
+ * ready (mask2). Unsupported ready profiles return INVALID. It uses only
+ * V224..228 and235..252 (235..251 for the fresh-grant profile),
+ * excludes raw229..234,
+ * and must complete within
+ * three lines after its held-bus beam read for up to8tiles (two lines
+ * for up to4). The refresh constructor creates a distinct token that the
+ * legacy try API rejects; its count range is1..8. Spans above4 require
+ * the fresh-grant driver capability (mask4), no pending PSG descriptors,
+ * and a granted V stamp in the same raw scanline (age0). Other span contracts still apply. */
+#define MD_Z80_VIDEO_SPAN_REFRESH_CAP 2
+#define MD_Z80_VIDEO_SPAN_GRANT_CAP 4
+u8 md_z80_video_span_prepare_refresh(MdZ80VideoSpan *job,const u32 *source,u16 tile,u16 count);
+u8 md_z80_video_span_try_refresh(MdZ80PsgMailbox *mailbox,MdZ80VideoSpan *job);
 #endif

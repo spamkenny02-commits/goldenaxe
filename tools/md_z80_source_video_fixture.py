@@ -1,8 +1,8 @@
 """Upload the actual source-checked SMS pattern mirror as an MD tile atlas."""
 from md_z80_video_fixture import instrument
 
-def instrument_source(main,body,tiles=1,readback=True,during_delivery=False):
-    assert 1<=tiles<=4
+def instrument_source(main,body,tiles=1,readback=True,during_delivery=False,refresh=False):
+    assert 1<=tiles<=8
     main=instrument(main,False,True,0,True,True)
     main=main.replace('#include "md_z80_video_dma.h"','#include "md_z80_video_dma.h"\n#include "pattern_convert.h"')
     main=main.replace('static u8 video_pattern_prepared;', '''static const u8 *video_source;static u16 video_cursor,video_batch;
@@ -11,6 +11,9 @@ static u8 video_pattern_prepared;''')
     needle=' mask=((gaw_video_updates+1)&1)?0x11111111UL:0;\n for(n=0;n<8;n++) video_pattern[n]=((n&1)?0x76543210UL:0x01234567UL)^mask;'
     assert main.count(needle)==1
     main=main.replace(needle,' video_batch=512-video_cursor;if(video_batch>'+str(tiles)+') video_batch='+str(tiles)+';\n pattern_convert(video_source+(u32)video_cursor*32,video_pattern,video_batch*8);')
+    if tiles==8:
+        main=main.replace('static u16 video_cursor,video_batch;', 'static u16 video_cursor,video_batch;\nvolatile u32 gaw_video_span_sizes[9];')
+        main=main.replace(' pattern_convert(video_source+(u32)video_cursor*32,video_pattern,video_batch*8);',' if((mailbox.busy || mailbox.head!=mailbox.tail) && video_batch>4) video_batch=4;\n pattern_convert(video_source+(u32)video_cursor*32,video_pattern,video_batch*8);')
     if tiles==3:
         needle=' pattern_convert(video_source+(u32)video_cursor*32,video_pattern,video_batch*8);'
         main=main.replace(needle,' if(video_cursor==0) video_batch=1;else if(video_cursor==1) video_batch=2;\n'+needle)
@@ -27,6 +30,7 @@ static u8 video_pattern_prepared;''')
   if(gaw_video_readback_errors) fault(0xf30);
   gaw_video_updates+=video_batch;video_cursor+=video_batch;gaw_video_dma_commits++;video_pattern_prepared=0;
  }''')
+    if tiles==8:main=main.replace('gaw_video_dma_commits++;video_pattern_prepared=0;', 'gaw_video_dma_commits++;gaw_video_span_sizes[video_batch]++;video_pattern_prepared=0;')
     if not readback:
         a=main.index('  /* Read actual VDP RAM after the DMA,')
         b=main.index('  gaw_video_updates+=video_batch;',a)
@@ -45,6 +49,9 @@ void cooperative_video_source(const u8 *source) {
         main=main.replace('#include "md_z80_video_dma.h"','#include "md_z80_video_dma.h"\n#include "md_z80_video_span.h"')
         main=main.replace('md_z80_video_dma_prepare(&video_job,video_pattern,16+video_cursor)','md_z80_video_span_prepare(&video_job,video_pattern,16+video_cursor,video_batch)')
         main=main.replace('md_z80_video_dma_try_prepared(&mailbox,&video_job)','md_z80_video_span_try(&mailbox,&video_job)')
+    if refresh:
+        main=main.replace('md_z80_video_span_try(&mailbox,&video_job)','md_z80_video_span_try_refresh(&mailbox,&video_job)')
+        main=main.replace('md_z80_video_span_prepare(&video_job,video_pattern,16+video_cursor,video_batch)','md_z80_video_span_prepare_refresh(&video_job,video_pattern,16+video_cursor,video_batch)')
     needle=' VDP_setEnable(TRUE);'
     assert main.count(needle)==1
     main=main.replace(needle,''' {u16 x,y;for(y=0;y<16;y++) for(x=0;x<32;x++) VDP_setTileMapXY(BG_A,16+y*32+x,x,y);}

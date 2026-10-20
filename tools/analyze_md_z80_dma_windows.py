@@ -74,6 +74,25 @@ def main():
                 candidates.append(bytes.fromhex('207c00c00004308030bc94003085308430833039')+
                     (job+10).to_bytes(4,'big')+bytes.fromhex('30803039')+
                     (job+12).to_bytes(4,'big')+bytes.fromhex('308032bc0000'))
+                # Capability-gated refresh helper: source words in D4/D3/D2.
+                candidates.append(bytes.fromhex('207c00c00004308030bc94003084308330823039')+
+                    (job+10).to_bytes(4,'big')+bytes.fromhex('30803039')+
+                    (job+12).to_bytes(4,'big')+bytes.fromhex('308032bc0000'))
+                # Full16checkpoint fresh-grant proof: A1 control, D2 length,
+                # frame source words and command at A0+10/+12, absolute release.
+                candidates.append(bytes.fromhex('227c00c00004328232bc940032aefea632aefea832aefeaa3028000a32803028000c328033fc000000a11100'))
+                # Reviewed fresh-grant/adaptive8 LTO: D3/D2/A1 source,
+                # command at global RAM token +10/+12, absolute release.
+                candidates.append(bytes.fromhex('207c00c00004308030bc94003083308230893039')+
+                    (job+10).to_bytes(4,'big')+bytes.fromhex('30803039')+
+                    (job+12).to_bytes(4,'big')+bytes.fromhex('308033fc000000a11100'))
+                # Split-window helper: A3 owns control, A1 length/command,
+                # A2 source-high; the BUSREQ release uses its absolute port.
+                candidates.append(bytes.fromhex('267c00c00004368936bc940036aefe9c36aefeac368a3268000a36893268000c368933fc000000a11100'))
+                # Bit-window/no-readback and bounded-publication-yield forms.
+                candidates.append(bytes.fromhex('247c00c0000434aefe9434bc940034aefea834aefeaa34aefeac3428000a34823428000c348232bc0000'))
+                # Bit-window with readback (full checkpoints and tail stress).
+                candidates.append(bytes.fromhex('247c00c0000434aefe9234bc940034aefea634aefea834aefeaa3428000a34823428000c348232bc0000'))
         assert sha(kernel)==report['kernel_sha256'] and sum(kernel.count(s) for s in candidates)==1
         selected=next(s for s in candidates if kernel.count(s)==1)
         committed_pc=kernel.index(selected)+len(selected)
@@ -97,7 +116,9 @@ def main():
                 tiles=report.get('video_source_tiles',1)
                 jobs=172 if tiles==3 else (512+tiles-1)//tiles
                 expected_commits=jobs if report.get('video_source_patterns',False) else reference['publisher_callbacks']
-                assert len(commits)==expected_commits
+                if tiles==8:
+                    assert 64<=len(commits)<=128
+                else:assert len(commits)==expected_commits
                 beam_reads=[e for e in part if e[0]==4];beam_times=[e[1] for e in beam_reads]
                 z80_times=[e[1] for e in part if e[0]==6]
                 assert beam_times==sorted(beam_times) and z80_times==sorted(z80_times)
@@ -105,6 +126,7 @@ def main():
                 after_bus=sum(bisect_left(beam_times,b)-bisect_right(beam_times,a) for a,b in all_ranges)
                 before_bus=len(helper_beams)-after_bus
                 assert before_bus>=after_bus>=len(commits)
+                early_commits=0;beam_to_release_max=0
                 for a,b in commits:
                     assert 0<b-a<17100
                     assert all((line+224)%lines>=224 for line in range(a//3420,b//3420+1))
@@ -112,7 +134,13 @@ def main():
                     assert len(beam)==1
                     e=beam[0];physical=(e[1]//3420+224)%lines
                     v=(physical if physical<=(234 if lines==262 else 258) else physical-lines)&255
-                    assert e[2]==v*256+h[e[1]%3420] and 235<=v<=252
+                    upper=251 if report.get('fresh_grant_stamps',False) else 252
+                    allowed=(224<=v<=228 or 235<=v<=upper) if report.get('video_span_split_window',False) else 235<=v<=252
+                    assert e[2]==v*256+h[e[1]%3420] and allowed
+                    if report.get('video_span_split_window',False):
+                        assert b-e[1]<(10260 if tiles==8 else 6840)
+                        early_commits+=224<=v<=228
+                        beam_to_release_max=max(beam_to_release_max,b-e[1])
                     # BUSREQ precedes BUSACK: an in-flight Z80 instruction
                     # may finish before the native held-bus guard read.
                     assert bisect_right(z80_times,beam[0][1])==bisect_left(z80_times,b)
@@ -128,7 +156,8 @@ def main():
                 if report.get('video_during_delivery',False):
                     last_psg=max(e[1] for e in part if e[0]==5)
                     rows[-1]['before_last_psg']=sum(b<last_psg for a,b in commits)
-            expected_total=48*jobs if report.get('video_source_patterns',False) else 2784
+                if report.get('video_span_split_window',False):rows[-1].update(early_commits=early_commits,beam_to_release_max=beam_to_release_max)
+            expected_total=(region_report['video_dma_commits'] if tiles==8 else 48*jobs) if report.get('video_source_patterns',False) else 2784
             assert sum(r['committed'] for r in rows)==expected_total
             if report.get('video_source_patterns',False):
                 assert region_report['video_requests']==48*512
@@ -146,11 +175,12 @@ def main():
                 hold_max=max(r['hold_max'] for r in rows),
                 max_last_after_loader_frames=max(r['last_after_loader_frames'] for r in rows),rows=rows))
             if report.get('video_during_delivery',False):results[-1]['before_last_psg']=sum(r['before_last_psg'] for r in rows)
+            if report.get('video_span_split_window',False):results[-1].update(early_commits=sum(r['early_commits'] for r in rows),beam_to_release_max=max(r['beam_to_release_max'] for r in rows))
             print({k:v for k,v in results[-1].items() if k!='rows'},flush=True)
     output=dict(hvc_sha256=sha(hvc),signature_hex=signature.hex(),results=results,
         limits=['Counts physical successful DMA-path releases by checked native instruction signature, not by counters or duration. Every counted request-to-release range is inside physical VBlank, with its native held-bus beam read independently checked against frame/time/HV tables. No Z80 sample occurs after that guard read before release; an in-flight instruction can finish between BUSREQ and BUSACK.',
                 'All fixture requests commit in FIFO order; payload type and renderer scope are specified in the kernel report. No per-frame deadline proof. Many video jobs drain after loader/audio delivery. Delivery query boundary is rounded to20ticks, so after-query counts use a20tick margin.',
-                'This supplemental analysis establishes the specific DMA path actually executed. Native IRQs remain masked, only32byte jobs tested, no waveform/hardware/whole-game guarantee.'])
+                'This supplemental analysis establishes the specific DMA path actually executed. Native IRQs remain masked; tested transfer sizes are specified by each kernel report, with adaptive4/8tile counts where indicated. No waveform/hardware/whole-game guarantee.'])
     (ROOT/'analysis'/args.report_name).write_text(json.dumps(output,indent=2)+'\n')
 
 

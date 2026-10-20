@@ -36,6 +36,11 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+Le [dernier essai de coexistence vidéo/son](analysis/md_z80_refresh_grants_milestone.md)
+valide des autorisations de transfert datées et des blocs adaptatifs de 128/256 octets.
+Les captures PAL/NTSC vérifient le blanking, les mots vidéo et l'horloge sonore.
+Le débit reste insuffisant et ce chemin expérimental n'est pas intégré à la ROM jouable.
+
 Les jalons ci-dessous concernent la chaîne expérimentale avec horloge,
 qui reste distincte du chargement de la ROM jouable.
 
