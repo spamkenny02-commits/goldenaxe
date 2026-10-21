@@ -6808,5 +6808,32 @@
         "sha256": "695ca96671c8e09eb79b09937dd05f0d85a41bb68df6f27b9d535c60aa79e594"
       }
     ]
+  },
+  {
+    "version": 220,
+    "sha256": "b49be582d3019f00e396840b1d0716b75f3ada775e298c75049c1e0216266202",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T12:59:55.941435+00:00",
+    "rom": "v0220-b49be582/gaw-megadrive-v0220.bin",
+    "notes": "Texte des conversations publie au VBlank ; controle PAL/NTSC et regressions PNJ/marchand NTSC.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "dialogue_vblank_v0220_report.json",
+        "sha256": "46486fb90157329634c9e1db1d93bdc8d0bff19037426af48657559c25e33b6b"
+      },
+      {
+        "file": "dialogue_opening_regression_v0220_report.json",
+        "sha256": "5d986eb4bd41bf185e0a75557144c36eafe6c3de1269c6f0d1ef4b667f953094"
+      },
+      {
+        "file": "house_dialogue_v0220_report.json",
+        "sha256": "4dc2670c95df81e6d7aeff6d558840e7e8531f2140354fb70f81f68e8c220b7d"
+      },
+      {
+        "file": "merchant_v0220_report.json",
+        "sha256": "1ccdb7110dfb46bce9599a31bd33cf95746355afacbfc7ecbacb2dcfa32e3254"
+      }
+    ]
   }
 ]

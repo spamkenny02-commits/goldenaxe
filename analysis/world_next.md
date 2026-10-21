@@ -1251,3 +1251,7 @@ recovery report byte-identical. All218 numberedROMs preserved.
 2026-10-21 playable v0219: clip world sprite rows outside source192 viewport.
 PAL/NTSC boundary cases, natural frame coherence and initial inventory routes pass.
 Source RNG and full-game/hardware fidelity remain unfinished.
+
+2026-10-21 playable v0220: indoor dialogue bitmap DMA in VBlank before PSG.
+302 coherent text frames PAL/NTSC vs v0219 10/5 mismatches. NPC/merchant paths pass NTSC.
+Opening final scroll pose extra NTSC frame predates change and remains unresolved.

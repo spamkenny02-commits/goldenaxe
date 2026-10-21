@@ -5,25 +5,28 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0219 — 1024 Kio.**
+**Version courante : v0220 — 1024 Kio.**
 
-[Télécharger la ROM v0219](versions/v0219-7518d3c1/gaw-megadrive-v0219.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0220](versions/v0220-b49be582/gaw-megadrive-v0220.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `7518d3c174b117b299c1317b5921e351de7e96eee44fcd4a7d3d43566854cce7`
-Checksum Mega Drive : `227C`
+SHA-256 : `b49be582d3019f00e396840b1d0716b75f3ada775e298c75049c1e0216266202`
+Checksum Mega Drive : `2A09`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0219**.
-La v0219 empêche les sprites de déborder dans les bandes noires au-dessus
-et en dessous de la zone de jeu Master System. Le correctif conserve les
-pixels visibles, les acteurs et le statut de débordement SMS sur les cas testés.
-Les contrôles ciblés passent en PAL/NTSC, ainsi que le retour d’inventaire
-dans la clairière et les deux premières maisons.
-Voir les [changements et limites](analysis/playable_sprite_viewport_v0219.md).
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0220**.
+La v0220 publie les bitmaps des conversations au VBlank pour éviter les
+images où le texte est partiellement mis à jour pendant le balayage.
+Les 302 images du dialogue contrôlé passent en PAL/NTSC ; les six PNJ,
+les achats/refus du premier marchand et les parcours naturels testés passent.
+La cadence complète des dialogues reste à aligner sur la Master System.
+Voir les [changements et limites](analysis/dialogue_vblank_v0220.md).
+
+La v0219 a corrigé les sprites débordant dans les bandes noires.
+Ce correctif est conservé. Voir les [preuves de la v0219](analysis/playable_sprite_viewport_v0219.md).
 
 La v0218 a introduit la publication des sprites au VBlank et corrigé la
 cadence des scrollings verticaux testés. Ces changements sont conservés.

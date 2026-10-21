@@ -11,11 +11,14 @@ def shifted(bitmap,count):
 
 def main():
     baseline='--baseline' in sys.argv
-    sy={m[2].split('.lto_priv.')[0]:int(m[1],16)&65535 for line in (ROOT/'megadrive/out/release/symbol.txt').read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))}
+    reference='--reference-v0219' in sys.argv
+    rom=ROOT/'versions/v0219-7518d3c1/gaw-megadrive-v0219.bin' if reference else ROOT/'gaw-megadrive.bin'
+    symbol_file=ROOT/'validation/v0219-symbols.txt' if reference else ROOT/'megadrive/out/release/symbol.txt'
+    sy={m[2].split('.lto_priv.')[0]:int(m[1],16)&65535 for line in symbol_file.read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))}
     cases=[]
     for region in ['auto','pal']:
         records={}
-        for tag,path in [('sms',ROOT/'input/original.sms'),('md',ROOT/'gaw-megadrive.bin')]:
+        for tag,path in [('sms',ROOT/'input/original.sms'),('md',rom)]:
             bitmaps={};patterns={}
             def observe(frame,raw):
                 if not 2199<=frame<=2250:return
@@ -40,7 +43,7 @@ def main():
                         out.append(value)
                     patterns[frame]=bytes(out)
             with contextlib.redirect_stdout(io.StringIO()):
-                run(path,2250,ROOT/f'validation/dialogue-scroll-{region}-{tag}',set(),([(200,220,0)] if tag=='sms' else [])+PRESSES[:6]+[(2200,2210,8)],ram_observer=observe,vram_observer=vram,core_options={'genesis_plus_gx_region_detect':region})
+                run(path,2250,ROOT/f'validation/dialogue-scroll-{region}-{tag}{"-v0219-reference" if reference else ""}',set(),([(200,220,0)] if tag=='sms' else [])+PRESSES[:6]+[(2200,2210,8)],ram_observer=observe,vram_observer=vram,core_options={'genesis_plus_gx_region_detect':region})
             records[tag]=dict(bitmaps=bitmaps,patterns=patterns)
         base=records['sms']['bitmaps'][2199]
         assert base==records['md']['bitmaps'][2199]
@@ -56,7 +59,7 @@ def main():
             poses.append(dict(cumulative_shift=shift,bitmap_sha256=sha(expected),matching_frames=matching))
         cases.append(dict(region=region,poses=poses,all_native_vram_poses_present=all(p['matching_frames']['md']['patterns'] for p in poses),first_presentation_frames_exact=all(p['matching_frames']['md']['patterns'] and p['matching_frames']['sms']['patterns'][0]==p['matching_frames']['md']['patterns'][0] for p in poses),complete_pose_frame_lists_exact=all(p['matching_frames']['sms']['patterns']==p['matching_frames']['md']['patterns'] for p in poses),all_pattern_pixel_colors_verified=True))
         print(region,'poses',[(p['cumulative_shift'],p['matching_frames']) for p in poses],flush=True)
-    report=dict(md_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),source_sha256=sha((ROOT/'input/original.sms').read_bytes()),cases=cases,production_roms_unmodified=True,ram_injections=False,full_game_ported=False,limits=['Natural first page scroll only; four complete pattern poses including their observed durations, without full framebuffer equivalence.','Partial upload frames, subsequent word timing, whole dialogue timing and suppressed IRQ counts remain unproven or different.'])
-    (ROOT/f'validation/dialogue_scroll{"_baseline" if baseline else ""}_report.json').write_text(json.dumps(report,indent=2)+'\n')
+    report=dict(md_sha256=sha(rom.read_bytes()),source_sha256=sha((ROOT/'input/original.sms').read_bytes()),cases=cases,production_roms_unmodified=True,ram_injections=False,full_game_ported=False,limits=['Natural first page scroll only; four complete pattern poses including their observed durations, without full framebuffer equivalence.','Partial upload frames, subsequent word timing, whole dialogue timing and suppressed IRQ counts remain unproven or different.'])
+    (ROOT/f'validation/dialogue_scroll{"_v0219_reference" if reference else ""}{"_baseline" if baseline else ""}_report.json').write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

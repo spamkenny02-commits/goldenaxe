@@ -74,6 +74,7 @@ static bool hero_health_pending;
 static s16 hero_dy,hero_dx;
 static u16 house_animation_scan,house_animation_patterns_pending,house_talk_latch;
 static volatile u16 house_dialogue_active,house_dialogue_index;
+static volatile u16 dialogue_video_pending;
 static volatile u16 save_service_phase;
 /* Dialogue and foreground world rendering are mutually exclusive. Reuse
  * the existing workspace rather than consuming the DMA heap with a second
@@ -554,7 +555,7 @@ static void upload_dialog_bitmap(void)
     const u8 *source=scratch;
     u8 *destination=sms_vram+0x2000;
     u32 *patterns=md_patterns+256*8;
-    u16 n;
+    u16 n;u32 started=vtimer;
     for(n=0;n<0x410;n++)
     {
         u16 bitmap=*source++;
@@ -562,7 +563,21 @@ static void upload_dialog_bitmap(void)
         *destination++=0;*destination++=0;
         *patterns++=dialogue_packed_pixels[bitmap];
     }
-    VDP_loadTileData(md_patterns+256*8,16+256,130,CPU);
+    if(house_dialogue_active)
+    {
+        /* Own the converted buffer until the IRQ completes its DMA. World
+         * simulation is blocked throughout a service/dialogue, so it cannot
+         * reuse this pattern atlas while publication is pending. */
+        __asm__ volatile ("" ::: "memory");
+        dialogue_video_pending=1;
+        while(dialogue_video_pending) __asm__ volatile ("nop");
+        __asm__ volatile ("" ::: "memory");
+        SYS_doVBlankProcessEx(IMMEDIATELY);input=JOY_readJoypad(JOY_1);
+        /* Retain the two-frame bitmap-transfer interval. Scroll adds the
+         * third NTSC frame below, as in the original four-pose sequence. */
+        while(vtimer-started<2) wait_frame();
+    }
+    else VDP_loadTileData(md_patterns+256*8,16+256,130,CPU);
 }
 
 /* 068A..06B6: publish each of the four original bitmap scroll poses. */
@@ -580,8 +595,7 @@ static void scroll_dialog_bitmap(void)
             memset(scratch+column*40+40-step,0,step);
         }
         sound_effect(0x9f);upload_dialog_bitmap();
-        /* PAL conversion/upload already spans the two source video frames.
-         * NTSC retains the third frame before the next pose. */
+        /* Two-frame bitmap publication; NTSC retains a third frame. */
         if(!SYS_isPAL()) wait_frame();
     }
     /* 06D6 calls 0786 again before parsing/drawing the next word. */
@@ -1151,6 +1165,12 @@ static void world_vint(void)
         world_sms_sprite_prepared_overflow=world_video_next_overflow;
         __asm__ volatile ("" ::: "memory");
         world_video_pending=0;
+    }
+    if(dialogue_video_pending)
+    {
+        VDP_loadTileData(md_patterns+256*8,16+256,130,DMA);
+        __asm__ volatile ("" ::: "memory");
+        dialogue_video_pending=0;
     }
     sound_tick();
 }
