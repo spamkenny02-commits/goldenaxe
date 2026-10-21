@@ -6655,5 +6655,131 @@
         "sha256": "1a758f88964dc1f78bd9ec796aa171b2d8b4663e6490572245f282814e7f57de"
       }
     ]
+  },
+  {
+    "version": 211,
+    "sha256": "b7eec79d146402b6d6d402eecf0354c145001026dc57da36fc1b49ecf29a703d",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T05:57:30.406536+00:00",
+    "rom": "v0211-b7eec79d/gaw-megadrive-v0211.bin",
+    "notes": "Diagnostic intermediaire de publication SAT ; remplacé par v0218, non recommande.",
+    "validation": "diagnostic_failed",
+    "reports": []
+  },
+  {
+    "version": 212,
+    "sha256": "e6a444b40664a830bcc79d3701e647f764ccf1aa5e50ed6ad5b00c68fdeb3a24",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T06:01:21.842532+00:00",
+    "rom": "v0212-e6a444b4/gaw-megadrive-v0212.bin",
+    "notes": "Diagnostic intermediaire de publication SAT ; remplacé par v0218, non recommande.",
+    "validation": "diagnostic_failed",
+    "reports": []
+  },
+  {
+    "version": 213,
+    "sha256": "aeed5590a1abccf4e1cb0c6e78cc339ece95b0b70f14faf7dbce53aa3eaa56dc",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T06:03:17.799106+00:00",
+    "rom": "v0213-aeed5590/gaw-megadrive-v0213.bin",
+    "notes": "Diagnostic intermediaire de publication SAT ; remplacé par v0218, non recommande.",
+    "validation": "diagnostic_failed",
+    "reports": []
+  },
+  {
+    "version": 214,
+    "sha256": "b224e777393dbed504c56e86fe633badfe47e001d4525d72634c10c00976c892",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T06:04:44.976767+00:00",
+    "rom": "v0214-b224e777/gaw-megadrive-v0214.bin",
+    "notes": "Diagnostic intermediaire de publication SAT ; remplacé par v0218, non recommande.",
+    "validation": "diagnostic_failed",
+    "reports": [
+      {
+        "file": "playable_sprite_end_v0214_report.json",
+        "sha256": "66a48ebacdb2c92b1dc5e57011c6b065f121152aa44eb978bf1fb36f841c2752"
+      }
+    ]
+  },
+  {
+    "version": 215,
+    "sha256": "ba2279cd2e4d093e51eadff530becc02f561035436a55e80ce63896ae4233015",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T06:21:59.157884+00:00",
+    "rom": "v0215-ba2279cd/gaw-megadrive-v0215.bin",
+    "notes": "Diagnostic intermediaire de publication SAT ; remplacé par v0218, non recommande.",
+    "validation": "diagnostic_failed",
+    "reports": []
+  },
+  {
+    "version": 216,
+    "sha256": "5c4a7b352d846ead271e748c4cc8cc62945563b5fa5f8d3a53dfd2ad210a3203",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T06:30:46.083001+00:00",
+    "rom": "v0216-5c4a7b35/gaw-megadrive-v0216.bin",
+    "notes": "Integration intermediaire du VBlank ; remplacée par v0218 et son calage du scrolling source.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 217,
+    "sha256": "d2b31074f24880e2764826bc55d3a913edea53815b5f8aa06529a67a49ed171e",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T06:37:59.102064+00:00",
+    "rom": "v0217-d2b31074/gaw-megadrive-v0217.bin",
+    "notes": "Integration intermediaire du VBlank ; remplacée par v0218 et son calage du scrolling source.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 218,
+    "sha256": "399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T06:55:25.792045+00:00",
+    "rom": "v0218-399be6a3/gaw-megadrive-v0218.bin",
+    "notes": "ROM jouable : sprites et tuiles publies au VBlank avant musique, fin SAT D0, scrolling vertical cale sur la SMS. Intro/menu/inventaire verifies PAL/NTSC.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "world_publication_v0218_report.json",
+        "sha256": "e8fe1c79b70de9ae71bcca76cf9f66612605792d37c218c9602172a7ace8f208"
+      },
+      {
+        "file": "world_frame_coherence_v0218_report.json",
+        "sha256": "ba48b0640c2580bf6c59670d85f4653b451678df9b3bb99f94f05935f6901edc"
+      },
+      {
+        "file": "playable_sprite_end_v0218_report.json",
+        "sha256": "5bf5f38a21af28bde3d9ccaf69aa9736eccbcfcff5626b545ad30e2d98b2a367"
+      },
+      {
+        "file": "playable_sprite_limit_v0218_report.json",
+        "sha256": "4d61afc0bd45f2f6dc02013c408e82dd164be8ba423a74423fc26c9b1607b539"
+      },
+      {
+        "file": "world_publish_regression_v0218_report.json",
+        "sha256": "44efe96785e8d3ad226fa78fa418708dc46d0a316fb2ce807fe104090a90243f"
+      },
+      {
+        "file": "inventory_restore_report.json",
+        "sha256": "96ab15a853a9a21e59d7eb39bb0960e7ce699204ad8a4a9656a60cd19629f47c"
+      },
+      {
+        "file": "intro_report.json",
+        "sha256": "0c6d542b930870258d6348f6e89dd00e1c07b013198bc3f4619f806a87b796f0"
+      },
+      {
+        "file": "intro-pal_report.json",
+        "sha256": "a80c8a7f8949341d6fbb413fd20e85b8b22777d2f1b0efd4de9d0af3aa8893ad"
+      },
+      {
+        "file": "natural_start_menu_sfx_report.json",
+        "sha256": "eb513343a654cd4b9b7f670972a397433c34d21fb227fb4a8b16379361b7e36d"
+      },
+      {
+        "file": "world_publication_recovery_v0218_report.json",
+        "sha256": "0ff74fa613cb037456814f7ccb4486f301b8d3d93805ab4f77f348a64927e0e6"
+      }
+    ]
   }
 ]

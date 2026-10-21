@@ -1,0 +1,208 @@
+{
+  "md_sha256": "ba2279cd2e4d093e51eadff530becc02f561035436a55e80ce63896ae4233015",
+  "baseline_sha256": "4678a4f4eddb4f1a76e9f174ba1381c76687f011de541f11bbfac8af3d65a554",
+  "cases": [
+    {
+      "region": "auto",
+      "case": "leading",
+      "frames": 10,
+      "visible_prefix_lengths": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "discarded_entries": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "natural_frames_identical": [
+        60,
+        300,
+        1000,
+        1500,
+        2300,
+        2700,
+        3000
+      ],
+      "natural_raster_differences": [
+        {
+          "frame": 3120,
+          "box": [
+            64,
+            64,
+            208,
+            160
+          ]
+        }
+      ],
+      "actor_state_preserved": true
+    },
+    {
+      "region": "auto",
+      "case": "prefix",
+      "frames": 10,
+      "visible_prefix_lengths": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "discarded_entries": [
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      "natural_frames_identical": [
+        60,
+        300,
+        1000,
+        1500,
+        2300,
+        2700,
+        3000
+      ],
+      "natural_raster_differences": [
+        {
+          "frame": 3120,
+          "box": [
+            64,
+            64,
+            208,
+            160
+          ]
+        }
+      ],
+      "actor_state_preserved": true
+    },
+    {
+      "region": "pal",
+      "case": "leading",
+      "frames": 10,
+      "visible_prefix_lengths": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "discarded_entries": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "natural_frames_identical": [
+        60,
+        300,
+        1000,
+        1500,
+        2300,
+        2700,
+        3000
+      ],
+      "natural_raster_differences": [
+        {
+          "frame": 3120,
+          "box": [
+            161,
+            32,
+            175,
+            36
+          ]
+        }
+      ],
+      "actor_state_preserved": true
+    },
+    {
+      "region": "pal",
+      "case": "prefix",
+      "frames": 10,
+      "visible_prefix_lengths": [
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      "discarded_entries": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "natural_frames_identical": [
+        60,
+        300,
+        1000,
+        1500,
+        2300,
+        2700,
+        3000
+      ],
+      "natural_raster_differences": [
+        {
+          "frame": 3120,
+          "box": [
+            161,
+            32,
+            175,
+            36
+          ]
+        }
+      ],
+      "actor_state_preserved": true
+    }
+  ],
+  "release_accepted": false,
+  "scope": "Full playable boot/controller route, then controlled actor Y=225 to emit source SAT D0. Leading marker hides all; marker after visible prefix terminates the hardware MD SAT. Types/simulation remain, natural captures unchanged. No whole-game/timing claim."
+}

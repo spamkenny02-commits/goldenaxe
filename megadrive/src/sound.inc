@@ -37,9 +37,7 @@ static void sound_reader_emit(void *context,const u8 *writes,u16 count)
 static void sound_tick(void)
 {
     u8 accepted;SourceClockWork work;
-    /* Source IRQ reads status before uploading the next prepared SAT. */
-    world_sms_sprite_overflow=world_sms_sprite_display_overflow;
-    world_sms_sprite_display_overflow=world_sms_sprite_prepared_overflow;
+    /* Source status is latched by world_vint before video and audio. */
     if(intro_timer) intro_timer--;
     if(sound_request) { sound_ram[6]=sound_request;sound_request=0; }
     if(sound_effect_request) { sound_ram[8]=sound_effect_request;sound_effect_request=0; }

@@ -5,23 +5,32 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0210 — 1024 Kio.**
+**Version courante : v0218 — 1024 Kio.**
 
-[Télécharger la ROM v0210](versions/v0210-4678a4f4/gaw-megadrive-v0210.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0218](versions/v0218-399be6a3/gaw-megadrive-v0218.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `4678a4f4eddb4f1a76e9f174ba1381c76687f011de541f11bbfac8af3d65a554`
-Checksum Mega Drive : `5779`
+SHA-256 : `399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d`
+Checksum Mega Drive : `AA56`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0210**.
-La v0210 intègre un changement dans le jeu complet. Les travaux du nouveau
-moteur à horloge source restent des bancs de validation séparés. Le dernier jalon validé raccorde la construction
-des sprites, l’attente et l’interruption du jeu dans un banc 68000. La livraison
-vidéo complète, le son et leur intégration à la ROM jouable restent à terminer.
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0218**.
+La v0218 prépare les sprites en RAM puis les publie au VBlank avant le
+lecteur musical. Le portage complet, les parcours non couverts et le flux
+aléatoire Z80 restent à valider ou à terminer.
+
+La **v0218** corrige la publication partielle de sprites pendant le balayage,
+respecte le terminateur SMS Y=208 et cale les vingt étapes des scrollings
+verticaux testés sur l’original, sans l’image d’attente supplémentaire.
+Les contrôles PAL/NTSC couvrent le rendu, les transitions, l’intro, les bruitages
+du menu et l’inventaire. Voir les [changements et limites](analysis/world_publication_v0218.md).
+Les v0211–v0217 sont des étapes intermédiaires ; utiliser **v0218** pour jouer.
+
+Les jalons suivants conservent leur ROM témoin de l’époque ; leurs mentions
+v0203 ou v0210 ne remplacent pas la version recommandée ci-dessus.
 
 La **v0210** applique dans le jeu la limite SMS de huit sprites par ligne.
 Les parties excédentaires sont masquées, y compris lors de chevauchements

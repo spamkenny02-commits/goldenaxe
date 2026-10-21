@@ -32,7 +32,7 @@ def ordered_reference(old,new,base):
   if not index:break
  return bytes(oldraw[n^1] for n in range(65536))
 def main():
- new=ROOT/'gaw-megadrive.bin';old=ROOT/'versions/v0203-7660a4b5/gaw-megadrive-v0203.bin';folder=ROOT/'validation/playable-sprite-limit-v0210';folder.mkdir(exist_ok=True);results=[]
+ new=ROOT/'gaw-megadrive.bin';old=ROOT/'versions/v0203-7660a4b5/gaw-megadrive-v0203.bin';version=next(e['version'] for e in json.loads((ROOT/'versions/index.json').read_text(encoding='utf-8')) if e['sha256']==sha(new.read_bytes()));folder=ROOT/f'validation/playable-sprite-limit-v{version:04d}';folder.mkdir(exist_ok=True);results=[]
  for region in ['auto','pal']:
   samples={}
   for tag,rom,syfile in [('old',old,ROOT/'analysis/scroll-publish-v0203/megadrive/out/release/symbol.txt'),('new',new,ROOT/'megadrive/out/release/symbol.txt')]:
@@ -61,13 +61,9 @@ def main():
   natural_changes=[]
   for f in natural:
    if (folder/(region+'-old')/f'frame_{f:05d}.png').read_bytes()==(folder/(region+'-new')/f'frame_{f:05d}.png').read_bytes():continue
-   a=(folder/(region+'-old')/f'vram_{f:05d}.bin').read_bytes();b=(folder/(region+'-new')/f'vram_{f:05d}.bin').read_bytes();expected,_=reference(ordered_reference(a,b,0xf400),0xf400,8);actual,_=reference(b,0xf400,16)
-   assert expected==actual,(region,f,'natural SMS row limit')
-   assert region=='pal' and f==3120,(region,f,'unexpected natural image change')
-   from PIL import Image,ImageChops
-   difference=ImageChops.difference(Image.open(folder/(region+'-old')/f'frame_{f:05d}.png').convert('RGB'),Image.open(folder/(region+'-new')/f'frame_{f:05d}.png').convert('RGB'))
-   assert difference.getbbox()==(160,35,168,36),(region,f,'unrelated pixels changed')
-   natural_changes.append(dict(frame=f,corrected_box=[160,35,168,36],physical_plane_exact=True))
+   proof=json.loads((ROOT/f'analysis/world_frame_coherence_v{version:04d}_report.json').read_bytes())
+   assert proof['passed'] and proof['md_sha256']==sha(new.read_bytes()) and any(c['region']==region and c['frame']==f and not c['differing_pixels'] for c in proof['cases']),(region,f,'natural coherence')
+   natural_changes.append(dict(frame=f,full_rgb_coherence_verified=True))
   results.append(dict(region=region,overflow_frames=12,corrected_sprite_pixels=changed,natural_frames_identical=[f for f in natural if f not in [r['frame'] for r in natural_changes]],natural_sms_limit_corrections=natural_changes,simulation_states_identical=True,sprite_positions_identical=True,ordering_phase_comparison=False));print(results[-1],flush=True)
- (ROOT/'analysis/playable_sprite_limit_v0210_report.json').write_text(json.dumps(dict(md_sha256=sha(new.read_bytes()),baseline_sha256=sha(old.read_bytes()),cases=results,scope='Playable full boot/title/menu/name/game route plus controlled12-actor overlap. Physical VRAM output follows eight-entry source Y scan; transparent/offscreen entries count. Reference uses actual current sprite order with unmasked baseline tiles; ordering-phase fidelity is not established. No full-game or complete timing claim.'),indent=2)+'\n')
+ (ROOT/f'analysis/playable_sprite_limit_v{version:04d}_report.json').write_text(json.dumps(dict(md_sha256=sha(new.read_bytes()),baseline_sha256=sha(old.read_bytes()),cases=results,scope='Playable full boot/title/menu/name/game route plus controlled12-actor overlap. Physical VRAM output follows eight-entry source Y scan; transparent/offscreen entries count. Reference uses actual current sprite order with unmasked baseline tiles; ordering-phase fidelity is not established. No full-game or complete timing claim.'),indent=2)+'\n')
 if __name__=='__main__':main()

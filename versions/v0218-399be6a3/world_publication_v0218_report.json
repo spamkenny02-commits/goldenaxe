@@ -1,0 +1,44 @@
+{
+  "md_sha256": "399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d",
+  "rom_bytes": 1048576,
+  "checksum": "AA56",
+  "reports": {
+    "analysis/world_frame_coherence_v0218_report.json": "ba48b0640c2580bf6c59670d85f4653b451678df9b3bb99f94f05935f6901edc",
+    "analysis/playable_sprite_end_v0218_report.json": "5bf5f38a21af28bde3d9ccaf69aa9736eccbcfcff5626b545ad30e2d98b2a367",
+    "analysis/playable_sprite_limit_v0218_report.json": "4d61afc0bd45f2f6dc02013c408e82dd164be8ba423a74423fc26c9b1607b539",
+    "analysis/world_publish_regression_v0218_report.json": "44efe96785e8d3ad226fa78fa418708dc46d0a316fb2ce807fe104090a90243f",
+    "validation/inventory_restore_report.json": "96ab15a853a9a21e59d7eb39bb0960e7ce699204ad8a4a9656a60cd19629f47c",
+    "validation/intro_report.json": "0c6d542b930870258d6348f6e89dd00e1c07b013198bc3f4619f806a87b796f0",
+    "validation/intro-pal_report.json": "a80c8a7f8949341d6fbb413fd20e85b8b22777d2f1b0efd4de9d0af3aa8893ad",
+    "validation/natural_start_menu_sfx_report.json": "eb513343a654cd4b9b7f670972a397433c34d21fb227fb4a8b16379361b7e36d",
+    "analysis/sprite_publish_timing_report.json": "abe2a535a39ee3a1d2efd9aa688b4316245eeb35bc293b25d96febb1d6d9edbb",
+    "analysis/sprite_publish_timing_ntsc_report.json": "fbada226594a2f53f9c26057a4cfaa1bf00337987ef4bb23eead8d9d3b49ac38",
+    "analysis/source_scroll_cadence_report.json": "4fb6f1fe979cf4eaba8129a91b5707608d541719caa44a3a9d226a805917d6c5"
+  },
+  "sources": {
+    "megadrive/src/main.c": "dc9c9d4b553afdaa457bcd5883b09414db177ee675c50fe4c7b125df7161bfa8",
+    "megadrive/src/sound.inc": "d2eaf85dae4f6b10e0ece122ed081e268f9b3c7cac3500b85980d91ab6aeade5",
+    "megadrive/src/actors.c": "015b11a152994ea4c9c571a24ac4d4332e6d53e1ef473bb91a6b3e5e769b0845"
+  },
+  "sat_publication": [
+    {
+      "region": "pal",
+      "transfers": 5,
+      "last_scanline": 229
+    },
+    {
+      "region": "auto",
+      "transfers": 5,
+      "last_scanline": 229
+    }
+  ],
+  "coherent_rgb_pixels": 614400,
+  "source_vertical_steps_verified": 80,
+  "inventory_routes": 6,
+  "intro_lines_verified": 130,
+  "menu_sfx_routes": 4,
+  "passed": true,
+  "limits": [
+    "Playable integration, not a diagnostic kernel. Gates cover listed initial routes only. Provisional native PRNG and full source R/timing evolution remain incomplete; NPC chronology and other scenes are not declared identical. Sprite/clone/UI publication outside the normal world wait path retains its existing immediate behavior. No whole-game, hardware console or waveform equivalence claim."
+  ]
+}

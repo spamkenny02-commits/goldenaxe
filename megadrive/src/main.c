@@ -75,7 +75,20 @@ static s16 hero_dy,hero_dx;
 static u16 house_animation_scan,house_animation_patterns_pending,house_talk_latch;
 static volatile u16 house_dialogue_active,house_dialogue_index;
 static volatile u16 save_service_phase;
-static u8 house_dialogue_backup[0x1c50];
+/* Dialogue and foreground world rendering are mutually exclusive. Reuse
+ * the existing workspace rather than consuming the DMA heap with a second
+ * permanent copy. At most64 clone jobs plus4 dynamic pattern uploads. */
+typedef struct { const u32 *source;u16 tile,count; } WorldTileJob;
+static union {
+    u8 dialogue[0x1c50];
+    struct { WorldTileJob jobs[68];u32 clones[65][8]; } video;
+} house_dialogue_storage;
+_Static_assert(sizeof(house_dialogue_storage.video)<=sizeof(house_dialogue_storage.dialogue),"World video workspace exceeds dialogue storage");
+#define house_dialogue_backup house_dialogue_storage.dialogue
+#define world_tile_jobs house_dialogue_storage.video.jobs
+#define world_clone_tiles house_dialogue_storage.video.clones
+static u16 world_tile_job_count,world_video_sat_count,world_video_next_overflow;
+static bool world_video_preparing,world_video_palette;
 static bool save_resume_pending;
 static u16 save_resume_room,save_resume_health;
 static u16 world_graphics_class,house_return_room,house_return_x,house_return_y;
@@ -85,6 +98,8 @@ static u8 game_save_state[0x250];
 static u8 room_metadata[3]; /* C06E..C070 */
 static u16 room_id,game_state,transition_direction,transition_stage,transition_step;
 static bool transition_pose_prepared;
+static volatile u16 world_video_pending;
+static u16 world_video_phase,world_video_order_overflow;
 static u8 forest_maze_progress; /* C06C: transient, outside the save record. */
 static u16 hero_pattern_wait_frames;
 static s16 hero_scroll_x,hero_scroll_y;
@@ -930,10 +945,29 @@ static void prepare_hero_patterns(void)
 }
 
 /* SMS mode-4 sprites: eight 8x8 entries per active scanline; X clipping does
- * not remove an entry from the Y scan. This models SMS status, not MD limits. */
+ * not remove an entry from the Y scan. Source overflow status and renderer masks use the same Y scan. */
+static void world_tile_upload(const u32 *source,u16 tile,u16 count)
+{
+    if(world_video_preparing)
+    {
+        WorldTileJob *job=world_tile_jobs+world_tile_job_count++;
+        job->source=source;job->tile=tile;job->count=count;
+    }
+    else VDP_loadTileData(source,tile,count,CPU);
+}
+static void world_clone_upload(const u32 *source,u16 tile,u16 index)
+{
+    if(world_video_preparing)
+    {
+        memcpy(world_clone_tiles[index],source,32);
+        world_tile_upload(world_clone_tiles[index],tile,1);
+    }
+    else VDP_loadTileData(source,tile,1,CPU);
+}
+
 /* Retain the SMS eight-entry Y scan in the actual playable renderer.
  * Clone only rows suppressed by overflow; read the currently resident tile,
- * since hero pattern publication can intentionally lag its prepared shadow.
+ * unless that same IRQ owns a queued pattern update for the tile.
  * Tiles1024..1087 and1152..1216 are reserved here, beyond the512 source tiles. */
 static void mask_world_sms_sprite_rows(u16 count)
 {
@@ -955,17 +989,38 @@ static void mask_world_sms_sprite_rows(u16 count)
         if(mask==255) continue;
         if(!mask)
         {
-            if(!blank_loaded) { memset(clone,0,sizeof(clone));VDP_loadTileData(clone,1216,1,CPU);blank_loaded=TRUE; }
+            if(!blank_loaded) { memset(clone,0,sizeof(clone));world_clone_upload(clone,1216,64);blank_loaded=TRUE; }
             VDP_setSpriteTile(n,1216);continue;
         }
         tile=vdpSpriteCache[n].attribut&2047;
-        *(volatile u32*)VDP_CTRL_PORT=VDP_READ_VRAM_ADDR((u32)tile*32);
-        for(row=0;row<8;row++)
         {
-            word=*data;clone[row]=(u32)word<<16;clone[row]|=*data;
-            if(!(mask&(1<<row))) clone[row]=0;
+            const u32 *queued=0;u16 j;
+            if(world_video_preparing) for(j=0;j<world_tile_job_count;j++)
+            {
+                const WorldTileJob *job=world_tile_jobs+j;
+                if(tile>=job->tile && tile<job->tile+job->count)
+                { queued=job->source+(tile-job->tile)*8;break; }
+            }
+            if(!queued) *(volatile u32*)VDP_CTRL_PORT=VDP_READ_VRAM_ADDR((u32)tile*32);
+            for(row=0;row<8;row++)
+            {
+                if(queued) clone[row]=queued[row];
+                else { word=*data;clone[row]=(u32)word<<16;clone[row]|=*data; }
+                if(!(mask&(1<<row))) clone[row]=0;
+            }
         }
-        VDP_loadTileData(clone,clone_base+n,1,CPU);VDP_setSpriteTile(n,clone_base+n);
+        world_clone_upload(clone,clone_base+n,n);VDP_setSpriteTile(n,clone_base+n);
+    }
+}
+
+/* The rare terminator path stays outside the normal frame's hot loop. */
+static __attribute__((noinline,cold)) void terminate_world_sprite_list(u16 count)
+{
+    if(count) vdpSpriteCache[count-1].link=0;
+    else
+    {
+        vdpSpriteCache[0].y=vdpSpriteCache[0].x=0;
+        vdpSpriteCache[0].size_link=vdpSpriteCache[0].attribut=0;
     }
 }
 
@@ -978,7 +1033,7 @@ static void prepare_world_sms_sprite_overflow(u16 count)
     for(n=0;n<count && n<64;n++)
     {
         raw=(vdpSpriteCache[n].y-145)&255;
-        if(raw==208) break;
+        if(raw==208) { terminate_world_sprite_list(n);count=n;break; }
         top=raw<208?(s16)raw+1:(s16)raw-255;
         bottom=top+8;
         if(top<0) top=0;
@@ -986,13 +1041,14 @@ static void prepare_world_sms_sprite_overflow(u16 count)
         if(top>=bottom) continue;
         edges[top]++;edges[bottom]--;
     }
-    world_sms_sprite_prepared_overflow=0;
+    world_video_next_overflow=0;
     for(n=0;n<192;n++)
     {
         used+=edges[n];
-        if(used>8) { world_sms_sprite_prepared_overflow=1;break; }
+        if(used>8) { world_video_next_overflow=1;break; }
     }
-    if(world_sms_sprite_prepared_overflow) mask_world_sms_sprite_rows(count);
+    if(world_video_next_overflow) mask_world_sms_sprite_rows(count);
+    if(!world_video_preparing) world_sms_sprite_prepared_overflow=world_video_next_overflow;
 }
 
 static u16 dungeon_bitmap_pending;
@@ -1031,39 +1087,84 @@ static void update_hero_sprites_for_frame(u16 order_phase,bool order_overflow)
     if(hero_patterns_pending && !(game_state==10 && transition_step==0))
     {
         if(hero_pattern_wait_frames) hero_pattern_wait_frames--;
-        else { VDP_loadTileData(md_patterns+496*8,16+496,hero_pattern_tiles,CPU);hero_patterns_pending=FALSE; }
+        else { world_tile_upload(md_patterns+496*8,16+496,hero_pattern_tiles);hero_patterns_pending=FALSE; }
     }
     if(dungeon_bitmap_pending)
-    { u16 tile=dungeon_bitmap_pending-1;VDP_loadTileData(md_patterns+tile*8,16+tile,6,CPU);dungeon_bitmap_pending=0; }
+    { u16 tile=dungeon_bitmap_pending-1;world_tile_upload(md_patterns+tile*8,16+tile,6);dungeon_bitmap_pending=0; }
     if(house_animation_patterns_pending)
-    { u16 tile=house_animation_patterns_pending-1;VDP_loadTileData(md_patterns+tile*8,16+tile,4,CPU);house_animation_patterns_pending=0; }
+    { u16 tile=house_animation_patterns_pending-1;world_tile_upload(md_patterns+tile*8,16+tile,4);house_animation_patterns_pending=0; }
     if(world_loot_patterns_pending)
     {
         memcpy(sms_vram+0x3780,actor_loot_patterns+(world_loot_patterns_pending-1)*128,128);
-        convert_patterns_range(444,4);VDP_loadTileData(md_patterns+444*8,16+444,4,CPU);world_loot_patterns_pending=0;
+        convert_patterns_range(444,4);world_tile_upload(md_patterns+444*8,16+444,4);world_loot_patterns_pending=0;
     }
     if(hero_magic_pending)
     {
         if(hero_magic_delay) hero_magic_delay--;
-        else { VDP_setTileMapDataRect(BG_A,md_map+23*32+15,15,25,hero_max_magic>>3,1,hero_max_magic>>3,CPU);hero_magic_pending=FALSE; }
+        else { VDP_setTileMapDataRect(BG_A,md_map+23*32+15,15,25,hero_max_magic>>3,1,hero_max_magic>>3,world_video_preparing?DMA_QUEUE:CPU);hero_magic_pending=FALSE; }
     }
     if(hero_gold_pending)
-    { VDP_setTileMapDataRect(BG_A,md_map+23*32+8,8,25,3,1,3,CPU);hero_gold_pending=FALSE; }
+    { VDP_setTileMapDataRect(BG_A,md_map+23*32+8,8,25,3,1,3,world_video_preparing?DMA_QUEUE:CPU);hero_gold_pending=FALSE; }
     if(hero_health_pending)
     {
-        VDP_setTileMapDataRect(BG_A,md_map+21*32+15,15,23,hero_max_health>>3,1,hero_max_health>>3,CPU);
+        VDP_setTileMapDataRect(BG_A,md_map+21*32+15,15,23,hero_max_health>>3,1,hero_max_health>>3,world_video_preparing?DMA_QUEUE:CPU);
         hero_health_pending=FALSE;
     }
     VDP_resetSprites();
     count=add_world_sprite_scene(order_phase,order_overflow,ending_hero_descriptor==0x8495?ending_held_frame:ending_hero_descriptor==0x84e1?ending_axe_frame:hero_casting?world_cast_frames+hero_direction*13:world_combat_frames+frame_offset,(hero_x>>8)+hero_scroll_x,(hero_y>>8)+hero_scroll_y,hero_flags&1,game_state!=10);
     prepare_world_sms_sprite_overflow(count);
-    if(count && count<=64) { VDP_setSpriteLink(count-1,0);VDP_updateSprites(count,CPU); }
-    else if(!count) { VDP_setSpriteFull(0,0,0,SPRITE_SIZE(1,1),0,0);VDP_updateSprites(1,CPU); }
-    if(world_palette_pending) { set_world_palette();world_palette_pending=FALSE; }
+    if(count && count<=64) VDP_setSpriteLink(count-1,0);
+    else { VDP_setSpriteFull(0,0,0,SPRITE_SIZE(1,1),0,0);count=1; }
+    if(world_video_preparing) world_video_sat_count=count;
+    else VDP_updateSprites(count,CPU);
+    if(world_palette_pending)
+    {
+        if(world_video_preparing) world_video_palette=TRUE;
+        else set_world_palette();
+        world_palette_pending=FALSE;
+    }
 }
 
 static void update_hero_sprites(void)
 { update_hero_sprites_for_frame(world_clock(),world_sms_sprite_overflow); }
+
+/* Foreground waits with a complete simulation state. Own the queued frame's
+ * VDP work in VBlank before the expensive PSG reader; no active-display SAT
+ * copy and no IRQ interleaving in a partially configured DMA command. */
+static void world_vint(void)
+{
+    world_sms_sprite_overflow=world_sms_sprite_display_overflow;
+    world_sms_sprite_display_overflow=world_sms_sprite_prepared_overflow;
+    if(world_video_pending)
+    {
+        Z80_enableBusProtection();DMA_flushQueue();Z80_disableBusProtection();
+        u16 n;
+        for(n=0;n<world_tile_job_count;n++)
+        {
+            const WorldTileJob *job=world_tile_jobs+n;
+            VDP_loadTileData(job->source,job->tile,job->count,DMA);
+        }
+        VDP_updateSprites(world_video_sat_count,DMA);
+        if(world_video_palette) set_world_palette();
+        world_sms_sprite_prepared_overflow=world_video_next_overflow;
+        __asm__ volatile ("" ::: "memory");
+        world_video_pending=0;
+    }
+    sound_tick();
+}
+static void wait_world_video(void)
+{
+    world_video_phase=world_clock();world_video_order_overflow=world_sms_sprite_overflow;
+    world_tile_job_count=0;world_video_palette=FALSE;world_video_preparing=TRUE;
+    update_hero_sprites_for_frame(world_video_phase,world_video_order_overflow);
+    world_video_preparing=FALSE;
+    __asm__ volatile ("" ::: "memory");
+    world_video_pending=1;
+    while(world_video_pending) __asm__ volatile ("nop");
+    __asm__ volatile ("" ::: "memory");
+    SYS_doVBlankProcessEx(IMMEDIATELY);
+    input=JOY_readJoypad(JOY_1);
+}
 
 /* 1B0E: initial map construction folds cell changes into both tile maps. */
 static void prepare_room_cell(u16 index,u8 value)
@@ -1803,8 +1904,12 @@ static void step_room_transition(void)
         }
         transition_stage=1;return;
     }
-    /* Match the setup frames observed around 21A1/2260 before scrolling. */
-    if(transition_stage<(SYS_isPAL()?2:3)) { transition_stage++;return; }
+    /* 206A/2099/2260 performs the extra upward buffer exchanges. With
+     * publication before the reader, its setup boundary differs from the
+     * other paths. Original208A/2090 traces anchor the first published row;
+     * the subsequent20 rows remain one IRQ apart in both regions. */
+    if(transition_stage<(transition_direction==0?(SYS_isPAL()?3:2):(SYS_isPAL()?2:3)))
+    { transition_stage++;return; }
     if(transition_step==extent)
     {
         if(transition_direction>=2)
@@ -2647,8 +2752,7 @@ reload_world:
             { u16 black[32]={0};resume_phase=1;fade_world_palette(black,FALSE); }
             resuming=TRUE;goto reload_world;
         }
-        { u16 order_phase=world_clock();bool order_overflow=world_sms_sprite_overflow;
-          wait_frame();update_hero_sprites_for_frame(order_phase,order_overflow); }
+        wait_world_video();
         if(game_state==12) { if(tick_world_simulation()) continue; }
         else step_room_transition();
         if(transition_pose_prepared) transition_pose_prepared=FALSE;
@@ -3050,7 +3154,7 @@ int main(bool hardReset)
     PAL_setColor(33,green);
     VDP_fillTileMapRect(BG_B,TILE_ATTR_FULL(PAL2,0,0,0,1),0,2,32,24);
     JOY_init();save_init();
-    sound_stop();sound_ram[3]=SYS_isPAL()?0:0x80;SYS_setVIntCallback(sound_tick);
+    sound_stop();sound_ram[3]=SYS_isPAL()?0:0x80;SYS_setVIntCallback(world_vint);
     while(TRUE)
     {
         title_phase=TRUE; title_requested=FALSE;

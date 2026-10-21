@@ -1218,3 +1218,31 @@ Six inventoryroutes/exterior/firsttwohouses passed PAL/NTSC staticrestore.
 No fullgame/timing/hardwareclaim. New clockedbackend remains experimental;
 continue shipping real playable integrations with bounded necessarychecks.
 Evidence:analysis/playable_sprite_limit_v0210.md and releaseattachedreports.
+
+Playablev0218 publication integration (2026-10-21):
+Actual autonomous main prepares sprites/clone payloads in foreground, then
+commits queued BG/HUD/patterns and SATDMA in world_vint before PSG reader.
+Volatile pending handshake plus compiler barriers; no partially prepared batch
+consumption. Reuse mutually exclusive dialogue union:2624video bytes inside
+existing7248byte workspace, compile-size assertion, no extra permanent DMAheap.
+Current atlas job participates in clone generation; delayed hero still uses
+resident art. Original overflow pipeline latched before nextSATpublication.
+Read-only GPG confirmsPAL oldSATline31..38 vs new228; NTSC old109..114 vs228..229
+forframe3120. Five transfers/region all inVBlank; plain-core PNG parity.
+12natural viewport/HUD images match independent VRAM/CRAM composition on614400
+pixels. D0 termination40frames; source8-entry rowlimit24frames.
+Source20D0/2090 traces prove one vertical step/IRQ. Upward setup calibrated to
+source extra2099 swaps; all80tested published steps now match source frame
+and cadence. Ten finalmaps stable firstfollowingframe; oldNTSCvertical holdgone.
+130intro lines/scenes, menuPSG4routes, inventory6routes pass PAL/NTSC.
+ROM1MiB SHA399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d,checksumAA56.
+Prototypes211..217 kept; use218. Default ROM/README/Gitmain updated.
+Remaining: provisionalSGDK PRNG/sourceR refresh stream, other rooms/timing,
+full-game/hardware/waveform. Immediate sprite publication outside normal
+world wait path remains existing behavior. Do not claim all deadlines solved.
+Prefer playable integrations with necessary checks; user rejected benchmark-only
+progress. Evidence:analysis/world_publication_v0218.md and attachedrelease reports.
+
+Archiveworld-publication-v0218 finalized:4781refs;184074650generatedbytesremoved,
+165540262netbytesfreed. Fullgzip/SHAreadback and postcleanup RGB/cadence/DMA
+recovery report byte-identical. All218 numberedROMs preserved.

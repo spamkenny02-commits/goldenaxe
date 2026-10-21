@@ -1,0 +1,57 @@
+{
+  "md_sha256": "399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d",
+  "baseline_sha256": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+  "cases": [
+    {
+      "region": "auto",
+      "overflow_frames": 12,
+      "corrected_sprite_pixels": 7500,
+      "natural_frames_identical": [
+        60,
+        120,
+        300,
+        800,
+        1000,
+        1500,
+        2300,
+        2700,
+        3000
+      ],
+      "natural_sms_limit_corrections": [
+        {
+          "frame": 3120,
+          "full_rgb_coherence_verified": true
+        }
+      ],
+      "simulation_states_identical": true,
+      "sprite_positions_identical": true,
+      "ordering_phase_comparison": false
+    },
+    {
+      "region": "pal",
+      "overflow_frames": 12,
+      "corrected_sprite_pixels": 7500,
+      "natural_frames_identical": [
+        60,
+        120,
+        300,
+        800,
+        1000,
+        1500,
+        2300,
+        2700,
+        3000
+      ],
+      "natural_sms_limit_corrections": [
+        {
+          "frame": 3120,
+          "full_rgb_coherence_verified": true
+        }
+      ],
+      "simulation_states_identical": true,
+      "sprite_positions_identical": true,
+      "ordering_phase_comparison": false
+    }
+  ],
+  "scope": "Playable full boot/title/menu/name/game route plus controlled12-actor overlap. Physical VRAM output follows eight-entry source Y scan; transparent/offscreen entries count. Reference uses actual current sprite order with unmasked baseline tiles; ordering-phase fidelity is not established. No full-game or complete timing claim."
+}

@@ -1,0 +1,402 @@
+{
+  "md_sha256": "d2b31074f24880e2764826bc55d3a913edea53815b5f8aa06529a67a49ed171e",
+  "reference_sha256": "4678a4f4eddb4f1a76e9f174ba1381c76687f011de541f11bbfac8af3d65a554",
+  "cases": [
+    {
+      "region": "auto",
+      "route": "horizontal",
+      "scroll_state_frames_identical": 751,
+      "source_scroll_cadence": [],
+      "source_mismatched_frames": {
+        "old": {
+          "game_state": 2,
+          "room_id": 0,
+          "hero_x": 78,
+          "hero_y": 0
+        },
+        "new": {
+          "game_state": 2,
+          "room_id": 0,
+          "hero_x": 77,
+          "hero_y": 0
+        }
+      },
+      "transitions": [
+        {
+          "frame": 2812,
+          "old_completion_frame": 2812,
+          "direction": 2,
+          "background_pixels": 40564,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": false,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        },
+        {
+          "frame": 3112,
+          "old_completion_frame": 3112,
+          "direction": 3,
+          "background_pixels": 40636,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": false,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        }
+      ]
+    },
+    {
+      "region": "auto",
+      "route": "vertical",
+      "scroll_state_frames_identical": 711,
+      "source_scroll_cadence": [
+        {
+          "direction": 1,
+          "source_intervals": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "native_intervals": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "native_publication_minus_source_completion_frames": 0
+        },
+        {
+          "direction": 0,
+          "source_intervals": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "native_intervals": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "native_publication_minus_source_completion_frames": 1
+        }
+      ],
+      "source_mismatched_frames": {
+        "old": {
+          "game_state": 8,
+          "room_id": 0,
+          "hero_x": 77,
+          "hero_y": 64
+        },
+        "new": {
+          "game_state": 2,
+          "room_id": 0,
+          "hero_x": 76,
+          "hero_y": 1
+        }
+      },
+      "transitions": [
+        {
+          "frame": 2812,
+          "old_completion_frame": 2812,
+          "direction": 2,
+          "background_pixels": 40564,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": false,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        },
+        {
+          "frame": 3069,
+          "old_completion_frame": 3070,
+          "direction": 1,
+          "background_pixels": 40654,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": true,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        },
+        {
+          "frame": 3247,
+          "old_completion_frame": 3250,
+          "direction": 0,
+          "background_pixels": 40654,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": true,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        }
+      ]
+    },
+    {
+      "region": "pal",
+      "route": "horizontal",
+      "scroll_state_frames_identical": 751,
+      "source_scroll_cadence": [],
+      "source_mismatched_frames": {
+        "old": {
+          "game_state": 0,
+          "room_id": 0,
+          "hero_x": 0,
+          "hero_y": 0
+        },
+        "new": {
+          "game_state": 0,
+          "room_id": 0,
+          "hero_x": 0,
+          "hero_y": 0
+        }
+      },
+      "transitions": [
+        {
+          "frame": 2810,
+          "old_completion_frame": 2810,
+          "direction": 2,
+          "background_pixels": 40564,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": false,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        },
+        {
+          "frame": 3110,
+          "old_completion_frame": 3110,
+          "direction": 3,
+          "background_pixels": 40636,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": false,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        }
+      ]
+    },
+    {
+      "region": "pal",
+      "route": "vertical",
+      "scroll_state_frames_identical": 729,
+      "source_scroll_cadence": [
+        {
+          "direction": 1,
+          "source_intervals": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "native_intervals": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "native_publication_minus_source_completion_frames": 0
+        },
+        {
+          "direction": 0,
+          "source_intervals": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "native_intervals": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "native_publication_minus_source_completion_frames": -1
+        }
+      ],
+      "source_mismatched_frames": {
+        "old": {
+          "game_state": 1,
+          "room_id": 1,
+          "hero_x": 0,
+          "hero_y": 55
+        },
+        "new": {
+          "game_state": 2,
+          "room_id": 0,
+          "hero_x": 0,
+          "hero_y": 57
+        }
+      },
+      "transitions": [
+        {
+          "frame": 2810,
+          "old_completion_frame": 2810,
+          "direction": 2,
+          "background_pixels": 40564,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": false,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        },
+        {
+          "frame": 3068,
+          "old_completion_frame": 3068,
+          "direction": 1,
+          "background_pixels": 40654,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": false,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        },
+        {
+          "frame": 3244,
+          "old_completion_frame": 3245,
+          "direction": 0,
+          "background_pixels": 40618,
+          "post_completion_differences": [
+            0,
+            0
+          ],
+          "old_penultimate_pose_held": false,
+          "new_final_map_stable_from_first_post_completion_frame": true
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "scope": "Natural exterior horizontal/vertical routes. Room/state/direction/step cadence compares on3004 frames. Exact source hero timing is not established; regional source mismatch counts are retained, not hidden. Source vertical20-step cadence matches every interval; remaining absolute offsets are recorded. Ten final map transitions stable from first following frame, excluding union of hardware sprite rectangles. Not all rooms or full source timing."
+}

@@ -25,7 +25,7 @@ def main():
             title.append(frame);native_closed=True
     with contextlib.redirect_stdout(io.StringIO()):
         run(ROOT/'input/original.sms',7600,ROOT/f'validation/sms-intro-natural{suffix}',{1000,2100,4200,4800,6100},[],skip_intro=False,ram_observer=sms_observe,core_options=options)
-        run(ROOT/'gaw-megadrive.bin',7600,ROOT/f'validation/md-intro-natural{suffix}',{1000,2100,4200,4800,6100},[],skip_intro=False,ram_observer=md_observe,core_options=options,audio_out=ROOT/f'validation/md-intro-music{suffix}.wav')
+        run(ROOT/'gaw-megadrive.bin',7600,ROOT/f'validation/md-intro-natural{suffix}',{1000,2100,4200,4800,6100},[],skip_intro=False,ram_observer=md_observe,core_options=options,audio_out=None if '--no-audio' in sys.argv else ROOT/f'validation/md-intro-music{suffix}.wav')
     results=[]
     for line in range(1,66):
         assert source.get(line) and target.get(line),(line,'missing story line')
@@ -36,6 +36,6 @@ def main():
     assert max(offsets)-min(offsets)<=2,('Accumulating scene/intro delay',offsets)
     fps={tag:json.loads((ROOT/f'validation/{tag}-intro-natural{suffix}/capture.json').read_text())['fps'] for tag in ['sms','md']}
     assert abs(fps['sms']-fps['md'])<1e-9
-    report=dict(video_fps=fps,line_start_offset_frames_range=[min(offsets),max(offsets)],no_accumulating_text_delay=True,region='pal' if suffix else 'auto',md_sha256=hashlib.sha256((ROOT/'gaw-megadrive.bin').read_bytes()).hexdigest(),natural_boot=True,no_buttons=True,no_ram_mutations=True,story_lines=results,title_returns_after_intro=True,absolute_frame_timing_exact=False,all_sprite_animation_phases_verified=False,source_intro_completion_frame=source_done[0] if source_done else None,native_intro_completion_frame=min(title),audio=f'md-intro-music{suffix}.wav')
+    report=dict(video_fps=fps,line_start_offset_frames_range=[min(offsets),max(offsets)],no_accumulating_text_delay=True,region='pal' if suffix else 'auto',md_sha256=hashlib.sha256((ROOT/'gaw-megadrive.bin').read_bytes()).hexdigest(),natural_boot=True,no_buttons=True,no_ram_mutations=True,story_lines=results,title_returns_after_intro=True,absolute_frame_timing_exact=False,all_sprite_animation_phases_verified=False,source_intro_completion_frame=source_done[0] if source_done else None,native_intro_completion_frame=min(title),audio=None if '--no-audio' in sys.argv else f'md-intro-music{suffix}.wav')
     (ROOT/f'validation/intro{suffix}_report.json').write_text(json.dumps(report,indent=2)+'\n');print('65 story lines and scene maps match original; natural intro reaches title')
 if __name__=='__main__':main()
