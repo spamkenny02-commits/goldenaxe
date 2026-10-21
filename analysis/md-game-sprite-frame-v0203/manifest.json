@@ -1,0 +1,3764 @@
+{
+  "previous_manifest_sha256": "1f7e61f246541a1d6af5e83a7b55ada857f5d8425ac981fb2ca2ef203a6fd0a0",
+  "playable_sha256": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+  "reports": {
+    "analysis/md_game_sprite_frame_report.json": "a19bbe080694f60093bf30f7d3bd1fc5c3c52c8d98fd692ff33cb4c50ca2038c",
+    "analysis/md_game_sprite_frame_recovery_report.json": "36e214d3a1b8bc7a6ec7ec51e6d5a2dccd41cde6e8e15402a3a390b925d68add"
+  },
+  "native_irq_sat_hidden_dma_verified": true,
+  "source_status_supplied": true,
+  "patterns_supplied": true,
+  "production_integration": false,
+  "physical_frame_psg_delivery": false,
+  "video_frame_deadlines_accepted": false,
+  "files": {
+    "analysis/md_game_sprite_frame_milestone.md": "21919471acdc24caa28c4dc0b0aeedc3fbfae784743d81477da0c7a21cb38739",
+    "analysis/md_game_sprite_frame_recovery_report.json": "36e214d3a1b8bc7a6ec7ec51e6d5a2dccd41cde6e8e15402a3a390b925d68add",
+    "megadrive/src/md_game_sprite_frame.c": "4a214f58445dd6fd3216340d80b18fdd2c5bffc2ac6f603953594fdaefa32439",
+    "megadrive/src/md_game_sprite_frame.h": "128af02c357dd37483396c78076e54b06d386a8365c7d4ca8e5e9c15b522e790",
+    "megadrive/src/md_service_clock_start.c": "ae633ff9eb8d30a340439b3458f2a94cd400644a821f081f172458d2369be0be",
+    "megadrive/src/md_sms_sprite8_stream.c": "e11c2d78ae31d1a02af1a0739edac5cfcc7634e815497c17646473079548903f",
+    "megadrive/src/md_sms_sprite8_stream.h": "ae5983ab17a0d6dc081102948d2627f6c80eeebc24a2bb531b0ca48be1082dd9",
+    "megadrive/src/md_z80_psg_start.c": "3d025627c079bd442790db291de6f5d2f215e4146cb1f3552b2f42a99a8113ef",
+    "megadrive/src/md_z80_video_span.c": "12963459d4bbb6ece185c5e1ce00067216e9cc955638b5c74622ce1e7d469461",
+    "megadrive/src/md_z80_video_span.h": "96ce521c00467db34e52f7e70652f4d633a1ad203d7f3b7aad55612ced97bcb0",
+    "megadrive/src/source_audio_dispatch.c": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "megadrive/src/source_audio_dispatch.h": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960",
+    "megadrive/src/source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "megadrive/src/source_audio_envelope.h": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c",
+    "megadrive/src/source_audio_fast.c": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "megadrive/src/source_audio_fast.h": "2fdec938642ffcfe22790f5985bc16a74c8d3103d1b41927929b77797f1b3f5a",
+    "megadrive/src/source_audio_fast_timed.c": "7113a7169873d47eea7442c0ca03f66a405db686984f16d52931dfb7d99de8d6",
+    "megadrive/src/source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "megadrive/src/source_audio_memory.h": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9",
+    "megadrive/src/source_audio_noise.c": "cd3cf09ae5cbd50f178678e68133e8622ef90263f2cbed356e91b6083d379514",
+    "megadrive/src/source_audio_noise.h": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1",
+    "megadrive/src/source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
+    "megadrive/src/source_audio_pitch.h": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2",
+    "megadrive/src/source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "megadrive/src/source_audio_prefix.h": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9",
+    "megadrive/src/source_audio_prefix_timed.c": "6e66131d2e9daa764ae12eca02b886f25fbf4fcf13a2972d34ccecddfcc12c0d",
+    "megadrive/src/source_audio_priority.c": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "megadrive/src/source_audio_priority.h": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb",
+    "megadrive/src/source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "megadrive/src/source_audio_reader.h": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933",
+    "megadrive/src/source_audio_reader_master.c": "12b82a5e815ed93ac3d0e2e2878441897f0e975d5c637fb65f599f9161992f17",
+    "megadrive/src/source_audio_sequence.c": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "megadrive/src/source_audio_sequence.h": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c",
+    "megadrive/src/source_audio_tone.c": "73551d475a0ca1cecb45590b2d0adabab85d694c10b97b4086e0f5e2662ac6dd",
+    "megadrive/src/source_audio_tone.h": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4",
+    "megadrive/src/source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "megadrive/src/source_clock.h": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8",
+    "megadrive/src/source_game_frame.c": "b7845c5cabdf54b4df19ef70ae3579a590e36d407a9729726e03a723e71d4044",
+    "megadrive/src/source_game_irq.c": "cd4587eb01a64bb92a974b1423a531d29d27b2e527dd8ac908e0736ed624f62a",
+    "megadrive/src/source_game_irq.h": "cdaec556cedbb95d9704b42740c44d38e9ad3df3669709ca503a37e763363b52",
+    "megadrive/src/source_irq.c": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+    "megadrive/src/source_irq.h": "c463a407ad732d2a78e16a6b50b18edb3c0fb941655c5a3aae3acc9df402d658",
+    "megadrive/src/source_irq_master_context.c": "1b11182a3c10d8ab59ca6708853d6133ebe84423a7e5cbc1388e1ce01fd70d77",
+    "megadrive/src/source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "megadrive/src/source_rng.h": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f",
+    "megadrive/src/source_sms_sprite8.c": "16de4c753a60c980d89237a4a57bebaba6264f2cad6d597f82eea5bb4ed48fcd",
+    "megadrive/src/source_sms_sprite8.h": "1b16992476ffd9c873455906f63e5b7cab13ba1830e7145a72b44bc961ffee9e",
+    "megadrive/src/source_sprite_scene_timed.c": "91528db327f5f448e0ed4c24c9d24719f92e5309aeb4b30d233be750295c524f",
+    "megadrive/src/source_sprite_scene_timed.h": "a287a8adc32f42ed4b0059a7a8032645bc0fc562fa339c94bcee13fc7e89e0fc",
+    "megadrive/z80/md_psg_refresh_z80.asm": "94da4b4eaefaf177dfa10e25cd152f5c0c71842a48d4e1452aae1a65a8f7bae3",
+    "README.md": "94464fc096687645e1bf65ab85679795190bed43fa6a2eec0c7f47e1f89564ab",
+    "tools/archive_lossless_evidence.py": "a364d75b4c9559263df9bb6f2a5324a0f123751eba90ef540c7380ae620bb205",
+    "tools/archive_md_game_sprite_frame.py": "ec3060da6bd1a8c06b933b88cc7c12db7f377cca6c6b643a7f17f38136a13d42",
+    "tools/md_sms_sprite8_fixture.py": "1b4947cba62a217cc0355a75067e48f38508e5a4ad7b9c2e9ce5a1fda81bf260",
+    "tools/md_z80_source_video_fixture.py": "0dc344867645a845b8d9e1b4322eba1c6a203545bedd87708824858b31d056ab",
+    "tools/run_core.py": "0dc61ebdee03c36670f0bb62d0d3bf951696a40abaf65aff85f9dd78b88d4f05",
+    "tools/validate_game_sprite_frame.py": "c2158942fa32b6faa0612e4101840ed42058eaff1b3860fe4b23cd701ae4dc98",
+    "tools/validate_game_sprite_frame_68k.py": "b055f925801ae4c41dfe3749627738f7f059aac2b863975e5612e3d04786efe2",
+    "tools/validate_md_game_sprite_frame.py": "aed26b7027f2cdb95d2035f6d9286af314f3b884bf13d53a9d34b9347c6433b8",
+    "tools/validate_sms_sprite8.py": "a0832b8005a61dbd00fab5c542b6ffff46b451a7fb7006a221de7c73ab474da0",
+    "tools/verify_game_sprite_frame_assets.py": "0f9d5524e2b4ebdfb9076a677ef5c69d93df3f63e2ae69f5e8e73dd116cbe64f",
+    "tools/verify_md_game_sprite_frame.py": "b59fef054797fb3ecfb7db5ca84a26e3b09036e67a56e48580ad86edfbf04ab8"
+  },
+  "compressed": {
+    "analysis/md_game_sprite_frame_report.json": {
+      "stored": "objects/a19bbe080694f60093bf30f7d3bd1fc5c3c52c8d98fd692ff33cb4c50ca2038c.gz",
+      "raw_sha256": "a19bbe080694f60093bf30f7d3bd1fc5c3c52c8d98fd692ff33cb4c50ca2038c",
+      "raw_bytes": 82179,
+      "stored_sha256": "f5e3fcdd0f5391a0ebb9aff2284663453b51505d082fd2c44363f84bfbefa7f7"
+    },
+    "analysis/world_next.md": {
+      "stored": "objects/326ed064e4ad43bb806c5752006cebf0e800305292c21270d5691305d89afec6.gz",
+      "raw_sha256": "326ed064e4ad43bb806c5752006cebf0e800305292c21270d5691305d89afec6",
+      "raw_bytes": 212251,
+      "stored_sha256": "d58e51bbd110642865c46cd4210fa3778479fa5475f6a287376bcf0ace7e89ae"
+    },
+    "validation/md-game-sprite-frame/build.log": {
+      "stored": "objects/17c5f4caa63e827de4fb363b2cca52f5003f92a32c3ea9ba8026cdb434bd85ff.gz",
+      "raw_sha256": "17c5f4caa63e827de4fb363b2cca52f5003f92a32c3ea9ba8026cdb434bd85ff",
+      "raw_bytes": 44037,
+      "stored_sha256": "947fd00fac000fa9c1934cca63c7068ffbe5d575763bd013c99fe8d43f67f462"
+    },
+    "validation/md-game-sprite-frame/compiler-tmp/JavaLauncher.log": {
+      "stored": "objects/be268ba3505b1386ba3990628bde7186269b50d994bf1728a2cce1a699d0673c.gz",
+      "raw_sha256": "be268ba3505b1386ba3990628bde7186269b50d994bf1728a2cce1a699d0673c",
+      "raw_bytes": 4488,
+      "stored_sha256": "2385e8884081f98eb59f5446a2170a741ff59873dac0ba4039a3f9472e2581c6"
+    },
+    "validation/md-game-sprite-frame/driver.bin": {
+      "stored": "objects/84b56a31393e9af6a3b7166255966f2602a9e8eb45092a86fe5656be1aa34ee2.gz",
+      "raw_sha256": "84b56a31393e9af6a3b7166255966f2602a9e8eb45092a86fe5656be1aa34ee2",
+      "raw_bytes": 1857,
+      "stored_sha256": "850b632bd143d5aed80b80e40ca9c0127c2608c8bee95b1fba43c345223d6342"
+    },
+    "validation/md-game-sprite-frame/driver.lst": {
+      "stored": "objects/87ed35d1e71f642abee6a30e8fde7deea2b960f0112b2f03b49722da09859592.gz",
+      "raw_sha256": "87ed35d1e71f642abee6a30e8fde7deea2b960f0112b2f03b49722da09859592",
+      "raw_bytes": 22104,
+      "stored_sha256": "029fb900b1f7a18010a0e62287621e7697b26164ad422f3da0812935eb413ed5"
+    },
+    "validation/md-game-sprite-frame/ntsc/capture.json": {
+      "stored": "objects/db78120192924160fe55b2a65d37d27dfcd1f5f0dcbb9d21c81fe485bb81b33d.gz",
+      "raw_sha256": "db78120192924160fe55b2a65d37d27dfcd1f5f0dcbb9d21c81fe485bb81b33d",
+      "raw_bytes": 554,
+      "stored_sha256": "8efc0721a643d5e5c87e64ff2ea35f6f10a1924468b1fa91f1c43cbe732d907d"
+    },
+    "validation/md-game-sprite-frame/ntsc-0-vram.bin": {
+      "stored": "objects/9d0ef3bf2bc989082114b873d8ad1185ee6c3ccb06f1c9d3d1ce92279b1da29e.gz",
+      "raw_sha256": "9d0ef3bf2bc989082114b873d8ad1185ee6c3ccb06f1c9d3d1ce92279b1da29e",
+      "raw_bytes": 65536,
+      "stored_sha256": "01f9943e375e749e4118e8831ee84823d23ff9570fad23561ae6aff2f0379d23"
+    },
+    "validation/md-game-sprite-frame/ntsc-1-vram.bin": {
+      "stored": "objects/7a63f169d9501d53e6d7db8f486147fb060908ddd40dc3753b5a895feb83f474.gz",
+      "raw_sha256": "7a63f169d9501d53e6d7db8f486147fb060908ddd40dc3753b5a895feb83f474",
+      "raw_bytes": 65536,
+      "stored_sha256": "fbd1257f52fc421538c405037149bd2ce6b652600b3ba101f12eb77f70123f04"
+    },
+    "validation/md-game-sprite-frame/ntsc-10-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-100-vram.bin": {
+      "stored": "objects/c576376c5c68f18c08d093086274ddc28548397fe1967d421f3691523c105bf7.gz",
+      "raw_sha256": "c576376c5c68f18c08d093086274ddc28548397fe1967d421f3691523c105bf7",
+      "raw_bytes": 65536,
+      "stored_sha256": "c58066f9cdcc9303e1c0ef1edd452acb1752c02fa95775ebb9fccb6b1059c00f"
+    },
+    "validation/md-game-sprite-frame/ntsc-101-vram.bin": {
+      "stored": "objects/a471da3930d4676444cfd5291e0ce1eba4ecc1b91148b68f0e2b74021f193e5f.gz",
+      "raw_sha256": "a471da3930d4676444cfd5291e0ce1eba4ecc1b91148b68f0e2b74021f193e5f",
+      "raw_bytes": 65536,
+      "stored_sha256": "29a5e023b8905713ab4c7b7d7a292a43570245339b45108bc999633123b783a8"
+    },
+    "validation/md-game-sprite-frame/ntsc-102-vram.bin": {
+      "stored": "objects/2eec3d011ee2b56315b8707a2deecdc193ed9f3e36eb6e9b3eb91e8a7752801d.gz",
+      "raw_sha256": "2eec3d011ee2b56315b8707a2deecdc193ed9f3e36eb6e9b3eb91e8a7752801d",
+      "raw_bytes": 65536,
+      "stored_sha256": "a8c32df4fc4f7566b0f9e2ab772a8996bc96393f10dd5f7e5351f07d8a04b6f0"
+    },
+    "validation/md-game-sprite-frame/ntsc-103-vram.bin": {
+      "stored": "objects/9b8d68de68d91618eb54a86152b909fd6a13a1f42aafdfe540cd0773f5a5a0e4.gz",
+      "raw_sha256": "9b8d68de68d91618eb54a86152b909fd6a13a1f42aafdfe540cd0773f5a5a0e4",
+      "raw_bytes": 65536,
+      "stored_sha256": "b5ba490464fe33d09424ff3d2c7c3d8e8a013c6da66e7b183038b0e0ff7a6420"
+    },
+    "validation/md-game-sprite-frame/ntsc-104-vram.bin": {
+      "stored": "objects/989504c3b3c191b01f2bce05171ca20cd5da57d766ac36c0fa0ff26428a9c7a8.gz",
+      "raw_sha256": "989504c3b3c191b01f2bce05171ca20cd5da57d766ac36c0fa0ff26428a9c7a8",
+      "raw_bytes": 65536,
+      "stored_sha256": "353b3ca4867fb5a27a96e4d2e6d1c638b7ec774860bd8e06fd2b9be6b8caeecd"
+    },
+    "validation/md-game-sprite-frame/ntsc-105-vram.bin": {
+      "stored": "objects/76554f77f19f7d59224955e93e2ab6787daec99a94e1a462fa1a5b52e70a2fad.gz",
+      "raw_sha256": "76554f77f19f7d59224955e93e2ab6787daec99a94e1a462fa1a5b52e70a2fad",
+      "raw_bytes": 65536,
+      "stored_sha256": "3eaad3f63232c0e0f327213a156cb8e5828b8ebe49a147a59de1c72789948eae"
+    },
+    "validation/md-game-sprite-frame/ntsc-106-vram.bin": {
+      "stored": "objects/666a2003ba811f990d2429450dbd0697182d52c69347101174a2d0882e93da23.gz",
+      "raw_sha256": "666a2003ba811f990d2429450dbd0697182d52c69347101174a2d0882e93da23",
+      "raw_bytes": 65536,
+      "stored_sha256": "874031dcc9b2ba3c3bd39b19f056844637967eb9dc4ac2f75d6afebccc46d66c"
+    },
+    "validation/md-game-sprite-frame/ntsc-107-vram.bin": {
+      "stored": "objects/3225489f5018905981760c6c15bc21cc0bddf2b5eb8439c4439e22fc288e9e5b.gz",
+      "raw_sha256": "3225489f5018905981760c6c15bc21cc0bddf2b5eb8439c4439e22fc288e9e5b",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf3ae827f126e53f2f7f60e4f4ea119f805e6703fc8b604a80b0260f3ce4ea74"
+    },
+    "validation/md-game-sprite-frame/ntsc-108-vram.bin": {
+      "stored": "objects/b2946629f6ff1164a0879dc39509628ae6cf245d96722df97734e8a21d5c4e37.gz",
+      "raw_sha256": "b2946629f6ff1164a0879dc39509628ae6cf245d96722df97734e8a21d5c4e37",
+      "raw_bytes": 65536,
+      "stored_sha256": "dff7bff3fe13f8e370a0a9cbc43d085a5a127e7b03973e09ce9713cecb8b3d6c"
+    },
+    "validation/md-game-sprite-frame/ntsc-109-vram.bin": {
+      "stored": "objects/43cb06b8cf53f4bf1111808366dac016ecdddeac98050a5fcec1d0f904ac7c72.gz",
+      "raw_sha256": "43cb06b8cf53f4bf1111808366dac016ecdddeac98050a5fcec1d0f904ac7c72",
+      "raw_bytes": 65536,
+      "stored_sha256": "6ef3ba805b019db27ed01db6168e40423f11341f5134218e1eab855fd4300e8f"
+    },
+    "validation/md-game-sprite-frame/ntsc-11-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-110-vram.bin": {
+      "stored": "objects/438bc37dff31bc46a22bb0e8ba5a46581cbebd8def94bf0f38f6676512e3c6a3.gz",
+      "raw_sha256": "438bc37dff31bc46a22bb0e8ba5a46581cbebd8def94bf0f38f6676512e3c6a3",
+      "raw_bytes": 65536,
+      "stored_sha256": "baa301e1242e3a286f3840a7ed332677a557176c878c6f8a9c0f2918ff304ec5"
+    },
+    "validation/md-game-sprite-frame/ntsc-111-vram.bin": {
+      "stored": "objects/a41220b096b3a4d753f2be2c30a521c9f64424dd699833650a2c1f1809a1df5a.gz",
+      "raw_sha256": "a41220b096b3a4d753f2be2c30a521c9f64424dd699833650a2c1f1809a1df5a",
+      "raw_bytes": 65536,
+      "stored_sha256": "75b867d8c3c186bbd9872ac4637cd278a894f0c67e32e9188251c800a4f59143"
+    },
+    "validation/md-game-sprite-frame/ntsc-112-vram.bin": {
+      "stored": "objects/4784bb7cfaebd5f037fcf0104f84151051f17d8c81cd70ad247950eac3e6d4a8.gz",
+      "raw_sha256": "4784bb7cfaebd5f037fcf0104f84151051f17d8c81cd70ad247950eac3e6d4a8",
+      "raw_bytes": 65536,
+      "stored_sha256": "4f0a9cf99bf52e894f5ff98207e62493a45023569466ce1efd4a5fd5c4389ec7"
+    },
+    "validation/md-game-sprite-frame/ntsc-113-vram.bin": {
+      "stored": "objects/5a29bb87c16982ac151781c1c5990de1a46b27af6aac299dbeb328d51696ee1b.gz",
+      "raw_sha256": "5a29bb87c16982ac151781c1c5990de1a46b27af6aac299dbeb328d51696ee1b",
+      "raw_bytes": 65536,
+      "stored_sha256": "62d63a36bf56f1adbee1aa9cf6a3f308e93e2e3d594cac92bc751fc9b4d1be2e"
+    },
+    "validation/md-game-sprite-frame/ntsc-114-vram.bin": {
+      "stored": "objects/c4009a30ba6ee02b3812801043a653be37706293fe9b19a147cb2d3000df8141.gz",
+      "raw_sha256": "c4009a30ba6ee02b3812801043a653be37706293fe9b19a147cb2d3000df8141",
+      "raw_bytes": 65536,
+      "stored_sha256": "9f4c4c6c995731913f9da6f72c755bf27ea7a34d8141a0b42441b12ed9c7aa5f"
+    },
+    "validation/md-game-sprite-frame/ntsc-115-vram.bin": {
+      "stored": "objects/e3fa0897d50eca8ab4c8713e55779c612c09afe0e2e788df3f756fd787405f48.gz",
+      "raw_sha256": "e3fa0897d50eca8ab4c8713e55779c612c09afe0e2e788df3f756fd787405f48",
+      "raw_bytes": 65536,
+      "stored_sha256": "353d46e6804a0e2e9a2ebac2ec4f7f151757974ebbb0da19db7633952af9f275"
+    },
+    "validation/md-game-sprite-frame/ntsc-116-vram.bin": {
+      "stored": "objects/87032292e7fb505e4e0ac36d7a9257bf5469d1344f87d8a1e43cc6942b4e60e0.gz",
+      "raw_sha256": "87032292e7fb505e4e0ac36d7a9257bf5469d1344f87d8a1e43cc6942b4e60e0",
+      "raw_bytes": 65536,
+      "stored_sha256": "487f592e2b4d85d56103d4473ac0e4c14421f33da283c82360c31da07a886b29"
+    },
+    "validation/md-game-sprite-frame/ntsc-117-vram.bin": {
+      "stored": "objects/351b64c5e693ded620fdd029d32c9d1ae2e9a7cbc07e0ee2e9387ded1a70f618.gz",
+      "raw_sha256": "351b64c5e693ded620fdd029d32c9d1ae2e9a7cbc07e0ee2e9387ded1a70f618",
+      "raw_bytes": 65536,
+      "stored_sha256": "8942c98726d9cba4e92fccccab6961fdbfc83ee49be0c0f46e1f2d996e0d6292"
+    },
+    "validation/md-game-sprite-frame/ntsc-118-vram.bin": {
+      "stored": "objects/61e733ff13019e4947e980538ac0b14be0c29ad3374e7b9f0c204a26530c4bea.gz",
+      "raw_sha256": "61e733ff13019e4947e980538ac0b14be0c29ad3374e7b9f0c204a26530c4bea",
+      "raw_bytes": 65536,
+      "stored_sha256": "d2a2978c3a8be4552ef668c1bbc79638461757619028b15962d873fa8f416b4a"
+    },
+    "validation/md-game-sprite-frame/ntsc-119-vram.bin": {
+      "stored": "objects/85f3d20b388649349ee8d68cf9694001889a3491d6f9101a60da7585c06a1c54.gz",
+      "raw_sha256": "85f3d20b388649349ee8d68cf9694001889a3491d6f9101a60da7585c06a1c54",
+      "raw_bytes": 65536,
+      "stored_sha256": "dc8e3daa01554d4226f886ec9c9e281420e078de4c3f498fc0e3fb417771349e"
+    },
+    "validation/md-game-sprite-frame/ntsc-12-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-120-vram.bin": {
+      "stored": "objects/5077336bd8c356acd5457b73a76e2a54b080ab231acb95f4eb0b83be298e74fe.gz",
+      "raw_sha256": "5077336bd8c356acd5457b73a76e2a54b080ab231acb95f4eb0b83be298e74fe",
+      "raw_bytes": 65536,
+      "stored_sha256": "de790af9b566080e248a278aa2ff5dabe4aaa2d89efaeb91cb1c8be1c31937d6"
+    },
+    "validation/md-game-sprite-frame/ntsc-121-vram.bin": {
+      "stored": "objects/aff4f6992b88571b4d89a436d0f5d079939675c688206464d03b264488a9b27e.gz",
+      "raw_sha256": "aff4f6992b88571b4d89a436d0f5d079939675c688206464d03b264488a9b27e",
+      "raw_bytes": 65536,
+      "stored_sha256": "bbfebdcadc42050bcd6e0217add6efcba2921a6df8678b1be9aedf13eceb08bd"
+    },
+    "validation/md-game-sprite-frame/ntsc-122-vram.bin": {
+      "stored": "objects/b4a32fa9ae6d78e1132f718877106ebfc7da56c53be3cf927a24ad3aba68a6e1.gz",
+      "raw_sha256": "b4a32fa9ae6d78e1132f718877106ebfc7da56c53be3cf927a24ad3aba68a6e1",
+      "raw_bytes": 65536,
+      "stored_sha256": "47181c12ad3bc3f7755a8d3c3f2719401a9beca09431ef6596669197c54b7607"
+    },
+    "validation/md-game-sprite-frame/ntsc-123-vram.bin": {
+      "stored": "objects/d4c1c01f5b18b770255d9447b0f264536998a418c850bf4f06222cc450f3d880.gz",
+      "raw_sha256": "d4c1c01f5b18b770255d9447b0f264536998a418c850bf4f06222cc450f3d880",
+      "raw_bytes": 65536,
+      "stored_sha256": "37fb2ae533f20f0b427812e91e39bc36ab11258bc3a96cf627c195c83992cbfa"
+    },
+    "validation/md-game-sprite-frame/ntsc-124-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/ntsc-125-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/ntsc-126-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/ntsc-127-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/ntsc-128-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/ntsc-129-vram.bin": {
+      "stored": "objects/7c5cf9aa43e8bf66c7f6ae8d91031c706cbe2e755e1d724116941bf67a358e88.gz",
+      "raw_sha256": "7c5cf9aa43e8bf66c7f6ae8d91031c706cbe2e755e1d724116941bf67a358e88",
+      "raw_bytes": 65536,
+      "stored_sha256": "9d72b911c35fc263c0b5fbfed80f7000e5d2a07b537de657cdeb5592b30c7a7a"
+    },
+    "validation/md-game-sprite-frame/ntsc-13-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-130-vram.bin": {
+      "stored": "objects/7c5cf9aa43e8bf66c7f6ae8d91031c706cbe2e755e1d724116941bf67a358e88.gz",
+      "raw_sha256": "7c5cf9aa43e8bf66c7f6ae8d91031c706cbe2e755e1d724116941bf67a358e88",
+      "raw_bytes": 65536,
+      "stored_sha256": "9d72b911c35fc263c0b5fbfed80f7000e5d2a07b537de657cdeb5592b30c7a7a"
+    },
+    "validation/md-game-sprite-frame/ntsc-131-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/ntsc-132-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-14-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-15-vram.bin": {
+      "stored": "objects/de98692175e1f7104aecd24266a1aff69d33ab76b97ea31dad1cea0dc206f253.gz",
+      "raw_sha256": "de98692175e1f7104aecd24266a1aff69d33ab76b97ea31dad1cea0dc206f253",
+      "raw_bytes": 65536,
+      "stored_sha256": "4a15bca443c1da843d3e73b12daa1d614190f26c0968999adc2637b44d73d8b4"
+    },
+    "validation/md-game-sprite-frame/ntsc-16-vram.bin": {
+      "stored": "objects/203486f07b9ff489a05b8fdbf03dc879dea352ec369bf30b3635bd312d8d4eea.gz",
+      "raw_sha256": "203486f07b9ff489a05b8fdbf03dc879dea352ec369bf30b3635bd312d8d4eea",
+      "raw_bytes": 65536,
+      "stored_sha256": "df6f61ad179ef2f3064f1f3360d8a30a57ab9352259e9e8d9a8745b2f52b27f6"
+    },
+    "validation/md-game-sprite-frame/ntsc-17-vram.bin": {
+      "stored": "objects/203486f07b9ff489a05b8fdbf03dc879dea352ec369bf30b3635bd312d8d4eea.gz",
+      "raw_sha256": "203486f07b9ff489a05b8fdbf03dc879dea352ec369bf30b3635bd312d8d4eea",
+      "raw_bytes": 65536,
+      "stored_sha256": "df6f61ad179ef2f3064f1f3360d8a30a57ab9352259e9e8d9a8745b2f52b27f6"
+    },
+    "validation/md-game-sprite-frame/ntsc-18-vram.bin": {
+      "stored": "objects/eff17c331d3d1c84d241c3ec59f124f8ff51db386a8787a08b375cbbc5fb7bcd.gz",
+      "raw_sha256": "eff17c331d3d1c84d241c3ec59f124f8ff51db386a8787a08b375cbbc5fb7bcd",
+      "raw_bytes": 65536,
+      "stored_sha256": "bc3f26ac698cda2cea3bfa49a4d85fb8da796b40b12752fb4df06deb29a21a7c"
+    },
+    "validation/md-game-sprite-frame/ntsc-19-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-2-vram.bin": {
+      "stored": "objects/7a63f169d9501d53e6d7db8f486147fb060908ddd40dc3753b5a895feb83f474.gz",
+      "raw_sha256": "7a63f169d9501d53e6d7db8f486147fb060908ddd40dc3753b5a895feb83f474",
+      "raw_bytes": 65536,
+      "stored_sha256": "fbd1257f52fc421538c405037149bd2ce6b652600b3ba101f12eb77f70123f04"
+    },
+    "validation/md-game-sprite-frame/ntsc-20-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-21-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-22-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-23-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-24-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-25-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-26-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-27-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-28-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-29-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-3-vram.bin": {
+      "stored": "objects/80b9693ce7c67376c58119750686498430324bf1a0334d87eb4bb3ab158b83cf.gz",
+      "raw_sha256": "80b9693ce7c67376c58119750686498430324bf1a0334d87eb4bb3ab158b83cf",
+      "raw_bytes": 65536,
+      "stored_sha256": "1155841fba7d082c07278b672c27edcbfeba20e36081f0fd216d8d2325712d0c"
+    },
+    "validation/md-game-sprite-frame/ntsc-30-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/ntsc-31-vram.bin": {
+      "stored": "objects/e604177d9fe0afa78efe6a196a8f4c44a93361d50e5bfba62293faee32938b5a.gz",
+      "raw_sha256": "e604177d9fe0afa78efe6a196a8f4c44a93361d50e5bfba62293faee32938b5a",
+      "raw_bytes": 65536,
+      "stored_sha256": "14da3b8c8dc21cb4824b475352fbae68c2c0ab2b9e2e514b8085374e58056298"
+    },
+    "validation/md-game-sprite-frame/ntsc-32-vram.bin": {
+      "stored": "objects/67635139d74f9c2fd0a7c395059ee2c476d87dedfc7c351054d435e4b63e1f8a.gz",
+      "raw_sha256": "67635139d74f9c2fd0a7c395059ee2c476d87dedfc7c351054d435e4b63e1f8a",
+      "raw_bytes": 65536,
+      "stored_sha256": "fbe5ec257a1384b3da1bde32754d246e1fd90d736b2ca80ba5202ea1155d2d7b"
+    },
+    "validation/md-game-sprite-frame/ntsc-33-vram.bin": {
+      "stored": "objects/67635139d74f9c2fd0a7c395059ee2c476d87dedfc7c351054d435e4b63e1f8a.gz",
+      "raw_sha256": "67635139d74f9c2fd0a7c395059ee2c476d87dedfc7c351054d435e4b63e1f8a",
+      "raw_bytes": 65536,
+      "stored_sha256": "fbe5ec257a1384b3da1bde32754d246e1fd90d736b2ca80ba5202ea1155d2d7b"
+    },
+    "validation/md-game-sprite-frame/ntsc-34-vram.bin": {
+      "stored": "objects/91db4843a62127bfd45c376589733f10e8d046c2f9fa99a6d5f543ec752b6529.gz",
+      "raw_sha256": "91db4843a62127bfd45c376589733f10e8d046c2f9fa99a6d5f543ec752b6529",
+      "raw_bytes": 65536,
+      "stored_sha256": "ed9285c504da69bc4501d0c49073fb0425dd01a505c9f9543bec013d89d06a40"
+    },
+    "validation/md-game-sprite-frame/ntsc-35-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-36-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-37-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-38-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-39-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-4-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-40-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-41-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-42-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-43-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-44-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-45-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-46-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-47-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/ntsc-48-vram.bin": {
+      "stored": "objects/110d4d031ebac589d4f1020cf4362766a7ffdc12f0d6e9f128aa3e60677f3ffb.gz",
+      "raw_sha256": "110d4d031ebac589d4f1020cf4362766a7ffdc12f0d6e9f128aa3e60677f3ffb",
+      "raw_bytes": 65536,
+      "stored_sha256": "bac140f32b73760f956ed4b255bf8825df51debfd33d6125f3032ce9d149eb82"
+    },
+    "validation/md-game-sprite-frame/ntsc-49-vram.bin": {
+      "stored": "objects/616cc0242c8b3817fffbe2896fe965ac9f209a3bd6c65ecca36073faa0423a9a.gz",
+      "raw_sha256": "616cc0242c8b3817fffbe2896fe965ac9f209a3bd6c65ecca36073faa0423a9a",
+      "raw_bytes": 65536,
+      "stored_sha256": "cb6d5310b9d77ac9ac447f42686e5a13806084c0286e04e694185b1e5bf0bacf"
+    },
+    "validation/md-game-sprite-frame/ntsc-5-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-50-vram.bin": {
+      "stored": "objects/616cc0242c8b3817fffbe2896fe965ac9f209a3bd6c65ecca36073faa0423a9a.gz",
+      "raw_sha256": "616cc0242c8b3817fffbe2896fe965ac9f209a3bd6c65ecca36073faa0423a9a",
+      "raw_bytes": 65536,
+      "stored_sha256": "cb6d5310b9d77ac9ac447f42686e5a13806084c0286e04e694185b1e5bf0bacf"
+    },
+    "validation/md-game-sprite-frame/ntsc-51-vram.bin": {
+      "stored": "objects/a40d3438b61a9d5ff04510f618a1dbb95b204a9832dd900863f9c2710d56c09c.gz",
+      "raw_sha256": "a40d3438b61a9d5ff04510f618a1dbb95b204a9832dd900863f9c2710d56c09c",
+      "raw_bytes": 65536,
+      "stored_sha256": "866c6c41f8ed247b8970be49dc5052d409383ab0d2cc1b4eba4357f2d3124e74"
+    },
+    "validation/md-game-sprite-frame/ntsc-52-vram.bin": {
+      "stored": "objects/f49222e928a1f48cbef4d957e7f3cc64f0e32a4bf6e618bc78bde4dac14a7fe9.gz",
+      "raw_sha256": "f49222e928a1f48cbef4d957e7f3cc64f0e32a4bf6e618bc78bde4dac14a7fe9",
+      "raw_bytes": 65536,
+      "stored_sha256": "93d658f78ab14d9e17ce522222016aa54b0e5ba2da2306ca8e319fcb3fc728b9"
+    },
+    "validation/md-game-sprite-frame/ntsc-53-vram.bin": {
+      "stored": "objects/7578e872943a06f38ccdc21dd280cc33d4672484ef58ba37b46cb04946fa1aa9.gz",
+      "raw_sha256": "7578e872943a06f38ccdc21dd280cc33d4672484ef58ba37b46cb04946fa1aa9",
+      "raw_bytes": 65536,
+      "stored_sha256": "de6d016ab495a6f07a43b9138421adbed0b930c78a43534cdc4d01c94a75448e"
+    },
+    "validation/md-game-sprite-frame/ntsc-54-vram.bin": {
+      "stored": "objects/7578e872943a06f38ccdc21dd280cc33d4672484ef58ba37b46cb04946fa1aa9.gz",
+      "raw_sha256": "7578e872943a06f38ccdc21dd280cc33d4672484ef58ba37b46cb04946fa1aa9",
+      "raw_bytes": 65536,
+      "stored_sha256": "de6d016ab495a6f07a43b9138421adbed0b930c78a43534cdc4d01c94a75448e"
+    },
+    "validation/md-game-sprite-frame/ntsc-55-vram.bin": {
+      "stored": "objects/72e849ff8ec7d0e97223936a1808769b8f1360c2d12474d61ae2cb28ccf723cc.gz",
+      "raw_sha256": "72e849ff8ec7d0e97223936a1808769b8f1360c2d12474d61ae2cb28ccf723cc",
+      "raw_bytes": 65536,
+      "stored_sha256": "13a4f62ce9a2466397fd78a143fc0125aa05a4802336527e28a2904e5698b14c"
+    },
+    "validation/md-game-sprite-frame/ntsc-56-vram.bin": {
+      "stored": "objects/15cd3be147d5bc5b1b7878423ae9e02284438a20d39781f62e957e1423482cc5.gz",
+      "raw_sha256": "15cd3be147d5bc5b1b7878423ae9e02284438a20d39781f62e957e1423482cc5",
+      "raw_bytes": 65536,
+      "stored_sha256": "f46a0e24350f55e75cd9ba6fb2aa5c75d02b6beaed1a3701a8606781cc21f488"
+    },
+    "validation/md-game-sprite-frame/ntsc-57-vram.bin": {
+      "stored": "objects/a31dcd8c3f1dbe6f945aacdcd63f324931dfac833dae088b57aa14ec9c966e44.gz",
+      "raw_sha256": "a31dcd8c3f1dbe6f945aacdcd63f324931dfac833dae088b57aa14ec9c966e44",
+      "raw_bytes": 65536,
+      "stored_sha256": "dabb2cf46a786b89ecec93386197b7a7f7b72adf42724a18a1544f7452c9e73e"
+    },
+    "validation/md-game-sprite-frame/ntsc-58-vram.bin": {
+      "stored": "objects/a31dcd8c3f1dbe6f945aacdcd63f324931dfac833dae088b57aa14ec9c966e44.gz",
+      "raw_sha256": "a31dcd8c3f1dbe6f945aacdcd63f324931dfac833dae088b57aa14ec9c966e44",
+      "raw_bytes": 65536,
+      "stored_sha256": "dabb2cf46a786b89ecec93386197b7a7f7b72adf42724a18a1544f7452c9e73e"
+    },
+    "validation/md-game-sprite-frame/ntsc-59-vram.bin": {
+      "stored": "objects/94d8fbe12831220112a9b58a17d23bef78ab1f637806b31129dc3fed923fe559.gz",
+      "raw_sha256": "94d8fbe12831220112a9b58a17d23bef78ab1f637806b31129dc3fed923fe559",
+      "raw_bytes": 65536,
+      "stored_sha256": "d0df9d3c42213ecdedfd3238ef84e01935c50b076af9cb3d66378b93e50c44ae"
+    },
+    "validation/md-game-sprite-frame/ntsc-6-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-60-vram.bin": {
+      "stored": "objects/b4dfc2d53986021eeb8262dffb27d16ac0361e83db343fec535e1f665a63bee9.gz",
+      "raw_sha256": "b4dfc2d53986021eeb8262dffb27d16ac0361e83db343fec535e1f665a63bee9",
+      "raw_bytes": 65536,
+      "stored_sha256": "9aa14a55584e63ab246958ed56d4afa3bcc71d69adfc381fe837b2696de226a8"
+    },
+    "validation/md-game-sprite-frame/ntsc-61-vram.bin": {
+      "stored": "objects/eca46032533c1aefba350f23616c24d5a27ec97fc301785272c2d862a6442a5d.gz",
+      "raw_sha256": "eca46032533c1aefba350f23616c24d5a27ec97fc301785272c2d862a6442a5d",
+      "raw_bytes": 65536,
+      "stored_sha256": "48829a7e510ac545d1a756f08b30b4c12f732f7c3183fcbc5c9f5a52d818dc62"
+    },
+    "validation/md-game-sprite-frame/ntsc-62-vram.bin": {
+      "stored": "objects/944d93ce433c23ebe3828af34724352def74d6e3e209a189e4494896659acd66.gz",
+      "raw_sha256": "944d93ce433c23ebe3828af34724352def74d6e3e209a189e4494896659acd66",
+      "raw_bytes": 65536,
+      "stored_sha256": "f767c96cc74a50092e5db246c683cfb76c66b2af68a3d0d055e3759f7c2ecfd8"
+    },
+    "validation/md-game-sprite-frame/ntsc-63-vram.bin": {
+      "stored": "objects/e9a8522019e6b7542112b8bbf590d7f102afe4484ccb31a38c12c729b94261d6.gz",
+      "raw_sha256": "e9a8522019e6b7542112b8bbf590d7f102afe4484ccb31a38c12c729b94261d6",
+      "raw_bytes": 65536,
+      "stored_sha256": "97b60cba5f1807135e373140c39b4ea53bffe2efc423d98168226db617882a21"
+    },
+    "validation/md-game-sprite-frame/ntsc-64-vram.bin": {
+      "stored": "objects/fe68a025440d6ba7cdfb494766cd63ac8abc2ce17331c58e1cfe8aa084890f2c.gz",
+      "raw_sha256": "fe68a025440d6ba7cdfb494766cd63ac8abc2ce17331c58e1cfe8aa084890f2c",
+      "raw_bytes": 65536,
+      "stored_sha256": "6ddda436ec72112ba0db35bb29416b49343b94de821fb69ad0b45799e4cf22a6"
+    },
+    "validation/md-game-sprite-frame/ntsc-65-vram.bin": {
+      "stored": "objects/3b73093a240eaa54ef1e37f5be6b0d9911c3b9e72962077e7f55b58f635f0b0a.gz",
+      "raw_sha256": "3b73093a240eaa54ef1e37f5be6b0d9911c3b9e72962077e7f55b58f635f0b0a",
+      "raw_bytes": 65536,
+      "stored_sha256": "302ccf355e44aa7e290392837346329c738a2cfa3cb81a19114802d20270a530"
+    },
+    "validation/md-game-sprite-frame/ntsc-66-vram.bin": {
+      "stored": "objects/ce00152189bd89b10a8b474e17e1d0849ca56ff8bd6fe086220db2e6dc00d2d5.gz",
+      "raw_sha256": "ce00152189bd89b10a8b474e17e1d0849ca56ff8bd6fe086220db2e6dc00d2d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "e5d4e1dfd0a50cd31221b704090cf81e8c26b4083993a330097f265fa1ed7821"
+    },
+    "validation/md-game-sprite-frame/ntsc-67-vram.bin": {
+      "stored": "objects/6ba0918607cd17c951da6d13f27f432b885d9b0305c57bed538d83e4c99d8bf5.gz",
+      "raw_sha256": "6ba0918607cd17c951da6d13f27f432b885d9b0305c57bed538d83e4c99d8bf5",
+      "raw_bytes": 65536,
+      "stored_sha256": "ab3f40da67e994bd6d73de5c3a8687a029300b77828f2d36ace54adb3ac1be91"
+    },
+    "validation/md-game-sprite-frame/ntsc-68-vram.bin": {
+      "stored": "objects/eb50e76b33c1156cfdcf620dfaae89c6a5d22fee06ee0631a4aef161f380df63.gz",
+      "raw_sha256": "eb50e76b33c1156cfdcf620dfaae89c6a5d22fee06ee0631a4aef161f380df63",
+      "raw_bytes": 65536,
+      "stored_sha256": "e053c2060d0651be53ce3f0325e2f95aebc317665e424353c8e0b9dd951a55b0"
+    },
+    "validation/md-game-sprite-frame/ntsc-69-vram.bin": {
+      "stored": "objects/d3aad2f52e6c142a3dac22753d4cda859ef640e72ea467f2fc1a60548289923b.gz",
+      "raw_sha256": "d3aad2f52e6c142a3dac22753d4cda859ef640e72ea467f2fc1a60548289923b",
+      "raw_bytes": 65536,
+      "stored_sha256": "93461b7b379647d6de690aa6493ec5fd0febef1e4f8d6ec2e202091c699821c6"
+    },
+    "validation/md-game-sprite-frame/ntsc-7-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-70-vram.bin": {
+      "stored": "objects/d70e96f8930f306d37ed1e44e50993f488e79650a7719f5b6f23edb6176596fa.gz",
+      "raw_sha256": "d70e96f8930f306d37ed1e44e50993f488e79650a7719f5b6f23edb6176596fa",
+      "raw_bytes": 65536,
+      "stored_sha256": "b12db3a595e963e1060d78d910926e2aeeddad7489ac1dbca4760cffac640dba"
+    },
+    "validation/md-game-sprite-frame/ntsc-71-vram.bin": {
+      "stored": "objects/8ed2be497dc575810589b75e853bff1c6e3f403ab69cb6bc74223b1941a006a7.gz",
+      "raw_sha256": "8ed2be497dc575810589b75e853bff1c6e3f403ab69cb6bc74223b1941a006a7",
+      "raw_bytes": 65536,
+      "stored_sha256": "c7ec37d9a449298f167863e66b1deb0dd949eaec0b7544ee88890f4212363aa2"
+    },
+    "validation/md-game-sprite-frame/ntsc-72-vram.bin": {
+      "stored": "objects/52c23db41d4267009741c5b707acb8c99546146c70ff3378b49527ad0ad5f321.gz",
+      "raw_sha256": "52c23db41d4267009741c5b707acb8c99546146c70ff3378b49527ad0ad5f321",
+      "raw_bytes": 65536,
+      "stored_sha256": "18d2c383cb4dfc8dde1d637e231954e87c1498f7ab9712df0473b83cd7de7978"
+    },
+    "validation/md-game-sprite-frame/ntsc-73-vram.bin": {
+      "stored": "objects/f5219836389ca0db281acbe4bf6fe9488d199c13f7299481c9eadbc5f8e35b07.gz",
+      "raw_sha256": "f5219836389ca0db281acbe4bf6fe9488d199c13f7299481c9eadbc5f8e35b07",
+      "raw_bytes": 65536,
+      "stored_sha256": "84fe5ede609f6eeb0321d2afdffa5ee36f2bf10fa5dd37ebfa5233dfe8f5c643"
+    },
+    "validation/md-game-sprite-frame/ntsc-74-vram.bin": {
+      "stored": "objects/b3e6fd618a1555ee9b08897e1362182dfd97dbe968fdec1381484906b54bae04.gz",
+      "raw_sha256": "b3e6fd618a1555ee9b08897e1362182dfd97dbe968fdec1381484906b54bae04",
+      "raw_bytes": 65536,
+      "stored_sha256": "626f7efb4bf114abe1fe1bf73cfdaa99e66855de6ca426d0b91dbbd910b6d8c0"
+    },
+    "validation/md-game-sprite-frame/ntsc-75-vram.bin": {
+      "stored": "objects/a51b9011db71fbb67d56895702d747dec9d8fae94e67e6d607e5c253b46c0a45.gz",
+      "raw_sha256": "a51b9011db71fbb67d56895702d747dec9d8fae94e67e6d607e5c253b46c0a45",
+      "raw_bytes": 65536,
+      "stored_sha256": "2f7980173da2ebeefdcb02b3cdf71f81d6071f716e3c19906c38ffce28072fb8"
+    },
+    "validation/md-game-sprite-frame/ntsc-76-vram.bin": {
+      "stored": "objects/2eefd1b767816d9125562c1ef532eeb65746c71da2ddf7925301068bafd8902a.gz",
+      "raw_sha256": "2eefd1b767816d9125562c1ef532eeb65746c71da2ddf7925301068bafd8902a",
+      "raw_bytes": 65536,
+      "stored_sha256": "853da010968e4a302a23bafd983fc67af7221150c36aed96125273fe267e1b49"
+    },
+    "validation/md-game-sprite-frame/ntsc-77-vram.bin": {
+      "stored": "objects/8b180de0083b3db783c54d3db3529ae04b923697b7ca4782eddcc685a07c2d17.gz",
+      "raw_sha256": "8b180de0083b3db783c54d3db3529ae04b923697b7ca4782eddcc685a07c2d17",
+      "raw_bytes": 65536,
+      "stored_sha256": "02ff9a5186eef0dad249a3e94bc8030aa59d275786de7c785ad90757f27963c1"
+    },
+    "validation/md-game-sprite-frame/ntsc-78-vram.bin": {
+      "stored": "objects/db9223f443f4f05f69032f6223d23d6fae7344a044c0a3ccbe997e3f81b39ca4.gz",
+      "raw_sha256": "db9223f443f4f05f69032f6223d23d6fae7344a044c0a3ccbe997e3f81b39ca4",
+      "raw_bytes": 65536,
+      "stored_sha256": "5c34f7b6c2b4c332943d655a4ea074f5dc5b63afdd1812b8dce4648ee36c0ea3"
+    },
+    "validation/md-game-sprite-frame/ntsc-79-vram.bin": {
+      "stored": "objects/e0d3442a88f5b7e7f362cadea18603d97b02ee93db44cdeb3eebf72d12b71bdc.gz",
+      "raw_sha256": "e0d3442a88f5b7e7f362cadea18603d97b02ee93db44cdeb3eebf72d12b71bdc",
+      "raw_bytes": 65536,
+      "stored_sha256": "e16f5fc2a0816902db43ed93e6ee9f0d5cc008940ba84032cd2eb1e0ec776121"
+    },
+    "validation/md-game-sprite-frame/ntsc-8-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-80-vram.bin": {
+      "stored": "objects/594069dee2f73974c0aa9561a3e14463cb751f4ecc06bdd6b0f308336137babb.gz",
+      "raw_sha256": "594069dee2f73974c0aa9561a3e14463cb751f4ecc06bdd6b0f308336137babb",
+      "raw_bytes": 65536,
+      "stored_sha256": "32334489dee1896dff75b1cf8571fb164ab98f58fec3a09fcec0a05963e4e03c"
+    },
+    "validation/md-game-sprite-frame/ntsc-81-vram.bin": {
+      "stored": "objects/64ae2d33ed36dda944fdad8fd0ca8282b58774a14662e8d0a919a5927d991739.gz",
+      "raw_sha256": "64ae2d33ed36dda944fdad8fd0ca8282b58774a14662e8d0a919a5927d991739",
+      "raw_bytes": 65536,
+      "stored_sha256": "8529f4d15b1c1c0e9084b1a907d764b226bb54d2f06c432f2265285acdb44de9"
+    },
+    "validation/md-game-sprite-frame/ntsc-82-vram.bin": {
+      "stored": "objects/f79bfb696b1068794d6e9c0a4bc03fb3b2ab0aa7b551f64106e44018b7ccddd8.gz",
+      "raw_sha256": "f79bfb696b1068794d6e9c0a4bc03fb3b2ab0aa7b551f64106e44018b7ccddd8",
+      "raw_bytes": 65536,
+      "stored_sha256": "372fe58d31b61288606464ec5c30a0465caec8886fbadf4c20e871123cbdac9f"
+    },
+    "validation/md-game-sprite-frame/ntsc-83-vram.bin": {
+      "stored": "objects/d70cd722cdbffcdb53c709b23eac2e26df542126094befbc2e84015d93107fb1.gz",
+      "raw_sha256": "d70cd722cdbffcdb53c709b23eac2e26df542126094befbc2e84015d93107fb1",
+      "raw_bytes": 65536,
+      "stored_sha256": "7858c9dc5a918bbbf591b0b644f7886fb77ece3ffda03f8e70def3c0fa6a906e"
+    },
+    "validation/md-game-sprite-frame/ntsc-84-vram.bin": {
+      "stored": "objects/134054d6fc4711b0efb5f8832bcc355e8d5bb37e16efba6623fbd3f441ee96ff.gz",
+      "raw_sha256": "134054d6fc4711b0efb5f8832bcc355e8d5bb37e16efba6623fbd3f441ee96ff",
+      "raw_bytes": 65536,
+      "stored_sha256": "d536db2cc25f11a21c357bcb26f5be86e9be11697745ad2533c9d710267138d3"
+    },
+    "validation/md-game-sprite-frame/ntsc-85-vram.bin": {
+      "stored": "objects/21c1c2c28ed3948e506d72fe671c59abe1b9d39bb6a39e46a706fb058d345d06.gz",
+      "raw_sha256": "21c1c2c28ed3948e506d72fe671c59abe1b9d39bb6a39e46a706fb058d345d06",
+      "raw_bytes": 65536,
+      "stored_sha256": "45474a29f7f2653835b7357efdba31e0d9d583e935cae8c77a7aa65bb35f9bf7"
+    },
+    "validation/md-game-sprite-frame/ntsc-86-vram.bin": {
+      "stored": "objects/6df45a179cff074877a24c291babe227d6fd0c64aa1506ada556749e4f9c1375.gz",
+      "raw_sha256": "6df45a179cff074877a24c291babe227d6fd0c64aa1506ada556749e4f9c1375",
+      "raw_bytes": 65536,
+      "stored_sha256": "b97459bc78f8dd342e68426888255f8c851bb8a6b62f5127733c5551a65166e0"
+    },
+    "validation/md-game-sprite-frame/ntsc-87-vram.bin": {
+      "stored": "objects/542bacaa5e7e566a89ce3e43b679819bb455d3b4037ab0d60c06ca168104d9f8.gz",
+      "raw_sha256": "542bacaa5e7e566a89ce3e43b679819bb455d3b4037ab0d60c06ca168104d9f8",
+      "raw_bytes": 65536,
+      "stored_sha256": "fdf3f0a3ba8ea239fcf0a8d6b37dc3f691613cdb5263b38481e088a2ae0e97c2"
+    },
+    "validation/md-game-sprite-frame/ntsc-88-vram.bin": {
+      "stored": "objects/e4de33c851d8883e9299ea4f40ace60d53fffb5540a161665974c7dc25b1c040.gz",
+      "raw_sha256": "e4de33c851d8883e9299ea4f40ace60d53fffb5540a161665974c7dc25b1c040",
+      "raw_bytes": 65536,
+      "stored_sha256": "df873dcdd5f456939bead2edffd465c857c850554e000b2d17a3e94ef4effdee"
+    },
+    "validation/md-game-sprite-frame/ntsc-89-vram.bin": {
+      "stored": "objects/bb541ffa70cd219c6a5437e812238c2cbfefeebdb08ab6f8d4dec22e3b64d5c7.gz",
+      "raw_sha256": "bb541ffa70cd219c6a5437e812238c2cbfefeebdb08ab6f8d4dec22e3b64d5c7",
+      "raw_bytes": 65536,
+      "stored_sha256": "f0a335c555436a66eedb2f6b8576ba1bacc840f842746200d3331db02fe69378"
+    },
+    "validation/md-game-sprite-frame/ntsc-9-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/ntsc-90-vram.bin": {
+      "stored": "objects/dc32580cf41d7ddcb161046ec047243543dbe4a95d0311c7894e4acffb4e88e0.gz",
+      "raw_sha256": "dc32580cf41d7ddcb161046ec047243543dbe4a95d0311c7894e4acffb4e88e0",
+      "raw_bytes": 65536,
+      "stored_sha256": "0b5c7a5da8ceca7d908ab438665d9c744d5a92e38c214569bf095ffa53154215"
+    },
+    "validation/md-game-sprite-frame/ntsc-91-vram.bin": {
+      "stored": "objects/0b29e0752c4deead3046872cadaaccd9fe9518bd7da9895d560bd2952f59ee26.gz",
+      "raw_sha256": "0b29e0752c4deead3046872cadaaccd9fe9518bd7da9895d560bd2952f59ee26",
+      "raw_bytes": 65536,
+      "stored_sha256": "e0000d3c0e97e21de7e58b2949528b7ea48d8ad46d66d37a50bfca1618b0b1b9"
+    },
+    "validation/md-game-sprite-frame/ntsc-92-vram.bin": {
+      "stored": "objects/ca73f847d27bb81a5271ec303b58d6fc1bb916698e540768dbc9e3e1b81ffc53.gz",
+      "raw_sha256": "ca73f847d27bb81a5271ec303b58d6fc1bb916698e540768dbc9e3e1b81ffc53",
+      "raw_bytes": 65536,
+      "stored_sha256": "637b450aa3fbc025e83dfe8860cc5d9bf7e4e391a3cef44ba8bf174abfc94ed7"
+    },
+    "validation/md-game-sprite-frame/ntsc-93-vram.bin": {
+      "stored": "objects/9256c3b945b99423c292b70dd71d2aac5d32058b6207c4b5cc10fccd9f923316.gz",
+      "raw_sha256": "9256c3b945b99423c292b70dd71d2aac5d32058b6207c4b5cc10fccd9f923316",
+      "raw_bytes": 65536,
+      "stored_sha256": "0e3acf29d196bbfc453c98c01bc5b06ea2e718709a5ad9b25ea14e14a39aec89"
+    },
+    "validation/md-game-sprite-frame/ntsc-94-vram.bin": {
+      "stored": "objects/d5831c1ddfc9c8663c5b44c96f867024a34c63e1d057a1a2d4ccd7e9d93b37c4.gz",
+      "raw_sha256": "d5831c1ddfc9c8663c5b44c96f867024a34c63e1d057a1a2d4ccd7e9d93b37c4",
+      "raw_bytes": 65536,
+      "stored_sha256": "7d30c7f87364489da28221f18820e74182dbe7ccda9523ea45225222a0343e03"
+    },
+    "validation/md-game-sprite-frame/ntsc-95-vram.bin": {
+      "stored": "objects/edac65eee460fdf67f043f3475ba8aca6b54592d96e60893d30637a81571af78.gz",
+      "raw_sha256": "edac65eee460fdf67f043f3475ba8aca6b54592d96e60893d30637a81571af78",
+      "raw_bytes": 65536,
+      "stored_sha256": "4a86056da863bf0f55d68486a166aa62084e75c3d9e8f08a3c472a77f935dd8f"
+    },
+    "validation/md-game-sprite-frame/ntsc-96-vram.bin": {
+      "stored": "objects/fe2bc0f0ea31b146f3cca3160cca22a51d3d78bb33d5ad73d5d97bdde9c5ed2a.gz",
+      "raw_sha256": "fe2bc0f0ea31b146f3cca3160cca22a51d3d78bb33d5ad73d5d97bdde9c5ed2a",
+      "raw_bytes": 65536,
+      "stored_sha256": "49787e449169a87280d2a06512f018b08e07bcc04648e8bd27ea5cb9daee2fef"
+    },
+    "validation/md-game-sprite-frame/ntsc-97-vram.bin": {
+      "stored": "objects/e577f174f9543586d6382cb826c1e8270724ce2dc45dea5bef041b1daf2094a6.gz",
+      "raw_sha256": "e577f174f9543586d6382cb826c1e8270724ce2dc45dea5bef041b1daf2094a6",
+      "raw_bytes": 65536,
+      "stored_sha256": "dbfe0a94db41a7cde34a7c76e892e6e4be96dd5c440860e5934fd6b6e1db1723"
+    },
+    "validation/md-game-sprite-frame/ntsc-98-vram.bin": {
+      "stored": "objects/a1e4f17039eb808d2b60157fbe11b9bef44385c7073c3c376eb45bc1329bd3fd.gz",
+      "raw_sha256": "a1e4f17039eb808d2b60157fbe11b9bef44385c7073c3c376eb45bc1329bd3fd",
+      "raw_bytes": 65536,
+      "stored_sha256": "6cfb9cf2163dcc90f12b9d1e5e65a2afcba9bd64add37624eaef9729a6e6ee62"
+    },
+    "validation/md-game-sprite-frame/ntsc-99-vram.bin": {
+      "stored": "objects/6ee625454a86157aa534d7f185ed0d4d392e4c21860f0e38f189464173a059e8.gz",
+      "raw_sha256": "6ee625454a86157aa534d7f185ed0d4d392e4c21860f0e38f189464173a059e8",
+      "raw_bytes": 65536,
+      "stored_sha256": "64e51de0f91f615892a5071da04d3055949b4eb71e8a58d65bbfbfa32527383c"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/assets.d": {
+      "stored": "objects/504d0a269be486a162a09169bc879869c6dff5d23d65e9529eed52ed119bd317.gz",
+      "raw_sha256": "504d0a269be486a162a09169bc879869c6dff5d23d65e9529eed52ed119bd317",
+      "raw_bytes": 40,
+      "stored_sha256": "9ce467ad0f74c4a9a8ece2f327118a256e930cff69c01c58b8a779d7c2f45750"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/main.d": {
+      "stored": "objects/54fd52a918adb24bdec2f84ed6809e4389f1a89119e7efb6b9e170c924b8f022.gz",
+      "raw_sha256": "54fd52a918adb24bdec2f84ed6809e4389f1a89119e7efb6b9e170c924b8f022",
+      "raw_bytes": 2740,
+      "stored_sha256": "c3b0d247910986e0321728f5c2a29093481b42f656fc1b8cd6014f2d29eb38c9"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/md_game_sprite_frame.d": {
+      "stored": "objects/02ce6050a2955b3cd9cd2c1ec58a261131673271fcc99e426756671e321ba81a.gz",
+      "raw_sha256": "02ce6050a2955b3cd9cd2c1ec58a261131673271fcc99e426756671e321ba81a",
+      "raw_bytes": 2618,
+      "stored_sha256": "26f4b3b7d849cf5610aedf362687bea383091574f5830b234b7fb0da850242b2"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/md_service_clock_start.d": {
+      "stored": "objects/e8d1bad4dd1f0347a00a594c5bd3762ce4daca785b7b76cf71af4443f1e9856d.gz",
+      "raw_sha256": "e8d1bad4dd1f0347a00a594c5bd3762ce4daca785b7b76cf71af4443f1e9856d",
+      "raw_bytes": 484,
+      "stored_sha256": "aa45927ba644140d5df717fe73a4ccf70fd239daffad61560931a8b52426cdfc"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/md_sms_sprite8_stream.d": {
+      "stored": "objects/dc944b72fc79a401f4cb0e9468dbda39442a20dfe8296376848a653b08ad4428.gz",
+      "raw_sha256": "dc944b72fc79a401f4cb0e9468dbda39442a20dfe8296376848a653b08ad4428",
+      "raw_bytes": 978,
+      "stored_sha256": "427506f991846c4a0b9f1f1495525fa8d0c3ea96bf058c2f3793d6650d1176f8"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/md_z80_psg_start.d": {
+      "stored": "objects/5bfcd63f7f6dbdb2fdc775a89849ae80bb958633746f53fd0529b2a6aefc7216.gz",
+      "raw_sha256": "5bfcd63f7f6dbdb2fdc775a89849ae80bb958633746f53fd0529b2a6aefc7216",
+      "raw_bytes": 648,
+      "stored_sha256": "b3038660fe22bc4693717adb9933fc381131ebfb4fc8470aa807824852c222b1"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/md_z80_video_span.d": {
+      "stored": "objects/dda0f64bfb6dc7ea54932cc49285d8aa974ededea4b2989005dd0a6eb3710cb9.gz",
+      "raw_sha256": "dda0f64bfb6dc7ea54932cc49285d8aa974ededea4b2989005dd0a6eb3710cb9",
+      "raw_bytes": 752,
+      "stored_sha256": "114d831e57a7d18bdc0b4aacb5f035501d5d3ab585048b47d02fc6fac2964a32"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_dispatch.d": {
+      "stored": "objects/b465c863c415b77ba16d0d6b02610da02567a5c9a56232c722adf819b8a50b5a.gz",
+      "raw_sha256": "b465c863c415b77ba16d0d6b02610da02567a5c9a56232c722adf819b8a50b5a",
+      "raw_bytes": 480,
+      "stored_sha256": "9ac40b620ef625d85e5688aaffaabab4b73042b433d05ead50e2252e692c7838"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_envelope.d": {
+      "stored": "objects/69b0bf3d9e0577d91bcdf5f6b3f754627a8af186a82b61fd5a7c5f8adc32939a.gz",
+      "raw_sha256": "69b0bf3d9e0577d91bcdf5f6b3f754627a8af186a82b61fd5a7c5f8adc32939a",
+      "raw_bytes": 480,
+      "stored_sha256": "596d9bbb168136613bc324fd4df9a98651ee1040b3f31e4df565f88d35189284"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_fast.d": {
+      "stored": "objects/207a84a7b3399c9dda7406138dafdf7e8554c45f817a17ff8e87ecc9f5d7e5ed.gz",
+      "raw_sha256": "207a84a7b3399c9dda7406138dafdf7e8554c45f817a17ff8e87ecc9f5d7e5ed",
+      "raw_bytes": 1714,
+      "stored_sha256": "4b30909008952775fe59b4e050eb0faf76597e2f323d5e40ba792a3d9876f05f"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_fast_timed.d": {
+      "stored": "objects/5a0b19d2d00efd44379a47116d196a462632e53e59cd384dbd8962ec7aef4a6c.gz",
+      "raw_sha256": "5a0b19d2d00efd44379a47116d196a462632e53e59cd384dbd8962ec7aef4a6c",
+      "raw_bytes": 1950,
+      "stored_sha256": "99fefa2e08dd6862b90df698657bc37f0adcf9fce9757128b1696a3417fc6581"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_memory.d": {
+      "stored": "objects/50a06ce8082a7c0a612d30968a5d8e6b2b4c24e7f4657559867e89ed2546f85a.gz",
+      "raw_sha256": "50a06ce8082a7c0a612d30968a5d8e6b2b4c24e7f4657559867e89ed2546f85a",
+      "raw_bytes": 274,
+      "stored_sha256": "490a39ea94af8051b6ee7669960e62407f246d28c35bdffc4b5618f4c858fdf2"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_noise.d": {
+      "stored": "objects/d7c460b8841979188142665a881bb804f763290a7856dac4a33ac3504e4f668f.gz",
+      "raw_sha256": "d7c460b8841979188142665a881bb804f763290a7856dac4a33ac3504e4f668f",
+      "raw_bytes": 574,
+      "stored_sha256": "5005e4095bcf4d67617ab6f632c50b741ea2f54b50a3a9930a6eb95b8d40a9d3"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_pitch.d": {
+      "stored": "objects/c28f3ce6f8be9373527c7a7dc502256801d62d218687751d30e72ac43df8e099.gz",
+      "raw_sha256": "c28f3ce6f8be9373527c7a7dc502256801d62d218687751d30e72ac43df8e099",
+      "raw_bytes": 462,
+      "stored_sha256": "aacefe04bd11a5744414f3c7c78e63840050f9fa1165b259478f3255181493cc"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_prefix.d": {
+      "stored": "objects/c351d480fe84d9df237df213b38314d72c3ae2293a3224a562555fab1f13357d.gz",
+      "raw_sha256": "c351d480fe84d9df237df213b38314d72c3ae2293a3224a562555fab1f13357d",
+      "raw_bytes": 364,
+      "stored_sha256": "879e47a24a56f2c0a934962f69ece2264f15d3ba4b254d190ea3609496a22c44"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_prefix_timed.d": {
+      "stored": "objects/72c4e0dea3135f77462c6bd373fb7247719c306eb63d4940d0b416704169e72c.gz",
+      "raw_sha256": "72c4e0dea3135f77462c6bd373fb7247719c306eb63d4940d0b416704169e72c",
+      "raw_bytes": 1344,
+      "stored_sha256": "80738ca40af789370fd88a95c748688ab3057a049674a7d0ae6e0c31a136c3ba"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_priority.d": {
+      "stored": "objects/a831a62bef4f6824360455172fdb5359b2801224e15be0797fb40dfe997ab2cc.gz",
+      "raw_sha256": "a831a62bef4f6824360455172fdb5359b2801224e15be0797fb40dfe997ab2cc",
+      "raw_bytes": 588,
+      "stored_sha256": "94e075ae582e7f0b7a16a7c05e932be1224ec91a9c2bad2753c4ed5da221d7e7"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_reader.d": {
+      "stored": "objects/2b8df80a3ef44e3fb37b58e031251f675be5a3dc2f6e7664ab07cede58f35af0.gz",
+      "raw_sha256": "2b8df80a3ef44e3fb37b58e031251f675be5a3dc2f6e7664ab07cede58f35af0",
+      "raw_bytes": 994,
+      "stored_sha256": "5f43bdc683f75c3ae1e4d89fb64f7aa9a7724e19b6bc351689837bb9d21682ef"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_reader_master.d": {
+      "stored": "objects/d6b386e99b3892b13f21f83491b47783fe8be3eb2fbe2f6cac9b01ff7f751f3a.gz",
+      "raw_sha256": "d6b386e99b3892b13f21f83491b47783fe8be3eb2fbe2f6cac9b01ff7f751f3a",
+      "raw_bytes": 1248,
+      "stored_sha256": "ea2e497031b861583b454ba6c2e04231b78863160bfad52443751318e09f682e"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_sequence.d": {
+      "stored": "objects/bf3a72f365580fc7694e720c798a284a48ad9efc39f7dd525ed2e3d8e3daa07d.gz",
+      "raw_sha256": "bf3a72f365580fc7694e720c798a284a48ad9efc39f7dd525ed2e3d8e3daa07d",
+      "raw_bytes": 800,
+      "stored_sha256": "47c436862625077531ae8771cbdb5c8039c4f16667cb987cb5f530172a26dee7"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_tone.d": {
+      "stored": "objects/32fa68ada2e4e8c3fdc9a089e49351ff43031343ffbb0919b9797776c1cc8759.gz",
+      "raw_sha256": "32fa68ada2e4e8c3fdc9a089e49351ff43031343ffbb0919b9797776c1cc8759",
+      "raw_bytes": 774,
+      "stored_sha256": "dec441f85d673f4bba3deb5be2d4c5bfb8bc6208e58ff11afca3df1bb1f36b87"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_clock.d": {
+      "stored": "objects/9640868bf5915beb3cdd93a5f2db85bfa1da462253ab1f37cf0dfd3a852b4a28.gz",
+      "raw_sha256": "9640868bf5915beb3cdd93a5f2db85bfa1da462253ab1f37cf0dfd3a852b4a28",
+      "raw_bytes": 318,
+      "stored_sha256": "5fd195bd2724c4f41477652f6c94ae93b826715af9658154d9c6251a396fcefc"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_game_frame.d": {
+      "stored": "objects/42a1d3b5f231371530c064f23b8ef5a55f459283c1f13745666f021e49951532.gz",
+      "raw_sha256": "42a1d3b5f231371530c064f23b8ef5a55f459283c1f13745666f021e49951532",
+      "raw_bytes": 1886,
+      "stored_sha256": "6329629a2f564fce5e3d4e82ffc87980a51a9fddb8621c7a20d82dd8b6a4bea9"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_game_irq.d": {
+      "stored": "objects/d694709ba355245bbe7ab5fa73b936f522afe059d295959678235c929cd6aeaa.gz",
+      "raw_sha256": "d694709ba355245bbe7ab5fa73b936f522afe059d295959678235c929cd6aeaa",
+      "raw_bytes": 1790,
+      "stored_sha256": "ed42ce7cf0e38480ab65c872357a7e811b8a8a12ed46a60941d7f6b54e9ef6f7"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_irq.d": {
+      "stored": "objects/3eb4cca87dc649ddf4fcad097a634a60b5872410e6f31d947d427cf23922f14c.gz",
+      "raw_sha256": "3eb4cca87dc649ddf4fcad097a634a60b5872410e6f31d947d427cf23922f14c",
+      "raw_bytes": 310,
+      "stored_sha256": "da1e0085561f8570df9798cea110d1c15d321430b5d8586bd15812a27caa864c"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_irq_master_context.d": {
+      "stored": "objects/db358db5a2a7bb4cb933b99a9b48f784e3aeb862efd5cead9001309d5d97ace1.gz",
+      "raw_sha256": "db358db5a2a7bb4cb933b99a9b48f784e3aeb862efd5cead9001309d5d97ace1",
+      "raw_bytes": 1746,
+      "stored_sha256": "b048f407b3c18bf3e299c772d880d1f15172b4f6aab30b8ed3a33b17bf1c3710"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_rng.d": {
+      "stored": "objects/ebd41a495ac484dce0d72dd3cff39978b6f99a1fc2b3503d3a4fab33d5afc0c4.gz",
+      "raw_sha256": "ebd41a495ac484dce0d72dd3cff39978b6f99a1fc2b3503d3a4fab33d5afc0c4",
+      "raw_bytes": 220,
+      "stored_sha256": "f7783d8e44e990ef113a7ae07759ed54cb87f566be3e1856af4ae556dd0ca697"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_sms_sprite8.d": {
+      "stored": "objects/f5b67bb9c677ae60c5b82d585b0fcbf4df6168d06520cdcd0d7b19876911fc65.gz",
+      "raw_sha256": "f5b67bb9c677ae60c5b82d585b0fcbf4df6168d06520cdcd0d7b19876911fc65",
+      "raw_bytes": 268,
+      "stored_sha256": "29fc9758458758584e512d179c021682df106e307edd1758bce71cb6d8257279"
+    },
+    "validation/md-game-sprite-frame/out/release/_deps/src/source_sprite_scene_timed.d": {
+      "stored": "objects/5ba7acb5b3d376c9c2b2fdcfeaa9b758cfa0b77e510167884fcc9655df4cda5a.gz",
+      "raw_sha256": "5ba7acb5b3d376c9c2b2fdcfeaa9b758cfa0b77e510167884fcc9655df4cda5a",
+      "raw_bytes": 508,
+      "stored_sha256": "3b33769bf6d4568c88839cd1ef3378e32642c2a3e00304eeef2bf175a1736a13"
+    },
+    "validation/md-game-sprite-frame/out/release/rom.bin": {
+      "stored": "objects/9942413f6ba0d1f6cfb1da8ef2edd0174a05760d398c96b2fa60de45c87bb145.gz",
+      "raw_sha256": "9942413f6ba0d1f6cfb1da8ef2edd0174a05760d398c96b2fa60de45c87bb145",
+      "raw_bytes": 3801088,
+      "stored_sha256": "93fc1dc0ba168d9b2a57ba9401134f63864469163f6e991b5b594501e6929f7b"
+    },
+    "validation/md-game-sprite-frame/out/release/rom.out": {
+      "stored": "objects/1c832d2fdc47498106f17481a373d09ee87a4011fef7072d08bbdbca9ae1782a.gz",
+      "raw_sha256": "1c832d2fdc47498106f17481a373d09ee87a4011fef7072d08bbdbca9ae1782a",
+      "raw_bytes": 3771124,
+      "stored_sha256": "768f8eeebbc1968dcefd722af1205f87d476b2a678fc1415f31ef193f8471ca7"
+    },
+    "validation/md-game-sprite-frame/out/release/rom_header.o": {
+      "stored": "objects/bbd4af6a74fd3c92e08b500a7f98ea075e6a2d1917adf1e9cf5587f4851150de.gz",
+      "raw_sha256": "bbd4af6a74fd3c92e08b500a7f98ea075e6a2d1917adf1e9cf5587f4851150de",
+      "raw_bytes": 932,
+      "stored_sha256": "f88fb6edd122925586858b13955aae4feb3560124852ce24f76034affa84c587"
+    },
+    "validation/md-game-sprite-frame/out/release/sega.o": {
+      "stored": "objects/3cc038905b6b9ac0eee40d19320245a8b06fc02a4a712c73f20273b87d33362b.gz",
+      "raw_sha256": "3cc038905b6b9ac0eee40d19320245a8b06fc02a4a712c73f20273b87d33362b",
+      "raw_bytes": 4276,
+      "stored_sha256": "b7ffa9c336701fb16f0fbe181b11179d4230876fb26bb6f5927e7e414d69be2d"
+    },
+    "validation/md-game-sprite-frame/out/release/sega.s": {
+      "stored": "objects/d7954a33a7b17ddf060dadf21305256b524a019678849cf9f6e0dde4ee8e211b.gz",
+      "raw_sha256": "d7954a33a7b17ddf060dadf21305256b524a019678849cf9f6e0dde4ee8e211b",
+      "raw_bytes": 10664,
+      "stored_sha256": "7ef9b01e1f0d289592e0dba0c5463fd3cfc956291c3e3090fcd3c8c1c1a29cfd"
+    },
+    "validation/md-game-sprite-frame/out/release/src/assets.o": {
+      "stored": "objects/bd183ed8f5b1fc8ba6255a873d414cd18c85ba8fa0d8a8f58123012d35006bc8.gz",
+      "raw_sha256": "bd183ed8f5b1fc8ba6255a873d414cd18c85ba8fa0d8a8f58123012d35006bc8",
+      "raw_bytes": 3655360,
+      "stored_sha256": "e3251f96fddb5b23579fa5604ba0dcd2be00e71e07cd43c14e99cfc3438a01c4"
+    },
+    "validation/md-game-sprite-frame/out/release/src/main.o": {
+      "stored": "objects/9aaaceeaf221a181c7766bd18c889d6281b0a2bbd109ee961f34460e0a80f04d.gz",
+      "raw_sha256": "9aaaceeaf221a181c7766bd18c889d6281b0a2bbd109ee961f34460e0a80f04d",
+      "raw_bytes": 79592,
+      "stored_sha256": "9fd70b684e0c9994dc52bcecc29a80c3b77244dddcbdf849e9b8f393ad276219"
+    },
+    "validation/md-game-sprite-frame/out/release/src/md_game_sprite_frame.o": {
+      "stored": "objects/576e3bffae49bd2873ceb43bf4be36b9f391631bb71c1b55e6a65b014dc978c9.gz",
+      "raw_sha256": "576e3bffae49bd2873ceb43bf4be36b9f391631bb71c1b55e6a65b014dc978c9",
+      "raw_bytes": 13700,
+      "stored_sha256": "edb28a2f3767568a1759a9e8e88c3e5e8b01651e7e1ce462846f898645be6d0a"
+    },
+    "validation/md-game-sprite-frame/out/release/src/md_service_clock_start.o": {
+      "stored": "objects/ea1aeb607321be476c16639dc1c4ec57316663e58935204d101e5608a908bef6.gz",
+      "raw_sha256": "ea1aeb607321be476c16639dc1c4ec57316663e58935204d101e5608a908bef6",
+      "raw_bytes": 6316,
+      "stored_sha256": "4be6e2ee413314054b52f968bce941b503cffaa73ee7a9174230d82322a01c6d"
+    },
+    "validation/md-game-sprite-frame/out/release/src/md_sms_sprite8_stream.o": {
+      "stored": "objects/44b297330316e37d3258bbff87e609b2189c0d6b7f2c6f1e7c7d07f750c3e0f5.gz",
+      "raw_sha256": "44b297330316e37d3258bbff87e609b2189c0d6b7f2c6f1e7c7d07f750c3e0f5",
+      "raw_bytes": 14636,
+      "stored_sha256": "d6731a670816f5b55b26a059aacfe878435f21e7d033a6fd1cbd193166730af3"
+    },
+    "validation/md-game-sprite-frame/out/release/src/md_z80_psg_start.o": {
+      "stored": "objects/bf7e5eccf341fc216084ece98c60abbc6faf481a65cd66db8199bce79ff3cccb.gz",
+      "raw_sha256": "bf7e5eccf341fc216084ece98c60abbc6faf481a65cd66db8199bce79ff3cccb",
+      "raw_bytes": 10428,
+      "stored_sha256": "ec6a8ce0d87dfcff7e86af6855e32be9c7735831eaec4cda3def1248aa5e489a"
+    },
+    "validation/md-game-sprite-frame/out/release/src/md_z80_video_span.o": {
+      "stored": "objects/6f89ca2afb7357f7acc6a49bf788f7237c6da54e7fd7fe9b2077d65955ec74c0.gz",
+      "raw_sha256": "6f89ca2afb7357f7acc6a49bf788f7237c6da54e7fd7fe9b2077d65955ec74c0",
+      "raw_bytes": 33256,
+      "stored_sha256": "9dde830c740319ddac45579fdbaf819e617a65d9840a7e3db415ad7c3cc0fe99"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_dispatch.o": {
+      "stored": "objects/c23917ff0006a163de7eac447590d86a1e11bb5fda7c74f63abfa54d9c3e5458.gz",
+      "raw_sha256": "c23917ff0006a163de7eac447590d86a1e11bb5fda7c74f63abfa54d9c3e5458",
+      "raw_bytes": 13732,
+      "stored_sha256": "81f6d38eaa72e7e06e63c80634975359e9999791677949b2962b5745a00d0eaa"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_envelope.o": {
+      "stored": "objects/8d36ec645edcde2512d1842fd3e9629b4348c60a0981962d41ca62d03bc6afa8.gz",
+      "raw_sha256": "8d36ec645edcde2512d1842fd3e9629b4348c60a0981962d41ca62d03bc6afa8",
+      "raw_bytes": 12768,
+      "stored_sha256": "f2b492fca018e9dff8626acae1188c520150041b2e5777967fdc84f5a12ac614"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_fast.o": {
+      "stored": "objects/8714a0895a27025045b92b4d515d387c64862b39833b0cd55cd6a31eef9895bf.gz",
+      "raw_sha256": "8714a0895a27025045b92b4d515d387c64862b39833b0cd55cd6a31eef9895bf",
+      "raw_bytes": 66104,
+      "stored_sha256": "bde2b63161d622859460feb36fe1047d901665bb553b14579d7a513c279c8dd1"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_fast_timed.o": {
+      "stored": "objects/97c05e75062e00081fd4b72ef23911bcb5020f4c86693b4fbf2ab023cd159b5b.gz",
+      "raw_sha256": "97c05e75062e00081fd4b72ef23911bcb5020f4c86693b4fbf2ab023cd159b5b",
+      "raw_bytes": 66084,
+      "stored_sha256": "fae0c67ddae81e5a68ab883cebc56b7eeee7c977aa60d62cfb8a304f92411939"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_memory.o": {
+      "stored": "objects/62092f476a968c9340220598c20dea8b713347b5f3214ee47ea746bab0765c88.gz",
+      "raw_sha256": "62092f476a968c9340220598c20dea8b713347b5f3214ee47ea746bab0765c88",
+      "raw_bytes": 4532,
+      "stored_sha256": "47315dc06a530c6631ef3fe7af1e6fc8593ce132c95afc570a11a8c5943ef7f7"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_noise.o": {
+      "stored": "objects/44056ac8a068418eb614542bce5de586a0643af73837a80fc99d0f3cc24c4abb.gz",
+      "raw_sha256": "44056ac8a068418eb614542bce5de586a0643af73837a80fc99d0f3cc24c4abb",
+      "raw_bytes": 8896,
+      "stored_sha256": "005a1bb9aad1cfb8455597449858adc2a7bcabf2bcb24ca9666bd7c337b4d677"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_pitch.o": {
+      "stored": "objects/0ef7943d18d1baaf576f14bfb959599ea2c6bdeaa71be8ea8f9e21ead949c0bb.gz",
+      "raw_sha256": "0ef7943d18d1baaf576f14bfb959599ea2c6bdeaa71be8ea8f9e21ead949c0bb",
+      "raw_bytes": 10532,
+      "stored_sha256": "295b979c797c6badd7ad8f22d467ab0f029fe1ddb48e66e75d2e7bda353c1ebd"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_prefix.o": {
+      "stored": "objects/a5abd8f5735323eb512071559800e90214e1c0d80194c43ec479f7d741ce01d7.gz",
+      "raw_sha256": "a5abd8f5735323eb512071559800e90214e1c0d80194c43ec479f7d741ce01d7",
+      "raw_bytes": 13864,
+      "stored_sha256": "ec21a92e4c23f58192007d1a8bf614fc8cc5025567b937f2fde080d36cbedef5"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_prefix_timed.o": {
+      "stored": "objects/c01678a218bd44c5329bfd6c1371f6b4d785677b427c599caef5413eabc113ec.gz",
+      "raw_sha256": "c01678a218bd44c5329bfd6c1371f6b4d785677b427c599caef5413eabc113ec",
+      "raw_bytes": 31588,
+      "stored_sha256": "e8303f43a66d05352bffc33d2ace0b70746971daef2e1feb955dc00ebbe63228"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_priority.o": {
+      "stored": "objects/a6ea2749f830be13eca1b08e5c7ee2681dfee62645a93cc64667c7703642532e.gz",
+      "raw_sha256": "a6ea2749f830be13eca1b08e5c7ee2681dfee62645a93cc64667c7703642532e",
+      "raw_bytes": 13892,
+      "stored_sha256": "970e38a7f520b2156fa142e2528c4b35dca4f57c6a5289e2d8bfa76a32935e9d"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_reader.o": {
+      "stored": "objects/4d4e077b8bf9bd33a8a04ffc3e2b8375e6c8ba72f46aa9cf63209f693db8203d.gz",
+      "raw_sha256": "4d4e077b8bf9bd33a8a04ffc3e2b8375e6c8ba72f46aa9cf63209f693db8203d",
+      "raw_bytes": 16232,
+      "stored_sha256": "acf98dfb0dd1bda447b997fe7df30b631ceecefea18c5038da7b398c5710528a"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_reader_master.o": {
+      "stored": "objects/f7f6f04b36555bdf555c74ef18e431eedf6aab2220722d6095f82702952d3cbe.gz",
+      "raw_sha256": "f7f6f04b36555bdf555c74ef18e431eedf6aab2220722d6095f82702952d3cbe",
+      "raw_bytes": 16460,
+      "stored_sha256": "92b3843ef83cb163a4692cc303595696787b5feaa534a211a780a07ef5108f95"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_sequence.o": {
+      "stored": "objects/3bad93ab8e8bdcb42518e8704bc6593a254289d80696c891bcdbb8b2822724ed.gz",
+      "raw_sha256": "3bad93ab8e8bdcb42518e8704bc6593a254289d80696c891bcdbb8b2822724ed",
+      "raw_bytes": 39224,
+      "stored_sha256": "0f42c63f738cd3fadfa986690d222db7480485e6edc541471842f9187ec5b291"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_audio_tone.o": {
+      "stored": "objects/69157639a9de9682ca9f934cc2e184cb257e1e845a78b2b71ab8189344a999da.gz",
+      "raw_sha256": "69157639a9de9682ca9f934cc2e184cb257e1e845a78b2b71ab8189344a999da",
+      "raw_bytes": 16512,
+      "stored_sha256": "405b9f1c1438fdd96bb30e26a31b1b55d71132339ed1cbf25c289d154e5e91fd"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_clock.o": {
+      "stored": "objects/8d5fbe265de97c0753aab4b20c76aa77572368e5c875b5314cc7384be2c4c835.gz",
+      "raw_sha256": "8d5fbe265de97c0753aab4b20c76aa77572368e5c875b5314cc7384be2c4c835",
+      "raw_bytes": 22692,
+      "stored_sha256": "4090e933d5ea8e3cddcb06b40427817cfd9dc8e96234ece408df8a881d5ebfb9"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_game_frame.o": {
+      "stored": "objects/8b03fdf9400c89e6e4386a3515eec9183894e27cd0375a1f577660a29788b065.gz",
+      "raw_sha256": "8b03fdf9400c89e6e4386a3515eec9183894e27cd0375a1f577660a29788b065",
+      "raw_bytes": 18908,
+      "stored_sha256": "704adb0afadd43d65e44d1e73f049f1c3ad382972c43aa6ea92d51c262169137"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_game_irq.o": {
+      "stored": "objects/ffce49831987ea3f5606c96c6ed2cfd84a0da495c3315762271177046e17f3b5.gz",
+      "raw_sha256": "ffce49831987ea3f5606c96c6ed2cfd84a0da495c3315762271177046e17f3b5",
+      "raw_bytes": 12824,
+      "stored_sha256": "75708e0d7c4900860c7d5b57999fabfe027af45888477360e21644d443261153"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_irq.o": {
+      "stored": "objects/6f767bfc73e83184b8983b1460d5a1cf805754b3f1cdda4cc0822f214e53bd3f.gz",
+      "raw_sha256": "6f767bfc73e83184b8983b1460d5a1cf805754b3f1cdda4cc0822f214e53bd3f",
+      "raw_bytes": 16212,
+      "stored_sha256": "2eb6d797c71cd755ea45b33a3219a75c3641fe8b0d28ace0f1641379c2f9d9f6"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_irq_master_context.o": {
+      "stored": "objects/e8561f032128f34629f73871acb5e4b5468a92ab3f22d33ee64fb0f9b53a043c.gz",
+      "raw_sha256": "e8561f032128f34629f73871acb5e4b5468a92ab3f22d33ee64fb0f9b53a043c",
+      "raw_bytes": 13372,
+      "stored_sha256": "7195dbe9f76c2256d9ac35f7e8399e00adf0388c85a6d0c8f991df6b8e12b716"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_rng.o": {
+      "stored": "objects/65e1ad44c876bbe8fbca89196e59cc10d1ecd8bd640364291d7822735fbe4ebc.gz",
+      "raw_sha256": "65e1ad44c876bbe8fbca89196e59cc10d1ecd8bd640364291d7822735fbe4ebc",
+      "raw_bytes": 5644,
+      "stored_sha256": "390cde7e7b9e2308ac03ac672ecaf37700939be5c277332fdc9bedfd9598cf90"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_sms_sprite8.o": {
+      "stored": "objects/e4453bbf2cf891dffb838dff4a1b3a4937d65c494c8baa6a5c2e4ceeec94c833.gz",
+      "raw_sha256": "e4453bbf2cf891dffb838dff4a1b3a4937d65c494c8baa6a5c2e4ceeec94c833",
+      "raw_bytes": 14904,
+      "stored_sha256": "feb4c006b79dfd532be2ed5b9dff2d88defd703c0b2bc3eb07d8239e4168b606"
+    },
+    "validation/md-game-sprite-frame/out/release/src/source_sprite_scene_timed.o": {
+      "stored": "objects/299ba01777c27c718c9f964acfa85410c81e1832dffe2ff0b827d0b925ffb518.gz",
+      "raw_sha256": "299ba01777c27c718c9f964acfa85410c81e1832dffe2ff0b827d0b925ffb518",
+      "raw_bytes": 46192,
+      "stored_sha256": "ed8b45a64df77e1a1ec08fdd0ef2acd850f6fb34dd9c1fbd83ea16098415073a"
+    },
+    "validation/md-game-sprite-frame/out/release/symbol.txt": {
+      "stored": "objects/adea875295a7112c3a4491b01c24485dd3ad9ecdaafed1508b99c0c4a77d46cf.gz",
+      "raw_sha256": "adea875295a7112c3a4491b01c24485dd3ad9ecdaafed1508b99c0c4a77d46cf",
+      "raw_bytes": 18723,
+      "stored_sha256": "6637a943cb41e5f9943a6f9cd6cffc451733e0d5be8050be7abce3f1826492c0"
+    },
+    "validation/md-game-sprite-frame/out/rom.bin": {
+      "stored": "objects/9942413f6ba0d1f6cfb1da8ef2edd0174a05760d398c96b2fa60de45c87bb145.gz",
+      "raw_sha256": "9942413f6ba0d1f6cfb1da8ef2edd0174a05760d398c96b2fa60de45c87bb145",
+      "raw_bytes": 3801088,
+      "stored_sha256": "93fc1dc0ba168d9b2a57ba9401134f63864469163f6e991b5b594501e6929f7b"
+    },
+    "validation/md-game-sprite-frame/out/rom_header.bin": {
+      "stored": "objects/6fa50cf5287a5ea90ed5f186496649e235aa0bdc3553623665222d08ca80e88f.gz",
+      "raw_sha256": "6fa50cf5287a5ea90ed5f186496649e235aa0bdc3553623665222d08ca80e88f",
+      "raw_bytes": 256,
+      "stored_sha256": "098cf10e2a3e2f78086a55399bd6a7d940135182a611cf4fe609d2d74d619aae"
+    },
+    "validation/md-game-sprite-frame/pal/capture.json": {
+      "stored": "objects/3b8c99c3b7addefc17a58ce704d9769b29bba24f3538c9c3178c20d030736608.gz",
+      "raw_sha256": "3b8c99c3b7addefc17a58ce704d9769b29bba24f3538c9c3178c20d030736608",
+      "raw_bytes": 552,
+      "stored_sha256": "bc99c2b5c7910461a773b1414bfe6eda0dae241f5fc9f7d2b8fd66351ebacc86"
+    },
+    "validation/md-game-sprite-frame/pal-0-vram.bin": {
+      "stored": "objects/9d0ef3bf2bc989082114b873d8ad1185ee6c3ccb06f1c9d3d1ce92279b1da29e.gz",
+      "raw_sha256": "9d0ef3bf2bc989082114b873d8ad1185ee6c3ccb06f1c9d3d1ce92279b1da29e",
+      "raw_bytes": 65536,
+      "stored_sha256": "01f9943e375e749e4118e8831ee84823d23ff9570fad23561ae6aff2f0379d23"
+    },
+    "validation/md-game-sprite-frame/pal-1-vram.bin": {
+      "stored": "objects/7a63f169d9501d53e6d7db8f486147fb060908ddd40dc3753b5a895feb83f474.gz",
+      "raw_sha256": "7a63f169d9501d53e6d7db8f486147fb060908ddd40dc3753b5a895feb83f474",
+      "raw_bytes": 65536,
+      "stored_sha256": "fbd1257f52fc421538c405037149bd2ce6b652600b3ba101f12eb77f70123f04"
+    },
+    "validation/md-game-sprite-frame/pal-10-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-100-vram.bin": {
+      "stored": "objects/c576376c5c68f18c08d093086274ddc28548397fe1967d421f3691523c105bf7.gz",
+      "raw_sha256": "c576376c5c68f18c08d093086274ddc28548397fe1967d421f3691523c105bf7",
+      "raw_bytes": 65536,
+      "stored_sha256": "c58066f9cdcc9303e1c0ef1edd452acb1752c02fa95775ebb9fccb6b1059c00f"
+    },
+    "validation/md-game-sprite-frame/pal-101-vram.bin": {
+      "stored": "objects/a471da3930d4676444cfd5291e0ce1eba4ecc1b91148b68f0e2b74021f193e5f.gz",
+      "raw_sha256": "a471da3930d4676444cfd5291e0ce1eba4ecc1b91148b68f0e2b74021f193e5f",
+      "raw_bytes": 65536,
+      "stored_sha256": "29a5e023b8905713ab4c7b7d7a292a43570245339b45108bc999633123b783a8"
+    },
+    "validation/md-game-sprite-frame/pal-102-vram.bin": {
+      "stored": "objects/2eec3d011ee2b56315b8707a2deecdc193ed9f3e36eb6e9b3eb91e8a7752801d.gz",
+      "raw_sha256": "2eec3d011ee2b56315b8707a2deecdc193ed9f3e36eb6e9b3eb91e8a7752801d",
+      "raw_bytes": 65536,
+      "stored_sha256": "a8c32df4fc4f7566b0f9e2ab772a8996bc96393f10dd5f7e5351f07d8a04b6f0"
+    },
+    "validation/md-game-sprite-frame/pal-103-vram.bin": {
+      "stored": "objects/9b8d68de68d91618eb54a86152b909fd6a13a1f42aafdfe540cd0773f5a5a0e4.gz",
+      "raw_sha256": "9b8d68de68d91618eb54a86152b909fd6a13a1f42aafdfe540cd0773f5a5a0e4",
+      "raw_bytes": 65536,
+      "stored_sha256": "b5ba490464fe33d09424ff3d2c7c3d8e8a013c6da66e7b183038b0e0ff7a6420"
+    },
+    "validation/md-game-sprite-frame/pal-104-vram.bin": {
+      "stored": "objects/989504c3b3c191b01f2bce05171ca20cd5da57d766ac36c0fa0ff26428a9c7a8.gz",
+      "raw_sha256": "989504c3b3c191b01f2bce05171ca20cd5da57d766ac36c0fa0ff26428a9c7a8",
+      "raw_bytes": 65536,
+      "stored_sha256": "353b3ca4867fb5a27a96e4d2e6d1c638b7ec774860bd8e06fd2b9be6b8caeecd"
+    },
+    "validation/md-game-sprite-frame/pal-105-vram.bin": {
+      "stored": "objects/76554f77f19f7d59224955e93e2ab6787daec99a94e1a462fa1a5b52e70a2fad.gz",
+      "raw_sha256": "76554f77f19f7d59224955e93e2ab6787daec99a94e1a462fa1a5b52e70a2fad",
+      "raw_bytes": 65536,
+      "stored_sha256": "3eaad3f63232c0e0f327213a156cb8e5828b8ebe49a147a59de1c72789948eae"
+    },
+    "validation/md-game-sprite-frame/pal-106-vram.bin": {
+      "stored": "objects/666a2003ba811f990d2429450dbd0697182d52c69347101174a2d0882e93da23.gz",
+      "raw_sha256": "666a2003ba811f990d2429450dbd0697182d52c69347101174a2d0882e93da23",
+      "raw_bytes": 65536,
+      "stored_sha256": "874031dcc9b2ba3c3bd39b19f056844637967eb9dc4ac2f75d6afebccc46d66c"
+    },
+    "validation/md-game-sprite-frame/pal-107-vram.bin": {
+      "stored": "objects/3225489f5018905981760c6c15bc21cc0bddf2b5eb8439c4439e22fc288e9e5b.gz",
+      "raw_sha256": "3225489f5018905981760c6c15bc21cc0bddf2b5eb8439c4439e22fc288e9e5b",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf3ae827f126e53f2f7f60e4f4ea119f805e6703fc8b604a80b0260f3ce4ea74"
+    },
+    "validation/md-game-sprite-frame/pal-108-vram.bin": {
+      "stored": "objects/b2946629f6ff1164a0879dc39509628ae6cf245d96722df97734e8a21d5c4e37.gz",
+      "raw_sha256": "b2946629f6ff1164a0879dc39509628ae6cf245d96722df97734e8a21d5c4e37",
+      "raw_bytes": 65536,
+      "stored_sha256": "dff7bff3fe13f8e370a0a9cbc43d085a5a127e7b03973e09ce9713cecb8b3d6c"
+    },
+    "validation/md-game-sprite-frame/pal-109-vram.bin": {
+      "stored": "objects/43cb06b8cf53f4bf1111808366dac016ecdddeac98050a5fcec1d0f904ac7c72.gz",
+      "raw_sha256": "43cb06b8cf53f4bf1111808366dac016ecdddeac98050a5fcec1d0f904ac7c72",
+      "raw_bytes": 65536,
+      "stored_sha256": "6ef3ba805b019db27ed01db6168e40423f11341f5134218e1eab855fd4300e8f"
+    },
+    "validation/md-game-sprite-frame/pal-11-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-110-vram.bin": {
+      "stored": "objects/438bc37dff31bc46a22bb0e8ba5a46581cbebd8def94bf0f38f6676512e3c6a3.gz",
+      "raw_sha256": "438bc37dff31bc46a22bb0e8ba5a46581cbebd8def94bf0f38f6676512e3c6a3",
+      "raw_bytes": 65536,
+      "stored_sha256": "baa301e1242e3a286f3840a7ed332677a557176c878c6f8a9c0f2918ff304ec5"
+    },
+    "validation/md-game-sprite-frame/pal-111-vram.bin": {
+      "stored": "objects/a41220b096b3a4d753f2be2c30a521c9f64424dd699833650a2c1f1809a1df5a.gz",
+      "raw_sha256": "a41220b096b3a4d753f2be2c30a521c9f64424dd699833650a2c1f1809a1df5a",
+      "raw_bytes": 65536,
+      "stored_sha256": "75b867d8c3c186bbd9872ac4637cd278a894f0c67e32e9188251c800a4f59143"
+    },
+    "validation/md-game-sprite-frame/pal-112-vram.bin": {
+      "stored": "objects/4784bb7cfaebd5f037fcf0104f84151051f17d8c81cd70ad247950eac3e6d4a8.gz",
+      "raw_sha256": "4784bb7cfaebd5f037fcf0104f84151051f17d8c81cd70ad247950eac3e6d4a8",
+      "raw_bytes": 65536,
+      "stored_sha256": "4f0a9cf99bf52e894f5ff98207e62493a45023569466ce1efd4a5fd5c4389ec7"
+    },
+    "validation/md-game-sprite-frame/pal-113-vram.bin": {
+      "stored": "objects/5a29bb87c16982ac151781c1c5990de1a46b27af6aac299dbeb328d51696ee1b.gz",
+      "raw_sha256": "5a29bb87c16982ac151781c1c5990de1a46b27af6aac299dbeb328d51696ee1b",
+      "raw_bytes": 65536,
+      "stored_sha256": "62d63a36bf56f1adbee1aa9cf6a3f308e93e2e3d594cac92bc751fc9b4d1be2e"
+    },
+    "validation/md-game-sprite-frame/pal-114-vram.bin": {
+      "stored": "objects/c4009a30ba6ee02b3812801043a653be37706293fe9b19a147cb2d3000df8141.gz",
+      "raw_sha256": "c4009a30ba6ee02b3812801043a653be37706293fe9b19a147cb2d3000df8141",
+      "raw_bytes": 65536,
+      "stored_sha256": "9f4c4c6c995731913f9da6f72c755bf27ea7a34d8141a0b42441b12ed9c7aa5f"
+    },
+    "validation/md-game-sprite-frame/pal-115-vram.bin": {
+      "stored": "objects/e3fa0897d50eca8ab4c8713e55779c612c09afe0e2e788df3f756fd787405f48.gz",
+      "raw_sha256": "e3fa0897d50eca8ab4c8713e55779c612c09afe0e2e788df3f756fd787405f48",
+      "raw_bytes": 65536,
+      "stored_sha256": "353d46e6804a0e2e9a2ebac2ec4f7f151757974ebbb0da19db7633952af9f275"
+    },
+    "validation/md-game-sprite-frame/pal-116-vram.bin": {
+      "stored": "objects/87032292e7fb505e4e0ac36d7a9257bf5469d1344f87d8a1e43cc6942b4e60e0.gz",
+      "raw_sha256": "87032292e7fb505e4e0ac36d7a9257bf5469d1344f87d8a1e43cc6942b4e60e0",
+      "raw_bytes": 65536,
+      "stored_sha256": "487f592e2b4d85d56103d4473ac0e4c14421f33da283c82360c31da07a886b29"
+    },
+    "validation/md-game-sprite-frame/pal-117-vram.bin": {
+      "stored": "objects/351b64c5e693ded620fdd029d32c9d1ae2e9a7cbc07e0ee2e9387ded1a70f618.gz",
+      "raw_sha256": "351b64c5e693ded620fdd029d32c9d1ae2e9a7cbc07e0ee2e9387ded1a70f618",
+      "raw_bytes": 65536,
+      "stored_sha256": "8942c98726d9cba4e92fccccab6961fdbfc83ee49be0c0f46e1f2d996e0d6292"
+    },
+    "validation/md-game-sprite-frame/pal-118-vram.bin": {
+      "stored": "objects/61e733ff13019e4947e980538ac0b14be0c29ad3374e7b9f0c204a26530c4bea.gz",
+      "raw_sha256": "61e733ff13019e4947e980538ac0b14be0c29ad3374e7b9f0c204a26530c4bea",
+      "raw_bytes": 65536,
+      "stored_sha256": "d2a2978c3a8be4552ef668c1bbc79638461757619028b15962d873fa8f416b4a"
+    },
+    "validation/md-game-sprite-frame/pal-119-vram.bin": {
+      "stored": "objects/85f3d20b388649349ee8d68cf9694001889a3491d6f9101a60da7585c06a1c54.gz",
+      "raw_sha256": "85f3d20b388649349ee8d68cf9694001889a3491d6f9101a60da7585c06a1c54",
+      "raw_bytes": 65536,
+      "stored_sha256": "dc8e3daa01554d4226f886ec9c9e281420e078de4c3f498fc0e3fb417771349e"
+    },
+    "validation/md-game-sprite-frame/pal-12-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-120-vram.bin": {
+      "stored": "objects/5077336bd8c356acd5457b73a76e2a54b080ab231acb95f4eb0b83be298e74fe.gz",
+      "raw_sha256": "5077336bd8c356acd5457b73a76e2a54b080ab231acb95f4eb0b83be298e74fe",
+      "raw_bytes": 65536,
+      "stored_sha256": "de790af9b566080e248a278aa2ff5dabe4aaa2d89efaeb91cb1c8be1c31937d6"
+    },
+    "validation/md-game-sprite-frame/pal-121-vram.bin": {
+      "stored": "objects/aff4f6992b88571b4d89a436d0f5d079939675c688206464d03b264488a9b27e.gz",
+      "raw_sha256": "aff4f6992b88571b4d89a436d0f5d079939675c688206464d03b264488a9b27e",
+      "raw_bytes": 65536,
+      "stored_sha256": "bbfebdcadc42050bcd6e0217add6efcba2921a6df8678b1be9aedf13eceb08bd"
+    },
+    "validation/md-game-sprite-frame/pal-122-vram.bin": {
+      "stored": "objects/b4a32fa9ae6d78e1132f718877106ebfc7da56c53be3cf927a24ad3aba68a6e1.gz",
+      "raw_sha256": "b4a32fa9ae6d78e1132f718877106ebfc7da56c53be3cf927a24ad3aba68a6e1",
+      "raw_bytes": 65536,
+      "stored_sha256": "47181c12ad3bc3f7755a8d3c3f2719401a9beca09431ef6596669197c54b7607"
+    },
+    "validation/md-game-sprite-frame/pal-123-vram.bin": {
+      "stored": "objects/d4c1c01f5b18b770255d9447b0f264536998a418c850bf4f06222cc450f3d880.gz",
+      "raw_sha256": "d4c1c01f5b18b770255d9447b0f264536998a418c850bf4f06222cc450f3d880",
+      "raw_bytes": 65536,
+      "stored_sha256": "37fb2ae533f20f0b427812e91e39bc36ab11258bc3a96cf627c195c83992cbfa"
+    },
+    "validation/md-game-sprite-frame/pal-124-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/pal-125-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/pal-126-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/pal-127-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/pal-128-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/pal-129-vram.bin": {
+      "stored": "objects/7c5cf9aa43e8bf66c7f6ae8d91031c706cbe2e755e1d724116941bf67a358e88.gz",
+      "raw_sha256": "7c5cf9aa43e8bf66c7f6ae8d91031c706cbe2e755e1d724116941bf67a358e88",
+      "raw_bytes": 65536,
+      "stored_sha256": "9d72b911c35fc263c0b5fbfed80f7000e5d2a07b537de657cdeb5592b30c7a7a"
+    },
+    "validation/md-game-sprite-frame/pal-13-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-130-vram.bin": {
+      "stored": "objects/7c5cf9aa43e8bf66c7f6ae8d91031c706cbe2e755e1d724116941bf67a358e88.gz",
+      "raw_sha256": "7c5cf9aa43e8bf66c7f6ae8d91031c706cbe2e755e1d724116941bf67a358e88",
+      "raw_bytes": 65536,
+      "stored_sha256": "9d72b911c35fc263c0b5fbfed80f7000e5d2a07b537de657cdeb5592b30c7a7a"
+    },
+    "validation/md-game-sprite-frame/pal-131-vram.bin": {
+      "stored": "objects/0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9.gz",
+      "raw_sha256": "0b0ef53401870c5aa98dea899cb39b6d119575a16c971fd78d525d983e9307a9",
+      "raw_bytes": 65536,
+      "stored_sha256": "e73bc8c37b0ee8810ab5c64df249d6113b0b14f1403512454d765f294853b255"
+    },
+    "validation/md-game-sprite-frame/pal-132-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-14-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-15-vram.bin": {
+      "stored": "objects/de98692175e1f7104aecd24266a1aff69d33ab76b97ea31dad1cea0dc206f253.gz",
+      "raw_sha256": "de98692175e1f7104aecd24266a1aff69d33ab76b97ea31dad1cea0dc206f253",
+      "raw_bytes": 65536,
+      "stored_sha256": "4a15bca443c1da843d3e73b12daa1d614190f26c0968999adc2637b44d73d8b4"
+    },
+    "validation/md-game-sprite-frame/pal-16-vram.bin": {
+      "stored": "objects/203486f07b9ff489a05b8fdbf03dc879dea352ec369bf30b3635bd312d8d4eea.gz",
+      "raw_sha256": "203486f07b9ff489a05b8fdbf03dc879dea352ec369bf30b3635bd312d8d4eea",
+      "raw_bytes": 65536,
+      "stored_sha256": "df6f61ad179ef2f3064f1f3360d8a30a57ab9352259e9e8d9a8745b2f52b27f6"
+    },
+    "validation/md-game-sprite-frame/pal-17-vram.bin": {
+      "stored": "objects/203486f07b9ff489a05b8fdbf03dc879dea352ec369bf30b3635bd312d8d4eea.gz",
+      "raw_sha256": "203486f07b9ff489a05b8fdbf03dc879dea352ec369bf30b3635bd312d8d4eea",
+      "raw_bytes": 65536,
+      "stored_sha256": "df6f61ad179ef2f3064f1f3360d8a30a57ab9352259e9e8d9a8745b2f52b27f6"
+    },
+    "validation/md-game-sprite-frame/pal-18-vram.bin": {
+      "stored": "objects/eff17c331d3d1c84d241c3ec59f124f8ff51db386a8787a08b375cbbc5fb7bcd.gz",
+      "raw_sha256": "eff17c331d3d1c84d241c3ec59f124f8ff51db386a8787a08b375cbbc5fb7bcd",
+      "raw_bytes": 65536,
+      "stored_sha256": "bc3f26ac698cda2cea3bfa49a4d85fb8da796b40b12752fb4df06deb29a21a7c"
+    },
+    "validation/md-game-sprite-frame/pal-19-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-2-vram.bin": {
+      "stored": "objects/7a63f169d9501d53e6d7db8f486147fb060908ddd40dc3753b5a895feb83f474.gz",
+      "raw_sha256": "7a63f169d9501d53e6d7db8f486147fb060908ddd40dc3753b5a895feb83f474",
+      "raw_bytes": 65536,
+      "stored_sha256": "fbd1257f52fc421538c405037149bd2ce6b652600b3ba101f12eb77f70123f04"
+    },
+    "validation/md-game-sprite-frame/pal-20-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-21-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-22-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-23-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-24-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-25-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-26-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-27-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-28-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-29-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-3-vram.bin": {
+      "stored": "objects/80b9693ce7c67376c58119750686498430324bf1a0334d87eb4bb3ab158b83cf.gz",
+      "raw_sha256": "80b9693ce7c67376c58119750686498430324bf1a0334d87eb4bb3ab158b83cf",
+      "raw_bytes": 65536,
+      "stored_sha256": "1155841fba7d082c07278b672c27edcbfeba20e36081f0fd216d8d2325712d0c"
+    },
+    "validation/md-game-sprite-frame/pal-30-vram.bin": {
+      "stored": "objects/dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921.gz",
+      "raw_sha256": "dd8c0ca622db1ded102b3b74fb5f68c566c4453325902c65119c084f35ac4921",
+      "raw_bytes": 65536,
+      "stored_sha256": "0ad7c807b9cfacf23897d99cbbcbde5df49f636adff4464f761dfac5ea89ce06"
+    },
+    "validation/md-game-sprite-frame/pal-31-vram.bin": {
+      "stored": "objects/e604177d9fe0afa78efe6a196a8f4c44a93361d50e5bfba62293faee32938b5a.gz",
+      "raw_sha256": "e604177d9fe0afa78efe6a196a8f4c44a93361d50e5bfba62293faee32938b5a",
+      "raw_bytes": 65536,
+      "stored_sha256": "14da3b8c8dc21cb4824b475352fbae68c2c0ab2b9e2e514b8085374e58056298"
+    },
+    "validation/md-game-sprite-frame/pal-32-vram.bin": {
+      "stored": "objects/67635139d74f9c2fd0a7c395059ee2c476d87dedfc7c351054d435e4b63e1f8a.gz",
+      "raw_sha256": "67635139d74f9c2fd0a7c395059ee2c476d87dedfc7c351054d435e4b63e1f8a",
+      "raw_bytes": 65536,
+      "stored_sha256": "fbe5ec257a1384b3da1bde32754d246e1fd90d736b2ca80ba5202ea1155d2d7b"
+    },
+    "validation/md-game-sprite-frame/pal-33-vram.bin": {
+      "stored": "objects/67635139d74f9c2fd0a7c395059ee2c476d87dedfc7c351054d435e4b63e1f8a.gz",
+      "raw_sha256": "67635139d74f9c2fd0a7c395059ee2c476d87dedfc7c351054d435e4b63e1f8a",
+      "raw_bytes": 65536,
+      "stored_sha256": "fbe5ec257a1384b3da1bde32754d246e1fd90d736b2ca80ba5202ea1155d2d7b"
+    },
+    "validation/md-game-sprite-frame/pal-34-vram.bin": {
+      "stored": "objects/91db4843a62127bfd45c376589733f10e8d046c2f9fa99a6d5f543ec752b6529.gz",
+      "raw_sha256": "91db4843a62127bfd45c376589733f10e8d046c2f9fa99a6d5f543ec752b6529",
+      "raw_bytes": 65536,
+      "stored_sha256": "ed9285c504da69bc4501d0c49073fb0425dd01a505c9f9543bec013d89d06a40"
+    },
+    "validation/md-game-sprite-frame/pal-35-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-36-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-37-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-38-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-39-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-4-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-40-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-41-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-42-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-43-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-44-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-45-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-46-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-47-vram.bin": {
+      "stored": "objects/329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5.gz",
+      "raw_sha256": "329384f8e506dd5279e9f8d77809b6a328c3910b8bcbff317c0761ab12a0f7d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "cf54a8f55b9535db2ff8770673caefc78b6cc6342f6784847a5b742cdbdad1ca"
+    },
+    "validation/md-game-sprite-frame/pal-48-vram.bin": {
+      "stored": "objects/110d4d031ebac589d4f1020cf4362766a7ffdc12f0d6e9f128aa3e60677f3ffb.gz",
+      "raw_sha256": "110d4d031ebac589d4f1020cf4362766a7ffdc12f0d6e9f128aa3e60677f3ffb",
+      "raw_bytes": 65536,
+      "stored_sha256": "bac140f32b73760f956ed4b255bf8825df51debfd33d6125f3032ce9d149eb82"
+    },
+    "validation/md-game-sprite-frame/pal-49-vram.bin": {
+      "stored": "objects/616cc0242c8b3817fffbe2896fe965ac9f209a3bd6c65ecca36073faa0423a9a.gz",
+      "raw_sha256": "616cc0242c8b3817fffbe2896fe965ac9f209a3bd6c65ecca36073faa0423a9a",
+      "raw_bytes": 65536,
+      "stored_sha256": "cb6d5310b9d77ac9ac447f42686e5a13806084c0286e04e694185b1e5bf0bacf"
+    },
+    "validation/md-game-sprite-frame/pal-5-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-50-vram.bin": {
+      "stored": "objects/616cc0242c8b3817fffbe2896fe965ac9f209a3bd6c65ecca36073faa0423a9a.gz",
+      "raw_sha256": "616cc0242c8b3817fffbe2896fe965ac9f209a3bd6c65ecca36073faa0423a9a",
+      "raw_bytes": 65536,
+      "stored_sha256": "cb6d5310b9d77ac9ac447f42686e5a13806084c0286e04e694185b1e5bf0bacf"
+    },
+    "validation/md-game-sprite-frame/pal-51-vram.bin": {
+      "stored": "objects/a40d3438b61a9d5ff04510f618a1dbb95b204a9832dd900863f9c2710d56c09c.gz",
+      "raw_sha256": "a40d3438b61a9d5ff04510f618a1dbb95b204a9832dd900863f9c2710d56c09c",
+      "raw_bytes": 65536,
+      "stored_sha256": "866c6c41f8ed247b8970be49dc5052d409383ab0d2cc1b4eba4357f2d3124e74"
+    },
+    "validation/md-game-sprite-frame/pal-52-vram.bin": {
+      "stored": "objects/f49222e928a1f48cbef4d957e7f3cc64f0e32a4bf6e618bc78bde4dac14a7fe9.gz",
+      "raw_sha256": "f49222e928a1f48cbef4d957e7f3cc64f0e32a4bf6e618bc78bde4dac14a7fe9",
+      "raw_bytes": 65536,
+      "stored_sha256": "93d658f78ab14d9e17ce522222016aa54b0e5ba2da2306ca8e319fcb3fc728b9"
+    },
+    "validation/md-game-sprite-frame/pal-53-vram.bin": {
+      "stored": "objects/7578e872943a06f38ccdc21dd280cc33d4672484ef58ba37b46cb04946fa1aa9.gz",
+      "raw_sha256": "7578e872943a06f38ccdc21dd280cc33d4672484ef58ba37b46cb04946fa1aa9",
+      "raw_bytes": 65536,
+      "stored_sha256": "de6d016ab495a6f07a43b9138421adbed0b930c78a43534cdc4d01c94a75448e"
+    },
+    "validation/md-game-sprite-frame/pal-54-vram.bin": {
+      "stored": "objects/7578e872943a06f38ccdc21dd280cc33d4672484ef58ba37b46cb04946fa1aa9.gz",
+      "raw_sha256": "7578e872943a06f38ccdc21dd280cc33d4672484ef58ba37b46cb04946fa1aa9",
+      "raw_bytes": 65536,
+      "stored_sha256": "de6d016ab495a6f07a43b9138421adbed0b930c78a43534cdc4d01c94a75448e"
+    },
+    "validation/md-game-sprite-frame/pal-55-vram.bin": {
+      "stored": "objects/72e849ff8ec7d0e97223936a1808769b8f1360c2d12474d61ae2cb28ccf723cc.gz",
+      "raw_sha256": "72e849ff8ec7d0e97223936a1808769b8f1360c2d12474d61ae2cb28ccf723cc",
+      "raw_bytes": 65536,
+      "stored_sha256": "13a4f62ce9a2466397fd78a143fc0125aa05a4802336527e28a2904e5698b14c"
+    },
+    "validation/md-game-sprite-frame/pal-56-vram.bin": {
+      "stored": "objects/15cd3be147d5bc5b1b7878423ae9e02284438a20d39781f62e957e1423482cc5.gz",
+      "raw_sha256": "15cd3be147d5bc5b1b7878423ae9e02284438a20d39781f62e957e1423482cc5",
+      "raw_bytes": 65536,
+      "stored_sha256": "f46a0e24350f55e75cd9ba6fb2aa5c75d02b6beaed1a3701a8606781cc21f488"
+    },
+    "validation/md-game-sprite-frame/pal-57-vram.bin": {
+      "stored": "objects/a31dcd8c3f1dbe6f945aacdcd63f324931dfac833dae088b57aa14ec9c966e44.gz",
+      "raw_sha256": "a31dcd8c3f1dbe6f945aacdcd63f324931dfac833dae088b57aa14ec9c966e44",
+      "raw_bytes": 65536,
+      "stored_sha256": "dabb2cf46a786b89ecec93386197b7a7f7b72adf42724a18a1544f7452c9e73e"
+    },
+    "validation/md-game-sprite-frame/pal-58-vram.bin": {
+      "stored": "objects/a31dcd8c3f1dbe6f945aacdcd63f324931dfac833dae088b57aa14ec9c966e44.gz",
+      "raw_sha256": "a31dcd8c3f1dbe6f945aacdcd63f324931dfac833dae088b57aa14ec9c966e44",
+      "raw_bytes": 65536,
+      "stored_sha256": "dabb2cf46a786b89ecec93386197b7a7f7b72adf42724a18a1544f7452c9e73e"
+    },
+    "validation/md-game-sprite-frame/pal-59-vram.bin": {
+      "stored": "objects/94d8fbe12831220112a9b58a17d23bef78ab1f637806b31129dc3fed923fe559.gz",
+      "raw_sha256": "94d8fbe12831220112a9b58a17d23bef78ab1f637806b31129dc3fed923fe559",
+      "raw_bytes": 65536,
+      "stored_sha256": "d0df9d3c42213ecdedfd3238ef84e01935c50b076af9cb3d66378b93e50c44ae"
+    },
+    "validation/md-game-sprite-frame/pal-6-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-60-vram.bin": {
+      "stored": "objects/b4dfc2d53986021eeb8262dffb27d16ac0361e83db343fec535e1f665a63bee9.gz",
+      "raw_sha256": "b4dfc2d53986021eeb8262dffb27d16ac0361e83db343fec535e1f665a63bee9",
+      "raw_bytes": 65536,
+      "stored_sha256": "9aa14a55584e63ab246958ed56d4afa3bcc71d69adfc381fe837b2696de226a8"
+    },
+    "validation/md-game-sprite-frame/pal-61-vram.bin": {
+      "stored": "objects/eca46032533c1aefba350f23616c24d5a27ec97fc301785272c2d862a6442a5d.gz",
+      "raw_sha256": "eca46032533c1aefba350f23616c24d5a27ec97fc301785272c2d862a6442a5d",
+      "raw_bytes": 65536,
+      "stored_sha256": "48829a7e510ac545d1a756f08b30b4c12f732f7c3183fcbc5c9f5a52d818dc62"
+    },
+    "validation/md-game-sprite-frame/pal-62-vram.bin": {
+      "stored": "objects/944d93ce433c23ebe3828af34724352def74d6e3e209a189e4494896659acd66.gz",
+      "raw_sha256": "944d93ce433c23ebe3828af34724352def74d6e3e209a189e4494896659acd66",
+      "raw_bytes": 65536,
+      "stored_sha256": "f767c96cc74a50092e5db246c683cfb76c66b2af68a3d0d055e3759f7c2ecfd8"
+    },
+    "validation/md-game-sprite-frame/pal-63-vram.bin": {
+      "stored": "objects/e9a8522019e6b7542112b8bbf590d7f102afe4484ccb31a38c12c729b94261d6.gz",
+      "raw_sha256": "e9a8522019e6b7542112b8bbf590d7f102afe4484ccb31a38c12c729b94261d6",
+      "raw_bytes": 65536,
+      "stored_sha256": "97b60cba5f1807135e373140c39b4ea53bffe2efc423d98168226db617882a21"
+    },
+    "validation/md-game-sprite-frame/pal-64-vram.bin": {
+      "stored": "objects/fe68a025440d6ba7cdfb494766cd63ac8abc2ce17331c58e1cfe8aa084890f2c.gz",
+      "raw_sha256": "fe68a025440d6ba7cdfb494766cd63ac8abc2ce17331c58e1cfe8aa084890f2c",
+      "raw_bytes": 65536,
+      "stored_sha256": "6ddda436ec72112ba0db35bb29416b49343b94de821fb69ad0b45799e4cf22a6"
+    },
+    "validation/md-game-sprite-frame/pal-65-vram.bin": {
+      "stored": "objects/3b73093a240eaa54ef1e37f5be6b0d9911c3b9e72962077e7f55b58f635f0b0a.gz",
+      "raw_sha256": "3b73093a240eaa54ef1e37f5be6b0d9911c3b9e72962077e7f55b58f635f0b0a",
+      "raw_bytes": 65536,
+      "stored_sha256": "302ccf355e44aa7e290392837346329c738a2cfa3cb81a19114802d20270a530"
+    },
+    "validation/md-game-sprite-frame/pal-66-vram.bin": {
+      "stored": "objects/ce00152189bd89b10a8b474e17e1d0849ca56ff8bd6fe086220db2e6dc00d2d5.gz",
+      "raw_sha256": "ce00152189bd89b10a8b474e17e1d0849ca56ff8bd6fe086220db2e6dc00d2d5",
+      "raw_bytes": 65536,
+      "stored_sha256": "e5d4e1dfd0a50cd31221b704090cf81e8c26b4083993a330097f265fa1ed7821"
+    },
+    "validation/md-game-sprite-frame/pal-67-vram.bin": {
+      "stored": "objects/6ba0918607cd17c951da6d13f27f432b885d9b0305c57bed538d83e4c99d8bf5.gz",
+      "raw_sha256": "6ba0918607cd17c951da6d13f27f432b885d9b0305c57bed538d83e4c99d8bf5",
+      "raw_bytes": 65536,
+      "stored_sha256": "ab3f40da67e994bd6d73de5c3a8687a029300b77828f2d36ace54adb3ac1be91"
+    },
+    "validation/md-game-sprite-frame/pal-68-vram.bin": {
+      "stored": "objects/eb50e76b33c1156cfdcf620dfaae89c6a5d22fee06ee0631a4aef161f380df63.gz",
+      "raw_sha256": "eb50e76b33c1156cfdcf620dfaae89c6a5d22fee06ee0631a4aef161f380df63",
+      "raw_bytes": 65536,
+      "stored_sha256": "e053c2060d0651be53ce3f0325e2f95aebc317665e424353c8e0b9dd951a55b0"
+    },
+    "validation/md-game-sprite-frame/pal-69-vram.bin": {
+      "stored": "objects/d3aad2f52e6c142a3dac22753d4cda859ef640e72ea467f2fc1a60548289923b.gz",
+      "raw_sha256": "d3aad2f52e6c142a3dac22753d4cda859ef640e72ea467f2fc1a60548289923b",
+      "raw_bytes": 65536,
+      "stored_sha256": "93461b7b379647d6de690aa6493ec5fd0febef1e4f8d6ec2e202091c699821c6"
+    },
+    "validation/md-game-sprite-frame/pal-7-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-70-vram.bin": {
+      "stored": "objects/d70e96f8930f306d37ed1e44e50993f488e79650a7719f5b6f23edb6176596fa.gz",
+      "raw_sha256": "d70e96f8930f306d37ed1e44e50993f488e79650a7719f5b6f23edb6176596fa",
+      "raw_bytes": 65536,
+      "stored_sha256": "b12db3a595e963e1060d78d910926e2aeeddad7489ac1dbca4760cffac640dba"
+    },
+    "validation/md-game-sprite-frame/pal-71-vram.bin": {
+      "stored": "objects/8ed2be497dc575810589b75e853bff1c6e3f403ab69cb6bc74223b1941a006a7.gz",
+      "raw_sha256": "8ed2be497dc575810589b75e853bff1c6e3f403ab69cb6bc74223b1941a006a7",
+      "raw_bytes": 65536,
+      "stored_sha256": "c7ec37d9a449298f167863e66b1deb0dd949eaec0b7544ee88890f4212363aa2"
+    },
+    "validation/md-game-sprite-frame/pal-72-vram.bin": {
+      "stored": "objects/52c23db41d4267009741c5b707acb8c99546146c70ff3378b49527ad0ad5f321.gz",
+      "raw_sha256": "52c23db41d4267009741c5b707acb8c99546146c70ff3378b49527ad0ad5f321",
+      "raw_bytes": 65536,
+      "stored_sha256": "18d2c383cb4dfc8dde1d637e231954e87c1498f7ab9712df0473b83cd7de7978"
+    },
+    "validation/md-game-sprite-frame/pal-73-vram.bin": {
+      "stored": "objects/f5219836389ca0db281acbe4bf6fe9488d199c13f7299481c9eadbc5f8e35b07.gz",
+      "raw_sha256": "f5219836389ca0db281acbe4bf6fe9488d199c13f7299481c9eadbc5f8e35b07",
+      "raw_bytes": 65536,
+      "stored_sha256": "84fe5ede609f6eeb0321d2afdffa5ee36f2bf10fa5dd37ebfa5233dfe8f5c643"
+    },
+    "validation/md-game-sprite-frame/pal-74-vram.bin": {
+      "stored": "objects/b3e6fd618a1555ee9b08897e1362182dfd97dbe968fdec1381484906b54bae04.gz",
+      "raw_sha256": "b3e6fd618a1555ee9b08897e1362182dfd97dbe968fdec1381484906b54bae04",
+      "raw_bytes": 65536,
+      "stored_sha256": "626f7efb4bf114abe1fe1bf73cfdaa99e66855de6ca426d0b91dbbd910b6d8c0"
+    },
+    "validation/md-game-sprite-frame/pal-75-vram.bin": {
+      "stored": "objects/a51b9011db71fbb67d56895702d747dec9d8fae94e67e6d607e5c253b46c0a45.gz",
+      "raw_sha256": "a51b9011db71fbb67d56895702d747dec9d8fae94e67e6d607e5c253b46c0a45",
+      "raw_bytes": 65536,
+      "stored_sha256": "2f7980173da2ebeefdcb02b3cdf71f81d6071f716e3c19906c38ffce28072fb8"
+    },
+    "validation/md-game-sprite-frame/pal-76-vram.bin": {
+      "stored": "objects/2eefd1b767816d9125562c1ef532eeb65746c71da2ddf7925301068bafd8902a.gz",
+      "raw_sha256": "2eefd1b767816d9125562c1ef532eeb65746c71da2ddf7925301068bafd8902a",
+      "raw_bytes": 65536,
+      "stored_sha256": "853da010968e4a302a23bafd983fc67af7221150c36aed96125273fe267e1b49"
+    },
+    "validation/md-game-sprite-frame/pal-77-vram.bin": {
+      "stored": "objects/8b180de0083b3db783c54d3db3529ae04b923697b7ca4782eddcc685a07c2d17.gz",
+      "raw_sha256": "8b180de0083b3db783c54d3db3529ae04b923697b7ca4782eddcc685a07c2d17",
+      "raw_bytes": 65536,
+      "stored_sha256": "02ff9a5186eef0dad249a3e94bc8030aa59d275786de7c785ad90757f27963c1"
+    },
+    "validation/md-game-sprite-frame/pal-78-vram.bin": {
+      "stored": "objects/db9223f443f4f05f69032f6223d23d6fae7344a044c0a3ccbe997e3f81b39ca4.gz",
+      "raw_sha256": "db9223f443f4f05f69032f6223d23d6fae7344a044c0a3ccbe997e3f81b39ca4",
+      "raw_bytes": 65536,
+      "stored_sha256": "5c34f7b6c2b4c332943d655a4ea074f5dc5b63afdd1812b8dce4648ee36c0ea3"
+    },
+    "validation/md-game-sprite-frame/pal-79-vram.bin": {
+      "stored": "objects/e0d3442a88f5b7e7f362cadea18603d97b02ee93db44cdeb3eebf72d12b71bdc.gz",
+      "raw_sha256": "e0d3442a88f5b7e7f362cadea18603d97b02ee93db44cdeb3eebf72d12b71bdc",
+      "raw_bytes": 65536,
+      "stored_sha256": "e16f5fc2a0816902db43ed93e6ee9f0d5cc008940ba84032cd2eb1e0ec776121"
+    },
+    "validation/md-game-sprite-frame/pal-8-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-80-vram.bin": {
+      "stored": "objects/594069dee2f73974c0aa9561a3e14463cb751f4ecc06bdd6b0f308336137babb.gz",
+      "raw_sha256": "594069dee2f73974c0aa9561a3e14463cb751f4ecc06bdd6b0f308336137babb",
+      "raw_bytes": 65536,
+      "stored_sha256": "32334489dee1896dff75b1cf8571fb164ab98f58fec3a09fcec0a05963e4e03c"
+    },
+    "validation/md-game-sprite-frame/pal-81-vram.bin": {
+      "stored": "objects/64ae2d33ed36dda944fdad8fd0ca8282b58774a14662e8d0a919a5927d991739.gz",
+      "raw_sha256": "64ae2d33ed36dda944fdad8fd0ca8282b58774a14662e8d0a919a5927d991739",
+      "raw_bytes": 65536,
+      "stored_sha256": "8529f4d15b1c1c0e9084b1a907d764b226bb54d2f06c432f2265285acdb44de9"
+    },
+    "validation/md-game-sprite-frame/pal-82-vram.bin": {
+      "stored": "objects/f79bfb696b1068794d6e9c0a4bc03fb3b2ab0aa7b551f64106e44018b7ccddd8.gz",
+      "raw_sha256": "f79bfb696b1068794d6e9c0a4bc03fb3b2ab0aa7b551f64106e44018b7ccddd8",
+      "raw_bytes": 65536,
+      "stored_sha256": "372fe58d31b61288606464ec5c30a0465caec8886fbadf4c20e871123cbdac9f"
+    },
+    "validation/md-game-sprite-frame/pal-83-vram.bin": {
+      "stored": "objects/d70cd722cdbffcdb53c709b23eac2e26df542126094befbc2e84015d93107fb1.gz",
+      "raw_sha256": "d70cd722cdbffcdb53c709b23eac2e26df542126094befbc2e84015d93107fb1",
+      "raw_bytes": 65536,
+      "stored_sha256": "7858c9dc5a918bbbf591b0b644f7886fb77ece3ffda03f8e70def3c0fa6a906e"
+    },
+    "validation/md-game-sprite-frame/pal-84-vram.bin": {
+      "stored": "objects/134054d6fc4711b0efb5f8832bcc355e8d5bb37e16efba6623fbd3f441ee96ff.gz",
+      "raw_sha256": "134054d6fc4711b0efb5f8832bcc355e8d5bb37e16efba6623fbd3f441ee96ff",
+      "raw_bytes": 65536,
+      "stored_sha256": "d536db2cc25f11a21c357bcb26f5be86e9be11697745ad2533c9d710267138d3"
+    },
+    "validation/md-game-sprite-frame/pal-85-vram.bin": {
+      "stored": "objects/21c1c2c28ed3948e506d72fe671c59abe1b9d39bb6a39e46a706fb058d345d06.gz",
+      "raw_sha256": "21c1c2c28ed3948e506d72fe671c59abe1b9d39bb6a39e46a706fb058d345d06",
+      "raw_bytes": 65536,
+      "stored_sha256": "45474a29f7f2653835b7357efdba31e0d9d583e935cae8c77a7aa65bb35f9bf7"
+    },
+    "validation/md-game-sprite-frame/pal-86-vram.bin": {
+      "stored": "objects/6df45a179cff074877a24c291babe227d6fd0c64aa1506ada556749e4f9c1375.gz",
+      "raw_sha256": "6df45a179cff074877a24c291babe227d6fd0c64aa1506ada556749e4f9c1375",
+      "raw_bytes": 65536,
+      "stored_sha256": "b97459bc78f8dd342e68426888255f8c851bb8a6b62f5127733c5551a65166e0"
+    },
+    "validation/md-game-sprite-frame/pal-87-vram.bin": {
+      "stored": "objects/542bacaa5e7e566a89ce3e43b679819bb455d3b4037ab0d60c06ca168104d9f8.gz",
+      "raw_sha256": "542bacaa5e7e566a89ce3e43b679819bb455d3b4037ab0d60c06ca168104d9f8",
+      "raw_bytes": 65536,
+      "stored_sha256": "fdf3f0a3ba8ea239fcf0a8d6b37dc3f691613cdb5263b38481e088a2ae0e97c2"
+    },
+    "validation/md-game-sprite-frame/pal-88-vram.bin": {
+      "stored": "objects/e4de33c851d8883e9299ea4f40ace60d53fffb5540a161665974c7dc25b1c040.gz",
+      "raw_sha256": "e4de33c851d8883e9299ea4f40ace60d53fffb5540a161665974c7dc25b1c040",
+      "raw_bytes": 65536,
+      "stored_sha256": "df873dcdd5f456939bead2edffd465c857c850554e000b2d17a3e94ef4effdee"
+    },
+    "validation/md-game-sprite-frame/pal-89-vram.bin": {
+      "stored": "objects/bb541ffa70cd219c6a5437e812238c2cbfefeebdb08ab6f8d4dec22e3b64d5c7.gz",
+      "raw_sha256": "bb541ffa70cd219c6a5437e812238c2cbfefeebdb08ab6f8d4dec22e3b64d5c7",
+      "raw_bytes": 65536,
+      "stored_sha256": "f0a335c555436a66eedb2f6b8576ba1bacc840f842746200d3331db02fe69378"
+    },
+    "validation/md-game-sprite-frame/pal-9-vram.bin": {
+      "stored": "objects/de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f.gz",
+      "raw_sha256": "de21004e8b8c0c3e38541b8244459b79ff1f5d32a2935ab91e8a8646f783540f",
+      "raw_bytes": 65536,
+      "stored_sha256": "db9ee52e91dd816864e2e8d42c214e0250a90844a44bcb0633a31e3e86c02227"
+    },
+    "validation/md-game-sprite-frame/pal-90-vram.bin": {
+      "stored": "objects/dc32580cf41d7ddcb161046ec047243543dbe4a95d0311c7894e4acffb4e88e0.gz",
+      "raw_sha256": "dc32580cf41d7ddcb161046ec047243543dbe4a95d0311c7894e4acffb4e88e0",
+      "raw_bytes": 65536,
+      "stored_sha256": "0b5c7a5da8ceca7d908ab438665d9c744d5a92e38c214569bf095ffa53154215"
+    },
+    "validation/md-game-sprite-frame/pal-91-vram.bin": {
+      "stored": "objects/0b29e0752c4deead3046872cadaaccd9fe9518bd7da9895d560bd2952f59ee26.gz",
+      "raw_sha256": "0b29e0752c4deead3046872cadaaccd9fe9518bd7da9895d560bd2952f59ee26",
+      "raw_bytes": 65536,
+      "stored_sha256": "e0000d3c0e97e21de7e58b2949528b7ea48d8ad46d66d37a50bfca1618b0b1b9"
+    },
+    "validation/md-game-sprite-frame/pal-92-vram.bin": {
+      "stored": "objects/ca73f847d27bb81a5271ec303b58d6fc1bb916698e540768dbc9e3e1b81ffc53.gz",
+      "raw_sha256": "ca73f847d27bb81a5271ec303b58d6fc1bb916698e540768dbc9e3e1b81ffc53",
+      "raw_bytes": 65536,
+      "stored_sha256": "637b450aa3fbc025e83dfe8860cc5d9bf7e4e391a3cef44ba8bf174abfc94ed7"
+    },
+    "validation/md-game-sprite-frame/pal-93-vram.bin": {
+      "stored": "objects/9256c3b945b99423c292b70dd71d2aac5d32058b6207c4b5cc10fccd9f923316.gz",
+      "raw_sha256": "9256c3b945b99423c292b70dd71d2aac5d32058b6207c4b5cc10fccd9f923316",
+      "raw_bytes": 65536,
+      "stored_sha256": "0e3acf29d196bbfc453c98c01bc5b06ea2e718709a5ad9b25ea14e14a39aec89"
+    },
+    "validation/md-game-sprite-frame/pal-94-vram.bin": {
+      "stored": "objects/d5831c1ddfc9c8663c5b44c96f867024a34c63e1d057a1a2d4ccd7e9d93b37c4.gz",
+      "raw_sha256": "d5831c1ddfc9c8663c5b44c96f867024a34c63e1d057a1a2d4ccd7e9d93b37c4",
+      "raw_bytes": 65536,
+      "stored_sha256": "7d30c7f87364489da28221f18820e74182dbe7ccda9523ea45225222a0343e03"
+    },
+    "validation/md-game-sprite-frame/pal-95-vram.bin": {
+      "stored": "objects/edac65eee460fdf67f043f3475ba8aca6b54592d96e60893d30637a81571af78.gz",
+      "raw_sha256": "edac65eee460fdf67f043f3475ba8aca6b54592d96e60893d30637a81571af78",
+      "raw_bytes": 65536,
+      "stored_sha256": "4a86056da863bf0f55d68486a166aa62084e75c3d9e8f08a3c472a77f935dd8f"
+    },
+    "validation/md-game-sprite-frame/pal-96-vram.bin": {
+      "stored": "objects/fe2bc0f0ea31b146f3cca3160cca22a51d3d78bb33d5ad73d5d97bdde9c5ed2a.gz",
+      "raw_sha256": "fe2bc0f0ea31b146f3cca3160cca22a51d3d78bb33d5ad73d5d97bdde9c5ed2a",
+      "raw_bytes": 65536,
+      "stored_sha256": "49787e449169a87280d2a06512f018b08e07bcc04648e8bd27ea5cb9daee2fef"
+    },
+    "validation/md-game-sprite-frame/pal-97-vram.bin": {
+      "stored": "objects/e577f174f9543586d6382cb826c1e8270724ce2dc45dea5bef041b1daf2094a6.gz",
+      "raw_sha256": "e577f174f9543586d6382cb826c1e8270724ce2dc45dea5bef041b1daf2094a6",
+      "raw_bytes": 65536,
+      "stored_sha256": "dbfe0a94db41a7cde34a7c76e892e6e4be96dd5c440860e5934fd6b6e1db1723"
+    },
+    "validation/md-game-sprite-frame/pal-98-vram.bin": {
+      "stored": "objects/a1e4f17039eb808d2b60157fbe11b9bef44385c7073c3c376eb45bc1329bd3fd.gz",
+      "raw_sha256": "a1e4f17039eb808d2b60157fbe11b9bef44385c7073c3c376eb45bc1329bd3fd",
+      "raw_bytes": 65536,
+      "stored_sha256": "6cfb9cf2163dcc90f12b9d1e5e65a2afcba9bd64add37624eaef9729a6e6ee62"
+    },
+    "validation/md-game-sprite-frame/pal-99-vram.bin": {
+      "stored": "objects/6ee625454a86157aa534d7f185ed0d4d392e4c21860f0e38f189464173a059e8.gz",
+      "raw_sha256": "6ee625454a86157aa534d7f185ed0d4d392e4c21860f0e38f189464173a059e8",
+      "raw_bytes": 65536,
+      "stored_sha256": "64e51de0f91f615892a5071da04d3055949b4eb71e8a58d65bbfbfa32527383c"
+    },
+    "validation/md-game-sprite-frame/src/assets.s": {
+      "stored": "objects/28bc0851d271bd0acc9b51e2beddb261b6f71dce14d268951e059ae7b672fc07.gz",
+      "raw_sha256": "28bc0851d271bd0acc9b51e2beddb261b6f71dce14d268951e059ae7b672fc07",
+      "raw_bytes": 488,
+      "stored_sha256": "1c966bd80e5bb34c817ca07f80d5bb0a62c399f92c16531e716eba2ed7cecdce"
+    },
+    "validation/md-game-sprite-frame/src/bank12.bin": {
+      "stored": "objects/b2b7eec03b7978bb0214ab0b7500710306f7f2ec93e54b775f82c61cb10b153b.gz",
+      "raw_sha256": "b2b7eec03b7978bb0214ab0b7500710306f7f2ec93e54b775f82c61cb10b153b",
+      "raw_bytes": 16384,
+      "stored_sha256": "517c188fc97ec9856fa77597264ad5c0fcb742fa5007875ab44db30d119511df"
+    },
+    "validation/md-game-sprite-frame/src/bank6.bin": {
+      "stored": "objects/09984945a990780b959f25ba313eb081475d1f6517cf59cdb3e015bf423c6953.gz",
+      "raw_sha256": "09984945a990780b959f25ba313eb081475d1f6517cf59cdb3e015bf423c6953",
+      "raw_bytes": 16384,
+      "stored_sha256": "997247a501ac6d4dbb3c5e137ae5124492f3581b715132f9625ac65ee71e0d3a"
+    },
+    "validation/md-game-sprite-frame/src/driver.h": {
+      "stored": "objects/84879129e5a26be8ba7d6aee431613563cb83048f1c07d89d8cc3560bb381efa.gz",
+      "raw_sha256": "84879129e5a26be8ba7d6aee431613563cb83048f1c07d89d8cc3560bb381efa",
+      "raw_bytes": 4626,
+      "stored_sha256": "263e8a67390c1db626492b148d3e04c4661d1923db37e0f04ab51360a367cacd"
+    },
+    "validation/md-game-sprite-frame/src/inputs.bin": {
+      "stored": "objects/da13e4c04b7e3611ee4d8dc1e349ec8d293c619b844212af788c2f526e4529df.gz",
+      "raw_sha256": "da13e4c04b7e3611ee4d8dc1e349ec8d293c619b844212af788c2f526e4529df",
+      "raw_bytes": 1089536,
+      "stored_sha256": "5a3a7f8a5a43a3c46c013d2d756ea3f81ed9fc66d5c6e6212cfc67a0fae95019"
+    },
+    "validation/md-game-sprite-frame/src/low.bin": {
+      "stored": "objects/4c52dd6c84bbb9ddbaa28bc19f88e023094788890653cca5a4d496617e6acf38.gz",
+      "raw_sha256": "4c52dd6c84bbb9ddbaa28bc19f88e023094788890653cca5a4d496617e6acf38",
+      "raw_bytes": 32768,
+      "stored_sha256": "89c60a9e12b038b90679c729a6acd91a8c07d40a073b286449b09377980c994f"
+    },
+    "validation/md-game-sprite-frame/src/main.c": {
+      "stored": "objects/98742f71bf173df7c7f335e834d9674061aaf734cbbd67a94009e0263fbdefcf.gz",
+      "raw_sha256": "98742f71bf173df7c7f335e834d9674061aaf734cbbd67a94009e0263fbdefcf",
+      "raw_bytes": 11004,
+      "stored_sha256": "1adfcaa10eb8bbc86379096c483e80a98a5c43f37351e8ca6fa1329c67bdc308"
+    },
+    "validation/md-game-sprite-frame/src/md_game_sprite_frame.c": {
+      "stored": "objects/1eeca3a3819dd1dd02b44f0dd814028dd9bb59cc10ae111283bd5da244cd206c.gz",
+      "raw_sha256": "1eeca3a3819dd1dd02b44f0dd814028dd9bb59cc10ae111283bd5da244cd206c",
+      "raw_bytes": 58,
+      "stored_sha256": "4603c7a448e82b34e8f4ce3223555cca27b26bfb0ff6a8cab96f4b86a71d4134"
+    },
+    "validation/md-game-sprite-frame/src/md_game_sprite_frame.h": {
+      "stored": "objects/72ee79560b9713f852e2948dd4c1ac4732a62ec595f6507a852ad3e04e4d757f.gz",
+      "raw_sha256": "72ee79560b9713f852e2948dd4c1ac4732a62ec595f6507a852ad3e04e4d757f",
+      "raw_bytes": 58,
+      "stored_sha256": "c6d19b6253b283d10e734d078d1b5156e2919c1d7479935aebe0346461a651a1"
+    },
+    "validation/md-game-sprite-frame/src/md_service_clock_start.c": {
+      "stored": "objects/8c6f6d9935998265f6f07c1c42f92e94cfbb4b222fe51b0644ba0f0e4e36cb95.gz",
+      "raw_sha256": "8c6f6d9935998265f6f07c1c42f92e94cfbb4b222fe51b0644ba0f0e4e36cb95",
+      "raw_bytes": 60,
+      "stored_sha256": "971bc5ec26b7c8fbec8580e6e9aa98b9dc7a506c0567c3a79e70903fd13aa59d"
+    },
+    "validation/md-game-sprite-frame/src/md_sms_sprite8_stream.c": {
+      "stored": "objects/3bcf93a89824d6f394b8905f52a10811fdde556bd2603cf0e195490ae2716bfe.gz",
+      "raw_sha256": "3bcf93a89824d6f394b8905f52a10811fdde556bd2603cf0e195490ae2716bfe",
+      "raw_bytes": 59,
+      "stored_sha256": "8d4feec114b0e177c3e125b844227fcd13b2b5a30cea304f08cd5ee8a6052d51"
+    },
+    "validation/md-game-sprite-frame/src/md_z80_psg_start.c": {
+      "stored": "objects/abbd9cabd2037191d523e3f43478bc945cf5dad6d712abdbdb7fb30b704524ea.gz",
+      "raw_sha256": "abbd9cabd2037191d523e3f43478bc945cf5dad6d712abdbdb7fb30b704524ea",
+      "raw_bytes": 54,
+      "stored_sha256": "efd7ebd5c7521f6164b23a3569fc92ea36938cbab6bd38ecfd5d3ad60a9c7836"
+    },
+    "validation/md-game-sprite-frame/src/md_z80_video_span.c": {
+      "stored": "objects/f4ad2f29c56a0fc7573231a36c259b32d59fb540020e358bd450250c7f78358f.gz",
+      "raw_sha256": "f4ad2f29c56a0fc7573231a36c259b32d59fb540020e358bd450250c7f78358f",
+      "raw_bytes": 55,
+      "stored_sha256": "7cfd26135eb89176d15a602ad305de8264a39a6d20af8b6e1d433d8d279178b7"
+    },
+    "validation/md-game-sprite-frame/src/ntsc.bin": {
+      "stored": "objects/2a50107e6fb924663b9f0b3d8428ed1174539acbd2c6cf8df0be1eb5b7df3ffd.gz",
+      "raw_sha256": "2a50107e6fb924663b9f0b3d8428ed1174539acbd2c6cf8df0be1eb5b7df3ffd",
+      "raw_bytes": 1241600,
+      "stored_sha256": "586cebe65d06729b59a6429e1479238b0622d2d62fe64ec93644def0cd662877"
+    },
+    "validation/md-game-sprite-frame/src/offsets.h": {
+      "stored": "objects/2901c1d0caa8470e608a0c8ee316353d7516bd7ccf1b0beea442aa6cffd0edfb.gz",
+      "raw_sha256": "2901c1d0caa8470e608a0c8ee316353d7516bd7ccf1b0beea442aa6cffd0edfb",
+      "raw_bytes": 10827,
+      "stored_sha256": "6f7c8b739dbf7ff525ab56024f72e00191e7f8b7aa933a627df976791681524f"
+    },
+    "validation/md-game-sprite-frame/src/pal.bin": {
+      "stored": "objects/8100aa9b3dcb11d75868bfc6b6fa7837880a1a4708a9e8d27ae3b28d4edcdc25.gz",
+      "raw_sha256": "8100aa9b3dcb11d75868bfc6b6fa7837880a1a4708a9e8d27ae3b28d4edcdc25",
+      "raw_bytes": 1241600,
+      "stored_sha256": "ca483b7fd48a18f575469fc78b34ac407d27fc48af8996bb7ed7eeec4978b1d8"
+    },
+    "validation/md-game-sprite-frame/src/patterns.bin": {
+      "stored": "objects/2c2a0c2ea3d3cb24e1a24dd7c477ea05f2cdb6f0341de41621e84497d6124dda.gz",
+      "raw_sha256": "2c2a0c2ea3d3cb24e1a24dd7c477ea05f2cdb6f0341de41621e84497d6124dda",
+      "raw_bytes": 16384,
+      "stored_sha256": "beba2333d56aa0c6b5be3f6540157fab5c48ebf4fc3a02f1ff8d11e5beeadcc2"
+    },
+    "validation/md-game-sprite-frame/src/rom_header.c": {
+      "stored": "objects/f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe.gz",
+      "raw_sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+      "raw_bytes": 790,
+      "stored_sha256": "5079bebbab60471cfe6a2fc21fd66d8c3b7eb92b5d4005f522583389d23ba933"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_dispatch.c": {
+      "stored": "objects/91e57667244510bbfb48df8541d14c9643b65366c65a9328bf27389b6ac27226.gz",
+      "raw_sha256": "91e57667244510bbfb48df8541d14c9643b65366c65a9328bf27389b6ac27226",
+      "raw_bytes": 59,
+      "stored_sha256": "5d91065805fcf6aa2a2e9c3e1a5f1c573820568de4737aa70d940c3870750069"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_envelope.c": {
+      "stored": "objects/a1320f027645b5aa8a0e11b51e77107528c9fed3d2ffab7458544f7fc75b5d49.gz",
+      "raw_sha256": "a1320f027645b5aa8a0e11b51e77107528c9fed3d2ffab7458544f7fc75b5d49",
+      "raw_bytes": 59,
+      "stored_sha256": "84ae5eb3a1b50cdaf2f7e5fbb459b0e0ba2b2ef18c713bf377811ce809394cd7"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_fast.c": {
+      "stored": "objects/4f5d39086ee0e5a7a0cfa2102ef13ebb2aa592bb14de484fb2c28b981d08dbb6.gz",
+      "raw_sha256": "4f5d39086ee0e5a7a0cfa2102ef13ebb2aa592bb14de484fb2c28b981d08dbb6",
+      "raw_bytes": 55,
+      "stored_sha256": "e6ad8866cdce0fc30edd0a6bb78551fd69371ae1df812b077d45f78ff558b784"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_fast_timed.c": {
+      "stored": "objects/0856280ea2714574ba0155573a7fca269bb827394e961064e54a44c3f70687e2.gz",
+      "raw_sha256": "0856280ea2714574ba0155573a7fca269bb827394e961064e54a44c3f70687e2",
+      "raw_bytes": 61,
+      "stored_sha256": "3ca10fbb9cda238b964414d3d4a1fd42692a1cc3638be7f0703d7f3e903db8c1"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_memory.c": {
+      "stored": "objects/3b0a0c3905167dff3a5a759303276185c7ac3c295652fc8fd58778dc3c675550.gz",
+      "raw_sha256": "3b0a0c3905167dff3a5a759303276185c7ac3c295652fc8fd58778dc3c675550",
+      "raw_bytes": 57,
+      "stored_sha256": "cbcf500e555c360c7143bb1c9edceca3b9de76c810b6cb98018a0dc001b166d9"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_noise.c": {
+      "stored": "objects/23e9820071c7d8306a37f59209c4c5931b5d1d0203639acf9e00e31c44fdd6d7.gz",
+      "raw_sha256": "23e9820071c7d8306a37f59209c4c5931b5d1d0203639acf9e00e31c44fdd6d7",
+      "raw_bytes": 56,
+      "stored_sha256": "b43dcab846f44a333df6b744d516d0809b91a284dff4f37689093a873b1fe0b6"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_pitch.c": {
+      "stored": "objects/ab3110fd23c86b01ae03a47df9218de407aa658eea66781a710ab75de8833f56.gz",
+      "raw_sha256": "ab3110fd23c86b01ae03a47df9218de407aa658eea66781a710ab75de8833f56",
+      "raw_bytes": 56,
+      "stored_sha256": "81b4a2c6c8f518f293f89423d46712dd901a6b5875759c8592b91ae6eb3b1f9d"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_prefix.c": {
+      "stored": "objects/23eb251cab725b164237146da63efb76a7d2cbe336a786a33e6ee6fac40f7534.gz",
+      "raw_sha256": "23eb251cab725b164237146da63efb76a7d2cbe336a786a33e6ee6fac40f7534",
+      "raw_bytes": 57,
+      "stored_sha256": "4da4fac4a39e32ec3313b0cbd9a46d8cd95e91a78d4f6497371b6f2d20f2a3ed"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_prefix_timed.c": {
+      "stored": "objects/f6ecb7df15da06d6f3debc3337173f3313b761c0c4acb09e56d30e482fa504c9.gz",
+      "raw_sha256": "f6ecb7df15da06d6f3debc3337173f3313b761c0c4acb09e56d30e482fa504c9",
+      "raw_bytes": 63,
+      "stored_sha256": "f8fb450f1ede13aaa3b733450636f57a734738eb8e22c7484e338a0f4b154b2a"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_priority.c": {
+      "stored": "objects/ca787bd3a6b5b2912694ff5d7c488c8b452e1ad105296500c28cb04bdbffb6c2.gz",
+      "raw_sha256": "ca787bd3a6b5b2912694ff5d7c488c8b452e1ad105296500c28cb04bdbffb6c2",
+      "raw_bytes": 59,
+      "stored_sha256": "eb880c1a9e809ce3220b16b5b4755b5bc5f99d2b4e057ffefbc7858da53e5f81"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_reader.c": {
+      "stored": "objects/81fe32a7576769b3d356251991e17069cc54da26bd4d82fab0680f1d03530c20.gz",
+      "raw_sha256": "81fe32a7576769b3d356251991e17069cc54da26bd4d82fab0680f1d03530c20",
+      "raw_bytes": 57,
+      "stored_sha256": "1abe460172e84d58885270e278f313b0fac9cdf56bc5611b7caf5ff9f958b75b"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_reader_master.c": {
+      "stored": "objects/d43dfc82ffd120c26f207ba626e5e1234535b462db665d79e099d6a43c6b6125.gz",
+      "raw_sha256": "d43dfc82ffd120c26f207ba626e5e1234535b462db665d79e099d6a43c6b6125",
+      "raw_bytes": 64,
+      "stored_sha256": "06738357d336243cd6cb997de29fde98ae0ee96243f587d4d0a2da917c50c0bb"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_sequence.c": {
+      "stored": "objects/49f7718acb044ab28710e8d6dae49849b444b5916ddb249530e7f4cab83f9777.gz",
+      "raw_sha256": "49f7718acb044ab28710e8d6dae49849b444b5916ddb249530e7f4cab83f9777",
+      "raw_bytes": 59,
+      "stored_sha256": "1ad1f4717252fc7fb1ef00bad4b33fcfd5a9576f6b98dd9f2b222d8d8943b9fc"
+    },
+    "validation/md-game-sprite-frame/src/source_audio_tone.c": {
+      "stored": "objects/c68b3d1d5ed41c414d593986e1054ebbf330dee7a6f20c131e73d6898e468406.gz",
+      "raw_sha256": "c68b3d1d5ed41c414d593986e1054ebbf330dee7a6f20c131e73d6898e468406",
+      "raw_bytes": 55,
+      "stored_sha256": "af525da455284574d4c04c1477624413fdefc17f37fea7618b17029afadb78e7"
+    },
+    "validation/md-game-sprite-frame/src/source_clock.c": {
+      "stored": "objects/0fb5ada94cca534b74c33a3439a784538e09a55d3953865a18dc2c744bf18eb3.gz",
+      "raw_sha256": "0fb5ada94cca534b74c33a3439a784538e09a55d3953865a18dc2c744bf18eb3",
+      "raw_bytes": 50,
+      "stored_sha256": "84f8c18afd151696bce757ad901e506a6e28f6f216b9cc345749ef2fc36e2603"
+    },
+    "validation/md-game-sprite-frame/src/source_game_frame.c": {
+      "stored": "objects/a796785323cdefe8dbaf93e19003d2c40de1420b3de58fe016d4bc335c427df2.gz",
+      "raw_sha256": "a796785323cdefe8dbaf93e19003d2c40de1420b3de58fe016d4bc335c427df2",
+      "raw_bytes": 55,
+      "stored_sha256": "93c526e03ff204fff2bbb2f835eb136b2428c30e9a1acdd514e70efb7b2d4287"
+    },
+    "validation/md-game-sprite-frame/src/source_game_irq.c": {
+      "stored": "objects/9920aefc79b17bece4e669ed75177b3115304baab88068eda175f31a8ef5876a.gz",
+      "raw_sha256": "9920aefc79b17bece4e669ed75177b3115304baab88068eda175f31a8ef5876a",
+      "raw_bytes": 53,
+      "stored_sha256": "3b5a8f9c354239c9c636509ff467054a68a5ab0871c9b35bb0e3bc419deb8506"
+    },
+    "validation/md-game-sprite-frame/src/source_game_irq.h": {
+      "stored": "objects/661a251bc01418b7e47a20ec7a022d4a6572e9ab70dd23284a46c4862402424e.gz",
+      "raw_sha256": "661a251bc01418b7e47a20ec7a022d4a6572e9ab70dd23284a46c4862402424e",
+      "raw_bytes": 53,
+      "stored_sha256": "466cecf7b6149bfcc2cf96785c202b1a5509ce8ea20ed0f2075fbb258159073c"
+    },
+    "validation/md-game-sprite-frame/src/source_irq.c": {
+      "stored": "objects/b27bd1afb3528e9ca082e3430c8a72d2bccbe8b906f516d47cf2d0ebec25933a.gz",
+      "raw_sha256": "b27bd1afb3528e9ca082e3430c8a72d2bccbe8b906f516d47cf2d0ebec25933a",
+      "raw_bytes": 48,
+      "stored_sha256": "7b29d9a178a6825e74885fc78efc17a1135debfb2a29159562ab17355dd5da6e"
+    },
+    "validation/md-game-sprite-frame/src/source_irq_master_context.c": {
+      "stored": "objects/cc7bc410f4cafb85a0877504aa9c7c6f1ba39998c9a77b13d074fa1e42993cc3.gz",
+      "raw_sha256": "cc7bc410f4cafb85a0877504aa9c7c6f1ba39998c9a77b13d074fa1e42993cc3",
+      "raw_bytes": 63,
+      "stored_sha256": "a18632e4147c667bf1c5a1aaab03d24f2f68d59a69b3b8d888ad4757b22915b7"
+    },
+    "validation/md-game-sprite-frame/src/source_rng.c": {
+      "stored": "objects/03da42ffcd083829a73d7b338b4a008811e791f7b1cf5c050f7f267e25a94f53.gz",
+      "raw_sha256": "03da42ffcd083829a73d7b338b4a008811e791f7b1cf5c050f7f267e25a94f53",
+      "raw_bytes": 48,
+      "stored_sha256": "b338de055959f8d505d87062a372bec36a84086d74ce6ebe14cb77813349c6ad"
+    },
+    "validation/md-game-sprite-frame/src/source_sms_sprite8.c": {
+      "stored": "objects/1abd68efec5f793d08e57df76ba4d7d29966190cf43b141e43f5a23e5c67ad96.gz",
+      "raw_sha256": "1abd68efec5f793d08e57df76ba4d7d29966190cf43b141e43f5a23e5c67ad96",
+      "raw_bytes": 56,
+      "stored_sha256": "e4f590262a27ba635630c486e91e5b489b0355fb45b99efdfaa9c6f7fbc1c16c"
+    },
+    "validation/md-game-sprite-frame/src/source_sprite_scene_timed.c": {
+      "stored": "objects/33d7ec40607275f5e722a4c379709a589c74db9597884ca9d4400bd62e53668d.gz",
+      "raw_sha256": "33d7ec40607275f5e722a4c379709a589c74db9597884ca9d4400bd62e53668d",
+      "raw_bytes": 63,
+      "stored_sha256": "c3d9d33a94b1a400d4b3b9ed2a03ce7253d0271b9d31f9aa331d8030992fb7bb"
+    },
+    "validation/md-game-sprite-frame/z80-build.log": {
+      "stored": "objects/4407d51ec7786e6d6045697ff658236f7cf5132f5f574d044c284c455abb58e1.gz",
+      "raw_sha256": "4407d51ec7786e6d6045697ff658236f7cf5132f5f574d044c284c455abb58e1",
+      "raw_bytes": 99,
+      "stored_sha256": "dedc6ca70cf2e13172e29265b13a799bd5f6af9ab93351dee30316361e739488"
+    },
+    "validation/md-game-sprite-frame-run.log": {
+      "stored": "objects/6d5b8343f929a02a82d61aaed7e2dd924dd0dc3afd21b03ec7add9392861363b.gz",
+      "raw_sha256": "6d5b8343f929a02a82d61aaed7e2dd924dd0dc3afd21b03ec7add9392861363b",
+      "raw_bytes": 597,
+      "stored_sha256": "f85b8633b608a268b8034ea5020569712c65aac4af193251a8dbf80c6fa92cc9"
+    },
+    "validation/md-game-sprite-frame-world-prefix.json": {
+      "stored": "objects/34fed47dec2bd28a4d2343deeebd723ea83cd05f42dc11f1c0e91b9f407afe1a.gz",
+      "raw_sha256": "34fed47dec2bd28a4d2343deeebd723ea83cd05f42dc11f1c0e91b9f407afe1a",
+      "raw_bytes": 106,
+      "stored_sha256": "a788d171b17e8e5b22004f129e2160874bccad17c61086d907dcdceba3eda6bb"
+    },
+    "validation/sms-vertical-check/capture.json": {
+      "stored": "objects/bdaccccc589b8dd81ba536cd6b7cca2448e9dac50c679479a8f6e503b31d8faa.gz",
+      "raw_sha256": "bdaccccc589b8dd81ba536cd6b7cca2448e9dac50c679479a8f6e503b31d8faa",
+      "raw_bytes": 14702,
+      "stored_sha256": "f60a46307ed3c6e59859a40ac17b1791f9194d238770d7af5d8ad9ac14c43a7e"
+    },
+    "validation/sms-vertical-check/vdp_regs_03120.bin": {
+      "stored": "objects/4cb709d59e341814e84defe25f1e9e623f48687920b0970f71c5e9c94622f724.gz",
+      "raw_sha256": "4cb709d59e341814e84defe25f1e9e623f48687920b0970f71c5e9c94622f724",
+      "raw_bytes": 32,
+      "stored_sha256": "95821f45c82a8358c6a6c18d5c47f9a991e9606e34bd2aeedc01896636fd11bc"
+    },
+    "validation/sms-vertical-check/vram_03120.bin": {
+      "stored": "objects/d3d7bf2c0b1fe3a6d3698db0d31b9d52e11511aaba18cce5a08413eca63f5441.gz",
+      "raw_sha256": "d3d7bf2c0b1fe3a6d3698db0d31b9d52e11511aaba18cce5a08413eca63f5441",
+      "raw_bytes": 65536,
+      "stored_sha256": "928654709b4d7e7ee32c2b5d62828efdd42403e76da9599ee391b3f13388e77a"
+    }
+  },
+  "removed_verified_generated": [
+    {
+      "path": "validation/md-game-sprite-frame/driver.bin",
+      "bytes": 1857
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-0-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-1-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-10-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-100-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-101-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-102-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-103-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-104-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-105-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-106-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-107-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-108-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-109-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-11-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-110-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-111-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-112-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-113-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-114-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-115-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-116-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-117-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-118-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-119-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-12-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-120-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-121-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-122-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-123-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-124-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-125-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-126-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-127-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-128-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-129-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-13-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-130-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-131-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-132-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-14-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-15-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-16-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-17-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-18-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-19-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-2-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-20-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-21-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-22-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-23-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-24-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-25-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-26-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-27-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-28-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-29-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-3-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-30-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-31-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-32-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-33-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-34-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-35-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-36-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-37-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-38-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-39-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-4-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-40-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-41-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-42-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-43-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-44-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-45-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-46-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-47-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-48-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-49-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-5-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-50-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-51-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-52-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-53-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-54-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-55-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-56-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-57-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-58-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-59-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-6-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-60-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-61-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-62-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-63-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-64-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-65-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-66-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-67-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-68-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-69-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-7-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-70-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-71-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-72-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-73-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-74-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-75-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-76-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-77-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-78-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-79-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-8-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-80-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-81-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-82-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-83-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-84-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-85-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-86-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-87-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-88-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-89-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-9-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-90-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-91-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-92-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-93-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-94-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-95-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-96-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-97-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-98-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/ntsc-99-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/assets.d",
+      "bytes": 40
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/main.d",
+      "bytes": 2740
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/md_game_sprite_frame.d",
+      "bytes": 2618
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/md_service_clock_start.d",
+      "bytes": 484
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/md_sms_sprite8_stream.d",
+      "bytes": 978
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/md_z80_psg_start.d",
+      "bytes": 648
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/md_z80_video_span.d",
+      "bytes": 752
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_dispatch.d",
+      "bytes": 480
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_envelope.d",
+      "bytes": 480
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_fast.d",
+      "bytes": 1714
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_fast_timed.d",
+      "bytes": 1950
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_memory.d",
+      "bytes": 274
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_noise.d",
+      "bytes": 574
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_pitch.d",
+      "bytes": 462
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_prefix.d",
+      "bytes": 364
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_prefix_timed.d",
+      "bytes": 1344
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_priority.d",
+      "bytes": 588
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_reader.d",
+      "bytes": 994
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_reader_master.d",
+      "bytes": 1248
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_sequence.d",
+      "bytes": 800
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_audio_tone.d",
+      "bytes": 774
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_clock.d",
+      "bytes": 318
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_game_frame.d",
+      "bytes": 1886
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_game_irq.d",
+      "bytes": 1790
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_irq.d",
+      "bytes": 310
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_irq_master_context.d",
+      "bytes": 1746
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_rng.d",
+      "bytes": 220
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_sms_sprite8.d",
+      "bytes": 268
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/_deps/src/source_sprite_scene_timed.d",
+      "bytes": 508
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/rom.bin",
+      "bytes": 3801088
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/rom.out",
+      "bytes": 3771124
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/rom_header.o",
+      "bytes": 932
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/sega.o",
+      "bytes": 4276
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/sega.s",
+      "bytes": 10664
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/assets.o",
+      "bytes": 3655360
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/main.o",
+      "bytes": 79592
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/md_game_sprite_frame.o",
+      "bytes": 13700
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/md_service_clock_start.o",
+      "bytes": 6316
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/md_sms_sprite8_stream.o",
+      "bytes": 14636
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/md_z80_psg_start.o",
+      "bytes": 10428
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/md_z80_video_span.o",
+      "bytes": 33256
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_dispatch.o",
+      "bytes": 13732
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_envelope.o",
+      "bytes": 12768
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_fast.o",
+      "bytes": 66104
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_fast_timed.o",
+      "bytes": 66084
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_memory.o",
+      "bytes": 4532
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_noise.o",
+      "bytes": 8896
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_pitch.o",
+      "bytes": 10532
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_prefix.o",
+      "bytes": 13864
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_prefix_timed.o",
+      "bytes": 31588
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_priority.o",
+      "bytes": 13892
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_reader.o",
+      "bytes": 16232
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_reader_master.o",
+      "bytes": 16460
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_sequence.o",
+      "bytes": 39224
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_audio_tone.o",
+      "bytes": 16512
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_clock.o",
+      "bytes": 22692
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_game_frame.o",
+      "bytes": 18908
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_game_irq.o",
+      "bytes": 12824
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_irq.o",
+      "bytes": 16212
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_irq_master_context.o",
+      "bytes": 13372
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_rng.o",
+      "bytes": 5644
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_sms_sprite8.o",
+      "bytes": 14904
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/release/src/source_sprite_scene_timed.o",
+      "bytes": 46192
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/rom.bin",
+      "bytes": 3801088
+    },
+    {
+      "path": "validation/md-game-sprite-frame/out/rom_header.bin",
+      "bytes": 256
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-0-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-1-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-10-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-100-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-101-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-102-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-103-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-104-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-105-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-106-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-107-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-108-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-109-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-11-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-110-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-111-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-112-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-113-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-114-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-115-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-116-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-117-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-118-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-119-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-12-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-120-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-121-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-122-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-123-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-124-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-125-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-126-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-127-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-128-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-129-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-13-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-130-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-131-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-132-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-14-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-15-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-16-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-17-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-18-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-19-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-2-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-20-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-21-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-22-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-23-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-24-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-25-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-26-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-27-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-28-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-29-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-3-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-30-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-31-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-32-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-33-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-34-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-35-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-36-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-37-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-38-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-39-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-4-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-40-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-41-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-42-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-43-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-44-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-45-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-46-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-47-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-48-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-49-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-5-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-50-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-51-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-52-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-53-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-54-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-55-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-56-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-57-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-58-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-59-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-6-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-60-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-61-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-62-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-63-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-64-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-65-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-66-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-67-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-68-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-69-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-7-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-70-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-71-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-72-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-73-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-74-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-75-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-76-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-77-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-78-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-79-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-8-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-80-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-81-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-82-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-83-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-84-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-85-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-86-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-87-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-88-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-89-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-9-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-90-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-91-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-92-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-93-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-94-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-95-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-96-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-97-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-98-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/pal-99-vram.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/src/assets.s",
+      "bytes": 488
+    },
+    {
+      "path": "validation/md-game-sprite-frame/src/bank12.bin",
+      "bytes": 16384
+    },
+    {
+      "path": "validation/md-game-sprite-frame/src/bank6.bin",
+      "bytes": 16384
+    },
+    {
+      "path": "validation/md-game-sprite-frame/src/inputs.bin",
+      "bytes": 1089536
+    },
+    {
+      "path": "validation/md-game-sprite-frame/src/low.bin",
+      "bytes": 32768
+    },
+    {
+      "path": "validation/md-game-sprite-frame/src/ntsc.bin",
+      "bytes": 1241600
+    },
+    {
+      "path": "validation/md-game-sprite-frame/src/pal.bin",
+      "bytes": 1241600
+    },
+    {
+      "path": "validation/md-game-sprite-frame/src/patterns.bin",
+      "bytes": 16384
+    }
+  ]
+}

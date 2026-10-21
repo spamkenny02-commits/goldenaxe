@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "region": "ntsc",
+      "cases": 133,
+      "pixels_compared": 6537216,
+      "physical_words_read_back": 71936,
+      "dma_jobs": 1132,
+      "kernel_sha256": "9942413f6ba0d1f6cfb1da8ef2edd0174a05760d398c96b2fa60de45c87bb145"
+    },
+    {
+      "region": "pal",
+      "cases": 133,
+      "pixels_compared": 6537216,
+      "physical_words_read_back": 71936,
+      "dma_jobs": 1132,
+      "kernel_sha256": "9942413f6ba0d1f6cfb1da8ef2edd0174a05760d398c96b2fa60de45c87bb145"
+    }
+  ],
+  "limits": [
+    "Original source SAT/planar patterns compare to actual captured MD VRAM. Linked native ROM inputs match the independently verified parent frame assets. Source entry/status and pattern shadow are supplied. No deadline, display reveal or hardware PSG delivery proof."
+  ]
+}

@@ -21,7 +21,7 @@ Checksum Mega Drive : `368C`
 Les travaux natifs plus récents sont des bancs de validation ; ils ne constituent
 pas une nouvelle version jouable. Le dernier jalon validé raccorde la construction
 des sprites, l’attente et l’interruption du jeu dans un banc 68000. La livraison
-vidéo de cette chaîne et son intégration à la ROM jouable restent à terminer.
+vidéo complète, le son et leur intégration à la ROM jouable restent à terminer.
 
 La **v0203** corrige le flash d’une image de l’ancienne carte à la fin du
 scrolling horizontal. Les parcours depuis la clairière et le retour du village
@@ -42,11 +42,17 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+La [publication des sprites issus de l’interruption](analysis/md_game_sprite_frame_milestone.md)
+alimente maintenant la VRAM Mega Drive : 133 cas PAL/NTSC concordent pixel par
+pixel avec la référence SMS, avec effacement des anciennes entrées. La copie
+reste intacte pendant les attentes de transfert. Le banc garde l’écran coupé ;
+la publication et le son doivent encore être réunis aux échéances du jeu.
+
 Le [raccordement sprites / attente / interruption / son](analysis/game_sprite_frame_milestone.md)
 passe sur 133 cas par région, sur hôte et sur 68000. Les 217 interruptions,
 les 25 536 octets de sprites et les 592 octets PSG concordent en valeurs et en dates.
-Le statut vidéo SMS est fourni à chaque interruption ; sa prédiction et la
-livraison des données au rendu Mega Drive restent à intégrer.
+Le statut vidéo SMS reste fourni à chaque interruption. Le banc de publication
+ci-dessus raccorde les sprites au rendu ; la prédiction du statut reste à intégrer.
 Ce jalon concerne un banc de diagnostic ; la ROM jouable reste **v0203**.
 
 La [construction des sprites suit maintenant les frontières des instructions SMS](analysis/sprite_scene_timed_milestone.md).

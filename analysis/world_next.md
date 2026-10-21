@@ -1188,3 +1188,19 @@ semantics, then integrate actor/pattern progression and fullframe delivery.
 Playablev0203 unchanged; no fullgame/deadline/waveform/hardware claim.
 Evidence:analysis/game_sprite_frame_milestone.md; archivegame-sprite-frame-v0203.
 Gitmain now synchronized with spamkenny02-commits/goldenaxe; oldV51 history kept.
+
+IRQ SAT -> physicalMD sprite stream milestone (2026-10-21):
+MdGameSpriteFrame owns192SATbytes and sourceOUTIdates before returning from
+logicalIRQ, then drains bounded hidden clone/SATDMA via existingSMS8 backend.
+WAIT retains data; a second fullIRQ whilepending is fatal, never drops frames.
+133cases/region use the actual0938/wait/fullIRQ composition; source SATRAM
+is overwritten before draining to prove ownership. All133 physicalVRAMplanes
+match original sourceSAT+planarpatterns pixelwise (6537216pixels/region),
+including zeroed oldtails.1132DMAjobs and71936 verifiedVRAMwords/region.
+Five ownedpacket/overflow/fatal/rebind/date contract checks pass on68000.
+Captured patternshadow and perIRQstatus remain supplied; sourcePSG bytes/dates
+are checked but are not delivered to hardwarePSG in this particular fixture.
+Display remains hidden. Next: jointly schedule the frame PSG with SATdelivery
+and compare physicaltiming/reveal deadlines, then autonomous actor/patternwork.
+Playablev0203 unchanged; no fullgame/waveform/hardware/reveal claim.
+Evidence:analysis/md_game_sprite_frame_milestone.md; preserve207numberedROMs.
