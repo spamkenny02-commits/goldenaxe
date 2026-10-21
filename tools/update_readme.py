@@ -21,7 +21,7 @@ def refresh_readme_release(root,entry):
 
 {status}
 
-SHA-256 : `{entry['sha256']}`  
+SHA-256 : `{entry['sha256']}`
 Checksum Mega Drive : `{int.from_bytes(data[0x18e:0x190],'big'):04X}`
 {END}'''
  begin=text.index(START);end=text.index(END,begin)+len(END)

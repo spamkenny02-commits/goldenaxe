@@ -5,23 +5,31 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0203 — 1024 Kio.**
+**Version courante : v0210 — 1024 Kio.**
 
-[Télécharger la ROM v0203](versions/v0203-7660a4b5/gaw-megadrive-v0203.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0210](versions/v0210-4678a4f4/gaw-megadrive-v0210.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7`  
-Checksum Mega Drive : `368C`
+SHA-256 : `4678a4f4eddb4f1a76e9f174ba1381c76687f011de541f11bbfac8af3d65a554`
+Checksum Mega Drive : `5779`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée reste **v0203**.
-Les travaux natifs plus récents sont des bancs de validation ; ils ne constituent
-pas une nouvelle version jouable. Le dernier jalon validé raccorde la construction
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0210**.
+La v0210 intègre un changement dans le jeu complet. Les travaux du nouveau
+moteur à horloge source restent des bancs de validation séparés. Le dernier jalon validé raccorde la construction
 des sprites, l’attente et l’interruption du jeu dans un banc 68000. La livraison
 vidéo complète, le son et leur intégration à la ROM jouable restent à terminer.
+
+La **v0210** applique dans le jeu la limite SMS de huit sprites par ligne.
+Les parties excédentaires sont masquées, y compris lors de chevauchements
+partiels ; deux zones de tuiles évitent de modifier les sprites encore affichés.
+Le test de douze acteurs et les six parcours d’inventaire passent en PAL/NTSC.
+Les captures naturelles testées restent identiques, sauf une ligne de sprite PAL
+corrigée par cette limite. Voir les [changements et limites](analysis/playable_sprite_limit_v0210.md).
+Les v0208/v0209 sont des compilations intermédiaires conservées ; utiliser v0210.
 
 La **v0203** corrige le flash d’une image de l’ancienne carte à la fin du
 scrolling horizontal. Les parcours depuis la clairière et le retour du village
@@ -30,7 +38,7 @@ Sur 3 004 images comparées à la v0202, seules les trois images du défaut
 reproduit changent ; les états et la cadence des transitions restent identiques.
 Voir les [preuves et limites de la v0203](analysis/scroll_publish_v0203.md).
 Les v0204 à v0207 sont des diagnostics de scrolling/audio conservés pour recherche ;
-la ROM recommandée reste la v0203.
+ces diagnostics sont remplacés par la ROM jouable v0210.
 
 La v0202 accélère la conversion des motifs de l’intro, du titre et de
 l’inventaire : environ **39 % de coût CPU en moins pour cette routine**,

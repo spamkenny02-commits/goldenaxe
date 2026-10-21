@@ -931,6 +931,44 @@ static void prepare_hero_patterns(void)
 
 /* SMS mode-4 sprites: eight 8x8 entries per active scanline; X clipping does
  * not remove an entry from the Y scan. This models SMS status, not MD limits. */
+/* Retain the SMS eight-entry Y scan in the actual playable renderer.
+ * Clone only rows suppressed by overflow; read the currently resident tile,
+ * since hero pattern publication can intentionally lag its prepared shadow.
+ * Tiles1024..1087 and1152..1216 are reserved here, beyond the512 source tiles. */
+static void mask_world_sms_sprite_rows(u16 count)
+{
+    static u16 clone_base;
+    u8 used[192];u16 n,row,word,raw,tile;u8 mask;s16 top,line;
+    u32 clone[8];bool blank_loaded=FALSE;volatile u16 *data=(volatile u16*)VDP_DATA_PORT;
+    /* Never overwrite tiles still referenced by the preceding SAT. */
+    clone_base=clone_base==1024?1152:1024;
+    memset(used,0,sizeof(used));VDP_setAutoInc(2);
+    for(n=0;n<count && n<64;n++)
+    {
+        raw=(vdpSpriteCache[n].y-145)&255;if(raw==208) break;
+        top=raw<208?(s16)raw+1:(s16)raw-255;mask=255;
+        for(row=0;row<8;row++)
+        {
+            line=top+row;
+            if(line>=0 && line<192 && used[line]++>=8) mask&=~(1<<row);
+        }
+        if(mask==255) continue;
+        if(!mask)
+        {
+            if(!blank_loaded) { memset(clone,0,sizeof(clone));VDP_loadTileData(clone,1216,1,CPU);blank_loaded=TRUE; }
+            VDP_setSpriteTile(n,1216);continue;
+        }
+        tile=vdpSpriteCache[n].attribut&2047;
+        *(volatile u32*)VDP_CTRL_PORT=VDP_READ_VRAM_ADDR((u32)tile*32);
+        for(row=0;row<8;row++)
+        {
+            word=*data;clone[row]=(u32)word<<16;clone[row]|=*data;
+            if(!(mask&(1<<row))) clone[row]=0;
+        }
+        VDP_loadTileData(clone,clone_base+n,1,CPU);VDP_setSpriteTile(n,clone_base+n);
+    }
+}
+
 static void prepare_world_sms_sprite_overflow(u16 count)
 {
     s8 edges[193];
@@ -954,6 +992,7 @@ static void prepare_world_sms_sprite_overflow(u16 count)
         used+=edges[n];
         if(used>8) { world_sms_sprite_prepared_overflow=1;break; }
     }
+    if(world_sms_sprite_prepared_overflow) mask_world_sms_sprite_rows(count);
 }
 
 static u16 dungeon_bitmap_pending;

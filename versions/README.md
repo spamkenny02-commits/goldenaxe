@@ -4,6 +4,9 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0210 | [Telecharger](v0210-4678a4f4/gaw-megadrive-v0210.bin) | targeted_checks_passed | ROM jouable : limite SMS de huit sprites par ligne, masquage des lignes excedentaires avec doubles buffers. Controles PAL/NTSC et inventaire de six parcours reussis. | `4678a4f4eddb4f1a76e9f174ba1381c76687f011de541f11bbfac8af3d65a554` |
+| v0209 | [Telecharger](v0209-d2096e1d/gaw-megadrive-v0209.bin) | build_only | Compilation intermediaire du masquage SMS des sprites ; non recommandee, remplacee par v0210. | `d2096e1d60130c95160147bf499876b62e3904b441edb85dc5ffff0bd991d5c0` |
+| v0208 | [Telecharger](v0208-fe8d03a5/gaw-megadrive-v0208.bin) | build_only | Compilation intermediaire du masquage SMS des sprites ; non recommandee, remplacee par v0210. | `fe8d03a5755d2bc74cc8017e009c18f970693e43b3df7f59955e55546b691e7e` |
 | v0207 | [Telecharger](v0207-82875871/gaw-megadrive-v0207.bin) | superseded_diagnostic | Diagnostic de composition audio gardee ; remplace par une voie rapide separee, hors du binaire jouable. Utiliser v0203. | `8287587147c352ca65af331f00edda5827ee3baa84b5a447e86ab73327861d32` |
 | v0206 | [Telecharger](v0206-b3bfbea1/gaw-megadrive-v0206.bin) | superseded_diagnostic | Diagnostic audio rapide global : avance certains chargements et degrade le retour nord PAL. Utiliser v0203. | `b3bfbea127c9e1f21fe42c009662f2b96bd0c68aaa9a845989ebdd44d08af8d4` |
 | v0205 | [Telecharger](v0205-e6708f0c/gaw-megadrive-v0205.bin) | superseded_diagnostic | Diagnostic audio : copies par canal reduites ; le retard vertical NTSC subsiste. Utiliser v0203. | `e6708f0cdc30deae005628e098a8c0510660cc8bc768ec3ed085ee7d29db14d7` |

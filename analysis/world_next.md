@@ -1204,3 +1204,17 @@ Display remains hidden. Next: jointly schedule the frame PSG with SATdelivery
 and compare physicaltiming/reveal deadlines, then autonomous actor/patternwork.
 Playablev0203 unchanged; no fullgame/waveform/hardware/reveal claim.
 Evidence:analysis/md_game_sprite_frame_milestone.md; preserve207numberedROMs.
+
+Playable milestonev0210 (2026-10-21):
+Actualmain.c now masks SMS Y-scan entries after eighth sprite perline. Only
+suppressed rows are cloned from residentVRAM (not future preparedpatterns).
+Two VRAMbanks1024/1152 plus blank1216 avoid overwriting previousSATclones.
+Versions208/209 are preserved intermediate builds;210 is recommendedplayable.
+SHA4678a4f4 (fullhashinreleaseindex),1MiB checksum5779.
+12partial-overlapactor frames/region match independent eight-entry raster;
+gameplayposition/state preserved. Sourceorderingphase not established.
+10natural NTSC PNGs unchanged;9PAL unchanged, onePAL row corrected(160,35,168,36).
+Six inventoryroutes/exterior/firsttwohouses passed PAL/NTSC staticrestore.
+No fullgame/timing/hardwareclaim. New clockedbackend remains experimental;
+continue shipping real playable integrations with bounded necessarychecks.
+Evidence:analysis/playable_sprite_limit_v0210.md and releaseattachedreports.

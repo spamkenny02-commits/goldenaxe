@@ -6616,5 +6616,44 @@
     "notes": "Diagnostic de composition audio gardee ; remplace par une voie rapide separee, hors du binaire jouable. Utiliser v0203.",
     "validation": "superseded_diagnostic",
     "reports": []
+  },
+  {
+    "version": 208,
+    "sha256": "fe8d03a5755d2bc74cc8017e009c18f970693e43b3df7f59955e55546b691e7e",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T05:45:06.646023+00:00",
+    "rom": "v0208-fe8d03a5/gaw-megadrive-v0208.bin",
+    "notes": "Compilation intermediaire du masquage SMS des sprites ; non recommandee, remplacee par v0210.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 209,
+    "sha256": "d2096e1d60130c95160147bf499876b62e3904b441edb85dc5ffff0bd991d5c0",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T05:47:47.150668+00:00",
+    "rom": "v0209-d2096e1d/gaw-megadrive-v0209.bin",
+    "notes": "Compilation intermediaire du masquage SMS des sprites ; non recommandee, remplacee par v0210.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 210,
+    "sha256": "4678a4f4eddb4f1a76e9f174ba1381c76687f011de541f11bbfac8af3d65a554",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T05:50:33.180845+00:00",
+    "rom": "v0210-4678a4f4/gaw-megadrive-v0210.bin",
+    "notes": "ROM jouable : limite SMS de huit sprites par ligne, masquage des lignes excedentaires avec doubles buffers. Controles PAL/NTSC et inventaire de six parcours reussis.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "playable_sprite_limit_v0210_report.json",
+        "sha256": "3714d86bfeab8c3e5e9f3c68e32bec665c717fdc25fff0c2a3ad887e1e3e8fc2"
+      },
+      {
+        "file": "inventory_restore_report.json",
+        "sha256": "1a758f88964dc1f78bd9ec796aa171b2d8b4663e6490572245f282814e7f57de"
+      }
+    ]
   }
 ]
