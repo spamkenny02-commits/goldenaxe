@@ -1,0 +1,47 @@
+{
+  "md_sha256": "6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549",
+  "passed": true,
+  "host_exact_c_lookup_cases": 512,
+  "reference_commit": "f8dc1a8",
+  "cases": [
+    {
+      "region": "auto",
+      "source_page_wait_frame": 1596,
+      "previous_page_wait_frame": 1606,
+      "current_page_wait_frame": 1603,
+      "frames_gained": 3,
+      "remaining_delay_frames": 7,
+      "completed_source_uploads_preserved": 37,
+      "distinct_source_bitmaps_preserved_in_order": 29
+    },
+    {
+      "region": "pal",
+      "source_page_wait_frame": 1583,
+      "previous_page_wait_frame": 1601,
+      "current_page_wait_frame": 1601,
+      "frames_gained": 0,
+      "remaining_delay_frames": 18,
+      "completed_source_uploads_preserved": 37,
+      "distinct_source_bitmaps_preserved_in_order": 29
+    }
+  ],
+  "evidence": {
+    "analysis/dialogue_preparation_v0223_profile.json": "5426aa380f465cf193aa5212026a173c576174c942a183d9f4ff4890b2dff636",
+    "analysis/dialogue_preparation_v0224_profile.json": "88f0ad74de8a97309cd3960cb2113d60987c2895515e1f861e23db75016f4b6a",
+    "analysis/dialogue_preparation_v0223-pal_profile.json": "e320838f3eb3d5dfbc0502e60a337f6e1bb9193b3ca2f78ce5a704d27fb4ac28",
+    "analysis/dialogue_preparation_v0224-pal_profile.json": "bb66e967effa57fae5a2155797c06805e5e80f45252ae0af7bf0e00563eec2ee",
+    "validation/dialogue_controls_report.json": "d8b195b23ce1715967fd61cd273e2f56d9a1ec067779cd7fe0e005064603b709",
+    "validation/dialogue_scroll_report.json": "730b029d59b96a98f8fa95e5d147c8855b009cefe912c2b429854b8d97041f08",
+    "analysis/dialogue_vblank_v0224_report.json": "4fdc00c90a41d665ddfca615a49cc99f5839681061061dccf96f3774516d8379",
+    "analysis/dialogue_page_buttons_v0224_report.json": "0c7ca736dc6770cd5e9db559082b084104370002f29cdd8a874bf677bc9ba8a0"
+  },
+  "source_files": {
+    "megadrive/src/main.c": "8105d7ca16e9e76e3e598eb6c86e0822d0d7e31c2f4e6e7eaf947f3cf8bb5ded",
+    "megadrive/src/dialogue_glyph_lookup.inc": "e6a13f46b1ddb39f672d59d88f46109b4828e735ac58824a113e975b6c168ce2",
+    "tools/generate_dialogue_glyph_lookup.py": "bfa9539be8a8ae7a3afaf32cdc18eb3bbc30a97aa62a9f49f2d7ea79da4ae1b5",
+    "build.ps1": "7973f0112e69c59f8a5b3b0ac9e9380756b8c579df361908dfc5ba2bf9ed6d29"
+  },
+  "scope": "Exact old/new compiled C lookup for every input byte and both font modes; actual SMS/68000 text fixtures and natural first-page presentation. No complete dialogue cadence, full campaign, RNG or hardware fidelity claim.",
+  "full_game_validated": false,
+  "complete_dialogue_timing_exact": false
+}

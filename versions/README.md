@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0224 | [Telecharger](v0224-6be955fd/gaw-megadrive-v0224.bin) | targeted_checks_passed | Recherche directe des caracteres ; premier dialogue 3 images plus rapide en NTSC, PAL inchange. Texte et scrolling verifies ; cadence globale incomplete. | `6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549` |
 | v0223 | [Telecharger](v0223-39e69955/gaw-megadrive-v0223.bin) | targeted_checks_passed | Attente des pages et marqueurs corriges ; parcours naturel jusqu'au donjon1 verifie PAL/NTSC. | `39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31` |
 | v0222 | [Telecharger](v0222-13edb546/gaw-megadrive-v0222.bin) | targeted_checks_passed | Dessin des caracteres optimise, pixels identiques ; premiere page testee 7 images plus rapide NTSC et 1 PAL. | `13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8` |
 | v0221 | [Telecharger](v0221-0cc51636/gaw-megadrive-v0221.bin) | targeted_checks_passed | Fin du defilement de dialogue sans image d'attente en trop ; quatre poses SMS exactes PAL/NTSC sur le passage teste. | `0cc51636efdff6e1bed7c0e74808d0ce5589f9333718abdccb392cef7daa1013` |

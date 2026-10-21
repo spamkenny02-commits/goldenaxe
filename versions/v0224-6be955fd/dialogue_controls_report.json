@@ -1,0 +1,618 @@
+{
+  "md_sha256": "6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "production_roms_unmodified": true,
+  "test_rom_text_resources_modified": true,
+  "baseline_diagnostic": false,
+  "cases": [
+    {
+      "region": "auto",
+      "name": "plain",
+      "text_hex": "412042432e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "ab37379671d22855bf9532f7f9fa98b27c746cbf1e41dc4c55a1266cab77b61e",
+        "md": "30db8a05ce31a54ed5ae16426e0dd68dc063d3ce0bbe5d9409e4e7fd62d6794a"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "64c51e7de1db775371f35eb54638659b0120d0c7cd336d4005e395330bf0dc82",
+          "native_bitmap_sha256": "64c51e7de1db775371f35eb54638659b0120d0c7cd336d4005e395330bf0dc82"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "auto",
+      "name": "toggle",
+      "text_hex": "5cc2c3205cc2c32e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "345a48cc1f8795bddc071b8b4ea383e661ef995e766adb0d7a9ce0227849fcdf",
+        "md": "3af672b58675ce1e3f9454aa0e542be3c5e157755bb2b2b6da805d8c19412ab9"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "ba6f4cec7216ef2c39018eb6fff0a3db6f50e515628782e3884bad6406df183d",
+          "native_bitmap_sha256": "ba6f4cec7216ef2c39018eb6fff0a3db6f50e515628782e3884bad6406df183d"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "auto",
+      "name": "toggle_inside_word",
+      "text_hex": "c25cc35cc22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "c3606ee50946b1a6671181a973aeefb015c8c0581de572e8b339fd4b9016148c",
+        "md": "8f60ea7d2fc8c903ba0575bdfb92a6bfb2ae1abebc77be77464dbb988f1be9a1"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "32aafb6dfed8dd5aaa7cbdb452f6666fe8367f17e46f68ce9ef172acf5074ae2",
+          "native_bitmap_sha256": "32aafb6dfed8dd5aaa7cbdb452f6666fe8367f17e46f68ce9ef172acf5074ae2"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "auto",
+      "name": "double_toggle",
+      "text_hex": "5c5cc22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "54c4485f8017b488a6f11f22953ac456decfc0d467b0b561edf0192c0914125c",
+        "md": "4f0314cf95ee3a6528ee1315c9eff618db128793e4f3ebc903f68904090f5316"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "4b3150f08930cd7505392f479aa9bdc0cb504958f649ea3324d84b5af3a16984",
+          "native_bitmap_sha256": "4b3150f08930cd7505392f479aa9bdc0cb504958f649ea3324d84b5af3a16984"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "auto",
+      "name": "toggle_wrap",
+      "text_hex": "5cc2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c220c3c3c3c3c3c3c3c3c3c3c3c3205cc2c2c2c2c2c22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "9ee7638ea773ad21447636951cb2b2003eadaaa9d9172bc906aa250347d8013f",
+        "md": "c4e12ab35e6f64fceec73e4c78cf1f6636fe6004b6bda4775fa67978a9e47c01"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "b747b5698f64d5ac01bbc9a966600cffde6a5242603780de4e99c4a341b048db",
+          "native_bitmap_sha256": "b747b5698f64d5ac01bbc9a966600cffde6a5242603780de4e99c4a341b048db"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "auto",
+      "name": "overwide_word",
+      "text_hex": "5cc2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c220c3c3c3c3c3c3c3c3c3c3c3c3205cc2c2c2c2c2c22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "70507d734ce2029ee377cf17a58c8f507ebde60bde6928658e4a32d337579c37",
+        "md": "64206ea1c931e0c679a5da533475099e9bc2017927afafd634f8f198fb3d50ee"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+          "native_bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "auto",
+      "name": "forced_name",
+      "text_hex": "5cc2202520c22e20",
+      "argument_hex": "c2",
+      "fixture_hashes": {
+        "sms": "ad1ebe9d16877adc979b0c6bae0ce9162ece6d655b9d98deaf65616e29bcaaa8",
+        "md": "c1a3158c672924601ead0a8e58732392e774c502ccccf37bc447b69c8b282e71"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "4b7e16b1a72f2ef5be81792918fcd546d83998a398c73267c63cd7ae397cabee",
+          "native_bitmap_sha256": "4b7e16b1a72f2ef5be81792918fcd546d83998a398c73267c63cd7ae397cabee"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": true
+    },
+    {
+      "region": "auto",
+      "name": "number_zero",
+      "text_hex": "5072697820232e20",
+      "argument_hex": 0,
+      "fixture_hashes": {
+        "sms": "0005986104637739ff881ac45e9ff3599b8fd6e7cf0d6d044ad90fd1a8925c10",
+        "md": "5f79128a69fd44d8b985582a4280dd9aba6091a82a433c8c03186f8d9b640f13"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "5f3f1d65a8849a94419b20d28ac41911608943855eff8170b5931639aa1adfb9",
+          "native_bitmap_sha256": "5f3f1d65a8849a94419b20d28ac41911608943855eff8170b5931639aa1adfb9"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": true
+    },
+    {
+      "region": "auto",
+      "name": "number_65",
+      "text_hex": "5072697820232e20",
+      "argument_hex": 65,
+      "fixture_hashes": {
+        "sms": "0005986104637739ff881ac45e9ff3599b8fd6e7cf0d6d044ad90fd1a8925c10",
+        "md": "5f79128a69fd44d8b985582a4280dd9aba6091a82a433c8c03186f8d9b640f13"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "ff7d5beea3c5f53f70486422fbf918eda6fcaa28d5f8c9cf459215dc90bd994a",
+          "native_bitmap_sha256": "ff7d5beea3c5f53f70486422fbf918eda6fcaa28d5f8c9cf459215dc90bd994a"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": true
+    },
+    {
+      "region": "auto",
+      "name": "number_12345",
+      "text_hex": "5072697820232e20",
+      "argument_hex": 12345,
+      "fixture_hashes": {
+        "sms": "0005986104637739ff881ac45e9ff3599b8fd6e7cf0d6d044ad90fd1a8925c10",
+        "md": "5f79128a69fd44d8b985582a4280dd9aba6091a82a433c8c03186f8d9b640f13"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "dbff1f8519bc9108adf7d3dc9c628f65e9edb03225ec64456ca8251e5ceef9dc",
+          "native_bitmap_sha256": "dbff1f8519bc9108adf7d3dc9c628f65e9edb03225ec64456ca8251e5ceef9dc"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": true
+    },
+    {
+      "region": "auto",
+      "name": "pause",
+      "text_hex": "4176616e742441707265732e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "63d24843087ac18d951f5cbadf3ad0e8217271ee84f8ff3ada7988f46cdcc2be",
+        "md": "b50be03d3ddb06414b24ce7d82d4ca7fd140f7875382afcc2429d82f99da052b"
+      },
+      "checks": [
+        {
+          "frame": 1650,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "54cf4b1788b78e37b230e48486481cdf2c36083dca25a03bdfd2527f031af648",
+          "native_bitmap_sha256": "54cf4b1788b78e37b230e48486481cdf2c36083dca25a03bdfd2527f031af648"
+        },
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "b1a5de8b8264f982af16eb04aa08047784eb54e894ff8579809bd2a0486d7bde",
+          "native_bitmap_sha256": "b1a5de8b8264f982af16eb04aa08047784eb54e894ff8579809bd2a0486d7bde"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "auto",
+      "name": "pause_toggle",
+      "text_hex": "5cc224c3205cc22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "b2a64d606b72b582e2b5d5a27359b4cc2c5ce205027181ad21fb9646bf780c2c",
+        "md": "8a7e833630c6d45d88f84ff95c892dc116984bc759349b79ff67599d4e1644b8"
+      },
+      "checks": [
+        {
+          "frame": 1650,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "17b31c086ffe7dbaf40a852709088b9936c18a8213715adcca99e588361206dd",
+          "native_bitmap_sha256": "17b31c086ffe7dbaf40a852709088b9936c18a8213715adcca99e588361206dd"
+        },
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "fda8fc41458196706c0f56dfcd34c8167c680b036ce2519ba905bce5338fe740",
+          "native_bitmap_sha256": "fda8fc41458196706c0f56dfcd34c8167c680b036ce2519ba905bce5338fe740"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "auto",
+      "name": "newline_toggle",
+      "text_hex": "5cc2ffc3205cc22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "a872d919776b7abd244d8a6403680c5685f1304eec2b41471c15277cc6929072",
+        "md": "7da1a6ba575e94d812c292f9989b899e5d727f38b7de57636ea72900c2390f75"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "f3b55e5e18237ba21b2a6c77da3f44b042ef0148297038be1bc0cfdc53e043c8",
+          "native_bitmap_sha256": "f3b55e5e18237ba21b2a6c77da3f44b042ef0148297038be1bc0cfdc53e043c8"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "plain",
+      "text_hex": "412042432e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "ab37379671d22855bf9532f7f9fa98b27c746cbf1e41dc4c55a1266cab77b61e",
+        "md": "30db8a05ce31a54ed5ae16426e0dd68dc063d3ce0bbe5d9409e4e7fd62d6794a"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "64c51e7de1db775371f35eb54638659b0120d0c7cd336d4005e395330bf0dc82",
+          "native_bitmap_sha256": "64c51e7de1db775371f35eb54638659b0120d0c7cd336d4005e395330bf0dc82"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "toggle",
+      "text_hex": "5cc2c3205cc2c32e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "345a48cc1f8795bddc071b8b4ea383e661ef995e766adb0d7a9ce0227849fcdf",
+        "md": "3af672b58675ce1e3f9454aa0e542be3c5e157755bb2b2b6da805d8c19412ab9"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "ba6f4cec7216ef2c39018eb6fff0a3db6f50e515628782e3884bad6406df183d",
+          "native_bitmap_sha256": "ba6f4cec7216ef2c39018eb6fff0a3db6f50e515628782e3884bad6406df183d"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "toggle_inside_word",
+      "text_hex": "c25cc35cc22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "c3606ee50946b1a6671181a973aeefb015c8c0581de572e8b339fd4b9016148c",
+        "md": "8f60ea7d2fc8c903ba0575bdfb92a6bfb2ae1abebc77be77464dbb988f1be9a1"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "32aafb6dfed8dd5aaa7cbdb452f6666fe8367f17e46f68ce9ef172acf5074ae2",
+          "native_bitmap_sha256": "32aafb6dfed8dd5aaa7cbdb452f6666fe8367f17e46f68ce9ef172acf5074ae2"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "double_toggle",
+      "text_hex": "5c5cc22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "54c4485f8017b488a6f11f22953ac456decfc0d467b0b561edf0192c0914125c",
+        "md": "4f0314cf95ee3a6528ee1315c9eff618db128793e4f3ebc903f68904090f5316"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "4b3150f08930cd7505392f479aa9bdc0cb504958f649ea3324d84b5af3a16984",
+          "native_bitmap_sha256": "4b3150f08930cd7505392f479aa9bdc0cb504958f649ea3324d84b5af3a16984"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "toggle_wrap",
+      "text_hex": "5cc2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c220c3c3c3c3c3c3c3c3c3c3c3c3205cc2c2c2c2c2c22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "9ee7638ea773ad21447636951cb2b2003eadaaa9d9172bc906aa250347d8013f",
+        "md": "c4e12ab35e6f64fceec73e4c78cf1f6636fe6004b6bda4775fa67978a9e47c01"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "b747b5698f64d5ac01bbc9a966600cffde6a5242603780de4e99c4a341b048db",
+          "native_bitmap_sha256": "b747b5698f64d5ac01bbc9a966600cffde6a5242603780de4e99c4a341b048db"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "overwide_word",
+      "text_hex": "5cc2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c2c220c3c3c3c3c3c3c3c3c3c3c3c3205cc2c2c2c2c2c22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "70507d734ce2029ee377cf17a58c8f507ebde60bde6928658e4a32d337579c37",
+        "md": "64206ea1c931e0c679a5da533475099e9bc2017927afafd634f8f198fb3d50ee"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+          "native_bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "forced_name",
+      "text_hex": "5cc2202520c22e20",
+      "argument_hex": "c2",
+      "fixture_hashes": {
+        "sms": "ad1ebe9d16877adc979b0c6bae0ce9162ece6d655b9d98deaf65616e29bcaaa8",
+        "md": "c1a3158c672924601ead0a8e58732392e774c502ccccf37bc447b69c8b282e71"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "4b7e16b1a72f2ef5be81792918fcd546d83998a398c73267c63cd7ae397cabee",
+          "native_bitmap_sha256": "4b7e16b1a72f2ef5be81792918fcd546d83998a398c73267c63cd7ae397cabee"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": true
+    },
+    {
+      "region": "pal",
+      "name": "number_zero",
+      "text_hex": "5072697820232e20",
+      "argument_hex": 0,
+      "fixture_hashes": {
+        "sms": "0005986104637739ff881ac45e9ff3599b8fd6e7cf0d6d044ad90fd1a8925c10",
+        "md": "5f79128a69fd44d8b985582a4280dd9aba6091a82a433c8c03186f8d9b640f13"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "5f3f1d65a8849a94419b20d28ac41911608943855eff8170b5931639aa1adfb9",
+          "native_bitmap_sha256": "5f3f1d65a8849a94419b20d28ac41911608943855eff8170b5931639aa1adfb9"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": true
+    },
+    {
+      "region": "pal",
+      "name": "number_65",
+      "text_hex": "5072697820232e20",
+      "argument_hex": 65,
+      "fixture_hashes": {
+        "sms": "0005986104637739ff881ac45e9ff3599b8fd6e7cf0d6d044ad90fd1a8925c10",
+        "md": "5f79128a69fd44d8b985582a4280dd9aba6091a82a433c8c03186f8d9b640f13"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "ff7d5beea3c5f53f70486422fbf918eda6fcaa28d5f8c9cf459215dc90bd994a",
+          "native_bitmap_sha256": "ff7d5beea3c5f53f70486422fbf918eda6fcaa28d5f8c9cf459215dc90bd994a"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": true
+    },
+    {
+      "region": "pal",
+      "name": "number_12345",
+      "text_hex": "5072697820232e20",
+      "argument_hex": 12345,
+      "fixture_hashes": {
+        "sms": "0005986104637739ff881ac45e9ff3599b8fd6e7cf0d6d044ad90fd1a8925c10",
+        "md": "5f79128a69fd44d8b985582a4280dd9aba6091a82a433c8c03186f8d9b640f13"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "dbff1f8519bc9108adf7d3dc9c628f65e9edb03225ec64456ca8251e5ceef9dc",
+          "native_bitmap_sha256": "dbff1f8519bc9108adf7d3dc9c628f65e9edb03225ec64456ca8251e5ceef9dc"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": true
+    },
+    {
+      "region": "pal",
+      "name": "pause",
+      "text_hex": "4176616e742441707265732e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "63d24843087ac18d951f5cbadf3ad0e8217271ee84f8ff3ada7988f46cdcc2be",
+        "md": "b50be03d3ddb06414b24ce7d82d4ca7fd140f7875382afcc2429d82f99da052b"
+      },
+      "checks": [
+        {
+          "frame": 1650,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "54cf4b1788b78e37b230e48486481cdf2c36083dca25a03bdfd2527f031af648",
+          "native_bitmap_sha256": "54cf4b1788b78e37b230e48486481cdf2c36083dca25a03bdfd2527f031af648"
+        },
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "b1a5de8b8264f982af16eb04aa08047784eb54e894ff8579809bd2a0486d7bde",
+          "native_bitmap_sha256": "b1a5de8b8264f982af16eb04aa08047784eb54e894ff8579809bd2a0486d7bde"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "pause_toggle",
+      "text_hex": "5cc224c3205cc22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "b2a64d606b72b582e2b5d5a27359b4cc2c5ce205027181ad21fb9646bf780c2c",
+        "md": "8a7e833630c6d45d88f84ff95c892dc116984bc759349b79ff67599d4e1644b8"
+      },
+      "checks": [
+        {
+          "frame": 1650,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "17b31c086ffe7dbaf40a852709088b9936c18a8213715adcca99e588361206dd",
+          "native_bitmap_sha256": "17b31c086ffe7dbaf40a852709088b9936c18a8213715adcca99e588361206dd"
+        },
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "fda8fc41458196706c0f56dfcd34c8167c680b036ce2519ba905bce5338fe740",
+          "native_bitmap_sha256": "fda8fc41458196706c0f56dfcd34c8167c680b036ce2519ba905bce5338fe740"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    },
+    {
+      "region": "pal",
+      "name": "newline_toggle",
+      "text_hex": "5cc2ffc3205cc22e20",
+      "argument_hex": null,
+      "fixture_hashes": {
+        "sms": "a872d919776b7abd244d8a6403680c5685f1304eec2b41471c15277cc6929072",
+        "md": "7da1a6ba575e94d812c292f9989b899e5d727f38b7de57636ea72900c2390f75"
+      },
+      "checks": [
+        {
+          "frame": 1800,
+          "software_bitmap_exact": true,
+          "hardware_bitmap_exact": true,
+          "hardware_colors_valid": true,
+          "source_bitmap_sha256": "f3b55e5e18237ba21b2a6c77da3f44b042ef0148297038be1bc0cfdc53e043c8",
+          "native_bitmap_sha256": "f3b55e5e18237ba21b2a6c77da3f44b042ef0148297038be1bc0cfdc53e043c8"
+        }
+      ],
+      "passed": true,
+      "controlled_argument_ram_injection": false
+    }
+  ],
+  "full_game_ported": false,
+  "limits": [
+    "Controlled short opening-text fixtures, not natural quests or full conversations.",
+    "Only stable software/hardware bitmap shapes, pause continuation and color indices; no timing, palette, marker or audio equivalence."
+  ]
+}

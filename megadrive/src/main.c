@@ -541,10 +541,8 @@ static const u8 *draw_raw_glyphs(u16 destination,const u8 *glyphs,u16 count,bool
  * scratch is the D100-style column-major bitmap while no RLE loader is active. */
 static u16 dialog_glyph(u8 value,bool small)
 {
-    s16 index;
-    if(value==0xb0) value='-';
-    for(index=190;index>=0;index--) if(dialog_charset[index]==value) break;
-    if(index<0) index=80;
+    #include "dialogue_glyph_lookup.inc"
+    u16 index=dialogue_glyph_lookup[value];
     if(small && index>=0x88 && index<0xbf) index-=0x37; /* 05DF..05F0, DCC6 bit 0 */
     return index;
 }

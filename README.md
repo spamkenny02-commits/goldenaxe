@@ -5,19 +5,24 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0223 — 1024 Kio.**
+**Version courante : v0224 — 1024 Kio.**
 
-[Télécharger la ROM v0223](versions/v0223-39e69955/gaw-megadrive-v0223.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0224](versions/v0224-6be955fd/gaw-megadrive-v0224.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31`
-Checksum Mega Drive : `51E2`
+SHA-256 : `6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549`
+Checksum Mega Drive : `5D1D`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0223**.
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0224**.
+La v0224 remplace la recherche des caractères par une table directe.
+Le premier dialogue mesuré gagne trois images en NTSC ; le PAL reste inchangé.
+Les glyphes, les 26 fixtures de texte et le défilement conservent leur rendu.
+Voir les [changements et limites de la v0224](analysis/dialogue_lookup_v0224.md).
+
 La v0223 corrige l’attente entre deux pages : remise à zéro du compteur,
 clignotement sur son bit 3, validation par un bouton et reprise à FF puis 00.
 Les messages finaux d’auberge, de sauvegarde et du marchand utilisent leur
@@ -33,7 +38,7 @@ par ce parcours. Le premier donjon et son boss restent à parcourir entièrement
 
 Le dessin accéléré de la v0222 et les corrections de publication/défilement
 précédentes sont conservés. La cadence complète reste à aligner : la première
-page du récit commence son attente dix images après la SMS en NTSC et
+page du récit commence son attente sept images après la SMS en NTSC et
 dix-huit en PAL. L’horloge globale, les IRQ et le hasard Z80 restent ouverts.
 
 La v0219 a corrigé les sprites débordant dans les bandes noires.

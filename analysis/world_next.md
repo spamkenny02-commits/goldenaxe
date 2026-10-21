@@ -1283,3 +1283,11 @@ Read-only feedback walker recovers actual knockback; no RAM/ROM/SRAM fixture.
 PAL/NTSC SMS+MD route and real directional probe pass. Four fresh-process fixed-input replays have full final RAM/PNG equality.
 Settled playfield163840 normalized pixels match; door publication-to-ready89 NTSC/86 PAL on both.
 Arrival HP differs; first dungeon/boss/gem and full campaign not completed. Continue actual dungeon traversal and source RNG/clock work.
+
+2026-10-21 playable v0224: direct source-charset inversion replaces per-glyph reverse191 search.
+512 exact compiled host-C lookup cases and26 SMS/68000 text fixtures pass.
+Natural first-page gains3 NTSC frames:1606->1603 vs source1596; PAL remains1601 vs1583.
+All37 completed source uploads/29 distinct shapes retained in order per region.
+First scroll poses,302 coherent indoor text frames and intermediate direction rejection pass.
+Natural combat trial clears room1D4 on SMS/MD via normal controls; different encounters/HP prevent a fidelity claim.
+Full campaign, source RNG/IRQ/global dialogue timing remain unfinished.

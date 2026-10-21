@@ -6964,5 +6964,40 @@
         "sha256": "88bf530280d81b2f4ddf5731033c22931ff874592e7af337c1d7fe6b2e2f2111"
       }
     ]
+  },
+  {
+    "version": 224,
+    "sha256": "6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T19:19:39.280787+00:00",
+    "rom": "v0224-6be955fd/gaw-megadrive-v0224.bin",
+    "notes": "Recherche directe des caracteres ; premier dialogue 3 images plus rapide en NTSC, PAL inchange. Texte et scrolling verifies ; cadence globale incomplete.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "dialogue_lookup_v0224_report.json",
+        "sha256": "60fb14383091b18475fffc9afc3327e4e5a261b0869d8a45c7adf5fe909f28c8"
+      },
+      {
+        "file": "dialogue_vblank_v0224_report.json",
+        "sha256": "4fdc00c90a41d665ddfca615a49cc99f5839681061061dccf96f3774516d8379"
+      },
+      {
+        "file": "dialogue_page_buttons_v0224_report.json",
+        "sha256": "0c7ca736dc6770cd5e9db559082b084104370002f29cdd8a874bf677bc9ba8a0"
+      },
+      {
+        "file": "dialogue_controls_report.json",
+        "sha256": "d8b195b23ce1715967fd61cd273e2f56d9a1ec067779cd7fe0e005064603b709"
+      },
+      {
+        "file": "dialogue_scroll_report.json",
+        "sha256": "730b029d59b96a98f8fa95e5d147c8855b009cefe912c2b429854b8d97041f08"
+      },
+      {
+        "file": "dialogue_lookup_recovery_v0224_report.json",
+        "sha256": "952eb0d302d25cf7765c2ba25a4c9d5fcaf64a26bb10b1c8525f2d2a9cb87fc7"
+      }
+    ]
   }
 ]

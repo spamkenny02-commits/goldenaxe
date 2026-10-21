@@ -1,0 +1,4953 @@
+{
+  "md_sha256": "39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "cfe8e0c83919acb98e5769408187e9ef2128031f62a2b9ec84f67410c3c46dae",
+  "region": "pal",
+  "diagnostic_only": true,
+  "production_roms_unmodified": true,
+  "ram_injections": false,
+  "results": {
+    "sms": {
+      "events": [
+        {
+          "frame": 1489,
+          "pc": 29764,
+          "clock": 84,
+          "hl": 43880,
+          "de": 259,
+          "bc": 0,
+          "master_cycles": 51673230,
+          "irq_master_cycles": 11194665
+        },
+        {
+          "frame": 1489,
+          "pc": 30619,
+          "clock": 84,
+          "hl": 43880,
+          "de": 259,
+          "bc": 0,
+          "master_cycles": 51673485,
+          "irq_master_cycles": 11194665
+        },
+        {
+          "frame": 1489,
+          "pc": 1316,
+          "clock": 84,
+          "hl": 43880,
+          "de": 56064,
+          "bc": 0,
+          "master_cycles": 51815205,
+          "irq_master_cycles": 11194665
+        },
+        {
+          "frame": 1489,
+          "pc": 1364,
+          "clock": 84,
+          "hl": 54543,
+          "de": 54544,
+          "bc": 0,
+          "master_cycles": 52145370,
+          "irq_master_cycles": 11194665
+        },
+        {
+          "frame": 1490,
+          "pc": 1405,
+          "clock": 84,
+          "hl": 55738,
+          "de": 6530,
+          "bc": 0,
+          "master_cycles": 52589565,
+          "irq_master_cycles": 11255565
+        },
+        {
+          "frame": 1492,
+          "pc": 1429,
+          "clock": 84,
+          "hl": 55738,
+          "de": 0,
+          "bc": 0,
+          "master_cycles": 55080795,
+          "irq_master_cycles": 11386230
+        },
+        {
+          "frame": 1493,
+          "pc": 2324,
+          "clock": 85,
+          "hl": 55738,
+          "de": 0,
+          "bc": 0,
+          "master_cycles": 55778490,
+          "irq_master_cycles": 11493915
+        },
+        {
+          "frame": 1493,
+          "pc": 1435,
+          "clock": 85,
+          "hl": 55738,
+          "de": 0,
+          "bc": 0,
+          "master_cycles": 56450865,
+          "irq_master_cycles": 11493915
+        },
+        {
+          "frame": 1493,
+          "pc": 1435,
+          "clock": 85,
+          "hl": 56546,
+          "de": 49328,
+          "bc": 0,
+          "master_cycles": 56457000,
+          "irq_master_cycles": 11493915
+        },
+        {
+          "frame": 1493,
+          "pc": 1750,
+          "clock": 85,
+          "hl": 49330,
+          "de": 10,
+          "bc": 0,
+          "master_cycles": 56661765,
+          "irq_master_cycles": 11493915
+        },
+        {
+          "frame": 1493,
+          "pc": 1926,
+          "clock": 85,
+          "hl": 49330,
+          "de": 10,
+          "bc": 0,
+          "master_cycles": 56662020,
+          "irq_master_cycles": 11493915
+        },
+        {
+          "frame": 1494,
+          "pc": 1934,
+          "clock": 86,
+          "hl": 49330,
+          "de": 10,
+          "bc": 0,
+          "master_cycles": 56900205,
+          "irq_master_cycles": 11653170
+        },
+        {
+          "frame": 1495,
+          "pc": 1971,
+          "clock": 86,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 58180350,
+          "irq_master_cycles": 11653170
+        },
+        {
+          "frame": 1495,
+          "pc": 1435,
+          "clock": 86,
+          "hl": 2048,
+          "de": 9727,
+          "bc": 190,
+          "master_cycles": 58251735,
+          "irq_master_cycles": 11721735
+        },
+        {
+          "frame": 1495,
+          "pc": 1638,
+          "clock": 86,
+          "hl": 35418,
+          "de": 2058,
+          "bc": 4,
+          "master_cycles": 58358985,
+          "irq_master_cycles": 11721735
+        },
+        {
+          "frame": 1495,
+          "pc": 1750,
+          "clock": 86,
+          "hl": 43882,
+          "de": 2058,
+          "bc": 254,
+          "master_cycles": 58361040,
+          "irq_master_cycles": 11721735
+        },
+        {
+          "frame": 1495,
+          "pc": 1926,
+          "clock": 86,
+          "hl": 43882,
+          "de": 2058,
+          "bc": 254,
+          "master_cycles": 58361295,
+          "irq_master_cycles": 11721735
+        },
+        {
+          "frame": 1496,
+          "pc": 1934,
+          "clock": 87,
+          "hl": 43882,
+          "de": 2058,
+          "bc": 254,
+          "master_cycles": 59038635,
+          "irq_master_cycles": 11878620
+        },
+        {
+          "frame": 1497,
+          "pc": 1971,
+          "clock": 87,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 60318780,
+          "irq_master_cycles": 11878620
+        },
+        {
+          "frame": 1497,
+          "pc": 1435,
+          "clock": 87,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 60390960,
+          "irq_master_cycles": 11950245
+        },
+        {
+          "frame": 1497,
+          "pc": 1643,
+          "clock": 87,
+          "hl": 43883,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 60393315,
+          "irq_master_cycles": 11950245
+        },
+        {
+          "frame": 1497,
+          "pc": 1750,
+          "clock": 87,
+          "hl": 43883,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 60395415,
+          "irq_master_cycles": 11950245
+        },
+        {
+          "frame": 1497,
+          "pc": 1926,
+          "clock": 87,
+          "hl": 43883,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 60395670,
+          "irq_master_cycles": 11950245
+        },
+        {
+          "frame": 1498,
+          "pc": 1934,
+          "clock": 88,
+          "hl": 43883,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 61229190,
+          "irq_master_cycles": 12156735
+        },
+        {
+          "frame": 1499,
+          "pc": 1971,
+          "clock": 88,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 62509335,
+          "irq_master_cycles": 12156735
+        },
+        {
+          "frame": 1499,
+          "pc": 1435,
+          "clock": 88,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 62531055,
+          "irq_master_cycles": 12177900
+        },
+        {
+          "frame": 1500,
+          "pc": 1643,
+          "clock": 88,
+          "hl": 43892,
+          "de": 13578,
+          "bc": 0,
+          "master_cycles": 63765915,
+          "irq_master_cycles": 12199065
+        },
+        {
+          "frame": 1500,
+          "pc": 1750,
+          "clock": 88,
+          "hl": 43892,
+          "de": 13578,
+          "bc": 254,
+          "master_cycles": 63768015,
+          "irq_master_cycles": 12199065
+        },
+        {
+          "frame": 1500,
+          "pc": 1926,
+          "clock": 88,
+          "hl": 43892,
+          "de": 13578,
+          "bc": 254,
+          "master_cycles": 63768270,
+          "irq_master_cycles": 12199065
+        },
+        {
+          "frame": 1501,
+          "pc": 1934,
+          "clock": 89,
+          "hl": 43892,
+          "de": 13578,
+          "bc": 254,
+          "master_cycles": 64357080,
+          "irq_master_cycles": 12321795
+        },
+        {
+          "frame": 1502,
+          "pc": 1971,
+          "clock": 89,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 65637225,
+          "irq_master_cycles": 12321795
+        },
+        {
+          "frame": 1502,
+          "pc": 1435,
+          "clock": 89,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 65680800,
+          "irq_master_cycles": 12364815
+        },
+        {
+          "frame": 1502,
+          "pc": 1643,
+          "clock": 89,
+          "hl": 43896,
+          "de": 18954,
+          "bc": 0,
+          "master_cycles": 66118770,
+          "irq_master_cycles": 12364815
+        },
+        {
+          "frame": 1502,
+          "pc": 1750,
+          "clock": 89,
+          "hl": 43896,
+          "de": 18954,
+          "bc": 254,
+          "master_cycles": 66120870,
+          "irq_master_cycles": 12364815
+        },
+        {
+          "frame": 1502,
+          "pc": 1926,
+          "clock": 89,
+          "hl": 43896,
+          "de": 18954,
+          "bc": 254,
+          "master_cycles": 66121125,
+          "irq_master_cycles": 12364815
+        },
+        {
+          "frame": 1503,
+          "pc": 1934,
+          "clock": 90,
+          "hl": 43896,
+          "de": 18954,
+          "bc": 254,
+          "master_cycles": 66497655,
+          "irq_master_cycles": 12487545
+        },
+        {
+          "frame": 1504,
+          "pc": 1971,
+          "clock": 90,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 67777800,
+          "irq_master_cycles": 12487545
+        },
+        {
+          "frame": 1504,
+          "pc": 1435,
+          "clock": 90,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 67818585,
+          "irq_master_cycles": 12527775
+        },
+        {
+          "frame": 1504,
+          "pc": 1643,
+          "clock": 90,
+          "hl": 43899,
+          "de": 23050,
+          "bc": 0,
+          "master_cycles": 68121255,
+          "irq_master_cycles": 12527775
+        },
+        {
+          "frame": 1504,
+          "pc": 1750,
+          "clock": 90,
+          "hl": 43899,
+          "de": 23050,
+          "bc": 254,
+          "master_cycles": 68123355,
+          "irq_master_cycles": 12527775
+        },
+        {
+          "frame": 1504,
+          "pc": 1926,
+          "clock": 90,
+          "hl": 43899,
+          "de": 23050,
+          "bc": 254,
+          "master_cycles": 68123610,
+          "irq_master_cycles": 12527775
+        },
+        {
+          "frame": 1505,
+          "pc": 1934,
+          "clock": 91,
+          "hl": 43899,
+          "de": 23050,
+          "bc": 254,
+          "master_cycles": 68638905,
+          "irq_master_cycles": 12650505
+        },
+        {
+          "frame": 1506,
+          "pc": 1971,
+          "clock": 91,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 69919050,
+          "irq_master_cycles": 12650505
+        },
+        {
+          "frame": 1506,
+          "pc": 1435,
+          "clock": 91,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 69959835,
+          "irq_master_cycles": 12690735
+        },
+        {
+          "frame": 1507,
+          "pc": 1638,
+          "clock": 91,
+          "hl": 35420,
+          "de": 31754,
+          "bc": 2,
+          "master_cycles": 70799805,
+          "irq_master_cycles": 12722385
+        },
+        {
+          "frame": 1507,
+          "pc": 1750,
+          "clock": 91,
+          "hl": 43905,
+          "de": 31754,
+          "bc": 254,
+          "master_cycles": 70801860,
+          "irq_master_cycles": 12722385
+        },
+        {
+          "frame": 1507,
+          "pc": 1926,
+          "clock": 91,
+          "hl": 43905,
+          "de": 31754,
+          "bc": 254,
+          "master_cycles": 70802115,
+          "irq_master_cycles": 12722385
+        },
+        {
+          "frame": 1508,
+          "pc": 1934,
+          "clock": 92,
+          "hl": 43905,
+          "de": 31754,
+          "bc": 254,
+          "master_cycles": 71850285,
+          "irq_master_cycles": 12845115
+        },
+        {
+          "frame": 1509,
+          "pc": 1971,
+          "clock": 92,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 73130430,
+          "irq_master_cycles": 12845115
+        },
+        {
+          "frame": 1509,
+          "pc": 1435,
+          "clock": 92,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 73171215,
+          "irq_master_cycles": 12885345
+        },
+        {
+          "frame": 1509,
+          "pc": 1643,
+          "clock": 92,
+          "hl": 43906,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 73173570,
+          "irq_master_cycles": 12885345
+        },
+        {
+          "frame": 1509,
+          "pc": 1750,
+          "clock": 92,
+          "hl": 43906,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 73175670,
+          "irq_master_cycles": 12885345
+        },
+        {
+          "frame": 1509,
+          "pc": 1926,
+          "clock": 92,
+          "hl": 43906,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 73175925,
+          "irq_master_cycles": 12885345
+        },
+        {
+          "frame": 1510,
+          "pc": 1934,
+          "clock": 93,
+          "hl": 43906,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 73990935,
+          "irq_master_cycles": 13008075
+        },
+        {
+          "frame": 1511,
+          "pc": 1971,
+          "clock": 93,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 75271080,
+          "irq_master_cycles": 13008075
+        },
+        {
+          "frame": 1511,
+          "pc": 1435,
+          "clock": 93,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 75311865,
+          "irq_master_cycles": 13048305
+        },
+        {
+          "frame": 1512,
+          "pc": 1643,
+          "clock": 93,
+          "hl": 43912,
+          "de": 39690,
+          "bc": 0,
+          "master_cycles": 76141755,
+          "irq_master_cycles": 13079955
+        },
+        {
+          "frame": 1512,
+          "pc": 1750,
+          "clock": 93,
+          "hl": 43912,
+          "de": 39690,
+          "bc": 254,
+          "master_cycles": 76143855,
+          "irq_master_cycles": 13079955
+        },
+        {
+          "frame": 1512,
+          "pc": 1926,
+          "clock": 93,
+          "hl": 43912,
+          "de": 39690,
+          "bc": 254,
+          "master_cycles": 76144110,
+          "irq_master_cycles": 13079955
+        },
+        {
+          "frame": 1513,
+          "pc": 1934,
+          "clock": 94,
+          "hl": 43912,
+          "de": 39690,
+          "bc": 254,
+          "master_cycles": 77202285,
+          "irq_master_cycles": 13202685
+        },
+        {
+          "frame": 1514,
+          "pc": 1971,
+          "clock": 94,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 78482430,
+          "irq_master_cycles": 13202685
+        },
+        {
+          "frame": 1514,
+          "pc": 1435,
+          "clock": 94,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 78523215,
+          "irq_master_cycles": 13242915
+        },
+        {
+          "frame": 1515,
+          "pc": 1643,
+          "clock": 94,
+          "hl": 43918,
+          "de": 48394,
+          "bc": 0,
+          "master_cycles": 79371090,
+          "irq_master_cycles": 13271775
+        },
+        {
+          "frame": 1515,
+          "pc": 1750,
+          "clock": 94,
+          "hl": 43918,
+          "de": 48394,
+          "bc": 254,
+          "master_cycles": 79373190,
+          "irq_master_cycles": 13271775
+        },
+        {
+          "frame": 1515,
+          "pc": 1926,
+          "clock": 94,
+          "hl": 43918,
+          "de": 48394,
+          "bc": 254,
+          "master_cycles": 79373445,
+          "irq_master_cycles": 13271775
+        },
+        {
+          "frame": 1516,
+          "pc": 1934,
+          "clock": 95,
+          "hl": 43918,
+          "de": 48394,
+          "bc": 254,
+          "master_cycles": 80413785,
+          "irq_master_cycles": 13394505
+        },
+        {
+          "frame": 1517,
+          "pc": 1971,
+          "clock": 95,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 81693930,
+          "irq_master_cycles": 13394505
+        },
+        {
+          "frame": 1517,
+          "pc": 1435,
+          "clock": 95,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 81737505,
+          "irq_master_cycles": 13437525
+        },
+        {
+          "frame": 1517,
+          "pc": 1643,
+          "clock": 95,
+          "hl": 43920,
+          "de": 50954,
+          "bc": 0,
+          "master_cycles": 81894690,
+          "irq_master_cycles": 13437525
+        },
+        {
+          "frame": 1517,
+          "pc": 1750,
+          "clock": 95,
+          "hl": 43920,
+          "de": 50954,
+          "bc": 254,
+          "master_cycles": 81896790,
+          "irq_master_cycles": 13437525
+        },
+        {
+          "frame": 1517,
+          "pc": 1926,
+          "clock": 95,
+          "hl": 43920,
+          "de": 50954,
+          "bc": 254,
+          "master_cycles": 81897045,
+          "irq_master_cycles": 13437525
+        },
+        {
+          "frame": 1518,
+          "pc": 1934,
+          "clock": 96,
+          "hl": 43920,
+          "de": 50954,
+          "bc": 254,
+          "master_cycles": 82554585,
+          "irq_master_cycles": 13560255
+        },
+        {
+          "frame": 1519,
+          "pc": 1971,
+          "clock": 96,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 83834730,
+          "irq_master_cycles": 13560255
+        },
+        {
+          "frame": 1519,
+          "pc": 1435,
+          "clock": 96,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 83875515,
+          "irq_master_cycles": 13600485
+        },
+        {
+          "frame": 1519,
+          "pc": 1655,
+          "clock": 96,
+          "hl": 43920,
+          "de": 53770,
+          "bc": 26,
+          "master_cycles": 83985195,
+          "irq_master_cycles": 13600485
+        },
+        {
+          "frame": 1519,
+          "pc": 1750,
+          "clock": 96,
+          "hl": 43920,
+          "de": 53770,
+          "bc": 254,
+          "master_cycles": 83987760,
+          "irq_master_cycles": 13600485
+        },
+        {
+          "frame": 1519,
+          "pc": 1926,
+          "clock": 96,
+          "hl": 43920,
+          "de": 53770,
+          "bc": 254,
+          "master_cycles": 83988015,
+          "irq_master_cycles": 13600485
+        },
+        {
+          "frame": 1520,
+          "pc": 1934,
+          "clock": 97,
+          "hl": 43920,
+          "de": 53770,
+          "bc": 254,
+          "master_cycles": 84695580,
+          "irq_master_cycles": 13723215
+        },
+        {
+          "frame": 1521,
+          "pc": 1971,
+          "clock": 97,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 85975725,
+          "irq_master_cycles": 13723215
+        },
+        {
+          "frame": 1521,
+          "pc": 1435,
+          "clock": 97,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 86016510,
+          "irq_master_cycles": 13763445
+        },
+        {
+          "frame": 1522,
+          "pc": 1643,
+          "clock": 97,
+          "hl": 43928,
+          "de": 7700,
+          "bc": 0,
+          "master_cycles": 87064170,
+          "irq_master_cycles": 13795095
+        },
+        {
+          "frame": 1522,
+          "pc": 1750,
+          "clock": 97,
+          "hl": 43928,
+          "de": 7700,
+          "bc": 254,
+          "master_cycles": 87066270,
+          "irq_master_cycles": 13795095
+        },
+        {
+          "frame": 1522,
+          "pc": 1926,
+          "clock": 97,
+          "hl": 43928,
+          "de": 7700,
+          "bc": 254,
+          "master_cycles": 87066525,
+          "irq_master_cycles": 13795095
+        },
+        {
+          "frame": 1523,
+          "pc": 1934,
+          "clock": 98,
+          "hl": 43928,
+          "de": 7700,
+          "bc": 254,
+          "master_cycles": 87907200,
+          "irq_master_cycles": 13917825
+        },
+        {
+          "frame": 1524,
+          "pc": 1971,
+          "clock": 98,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 89187345,
+          "irq_master_cycles": 13917825
+        },
+        {
+          "frame": 1524,
+          "pc": 1435,
+          "clock": 98,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 89228130,
+          "irq_master_cycles": 13958055
+        },
+        {
+          "frame": 1524,
+          "pc": 1643,
+          "clock": 98,
+          "hl": 43931,
+          "de": 11796,
+          "bc": 0,
+          "master_cycles": 89524890,
+          "irq_master_cycles": 13958055
+        },
+        {
+          "frame": 1524,
+          "pc": 1750,
+          "clock": 98,
+          "hl": 43931,
+          "de": 11796,
+          "bc": 254,
+          "master_cycles": 89526990,
+          "irq_master_cycles": 13958055
+        },
+        {
+          "frame": 1524,
+          "pc": 1926,
+          "clock": 98,
+          "hl": 43931,
+          "de": 11796,
+          "bc": 254,
+          "master_cycles": 89527245,
+          "irq_master_cycles": 13958055
+        },
+        {
+          "frame": 1525,
+          "pc": 1934,
+          "clock": 99,
+          "hl": 43931,
+          "de": 11796,
+          "bc": 254,
+          "master_cycles": 90048195,
+          "irq_master_cycles": 14080785
+        },
+        {
+          "frame": 1526,
+          "pc": 1971,
+          "clock": 99,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 91328340,
+          "irq_master_cycles": 14080785
+        },
+        {
+          "frame": 1526,
+          "pc": 1435,
+          "clock": 99,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 91369125,
+          "irq_master_cycles": 14121015
+        },
+        {
+          "frame": 1526,
+          "pc": 1643,
+          "clock": 99,
+          "hl": 43936,
+          "de": 17940,
+          "bc": 0,
+          "master_cycles": 91909290,
+          "irq_master_cycles": 14121015
+        },
+        {
+          "frame": 1526,
+          "pc": 1750,
+          "clock": 99,
+          "hl": 43936,
+          "de": 17940,
+          "bc": 254,
+          "master_cycles": 91911390,
+          "irq_master_cycles": 14121015
+        },
+        {
+          "frame": 1526,
+          "pc": 1926,
+          "clock": 99,
+          "hl": 43936,
+          "de": 17940,
+          "bc": 254,
+          "master_cycles": 91911645,
+          "irq_master_cycles": 14121015
+        },
+        {
+          "frame": 1527,
+          "pc": 1934,
+          "clock": 100,
+          "hl": 43936,
+          "de": 17940,
+          "bc": 254,
+          "master_cycles": 92191785,
+          "irq_master_cycles": 14246535
+        },
+        {
+          "frame": 1528,
+          "pc": 1971,
+          "clock": 100,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 93471930,
+          "irq_master_cycles": 14246535
+        },
+        {
+          "frame": 1528,
+          "pc": 1435,
+          "clock": 100,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 93512715,
+          "irq_master_cycles": 14286765
+        },
+        {
+          "frame": 1528,
+          "pc": 1643,
+          "clock": 100,
+          "hl": 43940,
+          "de": 22804,
+          "bc": 0,
+          "master_cycles": 93945225,
+          "irq_master_cycles": 14286765
+        },
+        {
+          "frame": 1528,
+          "pc": 1750,
+          "clock": 100,
+          "hl": 43940,
+          "de": 22804,
+          "bc": 254,
+          "master_cycles": 93947325,
+          "irq_master_cycles": 14286765
+        },
+        {
+          "frame": 1528,
+          "pc": 1926,
+          "clock": 100,
+          "hl": 43940,
+          "de": 22804,
+          "bc": 254,
+          "master_cycles": 93947580,
+          "irq_master_cycles": 14286765
+        },
+        {
+          "frame": 1529,
+          "pc": 1934,
+          "clock": 101,
+          "hl": 43940,
+          "de": 22804,
+          "bc": 254,
+          "master_cycles": 94329765,
+          "irq_master_cycles": 14409495
+        },
+        {
+          "frame": 1530,
+          "pc": 1971,
+          "clock": 101,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 95609910,
+          "irq_master_cycles": 14409495
+        },
+        {
+          "frame": 1530,
+          "pc": 1435,
+          "clock": 101,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 95650695,
+          "irq_master_cycles": 14449725
+        },
+        {
+          "frame": 1530,
+          "pc": 1643,
+          "clock": 101,
+          "hl": 43945,
+          "de": 29460,
+          "bc": 0,
+          "master_cycles": 96250635,
+          "irq_master_cycles": 14449725
+        },
+        {
+          "frame": 1530,
+          "pc": 1750,
+          "clock": 101,
+          "hl": 43945,
+          "de": 29460,
+          "bc": 254,
+          "master_cycles": 96252735,
+          "irq_master_cycles": 14449725
+        },
+        {
+          "frame": 1530,
+          "pc": 1926,
+          "clock": 101,
+          "hl": 43945,
+          "de": 29460,
+          "bc": 254,
+          "master_cycles": 96252990,
+          "irq_master_cycles": 14449725
+        },
+        {
+          "frame": 1531,
+          "pc": 1934,
+          "clock": 102,
+          "hl": 43945,
+          "de": 29460,
+          "bc": 254,
+          "master_cycles": 96470745,
+          "irq_master_cycles": 14572455
+        },
+        {
+          "frame": 1532,
+          "pc": 1971,
+          "clock": 102,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 97750890,
+          "irq_master_cycles": 14572455
+        },
+        {
+          "frame": 1532,
+          "pc": 1435,
+          "clock": 102,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 97794465,
+          "irq_master_cycles": 14615475
+        },
+        {
+          "frame": 1533,
+          "pc": 1643,
+          "clock": 102,
+          "hl": 43954,
+          "de": 40724,
+          "bc": 0,
+          "master_cycles": 98954370,
+          "irq_master_cycles": 14644335
+        },
+        {
+          "frame": 1533,
+          "pc": 1750,
+          "clock": 102,
+          "hl": 43954,
+          "de": 40724,
+          "bc": 254,
+          "master_cycles": 98956470,
+          "irq_master_cycles": 14644335
+        },
+        {
+          "frame": 1533,
+          "pc": 1926,
+          "clock": 102,
+          "hl": 43954,
+          "de": 40724,
+          "bc": 254,
+          "master_cycles": 98956725,
+          "irq_master_cycles": 14644335
+        },
+        {
+          "frame": 1534,
+          "pc": 1934,
+          "clock": 103,
+          "hl": 43954,
+          "de": 40724,
+          "bc": 254,
+          "master_cycles": 99682125,
+          "irq_master_cycles": 14767065
+        },
+        {
+          "frame": 1535,
+          "pc": 1971,
+          "clock": 103,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 100962270,
+          "irq_master_cycles": 14767065
+        },
+        {
+          "frame": 1535,
+          "pc": 1435,
+          "clock": 103,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 101003055,
+          "irq_master_cycles": 14807295
+        },
+        {
+          "frame": 1535,
+          "pc": 1643,
+          "clock": 103,
+          "hl": 43958,
+          "de": 46356,
+          "bc": 0,
+          "master_cycles": 101447550,
+          "irq_master_cycles": 14807295
+        },
+        {
+          "frame": 1535,
+          "pc": 1750,
+          "clock": 103,
+          "hl": 43958,
+          "de": 46356,
+          "bc": 254,
+          "master_cycles": 101449650,
+          "irq_master_cycles": 14807295
+        },
+        {
+          "frame": 1535,
+          "pc": 1926,
+          "clock": 103,
+          "hl": 43958,
+          "de": 46356,
+          "bc": 254,
+          "master_cycles": 101449905,
+          "irq_master_cycles": 14807295
+        },
+        {
+          "frame": 1536,
+          "pc": 1934,
+          "clock": 104,
+          "hl": 43958,
+          "de": 46356,
+          "bc": 254,
+          "master_cycles": 101822955,
+          "irq_master_cycles": 14930025
+        },
+        {
+          "frame": 1537,
+          "pc": 1971,
+          "clock": 104,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 103103100,
+          "irq_master_cycles": 14930025
+        },
+        {
+          "frame": 1537,
+          "pc": 1435,
+          "clock": 104,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 103146675,
+          "irq_master_cycles": 14973045
+        },
+        {
+          "frame": 1538,
+          "pc": 1655,
+          "clock": 104,
+          "hl": 43958,
+          "de": 48916,
+          "bc": 44,
+          "master_cycles": 104449995,
+          "irq_master_cycles": 15001905
+        },
+        {
+          "frame": 1538,
+          "pc": 1750,
+          "clock": 104,
+          "hl": 43958,
+          "de": 48916,
+          "bc": 254,
+          "master_cycles": 104452560,
+          "irq_master_cycles": 15001905
+        },
+        {
+          "frame": 1538,
+          "pc": 1926,
+          "clock": 104,
+          "hl": 43958,
+          "de": 48916,
+          "bc": 254,
+          "master_cycles": 104452815,
+          "irq_master_cycles": 15001905
+        },
+        {
+          "frame": 1539,
+          "pc": 1934,
+          "clock": 105,
+          "hl": 43958,
+          "de": 48916,
+          "bc": 254,
+          "master_cycles": 105034230,
+          "irq_master_cycles": 15124635
+        },
+        {
+          "frame": 1540,
+          "pc": 1971,
+          "clock": 105,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 106314375,
+          "irq_master_cycles": 15124635
+        },
+        {
+          "frame": 1540,
+          "pc": 1435,
+          "clock": 105,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 106355160,
+          "irq_master_cycles": 15164865
+        },
+        {
+          "frame": 1540,
+          "pc": 1643,
+          "clock": 105,
+          "hl": 43963,
+          "de": 3870,
+          "bc": 0,
+          "master_cycles": 106932420,
+          "irq_master_cycles": 15164865
+        },
+        {
+          "frame": 1540,
+          "pc": 1750,
+          "clock": 105,
+          "hl": 43963,
+          "de": 3870,
+          "bc": 254,
+          "master_cycles": 106934520,
+          "irq_master_cycles": 15164865
+        },
+        {
+          "frame": 1540,
+          "pc": 1926,
+          "clock": 105,
+          "hl": 43963,
+          "de": 3870,
+          "bc": 254,
+          "master_cycles": 106934775,
+          "irq_master_cycles": 15164865
+        },
+        {
+          "frame": 1541,
+          "pc": 1934,
+          "clock": 106,
+          "hl": 43963,
+          "de": 3870,
+          "bc": 254,
+          "master_cycles": 107175150,
+          "irq_master_cycles": 15287595
+        },
+        {
+          "frame": 1542,
+          "pc": 1971,
+          "clock": 106,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 108455295,
+          "irq_master_cycles": 15287595
+        },
+        {
+          "frame": 1542,
+          "pc": 1435,
+          "clock": 106,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 108498870,
+          "irq_master_cycles": 15330615
+        },
+        {
+          "frame": 1544,
+          "pc": 1638,
+          "clock": 106,
+          "hl": 35420,
+          "de": 21534,
+          "bc": 2,
+          "master_cycles": 110392095,
+          "irq_master_cycles": 15380640
+        },
+        {
+          "frame": 1544,
+          "pc": 1750,
+          "clock": 106,
+          "hl": 43976,
+          "de": 21534,
+          "bc": 254,
+          "master_cycles": 110394150,
+          "irq_master_cycles": 15380640
+        },
+        {
+          "frame": 1544,
+          "pc": 1926,
+          "clock": 106,
+          "hl": 43976,
+          "de": 21534,
+          "bc": 254,
+          "master_cycles": 110394405,
+          "irq_master_cycles": 15380640
+        },
+        {
+          "frame": 1545,
+          "pc": 1934,
+          "clock": 107,
+          "hl": 43976,
+          "de": 21534,
+          "bc": 254,
+          "master_cycles": 111457365,
+          "irq_master_cycles": 15503370
+        },
+        {
+          "frame": 1546,
+          "pc": 1971,
+          "clock": 107,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 112737510,
+          "irq_master_cycles": 15503370
+        },
+        {
+          "frame": 1546,
+          "pc": 1435,
+          "clock": 107,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 112778295,
+          "irq_master_cycles": 15543600
+        },
+        {
+          "frame": 1546,
+          "pc": 1643,
+          "clock": 107,
+          "hl": 43977,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 112780650,
+          "irq_master_cycles": 15543600
+        },
+        {
+          "frame": 1546,
+          "pc": 1750,
+          "clock": 107,
+          "hl": 43977,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 112782750,
+          "irq_master_cycles": 15543600
+        },
+        {
+          "frame": 1546,
+          "pc": 1926,
+          "clock": 107,
+          "hl": 43977,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 112783005,
+          "irq_master_cycles": 15543600
+        },
+        {
+          "frame": 1547,
+          "pc": 1934,
+          "clock": 108,
+          "hl": 43977,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 113600805,
+          "irq_master_cycles": 15669120
+        },
+        {
+          "frame": 1548,
+          "pc": 1971,
+          "clock": 108,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 114880950,
+          "irq_master_cycles": 15669120
+        },
+        {
+          "frame": 1548,
+          "pc": 1435,
+          "clock": 108,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 114921735,
+          "irq_master_cycles": 15709350
+        },
+        {
+          "frame": 1549,
+          "pc": 1643,
+          "clock": 108,
+          "hl": 43983,
+          "de": 29470,
+          "bc": 0,
+          "master_cycles": 115748310,
+          "irq_master_cycles": 15738210
+        },
+        {
+          "frame": 1549,
+          "pc": 1750,
+          "clock": 108,
+          "hl": 43983,
+          "de": 29470,
+          "bc": 254,
+          "master_cycles": 115750410,
+          "irq_master_cycles": 15738210
+        },
+        {
+          "frame": 1549,
+          "pc": 1926,
+          "clock": 108,
+          "hl": 43983,
+          "de": 29470,
+          "bc": 254,
+          "master_cycles": 115750665,
+          "irq_master_cycles": 15738210
+        },
+        {
+          "frame": 1550,
+          "pc": 1934,
+          "clock": 109,
+          "hl": 43983,
+          "de": 29470,
+          "bc": 254,
+          "master_cycles": 116809275,
+          "irq_master_cycles": 15860940
+        },
+        {
+          "frame": 1551,
+          "pc": 1971,
+          "clock": 109,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 118089420,
+          "irq_master_cycles": 15860940
+        },
+        {
+          "frame": 1551,
+          "pc": 1435,
+          "clock": 109,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 118130205,
+          "irq_master_cycles": 15901170
+        },
+        {
+          "frame": 1552,
+          "pc": 1643,
+          "clock": 109,
+          "hl": 43989,
+          "de": 38174,
+          "bc": 0,
+          "master_cycles": 118981830,
+          "irq_master_cycles": 15932820
+        },
+        {
+          "frame": 1552,
+          "pc": 1750,
+          "clock": 109,
+          "hl": 43989,
+          "de": 38174,
+          "bc": 254,
+          "master_cycles": 118983930,
+          "irq_master_cycles": 15932820
+        },
+        {
+          "frame": 1552,
+          "pc": 1926,
+          "clock": 109,
+          "hl": 43989,
+          "de": 38174,
+          "bc": 254,
+          "master_cycles": 118984185,
+          "irq_master_cycles": 15932820
+        },
+        {
+          "frame": 1553,
+          "pc": 1934,
+          "clock": 110,
+          "hl": 43989,
+          "de": 38174,
+          "bc": 254,
+          "master_cycles": 120021045,
+          "irq_master_cycles": 16055550
+        },
+        {
+          "frame": 1554,
+          "pc": 1971,
+          "clock": 110,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 121301190,
+          "irq_master_cycles": 16055550
+        },
+        {
+          "frame": 1554,
+          "pc": 1435,
+          "clock": 110,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 121341975,
+          "irq_master_cycles": 16095780
+        },
+        {
+          "frame": 1554,
+          "pc": 1643,
+          "clock": 110,
+          "hl": 43991,
+          "de": 40734,
+          "bc": 0,
+          "master_cycles": 121498980,
+          "irq_master_cycles": 16095780
+        },
+        {
+          "frame": 1554,
+          "pc": 1750,
+          "clock": 110,
+          "hl": 43991,
+          "de": 40734,
+          "bc": 254,
+          "master_cycles": 121501080,
+          "irq_master_cycles": 16095780
+        },
+        {
+          "frame": 1554,
+          "pc": 1926,
+          "clock": 110,
+          "hl": 43991,
+          "de": 40734,
+          "bc": 254,
+          "master_cycles": 121501335,
+          "irq_master_cycles": 16095780
+        },
+        {
+          "frame": 1555,
+          "pc": 1934,
+          "clock": 111,
+          "hl": 43991,
+          "de": 40734,
+          "bc": 254,
+          "master_cycles": 122161920,
+          "irq_master_cycles": 16218510
+        },
+        {
+          "frame": 1556,
+          "pc": 1971,
+          "clock": 111,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 123442065,
+          "irq_master_cycles": 16218510
+        },
+        {
+          "frame": 1556,
+          "pc": 1435,
+          "clock": 111,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 123482850,
+          "irq_master_cycles": 16258740
+        },
+        {
+          "frame": 1556,
+          "pc": 1643,
+          "clock": 111,
+          "hl": 43995,
+          "de": 46110,
+          "bc": 0,
+          "master_cycles": 123890040,
+          "irq_master_cycles": 16258740
+        },
+        {
+          "frame": 1556,
+          "pc": 1750,
+          "clock": 111,
+          "hl": 43995,
+          "de": 46110,
+          "bc": 254,
+          "master_cycles": 123892140,
+          "irq_master_cycles": 16258740
+        },
+        {
+          "frame": 1556,
+          "pc": 1926,
+          "clock": 111,
+          "hl": 43995,
+          "de": 46110,
+          "bc": 254,
+          "master_cycles": 123892395,
+          "irq_master_cycles": 16258740
+        },
+        {
+          "frame": 1557,
+          "pc": 1934,
+          "clock": 112,
+          "hl": 43995,
+          "de": 46110,
+          "bc": 254,
+          "master_cycles": 124305645,
+          "irq_master_cycles": 16384260
+        },
+        {
+          "frame": 1558,
+          "pc": 1971,
+          "clock": 112,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 125585790,
+          "irq_master_cycles": 16384260
+        },
+        {
+          "frame": 1558,
+          "pc": 1435,
+          "clock": 112,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 125626575,
+          "irq_master_cycles": 16424490
+        },
+        {
+          "frame": 1558,
+          "pc": 1643,
+          "clock": 112,
+          "hl": 43999,
+          "de": 51486,
+          "bc": 0,
+          "master_cycles": 126064425,
+          "irq_master_cycles": 16424490
+        },
+        {
+          "frame": 1558,
+          "pc": 1750,
+          "clock": 112,
+          "hl": 43999,
+          "de": 51486,
+          "bc": 254,
+          "master_cycles": 126066525,
+          "irq_master_cycles": 16424490
+        },
+        {
+          "frame": 1558,
+          "pc": 1926,
+          "clock": 112,
+          "hl": 43999,
+          "de": 51486,
+          "bc": 254,
+          "master_cycles": 126066780,
+          "irq_master_cycles": 16424490
+        },
+        {
+          "frame": 1559,
+          "pc": 1934,
+          "clock": 113,
+          "hl": 43999,
+          "de": 51486,
+          "bc": 254,
+          "master_cycles": 126443745,
+          "irq_master_cycles": 16547220
+        },
+        {
+          "frame": 1560,
+          "pc": 1971,
+          "clock": 113,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 127723890,
+          "irq_master_cycles": 16547220
+        },
+        {
+          "frame": 1560,
+          "pc": 1435,
+          "clock": 113,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 127764675,
+          "irq_master_cycles": 16587450
+        },
+        {
+          "frame": 1560,
+          "pc": 1655,
+          "clock": 113,
+          "hl": 43999,
+          "de": 54302,
+          "bc": 41,
+          "master_cycles": 127869630,
+          "irq_master_cycles": 16587450
+        },
+        {
+          "frame": 1560,
+          "pc": 1750,
+          "clock": 113,
+          "hl": 43999,
+          "de": 54302,
+          "bc": 254,
+          "master_cycles": 127872195,
+          "irq_master_cycles": 16587450
+        },
+        {
+          "frame": 1560,
+          "pc": 1926,
+          "clock": 113,
+          "hl": 43999,
+          "de": 54302,
+          "bc": 254,
+          "master_cycles": 127872450,
+          "irq_master_cycles": 16587450
+        },
+        {
+          "frame": 1561,
+          "pc": 1934,
+          "clock": 114,
+          "hl": 43999,
+          "de": 54302,
+          "bc": 254,
+          "master_cycles": 128584365,
+          "irq_master_cycles": 16710180
+        },
+        {
+          "frame": 1562,
+          "pc": 1971,
+          "clock": 114,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 129864510,
+          "irq_master_cycles": 16710180
+        },
+        {
+          "frame": 1562,
+          "pc": 1435,
+          "clock": 114,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 129908085,
+          "irq_master_cycles": 16753200
+        },
+        {
+          "frame": 1563,
+          "pc": 1638,
+          "clock": 114,
+          "hl": 35420,
+          "de": 8744,
+          "bc": 2,
+          "master_cycles": 131063850,
+          "irq_master_cycles": 16782060
+        },
+        {
+          "frame": 1563,
+          "pc": 1750,
+          "clock": 114,
+          "hl": 44007,
+          "de": 8744,
+          "bc": 254,
+          "master_cycles": 131065905,
+          "irq_master_cycles": 16782060
+        },
+        {
+          "frame": 1563,
+          "pc": 1926,
+          "clock": 114,
+          "hl": 44007,
+          "de": 8744,
+          "bc": 254,
+          "master_cycles": 131066160,
+          "irq_master_cycles": 16782060
+        },
+        {
+          "frame": 1564,
+          "pc": 1934,
+          "clock": 115,
+          "hl": 44007,
+          "de": 8744,
+          "bc": 254,
+          "master_cycles": 131795910,
+          "irq_master_cycles": 16904790
+        },
+        {
+          "frame": 1565,
+          "pc": 1971,
+          "clock": 115,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 133076055,
+          "irq_master_cycles": 16904790
+        },
+        {
+          "frame": 1565,
+          "pc": 1435,
+          "clock": 115,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 133116840,
+          "irq_master_cycles": 16945020
+        },
+        {
+          "frame": 1565,
+          "pc": 1643,
+          "clock": 115,
+          "hl": 44008,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 133119195,
+          "irq_master_cycles": 16945020
+        },
+        {
+          "frame": 1565,
+          "pc": 1750,
+          "clock": 115,
+          "hl": 44008,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 133121295,
+          "irq_master_cycles": 16945020
+        },
+        {
+          "frame": 1565,
+          "pc": 1926,
+          "clock": 115,
+          "hl": 44008,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 133121550,
+          "irq_master_cycles": 16945020
+        },
+        {
+          "frame": 1566,
+          "pc": 1934,
+          "clock": 116,
+          "hl": 44008,
+          "de": 4,
+          "bc": 254,
+          "master_cycles": 133936995,
+          "irq_master_cycles": 17067750
+        },
+        {
+          "frame": 1567,
+          "pc": 1971,
+          "clock": 116,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 135217140,
+          "irq_master_cycles": 17067750
+        },
+        {
+          "frame": 1567,
+          "pc": 1435,
+          "clock": 116,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 135260715,
+          "irq_master_cycles": 17110770
+        },
+        {
+          "frame": 1568,
+          "pc": 1643,
+          "clock": 116,
+          "hl": 44016,
+          "de": 18728,
+          "bc": 0,
+          "master_cycles": 136297815,
+          "irq_master_cycles": 17139630
+        },
+        {
+          "frame": 1568,
+          "pc": 1750,
+          "clock": 116,
+          "hl": 44016,
+          "de": 18728,
+          "bc": 254,
+          "master_cycles": 136299915,
+          "irq_master_cycles": 17139630
+        },
+        {
+          "frame": 1568,
+          "pc": 1926,
+          "clock": 116,
+          "hl": 44016,
+          "de": 18728,
+          "bc": 254,
+          "master_cycles": 136300170,
+          "irq_master_cycles": 17139630
+        },
+        {
+          "frame": 1569,
+          "pc": 1934,
+          "clock": 117,
+          "hl": 44016,
+          "de": 18728,
+          "bc": 254,
+          "master_cycles": 137148240,
+          "irq_master_cycles": 17262360
+        },
+        {
+          "frame": 1570,
+          "pc": 1971,
+          "clock": 117,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 138428385,
+          "irq_master_cycles": 17262360
+        },
+        {
+          "frame": 1570,
+          "pc": 1435,
+          "clock": 117,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 138469170,
+          "irq_master_cycles": 17302590
+        },
+        {
+          "frame": 1571,
+          "pc": 1643,
+          "clock": 117,
+          "hl": 44022,
+          "de": 27176,
+          "bc": 0,
+          "master_cycles": 139295745,
+          "irq_master_cycles": 17331450
+        },
+        {
+          "frame": 1571,
+          "pc": 1750,
+          "clock": 117,
+          "hl": 44022,
+          "de": 27176,
+          "bc": 254,
+          "master_cycles": 139297845,
+          "irq_master_cycles": 17331450
+        },
+        {
+          "frame": 1571,
+          "pc": 1926,
+          "clock": 117,
+          "hl": 44022,
+          "de": 27176,
+          "bc": 254,
+          "master_cycles": 139298100,
+          "irq_master_cycles": 17331450
+        },
+        {
+          "frame": 1572,
+          "pc": 1934,
+          "clock": 118,
+          "hl": 44022,
+          "de": 27176,
+          "bc": 254,
+          "master_cycles": 140362545,
+          "irq_master_cycles": 17456970
+        },
+        {
+          "frame": 1573,
+          "pc": 1971,
+          "clock": 118,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 141642690,
+          "irq_master_cycles": 17456970
+        },
+        {
+          "frame": 1573,
+          "pc": 1435,
+          "clock": 118,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 141683475,
+          "irq_master_cycles": 17497200
+        },
+        {
+          "frame": 1574,
+          "pc": 1643,
+          "clock": 118,
+          "hl": 44028,
+          "de": 35880,
+          "bc": 0,
+          "master_cycles": 142531965,
+          "irq_master_cycles": 17526060
+        },
+        {
+          "frame": 1574,
+          "pc": 1750,
+          "clock": 118,
+          "hl": 44028,
+          "de": 35880,
+          "bc": 254,
+          "master_cycles": 142534065,
+          "irq_master_cycles": 17526060
+        },
+        {
+          "frame": 1574,
+          "pc": 1926,
+          "clock": 118,
+          "hl": 44028,
+          "de": 35880,
+          "bc": 254,
+          "master_cycles": 142534320,
+          "irq_master_cycles": 17526060
+        },
+        {
+          "frame": 1575,
+          "pc": 1934,
+          "clock": 119,
+          "hl": 44028,
+          "de": 35880,
+          "bc": 254,
+          "master_cycles": 143571180,
+          "irq_master_cycles": 17648790
+        },
+        {
+          "frame": 1576,
+          "pc": 1971,
+          "clock": 119,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 144851325,
+          "irq_master_cycles": 17648790
+        },
+        {
+          "frame": 1576,
+          "pc": 1435,
+          "clock": 119,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 144892110,
+          "irq_master_cycles": 17689020
+        },
+        {
+          "frame": 1576,
+          "pc": 1643,
+          "clock": 119,
+          "hl": 44031,
+          "de": 39720,
+          "bc": 0,
+          "master_cycles": 145188660,
+          "irq_master_cycles": 17689020
+        },
+        {
+          "frame": 1576,
+          "pc": 1750,
+          "clock": 119,
+          "hl": 44031,
+          "de": 39720,
+          "bc": 254,
+          "master_cycles": 145190760,
+          "irq_master_cycles": 17689020
+        },
+        {
+          "frame": 1576,
+          "pc": 1926,
+          "clock": 119,
+          "hl": 44031,
+          "de": 39720,
+          "bc": 254,
+          "master_cycles": 145191015,
+          "irq_master_cycles": 17689020
+        },
+        {
+          "frame": 1577,
+          "pc": 1934,
+          "clock": 120,
+          "hl": 44031,
+          "de": 39720,
+          "bc": 254,
+          "master_cycles": 145714755,
+          "irq_master_cycles": 17814540
+        },
+        {
+          "frame": 1578,
+          "pc": 1971,
+          "clock": 120,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 146994900,
+          "irq_master_cycles": 17814540
+        },
+        {
+          "frame": 1578,
+          "pc": 1435,
+          "clock": 120,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 147035685,
+          "irq_master_cycles": 17854770
+        },
+        {
+          "frame": 1579,
+          "pc": 1643,
+          "clock": 120,
+          "hl": 44040,
+          "de": 50984,
+          "bc": 0,
+          "master_cycles": 148162905,
+          "irq_master_cycles": 17883630
+        },
+        {
+          "frame": 1579,
+          "pc": 1750,
+          "clock": 120,
+          "hl": 44040,
+          "de": 50984,
+          "bc": 254,
+          "master_cycles": 148165005,
+          "irq_master_cycles": 17883630
+        },
+        {
+          "frame": 1579,
+          "pc": 1926,
+          "clock": 120,
+          "hl": 44040,
+          "de": 50984,
+          "bc": 254,
+          "master_cycles": 148165260,
+          "irq_master_cycles": 17883630
+        },
+        {
+          "frame": 1580,
+          "pc": 1934,
+          "clock": 121,
+          "hl": 44040,
+          "de": 50984,
+          "bc": 254,
+          "master_cycles": 148923285,
+          "irq_master_cycles": 18006360
+        },
+        {
+          "frame": 1581,
+          "pc": 1971,
+          "clock": 121,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 150203430,
+          "irq_master_cycles": 18006360
+        },
+        {
+          "frame": 1581,
+          "pc": 1435,
+          "clock": 121,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 150244215,
+          "irq_master_cycles": 18046590
+        },
+        {
+          "frame": 1581,
+          "pc": 1655,
+          "clock": 121,
+          "hl": 44040,
+          "de": 53800,
+          "bc": 28,
+          "master_cycles": 150353265,
+          "irq_master_cycles": 18046590
+        },
+        {
+          "frame": 1581,
+          "pc": 2030,
+          "clock": 121,
+          "hl": 56525,
+          "de": 53800,
+          "bc": 28,
+          "master_cycles": 150354555,
+          "irq_master_cycles": 18046590
+        },
+        {
+          "frame": 1581,
+          "pc": 1926,
+          "clock": 121,
+          "hl": 56525,
+          "de": 53800,
+          "bc": 28,
+          "master_cycles": 150354810,
+          "irq_master_cycles": 18046590
+        },
+        {
+          "frame": 1582,
+          "pc": 1934,
+          "clock": 122,
+          "hl": 56525,
+          "de": 53800,
+          "bc": 28,
+          "master_cycles": 151066905,
+          "irq_master_cycles": 18172110
+        },
+        {
+          "frame": 1583,
+          "pc": 1971,
+          "clock": 122,
+          "hl": 54544,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 152347050,
+          "irq_master_cycles": 18172110
+        },
+        {
+          "frame": 1583,
+          "pc": 2036,
+          "clock": 122,
+          "hl": 49199,
+          "de": 4,
+          "bc": 190,
+          "master_cycles": 152387580,
+          "irq_master_cycles": 18212340
+        }
+      ],
+      "traces": [
+        {
+          "frame": 1440,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1441,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1442,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1443,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1444,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1445,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1446,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1447,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1448,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1449,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1450,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1451,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1452,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1453,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1454,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1455,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1456,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1457,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1458,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1459,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1460,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1461,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1462,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1463,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1464,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1465,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1466,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1467,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1468,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1469,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1470,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1471,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1472,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1473,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1474,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1475,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1476,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1477,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1478,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1479,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1480,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1481,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1482,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1483,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1484,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1485,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1486,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1487,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1488,
+          "bitmap_sha256": "47635f7f4054dbe4a4b50e819cb5189b12310ccd1f4b10d6b32e0f5c17a0e797",
+          "position": "00000000",
+          "text_pointer": 0
+        },
+        {
+          "frame": 1489,
+          "bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+          "position": "00000000",
+          "text_pointer": 43880
+        },
+        {
+          "frame": 1490,
+          "bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+          "position": "00000000",
+          "text_pointer": 43880
+        },
+        {
+          "frame": 1491,
+          "bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+          "position": "00000000",
+          "text_pointer": 43880
+        },
+        {
+          "frame": 1492,
+          "bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+          "position": "00000000",
+          "text_pointer": 43880
+        },
+        {
+          "frame": 1493,
+          "bitmap_sha256": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f",
+          "position": "00000008",
+          "text_pointer": 49330
+        },
+        {
+          "frame": 1494,
+          "bitmap_sha256": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f",
+          "position": "00000008",
+          "text_pointer": 49330
+        },
+        {
+          "frame": 1495,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+          "position": "000c000c",
+          "text_pointer": 43882
+        },
+        {
+          "frame": 1496,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+          "position": "000c000c",
+          "text_pointer": 43882
+        },
+        {
+          "frame": 1497,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+          "position": "0012000c",
+          "text_pointer": 43883
+        },
+        {
+          "frame": 1498,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+          "position": "0012000c",
+          "text_pointer": 43883
+        },
+        {
+          "frame": 1499,
+          "bitmap_sha256": "7d784bde266c8ff348ee03b12bfd7c2af203186e49456d0f5b09785a7fec5e7f",
+          "position": "00120025",
+          "text_pointer": 43888
+        },
+        {
+          "frame": 1500,
+          "bitmap_sha256": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26",
+          "position": "0040003a",
+          "text_pointer": 43892
+        },
+        {
+          "frame": 1501,
+          "bitmap_sha256": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26",
+          "position": "0040003a",
+          "text_pointer": 43892
+        },
+        {
+          "frame": 1502,
+          "bitmap_sha256": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50",
+          "position": "0055004f",
+          "text_pointer": 43896
+        },
+        {
+          "frame": 1503,
+          "bitmap_sha256": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50",
+          "position": "0055004f",
+          "text_pointer": 43896
+        },
+        {
+          "frame": 1504,
+          "bitmap_sha256": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+          "position": "0065005f",
+          "text_pointer": 43899
+        },
+        {
+          "frame": 1505,
+          "bitmap_sha256": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+          "position": "0065005f",
+          "text_pointer": 43899
+        },
+        {
+          "frame": 1506,
+          "bitmap_sha256": "602d35b5930250f111df4030a03f006ad50aee116251f28af421491b69f5c004",
+          "position": "0065007c",
+          "text_pointer": 43904
+        },
+        {
+          "frame": 1507,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+          "position": "007f007f",
+          "text_pointer": 43905
+        },
+        {
+          "frame": 1508,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+          "position": "007f007f",
+          "text_pointer": 43905
+        },
+        {
+          "frame": 1509,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+          "position": "0085007f",
+          "text_pointer": 43906
+        },
+        {
+          "frame": 1510,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+          "position": "0085007f",
+          "text_pointer": 43906
+        },
+        {
+          "frame": 1511,
+          "bitmap_sha256": "5e5e22589df7da58bf14a6e0e40f3c6c8939e63806777771bd9f825757a308e2",
+          "position": "0085009b",
+          "text_pointer": 43911
+        },
+        {
+          "frame": 1512,
+          "bitmap_sha256": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70",
+          "position": "00a600a0",
+          "text_pointer": 43912
+        },
+        {
+          "frame": 1513,
+          "bitmap_sha256": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70",
+          "position": "00a600a0",
+          "text_pointer": 43912
+        },
+        {
+          "frame": 1514,
+          "bitmap_sha256": "7cee14e06458fe3bfd53cff278081b47f5b721d133bc4da59df70c87a1096cc8",
+          "position": "00a600bd",
+          "text_pointer": 43917
+        },
+        {
+          "frame": 1515,
+          "bitmap_sha256": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6",
+          "position": "00c700c1",
+          "text_pointer": 43918
+        },
+        {
+          "frame": 1516,
+          "bitmap_sha256": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6",
+          "position": "00c700c1",
+          "text_pointer": 43918
+        },
+        {
+          "frame": 1517,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+          "position": "00d200cc",
+          "text_pointer": 43920
+        },
+        {
+          "frame": 1518,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+          "position": "00d200cc",
+          "text_pointer": 43920
+        },
+        {
+          "frame": 1519,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+          "position": "0a0000d7",
+          "text_pointer": 43920
+        },
+        {
+          "frame": 1520,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+          "position": "0a0000d7",
+          "text_pointer": 43920
+        },
+        {
+          "frame": 1521,
+          "bitmap_sha256": "e8c2f91ea3d24580a5d2d99a1e8bfe3e48ec5e77dd1c95cb35294a621159dea1",
+          "position": "0a000a19",
+          "text_pointer": 43925
+        },
+        {
+          "frame": 1522,
+          "bitmap_sha256": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307",
+          "position": "0a290a23",
+          "text_pointer": 43928
+        },
+        {
+          "frame": 1523,
+          "bitmap_sha256": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307",
+          "position": "0a290a23",
+          "text_pointer": 43928
+        },
+        {
+          "frame": 1524,
+          "bitmap_sha256": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5",
+          "position": "0a390a33",
+          "text_pointer": 43931
+        },
+        {
+          "frame": 1525,
+          "bitmap_sha256": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5",
+          "position": "0a390a33",
+          "text_pointer": 43931
+        },
+        {
+          "frame": 1526,
+          "bitmap_sha256": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947",
+          "position": "0a510a4b",
+          "text_pointer": 43936
+        },
+        {
+          "frame": 1527,
+          "bitmap_sha256": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947",
+          "position": "0a510a4b",
+          "text_pointer": 43936
+        },
+        {
+          "frame": 1528,
+          "bitmap_sha256": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973",
+          "position": "0a640a5e",
+          "text_pointer": 43940
+        },
+        {
+          "frame": 1529,
+          "bitmap_sha256": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973",
+          "position": "0a640a5e",
+          "text_pointer": 43940
+        },
+        {
+          "frame": 1530,
+          "bitmap_sha256": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3",
+          "position": "0a7e0a78",
+          "text_pointer": 43945
+        },
+        {
+          "frame": 1531,
+          "bitmap_sha256": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3",
+          "position": "0a7e0a78",
+          "text_pointer": 43945
+        },
+        {
+          "frame": 1532,
+          "bitmap_sha256": "46fc37ab881cca41f825d277821a7e30b49580845375d3efc24aa74a01ff9fc4",
+          "position": "0a7e0a95",
+          "text_pointer": 43950
+        },
+        {
+          "frame": 1533,
+          "bitmap_sha256": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2",
+          "position": "0aab0aa5",
+          "text_pointer": 43954
+        },
+        {
+          "frame": 1534,
+          "bitmap_sha256": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2",
+          "position": "0aab0aa5",
+          "text_pointer": 43954
+        },
+        {
+          "frame": 1535,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+          "position": "0abf0ab9",
+          "text_pointer": 43958
+        },
+        {
+          "frame": 1536,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+          "position": "0abf0ab9",
+          "text_pointer": 43958
+        },
+        {
+          "frame": 1537,
+          "bitmap_sha256": "c565d9cfe4a21bf39639a4052ec81907b673b4f583e04c7c59886055ba48d72b",
+          "position": "0abf0ad3",
+          "text_pointer": 43958
+        },
+        {
+          "frame": 1538,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+          "position": "14000ad3",
+          "text_pointer": 43958
+        },
+        {
+          "frame": 1539,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+          "position": "14000ad3",
+          "text_pointer": 43958
+        },
+        {
+          "frame": 1540,
+          "bitmap_sha256": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+          "position": "141a1414",
+          "text_pointer": 43963
+        },
+        {
+          "frame": 1541,
+          "bitmap_sha256": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+          "position": "141a1414",
+          "text_pointer": 43963
+        },
+        {
+          "frame": 1542,
+          "bitmap_sha256": "67c23b13448678a5803b200c44b1b3b3b7449a62b08b1238f3aa1b3a8c07bd54",
+          "position": "141a1432",
+          "text_pointer": 43968
+        },
+        {
+          "frame": 1543,
+          "bitmap_sha256": "7d14f2439641c39990a97e49c6347fd61132119c5c6505aed127804e8cc16b19",
+          "position": "141a1454",
+          "text_pointer": 43975
+        },
+        {
+          "frame": 1544,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+          "position": "14571457",
+          "text_pointer": 43976
+        },
+        {
+          "frame": 1545,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+          "position": "14571457",
+          "text_pointer": 43976
+        },
+        {
+          "frame": 1546,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+          "position": "145d1457",
+          "text_pointer": 43977
+        },
+        {
+          "frame": 1547,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+          "position": "145d1457",
+          "text_pointer": 43977
+        },
+        {
+          "frame": 1548,
+          "bitmap_sha256": "16e82250e2a7662b6a2d9fe7937a95098f1ce1d667c1025dad0b015daee23d94",
+          "position": "145d1473",
+          "text_pointer": 43982
+        },
+        {
+          "frame": 1549,
+          "bitmap_sha256": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5",
+          "position": "147e1478",
+          "text_pointer": 43983
+        },
+        {
+          "frame": 1550,
+          "bitmap_sha256": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5",
+          "position": "147e1478",
+          "text_pointer": 43983
+        },
+        {
+          "frame": 1551,
+          "bitmap_sha256": "a1567334c909aa9ac2bd7dd500eb9311ae18081a437daca6ece4a0960997ddbe",
+          "position": "147e1495",
+          "text_pointer": 43988
+        },
+        {
+          "frame": 1552,
+          "bitmap_sha256": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89",
+          "position": "149f1499",
+          "text_pointer": 43989
+        },
+        {
+          "frame": 1553,
+          "bitmap_sha256": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89",
+          "position": "149f1499",
+          "text_pointer": 43989
+        },
+        {
+          "frame": 1554,
+          "bitmap_sha256": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33",
+          "position": "14aa14a4",
+          "text_pointer": 43991
+        },
+        {
+          "frame": 1555,
+          "bitmap_sha256": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33",
+          "position": "14aa14a4",
+          "text_pointer": 43991
+        },
+        {
+          "frame": 1556,
+          "bitmap_sha256": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8",
+          "position": "14bf14b9",
+          "text_pointer": 43995
+        },
+        {
+          "frame": 1557,
+          "bitmap_sha256": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8",
+          "position": "14bf14b9",
+          "text_pointer": 43995
+        },
+        {
+          "frame": 1558,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+          "position": "14d414ce",
+          "text_pointer": 43999
+        },
+        {
+          "frame": 1559,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+          "position": "14d414ce",
+          "text_pointer": 43999
+        },
+        {
+          "frame": 1560,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+          "position": "1e0014d9",
+          "text_pointer": 43999
+        },
+        {
+          "frame": 1561,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+          "position": "1e0014d9",
+          "text_pointer": 43999
+        },
+        {
+          "frame": 1562,
+          "bitmap_sha256": "7d5d525fcc9b0dbf6c4f136aab7753c601087ccbbb59f801d6c84427dff0b906",
+          "position": "1e001e18",
+          "text_pointer": 44004
+        },
+        {
+          "frame": 1563,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+          "position": "1e251e25",
+          "text_pointer": 44007
+        },
+        {
+          "frame": 1564,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+          "position": "1e251e25",
+          "text_pointer": 44007
+        },
+        {
+          "frame": 1565,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+          "position": "1e2b1e25",
+          "text_pointer": 44008
+        },
+        {
+          "frame": 1566,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+          "position": "1e2b1e25",
+          "text_pointer": 44008
+        },
+        {
+          "frame": 1567,
+          "bitmap_sha256": "a7065ba0188fc146c8ed334d1cca3cc97987b4d17a7f15448e230d4f25a845aa",
+          "position": "1e2b1e45",
+          "text_pointer": 44013
+        },
+        {
+          "frame": 1568,
+          "bitmap_sha256": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3",
+          "position": "1e541e4e",
+          "text_pointer": 44016
+        },
+        {
+          "frame": 1569,
+          "bitmap_sha256": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3",
+          "position": "1e541e4e",
+          "text_pointer": 44016
+        },
+        {
+          "frame": 1570,
+          "bitmap_sha256": "fe32c5ea2d6323370c20694a70d77e4190a4af521a64730d0d3ca759b36e7b1a",
+          "position": "1e541e6a",
+          "text_pointer": 44021
+        },
+        {
+          "frame": 1571,
+          "bitmap_sha256": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f",
+          "position": "1e751e6f",
+          "text_pointer": 44022
+        },
+        {
+          "frame": 1572,
+          "bitmap_sha256": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f",
+          "position": "1e751e6f",
+          "text_pointer": 44022
+        },
+        {
+          "frame": 1573,
+          "bitmap_sha256": "0530aa73a00b6056c33bea15e0bceb6821d46dceeeef220ec7a4fb7784e721d2",
+          "position": "1e751e8c",
+          "text_pointer": 44026
+        },
+        {
+          "frame": 1574,
+          "bitmap_sha256": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f",
+          "position": "1e961e90",
+          "text_pointer": 44028
+        },
+        {
+          "frame": 1575,
+          "bitmap_sha256": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f",
+          "position": "1e961e90",
+          "text_pointer": 44028
+        },
+        {
+          "frame": 1576,
+          "bitmap_sha256": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154",
+          "position": "1ea61ea0",
+          "text_pointer": 44031
+        },
+        {
+          "frame": 1577,
+          "bitmap_sha256": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154",
+          "position": "1ea61ea0",
+          "text_pointer": 44031
+        },
+        {
+          "frame": 1578,
+          "bitmap_sha256": "6cfbb40d8325755a0e683a536403224d5f6ab9525ee7a58da844ef6841fb93f4",
+          "position": "1ea61ebe",
+          "text_pointer": 44036
+        },
+        {
+          "frame": 1579,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ecc",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1580,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ecc",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1581,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1582,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1583,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1584,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1585,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1586,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1587,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1588,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1589,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1590,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1591,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1592,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1593,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1594,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1595,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1596,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1597,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1598,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1599,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1600,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1601,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1602,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1603,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1604,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1605,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1606,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1607,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1608,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1609,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1610,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1611,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1612,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1613,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1614,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1615,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1616,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1617,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1618,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1619,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        },
+        {
+          "frame": 1620,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+          "position": "1ed21ed7",
+          "text_pointer": 44040
+        }
+      ],
+      "hardware_bitmap_sha256": {
+        "1489": "13ac93ae8fd848b1597aafcb5e20916e3e42f7e618f50ed94c3c6e7211dd5d69",
+        "1490": "c07e8611b32a15a484e975a20827f14200498d87a17458abacfa7b67240a079b",
+        "1491": "7d64b33c3a99446ff4da000aad3a21c664015eb19ac21a315584d8c0fe6c3e44",
+        "1492": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+        "1493": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+        "1494": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f",
+        "1495": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f",
+        "1496": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1497": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1498": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1499": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1500": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1501": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26",
+        "1502": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26",
+        "1503": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50",
+        "1504": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50",
+        "1505": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+        "1506": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+        "1507": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+        "1508": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1509": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1510": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1511": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1512": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1513": "d87f22338dfb053b83eb8cb4d8ac25edaa493859f648443d3610eb414d1ac883",
+        "1514": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70",
+        "1515": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70",
+        "1516": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70",
+        "1517": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6",
+        "1518": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6",
+        "1519": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1520": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1521": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1522": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1523": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307",
+        "1524": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307",
+        "1525": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5",
+        "1526": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5",
+        "1527": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947",
+        "1528": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947",
+        "1529": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973",
+        "1530": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973",
+        "1531": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3",
+        "1532": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3",
+        "1533": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3",
+        "1534": "5fd733a4eaa5c49b6056c32368ad93c4fb04b254360f02d7cf8072013bf38a7c",
+        "1535": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2",
+        "1536": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2",
+        "1537": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1538": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1539": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1540": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1541": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+        "1542": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+        "1543": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+        "1544": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+        "1545": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1546": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1547": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1548": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1549": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1550": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5",
+        "1551": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5",
+        "1552": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5",
+        "1553": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89",
+        "1554": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89",
+        "1555": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89",
+        "1556": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33",
+        "1557": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33",
+        "1558": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8",
+        "1559": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8",
+        "1560": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1561": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1562": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1563": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1564": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1565": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1566": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1567": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1568": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1569": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3",
+        "1570": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3",
+        "1571": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3",
+        "1572": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f",
+        "1573": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f",
+        "1574": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f",
+        "1575": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f",
+        "1576": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f",
+        "1577": "978a50979e5e3310582313d0017c5967be1624b45d27071ccadfce06c5c196a2",
+        "1578": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154",
+        "1579": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154",
+        "1580": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154",
+        "1581": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1582": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1583": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1584": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1585": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1586": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1587": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1588": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1589": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1590": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1591": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1592": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1593": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1594": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1595": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1596": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1597": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1598": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1599": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1600": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1601": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1602": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1603": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1604": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1605": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1606": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1607": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1608": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1609": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1610": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1611": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1612": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1613": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1614": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1615": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1616": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1617": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1618": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1619": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1620": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+      },
+      "hardware_bitmap_colors_valid": {
+        "1489": false,
+        "1490": false,
+        "1491": false,
+        "1492": true,
+        "1493": true,
+        "1494": true,
+        "1495": true,
+        "1496": true,
+        "1497": true,
+        "1498": true,
+        "1499": true,
+        "1500": true,
+        "1501": true,
+        "1502": true,
+        "1503": true,
+        "1504": true,
+        "1505": true,
+        "1506": true,
+        "1507": true,
+        "1508": true,
+        "1509": true,
+        "1510": true,
+        "1511": true,
+        "1512": true,
+        "1513": true,
+        "1514": true,
+        "1515": true,
+        "1516": true,
+        "1517": true,
+        "1518": true,
+        "1519": true,
+        "1520": true,
+        "1521": true,
+        "1522": true,
+        "1523": true,
+        "1524": true,
+        "1525": true,
+        "1526": true,
+        "1527": true,
+        "1528": true,
+        "1529": true,
+        "1530": true,
+        "1531": true,
+        "1532": true,
+        "1533": true,
+        "1534": true,
+        "1535": true,
+        "1536": true,
+        "1537": true,
+        "1538": true,
+        "1539": true,
+        "1540": true,
+        "1541": true,
+        "1542": true,
+        "1543": true,
+        "1544": true,
+        "1545": true,
+        "1546": true,
+        "1547": true,
+        "1548": true,
+        "1549": true,
+        "1550": true,
+        "1551": true,
+        "1552": true,
+        "1553": true,
+        "1554": true,
+        "1555": true,
+        "1556": true,
+        "1557": true,
+        "1558": true,
+        "1559": true,
+        "1560": true,
+        "1561": true,
+        "1562": true,
+        "1563": true,
+        "1564": true,
+        "1565": true,
+        "1566": true,
+        "1567": true,
+        "1568": true,
+        "1569": true,
+        "1570": true,
+        "1571": true,
+        "1572": true,
+        "1573": true,
+        "1574": true,
+        "1575": true,
+        "1576": true,
+        "1577": true,
+        "1578": true,
+        "1579": true,
+        "1580": true,
+        "1581": true,
+        "1582": true,
+        "1583": true,
+        "1584": true,
+        "1585": true,
+        "1586": true,
+        "1587": true,
+        "1588": true,
+        "1589": true,
+        "1590": true,
+        "1591": true,
+        "1592": true,
+        "1593": true,
+        "1594": true,
+        "1595": true,
+        "1596": true,
+        "1597": true,
+        "1598": true,
+        "1599": true,
+        "1600": true,
+        "1601": true,
+        "1602": true,
+        "1603": true,
+        "1604": true,
+        "1605": true,
+        "1606": true,
+        "1607": true,
+        "1608": true,
+        "1609": true,
+        "1610": true,
+        "1611": true,
+        "1612": true,
+        "1613": true,
+        "1614": true,
+        "1615": true,
+        "1616": true,
+        "1617": true,
+        "1618": true,
+        "1619": true,
+        "1620": true
+      }
+    },
+    "md": {
+      "events": [
+        {
+          "frame": 1490,
+          "pc": 67804,
+          "function": "render_dialogue_text",
+          "master_cycles_in_frame": 285030,
+          "sp": 3774872584
+        },
+        {
+          "frame": 1490,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 602690,
+          "sp": 3774871448
+        },
+        {
+          "frame": 1491,
+          "pc": 21542,
+          "function": "draw_map",
+          "master_cycles_in_frame": 1042781,
+          "sp": 3774871448
+        },
+        {
+          "frame": 1494,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 270817,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1497,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 282312,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1500,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 53510,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1502,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 646899,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1505,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 307512,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1508,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 246920,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1511,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 513172,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1514,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 106892,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1517,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 468260,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1520,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 466230,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1523,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 180154,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1526,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 286204,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1529,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 360530,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1532,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 244890,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1535,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 335764,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1538,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 314092,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1541,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 384470,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1544,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 647838,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1547,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 306266,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1550,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 218108,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1553,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 259324,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1556,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 947102,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1559,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 106891,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1562,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 468260,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1565,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 466230,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1568,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 180154,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1571,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 266576,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1574,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 308058,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1577,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 330318,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1580,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 412190,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1583,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 106850,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1586,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 546170,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1589,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 464200,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1592,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 470290,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1595,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 244946,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1598,
+          "pc": 27706,
+          "function": "upload_dialog_bitmap",
+          "master_cycles_in_frame": 569592,
+          "sp": 3774871460
+        },
+        {
+          "frame": 1601,
+          "pc": 28648,
+          "function": "wait_dialog_continue",
+          "master_cycles_in_frame": 195414,
+          "sp": 3774871460
+        }
+      ],
+      "traces": [
+        {
+          "frame": 1440,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1441,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1442,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1443,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1444,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1445,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1446,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1447,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1448,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1449,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1450,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1451,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1452,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1453,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1454,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1455,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1456,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1457,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1458,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1459,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1460,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1461,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1462,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1463,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1464,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1465,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1466,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1467,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1468,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1469,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1470,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1471,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1472,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1473,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1474,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1475,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1476,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1477,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1478,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1479,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1480,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1481,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1482,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1483,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1484,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1485,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1486,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1487,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1488,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1489,
+          "bitmap_sha256": "ec92aa1d0d5c2c982fd887af1aeef9c68cb3fc17ce43ef693c2f8185db646eb0"
+        },
+        {
+          "frame": 1490,
+          "bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79"
+        },
+        {
+          "frame": 1491,
+          "bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79"
+        },
+        {
+          "frame": 1492,
+          "bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79"
+        },
+        {
+          "frame": 1493,
+          "bitmap_sha256": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79"
+        },
+        {
+          "frame": 1494,
+          "bitmap_sha256": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f"
+        },
+        {
+          "frame": 1495,
+          "bitmap_sha256": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f"
+        },
+        {
+          "frame": 1496,
+          "bitmap_sha256": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f"
+        },
+        {
+          "frame": 1497,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821"
+        },
+        {
+          "frame": 1498,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821"
+        },
+        {
+          "frame": 1499,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821"
+        },
+        {
+          "frame": 1500,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821"
+        },
+        {
+          "frame": 1501,
+          "bitmap_sha256": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821"
+        },
+        {
+          "frame": 1502,
+          "bitmap_sha256": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26"
+        },
+        {
+          "frame": 1503,
+          "bitmap_sha256": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26"
+        },
+        {
+          "frame": 1504,
+          "bitmap_sha256": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26"
+        },
+        {
+          "frame": 1505,
+          "bitmap_sha256": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50"
+        },
+        {
+          "frame": 1506,
+          "bitmap_sha256": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50"
+        },
+        {
+          "frame": 1507,
+          "bitmap_sha256": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50"
+        },
+        {
+          "frame": 1508,
+          "bitmap_sha256": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52"
+        },
+        {
+          "frame": 1509,
+          "bitmap_sha256": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52"
+        },
+        {
+          "frame": 1510,
+          "bitmap_sha256": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52"
+        },
+        {
+          "frame": 1511,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b"
+        },
+        {
+          "frame": 1512,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b"
+        },
+        {
+          "frame": 1513,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b"
+        },
+        {
+          "frame": 1514,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b"
+        },
+        {
+          "frame": 1515,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b"
+        },
+        {
+          "frame": 1516,
+          "bitmap_sha256": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b"
+        },
+        {
+          "frame": 1517,
+          "bitmap_sha256": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70"
+        },
+        {
+          "frame": 1518,
+          "bitmap_sha256": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70"
+        },
+        {
+          "frame": 1519,
+          "bitmap_sha256": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70"
+        },
+        {
+          "frame": 1520,
+          "bitmap_sha256": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6"
+        },
+        {
+          "frame": 1521,
+          "bitmap_sha256": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6"
+        },
+        {
+          "frame": 1522,
+          "bitmap_sha256": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6"
+        },
+        {
+          "frame": 1523,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18"
+        },
+        {
+          "frame": 1524,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18"
+        },
+        {
+          "frame": 1525,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18"
+        },
+        {
+          "frame": 1526,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18"
+        },
+        {
+          "frame": 1527,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18"
+        },
+        {
+          "frame": 1528,
+          "bitmap_sha256": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18"
+        },
+        {
+          "frame": 1529,
+          "bitmap_sha256": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307"
+        },
+        {
+          "frame": 1530,
+          "bitmap_sha256": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307"
+        },
+        {
+          "frame": 1531,
+          "bitmap_sha256": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307"
+        },
+        {
+          "frame": 1532,
+          "bitmap_sha256": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5"
+        },
+        {
+          "frame": 1533,
+          "bitmap_sha256": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5"
+        },
+        {
+          "frame": 1534,
+          "bitmap_sha256": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5"
+        },
+        {
+          "frame": 1535,
+          "bitmap_sha256": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947"
+        },
+        {
+          "frame": 1536,
+          "bitmap_sha256": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947"
+        },
+        {
+          "frame": 1537,
+          "bitmap_sha256": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947"
+        },
+        {
+          "frame": 1538,
+          "bitmap_sha256": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973"
+        },
+        {
+          "frame": 1539,
+          "bitmap_sha256": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973"
+        },
+        {
+          "frame": 1540,
+          "bitmap_sha256": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973"
+        },
+        {
+          "frame": 1541,
+          "bitmap_sha256": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3"
+        },
+        {
+          "frame": 1542,
+          "bitmap_sha256": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3"
+        },
+        {
+          "frame": 1543,
+          "bitmap_sha256": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3"
+        },
+        {
+          "frame": 1544,
+          "bitmap_sha256": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2"
+        },
+        {
+          "frame": 1545,
+          "bitmap_sha256": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2"
+        },
+        {
+          "frame": 1546,
+          "bitmap_sha256": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2"
+        },
+        {
+          "frame": 1547,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215"
+        },
+        {
+          "frame": 1548,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215"
+        },
+        {
+          "frame": 1549,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215"
+        },
+        {
+          "frame": 1550,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215"
+        },
+        {
+          "frame": 1551,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215"
+        },
+        {
+          "frame": 1552,
+          "bitmap_sha256": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215"
+        },
+        {
+          "frame": 1553,
+          "bitmap_sha256": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb"
+        },
+        {
+          "frame": 1554,
+          "bitmap_sha256": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb"
+        },
+        {
+          "frame": 1555,
+          "bitmap_sha256": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb"
+        },
+        {
+          "frame": 1556,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0"
+        },
+        {
+          "frame": 1557,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0"
+        },
+        {
+          "frame": 1558,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0"
+        },
+        {
+          "frame": 1559,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0"
+        },
+        {
+          "frame": 1560,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0"
+        },
+        {
+          "frame": 1561,
+          "bitmap_sha256": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0"
+        },
+        {
+          "frame": 1562,
+          "bitmap_sha256": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5"
+        },
+        {
+          "frame": 1563,
+          "bitmap_sha256": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5"
+        },
+        {
+          "frame": 1564,
+          "bitmap_sha256": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5"
+        },
+        {
+          "frame": 1565,
+          "bitmap_sha256": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89"
+        },
+        {
+          "frame": 1566,
+          "bitmap_sha256": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89"
+        },
+        {
+          "frame": 1567,
+          "bitmap_sha256": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89"
+        },
+        {
+          "frame": 1568,
+          "bitmap_sha256": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33"
+        },
+        {
+          "frame": 1569,
+          "bitmap_sha256": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33"
+        },
+        {
+          "frame": 1570,
+          "bitmap_sha256": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33"
+        },
+        {
+          "frame": 1571,
+          "bitmap_sha256": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8"
+        },
+        {
+          "frame": 1572,
+          "bitmap_sha256": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8"
+        },
+        {
+          "frame": 1573,
+          "bitmap_sha256": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8"
+        },
+        {
+          "frame": 1574,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3"
+        },
+        {
+          "frame": 1575,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3"
+        },
+        {
+          "frame": 1576,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3"
+        },
+        {
+          "frame": 1577,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3"
+        },
+        {
+          "frame": 1578,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3"
+        },
+        {
+          "frame": 1579,
+          "bitmap_sha256": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3"
+        },
+        {
+          "frame": 1580,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2"
+        },
+        {
+          "frame": 1581,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2"
+        },
+        {
+          "frame": 1582,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2"
+        },
+        {
+          "frame": 1583,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2"
+        },
+        {
+          "frame": 1584,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2"
+        },
+        {
+          "frame": 1585,
+          "bitmap_sha256": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2"
+        },
+        {
+          "frame": 1586,
+          "bitmap_sha256": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3"
+        },
+        {
+          "frame": 1587,
+          "bitmap_sha256": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3"
+        },
+        {
+          "frame": 1588,
+          "bitmap_sha256": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3"
+        },
+        {
+          "frame": 1589,
+          "bitmap_sha256": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f"
+        },
+        {
+          "frame": 1590,
+          "bitmap_sha256": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f"
+        },
+        {
+          "frame": 1591,
+          "bitmap_sha256": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f"
+        },
+        {
+          "frame": 1592,
+          "bitmap_sha256": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f"
+        },
+        {
+          "frame": 1593,
+          "bitmap_sha256": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f"
+        },
+        {
+          "frame": 1594,
+          "bitmap_sha256": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f"
+        },
+        {
+          "frame": 1595,
+          "bitmap_sha256": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154"
+        },
+        {
+          "frame": 1596,
+          "bitmap_sha256": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154"
+        },
+        {
+          "frame": 1597,
+          "bitmap_sha256": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154"
+        },
+        {
+          "frame": 1598,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1599,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1600,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1601,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1602,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1603,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1604,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1605,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1606,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1607,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1608,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1609,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1610,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1611,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1612,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1613,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1614,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1615,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1616,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1617,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1618,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1619,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        },
+        {
+          "frame": 1620,
+          "bitmap_sha256": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+        }
+      ],
+      "hardware_bitmap_sha256": {
+        "1489": "29ff5dba6ef1e363ec6b6afe25ad2272d7e8e5c5aa8020d3073eed4eb4ee22e8",
+        "1490": "29ff5dba6ef1e363ec6b6afe25ad2272d7e8e5c5aa8020d3073eed4eb4ee22e8",
+        "1491": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+        "1492": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+        "1493": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+        "1494": "256fb9c4796b15a7ec4b0d5319e9e493ca4cffda658310420bdfd31e1c59da79",
+        "1495": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f",
+        "1496": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f",
+        "1497": "d4dda525f95d5fe670b90c7ce8ff79bc44ce22d4b93fbe7be7ab0c6365dbf49f",
+        "1498": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1499": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1500": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1501": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1502": "2590ec37da3974f8aaaa4f8494e552e92af2ad6ed7c2485c2fe9eecfb425e821",
+        "1503": "64d3f038c79898edc5a5b60be4a4e1ca00c30f6235a34789832ca18500de46bc",
+        "1504": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26",
+        "1505": "03af5209859e956fa404a8a5bdafe6a34c7fa78f0ac8c2fa715723058304ce26",
+        "1506": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50",
+        "1507": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50",
+        "1508": "777ee2d1e50b2c6c58a13f4929f4bc75a4a0dcaee17889938c033d264d024a50",
+        "1509": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+        "1510": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+        "1511": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+        "1512": "114c15e1d1779360f8230c101f4d536d04abf8beb6d3129b7d8df3333c75fa52",
+        "1513": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1514": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1515": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1516": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1517": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1518": "fb75d470cb15939e2e77c82dff72476c10ad1dec5f1ad40f52d850239425760b",
+        "1519": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70",
+        "1520": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70",
+        "1521": "d78a02b173d585ace3f57a94ac2126cae88498edbc52aa41e828d94725ff5e70",
+        "1522": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6",
+        "1523": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6",
+        "1524": "64f7cfa6a80f3aec6625dea2ba9f6c4fa95c3aac51d128dcc32e495cd82c13f6",
+        "1525": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1526": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1527": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1528": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1529": "92ac760fffbd820cb3266d82f60f16815daef2ce217263d6d5246fff8b38cb18",
+        "1530": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307",
+        "1531": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307",
+        "1532": "d5348d73b763b7b303b02ac0e2836bc048d69feaf669b794060ae06cc9432307",
+        "1533": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5",
+        "1534": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5",
+        "1535": "cdcf0a7434191d587c16bb582ef6ebda8156fc819d0c362bf8603556bce3d8b5",
+        "1536": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947",
+        "1537": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947",
+        "1538": "f6ffea2d50b8f46cae7c206bd0ddaa5bd63685b60176ea06e53b767ac14c7947",
+        "1539": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973",
+        "1540": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973",
+        "1541": "c4fa5c0cd352695c2944e149a37a0e642a022bed55bca1ebbfa2397f17337973",
+        "1542": "bc08f73eff57b101ca42180d75b66e6ab3130a749a233685a40ee82d946121a6",
+        "1543": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3",
+        "1544": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3",
+        "1545": "15c0cf6f739f5bff6c56dd18a772e4376e10f8f06b9d2654843676438cc83de3",
+        "1546": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2",
+        "1547": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2",
+        "1548": "b2f0d7fc6f932f19aea30ed5abb5496d8cb0e3af4467eaeed16fba16bf5520f2",
+        "1549": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1550": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1551": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1552": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1553": "b7cda2d68789f366a0cd66ec886fb00b8c901ea696b5583f7ef00efb582a1215",
+        "1554": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+        "1555": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+        "1556": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+        "1557": "f434038d3892015792403a6d8419777e984f800c62979bef223a11192059c4cb",
+        "1558": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1559": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1560": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1561": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1562": "9f76bd84e511c45973696593eccad06332cc007a33cea548a4dc852e6cd3aaa0",
+        "1563": "a9815c5aae5556bcea2e05d510a18a153d55614ac523a2f71ceb53953d7ac497",
+        "1564": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5",
+        "1565": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5",
+        "1566": "fd8f25f0abb64ceb762a84a1545425330ae18fcd0cbdda08220489b7784b5bc5",
+        "1567": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89",
+        "1568": "bdb418b8c36fde61e59c7b9f19b611c3b9ec69243b56f7e14ac996e0e6b98a89",
+        "1569": "53e8d6462a23c5e3b3a9f05ec111e3e92a3066d643c92b81836b0695708c29dc",
+        "1570": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33",
+        "1571": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33",
+        "1572": "138d9d7bfb1c106ba14f069f5c90190778cfbce8c42ca70297e86b1e1c518a33",
+        "1573": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8",
+        "1574": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8",
+        "1575": "bef6c94c33b57ab2438e25d57c2793e8326eaf72ce1cec7929783cf2616f57e8",
+        "1576": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1577": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1578": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1579": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1580": "4690df701a9e7f91f93ab9c334d714c4fef1df0a73d9abfc4ae1befe78b4ecd3",
+        "1581": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1582": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1583": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1584": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1585": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1586": "c0809b6b3b773fe7b5a3130802c46d705896c0e61b4f33e65baf4792359843e2",
+        "1587": "d20e6f477321bdaac96bf712d49ae78d5a7b0ab2179084ac4f3cdb7d67783206",
+        "1588": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3",
+        "1589": "a5858754a22de9d822a2ca937fb0491cb9e273543f203eabec5569b4c1730dc3",
+        "1590": "ea5ce2b98f9014d9fce9eb3ae3d37b03edccdccbe00ba0f58c7c26d7f2792dbb",
+        "1591": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f",
+        "1592": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f",
+        "1593": "1d312d708f77b409612debcca9cbdd4d0e6c591f1d9d8088e8b2d137b9d94b4f",
+        "1594": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f",
+        "1595": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f",
+        "1596": "46030cc28776cf7eca427c65effc5180a829ffe076023d8fe8cd055922ef2f9f",
+        "1597": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154",
+        "1598": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154",
+        "1599": "9203ddddbe4ab96592e720db5183ee5c66eb2069df0a68352767bbecb534b154",
+        "1600": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1601": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1602": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1603": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1604": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1605": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1606": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1607": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1608": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1609": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1610": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1611": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1612": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1613": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1614": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1615": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1616": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1617": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1618": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1619": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca",
+        "1620": "1920d51d670d8232d3b7b607dbcc213673c0701bdc37b67c1db08005404ff9ca"
+      },
+      "hardware_bitmap_colors_valid": {
+        "1489": false,
+        "1490": false,
+        "1491": true,
+        "1492": true,
+        "1493": true,
+        "1494": true,
+        "1495": true,
+        "1496": true,
+        "1497": true,
+        "1498": true,
+        "1499": true,
+        "1500": true,
+        "1501": true,
+        "1502": true,
+        "1503": true,
+        "1504": true,
+        "1505": true,
+        "1506": true,
+        "1507": true,
+        "1508": true,
+        "1509": true,
+        "1510": true,
+        "1511": true,
+        "1512": true,
+        "1513": true,
+        "1514": true,
+        "1515": true,
+        "1516": true,
+        "1517": true,
+        "1518": true,
+        "1519": true,
+        "1520": true,
+        "1521": true,
+        "1522": true,
+        "1523": true,
+        "1524": true,
+        "1525": true,
+        "1526": true,
+        "1527": true,
+        "1528": true,
+        "1529": true,
+        "1530": true,
+        "1531": true,
+        "1532": true,
+        "1533": true,
+        "1534": true,
+        "1535": true,
+        "1536": true,
+        "1537": true,
+        "1538": true,
+        "1539": true,
+        "1540": true,
+        "1541": true,
+        "1542": true,
+        "1543": true,
+        "1544": true,
+        "1545": true,
+        "1546": true,
+        "1547": true,
+        "1548": true,
+        "1549": true,
+        "1550": true,
+        "1551": true,
+        "1552": true,
+        "1553": true,
+        "1554": true,
+        "1555": true,
+        "1556": true,
+        "1557": true,
+        "1558": true,
+        "1559": true,
+        "1560": true,
+        "1561": true,
+        "1562": true,
+        "1563": true,
+        "1564": true,
+        "1565": true,
+        "1566": true,
+        "1567": true,
+        "1568": true,
+        "1569": true,
+        "1570": true,
+        "1571": true,
+        "1572": true,
+        "1573": true,
+        "1574": true,
+        "1575": true,
+        "1576": true,
+        "1577": true,
+        "1578": true,
+        "1579": true,
+        "1580": true,
+        "1581": true,
+        "1582": true,
+        "1583": true,
+        "1584": true,
+        "1585": true,
+        "1586": true,
+        "1587": true,
+        "1588": true,
+        "1589": true,
+        "1590": true,
+        "1591": true,
+        "1592": true,
+        "1593": true,
+        "1594": true,
+        "1595": true,
+        "1596": true,
+        "1597": true,
+        "1598": true,
+        "1599": true,
+        "1600": true,
+        "1601": true,
+        "1602": true,
+        "1603": true,
+        "1604": true,
+        "1605": true,
+        "1606": true,
+        "1607": true,
+        "1608": true,
+        "1609": true,
+        "1610": true,
+        "1611": true,
+        "1612": true,
+        "1613": true,
+        "1614": true,
+        "1615": true,
+        "1616": true,
+        "1617": true,
+        "1618": true,
+        "1619": true,
+        "1620": true
+      }
+    }
+  },
+  "limits": [
+    "One natural name A and scripted confirmation frame per region.",
+    "End-of-frame bitmap hashes and selected entry PCs; no full native instruction accounting."
+  ]
+}
