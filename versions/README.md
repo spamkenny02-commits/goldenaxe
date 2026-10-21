@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0225 | [Telecharger](v0225-71b56c3c/gaw-megadrive-v0225.bin) | targeted_checks_passed | Terrain publie au VBlank suivant comme sur SMS. Interrupteurs/sorts verifies PAL-NTSC ; neuf salles de combat et deux cles en parcours naturel NTSC. Donjon complet non termine. | `71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c` |
 | v0224 | [Telecharger](v0224-6be955fd/gaw-megadrive-v0224.bin) | targeted_checks_passed | Recherche directe des caracteres ; premier dialogue 3 images plus rapide en NTSC, PAL inchange. Texte et scrolling verifies ; cadence globale incomplete. | `6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549` |
 | v0223 | [Telecharger](v0223-39e69955/gaw-megadrive-v0223.bin) | targeted_checks_passed | Attente des pages et marqueurs corriges ; parcours naturel jusqu'au donjon1 verifie PAL/NTSC. | `39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31` |
 | v0222 | [Telecharger](v0222-13edb546/gaw-megadrive-v0222.bin) | targeted_checks_passed | Dessin des caracteres optimise, pixels identiques ; premiere page testee 7 images plus rapide NTSC et 1 PAL. | `13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8` |

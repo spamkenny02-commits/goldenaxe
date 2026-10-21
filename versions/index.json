@@ -6999,5 +6999,48 @@
         "sha256": "952eb0d302d25cf7765c2ba25a4c9d5fcaf64a26bb10b1c8525f2d2a9cb87fc7"
       }
     ]
+  },
+  {
+    "version": 225,
+    "sha256": "71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T19:39:32.433614+00:00",
+    "rom": "v0225-71b56c3c/gaw-megadrive-v0225.bin",
+    "notes": "Terrain publie au VBlank suivant comme sur SMS. Interrupteurs/sorts verifies PAL-NTSC ; neuf salles de combat et deux cles en parcours naturel NTSC. Donjon complet non termine.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "terrain_publication_v0225_report.json",
+        "sha256": "97963ccf7658183fd0b8c4ea68fd34905480812b9a25a0d3a551bd60599c08cf"
+      },
+      {
+        "file": "cell_publication_v0225_report.json",
+        "sha256": "17b85d8352702d4eca4ccfa4529945d7e934f6e95b81bb619cb0f08114d05085"
+      },
+      {
+        "file": "cell_publication_v0225-pal_report.json",
+        "sha256": "530a7088ff9743a8f339d4c3bbefb413a073f7189b9fe970c6cd68488290381e"
+      },
+      {
+        "file": "natural_dungeon_progress_v0225_report.json",
+        "sha256": "60d328261526d144cd2f5ad16df41927a2ff4b9ec6f571e62224bb4aabab03e6"
+      },
+      {
+        "file": "puzzles_gameplay_report.json",
+        "sha256": "1f985a9fd89712d1a53734f8a8361936811b9a7ff82b06f397204623ef4cf134"
+      },
+      {
+        "file": "puzzles_gameplay-pal_report.json",
+        "sha256": "b939b6aff5a1fdce74c5748d50cdbadaccfaa3fc1e6e087c2a4e8bee57131290"
+      },
+      {
+        "file": "second_spell_terrain_report.json",
+        "sha256": "5893de7b17ec0592904545c3065982a5aa2339a46dfcf114245b91a9fa121afa"
+      },
+      {
+        "file": "terrain_publication_recovery_v0225_report.json",
+        "sha256": "36b2f50b1eb294180a431e93928d8811fce765d7f96753f1b233ddae6b2d5d8b"
+      }
+    ]
   }
 ]

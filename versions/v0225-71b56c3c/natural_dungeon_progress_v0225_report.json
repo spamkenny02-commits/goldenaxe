@@ -1,0 +1,116 @@
+{
+  "md_sha256": "71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "region": "auto",
+  "cases": [
+    {
+      "system": "sms",
+      "case": "sms-auto-09",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+      "frames": 17777,
+      "visited_itinerary_rooms": [
+        484,
+        485,
+        484,
+        468,
+        452,
+        436,
+        437,
+        421,
+        420,
+        404,
+        403
+      ],
+      "key_events": [
+        [
+          485,
+          0,
+          1
+        ],
+        [
+          437,
+          1,
+          0
+        ],
+        [
+          403,
+          0,
+          1
+        ]
+      ],
+      "final_health": 14,
+      "final_keys": 1,
+      "full_final_ram_bytes_replayed": 8192,
+      "full_final_png_replayed": true,
+      "deaths": 0
+    },
+    {
+      "system": "md",
+      "case": "md-auto-11",
+      "rom_sha256": "71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c",
+      "frames": 14001,
+      "visited_itinerary_rooms": [
+        484,
+        485,
+        484,
+        468,
+        452,
+        436,
+        437,
+        421,
+        420,
+        404,
+        403
+      ],
+      "key_events": [
+        [
+          485,
+          0,
+          1
+        ],
+        [
+          437,
+          1,
+          0
+        ],
+        [
+          403,
+          0,
+          1
+        ]
+      ],
+      "final_health": 22,
+      "final_keys": 1,
+      "full_final_ram_bytes_replayed": 65536,
+      "full_final_png_replayed": true,
+      "deaths": 0
+    }
+  ],
+  "source_native_persistent_flags_exact_bytes": 256,
+  "source_native_settled_map_exact_bytes": 1280,
+  "evidence": {
+    "validation/natural-dungeon-combat/sms-auto-09/ram_17777.bin": "f3b94e5688908fbe9e2d0e945ff12c1421287b480ceddbedf47cc9728965cf53",
+    "validation/natural-dungeon-combat/sms-auto-09/frame_17777.png": "69c61f4a35e89f3802e7097cb5940d66c4d3e55df822c6612f3f7a16d257be17",
+    "validation/natural-dungeon-combat/sms-auto-09/report.json": "b0706eb40405bbf5e9b51a9353b11b04b595d04b6f362e4de3c10c4f41c82a2a",
+    "validation/natural-dungeon-combat/sms-auto-09/capture.json": "40eb673959f0b9169ab9c46fdb868a7407b47005176c92049210b51c126f0bda",
+    "validation/natural-dungeon-combat/sms-auto-09/events.json": "83a7c6f052d96631255e456b3c7a7d117d5a084cd016adf516bf8ca0f8bac498",
+    "validation/natural-dungeon-combat/sms-auto-09/controls.json": "3371d691d2821483966abd9f133f0f489bca2cea8c6d855334190658ec50801d",
+    "validation/natural-dungeon-combat/md-auto-11/ram_14001.bin": "b84f5331822b2ee28ae0b93f1f44690824000af8f2d62f7d9fd1dc4c8f9cc29c",
+    "validation/natural-dungeon-combat/md-auto-11/frame_14001.png": "c983af990ab8f7bdcd512f5ac51b29aecf662860bb8bf7eb7fc2f0366481c198",
+    "validation/natural-dungeon-combat/md-auto-11/report.json": "546ce9fef88989fbf2cc4ddfb7d7237e5c44789a633d9bde9a55184d9ffbe8fb",
+    "validation/natural-dungeon-combat/md-auto-11/capture.json": "c6e5196c7407cac16980f478a2480ada5895b8b9861dae6a61e992079b69ef6a",
+    "validation/natural-dungeon-combat/md-auto-11/events.json": "3afb02db86a5f7af47d8f0868c3d3fe331afeed2c715b93b2d889dd9c0a2076d",
+    "validation/natural-dungeon-combat/md-auto-11/controls.json": "cfbdf7ebe3fccaa496472bb5238bb589bd0a497a29ae316c0ad1bcc02f83b815"
+  },
+  "ram_mutations": false,
+  "rom_mutations": false,
+  "sram_injections": false,
+  "first_dungeon_cleared": false,
+  "full_game_validated": false,
+  "limits": [
+    "Nine combat rooms, two generated keys, one consumed key and194 stationary UP switch; boss/gem and the rest of the dungeon not reached.",
+    "Feedback controllers read RAM and send normal buttons; each resulting stream also replays in a separate fresh process without feedback.",
+    "Source/native timings, inputs, HP and random decisions differ; flags/map equality is only asserted at the final settled room193. NTSC only."
+  ]
+}

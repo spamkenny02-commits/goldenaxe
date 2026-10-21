@@ -5,19 +5,31 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0224 — 1024 Kio.**
+**Version courante : v0225 — 1024 Kio.**
 
-[Télécharger la ROM v0224](versions/v0224-6be955fd/gaw-megadrive-v0224.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0225](versions/v0225-71b56c3c/gaw-megadrive-v0225.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549`
-Checksum Mega Drive : `5D1D`
+SHA-256 : `71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c`
+Checksum Mega Drive : `C2DE`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0224**.
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0225**.
+La v0225 publie les changements ponctuels du terrain au VBlank suivant,
+comme la file graphique SMS, au lieu de les transférer depuis la simulation.
+Le décalage corrigé est vérifié en PAL/NTSC. Les interrupteurs et sorts
+concernés passent leurs contrôles. Voir les [preuves et limites](analysis/terrain_publication_v0225.md).
+
+Un parcours naturel NTSC couvre maintenant neuf salles de combat : deux clés
+obtenues, une porte ouverte avec une clé et l’interrupteur de la salle 194.
+La SMS et la v0225 terminent sans mort, avec les mêmes drapeaux persistants
+et la même carte finale ; les combats, les PV et le hasard diffèrent encore.
+Les boutons se rejouent avec RAM et image finales identiques à leur propre parcours.
+Le boss et le joyau du premier donjon restent à atteindre.
+
 La v0224 remplace la recherche des caractères par une table directe.
 Le premier dialogue mesuré gagne trois images en NTSC ; le PAL reste inchangé.
 Les glyphes, les 26 fixtures de texte et le défilement conservent leur rendu.
@@ -38,7 +50,7 @@ par ce parcours. Le premier donjon et son boss restent à parcourir entièrement
 
 Le dessin accéléré de la v0222 et les corrections de publication/défilement
 précédentes sont conservés. La cadence complète reste à aligner : la première
-page du récit commence son attente sept images après la SMS en NTSC et
+page du récit mesurée en v0224 commence son attente sept images après la SMS en NTSC et
 dix-huit en PAL. L’horloge globale, les IRQ et le hasard Z80 restent ouverts.
 
 La v0219 a corrigé les sprites débordant dans les bandes noires.

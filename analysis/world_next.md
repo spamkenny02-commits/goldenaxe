@@ -1291,3 +1291,12 @@ All37 completed source uploads/29 distinct shapes retained in order per region.
 First scroll poses,302 coherent indoor text frames and intermediate direction rejection pass.
 Natural combat trial clears room1D4 on SMS/MD via normal controls; different encounters/HP prevent a fidelity claim.
 Full campaign, source RNG/IRQ/global dialogue timing remain unfinished.
+
+2026-10-21 playable v0225: source1B0E/49EA terrain patches staged for next VBlank, before PSG.
+Controlled2B source delay1 vs old224 delay0; new225 delay1 in PAL/NTSC,266 coherent opaque patch frames.
+124 stationary puzzle/repeat cases and20 spell-terrain cases pass; absolute/full-family IRQ timing remains open.
+Natural NTSC boot->nine combat rooms->second key193 passes source/new225, no injections/no deaths.
+Two key rewards, one consumed key,194 UP switch; final256flags/1280map source exact.
+Fresh fixed-input replays have full8192/65536 RAM and PNG equality per machine.
+Old223 MD fixed route no longer reaches entrance on225; regenerated read-only md-v0225 prefix passes.
+Boss/gem/rest of dungeon/full campaign/RNG remain unfinished. BSS E43C leaves7108 bytes above it, not a full stack proof.

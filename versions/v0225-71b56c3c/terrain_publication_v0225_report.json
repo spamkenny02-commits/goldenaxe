@@ -1,0 +1,55 @@
+{
+  "md_sha256": "71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c",
+  "passed": true,
+  "checksum": "C2DE",
+  "publication_cases": [
+    {
+      "region": "auto",
+      "source_publication_delay_frames": 1,
+      "previous_native_publication_delay_frames": 0,
+      "current_native_publication_delay_frames": 1,
+      "coherent_native_patch_frames": 133
+    },
+    {
+      "region": "pal",
+      "source_publication_delay_frames": 1,
+      "previous_native_publication_delay_frames": 0,
+      "current_native_publication_delay_frames": 1,
+      "coherent_native_patch_frames": 133
+    }
+  ],
+  "controlled_stationary_puzzle_cases": 124,
+  "controlled_spell_terrain_cases": 20,
+  "natural_ntsc_dungeon_combat_rooms": 9,
+  "natural_key_rewards": 2,
+  "natural_keys_consumed": 1,
+  "source_native_final_flags_equal_bytes": 256,
+  "source_native_final_map_equal_bytes": 1280,
+  "source_native_fresh_replay_final_ram_equal_bytes": 73728,
+  "bss_end": 58428,
+  "bytes_above_bss": 7108,
+  "evidence": {
+    "analysis/cell_publication_v0224_report.json": "f5e00477a24549d11d43691aa0100473010b2b7bfe787d1a7cb69e0febd9f920",
+    "analysis/cell_publication_v0225_report.json": "17b85d8352702d4eca4ccfa4529945d7e934f6e95b81bb619cb0f08114d05085",
+    "analysis/cell_publication_v0224-pal_report.json": "4cf20fed6cc45aaaa35656ec494cd143af04020ee13ad441993a01cdf3828277",
+    "analysis/cell_publication_v0225-pal_report.json": "530a7088ff9743a8f339d4c3bbefb413a073f7189b9fe970c6cd68488290381e",
+    "validation/puzzles_gameplay_report.json": "1f985a9fd89712d1a53734f8a8361936811b9a7ff82b06f397204623ef4cf134",
+    "validation/puzzles_gameplay-pal_report.json": "b939b6aff5a1fdce74c5748d50cdbadaccfaa3fc1e6e087c2a4e8bee57131290",
+    "validation/second_spell_terrain_report.json": "5893de7b17ec0592904545c3065982a5aa2339a46dfcf114245b91a9fa121afa",
+    "analysis/natural_dungeon_progress_v0225_report.json": "60d328261526d144cd2f5ad16df41927a2ff4b9ec6f571e62224bb4aabab03e6"
+  },
+  "source_files": {
+    "megadrive/src/main.c": "eaba123ea07487a7cdd735904b7771e80bdfa919287c59c5e1e1074d131154f5",
+    "tools/validate_cell_publication.py": "4ab414a6591ac3c9cabf88744a8843c437b2749dd19a12908e363a9ed134d442",
+    "tools/natural_dungeon_combat.py": "d6149d1640238d8d67059903a12631c4c63dfb506e348fe80172dca26bd51c94",
+    "tools/verify_natural_dungeon_progress.py": "b570256adb233799b4735edbf91b6f3099c1b11af58db916baf195aa555f5dfa"
+  },
+  "full_game_validated": false,
+  "first_dungeon_cleared": false,
+  "source_rng_exact": false,
+  "limits": [
+    "Cell mutation publication delay is measured on the controlled actor2B branch in PAL/NTSC; this is not proof of every IRQ boundary or VDP mutation family.",
+    "The framebuffer check covers opaque pixels of the16x16 terrain patch, not complete frames. The previous ROM already had coherent patch pixels but exposed the change one IRQ early.",
+    "Nine-room natural progression is NTSC; feedback inputs, route times, combat and HP differ from SMS. Boss/gem/full dungeon remain unfinished."
+  ]
+}

@@ -100,6 +100,11 @@ static u8 room_metadata[3]; /* C06E..C070 */
 static u16 room_id,game_state,transition_direction,transition_stage,transition_step;
 static bool transition_pose_prepared;
 static volatile u16 world_video_pending;
+/* Source1B0E/49EA queue terrain writes for the next IRQ. Stage complete
+ * rows independently of dialogue storage and mutable world-map buffers. */
+static u16 world_cell_rows[20*32];
+static volatile u32 world_cell_rows_pending;
+static volatile u16 world_cell_write_active;
 static u16 world_video_phase,world_video_order_overflow;
 static u8 forest_maze_progress; /* C06C: transient, outside the save record. */
 static u16 hero_pattern_wait_frames;
@@ -1160,6 +1165,13 @@ static void world_vint(void)
 {
     world_sms_sprite_overflow=world_sms_sprite_display_overflow;
     world_sms_sprite_display_overflow=world_sms_sprite_prepared_overflow;
+    if(!world_cell_write_active && world_cell_rows_pending)
+    {
+        u16 row;u32 rows=world_cell_rows_pending;
+        for(row=0;row<20;row++) if(rows&(1UL<<row))
+            VDP_setTileMapDataRect(BG_A,world_cell_rows+row*32,0,row+2,32,1,32,DMA);
+        world_cell_rows_pending=0;
+    }
     if(world_video_pending)
     {
         Z80_enableBusProtection();DMA_flushQueue();Z80_disableBusProtection();
@@ -1473,7 +1485,15 @@ void replace_world_actor_cell(u16 x,u16 y,u16 cell)
         word=sms_vram[address]|((u16)sms_vram[address+1]<<8);p=(row+n/2)*32+col+n%2;
         md_map[p]=world_new_md[p]=TILE_ATTR_FULL((word>>11)&1,(word>>12)&1,(word>>10)&1,(word>>9)&1,16+(word&511));
     }
-    VDP_setTileMapDataRect(BG_A,md_map+row*32+col,col,row+2,2,2,32,CPU);
+    /* The SMS software map changes now, while its queued2x2 rectangle is
+     * consumed by the next IRQ. Merge complete dirty rows for native DMA;
+     * the IRQ must never read a row while foreground code is copying it. */
+    world_cell_write_active=1;
+    __asm__ volatile ("" ::: "memory");
+    memcpy(world_cell_rows+row*32,world_new_md+row*32,2*32*sizeof(u16));
+    world_cell_rows_pending|=3UL<<row;
+    __asm__ volatile ("" ::: "memory");
+    world_cell_write_active=0;
 }
 
 extern const u8 world_second_spell_terrain[],world_second_spell_probes[];
