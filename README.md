@@ -17,6 +17,12 @@ Checksum Mega Drive : `368C`
 
 ## État du portage
 
+État au **21 octobre 2026** : la ROM jouable recommandée reste **v0203**.
+Les travaux natifs plus récents sont des bancs de validation ; ils ne constituent
+pas une nouvelle version jouable. Le dernier jalon validé porte sur la construction
+des sprites et ses frontières d’instructions. Le raccordement à l’interruption
+complète du jeu est en cours et ne passe pas encore tous les contrôles.
+
 La **v0203** corrige le flash d’une image de l’ancienne carte à la fin du
 scrolling horizontal. Les parcours depuis la clairière et le retour du village
 sont vérifiés en PAL/NTSC, avec des contrôles verticaux complémentaires.
