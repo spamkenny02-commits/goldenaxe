@@ -1,8 +1,8 @@
 """Freeze v0220 dialogue evidence before cleaning generated capture binaries."""
-import gzip,io,json
+import gzip,io,json,sys
 from PIL import Image
 from run_core import ROOT
-from archive_lossless_evidence import freeze,sha
+from archive_lossless_evidence import freeze,sha,resume_verified_cleanup
 from validate_dialogue_vblank import text_pixels
 
 def main():
@@ -25,7 +25,11 @@ def main():
     roms={p:sha(p.read_bytes()) for p in (ROOT/'versions').glob('*/*.bin')};assert len(roms)==220
     original=sha((ROOT/'input/original.sms').read_bytes());assert original=='852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9'
     out=ROOT/'analysis/dialogue-vblank-v0220'
-    manifest=freeze(ROOT,out,paths,dict(playable_sha256=digest,numbered_roms_preserved=220,full_game_validated=False,source_dialogue_cadence_exact=False),roots,cleanup=True)
+    if '--resume' in sys.argv:
+        assert json.loads((out/'manifest.json').read_bytes())['playable_sha256']==digest
+        manifest=resume_verified_cleanup(ROOT,out,roots)
+    else:
+        manifest=freeze(ROOT,out,paths,dict(playable_sha256=digest,numbered_roms_preserved=220,full_game_validated=False,source_dialogue_cadence_exact=False),roots,cleanup=True)
     def recover(name):
         if name in manifest['files']:
             b=(out/name).read_bytes();assert sha(b)==manifest['files'][name];return b
