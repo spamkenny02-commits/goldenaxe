@@ -1246,3 +1246,8 @@ progress. Evidence:analysis/world_publication_v0218.md and attachedrelease repor
 Archiveworld-publication-v0218 finalized:4781refs;184074650generatedbytesremoved,
 165540262netbytesfreed. Fullgzip/SHAreadback and postcleanup RGB/cadence/DMA
 recovery report byte-identical. All218 numberedROMs preserved.
+
+
+2026-10-21 playable v0219: clip world sprite rows outside source192 viewport.
+PAL/NTSC boundary cases, natural frame coherence and initial inventory routes pass.
+Source RNG and full-game/hardware fidelity remain unfinished.

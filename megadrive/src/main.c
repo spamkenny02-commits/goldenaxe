@@ -984,7 +984,7 @@ static void mask_world_sms_sprite_rows(u16 count)
         for(row=0;row<8;row++)
         {
             line=top+row;
-            if(line>=0 && line<192 && used[line]++>=8) mask&=~(1<<row);
+            if(line<0 || line>=192 || used[line]++>=8) mask&=~(1<<row);
         }
         if(mask==255) continue;
         if(!mask)
@@ -1028,7 +1028,7 @@ static void prepare_world_sms_sprite_overflow(u16 count)
 {
     s8 edges[193];
     s16 used=0,top,bottom;
-    u16 n,raw;
+    u16 n,raw;bool clipped=FALSE;
     memset(edges,0,sizeof(edges));
     for(n=0;n<count && n<64;n++)
     {
@@ -1036,8 +1036,8 @@ static void prepare_world_sms_sprite_overflow(u16 count)
         if(raw==208) { terminate_world_sprite_list(n);count=n;break; }
         top=raw<208?(s16)raw+1:(s16)raw-255;
         bottom=top+8;
-        if(top<0) top=0;
-        if(bottom>192) bottom=192;
+        if(top<0) { top=0;clipped=TRUE; }
+        if(bottom>192) { bottom=192;clipped=TRUE; }
         if(top>=bottom) continue;
         edges[top]++;edges[bottom]--;
     }
@@ -1047,7 +1047,9 @@ static void prepare_world_sms_sprite_overflow(u16 count)
         used+=edges[n];
         if(used>8) { world_video_next_overflow=1;break; }
     }
-    if(world_video_next_overflow) mask_world_sms_sprite_rows(count);
+    /* Clipping outside the SMS192-line viewport is independent of SOVR.
+     * Keep those invisible rows out of the MD's top/bottom matte areas. */
+    if(world_video_next_overflow || clipped) mask_world_sms_sprite_rows(count);
     if(!world_video_preparing) world_sms_sprite_prepared_overflow=world_video_next_overflow;
 }
 

@@ -1,0 +1,128 @@
+{
+  "md_sha256": "7518d3c174b117b299c1317b5921e351de7e96eee44fcd4a7d3d43566854cce7",
+  "reference_sha256": "399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d",
+  "cases": [
+    {
+      "region": "auto",
+      "case": "above_all",
+      "entity_y": 0,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 1540,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "auto",
+      "case": "above_partial",
+      "entity_y": 5,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 1080,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "auto",
+      "case": "top_partial",
+      "entity_y": 12,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 360,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "auto",
+      "case": "bottom_partial",
+      "entity_y": 205,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 1260,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "auto",
+      "case": "below_all",
+      "entity_y": 209,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 1490,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "pal",
+      "case": "above_all",
+      "entity_y": 0,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 1540,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "pal",
+      "case": "above_partial",
+      "entity_y": 5,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 1080,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "pal",
+      "case": "top_partial",
+      "entity_y": 12,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 360,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "pal",
+      "case": "bottom_partial",
+      "entity_y": 205,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 1260,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    },
+    {
+      "region": "pal",
+      "case": "below_all",
+      "entity_y": 209,
+      "frames": 10,
+      "sprite_plane_pixels_compared": 573440,
+      "matte_rgb_pixels_compared": 81920,
+      "removed_outside_sms_pixels": 1490,
+      "inside_sms_pixels_identical": true,
+      "sat_count_preserved": true,
+      "overflow_status_preserved": true
+    }
+  ],
+  "passed": true,
+  "scope": "Full playable boot/controller path then one frozen actor at five boundary heights; no overflow fixture. Physical224-line MD sprite plane equals original source192-line crop. Every matte RGB pixel is black; valid rows, list length and overflow state unchanged. World source mode4/192,8x8/nozoom, no horizontal shift/left mask. No whole-game/hardware-console claim."
+}

@@ -5,29 +5,31 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0218 — 1024 Kio.**
+**Version courante : v0219 — 1024 Kio.**
 
-[Télécharger la ROM v0218](versions/v0218-399be6a3/gaw-megadrive-v0218.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0219](versions/v0219-7518d3c1/gaw-megadrive-v0219.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d`
-Checksum Mega Drive : `AA56`
+SHA-256 : `7518d3c174b117b299c1317b5921e351de7e96eee44fcd4a7d3d43566854cce7`
+Checksum Mega Drive : `227C`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0218**.
-La v0218 prépare les sprites en RAM puis les publie au VBlank avant le
-lecteur musical. Le portage complet, les parcours non couverts et le flux
-aléatoire Z80 restent à valider ou à terminer.
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0219**.
+La v0219 empêche les sprites de déborder dans les bandes noires au-dessus
+et en dessous de la zone de jeu Master System. Le correctif conserve les
+pixels visibles, les acteurs et le statut de débordement SMS sur les cas testés.
+Les contrôles ciblés passent en PAL/NTSC, ainsi que le retour d’inventaire
+dans la clairière et les deux premières maisons.
+Voir les [changements et limites](analysis/playable_sprite_viewport_v0219.md).
 
-La **v0218** corrige la publication partielle de sprites pendant le balayage,
-respecte le terminateur SMS Y=208 et cale les vingt étapes des scrollings
-verticaux testés sur l’original, sans l’image d’attente supplémentaire.
-Les contrôles PAL/NTSC couvrent le rendu, les transitions, l’intro, les bruitages
-du menu et l’inventaire. Voir les [changements et limites](analysis/world_publication_v0218.md).
-Les v0211–v0217 sont des étapes intermédiaires ; utiliser **v0218** pour jouer.
+La v0218 a introduit la publication des sprites au VBlank et corrigé la
+cadence des scrollings verticaux testés. Ces changements sont conservés.
+Voir les [preuves de la v0218](analysis/world_publication_v0218.md).
+Le portage complet, les parcours non couverts et le flux aléatoire Z80
+restent à valider ou à terminer.
 
 Les jalons suivants conservent leur ROM témoin de l’époque ; leurs mentions
 v0203 ou v0210 ne remplacent pas la version recommandée ci-dessus.
@@ -70,7 +72,7 @@ passe sur 133 cas par région, sur hôte et sur 68000. Les 217 interruptions,
 les 25 536 octets de sprites et les 592 octets PSG concordent en valeurs et en dates.
 Le statut vidéo SMS reste fourni à chaque interruption. Le banc de publication
 ci-dessus raccorde les sprites au rendu ; la prédiction du statut reste à intégrer.
-Ce jalon concerne un banc de diagnostic ; la ROM jouable reste **v0203**.
+Ce jalon historique concerne un banc de diagnostic ; utiliser la version courante indiquée en tête du README.
 
 La [construction des sprites suit maintenant les frontières des instructions SMS](analysis/sprite_scene_timed_milestone.md).
 Les cycles, le raster, le registre de rafraîchissement et les écritures RAM
@@ -88,7 +90,7 @@ Le [nouveau rendu des sprites SMS 8x8](analysis/md_sms_sprite8_milestone.md)
 reproduit la limite de huit sprites par ligne, les bords et le masquage par le HUD.
 Les six variantes PAL/NTSC concordent pixel par pixel sur les captures de test ;
 le raccordement au cycle complet du jeu reste à faire.
-La ROM jouable reste v0203.
+Ce jalon historique précède les intégrations des versions jouables suivantes.
 
 La [préparation native des commandes PSG](analysis/md_psg_native_prep_milestone.md)
 utilise désormais la multiplication 16 bits du 68000 et quatre copies longues.

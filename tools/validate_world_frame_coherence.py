@@ -44,7 +44,7 @@ def render(vram,cram,regs):
  out.putdata(pixels);return out
 
 def main():
- folder=ROOT/'validation/world-frame-coherence-v0218';folder.mkdir(exist_ok=True);rom=ROOT/'gaw-megadrive.bin';results=[];sy=symbols(ROOT/'megadrive/out/release/symbol.txt')
+ digest=sha((ROOT/'gaw-megadrive.bin').read_bytes());version=next(e['version'] for e in json.loads((ROOT/'versions/index.json').read_bytes()) if e['sha256']==digest);folder=ROOT/f'validation/world-frame-coherence-v{version:04d}';folder.mkdir(exist_ok=True);rom=ROOT/'gaw-megadrive.bin';results=[];sy=symbols(ROOT/'megadrive/out/release/symbol.txt')
  for region in ['auto','pal']:
   captures={3000,3118,3119,3120,3121,3122}
   with contextlib.redirect_stdout(io.StringIO()):run(rom,3123,folder/region,captures,PRESSES,core_options={'genesis_plus_gx_region_detect':region})
@@ -53,5 +53,5 @@ def main():
    ram=(d/f'ram_{f:05d}.bin').read_bytes();value=lambda name:int.from_bytes(bytes(ram[(sy[name]+i)^1] for i in range(2)),'big');assert value('sound_unhandled_command')==0 and value('world_tile_job_count')<=68
    result=dict(audio_unhandled_command=value('sound_unhandled_command'),queued_tile_jobs=value('world_tile_job_count'),region=region,frame=f,differing_pixels=len(differences),first_differences=differences[:12]);results.append(result);print(result,flush=True)
  report=dict(md_sha256=sha(rom.read_bytes()),cases=results,passed=not any(r['differing_pixels'] for r in results),scope='Independent snapshot VRAM/CRAM composition of51200 viewport/HUD pixels at six natural gameplay frames per region. Includes planes, tile flips/priority, sprite Y limit/linking, palettes and hscroll. Column Vscroll and shadow/highlight excluded by configured game mode. Not full-game/source cadence proof.')
- (ROOT/'analysis/world_frame_coherence_v0218_report.json').write_text(json.dumps(report,indent=2)+'\n');assert report['passed'],results
+ (ROOT/f'analysis/world_frame_coherence_v{version:04d}_report.json').write_text(json.dumps(report,indent=2)+'\n');assert report['passed'],results
 if __name__=='__main__':main()

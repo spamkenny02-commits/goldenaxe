@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0219 | [Telecharger](v0219-7518d3c1/gaw-megadrive-v0219.bin) | targeted_checks_passed | Sprites limites aux 192 lignes SMS ; controles des bords, rendu naturel et retour inventaire PAL/NTSC. | `7518d3c174b117b299c1317b5921e351de7e96eee44fcd4a7d3d43566854cce7` |
 | v0218 | [Telecharger](v0218-399be6a3/gaw-megadrive-v0218.bin) | targeted_checks_passed | ROM jouable : sprites et tuiles publies au VBlank avant musique, fin SAT D0, scrolling vertical cale sur la SMS. Intro/menu/inventaire verifies PAL/NTSC. | `399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d` |
 | v0217 | [Telecharger](v0217-d2b31074/gaw-megadrive-v0217.bin) | build_only | Integration intermediaire du VBlank ; remplacée par v0218 et son calage du scrolling source. | `d2b31074f24880e2764826bc55d3a913edea53815b5f8aa06529a67a49ed171e` |
 | v0216 | [Telecharger](v0216-5c4a7b35/gaw-megadrive-v0216.bin) | build_only | Integration intermediaire du VBlank ; remplacée par v0218 et son calage du scrolling source. | `5c4a7b352d846ead271e748c4cc8cc62945563b5fa5f8d3a53dfd2ad210a3203` |

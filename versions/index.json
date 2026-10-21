@@ -6781,5 +6781,32 @@
         "sha256": "0ff74fa613cb037456814f7ccb4486f301b8d3d93805ab4f77f348a64927e0e6"
       }
     ]
+  },
+  {
+    "version": 219,
+    "sha256": "7518d3c174b117b299c1317b5921e351de7e96eee44fcd4a7d3d43566854cce7",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T07:22:06.179769+00:00",
+    "rom": "v0219-7518d3c1/gaw-megadrive-v0219.bin",
+    "notes": "Sprites limites aux 192 lignes SMS ; controles des bords, rendu naturel et retour inventaire PAL/NTSC.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "playable_sprite_viewport_v0219_report.json",
+        "sha256": "94b7504c3f3aaf82f4e26d3fe2834cd979a6b14fcd97a50203655a974bfd0963"
+      },
+      {
+        "file": "world_frame_coherence_v0219_report.json",
+        "sha256": "e3a198f92305940801ad156dc57d32773889c8c87a21e0ab21e7f2af5979f094"
+      },
+      {
+        "file": "inventory_restore_v0219_report.json",
+        "sha256": "744ba23fcdad7f6dae4b9c282b3e8334d518e9d9d7fcc2d52ec99a9761d4e244"
+      },
+      {
+        "file": "sprite_viewport_recovery_v0219_report.json",
+        "sha256": "695ca96671c8e09eb79b09937dd05f0d85a41bb68df6f27b9d535c60aa79e594"
+      }
+    ]
   }
 ]
