@@ -1,0 +1,241 @@
+{
+  "md_sha256": "13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": false,
+  "diagnostic_only": true,
+  "cases": [
+    {
+      "region": "auto",
+      "starts": {
+        "sms": 1596,
+        "md": 1606
+      },
+      "relative_frames_compared": 64,
+      "clock_mismatch_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "marker_mismatch_offsets": [
+        8,
+        16,
+        24,
+        32,
+        40,
+        48,
+        56
+      ],
+      "confirmation": {
+        "sms": {
+          "2200": {
+            "clock": 255,
+            "marker": 252
+          },
+          "2201": {
+            "clock": 0,
+            "marker": 252
+          }
+        },
+        "md": {
+          "2200": {
+            "clock": 125,
+            "marker": 252
+          },
+          "2201": {
+            "clock": 126,
+            "marker": 252
+          }
+        }
+      },
+      "passed": false,
+      "evidence": {
+        "sms": {
+          "path": "validation/dialogue-waits-v0222/opening-auto-sms/observations.json",
+          "sha256": "9017ae506913b304ecf1ed5a6e9f1b3363d65d993b9acb120ea7a88ee23ff625"
+        },
+        "md": {
+          "path": "validation/dialogue-waits-v0222/opening-auto-md/observations.json",
+          "sha256": "cd0c05bbfac2d04d8dc067e695aa0011a209dfa2b745531e0d42d9c2372ef7dd"
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "starts": {
+        "sms": 1583,
+        "md": 1601
+      },
+      "relative_frames_compared": 64,
+      "clock_mismatch_offsets": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "marker_mismatch_offsets": [
+        8,
+        16,
+        24,
+        32,
+        40,
+        48,
+        56
+      ],
+      "confirmation": {
+        "sms": {
+          "2200": {
+            "clock": 255,
+            "marker": 252
+          },
+          "2201": {
+            "clock": 0,
+            "marker": 252
+          }
+        },
+        "md": {
+          "2200": {
+            "clock": 129,
+            "marker": 252
+          },
+          "2201": {
+            "clock": 130,
+            "marker": 252
+          }
+        }
+      },
+      "passed": false,
+      "evidence": {
+        "sms": {
+          "path": "validation/dialogue-waits-v0222/opening-pal-sms/observations.json",
+          "sha256": "7399626944c5fb94f319b0de009f8fd93e642d26708dde2d7c0b0f80060041cc"
+        },
+        "md": {
+          "path": "validation/dialogue-waits-v0222/opening-pal-md/observations.json",
+          "sha256": "017867c9efe11378b7f6dd1211abd6ecd67f83d5e31eceff449ae6dcd80e538d"
+        }
+      }
+    }
+  ],
+  "scope": "Natural opening page:64 aligned relative RAM-clock and physical marker frames; confirmation FF and next IRQ0 at2200/2201. Page starts differ and are not claimed synchronized. No whole-world/source IRQ clock proof."
+}

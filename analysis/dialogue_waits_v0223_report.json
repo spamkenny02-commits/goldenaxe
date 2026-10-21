@@ -1,0 +1,95 @@
+{
+  "md_sha256": "39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "diagnostic_only": false,
+  "cases": [
+    {
+      "region": "auto",
+      "starts": {
+        "sms": 1596,
+        "md": 1606
+      },
+      "relative_frames_compared": 64,
+      "clock_mismatch_offsets": [],
+      "marker_mismatch_offsets": [],
+      "confirmation": {
+        "sms": {
+          "2200": {
+            "clock": 255,
+            "marker": 252
+          },
+          "2201": {
+            "clock": 0,
+            "marker": 252
+          }
+        },
+        "md": {
+          "2200": {
+            "clock": 255,
+            "marker": 252
+          },
+          "2201": {
+            "clock": 0,
+            "marker": 252
+          }
+        }
+      },
+      "passed": true,
+      "evidence": {
+        "sms": {
+          "path": "validation/dialogue-waits-v0223/opening-auto-sms/observations.json",
+          "sha256": "9017ae506913b304ecf1ed5a6e9f1b3363d65d993b9acb120ea7a88ee23ff625"
+        },
+        "md": {
+          "path": "validation/dialogue-waits-v0223/opening-auto-md/observations.json",
+          "sha256": "48603a62c9a1c52cdfcef4c5d1b37eeb05250044a9f98dc646bc51a10b4ae582"
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "starts": {
+        "sms": 1583,
+        "md": 1601
+      },
+      "relative_frames_compared": 64,
+      "clock_mismatch_offsets": [],
+      "marker_mismatch_offsets": [],
+      "confirmation": {
+        "sms": {
+          "2200": {
+            "clock": 255,
+            "marker": 252
+          },
+          "2201": {
+            "clock": 0,
+            "marker": 252
+          }
+        },
+        "md": {
+          "2200": {
+            "clock": 255,
+            "marker": 252
+          },
+          "2201": {
+            "clock": 0,
+            "marker": 252
+          }
+        }
+      },
+      "passed": true,
+      "evidence": {
+        "sms": {
+          "path": "validation/dialogue-waits-v0223/opening-pal-sms/observations.json",
+          "sha256": "7399626944c5fb94f319b0de009f8fd93e642d26708dde2d7c0b0f80060041cc"
+        },
+        "md": {
+          "path": "validation/dialogue-waits-v0223/opening-pal-md/observations.json",
+          "sha256": "a3af963f72578903ec79bbbde4ae95431008ccc1941df394fc6c3eb2a7f6693b"
+        }
+      }
+    }
+  ],
+  "scope": "Natural opening page:64 aligned relative RAM-clock and physical marker frames; confirmation FF and next IRQ0 at2200/2201. Page starts differ and are not claimed synchronized. No whole-world/source IRQ clock proof."
+}

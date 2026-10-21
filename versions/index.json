@@ -6909,5 +6909,52 @@
         "sha256": "2cd148a9646f84ccbeb7d78c3c8d8d4069c431b2a1242d974d16dad46fbbdd03"
       }
     ]
+  },
+  {
+    "version": 223,
+    "sha256": "39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T13:40:06.968682+00:00",
+    "rom": "v0223-39e69955/gaw-megadrive-v0223.bin",
+    "notes": "Attente des pages et marqueurs corriges ; messages finaux des services sans clignotement parasite.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "dialogue_waits_v0223_report.json",
+        "sha256": "58fcc052e5f62e14e3c5a501e994ec124219235df964167b9c53856b5f50308d"
+      },
+      {
+        "file": "service_wait_markers_v0223_report.json",
+        "sha256": "8e3cb8e443ce8e1af6e9517dfa1a95f2625f4fa450e202d0c6e809eb697afd2e"
+      },
+      {
+        "file": "dialogue_page_buttons_v0223_report.json",
+        "sha256": "c22af2ce93b631a2cc3fc651e1e73f5f84b3bed35e7cc391ff0d7fd952594b7e"
+      },
+      {
+        "file": "save_v0223_report.json",
+        "sha256": "e9d660ec9e8277670787e51fd56538a45b8c403f6cfa50becf233591f717afad"
+      },
+      {
+        "file": "final_dialogue_v0223_report.json",
+        "sha256": "db03d07221240ef7c28db8895dd2472919af9b4f57ee3730686d69ac7ddf77d5"
+      },
+      {
+        "file": "dialogue_scroll_v0223_report.json",
+        "sha256": "c577fdad8ab1014b0414a8eab7f761084cbf40caef7b7d81193462f02031c7e3"
+      },
+      {
+        "file": "house_dialogue_v0223_report.json",
+        "sha256": "bb8cc08e5eb7e8d704d476082b9b71c3edbf6062a5094a8132ba4f6d3bd785cf"
+      },
+      {
+        "file": "merchant_magic_full_v0223_report.json",
+        "sha256": "7ce2cce861b67f3503a240f0dfb163710363a5b7a470a01a6c11bc39f2df43d2"
+      },
+      {
+        "file": "dialogue_waits_recovery_v0223_report.json",
+        "sha256": "5106e80f198c06d6dce6150bdb59ed8540583a69a4655fe8f84baed5716b1ae6"
+      }
+    ]
   }
 ]

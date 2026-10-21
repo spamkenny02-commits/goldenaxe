@@ -1,0 +1,33 @@
+{
+  "md_sha256": "39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "diagnostic_only": false,
+  "cases": [
+    {
+      "region": "auto",
+      "source_ignores_up": true,
+      "native_ignores_up": true,
+      "action_continues_afterward": true,
+      "all_three_1040_byte_bitmaps_source_exact": true,
+      "fixture_sha256": {
+        "sms": "af469719f0c68536abc725e9556f07ccbbbb6771694cd682da79b60ffce25a40",
+        "md": "c2326e35f827369f3ac041ff6dd712299586fc6537829ac7c15fbb0f990bbeff"
+      },
+      "passed": true
+    },
+    {
+      "region": "pal",
+      "source_ignores_up": true,
+      "native_ignores_up": true,
+      "action_continues_afterward": true,
+      "all_three_1040_byte_bitmaps_source_exact": true,
+      "fixture_sha256": {
+        "sms": "af469719f0c68536abc725e9556f07ccbbbb6771694cd682da79b60ffce25a40",
+        "md": "c2326e35f827369f3ac041ff6dd712299586fc6537829ac7c15fbb0f990bbeff"
+      },
+      "passed": true
+    }
+  ],
+  "scope": "Test copies replace only opening text with Avant$Apres and native checksum. Native indoor flag is an explicit test-only RAM injection; original07EE uses no such flag. Up at1700 must retain the pause, action at1800 must advance. Three settled1040-byte software bitmaps compared per region; no natural indoor route or full framebuffer/timing claim."
+}

@@ -1,0 +1,97 @@
+{
+  "md_sha256": "39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "diagnostic_only": false,
+  "cases": [
+    {
+      "region": "auto",
+      "acknowledgement": "action",
+      "frames_compared": 120,
+      "source_marker": 252,
+      "native_marker_values": [
+        252
+      ],
+      "marker_mismatch_frames": [],
+      "service_closed_and_resources_restored": true,
+      "passed": true,
+      "evidence": {
+        "sms": {
+          "path": "validation/service-waits-v0223/auto-8-sms/observations.json",
+          "sha256": "e0ad6641a548bb9d2e4bff89445ac9852336d7a888d5391aee58cf24165ed98d"
+        },
+        "md": {
+          "path": "validation/service-waits-v0223/auto-8-md/observations.json",
+          "sha256": "d5c0427fa57eee924710a6df395692105c8d270abf5124f10903694558d289be"
+        }
+      }
+    },
+    {
+      "region": "auto",
+      "acknowledgement": "up",
+      "frames_compared": 120,
+      "source_marker": 252,
+      "native_marker_values": [
+        252
+      ],
+      "marker_mismatch_frames": [],
+      "service_closed_and_resources_restored": true,
+      "passed": true,
+      "evidence": {
+        "sms": {
+          "path": "validation/service-waits-v0223/auto-4-sms/observations.json",
+          "sha256": "e0ad6641a548bb9d2e4bff89445ac9852336d7a888d5391aee58cf24165ed98d"
+        },
+        "md": {
+          "path": "validation/service-waits-v0223/auto-4-md/observations.json",
+          "sha256": "d5c0427fa57eee924710a6df395692105c8d270abf5124f10903694558d289be"
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "acknowledgement": "action",
+      "frames_compared": 120,
+      "source_marker": 252,
+      "native_marker_values": [
+        252
+      ],
+      "marker_mismatch_frames": [],
+      "service_closed_and_resources_restored": true,
+      "passed": true,
+      "evidence": {
+        "sms": {
+          "path": "validation/service-waits-v0223/pal-8-sms/observations.json",
+          "sha256": "3dd5118f036110640fdf1da079384f5cc029bd04be2479883ae6811b486a9e75"
+        },
+        "md": {
+          "path": "validation/service-waits-v0223/pal-8-md/observations.json",
+          "sha256": "2261f101582332a049bacefcd60cdb6fb4b788fed484bf19e0556b1e07ca5ce9"
+        }
+      }
+    },
+    {
+      "region": "pal",
+      "acknowledgement": "up",
+      "frames_compared": 120,
+      "source_marker": 252,
+      "native_marker_values": [
+        252
+      ],
+      "marker_mismatch_frames": [],
+      "service_closed_and_resources_restored": true,
+      "passed": true,
+      "evidence": {
+        "sms": {
+          "path": "validation/service-waits-v0223/pal-4-sms/observations.json",
+          "sha256": "3dd5118f036110640fdf1da079384f5cc029bd04be2479883ae6811b486a9e75"
+        },
+        "md": {
+          "path": "validation/service-waits-v0223/pal-4-md/observations.json",
+          "sha256": "2261f101582332a049bacefcd60cdb6fb4b788fed484bf19e0556b1e07ca5ce9"
+        }
+      }
+    }
+  ],
+  "scope": "First village free inn, refusal path after controlled position/resources.120 final-message marker frames per case; action and Up acknowledgement in PAL/NTSC, settled resource/state comparison. Does not prove every service, absolute pre-message timing or global IRQ clock."
+}

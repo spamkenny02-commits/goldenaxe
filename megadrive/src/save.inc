@@ -215,12 +215,12 @@ static void show_save_service(void)
         {
             save_write_slot(save_slot_selection);save_draw_slots(0xa4);save_service_phase=3;
             VDP_resetSprites();VDP_updateSprites(0,CPU);
-            render_dialogue_text(save_done_text,TRUE);wait_dialog_continue();
+            render_dialogue_text(save_done_text,TRUE);wait_dialog_end();
         }
     }
     else
     {
-        save_service_phase=5;render_dialogue_text(save_decline_text,TRUE);wait_dialog_continue();
+        save_service_phase=5;render_dialogue_text(save_decline_text,TRUE);wait_dialog_end();
     }
     service_finish();
 }

@@ -647,18 +647,20 @@ static void set_dialog_marker(u16 tile)
     md_map[623]=word;VDP_setTileMapXY(BG_A,word,15,21);
 }
 
-/* Intermediate pages and service frontends retain their separate marker. */
+/* 07F4..080F: only intermediate pages reset C02F, blink its bit3,
+ * accept a fresh source button, then leave C02F=FF and a stable marker. */
 static void wait_dialog_continue(void)
 {
-    u16 previous=input,blink=0;
+    u16 previous=input;
+    world_clock_shift=vtimer;
     while(TRUE)
     {
         wait_frame();
-        if((input&~previous)&(BUTTON_A|BUTTON_B|BUTTON_C|BUTTON_START|
-            (house_dialogue_active?(BUTTON_UP|BUTTON_DOWN|BUTTON_LEFT|BUTTON_RIGHT):0))) break;
+        set_dialog_marker((world_clock()&8)?0xfc:0xfd);
+        if((input&~previous)&(BUTTON_A|BUTTON_B|BUTTON_C|BUTTON_START)) break;
         previous=input;
-        set_dialog_marker((blink++&8)?0xfc:0xfd);
     }
+    world_clock_shift=vtimer+1;
     set_dialog_marker(0xfc);
 }
 

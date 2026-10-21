@@ -17,7 +17,7 @@ static void show_healer_service(void)
     {
         if(hero_gold<cost)
         {
-            render_dialogue_text(merchant_poor,TRUE);wait_dialog_continue();accepted=FALSE;
+            render_dialogue_text(merchant_poor,TRUE);wait_dialog_end();accepted=FALSE;
         }
         else
         {
@@ -52,5 +52,5 @@ static void show_healer_service(void)
         healer_phase=3;render_dialogue_text(healer_done,TRUE);
     }
     else { healer_phase=3;render_dialogue_text(healer_decline,TRUE); }
-    wait_dialog_continue();service_finish();healer_phase=0;
+    wait_dialog_end();service_finish();healer_phase=0;
 }

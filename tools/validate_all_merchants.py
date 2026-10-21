@@ -6,7 +6,7 @@ from run_core import run
 from validate_house_dialogue import native
 
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--limit',type=int);args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--limit',type=int);parser.add_argument('--case');args=parser.parse_args()
  sy={m[2].split('.lto_priv.')[0]:int(m[1],16)&65535 for l in (ROOT/'megadrive/out/release/symbol.txt').read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',l))}
  assets=json.loads((ROOT/'analysis/merchant_assets.json').read_text());towns={r:(m,g) for r,m,g in assets['towns']}
  nodes={r:(x,y) for r,x,y in assets['nodes']};doors=json.loads((ROOT/'analysis/doors_reference.json').read_text())['direct_unconditional_doors']
@@ -16,6 +16,8 @@ def main():
  fixtures += [('feather',0x71,dict(selection=1)),('oil',0x55,dict(selection=2)),('heal30',0xf9,dict(selection=1)),('potion100-owned',0x57,dict(potion=1)),('potion40-owned',0x34,dict(potion=1)),('potion40-poor',0x34,dict(gold=39)),('shield-owned',0xf9,dict(shield=2)),('shield-better',0xf9,dict(shield=3)),('heal-full',0x53,dict(hp=24)),('keys-full',0x71,dict(keys=99)),('feather-owned',0x71,dict(selection=1,feather=1)),('oil-owned',0x55,dict(selection=2,oil=1)),('normal-poor',0x55,dict(gold=99)),('magic4',0x23,dict(selection=1)),('magic8',0x23,dict(selection=2)),('magic-clamp',0x23,dict(selection=2,magic=17,magic_cap=24)),('magic-overflow',0x23,dict(selection=2,magic=240,magic_cap=248)),('magic-full',0x23,dict(magic=24,magic_cap=24)),('magic-poor',0x23,dict(gold=19))]
  if args.limit:fixtures=fixtures[:args.limit]
  else:fixtures += [('confirm_cancel_priority',0x94,dict(both=True))]
+ if args.case:
+  fixtures=[f for f in fixtures if f[0]==args.case];assert fixtures,'Unknown merchant case: '+args.case
  results=[]
  for label,town,override in fixtures:
   stats=base|override;mode,group=towns[town]
@@ -69,6 +71,6 @@ def main():
   assert intervals[0]==intervals[1],(label,'per-unit payment intervals',set(intervals[0]),set(intervals[1]))
   results.append(dict(name=label,town=town,house=house,mode=mode,stats=stats,initial_panel_pixels_exact=True,prompt_bitmap_bytes_exact=4160,settled_states_source_exact=2,currency_decrements=len(observations[0])-1,currency_intervals_source_exact=True,currency_intervals=list(set(intervals[1])),controlled_interior_checkpoint_and_stats=True))
   print('Merchant',label,'OK',flush=True)
- report=dict(md_sha256=hashlib.sha256((ROOT/'gaw-megadrive.bin').read_bytes()).hexdigest(),cases=results,all_23_towns_checked=args.limit is None,natural_world_access_verified=False,absolute_timing_verified=False)
- (ROOT/('validation/all_merchants_report.json' if args.limit is None else 'validation/all_merchants_partial_report.json')).write_text(json.dumps(report,indent=2)+'\n')
+ report=dict(md_sha256=hashlib.sha256((ROOT/'gaw-megadrive.bin').read_bytes()).hexdigest(),cases=results,all_23_towns_checked=args.limit is None and args.case is None,selected_case=args.case,natural_world_access_verified=False,absolute_timing_verified=False)
+ (ROOT/(f'validation/all_merchants_case_{args.case}_report.json' if args.case else 'validation/all_merchants_report.json' if args.limit is None else 'validation/all_merchants_partial_report.json')).write_text(json.dumps(report,indent=2)+'\n')
 if __name__=='__main__':main()

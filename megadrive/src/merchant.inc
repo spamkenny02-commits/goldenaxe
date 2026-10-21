@@ -130,7 +130,7 @@ static void show_merchant_service(void)
         {
             if(hero_magic==hero_max_magic)
             {
-                render_dialogue_text(merchant_full,TRUE);wait_dialog_continue();break;
+                render_dialogue_text(merchant_full,TRUE);wait_dialog_end();break;
             }
             if(merchant_pay(merchant_magic_prices[merchant_selection]))
             {
