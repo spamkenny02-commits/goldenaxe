@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "region": "ntsc",
+      "cases": 133,
+      "checkpoints": 532,
+      "irq_inputs": 217,
+      "port_values_dates": 26128,
+      "packed_sha256": "2a50107e6fb924663b9f0b3d8428ed1174539acbd2c6cf8df0be1eb5b7df3ffd",
+      "kernel_sha256": "5ffe43509eb5bf59d5f615a546abe3780b1654be079bf686f08c0184aaf16b80"
+    },
+    {
+      "region": "pal",
+      "cases": 133,
+      "checkpoints": 532,
+      "irq_inputs": 217,
+      "port_values_dates": 26128,
+      "packed_sha256": "8100aa9b3dcb11d75868bfc6b6fa7837880a1a4708a9e8d27ae3b28d4edcdc25",
+      "kernel_sha256": "5ffe43509eb5bf59d5f615a546abe3780b1654be079bf686f08c0184aaf16b80"
+    }
+  ],
+  "limits": [
+    "Exact byte recovery and ROM linkage for source checkpoints, explicit IRQ status inputs, SAT/PSG values/dates, original ROM banks and input RAM. Hardware status is supplied evidence, not predicted. No whole-game or renderer deadline claim."
+  ]
+}

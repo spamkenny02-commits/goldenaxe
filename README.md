@@ -19,9 +19,9 @@ Checksum Mega Drive : `368C`
 
 État au **21 octobre 2026** : la ROM jouable recommandée reste **v0203**.
 Les travaux natifs plus récents sont des bancs de validation ; ils ne constituent
-pas une nouvelle version jouable. Le dernier jalon validé porte sur la construction
-des sprites et ses frontières d’instructions. Le raccordement à l’interruption
-complète du jeu est en cours et ne passe pas encore tous les contrôles.
+pas une nouvelle version jouable. Le dernier jalon validé raccorde la construction
+des sprites, l’attente et l’interruption du jeu dans un banc 68000. La livraison
+vidéo de cette chaîne et son intégration à la ROM jouable restent à terminer.
 
 La **v0203** corrige le flash d’une image de l’ancienne carte à la fin du
 scrolling horizontal. Les parcours depuis la clairière et le retour du village
@@ -42,11 +42,18 @@ Voir les [preuves et limites de la v0202](analysis/pattern_pairs_milestone.md).
 Les v0199–v0201 sont conservées comme versions intermédiaires de diagnostic.
 Le portage complet et la cadence absolue depuis le boot restent à valider.
 
+Le [raccordement sprites / attente / interruption / son](analysis/game_sprite_frame_milestone.md)
+passe sur 133 cas par région, sur hôte et sur 68000. Les 217 interruptions,
+les 25 536 octets de sprites et les 592 octets PSG concordent en valeurs et en dates.
+Le statut vidéo SMS est fourni à chaque interruption ; sa prédiction et la
+livraison des données au rendu Mega Drive restent à intégrer.
+Ce jalon concerne un banc de diagnostic ; la ROM jouable reste **v0203**.
+
 La [construction des sprites suit maintenant les frontières des instructions SMS](analysis/sprite_scene_timed_milestone.md).
 Les cycles, le raster, le registre de rafraîchissement et les écritures RAM
 concordent avec le Z80 original sur 133 cas par région, également exécutés
-sur 68000. Les interruptions contrôlées observent les mêmes tables partielles ;
-le raccordement à l’interruption complète du jeu reste à terminer.
+sur 68000. Les interruptions contrôlées observent les mêmes tables partielles.
+Le banc de raccordement ci-dessus prolonge ce travail avec l’interruption du jeu.
 
 La [production native de la table de sprites](analysis/source_sprite_scene_milestone.md)
 reproduit désormais le tri et les descripteurs du Z80 : 133 cas concordent

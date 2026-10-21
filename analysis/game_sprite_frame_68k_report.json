@@ -1,0 +1,43 @@
+{
+  "kernel_sha256": "5ffe43509eb5bf59d5f615a546abe3780b1654be079bf686f08c0184aaf16b80",
+  "kernel_bytes": 3801088,
+  "source_report_sha256": "00bfce1d5b23877eec73e0c83ab715168afeafad1a0ae452e99611b00e8fad9f",
+  "results": [
+    {
+      "region": "ntsc",
+      "frame": 3318,
+      "done": 1,
+      "checks": 133,
+      "failures": 0,
+      "case": 132,
+      "kind": 0,
+      "error": 0,
+      "detail": 0,
+      "expected": 0,
+      "actual": 0,
+      "irqs": 217,
+      "sat": 133,
+      "psg": 592
+    },
+    {
+      "region": "pal",
+      "frame": 2778,
+      "done": 1,
+      "checks": 133,
+      "failures": 0,
+      "case": 132,
+      "kind": 0,
+      "error": 0,
+      "detail": 0,
+      "expected": 0,
+      "actual": 0,
+      "irqs": 217,
+      "sat": 133,
+      "psg": 592
+    }
+  ],
+  "contract_checks_per_region": 5,
+  "limits": [
+    "Native68000 executes the shared-RAM sprite/wait/full IRQ/audio composition. All four checkpoints compare PC/master/raster/R/IFF and930 RAM bytes; every SAT/PSG byte/date and each IRQ entry compare to unchanged original SMS routines. Status and initial entry RAM are supplied hardware inputs, not predicted. Trace-disabled execution also compares full8192-byte final RAM and clock/work results. Diagnostic kernel only; renderer delivery, hardware deadlines and whole-game integration are not proved."
+  ]
+}

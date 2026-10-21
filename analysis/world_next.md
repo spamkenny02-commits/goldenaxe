@@ -1170,3 +1170,21 @@ Playablev0203 unchanged; original full IRQ SAT64/128 publication, RAM336/audio
 bridge and dynamic actor patterns still need integration. Boot/fullgame/deadlines/
 waveform/hardware unproven. Evidence:analysis/sprite_scene_timed_milestone.md.
 Immutable archive:sprite-scene-timed-v0203; local Git only,207 numbered ROMs kept.
+
+Game sprite/wait/IRQ composition milestone (2026-10-21):
+Native0938 -> CALL0B95 -> original full IRQ SAT64/SAT128/audio -> mapper restore
+now shares C000..DFFF RAM through a compact336 IRQ adapter. Full IRQ is unsafe
+during live producer registers: C02E gates it until0B95 saves them; audio-only
+IRQs remain enabled during0938. Original003F writes per-IRQ source VDPstatus
+toC01B; observed inputs159/223 replace an incorrect constant128 assumption.
+133cases/region on host and68000;217IRQs (84audio-only/133full),25536SATbytes
+and592PSGbytes/region match exact values/dates. Four930-byte checkpoints,
+PC/master/raster/R/IFF exact. No-trace8192RAM and clock counters identical.
+Five fatal-path/ownership checks perregion pass onhost and68000.
+Inputs include observed entryRAM and hardwarestatus; no boot prediction.
+Tile/HUD/queue requests empty; SAT sink only, otherVDPdelivery stillneeded.
+Next: route owned IRQ SAT through MD sprite backend and preserve source status
+semantics, then integrate actor/pattern progression and fullframe delivery.
+Playablev0203 unchanged; no fullgame/deadline/waveform/hardware claim.
+Evidence:analysis/game_sprite_frame_milestone.md; archivegame-sprite-frame-v0203.
+Gitmain now synchronized with spamkenny02-commits/goldenaxe; oldV51 history kept.
