@@ -1,0 +1,8 @@
+{
+  "md_sha256": "36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134",
+  "passed": true,
+  "compiled_c_cases": 133120,
+  "reference_commit": "56c6131",
+  "source_sha256": "533c68e85b3f41a2286d24d8268250b15db51b50043ab6cde86462da9c51e18d",
+  "scope": "Exact old/new production functions compiled on host, with SDK IO stubs: all0..64 sprite counts,256 encoded Y values,four layouts,two preparation modes,0..4 base pattern jobs. SAT attributes/links,full clone pixels,queued DMA records,overflow status and final read command match. Source reads return a constant word except varied queued pattern rows; actual68000/VDP/cycle integration is separate."
+}

@@ -7042,5 +7042,40 @@
         "sha256": "36b2f50b1eb294180a431e93928d8811fce765d7f96753f1b233ddae6b2d5d8b"
       }
     ]
+  },
+  {
+    "version": 226,
+    "sha256": "36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T20:10:16.306079+00:00",
+    "rom": "v0226-36ad2e99/gaw-megadrive-v0226.bin",
+    "notes": "Masque SMS de sprites optimise, pixels identiques en PAL-NTSC. Premier boss/cristal/sortie verifies en NTSC ; cadence et campagne incompletes.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "sprite_mask_release_v0226_report.json",
+        "sha256": "7a0b310128af8e03d485109c24d86838cdd7de243d6626d59f55694e459fab02"
+      },
+      {
+        "file": "sprite_mask_equivalence_v0226_report.json",
+        "sha256": "419ee2dd9340cd36bb532b63c5595d134eddc5f03efbeccb0b18a5216c4ca43c"
+      },
+      {
+        "file": "sprite_mask_production_v0226_report.json",
+        "sha256": "42e7a84ce845f29cf1d2b36b5bdbebaa8c28f9fe3135f8f0c05d7fd7d7962733"
+      },
+      {
+        "file": "world_frame_coherence_v0226_report.json",
+        "sha256": "14df83e8649eb1abea0738704ff95adf1647070446f5f25d7b936edf3984ff25"
+      },
+      {
+        "file": "first_dungeon_story_v0226_report.json",
+        "sha256": "04ce59ba997039d75c40aaac71b0997f701d817bc9f6b708252fbde63c3db566"
+      },
+      {
+        "file": "first_dungeon_recovery_v0226_report.json",
+        "sha256": "891c5097164e9fdb87e081729e1411618248bad56f693e50aee131e3d872b062"
+      }
+    ]
   }
 ]

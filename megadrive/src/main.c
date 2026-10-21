@@ -1000,7 +1000,7 @@ static void world_clone_upload(const u32 *source,u16 tile,u16 index)
 static void mask_world_sms_sprite_rows(u16 count)
 {
     static u16 clone_base;
-    u8 used[192];u16 n,row,word,raw,tile;u8 mask;s16 top,line;
+    u8 used[192];u16 n,row,word,raw,tile,pattern_jobs=world_tile_job_count;u8 mask;s16 top,line;
     u32 clone[8];bool blank_loaded=FALSE;volatile u16 *data=(volatile u16*)VDP_DATA_PORT;
     /* Never overwrite tiles still referenced by the preceding SAT. */
     clone_base=clone_base==1024?1152:1024;
@@ -1008,11 +1008,29 @@ static void mask_world_sms_sprite_rows(u16 count)
     for(n=0;n<count && n<64;n++)
     {
         raw=(vdpSpriteCache[n].y-145)&255;if(raw==208) break;
-        top=raw<208?(s16)raw+1:(s16)raw-255;mask=255;
-        for(row=0;row<8;row++)
+        top=raw<208?(s16)raw+1:(s16)raw-255;mask=0;
+        if(top>=0 && top<=184)
         {
-            line=top+row;
-            if(line<0 || line>=192 || used[line]++>=8) mask&=~(1<<row);
+            /* Most sprites are wholly inside the SMS viewport. Constant
+             * row bits avoid per-pixel clipping tests and variable shifts. */
+            u8 *lines=used+top;
+            if(lines[0]++<8) mask|=1;
+            if(lines[1]++<8) mask|=2;
+            if(lines[2]++<8) mask|=4;
+            if(lines[3]++<8) mask|=8;
+            if(lines[4]++<8) mask|=16;
+            if(lines[5]++<8) mask|=32;
+            if(lines[6]++<8) mask|=64;
+            if(lines[7]++<8) mask|=128;
+        }
+        else
+        {
+            u16 bit=1;
+            for(row=0;row<8;row++,bit+=bit)
+            {
+                line=top+row;
+                if(line>=0 && line<192 && used[line]++<8) mask|=bit;
+            }
         }
         if(mask==255) continue;
         if(!mask)
@@ -1023,18 +1041,21 @@ static void mask_world_sms_sprite_rows(u16 count)
         tile=vdpSpriteCache[n].attribut&2047;
         {
             const u32 *queued=0;u16 j;
-            if(world_video_preparing) for(j=0;j<world_tile_job_count;j++)
+            /* Later jobs are the clones produced by this pass, at tile
+             *1024 or above; unmasked game sprites only reference16..527. */
+            if(world_video_preparing) for(j=0;j<pattern_jobs;j++)
             {
                 const WorldTileJob *job=world_tile_jobs+j;
                 if(tile>=job->tile && tile<job->tile+job->count)
                 { queued=job->source+(tile-job->tile)*8;break; }
             }
             if(!queued) *(volatile u32*)VDP_CTRL_PORT=VDP_READ_VRAM_ADDR((u32)tile*32);
-            for(row=0;row<8;row++)
+            u16 bit=1;
+            for(row=0;row<8;row++,bit+=bit)
             {
                 if(queued) clone[row]=queued[row];
                 else { word=*data;clone[row]=(u32)word<<16;clone[row]|=*data; }
-                if(!(mask&(1<<row))) clone[row]=0;
+                if(!(mask&bit)) clone[row]=0;
             }
         }
         world_clone_upload(clone,clone_base+n,n);VDP_setSpriteTile(n,clone_base+n);
@@ -1070,7 +1091,9 @@ static void prepare_world_sms_sprite_overflow(u16 count)
         edges[top]++;edges[bottom]--;
     }
     world_video_next_overflow=0;
-    for(n=0;n<192;n++)
+    /* Eight total entries cannot overflow a line. Viewport clipping still
+     * takes the shared masking path below, even for one sprite. */
+    if(count>8) for(n=0;n<192;n++)
     {
         used+=edges[n];
         if(used>8) { world_video_next_overflow=1;break; }

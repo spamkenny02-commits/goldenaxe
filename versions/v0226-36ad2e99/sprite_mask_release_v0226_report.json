@@ -1,0 +1,169 @@
+{
+  "md_sha256": "36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134",
+  "passed": true,
+  "checksum": "DD67",
+  "host_equivalence_cases": 133120,
+  "production_sprite_plane_pixels_exact": 4423680,
+  "production_timing_cases": [
+    {
+      "region": "auto",
+      "case": "hero_only",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 9,
+      "current_timing_samples": 9,
+      "previous_median_elapsed_master_cycles": 87528,
+      "current_median_elapsed_master_cycles": 16758,
+      "reduction_percent": 80.85
+    },
+    {
+      "region": "auto",
+      "case": "overlap",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 3,
+      "current_timing_samples": 4,
+      "previous_median_elapsed_master_cycles": 897988,
+      "current_median_elapsed_master_cycles": 705635.0,
+      "reduction_percent": 21.42
+    },
+    {
+      "region": "auto",
+      "case": "top_clip",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 9,
+      "current_timing_samples": 9,
+      "previous_median_elapsed_master_cycles": 185290,
+      "current_median_elapsed_master_cycles": 100058,
+      "reduction_percent": 46.0
+    },
+    {
+      "region": "auto",
+      "case": "bottom_clip",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 9,
+      "current_timing_samples": 9,
+      "previous_median_elapsed_master_cycles": 177156,
+      "current_median_elapsed_master_cycles": 94822,
+      "reduction_percent": 46.48
+    },
+    {
+      "region": "auto",
+      "case": "terminator",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 9,
+      "current_timing_samples": 9,
+      "previous_median_elapsed_master_cycles": 82460,
+      "current_median_elapsed_master_cycles": 11676,
+      "reduction_percent": 85.84
+    },
+    {
+      "region": "pal",
+      "case": "hero_only",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 9,
+      "current_timing_samples": 9,
+      "previous_median_elapsed_master_cycles": 87514,
+      "current_median_elapsed_master_cycles": 16758,
+      "reduction_percent": 80.85
+    },
+    {
+      "region": "pal",
+      "case": "overlap",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 4,
+      "current_timing_samples": 4,
+      "previous_median_elapsed_master_cycles": 894771.5,
+      "current_median_elapsed_master_cycles": 703874.5,
+      "reduction_percent": 21.33
+    },
+    {
+      "region": "pal",
+      "case": "top_clip",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 9,
+      "current_timing_samples": 9,
+      "previous_median_elapsed_master_cycles": 185290,
+      "current_median_elapsed_master_cycles": 100058,
+      "reduction_percent": 46.0
+    },
+    {
+      "region": "pal",
+      "case": "bottom_clip",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 9,
+      "current_timing_samples": 9,
+      "previous_median_elapsed_master_cycles": 177156,
+      "current_median_elapsed_master_cycles": 94822,
+      "reduction_percent": 46.48
+    },
+    {
+      "region": "pal",
+      "case": "terminator",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 9,
+      "current_timing_samples": 9,
+      "previous_median_elapsed_master_cycles": 82446,
+      "current_median_elapsed_master_cycles": 11676,
+      "reduction_percent": 85.84
+    }
+  ],
+  "first_dungeon_boss_crystal_exit_verified": true,
+  "natural_boss_death_examples": [
+    {
+      "case": "sms-auto-18",
+      "observed_boss_death_frames": 182,
+      "repeated_simulation_timer_frames": []
+    },
+    {
+      "case": "md-auto-18",
+      "observed_boss_death_frames": 183,
+      "repeated_simulation_timer_frames": [
+        19628
+      ]
+    },
+    {
+      "case": "md-auto-21",
+      "observed_boss_death_frames": 187,
+      "repeated_simulation_timer_frames": [
+        26937,
+        26985,
+        26988,
+        26990,
+        26993
+      ]
+    }
+  ],
+  "all_frame_deadlines_met": false,
+  "full_game_validated": false,
+  "source_rng_exact": false,
+  "evidence": {
+    "analysis/sprite_mask_equivalence_v0226_report.json": "419ee2dd9340cd36bb532b63c5595d134eddc5f03efbeccb0b18a5216c4ca43c",
+    "analysis/sprite_mask_production_v0226_report.json": "42e7a84ce845f29cf1d2b36b5bdbebaa8c28f9fe3135f8f0c05d7fd7d7962733",
+    "analysis/world_frame_coherence_v0226_report.json": "14df83e8649eb1abea0738704ff95adf1647070446f5f25d7b936edf3984ff25",
+    "analysis/first_dungeon_story_v0226_report.json": "04ce59ba997039d75c40aaac71b0997f701d817bc9f6b708252fbde63c3db566",
+    "validation/natural-dungeon-combat/sms-auto-18/boss_frames.json": "ae0f9027c73ed805c6cb08823843963a07ae49ebe6e05517ca9a013c8ad84041",
+    "validation/natural-dungeon-combat/md-auto-18/boss_frames.json": "992346f74d323681e86e93fc899937199d4dd053855bac9d1701c41b35cefe3f",
+    "validation/natural-dungeon-combat/md-auto-21/boss_frames.json": "20a3e7dff754910a970c87bc96d598a02144533a27ce05b17c7076f1c682e445"
+  },
+  "source_files": {
+    "megadrive/src/main.c": "533c68e85b3f41a2286d24d8268250b15db51b50043ab6cde86462da9c51e18d",
+    "tools/natural_dungeon_combat.py": "0d06b3488f3e5e378e9a4d88423840e7e5aae23fca5a7ab1a948406d7471a5f2",
+    "tools/validate_sprite_mask_equivalence.py": "ed586f6a60d6a825d344ada23cc61dc85003be2eef26be132d1dd318b83ce955",
+    "tools/validate_sprite_mask_production.py": "f88b6e6cc4dbbe78500ef4981b447d917692f19df207a83c86f4c58cc2483924",
+    "tools/verify_first_dungeon_story.py": "a57f8df179e7d828c103aa6e1343226443a9d619dc3f5414837a83459839c0c2"
+  },
+  "limits": [
+    "Measured reductions apply to the masking routine on frozen controlled scenes; elapsed times may include IRQ work. They are not global FPS or fidelity percentages.",
+    "Natural boss particle streams differ: the examples show remaining stalls, not a controlled before/after performance comparison. The optimization does not solve all frame deadlines.",
+    "The first dungeon story path reaches boss/crystal/exit; optional rooms/items, other dungeons, hardware console and complete audio/RNG/cadence fidelity remain unfinished."
+  ]
+}

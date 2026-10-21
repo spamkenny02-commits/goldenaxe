@@ -1,0 +1,161 @@
+{
+  "md_sha256": "36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "region": "auto",
+  "first_dungeon_boss_crystal_exit_verified": true,
+  "all_dungeon_rooms_explored": false,
+  "full_game_validated": false,
+  "cases": [
+    {
+      "system": "sms",
+      "case": "sms-auto-17",
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+      "frames": 25998,
+      "lineage": [
+        "sms-auto-17",
+        "sms-auto-15",
+        "sms-auto-09"
+      ],
+      "dungeon_rooms": [
+        373,
+        388,
+        389,
+        403,
+        404,
+        420,
+        421,
+        436,
+        437,
+        452,
+        468,
+        484,
+        485
+      ],
+      "boss_type": 104,
+      "keys": [
+        [
+          485,
+          0,
+          1
+        ],
+        [
+          437,
+          1,
+          0
+        ],
+        [
+          403,
+          0,
+          1
+        ],
+        [
+          389,
+          1,
+          0
+        ]
+      ],
+      "normal_continue_count": 0,
+      "final_health": 28,
+      "max_health": 32,
+      "gem_progress": 128,
+      "final_music": 130,
+      "fixed_replay_ram_bytes": 8192,
+      "fixed_replay_png_exact": true,
+      "modal_case": "sms-auto-15",
+      "modal_frame": 23980,
+      "health_refill_interval_frames": 2
+    },
+    {
+      "system": "md",
+      "case": "md-auto-22",
+      "rom_sha256": "36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134",
+      "frames": 29339,
+      "lineage": [
+        "md-auto-22",
+        "md-auto-21"
+      ],
+      "dungeon_rooms": [
+        373,
+        388,
+        389,
+        403,
+        404,
+        420,
+        421,
+        436,
+        437,
+        452,
+        468,
+        484,
+        485
+      ],
+      "boss_type": 104,
+      "keys": [
+        [
+          485,
+          0,
+          1
+        ],
+        [
+          437,
+          1,
+          0
+        ],
+        [
+          403,
+          0,
+          1
+        ],
+        [
+          389,
+          1,
+          0
+        ]
+      ],
+      "normal_continue_count": 1,
+      "final_health": 32,
+      "max_health": 32,
+      "gem_progress": 128,
+      "final_music": 130,
+      "fixed_replay_ram_bytes": 65536,
+      "fixed_replay_png_exact": true,
+      "modal_case": "md-auto-21",
+      "modal_frame": 27290,
+      "health_refill_interval_frames": 2
+    }
+  ],
+  "source_native_final_flags_exact_bytes": 256,
+  "source_native_final_map_exact_bytes": 1280,
+  "reward_window_words_exact": 150,
+  "reward_window_normalized_rgb_pixels_exact": 9600,
+  "reward_window_and_hero_tiles_exact": 19,
+  "evidence": {
+    "validation/natural-dungeon-combat/sms-auto-09/report.json": "b0706eb40405bbf5e9b51a9353b11b04b595d04b6f362e4de3c10c4f41c82a2a",
+    "validation/natural-dungeon-combat/sms-auto-09/capture.json": "40eb673959f0b9169ab9c46fdb868a7407b47005176c92049210b51c126f0bda",
+    "validation/natural-dungeon-combat/sms-auto-09/controls.json": "3371d691d2821483966abd9f133f0f489bca2cea8c6d855334190658ec50801d",
+    "validation/natural-dungeon-combat/sms-auto-09/events.json": "83a7c6f052d96631255e456b3c7a7d117d5a084cd016adf516bf8ca0f8bac498",
+    "validation/natural-dungeon-combat/sms-auto-15/report.json": "5798a04f83ed8031eb33e6bb8d93eb7a37a5bdcff07c0a419243e668f5fb6053",
+    "validation/natural-dungeon-combat/sms-auto-15/capture.json": "bbdeed1d158a89017160020ec0375afadce4abc4efb72f1908fa0bf4aabd4c4e",
+    "validation/natural-dungeon-combat/sms-auto-15/controls.json": "7a3e8e5e658906f1035e13cd762027c4be463745ed0032d858683e67c425aa44",
+    "validation/natural-dungeon-combat/sms-auto-15/events.json": "cea4efd938c0f8ce7ec9f362dc934e461f7257640bb8f57883e1a4c72fbb7af6",
+    "validation/natural-dungeon-combat/sms-auto-17/report.json": "47febd0beab853ac6a7b313e7d757569b49235532afcc8dc2f22fd0f869bcef8",
+    "validation/natural-dungeon-combat/sms-auto-17/capture.json": "58e19541773c140db4ce4248bdfbed211af72136cad34d2b0dea5f12fb80045f",
+    "validation/natural-dungeon-combat/sms-auto-17/controls.json": "c7da5c9559d014c5ae074278e5ac56c34a11d9fc46ba0d78c9e9f037468367b4",
+    "validation/natural-dungeon-combat/sms-auto-17/events.json": "c56a66649ff34fdf1f50921332407087f349d8d2d786515121393cc7376c1470",
+    "validation/natural-dungeon-combat/md-auto-21/report.json": "203e741d34e6d77aec3bd12a0aac456132147392111e37750257ad0222b09c74",
+    "validation/natural-dungeon-combat/md-auto-21/capture.json": "6e4a91e40eabdfd0d02a715e6505c746e919508c2437ded7758b6d268452cb29",
+    "validation/natural-dungeon-combat/md-auto-21/controls.json": "3a348c029e01e1d19189aae02ccd31a10ee43f3db4764c6e33184ae963ca45a2",
+    "validation/natural-dungeon-combat/md-auto-21/events.json": "1fcce1150e75ab0934eada2a3749fb7ebd1b5d1c8002a8da7dc9001abff02035",
+    "validation/natural-dungeon-combat/md-auto-22/report.json": "232fe0afef05bda18f585f69610415340615b9f684038675a467da45d72977cb",
+    "validation/natural-dungeon-combat/md-auto-22/capture.json": "58d11945fa996b885240d777d54e1fddda485385b273027d6b959c27c9091158",
+    "validation/natural-dungeon-combat/md-auto-22/controls.json": "ed055926468e6582898b5647205405892b8670789172cfe253e4b8c60c142efb",
+    "validation/natural-dungeon-combat/md-auto-22/events.json": "803a87b19261cba3adc90940e12d141970d701f235f1bdc1d7caae1c93e12c55"
+  },
+  "limits": [
+    "Critical story path through13 dungeon rooms: boss68, crystal, HP capacity24->32, refill and return toB9. Optional rooms/items, all other dungeons and full campaign remain unverified.",
+    "NTSC only; feedback controllers read game state and send normal buttons. Complete streams replay from cold boot without RAM reads or injections, with whole final RAM/PNG equality per machine.",
+    "Source/native encounters, buttons, HP and elapsed route times differ. Native route uses one ordinary death/Continue; no exact RNG, complete animation/cadence or waveform claim.",
+    "Reward display compares one settled window; palette normalization maps SMS RGB to nearest observed MD window color."
+  ]
+}

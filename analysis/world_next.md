@@ -1300,3 +1300,12 @@ Two key rewards, one consumed key,194 UP switch; final256flags/1280map source ex
 Fresh fixed-input replays have full8192/65536 RAM and PNG equality per machine.
 Old223 MD fixed route no longer reaches entrance on225; regenerated read-only md-v0225 prefix passes.
 Boss/gem/rest of dungeon/full campaign/RNG remain unfinished. BSS E43C leaves7108 bytes above it, not a full stack proof.
+
+2026-10-21 playable v0226: constant-bit unclipped sprite mask, bounded base-job search, no192-row scan for<=8 entries.
+133120 compiled old/new C cases pass;90 production PAL/NTSC sprite frames/4423680 pixels exact.
+Controlled mask elapsed median falls21..86 percent, not a global FPS measurement;12 natural frame compositions pass.
+First-dungeon critical story route:13 rooms,two key rewards/two consumed,boss68,crystal,HP24->32/refill/exitB9.
+Source no death;226 one ordinary Continue. Full cold fixed-input replay RAM/PNG equality; final256flags/1280map source exact.
+Settled reward150words/9600 normalized RGB pixels and two-frame HP increments pass. Optional rooms/items not all covered.
+Frame deadlines remain open: different natural boss particle streams show0 source/1 old225/5 new226 repeated timer frames.
+This is not a controlled before/after stall comparison. Source RNG and full campaign remain incomplete.

@@ -5,19 +5,32 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0225 — 1024 Kio.**
+**Version courante : v0226 — 1024 Kio.**
 
-[Télécharger la ROM v0225](versions/v0225-71b56c3c/gaw-megadrive-v0225.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0226](versions/v0226-36ad2e99/gaw-megadrive-v0226.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c`
-Checksum Mega Drive : `C2DE`
+SHA-256 : `36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134`
+Checksum Mega Drive : `DD67`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0225**.
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0226**.
+La v0226 allège le calcul des masques de sprites tout en conservant la limite
+SMS de huit sprites par ligne. Les pixels des scènes contrôlées restent identiques
+en PAL/NTSC. Les dépassements de frame ne sont pas tous résolus.
+Voir les [mesures et limites de la v0226](analysis/sprite_mask_v0226.md).
+
+Le premier boss, son cristal et le retour à l’extérieur sont maintenant vérifiés
+depuis une nouvelle partie, sans injection RAM : treize salles parcourues, deux
+clés obtenues et utilisées, vie maximale de 24 à 32 et drapeau du cristal conservé.
+La SMS finit sans mort ; le parcours v0226 utilise un Continue normal. Les flux
+de boutons se rejouent intégralement, avec RAM et image finales identiques à
+leur propre exécution. Les salles annexes, leurs objets et la suite de la campagne
+restent à explorer. Le hasard et la cadence complète restent à aligner.
+
 La v0225 publie les changements ponctuels du terrain au VBlank suivant,
 comme la file graphique SMS, au lieu de les transférer depuis la simulation.
 Le décalage corrigé est vérifié en PAL/NTSC. Les interrupteurs et sorts
@@ -28,7 +41,7 @@ obtenues, une porte ouverte avec une clé et l’interrupteur de la salle 194.
 La SMS et la v0225 terminent sans mort, avec les mêmes drapeaux persistants
 et la même carte finale ; les combats, les PV et le hasard diffèrent encore.
 Les boutons se rejouent avec RAM et image finales identiques à leur propre parcours.
-Le boss et le joyau du premier donjon restent à atteindre.
+Ce contrôle de la v0225 s’arrêtait avant le boss ; la preuve v0226 ci-dessus va jusqu’au cristal et à la sortie.
 
 La v0224 remplace la recherche des caractères par une table directe.
 Le premier dialogue mesuré gagne trois images en NTSC ; le PAL reste inchangé.
@@ -46,7 +59,7 @@ est maintenant vérifié sur cette même v0223 en PAL/NTSC : nouvelle partie,
 neuf écrans extérieurs, entrée, révélation et déplacement dans la première salle,
 sans injection RAM ni sauvegarde préparée. Les commandes se rejouent à l’identique.
 Les PV d’arrivée diffèrent de la SMS ; les combats et le hasard ne sont pas validés
-par ce parcours. Le premier donjon et son boss restent à parcourir entièrement.
+par ce parcours. Ce contrôle historique ne couvrait pas les combats du donjon ni son boss.
 
 Le dessin accéléré de la v0222 et les corrections de publication/défilement
 précédentes sont conservés. La cadence complète reste à aligner : la première
