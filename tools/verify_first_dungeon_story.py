@@ -1,5 +1,5 @@
 """Boot-to-boss/crystal/exit evidence, including fixed-input fresh-process replays."""
-import contextlib,gzip,io,json,subprocess,sys
+import contextlib,gzip,io,json,re,subprocess,sys
 from PIL import Image
 from run_core import ROOT,run
 from archive_lossless_evidence import sha
@@ -12,7 +12,7 @@ FINAL=['sms-auto-17','md-auto-22'];MODAL=['sms-auto-15','md-auto-21']
 def read(path):
     if path.exists():return path.read_bytes()
     name=path.relative_to(ROOT).as_posix()
-    for archive in [ROOT/'analysis/first-dungeon-v0226',ROOT/'analysis/terrain-publication-v0225']:
+    for archive in [ROOT/'analysis/actor-descriptor-v0228',ROOT/'analysis/first-dungeon-v0226',ROOT/'analysis/terrain-publication-v0225']:
         if not (archive/'manifest.json').exists():continue
         m=json.loads((archive/'manifest.json').read_bytes())
         if name in m['files']:
@@ -22,7 +22,7 @@ def read(path):
     raise FileNotFoundError(path)
 
 def replay(name):
-    assert name in FINAL
+    assert re.fullmatch(r'(sms|md)-auto-\d+',name)
     folder=BASE/name;capture=json.loads(read(folder/'capture.json'));end=capture['frames'];controls=json.loads(read(folder/'controls.json'));timeline=[()]*(end+1)
     for n,item in enumerate(controls):
         stop=controls[n+1]['frame']-1 if n+1<len(controls) else end
@@ -34,7 +34,9 @@ def replay(name):
 
 def main():
     sy=symbols(ROOT/'megadrive/out/release/symbol.txt');cases=[];records=[];evidence={};modal_records=[]
-    for name,modal in zip(FINAL,MODAL):
+    option=lambda key,default:sys.argv[sys.argv.index(key)+1] if key in sys.argv else default
+    finals=[FINAL[0],option('--native-final',FINAL[1])];modals=[MODAL[0],option('--native-modal',MODAL[1])]
+    for name,modal in zip(finals,modals):
         folder=BASE/name;capture=json.loads(read(folder/'capture.json'));report=json.loads(read(folder/'report.json'));end=capture['frames']
         assert report['failure'] is None and report['full_dungeon_cleared'] and report['last_state']['room']==0xb9 and report['last_state']['first_gem']==128 and report['last_state']['max_health']==32
         lineage=[];cursor=name
@@ -44,7 +46,7 @@ def main():
             cursor=r['recorded_new_game_prefix']
         route=ROOT/'validation/natural-dungeon-route'/cursor;c=json.loads(read(route/'capture.json'));r=json.loads(read(route/'route_report.json'))
         assert r['reached_entrance'] and not r['failure'] and not c['test_ram_writes'] and c['sram_input'] is None and c['rom_sha256']==capture['rom_sha256']
-        if '--verify-existing' not in sys.argv:subprocess.run([sys.executable,__file__,'--replay',name],cwd=ROOT,check=True)
+        if '--verify-existing' not in sys.argv and not (BASE/(name+'-story-replay-fresh')/'capture.json').exists():subprocess.run([sys.executable,__file__,'--replay',name],cwd=ROOT,check=True)
         replay_folder=BASE/(name+'-story-replay-fresh');rc=json.loads(read(replay_folder/'capture.json'));assert not rc['test_ram_writes'] and rc['sram_input'] is None and rc['rom_sha256']==capture['rom_sha256']
         for stem,ext in [('ram','bin'),('frame','png')]:
             a=read(folder/f'{stem}_{end:05d}.{ext}');b=read(replay_folder/f'{stem}_{end:05d}.{ext}');assert a==b,(name,stem)
@@ -82,7 +84,8 @@ def main():
     for tile in tiles|set(range(496,502)):assert sms_pixels(a,tile)==md_pixels(b,tile+16)
     s=Image.open(io.BytesIO(modal_records[0][1])).convert('RGB').crop((8,152,248,192));m=Image.open(io.BytesIO(modal_records[1][1])).convert('RGB').crop((8,168,248,208));colors=set(m.getdata());mapping={p:min(colors,key=lambda q:sum((x-y)**2 for x,y in zip(p,q))) for p in set(s.getdata())};assert all(mapping[p]==q for p,q in zip(s.getdata(),m.getdata()))
     result=dict(md_sha256=cases[1]['rom_sha256'],source_sha256=cases[0]['rom_sha256'],passed=True,region='auto',first_dungeon_boss_crystal_exit_verified=True,all_dungeon_rooms_explored=False,full_game_validated=False,cases=cases,source_native_final_flags_exact_bytes=256,source_native_final_map_exact_bytes=1280,reward_window_words_exact=150,reward_window_normalized_rgb_pixels_exact=9600,reward_window_and_hero_tiles_exact=len(tiles|set(range(496,502))),evidence=evidence,limits=['Critical story path through13 dungeon rooms: boss68, crystal, HP capacity24->32, refill and return toB9. Optional rooms/items, all other dungeons and full campaign remain unverified.','NTSC only; feedback controllers read game state and send normal buttons. Complete streams replay from cold boot without RAM reads or injections, with whole final RAM/PNG equality per machine.','Source/native encounters, buttons, HP and elapsed route times differ. Native route uses one ordinary death/Continue; no exact RNG, complete animation/cadence or waveform claim.','Reward display compares one settled window; palette normalization maps SMS RGB to nearest observed MD window color.'])
-    (ROOT/'analysis/first_dungeon_story_v0226_report.json').write_text(json.dumps(result,indent=2)+'\n');print(cases)
+    version=next(e['version'] for e in json.loads((ROOT/'versions/index.json').read_bytes()) if e['sha256']==result['md_sha256'])
+    (ROOT/f'analysis/first_dungeon_story_v{version:04d}_report.json').write_text(json.dumps(result,indent=2)+'\n');print(cases)
 
 if __name__=='__main__':
     if len(sys.argv)==3 and sys.argv[1]=='--replay':replay(sys.argv[2])

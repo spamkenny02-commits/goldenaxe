@@ -5,25 +5,37 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0226 — 1024 Kio.**
+**Version courante : v0228 — 1024 Kio.**
 
-[Télécharger la ROM v0226](versions/v0226-36ad2e99/gaw-megadrive-v0226.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0228](versions/v0228-a875719f/gaw-megadrive-v0228.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134`
-Checksum Mega Drive : `DD67`
+SHA-256 : `a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a`
+Checksum Mega Drive : `D23D`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0226**.
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0228**.
+La v0228 lit directement les descriptions graphiques dans un format adapté
+au 68000. Sur la même scène à douze acteurs, la préparation est environ 5 %
+plus courte qu’en v0226, avec des pixels identiques en PAL/NTSC. Ce gain
+ne représente pas une hausse globale des FPS. La cartouche reste à 1 Mio.
+Voir les [mesures et limites de la v0228](analysis/actor_descriptors_v0228.md).
+
+Le parcours premier boss → cristal → sortie est de nouveau vérifié depuis
+une nouvelle partie, cette fois sans mort sur v0228. Dans ce passage, les
+182 états/compteurs de disparition du boss correspondent à la SMS sans
+image répétée. La cadence globale, le hasard et le reste de la campagne
+restent à terminer. La v0227 est une compilation intermédiaire à écarter.
+
 La v0226 allège le calcul des masques de sprites tout en conservant la limite
 SMS de huit sprites par ligne. Les pixels des scènes contrôlées restent identiques
 en PAL/NTSC. Les dépassements de frame ne sont pas tous résolus.
 Voir les [mesures et limites de la v0226](analysis/sprite_mask_v0226.md).
 
-Le premier boss, son cristal et le retour à l’extérieur sont maintenant vérifiés
+La validation de la v0226 couvrait déjà le premier boss, son cristal et le retour à l’extérieur
 depuis une nouvelle partie, sans injection RAM : treize salles parcourues, deux
 clés obtenues et utilisées, vie maximale de 24 à 32 et drapeau du cristal conservé.
 La SMS finit sans mort ; le parcours v0226 utilise un Continue normal. Les flux

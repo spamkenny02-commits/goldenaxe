@@ -1,0 +1,15 @@
+{
+  "md_sha256": "a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a",
+  "passed": true,
+  "reference_commit": "b8bacbe",
+  "compiled_c_addresses_exact": 65536,
+  "native_rom_words_verified": 8425,
+  "native_rom_table_bytes": 16850,
+  "source_files": {
+    "megadrive/src/actors.c": "f7ac936475e71f9dc62edec5b6d6605109e9b931b05c2b6c0e5bd4dc34084a38",
+    "megadrive/src/actor_descriptor_words.inc": "91a07a450211b9f4385154fa9316e2ee54b32264cdbba11c6308132feb311c8c",
+    "tools/generate_actor_descriptor_words.py": "a95783698117654ba056e6dd02c8106c377d465dd6915c2fb2e47a0b4185b67a",
+    "build.ps1": "c40571165ddfac09ee5649c8e7a3e7257cf6b052e6c1b1790aad41d746b46378"
+  },
+  "scope": "Exact old/new C helpers compiled on host for every16-bit address. Padding beyond the exported bank gives defined test-only fallback reads; it does not make invalid production addresses valid. Every overlapping word of the real8426-byte source bank, including odd offsets, is verified in native68000 byte order in the playable ROM. Special gem/axe paths are included. Actual scene execution is checked separately."
+}

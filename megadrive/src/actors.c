@@ -3,6 +3,7 @@ extern void sound_effect(u16 command),sound_effect_main(u16 command);
 extern const u8 actor_room_types[],actor_stats[],actor_pattern_index[];
 extern const u8 actor_tile_counts[],actor_patterns[],actor_md_patterns[],actor_loading_costs[];
 extern const u8 actor_descriptors[];
+#include "actor_descriptor_words.inc"
 extern const u8 actor_ground_modes[],actor_ground_sequence_index[],actor_ground_sequences[];
 extern const u8 actor_spawn_terrain[];
 extern const u8 actor_projectile_types[],actor_projectile_templates[];
@@ -15,7 +16,7 @@ extern bool mutate_world_spell_terrain(u8 *entity,u16 level);
 u16 world_loot_style,world_loot_patterns_pending;
 extern const u8 actor_drop_exceptions[],actor_drop_choices[],actor_loot_patterns[];
 static u16 actor_room_class;
-static u16 descriptor_word(u16 address);
+static inline __attribute__((always_inline)) u16 descriptor_word(u16 address);
 static const u8 *descriptor_frame(u16 address);
 extern const u8 gem_descriptor_data[];
 extern void tick_world_gem(u8 *entity),tick_world_boss_death(u8 *entity);
@@ -2643,12 +2644,21 @@ static const u8 *descriptor_frame(u16 address)
     return actor_descriptors+(address&0x3fff);
 }
 
-static u16 descriptor_word(u16 address)
+static __attribute__((noinline,cold)) u16 descriptor_word_fallback(u16 address)
 {
     if(address>=0x2acd && address<0x2adc) return gem_descriptor_data[address-0x2acd]|((u16)gem_descriptor_data[address-0x2acc]<<8);
     if(address>=0x3d8d && address<0x3da4) return world_axe_descriptors[address-0x3d8d]|((u16)world_axe_descriptors[address-0x3d8c]<<8);
     address&=0x3fff;
     return actor_descriptors[address]|((u16)actor_descriptors[address+1]<<8);
+}
+
+static inline __attribute__((always_inline)) u16 descriptor_word(u16 address)
+{
+    u16 offset=address&0x3fff;
+    /* Inline the common native word read; gem/axe and the legacy fallback
+     * retain their byte reads outside this immutable bank slice. */
+    if(offset<ACTOR_DESCRIPTOR_WORD_COUNT) return actor_descriptor_words[offset];
+    return descriptor_word_fallback(address);
 }
 
 /* 09EE: one actor descriptor, shared by depth and rotating order. */

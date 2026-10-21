@@ -4,6 +4,8 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0228 | [Telecharger](v0228-a875719f/gaw-megadrive-v0228.bin) | targeted_checks_passed | Descriptions graphiques natives : preparation de scene a12 acteurs environ5% plus courte, pixels identiques PAL-NTSC. Premier boss/cristal/sortie revalides sans mort ; campagne/cadence/hasard incomplets. | `a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a` |
+| v0227 | [Telecharger](v0227-4bea5e39/gaw-megadrive-v0227.bin) | build_only | Compilation intermediaire : valeurs exactes, surcout du rendu observe. Ne pas utiliser comme version recommandee. | `4bea5e399dc59c58e914b0bdcc033c4aaa38401c88d54feddfcc7e4dea4fe620` |
 | v0226 | [Telecharger](v0226-36ad2e99/gaw-megadrive-v0226.bin) | targeted_checks_passed | Masque SMS de sprites optimise, pixels identiques en PAL-NTSC. Premier boss/cristal/sortie verifies en NTSC ; cadence et campagne incompletes. | `36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134` |
 | v0225 | [Telecharger](v0225-71b56c3c/gaw-megadrive-v0225.bin) | targeted_checks_passed | Terrain publie au VBlank suivant comme sur SMS. Interrupteurs/sorts verifies PAL-NTSC ; neuf salles de combat et deux cles en parcours naturel NTSC. Donjon complet non termine. | `71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c` |
 | v0224 | [Telecharger](v0224-6be955fd/gaw-megadrive-v0224.bin) | targeted_checks_passed | Recherche directe des caracteres ; premier dialogue 3 images plus rapide en NTSC, PAL inchange. Texte et scrolling verifies ; cadence globale incomplete. | `6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549` |

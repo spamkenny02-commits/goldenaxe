@@ -1,5 +1,7 @@
 param([string]$Sgdk = "$PSScriptRoot\..\..\work\sgdk", [string]$Java = 'D:/jdk-25.0.1/bin/java.exe')
 $ErrorActionPreference = 'Stop'
+& python "$PSScriptRoot/tools/generate_actor_descriptor_words.py"
+if ($LASTEXITCODE -ne 0) { throw 'Actor descriptor word generation failed' }
 & python "$PSScriptRoot/tools/generate_dialogue_glyph_lookup.py"
 if ($LASTEXITCODE -ne 0) { throw 'Dialogue glyph lookup generation failed' }
 & python "$PSScriptRoot/tools/generate_pattern_pairs.py"

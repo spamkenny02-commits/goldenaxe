@@ -1,0 +1,62 @@
+{
+  "md_sha256": "a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a",
+  "passed": true,
+  "checksum": "D23D",
+  "native_words": 8425,
+  "readonly_table_bytes": 16850,
+  "host_address_cases": 65536,
+  "identical_production_sprite_pixels": 4423680,
+  "controlled_overlap_timing": [
+    {
+      "region": "auto",
+      "case": "overlap",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 4,
+      "current_timing_samples": 4,
+      "previous_median_elapsed_master_cycles": 254912.0,
+      "current_median_elapsed_master_cycles": 241808.0,
+      "reduction_percent": 5.14
+    },
+    {
+      "region": "pal",
+      "case": "overlap",
+      "identical_physical_sprite_frames": 9,
+      "sprite_pixels_compared": 442368,
+      "previous_timing_samples": 4,
+      "current_timing_samples": 4,
+      "previous_median_elapsed_master_cycles": 254968.0,
+      "current_median_elapsed_master_cycles": 242186.0,
+      "reduction_percent": 5.01
+    }
+  ],
+  "first_dungeon_story_verified": true,
+  "natural_boss_death_state_timer_frames_exact": 182,
+  "natural_boss_death_timer_stalls": 0,
+  "all_frame_deadlines_met": false,
+  "full_game_validated": false,
+  "source_rng_exact": false,
+  "evidence": {
+    "analysis/actor_descriptor_words_v0228_report.json": "adf51a8fec035b7b9345c566f739de5e542fb5ef337fe5d85ff3d81845c549bd",
+    "analysis/actor_descriptor_production_v0228_report.json": "c8cebb9820369d9c23e37818adbddcdb866f8d40c050f0d72aa40141e8e87a8f",
+    "analysis/world_frame_coherence_v0228_report.json": "f92e6c4dfabbfad6a4b76ca513cab4be822dc9d18d0acb17bde84d3da9fca0ef",
+    "analysis/first_dungeon_story_v0228_report.json": "87b035fb1404615b94c2d6f7a325243ac9f3d62c6ef8d05a6792f51997235819",
+    "validation/natural-dungeon-combat/sms-auto-18/boss_frames.json": "ae0f9027c73ed805c6cb08823843963a07ae49ebe6e05517ca9a013c8ad84041",
+    "validation/natural-dungeon-combat/md-auto-24/boss_frames.json": "245c0feebc613d4b054ecf597e698ea2ca7d4375a93d05a34dc230746c283b95"
+  },
+  "source_files": {
+    "megadrive/src/actors.c": "f7ac936475e71f9dc62edec5b6d6605109e9b931b05c2b6c0e5bd4dc34084a38",
+    "megadrive/src/actor_descriptor_words.inc": "91a07a450211b9f4385154fa9316e2ee54b32264cdbba11c6308132feb311c8c",
+    "build.ps1": "c40571165ddfac09ee5649c8e7a3e7257cf6b052e6c1b1790aad41d746b46378",
+    "tools/generate_actor_descriptor_words.py": "a95783698117654ba056e6dd02c8106c377d465dd6915c2fb2e47a0b4185b67a",
+    "tools/validate_actor_descriptor_words.py": "b4357ba8c8e0834e7e874daf71d22b16be3c2f21a5e409d7b9a5aa3185808732",
+    "tools/validate_sprite_mask_production.py": "3024a34a4830a4d7fa09d678ec456a7f3b03f659d1d1605f34014b39165eee29",
+    "tools/natural_dungeon_combat.py": "dbceaba083cfa9b3a27922808e62ce708853908248c9e94a7a0cdfecef287e96",
+    "tools/verify_first_dungeon_story.py": "ee0e1a40ea3c4e299ba9be713db37bb28583314b37b47ab497e21c9021f337f8"
+  },
+  "limits": [
+    "Scene construction speed is measured on the same frozen12-actor setup; it is not a global FPS gain. Hero-only timing is essentially unchanged and may differ by a few master cycles.",
+    "The natural182-frame boss state/timer sequence matches this SMS run; different encounters/particle streams prevent a controlled whole-route speed comparison or an all-scenes deadline claim.",
+    "First-dungeon story path only: optional rooms/items, other dungeons, complete audio/cadence/RNG fidelity and real hardware remain unfinished."
+  ]
+}

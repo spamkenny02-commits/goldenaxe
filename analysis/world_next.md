@@ -1309,3 +1309,13 @@ Source no death;226 one ordinary Continue. Full cold fixed-input replay RAM/PNG 
 Settled reward150words/9600 normalized RGB pixels and two-frame HP increments pass. Optional rooms/items not all covered.
 Frame deadlines remain open: different natural boss particle streams show0 source/1 old225/5 new226 repeated timer frames.
 This is not a controlled before/after stall comparison. Source RNG and full campaign remain incomplete.
+
+2026-10-21 playable v0228: predecode8425 overlapping descriptor words into16850 ROM bytes, no new RAM.
+Inline the common read; keep gem/axe/legacy fallback separate. v227 is preserved intermediate: correct words but slower scene due calls.
+65536 compiled C addresses and all8425 native ROM words exact; padded fallback test does not validate invalid game pointers.
+PAL/NTSC controlled12-actor scene preparation5.14/5.01 percent shorter vs226;4423680 sprite pixels exact.
+12 independent frame compositions pass. Hero-only stage essentially unchanged; no global FPS claim.
+First boss/crystal/exit revalidated from boot without deaths in228; full fixed replay RAM/PNG exact per machine.
+182 source/native boss-death state+timer observations exact in this path, no repeated timer; other streams/deadlines remain open.
+Pilot alignment tightened in test tools after an incomplete trial, not in production combat.
+Optional rooms/items, other dungeons, source RNG/whole-campaign/hardware/audio fidelity remain unfinished.

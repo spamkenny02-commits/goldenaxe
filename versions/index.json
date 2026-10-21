@@ -7077,5 +7077,50 @@
         "sha256": "891c5097164e9fdb87e081729e1411618248bad56f693e50aee131e3d872b062"
       }
     ]
+  },
+  {
+    "version": 227,
+    "sha256": "4bea5e399dc59c58e914b0bdcc033c4aaa38401c88d54feddfcc7e4dea4fe620",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T20:31:03.417078+00:00",
+    "rom": "v0227-4bea5e39/gaw-megadrive-v0227.bin",
+    "notes": "Compilation intermediaire : valeurs exactes, surcout du rendu observe. Ne pas utiliser comme version recommandee.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 228,
+    "sha256": "a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T20:35:09.114779+00:00",
+    "rom": "v0228-a875719f/gaw-megadrive-v0228.bin",
+    "notes": "Descriptions graphiques natives : preparation de scene a12 acteurs environ5% plus courte, pixels identiques PAL-NTSC. Premier boss/cristal/sortie revalides sans mort ; campagne/cadence/hasard incomplets.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "actor_descriptor_release_v0228_report.json",
+        "sha256": "cf53df5c0077e3008edc19870eb6362152ea91958c2355e1f6f86ea05ae3aa10"
+      },
+      {
+        "file": "actor_descriptor_words_v0228_report.json",
+        "sha256": "adf51a8fec035b7b9345c566f739de5e542fb5ef337fe5d85ff3d81845c549bd"
+      },
+      {
+        "file": "actor_descriptor_production_v0228_report.json",
+        "sha256": "c8cebb9820369d9c23e37818adbddcdb866f8d40c050f0d72aa40141e8e87a8f"
+      },
+      {
+        "file": "world_frame_coherence_v0228_report.json",
+        "sha256": "f92e6c4dfabbfad6a4b76ca513cab4be822dc9d18d0acb17bde84d3da9fca0ef"
+      },
+      {
+        "file": "first_dungeon_story_v0228_report.json",
+        "sha256": "87b035fb1404615b94c2d6f7a325243ac9f3d62c6ef8d05a6792f51997235819"
+      },
+      {
+        "file": "actor_descriptor_recovery_v0228_report.json",
+        "sha256": "599f0d4b4c67776d230ff9a1d47db6d74e25fe94c2eadc74a9c5d475782ebbb1"
+      }
+    ]
   }
 ]
