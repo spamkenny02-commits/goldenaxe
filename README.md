@@ -5,25 +5,28 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0220 — 1024 Kio.**
+**Version courante : v0221 — 1024 Kio.**
 
-[Télécharger la ROM v0220](versions/v0220-b49be582/gaw-megadrive-v0220.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0221](versions/v0221-0cc51636/gaw-megadrive-v0221.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `b49be582d3019f00e396840b1d0716b75f3ada775e298c75049c1e0216266202`
-Checksum Mega Drive : `2A09`
+SHA-256 : `0cc51636efdff6e1bed7c0e74808d0ce5589f9333718abdccb392cef7daa1013`
+Checksum Mega Drive : `1087`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0220**.
-La v0220 publie les bitmaps des conversations au VBlank pour éviter les
-images où le texte est partiellement mis à jour pendant le balayage.
-Les 302 images du dialogue contrôlé passent en PAL/NTSC ; les six PNJ,
-les achats/refus du premier marchand et les parcours naturels testés passent.
-La cadence complète des dialogues reste à aligner sur la Master System.
-Voir les [changements et limites](analysis/dialogue_vblank_v0220.md).
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0221**.
+La v0221 retire l’attente supplémentaire après la quatrième pose du
+premier défilement du récit d’ouverture. Les dates et durées des quatre
+poses concordent maintenant avec la SMS en PAL/NTSC. En NTSC, le premier
+mot suivant apparaît et persiste aux mêmes images que sur l’original.
+La publication du texte au VBlank introduite en v0220 est conservée.
+Voir les [changements et limites](analysis/dialogue_scroll_v0221.md).
+
+La cadence complète des dialogues reste à aligner : en PAL, le premier mot
+après ce défilement persiste encore une image de trop.
 
 La v0219 a corrigé les sprites débordant dans les bandes noires.
 Ce correctif est conservé. Voir les [preuves de la v0219](analysis/playable_sprite_viewport_v0219.md).

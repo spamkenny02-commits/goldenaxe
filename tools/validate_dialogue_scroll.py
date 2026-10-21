@@ -15,6 +15,7 @@ def main():
     rom=ROOT/'versions/v0219-7518d3c1/gaw-megadrive-v0219.bin' if reference else ROOT/'gaw-megadrive.bin'
     symbol_file=ROOT/'validation/v0219-symbols.txt' if reference else ROOT/'megadrive/out/release/symbol.txt'
     sy={m[2].split('.lto_priv.')[0]:int(m[1],16)&65535 for line in symbol_file.read_text().splitlines() if (m:=re.match(r'([0-9a-fA-F]+)\s+\w\s+(\S+)',line))}
+    version=next(e['version'] for e in json.loads((ROOT/'versions/index.json').read_bytes()) if e['sha256']==sha(rom.read_bytes()))
     cases=[]
     for region in ['auto','pal']:
         records={}
@@ -48,6 +49,9 @@ def main():
         base=records['sms']['bitmaps'][2199]
         assert base==records['md']['bitmaps'][2199]
         poses=[]
+        for tag,record in records.items():
+            folder=ROOT/f'validation/dialogue-scroll-{region}-{tag}{"-v0219-reference" if reference else ""}'
+            (folder/'bitmap-records.bin').write_bytes(b''.join(record['bitmaps'][f]+record['patterns'][f] for f in range(2199,2251)))
         for shift in [2,5,8,10]:
             expected=shifted(base,shift)
             matching={tag:{kind:[f for f,b in values.items() if b==expected] for kind,values in rec.items()} for tag,rec in records.items()}
@@ -57,9 +61,18 @@ def main():
                 assert matching['sms']['patterns'][0]==matching['md']['patterns'][0],(region,shift,'first presentation frame',matching)
                 assert matching['sms']['patterns']==matching['md']['patterns'],(region,shift,'complete pose duration',matching)
             poses.append(dict(cumulative_shift=shift,bitmap_sha256=sha(expected),matching_frames=matching))
-        cases.append(dict(region=region,poses=poses,all_native_vram_poses_present=all(p['matching_frames']['md']['patterns'] for p in poses),first_presentation_frames_exact=all(p['matching_frames']['md']['patterns'] and p['matching_frames']['sms']['patterns'][0]==p['matching_frames']['md']['patterns'][0] for p in poses),complete_pose_frame_lists_exact=all(p['matching_frames']['sms']['patterns']==p['matching_frames']['md']['patterns'] for p in poses),all_pattern_pixel_colors_verified=True))
+        final=poses[-1]['matching_frames']['sms']['patterns'][-1]
+        first=next((f,b) for f,b in records['sms']['patterns'].items() if f>final and b!=shifted(base,10) and b in records['sms']['bitmaps'].values())
+        following={tag:[f for f,b in record['patterns'].items() if b==first[1]] for tag,record in records.items()}
+        if not baseline:
+            assert following['md'] and following['sms'][0]==following['md'][0],(region,'first following complete bitmap',following)
+            if region=='auto':assert following['sms']==following['md'],(region,'following bitmap duration',following)
+        cases.append(dict(region=region,poses=poses,first_following_complete_bitmap_sha256=sha(first[1]),following_complete_bitmap_frames=following,all_native_vram_poses_present=all(p['matching_frames']['md']['patterns'] for p in poses),first_presentation_frames_exact=all(p['matching_frames']['md']['patterns'] and p['matching_frames']['sms']['patterns'][0]==p['matching_frames']['md']['patterns'][0] for p in poses),complete_pose_frame_lists_exact=all(p['matching_frames']['sms']['patterns']==p['matching_frames']['md']['patterns'] for p in poses),all_pattern_pixel_colors_verified=True))
         print(region,'poses',[(p['cumulative_shift'],p['matching_frames']) for p in poses],flush=True)
-    report=dict(md_sha256=sha(rom.read_bytes()),source_sha256=sha((ROOT/'input/original.sms').read_bytes()),cases=cases,production_roms_unmodified=True,ram_injections=False,full_game_ported=False,limits=['Natural first page scroll only; four complete pattern poses including their observed durations, without full framebuffer equivalence.','Partial upload frames, subsequent word timing, whole dialogue timing and suppressed IRQ counts remain unproven or different.'])
+    report=dict(md_sha256=sha(rom.read_bytes()),source_sha256=sha((ROOT/'input/original.sms').read_bytes()),cases=cases,production_roms_unmodified=True,ram_injections=False,full_game_ported=False,limits=['Natural first page scroll only; four complete pattern poses including their observed durations, without full framebuffer equivalence.','Partial upload frames, later words, whole dialogue timing and suppressed IRQ counts remain unproven or different. The first following bitmap starts on the source frame in both regions; only its NTSC full duration is asserted equal.'])
+    report['version']=version
+    report['diagnostic_only']=baseline
+    report['passed']=not baseline and all(c['complete_pose_frame_lists_exact'] and c['following_complete_bitmap_frames']['sms'][0]==c['following_complete_bitmap_frames']['md'][0] for c in cases)
     (ROOT/f'validation/dialogue_scroll{"_v0219_reference" if reference else ""}{"_baseline" if baseline else ""}_report.json').write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__':main()

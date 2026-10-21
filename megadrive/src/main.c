@@ -595,8 +595,10 @@ static void scroll_dialog_bitmap(void)
             memset(scratch+column*40+40-step,0,step);
         }
         sound_effect(0x9f);upload_dialog_bitmap();
-        /* Two-frame bitmap publication; NTSC retains a third frame. */
-        if(!SYS_isPAL()) wait_frame();
+        /* 0696..06B2 has the next bitmap shift between successive poses.
+         * After the fourth pose, 06B6 reaches the zero terminator and 06D6
+         * republishes immediately: there is no fifth shift to account for. */
+        if(!SYS_isPAL() && phase<3) wait_frame();
     }
     /* 06D6 calls 0786 again before parsing/drawing the next word. */
     sound_effect(0x9f);upload_dialog_bitmap();

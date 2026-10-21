@@ -6839,5 +6839,36 @@
         "sha256": "0a5a54ebe0dc1e3dbf14a3083c72d4afb5633a104e4601d46c49cbafa05a8422"
       }
     ]
+  },
+  {
+    "version": 221,
+    "sha256": "0cc51636efdff6e1bed7c0e74808d0ce5589f9333718abdccb392cef7daa1013",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-21T13:12:05.199080+00:00",
+    "rom": "v0221-0cc51636/gaw-megadrive-v0221.bin",
+    "notes": "Fin du defilement de dialogue sans image d'attente en trop ; quatre poses SMS exactes PAL/NTSC sur le passage teste.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "dialogue_scroll_v0221_report.json",
+        "sha256": "eddae259818c9faab90508ac09e96af13d3bdcd82dd1bd5363fa4212325fe042"
+      },
+      {
+        "file": "house_dialogue_v0221_report.json",
+        "sha256": "61b6851c0f1c6103c3cae353921a2b2fd9e293f04453a02f8c30cd2cb5017201"
+      },
+      {
+        "file": "final_dialogue_v0221_report.json",
+        "sha256": "3288ec9139ac26f593c84756e006d891397d8a11c7434e7facea79385b5acefc"
+      },
+      {
+        "file": "dialogue_vblank_v0221_report.json",
+        "sha256": "25551bd7f3d6e084647f635978a373fee7b8421a453f72d411f734a2e97d1a6c"
+      },
+      {
+        "file": "dialogue_scroll_recovery_v0221_report.json",
+        "sha256": "35f1cffb8bdd5f2e794a043ac8a0bd6ad6306107ad58eacc607f30aed3217c29"
+      }
+    ]
   }
 ]
