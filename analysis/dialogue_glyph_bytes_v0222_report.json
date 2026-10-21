@@ -1,0 +1,10 @@
+{
+  "md_sha256": "13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8",
+  "passed": true,
+  "cases": 1714176,
+  "reference_commit": "9737d07",
+  "reference_function_sha256": "da27303981793fdd4d255c3a36d82d064d43031ad32b7c1e17abbbaa64cfe401",
+  "optimized_function_sha256": "7c4b5912ed0920bf998ba3c93554f4b4d4e4f7f02071d80de7861d0108843055",
+  "compared_bytes_per_case": 1072,
+  "scope": "Host compilation of exact old/new production glyph functions. All256 row-byte values at216 X and31 Y positions, over existing nonzero bitmap pixels and16-byte guards. Includes right-edge spill clipping. All ten rows have the same chosen byte; source-ROM glyph selection and actual68000 integration are separate production-ROM checks."
+}

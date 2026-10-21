@@ -1263,3 +1263,8 @@ Cleanup Git tracking check batched once; interrupted cleanup resumed after full 
 First natural opening scroll four complete pose lists match source in PAL/NTSC.
 First following complete bitmap starts same frame both regions; PAL still persists one extra frame.
 NPC restore, 12 final acknowledgements and302 VBlank text frames pass. Full port remains incomplete.
+
+2026-10-21 playable v0222: exact two-byte glyph-row OR rasterization replaces eight-pixel loop.
+1714176 host placement/row cases and26 SMS/68000 text fixtures pass.
+Natural first page gains7 NTSC/1 PAL frames vs221; all37 completed source uploads/29 shapes preserved.
+Remaining page delay10 NTSC/18 PAL; full text/source IRQ/audio/RNG timing remains open.

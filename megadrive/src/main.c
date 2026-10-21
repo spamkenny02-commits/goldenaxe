@@ -606,14 +606,21 @@ static void scroll_dialog_bitmap(void)
 
 static void draw_dialog_glyph(u16 x,u16 y,u16 index)
 {
-    u16 row,column;
+    const u8 *glyph=dialog_font+index*10;
+    u16 row,column,shift;
+    u8 *first,*second;
+    if(x>=208) return;
+    column=x>>3;shift=x&7;
+    first=scratch+column*40+y;
+    second=first+40;
+    /* A glyph row occupies at most two column-major bitmap bytes. Keep
+     * OR composition and clip the spill beyond the 26th source column. */
     for(row=0;row<10;row++)
-        for(column=0;column<8;column++)
-            if((dialog_font[index*10+row]&(128>>column)) && x+column<208)
-            {
-                u16 pixel=x+column;
-                scratch[(pixel>>3)*40+y+row]|=128>>(pixel&7);
-            }
+    {
+        u16 bits=glyph[row];
+        first[row]|=bits>>shift;
+        if(shift && column<25) second[row]|=bits<<(8-shift);
+    }
 }
 
 /* 7447..7451 / 627A..6282: final text acknowledgement has no blink

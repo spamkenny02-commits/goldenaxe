@@ -1,0 +1,46 @@
+{
+  "md_sha256": "13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8",
+  "passed": true,
+  "cases": [
+    {
+      "region": "auto",
+      "source_page_wait_frame": 1596,
+      "previous_page_wait_frame": 1613,
+      "current_page_wait_frame": 1606,
+      "frames_gained": 7,
+      "remaining_delay_frames": 10,
+      "story_entry_unchanged": true,
+      "source_completed_uploads_preserved": 37,
+      "source_distinct_complete_bitmaps_preserved_in_order": 29
+    },
+    {
+      "region": "pal",
+      "source_page_wait_frame": 1583,
+      "previous_page_wait_frame": 1602,
+      "current_page_wait_frame": 1601,
+      "frames_gained": 1,
+      "remaining_delay_frames": 18,
+      "story_entry_unchanged": true,
+      "source_completed_uploads_preserved": 37,
+      "source_distinct_complete_bitmaps_preserved_in_order": 29
+    }
+  ],
+  "evidence": {
+    "analysis/dialogue_preparation_v0221_profile.json": "67250d2e101d65e9798498d87dbfca3ea9e99a08adaabcd3e369bb87e435d64d",
+    "analysis/dialogue_preparation_v0222_profile.json": "ed2371852642e487b5bba37723915818ba48603e63149b6bd8aca939248dd018",
+    "analysis/dialogue_preparation_v0221-pal_profile.json": "323d1939204fcdb2147eec0b8a04c00d9ca5ebcbaf77c3167db131f21b90d9ce",
+    "analysis/dialogue_preparation_v0222-pal_profile.json": "18b5ae04fa64ee7c705da672824af4ba36b9e4775463108a8333497eef8afa31",
+    "analysis/dialogue_glyph_bytes_v0222_report.json": "2ff73720d442ae59d566bde7795596e664a1e1442395c4ef3d232bfcd5765c3a",
+    "analysis/dialogue_vblank_v0222_report.json": "fa87d4d05d57ff6969ca06bbdbb633dca191b39ec6fce132f8a2d0d51f501874",
+    "validation/dialogue_controls_report.json": "d90822086901457ccddba51c884f32c846e4b0059ea2dc80cc71d33cb33996a7",
+    "validation/house_dialogue_report.json": "3a031e71fe4298311423d0061a5e409f41c4948c6262b6f45377408da6f12d31",
+    "validation/dialogue_scroll_report.json": "c21403201bf7492fa20f0f15cb3c433bc285eac5638ef3960295c2edf8be3f3f"
+  },
+  "source_files": {
+    "megadrive/src/main.c": "f4a3793eebed91f457c22a2bffab5f93a7f0f5c81445c2384f3db1f46c561a92"
+  },
+  "full_game_validated": false,
+  "complete_dialogue_timing_exact": false,
+  "audio_irq_scheduling_exact": false,
+  "scope": "Exact OR/edge glyph rasterization plus actual production-ROM text fixtures and natural first-page snapshots. Improvements are measured on this route, not a global speed percentage. PAL next-word dwell and broader source clock/IRQ/RNG alignment remain open."
+}

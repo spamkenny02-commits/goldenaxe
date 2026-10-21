@@ -5,28 +5,29 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0221 — 1024 Kio.**
+**Version courante : v0222 — 1024 Kio.**
 
-[Télécharger la ROM v0221](versions/v0221-0cc51636/gaw-megadrive-v0221.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0222](versions/v0222-13edb546/gaw-megadrive-v0222.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `0cc51636efdff6e1bed7c0e74808d0ce5589f9333718abdccb392cef7daa1013`
-Checksum Mega Drive : `1087`
+SHA-256 : `13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8`
+Checksum Mega Drive : `4545`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0221**.
-La v0221 retire l’attente supplémentaire après la quatrième pose du
-premier défilement du récit d’ouverture. Les dates et durées des quatre
-poses concordent maintenant avec la SMS en PAL/NTSC. En NTSC, le premier
-mot suivant apparaît et persiste aux mêmes images que sur l’original.
-La publication du texte au VBlank introduite en v0220 est conservée.
-Voir les [changements et limites](analysis/dialogue_scroll_v0221.md).
+État au **21 octobre 2026** : la ROM jouable recommandée est **v0222**.
+La v0222 dessine chaque ligne de caractère dans un ou deux octets du bitmap,
+au lieu de traiter ses huit pixels séparément. Les bitmaps restent identiques.
+Sur la première page du récit testée, cela gagne sept images en NTSC et une
+en PAL par rapport à la v0221, sans modifier l’entrée dans le récit.
+Voir les [changements et limites](analysis/dialogue_glyph_v0222.md).
 
-La cadence complète des dialogues reste à aligner : en PAL, le premier mot
-après ce défilement persiste encore une image de trop.
+La publication au VBlank de la v0220 et les quatre poses corrigées en v0221
+sont conservées. La cadence complète des dialogues reste à aligner : cette
+page arrive encore dix images après la SMS en NTSC et dix-huit en PAL.
+Le premier mot après le défilement testé persiste encore une image de trop en PAL.
 
 La v0219 a corrigé les sprites débordant dans les bandes noires.
 Ce correctif est conservé. Voir les [preuves de la v0219](analysis/playable_sprite_viewport_v0219.md).
