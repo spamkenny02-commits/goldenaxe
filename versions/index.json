@@ -6916,7 +6916,7 @@
     "bytes": 1048576,
     "archived_utc": "2026-10-21T13:40:06.968682+00:00",
     "rom": "v0223-39e69955/gaw-megadrive-v0223.bin",
-    "notes": "Attente des pages et marqueurs corriges ; messages finaux des services sans clignotement parasite.",
+    "notes": "Attente des pages et marqueurs corriges ; parcours naturel jusqu'au donjon1 verifie PAL/NTSC.",
     "validation": "targeted_checks_passed",
     "reports": [
       {
@@ -6954,6 +6954,14 @@
       {
         "file": "dialogue_waits_recovery_v0223_report.json",
         "sha256": "5106e80f198c06d6dce6150bdb59ed8540583a69a4655fe8f84baed5716b1ae6"
+      },
+      {
+        "file": "natural_dungeon_route_v0223_report.json",
+        "sha256": "5d2276cac2388e480bbfefa865ec73861ef428609a9ca00c27019338a1a5af5d"
+      },
+      {
+        "file": "natural_dungeon_route_recovery_v0223_report.json",
+        "sha256": "88bf530280d81b2f4ddf5731033c22931ff874592e7af337c1d7fe6b2e2f2111"
       }
     ]
   }

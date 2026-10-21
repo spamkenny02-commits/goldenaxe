@@ -4,7 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
-| v0223 | [Telecharger](v0223-39e69955/gaw-megadrive-v0223.bin) | targeted_checks_passed | Attente des pages et marqueurs corriges ; messages finaux des services sans clignotement parasite. | `39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31` |
+| v0223 | [Telecharger](v0223-39e69955/gaw-megadrive-v0223.bin) | targeted_checks_passed | Attente des pages et marqueurs corriges ; parcours naturel jusqu'au donjon1 verifie PAL/NTSC. | `39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31` |
 | v0222 | [Telecharger](v0222-13edb546/gaw-megadrive-v0222.bin) | targeted_checks_passed | Dessin des caracteres optimise, pixels identiques ; premiere page testee 7 images plus rapide NTSC et 1 PAL. | `13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8` |
 | v0221 | [Telecharger](v0221-0cc51636/gaw-megadrive-v0221.bin) | targeted_checks_passed | Fin du defilement de dialogue sans image d'attente en trop ; quatre poses SMS exactes PAL/NTSC sur le passage teste. | `0cc51636efdff6e1bed7c0e74808d0ce5589f9333718abdccb392cef7daa1013` |
 | v0220 | [Telecharger](v0220-b49be582/gaw-megadrive-v0220.bin) | targeted_checks_passed | Texte des conversations publie au VBlank ; controle PAL/NTSC et regressions PNJ/marchand NTSC. | `b49be582d3019f00e396840b1d0716b75f3ada775e298c75049c1e0216266202` |

@@ -1,0 +1,176 @@
+{
+  "md_sha256": "39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    {
+      "region": "auto",
+      "reference": {
+        "trace": "sms-06",
+        "reached_frame": 4163,
+        "door_transition_frames": 89,
+        "arrival_health": 10,
+        "rooms": [
+          149,
+          148,
+          164,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          484
+        ],
+        "full_final_RAM_replay_bytes_exact": 8192,
+        "fixed_input_replay_PNG_exact": true,
+        "dungeon_checkpoint_and_visited_flag": true,
+        "final_frame": 4263
+      },
+      "native": {
+        "trace": "md-04",
+        "reached_frame": 4220,
+        "door_transition_frames": 89,
+        "arrival_health": 18,
+        "rooms": [
+          149,
+          148,
+          164,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          484
+        ],
+        "full_final_RAM_replay_bytes_exact": 65536,
+        "fixed_input_replay_PNG_exact": true,
+        "dungeon_checkpoint_and_visited_flag": true,
+        "final_frame": 4320
+      },
+      "settled_playfield_normalized_pixels_compared": 81920,
+      "settled_playfield_samples": [
+        {
+          "offset_from_ready": 60,
+          "sms_frame": 4223,
+          "md_frame": 4280,
+          "normalized_mismatches": 0
+        },
+        {
+          "offset_from_ready": 100,
+          "sms_frame": 4263,
+          "md_frame": 4320,
+          "normalized_mismatches": 0
+        }
+      ],
+      "whole_route_timing_equal": false,
+      "arrival_health_equal": false
+    },
+    {
+      "region": "pal",
+      "reference": {
+        "trace": "sms-pal-01",
+        "reached_frame": 4096,
+        "door_transition_frames": 86,
+        "arrival_health": 14,
+        "rooms": [
+          149,
+          148,
+          164,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          484
+        ],
+        "full_final_RAM_replay_bytes_exact": 8192,
+        "fixed_input_replay_PNG_exact": true,
+        "dungeon_checkpoint_and_visited_flag": true,
+        "final_frame": 4196
+      },
+      "native": {
+        "trace": "md-pal-01",
+        "reached_frame": 4097,
+        "door_transition_frames": 86,
+        "arrival_health": 20,
+        "rooms": [
+          149,
+          148,
+          164,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          484
+        ],
+        "full_final_RAM_replay_bytes_exact": 65536,
+        "fixed_input_replay_PNG_exact": true,
+        "dungeon_checkpoint_and_visited_flag": true,
+        "final_frame": 4197
+      },
+      "settled_playfield_normalized_pixels_compared": 81920,
+      "settled_playfield_samples": [
+        {
+          "offset_from_ready": 60,
+          "sms_frame": 4156,
+          "md_frame": 4157,
+          "normalized_mismatches": 0
+        },
+        {
+          "offset_from_ready": 100,
+          "sms_frame": 4196,
+          "md_frame": 4197,
+          "normalized_mismatches": 0
+        }
+      ],
+      "whole_route_timing_equal": false,
+      "arrival_health_equal": false
+    }
+  ],
+  "evidence": {
+    "validation/natural-dungeon-route/sms-06/route_report.json": "49447384b2923c41db2e8da13cf58401b80092d7d794cc88059ae376a4d8615f",
+    "validation/natural-dungeon-route/sms-06/capture.json": "483a98ee48d016979274bafcac2c0733c845aa1be39707be0300c04ebbf0527f",
+    "validation/natural-dungeon-route/sms-06/controls.json": "5f2f729cbf26e083525e115fd50ed002e28afd51ef047bf50887ec94ee2c4b12",
+    "validation/natural-dungeon-route/sms-06/events.json": "2e4416a0fb8ac2f6fd7c1634b1db6d0e8b3c5ad166a9a73c99deab0a1b77d395",
+    "validation/natural-dungeon-route/sms-06/ram_04263.bin": "59ddb03ab92c9cc603e92361d1eb0aa5a346f1f3ce79a275efe3788a2d7fbcaa",
+    "validation/natural-dungeon-route/sms-06/frame_04263.png": "5e1e3051bfec4c406dc51c68e6c90648efbee7e33957f68231aa01d7a3012123",
+    "validation/natural-dungeon-route/md-04/route_report.json": "d457045285aef2247073bf12b83114f5e9b1a0a84810315ec17378f6b054e7b0",
+    "validation/natural-dungeon-route/md-04/capture.json": "0d5a7c735f7a6a5e230eea3caa164559deea059e1fb93cf083dab4b086a63ffa",
+    "validation/natural-dungeon-route/md-04/controls.json": "35793f4f1c8e8879413bf31322e71e1c8a50e089f7abdc4632806c69666457b8",
+    "validation/natural-dungeon-route/md-04/events.json": "d9afec7ad979173e1ade246c0bcff7d111bc8e19abbfdbf3216332f3b8b73aad",
+    "validation/natural-dungeon-route/md-04/ram_04320.bin": "ea2ad1504d725a34b4929cba7f6042e5bb428f568d98c850410cd52cce113d73",
+    "validation/natural-dungeon-route/md-04/frame_04320.png": "210cb9db9695289324e8c8ec323a2dfa8f5b02a970da5054f52ad2459d82ed55",
+    "validation/natural-dungeon-route/sms-06/frame_04223.png": "df0fb9292ff5ad71574b9de7b167ab300e75c686f97f34416ead2bad308649f5",
+    "validation/natural-dungeon-route/md-04/frame_04280.png": "a3cb6c3ceaff46fe7d44c7309f7a6691312958bfcc8f72945526c45787ef8e24",
+    "validation/natural-dungeon-route/sms-pal-01/route_report.json": "725f5afe9fb7c8265bcd352f0278b6bfd00723f3b86eec96599d5586f3698bf7",
+    "validation/natural-dungeon-route/sms-pal-01/capture.json": "53d9f276606c74f24277f378f8a3a11dbac799b49bc965240507bdb595060026",
+    "validation/natural-dungeon-route/sms-pal-01/controls.json": "2412b0d0383f26e319e980ae5fc93611d7bba8ba525b2c857946e9dc3e80533e",
+    "validation/natural-dungeon-route/sms-pal-01/events.json": "491017547b984c4be334a90674135d79e5868c3d345b91e2906865228fe9d45b",
+    "validation/natural-dungeon-route/sms-pal-01/ram_04196.bin": "84a0d3b3a3052d867a9c872db754639b7f8ba595dbbccee3d7196edb2d4274f6",
+    "validation/natural-dungeon-route/sms-pal-01/frame_04196.png": "35c590b997ddfb50dd09903a81e023361407312f3ea93cadf72371e382a3c2b6",
+    "validation/natural-dungeon-route/md-pal-01/route_report.json": "e7caf86410da07af834ea7cc0f7170fecb40192909df5d2f524c01d983814ccc",
+    "validation/natural-dungeon-route/md-pal-01/capture.json": "1f4947c112226b917781971602d2636cd34a1a5f80f2eda7512070fd1d8cad50",
+    "validation/natural-dungeon-route/md-pal-01/controls.json": "988cd5825883ed46675e6fa2c2508ad9819c612a0b9309b5e7c2e9d38ce04a8e",
+    "validation/natural-dungeon-route/md-pal-01/events.json": "4cef2e6bfd383159fa5843ce57db0d80c9d7877b8c52f1271416db8d24fa85e3",
+    "validation/natural-dungeon-route/md-pal-01/ram_04197.bin": "66c6e68b1c5bb0418b804e6d99b38d49b29e80942aa09448dff75ec32927317f",
+    "validation/natural-dungeon-route/md-pal-01/frame_04197.png": "f0c6382b67313360870cbc487a74247a945d6ed1e4d0e55ea16bb52fc633cb6f",
+    "validation/natural-dungeon-route/sms-pal-01/frame_04156.png": "f75e32370f1558f6b79c14d250fd8326a6b13053a5fd1194f1a618a4680c6316",
+    "validation/natural-dungeon-route/md-pal-01/frame_04157.png": "f3682db4816b7e79566d9565fc3d228cb5f5cc5487313c0a43f3a41f03352a8d"
+  },
+  "ram_mutations": false,
+  "rom_mutations": false,
+  "checkpoint_injections": false,
+  "first_dungeon_cleared": false,
+  "full_game_validated": false,
+  "limits": [
+    "State-observing controller walks a ROM-derived route and recovers from actual knockback; each resulting input stream is replayed in a fresh emulator process without controller feedback, with full final RAM and PNG equality.",
+    "Nine exterior screens then entrance1E4; forward motion inside is tested. The first dungeon/boss/gem are not completed.",
+    "Source/native feedback controllers produce different inputs after differing encounters. Arrival HP and route durations differ, so no combat/RNG or full timing equivalence. Door duration measured from first destination-room publication to post-reveal idle initialization.",
+    "Only settled entrance playfield pixels use nearest-palette normalization; HUD health differs and intermediate transition pixels/audio are not compared."
+  ]
+}

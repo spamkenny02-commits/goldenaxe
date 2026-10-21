@@ -24,6 +24,13 @@ Les messages finaux d’auberge, de sauvegarde et du marchand utilisent leur
 attente finale, avec un marqueur fixe et validation possible par une direction.
 Voir les [changements et limites](analysis/dialogue_waits_v0223.md).
 
+Un [parcours naturel jusqu’au premier donjon](analysis/natural_dungeon_route_v0223.md)
+est maintenant vérifié sur cette même v0223 en PAL/NTSC : nouvelle partie,
+neuf écrans extérieurs, entrée, révélation et déplacement dans la première salle,
+sans injection RAM ni sauvegarde préparée. Les commandes se rejouent à l’identique.
+Les PV d’arrivée diffèrent de la SMS ; les combats et le hasard ne sont pas validés
+par ce parcours. Le premier donjon et son boss restent à parcourir entièrement.
+
 Le dessin accéléré de la v0222 et les corrections de publication/défilement
 précédentes sont conservés. La cadence complète reste à aligner : la première
 page du récit commence son attente dix images après la SMS en NTSC et
