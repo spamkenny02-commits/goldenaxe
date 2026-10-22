@@ -1,0 +1,134 @@
+{
+  "md_sha256": "7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    "return_feather_v0235-dungeon-pal_report.json",
+    "return_feather_v0235-dungeon_report.json",
+    "return_feather_v0235-house-pal_report.json",
+    "return_feather_v0235-house_report.json",
+    "return_feather_v0235-hurt-pal_report.json",
+    "return_feather_v0235-hurt_report.json",
+    "return_feather_v0235-moving-pal_report.json",
+    "return_feather_v0235-moving_report.json",
+    "return_feather_v0235-pal_report.json",
+    "return_feather_v0235-town-pal_report.json",
+    "return_feather_v0235-town_report.json",
+    "return_feather_v0235_report.json"
+  ],
+  "controlled_cases": 12,
+  "settled_map_hud_bytes_per_return": 1536,
+  "settled_normalized_pixel_comparisons": 393216,
+  "departure_actor_mask": 161,
+  "injured_counter_after_load": 29,
+  "purchase_then_exit_equip_and_use": [
+    {
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+      "passed": true,
+      "failure": null,
+      "stage": "wait",
+      "cast_frame": 5080,
+      "ready_frame": 5162,
+      "only_initial_gold_controlled": true,
+      "room_position_inventory_checkpoint_injections": false,
+      "last": {
+        "frame": 5163,
+        "room": 149,
+        "graphics": 0,
+        "game": 12,
+        "hero": 1,
+        "counter": 0,
+        "x": 136,
+        "y": 112,
+        "owned": 0,
+        "selected": 0,
+        "slot": 0,
+        "gold": 0,
+        "health": 24,
+        "audio_error": 0,
+        "resume": 0,
+        "loading": 0
+      }
+    },
+    {
+      "rom_sha256": "7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084",
+      "passed": true,
+      "failure": null,
+      "stage": "wait",
+      "cast_frame": 5080,
+      "ready_frame": 5157,
+      "only_initial_gold_controlled": true,
+      "room_position_inventory_checkpoint_injections": false,
+      "last": {
+        "frame": 5158,
+        "room": 149,
+        "graphics": 0,
+        "game": 12,
+        "hero": 1,
+        "counter": 0,
+        "x": 136,
+        "y": 112,
+        "owned": 0,
+        "selected": 0,
+        "slot": 9,
+        "gold": 0,
+        "health": 24,
+        "audio_error": 0,
+        "resume": 0,
+        "loading": 0
+      }
+    }
+  ],
+  "transition_timings": [
+    {
+      "case": "v0235-hurt-pal",
+      "sms": 2941,
+      "md": 2936,
+      "md_minus_sms_frames": -5
+    },
+    {
+      "case": "v0235-hurt",
+      "sms": 2942,
+      "md": 2938,
+      "md_minus_sms_frames": -4
+    },
+    {
+      "case": "v0235-moving-pal",
+      "sms": 2941,
+      "md": 2936,
+      "md_minus_sms_frames": -5
+    },
+    {
+      "case": "v0235-moving",
+      "sms": 2942,
+      "md": 2938,
+      "md_minus_sms_frames": -4
+    },
+    {
+      "case": "v0235-pal",
+      "sms": 2941,
+      "md": 2936,
+      "md_minus_sms_frames": -5
+    },
+    {
+      "case": "v0235-town-pal",
+      "sms": 2941,
+      "md": 2936,
+      "md_minus_sms_frames": -5
+    },
+    {
+      "case": "v0235-town",
+      "sms": 2942,
+      "md": 2938,
+      "md_minus_sms_frames": -4
+    },
+    {
+      "case": "v0235",
+      "sms": 2942,
+      "md": 2938,
+      "md_minus_sms_frames": -4
+    }
+  ],
+  "full_transition_timing_exact": false,
+  "full_game_verified": false
+}

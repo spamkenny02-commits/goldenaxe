@@ -5,19 +5,28 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0232 — 1024 Kio.**
+**Version courante : v0235 — 1024 Kio.**
 
-[Télécharger la ROM v0232](versions/v0232-786d954c/gaw-megadrive-v0232.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0235](versions/v0235-7c9f6750/gaw-megadrive-v0235.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `786d954c9bebd204d564d316279fbb7c78e47f59c2ff7fdb273bad4702ff935b`
-Checksum Mega Drive : `162D`
+SHA-256 : `7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084`
+Checksum Mega Drive : `818B`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **22 octobre 2026** : la ROM jouable recommandée est **v0232**.
+État au **22 octobre 2026** : la ROM jouable recommandée est **v0235**.
+La plume magique permet maintenant de revenir au dernier point de sauvegarde,
+avec consommation de l’objet et conservation des ressources du héros.
+Douze cas contrôlés PAL/NTSC couvrent aussi le mouvement et la blessure en cours.
+Un parcours avec achat, sortie à pied et sélection dans l’inventaire passe sur
+SMS et MD ; seul l’or initial est fourni. La durée de la transition reste à
+aligner (MD en avance de 4 à 5 images dans les cas mesurés).
+Les v0233/v0234 sont des compilations intermédiaires ; utiliser la v0235.
+Voir les [changements et limites de la v0235](analysis/return_feather_v0235.md).
+
 La v0232 permet d’utiliser la lanterne dans les salles sombres des donjons :
 effet lumineux, fondu vers la salle éclairée et retour à l’arme de base.
 L’éclairage est conservé après un passage par l’inventaire. Le drapeau de
@@ -26,7 +35,7 @@ Six cas contrôlés comparent 58 images de palette chacun à la SMS : salle
 normale, boss présent et disparition du boss, en PAL/NTSC. La salle, la
 possession et la phase initiale sont contrôlées. Le parcours normal jusqu’au
 premier donjon et les sélections d’inventaire passent dans les deux régions.
-Les v0230/v0231 sont des compilations intermédiaires ; utiliser la v0232.
+Les compilations intermédiaires v0230/v0231 ont été remplacées par la v0232.
 Voir les [changements et limites de la v0232](analysis/lantern_v0232.md).
 
 La v0229 rétablit le bruitage de refus sur une case vide et les restrictions

@@ -7233,5 +7233,40 @@
         "sha256": "962808b0a8235aa3cb65338c7780f354374ffe96753a8cd818d6eb9a4b48cfba"
       }
     ]
+  },
+  {
+    "version": 233,
+    "sha256": "bf93267a44a5c702809b6b317b4cd18ea307f2a4e6cb73c1002330af6c847700",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T19:06:52.565913+00:00",
+    "rom": "v0233-bf93267a/gaw-megadrive-v0233.bin",
+    "notes": "Compilation intermediaire de la plume magique ; remplacee par v0235 pour le chargement et la conservation du mouvement/blessure.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 234,
+    "sha256": "fb0cea5e4d355ca7b9d58f787e88bdf07dda26945b463aca16bf2defe11f1156",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T19:09:34.672543+00:00",
+    "rom": "v0234-fb0cea5e/gaw-megadrive-v0234.bin",
+    "notes": "Compilation intermediaire de la plume magique ; remplacee par v0235 pour le chargement et la conservation du mouvement/blessure.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 235,
+    "sha256": "7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T19:18:24.058294+00:00",
+    "rom": "v0235-7c9f6750/gaw-megadrive-v0235.bin",
+    "notes": "Plume magique utilisable : retour sauvegarde, conservation ressources/mouvement/blessure ; achat et utilisation verifies.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "return_feather_release_v0235_report.json",
+        "sha256": "d1b316eea35489941a3407ec64ac43c5221d3eb31705e46e45ae676d3326169c"
+      }
+    ]
   }
 ]

@@ -1328,3 +1328,6 @@ v0230: native lantern item3 now translates2FD2..3020/BDBE/BE78. Dark-room-only, 
 
 
 v0232: recommended lantern release, supersedes intermediate230/231. C0AE latch is set by1CD8/1CF3 music selection, retained while boss_death_music_hold, cleared by2AB1 gem. Lantern and normal dungeon palette use this latch, including after actor bit40 is cleared during death. Six controlled room/ownership/initial-phase contexts (normal,boss-present,boss-death x NTSC/PAL) compare58 background palette frames each. Natural first-dungeon entrance and inventory8 cases per region pass. Natural lantern acquisition/full campaign/RNG/global cadence remain unfinished or unverified.
+
+
+v0235: native feather30E8..3123 returns to save_runtime_checkpoint/C0C2, saves departure actor mask,20-step1F78 wipe/A6, no extra0B12 fade, reuse exterior graphics,consume item9/reset selection and1FA7 reveal. Preserve26E5 shared final movement and hurt decrement before2C63.12 controlled NTSC/PAL cases pass;8 settled1536-byte maps/HUD and49152 normalized pixels per return exact. Purchase/walk-out/equip/use passes on both with only initial gold60 injected. MD return4/5 frames early in ordinary NTSC/PAL fixtures; source RNG and full cadence unfinished. Same-instant contact damage before activation and all natural saved checkpoints still need verification.233/234 intermediate;235 recommended.

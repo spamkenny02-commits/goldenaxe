@@ -4,6 +4,9 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0235 | [Telecharger](v0235-7c9f6750/gaw-megadrive-v0235.bin) | targeted_checks_passed | Plume magique utilisable : retour sauvegarde, conservation ressources/mouvement/blessure ; achat et utilisation verifies. | `7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084` |
+| v0234 | [Telecharger](v0234-fb0cea5e/gaw-megadrive-v0234.bin) | build_only | Compilation intermediaire de la plume magique ; remplacee par v0235 pour le chargement et la conservation du mouvement/blessure. | `fb0cea5e4d355ca7b9d58f787e88bdf07dda26945b463aca16bf2defe11f1156` |
+| v0233 | [Telecharger](v0233-bf93267a/gaw-megadrive-v0233.bin) | build_only | Compilation intermediaire de la plume magique ; remplacee par v0235 pour le chargement et la conservation du mouvement/blessure. | `bf93267a44a5c702809b6b317b4cd18ea307f2a4e6cb73c1002330af6c847700` |
 | v0232 | [Telecharger](v0232-786d954c/gaw-megadrive-v0232.bin) | targeted_checks_passed | Lanterne fonctionnelle et palette du boss conservee durant sa disparition ; 6 contextes PAL/NTSC verifies. | `786d954c9bebd204d564d316279fbb7c78e47f59c2ff7fdb273bad4702ff935b` |
 | v0231 | [Telecharger](v0231-390ada84/gaw-megadrive-v0231.bin) | build_only | Compilation intermediaire de la lanterne ; remplacee par v0232 pour le drapeau de palette pendant la disparition du boss. | `390ada84d7e3bf6ed4c029432a83dacc95502d8f1a6c893ea2249d5f1975388a` |
 | v0230 | [Telecharger](v0230-1a09f7c6/gaw-megadrive-v0230.bin) | build_only | Compilation intermediaire de la lanterne ; remplacee par v0232 pour le drapeau de palette pendant la disparition du boss. | `1a09f7c63cd924ea9f7aee15023d91856b3da11c143bdbdd390350c04a47a8ba` |

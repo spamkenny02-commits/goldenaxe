@@ -95,6 +95,7 @@ static u16 save_resume_room,save_resume_health;
 static u16 world_graphics_class,house_return_room,house_return_x,house_return_y;
 static u16 world_dungeon_number;
 static u16 world_dungeon_dark;
+static bool return_feather_requested;
 static volatile u8 world_boss_state; /* C0AE, cleared by gem appearance. */
 static u8 game_save_state[0x250];
 static u8 room_metadata[3]; /* C06E..C070 */
@@ -865,6 +866,7 @@ static u16 hero_collision_index(u16 which)
  * Direction changes accept exactly one held cardinal button. Existing motion
  * continues through the shared integration tail. Other selected items pending. */
 static void inventory_hud_icon(void);
+static void use_return_feather(void);
 static void fade_world_palette(const u16 *target,bool fade_in);
 static u16 dungeon_bitmap_pending;
 
@@ -966,6 +968,8 @@ static void activate_hero_item(void)
         hero_items[8]=0;hero_selected_item=0;inventory_hud_icon();
         wait_frame();wait_frame();world_clock_shift+=2;
     }
+    else if(hero_selected_item==9 && !world_graphics_class)
+        return_feather_requested=TRUE; /* 30E8: finish through state8, outside the old room tick. */
 }
 
 static void attack_hero(void)
@@ -2685,6 +2689,10 @@ static bool tick_world_simulation(void)
     prepare_hero_defense();
     hero_attack=world_attack_strength[hero_selected_item*4+(hero_selected_item==0?hero_basic_level:hero_selected_item==1?hero_weapon_level:hero_items[hero_selected_item])];
     if((input&~world_previous_input&BUTTON_C) && hero_state==1 && hero_health && hero_selected_item<12) activate_hero_item();
+    if(return_feather_requested)
+    {
+        return_feather_requested=FALSE;use_return_feather();return TRUE;
+    }
     if(hero_state==8)
     {
         sound_effect_main(0x9a); /* 371D */
@@ -3001,6 +3009,7 @@ static void show_dialogue_text(const u8 *source,bool overlay)
 }
 
 #include "save.inc"
+#include "return_feather.inc"
 #include "merchant.inc"
 #include "healer.inc"
 

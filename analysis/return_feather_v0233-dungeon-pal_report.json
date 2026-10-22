@@ -1,0 +1,54 @@
+{
+  "md_sha256": "bf93267a44a5c702809b6b317b4cd18ea307f2a4e6cb73c1002330af6c847700",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "region": "pal",
+  "checkpoint": 149,
+  "graphics": 2,
+  "controlled_room_ownership_checkpoint_stats_and_actors": true,
+  "results": {
+    "sms": {
+      "behavior_pass": true,
+      "resources_preserved": true,
+      "last": {
+        "frame": 3300,
+        "room": 148,
+        "game": 12,
+        "hero": 1,
+        "selected": 9,
+        "owned": 1,
+        "health": 17,
+        "magic": 11,
+        "gold": 37,
+        "keys": 2,
+        "x": 34816,
+        "y": 28672,
+        "mask": 255,
+        "audio_error": 0
+      },
+      "movement_probe": true
+    },
+    "md": {
+      "behavior_pass": true,
+      "resources_preserved": true,
+      "last": {
+        "frame": 3300,
+        "room": 148,
+        "game": 12,
+        "hero": 1,
+        "selected": 9,
+        "owned": 1,
+        "health": 17,
+        "magic": 11,
+        "gold": 37,
+        "keys": 2,
+        "x": 34816,
+        "y": 28672,
+        "mask": 255,
+        "audio_error": 0
+      },
+      "movement_probe": true
+    }
+  },
+  "full_game_verified": false
+}
