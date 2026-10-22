@@ -1,0 +1,194 @@
+{
+  "md_sha256": "e5c3493162adfea6b539edfada41d471999c9e283e6edb035d1741813cb1b8c3",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    "world_overview_v0240-close-b-pal_report.json",
+    "world_overview_v0240-close-b_report.json",
+    "world_overview_v0240-dungeon-pal_report.json",
+    "world_overview_v0240-dungeon_report.json",
+    "world_overview_v0240-edited-pal_report.json",
+    "world_overview_v0240-edited_report.json",
+    "world_overview_v0240-held-pal_report.json",
+    "world_overview_v0240-held_report.json",
+    "world_overview_v0240-house-pal_report.json",
+    "world_overview_v0240-house_report.json",
+    "world_overview_v0240-pal_report.json",
+    "world_overview_v0240-treasure-edited-pal_report.json",
+    "world_overview_v0240-treasure-edited_report.json",
+    "world_overview_v0240-treasure-pal_report.json",
+    "world_overview_v0240-treasure_report.json",
+    "world_overview_v0240_report.json"
+  ],
+  "controlled_cases": 16,
+  "exterior_overview_cases": 10,
+  "held_close_cases": 2,
+  "source_quest_edit_changes_planar_bytes": 2,
+  "overview_normalized_pixel_frames_exact": 90,
+  "return_checks": [
+    {
+      "case": "v0240-close-b-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-close-b",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-edited-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-edited",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-held-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-held",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-treasure-edited-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-treasure-edited",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-treasure-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240-treasure",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0240",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_preserved_bytes_per_machine": 256,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    }
+  ],
+  "generation_finish_frames": [
+    {
+      "case": "v0240-close-b-pal",
+      "sms": 3274,
+      "md": 3194,
+      "md_minus_sms_frames": -80
+    },
+    {
+      "case": "v0240-close-b",
+      "sms": 3356,
+      "md": 3262,
+      "md_minus_sms_frames": -94
+    },
+    {
+      "case": "v0240-edited-pal",
+      "sms": 3274,
+      "md": 3194,
+      "md_minus_sms_frames": -80
+    },
+    {
+      "case": "v0240-edited",
+      "sms": 3356,
+      "md": 3262,
+      "md_minus_sms_frames": -94
+    },
+    {
+      "case": "v0240-held-pal",
+      "sms": 3274,
+      "md": 3194,
+      "md_minus_sms_frames": -80
+    },
+    {
+      "case": "v0240-held",
+      "sms": 3356,
+      "md": 3262,
+      "md_minus_sms_frames": -94
+    },
+    {
+      "case": "v0240-pal",
+      "sms": 3274,
+      "md": 3194,
+      "md_minus_sms_frames": -80
+    },
+    {
+      "case": "v0240-treasure-edited-pal",
+      "sms": 3274,
+      "md": 3194,
+      "md_minus_sms_frames": -80
+    },
+    {
+      "case": "v0240-treasure-edited",
+      "sms": 3356,
+      "md": 3262,
+      "md_minus_sms_frames": -94
+    },
+    {
+      "case": "v0240-treasure-pal",
+      "sms": 3274,
+      "md": 3194,
+      "md_minus_sms_frames": -80
+    },
+    {
+      "case": "v0240-treasure",
+      "sms": 3356,
+      "md": 3262,
+      "md_minus_sms_frames": -94
+    },
+    {
+      "case": "v0240",
+      "sms": 3356,
+      "md": 3262,
+      "md_minus_sms_frames": -94
+    }
+  ],
+  "setup_and_return_timing_exact": false,
+  "full_game_verified": false,
+  "limits": [
+    "Initial ownership, optional quest/treasure flags and one clock phase alignment are controlled. No natural item acquisition is established.",
+    "Color-normalized pixel comparisons cover settled UI and restored exterior only; incremental raster publication and loading duration remain incomplete."
+  ]
+}

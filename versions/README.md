@@ -4,6 +4,11 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0240 | [Telecharger](v0240-e5c34931/gaw-megadrive-v0240.bin) | targeted_checks_passed | Carte du monde utilisable : dessin progressif, marqueurs, quetes et restauration ;16 cas PAL/NTSC verifies. | `e5c3493162adfea6b539edfada41d471999c9e283e6edb035d1741813cb1b8c3` |
+| v0239 | [Telecharger](v0239-d464cba4/gaw-megadrive-v0239.bin) | build_only | Compilation intermediaire de la carte du monde ; utiliser v0240 pour les marqueurs, la restauration et les commandes. | `d464cba4aa72850ef5556c32a9999872dce9dcbba780288b646b38dac897900e` |
+| v0238 | [Telecharger](v0238-18880bc0/gaw-megadrive-v0238.bin) | build_only | Compilation intermediaire de la carte du monde ; utiliser v0240 pour les marqueurs, la restauration et les commandes. | `18880bc01b6698f34a7125c9a2cc257107affcdd65683a20eba4e729f25f1d2f` |
+| v0237 | [Telecharger](v0237-3185a6b0/gaw-megadrive-v0237.bin) | build_only | Compilation intermediaire de la carte du monde ; utiliser v0240 pour les marqueurs, la restauration et les commandes. | `3185a6b0145e93ca69de561ff3c0de6277de4dbc8b2d626712e49fb539ceef30` |
+| v0236 | [Telecharger](v0236-978bbf2d/gaw-megadrive-v0236.bin) | build_only | Compilation intermediaire de la carte du monde ; utiliser v0240 pour les marqueurs, la restauration et les commandes. | `978bbf2d6076e3d0cdd43aad4802ef29f764a0d7943be1a3e609dd2fd055dd98` |
 | v0235 | [Telecharger](v0235-7c9f6750/gaw-megadrive-v0235.bin) | targeted_checks_passed | Plume magique utilisable : retour sauvegarde, conservation ressources/mouvement/blessure ; achat et utilisation verifies. | `7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084` |
 | v0234 | [Telecharger](v0234-fb0cea5e/gaw-megadrive-v0234.bin) | build_only | Compilation intermediaire de la plume magique ; remplacee par v0235 pour le chargement et la conservation du mouvement/blessure. | `fb0cea5e4d355ca7b9d58f787e88bdf07dda26945b463aca16bf2defe11f1156` |
 | v0233 | [Telecharger](v0233-bf93267a/gaw-megadrive-v0233.bin) | build_only | Compilation intermediaire de la plume magique ; remplacee par v0235 pour le chargement et la conservation du mouvement/blessure. | `bf93267a44a5c702809b6b317b4cd18ea307f2a4e6cb73c1002330af6c847700` |

@@ -7268,5 +7268,60 @@
         "sha256": "d1b316eea35489941a3407ec64ac43c5221d3eb31705e46e45ae676d3326169c"
       }
     ]
+  },
+  {
+    "version": 236,
+    "sha256": "978bbf2d6076e3d0cdd43aad4802ef29f764a0d7943be1a3e609dd2fd055dd98",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T19:32:45.014265+00:00",
+    "rom": "v0236-978bbf2d/gaw-megadrive-v0236.bin",
+    "notes": "Compilation intermediaire de la carte du monde ; utiliser v0240 pour les marqueurs, la restauration et les commandes.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 237,
+    "sha256": "3185a6b0145e93ca69de561ff3c0de6277de4dbc8b2d626712e49fb539ceef30",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T19:37:19.065504+00:00",
+    "rom": "v0237-3185a6b0/gaw-megadrive-v0237.bin",
+    "notes": "Compilation intermediaire de la carte du monde ; utiliser v0240 pour les marqueurs, la restauration et les commandes.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 238,
+    "sha256": "18880bc01b6698f34a7125c9a2cc257107affcdd65683a20eba4e729f25f1d2f",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T19:39:17.358690+00:00",
+    "rom": "v0238-18880bc0/gaw-megadrive-v0238.bin",
+    "notes": "Compilation intermediaire de la carte du monde ; utiliser v0240 pour les marqueurs, la restauration et les commandes.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 239,
+    "sha256": "d464cba4aa72850ef5556c32a9999872dce9dcbba780288b646b38dac897900e",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T19:49:39.589264+00:00",
+    "rom": "v0239-d464cba4/gaw-megadrive-v0239.bin",
+    "notes": "Compilation intermediaire de la carte du monde ; utiliser v0240 pour les marqueurs, la restauration et les commandes.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 240,
+    "sha256": "e5c3493162adfea6b539edfada41d471999c9e283e6edb035d1741813cb1b8c3",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T19:51:06.652854+00:00",
+    "rom": "v0240-e5c34931/gaw-megadrive-v0240.bin",
+    "notes": "Carte du monde utilisable : dessin progressif, marqueurs, quetes et restauration ;16 cas PAL/NTSC verifies.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "world_overview_release_v0240_report.json",
+        "sha256": "c2e590c4cde09f1f8b0664eab0a8627eee50e5399357c8657de7e382ed1b6fc5"
+      }
+    ]
   }
 ]

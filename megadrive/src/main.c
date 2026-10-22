@@ -867,6 +867,7 @@ static u16 hero_collision_index(u16 which)
  * continues through the shared integration tail. Other selected items pending. */
 static void inventory_hud_icon(void);
 static void use_return_feather(void);
+static void show_world_overview(void);
 static void fade_world_palette(const u16 *target,bool fade_in);
 static u16 dungeon_bitmap_pending;
 
@@ -970,6 +971,7 @@ static void activate_hero_item(void)
     }
     else if(hero_selected_item==9 && !world_graphics_class)
         return_feather_requested=TRUE; /* 30E8: finish through state8, outside the old room tick. */
+    else if(hero_selected_item==11 && !world_graphics_class) show_world_overview();
 }
 
 static void attack_hero(void)
@@ -2658,6 +2660,8 @@ static void show_inventory(void)
     while(vtimer-menu_started<frames) wait_frame();
     world_previous_input=input;game_state=12;
 }
+
+#include "world_overview.inc"
 
 static bool tick_world_simulation(void)
 {

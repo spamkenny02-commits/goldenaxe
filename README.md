@@ -5,26 +5,33 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0235 — 1024 Kio.**
+**Version courante : v0240 — 1024 Kio.**
 
-[Télécharger la ROM v0235](versions/v0235-7c9f6750/gaw-megadrive-v0235.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0240](versions/v0240-e5c34931/gaw-megadrive-v0240.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084`
-Checksum Mega Drive : `818B`
+SHA-256 : `e5c3493162adfea6b539edfada41d471999c9e283e6edb035d1741813cb1b8c3`
+Checksum Mega Drive : `0484`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **22 octobre 2026** : la ROM jouable recommandée est **v0235**.
+État au **22 octobre 2026** : la ROM jouable recommandée est **v0240**.
+La carte du monde est maintenant utilisable : aperçu des 225 écrans extérieurs,
+transformations de quête, marqueurs de position/trésor et retour au jeu.
+Seize cas contrôlés PAL/NTSC vérifient l’affichage, les commandes et la restauration.
+La génération reste trop rapide (environ 94 images d’avance en NTSC, 80 en PAL).
+Les v0236 à v0239 sont intermédiaires ; utiliser la v0240.
+Voir les [changements et limites de la v0240](analysis/world_overview_v0240.md).
+
 La plume magique permet maintenant de revenir au dernier point de sauvegarde,
 avec consommation de l’objet et conservation des ressources du héros.
 Douze cas contrôlés PAL/NTSC couvrent aussi le mouvement et la blessure en cours.
 Un parcours avec achat, sortie à pied et sélection dans l’inventaire passe sur
 SMS et MD ; seul l’or initial est fourni. La durée de la transition reste à
 aligner (MD en avance de 4 à 5 images dans les cas mesurés).
-Les v0233/v0234 sont des compilations intermédiaires ; utiliser la v0235.
+Les compilations intermédiaires v0233/v0234 ont été remplacées par la v0235.
 Voir les [changements et limites de la v0235](analysis/return_feather_v0235.md).
 
 La v0232 permet d’utiliser la lanterne dans les salles sombres des donjons :
