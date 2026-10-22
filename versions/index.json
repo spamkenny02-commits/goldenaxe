@@ -7122,5 +7122,28 @@
         "sha256": "599f0d4b4c67776d230ff9a1d47db6d74e25fe94c2eadc74a9c5d475782ebbb1"
       }
     ]
+  },
+  {
+    "version": 229,
+    "sha256": "a9ae2d0abd7e49f0d638db0b23e28b5bb05e48123e1df7a00ce066ed69ef78a7",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T18:36:52.456391+00:00",
+    "rom": "v0229-a9ae2d0a/gaw-megadrive-v0229.bin",
+    "notes": "Inventaire : bruitage de refus restaure, objets exterieur refuses en interieur ; hache acquise/equipee/utilisee par parcours normal.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "inventory_release_v0229_report.json",
+        "sha256": "84bdbeaf522d6443648edead8ea06d17c51f80f54aa4375ba99c6bf1711c7fd1"
+      },
+      {
+        "file": "inventory_acceptance_v0229_report.json",
+        "sha256": "a29328554d6c3fe1707fbbf0fc4851af80d2f9e676a29a1dd909bc9853cb16e2"
+      },
+      {
+        "file": "inventory_acceptance_v0229-pal_report.json",
+        "sha256": "2e139e0efb75d60c62160c93d18a718b4ad313f382789851399c4998cf3866d0"
+      }
+    ]
   }
 ]

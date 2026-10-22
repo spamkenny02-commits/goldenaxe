@@ -5,19 +5,25 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0228 — 1024 Kio.**
+**Version courante : v0229 — 1024 Kio.**
 
-[Télécharger la ROM v0228](versions/v0228-a875719f/gaw-megadrive-v0228.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0229](versions/v0229-a9ae2d0a/gaw-megadrive-v0229.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a`
-Checksum Mega Drive : `D23D`
+SHA-256 : `a9ae2d0abd7e49f0d638db0b23e28b5bb05e48123e1df7a00ce066ed69ef78a7`
+Checksum Mega Drive : `4A15`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **21 octobre 2026** : la ROM jouable recommandée est **v0228**.
+État au **22 octobre 2026** : la ROM jouable recommandée est **v0229**.
+La v0229 rétablit le bruitage de refus sur une case vide et les restrictions
+des deux objets réservés à l’extérieur dans les maisons et donjons.
+Huit cas contrôlés passent en PAL/NTSC. Un parcours normal vérifie aussi
+la récupération de la hache, son équipement et une attaque après fermeture
+du menu. Voir les [changements de la v0229](analysis/inventory_v0229.md).
+
 La v0228 lit directement les descriptions graphiques dans un format adapté
 au 68000. Sur la même scène à douze acteurs, la préparation est environ 5 %
 plus courte qu’en v0226, avec des pixels identiques en PAL/NTSC. Ce gain

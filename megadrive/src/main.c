@@ -2580,13 +2580,20 @@ static void show_inventory(void)
         if((pressed&BUTTON_DOWN) && row_index!=2) cursor+=4;
         if(inventory_slot!=cursor) sound_effect(0x95); /* 7303 */
         inventory_slot=cursor;
-        if((pressed&BUTTON_C) && hero_items[cursor])
+        if(pressed&BUTTON_C)
         {
-            hero_selected_item=cursor;inventory_hud_icon();sound_effect(0xab); /* 7349 */
-            /* 1D0D consumes two additional display frames. C02F advances
-             * through 0B95, so these frames do not advance menu logic. */
-            wait_frame();wait_frame();world_clock_shift+=2;
-            inventory_sprites();prepare_hero_armor_palette();sms_palette[31]=((u8)(world_clock()-1)&2)?2:1;set_world_palette();
+            /* 7326..7356: reject absent items and the two exterior-only
+             * selections while C040 identifies a house or dungeon. */
+            if(!hero_items[cursor] || ((cursor==9 || cursor==11) && world_graphics_class))
+                sound_effect(0xa1);
+            else
+            {
+                hero_selected_item=cursor;inventory_hud_icon();sound_effect(0xab); /* 7349 */
+                /* 1D0D consumes two additional display frames. C02F advances
+                 * through 0B95, so these frames do not advance menu logic. */
+                wait_frame();wait_frame();world_clock_shift+=2;
+                inventory_sprites();prepare_hero_armor_palette();sms_palette[31]=((u8)(world_clock()-1)&2)?2:1;set_world_palette();
+            }
         }
         if(pressed&BUTTON_B) break; /* 71F2..71F9: closing has no sound command. */
     }

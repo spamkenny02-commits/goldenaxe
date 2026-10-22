@@ -1319,3 +1319,6 @@ First boss/crystal/exit revalidated from boot without deaths in228; full fixed r
 182 source/native boss-death state+timer observations exact in this path, no repeated timer; other streams/deadlines remain open.
 Pilot alignment tightened in test tools after an incomplete trial, not in production combat.
 Optional rooms/items, other dungeons, source RNG/whole-campaign/hardware/audio fidelity remain unfinished.
+
+
+v0229: restored inventory rejection command A1 for absent items and owned slots9/11 outside exterior graphics class (SMS7326..7356). Eight controlled ownership/context fixtures per NTSC/PAL match selection and sound commands. Natural axe acquisition/equip/close/attack passes on SMS and native; SMS uses one Continue, MD none. Cadence/RNG/full campaign remain unfinished.

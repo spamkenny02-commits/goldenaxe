@@ -1,0 +1,255 @@
+{
+  "md_sha256": "a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": false,
+  "controlled_ram_fixtures": true,
+  "results": [
+    {
+      "slot": 1,
+      "owned": 0,
+      "graphics": 0,
+      "cases": [
+        {
+          "tag": "sms",
+          "selected": 0,
+          "commands": [
+            0,
+            128,
+            161
+          ],
+          "expected": 0,
+          "selection_pass": true,
+          "sound_pass": true
+        },
+        {
+          "tag": "md",
+          "selected": 0,
+          "commands": [
+            0,
+            128
+          ],
+          "expected": 0,
+          "selection_pass": true,
+          "sound_pass": false
+        }
+      ]
+    },
+    {
+      "slot": 1,
+      "owned": 1,
+      "graphics": 2,
+      "cases": [
+        {
+          "tag": "sms",
+          "selected": 1,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 1,
+          "selection_pass": true,
+          "sound_pass": true
+        },
+        {
+          "tag": "md",
+          "selected": 1,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 1,
+          "selection_pass": true,
+          "sound_pass": true
+        }
+      ]
+    },
+    {
+      "slot": 9,
+      "owned": 1,
+      "graphics": 0,
+      "cases": [
+        {
+          "tag": "sms",
+          "selected": 9,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 9,
+          "selection_pass": true,
+          "sound_pass": true
+        },
+        {
+          "tag": "md",
+          "selected": 9,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 9,
+          "selection_pass": true,
+          "sound_pass": true
+        }
+      ]
+    },
+    {
+      "slot": 9,
+      "owned": 1,
+      "graphics": 1,
+      "cases": [
+        {
+          "tag": "sms",
+          "selected": 0,
+          "commands": [
+            0,
+            128,
+            161
+          ],
+          "expected": 0,
+          "selection_pass": true,
+          "sound_pass": true
+        },
+        {
+          "tag": "md",
+          "selected": 9,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 0,
+          "selection_pass": false,
+          "sound_pass": false
+        }
+      ]
+    },
+    {
+      "slot": 9,
+      "owned": 1,
+      "graphics": 2,
+      "cases": [
+        {
+          "tag": "sms",
+          "selected": 0,
+          "commands": [
+            0,
+            128,
+            161
+          ],
+          "expected": 0,
+          "selection_pass": true,
+          "sound_pass": true
+        },
+        {
+          "tag": "md",
+          "selected": 9,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 0,
+          "selection_pass": false,
+          "sound_pass": false
+        }
+      ]
+    },
+    {
+      "slot": 11,
+      "owned": 1,
+      "graphics": 0,
+      "cases": [
+        {
+          "tag": "sms",
+          "selected": 11,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 11,
+          "selection_pass": true,
+          "sound_pass": true
+        },
+        {
+          "tag": "md",
+          "selected": 11,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 11,
+          "selection_pass": true,
+          "sound_pass": true
+        }
+      ]
+    },
+    {
+      "slot": 11,
+      "owned": 1,
+      "graphics": 1,
+      "cases": [
+        {
+          "tag": "sms",
+          "selected": 0,
+          "commands": [
+            0,
+            128,
+            161
+          ],
+          "expected": 0,
+          "selection_pass": true,
+          "sound_pass": true
+        },
+        {
+          "tag": "md",
+          "selected": 11,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 0,
+          "selection_pass": false,
+          "sound_pass": false
+        }
+      ]
+    },
+    {
+      "slot": 11,
+      "owned": 1,
+      "graphics": 2,
+      "cases": [
+        {
+          "tag": "sms",
+          "selected": 0,
+          "commands": [
+            0,
+            128,
+            161
+          ],
+          "expected": 0,
+          "selection_pass": true,
+          "sound_pass": true
+        },
+        {
+          "tag": "md",
+          "selected": 11,
+          "commands": [
+            0,
+            128,
+            171
+          ],
+          "expected": 0,
+          "selection_pass": false,
+          "sound_pass": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "md_sha256": "a9ae2d0abd7e49f0d638db0b23e28b5bb05e48123e1df7a00ce066ed69ef78a7",
+  "passed": true,
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "selection_fixtures_per_region": 8,
+  "regions": [
+    "ntsc",
+    "pal"
+  ],
+  "source_and_native_selection_and_sound_command_match": true,
+  "natural_axe_acquisition_equipment_attack": [
+    {
+      "rom_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+      "passed": true,
+      "normal_boot_and_buttons": true,
+      "ram_writes": false,
+      "sram_input": null,
+      "acquisition_case": "validation\\natural-dungeon-combat\\sms-auto-27",
+      "prefix_deaths": 1,
+      "equipped_slot": 1,
+      "attack_frames": 12,
+      "final": {
+        "frame": 210,
+        "game": 12,
+        "slot": 1,
+        "selected": 1,
+        "weapon": 1,
+        "hero": 1,
+        "health": 24
+      }
+    },
+    {
+      "rom_sha256": "a9ae2d0abd7e49f0d638db0b23e28b5bb05e48123e1df7a00ce066ed69ef78a7",
+      "passed": true,
+      "normal_boot_and_buttons": true,
+      "ram_writes": false,
+      "sram_input": null,
+      "acquisition_case": "validation\\natural-dungeon-combat\\md-auto-27",
+      "prefix_deaths": 0,
+      "equipped_slot": 1,
+      "attack_frames": 12,
+      "final": {
+        "frame": 210,
+        "game": 12,
+        "slot": 1,
+        "selected": 1,
+        "weapon": 1,
+        "hero": 1,
+        "health": 8
+      }
+    }
+  ],
+  "full_game_verified": false,
+  "audio_waveform_equality_verified": false
+}
