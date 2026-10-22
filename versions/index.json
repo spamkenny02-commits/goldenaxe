@@ -7145,5 +7145,93 @@
         "sha256": "2e139e0efb75d60c62160c93d18a718b4ad313f382789851399c4998cf3866d0"
       }
     ]
+  },
+  {
+    "version": 230,
+    "sha256": "1a09f7c63cd924ea9f7aee15023d91856b3da11c143bdbdd390350c04a47a8ba",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T18:46:49.210913+00:00",
+    "rom": "v0230-1a09f7c6/gaw-megadrive-v0230.bin",
+    "notes": "Compilation intermediaire de la lanterne ; remplacee par v0232 pour le drapeau de palette pendant la disparition du boss.",
+    "validation": "build_only",
+    "reports": [
+      {
+        "file": "lantern_release_v0230_report.json",
+        "sha256": "2c22c9ea7e6e48dd7da50fbad3682e8d0357cbde20a11725b33b8f06ef88c7fe"
+      },
+      {
+        "file": "lantern_v0230-final_report.json",
+        "sha256": "18ab85b8c71d85f00921f87da0a48d8eec54f7f5e35d75337903fb8a2b8ff6b5"
+      },
+      {
+        "file": "lantern_v0230-pal-aligned_report.json",
+        "sha256": "be70a5ef40e9a2d9515e2648e0ddb2019c15216caf31fb0d79432a4489139fab"
+      },
+      {
+        "file": "inventory_acceptance_v0230_report.json",
+        "sha256": "4a0f5b2042dba500db6974179d9782edcbf7c13e0fed251b621fb9f8d8c4c4df"
+      },
+      {
+        "file": "inventory_acceptance_v0230-pal_report.json",
+        "sha256": "6f87a4171e18720ff63b088fa766619a9e67b3a3244b15a6163a7b502ed3ecce"
+      }
+    ]
+  },
+  {
+    "version": 231,
+    "sha256": "390ada84d7e3bf6ed4c029432a83dacc95502d8f1a6c893ea2249d5f1975388a",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T18:53:40.308579+00:00",
+    "rom": "v0231-390ada84/gaw-megadrive-v0231.bin",
+    "notes": "Compilation intermediaire de la lanterne ; remplacee par v0232 pour le drapeau de palette pendant la disparition du boss.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 232,
+    "sha256": "786d954c9bebd204d564d316279fbb7c78e47f59c2ff7fdb273bad4702ff935b",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-22T18:55:57.257101+00:00",
+    "rom": "v0232-786d954c/gaw-megadrive-v0232.bin",
+    "notes": "Lanterne fonctionnelle et palette du boss conservee durant sa disparition ; 6 contextes PAL/NTSC verifies.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "lantern_release_v0232_report.json",
+        "sha256": "875c3f2c32ccde2913350c711c14a9aed37fcee9545a1179ddb5c75b8d804d5d"
+      },
+      {
+        "file": "lantern_v0232_report.json",
+        "sha256": "3dcbea8e32f266fc7da6480c0fd74fe45f0bad98a24ab0557231499a010c213c"
+      },
+      {
+        "file": "lantern_v0232-pal_report.json",
+        "sha256": "ad9ad51c6db134ec5e1debcc6c5d19152e8c74ed892ad70f274c877033d6752d"
+      },
+      {
+        "file": "lantern_v0232-boss_report.json",
+        "sha256": "af3997f3f3e0b9107f5341182c9063fda1fe2e997ef48a787376e202046da962"
+      },
+      {
+        "file": "lantern_v0232-boss-pal_report.json",
+        "sha256": "70a42961e2f25658efd823db9db4079caebbe57cd3fc72ed3ea8b23ac284a7a1"
+      },
+      {
+        "file": "lantern_v0232-boss-death_report.json",
+        "sha256": "7c52345566517dcebc179e7e38ee564a9935069f42bdcb12a77fce1dfcb08844"
+      },
+      {
+        "file": "lantern_v0232-boss-death-pal_report.json",
+        "sha256": "ce23030a79ddd450c0187378013cacb543d2e8eb0326ac7a9752a987495823e0"
+      },
+      {
+        "file": "inventory_acceptance_v0232_report.json",
+        "sha256": "f300a668561b215959be13db686f90305cdd64c43a6509f027db856c6c91daa0"
+      },
+      {
+        "file": "inventory_acceptance_v0232-pal_report.json",
+        "sha256": "962808b0a8235aa3cb65338c7780f354374ffe96753a8cd818d6eb9a4b48cfba"
+      }
+    ]
   }
 ]

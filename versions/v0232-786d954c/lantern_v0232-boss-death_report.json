@@ -1,0 +1,35 @@
+{
+  "md_sha256": "786d954c9bebd204d564d316279fbb7c78e47f59c2ff7fdb273bad4702ff935b",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "region": "auto",
+  "controlled_room_and_ownership": true,
+  "boss_context_flag": true,
+  "boss_death_latch": true,
+  "initial_clock_aligned": true,
+  "activation_background_palette_frames_exact": 58,
+  "cases": {
+    "sms": {
+      "activated": true,
+      "lit": true,
+      "selected_reset": true,
+      "owned": 1,
+      "repeat_keeps_selection": true,
+      "magic_preserved": true,
+      "menu_return": true,
+      "lit_through_menu": true
+    },
+    "md": {
+      "activated": true,
+      "lit": true,
+      "selected_reset": true,
+      "owned": 1,
+      "repeat_keeps_selection": true,
+      "magic_preserved": true,
+      "menu_return": true,
+      "lit_through_menu": true
+    }
+  },
+  "settled_noncycling_background_palette_exact": true,
+  "full_game_verified": false
+}

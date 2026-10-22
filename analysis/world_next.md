@@ -1322,3 +1322,9 @@ Optional rooms/items, other dungeons, source RNG/whole-campaign/hardware/audio f
 
 
 v0229: restored inventory rejection command A1 for absent items and owned slots9/11 outside exterior graphics class (SMS7326..7356). Eight controlled ownership/context fixtures per NTSC/PAL match selection and sound commands. Natural axe acquisition/equip/close/attack passes on SMS and native; SMS uses one Continue, MD none. Cadence/RNG/full campaign remain unfinished.
+
+
+v0230: native lantern item3 now translates2FD2..3020/BDBE/BE78. Dark-room-only, A9,40 display waits and original color table,0ACE fade,reset selection0 with icon refresh. Retained through inventory; repeat in lit room does nothing. Controlled room/ownership and one initial clock alignment:58 background palette frames match SMS per NTSC/PAL. Inventory8 cases per region and normal boot-to-dungeon entry pass. Natural lantern acquisition/full campaign/RNG/global cadence remain unverified or unfinished.
+
+
+v0232: recommended lantern release, supersedes intermediate230/231. C0AE latch is set by1CD8/1CF3 music selection, retained while boss_death_music_hold, cleared by2AB1 gem. Lantern and normal dungeon palette use this latch, including after actor bit40 is cleared during death. Six controlled room/ownership/initial-phase contexts (normal,boss-present,boss-death x NTSC/PAL) compare58 background palette frames each. Natural first-dungeon entrance and inventory8 cases per region pass. Natural lantern acquisition/full campaign/RNG/global cadence remain unfinished or unverified.

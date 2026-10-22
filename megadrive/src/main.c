@@ -95,6 +95,7 @@ static u16 save_resume_room,save_resume_health;
 static u16 world_graphics_class,house_return_room,house_return_x,house_return_y;
 static u16 world_dungeon_number;
 static u16 world_dungeon_dark;
+static volatile u8 world_boss_state; /* C0AE, cleared by gem appearance. */
 static u8 game_save_state[0x250];
 static u8 room_metadata[3]; /* C06E..C070 */
 static u16 room_id,game_state,transition_direction,transition_stage,transition_step;
@@ -864,9 +865,37 @@ static u16 hero_collision_index(u16 which)
  * Direction changes accept exactly one held cardinal button. Existing motion
  * continues through the shared integration tail. Other selected items pending. */
 static void inventory_hud_icon(void);
+static void fade_world_palette(const u16 *target,bool fade_in);
 static u16 dungeon_bitmap_pending;
 
 static void update_hero_sprites(void);
+
+/* 2FD2..3020 / bank5 BDBE / BE78: the lantern only lights a dark
+ * dungeon room. Forty display waits flash its last three background colors,
+ * then 0ACE fades to the normal dungeon palette. Room loading selects the
+ * dark palette again; opening the inventory must retain the lit room. */
+static void activate_lantern(void)
+{
+    u16 n,k,index,target[32],boss=world_boss_state;
+    if(!world_dungeon_dark) return;
+    sound_effect(0xa9);
+    for(n=0;n<40;n++)
+    {
+        if(!(world_clock()&3))
+        {
+            for(k=0;k<3;k++) sms_palette[13+k]=boss?0:world_dungeon_color_cycle[((world_clock()>>2)&3)*3+k];
+            set_world_palette();
+        }
+        wait_frame();
+    }
+    world_dungeon_dark=0;
+    memcpy(target,sms_palette,sizeof(target));
+    index=world_dungeon_number>10?0:world_dungeon_number;
+    for(n=0;n<16;n++) target[n]=world_dungeon_palettes[index*16+n];
+    fade_world_palette(target,TRUE);
+    hero_selected_item=0;inventory_hud_icon();
+    wait_frame();wait_frame();world_clock_shift+=2;
+}
 
 /* 30BB/3021: a fresh heal activation costs magic even at full health.
  * Current normal exterior class heals sixteen, clamped to C0DA. */
@@ -907,6 +936,7 @@ static void activate_hero_item(void)
         sound_effect_main(0x97);inventory_hud_icon();
         wait_frame();world_clock_shift+=2;
     }
+    else if(hero_selected_item==3) activate_lantern();
     else if((hero_selected_item==4 || hero_selected_item==5) && !world_spell_state[0])
     {
         if((hero_selected_item==5 || !hero_fire_charge) && !spend_spell_magic())
@@ -1634,7 +1664,6 @@ static void check_room_puzzle(u8 flags,u16 stage)
 extern const u8 reward_labels[],reward_label_index[],reward_hero_bitmap[],reward_hero_frame[];
 extern const u8 fairy_heart_icon[],fairy_magic_icon[];
 static volatile u16 item_reward_active,item_reward_number;
-static volatile u8 world_boss_state; /* C0AE, cleared by gem appearance. */
 static bool boss_death_music_hold;
 extern const u8 gem_labels[],gem_label_index[],gem_window_icons[],gem_reward_hero_frame[],gem_tile_table[];
 static void update_world_music(void);
@@ -2072,10 +2101,14 @@ extern const u8 world_music_rooms[];
 static void update_world_music(void)
 {
     u16 n,track=world_graphics_class==1?(room_id==0xbf?0x8b:0x87):0x82;
+    world_boss_state=0;
     if(world_graphics_class==2)
     {
         track=0x83;
         for(n=0;n<8;n++) if(world_actor_state[n*0x30+3]&0x40) track=0x86;
+        /* 1CD8..1CF3: retain this latch throughout the boss death wait;
+         * 2AB1 clears it when the gem appears, after actor bit40 is gone. */
+        world_boss_state=track==0x86;
     }
     if(!world_graphics_class) for(n=0;n<11;n++) if(room_id==world_music_rooms[n]) track=0x84;
     if(sound_current_track!=track) sound_music(track);
@@ -2298,9 +2331,7 @@ static void animate_world_palette(void)
     if(world_graphics_class==1) animate_house_room();
     if(world_graphics_class==2 && !world_dungeon_dark && !(world_clock()&3))
     {
-        u16 boss=0;
-        for(n=0;n<8;n++) boss|=world_actor_state[n*0x30+3]&0x40;
-        for(n=0;n<3;n++) sms_palette[13+n]=boss?0:world_dungeon_color_cycle[((world_clock()>>2)&3)*3+n];
+        for(n=0;n<3;n++) sms_palette[13+n]=world_boss_state?0:world_dungeon_color_cycle[((world_clock()>>2)&3)*3+n];
     }
     if(!world_graphics_class && !(world_clock()&7)) for(n=0;n<4;n++) sms_palette[12+n]=world_water_cycle[((world_clock()&24)>>3)+n];
     prepare_hero_armor_palette();

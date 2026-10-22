@@ -1,0 +1,30 @@
+{
+  "md_sha256": "786d954c9bebd204d564d316279fbb7c78e47f59c2ff7fdb273bad4702ff935b",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "reports": [
+    "lantern_v0232",
+    "lantern_v0232-pal",
+    "lantern_v0232-boss",
+    "lantern_v0232-boss-pal",
+    "lantern_v0232-boss-death",
+    "lantern_v0232-boss-death-pal",
+    "inventory_acceptance_v0232",
+    "inventory_acceptance_v0232-pal"
+  ],
+  "regions": [
+    "ntsc",
+    "pal"
+  ],
+  "controlled_room_ownership_and_initial_phase": true,
+  "contexts": [
+    "normal",
+    "boss_present",
+    "boss_death_latch"
+  ],
+  "activation_background_palette_frames_exact_per_context": 58,
+  "total_background_palette_frames_compared": 348,
+  "normal_boot_to_first_dungeon_both_regions": true,
+  "sound_unhandled_command": 0,
+  "full_game_verified": false
+}

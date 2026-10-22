@@ -1,0 +1,20 @@
+{
+  "md_sha256": "1a09f7c63cd924ea9f7aee15023d91856b3da11c143bdbdd390350c04a47a8ba",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "reports": [
+    "lantern_v0230-final",
+    "lantern_v0230-pal-aligned",
+    "inventory_acceptance_v0230",
+    "inventory_acceptance_v0230-pal"
+  ],
+  "regions": [
+    "ntsc",
+    "pal"
+  ],
+  "controlled_room_ownership_and_initial_phase": true,
+  "activation_background_palette_frames_exact_per_region": 58,
+  "normal_boot_to_first_dungeon_both_regions": true,
+  "sound_unhandled_command": 0,
+  "full_game_verified": false
+}

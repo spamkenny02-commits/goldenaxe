@@ -4,6 +4,9 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0232 | [Telecharger](v0232-786d954c/gaw-megadrive-v0232.bin) | targeted_checks_passed | Lanterne fonctionnelle et palette du boss conservee durant sa disparition ; 6 contextes PAL/NTSC verifies. | `786d954c9bebd204d564d316279fbb7c78e47f59c2ff7fdb273bad4702ff935b` |
+| v0231 | [Telecharger](v0231-390ada84/gaw-megadrive-v0231.bin) | build_only | Compilation intermediaire de la lanterne ; remplacee par v0232 pour le drapeau de palette pendant la disparition du boss. | `390ada84d7e3bf6ed4c029432a83dacc95502d8f1a6c893ea2249d5f1975388a` |
+| v0230 | [Telecharger](v0230-1a09f7c6/gaw-megadrive-v0230.bin) | build_only | Compilation intermediaire de la lanterne ; remplacee par v0232 pour le drapeau de palette pendant la disparition du boss. | `1a09f7c63cd924ea9f7aee15023d91856b3da11c143bdbdd390350c04a47a8ba` |
 | v0229 | [Telecharger](v0229-a9ae2d0a/gaw-megadrive-v0229.bin) | targeted_checks_passed | Inventaire : bruitage de refus restaure, objets exterieur refuses en interieur ; hache acquise/equipee/utilisee par parcours normal. | `a9ae2d0abd7e49f0d638db0b23e28b5bb05e48123e1df7a00ce066ed69ef78a7` |
 | v0228 | [Telecharger](v0228-a875719f/gaw-megadrive-v0228.bin) | targeted_checks_passed | Descriptions graphiques natives : preparation de scene a12 acteurs environ5% plus courte, pixels identiques PAL-NTSC. Premier boss/cristal/sortie revalides sans mort ; campagne/cadence/hasard incomplets. | `a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a` |
 | v0227 | [Telecharger](v0227-4bea5e39/gaw-megadrive-v0227.bin) | build_only | Compilation intermediaire : valeurs exactes, surcout du rendu observe. Ne pas utiliser comme version recommandee. | `4bea5e399dc59c58e914b0bdcc033c4aaa38401c88d54feddfcc7e4dea4fe620` |
