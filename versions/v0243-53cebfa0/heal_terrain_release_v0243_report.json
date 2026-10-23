@@ -1,0 +1,254 @@
+{
+  "md_sha256": "53cebfa065645dcc9336159f41f334be7dfdf32fff5e35afb33746c0ebfb46c4",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    {
+      "region": "auto",
+      "case": "ordinary",
+      "graphics": 0,
+      "floor_tile": 37,
+      "terrain": 0,
+      "initial_health": 9,
+      "initial_magic": 48,
+      "activations": 2,
+      "heal_per_activation": 16,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 41,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 0,
+        "owned": 1
+      }
+    },
+    {
+      "region": "auto",
+      "case": "enhanced",
+      "graphics": 0,
+      "floor_tile": 160,
+      "terrain": 2,
+      "initial_health": 9,
+      "initial_magic": 48,
+      "activations": 2,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 73,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "auto",
+      "case": "clamped",
+      "graphics": 0,
+      "floor_tile": 161,
+      "terrain": 2,
+      "initial_health": 89,
+      "initial_magic": 24,
+      "activations": 1,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 96,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "auto",
+      "case": "full",
+      "graphics": 0,
+      "floor_tile": 160,
+      "terrain": 2,
+      "initial_health": 96,
+      "initial_magic": 24,
+      "activations": 1,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 96,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "auto",
+      "case": "insufficient",
+      "graphics": 0,
+      "floor_tile": 160,
+      "terrain": 2,
+      "initial_health": 9,
+      "initial_magic": 23,
+      "activations": 0,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 9,
+        "magic": 23,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "auto",
+      "case": "dungeon",
+      "graphics": 2,
+      "floor_tile": 12,
+      "terrain": 2,
+      "initial_health": 9,
+      "initial_magic": 48,
+      "activations": 2,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 73,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "pal",
+      "case": "ordinary",
+      "graphics": 0,
+      "floor_tile": 37,
+      "terrain": 0,
+      "initial_health": 9,
+      "initial_magic": 48,
+      "activations": 2,
+      "heal_per_activation": 16,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 41,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 0,
+        "owned": 1
+      }
+    },
+    {
+      "region": "pal",
+      "case": "enhanced",
+      "graphics": 0,
+      "floor_tile": 160,
+      "terrain": 2,
+      "initial_health": 9,
+      "initial_magic": 48,
+      "activations": 2,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 73,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "pal",
+      "case": "clamped",
+      "graphics": 0,
+      "floor_tile": 161,
+      "terrain": 2,
+      "initial_health": 89,
+      "initial_magic": 24,
+      "activations": 1,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 96,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "pal",
+      "case": "full",
+      "graphics": 0,
+      "floor_tile": 160,
+      "terrain": 2,
+      "initial_health": 96,
+      "initial_magic": 24,
+      "activations": 1,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 96,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "pal",
+      "case": "insufficient",
+      "graphics": 0,
+      "floor_tile": 160,
+      "terrain": 2,
+      "initial_health": 9,
+      "initial_magic": 23,
+      "activations": 0,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 9,
+        "magic": 23,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    },
+    {
+      "region": "pal",
+      "case": "dungeon",
+      "graphics": 2,
+      "floor_tile": 12,
+      "terrain": 2,
+      "initial_health": 9,
+      "initial_magic": 48,
+      "activations": 2,
+      "heal_per_activation": 32,
+      "consecutive_frames_exact": 52,
+      "final": {
+        "frame": 2870,
+        "health": 73,
+        "magic": 0,
+        "selected": 7,
+        "terrain": 2,
+        "owned": 1
+      }
+    }
+  ],
+  "controlled_cases": 12,
+  "consecutive_state_frame_comparisons": 624,
+  "full_game_verified": false,
+  "limits": [
+    "Controlled ownership, room class, floor words, resources and initial clock; terrain classification itself runs normally.",
+    "No full-frame pixel, audio waveform or natural acquisition claim."
+  ]
+}

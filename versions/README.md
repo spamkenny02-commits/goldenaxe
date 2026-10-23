@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0243 | [Telecharger](v0243-53cebfa0/gaw-megadrive-v0243.bin) | targeted_checks_passed | Soin : bonus terrain32 points contre16 ; 12 cas cibles PAL/NTSC. | `53cebfa065645dcc9336159f41f334be7dfdf32fff5e35afb33746c0ebfb46c4` |
 | v0242 | [Telecharger](v0242-b7ff1aa9/gaw-megadrive-v0242.bin) | targeted_checks_passed | Cloche de glace native et animation des motifs eau ; huit cas cibles PAL/NTSC. | `b7ff1aa9fc40e3f290f51e66f8918d54669ddab3a5c81384582b9fc117840943` |
 | v0241 | [Telecharger](v0241-3b9e06a3/gaw-megadrive-v0241.bin) | build_only | Compilation ; validation en attente. | `3b9e06a3c66a8c8104b9ee4172494394ec8c6e53cfee61b43bf67662501bbcf8` |
 | v0240 | [Telecharger](v0240-e5c34931/gaw-megadrive-v0240.bin) | targeted_checks_passed | Carte du monde utilisable : dessin progressif, marqueurs, quetes et restauration ;16 cas PAL/NTSC verifies. | `e5c3493162adfea6b539edfada41d471999c9e283e6edb035d1741813cb1b8c3` |

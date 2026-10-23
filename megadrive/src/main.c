@@ -904,8 +904,8 @@ static void activate_lantern(void)
     wait_frame();wait_frame();world_clock_shift+=2;
 }
 
-/* 30BB/3021: a fresh heal activation costs magic even at full health.
- * Current normal exterior class heals sixteen, clamped to C0DA. */
+/* 30BB/3021: fresh healing spends magic even at full health.
+ * 303A doubles healing on terrain context2; clamp against C0DA. */
 static bool spend_spell_magic(void)
 {
     static const u8 costs[4]={8,8,32,24};
@@ -958,7 +958,7 @@ static void activate_hero_item(void)
     }
     else if(hero_selected_item==7 && spend_spell_magic())
     {
-        u16 amount=hero_health+16;
+        u16 amount=hero_health+(hero_terrain_context==2?32:16);
         hero_health=amount>hero_max_health?hero_max_health:amount;
         sound_effect_main(0x97);
     }    else if(hero_selected_item==8 && hero_health!=hero_max_health)

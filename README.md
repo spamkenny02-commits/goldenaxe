@@ -5,19 +5,27 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0242 — 1024 Kio.**
+**Version courante : v0243 — 1024 Kio.**
 
-[Télécharger la ROM v0242](versions/v0242-b7ff1aa9/gaw-megadrive-v0242.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0243](versions/v0243-53cebfa0/gaw-megadrive-v0243.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `b7ff1aa9fc40e3f290f51e66f8918d54669ddab3a5c81384582b9fc117840943`
-Checksum Mega Drive : `96C6`
+SHA-256 : `53cebfa065645dcc9336159f41f334be7dfdf32fff5e35afb33746c0ebfb46c4`
+Checksum Mega Drive : `3793`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0242**.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0243**.
+Le soin respecte maintenant le bonus du terrain : 32 points dans le contexte
+prévu par la SMS, 16 ailleurs, avec plafonnement et coût de 24 points de magie.
+Douze cas contrôlés PAL/NTSC couvrent aussi le manque de magie, le maintien du
+bouton, la répétition et la vie déjà pleine ; 624 images d'état correspondent.
+Le sort de la sixième case reste à porter ; ses deux séquences plein écran
+sont maintenant désassemblées et leurs ressources identifiées.
+Voir les [changements et limites de la v0243](analysis/heal_terrain_v0243.md).
+
 La cloche de glace gèle maintenant l'eau en huit étapes, traite les ennemis
 présents et active les passages prévus par le jeu d'origine. Les motifs de
 l'eau extérieure sont aussi animés, en plus de leur palette.
@@ -31,7 +39,7 @@ La carte du monde est maintenant utilisable : aperçu des 225 écrans extérieur
 transformations de quête, marqueurs de position/trésor et retour au jeu.
 Seize cas contrôlés PAL/NTSC vérifient l’affichage, les commandes et la restauration.
 La génération reste trop rapide (environ 94 images d’avance en NTSC, 80 en PAL).
-Les v0236 à v0239 sont intermédiaires ; utiliser la v0240.
+Les v0236 à v0239 sont les compilations intermédiaires de cette fonctionnalité.
 Voir les [changements et limites de la v0240](analysis/world_overview_v0240.md).
 
 La plume magique permet maintenant de revenir au dernier point de sauvegarde,

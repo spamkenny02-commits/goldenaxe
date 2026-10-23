@@ -1,0 +1,37 @@
+{
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "production_ported": false,
+  "activation": "30A7..30BA",
+  "magic_cost": 32,
+  "level_byte": "C0E6",
+  "effect_dispatch": "C090; table6AF1",
+  "hero_initial": "37B3",
+  "hero_update": "37BD",
+  "level1": "6AFB..6C2D",
+  "level2": "6C2E..6D2B",
+  "finish_damage": "6BA7..6BF5",
+  "actor_visuals": "6DEA..6EEF",
+  "resources": [
+    {
+      "level": 1,
+      "compressed_start": 90939,
+      "compressed_end": 92168,
+      "decoded_bytes": 1504,
+      "decoded_sha256": "63ac17cad0bc9d651a5815ba9fa788d2883e97db2eb798bac2f0631dafee57cf"
+    },
+    {
+      "level": 2,
+      "compressed_start": 93512,
+      "compressed_end": 95753,
+      "decoded_bytes": 2528,
+      "decoded_sha256": "b8def80dc9ed49ac658836d65f775a77557d8af9a2476aaa6808895f7954db2d"
+    }
+  ],
+  "level1_grid_22_xy": "1ad654d68ed6c8d602d700d802d948d98ed9d4d91ada20dae6d9acd972d938d93ad838d7f2d6acd666d620d6",
+  "level2_blocks_10x6": "c4da08a8010484da10a8020482da20a8020682d938a8060682d880a80a0682d7f8a80e0682d6a0a9120602d678aa140602d668ab140602d658ac1406",
+  "remaining": [
+    "Translate both full-screen effects, shared orbiting sprites, actor damage, map/pattern/palette restoration and hero state6/7 as one production feature.",
+    "Confirm that temporary renderer storage can share modal union without overwriting room or restoration data.",
+    "Run source/native input checks for both levels, magic rejection, actors and indoor/outdoor return."
+  ]
+}
