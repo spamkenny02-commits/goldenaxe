@@ -7673,5 +7673,30 @@
         "sha256": "243cb25e5fc6d20d37a7917abe66083668184e4c96e8e613029a84884d67fc14"
       }
     ]
+  },
+  {
+    "version": 272,
+    "sha256": "3cbf990c66bdce19bff069e39711205fb451ad88c9b0daef8091c45aedad4454",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T15:46:36.392060+00:00",
+    "rom": "v0272-3cbf990c/gaw-megadrive-v0272.bin",
+    "notes": "Essai compteur modale ; remplace par273 avec le cout3559T de fin de construction. Phase physique PAL encore1 image en avance.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 273,
+    "sha256": "10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T15:54:41.446287+00:00",
+    "rom": "v0273-10116d2f/gaw-megadrive-v0273.bin",
+    "notes": "Horloge logique carte du monde : gel pendant dessin et reprise source, sans recalage apres activation. Phase physique encore0/1 image.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "overview_clock_release_v0273_report.json",
+        "sha256": "e1d4d05408558e120560f615b6770284e0226f7c65cf245b5ecfdc551ed7b3aa"
+      }
+    ]
   }
 ]

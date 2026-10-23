@@ -1,5 +1,5 @@
 {
-  "md_sha256": "8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6",
+  "md_sha256": "10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769",
   "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
   "passed": true,
   "cases": [
@@ -52,6 +52,8 @@
   "room_cost_cases": 1125,
   "pixel_cost_cases": 45000,
   "native_C_room_counter_cases": 1125,
+  "restore_cells_cases": 5,
+  "restore_cells_tstates": 3559,
   "metadata_kinds_observed": [
     0,
     1,

@@ -1,0 +1,328 @@
+{
+  "md_sha256": "10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "controlled_cases": 22,
+  "cases": [
+    {
+      "case": "v0273-all-flags-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-all-flags",
+      "clock_phase_offset": 0,
+      "same_physical_clock": true
+    },
+    {
+      "case": "v0273-all-ice-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-all-ice",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-both-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-both",
+      "clock_phase_offset": 0,
+      "same_physical_clock": true
+    },
+    {
+      "case": "v0273-close-b-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-close-b",
+      "clock_phase_offset": 0,
+      "same_physical_clock": true
+    },
+    {
+      "case": "v0273-dungeon-pal",
+      "guard": true,
+      "clock_phase_offset": 0
+    },
+    {
+      "case": "v0273-dungeon",
+      "guard": true,
+      "clock_phase_offset": 0
+    },
+    {
+      "case": "v0273-edited-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-edited",
+      "clock_phase_offset": 0,
+      "same_physical_clock": true
+    },
+    {
+      "case": "v0273-held-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-held",
+      "clock_phase_offset": 0,
+      "same_physical_clock": true
+    },
+    {
+      "case": "v0273-house-pal",
+      "guard": true,
+      "clock_phase_offset": 0
+    },
+    {
+      "case": "v0273-house",
+      "guard": true,
+      "clock_phase_offset": 0
+    },
+    {
+      "case": "v0273-ice-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-ice",
+      "clock_phase_offset": 0,
+      "same_physical_clock": true
+    },
+    {
+      "case": "v0273-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-treasure-pal",
+      "clock_phase_offset": 1,
+      "same_physical_clock": false
+    },
+    {
+      "case": "v0273-treasure",
+      "clock_phase_offset": 0,
+      "same_physical_clock": true
+    },
+    {
+      "case": "v0273",
+      "clock_phase_offset": 0,
+      "same_physical_clock": true
+    }
+  ],
+  "generation_clock_frame_observations": 16159,
+  "logical_clock_overview_images_exact": 168,
+  "physical_frame_sample_mismatches": 4,
+  "return_checks": [
+    {
+      "case": "v0273-all-flags-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 242,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-all-flags",
+      "source_frame": 4200,
+      "native_frame": 4200,
+      "same_logical_clock": 141,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-all-ice-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 242,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-all-ice",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 141,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-both-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 245,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-both",
+      "source_frame": 4200,
+      "native_frame": 4200,
+      "same_logical_clock": 145,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-close-b-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 245,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-close-b",
+      "source_frame": 4200,
+      "native_frame": 4200,
+      "same_logical_clock": 145,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-edited-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 245,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-edited",
+      "source_frame": 4200,
+      "native_frame": 4200,
+      "same_logical_clock": 145,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-held-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 245,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-held",
+      "source_frame": 4200,
+      "native_frame": 4200,
+      "same_logical_clock": 145,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-ice-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 245,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-ice",
+      "source_frame": 4200,
+      "native_frame": 4200,
+      "same_logical_clock": 144,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 245,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-treasure-pal",
+      "source_frame": 4201,
+      "native_frame": 4200,
+      "same_logical_clock": 245,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273-treasure",
+      "source_frame": 4200,
+      "native_frame": 4200,
+      "same_logical_clock": 145,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    },
+    {
+      "case": "v0273",
+      "source_frame": 4200,
+      "native_frame": 4200,
+      "same_logical_clock": 145,
+      "normalized_pixel_differences": 0,
+      "cells_preserved_bytes": 160,
+      "flags_verified_bytes": 256,
+      "map_hud_exact_bytes": 1536
+    }
+  ],
+  "source_closing_checks": [
+    {
+      "case": "close-ntsc",
+      "closing_counter_steps": [
+        1,
+        1
+      ]
+    },
+    {
+      "case": "close-pal",
+      "closing_counter_steps": [
+        1,
+        1
+      ]
+    }
+  ],
+  "alignment_writes_after_activation": 0,
+  "baseline_271_same_frame_marker_mismatches": 29,
+  "full_game_verified": false,
+  "physical_clock_exact": false,
+  "limits": [
+    "One initial clock alignment at2850 and controlled ownership/flags. No post-activation clock or counter injection. Natural global boot phase is not established.",
+    "The modal counter holds through construction and advances by source full waits. Some UI/return frames remain one physical frame early, including ordinary PAL; comparisons at the same logical counter are exact.",
+    "Initial/closing counter transitions can occur one frame apart while the screen is hidden. Source raster publication, complete restoration timing, RNG and full campaign remain unfinished."
+  ]
+}

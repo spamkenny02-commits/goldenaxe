@@ -4,6 +4,8 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0273 | [Telecharger](v0273-10116d2f/gaw-megadrive-v0273.bin) | targeted_checks_passed | Horloge logique carte du monde : gel pendant dessin et reprise source, sans recalage apres activation. Phase physique encore0/1 image. | `10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769` |
+| v0272 | [Telecharger](v0272-3cbf990c/gaw-megadrive-v0272.bin) | build_only | Essai compteur modale ; remplace par273 avec le cout3559T de fin de construction. Phase physique PAL encore1 image en avance. | `3cbf990c66bdce19bff069e39711205fb451ad88c9b0daef8091c45aedad4454` |
 | v0271 | [Telecharger](v0271-8a92b40c/gaw-megadrive-v0271.bin) | targeted_checks_passed | Carte du monde : cadence source225 salles, quetes/gel ; fin a0..1 image SMS dans18 cas exterieurs.22 scenarios cibles. | `8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6` |
 | v0270 | [Telecharger](v0270-36af7e88/gaw-megadrive-v0270.bin) | targeted_checks_passed | Rendu sprites/decor allege : duree de vie et clignotement loot alignes, 14 cas PAL/NTSC et7 ramassages. | `36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4` |
 | v0269 | [Telecharger](v0269-0f1ea001/gaw-megadrive-v0269.bin) | build_only | Essai conversion rapide : grands objets NTSC encore1 image en retard. Remplace par270. | `0f1ea0018e7631177500d9100325f4ea81e46193831b09ca2518d0baeda101c7` |

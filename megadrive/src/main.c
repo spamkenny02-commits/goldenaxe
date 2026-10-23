@@ -99,6 +99,8 @@ static volatile u16 screen_spell_active,screen_spell_iteration;
 static volatile u16 screen_spell_video_pending;
 static volatile u16 overview_pacing,overview_pacing_error;
 static volatile u32 overview_work_budget;
+static volatile u16 world_overview_active;
+static u16 overview_clock;
 static u16 screen_spell_sprite_count;
 static volatile u16 screen_spell_pacing_error,screen_spell_model_gap,screen_spell_late_publications;
 static u16 screen_spell_clock;
@@ -128,7 +130,7 @@ static volatile u16 resume_phase,resume_contour,resume_fade_step;
 static u32 world_clock_shift;
 static u8 dungeon_animation_scan,dungeon_animation_phase;
 static u16 room_shutter_state,room_shutter_direction,room_script_coordinate,room_script_coordinate_pending,room_script_direction;
-static u8 world_clock(void) { return screen_spell_active?(u8)screen_spell_clock:(u8)(vtimer-world_clock_shift); }
+static u8 world_clock(void) { return screen_spell_active?(u8)screen_spell_clock:world_overview_active?(u8)overview_clock:(u8)(vtimer-world_clock_shift); }
 /* 55F8: selected item1 at level2 is required for type6D pending damage. */
 bool world_final_boss_weapon_valid(void) { return hero_selected_item==1 && hero_weapon_level==2; }
 /* 4FC2..4FCA: contact with4D/4E subtracts eight magic, clamped at zero. */

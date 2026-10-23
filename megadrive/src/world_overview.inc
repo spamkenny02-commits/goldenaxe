@@ -1,7 +1,6 @@
 /* 31E7..3291, bank2 837C/83EC/844D: exterior world overview. */
 #include "world_overview_assets.inc"
 _Static_assert(6624<=sizeof(house_dialogue_storage.dialogue),"Overview backup exceeds modal workspace");
-static volatile u16 world_overview_active;
 
 static u8 overview_cell_color(u8 cell)
 {
@@ -35,11 +34,11 @@ static void show_world_overview(void)
     u16 number=room_id,n,row,col,plane,tile,previous=input,original31=sms_palette[31];
     u32 closed_at,budget,frames,work=33;
     u8 metadata[3];
-    world_overview_active=1;
+    overview_clock=world_clock();world_overview_active=1;
     memcpy(saved,sms_vram,5120);memcpy(saved+5120,sms_vram+0x3f40,64);
     memcpy(saved+5184,sms_vram+0x3800,1280);memcpy(saved+6464,scratch+0x800,160);
     memcpy(metadata,room_metadata,3);
-    blank_inventory_playfield();
+    blank_inventory_playfield();overview_clock=(overview_clock+1)&255; /*20DA/0BC6*/
     for(n=0x3800;n<0x3d00;n+=2) { sms_vram[n]=255;sms_vram[n+1]=8; }
     draw_frame(0x380e,19,13);
     for(row=0;row<10;row++) for(col=0;col<15;col++)
@@ -57,6 +56,7 @@ static void show_world_overview(void)
     convert_patterns_range_fast(0,160);convert_patterns_range_fast(506,2);
     VDP_loadTileData(md_patterns,16,160,CPU);VDP_loadTileData(md_patterns+506*8,522,2,CPU);
     set_world_palette();map_origin=0x3800;draw_map();
+    overview_clock=(overview_clock+1)&255; /*837C/229C full wait*/
     overview_work_budget=0;overview_pacing_error=0;overview_pacing=1;
     for(room_id=0x10;room_id<256;room_id++)
     {
@@ -99,21 +99,24 @@ static void show_world_overview(void)
             }
         }
     }
-    overview_pacing=0;
     room_id=number;memcpy(scratch+0x800,saved+6464,160);memcpy(room_metadata,metadata,3);
-    convert_patterns_range_fast(0,160);convert_patterns_range_fast(506,2);
-    VDP_loadTileData(md_patterns,16,160,CPU);VDP_loadTileData(md_patterns+506*8,522,2,CPU);
-    sms_palette[31]=3;set_world_palette();map_origin=0x3800;draw_map();
+    work+=overview_restore_tstates; /*3250..326A SRAM restoration*/
+    while(overview_work_budget<work && !overview_pacing_error) __asm__ volatile ("nop");
+    overview_pacing=0;
+    /* The225 rooms already published every overview tile. Source3250..3267
+     * only restores the cells and changes the marker color, with no reload. */
+    sms_palette[31]=3;set_world_palette();
     /* 326A resumes input sampling after construction. Retain activation's
      * previous input: a different button held during generation is fresh. */
     world_overview_active=2;
     while(TRUE)
     {
-        wait_frame();overview_sprites();
+        wait_frame();overview_clock=(overview_clock+1)&255;overview_sprites();
         if((input&~previous)&(BUTTON_B|BUTTON_C)) break;
         previous=input;
     }
     world_overview_active=3;closed_at=vtimer;blank_inventory_playfield();
+    overview_clock=(overview_clock+1)&255; /*3286/20DA*/
     memcpy(sms_vram,saved,5120);memcpy(sms_vram+0x3f40,saved+5120,64);
     memcpy(sms_vram+0x3800,saved+5184,1280);
     build_room_map(sms_vram+0x3800,world_new_md);
@@ -131,6 +134,7 @@ static void show_world_overview(void)
     set_world_palette();draw_map();update_hero_sprites();
     frames+=SYS_isPAL()?2:3;
     while(vtimer-closed_at<frames) wait_frame();
-    world_clock_shift+=2;
+    overview_clock=(overview_clock+1)&255; /*328F/1DE2*/
+    world_clock_shift=vtimer-overview_clock;
     world_overview_active=0;world_previous_input=input;
 }

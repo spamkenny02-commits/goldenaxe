@@ -1,0 +1,115 @@
+{
+  "steady_clock_phase_offset": 0,
+  "generation_counter_values": {},
+  "generation_expected_counter": 106,
+  "generation_counter_frozen": true,
+  "logical_clock_pixel_comparisons": [
+    {
+      "source_frame": 3700,
+      "native_frame": 3700,
+      "differences": 0,
+      "clock": 176
+    },
+    {
+      "source_frame": 3716,
+      "native_frame": 3716,
+      "differences": 0,
+      "clock": 192
+    },
+    {
+      "source_frame": 3732,
+      "native_frame": 3732,
+      "differences": 0,
+      "clock": 208
+    }
+  ],
+  "physical_frames_exact": false,
+  "ui_clock_mismatches": [],
+  "initial_clock_alignment_frame": 2850,
+  "clock_alignment_after_activation": false,
+  "all_room_flags": false,
+  "ice": false,
+  "md_sha256": "10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "region": "pal",
+  "graphics": 2,
+  "marker_sweep": false,
+  "held_close_during_generation": false,
+  "close_button": "C",
+  "sample_selections": {
+    "sms": 11,
+    "md": 11
+  },
+  "treasure": false,
+  "edited_room_11": false,
+  "controlled_ownership_quest_flags_and_one_clock_alignment": true,
+  "overview_planar_5120_bytes_exact": false,
+  "overview_tilemap_1280_bytes_exact": true,
+  "pixel_comparisons": [
+    {
+      "frame": 3700,
+      "differences": 0
+    },
+    {
+      "frame": 3716,
+      "differences": 0
+    },
+    {
+      "frame": 3732,
+      "differences": 0
+    }
+  ],
+  "return_verified": true,
+  "final": {
+    "sms": {
+      "frame": 4201,
+      "clock": 165,
+      "room": 149,
+      "hero": 1,
+      "selected": 11,
+      "owned": 1,
+      "game": 12,
+      "x": 34816,
+      "y": 28672,
+      "health": 24,
+      "gold": 0,
+      "magic": 24,
+      "audio_error": 0,
+      "overview": 0,
+      "pacing_error": 0
+    },
+    "md": {
+      "frame": 4201,
+      "clock": 165,
+      "room": 149,
+      "hero": 1,
+      "selected": 11,
+      "owned": 1,
+      "game": 12,
+      "x": 34816,
+      "y": 28672,
+      "health": 24,
+      "gold": 0,
+      "magic": 24,
+      "audio_error": 0,
+      "overview": 0,
+      "pacing_error": 0
+    }
+  },
+  "room_progress": {
+    "sms": [
+      {
+        "frame": 2849,
+        "room": 149
+      }
+    ],
+    "md": [
+      {
+        "frame": 2849,
+        "room": 149
+      }
+    ]
+  },
+  "full_game_verified": false
+}

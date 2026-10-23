@@ -5,19 +5,32 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0271 — 1024 Kio.**
+**Version courante : v0273 — 1024 Kio.**
 
-[Télécharger la ROM v0271](versions/v0271-8a92b40c/gaw-megadrive-v0271.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0273](versions/v0273-10116d2f/gaw-megadrive-v0273.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6`
-Checksum Mega Drive : `ED95`
+SHA-256 : `10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769`
+Checksum Mega Drive : `79C8`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0271**.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0273**.
+Le compteur logique reste maintenant figé pendant la construction de la carte
+et avance avec les attentes complètes de la routine SMS. Les marqueurs et le
+retour au jeu retrouvent ainsi leur phase sans réécriture de l'horloge après
+le dessin. Le rechargement graphique final inutile est supprimé ; le budget
+inclut les 3 559 T de restauration des cellules avant la lecture des boutons.
+Les 22 scénarios utilisent seulement un alignement avant activation : 168
+images de l'aperçu et 18 retours correspondent au même compteur logique.
+Le NTSC ordinaire est à la même phase physique ; le PAL ordinaire reste une
+image en avance. Les transitions cachées et la cadence physique complète
+restent à aligner. La v0272 est un essai intermédiaire ; utiliser la v0273.
+Voir les [changements et limites de la v0273](analysis/overview_clock_v0273.md).
+
+La **v0271** avait rapproché la durée de génération de la carte du monde.
 La génération de la carte du monde suit maintenant le travail des routines SMS :
 décodage des 225 salles, transformations de quête/gel et projection des cellules.
 Elle finit à la même image que la SMS en NTSC et une image avant en PAL dans

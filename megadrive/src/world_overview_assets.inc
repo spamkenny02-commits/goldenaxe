@@ -90,3 +90,4 @@ static const u16 overview_decode_tstates[] = {
     17139,18502,17223,18586,17396,18273,17480,18357,17848,18725,17932,18809,0,0,0,0,
 };
 static const u16 overview_pixel_tstates[] = {2201,2313,2425,2537,2649,2761,2873,2985};
+static const u16 overview_restore_tstates=3559;

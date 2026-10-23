@@ -135,3 +135,8 @@ def room_loop_tail(room):
  total=10+16+6+16+(8 if room&15==14 else 13)
  if room&15==14:total+=16+6+16+4+4+(7 if room==254 else 12+7)
  return total
+
+
+def restore_cells_cost():
+ #3250..326A: POP/restore room, enable SRAM, LDIR160, disable SRAM,color.
+ return 10+16+(17+4+13+7+13+10)+10+10+10+(159*21+16)+(17+13+7+13+4+10)+7+13

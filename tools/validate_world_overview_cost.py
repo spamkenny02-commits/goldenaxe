@@ -2,7 +2,7 @@
 import ctypes as c,gzip,json,os,re,subprocess
 from run_core import ROOT
 from archive_lossless_evidence import sha
-from world_overview_cost import room_decode_cost,projection_cost,room_projection_cost,room_loop_tail
+from world_overview_cost import room_decode_cost,projection_cost,room_projection_cost,room_loop_tail,restore_cells_cost
 
 def read(path):
  if path.exists():return path.read_bytes()
@@ -34,8 +34,9 @@ u32 cost(u16 room_id,u16 flag,u16 ice,const u8 *cells) {u16 row,col,plane;u32 wo
    if pc==0x322c:pending_pixel=e
    if pc==0x322f and pending_pixel:
     room=pending_pixel[4];idx=((room>>4)-1)*15+(room&15);cells=snap[idx*8192+0x1c00:idx*8192+0x1ca0];row=pending_pixel[8]&255;col=pending_pixel[8]>>8;observed=((e[2]-pending_pixel[2])-(e[3]-pending_pixel[3]))//15;assert observed==17+projection_cost(cells,colors,row,col),(tag,room,row,col,observed);pixels+=1
+  tail=next(e for e in events if e[1]==0x326a);tail_observed=((tail[2]-stop[2])-(tail[3]-stop[3]))//15;assert tail_observed==restore_cells_cost()==3559
   observed=((stop[2]-start[2])-(stop[3]-start[3]))//15;assert observed==total and rooms==225 and pixels==9000,(tag,total,observed,rooms,pixels)
   cases.append(dict(case=tag,room_costs_exact=rooms,pixel_costs_exact=pixels,whole_foreground_tstates=total,first_room_frame=start[0],finished_frame=stop[0],snapshots_sha256=sha(snap)))
- r=dict(md_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),source_sha256=sha(rom),passed=True,cases=cases,room_cost_cases=1125,pixel_cost_cases=45000,native_C_room_counter_cases=1125,metadata_kinds_observed=sorted(kinds),native_body_sha256=sha(body.encode()),full_game_verified=False,limits=['Read-only observer on unchanged SMS; foreground deltas subtract actual IRQ work. Four all-zero/all-one quest and ice combinations plus PAL baseline.','C counter body is extracted from the production overview; cost tables are generated from original instructions/RLE/metadata, never capture tables.','No proof of source terrain-context5 or global boot/raster/refresh alignment. Runtime IRQ debit uses live native semantic audio work and whole frame quantization.'])
+ r=dict(md_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),source_sha256=sha(rom),passed=True,cases=cases,room_cost_cases=1125,pixel_cost_cases=45000,native_C_room_counter_cases=1125,restore_cells_cases=5,restore_cells_tstates=3559,metadata_kinds_observed=sorted(kinds),native_body_sha256=sha(body.encode()),full_game_verified=False,limits=['Read-only observer on unchanged SMS; foreground deltas subtract actual IRQ work. Four all-zero/all-one quest and ice combinations plus PAL baseline.','C counter body is extracted from the production overview; cost tables are generated from original instructions/RLE/metadata, never capture tables.','No proof of source terrain-context5 or global boot/raster/refresh alignment. Runtime IRQ debit uses live native semantic audio work and whole frame quantization.'])
  (ROOT/'analysis/world_overview_cost_report.json').write_bytes((json.dumps(r,indent=2)+'\n').encode());print(dict(rooms=1125,pixels=45000,native_counter_cases=1125,cases=cases,metadata_kinds=sorted(kinds)))
 if __name__=='__main__':main()
