@@ -1,0 +1,72 @@
+{
+  "md_sha256": "8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    {
+      "case": "base",
+      "room_costs_exact": 225,
+      "pixel_costs_exact": 9000,
+      "whole_foreground_tstates": 27611056,
+      "first_room_frame": 2868,
+      "finished_frame": 3356,
+      "snapshots_sha256": "c8bd81c412b786d7e6b199f869ccfa232e9600eb63851b3933dfca572ec3ace6"
+    },
+    {
+      "case": "all",
+      "room_costs_exact": 225,
+      "pixel_costs_exact": 9000,
+      "whole_foreground_tstates": 27829148,
+      "first_room_frame": 2868,
+      "finished_frame": 3360,
+      "snapshots_sha256": "eb001446f8f903cacb91f1ace7346e21c83233a79cdadadb90e7c47a5587ec53"
+    },
+    {
+      "case": "ice",
+      "room_costs_exact": 225,
+      "pixel_costs_exact": 9000,
+      "whole_foreground_tstates": 27646729,
+      "first_room_frame": 2868,
+      "finished_frame": 3357,
+      "snapshots_sha256": "06864133dc1d5d98e57129a57877b535f6ffd938ba55e2f49c3315b30155cd94"
+    },
+    {
+      "case": "all-ice",
+      "room_costs_exact": 225,
+      "pixel_costs_exact": 9000,
+      "whole_foreground_tstates": 27863835,
+      "first_room_frame": 2868,
+      "finished_frame": 3361,
+      "snapshots_sha256": "53607707cf38f33d6e14ef805dca7b4b58957d06af5ede551dae6c7952839358"
+    },
+    {
+      "case": "base-pal",
+      "room_costs_exact": 225,
+      "pixel_costs_exact": 9000,
+      "whole_foreground_tstates": 27611056,
+      "first_room_frame": 2867,
+      "finished_frame": 3274,
+      "snapshots_sha256": "237a6df003057682f76051cfaa60038c1083df3e7e9f3d9f868df39a7cb8b3bd"
+    }
+  ],
+  "room_cost_cases": 1125,
+  "pixel_cost_cases": 45000,
+  "native_C_room_counter_cases": 1125,
+  "metadata_kinds_observed": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    20
+  ],
+  "native_body_sha256": "42c22b516044c0f5be48d1dea0aa7985424fbcf03ee2a27711ba456c811083a4",
+  "full_game_verified": false,
+  "limits": [
+    "Read-only observer on unchanged SMS; foreground deltas subtract actual IRQ work. Four all-zero/all-one quest and ice combinations plus PAL baseline.",
+    "C counter body is extracted from the production overview; cost tables are generated from original instructions/RLE/metadata, never capture tables.",
+    "No proof of source terrain-context5 or global boot/raster/refresh alignment. Runtime IRQ debit uses live native semantic audio work and whole frame quantization."
+  ]
+}

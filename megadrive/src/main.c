@@ -97,6 +97,8 @@ static u16 world_dungeon_number;
 static u16 world_dungeon_dark;
 static volatile u16 screen_spell_active,screen_spell_iteration;
 static volatile u16 screen_spell_video_pending;
+static volatile u16 overview_pacing,overview_pacing_error;
+static volatile u32 overview_work_budget;
 static u16 screen_spell_sprite_count;
 static volatile u16 screen_spell_pacing_error,screen_spell_model_gap,screen_spell_late_publications;
 static u16 screen_spell_clock;
@@ -1292,6 +1294,15 @@ static void world_vint(void)
         dialogue_video_pending=0;
     }
     sound_tick();
+    /* During overview construction the source IRQ only services audio.
+     * Debit its current native semantic work from the source-frame budget. */
+    if(overview_pacing)
+    {
+        u32 period=SYS_isPAL()?71364UL:59736UL;
+        u32 audio=524+sound_source_work.tstates;
+        if(audio<period) overview_work_budget+=period-audio;
+        else overview_pacing_error=1;
+    }
 }
 static void wait_world_video(void)
 {

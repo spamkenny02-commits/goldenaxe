@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0271 | [Telecharger](v0271-8a92b40c/gaw-megadrive-v0271.bin) | targeted_checks_passed | Carte du monde : cadence source225 salles, quetes/gel ; fin a0..1 image SMS dans18 cas exterieurs.22 scenarios cibles. | `8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6` |
 | v0270 | [Telecharger](v0270-36af7e88/gaw-megadrive-v0270.bin) | targeted_checks_passed | Rendu sprites/decor allege : duree de vie et clignotement loot alignes, 14 cas PAL/NTSC et7 ramassages. | `36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4` |
 | v0269 | [Telecharger](v0269-0f1ea001/gaw-megadrive-v0269.bin) | build_only | Essai conversion rapide : grands objets NTSC encore1 image en retard. Remplace par270. | `0f1ea0018e7631177500d9100325f4ea81e46193831b09ca2518d0baeda101c7` |
 | v0268 | [Telecharger](v0268-bfcf22b4/gaw-megadrive-v0268.bin) | build_only | Essai bandes sprites : pieces corrigees, grands objets NTSC encore2 images en retard. Remplace par270. | `bfcf22b42b1877f402a8a3f87041a528a6a942f00799195a7c405c4ba9126ad1` |

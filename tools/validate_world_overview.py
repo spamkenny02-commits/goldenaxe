@@ -7,11 +7,13 @@ from validate_playable_sprite_limit import symbols
 from archive_lossless_evidence import sha
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--pal',action='store_true');p.add_argument('--sweep',action='store_true');p.add_argument('--held-close',action='store_true');p.add_argument('--close-b',action='store_true');p.add_argument('--graphics',type=int,default=0);p.add_argument('--treasure',action='store_true');p.add_argument('--edited',action='store_true');p.add_argument('--diagnostic',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--tag',required=True);p.add_argument('--pal',action='store_true');p.add_argument('--sweep',action='store_true');p.add_argument('--held-close',action='store_true');p.add_argument('--close-b',action='store_true');p.add_argument('--graphics',type=int,default=0);p.add_argument('--treasure',action='store_true');p.add_argument('--edited',action='store_true');p.add_argument('--all-flags',action='store_true');p.add_argument('--ice',action='store_true');p.add_argument('--diagnostic',action='store_true');a=p.parse_args()
     sy=symbols(ROOT/'megadrive/out/release/symbol.txt');clock=0;cases={};parts={};generations={}
     for tag in ['sms','md']:
         source=tag=='sms';out=ROOT/f'validation/world-overview-{a.tag}-{tag}';assert not out.exists()
         writes=[(2810,0xdf,b'\13'),(2810,0xeb,b'\1'),(2810,0xf5,bytes([a.treasure])),(2810,0x600,bytes(768))] if source else [(2810,sy['hero_selected_item'],(11).to_bytes(2,'big')),(2810,sy['hero_items']+11,b'\1'),(2810,sy['game_save_state']+0x45,bytes([a.treasure])),(2810,sy['world_actor_state'],bytes(768)),(7000,sy['vtimer'],clock.to_bytes(4,'big')),(7000,sy['world_clock_shift'],bytes(4))]
+        if a.all_flags:writes.append((2810,0x110 if source else sy['game_save_state']+0x60,bytes([1])*240))
+        if a.ice:writes.append((2810,0xac if source else sy['ice_bell_state'],b'\1' if source else b'\0\1'))
         if a.edited:writes.append((2810,0x111 if source else sy['game_save_state']+0x61,b'\1'))
         if a.graphics:writes.append((2810,0x40 if source else sy['world_graphics_class'],bytes([a.graphics]) if source else a.graphics.to_bytes(2,'big')))
         state={};rows=[];last_room=None;rooms=[]
@@ -22,7 +24,7 @@ def main():
             data=lambda n,k:bytes(r[(sy[n]+i)^1] for i in range(k));word=lambda n:int.from_bytes(data(n,2),'big')
             room=int.from_bytes(r[0xb9:0xbb],'little') if source else word('room_id')
             if room!=last_room:rooms.append(dict(frame=f,room=room));last_room=room
-            state.update(frame=f,room=room,hero=r[0x301] if source else word('hero_state'),selected=r[0xdf] if source else word('hero_selected_item'),owned=r[0xeb] if source else data('hero_items',17)[11],game=r[0x1d] if source else word('game_state'),x=int.from_bytes(r[0x312:0x314],'little') if source else word('hero_x'),y=int.from_bytes(r[0x310:0x312],'little') if source else word('hero_y'),health=r[0x318] if source else word('hero_health'),gold=r[0xdd] if source else word('hero_gold'),magic=r[0xdb] if source else word('hero_magic'),audio_error=0 if source else word('sound_unhandled_command'),overview=0 if source else word('world_overview_active'))
+            state.update(frame=f,room=room,hero=r[0x301] if source else word('hero_state'),selected=r[0xdf] if source else word('hero_selected_item'),owned=r[0xeb] if source else data('hero_items',17)[11],game=r[0x1d] if source else word('game_state'),x=int.from_bytes(r[0x312:0x314],'little') if source else word('hero_x'),y=int.from_bytes(r[0x310:0x312],'little') if source else word('hero_y'),health=r[0x318] if source else word('hero_health'),gold=r[0xdd] if source else word('hero_gold'),magic=r[0xdb] if source else word('hero_magic'),audio_error=0 if source else word('sound_unhandled_command'),overview=0 if source else word('world_overview_active'),pacing_error=0 if source else word('overview_pacing_error'))
             if f%10==0:rows.append(state.copy())
             if f==7000:
                 parts[tag]=dict(selected=state['selected'],patterns=None if source else data('sms_vram',5120).hex(),map=None if source else data('sms_vram',0x3d00)[0x3800:].hex())
@@ -40,7 +42,8 @@ def main():
         passed=returned
     elif a.held_close:passed=returned and all(v['selected']==0 for v in parts.values()) and all(not x['differences'] for x in pixels)
     else:passed=patterns and tilemap and returned and all(v['selected']==11 for v in parts.values()) and all(not x['differences'] for x in pixels)
-    result=dict(md_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),source_sha256=sha((ROOT/'input/original.sms').read_bytes()),passed=passed,region='pal' if a.pal else 'auto',graphics=a.graphics,marker_sweep=a.sweep,held_close_during_generation=a.held_close,close_button='B' if a.close_b else 'C',sample_selections={k:v['selected'] for k,v in parts.items()},treasure=a.treasure,edited_room_11=a.edited,controlled_ownership_quest_flags_and_one_clock_alignment=True,overview_planar_5120_bytes_exact=patterns,overview_tilemap_1280_bytes_exact=tilemap,pixel_comparisons=pixels,return_verified=returned,final=cases,room_progress=generations,full_game_verified=False)
+    passed=passed and not cases['md']['pacing_error']
+    result=dict(all_room_flags=a.all_flags,ice=a.ice,md_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),source_sha256=sha((ROOT/'input/original.sms').read_bytes()),passed=passed,region='pal' if a.pal else 'auto',graphics=a.graphics,marker_sweep=a.sweep,held_close_during_generation=a.held_close,close_button='B' if a.close_b else 'C',sample_selections={k:v['selected'] for k,v in parts.items()},treasure=a.treasure,edited_room_11=a.edited,controlled_ownership_quest_flags_and_one_clock_alignment=True,overview_planar_5120_bytes_exact=patterns,overview_tilemap_1280_bytes_exact=tilemap,pixel_comparisons=pixels,return_verified=returned,final=cases,room_progress=generations,full_game_verified=False)
     (ROOT/f'analysis/world_overview_{a.tag}_report.json').write_text(json.dumps(result,indent=2)+'\n');print({k:v for k,v in result.items() if k!='room_progress'});assert passed or a.diagnostic
 
 if __name__=='__main__':main()

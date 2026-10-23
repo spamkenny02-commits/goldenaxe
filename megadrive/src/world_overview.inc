@@ -33,7 +33,7 @@ static void show_world_overview(void)
      * is available throughout this blocking modal; no extra permanent RAM. */
     u8 *saved=house_dialogue_backup;
     u16 number=room_id,n,row,col,plane,tile,previous=input,original31=sms_palette[31];
-    u32 closed_at,budget,frames;
+    u32 closed_at,budget,frames,work=33;
     u8 metadata[3];
     world_overview_active=1;
     memcpy(saved,sms_vram,5120);memcpy(saved+5120,sms_vram+0x3f40,64);
@@ -57,20 +57,37 @@ static void show_world_overview(void)
     convert_patterns_range_fast(0,160);convert_patterns_range_fast(506,2);
     VDP_loadTileData(md_patterns,16,160,CPU);VDP_loadTileData(md_patterns+506*8,522,2,CPU);
     set_world_palette();map_origin=0x3800;draw_map();
+    overview_work_budget=0;overview_pacing_error=0;overview_pacing=1;
     for(room_id=0x10;room_id<256;room_id++)
     {
         if((room_id&15)==15) continue;
-        decode_room_map(room_id,animation_map,world_new_md);
+        u16 cost_index=room_id*4+(ice_bell_state?2:0)+(game_save_state[0x50+room_id]&1);
+        u16 offset=world_room_index[room_id*2]|((u16)world_room_index[room_id*2+1]<<8);
+        /*190B prepares cells, not the unused640-word full room map. */
+        decode_planes(world_room_streams+offset,scratch+0x800,1);prepare_room_cells(room_id);
+        work+=11+17+overview_decode_tstates[cost_index]+7+5*(7+4+4+7+12)-5;
         for(row=0;row<5;row++) for(col=0;col<8;col++)
         {
             u16 cell=row*32+col*2,y=(((room_id-16)&240)>>4)*5+row;
             u16 address=(y>>3)*512+(room_id&15)*32+(y&7)*4;
             u8 color=0,k;
+            work+=7+13+overview_pixel_tstates[col]+4+4+7+(col<7?12:7);
             static const u8 offsets[4]={0,1,16,17};
             for(k=0;k<4;k++)
-            { u8 next=overview_cell_color(scratch[0x800+cell+offsets[k]]);if(next>color) color=next; }
+            {
+                u8 value=scratch[0x800+cell+offsets[k]],next=overview_cell_color(value);
+                if(!(value&1)) work+=11;
+                if(value>=68) work--;
+                if(next<color) work-=8;
+                if(next>color) color=next;
+            }
             for(plane=0;plane<4;plane++) if(color&(1<<plane)) sms_vram[address+plane]|=0x80>>col;
         }
+        work+=10+16+6+16+((room_id&15)==14?8:13);
+        if((room_id&15)==14) work+=16+6+16+4+4+(room_id==254?7:19);
+        /* Cumulative source instruction work, with live audio-only IRQ debit.
+         * Native decode/projection time already spent consumes this deadline. */
+        while(overview_work_budget<work && !overview_pacing_error) __asm__ volatile ("nop");
         {
             u16 first=(((room_id-16)&240)>>4)*5;
             u16 last=(first+4)>>3;
@@ -82,6 +99,7 @@ static void show_world_overview(void)
             }
         }
     }
+    overview_pacing=0;
     room_id=number;memcpy(scratch+0x800,saved+6464,160);memcpy(room_metadata,metadata,3);
     convert_patterns_range_fast(0,160);convert_patterns_range_fast(506,2);
     VDP_loadTileData(md_patterns,16,160,CPU);VDP_loadTileData(md_patterns+506*8,522,2,CPU);

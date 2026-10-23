@@ -1,0 +1,299 @@
+{
+  "md_sha256": "8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    "world_overview_v0271-all-flags-pal_report.json",
+    "world_overview_v0271-all-flags_report.json",
+    "world_overview_v0271-all-ice-pal_report.json",
+    "world_overview_v0271-all-ice_report.json",
+    "world_overview_v0271-both-pal_report.json",
+    "world_overview_v0271-both_report.json",
+    "world_overview_v0271-close-b-pal_report.json",
+    "world_overview_v0271-close-b_report.json",
+    "world_overview_v0271-dungeon-pal_report.json",
+    "world_overview_v0271-dungeon_report.json",
+    "world_overview_v0271-edited-pal_report.json",
+    "world_overview_v0271-edited_report.json",
+    "world_overview_v0271-held-pal_report.json",
+    "world_overview_v0271-held_report.json",
+    "world_overview_v0271-house-pal_report.json",
+    "world_overview_v0271-house_report.json",
+    "world_overview_v0271-ice-pal_report.json",
+    "world_overview_v0271-ice_report.json",
+    "world_overview_v0271-pal_report.json",
+    "world_overview_v0271-treasure-pal_report.json",
+    "world_overview_v0271-treasure_report.json",
+    "world_overview_v0271_report.json"
+  ],
+  "controlled_cases": 22,
+  "exterior_overview_cases": 16,
+  "held_close_cases": 2,
+  "source_quest_edit_changes_planar_bytes": 2,
+  "overview_normalized_pixel_frames_exact": 108,
+  "return_checks": [
+    {
+      "case": "v0271-all-flags-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-all-flags",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-all-ice-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": true,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-all-ice",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": true,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-both-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-both",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-close-b-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-close-b",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-edited-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-edited",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-held-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-held",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-ice-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": true,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-ice",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": true,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-treasure-pal",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271-treasure",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0271",
+      "room_cells_preserved_bytes_per_machine": 160,
+      "room_flags_verified_bytes_per_machine": 256,
+      "ice_passage_flags_expected": false,
+      "final_map_hud_bytes_exact": 1536,
+      "settled_normalized_pixel_differences": 0
+    }
+  ],
+  "generation_finish_frames": [
+    {
+      "case": "v0271-all-flags-pal",
+      "sms": 3277,
+      "md": 3276,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-all-flags",
+      "sms": 3360,
+      "md": 3360,
+      "md_minus_sms_frames": 0
+    },
+    {
+      "case": "v0271-all-ice-pal",
+      "sms": 3277,
+      "md": 3276,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-all-ice",
+      "sms": 3361,
+      "md": 3360,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-both-pal",
+      "sms": 3274,
+      "md": 3273,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-both",
+      "sms": 3356,
+      "md": 3356,
+      "md_minus_sms_frames": 0
+    },
+    {
+      "case": "v0271-close-b-pal",
+      "sms": 3274,
+      "md": 3273,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-close-b",
+      "sms": 3356,
+      "md": 3356,
+      "md_minus_sms_frames": 0
+    },
+    {
+      "case": "v0271-edited-pal",
+      "sms": 3274,
+      "md": 3273,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-edited",
+      "sms": 3356,
+      "md": 3356,
+      "md_minus_sms_frames": 0
+    },
+    {
+      "case": "v0271-held-pal",
+      "sms": 3274,
+      "md": 3273,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-held",
+      "sms": 3356,
+      "md": 3356,
+      "md_minus_sms_frames": 0
+    },
+    {
+      "case": "v0271-ice-pal",
+      "sms": 3274,
+      "md": 3273,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-ice",
+      "sms": 3357,
+      "md": 3357,
+      "md_minus_sms_frames": 0
+    },
+    {
+      "case": "v0271-pal",
+      "sms": 3274,
+      "md": 3273,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-treasure-pal",
+      "sms": 3274,
+      "md": 3273,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "v0271-treasure",
+      "sms": 3356,
+      "md": 3356,
+      "md_minus_sms_frames": 0
+    },
+    {
+      "case": "v0271",
+      "sms": 3356,
+      "md": 3356,
+      "md_minus_sms_frames": 0
+    }
+  ],
+  "source_room_cost_cases": 1125,
+  "source_pixel_cost_cases": 45000,
+  "native_cost_counter_cases": 1125,
+  "setup_and_return_timing_exact": false,
+  "full_game_verified": false,
+  "limits": [
+    "Initial ownership, optional quest/treasure flags and one clock phase alignment are controlled. No natural item acquisition is established.",
+    "Whole generation finishes within one frame in18 exterior fixtures. Setup and restoration, per-pixel raster writes and source terrain-context5 remain unverified. The native publishes whole tiles after each room, while SMS writes individual planes/pixels."
+  ]
+}

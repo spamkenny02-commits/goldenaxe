@@ -5,19 +5,32 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0270 — 1024 Kio.**
+**Version courante : v0271 — 1024 Kio.**
 
-[Télécharger la ROM v0270](versions/v0270-36af7e88/gaw-megadrive-v0270.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0271](versions/v0271-8a92b40c/gaw-megadrive-v0271.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4`
-Checksum Mega Drive : `E430`
+SHA-256 : `8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6`
+Checksum Mega Drive : `ED95`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0270**.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0271**.
+La génération de la carte du monde suit maintenant le travail des routines SMS :
+décodage des 225 salles, transformations de quête/gel et projection des cellules.
+Elle finit à la même image que la SMS en NTSC et une image avant en PAL dans
+les cas ordinaires, contre 94 et 80 images d'avance en v0240. Les autres cas
+extérieurs testés finissent aussi entre zéro et une image avant la SMS.
+Le modèle est recoupé avec 1 125 chargements et 45 000 projections de la ROM
+SMS inchangée. Les 22 scénarios couvrent les marqueurs, les quêtes, le gel,
+les boutons de fermeture, les retours au jeu et les gardes intérieures.
+La publication pixel par pixel, l'horloge logique complète de la modale et
+la cadence générale restent à terminer.
+Voir les [changements et limites de la v0271](analysis/world_overview_pacing_v0271.md).
+
+La **v0270** avait allégé le rendu des objets au sol.
 Le clignotement et la disparition des objets au sol ne prennent plus de retard
 dans les scènes chargées testées. Sept objets présents simultanément pouvaient
 faire manquer deux pas de simulation à la MD. Le contrôle des sprites par bandes,
@@ -75,7 +88,8 @@ Voir les [changements et limites de la v0242](analysis/ice_bell_v0242.md).
 La carte du monde est maintenant utilisable : aperçu des 225 écrans extérieurs,
 transformations de quête, marqueurs de position/trésor et retour au jeu.
 Seize cas contrôlés PAL/NTSC vérifient l’affichage, les commandes et la restauration.
-La génération reste trop rapide (environ 94 images d’avance en NTSC, 80 en PAL).
+Dans la v0240, la génération finissait environ 94 images trop tôt en NTSC,
+80 en PAL ; la v0271 corrige cette avance dans les cas testés.
 Les v0236 à v0239 sont les compilations intermédiaires de cette fonctionnalité.
 Voir les [changements et limites de la v0240](analysis/world_overview_v0240.md).
 
