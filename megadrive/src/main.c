@@ -95,6 +95,7 @@ static u16 save_resume_room,save_resume_health;
 static u16 world_graphics_class,house_return_room,house_return_x,house_return_y;
 static u16 world_dungeon_number;
 static u16 world_dungeon_dark;
+static u16 ice_bell_state; /* C0AC: cleared with the room's transient objects. */
 static bool return_feather_requested;
 static volatile u8 world_boss_state; /* C0AE, cleared by gem appearance. */
 static u8 game_save_state[0x250];
@@ -868,6 +869,9 @@ static u16 hero_collision_index(u16 which)
 static void inventory_hud_icon(void);
 static void use_return_feather(void);
 static void show_world_overview(void);
+static void activate_ice_bell(void);
+static void apply_ice_bell_metatiles(u16 number);
+static void portal_wait_frame(void);
 static void fade_world_palette(const u16 *target,bool fade_in);
 static u16 dungeon_bitmap_pending;
 
@@ -971,6 +975,7 @@ static void activate_hero_item(void)
     }
     else if(hero_selected_item==9 && !world_graphics_class)
         return_feather_requested=TRUE; /* 30E8: finish through state8, outside the old room tick. */
+    else if(hero_selected_item==10) activate_ice_bell();
     else if(hero_selected_item==11 && !world_graphics_class) show_world_overview();
 }
 
@@ -1179,7 +1184,7 @@ static void update_hero_sprites_for_frame(u16 order_phase,bool order_overflow)
         else { world_tile_upload(md_patterns+496*8,16+496,hero_pattern_tiles);hero_patterns_pending=FALSE; }
     }
     if(dungeon_bitmap_pending)
-    { u16 tile=dungeon_bitmap_pending-1;world_tile_upload(md_patterns+tile*8,16+tile,6);dungeon_bitmap_pending=0; }
+    { u16 tile=dungeon_bitmap_pending-1;world_tile_upload(md_patterns+tile*8,16+tile,world_graphics_class==2?6:4);dungeon_bitmap_pending=0; }
     if(house_animation_patterns_pending)
     { u16 tile=house_animation_patterns_pending-1;world_tile_upload(md_patterns+tile*8,16+tile,4);house_animation_patterns_pending=0; }
     if(world_loot_patterns_pending)
@@ -1334,6 +1339,7 @@ static void prepare_room_cells(u16 number)
     if(*record) memcpy(room_metadata,record+1,3);
     else { room_metadata[0]=255;room_metadata[1]=255;room_metadata[2]=0; }
     if(game_save_state[0x50+(flag_room&255)]&(1<<world_graphics_class)) prepare_room_transformation();
+    apply_ice_bell_metatiles(number); /* 190B ->1A02/1A30 */
 }
 
 /* 190B/2279: reuse the original metatiles and reconstruct a 32x20 map. */
@@ -1371,6 +1377,8 @@ static void redraw_current_room(u32 redraw_started)
     wait_frame();
     VDP_setTileMapDataRect(BG_A,world_new_md,0,2,32,20,32,CPU);
 }
+
+#include "ice_bell.inc"
 
 static void open_dungeon_passage(u8 flag)
 {
@@ -1880,6 +1888,7 @@ static u8 saved_room_actor_mask(u16 number);
 /* 1816..181F: C0CE plus the low byte of C037, within the save record. */
 static void load_current_world_actors(u16 number)
 {
+    ice_bell_state=0; /* 24C5 clears C090..C0AF before object initialization. */
     boss_death_music_hold=FALSE;
     load_world_actors_progression(number,saved_room_actor_mask(number),
         game_save_state[0x1e + (u8)world_dungeon_number],sms_vram,md_patterns);
@@ -2339,7 +2348,14 @@ static void animate_world_palette(void)
     {
         for(n=0;n<3;n++) sms_palette[13+n]=world_boss_state?0:world_dungeon_color_cycle[((world_clock()>>2)&3)*3+n];
     }
-    if(!world_graphics_class && !(world_clock()&7)) for(n=0;n<4;n++) sms_palette[12+n]=world_water_cycle[((world_clock()&24)>>3)+n];
+    if(!world_graphics_class && !(world_clock()&7))
+    {
+        /* 69CA..6A04: four SRAM water patterns queued for the next IRQ. */
+        u16 tile=127;
+        memcpy(sms_vram+tile*32,exterior_water_bitmaps+((world_clock()&24)>>3)*128,128);
+        convert_patterns_range(tile,4);dungeon_bitmap_pending=tile+1;
+        for(n=0;n<4;n++) sms_palette[12+n]=world_water_cycle[((world_clock()&24)>>3)+n];
+    }
     prepare_hero_armor_palette();
     sms_palette[31]=(world_clock()&2)?2:1;
     world_palette_pending=TRUE;
@@ -2665,6 +2681,7 @@ static void show_inventory(void)
 
 static bool tick_world_simulation(void)
 {
+    bool bell_action=FALSE;
     world_object_tick_count=1; /* 26B6 counts the hero before spell/loot/actor visits. */
     if(!boss_death_music_hold) update_world_music();
     s16 contact=-1,damage=0;
@@ -2692,7 +2709,8 @@ static bool tick_world_simulation(void)
     hero_terrain_context=classify_hero_terrain();
     prepare_hero_defense();
     hero_attack=world_attack_strength[hero_selected_item*4+(hero_selected_item==0?hero_basic_level:hero_selected_item==1?hero_weapon_level:hero_items[hero_selected_item])];
-    if((input&~world_previous_input&BUTTON_C) && hero_state==1 && hero_health && hero_selected_item<12) activate_hero_item();
+    if((input&~world_previous_input&BUTTON_C) && hero_state==1 && hero_health && hero_selected_item<12)
+    { bell_action=hero_selected_item==10;activate_hero_item(); }
     if(return_feather_requested)
     {
         return_feather_requested=FALSE;use_return_feather();return TRUE;
@@ -2712,7 +2730,7 @@ static bool tick_world_simulation(void)
     {
         if(!hero_state) { hero_state=1;hero_casting=0; }
         if(hero_state==12) { hero_animation=0;hero_flags|=1;hero_casting=0; } /* 2F0D/369F */
-        else if(hero_state==1) move_hero();
+        else if(hero_state==1) { if(!bell_action) move_hero(); }
         else if(hero_state>=2 && hero_state<=5) attack_hero();
         else if(hero_state==10 || hero_state==11)
         {

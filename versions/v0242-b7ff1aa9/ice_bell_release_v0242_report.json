@@ -1,0 +1,104 @@
+{
+  "md_sha256": "b7ff1aa9fc40e3f290f51e66f8918d54669ddab3a5c81384582b9fc117840943",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    "ice_bell_v0242-actors_report.json",
+    "ice_bell_v0242-dungeon_report.json",
+    "ice_bell_v0242-house_report.json",
+    "ice_bell_v0242-map_report.json",
+    "ice_bell_v0242-menu_report.json",
+    "ice_bell_v0242-pal_report.json",
+    "ice_bell_v0242-passage_report.json",
+    "ice_bell_v0242_report.json"
+  ],
+  "controlled_cases": 8,
+  "normalized_pixel_frames": [
+    {
+      "case": "v0242",
+      "frame": 2999,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242",
+      "frame": 3003,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242",
+      "frame": 3007,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242",
+      "frame": 3011,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242",
+      "frame": 3015,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242",
+      "frame": 3025,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242",
+      "frame": 3100,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242",
+      "frame": 3300,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242-pal",
+      "frame": 2999,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242-pal",
+      "frame": 3003,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242-pal",
+      "frame": 3007,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242-pal",
+      "frame": 3011,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242-pal",
+      "frame": 3015,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242-pal",
+      "frame": 3025,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242-pal",
+      "frame": 3100,
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0242-pal",
+      "frame": 3300,
+      "normalized_pixel_differences": 0
+    }
+  ],
+  "full_game_verified": false,
+  "limits": [
+    "Initial room, ownership, resources and one clock phase are controlled; natural acquisition and full campaign remain unverified.",
+    "Eight complete water masks and their sampled frames match in the tested PAL/NTSC scene; individual raster writes and audio waveforms are not established.",
+    "Actor conversion, inventory return, overview interaction, one special passage and indoor guards are targeted fixtures."
+  ]
+}

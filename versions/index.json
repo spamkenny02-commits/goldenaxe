@@ -7323,5 +7323,30 @@
         "sha256": "c2e590c4cde09f1f8b0664eab0a8627eee50e5399357c8657de7e382ed1b6fc5"
       }
     ]
+  },
+  {
+    "version": 241,
+    "sha256": "3b9e06a3c66a8c8104b9ee4172494394ec8c6e53cfee61b43bf67662501bbcf8",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T07:23:00.702546+00:00",
+    "rom": "v0241-3b9e06a3/gaw-megadrive-v0241.bin",
+    "notes": "Compilation ; validation en attente.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 242,
+    "sha256": "b7ff1aa9fc40e3f290f51e66f8918d54669ddab3a5c81384582b9fc117840943",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T07:33:58.529895+00:00",
+    "rom": "v0242-b7ff1aa9/gaw-megadrive-v0242.bin",
+    "notes": "Cloche de glace native et animation des motifs eau ; huit cas cibles PAL/NTSC.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "ice_bell_release_v0242_report.json",
+        "sha256": "a90bd41a75143c1a3b4b051e26d08842a6b11bfee8f7d3f609171491d17ad648"
+      }
+    ]
   }
 ]

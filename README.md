@@ -5,19 +5,28 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0240 — 1024 Kio.**
+**Version courante : v0242 — 1024 Kio.**
 
-[Télécharger la ROM v0240](versions/v0240-e5c34931/gaw-megadrive-v0240.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0242](versions/v0242-b7ff1aa9/gaw-megadrive-v0242.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `e5c3493162adfea6b539edfada41d471999c9e283e6edb035d1741813cb1b8c3`
-Checksum Mega Drive : `0484`
+SHA-256 : `b7ff1aa9fc40e3f290f51e66f8918d54669ddab3a5c81384582b9fc117840943`
+Checksum Mega Drive : `96C6`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **22 octobre 2026** : la ROM jouable recommandée est **v0240**.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0242**.
+La cloche de glace gèle maintenant l'eau en huit étapes, traite les ennemis
+présents et active les passages prévus par le jeu d'origine. Les motifs de
+l'eau extérieure sont aussi animés, en plus de leur palette.
+Huit cas contrôlés passent ; seize images normalisées correspondent à la SMS.
+Les huit étapes de gel apparaissent aux mêmes images dans la scène PAL/NTSC testée.
+L'acquisition naturelle de la cloche et la campagne complète restent à vérifier.
+La v0241 est une compilation intermédiaire ; utiliser la v0242.
+Voir les [changements et limites de la v0242](analysis/ice_bell_v0242.md).
+
 La carte du monde est maintenant utilisable : aperçu des 225 écrans extérieurs,
 transformations de quête, marqueurs de position/trésor et retour au jeu.
 Seize cas contrôlés PAL/NTSC vérifient l’affichage, les commandes et la restauration.
