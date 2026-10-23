@@ -1,0 +1,45 @@
+{
+  "md_sha256": "36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "lifetime_cases": 14,
+  "lifetime_reports": [
+    "loot_lifetime_v0270-type8-ntsc_report.json",
+    "loot_lifetime_v0270-type8-pal_report.json",
+    "loot_lifetime_v0270-type9-ntsc_report.json",
+    "loot_lifetime_v0270-type9-pal_report.json",
+    "loot_lifetime_v0270-type10-ntsc_report.json",
+    "loot_lifetime_v0270-type10-pal_report.json",
+    "loot_lifetime_v0270-type11-ntsc_report.json",
+    "loot_lifetime_v0270-type11-pal_report.json",
+    "loot_lifetime_v0270-type12-ntsc_report.json",
+    "loot_lifetime_v0270-type12-pal_report.json",
+    "loot_lifetime_v0270-type13-ntsc_report.json",
+    "loot_lifetime_v0270-type13-pal_report.json",
+    "loot_lifetime_v0270-type14-ntsc_report.json",
+    "loot_lifetime_v0270-type14-pal_report.json"
+  ],
+  "lifetime_state_frames": 5614,
+  "lifetime_normalized_images": 504,
+  "pickup_cases": 7,
+  "pickup_state_frames": 280,
+  "pickup_normalized_images": 266,
+  "overflow_host_cases": 23584,
+  "emitter_host_cases": 24000,
+  "spell_regressions": [
+    "level1",
+    "level1-pal",
+    "actors2",
+    "actors2-pal",
+    "house",
+    "dungeon"
+  ],
+  "bell_regressions": 2,
+  "natural_composition_frames": 12,
+  "full_game_verified": false,
+  "limits": [
+    "Initial ownership/loot/actor/hero states and one clock alignment are controlled; no natural drop RNG or full-campaign proof.",
+    "Lifetime records compare401 consecutive frames per case; normalized images sample36 selected frames per case. Key items are still present at3400, not proven forever.",
+    "Host actual-body comparisons establish decision/cache equivalence; native PAL/NTSC captures establish the tested integrations only. No general frame-rate, physical raster or analogue waveform claim."
+  ]
+}

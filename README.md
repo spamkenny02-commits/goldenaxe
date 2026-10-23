@@ -5,19 +5,30 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0267 — 1024 Kio.**
+**Version courante : v0270 — 1024 Kio.**
 
-[Télécharger la ROM v0267](versions/v0267-71d030d8/gaw-megadrive-v0267.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0270](versions/v0270-36af7e88/gaw-megadrive-v0270.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `71d030d8e70bde5d3b2e3e5219a7dcf23ca29f4fef340d21d659d525bfd84eab`
-Checksum Mega Drive : `8EC7`
+SHA-256 : `36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4`
+Checksum Mega Drive : `E430`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0267**.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0270**.
+Le clignotement et la disparition des objets au sol ne prennent plus de retard
+dans les scènes chargées testées. Sept objets présents simultanément pouvaient
+faire manquer deux pas de simulation à la MD. Le contrôle des sprites par bandes,
+la préparation de la table de sprites et la conversion des animations de décor
+réduisent ce coût sans modifier les règles de durée de vie ou de ramassage.
+Quatorze cas PAL/NTSC comparent 5 614 images d'état et 504 captures normalisées ;
+sept ramassages comparent 280 états et 266 captures, dont la limite de 99 clés.
+Les v0268/v0269 sont des essais intermédiaires ; utiliser la v0270.
+Voir les [changements et limites de la v0270](analysis/loot_render_v0270.md).
+
+La **v0267** avait réduit le coût audio et corrigé les attentes du sort.
 Le ralentissement du sort de niveau 2 avec plusieurs ennemis en NTSC est
 corrigé dans le cas testé : fin à la même image que sur SMS, contre 18 images
 de retard en v0264. Le lecteur musical copie seulement le canal de 48 octets
@@ -893,10 +904,9 @@ affichés en tête de ce README sont actualisés par `tools/version_rom.py`.
 
 Git conserve les sources, outils, rapports principaux et ROMs numérotées.
 Les captures et fichiers temporaires volumineux restent disponibles localement.
-Le travail reste dans le dépôt Git local, sur la branche `main`, sans dépôt
-distant configuré. Il sera copié vers un nouveau dépôt lorsque demandé.
-L’ancien dépôt GitHub V51 contient un autre arbre de code ; aucun changement
-n’y a été envoyé depuis ce projet.
+Le dépôt distant est [spamkenny02-commits/goldenaxe](https://github.com/spamkenny02-commits/goldenaxe).
+Les livraisons demandées sont publiées sur sa branche `main`, avec les ROMs
+numérotées et ce README. Les captures volumineuses archivées restent locales.
 
 - [Lectures d’opcodes des interruptions vidéo complètes](analysis/full_irq_refresh_milestone.md).
 

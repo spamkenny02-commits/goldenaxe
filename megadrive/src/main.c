@@ -1125,10 +1125,9 @@ static __attribute__((noinline,cold)) void terminate_world_sprite_list(u16 count
 
 static void prepare_world_sms_sprite_overflow(u16 count)
 {
-    s8 edges[193];
+    s8 edges[193];u8 bands[12]={0};
     s16 used=0,top,bottom;
-    u16 n,raw;bool clipped=FALSE;
-    memset(edges,0,sizeof(edges));
+    u16 n,raw;bool clipped=FALSE,crowded=FALSE;
     for(n=0;n<count && n<64;n++)
     {
         raw=(vdpSpriteCache[n].y-145)&255;
@@ -1138,15 +1137,35 @@ static void prepare_world_sms_sprite_overflow(u16 count)
         if(top<0) { top=0;clipped=TRUE; }
         if(bottom>192) { bottom=192;clipped=TRUE; }
         if(top>=bottom) continue;
-        edges[top]++;edges[bottom]--;
+        /* Each intersected16-line band counts this entry once. No band
+         * above8 proves that no individual line can exceed8. X and pattern
+         * transparency deliberately do not affect the SMS Y scan. */
+        if(count>8 && !crowded)
+        {
+            u16 first=top>>4,last=(bottom-1)>>4;
+            if(++bands[first]>8) crowded=TRUE;
+            if(last!=first && ++bands[last]>8) crowded=TRUE;
+        }
     }
     world_video_next_overflow=0;
-    /* Eight total entries cannot overflow a line. Viewport clipping still
-     * takes the shared masking path below, even for one sprite. */
-    if(count>8) for(n=0;n<192;n++)
+    /* A crowded band is only a possible overflow: resolve exact scanlines. */
+    if(count>8 && crowded)
     {
-        used+=edges[n];
-        if(used>8) { world_video_next_overflow=1;break; }
+        memset(edges,0,sizeof(edges));
+        for(n=0;n<count && n<64;n++)
+        {
+            raw=(vdpSpriteCache[n].y-145)&255;
+            top=raw<208?(s16)raw+1:(s16)raw-255;bottom=top+8;
+            if(top<0) top=0;
+            if(bottom>192) bottom=192;
+            if(top>=bottom) continue;
+            edges[top]++;edges[bottom]--;
+        }
+        for(n=0;n<192;n++)
+        {
+            used+=edges[n];
+            if(used>8) { world_video_next_overflow=1;break; }
+        }
     }
     /* Clipping outside the SMS192-line viewport is independent of SOVR.
      * Keep those invisible rows out of the MD's top/bottom matte areas. */
@@ -1872,7 +1891,7 @@ static void animate_dungeon_bitmaps(void)
     if(world_graphics_class!=2 || (clock&7)) return;
     tile=scratch[0x30];phase=order[(clock&24)>>3];
     memcpy(sms_vram+tile*32,dungeon_animation_bitmaps+phase*192,192);
-    convert_patterns_range(tile,6);dungeon_bitmap_pending=tile+1;
+    convert_patterns_range_fast(tile,6);dungeon_bitmap_pending=tile+1;
 }
 
 /* 6AA5..6AEA: four-cell dungeon floor scan, eight overlapping poses.
@@ -2338,7 +2357,7 @@ static void animate_house_room(void)
     {
         u16 tile=scratch[0xe0]; /* 6A41: C9E0 relative to C900 metatiles. */
         memcpy(sms_vram+tile*32,world_house_animation_bitmaps+((world_clock()&2)?128:0),128);
-        convert_patterns_range(tile,4);house_animation_patterns_pending=tile+1;
+        convert_patterns_range_fast(tile,4);house_animation_patterns_pending=tile+1;
     }
 }
 
@@ -2369,7 +2388,7 @@ static void animate_world_palette(void)
         /* 69CA..6A04: four SRAM water patterns queued for the next IRQ. */
         u16 tile=127;
         memcpy(sms_vram+tile*32,exterior_water_bitmaps+((world_clock()&24)>>3)*128,128);
-        convert_patterns_range(tile,4);dungeon_bitmap_pending=tile+1;
+        convert_patterns_range_fast(tile,4);dungeon_bitmap_pending=tile+1;
         for(n=0;n<4;n++) sms_palette[12+n]=world_water_cycle[((world_clock()&24)>>3)+n];
     }
     prepare_hero_armor_palette();

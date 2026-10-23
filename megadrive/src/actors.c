@@ -2666,7 +2666,7 @@ static u16 add_world_entity_sprites(u16 index,u8 *entity)
 {
     u16 n;
     u16 table=entity[8]|((u16)entity[9]<<8),count,base;
-    const u8 *frame;
+    const u8 *frame;VDPSprite *sprite;
     u8 x=entity[0x13],y=entity[0x11];
     table=descriptor_word(table+entity[10]*2);
     table=descriptor_word(table+entity[11]*2);
@@ -2678,15 +2678,18 @@ static u16 add_world_entity_sprites(u16 index,u8 *entity)
     { entity[0x1b]=frame[1];entity[0x1c]=frame[2]; }
     /* 09EE emits the complete descriptor; large bosses exceed16 parts. */
     if(!count || index+count>64) return index;
+    sprite=vdpSpriteCache+index;
     for(n=0;n<count;n++)
     {
         s16 screen_y;
         u8 tile=(base+frame[4+count+n*2])&255;
         y+=frame[3+n];x+=frame[3+count+n*2];
         screen_y=y>208?(s16)y-256:y;
-        VDP_setSpriteFull(index,x,screen_y+17,SPRITE_SIZE(1,1),
-                         TILE_ATTR_FULL(PAL1,0,0,0,16+256+tile),index+1);
-        index++;
+        /* All parts are8x8. Advance the cache pointer and write the
+         * packed size/link word rather than recomputing index*8 per part. */
+        sprite->y=screen_y+145;sprite->size_link=index+1;
+        sprite->attribut=TILE_ATTR_FULL(PAL1,0,0,0,16+256+tile);
+        sprite->x=x+128;sprite++;index++;
     }
     return index;
 }

@@ -7623,5 +7623,40 @@
         "sha256": "334c9b88d1742c73419ec8d4b8988bc3d5e9a2afa17809b0aba18610b25039f7"
       }
     ]
+  },
+  {
+    "version": 268,
+    "sha256": "bfcf22b42b1877f402a8a3f87041a528a6a942f00799195a7c405c4ba9126ad1",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T15:02:45.182811+00:00",
+    "rom": "v0268-bfcf22b4/gaw-megadrive-v0268.bin",
+    "notes": "Essai bandes sprites : pieces corrigees, grands objets NTSC encore2 images en retard. Remplace par270.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 269,
+    "sha256": "0f1ea0018e7631177500d9100325f4ea81e46193831b09ca2518d0baeda101c7",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T15:06:33.127863+00:00",
+    "rom": "v0269-0f1ea001/gaw-megadrive-v0269.bin",
+    "notes": "Essai conversion rapide : grands objets NTSC encore1 image en retard. Remplace par270.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 270,
+    "sha256": "36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T15:07:23.454137+00:00",
+    "rom": "v0270-36af7e88/gaw-megadrive-v0270.bin",
+    "notes": "Rendu sprites/decor allege : duree de vie et clignotement loot alignes, 14 cas PAL/NTSC et7 ramassages.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "loot_render_release_v0270_report.json",
+        "sha256": "bae7d149875c97400991ef5cc4050218a217fb11e7bb78a81a19a94e9c3cc8bd"
+      }
+    ]
   }
 ]

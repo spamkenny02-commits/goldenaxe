@@ -1,0 +1,103 @@
+{
+  "md_sha256": "36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4",
+  "cases": [
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 1,
+      "region": "auto",
+      "frame": 3000,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 0,
+      "region": "auto",
+      "frame": 3118,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 0,
+      "region": "auto",
+      "frame": 3119,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 0,
+      "region": "auto",
+      "frame": 3120,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 1,
+      "region": "auto",
+      "frame": 3121,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 0,
+      "region": "auto",
+      "frame": 3122,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 1,
+      "region": "pal",
+      "frame": 3000,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 1,
+      "region": "pal",
+      "frame": 3118,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 0,
+      "region": "pal",
+      "frame": 3119,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 0,
+      "region": "pal",
+      "frame": 3120,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 0,
+      "region": "pal",
+      "frame": 3121,
+      "differing_pixels": 0,
+      "first_differences": []
+    },
+    {
+      "audio_unhandled_command": 0,
+      "queued_tile_jobs": 0,
+      "region": "pal",
+      "frame": 3122,
+      "differing_pixels": 0,
+      "first_differences": []
+    }
+  ],
+  "passed": true,
+  "scope": "Independent snapshot VRAM/CRAM composition of51200 viewport/HUD pixels at six natural gameplay frames per region. Includes planes, tile flips/priority, sprite Y limit/linking, palettes and hscroll. Column Vscroll and shadow/highlight excluded by configured game mode. Not full-game/source cadence proof."
+}

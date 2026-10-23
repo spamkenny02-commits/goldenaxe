@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 23584,
+  "overflow_cases": 6498,
+  "masking_cases": 17019,
+  "terminator_cases": 5120,
+  "baseline_commit": "25b70e0",
+  "production_body_sha256": {
+    "baseline": "9e78635c418fe8beca9ff4b43c667f9104f3e46d3cb2aa5372336dee470fea3c",
+    "current": "6b84fb7263aa5a925dd86205fb9db93cb5f56db571c71f9889ba7da3e4bd679c"
+  },
+  "scope": "Host compiled actual production function bodies; exact overflow/mask/terminator/prepared-status decisions including clipped/transparent/offscreen Y scan. Physical native rendering is checked separately."
+}

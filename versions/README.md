@@ -4,6 +4,9 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0270 | [Telecharger](v0270-36af7e88/gaw-megadrive-v0270.bin) | targeted_checks_passed | Rendu sprites/decor allege : duree de vie et clignotement loot alignes, 14 cas PAL/NTSC et7 ramassages. | `36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4` |
+| v0269 | [Telecharger](v0269-0f1ea001/gaw-megadrive-v0269.bin) | build_only | Essai conversion rapide : grands objets NTSC encore1 image en retard. Remplace par270. | `0f1ea0018e7631177500d9100325f4ea81e46193831b09ca2518d0baeda101c7` |
+| v0268 | [Telecharger](v0268-bfcf22b4/gaw-megadrive-v0268.bin) | build_only | Essai bandes sprites : pieces corrigees, grands objets NTSC encore2 images en retard. Remplace par270. | `bfcf22b42b1877f402a8a3f87041a528a6a942f00799195a7c405c4ba9126ad1` |
 | v0267 | [Telecharger](v0267-71d030d8/gaw-megadrive-v0267.bin) | targeted_checks_passed | Cout audio reduit et attente absolue du sort ; niveau2 charge NTSC a la meme image SMS. Autres cas1..3 images en avance. | `71d030d8e70bde5d3b2e3e5219a7dcf23ca29f4fef340d21d659d525bfd84eab` |
 | v0266 | [Telecharger](v0266-a87da62c/gaw-megadrive-v0266.bin) | build_only | Essai attente finale rejetee : etape visuelle supplementaire. Ne pas utiliser ; prendre267. | `a87da62c5ee3936edc8f413a0b8f47f6f17007d2dcfe44d7819f69b294559d3b` |
 | v0265 | [Telecharger](v0265-612826eb/gaw-megadrive-v0265.bin) | build_only | Essai copie audio48 ; attentes PAL supplementaires. Remplace par267. | `612826eba9e99caa42a9178abd3743c9ec8c9f3f9846957885310c0d4bad5b08` |
