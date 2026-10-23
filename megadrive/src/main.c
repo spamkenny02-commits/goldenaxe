@@ -9,9 +9,9 @@
 #include "item_rewards.inc"
 #include "room_portals.inc"
 
-/* Native 68000 port of the title, menu, naming, narrative and initial room.
- * The source Z80 instructions are not executed by this ROM.
- * Normal-ground walking is ported; other game logic, sound and saves are pending. */
+/* Native68000 game logic, menus and PSG with original ROM resources as data.
+ * No Z80 CPU executes in this cartridge. Complete campaign, original RNG
+ * and hardware/timing parity remain unverified. */
 extern const u8 title_bank7[];
 extern const u32 title_bank7_size;
 extern const u32 title_loading_tstates;
@@ -98,6 +98,7 @@ static u16 world_dungeon_dark;
 static volatile u16 screen_spell_active,screen_spell_iteration;
 static volatile u16 screen_spell_video_pending;
 static u16 screen_spell_sprite_count;
+static volatile u16 screen_spell_pacing_error,screen_spell_model_gap,screen_spell_late_publications;
 static u16 screen_spell_clock;
 static u16 screen_spell_level; /* C090: level1/2 full-screen magic. */
 static u16 ice_bell_state; /* C0AC: cleared with the room's transient objects. */

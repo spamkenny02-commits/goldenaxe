@@ -5,28 +5,30 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0251 — 1024 Kio.**
+**Version courante : v0264 — 1024 Kio.**
 
-[Télécharger la ROM v0251](versions/v0251-435d5ede/gaw-megadrive-v0251.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0264](versions/v0264-f4a55f14/gaw-megadrive-v0264.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87`
-Checksum Mega Drive : `D765`
+SHA-256 : `f4a55f1465abb54ec9b2581c726d657494098de0c3c0f203b23a20c51886e53c`
+Checksum Mega Drive : `C2F0`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0251**.
-Le sort conserve maintenant le compteur de jeu SMS : un pas par étape,
-même si le travail occupe plusieurs images. L'ancien effet est effacé avant
-le rechargement des graphismes, pour éviter d'afficher ses motifs remplacés.
-Neuf cas ciblés vérifient 773 observations de l'horloge logique.
-Les modèles de coût de 232 constructions de carte et 232 scènes de sprites
-correspondent aux instructions SMS ; leur intégration à la cadence reste à faire.
-La durée réelle et les comparaisons visuelles des retours intérieurs restent
-incomplètes. La v0250 est intermédiaire.
-Voir les [changements et limites de la v0251](analysis/screen_spell_clock_v0251.md).
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0264**.
+La cadence du sort tient désormais compte du travail des routines SMS.
+Dans la scène sans ennemis, le niveau 1 finit une image avant la SMS en PAL
+et NTSC ; l'avance PAL était de 83 images dans la v0249.
+Les cartes et tables de sprites correspondent sur 598 états affichés.
+Neuf retours ont zéro différence de pixels normalisés, dont les retours en
+maison/donjon comparés au même pas de jeu et deux passages par l'inventaire.
+Le niveau 2 avec plusieurs ennemis reste 18 images trop lent en NTSC dans
+le cas contrôlé : l'optimisation de cette charge reste à faire.
+Les v0252 à v0263 sont intermédiaires ; les v0261/v0262 ont des cartes
+partielles et ne doivent pas être utilisées.
+Voir les [changements et limites de la v0264](analysis/screen_spell_pacing_v0264.md).
 
 Le sort plein écran de la sixième case est utilisable dans ses deux niveaux :
 animations d'origine, particules, coût en magie, dégâts et retour à la salle.

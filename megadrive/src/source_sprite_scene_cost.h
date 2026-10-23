@@ -7,4 +7,7 @@
  * 8000, including the screen-spell particles at6EAE. No hardware delays. */
 u8 source_sprite_scene_cost(u8 *ram,const u8 *bank12,const u8 *low,
  SourceClockWork *work,SourceSpriteSceneOutput *output);
+/* Algebraic equivalent for runtime pacing; T states only, no refresh count. */
+u8 source_sprite_scene_tstates(u8 *ram,const u8 *bank12,const u8 *low,
+ u32 *tstates,SourceSpriteSceneOutput *output);
 #endif

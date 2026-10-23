@@ -1,3 +1,4 @@
+#pragma GCC optimize ("O3")
 #include "source_sprite_scene_cost.h"
 #define GAW_SCENE_COST_ONLY
 #define source_sprite_scene_timed source_sprite_scene_count_inner

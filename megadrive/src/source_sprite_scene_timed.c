@@ -1,12 +1,20 @@
 #include "source_sprite_scene_timed.h"
+#ifdef GAW_SCENE_COST_ONLY
+#define GAW_SCENE_INLINE inline __attribute__((always_inline))
+#else
+#define GAW_SCENE_INLINE
+#endif
 typedef struct {
  SourceClock *clock;u8 *ram;const u8 *bank;SourceClockInterrupt interrupt;void *context;
  SourceSpriteSceneTrace trace;void *trace_context;u16 total;u8 error;
+#ifdef GAW_SCENE_COST_ONLY
+ u32 cost_tstates,cost_fetches;
+#endif
 } Scene;
-static u8 step(Scene *s,u16 pc,u16 t,u8 m)
+static GAW_SCENE_INLINE u8 step(Scene *s,u16 pc,u16 t,u8 m)
 {
 #ifdef GAW_SCENE_COST_ONLY
- (void)pc;s->clock->foreground_tstates+=t;s->clock->foreground_m1+=m;return 1;
+ (void)pc;s->cost_tstates+=t;s->cost_fetches+=m;return 1;
 #else
  if(s->error) return 0;
  if(s->trace) {
@@ -17,7 +25,7 @@ static u8 step(Scene *s,u16 pc,u16 t,u8 m)
 #endif
 }
 #define S(pc,t,m) do {if(!step(s,pc,t,m)) return 0;} while(0)
-static u8 get(Scene *s,u16 address)
+static GAW_SCENE_INLINE u8 get(Scene *s,u16 address)
 {
 #ifdef GAW_SCENE_COST_ONLY
  if(address<0x8000) return ((const u8 *)s->trace_context)[address];
@@ -26,15 +34,15 @@ static u8 get(Scene *s,u16 address)
  if(address>=0xc000 && address<0xe000) return s->ram[address-0xc000];
  s->error=1;return 0;
 }
-static u16 getword(Scene *s,u16 address)
+static GAW_SCENE_INLINE u16 getword(Scene *s,u16 address)
 {u16 value=get(s,address);return value|((u16)get(s,address+1)<<8);}
-static void put(Scene *s,u16 address,u8 value)
+static GAW_SCENE_INLINE void put(Scene *s,u16 address,u8 value)
 {
  if(address>=0xc000 && address<0xe000) s->ram[address-0xc000]=value;
  else if(address==0xffff) s->ram[0x1fff]=value;
  else s->error=1;
 }
-static void putword(Scene *s,u16 address,u16 value)
+static GAW_SCENE_INLINE void putword(Scene *s,u16 address,u16 value)
 {put(s,address,value);put(s,address+1,value>>8);}
 static u8 emit(Scene *s,u16 ix)
 {
@@ -133,6 +141,9 @@ u8 source_sprite_scene_timed(SourceClock *clock,u8 *ram,const u8 *bank,
  if(!clock || !ram || !bank || !output) return 0;
  s->clock=clock;s->ram=ram;s->bank=bank;s->interrupt=interrupt;s->context=context;
  s->trace=trace;s->trace_context=trace_context;s->total=s->error=0;
+#ifdef GAW_SCENE_COST_ONLY
+ s->cost_tstates=s->cost_fetches=0;
+#endif
  S(0x0938,13,1);a=get(s,0xc303);
  S(0x093b,7,1);a|=1;
  S(0x093d,13,1);put(s,0xc303,a);
@@ -257,5 +268,9 @@ u8 source_sprite_scene_timed(SourceClock *clock,u8 *ram,const u8 *bank,
  S(0x097d,10,1);
  if(s->error) return 0;
  slot=s->total;output->count=slot;output->y_end=hl;output->xy_end=getword(s,0xc026);
- output->rotating=rotating;output->bank=12;return !s->error;
+ output->rotating=rotating;output->bank=12;
+#ifdef GAW_SCENE_COST_ONLY
+ clock->foreground_tstates=s->cost_tstates;clock->foreground_m1=s->cost_fetches;
+#endif
+ return !s->error;
 }

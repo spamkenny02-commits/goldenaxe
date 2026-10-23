@@ -9,6 +9,14 @@
       "bytes": 2528,
       "sha256": "b8def80dc9ed49ac658836d65f775a77557d8af9a2476aaa6808895f7954db2d"
     },
+    "screen_spell_offsets": {
+      "bytes": 2304,
+      "sha256": "2563a08d384ff45f00d873e7c872ddc7c2bcf6fe3a29b69922d4bd3cb60ed489"
+    },
+    "screen_spell_bank12": {
+      "bytes": 16384,
+      "sha256": "b2b7eec03b7978bb0214ab0b7500710306f7f2ec93e54b775f82c61cb10b153b"
+    },
     "screen_spell_grid": {
       "bytes": 44,
       "sha256": "8fec7121344ee7d73651445d3573e4ec5a3b67ef86eecf2d61270335d0f8fa07"
@@ -30,5 +38,22 @@
       "sha256": "2471b10ac40b68ed9261953129e4af3eb2a758049c9095b14714f8337429e9b4"
     }
   },
-  "captured_states_used": false
+  "captured_states_used": false,
+  "irq_empty_fixed_tstates": [
+    13525,
+    9881,
+    12148,
+    8504
+  ],
+  "multiply_tstates": [
+    286,
+    292,
+    292,
+    298,
+    292,
+    298,
+    298,
+    304,
+    292
+  ]
 }

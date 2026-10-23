@@ -4,6 +4,19 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0264 | [Telecharger](v0264-f4a55f14/gaw-megadrive-v0264.bin) | targeted_checks_passed | Cadence du sort et SAT source ; niveau1 PAL/NTSC a1 image. Charge dense NTSC encore lente. | `f4a55f1465abb54ec9b2581c726d657494098de0c3c0f203b23a20c51886e53c` |
+| v0263 | [Telecharger](v0263-25a2ca66/gaw-megadrive-v0263.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `25a2ca660968b0560df8c79005145148021b02e338d6d94aa0e406186a2f2653` |
+| v0262 | [Telecharger](v0262-e9442fb9/gaw-megadrive-v0262.bin) | build_only | Essai abandonne : cartes partielles. Ne pas utiliser. | `e9442fb9b791a0f0814ca736638ac69d09c4ef8dc0eb90a478ca50c3536e55af` |
+| v0261 | [Telecharger](v0261-f4f01077/gaw-megadrive-v0261.bin) | build_only | Essai abandonne : cartes partielles. Ne pas utiliser. | `f4f01077de10b1edf2db0823a8b2220ecaa9ada0d7e8b51bfc49be452fe5b902` |
+| v0260 | [Telecharger](v0260-3531d463/gaw-megadrive-v0260.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `3531d463006acb61a0ee94be0ce86ad23fc80bafe211e2abd79a614702fa0afd` |
+| v0259 | [Telecharger](v0259-6586d282/gaw-megadrive-v0259.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `6586d2822824bdb5c15d87f1a72f0f292235d5548e265a9048b880ff97ef08c1` |
+| v0258 | [Telecharger](v0258-fe7c4957/gaw-megadrive-v0258.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `fe7c49573be73a940c7d6162deb5f525b5edd79b5e4d34bf60c2200bad5d9d1d` |
+| v0257 | [Telecharger](v0257-faf5c44b/gaw-megadrive-v0257.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `faf5c44ba4fe0cad8a2612ca7cf58f0601cf5c87f4c88e6e828b47cec1b6a9e7` |
+| v0256 | [Telecharger](v0256-30df7108/gaw-megadrive-v0256.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `30df710883591e7f4b4461ff85b3798575976f7b62eb1dcfd99f23b1dd56f466` |
+| v0255 | [Telecharger](v0255-765847de/gaw-megadrive-v0255.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `765847de80829082d05db93783b62f2bc4d299234456d9f1efdff29639c13fb6` |
+| v0254 | [Telecharger](v0254-021b7b9e/gaw-megadrive-v0254.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `021b7b9ea0d4b0a33cec82ffcff51837e71e72438d1d70a0c62d236d4b6eea95` |
+| v0253 | [Telecharger](v0253-f2b80257/gaw-megadrive-v0253.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `f2b8025751c2d94735677bc7a9b6570b30d991200a6bec803162bac2291c411a` |
+| v0252 | [Telecharger](v0252-18c3985f/gaw-megadrive-v0252.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `18c3985f1be2d884ea78068184adbcfb734909e982df81f5460f361f8412dce5` |
 | v0251 | [Telecharger](v0251-435d5ede/gaw-megadrive-v0251.bin) | targeted_checks_passed | Sort : horloge logique SMS et effacement avant restauration ; cadence physique encore incomplete. | `435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87` |
 | v0250 | [Telecharger](v0250-8832e6ab/gaw-megadrive-v0250.bin) | build_only | Compilation ; validation en attente. | `8832e6ab98b2e63c03faddaeed03e0fad48f1396d9ff593ccc29dbaf7a1e843f` |
 | v0249 | [Telecharger](v0249-88978b6e/gaw-megadrive-v0249.bin) | targeted_checks_passed | Sort plein ecran : deux niveaux, degats et restauration ; cadence encore approximative. | `88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8` |

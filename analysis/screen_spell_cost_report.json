@@ -1,5 +1,5 @@
 {
-  "md_sha256": "435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87",
+  "md_sha256": "f4a55f1465abb54ec9b2581c726d657494098de0c3c0f203b23a20c51886e53c",
   "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
   "passed": true,
   "cases": [
@@ -30,7 +30,33 @@
   ],
   "map_body_cases": 232,
   "sprite_scene_cases": 232,
-  "production_timing_corrected": false,
+  "fast_randomized_total_cases": 512,
+  "fast_randomized_accepted_cases": 341,
+  "fast_randomized_rejection_agreements": 171,
+  "empty_irq_wrapper_cases": [
+    {
+      "lines": 262,
+      "compensation": 0,
+      "tstates": 13525
+    },
+    {
+      "lines": 262,
+      "compensation": 128,
+      "tstates": 9881
+    },
+    {
+      "lines": 313,
+      "compensation": 0,
+      "tstates": 12148
+    },
+    {
+      "lines": 313,
+      "compensation": 128,
+      "tstates": 8504
+    }
+  ],
+  "foreground_cost_verified": true,
+  "physical_scheduler_verified": false,
   "full_game_verified": false,
   "limits": [
     "Controlled original spell cases; exact foreground T-state counts only. Interrupt, wait, initial raster and native scheduling are separate work.",
