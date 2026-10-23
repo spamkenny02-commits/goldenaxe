@@ -4,6 +4,12 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0249 | [Telecharger](v0249-88978b6e/gaw-megadrive-v0249.bin) | targeted_checks_passed | Sort plein ecran : deux niveaux, degats et restauration ; cadence encore approximative. | `88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8` |
+| v0248 | [Telecharger](v0248-8283fbe9/gaw-megadrive-v0248.bin) | build_only | Compilation ; validation en attente. | `8283fbe9fadd831c99535e5fc1660f061e716bfaaac7bbb0f26c23974f9c36f8` |
+| v0247 | [Telecharger](v0247-fe16d6ba/gaw-megadrive-v0247.bin) | build_only | Compilation ; validation en attente. | `fe16d6ba06a0c12ee7765cbc1e556fa47003efa2720682ab06285346c6014e94` |
+| v0246 | [Telecharger](v0246-7d5e9a78/gaw-megadrive-v0246.bin) | build_only | Compilation ; validation en attente. | `7d5e9a783aca617b4a4a02489ec989b24d69f00437c7beb9c093b8c8ee40851d` |
+| v0245 | [Telecharger](v0245-75cf145c/gaw-megadrive-v0245.bin) | build_only | Compilation ; validation en attente. | `75cf145cb35dac82216aa830fe38d6246c56de5e26f5d5530a3dd33f7a0196ed` |
+| v0244 | [Telecharger](v0244-81e5fec9/gaw-megadrive-v0244.bin) | build_only | Compilation ; validation en attente. | `81e5fec967be1f8c97382f8392ace1eff23d9b69591abe1ad004dcabc5b8c91c` |
 | v0243 | [Telecharger](v0243-53cebfa0/gaw-megadrive-v0243.bin) | targeted_checks_passed | Soin : bonus terrain32 points contre16 ; 12 cas cibles PAL/NTSC. | `53cebfa065645dcc9336159f41f334be7dfdf32fff5e35afb33746c0ebfb46c4` |
 | v0242 | [Telecharger](v0242-b7ff1aa9/gaw-megadrive-v0242.bin) | targeted_checks_passed | Cloche de glace native et animation des motifs eau ; huit cas cibles PAL/NTSC. | `b7ff1aa9fc40e3f290f51e66f8918d54669ddab3a5c81384582b9fc117840943` |
 | v0241 | [Telecharger](v0241-3b9e06a3/gaw-megadrive-v0241.bin) | build_only | Compilation ; validation en attente. | `3b9e06a3c66a8c8104b9ee4172494394ec8c6e53cfee61b43bf67662501bbcf8` |

@@ -7363,5 +7363,70 @@
         "sha256": "fd190dfc20702f99748ef34c40d2261e9f6b8a4dbeac6a3a864df87ed274c7d4"
       }
     ]
+  },
+  {
+    "version": 244,
+    "sha256": "81e5fec967be1f8c97382f8392ace1eff23d9b69591abe1ad004dcabc5b8c91c",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T07:46:55.385770+00:00",
+    "rom": "v0244-81e5fec9/gaw-megadrive-v0244.bin",
+    "notes": "Compilation ; validation en attente.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 245,
+    "sha256": "75cf145cb35dac82216aa830fe38d6246c56de5e26f5d5530a3dd33f7a0196ed",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T07:49:33.506997+00:00",
+    "rom": "v0245-75cf145c/gaw-megadrive-v0245.bin",
+    "notes": "Compilation ; validation en attente.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 246,
+    "sha256": "7d5e9a783aca617b4a4a02489ec989b24d69f00437c7beb9c093b8c8ee40851d",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T10:04:33.934809+00:00",
+    "rom": "v0246-7d5e9a78/gaw-megadrive-v0246.bin",
+    "notes": "Compilation ; validation en attente.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 247,
+    "sha256": "fe16d6ba06a0c12ee7765cbc1e556fa47003efa2720682ab06285346c6014e94",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T10:06:31.415187+00:00",
+    "rom": "v0247-fe16d6ba/gaw-megadrive-v0247.bin",
+    "notes": "Compilation ; validation en attente.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 248,
+    "sha256": "8283fbe9fadd831c99535e5fc1660f061e716bfaaac7bbb0f26c23974f9c36f8",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T10:09:33.144429+00:00",
+    "rom": "v0248-8283fbe9/gaw-megadrive-v0248.bin",
+    "notes": "Compilation ; validation en attente.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 249,
+    "sha256": "88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T10:11:33.904420+00:00",
+    "rom": "v0249-88978b6e/gaw-megadrive-v0249.bin",
+    "notes": "Sort plein ecran : deux niveaux, degats et restauration ; cadence encore approximative.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "screen_spell_release_v0249_report.json",
+        "sha256": "93131fbc637b8f8bec977c25b032223e75c9050b2f918f10e27f5cc0c047ee78"
+      }
+    ]
   }
 ]

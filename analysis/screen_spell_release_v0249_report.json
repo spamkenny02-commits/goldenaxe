@@ -1,0 +1,123 @@
+{
+  "md_sha256": "88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    "screen_spell_v0249-level1_report.json",
+    "screen_spell_v0249-level2_report.json",
+    "screen_spell_v0249-level1-pal_report.json",
+    "screen_spell_v0249-level2-pal_report.json",
+    "screen_spell_v0249-actors1_report.json",
+    "screen_spell_v0249-actors2_report.json",
+    "screen_spell_v0249-no-magic_report.json",
+    "screen_spell_v0249-house-real_report.json",
+    "screen_spell_v0249-dungeon-real_report.json"
+  ],
+  "controlled_cases": 9,
+  "ordered_display_map_states_exact": 436,
+  "display_map_bytes_per_state": 1280,
+  "pattern_tiles_exact": 552,
+  "settled_returns": [
+    {
+      "case": "v0249-level1",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0249-level2",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0249-level1-pal",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0249-level2-pal",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0249-no-magic",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "v0249-house-real",
+      "normalized_pixel_differences": 214
+    },
+    {
+      "case": "v0249-dungeon-real",
+      "normalized_pixel_differences": 142
+    }
+  ],
+  "effect_end_timing": [
+    {
+      "case": "v0249-level1",
+      "effect_end_frame": {
+        "sms": 3182,
+        "md": 3162
+      },
+      "md_minus_sms_frames": -20
+    },
+    {
+      "case": "v0249-level2",
+      "effect_end_frame": {
+        "sms": 3064,
+        "md": 3060
+      },
+      "md_minus_sms_frames": -4
+    },
+    {
+      "case": "v0249-level1-pal",
+      "effect_end_frame": {
+        "sms": 3175,
+        "md": 3092
+      },
+      "md_minus_sms_frames": -83
+    },
+    {
+      "case": "v0249-level2-pal",
+      "effect_end_frame": {
+        "sms": 3063,
+        "md": 3056
+      },
+      "md_minus_sms_frames": -7
+    },
+    {
+      "case": "v0249-actors1",
+      "effect_end_frame": {
+        "sms": 3183,
+        "md": 3164
+      },
+      "md_minus_sms_frames": -19
+    },
+    {
+      "case": "v0249-actors2",
+      "effect_end_frame": {
+        "sms": 3064,
+        "md": 3060
+      },
+      "md_minus_sms_frames": -4
+    },
+    {
+      "case": "v0249-house-real",
+      "effect_end_frame": {
+        "sms": 3182,
+        "md": 3162
+      },
+      "md_minus_sms_frames": -20
+    },
+    {
+      "case": "v0249-dungeon-real",
+      "effect_end_frame": {
+        "sms": 3064,
+        "md": 3058
+      },
+      "md_minus_sms_frames": -6
+    }
+  ],
+  "timing_exact": false,
+  "full_game_verified": false,
+  "limits": [
+    "Ownership, resources, optional frozen actors, room class/background bank and one initial clock phase are controlled; natural acquisition and full campaign are not established.",
+    "Ordered physical name-table states and pattern pixels match; full animated sprite positions, raster writes and audio waveforms remain unverified.",
+    "Animation cadence and restoration duration remain approximate; measured end offsets are retained in this report. The two indoor return captures retain pixel differences and are not visually exact."
+  ]
+}

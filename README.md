@@ -5,25 +5,32 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0243 — 1024 Kio.**
+**Version courante : v0249 — 1024 Kio.**
 
-[Télécharger la ROM v0243](versions/v0243-53cebfa0/gaw-megadrive-v0243.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0249](versions/v0249-88978b6e/gaw-megadrive-v0249.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `53cebfa065645dcc9336159f41f334be7dfdf32fff5e35afb33746c0ebfb46c4`
-Checksum Mega Drive : `3793`
+SHA-256 : `88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8`
+Checksum Mega Drive : `BB06`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0243**.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0249**.
+Le sort plein écran de la sixième case est utilisable dans ses deux niveaux :
+animations d'origine, particules, coût en magie, dégâts et retour à la salle.
+Neuf scénarios ciblés passent ; 436 états de carte affichés correspondent
+à la SMS dans le même ordre, ainsi que 552 tuiles graphiques comparées.
+La cadence reste à aligner : le niveau 1 finit 20 images trop tôt en NTSC,
+83 en PAL dans la scène contrôlée. Deux retours intérieurs conservent de
+petits écarts de pixels. Les v0244 à v0248 sont des compilations intermédiaires.
+Voir les [changements et limites de la v0249](analysis/screen_spell_v0249.md).
+
 Le soin respecte maintenant le bonus du terrain : 32 points dans le contexte
 prévu par la SMS, 16 ailleurs, avec plafonnement et coût de 24 points de magie.
 Douze cas contrôlés PAL/NTSC couvrent aussi le manque de magie, le maintien du
 bouton, la répétition et la vie déjà pleine ; 624 images d'état correspondent.
-Le sort de la sixième case reste à porter ; ses deux séquences plein écran
-sont maintenant désassemblées et leurs ressources identifiées.
 Voir les [changements et limites de la v0243](analysis/heal_terrain_v0243.md).
 
 La cloche de glace gèle maintenant l'eau en huit étapes, traite les ennemis

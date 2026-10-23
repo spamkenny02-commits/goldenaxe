@@ -1,5 +1,7 @@
 param([string]$Sgdk = "$PSScriptRoot\..\..\work\sgdk", [string]$Java = 'D:/jdk-25.0.1/bin/java.exe')
 $ErrorActionPreference = 'Stop'
+& python "$PSScriptRoot/tools/generate_screen_spell.py"
+if ($LASTEXITCODE -ne 0) { throw 'Screen spell resource generation failed' }
 & python "$PSScriptRoot/tools/generate_ice_bell.py"
 if ($LASTEXITCODE -ne 0) { throw 'Ice bell resource generation failed' }
 & python "$PSScriptRoot/tools/generate_world_overview.py"

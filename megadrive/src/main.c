@@ -95,6 +95,10 @@ static u16 save_resume_room,save_resume_health;
 static u16 world_graphics_class,house_return_room,house_return_x,house_return_y;
 static u16 world_dungeon_number;
 static u16 world_dungeon_dark;
+static volatile u16 screen_spell_active,screen_spell_iteration;
+static volatile u16 screen_spell_video_pending;
+static u16 screen_spell_sprite_count;
+static u16 screen_spell_level; /* C090: level1/2 full-screen magic. */
 static u16 ice_bell_state; /* C0AC: cleared with the room's transient objects. */
 static bool return_feather_requested;
 static volatile u8 world_boss_state; /* C0AE, cleared by gem appearance. */
@@ -288,7 +292,7 @@ static void set_palette(const u16 *sms)
 static void set_world_palette(void)
 {
     static const u16 levels[4]={0,3,5,7};
-    u16 color=sms_palette[0],n;
+    u16 color=sms_palette[(screen_spell_active==1 || screen_spell_active==2)?16:0],n;
     for(n=1;n<32;n++)
     {
         u16 sms=sms_palette[n];
@@ -870,6 +874,7 @@ static void inventory_hud_icon(void);
 static void use_return_feather(void);
 static void show_world_overview(void);
 static void activate_ice_bell(void);
+static void run_screen_spell(void);
 static void apply_ice_bell_metatiles(u16 number);
 static void portal_wait_frame(void);
 static void fade_world_palette(const u16 *target,bool fade_in);
@@ -956,6 +961,8 @@ static void activate_hero_item(void)
         hero_state=10;sound_effect_main(hero_selected_item==4?0x92:0x93);
         spawn_hero_projectile(hero_selected_item==4?3:4);
     }
+    else if(hero_selected_item==6 && spend_spell_magic())
+    { screen_spell_level=hero_items[6];hero_state=6;sound_effect_main(0x94); }
     else if(hero_selected_item==7 && spend_spell_magic())
     {
         u16 amount=hero_health+(hero_terrain_context==2?32:16);
@@ -1250,6 +1257,12 @@ static void world_vint(void)
         world_sms_sprite_prepared_overflow=world_video_next_overflow;
         __asm__ volatile ("" ::: "memory");
         world_video_pending=0;
+    }
+    if(screen_spell_video_pending)
+    {
+        VDP_setTileMapDataRect(BG_A,md_map,0,2,32,20,32,DMA);
+        VDP_updateSprites(screen_spell_sprite_count,DMA);set_world_palette();
+        screen_spell_video_pending=0;
     }
     if(dialogue_video_pending)
     {
@@ -1888,7 +1901,7 @@ static u8 saved_room_actor_mask(u16 number);
 /* 1816..181F: C0CE plus the low byte of C037, within the save record. */
 static void load_current_world_actors(u16 number)
 {
-    ice_bell_state=0; /* 24C5 clears C090..C0AF before object initialization. */
+    screen_spell_level=0;ice_bell_state=0; /* 24C5 clears C090..C0AF before object initialization. */
     boss_death_music_hold=FALSE;
     load_world_actors_progression(number,saved_room_actor_mask(number),
         game_save_state[0x1e + (u8)world_dungeon_number],sms_vram,md_patterns);
@@ -2343,6 +2356,7 @@ static void prepare_hero_armor_palette(void)
 static void animate_world_palette(void)
 {
     u16 n;
+    if(screen_spell_level) run_screen_spell();
     if(world_graphics_class==1) animate_house_room();
     if(world_graphics_class==2 && !world_dungeon_dark && !(world_clock()&3))
     {
@@ -2678,6 +2692,7 @@ static void show_inventory(void)
 }
 
 #include "world_overview.inc"
+#include "screen_spell.inc"
 
 static bool tick_world_simulation(void)
 {
@@ -2732,6 +2747,8 @@ static bool tick_world_simulation(void)
         if(hero_state==12) { hero_animation=0;hero_flags|=1;hero_casting=0; } /* 2F0D/369F */
         else if(hero_state==1) { if(!bell_action) move_hero(); }
         else if(hero_state>=2 && hero_state<=5) attack_hero();
+        else if(hero_state==6 || hero_state==7)
+        { if(hero_state==6) { hero_hurt=0;hero_state=7; }if(!screen_spell_level) hero_state=0; }
         else if(hero_state==10 || hero_state==11)
         {
             if(hero_state==10) { hero_state=11;hero_attack_phase=255;hero_animation=0; }
