@@ -2,6 +2,7 @@
 #include "source_pattern.h"
 #include "pattern_convert.h"
 #include "actors.h"
+#include "source_room_history.h"
 #include "key_redraw_cost.inc"
 #include "room_clear.inc"
 #include "room_contact.inc"
@@ -90,6 +91,7 @@ _Static_assert(sizeof(house_dialogue_storage.video)<=sizeof(house_dialogue_stora
 #define world_clone_tiles house_dialogue_storage.video.clones
 static u16 world_tile_job_count,world_video_sat_count,world_video_next_overflow;
 static bool world_video_preparing,world_video_palette;
+static u8 world_recent_rooms[16]; /* DCF0..DCFF, outside SRAM payload. */
 static bool save_resume_pending;
 static u16 save_resume_room,save_resume_health;
 static u16 world_graphics_class,house_return_room,house_return_x,house_return_y;
@@ -1933,10 +1935,17 @@ static void save_room_actor_mask(u16 number);
 static u8 saved_room_actor_mask(u16 number);
 
 /* 1816..181F: C0CE plus the low byte of C037, within the save record. */
+/* Provisional draw service: exact source R/IRQ stream is not integrated. */
+static u8 room_history_draw(void *context)
+{
+    (void)context;return (u8)random();
+}
+
 static void load_current_world_actors(u16 number)
 {
     screen_spell_level=0;ice_bell_state=0; /* 24C5 clears C090..C0AF before object initialization. */
     boss_death_music_hold=FALSE;
+    source_room_history(number,world_recent_rooms,game_save_state+0x150,room_history_draw,0);
     load_world_actors_progression(number,saved_room_actor_mask(number),
         game_save_state[0x1e + (u8)world_dungeon_number],sms_vram,md_patterns);
 }
@@ -2895,7 +2904,10 @@ reload_world:
         sms_vram[0x3e03+n*4]=0;
     }
     dungeon_animation_scan=dungeon_animation_phase=0;dungeon_bitmap_pending=0;
-        load_current_world_actors(0x95);
+    if(save_resume_pending)
+        load_world_actors_progression(0x95,saved_room_actor_mask(0x95),
+            game_save_state[0x1e],sms_vram,md_patterns); /* Template, no actual room entry. */
+    else load_current_world_actors(0x95);
     room_shutter_state=(world_actor_count&128)?2:0;room_shutter_direction=0;room_script_coordinate_pending=1;
     for(n=0;n<16;n++) { sms_palette[n]=world_palette[n];sms_palette[n+16]=menu_palette[n]; }
     /* Initial equipment C0F1=1; table $1E30 selects $38,$30. */

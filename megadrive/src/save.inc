@@ -15,6 +15,7 @@ static void save_init(void)
 static void save_reset_new_game(void)
 {
     memset(game_save_state,0,sizeof(game_save_state));
+    memset(world_recent_rooms,0,sizeof(world_recent_rooms)); /* 1CA3..1CAC. */
     /* 1C97 initializes the persistent visited/room bytes to FF. */
     memset(game_save_state+0x150,255,256);save_checkpoint_room=save_runtime_checkpoint=0x95;
     /* Initial 95 and the reached village 94 have empty enemy masks. */

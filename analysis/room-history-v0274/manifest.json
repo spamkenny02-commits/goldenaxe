@@ -1,0 +1,860 @@
+{
+  "release": 274,
+  "purpose": "Timed RNG isolated research and integrated room-history evidence",
+  "cleanup_roots": [
+    "validation/rng-timed-host",
+    "validation/rng-timed-68k",
+    "validation/room-history"
+  ],
+  "protected_sha256": {
+    "input/original.sms": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+    "versions/v0001-d32d3208/gaw-megadrive-v0001.bin": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b",
+    "versions/v0002-5d10a02a/gaw-megadrive-v0002.bin": "5d10a02a28e07170d10ec9b02354e81c42dc7a6185d1c48c7d636489c021d107",
+    "versions/v0003-7ab95bef/gaw-megadrive-v0003.bin": "7ab95bef3e0ecfae795bfc2705f5a316501b6b8f25ce815e2e125e3ece360dc0",
+    "versions/v0004-29e687c0/gaw-megadrive-v0004.bin": "29e687c0beff0c0c4210443d949f2b52b22f41309ab0c80ef35ebdad661f6f9c",
+    "versions/v0005-80d48c07/gaw-megadrive-v0005.bin": "80d48c07e1c79c94f76438b3e9a7ed365de7390df3c3b71404c34b82f9464d1c",
+    "versions/v0006-b82289fa/gaw-megadrive-v0006.bin": "b82289fa4a91003b304285c77c9b41505c93e299a0ac9625641cb79d8138047e",
+    "versions/v0007-62ebce68/gaw-megadrive-v0007.bin": "62ebce684ac9d1903bd87671c1cb6223420b89e521ce75415d177c134f34d211",
+    "versions/v0008-37023967/gaw-megadrive-v0008.bin": "37023967219a992e03bcb0c3f8b7e1ab55f22b6a4494e4621387b2fab92c6a57",
+    "versions/v0009-147c4ce4/gaw-megadrive-v0009.bin": "147c4ce4007a66da197009291606b55cc8ff6243cd2de0c5efe444dab39bb31f",
+    "versions/v0010-fd14924e/gaw-megadrive-v0010.bin": "fd14924e886e721dcc27cde37c3e2c7536107e46437593d26dd0b8359d029210",
+    "versions/v0011-174b1015/gaw-megadrive-v0011.bin": "174b10157b48d7f44ff7a271195b7d4367aa5ae219e32f757ddabf419b4f1aa9",
+    "versions/v0012-cea9c1bb/gaw-megadrive-v0012.bin": "cea9c1bb5063dcc3bdfc8ae73c8c375aaecf979cb4cc2aa4ba5f59ef0e02e797",
+    "versions/v0013-4ab93fb4/gaw-megadrive-v0013.bin": "4ab93fb473e026f95828ceca1d1881cb1d81b2b756bc8bc9871912322782b977",
+    "versions/v0014-8f9641da/gaw-megadrive-v0014.bin": "8f9641dab38de2e64a4ebd89ab52c32eed4a3a3eedb90f562516e76aa3f80a03",
+    "versions/v0015-5da7e25f/gaw-megadrive-v0015.bin": "5da7e25f09ba3e63e9a8c680972cb7fb67a70a856d83cc7ec929a8c6391c8fb5",
+    "versions/v0016-9a022782/gaw-megadrive-v0016.bin": "9a0227823cbcdfe349e398eaf08cfaae8851d066337b0bbd3c5f623024e2f334",
+    "versions/v0017-e44647ec/gaw-megadrive-v0017.bin": "e44647ecd41ba63bd5977364009b007648912bc0dad489836317da12fd88a831",
+    "versions/v0018-8eb043e1/gaw-megadrive-v0018.bin": "8eb043e13c34d640db41cedaebf177c7ea8e206ea53f8b45e0bd8a09b621cdfc",
+    "versions/v0019-865fe0a9/gaw-megadrive-v0019.bin": "865fe0a94f2939e9b999b3e3013d532d28ae293de8aba580889d1662dc44a456",
+    "versions/v0020-3fcc82be/gaw-megadrive-v0020.bin": "3fcc82be4c00617bb36be4e1adfd765e8443daa536afa7b61484c4ff1b434748",
+    "versions/v0021-27c56ec8/gaw-megadrive-v0021.bin": "27c56ec87e272f87f6d6bf368e5f34bd9b85264956b87932d74e281df5aa5cf5",
+    "versions/v0022-23ff4c2e/gaw-megadrive-v0022.bin": "23ff4c2e7f60399cc75bf59eb7fc46d5ac9ab76a046d168aaf2696382301fd0a",
+    "versions/v0023-3cfc6137/gaw-megadrive-v0023.bin": "3cfc61378ff64ecf311163707de88b6f309892e864693bcedcf849f1bb0b04b3",
+    "versions/v0024-92b10d8d/gaw-megadrive-v0024.bin": "92b10d8d94327cafb570d9e00e0f9050de69d53a89e990c9e12676348029a471",
+    "versions/v0025-e95a6b5b/gaw-megadrive-v0025.bin": "e95a6b5bfe9f5e1a714f6042531779e8213fcda3ac41cb142b2b7d4f9d005c58",
+    "versions/v0026-e0fef3c2/gaw-megadrive-v0026.bin": "e0fef3c26202309e88b6dcb60217ddc6727d4f9a85daf7ef989f25149d454f7e",
+    "versions/v0027-d7bdb3f6/gaw-megadrive-v0027.bin": "d7bdb3f6112d2efe06cef2c6ca9cde0159dd35b4f71c643b924428516a2196aa",
+    "versions/v0028-51452b3e/gaw-megadrive-v0028.bin": "51452b3e4e27abfe239fe2b4022abdb0dac0da82c6965e1d61eff7b97e279781",
+    "versions/v0029-28d4b958/gaw-megadrive-v0029.bin": "28d4b9580ee1297b4df416e154722c02c171d91c5d89ce78ed9b6f3c41155822",
+    "versions/v0030-c325609b/gaw-megadrive-v0030.bin": "c325609b47f43b324624a254be204fd89f59856ace4b2460f4e588f06f05cea1",
+    "versions/v0031-cec4ef9e/gaw-megadrive-v0031.bin": "cec4ef9e9b2a06a66c44e4fc32205613d99dbdb4d2385844eb26721f1d82e371",
+    "versions/v0032-ea5b8434/gaw-megadrive-v0032.bin": "ea5b8434f3606cac37ab1212fd7d8249b29703b3e84be993cd75fb357b7ed1f3",
+    "versions/v0033-86a5a66c/gaw-megadrive-v0033.bin": "86a5a66c59a479cd96214440abb4b76fa878f3b7a3690b29afec998d6665e6ff",
+    "versions/v0034-43775313/gaw-megadrive-v0034.bin": "43775313034361956b0446f9709bfbdbcaab0d9980fd50e4174536f2283714df",
+    "versions/v0035-75c38bcb/gaw-megadrive-v0035.bin": "75c38bcb0d25615754f4bec7d34dd26a88398acdc1cc6b569617ab450a2c94ca",
+    "versions/v0036-259c086b/gaw-megadrive-v0036.bin": "259c086bdc5b9ceba3bbde2afacc4b17e60ae59d98791c4f7dee02f5367b212c",
+    "versions/v0037-9b8f5ee7/gaw-megadrive-v0037.bin": "9b8f5ee7c131c2c51b60250c85c7a5c89084ac657a399b881343dc4bdd2cbf96",
+    "versions/v0038-73b3f51e/gaw-megadrive-v0038.bin": "73b3f51ead03f172a2c893402f7a9b4c2fb0b539bff9227c4843bc78ba1a1a66",
+    "versions/v0039-ece4a6b0/gaw-megadrive-v0039.bin": "ece4a6b0c171afb03fb04e680515df12b27601a07755a9f9210a2980622db70c",
+    "versions/v0040-a4f0f052/gaw-megadrive-v0040.bin": "a4f0f052ea5cb60c04f60c0dcae01245099b920464fa83e14eb198d2b2743122",
+    "versions/v0041-d8f2dc05/gaw-megadrive-v0041.bin": "d8f2dc050dd1b46f59370599da09c40f444908040bb5a0dcb287f7e89e752ffd",
+    "versions/v0042-2230c2b4/gaw-megadrive-v0042.bin": "2230c2b4badf9c0086cfcd0fd2ca45cea0e8942a79631252ee24306ddd8409ff",
+    "versions/v0043-94317503/gaw-megadrive-v0043.bin": "94317503805abf9288dd056b64a4f8b61d92dc3c9b2a51227813777879f01fb1",
+    "versions/v0044-267fcf5b/gaw-megadrive-v0044.bin": "267fcf5bf3154bc905ab9e75b9893f7d038c6aebdabb41849f61a349cec047b2",
+    "versions/v0045-e45374ab/gaw-megadrive-v0045.bin": "e45374abc29f9db490922d958357cf73ade7682c42e6e12036710987eca194f8",
+    "versions/v0046-3f77f21f/gaw-megadrive-v0046.bin": "3f77f21ff2e22586e66e109201750b237058e9347b9cca84999a3710410d4573",
+    "versions/v0047-ff1a0b0a/gaw-megadrive-v0047.bin": "ff1a0b0a5c513fbbacd473cba06bf4316b431036da9755b6caefe491ac815331",
+    "versions/v0048-e796cfbe/gaw-megadrive-v0048.bin": "e796cfbe1b6d15a67200953b17ab67546d9ce111a15c554da513f7eb15849b3c",
+    "versions/v0049-3e6de542/gaw-megadrive-v0049.bin": "3e6de5423466531de424804c834c071f53c757e3a29ee6efa6264912e68e1b14",
+    "versions/v0050-12d69d55/gaw-megadrive-v0050.bin": "12d69d553cc634c242d6143af7df3d196fff95e822fc4a6ad539deb97562b52f",
+    "versions/v0051-3161f829/gaw-megadrive-v0051.bin": "3161f829edc97c40f95ff52c90dd23529207d265ec73e170f4c6e6c9486bc172",
+    "versions/v0052-1e6402e3/gaw-megadrive-v0052.bin": "1e6402e38df077646a972a0a61dc335fd2c8fe54a6c4217888f8e1233ab5e6a5",
+    "versions/v0053-acc8299d/gaw-megadrive-v0053.bin": "acc8299def6be457146a520444bc6d0db9e8e8f13e623a7ec35da97b678ab535",
+    "versions/v0054-1dbffe65/gaw-megadrive-v0054.bin": "1dbffe65bf7aef56c4a355f776f4fc89d59acbf3fae1a8bdb99c85a240b8a65f",
+    "versions/v0055-8bb01ac9/gaw-megadrive-v0055.bin": "8bb01ac912d6a7d7a347d66a2ad67f8af664e75f92dbab18225e8438f16efe9b",
+    "versions/v0056-e9694529/gaw-megadrive-v0056.bin": "e969452902935eca93d236542d0a8048a2859e0918693c3b8ae59f19c611147c",
+    "versions/v0057-4c0e876d/gaw-megadrive-v0057.bin": "4c0e876dec34cbc21c232ca239047593f5b1e35c4ec0531951aa7aa8334213a6",
+    "versions/v0058-b01d9b9d/gaw-megadrive-v0058.bin": "b01d9b9d2519e382fe2da006d2c55730b94d225562bd017640276cec8cda5ee9",
+    "versions/v0059-637887dc/gaw-megadrive-v0059.bin": "637887dc2bdff7b3e544acf1207ab64b6d12ff7b514df747e6c0a2ea67939440",
+    "versions/v0060-b2742e83/gaw-megadrive-v0060.bin": "b2742e8311c22e93fcc49693b9332a5e0d13de95af0a85ca72712419f6d51fd6",
+    "versions/v0061-5c4b9137/gaw-megadrive-v0061.bin": "5c4b9137bb73638e16452dc408a6ad303d69fd5d430edadd3a470dc0c7731d13",
+    "versions/v0062-2af5d590/gaw-megadrive-v0062.bin": "2af5d590a86ff3f05f7bdcf07ef68ccdae002fe21da313b38383abcc7689b0d3",
+    "versions/v0063-62366fff/gaw-megadrive-v0063.bin": "62366fff149b56f25a62b8e10bdd13615bdef58efa3548362ab3ac857bf2f07b",
+    "versions/v0064-065f1446/gaw-megadrive-v0064.bin": "065f144627e9938c4e2af2601214c3c17b25aa84e08a96ad941b27a99156c444",
+    "versions/v0065-00d0e801/gaw-megadrive-v0065.bin": "00d0e8018f870b086ccc7b25cd6662bfdb7ab40a223af584780fd1fb9b0514d9",
+    "versions/v0066-6e394baf/gaw-megadrive-v0066.bin": "6e394baf28744cb9f6526aa43bbfdfa585c5081f552f7a0d17de37626562a471",
+    "versions/v0067-cab97c21/gaw-megadrive-v0067.bin": "cab97c21bb9dd9c65b67cb9fb4f8afa2fd5441a375bf84f402e76e7ef5500769",
+    "versions/v0068-67dcb426/gaw-megadrive-v0068.bin": "67dcb426363a45e24464028c2734d9a338bd1665558f03d0eaf5ede6f6bc95aa",
+    "versions/v0069-c75ec097/gaw-megadrive-v0069.bin": "c75ec097d5d6f460420583df4821bb721ada92eb7cbaa5e05f1cf9fd234bbc52",
+    "versions/v0070-ee7ae2e4/gaw-megadrive-v0070.bin": "ee7ae2e440037232e650fae4a30b1c0ce4a2ad1f1e955e46e9a261d88074d008",
+    "versions/v0071-b3613817/gaw-megadrive-v0071.bin": "b361381750ac3366da528a8d544864b2b097a6b5fffaf363d935ef5bb068e1f8",
+    "versions/v0072-e44949dd/gaw-megadrive-v0072.bin": "e44949dd17bccba7ec27c105170d1323fb7a22d548d6e7b86a06878810dadfef",
+    "versions/v0073-16544cb1/gaw-megadrive-v0073.bin": "16544cb1e00dfc72002f65e1b35612e981453cfe7afac05ae7ff82a55b43ba7f",
+    "versions/v0074-d28e6149/gaw-megadrive-v0074.bin": "d28e614977cb544474e9c38f5b2fac32c335796643a674c804306ce81c4a5a72",
+    "versions/v0075-82b3580f/gaw-megadrive-v0075.bin": "82b3580f29ef0829d3d33b42de7982b4cec0dbe3431d2156475339b052bdfc71",
+    "versions/v0076-a171c534/gaw-megadrive-v0076.bin": "a171c53496510b0e93fde0518fe517243a8fe55f78e310edf968eee53abd1b3d",
+    "versions/v0077-6641d4b3/gaw-megadrive-v0077.bin": "6641d4b3bc5983dc5fe7978f9c74ece3623eacf208da73c435a7fce241f85a14",
+    "versions/v0078-76081dc2/gaw-megadrive-v0078.bin": "76081dc2de34daf978bc0e56a936ed790555e538559382e6b55e20d00540864b",
+    "versions/v0079-c0146cd5/gaw-megadrive-v0079.bin": "c0146cd5b9621f6b59e6837e375f8e19fffd9a8694ee13bbc87c01f87343e5f2",
+    "versions/v0080-6aee1373/gaw-megadrive-v0080.bin": "6aee137328ef55bfb35aa39a33483be1457ab562cd8e3a7ea5a2689cff7efea5",
+    "versions/v0081-716bc75b/gaw-megadrive-v0081.bin": "716bc75b879fc1fdb0259b2b6e312a519a4c52805ccc02113e6fd3e37972b84d",
+    "versions/v0082-365b546d/gaw-megadrive-v0082.bin": "365b546d3f02682d7642b10970eda3863f47d49e80602619ebef16c95006b021",
+    "versions/v0083-ac6b7471/gaw-megadrive-v0083.bin": "ac6b7471f1a375b708aada21749779fa6395d8ef0d96b7d89cfa9c8f209bcf90",
+    "versions/v0084-7de7d76b/gaw-megadrive-v0084.bin": "7de7d76b234815306e8c91923f5413745ec5678c0697aeb929a3f2a31959da9a",
+    "versions/v0085-5e223105/gaw-megadrive-v0085.bin": "5e223105f6b3adcd99fbf5d4ec7bec7226874cb75bbc1c03fc07422583f2638a",
+    "versions/v0086-8d3b41f9/gaw-megadrive-v0086.bin": "8d3b41f9aea150db0dbea2be6114b43e7f9ff4bd965b4f72cd0f34e10bb50a1c",
+    "versions/v0087-4273eda3/gaw-megadrive-v0087.bin": "4273eda362638d07c3b7a0dcb54e8a9dea26781e3f8d8c69c938c828ab54f565",
+    "versions/v0088-7bbb79ba/gaw-megadrive-v0088.bin": "7bbb79bad0ffe2647b70f38e3af6a6d64bd587f45fadaa44aff98cdda1880532",
+    "versions/v0089-1942f987/gaw-megadrive-v0089.bin": "1942f9874b60a1f63742527016555105c1fb2c8e401164f4b0573ca571ce3109",
+    "versions/v0090-13d6eb10/gaw-megadrive-v0090.bin": "13d6eb102b7b5d0f34355a413a90f58acde8d900234b3368d574d234c6dcfe05",
+    "versions/v0091-43f9c07e/gaw-megadrive-v0091.bin": "43f9c07eb6bedb423eacb48ca2935ea2dc22b85d9688e4f3b3d355f9ede1efbd",
+    "versions/v0092-602393fc/gaw-megadrive-v0092.bin": "602393fc12173ab1670fbcbc1b58ce4596a6129291437524540118b82d1752f3",
+    "versions/v0093-28ce141a/gaw-megadrive-v0093.bin": "28ce141a255dbe91bdd62913e991435adff69719e07f12e6019343668902bfaf",
+    "versions/v0094-8639238d/gaw-megadrive-v0094.bin": "8639238d6de100f584c6f7daa18c7cb54398a3bd9b217da288c4169c3b80303d",
+    "versions/v0095-f2f9fdc1/gaw-megadrive-v0095.bin": "f2f9fdc1aaa20bc67eb5f1d9e21697b30c47dd9bc7b60f863c14b204b14d0328",
+    "versions/v0096-0faff7e5/gaw-megadrive-v0096.bin": "0faff7e5a78478e3c637209c3e380ade74d065c2149824be9598400014baf32c",
+    "versions/v0097-51363105/gaw-megadrive-v0097.bin": "5136310583bcc2eed918f0593c2209d28d5b1b5a32410e4cfbc7afc628acc912",
+    "versions/v0098-680c5ebc/gaw-megadrive-v0098.bin": "680c5ebc70be288899930ff67e832ea5f08c0866f6ef859ebc124ac9b9bc5933",
+    "versions/v0099-eade0289/gaw-megadrive-v0099.bin": "eade02892e01d3eaf7e2df1d3553aed344848a22c06cfeb3277334149647747d",
+    "versions/v0100-0a14bf9d/gaw-megadrive-v0100.bin": "0a14bf9d0383b9af0905d2676f6248c38757a4bd7925e7465ad5acef3a82885a",
+    "versions/v0101-fa3b3fda/gaw-megadrive-v0101.bin": "fa3b3fda81fb8d4aa6ee9241483561895da82738b395743eef88abecc5ea8443",
+    "versions/v0102-222c090b/gaw-megadrive-v0102.bin": "222c090bcc650d11d01d92b3d75aa6aff9927d1be0b93f77ae2738a1b29c8841",
+    "versions/v0103-6650285f/gaw-megadrive-v0103.bin": "6650285fd8864ceb1ed31c24fb7899d73dcb5ff455c5f2e23ce56917668480e6",
+    "versions/v0104-b0859ec2/gaw-megadrive-v0104.bin": "b0859ec2712632ecdf34d81b2dbe3ac048dc67163d9b34158e38e1f625b5a5d9",
+    "versions/v0105-5dbebb15/gaw-megadrive-v0105.bin": "5dbebb15dd30d2b8747303ff3a9a642587c222e72f94a8d4e84dece9efad4d8d",
+    "versions/v0106-f4d1dd39/gaw-megadrive-v0106.bin": "f4d1dd390a1c018172fff700ecf17fb17c99f874f16044d6810726d79b564e9c",
+    "versions/v0107-d490395b/gaw-megadrive-v0107.bin": "d490395b9961b5a7ae5b36d4463a0eb700951890bbcea0d4c4ba62605d83f0f0",
+    "versions/v0108-3e9ced37/gaw-megadrive-v0108.bin": "3e9ced370044caaec311aca2f9ac9b24ff6337b3dc53b57b8abc13cf66a13719",
+    "versions/v0109-54b787f9/gaw-megadrive-v0109.bin": "54b787f9bc3e6782040faf09dce47ca8844f240ca4d6a3c6e4b183f672fc74a2",
+    "versions/v0110-c64afe1e/gaw-megadrive-v0110.bin": "c64afe1e8e4802f49f8e1408a3c03a26e8443e729179308052a5af1ca157ca75",
+    "versions/v0111-26d75abb/gaw-megadrive-v0111.bin": "26d75abb554ed062e218a2e3d48fff120abcd08f28b7f9a6a1f220e5cb188b7d",
+    "versions/v0112-f01b1bee/gaw-megadrive-v0112.bin": "f01b1beee7001aa50e7b71d79fa182106beb0e8906b31d9397fa946e8325db31",
+    "versions/v0113-58543772/gaw-megadrive-v0113.bin": "585437724e49ca97f2595072459324a3311708c915f12e2c7532837c15feaae5",
+    "versions/v0114-fa929315/gaw-megadrive-v0114.bin": "fa9293155842594f13c97566a540bf3940ea0657bd513168a1770e592df16ba5",
+    "versions/v0115-cb4f0424/gaw-megadrive-v0115.bin": "cb4f042495ed0353dbd7b0104fbfef5f76c696a5d3f528ce2c83eba16bd171ac",
+    "versions/v0116-e7069055/gaw-megadrive-v0116.bin": "e7069055e4dca251b0905e83e9d212e55e991321058edb640ebab5c61f851b15",
+    "versions/v0117-da820264/gaw-megadrive-v0117.bin": "da8202641aa6d97cf4edab63cf39cc356cc461ca0b07fec6c61d74e40a3be932",
+    "versions/v0118-a72eb3e8/gaw-megadrive-v0118.bin": "a72eb3e83e49733761e285e3639ef6c4a344995fd8fd45f7372b3be8d2c60405",
+    "versions/v0119-d3ea2cd9/gaw-megadrive-v0119.bin": "d3ea2cd95d7cc771e8ef3615b08594acd371f74bc709a621adc9b125dce448ef",
+    "versions/v0120-8dd2bab8/gaw-megadrive-v0120.bin": "8dd2bab8372456b17bc74e79996ba2dc49ac2f8ab9e1e137f03150f69072a97f",
+    "versions/v0121-e5868929/gaw-megadrive-v0121.bin": "e58689290cf7a9e7f54b9651a0cef23b719d567e87b9327e58dbdb5af9d56fd6",
+    "versions/v0122-8b7e8076/gaw-megadrive-v0122.bin": "8b7e80769ddc081fe5caeacceba0f678a2b04c6b33857c526794b6645791b9fb",
+    "versions/v0123-121f3aa6/gaw-megadrive-v0123.bin": "121f3aa68676583cfa6a579b401056a16c354eae6c88c855138a90a1865d4fcd",
+    "versions/v0124-987f92ad/gaw-megadrive-v0124.bin": "987f92ad158c69c81aa5fd74d5e37a77711f39e8994e51c40633a765592fa822",
+    "versions/v0125-e361feb5/gaw-megadrive-v0125.bin": "e361feb5e2297f2ed87df884a1928e9b81cf2df8dad77035770183d8554c613a",
+    "versions/v0126-c5e5c136/gaw-megadrive-v0126.bin": "c5e5c13640de02fda61fb10f16c5857f4265f679b109b78a1ada95cc94bb9755",
+    "versions/v0127-d3770033/gaw-megadrive-v0127.bin": "d3770033cda9c7b306172abb2da7bfbc72815905b7bb21710f56c4b8d09b51e0",
+    "versions/v0128-681b8e80/gaw-megadrive-v0128.bin": "681b8e8089000d5fea9f175f77aac92f9cbc164e168e797408875d44784cd3b4",
+    "versions/v0129-8960a965/gaw-megadrive-v0129.bin": "8960a965dc1e68ec0304aedc1dbc542ba54068fac07d4be74258e4fcc38900c1",
+    "versions/v0130-ee2d31fc/gaw-megadrive-v0130.bin": "ee2d31fc71c765be4802ec8b5ad7d86b99a6225a2ce7850ea2071e23c721aa73",
+    "versions/v0131-a41f0e2f/gaw-megadrive-v0131.bin": "a41f0e2f59bc338620aab82c6937924cf50b9771a4ceec9c8e4275eee822c415",
+    "versions/v0132-f1537f6f/gaw-megadrive-v0132.bin": "f1537f6f2f7e51da9821629bc119dd1f645829730453b388c1eea748ea54a387",
+    "versions/v0133-cae543bf/gaw-megadrive-v0133.bin": "cae543bfc455fef341f1496f3fe2d4a71ad237dccfeb3a895e5cd67ccc418cf4",
+    "versions/v0134-1c2c26a2/gaw-megadrive-v0134.bin": "1c2c26a2dde2cd3e4caeb4da464a0faa8776aab50e7518253815148cab616549",
+    "versions/v0135-e4790504/gaw-megadrive-v0135.bin": "e4790504a6f3a165285c2cef9402fee56240c32dfe2b4a9f730f08a19fc6d8ae",
+    "versions/v0136-d995d9a0/gaw-megadrive-v0136.bin": "d995d9a005c68bde1f0991847d7f0b89c604c5df085962f8318f7667ac18523a",
+    "versions/v0137-775552e0/gaw-megadrive-v0137.bin": "775552e0c69285001d9763e3c584f26417fb00e36e6dc0471ab63a5c3427973d",
+    "versions/v0138-39058dcb/gaw-megadrive-v0138.bin": "39058dcb999456ab4f69b2a5afeaf06077e0148ca4235b02c865b22e9dad3c09",
+    "versions/v0139-cbc44ca1/gaw-megadrive-v0139.bin": "cbc44ca13ec2be15274c972a6a8aafb812219b346afed50934df2bb11199139d",
+    "versions/v0140-cc830a82/gaw-megadrive-v0140.bin": "cc830a8216e7432706dfd53bfafc3deee7c9e73635be09c232523e0aa524efc3",
+    "versions/v0141-51ff11b9/gaw-megadrive-v0141.bin": "51ff11b9c6a5d9ba1321f81c60bc3c4fb9fbc61d4c47514f9f0005dca3aee89e",
+    "versions/v0142-546b1a68/gaw-megadrive-v0142.bin": "546b1a68e93b64c59b3564bbb21316e53e1a766a1a15977c94f0d2681a76b838",
+    "versions/v0143-57c8ca28/gaw-megadrive-v0143.bin": "57c8ca289fb26b0e92ebc5c78bacd9c78d4654ab52ffec61ffcdf4510dbd4e03",
+    "versions/v0144-4fb44220/gaw-megadrive-v0144.bin": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+    "versions/v0145-3d4c7893/gaw-megadrive-v0145.bin": "3d4c7893100e1d6dea7a064799176fa4151e52310a18c2b04c70431acd76765b",
+    "versions/v0146-edc3758a/gaw-megadrive-v0146.bin": "edc3758a27b634b87579b3049dc1553cba6308cec3a300a0848b3dab89043fa8",
+    "versions/v0147-aef23965/gaw-megadrive-v0147.bin": "aef239654fc2341bc35734d0d1b2c346534ce8038197a0b6e62bd4c571b32f5e",
+    "versions/v0148-0a3927a9/gaw-megadrive-v0148.bin": "0a3927a93d7ca4ebc06ff8fccf04cd2ca19b7eed1e6462c9d58334209ff1160f",
+    "versions/v0149-4ba31d49/gaw-megadrive-v0149.bin": "4ba31d49f9553901b5128ea1172d069b7488bc0ace2471ca4a285b403557fc18",
+    "versions/v0150-7964548f/gaw-megadrive-v0150.bin": "7964548f395729aca7332cfddc61c4d60f829ebd6826273657131367530cd333",
+    "versions/v0151-d5eb8d05/gaw-megadrive-v0151.bin": "d5eb8d058faec317c8dbb2eb7ad72c295e651c599ebe9486c7b5ecef38092784",
+    "versions/v0152-398b2f20/gaw-megadrive-v0152.bin": "398b2f205c89df496ad738275951765f5135e6a6476b14468e4c65dcc6f2e473",
+    "versions/v0153-551fc32e/gaw-megadrive-v0153.bin": "551fc32e64099db4f1895ee9c14aaee12f3f1f0724ffe804c39a06f56c5cedae",
+    "versions/v0154-e229d0f8/gaw-megadrive-v0154.bin": "e229d0f85428ee0ec459c3c38cd362f212bafe1ea5df0ef11aeaab2707515a4e",
+    "versions/v0155-709b001b/gaw-megadrive-v0155.bin": "709b001be8c9fbc0ebaa19810656a654d7e695449bb6e6d3d2d1cdb3a4139ef1",
+    "versions/v0156-ce3b6e77/gaw-megadrive-v0156.bin": "ce3b6e775b65ac01808658b9c90321f01bfc1ac06a46809bbbdfc2613d671bb3",
+    "versions/v0157-36623fbb/gaw-megadrive-v0157.bin": "36623fbb057ebc7ec7eb2c7ef17f5fc8a417537368b135d10d3cde1f39b0c9d9",
+    "versions/v0158-ae1a4d11/gaw-megadrive-v0158.bin": "ae1a4d11ba67556a51ae203fef6d4872ff225ddef640430717f88ca218c061a3",
+    "versions/v0159-89db44f7/gaw-megadrive-v0159.bin": "89db44f795fe62266ae4f2b8494c59b983a0675c89cc030d92f9ba9daecf4f63",
+    "versions/v0160-f8cca513/gaw-megadrive-v0160.bin": "f8cca513ad07cd84d402f5e9bff0042691003a50146b8baaa4fbf2d37db30de0",
+    "versions/v0161-e14b3079/gaw-megadrive-v0161.bin": "e14b30794aa5b1b872628f05f48c50dc0a73c7a31eed74065b02fd00f3c64655",
+    "versions/v0162-233c614a/gaw-megadrive-v0162.bin": "233c614a78bfd29a4c7e6404678bb1e11258a01940bb663578e387d9c1ba0d7e",
+    "versions/v0163-cd04a76a/gaw-megadrive-v0163.bin": "cd04a76a8046e85c5efc4c20d575923ef63d9fd85635a1195260aee3d37d7189",
+    "versions/v0164-7e2e7982/gaw-megadrive-v0164.bin": "7e2e79822ce9699d0b8e4217b554b84fb18567a72ab332d271951f4ae13e05ec",
+    "versions/v0165-be87ac1a/gaw-megadrive-v0165.bin": "be87ac1ae8e6a5c12a7e5500b8cc5d02de2edb4eb3fb083954df7bb57d71af31",
+    "versions/v0166-f3cb9b5b/gaw-megadrive-v0166.bin": "f3cb9b5b9731933f7ba686412f77702be75872f74daee3d945cd17681d136895",
+    "versions/v0167-cbcbfa73/gaw-megadrive-v0167.bin": "cbcbfa73d37247540e914aae9cb642aba3f8ae05df60aa51e2f4331590592377",
+    "versions/v0168-1bb83c7c/gaw-megadrive-v0168.bin": "1bb83c7c4bbe0c0db3ba1a90ab5de16bebb25e35f8077716a5f70736b2ab4d8a",
+    "versions/v0169-3b343327/gaw-megadrive-v0169.bin": "3b343327e2e58cffd3a5f34ed463c582b7627028d957dc7872f3b85fd1c1c273",
+    "versions/v0170-a4972307/gaw-megadrive-v0170.bin": "a4972307b03cc976890bda1e45b339767e6611492bb5f0fecce70ad1f83e9e78",
+    "versions/v0171-1f87396f/gaw-megadrive-v0171.bin": "1f87396f9b6e1e533c90e851d55eb397f5247cbde0b7c43a2a5978f84a973fd9",
+    "versions/v0172-d31a6ede/gaw-megadrive-v0172.bin": "d31a6ede2434240e43c9f7121288384edd91c7ae0d8348edd8f476fa8088e8f0",
+    "versions/v0173-b4790455/gaw-megadrive-v0173.bin": "b4790455242c29db4f07e1d96a83534e5e2ec27e16b083e9472a85d97c16f058",
+    "versions/v0174-911973c5/gaw-megadrive-v0174.bin": "911973c5b764172bc2d1807662778b4eaaa59e15e0517ea2980b31cdb3db52eb",
+    "versions/v0175-82520cf7/gaw-megadrive-v0175.bin": "82520cf76895fb015494576f4a71275838a3ea6cd7a7e24d9b6166b3d1efc929",
+    "versions/v0176-9a4471c0/gaw-megadrive-v0176.bin": "9a4471c02bbe93c05bd6c7ab1d4488a575ea1a278ada0fbd6619955f26496ce5",
+    "versions/v0177-3f4dbbc9/gaw-megadrive-v0177.bin": "3f4dbbc93e4c6db3e688c77c85912be93ed886dd73d0610d75fb77ec4c8f558c",
+    "versions/v0178-a8d8ee11/gaw-megadrive-v0178.bin": "a8d8ee11f592e748d89cfe4138dbc15701a33f3b3a908cb6047969ff94e0af34",
+    "versions/v0179-d018ed93/gaw-megadrive-v0179.bin": "d018ed93a4d25c99fa258d474b70fd36bbd853da13957a451232ef67e2680af4",
+    "versions/v0180-3f155979/gaw-megadrive-v0180.bin": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+    "versions/v0181-97313b55/gaw-megadrive-v0181.bin": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+    "versions/v0182-f41db51b/gaw-megadrive-v0182.bin": "f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d",
+    "versions/v0183-ec1677f7/gaw-megadrive-v0183.bin": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+    "versions/v0184-67010959/gaw-megadrive-v0184.bin": "67010959a2ab6fbaf409426ca2e06d645040c73d7f7cd99a01c4debb49fedc1e",
+    "versions/v0185-1a34d6f6/gaw-megadrive-v0185.bin": "1a34d6f67efb5b3ca2dbdcfc4611ab51a6cadf1055fcf1752a96967b77fb73c7",
+    "versions/v0186-83a88ce9/gaw-megadrive-v0186.bin": "83a88ce9e663a49944e1f729e4529f446c4e8997c195b3ef55907657aac66734",
+    "versions/v0187-af8dcbee/gaw-megadrive-v0187.bin": "af8dcbee838485e2ab8a403bf1bb6f434a4a30c346dc9aa83ca9f82d688405f5",
+    "versions/v0188-6ebb6a08/gaw-megadrive-v0188.bin": "6ebb6a08f01d543131fbf6bdafbbcff5f55726c8342a582247da173726c57b60",
+    "versions/v0189-72cdc002/gaw-megadrive-v0189.bin": "72cdc00261217500cbdbb8a76ed0dedf408e003434e898e13244ce2946ab320a",
+    "versions/v0190-ca8975f3/gaw-megadrive-v0190.bin": "ca8975f3df7f563ce2e90927e0bb299f4d86d56807e0b6c97be6e93a0b755eda",
+    "versions/v0191-4c5ba01e/gaw-megadrive-v0191.bin": "4c5ba01eb905c88138fba32a03b2f173cde3bacf8e2316c0982eee8487f86197",
+    "versions/v0192-a30af8ee/gaw-megadrive-v0192.bin": "a30af8eeb4748ebffb980c74213df2d87b469e69e947d43f08830593f60d3db4",
+    "versions/v0193-e610215d/gaw-megadrive-v0193.bin": "e610215d8a1b41e65e6b9b94e3bc2a105f57a9d66f745dd7a39378f83ee01604",
+    "versions/v0194-2fceb892/gaw-megadrive-v0194.bin": "2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143",
+    "versions/v0195-dfe79f9e/gaw-megadrive-v0195.bin": "dfe79f9e67bdba470a08a424540f253b4f87230743ca71fc9c48241e105e2393",
+    "versions/v0196-478294fe/gaw-megadrive-v0196.bin": "478294fe3caf3254d3076455e281eede4c7867a139f174064e5d89e6593a6044",
+    "versions/v0197-07917ec0/gaw-megadrive-v0197.bin": "07917ec03c9b861d3bf71df1860104c72482e1c08bb068eff047d7c3707b6033",
+    "versions/v0198-c7d01098/gaw-megadrive-v0198.bin": "c7d010987bee974547b25d5d5734c666c2f684603972b1e4159a8dd584087818",
+    "versions/v0199-31fe30d6/gaw-megadrive-v0199.bin": "31fe30d67b4307a56ab75f6dfd65969d70e9e5efa51db9bbb8a65409208eed48",
+    "versions/v0200-32506b02/gaw-megadrive-v0200.bin": "32506b0254c9fcb8ed65827ca62ce2ea4acfe24afe297531727bbc6a3e9339e4",
+    "versions/v0201-e6af967f/gaw-megadrive-v0201.bin": "e6af967f16b4637c4937fc9332c243c394a6b282c484d40ba87879970f655ee4",
+    "versions/v0202-f55643bb/gaw-megadrive-v0202.bin": "f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1",
+    "versions/v0203-7660a4b5/gaw-megadrive-v0203.bin": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+    "versions/v0204-566c4798/gaw-megadrive-v0204.bin": "566c4798fc9d4773de6d1cb03976111813709e4cdef9917bcf9698c4ba732c57",
+    "versions/v0205-e6708f0c/gaw-megadrive-v0205.bin": "e6708f0cdc30deae005628e098a8c0510660cc8bc768ec3ed085ee7d29db14d7",
+    "versions/v0206-b3bfbea1/gaw-megadrive-v0206.bin": "b3bfbea127c9e1f21fe42c009662f2b96bd0c68aaa9a845989ebdd44d08af8d4",
+    "versions/v0207-82875871/gaw-megadrive-v0207.bin": "8287587147c352ca65af331f00edda5827ee3baa84b5a447e86ab73327861d32",
+    "versions/v0208-fe8d03a5/gaw-megadrive-v0208.bin": "fe8d03a5755d2bc74cc8017e009c18f970693e43b3df7f59955e55546b691e7e",
+    "versions/v0209-d2096e1d/gaw-megadrive-v0209.bin": "d2096e1d60130c95160147bf499876b62e3904b441edb85dc5ffff0bd991d5c0",
+    "versions/v0210-4678a4f4/gaw-megadrive-v0210.bin": "4678a4f4eddb4f1a76e9f174ba1381c76687f011de541f11bbfac8af3d65a554",
+    "versions/v0211-b7eec79d/gaw-megadrive-v0211.bin": "b7eec79d146402b6d6d402eecf0354c145001026dc57da36fc1b49ecf29a703d",
+    "versions/v0212-e6a444b4/gaw-megadrive-v0212.bin": "e6a444b40664a830bcc79d3701e647f764ccf1aa5e50ed6ad5b00c68fdeb3a24",
+    "versions/v0213-aeed5590/gaw-megadrive-v0213.bin": "aeed5590a1abccf4e1cb0c6e78cc339ece95b0b70f14faf7dbce53aa3eaa56dc",
+    "versions/v0214-b224e777/gaw-megadrive-v0214.bin": "b224e777393dbed504c56e86fe633badfe47e001d4525d72634c10c00976c892",
+    "versions/v0215-ba2279cd/gaw-megadrive-v0215.bin": "ba2279cd2e4d093e51eadff530becc02f561035436a55e80ce63896ae4233015",
+    "versions/v0216-5c4a7b35/gaw-megadrive-v0216.bin": "5c4a7b352d846ead271e748c4cc8cc62945563b5fa5f8d3a53dfd2ad210a3203",
+    "versions/v0217-d2b31074/gaw-megadrive-v0217.bin": "d2b31074f24880e2764826bc55d3a913edea53815b5f8aa06529a67a49ed171e",
+    "versions/v0218-399be6a3/gaw-megadrive-v0218.bin": "399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d",
+    "versions/v0219-7518d3c1/gaw-megadrive-v0219.bin": "7518d3c174b117b299c1317b5921e351de7e96eee44fcd4a7d3d43566854cce7",
+    "versions/v0220-b49be582/gaw-megadrive-v0220.bin": "b49be582d3019f00e396840b1d0716b75f3ada775e298c75049c1e0216266202",
+    "versions/v0221-0cc51636/gaw-megadrive-v0221.bin": "0cc51636efdff6e1bed7c0e74808d0ce5589f9333718abdccb392cef7daa1013",
+    "versions/v0222-13edb546/gaw-megadrive-v0222.bin": "13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8",
+    "versions/v0223-39e69955/gaw-megadrive-v0223.bin": "39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31",
+    "versions/v0224-6be955fd/gaw-megadrive-v0224.bin": "6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549",
+    "versions/v0225-71b56c3c/gaw-megadrive-v0225.bin": "71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c",
+    "versions/v0226-36ad2e99/gaw-megadrive-v0226.bin": "36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134",
+    "versions/v0227-4bea5e39/gaw-megadrive-v0227.bin": "4bea5e399dc59c58e914b0bdcc033c4aaa38401c88d54feddfcc7e4dea4fe620",
+    "versions/v0228-a875719f/gaw-megadrive-v0228.bin": "a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a",
+    "versions/v0229-a9ae2d0a/gaw-megadrive-v0229.bin": "a9ae2d0abd7e49f0d638db0b23e28b5bb05e48123e1df7a00ce066ed69ef78a7",
+    "versions/v0230-1a09f7c6/gaw-megadrive-v0230.bin": "1a09f7c63cd924ea9f7aee15023d91856b3da11c143bdbdd390350c04a47a8ba",
+    "versions/v0231-390ada84/gaw-megadrive-v0231.bin": "390ada84d7e3bf6ed4c029432a83dacc95502d8f1a6c893ea2249d5f1975388a",
+    "versions/v0232-786d954c/gaw-megadrive-v0232.bin": "786d954c9bebd204d564d316279fbb7c78e47f59c2ff7fdb273bad4702ff935b",
+    "versions/v0233-bf93267a/gaw-megadrive-v0233.bin": "bf93267a44a5c702809b6b317b4cd18ea307f2a4e6cb73c1002330af6c847700",
+    "versions/v0234-fb0cea5e/gaw-megadrive-v0234.bin": "fb0cea5e4d355ca7b9d58f787e88bdf07dda26945b463aca16bf2defe11f1156",
+    "versions/v0235-7c9f6750/gaw-megadrive-v0235.bin": "7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084",
+    "versions/v0236-978bbf2d/gaw-megadrive-v0236.bin": "978bbf2d6076e3d0cdd43aad4802ef29f764a0d7943be1a3e609dd2fd055dd98",
+    "versions/v0237-3185a6b0/gaw-megadrive-v0237.bin": "3185a6b0145e93ca69de561ff3c0de6277de4dbc8b2d626712e49fb539ceef30",
+    "versions/v0238-18880bc0/gaw-megadrive-v0238.bin": "18880bc01b6698f34a7125c9a2cc257107affcdd65683a20eba4e729f25f1d2f",
+    "versions/v0239-d464cba4/gaw-megadrive-v0239.bin": "d464cba4aa72850ef5556c32a9999872dce9dcbba780288b646b38dac897900e",
+    "versions/v0240-e5c34931/gaw-megadrive-v0240.bin": "e5c3493162adfea6b539edfada41d471999c9e283e6edb035d1741813cb1b8c3",
+    "versions/v0241-3b9e06a3/gaw-megadrive-v0241.bin": "3b9e06a3c66a8c8104b9ee4172494394ec8c6e53cfee61b43bf67662501bbcf8",
+    "versions/v0242-b7ff1aa9/gaw-megadrive-v0242.bin": "b7ff1aa9fc40e3f290f51e66f8918d54669ddab3a5c81384582b9fc117840943",
+    "versions/v0243-53cebfa0/gaw-megadrive-v0243.bin": "53cebfa065645dcc9336159f41f334be7dfdf32fff5e35afb33746c0ebfb46c4",
+    "versions/v0244-81e5fec9/gaw-megadrive-v0244.bin": "81e5fec967be1f8c97382f8392ace1eff23d9b69591abe1ad004dcabc5b8c91c",
+    "versions/v0245-75cf145c/gaw-megadrive-v0245.bin": "75cf145cb35dac82216aa830fe38d6246c56de5e26f5d5530a3dd33f7a0196ed",
+    "versions/v0246-7d5e9a78/gaw-megadrive-v0246.bin": "7d5e9a783aca617b4a4a02489ec989b24d69f00437c7beb9c093b8c8ee40851d",
+    "versions/v0247-fe16d6ba/gaw-megadrive-v0247.bin": "fe16d6ba06a0c12ee7765cbc1e556fa47003efa2720682ab06285346c6014e94",
+    "versions/v0248-8283fbe9/gaw-megadrive-v0248.bin": "8283fbe9fadd831c99535e5fc1660f061e716bfaaac7bbb0f26c23974f9c36f8",
+    "versions/v0249-88978b6e/gaw-megadrive-v0249.bin": "88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8",
+    "versions/v0250-8832e6ab/gaw-megadrive-v0250.bin": "8832e6ab98b2e63c03faddaeed03e0fad48f1396d9ff593ccc29dbaf7a1e843f",
+    "versions/v0251-435d5ede/gaw-megadrive-v0251.bin": "435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87",
+    "versions/v0252-18c3985f/gaw-megadrive-v0252.bin": "18c3985f1be2d884ea78068184adbcfb734909e982df81f5460f361f8412dce5",
+    "versions/v0253-f2b80257/gaw-megadrive-v0253.bin": "f2b8025751c2d94735677bc7a9b6570b30d991200a6bec803162bac2291c411a",
+    "versions/v0254-021b7b9e/gaw-megadrive-v0254.bin": "021b7b9ea0d4b0a33cec82ffcff51837e71e72438d1d70a0c62d236d4b6eea95",
+    "versions/v0255-765847de/gaw-megadrive-v0255.bin": "765847de80829082d05db93783b62f2bc4d299234456d9f1efdff29639c13fb6",
+    "versions/v0256-30df7108/gaw-megadrive-v0256.bin": "30df710883591e7f4b4461ff85b3798575976f7b62eb1dcfd99f23b1dd56f466",
+    "versions/v0257-faf5c44b/gaw-megadrive-v0257.bin": "faf5c44ba4fe0cad8a2612ca7cf58f0601cf5c87f4c88e6e828b47cec1b6a9e7",
+    "versions/v0258-fe7c4957/gaw-megadrive-v0258.bin": "fe7c49573be73a940c7d6162deb5f525b5edd79b5e4d34bf60c2200bad5d9d1d",
+    "versions/v0259-6586d282/gaw-megadrive-v0259.bin": "6586d2822824bdb5c15d87f1a72f0f292235d5548e265a9048b880ff97ef08c1",
+    "versions/v0260-3531d463/gaw-megadrive-v0260.bin": "3531d463006acb61a0ee94be0ce86ad23fc80bafe211e2abd79a614702fa0afd",
+    "versions/v0261-f4f01077/gaw-megadrive-v0261.bin": "f4f01077de10b1edf2db0823a8b2220ecaa9ada0d7e8b51bfc49be452fe5b902",
+    "versions/v0262-e9442fb9/gaw-megadrive-v0262.bin": "e9442fb9b791a0f0814ca736638ac69d09c4ef8dc0eb90a478ca50c3536e55af",
+    "versions/v0263-25a2ca66/gaw-megadrive-v0263.bin": "25a2ca660968b0560df8c79005145148021b02e338d6d94aa0e406186a2f2653",
+    "versions/v0264-f4a55f14/gaw-megadrive-v0264.bin": "f4a55f1465abb54ec9b2581c726d657494098de0c3c0f203b23a20c51886e53c",
+    "versions/v0265-612826eb/gaw-megadrive-v0265.bin": "612826eba9e99caa42a9178abd3743c9ec8c9f3f9846957885310c0d4bad5b08",
+    "versions/v0266-a87da62c/gaw-megadrive-v0266.bin": "a87da62c5ee3936edc8f413a0b8f47f6f17007d2dcfe44d7819f69b294559d3b",
+    "versions/v0267-71d030d8/gaw-megadrive-v0267.bin": "71d030d8e70bde5d3b2e3e5219a7dcf23ca29f4fef340d21d659d525bfd84eab",
+    "versions/v0268-bfcf22b4/gaw-megadrive-v0268.bin": "bfcf22b42b1877f402a8a3f87041a528a6a942f00799195a7c405c4ba9126ad1",
+    "versions/v0269-0f1ea001/gaw-megadrive-v0269.bin": "0f1ea0018e7631177500d9100325f4ea81e46193831b09ca2518d0baeda101c7",
+    "versions/v0270-36af7e88/gaw-megadrive-v0270.bin": "36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4",
+    "versions/v0271-8a92b40c/gaw-megadrive-v0271.bin": "8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6",
+    "versions/v0272-3cbf990c/gaw-megadrive-v0272.bin": "3cbf990c66bdce19bff069e39711205fb451ad88c9b0daef8091c45aedad4454",
+    "versions/v0273-10116d2f/gaw-megadrive-v0273.bin": "10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769",
+    "versions/v0274-6af186de/gaw-megadrive-v0274.bin": "6af186deca6c86bfdeccaa607aab39f31345349b4d3a5861ad4d912b084c87f4"
+  },
+  "files": {
+    "analysis/rng_timed_68k_report.json": "e884d220b52bda19c5bc195ef2cdefa1521748c93ec157b111abc8b4a6759403",
+    "analysis/rng_timed_host_report.json": "1417090299307530a54294e86f82ab4c0164126bb44a4aeaf43390ac2478636d",
+    "analysis/room_history_rules_report.json": "b3ae6e225805b6289c4412326221f585c201bf8666d03dac778730b8669b0e50",
+    "analysis/room_history_v0274.md": "f99dfc926955b5ff5faa91f6cc68806376b09c7bbdac976a3d2eea5698c2e64b",
+    "analysis/room_history_v0274_report.json": "ff9110f2df14fe3b4089864eee0a1fa614ead8d268466790d8876f966d328bf0",
+    "megadrive/src/save.inc": "2554bc66afa5784efb009dcc92be466999df7edbc760949fbe4b775e0e7fe316",
+    "megadrive/src/source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "megadrive/src/source_rng_timed.h": "83ef265f2519f81fb26dd9a317d605f78aad7ef4950f1c65232859048121f186",
+    "megadrive/src/source_room_history.c": "a6370aa857d816404a449b6b0cb37cd31e17e1d9314ebcab3a38debd07c90397",
+    "megadrive/src/source_room_history.h": "129d4335f743294ae4ebf821dbf57c09e65aeb3dee537917719a0a35e31378ef"
+  },
+  "compressed": {
+    "megadrive/src/main.c": {
+      "stored": "objects/062285d4abccc53bfa147f5035f969c0831111c4a8942fa799aa95d7d8f142c4.gz",
+      "raw_sha256": "062285d4abccc53bfa147f5035f969c0831111c4a8942fa799aa95d7d8f142c4",
+      "raw_bytes": 149750,
+      "stored_sha256": "f5cd314cca50ae69ffaf03447722ceb3cbfcc2197dca5b5166614267faee6f4e"
+    },
+    "validation/rng-timed-68k/auto/capture.json": {
+      "stored": "objects/3992d4f9e9e2280f7bfbcfe4a59716ee0088a5a87cd30a1f2b40a7c29dcebea8.gz",
+      "raw_sha256": "3992d4f9e9e2280f7bfbcfe4a59716ee0088a5a87cd30a1f2b40a7c29dcebea8",
+      "raw_bytes": 548,
+      "stored_sha256": "1c92bea5ab244429cba58b61e437990e8edea7fc7aad3a4f858139f0eb60b6cf"
+    },
+    "validation/rng-timed-68k/build.log": {
+      "stored": "objects/ec736c1e26023f34857d8f4442ed82c7d12e0ca283c979850350619f55026678.gz",
+      "raw_sha256": "ec736c1e26023f34857d8f4442ed82c7d12e0ca283c979850350619f55026678",
+      "raw_bytes": 8742,
+      "stored_sha256": "e509a13ac1d889be1a265570457ed0791fe8ab62ca62381d3c52ddcdd6ab6448"
+    },
+    "validation/rng-timed-68k/out/release/_deps/src/main.d": {
+      "stored": "objects/5c118a4f9c4ca4b8347b60de5e5ede8fa578a73d455246d28d7e78b1cd164cdc.gz",
+      "raw_sha256": "5c118a4f9c4ca4b8347b60de5e5ede8fa578a73d455246d28d7e78b1cd164cdc",
+      "raw_bytes": 256,
+      "stored_sha256": "3a93f95bc8645efaf598b1bea4bca8fb3fc16c9910af0c6fbe23cd46cf1c64b5"
+    },
+    "validation/rng-timed-68k/out/release/_deps/src/source_clock.d": {
+      "stored": "objects/9640868bf5915beb3cdd93a5f2db85bfa1da462253ab1f37cf0dfd3a852b4a28.gz",
+      "raw_sha256": "9640868bf5915beb3cdd93a5f2db85bfa1da462253ab1f37cf0dfd3a852b4a28",
+      "raw_bytes": 318,
+      "stored_sha256": "5fd195bd2724c4f41477652f6c94ae93b826715af9658154d9c6251a396fcefc"
+    },
+    "validation/rng-timed-68k/out/release/_deps/src/source_rng.d": {
+      "stored": "objects/ebd41a495ac484dce0d72dd3cff39978b6f99a1fc2b3503d3a4fab33d5afc0c4.gz",
+      "raw_sha256": "ebd41a495ac484dce0d72dd3cff39978b6f99a1fc2b3503d3a4fab33d5afc0c4",
+      "raw_bytes": 220,
+      "stored_sha256": "f7783d8e44e990ef113a7ae07759ed54cb87f566be3e1856af4ae556dd0ca697"
+    },
+    "validation/rng-timed-68k/out/release/_deps/src/source_rng_timed.d": {
+      "stored": "objects/cb1b362cdc8157dacfb817bc94e178e70fd0a6f25eff4498e69b12f78ba12886.gz",
+      "raw_sha256": "cb1b362cdc8157dacfb817bc94e178e70fd0a6f25eff4498e69b12f78ba12886",
+      "raw_bytes": 432,
+      "stored_sha256": "ee2f8c186e2a6a536b6968093fcf90f13c6ef999c62b0054e63b0da64412c6be"
+    },
+    "validation/rng-timed-68k/out/release/rom.bin": {
+      "stored": "objects/29239139ce0d35ed859844e3c97819dc252160573369468804e1779c3cb86570.gz",
+      "raw_sha256": "29239139ce0d35ed859844e3c97819dc252160573369468804e1779c3cb86570",
+      "raw_bytes": 655360,
+      "stored_sha256": "a8bd16777ef3a7e8deeb96052ec5cd3ec5f0a826e7865e3a52cad6d9e1757421"
+    },
+    "validation/rng-timed-68k/out/release/rom.out": {
+      "stored": "objects/f1d584420de76e1b4f329be9e20a0e46cd4545ca64d03a0259e8bc89e44d309b.gz",
+      "raw_sha256": "f1d584420de76e1b4f329be9e20a0e46cd4545ca64d03a0259e8bc89e44d309b",
+      "raw_bytes": 551744,
+      "stored_sha256": "67187f97ff764b7ba78ceeca89c23d62abce3f775d55312f080a3f283ac491b6"
+    },
+    "validation/rng-timed-68k/out/release/rom_header.o": {
+      "stored": "objects/bbd4af6a74fd3c92e08b500a7f98ea075e6a2d1917adf1e9cf5587f4851150de.gz",
+      "raw_sha256": "bbd4af6a74fd3c92e08b500a7f98ea075e6a2d1917adf1e9cf5587f4851150de",
+      "raw_bytes": 932,
+      "stored_sha256": "f88fb6edd122925586858b13955aae4feb3560124852ce24f76034affa84c587"
+    },
+    "validation/rng-timed-68k/out/release/sega.o": {
+      "stored": "objects/3cc038905b6b9ac0eee40d19320245a8b06fc02a4a712c73f20273b87d33362b.gz",
+      "raw_sha256": "3cc038905b6b9ac0eee40d19320245a8b06fc02a4a712c73f20273b87d33362b",
+      "raw_bytes": 4276,
+      "stored_sha256": "b7ffa9c336701fb16f0fbe181b11179d4230876fb26bb6f5927e7e414d69be2d"
+    },
+    "validation/rng-timed-68k/out/release/sega.s": {
+      "stored": "objects/d7954a33a7b17ddf060dadf21305256b524a019678849cf9f6e0dde4ee8e211b.gz",
+      "raw_sha256": "d7954a33a7b17ddf060dadf21305256b524a019678849cf9f6e0dde4ee8e211b",
+      "raw_bytes": 10664,
+      "stored_sha256": "7ef9b01e1f0d289592e0dba0c5463fd3cfc956291c3e3090fcd3c8c1c1a29cfd"
+    },
+    "validation/rng-timed-68k/out/release/src/main.o": {
+      "stored": "objects/7e015cfacbbe09e972a55fc32d3d63306575d0cfb652ae5fd4741b60239aba59.gz",
+      "raw_sha256": "7e015cfacbbe09e972a55fc32d3d63306575d0cfb652ae5fd4741b60239aba59",
+      "raw_bytes": 1060560,
+      "stored_sha256": "29ea9c9c88ce0b85c989578b8417ea4c91aa77d0d1ea4d981eef528fac3592be"
+    },
+    "validation/rng-timed-68k/out/release/src/source_clock.o": {
+      "stored": "objects/7e84b66862daac9b82fa6534031513a6cf83a135ae79c5bc88ab9975c1085bee.gz",
+      "raw_sha256": "7e84b66862daac9b82fa6534031513a6cf83a135ae79c5bc88ab9975c1085bee",
+      "raw_bytes": 21032,
+      "stored_sha256": "a8e37a84e716763dbc2ae8d5b6adb940f83676587201ea5c366559c3e3a1412d"
+    },
+    "validation/rng-timed-68k/out/release/src/source_rng.o": {
+      "stored": "objects/2a682b96ca7d99c3ea94758f984daec4a01a2814054058883763019ce7e20b3a.gz",
+      "raw_sha256": "2a682b96ca7d99c3ea94758f984daec4a01a2814054058883763019ce7e20b3a",
+      "raw_bytes": 6544,
+      "stored_sha256": "89c1d258cf35125802896fbb64d0311feb76ff40a98d3c8cd8543e1802a67160"
+    },
+    "validation/rng-timed-68k/out/release/src/source_rng_timed.o": {
+      "stored": "objects/ff650df7ff7125837cab9491ed98900c2f0f24dad4243c44f0bf353709cd3fd3.gz",
+      "raw_sha256": "ff650df7ff7125837cab9491ed98900c2f0f24dad4243c44f0bf353709cd3fd3",
+      "raw_bytes": 13692,
+      "stored_sha256": "5db002a799ac25b6288f847d96ec33e9fb15e56276660842e34fec857ba06358"
+    },
+    "validation/rng-timed-68k/out/release/symbol.txt": {
+      "stored": "objects/9badae8070ca529d8654acb83924ea48cc48790843f1de0755ba7de26cd60dce.gz",
+      "raw_sha256": "9badae8070ca529d8654acb83924ea48cc48790843f1de0755ba7de26cd60dce",
+      "raw_bytes": 16798,
+      "stored_sha256": "932b50d5c0852e1e5f3c69bf1076ea6423b1abe3ba31f02e8055ef35b95fd1b9"
+    },
+    "validation/rng-timed-68k/out/rom.bin": {
+      "stored": "objects/29239139ce0d35ed859844e3c97819dc252160573369468804e1779c3cb86570.gz",
+      "raw_sha256": "29239139ce0d35ed859844e3c97819dc252160573369468804e1779c3cb86570",
+      "raw_bytes": 655360,
+      "stored_sha256": "a8bd16777ef3a7e8deeb96052ec5cd3ec5f0a826e7865e3a52cad6d9e1757421"
+    },
+    "validation/rng-timed-68k/out/rom_header.bin": {
+      "stored": "objects/6fa50cf5287a5ea90ed5f186496649e235aa0bdc3553623665222d08ca80e88f.gz",
+      "raw_sha256": "6fa50cf5287a5ea90ed5f186496649e235aa0bdc3553623665222d08ca80e88f",
+      "raw_bytes": 256,
+      "stored_sha256": "098cf10e2a3e2f78086a55399bd6a7d940135182a611cf4fe609d2d74d619aae"
+    },
+    "validation/rng-timed-68k/pal/capture.json": {
+      "stored": "objects/b23a1d815a71b26c3b06d853c527cad209e5e8bb187c23044c030df475f7e533.gz",
+      "raw_sha256": "b23a1d815a71b26c3b06d853c527cad209e5e8bb187c23044c030df475f7e533",
+      "raw_bytes": 546,
+      "stored_sha256": "35b1a79b4cdd48a070b2bbc9592803f4532db3a844a3220f2644b4d6e6407d1e"
+    },
+    "validation/rng-timed-68k/src/expected.h": {
+      "stored": "objects/0bdadc68139f5804f108cea512e86404d138d458d99459d66ef9c4d5223229aa.gz",
+      "raw_sha256": "0bdadc68139f5804f108cea512e86404d138d458d99459d66ef9c4d5223229aa",
+      "raw_bytes": 925449,
+      "stored_sha256": "f6ed392c804280ffc1b22c6af8136343b9cb808c6d7f0e89b3e05907798f2293"
+    },
+    "validation/rng-timed-68k/src/main.c": {
+      "stored": "objects/1740e45dcdb5a5b9dc27b92df26e0e154c61e3193699ce0dfae46e3581c29e12.gz",
+      "raw_sha256": "1740e45dcdb5a5b9dc27b92df26e0e154c61e3193699ce0dfae46e3581c29e12",
+      "raw_bytes": 2636,
+      "stored_sha256": "778a9c4bb5e376e3cd2361a0604c8279f222549b8ef3976a0b2427861e343752"
+    },
+    "validation/rng-timed-68k/src/rom_header.c": {
+      "stored": "objects/f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe.gz",
+      "raw_sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+      "raw_bytes": 790,
+      "stored_sha256": "5079bebbab60471cfe6a2fc21fd66d8c3b7eb92b5d4005f522583389d23ba933"
+    },
+    "validation/rng-timed-68k/src/source_clock.c": {
+      "stored": "objects/a74871c5c90cf646fe56c99f315efe2e6d67c3618476330967b324157ca3ccfd.gz",
+      "raw_sha256": "a74871c5c90cf646fe56c99f315efe2e6d67c3618476330967b324157ca3ccfd",
+      "raw_bytes": 49,
+      "stored_sha256": "74afb13aa7046cd154192f4b2ca9ea18cd7912e9f6ed54f8ce9d57f49dd64645"
+    },
+    "validation/rng-timed-68k/src/source_rng.c": {
+      "stored": "objects/ae0c0627a2383cfde39ca66f3deadf79a5fc4ace0312d9ee2632be433ea68746.gz",
+      "raw_sha256": "ae0c0627a2383cfde39ca66f3deadf79a5fc4ace0312d9ee2632be433ea68746",
+      "raw_bytes": 47,
+      "stored_sha256": "8713b2b61ceffddda7537a20df130f9adadc23b42e1de61a1bba0b6cf641d40b"
+    },
+    "validation/rng-timed-68k/src/source_rng_timed.c": {
+      "stored": "objects/edaa95f25abc3ff3ad1c52677b21e544045d054622266cd09830904e06712b94.gz",
+      "raw_sha256": "edaa95f25abc3ff3ad1c52677b21e544045d054622266cd09830904e06712b94",
+      "raw_bytes": 53,
+      "stored_sha256": "a801eb9c499ce09218cf98a37a4bf194e6b65986638f3302ab387b01c45cf2f1"
+    },
+    "validation/rng-timed-host/boundary-cases.json": {
+      "stored": "objects/d184cbdde97899d572d44f8ab8a4d2cefdf929533e31201c9eaeabb66ccf5217.gz",
+      "raw_sha256": "d184cbdde97899d572d44f8ab8a4d2cefdf929533e31201c9eaeabb66ccf5217",
+      "raw_bytes": 465893,
+      "stored_sha256": "eff167bbb9533aba5ab7729af007f2c156aef8a2b912c19d5c543f41fc03ad83"
+    },
+    "validation/rng-timed-host/rng.dll": {
+      "stored": "objects/eb5a9a3a3f5d8ccd0e31b4f28d2dc373b44d968b481f1d21d5dd58a458e82d21.gz",
+      "raw_sha256": "eb5a9a3a3f5d8ccd0e31b4f28d2dc373b44d968b481f1d21d5dd58a458e82d21",
+      "raw_bytes": 103608,
+      "stored_sha256": "2c6ef072ee9a13b39a003dd6da416754e6a21abf321141a88b62309933624ac4"
+    },
+    "validation/rng-timed-host/types.h": {
+      "stored": "objects/f391cffb11fddc2494549cd2981662431068c32eb2cafdf31718f83a2a73fdde.gz",
+      "raw_sha256": "f391cffb11fddc2494549cd2981662431068c32eb2cafdf31718f83a2a73fdde",
+      "raw_bytes": 82,
+      "stored_sha256": "81bfff6fc1eb4586e1fcb699bcbcf12bd2aed0a50d39f6a13746697fe6073d28"
+    },
+    "validation/room-history/auto/capture.json": {
+      "stored": "objects/f4c2f6b96a2d70cba639bb9c715610560cbc564a2d190f2c39fdba2bb72f3880.gz",
+      "raw_sha256": "f4c2f6b96a2d70cba639bb9c715610560cbc564a2d190f2c39fdba2bb72f3880",
+      "raw_bytes": 1513,
+      "stored_sha256": "8ee3140e5f2382df3b0dd0d394c3514aeb1941bcd60cf1933a9f5f4b2090609d"
+    },
+    "validation/room-history/auto/cram_02500.bin": {
+      "stored": "objects/6089785e1ed0e394b29bb1e3fb2d6418d3868a0ced0673e9010e90e867860684.gz",
+      "raw_sha256": "6089785e1ed0e394b29bb1e3fb2d6418d3868a0ced0673e9010e90e867860684",
+      "raw_bytes": 128,
+      "stored_sha256": "f7dd8500c3cb003c12c0702e49784f8b410f628082f151f35353e487d34a2948"
+    },
+    "validation/room-history/auto/cram_03100.bin": {
+      "stored": "objects/90bd8f0af11eb699ee548957a8c9c507a9746cf62c65552b303f9630ca7e8a52.gz",
+      "raw_sha256": "90bd8f0af11eb699ee548957a8c9c507a9746cf62c65552b303f9630ca7e8a52",
+      "raw_bytes": 128,
+      "stored_sha256": "6cab282ab8541000c868572745239e83b0a710178411b8314170141bda0d030b"
+    },
+    "validation/room-history/auto/cram_03500.bin": {
+      "stored": "objects/87ee1bce3d8cb1091c7592e5e442642e81c5194ab6a8571b26acc9aaa63c7906.gz",
+      "raw_sha256": "87ee1bce3d8cb1091c7592e5e442642e81c5194ab6a8571b26acc9aaa63c7906",
+      "raw_bytes": 128,
+      "stored_sha256": "b16606c64f5c37f43e4761eeecc8198f585c737c4785f6765507a07e5444f6e1"
+    },
+    "validation/room-history/auto/frame_02500.png": {
+      "stored": "objects/d8c59004ac2b8a3d2c367add679d629423b47bd48e10ddd4bd5df41723a903c2.gz",
+      "raw_sha256": "d8c59004ac2b8a3d2c367add679d629423b47bd48e10ddd4bd5df41723a903c2",
+      "raw_bytes": 5510,
+      "stored_sha256": "8098149b697de6c0a65137474bb2c001e7810ebed50e21c8e255a920a302e17c"
+    },
+    "validation/room-history/auto/frame_03100.png": {
+      "stored": "objects/e1f2e78975435bda0511b9b3bff7fb375c16850c52af3eae84da114f504ae675.gz",
+      "raw_sha256": "e1f2e78975435bda0511b9b3bff7fb375c16850c52af3eae84da114f504ae675",
+      "raw_bytes": 3974,
+      "stored_sha256": "3472de79e7154d4fd54b2ae0bd56942c2d3ca0922af80ec9df5ceb111fc140b3"
+    },
+    "validation/room-history/auto/frame_03500.png": {
+      "stored": "objects/e1f2e78975435bda0511b9b3bff7fb375c16850c52af3eae84da114f504ae675.gz",
+      "raw_sha256": "e1f2e78975435bda0511b9b3bff7fb375c16850c52af3eae84da114f504ae675",
+      "raw_bytes": 3974,
+      "stored_sha256": "3472de79e7154d4fd54b2ae0bd56942c2d3ca0922af80ec9df5ceb111fc140b3"
+    },
+    "validation/room-history/auto/ram_02500.bin": {
+      "stored": "objects/0b263469115b0ca9e1520f4613b4697d615bd65890fabf0ce5d18de14c1e5996.gz",
+      "raw_sha256": "0b263469115b0ca9e1520f4613b4697d615bd65890fabf0ce5d18de14c1e5996",
+      "raw_bytes": 65536,
+      "stored_sha256": "d126172bad1747a0db349bbe1d780e03eb034949a2b368d3b415898f59d10141"
+    },
+    "validation/room-history/auto/ram_03100.bin": {
+      "stored": "objects/7dc975b111a6d22f4543f8101eae5b4a6181522fcb3b902481b13dde61090b73.gz",
+      "raw_sha256": "7dc975b111a6d22f4543f8101eae5b4a6181522fcb3b902481b13dde61090b73",
+      "raw_bytes": 65536,
+      "stored_sha256": "8f5dfcd4a26a65102a129c374db64f4f8506aec87d356c0d3c14c1501e8a96ca"
+    },
+    "validation/room-history/auto/ram_03500.bin": {
+      "stored": "objects/1889b49bd4b14a4d0053fdc725d0e27f5742a97046859f5d8ff5faa201d49f46.gz",
+      "raw_sha256": "1889b49bd4b14a4d0053fdc725d0e27f5742a97046859f5d8ff5faa201d49f46",
+      "raw_bytes": 65536,
+      "stored_sha256": "f568ff7fc10f0af5226ffcf4e89cf36d597e82d1720bc657fe4f8d315ed3f660"
+    },
+    "validation/room-history/auto/vdp_regs_02500.bin": {
+      "stored": "objects/86a79a76f23ba42c3f3b981135b360d47af42c3c5dd821e6dc54e3531e300ff6.gz",
+      "raw_sha256": "86a79a76f23ba42c3f3b981135b360d47af42c3c5dd821e6dc54e3531e300ff6",
+      "raw_bytes": 32,
+      "stored_sha256": "09fc8a31f0eb4720605f5a429a9031cdd5db05b9a142d333189d15a060373866"
+    },
+    "validation/room-history/auto/vdp_regs_03100.bin": {
+      "stored": "objects/e7e28d2c3b13341a4e5cf8947f2c9ddbb1938e8d05e5dc30e22194850ab83c2b.gz",
+      "raw_sha256": "e7e28d2c3b13341a4e5cf8947f2c9ddbb1938e8d05e5dc30e22194850ab83c2b",
+      "raw_bytes": 32,
+      "stored_sha256": "0b3aabeceaf10a6e102a015459568cdeba561ba880c68896d332cd8329d6e8c4"
+    },
+    "validation/room-history/auto/vdp_regs_03500.bin": {
+      "stored": "objects/e7e28d2c3b13341a4e5cf8947f2c9ddbb1938e8d05e5dc30e22194850ab83c2b.gz",
+      "raw_sha256": "e7e28d2c3b13341a4e5cf8947f2c9ddbb1938e8d05e5dc30e22194850ab83c2b",
+      "raw_bytes": 32,
+      "stored_sha256": "0b3aabeceaf10a6e102a015459568cdeba561ba880c68896d332cd8329d6e8c4"
+    },
+    "validation/room-history/auto/vram_02500.bin": {
+      "stored": "objects/4b57874ede3e1c34699f6c3c93cd6d751f1d91c366693a716bc518f8e0684bfe.gz",
+      "raw_sha256": "4b57874ede3e1c34699f6c3c93cd6d751f1d91c366693a716bc518f8e0684bfe",
+      "raw_bytes": 65536,
+      "stored_sha256": "f606c043e66cf12eb2e3b56c2609e168a11a85d362f2f4223bec34a424b8c656"
+    },
+    "validation/room-history/auto/vram_03100.bin": {
+      "stored": "objects/7d66fc3c784764bfa8987d671170212a08f2dee87eea46dbc710e01651af5eff.gz",
+      "raw_sha256": "7d66fc3c784764bfa8987d671170212a08f2dee87eea46dbc710e01651af5eff",
+      "raw_bytes": 65536,
+      "stored_sha256": "af97fe649592c6e1c7f2f53ba7e713e060164c3841fd3dbaac3e8e6bd3ee72d1"
+    },
+    "validation/room-history/auto/vram_03500.bin": {
+      "stored": "objects/aaf5ec250ca685a08c7f4b1fd8753912316c3abd62490e2c6ebc428a39cf9ee9.gz",
+      "raw_sha256": "aaf5ec250ca685a08c7f4b1fd8753912316c3abd62490e2c6ebc428a39cf9ee9",
+      "raw_bytes": 65536,
+      "stored_sha256": "1b326d2cc1a80831e5926776f452a290802b48520deeefbb0c0d66f6ded548de"
+    },
+    "validation/room-history/controlled.sms": {
+      "stored": "objects/bfa1c507783c92e21fab10852cd0398cf33e65a2ce44cab861d4f0f0c0c556e6.gz",
+      "raw_sha256": "bfa1c507783c92e21fab10852cd0398cf33e65a2ce44cab861d4f0f0c0c556e6",
+      "raw_bytes": 262144,
+      "stored_sha256": "32ac2605d73fa9bf3328094e461a2b412c2fff0833e35da7a94addc4fbf84bb5"
+    },
+    "validation/room-history/history.dll": {
+      "stored": "objects/f143fff6a4f1133469f81120c827cf68d499d328745a2e222fddec5ffa7c6589.gz",
+      "raw_sha256": "f143fff6a4f1133469f81120c827cf68d499d328745a2e222fddec5ffa7c6589",
+      "raw_bytes": 95380,
+      "stored_sha256": "2b5468ee7f7b1f865a2c5d7524fff50a8496e75be6e3721c34a2fed80b89582d"
+    },
+    "validation/room-history/pal/capture.json": {
+      "stored": "objects/81fba2842f2e268642d5149cc1c128a7d547ac1b48bb654a1eb22beb3ac640cb.gz",
+      "raw_sha256": "81fba2842f2e268642d5149cc1c128a7d547ac1b48bb654a1eb22beb3ac640cb",
+      "raw_bytes": 1511,
+      "stored_sha256": "6a80599c4f476b90b55ea596535b720f3fe2f462297a23d3655a2fb207648bc1"
+    },
+    "validation/room-history/pal/cram_02500.bin": {
+      "stored": "objects/996b3f53a8032acf10407b933d912eb6a3f4086144ecc91bc6d39d4181e81b9f.gz",
+      "raw_sha256": "996b3f53a8032acf10407b933d912eb6a3f4086144ecc91bc6d39d4181e81b9f",
+      "raw_bytes": 128,
+      "stored_sha256": "34f8a7d34077ed9e7d6fa55403fba046fa5f27fa072025f9e8780df80307955c"
+    },
+    "validation/room-history/pal/cram_03100.bin": {
+      "stored": "objects/af8bcfc6d066885fd9341f113a3cf6f209255e1873f796e50c09ecb4c0889ae8.gz",
+      "raw_sha256": "af8bcfc6d066885fd9341f113a3cf6f209255e1873f796e50c09ecb4c0889ae8",
+      "raw_bytes": 128,
+      "stored_sha256": "2b82795a51c01e771215c54661a269796972c5d696c06cfccfa76410f5c44002"
+    },
+    "validation/room-history/pal/cram_03500.bin": {
+      "stored": "objects/921cd0d9df94c22138182530b07e12cf0b3f9d7c58dd26258d29b93712ca7cc4.gz",
+      "raw_sha256": "921cd0d9df94c22138182530b07e12cf0b3f9d7c58dd26258d29b93712ca7cc4",
+      "raw_bytes": 128,
+      "stored_sha256": "063b92445b1f37e9f8522be76950cdd9d3de8c0f5d52a01b9523fe53c1bafd0c"
+    },
+    "validation/room-history/pal/frame_02500.png": {
+      "stored": "objects/d8c59004ac2b8a3d2c367add679d629423b47bd48e10ddd4bd5df41723a903c2.gz",
+      "raw_sha256": "d8c59004ac2b8a3d2c367add679d629423b47bd48e10ddd4bd5df41723a903c2",
+      "raw_bytes": 5510,
+      "stored_sha256": "8098149b697de6c0a65137474bb2c001e7810ebed50e21c8e255a920a302e17c"
+    },
+    "validation/room-history/pal/frame_03100.png": {
+      "stored": "objects/e1f2e78975435bda0511b9b3bff7fb375c16850c52af3eae84da114f504ae675.gz",
+      "raw_sha256": "e1f2e78975435bda0511b9b3bff7fb375c16850c52af3eae84da114f504ae675",
+      "raw_bytes": 3974,
+      "stored_sha256": "3472de79e7154d4fd54b2ae0bd56942c2d3ca0922af80ec9df5ceb111fc140b3"
+    },
+    "validation/room-history/pal/frame_03500.png": {
+      "stored": "objects/e1f2e78975435bda0511b9b3bff7fb375c16850c52af3eae84da114f504ae675.gz",
+      "raw_sha256": "e1f2e78975435bda0511b9b3bff7fb375c16850c52af3eae84da114f504ae675",
+      "raw_bytes": 3974,
+      "stored_sha256": "3472de79e7154d4fd54b2ae0bd56942c2d3ca0922af80ec9df5ceb111fc140b3"
+    },
+    "validation/room-history/pal/ram_02500.bin": {
+      "stored": "objects/df8b529e27f1ecff79544c570da1afcac34d2b80a71fe7d500d0c7e394878492.gz",
+      "raw_sha256": "df8b529e27f1ecff79544c570da1afcac34d2b80a71fe7d500d0c7e394878492",
+      "raw_bytes": 65536,
+      "stored_sha256": "965a41a65192898db5fdb2cc0a388502e8bbf078c0781c3a9aad834317ddbb93"
+    },
+    "validation/room-history/pal/ram_03100.bin": {
+      "stored": "objects/b62450953506cc0f203efcb8eecb44dab524012b8e544ef1e705486ea0ede1e4.gz",
+      "raw_sha256": "b62450953506cc0f203efcb8eecb44dab524012b8e544ef1e705486ea0ede1e4",
+      "raw_bytes": 65536,
+      "stored_sha256": "6cc3a483ca7aff862b7405b55f17d11c1ab91e13989be359fbdbf64a6d05e91a"
+    },
+    "validation/room-history/pal/ram_03500.bin": {
+      "stored": "objects/e710e0cf205add1f9ecb7a90d058e2c3fc8db4d3f0f81463de4beb6babc79201.gz",
+      "raw_sha256": "e710e0cf205add1f9ecb7a90d058e2c3fc8db4d3f0f81463de4beb6babc79201",
+      "raw_bytes": 65536,
+      "stored_sha256": "8f27d2d804c7e6673244a56410ba3f4b4fe610333e7d492c89fe63d71c91f387"
+    },
+    "validation/room-history/pal/vdp_regs_02500.bin": {
+      "stored": "objects/86a79a76f23ba42c3f3b981135b360d47af42c3c5dd821e6dc54e3531e300ff6.gz",
+      "raw_sha256": "86a79a76f23ba42c3f3b981135b360d47af42c3c5dd821e6dc54e3531e300ff6",
+      "raw_bytes": 32,
+      "stored_sha256": "09fc8a31f0eb4720605f5a429a9031cdd5db05b9a142d333189d15a060373866"
+    },
+    "validation/room-history/pal/vdp_regs_03100.bin": {
+      "stored": "objects/e7e28d2c3b13341a4e5cf8947f2c9ddbb1938e8d05e5dc30e22194850ab83c2b.gz",
+      "raw_sha256": "e7e28d2c3b13341a4e5cf8947f2c9ddbb1938e8d05e5dc30e22194850ab83c2b",
+      "raw_bytes": 32,
+      "stored_sha256": "0b3aabeceaf10a6e102a015459568cdeba561ba880c68896d332cd8329d6e8c4"
+    },
+    "validation/room-history/pal/vdp_regs_03500.bin": {
+      "stored": "objects/e7e28d2c3b13341a4e5cf8947f2c9ddbb1938e8d05e5dc30e22194850ab83c2b.gz",
+      "raw_sha256": "e7e28d2c3b13341a4e5cf8947f2c9ddbb1938e8d05e5dc30e22194850ab83c2b",
+      "raw_bytes": 32,
+      "stored_sha256": "0b3aabeceaf10a6e102a015459568cdeba561ba880c68896d332cd8329d6e8c4"
+    },
+    "validation/room-history/pal/vram_02500.bin": {
+      "stored": "objects/4b57874ede3e1c34699f6c3c93cd6d751f1d91c366693a716bc518f8e0684bfe.gz",
+      "raw_sha256": "4b57874ede3e1c34699f6c3c93cd6d751f1d91c366693a716bc518f8e0684bfe",
+      "raw_bytes": 65536,
+      "stored_sha256": "f606c043e66cf12eb2e3b56c2609e168a11a85d362f2f4223bec34a424b8c656"
+    },
+    "validation/room-history/pal/vram_03100.bin": {
+      "stored": "objects/7d66fc3c784764bfa8987d671170212a08f2dee87eea46dbc710e01651af5eff.gz",
+      "raw_sha256": "7d66fc3c784764bfa8987d671170212a08f2dee87eea46dbc710e01651af5eff",
+      "raw_bytes": 65536,
+      "stored_sha256": "af97fe649592c6e1c7f2f53ba7e713e060164c3841fd3dbaac3e8e6bd3ee72d1"
+    },
+    "validation/room-history/pal/vram_03500.bin": {
+      "stored": "objects/aaf5ec250ca685a08c7f4b1fd8753912316c3abd62490e2c6ebc428a39cf9ee9.gz",
+      "raw_sha256": "aaf5ec250ca685a08c7f4b1fd8753912316c3abd62490e2c6ebc428a39cf9ee9",
+      "raw_bytes": 65536,
+      "stored_sha256": "1b326d2cc1a80831e5926776f452a290802b48520deeefbb0c0d66f6ded548de"
+    },
+    "validation/room-history/sms/capture.json": {
+      "stored": "objects/bc8bd94e30b79d577b51db5ab5ebfed65da28eedfa36d4fdd3c840e9b654d363.gz",
+      "raw_sha256": "bc8bd94e30b79d577b51db5ab5ebfed65da28eedfa36d4fdd3c840e9b654d363",
+      "raw_bytes": 910,
+      "stored_sha256": "b86ee5bc1f47ec5c9019ce9b55baeb2e01eed1beac5bd26b3752552eb3f232f8"
+    },
+    "validation/room-history/types.h": {
+      "stored": "objects/d789b19ccb2f44d7c564bdb1374bb97a85cbe4a976ba9002f2527055c9213494.gz",
+      "raw_sha256": "d789b19ccb2f44d7c564bdb1374bb97a85cbe4a976ba9002f2527055c9213494",
+      "raw_bytes": 63,
+      "stored_sha256": "bf10ddcdbb0d0a7f018751e38ed312fff917bc8631c55ce04b9b3aec18a3a964"
+    }
+  },
+  "removed_verified_generated": [
+    {
+      "path": "validation/rng-timed-68k/out/release/_deps/src/main.d",
+      "bytes": 256
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/_deps/src/source_clock.d",
+      "bytes": 318
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/_deps/src/source_rng.d",
+      "bytes": 220
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/_deps/src/source_rng_timed.d",
+      "bytes": 432
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/rom.bin",
+      "bytes": 655360
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/rom.out",
+      "bytes": 551744
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/rom_header.o",
+      "bytes": 932
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/sega.o",
+      "bytes": 4276
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/sega.s",
+      "bytes": 10664
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/src/main.o",
+      "bytes": 1060560
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/src/source_clock.o",
+      "bytes": 21032
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/src/source_rng.o",
+      "bytes": 6544
+    },
+    {
+      "path": "validation/rng-timed-68k/out/release/src/source_rng_timed.o",
+      "bytes": 13692
+    },
+    {
+      "path": "validation/rng-timed-68k/out/rom.bin",
+      "bytes": 655360
+    },
+    {
+      "path": "validation/rng-timed-68k/out/rom_header.bin",
+      "bytes": 256
+    },
+    {
+      "path": "validation/rng-timed-68k/src/expected.h",
+      "bytes": 925449
+    },
+    {
+      "path": "validation/rng-timed-host/rng.dll",
+      "bytes": 103608
+    },
+    {
+      "path": "validation/room-history/auto/cram_02500.bin",
+      "bytes": 128
+    },
+    {
+      "path": "validation/room-history/auto/cram_03100.bin",
+      "bytes": 128
+    },
+    {
+      "path": "validation/room-history/auto/cram_03500.bin",
+      "bytes": 128
+    },
+    {
+      "path": "validation/room-history/auto/ram_02500.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/auto/ram_03100.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/auto/ram_03500.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/auto/vdp_regs_02500.bin",
+      "bytes": 32
+    },
+    {
+      "path": "validation/room-history/auto/vdp_regs_03100.bin",
+      "bytes": 32
+    },
+    {
+      "path": "validation/room-history/auto/vdp_regs_03500.bin",
+      "bytes": 32
+    },
+    {
+      "path": "validation/room-history/auto/vram_02500.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/auto/vram_03100.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/auto/vram_03500.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/history.dll",
+      "bytes": 95380
+    },
+    {
+      "path": "validation/room-history/pal/cram_02500.bin",
+      "bytes": 128
+    },
+    {
+      "path": "validation/room-history/pal/cram_03100.bin",
+      "bytes": 128
+    },
+    {
+      "path": "validation/room-history/pal/cram_03500.bin",
+      "bytes": 128
+    },
+    {
+      "path": "validation/room-history/pal/ram_02500.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/pal/ram_03100.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/pal/ram_03500.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/pal/vdp_regs_02500.bin",
+      "bytes": 32
+    },
+    {
+      "path": "validation/room-history/pal/vdp_regs_03100.bin",
+      "bytes": 32
+    },
+    {
+      "path": "validation/room-history/pal/vdp_regs_03500.bin",
+      "bytes": 32
+    },
+    {
+      "path": "validation/room-history/pal/vram_02500.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/pal/vram_03100.bin",
+      "bytes": 65536
+    },
+    {
+      "path": "validation/room-history/pal/vram_03500.bin",
+      "bytes": 65536
+    }
+  ]
+}

@@ -5,29 +5,37 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0273 — 1024 Kio.**
+**Version courante : v0274 — 1024 Kio.**
 
-[Télécharger la ROM v0273](versions/v0273-10116d2f/gaw-megadrive-v0273.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0274](versions/v0274-6af186de/gaw-megadrive-v0274.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769`
-Checksum Mega Drive : `79C8`
+SHA-256 : `6af186deca6c86bfdeccaa607aab39f31345349b4d3a5861ad4d912b084c87f4`
+Checksum Mega Drive : `2769`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0273**.
-Le compteur logique reste maintenant figé pendant la construction de la carte
-et avance avec les attentes complètes de la routine SMS. Les marqueurs et le
-retour au jeu retrouvent ainsi leur phase sans réécriture de l'horloge après
-le dessin. Le rechargement graphique final inutile est supprimé ; le budget
-inclut les 3 559 T de restauration des cellules avant la lecture des boutons.
-Les 22 scénarios utilisent seulement un alignement avant activation : 168
-images de l'aperçu et 18 retours correspondent au même compteur logique.
-Le NTSC ordinaire est à la même phase physique ; le PAL ordinaire reste une
-image en avance. Les transitions cachées et la cadence physique complète
-restent à aligner. La v0272 est un essai intermédiaire ; utiliser la v0273.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0274**.
+Le portage inclut désormais la routine SMS de réapparition des ennemis :
+à chaque entrée de salle, trois tentatives à l'extérieur ou cinq en donjon
+peuvent réinitialiser une salle entièrement vidée. L'historique protège les
+16 dernières salles à l'extérieur et les quatre premières entrées en donjon ;
+les six exceptions des donjons et les masques partiellement vidés sont préservés.
+L'historique partagé est remis à zéro pour une nouvelle partie et reste hors SRAM.
+Le chargement temporaire de la salle 95 pendant une reprise ne le modifie pas.
+Les règles correspondent à la routine Z80 inchangée sur 6 656 cas à tirages
+contrôlés. Deux parcours du binaire jouable, NTSC et PAL, vérifient l'historique
+et la réinitialisation de masques avec une préparation contrôlée des salles.
+Le générateur SGDK reste provisoire : les salles tirées ne suivent pas encore
+le flux aléatoire exact de la SMS. Les reprises et la campagne complète restent
+à vérifier. Voir les [changements de la v0274](analysis/room_history_v0274.md).
+
+La **v0273** corrige le compteur logique de la carte du monde : il reste figé
+pendant la construction et avance avec les attentes de la routine SMS, sans
+réécriture après le dessin. Le NTSC ordinaire est à la même phase physique ;
+le PAL ordinaire reste une image en avance.
 Voir les [changements et limites de la v0273](analysis/overview_clock_v0273.md).
 
 La **v0271** avait rapproché la durée de génération de la carte du monde.

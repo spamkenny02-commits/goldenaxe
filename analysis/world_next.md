@@ -1352,3 +1352,10 @@ v0240: native overview item11 translates31E7..3291/837C/83EC/844D.225 exterior r
 2026-10-23 v0271: overview cumulative source-work pacing,190B cells only(no unused640-word map), ROM-derived decode costs4 flag/ice cases and844D projection color/rotation/IO costs. Live audio-only IRQ debit524+reader T per physicalperiod. Source225 rooms*5=1125 decoder/cells and45000 pixels, five whole-loop totals exact; actual C counters1125 exact. Ordinary finish0NTSC/-1PAL vs240 -94/-80; all18 exterior cases within1 frame.22 cases108 overview+18 return normalized images exact,5120 graphics/1280 map, expected3 ice passage flags. Loot401-state/36-image, dense spell and natural12 composition regressions pass. Modal C02F/raster publication/terrain5/restoration/natural acquisition/full campaign/RNG/waveform still unverified. ROM271 real new binary, goal unfinished.
 
 2026-10-23 v0273: overview source-owned logical counter, entry+2 full waits, no physical-IRQ ticks during construction, one per menu iteration, closing+2 then handoff through world_clock_shift. Redundant final overview tile/map reload removed.3559T SRAM restoration tail derived/verified5 source captures. Pre-activation alignment2850 only; baseline271 fails freeze and29/33 NTSC marker samples.22 scenarios,16159 construction counter observations,168 same-logical-clock overview images/18 same-clock restored frames exact. Physical offset0/1 persists (ordinaryNTSC0, ordinaryPAL1early);4 physical sample mismatches retained honestly. Hidden transition clock edges/raster/global boot phase remain unverified. Loot401-state/36-image,dense spell,natural12 composition pass. Intermediate272 kept. Full goal unfinished: hardware/audio waveforms,RNG,natural campaign,physical timing.
+
+
+2026-10-23 v0274: native1C15 recent-room history and empty-mask respawn.
+6656 controlled Z80/C cases; NTSC/PAL playable crossings passed.
+History reset1CA3 on new game, shared16/4 prefix, six dungeon exclusions.
+SGDK RNG remains provisional; timed04E1 helper tested but not game-integrated.
+Continue/death and complete campaign remain unverified.

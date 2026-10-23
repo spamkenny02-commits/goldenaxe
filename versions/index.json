@@ -7698,5 +7698,20 @@
         "sha256": "e1d4d05408558e120560f615b6770284e0226f7c65cf245b5ecfdc551ed7b3aa"
       }
     ]
+  },
+  {
+    "version": 274,
+    "sha256": "6af186deca6c86bfdeccaa607aab39f31345349b4d3a5861ad4d912b084c87f4",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T19:20:02.499599+00:00",
+    "rom": "v0274-6af186de/gaw-megadrive-v0274.bin",
+    "notes": "Historique SMS des salles et reapparition des ennemis ; 6656 cas controles et parcours NTSC/PAL. Flux RNG exact encore a integrer.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "room_history_v0274_report.json",
+        "sha256": "ff9110f2df14fe3b4089864eee0a1fa614ead8d268466790d8876f966d328bf0"
+      }
+    ]
   }
 ]

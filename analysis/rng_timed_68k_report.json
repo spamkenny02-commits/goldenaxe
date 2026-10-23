@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 35656,
+      "done": 1,
+      "cases": 398048,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "region": "pal",
+      "frame": 29847,
+      "done": 1,
+      "cases": 398048,
+      "failures": 0,
+      "first_error": 0
+    }
+  ],
+  "native_cases": 796096,
+  "module_sha256": {
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "source_rng_timed.h": "83ef265f2519f81fb26dd9a317d605f78aad7ef4950f1c65232859048121f186"
+  },
+  "test_rom_sha256": "29239139ce0d35ed859844e3c97819dc252160573369468804e1779c3cb86570",
+  "playable_rom_sha256": "10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769",
+  "production_rng_integrated": false,
+  "limits": [
+    "Dedicated68000 test cartridge, native IRQs disabled; virtual source IRQ callback is the paused-audio563T/59M1 model. Controlled SourceClock entry states; no natural game clock claim.",
+    "Both fast and instruction-boundary paths execute; original gameplay ROM stays unchanged. Host seed mutation/failure checks are separate."
+  ]
+}

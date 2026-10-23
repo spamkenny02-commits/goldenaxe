@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "exhaustive_seed_refresh_prefetch_cases": 393216,
+  "boundary_cases": 4576,
+  "interrupted_cases": 3880,
+  "direct_refresh_cases": 256,
+  "irq_seed_mutation_cases": 2,
+  "callback_failure_cases": 2,
+  "irq_tstates": 563,
+  "irq_fetches": 59,
+  "module_sha256": {
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "source_rng_timed.h": "83ef265f2519f81fb26dd9a317d605f78aad7ef4950f1c65232859048121f186"
+  },
+  "playable_rom_sha256": "10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769",
+  "production_rng_integrated": false,
+  "limits": [
+    "ROM-derived04E1 instruction plan plus separately source-verified Python clock oracle and paused audio IRQ model. Boundary inputs are controlled, not natural gameplay entry clocks.",
+    "No whole-game clock propagation or native gameplay RNG replacement. Source direct-R reads and seeded calls are distinct APIs. Native68000 execution is checked separately."
+  ]
+}
