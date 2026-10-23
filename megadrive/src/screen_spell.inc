@@ -34,7 +34,10 @@ static void screen_spell_present(void)
         else if(work>period) gap=(work-audio+(period-audio)-1)/(period-audio);
     }
     screen_spell_model_gap=gap;
-    while(vtimer-screen_spell_last_publication+1<gap) portal_wait_frame();
+    /* Audio-only IRQs already run world_vint. Wait for the absolute tick;
+     * SGDK ON_VBLANK_START can skip another IRQ if one arrives as its wait
+     * samples the counter and blank flag. No VDP work is queued here. */
+    while(vtimer-screen_spell_last_publication+1<gap) __asm__ volatile ("nop");
     __asm__ volatile ("" ::: "memory");
     if(screen_spell_iteration && vtimer-screen_spell_last_publication+1>gap) screen_spell_late_publications++;
     __asm__ volatile ("" ::: "memory");

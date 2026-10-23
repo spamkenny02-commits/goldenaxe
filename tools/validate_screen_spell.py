@@ -76,7 +76,11 @@ def main():
                         seen.add(index);base=0xf400+index*8;word=lambda off:int.from_bytes(v[base+off:base+off+2],'little');tile=word(4)&2047
                         sat.append([((word(6)&511)-128)&255,((word(0)&511)-145)&255,(tile-272)&255 if tile<1024 else None]);index=word(2)&127
                         if not index:break
-                display.append(dict(frame=f,active=states[-1]['active'],clock=states[-1]['clock'],map=buf.hex(),sprites=sat));last_display=buf
+                # Initial clear can publish while MD setup is still phase1.
+                # Include that exact physical blank, like SMS C090 already set;
+                # exclude the old room map that is still visible during setup.
+                initial_blank=not source and states[-1]['active']==1 and buf==(bytes([255,8 if a.level==1 else 0])*640)
+                display.append(dict(frame=f,active=2 if initial_blank else states[-1]['active'],native_phase=states[-1]['active'] if not source else None,initial_clear_during_setup=initial_blank,clock=states[-1]['clock'],map=buf.hex(),sprites=sat));last_display=buf
         captures={2999,3005,3020,3040,3060,3080,3100,3150,3400}
         presses=([(200,220,0)] if source else [])+PRESSES[:8]+[(3000,3001,8)]
         if a.post_menu:presses += [(3460,3463,0),(3560,3563,0)];captures.update([3490,3650,3700])

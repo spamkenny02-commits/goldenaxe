@@ -1,0 +1,167 @@
+{
+  "md_sha256": "612826eba9e99caa42a9178abd3743c9ec8c9f3f9846957885310c0d4bad5b08",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "controlled_cases": 12,
+  "cases": [
+    "screen_spell_v0265-final-level1_report.json",
+    "screen_spell_v0265-final-level1-pal_report.json",
+    "screen_spell_v0265-final-level2_report.json",
+    "screen_spell_v0265-final-level2-pal_report.json",
+    "screen_spell_v0265-final-actors1_report.json",
+    "screen_spell_v0265-final-actors2_report.json",
+    "screen_spell_v0265-final-actors2-pal_report.json",
+    "screen_spell_v0265-final-house_report.json",
+    "screen_spell_v0265-final-dungeon_report.json",
+    "screen_spell_v0265-final-no-magic_report.json",
+    "screen_spell_v0265-final-menu_report.json",
+    "screen_spell_v0265-final-menu-pal_report.json"
+  ],
+  "ordered_map_and_sprite_states_exact": 626,
+  "logical_loop_clock_observations": 1344,
+  "returns": [
+    {
+      "case": "level1",
+      "source_frame": 3400,
+      "native_frame": 3398,
+      "comparison": "same logical game clock",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "level1-pal",
+      "source_frame": 3400,
+      "native_frame": 3407,
+      "comparison": "same logical game clock",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "level2",
+      "source_frame": 3400,
+      "native_frame": 3396,
+      "comparison": "same logical game clock",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "level2-pal",
+      "source_frame": 3400,
+      "native_frame": 3396,
+      "comparison": "same logical game clock",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "house",
+      "source_frame": 3400,
+      "native_frame": 3398,
+      "comparison": "same logical game clock",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "dungeon",
+      "source_frame": 3400,
+      "native_frame": 3396,
+      "comparison": "same logical game clock",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "no-magic",
+      "source_frame": 3400,
+      "native_frame": 3400,
+      "comparison": "same logical game clock",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "menu",
+      "source_frame": 3700,
+      "native_frame": 3700,
+      "comparison": "same physical frame after inventory",
+      "normalized_pixel_differences": 0
+    },
+    {
+      "case": "menu-pal",
+      "source_frame": 3700,
+      "native_frame": 3700,
+      "comparison": "same physical frame after inventory",
+      "normalized_pixel_differences": 0
+    }
+  ],
+  "effect_end_timing": [
+    {
+      "case": "level1",
+      "sms": 3182,
+      "md": 3181,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "level1-pal",
+      "sms": 3175,
+      "md": 3183,
+      "md_minus_sms_frames": 8
+    },
+    {
+      "case": "level2",
+      "sms": 3064,
+      "md": 3062,
+      "md_minus_sms_frames": -2
+    },
+    {
+      "case": "level2-pal",
+      "sms": 3063,
+      "md": 3060,
+      "md_minus_sms_frames": -3
+    },
+    {
+      "case": "actors1",
+      "sms": 3183,
+      "md": 3181,
+      "md_minus_sms_frames": -2
+    },
+    {
+      "case": "actors2",
+      "sms": 3064,
+      "md": 3064,
+      "md_minus_sms_frames": 0
+    },
+    {
+      "case": "actors2-pal",
+      "sms": 3063,
+      "md": 3060,
+      "md_minus_sms_frames": -3
+    },
+    {
+      "case": "house",
+      "sms": 3182,
+      "md": 3181,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "dungeon",
+      "sms": 3064,
+      "md": 3061,
+      "md_minus_sms_frames": -3
+    },
+    {
+      "case": "menu",
+      "sms": 3182,
+      "md": 3181,
+      "md_minus_sms_frames": -1
+    },
+    {
+      "case": "menu-pal",
+      "sms": 3175,
+      "md": 3183,
+      "md_minus_sms_frames": 8
+    }
+  ],
+  "audio_host_source_vectors": 25644,
+  "audio_host_mutations": 6000,
+  "audio_host_direct_channels": 2840,
+  "audio_native_region_cases": 51288,
+  "physical_timing_exact": false,
+  "full_game_verified": false,
+  "limits": [
+    "Initial ownership, resources, room class, optional frozen actors and one clock alignment are controlled. Natural acquisition and full campaign remain unverified.",
+    "Nine restored pixel comparisons normalize the palette and MD viewport. Seven align the logical game clock; two compare the same physical frame after opening/closing inventory.",
+    "Runtime pacing uses source foreground work and previous live audio work, with a fixed empty-queue IRQ raster assumption. Initial raster, future audio work and whole interrupt scheduling remain approximate.",
+    "Timing is reported per controlled fixture. No whole-game timing or analogue waveform claim; The initial blank is included even when the native setup phase is still1; its VRAM words and SAT are compared. The extra final-frame wait experiment266 was rejected."
+  ]
+}

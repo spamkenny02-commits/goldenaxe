@@ -7588,5 +7588,40 @@
         "sha256": "55f21e5239b4fabe40d5be1e5d3e696e7f89d32d18bb08dc5e607f336ddd8be1"
       }
     ]
+  },
+  {
+    "version": 265,
+    "sha256": "612826eba9e99caa42a9178abd3743c9ec8c9f3f9846957885310c0d4bad5b08",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T14:44:53.528923+00:00",
+    "rom": "v0265-612826eb/gaw-megadrive-v0265.bin",
+    "notes": "Essai copie audio48 ; attentes PAL supplementaires. Remplace par267.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 266,
+    "sha256": "a87da62c5ee3936edc8f413a0b8f47f6f17007d2dcfe44d7819f69b294559d3b",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T14:48:43.037630+00:00",
+    "rom": "v0266-a87da62c/gaw-megadrive-v0266.bin",
+    "notes": "Essai attente finale rejetee : etape visuelle supplementaire. Ne pas utiliser ; prendre267.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 267,
+    "sha256": "71d030d8e70bde5d3b2e3e5219a7dcf23ca29f4fef340d21d659d525bfd84eab",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T14:54:11.552472+00:00",
+    "rom": "v0267-71d030d8/gaw-megadrive-v0267.bin",
+    "notes": "Cout audio reduit et attente absolue du sort ; niveau2 charge NTSC a la meme image SMS. Autres cas1..3 images en avance.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "audio_channel_snapshot_release_v0267_report.json",
+        "sha256": "334c9b88d1742c73419ec8d4b8988bc3d5e9a2afa17809b0aba18610b25039f7"
+      }
+    ]
   }
 ]

@@ -5,30 +5,37 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0264 — 1024 Kio.**
+**Version courante : v0267 — 1024 Kio.**
 
-[Télécharger la ROM v0264](versions/v0264-f4a55f14/gaw-megadrive-v0264.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0267](versions/v0267-71d030d8/gaw-megadrive-v0267.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `f4a55f1465abb54ec9b2581c726d657494098de0c3c0f203b23a20c51886e53c`
-Checksum Mega Drive : `C2F0`
+SHA-256 : `71d030d8e70bde5d3b2e3e5219a7dcf23ca29f4fef340d21d659d525bfd84eab`
+Checksum Mega Drive : `8EC7`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0264**.
-La cadence du sort tient désormais compte du travail des routines SMS.
-Dans la scène sans ennemis, le niveau 1 finit une image avant la SMS en PAL
-et NTSC ; l'avance PAL était de 83 images dans la v0249.
-Les cartes et tables de sprites correspondent sur 598 états affichés.
-Neuf retours ont zéro différence de pixels normalisés, dont les retours en
-maison/donjon comparés au même pas de jeu et deux passages par l'inventaire.
-Le niveau 2 avec plusieurs ennemis reste 18 images trop lent en NTSC dans
-le cas contrôlé : l'optimisation de cette charge reste à faire.
-Les v0252 à v0263 sont intermédiaires ; les v0261/v0262 ont des cartes
-partielles et ne doivent pas être utilisées.
-Voir les [changements et limites de la v0264](analysis/screen_spell_pacing_v0264.md).
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0267**.
+Le ralentissement du sort de niveau 2 avec plusieurs ennemis en NTSC est
+corrigé dans le cas testé : fin à la même image que sur SMS, contre 18 images
+de retard en v0264. Le lecteur musical copie seulement le canal de 48 octets
+entre deux étapes de séquence ; il conserve la sauvegarde complète lorsque
+la séquence peut modifier les autres canaux. Les commandes PSG et les retours
+d'erreur restent identiques aux routines précédentes dans les comparaisons.
+L'attente intermédiaire du sort suit directement son compteur d'images,
+pour éviter une attente SGDK supplémentaire autour du début de VBlank.
+Douze scénarios vérifient 626 états de carte/sprites et neuf retours sans
+différence de pixels normalisés. Les autres cas finissent encore 1 à 3 images
+avant la SMS : la synchronisation physique complète reste à terminer.
+Les v0265/v0266 sont des essais intermédiaires ; utiliser la v0267.
+Voir les [changements et limites de la v0267](analysis/audio_channel_snapshot_v0267.md).
+
+La v0264 avait ajouté les coûts des routines SMS au rythme du sort et
+la table de sprites source. Les v0252 à v0263 sont intermédiaires ; les
+v0261/v0262 ont des cartes partielles et ne doivent pas être utilisées.
+Voir les [changements de la v0264](analysis/screen_spell_pacing_v0264.md).
 
 Le sort plein écran de la sixième case est utilisable dans ses deux niveaux :
 animations d'origine, particules, coût en magie, dégâts et retour à la salle.

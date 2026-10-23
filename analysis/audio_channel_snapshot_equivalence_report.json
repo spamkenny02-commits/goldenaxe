@@ -1,0 +1,32 @@
+{
+  "md_sha256": "71d030d8e70bde5d3b2e3e5219a7dcf23ca29f4fef340d21d659d525bfd84eab",
+  "baseline_commit": "b7696b3",
+  "source_vector_cases": 25644,
+  "mutated_cases": 6000,
+  "direct_channel_cases": 2840,
+  "direct_channel_rejected": 333,
+  "accepted": 31468,
+  "rejected": 176,
+  "streamed_successes": 31468,
+  "all_400_bytes_work_DE_PSG_status_exact": true,
+  "transactional_rejection_restores_state_and_DE": true,
+  "result_digest": "939341305fb034ad86476140bc66ee7bd10bdbefd465073c4300c77b92edfcf9",
+  "module_sha256": {
+    "source_audio_fast": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "source_audio_reader": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "source_audio_priority": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "source_audio_tone": "8098ba4e45c21629a9920e6ca9ac5385ecb986e31d0db143cbbff42c0c92b272",
+    "source_audio_noise": "45b37e1689255404b86855e3970e82bfefd313421522aae46e3fae455fa9690b",
+    "source_audio_sequence": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "limits": [
+    "Host differential test. Valid states additionally have retained source and compiled68000 checks. All streamed rejections additionally match baseline state, DE, cost, status and previously emitted PSG bytes. The public transactional reader retains full rollback. No analogue waveform or full-game claim."
+  ],
+  "production_channel_snapshot_optimized": true,
+  "production_fast_audio_wired": false
+}

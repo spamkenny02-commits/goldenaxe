@@ -4,6 +4,9 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0267 | [Telecharger](v0267-71d030d8/gaw-megadrive-v0267.bin) | targeted_checks_passed | Cout audio reduit et attente absolue du sort ; niveau2 charge NTSC a la meme image SMS. Autres cas1..3 images en avance. | `71d030d8e70bde5d3b2e3e5219a7dcf23ca29f4fef340d21d659d525bfd84eab` |
+| v0266 | [Telecharger](v0266-a87da62c/gaw-megadrive-v0266.bin) | build_only | Essai attente finale rejetee : etape visuelle supplementaire. Ne pas utiliser ; prendre267. | `a87da62c5ee3936edc8f413a0b8f47f6f17007d2dcfe44d7819f69b294559d3b` |
+| v0265 | [Telecharger](v0265-612826eb/gaw-megadrive-v0265.bin) | build_only | Essai copie audio48 ; attentes PAL supplementaires. Remplace par267. | `612826eba9e99caa42a9178abd3743c9ec8c9f3f9846957885310c0d4bad5b08` |
 | v0264 | [Telecharger](v0264-f4a55f14/gaw-megadrive-v0264.bin) | targeted_checks_passed | Cadence du sort et SAT source ; niveau1 PAL/NTSC a1 image. Charge dense NTSC encore lente. | `f4a55f1465abb54ec9b2581c726d657494098de0c3c0f203b23a20c51886e53c` |
 | v0263 | [Telecharger](v0263-25a2ca66/gaw-megadrive-v0263.bin) | build_only | Intermediaire de cadence ; remplace par v0264. | `25a2ca660968b0560df8c79005145148021b02e338d6d94aa0e406186a2f2653` |
 | v0262 | [Telecharger](v0262-e9442fb9/gaw-megadrive-v0262.bin) | build_only | Essai abandonne : cartes partielles. Ne pas utiliser. | `e9442fb9b791a0f0814ca736638ac69d09c4ef8dc0eb90a478ca50c3536e55af` |

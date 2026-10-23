@@ -16,12 +16,12 @@
 #define EMIT(v,t) do {if(output->count>=512) goto reject;GAW_AUDIO_TIMED_STAMP(output,t);output->writes[output->count++]=(u8)(v);} while(0)
 
 #ifndef GAW_AUDIO_STREAM_CHANNELS
-static void copy_state(u8 *to,const u8 *from)
+static void copy_state(u8 *to,const u8 *from,u16 bytes)
 {
 #ifdef SGDK_GCC
-    memcpy(to,from,400);
+    memcpy(to,from,bytes);
 #else
-    __builtin_memcpy(to,from,400);
+    __builtin_memcpy(to,from,bytes);
 #endif
 }
 #endif
@@ -31,7 +31,9 @@ u8 source_audio_tone(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
                      SourceAudioSequenceOutput *output)
 {
 #ifndef GAW_AUDIO_STREAM_CHANNELS
-    u8 old[400];
+    /* Without a sequence step, tone/pitch/envelope only mutate this
+     * 48-byte record. A sequence can restore or change other channels. */
+    u8 old[400],*backup_base;u16 backup_bytes;
 #endif
     u8 *c,pitch=1,n,value;u16 original_de=*de,pointer,frequency;
     SourceClockWork sub;SourceAudioPitchOutput modulation;SourceAudioEnvelopeOutput envelope;
@@ -42,7 +44,9 @@ u8 source_audio_tone(u8 *state,u16 offset,const u8 *low,u16 low_bytes,
     if(offset>0x160) {output->error=255;return 0;}
 
 #ifndef GAW_AUDIO_STREAM_CHANNELS
-    copy_state(old,state);
+    backup_bytes=state[offset+10]==1?400:48;
+    backup_base=backup_bytes==400?state:state+offset;
+    copy_state(old,backup_base,backup_bytes);
 #endif
     c=state+offset;c[10]--;ADD(23,2);
     if(!c[10])
@@ -168,7 +172,7 @@ done:
 reject:
 
 #ifndef GAW_AUDIO_STREAM_CHANNELS
-    copy_state(state,old);
+    copy_state(backup_base,old,backup_bytes);
 #endif
     *de=original_de;work->tstates=work->fetches=0;
     output->de=original_de;output->count=output->unwind=0;

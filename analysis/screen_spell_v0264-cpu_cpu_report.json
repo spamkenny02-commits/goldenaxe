@@ -1,0 +1,1142 @@
+{
+  "md_sha256": "f4a55f1465abb54ec9b2581c726d657494098de0c3c0f203b23a20c51886e53c",
+  "read_only_cpu_observer": true,
+  "controlled_fixture": true,
+  "functions": {
+    "source_audio_reader_stream.constprop.0": {
+      "entry": 206766,
+      "returns": [
+        206906,
+        207490
+      ]
+    },
+    "source_sprite_scene_tstates.constprop.0": {
+      "entry": 203178,
+      "returns": [
+        204090,
+        205420
+      ]
+    },
+    "prepare_world_sms_sprite_overflow.lto_priv.0": {
+      "entry": 29154,
+      "returns": [
+        30132
+      ]
+    },
+    "world_vint.lto_priv.0": {
+      "entry": 18496,
+      "returns": [
+        18760,
+        19800
+      ]
+    }
+  },
+  "spans": [
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3004,
+      "master": 172284
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3004,
+      "master": 176932
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3005,
+      "master": 174048
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3005,
+      "master": 178696
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3006,
+      "master": 172242
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3006,
+      "master": 176890
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3006,
+      "master": 240912
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3006,
+      "master": 106974
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3007,
+      "master": 174286
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3007,
+      "master": 516367
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3008,
+      "master": 172522
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3008,
+      "master": 177170
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3007,
+      "master": 420553
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3008,
+      "master": 106974
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3009,
+      "master": 11886
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3009,
+      "master": 353979
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3009,
+      "master": 239274
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3010,
+      "master": 174300
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3010,
+      "master": 178948
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3009,
+      "master": 288715
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3011,
+      "master": 172522
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3011,
+      "master": 514601
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3012,
+      "master": 174300
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3012,
+      "master": 178948
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3011,
+      "master": 420987
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3012,
+      "master": 106988
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3013,
+      "master": 196280
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3013,
+      "master": 538323
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3014,
+      "master": 172900
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3014,
+      "master": 177548
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3014,
+      "master": 238994
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3014,
+      "master": 106974
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3015,
+      "master": 11872
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3015,
+      "master": 354274
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3016,
+      "master": 171136
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3016,
+      "master": 175784
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3015,
+      "master": 417739
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3016,
+      "master": 106974
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3017,
+      "master": 174286
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3017,
+      "master": 516295
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3018,
+      "master": 172494
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3018,
+      "master": 177142
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3018,
+      "master": 237580
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3018,
+      "master": 106974
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3019,
+      "master": 174286
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3019,
+      "master": 516007
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3020,
+      "master": 172536
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3020,
+      "master": 177184
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3020,
+      "master": 237258
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3021,
+      "master": 11872
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3021,
+      "master": 16534
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3020,
+      "master": 126294
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3022,
+      "master": 174258
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3022,
+      "master": 516651
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3023,
+      "master": 172494
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3023,
+      "master": 177142
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3023,
+      "master": 238434
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3024,
+      "master": 174300
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3024,
+      "master": 178948
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3023,
+      "master": 288666
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3025,
+      "master": 172494
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3025,
+      "master": 514886
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3026,
+      "master": 174300
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3026,
+      "master": 178948
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3026,
+      "master": 238294
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3027,
+      "master": 11872
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3027,
+      "master": 16520
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3026,
+      "master": 126266
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3028,
+      "master": 327656
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3028,
+      "master": 669740
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3029,
+      "master": 175938
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3029,
+      "master": 180586
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3030,
+      "master": 174174
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3030,
+      "master": 178822
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3029,
+      "master": 418306
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3030,
+      "master": 106974
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3031,
+      "master": 175924
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3031,
+      "master": 518008
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3032,
+      "master": 172648
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3032,
+      "master": 177296
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3032,
+      "master": 237538
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3033,
+      "master": 11872
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3033,
+      "master": 16520
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3032,
+      "master": 126308
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3034,
+      "master": 174384
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3034,
+      "master": 516790
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3035,
+      "master": 171136
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3035,
+      "master": 175784
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3035,
+      "master": 237538
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3036,
+      "master": 172928
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3036,
+      "master": 177590
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3035,
+      "master": 287322
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3037,
+      "master": 171094
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3037,
+      "master": 513486
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3038,
+      "master": 174300
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3038,
+      "master": 178948
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3038,
+      "master": 236138
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3039,
+      "master": 11900
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3039,
+      "master": 16562
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3038,
+      "master": 126308
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3040,
+      "master": 172522
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3040,
+      "master": 514536
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3041,
+      "master": 174314
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3041,
+      "master": 178976
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3041,
+      "master": 237790
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3042,
+      "master": 241906
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3042,
+      "master": 246554
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3041,
+      "master": 356286
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3043,
+      "master": 174398
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3043,
+      "master": 516412
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3044,
+      "master": 172648
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3044,
+      "master": 177296
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3044,
+      "master": 235970
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3045,
+      "master": 11872
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3045,
+      "master": 16534
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3044,
+      "master": 126294
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3046,
+      "master": 175770
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3046,
+      "master": 518162
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3047,
+      "master": 172536
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3047,
+      "master": 177184
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3047,
+      "master": 235956
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3048,
+      "master": 174300
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3048,
+      "master": 178948
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3047,
+      "master": 288708
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3049,
+      "master": 172494
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3049,
+      "master": 514830
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3050,
+      "master": 174258
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3050,
+      "master": 178906
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3050,
+      "master": 235956
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3051,
+      "master": 11900
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3051,
+      "master": 16562
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3050,
+      "master": 126280
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3052,
+      "master": 172522
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3052,
+      "master": 514536
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3053,
+      "master": 174300
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3053,
+      "master": 178948
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3053,
+      "master": 237314
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3054,
+      "master": 172536
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3054,
+      "master": 177184
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3053,
+      "master": 286972
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3055,
+      "master": 174286
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3055,
+      "master": 516370
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3056,
+      "master": 310562
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3056,
+      "master": 315224
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3057,
+      "master": 11900
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3057,
+      "master": 16562
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3056,
+      "master": 256648
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3057,
+      "master": 106974
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3058,
+      "master": 174104
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3058,
+      "master": 516510
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3059,
+      "master": 172368
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3059,
+      "master": 177016
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3059,
+      "master": 237650
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3060,
+      "master": 175532
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3060,
+      "master": 180194
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3059,
+      "master": 289912
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3061,
+      "master": 172228
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3061,
+      "master": 514620
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3062,
+      "master": 174048
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3062,
+      "master": 178696
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3062,
+      "master": 237342
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3063,
+      "master": 11872
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3063,
+      "master": 16548
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3062,
+      "master": 126280
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3064,
+      "master": 172270
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3064,
+      "master": 514354
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3065,
+      "master": 174300
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3065,
+      "master": 178948
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3065,
+      "master": 239008
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3066,
+      "master": 172536
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3066,
+      "master": 177184
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3065,
+      "master": 286958
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3067,
+      "master": 174286
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3067,
+      "master": 516370
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3068,
+      "master": 172522
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3068,
+      "master": 177170
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3068,
+      "master": 241066
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3069,
+      "master": 11872
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3069,
+      "master": 16520
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3068,
+      "master": 126238
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3070,
+      "master": 174258
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3070,
+      "master": 516650
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3071,
+      "master": 278922
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3071,
+      "master": 283570
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3071,
+      "master": 240758
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3072,
+      "master": 174398
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3072,
+      "master": 179060
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3072,
+      "master": 106988
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3073,
+      "master": 172592
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3073,
+      "master": 514984
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3074,
+      "master": 175770
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3074,
+      "master": 180418
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3074,
+      "master": 241164
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3075,
+      "master": 11872
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3075,
+      "master": 16520
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3074,
+      "master": 126252
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3076,
+      "master": 174034
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3076,
+      "master": 516118
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3077,
+      "master": 175812
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3077,
+      "master": 180460
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3077,
+      "master": 241472
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3078,
+      "master": 172536
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3078,
+      "master": 177184
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3077,
+      "master": 286944
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3079,
+      "master": 174286
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3079,
+      "master": 516370
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3080,
+      "master": 172494
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3080,
+      "master": 177142
+    },
+    {
+      "function": "source_sprite_scene_tstates.constprop.0",
+      "frame": 3080,
+      "master": 240450
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3081,
+      "master": 11900
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3081,
+      "master": 16562
+    },
+    {
+      "function": "prepare_world_sms_sprite_overflow.lto_priv.0",
+      "frame": 3080,
+      "master": 126350
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3082,
+      "master": 174258
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3082,
+      "master": 516664
+    },
+    {
+      "function": "source_audio_reader_stream.constprop.0",
+      "frame": 3083,
+      "master": 172522
+    },
+    {
+      "function": "world_vint.lto_priv.0",
+      "frame": 3083,
+      "master": 177170
+    }
+  ],
+  "summary_cycles_68k": {
+    "source_audio_reader_stream.constprop.0": {
+      "count": 80,
+      "min": 1696.0,
+      "mean": 21907.75,
+      "max": 46808.0
+    },
+    "world_vint.lto_priv.0": {
+      "count": 80,
+      "min": 2360.0,
+      "mean": 39449.241071428565,
+      "max": 95677.14285714286
+    },
+    "source_sprite_scene_tstates.constprop.0": {
+      "count": 28,
+      "min": 33708.0,
+      "mean": 37847.392857142855,
+      "max": 60141.0
+    },
+    "prepare_world_sms_sprite_overflow.lto_priv.0": {
+      "count": 28,
+      "min": 15282.0,
+      "mean": 24929.321428571428,
+      "max": 50898.0
+    }
+  }
+}
