@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "md_sha256": "6af186deca6c86bfdeccaa607aab39f31345349b4d3a5861ad4d912b084c87f4",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "game_code_changed": false,
+  "cases": [
+    {
+      "system": "sms",
+      "axe_acquired": true,
+      "equipped_by_inventory": true,
+      "first_crystal": true,
+      "first_dungeon_exited": true,
+      "first_dungeon_deaths": 0,
+      "fixed_replay_ram_bytes": 8192,
+      "fixed_png_exact": true,
+      "later_trials": [
+        {
+          "case": "sms-auto-v0274-axe-d2-boss05",
+          "reached_boss": false,
+          "deaths": 7,
+          "failure": "death_retry_limit"
+        },
+        {
+          "case": "sms-auto-v0274-axe-d2-boss06",
+          "reached_boss": false,
+          "deaths": 1,
+          "failure": "frame_limit"
+        }
+      ],
+      "second_boss_reached": false,
+      "second_crystal": false,
+      "minimum_second_boss_hp": null,
+      "later_deaths": 1,
+      "later_failure": "frame_limit",
+      "later_final_room": 337
+    },
+    {
+      "system": "md",
+      "axe_acquired": true,
+      "equipped_by_inventory": true,
+      "first_crystal": true,
+      "first_dungeon_exited": true,
+      "first_dungeon_deaths": 0,
+      "fixed_replay_ram_bytes": 65536,
+      "fixed_png_exact": true,
+      "later_trials": [
+        {
+          "case": "md-auto-v0274-axe-d2-boss05",
+          "reached_boss": true,
+          "deaths": 7,
+          "failure": "death_retry_limit"
+        },
+        {
+          "case": "md-auto-v0274-axe-d2-boss06",
+          "reached_boss": false,
+          "deaths": 1,
+          "failure": "frame_limit"
+        }
+      ],
+      "second_boss_reached": true,
+      "second_crystal": false,
+      "minimum_second_boss_hp": 26,
+      "later_deaths": 1,
+      "later_failure": "frame_limit",
+      "later_final_room": 337
+    }
+  ],
+  "source_first_exit_flags_exact_bytes": 256,
+  "source_first_exit_map_exact_bytes": 1280,
+  "evidence": {
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe01/capture.json": "060cb5e921cc23011212cc58e2b0806b75efd5c8bdf299a5d224e40b4a94acf4",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe01/report.json": "b0ec7895a75d2c0ed276310f54efd8b97c5ec6ba6cefafc19475b1b3b8a2e92d",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe01/controls.json": "a7f026c83b8299b5eef09a1328c54aab8d976326d8f67260b8078b232a18c6db",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-boss01/capture.json": "ccdb9ae8f19d36daa92345a0d4d34dab7e821c51bcd085df0dcc20c8c5d98ba3",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-boss01/report.json": "a124e61f0e8499af0f66f886deea643eba39b92bb4019f0f1e1d48b371b37a29",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-boss01/controls.json": "8b1b6fc2cf396f6da6b0c1d2b64fd6e69fc47f736d2d463cc21a5bd55e7c0916",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-exit01/capture.json": "aa0e8ecc302317d819f3e950fd315c9853b52dc17d957c96bfcf632f280ed442",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-exit01/report.json": "ffbeb6bf216baa2cb3432a83d6ca57a4a606082176a3acb59abd811b16842aeb",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-exit01/controls.json": "c07949e53106b4f15fa97381c7756a0ea24526d39e1ab0ce1d30a81b7659b222",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-exit01-fixed-replay/replay_report.json": "837955b26ba340bdebfdb2aa99b097c0b4e1194b3abb2dbbee82fa36e80cf8da",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-d2-boss05/capture.json": "72e6ffb00714b8fbafc2f11976f5ac7240c74851064344918fdbeeb882760241",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-d2-boss05/report.json": "99ee614c17bdc2baf30658a1fa3bb92da5eccf6123d27179b71d999fd1b0b7c9",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-d2-boss05/controls.json": "df3a1cbb9115c6d0c5ebc54b3c9b817556a04aff4261f15205ed25bc9841f3cf",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-d2-boss05/events.json": "1b205ac0639aca50db1a1730d3251b340e159cbed93886ec04b0a0f894452b8e",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-d2-boss06/capture.json": "ae98a18e207542e3fdb279fd576e33c6d8cd012bd17131be72527403ba856875",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-d2-boss06/report.json": "d3a1d925ef3b8e8d0a315c8bbb0c0a034daac352cf293c1e27cb2623d814330b",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-d2-boss06/controls.json": "d12c0c2c5974141383e9b02847114917e9a28e6804f47d5761cf8baf7d391096",
+    "validation/natural-dungeon-combat/sms-auto-v0274-axe-d2-boss06/events.json": "55fe590041278e7242b4013e1921567b9f637e5a48e1f3c9f2f2a66f49e5970c",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe01/capture.json": "58e8407830ff659b27471fb5c433bbc262eaec8abd1a4c5494f0466259d75f68",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe01/report.json": "8e4dcafc64a15141d78f711845c09cece4552bf6005b6fc14582db3d11dcadf8",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe01/controls.json": "bbe1e48511c55fbdcfeeef0e11bae34682967ab6e8bd46c37fc99b4e6aa0c7e4",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-boss01/capture.json": "f58ea0b3dcdffa394e47b3d05865c5cfacbe2864c4d9688d28fb03fbf23d9b69",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-boss01/report.json": "ff41bb975afe4a8f587ef4f4c3655ef4b1bac9b1e289cef9baf35be6894b456d",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-boss01/controls.json": "0891647c123e5c39af2c2d5f047ad278959d70669db59e6c109d12d36938be9e",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-exit01/capture.json": "b6e07c6e1795215914727c74347adc81a46db91733b32afea1648de4f4a3acda",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-exit01/report.json": "f3cfe84e2b29bf3e75f5c50982f7b375026b129b9ed361bd79642d86c951e85c",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-exit01/controls.json": "b9bdc2f3c168a6f1697408c92b891b0107c3a2065b53eede794811c38b10e4a2",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-exit01-fixed-replay/replay_report.json": "d1b5798a94ba3d78e2ecb9b67605f2d0d1caa03dde4d4b74c038072ddc824cbf",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-d2-boss05/capture.json": "107b6d04d9bdc4a6bf07e1536fb4bc163829a172f175dad541706f96f306e02e",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-d2-boss05/report.json": "9cc8a08f4d76cf4b17ef304f3e8e0afa44e98250b9ef7dbeea36781f0645c25c",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-d2-boss05/controls.json": "b1c2dccd25ad009b07edb02ba519330ffeeaeb8488dde48964c4bda667cc23d7",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-d2-boss05/events.json": "b6502a7b9b20568f45feb5f72a9d2fd3f9af721952c475589e61d239d6e915a7",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-d2-boss06/capture.json": "28bc23b4b373616e211278305358b1e1594feb50a0f262a5fc5a07d563c4e217",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-d2-boss06/report.json": "9b5546ebb39160f0859a6c512ce15781efa4b1598d6217441bef245acbeaf820",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-d2-boss06/controls.json": "800212c1cfcbfc8e0bc475ee234374a95be7e8fba0c089aee91630ac6c942921",
+    "validation/natural-dungeon-combat/md-auto-v0274-axe-d2-boss06/events.json": "6d2ab0f494d9caaa50c95d3a7c41f5496847e64653403a3a80e6d7286374f25b"
+  },
+  "full_game_validated": false,
+  "limits": [
+    "Natural NTSC button-only paths, no ROM/RAM/SRAM injections. First axe/equip/boss/crystal/exit pass without deaths on both systems.",
+    "Each final first-dungeon state/image is reproduced by a cold fixed-input replay. Source/native encounters, controls, health and timings differ.",
+    "Later dungeon-two attempts are reported with their real outcome; reaching a boss is not completing its fight.",
+    "Original R/IRQ random stream, global timing, waveform, PAL campaign and hardware remain incomplete or unverified."
+  ]
+}

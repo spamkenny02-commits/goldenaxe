@@ -38,8 +38,11 @@ donjon et y obtient une première clé. À ces deux étapes, les 256 indicateurs
 de progression et les 1 280 octets de carte correspondent à la SMS.
 Les parcours jusqu'à la clé sont rejoués depuis le démarrage avec des commandes
 fixes : RAM finale complète et image finale identiques pour chaque machine.
-Les tentatives suivantes n'ont pas encore atteint le deuxième boss : le pilote
-meurt avec l'arme de départ. La hache sera récupérée avant de poursuivre.
+La hache est désormais récupérée puis équipée par les commandes normales sur
+les deux machines. Le parcours hache/premier boss/cristal/sortie passe sans décès
+et se rejoue exactement. Le deuxième boss est atteint sur MD, mais son combat
+et le deuxième cristal restent à valider. Voir le
+[parcours avec la hache](analysis/natural_axe_campaign_v0274.md).
 Voir le [parcours et ses limites](analysis/natural_campaign_v0274.md).
 Aucun nouveau binaire n'est créé pour ces seuls changements d'outils.
 

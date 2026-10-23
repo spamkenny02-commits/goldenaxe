@@ -7705,7 +7705,7 @@
     "bytes": 1048576,
     "archived_utc": "2026-10-23T19:20:02.499599+00:00",
     "rom": "v0274-6af186de/gaw-megadrive-v0274.bin",
-    "notes": "Reapparition SMS des ennemis ; premier donjon naturel termine et premiere cle du deuxieme donjon. RNG exact et campagne complete encore ouverts.",
+    "notes": "Reapparition SMS des ennemis ; parcours hache/premier cristal/sortie naturel verifie ; deuxieme boss atteint sur MD, combat encore non valide.",
     "validation": "targeted_checks_passed",
     "reports": [
       {
@@ -7715,6 +7715,10 @@
       {
         "file": "natural_campaign_v0274_report.json",
         "sha256": "a4ec0f303cb3051302e796f6350dfb888441d6fbce722cfcd7fe9191d1cfe72c"
+      },
+      {
+        "file": "natural_axe_campaign_v0274_report.json",
+        "sha256": "4ac92431eeba799a16f7a19d5589db844060731f0a51bea0084f42d7af18661e"
       }
     ]
   }

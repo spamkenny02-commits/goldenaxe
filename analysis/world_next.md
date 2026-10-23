@@ -1365,3 +1365,10 @@ D2 entry171 and key152 natural on SMS/MD, no deaths, flags/map exact; whole-RAM/
 Later pilot trials fail with starting weapon; second boss NOT reached. Acquire axe before continuing.
 Tools: generic door index/prefix, all stationary switches, C4B0 loot read, HP0 hazards and vulnerable satellites.
 Fixed-input frontend precomputes intervals; no gameplay code or ROM changed.
+
+2026-10-23 v0274 axe path: acquired1B6, equipped via menu, first boss/crystal/exit without death on SMS and MD.
+Cold fixed replays reproduce full RAM+PNG; first-exit flags256/map1280 source exact.
+Native second boss63 in144 reached but NOT defeated. D2 script key160 was missing from prior itinerary.
+Tools: equip axe, rush designated rooms, helpful loot, exterior normal Continue, generic exit checks.
+Collision-box aiming experiment regressed full paths and was removed; failed trials preserved.
+No gameplay code or ROM change. Full campaign and source R/IRQ RNG remain unfinished.

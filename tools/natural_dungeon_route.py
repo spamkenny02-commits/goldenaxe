@@ -60,7 +60,7 @@ class World:
         return list(reversed(path)),len(parents)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--plan',action='store_true');parser.add_argument('--sms',action='store_true');parser.add_argument('--pal',action='store_true');parser.add_argument('--frames',type=int,default=12000);parser.add_argument('--trial',default='01');parser.add_argument('--door-index',type=int,default=1);parser.add_argument('--prefix-combat',help='Natural completed combat trace, replayed from cold boot');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--plan',action='store_true');parser.add_argument('--sms',action='store_true');parser.add_argument('--pal',action='store_true');parser.add_argument('--frames',type=int,default=12000);parser.add_argument('--trial',default='01');parser.add_argument('--door-index',type=int,default=1);parser.add_argument('--retry-deaths',type=int,default=0,help='Use normal Continue after death, at most this many times');parser.add_argument('--prefix-combat',help='Natural completed combat trace, replayed from cold boot');args=parser.parse_args()
     world=World(args.door_index);start=(0x95,136,112);prefix_end=0;prefix_inputs=[];prefix_presses=[]
     if args.prefix_combat:
         prefix=ROOT/'validation/natural-dungeon-combat'/args.prefix_combat
@@ -81,9 +81,9 @@ def main():
     if args.plan:return
     tag='sms' if args.sms else 'md';rom=ROOT/'input/original.sms' if args.sms else ROOT/'gaw-megadrive.bin';sy=None if args.sms else symbols(ROOT/'megadrive/out/release/symbol.txt')
     state={};events=[];samples=[];captures=set();controls=[];cursor=0;cached_frame=-1;cached_buttons=[];last_progress=route_start;reached_at=None;ready_at=None;room_entry_at=None;saw_target_reset=False;probe_before=None;probe_after=None;failure=None
-    previous_key=None;observed_frame=0
+    previous_key=None;observed_frame=0;death_active=False;deaths=0;menu_since=None
     def observe(f,r):
-        nonlocal previous_key,reached_at,ready_at,room_entry_at,saw_target_reset,probe_before,probe_after,failure,observed_frame
+        nonlocal previous_key,reached_at,ready_at,room_entry_at,saw_target_reset,probe_before,probe_after,failure,observed_frame,death_active,deaths,menu_since
         observed_frame=f
         if args.sms:
             state.update(room=int.from_bytes(r[0xb9:0xbb],'little'),game_state=r[0x1d],hero_state=r[0x301],counter=r[0x304],x=int.from_bytes(r[0x312:0x314],'little')>>8,y=int.from_bytes(r[0x310:0x312],'little')>>8,health=r[0x318],gold=r[0xdd],maze=r[0x6c])
@@ -105,7 +105,11 @@ def main():
         if ready_at is not None and f in [ready_at+59,ready_at+84,ready_at+99]:captures.add(f+1)
         if ready_at is not None and f==ready_at+60:probe_before=dict(state)
         if ready_at is not None and f==ready_at+85:probe_after=dict(state)
-        if state['game_state']==20 or (not state['health'] and state['hero_state'] in [8,9]):failure='hero_died'
+        dying=state['game_state']==20 or (not state['health'] and state['hero_state'] in [8,9])
+        if dying and not death_active:death_active=True;deaths+=1
+        if state['game_state']==20 and menu_since is None:menu_since=f
+        if state['health'] and state['game_state']==12 and state['hero_state']==1:death_active=False;menu_since=None
+        if deaths>args.retry_deaths:failure='hero_died'
     def choose(f):
         nonlocal path,cursor,cached_frame,cached_buttons,last_progress,failure
         if f<=prefix_end:return prefix_inputs[f]
@@ -113,6 +117,10 @@ def main():
         cached_frame=f;cached_buttons=[]
         if ready_at is not None and ready_at+70<=f<=ready_at+74:cached_buttons=[4];return cached_buttons
         if f<2501 or not state or reached_at is not None or failure:return cached_buttons
+        if death_active:
+            last_progress=f
+            if state['game_state']==20 and menu_since is not None and f-menu_since>=180 and f%30==0:cached_buttons=[8]
+            return cached_buttons
         if state['game_state']!=12 or state['hero_state'] not in [0,1]:return cached_buttons
         point=(state['room'],state['x'],state['y'])
         while cursor<len(path) and point==tuple(path[cursor][2][:3]):cursor+=1;last_progress=f
@@ -147,7 +155,7 @@ def main():
     if ready_at is not None:
         final=Image.open(directory/f'frame_{ready_at+60:05d}.png').convert('RGB');visible=final.getbbox() is not None and final.crop((0,160 if args.sms else 176,256,192 if args.sms else 208)).getbbox() is not None
     probe=bool(probe_before and probe_after and probe_before['room']==probe_after['room']==world.goal['target'] and probe_before['x']==probe_after['x']==128 and probe_before['y']==152 and probe_after['y']==144)
-    report=dict(door_index=args.door_index,recorded_combat_prefix=args.prefix_combat,prefix_end=prefix_end,region='pal' if args.pal else 'auto',directional_probe_succeeded=probe,probe_before=probe_before,probe_after=probe_after,rendered_final_frame_nonblack=visible,rom_sha256=sha(rom.read_bytes()),reference_sha256=sha(world.rom),reached_entrance=ready_at is not None,first_published_target_room_frame=room_entry_at,first_target_state12_frame=reached_at,first_controllable_frame=ready_at,door_transition_frames=None if ready_at is None else ready_at-room_entry_at,failure=failure,waypoints_reached=cursor,waypoints_planned=len(path),last_state=state,ram_injections=False,sram_checkpoint_injection=False,scope='Read-only state-driven directional controller along ROM-derived static path, normal boot/name/opening. No combat strategy or whole-dungeon claim.')
+    report=dict(normal_continues=deaths,retry_deaths=args.retry_deaths,door_index=args.door_index,recorded_combat_prefix=args.prefix_combat,prefix_end=prefix_end,region='pal' if args.pal else 'auto',directional_probe_succeeded=probe,probe_before=probe_before,probe_after=probe_after,rendered_final_frame_nonblack=visible,rom_sha256=sha(rom.read_bytes()),reference_sha256=sha(world.rom),reached_entrance=ready_at is not None,first_published_target_room_frame=room_entry_at,first_target_state12_frame=reached_at,first_controllable_frame=ready_at,door_transition_frames=None if ready_at is None else ready_at-room_entry_at,failure=failure,waypoints_reached=cursor,waypoints_planned=len(path),last_state=state,ram_injections=False,sram_checkpoint_injection=False,scope='Read-only state-driven directional controller along ROM-derived static path, normal boot/name/opening. No combat strategy or whole-dungeon claim.')
     (directory/'route_report.json').write_text(json.dumps(report,indent=2)+'\n');print(report)
 
 if __name__=='__main__':main()
