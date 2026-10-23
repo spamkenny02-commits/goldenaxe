@@ -32,6 +32,17 @@ Le générateur SGDK reste provisoire : les salles tirées ne suivent pas encore
 le flux aléatoire exact de la SMS. Les reprises et la campagne complète restent
 à vérifier. Voir les [changements de la v0274](analysis/room_history_v0274.md).
 
+Le parcours naturel de la v0274 termine maintenant le premier donjon sans
+décès (boss, cristal, vie maximale 32, sortie), puis atteint le deuxième
+donjon et y obtient une première clé. À ces deux étapes, les 256 indicateurs
+de progression et les 1 280 octets de carte correspondent à la SMS.
+Les parcours jusqu'à la clé sont rejoués depuis le démarrage avec des commandes
+fixes : RAM finale complète et image finale identiques pour chaque machine.
+Les tentatives suivantes n'ont pas encore atteint le deuxième boss : le pilote
+meurt avec l'arme de départ. La hache sera récupérée avant de poursuivre.
+Voir le [parcours et ses limites](analysis/natural_campaign_v0274.md).
+Aucun nouveau binaire n'est créé pour ces seuls changements d'outils.
+
 La **v0273** corrige le compteur logique de la carte du monde : il reste figé
 pendant la construction et avance avec les attentes de la routine SMS, sans
 réécriture après le dessin. Le NTSC ordinaire est à la même phase physique ;

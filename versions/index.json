@@ -7705,12 +7705,16 @@
     "bytes": 1048576,
     "archived_utc": "2026-10-23T19:20:02.499599+00:00",
     "rom": "v0274-6af186de/gaw-megadrive-v0274.bin",
-    "notes": "Historique SMS des salles et reapparition des ennemis ; 6656 cas controles et parcours NTSC/PAL. Flux RNG exact encore a integrer.",
+    "notes": "Reapparition SMS des ennemis ; premier donjon naturel termine et premiere cle du deuxieme donjon. RNG exact et campagne complete encore ouverts.",
     "validation": "targeted_checks_passed",
     "reports": [
       {
         "file": "room_history_v0274_report.json",
         "sha256": "ff9110f2df14fe3b4089864eee0a1fa614ead8d268466790d8876f966d328bf0"
+      },
+      {
+        "file": "natural_campaign_v0274_report.json",
+        "sha256": "a4ec0f303cb3051302e796f6350dfb888441d6fbce722cfcd7fe9191d1cfe72c"
       }
     ]
   }

@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "md_sha256": "6af186deca6c86bfdeccaa607aab39f31345349b4d3a5861ad4d912b084c87f4",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "game_code_changed": false,
+  "new_rom_created": false,
+  "first_dungeon": {
+    "native_deaths": 0,
+    "crystal": true,
+    "max_health": 32,
+    "exit_room": 185,
+    "source_flags_exact_bytes": 256,
+    "source_map_exact_bytes": 1280
+  },
+  "second_dungeon_key": {
+    "cases": [
+      {
+        "case": "sms-auto-v0274-d2-key01",
+        "frames": 31153,
+        "deaths": 0,
+        "health": 32,
+        "keys": 1,
+        "whole_ram_fixed_replay_bytes": 8192,
+        "fixed_png_exact": true
+      },
+      {
+        "case": "md-auto-v0274-d2-key02",
+        "frames": 34023,
+        "deaths": 0,
+        "health": 16,
+        "keys": 1,
+        "whole_ram_fixed_replay_bytes": 65536,
+        "fixed_png_exact": true
+      }
+    ],
+    "source_flags_exact_bytes": 256,
+    "source_map_exact_bytes": 1280
+  },
+  "later_trials": [
+    {
+      "case": "sms-auto-v0274-d2-boss05",
+      "entered_rooms": [
+        288,
+        289,
+        304,
+        305,
+        306,
+        307,
+        320,
+        323,
+        336,
+        337,
+        338,
+        353,
+        369
+      ],
+      "final_room": 323,
+      "deaths": 4,
+      "failure": "death_retry_limit",
+      "weapon": 0,
+      "boss_reached": false
+    },
+    {
+      "case": "md-auto-v0274-d2-boss05",
+      "entered_rooms": [
+        288,
+        289,
+        304,
+        305,
+        306,
+        320,
+        336,
+        337,
+        338,
+        353,
+        369
+      ],
+      "final_room": 305,
+      "deaths": 4,
+      "failure": "death_retry_limit",
+      "weapon": 0,
+      "boss_reached": false
+    }
+  ],
+  "evidence": {
+    "validation/natural-dungeon-combat/md-auto-v0274-exit01/capture.json": "77b451872c08d4f00852b9fa336f664625b34aedf71a4a4970c0ae5d530edbd7",
+    "validation/natural-dungeon-combat/md-auto-v0274-exit01/report.json": "540b8967e6b8ca946e96221585850e35c2f4e97dfc90407fb74f253713189383",
+    "validation/natural-dungeon-combat/md-auto-v0274-exit01/controls.json": "8212a01700ebf57b94bfdde0fd497cf438e34961284f50392e0c6218493bb71f",
+    "validation/natural-dungeon-combat/sms-auto-v0274-d2-key01/capture.json": "dfb0229e03db05e0851d66a043e653bb7a7386c4d50c145cf30bf411aa101363",
+    "validation/natural-dungeon-combat/sms-auto-v0274-d2-key01/report.json": "daa3a60f996a5ac04ae95be63a64bbda411676fdf8b8e8db42feaf3b85e40d36",
+    "validation/natural-dungeon-combat/sms-auto-v0274-d2-key01/controls.json": "bf2585863126e6cf68f871280219ac5166590fb2243715cedd6aaf4a0c9743e3",
+    "validation/natural-dungeon-combat/sms-auto-v0274-d2-key01-fixed-replay/replay_report.json": "85fe84ab4f3f2171205ae7ac307fe2a38ed6d6c89f34473621e85acf3277d60c",
+    "validation/natural-dungeon-combat/md-auto-v0274-d2-key02/capture.json": "c8865816c9a815bfcd77bde40943308e74af72a637f5aa59aeab6d6adaeb570a",
+    "validation/natural-dungeon-combat/md-auto-v0274-d2-key02/report.json": "a6066d3fafb76cad1d32053178acd87b3525e1934a80e65f80a04d2bc8429357",
+    "validation/natural-dungeon-combat/md-auto-v0274-d2-key02/controls.json": "4838693c380c4ebcc4e6434898c676c2408bb95f68fe40f759b939ceca327605",
+    "validation/natural-dungeon-combat/md-auto-v0274-d2-key02-fixed-replay/replay_report.json": "7e6e2435f934f706493a176bf00c48113bfb0f35c9af14b3be01a31ccc2e625a",
+    "validation/natural-dungeon-combat/sms-auto-v0274-d2-boss05/capture.json": "ab3f1bb673489d2cc03415b940f715af07480dbf6d31fcfa55437f978082cee3",
+    "validation/natural-dungeon-combat/sms-auto-v0274-d2-boss05/report.json": "5214f7867226eff106554c1da1c928f0c64fe9411eae4a575aa0459883e8d0bf",
+    "validation/natural-dungeon-combat/sms-auto-v0274-d2-boss05/controls.json": "c15af224899c9be250a08e453614caf12ff9d19b59c64a13970d6c2ca27d191d",
+    "validation/natural-dungeon-combat/sms-auto-v0274-d2-boss05/events.json": "f896193c8342cdd8e4c07dbc7c258609b4e02f0266ef330a41d5f90d67273be3",
+    "validation/natural-dungeon-combat/md-auto-v0274-d2-boss05/capture.json": "a4fb5ba2f23f7afcaf3b9ecda631abce1892a2b897baf0e44845fa7eaef7b1b8",
+    "validation/natural-dungeon-combat/md-auto-v0274-d2-boss05/report.json": "179e39ed1977db41b5318ab87e260ed5df897ebb4cef913d9594fdd5ecbdd75e",
+    "validation/natural-dungeon-combat/md-auto-v0274-d2-boss05/controls.json": "deeddb54465188aeb628957fe2048c4d79ec51ac186c24b28eb20ee1d36f1f09",
+    "validation/natural-dungeon-combat/md-auto-v0274-d2-boss05/events.json": "645a0f37ab2119228cada7defc2d5ca23c8a058ba94b4b4481588cf575de45ab"
+  },
+  "full_game_validated": false,
+  "limits": [
+    "NTSC natural paths use normal buttons from cold boot; no ROM/RAM/SRAM injection.",
+    "Fixed-input replay equality is per machine; source/native random encounters, timings, health and buttons differ.",
+    "First-dungeon SMS comparison uses its previously verified immutable cold-boot record.",
+    "Second boss not reached: controller retries die with the starting weapon. Later trials are failures, not evidence of a game bug or completed dungeon.",
+    "Original R/IRQ random stream, waveform, PAL campaign and hardware remain unfinished or unverified."
+  ]
+}

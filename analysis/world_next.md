@@ -1359,3 +1359,9 @@ v0240: native overview item11 translates31E7..3291/837C/83EC/844D.225 exterior r
 History reset1CA3 on new game, shared16/4 prefix, six dungeon exclusions.
 SGDK RNG remains provisional; timed04E1 helper tested but not game-integrated.
 Continue/death and complete campaign remain unverified.
+
+2026-10-23 v0274 natural campaign: first boss/crystal/exit without death; flags256/map1280 source exact.
+D2 entry171 and key152 natural on SMS/MD, no deaths, flags/map exact; whole-RAM/PNG fixed replays pass.
+Later pilot trials fail with starting weapon; second boss NOT reached. Acquire axe before continuing.
+Tools: generic door index/prefix, all stationary switches, C4B0 loot read, HP0 hazards and vulnerable satellites.
+Fixed-input frontend precomputes intervals; no gameplay code or ROM changed.

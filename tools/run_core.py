@@ -18,6 +18,13 @@ def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,
     presses=list(presses)
     if skip_intro and Path(rom).suffix.lower()!='.sms' and not any(a<=220 and b>=200 for a,b,key in presses):
         presses.insert(0,(200,220,0))
+    # Compile fixed intervals once; long cold-boot campaign replays can carry
+    # thousands of intervals. Keep inclusive endpoints and overlapping holds.
+    fixed_inputs=[0]*(frames+1)
+    for start,end,button in presses:
+        if button<0:continue
+        mask=1<<button
+        for tick in range(max(0,start),min(frames,end)+1):fixed_inputs[tick]|=mask
     out=Path(out); out.mkdir(parents=True,exist_ok=True)
     dll=c.CDLL(str(Path(core).resolve() if core else ROOT.parents[1]/'work/libretro/genesis_plus_gx_libretro.dll'))
     system_dir=str(ROOT.parents[1]/'work/libretro').encode()
@@ -71,7 +78,7 @@ def run(rom,frames,out,captures,presses,core=None,ram_writes=(),skip_intro=True,
     def poll(): pass
     @INPUT
     def input_state(port,device,index,button):
-        return int(port==0 and (any(a<=frame<=b and button==key for a,b,key in presses)
+        return int(port==0 and (bool(fixed_inputs[frame] & (1<<button))
                    or (input_provider is not None and button in input_provider(frame))))
     callbacks=[environment,video,audio,batch,poll,input_state]
     for name,typ,cb in zip(('environment','video_refresh','audio_sample','audio_sample_batch','input_poll','input_state'),(ENV,VIDEO,AUDIO,BATCH,POLL,INPUT),callbacks):
