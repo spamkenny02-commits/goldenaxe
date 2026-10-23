@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": 36864,
+  "changed_directions_vs_unprojected_inputs": 2464,
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "rom_ld_r_a_occurrences": 0,
+  "raw_sites": {
+    "4EBE": "ed5ffe20380d",
+    "4ED5": "ed5f0f30e4"
+  },
+  "outputs_sha256": "010f7cd2bea2e8ba39e3372378b249ca418a9ee2000e16f33b744a617d341008",
+  "scope": "Actual C production move body vs original chooser/bounds with controlled source R inputs. Explicit fixture bytes remain unmodified.",
+  "limits": [
+    "Cold-reset R7=0 reference; no BIOS-precondition claim.",
+    "Projection corrects allowed input range only. SGDK draws remain provisional; source clock/IRQ random sequence is not integrated."
+  ]
+}

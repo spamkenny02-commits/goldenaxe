@@ -5,19 +5,29 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0274 — 1024 Kio.**
+**Version courante : v0275 — 1024 Kio.**
 
-[Télécharger la ROM v0274](versions/v0274-6af186de/gaw-megadrive-v0274.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0275](versions/v0275-02b597b3/gaw-megadrive-v0275.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `6af186deca6c86bfdeccaa607aab39f31345349b4d3a5861ad4d912b084c87f4`
-Checksum Mega Drive : `2769`
+SHA-256 : `02b597b346e3518670f93e1cfc5281a9db6a6cfbfbe2a70139ef18b11f05a5c5`
+Checksum Mega Drive : `8042`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0274**.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.
+Les choix de direction des ennemis 47/48/49 et du boss 65 utilisent désormais
+la plage 0–127 des lectures directes de R dans le démarrage SMS de référence.
+Le port fournissait parfois 128–255, ce qui changeait la branche du sélecteur
+4EBE. Les tirages 04E1 restent sur huit bits. Les 36 864 cas contrôlés Z80/C
+et 26 cas de la ROM jouable en NTSC/PAL passent, avec vérification des vecteurs,
+des branches et du nombre/ordre des tirages. Le flux aléatoire exact dépendant
+de l'horloge et des IRQ reste à intégrer. Voir les
+[changements et limites de la v0275](analysis/refresh_domain_v0275.md).
+
+La **v0274** avait ajouté l'historique des salles et leur réapparition.
 Le portage inclut désormais la routine SMS de réapparition des ennemis :
 à chaque entrée de salle, trois tentatives à l'extérieur ou cinq en donjon
 peuvent réinitialiser une salle entièrement vidée. L'historique protège les

@@ -4,6 +4,7 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0275 | [Telecharger](v0275-02b597b3/gaw-megadrive-v0275.bin) | targeted_checks_passed | Corrige les entrees directes de R pour les directions 47/48/49 et boss65 ; 36864 cas Z80/C et26 cas jouables PAL/NTSC ; flux R/IRQ exact encore a integrer. | `02b597b346e3518670f93e1cfc5281a9db6a6cfbfbe2a70139ef18b11f05a5c5` |
 | v0274 | [Telecharger](v0274-6af186de/gaw-megadrive-v0274.bin) | targeted_checks_passed | Reapparition SMS des ennemis ; parcours hache/premier cristal/sortie naturel verifie ; deuxieme boss atteint sur MD, combat encore non valide. | `6af186deca6c86bfdeccaa607aab39f31345349b4d3a5861ad4d912b084c87f4` |
 | v0273 | [Telecharger](v0273-10116d2f/gaw-megadrive-v0273.bin) | targeted_checks_passed | Horloge logique carte du monde : gel pendant dessin et reprise source, sans recalage apres activation. Phase physique encore0/1 image. | `10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769` |
 | v0272 | [Telecharger](v0272-3cbf990c/gaw-megadrive-v0272.bin) | build_only | Essai compteur modale ; remplace par273 avec le cout3559T de fin de construction. Phase physique PAL encore1 image en avance. | `3cbf990c66bdce19bff069e39711205fb451ad88c9b0daef8091c45aedad4454` |

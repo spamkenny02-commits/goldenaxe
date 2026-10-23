@@ -7721,5 +7721,20 @@
         "sha256": "4ac92431eeba799a16f7a19d5589db844060731f0a51bea0084f42d7af18661e"
       }
     ]
+  },
+  {
+    "version": 275,
+    "sha256": "02b597b346e3518670f93e1cfc5281a9db6a6cfbfbe2a70139ef18b11f05a5c5",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T20:19:03.965617+00:00",
+    "rom": "v0275-02b597b3/gaw-megadrive-v0275.bin",
+    "notes": "Corrige les entrees directes de R pour les directions 47/48/49 et boss65 ; 36864 cas Z80/C et26 cas jouables PAL/NTSC ; flux R/IRQ exact encore a integrer.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "refresh_domain_v0275_report.json",
+        "sha256": "7586864742115b785af2fabc6984daabf9f67cf4c70c1b1b0d649d217406550c"
+      }
+    ]
   }
 ]

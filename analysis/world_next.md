@@ -1372,3 +1372,9 @@ Native second boss63 in144 reached but NOT defeated. D2 script key160 was missin
 Tools: equip axe, rush designated rooms, helpful loot, exterior normal Continue, generic exit checks.
 Collision-box aiming experiment regressed full paths and was removed; failed trials preserved.
 No gameplay code or ROM change. Full campaign and source R/IRQ RNG remain unfinished.
+
+2026-10-23 v0275 playable: fix direct-R input domain at4EBE/4ED5 callers (47/48/49,65).
+Cold-reset R7=0; no ED4F in ROM. SGDK projection only, not exact R/IRQ sequence integration.
+36864 original Z80/C cases,2464 directions changed vs unprojected inputs.
+26 playable NTSC/PAL cases verify vectors/branches/exact draw counts;04E1 gate128 remains full-range.
+Source clock/RNG sequence, complete campaign on new SHA and hardware/audio fidelity remain open.

@@ -1086,6 +1086,11 @@ static u16 second_boss_direction(u8 *e,u16 hero_x,u16 hero_y,u8 select,u8 turn)
     return d;
 }
 static u8 dungeon_phase_roll(const u8 *roll,u16 n) { return roll?roll[n]:(u8)random(); }
+/* Provisional input for direct LD A,R sites. Cold reset clears R7 and this
+ * ROM contains no LD R,A. Keep explicit fixture inputs unchanged; this is
+ * a domain correction, not reconstruction of the source R/IRQ sequence. */
+static u8 dungeon_phase_refresh(const u8 *roll,u16 n)
+{ return roll?roll[n]:((u8)random()&127); }
 /* 57F8 with BC=0001: only terrain00 is accepted, with retained partial writes. */
 static bool dungeon_phase_spawn(u8 *e,const u8 *cells,u16 hero_x,u16 hero_y,u16 frame,u16 slot,const u8 *roll)
 {
@@ -1135,7 +1140,7 @@ void dungeon_proximity_behavior(u8 *e,const u8 *tilemap,u16 hero_x,u16 hero_y,u1
 }
 static void dungeon_phase_move(u8 *e,u16 hero_x,u16 hero_y,const u8 *roll)
 {
-    u8 select=e[0]>=0x49?dungeon_phase_roll(roll,2):0,turn=(select&1)?0:dungeon_phase_roll(roll,3);
+    u8 select=e[0]>=0x49?dungeon_phase_refresh(roll,2):0,turn=(select&1)?0:dungeon_phase_refresh(roll,3);
     u16 direction=second_boss_direction(e,hero_x,hero_y,select,turn);const u8 *v=second_boss_fast+1+direction*5;
     e[0x20]=direction;e[4]=second_boss_fast[0];memcpy(e+0x14,v,4);e[10]=v[4];e[1]=6;
 }
@@ -2519,9 +2524,9 @@ void tick_world_actors(const u8 *tilemap,const u8 *cells,u16 hero_x,u16 hero_y,u
                 if(entity[1]==6 && !entity[4])
                 {
                     if(entity[0x2e]) move=TRUE;
-                    else { gate=random();if(gate<8) pause=random();else move=TRUE; }
+                    else { gate=random();if(gate<8) pause=random()&127;else move=TRUE; }
                 }
-                if(move) { select=random();if(!(select&1)) turn=random(); }
+                if(move) { select=random()&127;if(!(select&1)) turn=random()&127; }
                 second_boss_behavior(entity,hero_x,hero_y,select,turn,gate,pause);
             }
             else if(entity[0]==0x66) second_boss_satellite_behavior(entity);
