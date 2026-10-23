@@ -7428,5 +7428,30 @@
         "sha256": "93131fbc637b8f8bec977c25b032223e75c9050b2f918f10e27f5cc0c047ee78"
       }
     ]
+  },
+  {
+    "version": 250,
+    "sha256": "8832e6ab98b2e63c03faddaeed03e0fad48f1396d9ff593ccc29dbaf7a1e843f",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T10:33:20.942050+00:00",
+    "rom": "v0250-8832e6ab/gaw-megadrive-v0250.bin",
+    "notes": "Compilation ; validation en attente.",
+    "validation": "build_only",
+    "reports": []
+  },
+  {
+    "version": 251,
+    "sha256": "435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87",
+    "bytes": 1048576,
+    "archived_utc": "2026-10-23T10:36:12.649021+00:00",
+    "rom": "v0251-435d5ede/gaw-megadrive-v0251.bin",
+    "notes": "Sort : horloge logique SMS et effacement avant restauration ; cadence physique encore incomplete.",
+    "validation": "targeted_checks_passed",
+    "reports": [
+      {
+        "file": "screen_spell_clock_release_v0251_report.json",
+        "sha256": "38b0cd723069acb47e7596c3233e92a1aea19afd9f4ea661fe4f4e860acadb96"
+      }
+    ]
   }
 ]

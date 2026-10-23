@@ -98,6 +98,7 @@ static u16 world_dungeon_dark;
 static volatile u16 screen_spell_active,screen_spell_iteration;
 static volatile u16 screen_spell_video_pending;
 static u16 screen_spell_sprite_count;
+static u16 screen_spell_clock;
 static u16 screen_spell_level; /* C090: level1/2 full-screen magic. */
 static u16 ice_bell_state; /* C0AC: cleared with the room's transient objects. */
 static bool return_feather_requested;
@@ -124,7 +125,7 @@ static volatile u16 resume_phase,resume_contour,resume_fade_step;
 static u32 world_clock_shift;
 static u8 dungeon_animation_scan,dungeon_animation_phase;
 static u16 room_shutter_state,room_shutter_direction,room_script_coordinate,room_script_coordinate_pending,room_script_direction;
-static u8 world_clock(void) { return (u8)(vtimer-world_clock_shift); }
+static u8 world_clock(void) { return screen_spell_active?(u8)screen_spell_clock:(u8)(vtimer-world_clock_shift); }
 /* 55F8: selected item1 at level2 is required for type6D pending damage. */
 bool world_final_boss_weapon_valid(void) { return hero_selected_item==1 && hero_weapon_level==2; }
 /* 4FC2..4FCA: contact with4D/4E subtracts eight magic, clamped at zero. */
@@ -292,7 +293,7 @@ static void set_palette(const u16 *sms)
 static void set_world_palette(void)
 {
     static const u16 levels[4]={0,3,5,7};
-    u16 color=sms_palette[(screen_spell_active==1 || screen_spell_active==2)?16:0],n;
+    u16 color=sms_palette[screen_spell_active?16:0],n;
     for(n=1;n<32;n++)
     {
         u16 sms=sms_palette[n];
@@ -962,7 +963,7 @@ static void activate_hero_item(void)
         spawn_hero_projectile(hero_selected_item==4?3:4);
     }
     else if(hero_selected_item==6 && spend_spell_magic())
-    { screen_spell_level=hero_items[6];hero_state=6;sound_effect_main(0x94); }
+    { screen_spell_clock=world_clock();screen_spell_level=hero_items[6];hero_state=6;sound_effect_main(0x94); }
     else if(hero_selected_item==7 && spend_spell_magic())
     {
         u16 amount=hero_health+(hero_terrain_context==2?32:16);

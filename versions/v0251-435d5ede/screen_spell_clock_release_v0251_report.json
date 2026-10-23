@@ -1,0 +1,29 @@
+{
+  "md_sha256": "435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    "screen_spell_v0251-level1_report.json",
+    "screen_spell_v0251-level1-pal_report.json",
+    "screen_spell_v0251-level2_report.json",
+    "screen_spell_v0251-level2-pal_report.json",
+    "screen_spell_v0251-house_report.json",
+    "screen_spell_v0251-dungeon_report.json",
+    "screen_spell_v0251-actors1_report.json",
+    "screen_spell_v0251-actors2_report.json",
+    "screen_spell_v0251-no-magic_report.json"
+  ],
+  "controlled_cases": 9,
+  "logical_loop_clock_rows_exact": 773,
+  "source_map_cost_cases": 232,
+  "source_sprite_cost_cases": 232,
+  "physical_timing_exact": false,
+  "indoor_pixels_verified": false,
+  "full_game_verified": false,
+  "limits": [
+    "Per-step logical clock and original setup/closing wait counts are ported. Actual physical animation cadence is still approximate.",
+    "Cycle counts are checked against unchanged SMS runs in a read-only observer; the cost-only sprite helper is not yet integrated into playable scheduling.",
+    "Ownership, resources, initial clock and indoor room setup remain controlled; no natural acquisition or whole campaign proof.",
+    "Dynamic aligned-frame additions currently capture RAM/VDP but miss the already-delivered video callback. No aligned-return pixel claim is made."
+  ]
+}

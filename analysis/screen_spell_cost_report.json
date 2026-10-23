@@ -1,0 +1,39 @@
+{
+  "md_sha256": "435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87",
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "passed": true,
+  "cases": [
+    {
+      "case": "level1",
+      "map_body_cases": 88,
+      "sprite_scene_cases": 88,
+      "input_scene_sha256": "c45326afb1b0107fe5f268dd6ce4c68b56abad404fed52330e66d55db6e27d81"
+    },
+    {
+      "case": "level1-pal",
+      "map_body_cases": 88,
+      "sprite_scene_cases": 88,
+      "input_scene_sha256": "80d8157b3a8d4d5ca77b91aae57baa7d23a23fdf186ecf98fc5715b29686192e"
+    },
+    {
+      "case": "level2",
+      "map_body_cases": 28,
+      "sprite_scene_cases": 28,
+      "input_scene_sha256": "c04989ff979284d7c84dbe451bfd32cb25c243211e2145ec00cbf8ff0e52e112"
+    },
+    {
+      "case": "level2-pal",
+      "map_body_cases": 28,
+      "sprite_scene_cases": 28,
+      "input_scene_sha256": "291d1deaa4866592d735d3ab7fa502280a7d13d788b091dd7c29b75f7b0e7a06"
+    }
+  ],
+  "map_body_cases": 232,
+  "sprite_scene_cases": 232,
+  "production_timing_corrected": false,
+  "full_game_verified": false,
+  "limits": [
+    "Controlled original spell cases; exact foreground T-state counts only. Interrupt, wait, initial raster and native scheduling are separate work.",
+    "Cost-only sprite helper supports low ROM descriptors and mutates private shadow RAM; the existing timed API remains unchanged."
+  ]
+}

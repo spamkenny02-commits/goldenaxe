@@ -5,16 +5,23 @@ typedef struct {
 } Scene;
 static u8 step(Scene *s,u16 pc,u16 t,u8 m)
 {
+#ifdef GAW_SCENE_COST_ONLY
+ (void)pc;s->clock->foreground_tstates+=t;s->clock->foreground_m1+=m;return 1;
+#else
  if(s->error) return 0;
  if(s->trace) {
   if(!s->clock->first && !source_clock_checkpoint(s->clock,s->interrupt,s->context)) return 0;
   if(!s->trace(s->trace_context,pc,s->clock,s->ram)) return 0;
  }
  return source_clock_plain(s->clock,t,m,s->interrupt,s->context);
+#endif
 }
 #define S(pc,t,m) do {if(!step(s,pc,t,m)) return 0;} while(0)
 static u8 get(Scene *s,u16 address)
 {
+#ifdef GAW_SCENE_COST_ONLY
+ if(address<0x8000) return ((const u8 *)s->trace_context)[address];
+#endif
  if(address>=0x8000 && address<0xc000) return s->bank[address-0x8000];
  if(address>=0xc000 && address<0xe000) return s->ram[address-0xc000];
  s->error=1;return 0;

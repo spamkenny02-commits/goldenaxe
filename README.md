@@ -5,24 +5,34 @@ puis porter sa logique Z80 en code natif 68000 avec SGDK. La fidélité à la
 Master System passe avant les améliorations.
 
 <!-- ROM-RELEASE:START -->
-**Version courante : v0249 — 1024 Kio.**
+**Version courante : v0251 — 1024 Kio.**
 
-[Télécharger la ROM v0249](versions/v0249-88978b6e/gaw-megadrive-v0249.bin) · [Toutes les versions](versions/README.md)
+[Télécharger la ROM v0251](versions/v0251-435d5ede/gaw-megadrive-v0251.bin) · [Toutes les versions](versions/README.md)
 
 Contrôles ciblés réussis ; portage complet encore non validé.
 
-SHA-256 : `88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8`
-Checksum Mega Drive : `BB06`
+SHA-256 : `435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87`
+Checksum Mega Drive : `D765`
 <!-- ROM-RELEASE:END -->
 
 ## État du portage
 
-État au **23 octobre 2026** : la ROM jouable recommandée est **v0249**.
+État au **23 octobre 2026** : la ROM jouable recommandée est **v0251**.
+Le sort conserve maintenant le compteur de jeu SMS : un pas par étape,
+même si le travail occupe plusieurs images. L'ancien effet est effacé avant
+le rechargement des graphismes, pour éviter d'afficher ses motifs remplacés.
+Neuf cas ciblés vérifient 773 observations de l'horloge logique.
+Les modèles de coût de 232 constructions de carte et 232 scènes de sprites
+correspondent aux instructions SMS ; leur intégration à la cadence reste à faire.
+La durée réelle et les comparaisons visuelles des retours intérieurs restent
+incomplètes. La v0250 est intermédiaire.
+Voir les [changements et limites de la v0251](analysis/screen_spell_clock_v0251.md).
+
 Le sort plein écran de la sixième case est utilisable dans ses deux niveaux :
 animations d'origine, particules, coût en magie, dégâts et retour à la salle.
 Neuf scénarios ciblés passent ; 436 états de carte affichés correspondent
 à la SMS dans le même ordre, ainsi que 552 tuiles graphiques comparées.
-La cadence reste à aligner : le niveau 1 finit 20 images trop tôt en NTSC,
+Dans les mesures de la v0249, le niveau 1 finit 20 images trop tôt en NTSC,
 83 en PAL dans la scène contrôlée. Deux retours intérieurs conservent de
 petits écarts de pixels. Les v0244 à v0248 sont des compilations intermédiaires.
 Voir les [changements et limites de la v0249](analysis/screen_spell_v0249.md).

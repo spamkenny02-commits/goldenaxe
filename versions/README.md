@@ -4,6 +4,8 @@ Chaque binaire est conserve sans ecrasement. Les controles cibles ne prouvent pa
 
 | Version | ROM | Validation | Changements | SHA-256 |
 | --- | --- | --- | --- | --- |
+| v0251 | [Telecharger](v0251-435d5ede/gaw-megadrive-v0251.bin) | targeted_checks_passed | Sort : horloge logique SMS et effacement avant restauration ; cadence physique encore incomplete. | `435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87` |
+| v0250 | [Telecharger](v0250-8832e6ab/gaw-megadrive-v0250.bin) | build_only | Compilation ; validation en attente. | `8832e6ab98b2e63c03faddaeed03e0fad48f1396d9ff593ccc29dbaf7a1e843f` |
 | v0249 | [Telecharger](v0249-88978b6e/gaw-megadrive-v0249.bin) | targeted_checks_passed | Sort plein ecran : deux niveaux, degats et restauration ; cadence encore approximative. | `88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8` |
 | v0248 | [Telecharger](v0248-8283fbe9/gaw-megadrive-v0248.bin) | build_only | Compilation ; validation en attente. | `8283fbe9fadd831c99535e5fc1660f061e716bfaaac7bbb0f26c23974f9c36f8` |
 | v0247 | [Telecharger](v0247-fe16d6ba/gaw-megadrive-v0247.bin) | build_only | Compilation ; validation en attente. | `fe16d6ba06a0c12ee7765cbc1e556fa47003efa2720682ab06285346c6014e94` |

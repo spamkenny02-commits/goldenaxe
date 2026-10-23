@@ -5,7 +5,7 @@ _Static_assert(2304<=sizeof(house_dialogue_storage.dialogue),"Screen spell excee
 
 static void screen_spell_sprites(u8 *phases,bool particles)
 {
-    u16 n,count=0,pose=hero_render_pose();
+    u16 n,count=0,pose=hero_render_pose(),clock=screen_spell_clock;
     u16 off=world_combat_frame_index[pose*2]|((u16)world_combat_frame_index[pose*2+1]<<8);
     const u8 *frame=world_combat_frames+off;
     VDP_resetSprites();
@@ -13,12 +13,12 @@ static void screen_spell_sprites(u8 *phases,bool particles)
     count=add_sms_sprite_frame(count,hero_x>>8,hero_y>>8,frame,0);
     if(particles) for(n=0;n<8;n++)
     {
-        u16 amplitude=16+((world_clock()&8)?8-(world_clock()&7):world_clock()&7);
+        u16 amplitude=16+((clock&8)?8-(clock&7):clock&7);
         s16 dx=(s16)((s8)actor_flying_sine[(phases[n]+64)&255]*2*amplitude)>>8;
         s16 dy=(s16)((s8)actor_flying_sine[phases[n]]*2*amplitude)>>8;
         s16 x=(hero_x>>8)+dx;
         u8 y=((hero_y>>8)+dy-6)&255;
-        u8 dot[4]={1,0,0,0xf4+(world_clock()&1)};
+        u8 dot[4]={1,0,0,0xf4+(clock&1)};
         if(x>=4 && x<252) count=add_sms_sprite_frame(count,x-4,(u8)(y-8),dot,0);
         phases[n]+=9;
     }
@@ -34,6 +34,7 @@ static void screen_spell_present(void)
     while(screen_spell_video_pending) __asm__ volatile ("nop");
     __asm__ volatile ("" ::: "memory");
     SYS_doVBlankProcessEx(IMMEDIATELY);input=JOY_readJoypad(JOY_1);
+    screen_spell_clock=(screen_spell_clock+1)&255;world_clock_shift=vtimer-screen_spell_clock;
 }
 
 static void run_screen_spell(void)
@@ -64,6 +65,8 @@ static void run_screen_spell(void)
         work[n*32+2]=screen_spell_grid[n*2];work[n*32+3]=screen_spell_grid[n*2+1];
     }
     else for(n=0;n<4;n++) { work[n*32]=4;work[n*32+1]=n*16; }
+    /*20DF/20E4 performs one full0B95 wait; decoding itself freezes C02F. */
+    screen_spell_clock=(screen_spell_clock+1)&255;world_clock_shift=vtimer-screen_spell_clock;
     screen_spell_active=2;
     do
     {
@@ -86,7 +89,7 @@ static void run_screen_spell(void)
             { u16 offset=(address-0xd600)+row*64+col*2;if(offset<1280) { sms_vram[0x3800+offset]=screen_spell_cells2[source];sms_vram[0x3801+offset]=screen_spell_cells2[source+1];md_map[offset/2]=16+screen_spell_cells2[source]+((screen_spell_cells2[source+1]&2)?0x800:0); }source+=2; }
             if(++e[8]==1) { e[8]=0;if(++e[2]>=10) { e[2]=7;e[9]++; } }
         }
-        if(level==2) sms_palette[1]=(world_clock()&3)?0:3;
+        if(level==2) sms_palette[1]=(screen_spell_clock&3)?0:3;
         screen_spell_sprites(phases,level==2 || work[11*32]!=0);
         /* 22C3 waits for a fresh IRQ then publishes all 1280 name bytes. */
         screen_spell_present();screen_spell_iteration++;
@@ -101,6 +104,9 @@ static void run_screen_spell(void)
         e[0x1d]+=damage;e[0x1e]=0;e[0x1f]=0xc3;
     }
     screen_spell_level=0;hero_selected_item=0;
+    /*6BEA clears the old effect before16EF replaces its patterns. */
+    VDP_resetSprites();VDP_updateSprites(0,CPU);
+    VDP_fillTileMapRect(BG_A,TILE_ATTR_FULL(PAL1,0,0,0,16+255),0,2,32,20);
     memset(world_spell_state,0,48);memset(world_loot_state,0,336);
     memcpy(sms_vram+0x3800,saved,1280);
     started=vtimer;
@@ -125,5 +131,8 @@ static void run_screen_spell(void)
     budget=(SYS_isPAL()?71364UL:59736UL)-3072UL;
     frames=((world_graphics_class==2?693284UL:world_graphics_class?664703UL:995861UL)+290000UL+budget-1)/budget+1;
     while(vtimer-started<frames) portal_wait_frame();
-    set_world_palette();draw_map();screen_spell_active=0;
+    /*20DF then1DE2 contribute two further full waits, not one tick for
+     * every physical VBlank spent reloading/decompressing the room. */
+    screen_spell_clock=(screen_spell_clock+2)&255;world_clock_shift=vtimer-screen_spell_clock;
+    screen_spell_active=0;set_world_palette();draw_map();world_clock_shift=vtimer-screen_spell_clock;
 }
