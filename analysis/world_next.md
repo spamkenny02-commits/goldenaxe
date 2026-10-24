@@ -1456,3 +1456,17 @@ pixels and black padding:24 native-loader mirrors,3 actual SMS VDP captures,
 calibration retained; source snapshots/provenance bound in report.
 Not transition scheduling,global clock/VDP initialization or playable integration.
 No new playable ROM number; v0275 and all275 numbered ROMs preserved.
+
+2026-10-24 - Incremental SGDK video and live native dirty producers.
+Previous completed goal turn progressed: static SGDK renderer fde7715.
+Added source_vdp_dirty.h and md_source_room_frame_update. Coalesced changed
+pattern spans/name runs, palette updates and only changed sprite clones.
+IRQ writes and marked contour writes accumulate actual value changes.
+130 input states in each region=260 held MD images match planar RGB oracle.
+28 real vertical-scroll captures include20 changing map steps3051..3070;
+the60 later captures animate entities without map changes. No-op cases upload
+zero patterns/map words/clones. Source samples have hardware R8/R9 zero.
+IRQ dirty coverage:288 original source cases plus576 compiled68000 cases,
+including flags. Marked contours64 Z80/C cases and full24 source/48 compiled
+68000 chains pass with accumulated flags. Physical scanline deadlines and
+natural playable integration remain open. Still v0275,275 ROMs preserved.

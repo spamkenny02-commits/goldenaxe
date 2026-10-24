@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "source_cases": 288,
+  "distinct_vectors": 288,
+  "native_cases": 576,
+  "results": [
+    {
+      "shard": 0,
+      "region": "auto",
+      "test_rom_sha256": "2af2a9a46243eb838ba0457e9b41b6b1860ef5a24bada207b8fe6b2aa584d335",
+      "frame": 603,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 0,
+      "region": "pal",
+      "test_rom_sha256": "2af2a9a46243eb838ba0457e9b41b6b1860ef5a24bada207b8fe6b2aa584d335",
+      "frame": 505,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 1,
+      "region": "auto",
+      "test_rom_sha256": "f301f5707ebaa806d8f3e28b3ccd0ad9ad1c76c3f08044c67a9318966981acb7",
+      "frame": 637,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 1,
+      "region": "pal",
+      "test_rom_sha256": "f301f5707ebaa806d8f3e28b3ccd0ad9ad1c76c3f08044c67a9318966981acb7",
+      "frame": 534,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 2,
+      "region": "auto",
+      "test_rom_sha256": "708659be5ac315a3f641cc70648183bd377e6c5cad0e092dd02b12d7d59b6fcd",
+      "frame": 637,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 2,
+      "region": "pal",
+      "test_rom_sha256": "708659be5ac315a3f641cc70648183bd377e6c5cad0e092dd02b12d7d59b6fcd",
+      "frame": 534,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 3,
+      "region": "auto",
+      "test_rom_sha256": "adb47dae4aa2af417a896d6434513818ac162ee27657b5e05646ad87567861d0",
+      "frame": 603,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 3,
+      "region": "pal",
+      "test_rom_sha256": "adb47dae4aa2af417a896d6434513818ac162ee27657b5e05646ad87567861d0",
+      "frame": 505,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 4,
+      "region": "auto",
+      "test_rom_sha256": "de5ada0e4163c72a3ae39c9a5529d38877142affea871575ef2597bf535c65f9",
+      "frame": 637,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 4,
+      "region": "pal",
+      "test_rom_sha256": "de5ada0e4163c72a3ae39c9a5529d38877142affea871575ef2597bf535c65f9",
+      "frame": 534,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 5,
+      "region": "auto",
+      "test_rom_sha256": "cf639ac63ffb7b642bd8f83a05647fae64b66a60c1b6a3aa44522d48c01661c5",
+      "frame": 637,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 5,
+      "region": "pal",
+      "test_rom_sha256": "cf639ac63ffb7b642bd8f83a05647fae64b66a60c1b6a3aa44522d48c01661c5",
+      "frame": 534,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    }
+  ],
+  "module_sha256": {
+    "source_irq_video.c": "3f322574db79f67367267a69324ce315c416b395240a8093e405f2d9e849c824"
+  },
+  "headers_sha256": {
+    "source_irq_video.h": "5afd1ad89dcec812c58864c701e74caa076d861426ba46617c9c0a068d9a197b",
+    "source_irq_context.h": "1b830f508b0c6f4236f6f430717a01ffd5f0c48bdd1ff70a629999163990f680",
+    "source_vdp_dirty.h": "ea51d9e09b02842001e1818f737a881c0ac0d4cd6ce5bf6662840c4922daaed2"
+  },
+  "source_cases_sha256": "daee582a5062c39a833312e84512aa8c591b3edc8bbeb3dfde86de3e264c9a2c",
+  "production_clock_wired": false,
+  "limits": [
+    "Dedicated68000 cartridges, physical IRQs disabled.288 source vectors in each physical region; full mirrors, output counts and accumulated dirty flags match host.",
+    "Not physical display pacing, byte deadlines, global boot or full campaign proof."
+  ]
+}

@@ -22,7 +22,7 @@ static u8 get(Memory *m,u16 a,u8 bank,u8 cartridge,u8 *value)
  return 1;
 }
 static void emit(SourceIrqVideo *v,u16 a,u8 value)
-{v->vram[a&0x3fff]=value;v->bytes++;}
+{a&=0x3fff;if(v->vram[a]!=value){v->vram[a]=value;source_vdp_dirty_vram(v->dirty,a);}v->bytes++;}
 #define READ(a,b,c,v) do {if(!get(&m,a,b,c,&v)){video->error=SOURCE_IRQ_VIDEO_READ;return 0;}} while(0)
 u8 source_irq_video_publish(void *user,const SourceIrqContext *context,
  const SourceClockIrq *entry,u16 *tile_count)
@@ -53,7 +53,7 @@ u8 source_irq_video_publish(void *user,const SourceIrqContext *context,
   bits=m.ram[0x45]&3;address=0x3d02+((u16)bits<<6);source=0xdb02+((u16)bits<<6);m.ram[0x45]=0;
   for(n=0;n<60;n++){READ(source,4,0,value);source++;emit(video,address++,value);}
  }
- if(!m.ram[0x33])for(n=0;n<32;n++){READ(0xdca0+n,4,0,value);video->cram[n]=value&63;}
+ if(!m.ram[0x33])for(n=0;n<32;n++){READ(0xdca0+n,4,0,value);if(video->cram[n]!=(value&63)){video->cram[n]=value&63;if(video->dirty)video->dirty->palette|=1UL<<n;}}
  pointer=m.ram[0x34]|((u16)m.ram[0x35]<<8);
  if(!put(&m,pointer,0)){video->error=SOURCE_IRQ_VIDEO_QUEUE;return 0;}
  queue=0xdd00;

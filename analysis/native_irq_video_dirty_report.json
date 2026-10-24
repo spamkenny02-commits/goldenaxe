@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "cases": 288,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 144,
+      "output_sha256": "53cc97f206c727d739493479360f30037c101955c233268a2bcdb0829dc3fc71"
+    },
+    {
+      "region": "pal",
+      "cases": 144,
+      "output_sha256": "53cc97f206c727d739493479360f30037c101955c233268a2bcdb0829dc3fc71"
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "c6924b9d9ba06b54c7df9fa6cfc3dcbcd578263f7d09dbe4c8d8da53f0bad6b2",
+  "module_sha256": {
+    "source_irq_video.c": "3f322574db79f67367267a69324ce315c416b395240a8093e405f2d9e849c824"
+  },
+  "production_clock_wired": false,
+  "limits": [
+    "Unchanged original full IRQ/banks4/6 under a controlled caller; hardware IRQ generation disabled. Bitmap absent/bank4/bank5, all HUD selections, palette skip, ROM/SRAM/row/mixed/self-reading queues in both regions. Entire16KiB VRAM,32 effective6bit CRAM and scrolling/line registers compared.",
+    "All final VRAM/CRAM changes must be covered by accumulated dirty flags; flags may conservatively include intermediate writes restored later. Physical MD scheduling, nested IRQs, exact byte deadlines, full game and all malformed/zero-count descriptors remain unverified."
+  ]
+}

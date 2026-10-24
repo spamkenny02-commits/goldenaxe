@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "cases": 64,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 32,
+      "output_sha256": "0105544f5757b873603dc74024a4521bbbd87ec91d0e80b597846f56c677103a"
+    },
+    {
+      "region": "pal",
+      "cases": 32,
+      "output_sha256": "170a3f3fd654f94228ee803adfc39c065efd9e240c45227b24509e170756fc2d"
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "1f0f6bbf6876affd3c0e56fc651d32c96ff57c31d966f9479f61034527de2d5d",
+  "module_sha256": {
+    "source_room_contours.c": "5cbe899710f14c288ec0f27bb2e59fa54ca9c8f7ca5643da1e883f0dc4ab5e19",
+    "source_irq_video.c": "3f322574db79f67367267a69324ce315c416b395240a8093e405f2d9e849c824",
+    "source_room_reveal.c": "bbd1d72c997191da79f1050f436179dba4e0929ce83349204c79d57a3e3ae064",
+    "source_room_ready.c": "b0e51f80c14d01dd54591e6d55eb17aa408ff48562bbfbf1ec2eb739d5b85dcf",
+    "source_hero_initialize.c": "e6f393d609e9fa62fe2874ec2208e34b103783706a840def7cb8c98214ff1117",
+    "source_actor_graphics.c": "c7b0657f72bc578079658b782555a84295aa8cf3ad8310ec2eb4a6fb7d486daa",
+    "source_actor_list.c": "d4a2e65cd5fd99d97cdf13e25bf0f19c2b23f6406c9d80deebc38aa516752676",
+    "source_room_load.c": "8de55099ba3da08a68c70b5d7a97ffbae7cd7fbd33f8fe24818431849db8277b",
+    "source_room_history_timed.c": "a0eaca563801d9640884e1b1c44457a6f7565c03bb7d9b0001c784e86e8a76bc",
+    "source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "source_room_finish.c": "508dea1362a52d21459103bb73ebc8434d54902107b9d6ecad601fd61ed779f2",
+    "source_wait_restore.c": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
+    "source_room_hud.c": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "source_world_map.c": "ae46c79b62e76f8594615ebe2e944b09740cb549727fcbbef524fd8ef67e54c7",
+    "source_ram_planes.c": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
+    "source_graphics_load.c": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
+    "source_pattern_clock.c": "be36a399ae39e093a7489d71c205fe09a7f67755307b8385e6f872d46656146e",
+    "source_wait.c": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "source_irq_context.c": "013a3ef89374be5f178cf3968aeafca498cdd380b2d943d341c208fa8f9497d9",
+    "source_irq.c": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_audio_fast.c": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch.c": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "source_audio_priority.c": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "source_audio_tone.c": "8098ba4e45c21629a9920e6ca9ac5385ecb986e31d0db143cbbff42c0c92b272",
+    "source_audio_noise.c": "45b37e1689255404b86855e3970e82bfefd313421522aae46e3fae455fa9690b",
+    "source_audio_sequence.c": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "production_clock_wired": false,
+  "limits": [
+    "Original1FB6..2050, IRQ, waits and banks4/6 unchanged. Test caller JP from16D0 and return/JP to1706 are explicitly included in native timing. Four full tilemap patterns, all HUD flags and palette skips, both regions. Entire16KiB VRAM,331 RAM/400 audio,time/M1/R checked.",
+    "Controlled caller and inactive audio. No physical MD pacing/byte deadlines or full game proof."
+  ]
+}

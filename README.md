@@ -17,23 +17,24 @@ Checksum Mega Drive : `8042`
 
 ## État du portage
 
-La nouvelle chaine native couvre maintenant le chargement, le heros, les scripts,
-la musique, le rallumage, le fondu et les16 contours sur une seule horloge.
-24 parcours/2 592 points controles et48 executions68000 passent jusqu'a2002.
-Les64 cas directs du contour comparent aussi toute la VRAM a la SMS.
-Le regroupement des ecritures sans IRQ accelere ce banc68000 d'environ27 % ;
-ce chiffre ne mesure pas la vitesse de la ROM jouable.
-Les transferts video des IRQ alimentent les miroirs natifs :288 cas SMS et
-576 executions68000 passes. Le nouveau rendu SGDK statique affiche maintenant
-ces miroirs :78 images PAL/NTSC, dont des captures du jeu SMS original, sans
-difference RGB avec un oracle planaire independant. Il couvre tuiles, palettes,
-priorites et sprites8x8 avec limite SMS de huit par ligne.
-L'animation des transitions, les scrolls, la cadence physique et l'origine
-globale restent a raccorder au jeu. La ROM jouable reste v0275,
-avec le hasard SGDK provisoire.
-Voir [le rendu SGDK et son image](analysis/md_source_room_frame.md),
-[la chaine complete avec contours](analysis/native_room_contours.md) et
-[les transferts video natifs](analysis/native_irq_video.md).
+Pour les six destinations extérieures testées, la chaîne native couvre le
+chargement, le héros, les scripts, la musique, le rallumage, le fondu et les
+16 contours avec une seule horloge. Elle passe 24 parcours SMS, 2 592 points
+de contrôle et 48 exécutions en 68000 jusqu’à la fin du dévoilement.
+
+Le rendu SGDK met à jour les tuiles, les mots de carte, les palettes et les
+clones de sprites modifiés. Les 260 images PAL/NTSC concordent avec l’oracle
+planaire, dont les 20 étapes du passage vertical SMS. Les cas sans changement
+ne rechargent aucune tuile, aucun mot de carte ni aucun clone. Le suivi partagé
+par les IRQ et les contours passe aussi ses contrôles source et 68000.
+
+Ces comparaisons valident les données et les images maintenues, sans encore
+prouver les échéances de balayage. La cadence physique et l’intégration naturelle
+restent à raccorder au jeu. La ROM jouable reste **v0275**, avec le hasard SGDK
+provisoire.
+Voir [le rendu incrémental et sa démonstration](analysis/md_source_room_delta.md),
+[la chaîne complète avec contours](analysis/native_room_contours.md) et
+[le premier rendu SGDK](analysis/md_source_room_frame.md).
 
 État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.
 Les choix de direction des ennemis 47/48/49 et du boss 65 utilisent désormais
