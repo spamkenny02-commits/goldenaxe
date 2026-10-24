@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "region": "auto",
+      "scalar_frames": 8947,
+      "batched_frames": 6544,
+      "reduction_percent": 26.85816474796021
+    },
+    {
+      "region": "pal",
+      "scalar_frames": 7490,
+      "batched_frames": 5479,
+      "reduction_percent": 26.84913217623498
+    }
+  ],
+  "changed_module": "source_room_contours.c",
+  "baseline_module_sha256": "36ba13df8cc2ffdce00b4181f86069a5a6ef1219e9d572018eb20e721668e3fe",
+  "current_module_sha256": "de18b6f5039f8576f084cbead2a28ce2f3dc04de0f2b9c52e0e2879d9574a7ff",
+  "cases_sha256": "a14b882a69bd9a3922d13415fe208ac6c62bc9dc3135c84450171c4930fd6842",
+  "limits": [
+    "Diagnostic68000 CPU execution frames for24 virtual-clock cases per region, physical IRQs disabled. Not playable game FPS or physical loading pacing."
+  ]
+}

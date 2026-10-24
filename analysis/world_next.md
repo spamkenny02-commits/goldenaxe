@@ -1431,3 +1431,16 @@ models queue terminator/height self-modification without altering canonical RAM.
 68000 chains pass with callback active; source clock/IRQ/R/M1 stays unchanged.
 Still outside playable main; physical SGDK scheduling,contours and global clock
 remain open. No numbered playable build; all275 ROMs preserved.
+
+2026-10-24 - Full16 contour reveal joins continuous native16D0..2002 chain.
+Previous completed goal turn was progress: native IRQ video delivery e95deec.
+Added source_room_contours.c/h: source contour word order, two live waits each,
+DI/EI VDP address latches, live D600 reads and14bit VRAM writes.
+24 source chains reach2002 with2592 checkpoints:2544 phase/R/M1/RAM/audio
+points and48 time/C02F endpoints.48 compiled68000 chain executions pass.
+64 separate originalZ80 contour cases compare entire16KiB VRAM,331 RAM,400 audio
+and full time/M1/R. Stable139T/17M1 word blocks retain scalar code near IRQs.
+Identical vectors on68000:8947->6544 NTSC,7490->5479 PAL diagnostic frames;
+about26.85percent less CPU execution, not a playable FPS/pacing claim.
+Physical renderer/pacing,global boot clock,other classes and campaign remain
+open. No playable ROM build; v0275 and all275 numbered ROMs preserved.

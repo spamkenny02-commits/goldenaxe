@@ -17,21 +17,19 @@ Checksum Mega Drive : `8042`
 
 ## État du portage
 
-La nouvelle chaine native relie maintenant le chargement, le heros, les scripts,
-la musique, le rallumage et le fondu sur une seule horloge : 24 parcours et
-1 056 points controles jusqu'a la premiere attente du contour. Parmi eux,
-1 032 points comparent phase/R/M1/RAM/audio ; les 24 retours du fondu comparent
-le temps et le compteur logique. Les 48 executions 68000 de la chaine passent.
-Le fondu couvre aussi 96 cas SMS/C et 192 executions 68000 separees.
-Les transferts video des IRQ alimentent maintenant les miroirs natifs de la
-VRAM, des sprites, du HUD, des palettes et des registres.288 cas compares a la
-SMS et576 executions68000 passent ; les48 executions de la chaine avec ces
-transferts branches passent aussi. Cette chaine reste hors du jeu : dessin
-des contours, publication SGDK et cadence physique restent a raccorder.
-La ROM jouable reste v0275, avec le hasard SGDK provisoire.
-Voir [les transferts video natifs](analysis/native_irq_video.md),
-[le rallumage et le fondu](analysis/native_room_reveal.md) et
-[la chaine precedente heros/scripts/musique](analysis/native_room_ready.md).
+La nouvelle chaine native couvre maintenant le chargement, le heros, les scripts,
+la musique, le rallumage, le fondu et les16 contours sur une seule horloge.
+24 parcours/2 592 points controles et48 executions68000 passent jusqu'a2002.
+Les64 cas directs du contour comparent aussi toute la VRAM a la SMS.
+Le regroupement des ecritures sans IRQ accelere ce banc68000 d'environ27 % ;
+ce chiffre ne mesure pas la vitesse de la ROM jouable.
+Les transferts video des IRQ alimentent les miroirs natifs :288 cas SMS et
+576 executions68000 passes. La publication SGDK, la cadence physique et
+l'origine globale restent a raccorder au jeu. La ROM jouable reste v0275,
+avec le hasard SGDK provisoire.
+Voir [la chaine complete avec contours](analysis/native_room_contours.md),
+[les transferts video natifs](analysis/native_irq_video.md) et
+[le rallumage/fondu](analysis/native_room_reveal.md).
 
 État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.
 Les choix de direction des ennemis 47/48/49 et du boss 65 utilisent désormais
