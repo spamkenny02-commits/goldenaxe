@@ -1,0 +1,1851 @@
+{
+  "passed": true,
+  "cases": 156,
+  "loaded_types": 80,
+  "types": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    120,
+    121,
+    122,
+    123,
+    124
+  ],
+  "reuse_cases": 64,
+  "mixed_mask_cases": 12,
+  "rows": [
+    {
+      "room": 32,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        32
+      ],
+      "pattern_bytes": 1760,
+      "checkpoints": 4,
+      "irqs": 23
+    },
+    {
+      "room": 32,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        32
+      ],
+      "pattern_bytes": 1760,
+      "checkpoints": 4,
+      "irqs": 23
+    },
+    {
+      "room": 17,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        33
+      ],
+      "pattern_bytes": 1760,
+      "checkpoints": 4,
+      "irqs": 23
+    },
+    {
+      "room": 17,
+      "mask": 40,
+      "kind": "reuse",
+      "types": [
+        33
+      ],
+      "pattern_bytes": 1760,
+      "checkpoints": 4,
+      "irqs": 23
+    },
+    {
+      "room": 30,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        34
+      ],
+      "pattern_bytes": 1760,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 30,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        34
+      ],
+      "pattern_bytes": 1760,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 69,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        35
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 84,
+      "mask": 12,
+      "kind": "reuse",
+      "types": [
+        35
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 18,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        36
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 110,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        36
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 32,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        38
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 32,
+      "mask": 24,
+      "kind": "reuse",
+      "types": [
+        38
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 16,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        39
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 16,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        39
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 20,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        40
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 59,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        40
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 82,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        41
+      ],
+      "pattern_bytes": 1280,
+      "checkpoints": 4,
+      "irqs": 17
+    },
+    {
+      "room": 82,
+      "mask": 40,
+      "kind": "reuse",
+      "types": [
+        41
+      ],
+      "pattern_bytes": 1280,
+      "checkpoints": 4,
+      "irqs": 17
+    },
+    {
+      "room": 99,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        42
+      ],
+      "pattern_bytes": 1280,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 109,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        42
+      ],
+      "pattern_bytes": 1280,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 81,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        43
+      ],
+      "pattern_bytes": 512,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 81,
+      "mask": 18,
+      "kind": "reuse",
+      "types": [
+        43
+      ],
+      "pattern_bytes": 512,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 101,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        44
+      ],
+      "pattern_bytes": 512,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 101,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        44
+      ],
+      "pattern_bytes": 512,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 81,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        45
+      ],
+      "pattern_bytes": 672,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 81,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        45
+      ],
+      "pattern_bytes": 672,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 17,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        46
+      ],
+      "pattern_bytes": 672,
+      "checkpoints": 4,
+      "irqs": 9
+    },
+    {
+      "room": 26,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        46
+      ],
+      "pattern_bytes": 672,
+      "checkpoints": 4,
+      "irqs": 9
+    },
+    {
+      "room": 26,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        47
+      ],
+      "pattern_bytes": 672,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 42,
+      "mask": 12,
+      "kind": "reuse",
+      "types": [
+        47
+      ],
+      "pattern_bytes": 672,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 35,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        49
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 35,
+      "mask": 130,
+      "kind": "reuse",
+      "types": [
+        49
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 204,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        50
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 204,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        50
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 25,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        51
+      ],
+      "pattern_bytes": 1440,
+      "checkpoints": 4,
+      "irqs": 19
+    },
+    {
+      "room": 25,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        51
+      ],
+      "pattern_bytes": 1440,
+      "checkpoints": 4,
+      "irqs": 19
+    },
+    {
+      "room": 25,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        52
+      ],
+      "pattern_bytes": 1440,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 25,
+      "mask": 24,
+      "kind": "reuse",
+      "types": [
+        52
+      ],
+      "pattern_bytes": 1440,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 195,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        53
+      ],
+      "pattern_bytes": 768,
+      "checkpoints": 4,
+      "irqs": 10
+    },
+    {
+      "room": 195,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        53
+      ],
+      "pattern_bytes": 768,
+      "checkpoints": 4,
+      "irqs": 10
+    },
+    {
+      "room": 123,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        54
+      ],
+      "pattern_bytes": 768,
+      "checkpoints": 4,
+      "irqs": 10
+    },
+    {
+      "room": 123,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        54
+      ],
+      "pattern_bytes": 768,
+      "checkpoints": 4,
+      "irqs": 10
+    },
+    {
+      "room": 28,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        55
+      ],
+      "pattern_bytes": 768,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 44,
+      "mask": 48,
+      "kind": "reuse",
+      "types": [
+        55
+      ],
+      "pattern_bytes": 768,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 21,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        56
+      ],
+      "pattern_bytes": 1920,
+      "checkpoints": 4,
+      "irqs": 25
+    },
+    {
+      "room": 23,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        56
+      ],
+      "pattern_bytes": 1920,
+      "checkpoints": 4,
+      "irqs": 25
+    },
+    {
+      "room": 36,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        57
+      ],
+      "pattern_bytes": 1920,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 53,
+      "mask": 48,
+      "kind": "reuse",
+      "types": [
+        57
+      ],
+      "pattern_bytes": 1920,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 68,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        58
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 22
+    },
+    {
+      "room": 68,
+      "mask": 136,
+      "kind": "reuse",
+      "types": [
+        58
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 22
+    },
+    {
+      "room": 72,
+      "mask": 8,
+      "kind": "single",
+      "types": [
+        59
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 22
+    },
+    {
+      "room": 86,
+      "mask": 40,
+      "kind": "reuse",
+      "types": [
+        59
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 22
+    },
+    {
+      "room": 155,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        60
+      ],
+      "pattern_bytes": 928,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 155,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        60
+      ],
+      "pattern_bytes": 928,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 38,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        61
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 19
+    },
+    {
+      "room": 38,
+      "mask": 40,
+      "kind": "reuse",
+      "types": [
+        61
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 19
+    },
+    {
+      "room": 93,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        62
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 93,
+      "mask": 48,
+      "kind": "reuse",
+      "types": [
+        62
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 218,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        63
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 234,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        63
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 218,
+      "mask": 64,
+      "kind": "single",
+      "types": [
+        64
+      ],
+      "pattern_bytes": 928,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 218,
+      "mask": 96,
+      "kind": "reuse",
+      "types": [
+        64
+      ],
+      "pattern_bytes": 928,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 27,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        65
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 27,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        65
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 29,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        66
+      ],
+      "pattern_bytes": 1120,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 272,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        67
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 22
+    },
+    {
+      "room": 272,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        67
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 22
+    },
+    {
+      "room": 274,
+      "mask": 64,
+      "kind": "single",
+      "types": [
+        68
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 22
+    },
+    {
+      "room": 274,
+      "mask": 96,
+      "kind": "reuse",
+      "types": [
+        68
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 22
+    },
+    {
+      "room": 274,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        69
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 274,
+      "mask": 24,
+      "kind": "reuse",
+      "types": [
+        69
+      ],
+      "pattern_bytes": 1664,
+      "checkpoints": 4,
+      "irqs": 5
+    },
+    {
+      "room": 274,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        70
+      ],
+      "pattern_bytes": 640,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 285,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        70
+      ],
+      "pattern_bytes": 640,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 304,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        71
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 304,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        71
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 280,
+      "mask": 8,
+      "kind": "single",
+      "types": [
+        72
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 280,
+      "mask": 12,
+      "kind": "reuse",
+      "types": [
+        72
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 299,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        73
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 299,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        73
+      ],
+      "pattern_bytes": 192,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 293,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        74
+      ],
+      "pattern_bytes": 288,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 293,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        74
+      ],
+      "pattern_bytes": 288,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 293,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        75
+      ],
+      "pattern_bytes": 288,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 293,
+      "mask": 48,
+      "kind": "reuse",
+      "types": [
+        75
+      ],
+      "pattern_bytes": 288,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 281,
+      "mask": 8,
+      "kind": "single",
+      "types": [
+        76
+      ],
+      "pattern_bytes": 288,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 281,
+      "mask": 12,
+      "kind": "reuse",
+      "types": [
+        76
+      ],
+      "pattern_bytes": 288,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 309,
+      "mask": 2,
+      "kind": "single",
+      "types": [
+        77
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 309,
+      "mask": 3,
+      "kind": "reuse",
+      "types": [
+        77
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 282,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        78
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 282,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        78
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 275,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        79
+      ],
+      "pattern_bytes": 896,
+      "checkpoints": 4,
+      "irqs": 12
+    },
+    {
+      "room": 275,
+      "mask": 24,
+      "kind": "reuse",
+      "types": [
+        79
+      ],
+      "pattern_bytes": 896,
+      "checkpoints": 4,
+      "irqs": 12
+    },
+    {
+      "room": 290,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        80
+      ],
+      "pattern_bytes": 896,
+      "checkpoints": 4,
+      "irqs": 12
+    },
+    {
+      "room": 290,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        80
+      ],
+      "pattern_bytes": 896,
+      "checkpoints": 4,
+      "irqs": 12
+    },
+    {
+      "room": 316,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        81
+      ],
+      "pattern_bytes": 896,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 316,
+      "mask": 20,
+      "kind": "reuse",
+      "types": [
+        81
+      ],
+      "pattern_bytes": 896,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 281,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        82
+      ],
+      "pattern_bytes": 1152,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 281,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        82
+      ],
+      "pattern_bytes": 1152,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 276,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        83
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 276,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        83
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 323,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        84
+      ],
+      "pattern_bytes": 1536,
+      "checkpoints": 4,
+      "irqs": 20
+    },
+    {
+      "room": 323,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        84
+      ],
+      "pattern_bytes": 1536,
+      "checkpoints": 4,
+      "irqs": 20
+    },
+    {
+      "room": 296,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        85
+      ],
+      "pattern_bytes": 1536,
+      "checkpoints": 4,
+      "irqs": 20
+    },
+    {
+      "room": 296,
+      "mask": 132,
+      "kind": "reuse",
+      "types": [
+        85
+      ],
+      "pattern_bytes": 1536,
+      "checkpoints": 4,
+      "irqs": 20
+    },
+    {
+      "room": 282,
+      "mask": 32,
+      "kind": "single",
+      "types": [
+        86
+      ],
+      "pattern_bytes": 1536,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 282,
+      "mask": 36,
+      "kind": "reuse",
+      "types": [
+        86
+      ],
+      "pattern_bytes": 1536,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 385,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        87
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 385,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        87
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 348,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        88
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 348,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        88
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 275,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        89
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 14
+    },
+    {
+      "room": 275,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        89
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 14
+    },
+    {
+      "room": 278,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        90
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 278,
+      "mask": 24,
+      "kind": "reuse",
+      "types": [
+        90
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 294,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        91
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 294,
+      "mask": 24,
+      "kind": "reuse",
+      "types": [
+        91
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 362,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        92
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 13
+    },
+    {
+      "room": 362,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        92
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 13
+    },
+    {
+      "room": 283,
+      "mask": 8,
+      "kind": "single",
+      "types": [
+        93
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 283,
+      "mask": 10,
+      "kind": "reuse",
+      "types": [
+        93
+      ],
+      "pattern_bytes": 1024,
+      "checkpoints": 4,
+      "irqs": 3
+    },
+    {
+      "room": 280,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        94
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 280,
+      "mask": 144,
+      "kind": "reuse",
+      "types": [
+        94
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 279,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        95
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 19
+    },
+    {
+      "room": 279,
+      "mask": 136,
+      "kind": "reuse",
+      "types": [
+        95
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 19
+    },
+    {
+      "room": 276,
+      "mask": 16,
+      "kind": "single",
+      "types": [
+        96
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 276,
+      "mask": 20,
+      "kind": "reuse",
+      "types": [
+        96
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 295,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        97
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 295,
+      "mask": 192,
+      "kind": "reuse",
+      "types": [
+        97
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 301,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        98
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 301,
+      "mask": 160,
+      "kind": "reuse",
+      "types": [
+        98
+      ],
+      "pattern_bytes": 256,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 324,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        99
+      ],
+      "pattern_bytes": 1568,
+      "checkpoints": 4,
+      "irqs": 20
+    },
+    {
+      "room": 277,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        100
+      ],
+      "pattern_bytes": 1568,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 355,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        101
+      ],
+      "pattern_bytes": 640,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 377,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        103
+      ],
+      "pattern_bytes": 768,
+      "checkpoints": 4,
+      "irqs": 2
+    },
+    {
+      "room": 373,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        104
+      ],
+      "pattern_bytes": 3424,
+      "checkpoints": 4,
+      "irqs": 44
+    },
+    {
+      "room": 451,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        105
+      ],
+      "pattern_bytes": 3424,
+      "checkpoints": 4,
+      "irqs": 9
+    },
+    {
+      "room": 384,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        106
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 19
+    },
+    {
+      "room": 406,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        107
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 428,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        108
+      ],
+      "pattern_bytes": 2592,
+      "checkpoints": 4,
+      "irqs": 7
+    },
+    {
+      "room": 332,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        109
+      ],
+      "pattern_bytes": 3872,
+      "checkpoints": 4,
+      "irqs": 10
+    },
+    {
+      "room": 440,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        120
+      ],
+      "pattern_bytes": 1568,
+      "checkpoints": 4,
+      "irqs": 20
+    },
+    {
+      "room": 446,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        121
+      ],
+      "pattern_bytes": 1568,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 457,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        122
+      ],
+      "pattern_bytes": 3424,
+      "checkpoints": 4,
+      "irqs": 44
+    },
+    {
+      "room": 350,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        123
+      ],
+      "pattern_bytes": 3424,
+      "checkpoints": 4,
+      "irqs": 9
+    },
+    {
+      "room": 286,
+      "mask": 128,
+      "kind": "single",
+      "types": [
+        124
+      ],
+      "pattern_bytes": 1472,
+      "checkpoints": 4,
+      "irqs": 4
+    },
+    {
+      "room": 26,
+      "mask": 85,
+      "kind": "mixed",
+      "types": [
+        46,
+        52
+      ],
+      "pattern_bytes": 2112,
+      "checkpoints": 7,
+      "irqs": 13
+    },
+    {
+      "room": 26,
+      "mask": 170,
+      "kind": "mixed",
+      "types": [
+        46,
+        47,
+        52
+      ],
+      "pattern_bytes": 2784,
+      "checkpoints": 10,
+      "irqs": 14
+    },
+    {
+      "room": 60,
+      "mask": 85,
+      "kind": "mixed",
+      "types": [
+        65
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 60,
+      "mask": 170,
+      "kind": "mixed",
+      "types": [
+        65
+      ],
+      "pattern_bytes": 320,
+      "checkpoints": 4,
+      "irqs": 1
+    },
+    {
+      "room": 54,
+      "mask": 85,
+      "kind": "mixed",
+      "types": [
+        46
+      ],
+      "pattern_bytes": 672,
+      "checkpoints": 4,
+      "irqs": 9
+    },
+    {
+      "room": 54,
+      "mask": 170,
+      "kind": "mixed",
+      "types": [
+        46
+      ],
+      "pattern_bytes": 672,
+      "checkpoints": 4,
+      "irqs": 9
+    },
+    {
+      "room": 135,
+      "mask": 85,
+      "kind": "mixed",
+      "types": [
+        46,
+        51
+      ],
+      "pattern_bytes": 2112,
+      "checkpoints": 7,
+      "irqs": 28
+    },
+    {
+      "room": 135,
+      "mask": 170,
+      "kind": "mixed",
+      "types": [
+        38,
+        46
+      ],
+      "pattern_bytes": 864,
+      "checkpoints": 7,
+      "irqs": 12
+    },
+    {
+      "room": 109,
+      "mask": 85,
+      "kind": "mixed",
+      "types": [
+        42,
+        43
+      ],
+      "pattern_bytes": 1792,
+      "checkpoints": 7,
+      "irqs": 5
+    },
+    {
+      "room": 109,
+      "mask": 170,
+      "kind": "mixed",
+      "types": [
+        42,
+        43
+      ],
+      "pattern_bytes": 1792,
+      "checkpoints": 7,
+      "irqs": 5
+    },
+    {
+      "room": 150,
+      "mask": 85,
+      "kind": "mixed",
+      "types": [
+        32,
+        38
+      ],
+      "pattern_bytes": 1952,
+      "checkpoints": 7,
+      "irqs": 25
+    },
+    {
+      "room": 150,
+      "mask": 170,
+      "kind": "mixed",
+      "types": [
+        32,
+        38
+      ],
+      "pattern_bytes": 1952,
+      "checkpoints": 7,
+      "irqs": 25
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "f2017a41904e573b58fc691848e301a8816a4dd5888df063b458a91a1e684e6c",
+  "core_sha256": "560e3a496f900b838fab5095a6c1571ff580a85c4199bed1d31830d54c454032",
+  "output_sha256": "54a3d581d64c3c6c96ea2013162af593892d66018d22e6d069e0928261c6a4a2",
+  "module_sha256": {
+    "source_actor_graphics.c": "74c0cd599ab6cf2d0dde87d164d5dd134a835f0f835922b498f49be3f474502f",
+    "source_room_finish.c": "508dea1362a52d21459103bb73ebc8434d54902107b9d6ecad601fd61ed779f2",
+    "source_wait_restore.c": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
+    "source_room_hud.c": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "source_world_map.c": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489",
+    "source_ram_planes.c": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
+    "source_graphics_load.c": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
+    "source_pattern_clock.c": "837bfd1dc7112d2e453772575b460e9355691139b07bd9c5f1ef4366806e7e02",
+    "source_wait.c": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "source_irq_context.c": "9d423c3750d96318902c2e72f6456e571251357bfb2e6196f4ee3aad0f845b1b",
+    "source_irq.c": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_audio_fast.c": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch.c": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "source_audio_priority.c": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "source_audio_tone.c": "8098ba4e45c21629a9920e6ca9ac5385ecb986e31d0db143cbbff42c0c92b272",
+    "source_audio_noise.c": "45b37e1689255404b86855e3970e82bfefd313421522aae46e3fae455fa9690b",
+    "source_audio_sequence.c": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "limits": [
+    "Original1853..18E1 and resource ROM unchanged. Every type present in512 lists is selected once; available duplicate types and12 mixed partial masks also exercised. Controlled actor records/entryR and paused audio, live source IRQs enabled.",
+    "Entry1853 observed once; native clock/IRQ/audio thereafter. Checkpoint331RAM/400audio/phase/time/M1/R, final actors/allocation/patterns and1024 scratch bytes compare. Not all512 full lists/masks or full gameplay.",
+    "Native68000 live-music/full-chain proof is the separate24-path matrix; individual boss resources and remap10 here are host C/source comparisons."
+  ]
+}

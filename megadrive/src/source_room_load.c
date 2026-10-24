@@ -44,3 +44,15 @@ u8 source_room_load_class0_actors(SourceClock *clock,SourceIrqContext *context,
  if(!source_actor_list(clock,context,bank12,actors,checkpoint,user)) return 0;
  output->completed=6;return 1;
 }
+u8 source_room_load_class0_graphics(SourceClock *clock,SourceIrqContext *context,
+ const SourceRoomLoadInput *input,SourceRoomLoadData *data,const u8 *rom,
+ SourceActorListData *actors,SourceActorGraphicsData *graphics,
+ SourceRoomLoadOutput *output,SourceGraphicsCheckpoint checkpoint,void *user)
+{
+ if(!data || !data->graphics || !actors || !graphics || !rom ||
+    graphics->actors!=actors->actors || graphics->patterns!=data->graphics->patterns ||
+    graphics->terrain!=data->graphics->terrain || !graphics->allocated) return 0;
+ if(!source_room_load_class0_actors(clock,context,input,data,rom+0x30000,actors,output,checkpoint,user)) return 0;
+ if(!source_actor_graphics(clock,context,rom,graphics,checkpoint,user)) return 0;
+ output->completed=7;return 1;
+}

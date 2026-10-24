@@ -17,13 +17,14 @@ Checksum Mega Drive : `8042`
 
 ## État du portage
 
-Le chargement natif partage maintenant une seule horloge depuis les
-graphismes jusqu'a la liste des ennemis (16D0..1853), avec les IRQ et la
-musique source actives : 24 chemins/528 points concordent, ainsi que
-96 executions de chaine en 68000. Les 512 listes et le remplacement des
-boss sont aussi verifies sur 9 216 cas Z80/C. Cette chaine reste hors
-du chemin jouable ; la v0275 conserve le hasard SGDK provisoire. Voir le
-[chargement continu et ses limites](analysis/native_room_load.md) et
+Le chargement natif partage maintenant une seule horloge depuis le decor
+jusqu'aux graphismes d'ennemis (16D0..18E1), avec les IRQ et la musique
+source actives : 24 chemins/624 points concordent, puis 48 executions de
+chaine en 68000. Les 80 types graphiques sont verifies sur 156 cas Z80/C ;
+96 conversions ciblent aussi les palettes et la memoire temporaire. Cette
+chaine reste hors du chemin jouable ; la v0275 conserve le hasard SGDK.
+Voir les [graphismes d'ennemis et leurs limites](analysis/native_room_graphics.md),
+le [chargement precedent](analysis/native_room_load.md) et
 [l'historique cadence](analysis/history_timed_native.md).
 
 État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.

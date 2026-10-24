@@ -1390,3 +1390,11 @@ Both chain variants pass24 vectors in both physical regions on68000 (96 executio
 Actor list1780..1852 native:512 rooms*6 masks*3 progress=9216 Z80/C cases;90 boss branches incl30 gem replacements/30 clears.
 Boss unit IRQs disabled; interrupted boss suppression and native boss unit execution remain unverified. Playable v275 unchanged.
 Next extend1853 actor graphics/remap on same clock, then hero/tail. Global boot entry, all map classes/renderer CPU budget and full campaign remain open.
+
+2026-10-24: source_actor_graphics1853->18E1 and1D0D remap ported; generic032A uses explicit logical VDP address.
+Continuous16D0 chain matches624 checkpoints/24 paid exits/72 RNG calls with active audio IRQs;48 compiled68000 executions pass.
+All80 room-list graphic types covered in156 source/C cases incl64 reuse/12 mixed masks;96 remap cases compare1024 scratch bytes and pixels.
+Scratch pixels occupy D130..D16F across8 rows, not one reused8-byte row; corrected before game integration.
+Native diagnostic compares736-byte checkpoint states in place against ROM to avoid starving SGDK startup heap.
+No new playable ROM: v275/275 numbered ROMs preserved. Full root clock, hero/tail, all classes, physical render/CPU budget/waveforms/campaign remain open.
+Next extend18E1 RET, hero2C63, room scripts5B20 and1CAF music selection to1FA7 on this same clock.

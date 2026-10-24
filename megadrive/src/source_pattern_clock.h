@@ -28,4 +28,10 @@ u8 source_graphics_prefix_class0_planned(SourceClock *clock,SourceIrqContext *co
 u8 source_graphics_prefix_changed(SourceClock *clock,SourceIrqContext *context,u16 room,
                                  const u8 *patterns,u8 *destination,const u8 **end,
                                  const SourcePatternPlan *plan);
+/* Original032A including RET, at an explicit logical VDP command address.
+ * Destination is the matching caller-owned mirror location. Source is an
+ * immutable valid ROM stream; caller guarantees decoded capacity. Updates
+ * source/end address and live C031/C032 with the original plane-end writes. */
+u8 source_pattern_decode(SourceClock *clock,SourceIrqContext *context,
+ const u8 **source,u8 *destination,u16 address,u16 *end_address);
 #endif

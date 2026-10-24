@@ -91,15 +91,15 @@ static u16 planned_window(SourceClock *clock,const SourcePatternPlane *plan,u16 
 }
 
 static u8 patterns032a(SourceClock *clock,SourceIrqContext *context,
-                       const u8 **source,u8 *destination,const SourcePatternPlan *plan)
+                       const u8 **source,u8 *destination,const SourcePatternPlan *plan,u16 address,u16 *end_address)
 {
-    u16 plane,cursor=0x4000;
+    u16 plane,cursor=address;
     const u8 *src=*source;
     if(!source_clock_block(clock,11,2)) {S(7,1);S(4,1);}
     for(plane=0;plane<4;plane++)
     {
         u8 *write=destination+plane;u16 command_index=0;
-        cursor=0x4000+plane;
+        cursor=address+plane;
         if(!source_clock_block(clock,22,2)) {S(11,1);S(11,1);}
         for(;;)
         {
@@ -178,7 +178,14 @@ static u8 patterns032a(SourceClock *clock,SourceIrqContext *context,
         if(((cursor+1)&255)>=4) S(12,1);else {S(7,1);S(4,1);}
         S(10,1);
     }
-    *source=src;return 1;
+    *source=src;if(end_address) *end_address=cursor-3;return 1;
+}
+
+u8 source_pattern_decode(SourceClock *clock,SourceIrqContext *context,
+ const u8 **source,u8 *destination,u16 address,u16 *end_address)
+{
+ if(!clock || !context || !context->ram || !source || !*source || !destination || !end_address) return 0;
+ return patterns032a(clock,context,source,destination,0,address,end_address);
 }
 
 u8 source_graphics_prefix_changed(SourceClock *clock,SourceIrqContext *context,u16 room,
@@ -211,7 +218,7 @@ u8 source_graphics_prefix_changed(SourceClock *clock,SourceIrqContext *context,u
     for(n=0;n<sizeof(before_copy);n++) S(before_copy[n],1);
     for(n=0;n<15;n++) S(21,2);
     S(16,2);S(10,1);S(17,1);
-    if(!patterns032a(clock,context,&patterns,destination,plan)) return 0;
+    if(!patterns032a(clock,context,&patterns,destination,plan,0x4000,0)) return 0;
     *end=patterns;
     return source_clock_checkpoint(clock,source_irq_interrupt,context);
 }

@@ -5,7 +5,7 @@ from run_core import ROOT
 from archive_lossless_evidence import sha
 from validate_native_room_finish import MODULES as FINISH_MODULES,WRAPPER as FINISH_WRAPPER,PCS as FINISH_PCS
 
-MODULES=['source_actor_list','source_room_load','source_room_history_timed','source_rng_timed',*FINISH_MODULES]
+MODULES=['source_actor_graphics','source_actor_list','source_room_load','source_room_history_timed','source_rng_timed',*FINISH_MODULES]
 PCS=[*FINISH_PCS,0x1780]
 WRAPPER=FINISH_WRAPPER.replace('#include "source_room_finish.h"','#include "source_room_load.h"')
 WRAPPER=WRAPPER.replace('0x1deb,0x24bf};','0x1deb,0x24bf,0x1780};').replace('p->points>=16','p->points>=17')
@@ -43,9 +43,9 @@ def compile_helper(actors=False):
  fn.argtypes=[u32,c.c_uint8,*([u8]*4),c.c_uint16,*([u8]*(10 if actors else 8)),u32,u32,u32,u8];fn.restype=c.c_uint8
  return folder,dll,fn
 
-@lru_cache(maxsize=2)
+@lru_cache(maxsize=3)
 def reference_manifest(actors):
- archive=ROOT/('analysis/actor-prefix-refresh-research-v0183' if actors else 'analysis/history-refresh-research-v0183')
+ archive=ROOT/('analysis/actor-graphics-refresh-research-v0183' if actors=='graphics' else 'analysis/actor-prefix-refresh-research-v0183' if actors else 'analysis/history-refresh-research-v0183')
  manifest=json.loads((archive/'manifest.json').read_bytes());assert manifest['source_sha256']==sha((ROOT/'input/original.sms').read_bytes())
  return archive,{i['path']:i['sha256'] for i in manifest['files']}
 
