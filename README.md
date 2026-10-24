@@ -17,11 +17,14 @@ Checksum Mega Drive : `8042`
 
 ## État du portage
 
-Le raccordement natif de l'historique au generateur SMS a avance le
-24 octobre : 9 216 cas Z80/C et 18 432 executions 68000 concordent pour
-l'historique et le prefixe de chargement jusqu'a 1780. Cette etape reste
-hors du chemin jouable ; elle ne remplace pas encore le hasard SGDK de
-la v0275. Voir le [raccordement et ses limites](analysis/history_timed_native.md).
+Le chargement natif partage maintenant une seule horloge depuis les
+graphismes jusqu'a la liste des ennemis (16D0..1853), avec les IRQ et la
+musique source actives : 24 chemins/528 points concordent, ainsi que
+96 executions de chaine en 68000. Les 512 listes et le remplacement des
+boss sont aussi verifies sur 9 216 cas Z80/C. Cette chaine reste hors
+du chemin jouable ; la v0275 conserve le hasard SGDK provisoire. Voir le
+[chargement continu et ses limites](analysis/native_room_load.md) et
+[l'historique cadence](analysis/history_timed_native.md).
 
 État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.
 Les choix de direction des ennemis 47/48/49 et du boss 65 utilisent désormais

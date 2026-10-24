@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "actor_list_included": true,
+  "cases": 24,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 3239,
+      "done": 1,
+      "cases": 24,
+      "failures": 0
+    },
+    {
+      "region": "pal",
+      "frame": 2712,
+      "done": 1,
+      "cases": 24,
+      "failures": 0
+    }
+  ],
+  "helpers": {
+    "source_actor_list": "d4a2e65cd5fd99d97cdf13e25bf0f19c2b23f6406c9d80deebc38aa516752676",
+    "source_room_load": "94097d0b3e7e69fdac7e485a80f4349d58e3e7b82471464f310d43a8866a1523",
+    "source_room_history_timed": "a0eaca563801d9640884e1b1c44457a6f7565c03bb7d9b0001c784e86e8a76bc",
+    "source_rng_timed": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "source_room_finish": "508dea1362a52d21459103bb73ebc8434d54902107b9d6ecad601fd61ed779f2",
+    "source_wait_restore": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
+    "source_room_hud": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "source_world_map": "cbc9feb184b8c56ff66931313ee08959fb7458e8490e5459d3d6254321082489",
+    "source_ram_planes": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
+    "source_graphics_load": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
+    "source_pattern_clock": "edc157483af29634488799bfa32efac1eb912c53c4774648e35b56943ca1526e",
+    "source_wait": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "source_irq_context": "9d423c3750d96318902c2e72f6456e571251357bfb2e6196f4ee3aad0f845b1b",
+    "source_irq": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+    "source_clock": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_audio_fast": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "source_audio_reader": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "source_audio_priority": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "source_audio_tone": "8098ba4e45c21629a9920e6ca9ac5385ecb986e31d0db143cbbff42c0c92b272",
+    "source_audio_noise": "45b37e1689255404b86855e3970e82bfefd313421522aae46e3fae455fa9690b",
+    "source_audio_sequence": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_memory": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "source_case_sha256": "122f11e355fcde2d3b887b5b54f730719d6e9b3461ae25424bfb9c7864c151b1",
+  "kernel_sha256": "b40a20f731777bc78dc2a43ae6685462673764b01a6109993141efc489f4d511",
+  "production_clock_wired": false,
+  "limits": [
+    "Compiled68000 22 checkpoint vectors retain source phase/R/M1/331RAM/400audio/IRQ-offset assertions; other fields are host parity.",
+    "Includes final seed/history/masks and368 cleared bytes. Physical IRQs disabled; source IRQs use live native audio. Changed class0 load only; physical uploads/contention, all graphics classes and global entry-state propagation remain pending."
+  ]
+}

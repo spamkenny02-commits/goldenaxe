@@ -1383,3 +1383,10 @@ Source clock/RNG sequence, complete campaign on new SHA and hardware/audio fidel
 Compiled68000 replays9216 vectors in both regions:18432 executions pass, paused563T/59M1 source IRQ only.
 No gameplay RNG replacement, no observedR injection between draws, no new playable ROM.
 Need connect continuous graphics/loading entry clock and live IRQ context, then actor loader1780; full campaign remains open.
+
+2026-10-24: native source_room_load_class0 composes16D0->1780; actors variant extends to1853 with one clock/live IRQ+audio.
+24 controlled source paid exits match22 checkpoints/72 RNG calls/final history+masks+768 actor bytes+count.
+Both chain variants pass24 vectors in both physical regions on68000 (96 executions); physical IRQs disabled, virtual source audio active.
+Actor list1780..1852 native:512 rooms*6 masks*3 progress=9216 Z80/C cases;90 boss branches incl30 gem replacements/30 clears.
+Boss unit IRQs disabled; interrupted boss suppression and native boss unit execution remain unverified. Playable v275 unchanged.
+Next extend1853 actor graphics/remap on same clock, then hero/tail. Global boot entry, all map classes/renderer CPU budget and full campaign remain open.

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases": 9216,
+  "rooms": 512,
+  "masks": 6,
+  "progress_states": 3,
+  "boss_cases": 90,
+  "gem_replacements": 30,
+  "boss_clears": 30,
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "299501f2fa5d19c774b30da67333353bd0052d7e241c24e9f141056958c445b8",
+  "core_sha256": "c8c92c1f25579a89625555b80c8fe4428a8b646ae479f39d7c523a22826e3f3d",
+  "output_sha256": "c8b09605a3b35ebfe9ab1c6dbf26520aaae4383dde2aeaa11fa0591c5d1a2b47",
+  "module_sha256": {
+    "source_actor_list.c": "d4a2e65cd5fd99d97cdf13e25bf0f19c2b23f6406c9d80deebc38aa516752676",
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04"
+  },
+  "production_clock_wired": false,
+  "limits": [
+    "Original1780..1852 and bank12 unchanged. Controlled room/masks/progression/entryR, source interrupts disabled. Entire768 actor bytes,count,cycles,M1,R,raster compare.",
+    "Live IRQ composition and native68000 execution are separately checked on24 ordinary exterior paths; no interrupted boss-suppression claim."
+  ]
+}
