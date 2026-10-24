@@ -3,7 +3,9 @@
 #include "source_irq.h"
 #include "source_audio_reader.h"
 typedef void (*SourceIrqTrace)(void *context,const SourceClockIrq *entry,const SourceClockWork *work);
-typedef struct {
+struct SourceIrqContext;
+typedef u8 (*SourceIrqVideoPublish)(void *user,const struct SourceIrqContext *context,const SourceClockIrq *entry,u16 *tile_count);
+typedef struct SourceIrqContext {
     u8 *ram,*audio;
     const u8 *low,*bank6;
     u16 low_bytes,audio_de,error;
@@ -19,8 +21,10 @@ typedef struct {
      * The compact RAM/audio views above remain authoritative for their pages.
      * Initialize to zero when unused; use source_room_memory accessors. */
     u8 *full_ram;
+    /* Optional full-IRQ video delivery; may publish before later failure. */
+    SourceIrqVideoPublish video;void *video_context;
 } SourceIrqContext;
-enum {SOURCE_IRQ_CONTEXT_INVALID=0x800,SOURCE_IRQ_CONTEXT_RESET,SOURCE_IRQ_CONTEXT_NESTED};
+enum {SOURCE_IRQ_CONTEXT_INVALID=0x800,SOURCE_IRQ_CONTEXT_RESET,SOURCE_IRQ_CONTEXT_NESTED,SOURCE_IRQ_CONTEXT_VIDEO};
 /* SourceClockInterrupt adapter with dynamic native8000 + IRQ state/work.
  * Input lines/joy/reset/tile count are supplied by the caller; raster comes
  * from the scheduler and compensation from audio RAM. Null sink discards PSG

@@ -17,6 +17,7 @@ def main():
  lines.append('};');(src/'expected.h').write_bytes(('\n'.join(lines)+'\n').encode())
  for n in MODULES:(src/(n+'.c')).write_bytes(('#include "../../../../megadrive/src/'+n+'.c"\n').encode())
  wrapper=WRAPPER.replace('#include "source_room_reveal.h"','#include "../../../../megadrive/src/source_room_reveal.h"\nstatic const u8 *expected_states;\nvolatile u32 gaw_ready_state_errors;\nvoid room_ready_expect(const u8 *p){expected_states=p;}')
+ wrapper=wrapper.replace('#include "source_irq_video.h"','#include "../../../../megadrive/src/source_irq_video.h"')
  wrapper=wrapper.replace('s=t->states+t->points*736;','s=t->states;').replace(' t->points++;return 1;',' for(n=0;n<736;n++){if(s[n]!=expected_states[t->points*736+n])gaw_ready_state_errors++;}\n t->points++;return 1;')
  (src/'wrapper.c').write_bytes(wrapper.encode())
  (src/'main.c').write_bytes(r'''#include <genesis.h>
@@ -60,7 +61,7 @@ int main(bool hard_reset)
    state.update(frame=f,done=value('gaw_ready_done',2),cases=value('gaw_ready_cases',4),failures=value('gaw_ready_failures',4),first_error=value('gaw_ready_first_error',4))
   with contextlib.redirect_stdout(io.StringIO()):run(cart,60000,base/region,set(),[],skip_intro=False,ram_observer=observe,stop_when=lambda:bool(state.get('done')),core_options={'genesis_plus_gx_region_detect':region})
   assert state['done'] and state['cases']==24 and not state['failures'],(region,state);results.append(dict(region=region,**state));print(results[-1],flush=True)
- report=dict(passed=True,cases=24,native_cases=48,results=results,module_sha256=host['module_sha256'],headers_sha256=host['headers_sha256'],source_cases_sha256=sha((folder/'cases.json').read_bytes()),test_rom_sha256=sha(cart.read_bytes()),playable_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),production_clock_wired=False,limits=['Dedicated68000 cartridge; physical IRQs disabled, continuous virtual source clock and live native IRQ/audio. Source-checked checkpoints, hero475 entry/return bytes, script/music fields, actors/history/masks and enemy patterns retained.','Other body/mirror bytes compare to host parity. Six controlled class0 destinations; no contour drawing or IRQ video publication, physical renderer/pacing, boot entry, other classes or full campaign proof.'])
+ report=dict(passed=True,cases=24,native_cases=48,results=results,module_sha256=host['module_sha256'],headers_sha256=host['headers_sha256'],source_cases_sha256=sha((folder/'cases.json').read_bytes()),test_rom_sha256=sha(cart.read_bytes()),playable_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),production_clock_wired=False,limits=['Dedicated68000 cartridge; physical IRQs disabled, continuous virtual source clock and live native IRQ/audio. Source-checked checkpoints, hero475 entry/return bytes, script/music fields, actors/history/masks and enemy patterns retained.','Other body/mirror bytes compare to host parity. Six controlled class0 destinations; native IRQ video mirrors bound; no contour drawing, physical renderer/pacing, boot entry, other classes or full campaign proof.'])
  (ROOT/'analysis/native_room_reveal_68k_report.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
 
 if __name__=='__main__':main()

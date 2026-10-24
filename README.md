@@ -23,11 +23,15 @@ la musique, le rallumage et le fondu sur une seule horloge : 24 parcours et
 1 032 points comparent phase/R/M1/RAM/audio ; les 24 retours du fondu comparent
 le temps et le compteur logique. Les 48 executions 68000 de la chaine passent.
 Le fondu couvre aussi 96 cas SMS/C et 192 executions 68000 separees.
-Cette chaine reste hors du jeu : les transferts video des IRQ, le dessin des
-contours et la cadence physique doivent encore etre raccordes. La ROM jouable
-reste v0275, avec le hasard SGDK provisoire.
-Voir [le raccordement du rallumage et du fondu](analysis/native_room_reveal.md)
-et [la chaine precedente heros/scripts/musique](analysis/native_room_ready.md).
+Les transferts video des IRQ alimentent maintenant les miroirs natifs de la
+VRAM, des sprites, du HUD, des palettes et des registres.288 cas compares a la
+SMS et576 executions68000 passent ; les48 executions de la chaine avec ces
+transferts branches passent aussi. Cette chaine reste hors du jeu : dessin
+des contours, publication SGDK et cadence physique restent a raccorder.
+La ROM jouable reste v0275, avec le hasard SGDK provisoire.
+Voir [les transferts video natifs](analysis/native_irq_video.md),
+[le rallumage et le fondu](analysis/native_room_reveal.md) et
+[la chaine precedente heros/scripts/musique](analysis/native_room_ready.md).
 
 État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.
 Les choix de direction des ennemis 47/48/49 et du boss 65 utilisent désormais

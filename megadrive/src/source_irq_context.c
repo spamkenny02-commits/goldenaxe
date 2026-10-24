@@ -31,6 +31,8 @@ u8 source_irq_interrupt(void *context,const SourceClockIrq *entry,SourceClockWor
     input.raster=entry->entry_raster;input.compensation=ctx->audio[3];
     if(full)
     {
+        if(ctx->video && !ctx->video(ctx->video_context,ctx,entry,&input.tile_count))
+        {ctx->error=SOURCE_IRQ_CONTEXT_VIDEO;return 0;}
         copy_state(ram,ctx->ram);
         if(!source_irq(ram,&input,&zero,&irq)) {ctx->error=SOURCE_IRQ_CONTEXT_INVALID;return 0;}
     }

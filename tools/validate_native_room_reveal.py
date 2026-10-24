@@ -5,11 +5,12 @@ from archive_lossless_evidence import sha
 from validate_native_room_load import MODULES as LOAD_MODULES,records,read_reference,reference_manifest
 from validate_native_room_graphics import PREFIX_PCS
 from actor_reference import load_room_actors
-MODULES=['source_room_reveal','source_room_ready','source_hero_initialize',*LOAD_MODULES]
+MODULES=['source_irq_video','source_room_reveal','source_room_ready','source_hero_initialize',*LOAD_MODULES]
 HERO_PCS=[0x2c63,0x369f,0x2c8a,0x2ca6,0x2d3e,0x24e7]
 TAIL_PCS=[0x5b20,0x1caf,0x1cf8,0x24ed,0x1fa7]
 HERO_INDICES=list(range(0x41,0x6c))+list(range(0x300,0x4b0))
 WRAPPER=r'''#include "source_room_reveal.h"
+#include "source_irq_video.h"
 static u8 pixels[16384],saved[1024],hero_before[475],hero_after[475];
 typedef struct {u32 count,points;u32 *events,*snapshots;u8 *states;SourceIrqContext *irq;} Trace;
 static void snapshot(const SourceClock *k,const SourceIrqContext *ctx,u32 *out)
@@ -38,7 +39,7 @@ static u8 point(void *user,u16 pc,const SourceClock *k,const SourceIrqContext *c
 }
 u8 room_ready_case(const u32 *phase,u8 refresh,const u8 *rom,u8 *body,u32 *out,u32 *events,u32 *points,u8 *states)
 {
- SourceClock k;SourceIrqContext ctx={0};Trace log={0};SourceGraphicsData graphics;SourceWorldMapData map;SourceRoomLoadData data;SourceRoomLoadOutput loaded;
+ SourceClock k;SourceIrqContext ctx={0};SourceIrqVideo video={0};u8 cram[32]={0},regs[16]={0};Trace log={0};SourceGraphicsData graphics;SourceWorldMapData map;SourceRoomLoadData data;SourceRoomLoadOutput loaded;
  SourceActorListData actors={body+0x600,body+0xa2,body+0xb9,body+0x200,body+0xce};SourceActorGraphicsData actor_graphics={body+0x600,pixels,body+0x1100,body+0x67};
  u16 n,room=body[0xb9]|((u16)body[0xba]<<8);u8 ram[336],audio[400],hud[16];
  SourceRoomLoadInput input={rom+0x3c010,rom+0x8000,rom+0x2c000,rom+(8+(room>>7))*16384UL,rom+0x10000,hud,1};
@@ -50,6 +51,7 @@ u8 room_ready_case(const u32 *phase,u8 refresh,const u8 *rom,u8 *body,u32 *out,u
  hud[0]=body[0x318];for(n=0;n<4;n++)hud[1+n]=body[0xda+n];for(n=0;n<9;n++)hud[5+n]=body[0xcf+n];hud[14]=body[0xbf];hud[15]=body[0xf1];
  for(n=0;n<16384;n++)pixels[n]=0xa7;
  ctx.ram=ram;ctx.audio=audio;ctx.full_ram=body;ctx.low=rom;ctx.low_bytes=32768;ctx.bank6=rom+0x18000;ctx.input.lines=phase[3];ctx.input.reset_mask=16;
+ video.rom=rom;video.vram=pixels;video.cram=cram;video.registers=regs;ctx.video=source_irq_video_publish;ctx.video_context=&video;
  ctx.trace=trace;ctx.trace_context=&log;log.irq=&ctx;log.events=events;log.snapshots=points;log.states=states;
  graphics.patterns=pixels;graphics.metatiles=body+0x900;graphics.backup=body+0x80;graphics.terrain=body+0x1100;graphics.saved_terrain=saved;
  map.cells=body+0x1c00;map.tilemap=body+0x1600;data.graphics=&graphics;data.map=&map;data.room=body+0xb9;data.flags=body+0x90;data.objects=body+0x4b0;data.masks=body+0x200;
@@ -98,11 +100,11 @@ def main():
     hb=c.string_at(lib.room_ready_hero_before(),475);ha=c.string_at(lib.room_ready_hero_after(),475);assert hb==bytes(hero_before[j] for j in HERO_INDICES),(tag,'hero input',[(hex(j),a,hero_before[j]) for j,a in zip(HERO_INDICES,hb) if a!=hero_before[j]][:8]);assert ha==bytes(hero_after[j] for j in HERO_INDICES),(tag,'hero output')
     late=next(raw[n+8:n+8200] for n in range(0,len(raw),8200) if struct.unpack_from('<Q',raw,n)[0]==next(r['time'] for r in rows if r['pc']==0xace and r['time']>start));fields=list(range(0x1cc0,0x1ce0))+list(range(0x60,0x68))+[0xa4,0xa5,0xa8,0xae]+list(range(0x1ce0,0x1ce6));assert all(body[j]==late[j] for j in fields),(tag,'script/music state',[(hex(j),body[j],late[j]) for j in fields if body[j]!=late[j]])
     assert all((body[0x1ca0+j]&63)==(late[0x1cc0+j]&63) for j in range(32));assert body[0x1d]==12 and body[0x1600:0x1b00]==hero_before[0x1600:0x1b00],(tag,'game/collision')
-    graph=read_reference(source/f'{region}-actor-graphics-records.bin','tail');graphics_time=next(r['time'] for r in rows if r['pc']==0x18e1 and r['time']>start);g=next(graph[n:n+8208] for n in range(0,len(graph),8208) if struct.unpack_from('<Q',graph,n)[0]==graphics_time);allocation=struct.unpack_from('<I',g,8)[0];pixels=c.string_at(lib.room_ready_patterns(),16384);assert out[22]==allocation and pixels[0x2000:0x2000+allocation*32]==g[16:16+allocation*32];assert pixels[0x3800:0x3e00]==bytes.fromhex('ff18')*768
+    graph=read_reference(source/f'{region}-actor-graphics-records.bin','tail');graphics_time=next(r['time'] for r in rows if r['pc']==0x18e1 and r['time']>start);g=next(graph[n:n+8208] for n in range(0,len(graph),8208) if struct.unpack_from('<Q',graph,n)[0]==graphics_time);allocation=struct.unpack_from('<I',g,8)[0];pixels=c.string_at(lib.room_ready_patterns(),16384);assert out[22]==allocation and pixels[0x2000:0x2000+allocation*32]==g[16:16+allocation*32];assert pixels[0x3800:0x3d00]==bytes.fromhex('ff18')*640
     cases.append(dict(phase=entry['phase'],refresh=entry['refresh'],body=list(before),expected=list(out),events=list(events[:out[7]*6]),points=list(points[:len(pcs)*19]),states=list(states[:len(pcs)*736]),after_body=list(body),patterns=list(pixels),hero_before=list(hb),hero_after=list(ha)))
     results.append(dict(town=town,target=target,mask=mask,region=region,checkpoints=len(pcs),foreground_tstates=out[3],foreground_m1=out[4],irqs=out[7],music=body[0x65],exit_refresh=out[10]));print(results[-1],flush=True)
  assert len(cases)==24;(folder/'cases.json').write_bytes((json.dumps(cases,separators=(',',':'))+'\n').encode())
- report=dict(passed=True,cases=24,checkpoints=sum(r['checkpoints'] for r in results),rng_calls=72,rows=results,source_sha256=sha(original),playable_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),module_sha256={n+'.c':sha((ROOT/'megadrive/src'/(n+'.c')).read_bytes()) for n in MODULES},headers_sha256={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['source_room_reveal.h','source_room_ready.h','source_hero_initialize.h','source_room_memory.h','source_irq_context.h']},reference_manifest_sha256=sha((reference_manifest('tail')[0]/'manifest.json').read_bytes()),production_clock_wired=False,limits=['Single16D0 full RAM/R/phase input. No intermediate hero,collision,R,seed or music injection. Source331RAM/400audio/time/M1/R/IRQ offsets at checkpoints and hero475 entry/return bytes, script/music fields, actors/history/masks and enemy patterns checked.','Remaining full-body/mirror bytes are native output only. Six controlled class0 saved-bit0 exterior destinations. Fade return1FB6 time/clock checked, followed by full source phase/M1/R/RAM/audio at the first contour0B95 without resetting the clock; IRQ VRAM/SAT/CRAM publication, physical renderer/pacing, boot entry, other classes and campaign remain open.'])
+ report=dict(passed=True,cases=24,checkpoints=sum(r['checkpoints'] for r in results),rng_calls=72,rows=results,source_sha256=sha(original),playable_sha256=sha((ROOT/'gaw-megadrive.bin').read_bytes()),module_sha256={n+'.c':sha((ROOT/'megadrive/src'/(n+'.c')).read_bytes()) for n in MODULES},headers_sha256={n:sha((ROOT/'megadrive/src'/n).read_bytes()) for n in ['source_irq_video.h','source_room_reveal.h','source_room_ready.h','source_hero_initialize.h','source_room_memory.h','source_irq_context.h']},reference_manifest_sha256=sha((reference_manifest('tail')[0]/'manifest.json').read_bytes()),production_clock_wired=False,limits=['Single16D0 full RAM/R/phase input. No intermediate hero,collision,R,seed or music injection. Source331RAM/400audio/time/M1/R/IRQ offsets at checkpoints and hero475 entry/return bytes, script/music fields, actors/history/masks and enemy patterns checked.','Remaining full-body/mirror bytes are native output only. Six controlled class0 saved-bit0 exterior destinations. Fade return1FB6 time/clock checked, followed by full source phase/M1/R/RAM/audio at the first contour0B95 without resetting the clock; Native IRQ VRAM/SAT/CRAM delivery is bound; physical renderer/pacing, boot entry, other classes and campaign remain open.'])
  (ROOT/'analysis/native_room_reveal_report.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
 
 if __name__=='__main__':main()

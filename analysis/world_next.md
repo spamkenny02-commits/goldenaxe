@@ -1419,3 +1419,15 @@ checkpoints plus24 fade-return time/C02F checks.48 compiled68000 chain execution
 96 originalZ80/native C fade cases and192 compiled68000 fade executions pass.
 IRQ VRAM/SAT/CRAM publication and physical renderer/pacing remain external.
 No playable build or version increment; v0275 stays unchanged. See native_room_reveal.md.
+
+2026-10-24 - Full IRQ video mirrors connected to the continuous native loader.
+Previous completed goal turn was progress: native reveal/fade committed d5d15fa.
+Added source_irq_video.c/h and optional canonical IRQ video callback.
+SAT,3plane hero bitmap expanded with zero plane,HUD,palette and queued ROM/SRAM/
+row transfers now publish to mirrors before audio. Private compact overlay
+models queue terminator/height self-modification without altering canonical RAM.
+288 original full IRQ cases compare16KiB VRAM,32 effective CRAM and regs8..10;
+576 compiled68000 executions pass.24 source loader/fade chains and48 compiled
+68000 chains pass with callback active; source clock/IRQ/R/M1 stays unchanged.
+Still outside playable main; physical SGDK scheduling,contours and global clock
+remain open. No numbered playable build; all275 ROMs preserved.

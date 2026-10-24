@@ -1,0 +1,141 @@
+{
+  "passed": true,
+  "source_cases": 288,
+  "distinct_vectors": 288,
+  "native_cases": 576,
+  "results": [
+    {
+      "shard": 0,
+      "region": "auto",
+      "test_rom_sha256": "23bf72427231c99ee7ee832f21e266e3173d1a460aebde0d6ed09ddac2c85c81",
+      "frame": 589,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 0,
+      "region": "pal",
+      "test_rom_sha256": "23bf72427231c99ee7ee832f21e266e3173d1a460aebde0d6ed09ddac2c85c81",
+      "frame": 494,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 1,
+      "region": "auto",
+      "test_rom_sha256": "19ba7b1eb9ab7e7035f4e3b7eb013ee18ad04926ce2d5b4d689809aea0205203",
+      "frame": 612,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 1,
+      "region": "pal",
+      "test_rom_sha256": "19ba7b1eb9ab7e7035f4e3b7eb013ee18ad04926ce2d5b4d689809aea0205203",
+      "frame": 513,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 2,
+      "region": "auto",
+      "test_rom_sha256": "b82b8b4169598e0c645e138500a53401cab65dfafeec0cc209ee8d92a8f05703",
+      "frame": 612,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 2,
+      "region": "pal",
+      "test_rom_sha256": "b82b8b4169598e0c645e138500a53401cab65dfafeec0cc209ee8d92a8f05703",
+      "frame": 513,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 3,
+      "region": "auto",
+      "test_rom_sha256": "82ce5cfb306801e0048d6832469cedda4b9b7e1a7726bcad7f6e79ab43f97066",
+      "frame": 589,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 3,
+      "region": "pal",
+      "test_rom_sha256": "82ce5cfb306801e0048d6832469cedda4b9b7e1a7726bcad7f6e79ab43f97066",
+      "frame": 494,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 4,
+      "region": "auto",
+      "test_rom_sha256": "1cc2095cceda04682d0fc20bd81b0429bec1833068c513a95cbcdfe6179687f4",
+      "frame": 612,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 4,
+      "region": "pal",
+      "test_rom_sha256": "1cc2095cceda04682d0fc20bd81b0429bec1833068c513a95cbcdfe6179687f4",
+      "frame": 513,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 5,
+      "region": "auto",
+      "test_rom_sha256": "adfa459109b5bce4630ee2f849c3140556c73f24156e82a5dc2cc51e24738090",
+      "frame": 612,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "shard": 5,
+      "region": "pal",
+      "test_rom_sha256": "adfa459109b5bce4630ee2f849c3140556c73f24156e82a5dc2cc51e24738090",
+      "frame": 513,
+      "done": 1,
+      "cases": 48,
+      "failures": 0,
+      "first_error": 0
+    }
+  ],
+  "module_sha256": {
+    "source_irq_video.c": "f298cafd2fe76fd1075db43ab60fffcaac2a286f654ebe1743a5008dd070887a"
+  },
+  "headers_sha256": {
+    "source_irq_video.h": "c40df7191ebe9f1c687a3b02d8677c1a05f07f97f97eef2588fede1738a9f324",
+    "source_irq_context.h": "1b830f508b0c6f4236f6f430717a01ffd5f0c48bdd1ff70a629999163990f680"
+  },
+  "source_cases_sha256": "256452db99c53055f1096cdb450ca0987c4bf84122396d09c80df1b322bd71cb",
+  "production_clock_wired": false,
+  "limits": [
+    "Dedicated68000 cartridges, physical IRQs disabled.288 source vectors in each physical region; full mirrors and output counts match host.",
+    "Not physical display pacing, byte deadlines, global boot or full campaign proof."
+  ]
+}

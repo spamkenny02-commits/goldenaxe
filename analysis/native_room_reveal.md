@@ -35,11 +35,18 @@ l'horloge virtuelle, les IRQ SMS natives et le lecteur audio natif. Leur duree
 d'execution ne mesure pas la cadence du jeu. Les autres octets du corps RAM et
 du miroir compares en68000 n'ont qu'une preuve de concordance avec l'hote.
 
-La chaine reste hors du chemin jouable. L'IRQ calcule deja le travail et ses
-effets RAM, mais ne publie pas encore les transferts VRAM/SAT/CRAM dans ce miroir.
+La chaine reste hors du chemin jouable. Depuis le raccordement source_irq_video,
+les IRQ publient aussi leurs transferts dans les miroirs VRAM/SAT/CRAM.
 Les contours, le raccordement SGDK, l'origine globale de l'horloge, les autres
 classes de carte et la campagne complete restent ouverts. Aucune nouvelle ROM
 jouable n'est annoncee : les275 versions et la v0275 sont preservees.
 
 Rapports : native_room_reveal_report.json, native_room_reveal_68k_report.json,
 native_room_fade_report.json et native_room_fade_68k_report.json.
+
+Update2026-10-24: source_irq_video is now bound to the continuous loader.
+Its native IRQ mirrors cover SAT,hero bitmap,HUD,CRAM,scroll/line registers
+and ROM/SRAM/row queues.24 source chains and48 compiled68000 chains pass
+with video delivery active; other mirror bytes remain host-parity evidence.
+Physical SGDK publication/pacing and contours are still external.
+See native_irq_video.md for the separate288 source/576 native video cases.
