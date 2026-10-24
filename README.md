@@ -24,12 +24,16 @@ Les64 cas directs du contour comparent aussi toute la VRAM a la SMS.
 Le regroupement des ecritures sans IRQ accelere ce banc68000 d'environ27 % ;
 ce chiffre ne mesure pas la vitesse de la ROM jouable.
 Les transferts video des IRQ alimentent les miroirs natifs :288 cas SMS et
-576 executions68000 passes. La publication SGDK, la cadence physique et
-l'origine globale restent a raccorder au jeu. La ROM jouable reste v0275,
+576 executions68000 passes. Le nouveau rendu SGDK statique affiche maintenant
+ces miroirs :78 images PAL/NTSC, dont des captures du jeu SMS original, sans
+difference RGB avec un oracle planaire independant. Il couvre tuiles, palettes,
+priorites et sprites8x8 avec limite SMS de huit par ligne.
+L'animation des transitions, les scrolls, la cadence physique et l'origine
+globale restent a raccorder au jeu. La ROM jouable reste v0275,
 avec le hasard SGDK provisoire.
-Voir [la chaine complete avec contours](analysis/native_room_contours.md),
-[les transferts video natifs](analysis/native_irq_video.md) et
-[le rallumage/fondu](analysis/native_room_reveal.md).
+Voir [le rendu SGDK et son image](analysis/md_source_room_frame.md),
+[la chaine complete avec contours](analysis/native_room_contours.md) et
+[les transferts video natifs](analysis/native_irq_video.md).
 
 État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.
 Les choix de direction des ennemis 47/48/49 et du boss 65 utilisent désormais

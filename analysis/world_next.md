@@ -1444,3 +1444,15 @@ Identical vectors on68000:8947->6544 NTSC,7490->5479 PAL diagnostic frames;
 about26.85percent less CPU execution, not a playable FPS/pacing claim.
 Physical renderer/pacing,global boot clock,other classes and campaign remain
 open. No playable ROM build; v0275 and all275 numbered ROMs preserved.
+
+2026-10-24 - First full static SGDK room renderer for native mirrors.
+Previous completed goal turn progressed: native16D0..2002 contours6bb5b66.
+md_source_room_frame.c/h streams512 planar tiles, foreground/background planes,
+6bit palettes and8x8 sprite clones with SMS8-per-line clipping using bounded
+scratch. Explicit3800/3F00 layout, zero scroll, display-off upload only.
+39 input scenes in two regions=78 physical MD screenshots match all256x192 RGB
+pixels and black padding:24 native-loader mirrors,3 actual SMS VDP captures,
+12 synthetic priority/flips/leftmask/overflow scenes. Per-channel RGB565
+calibration retained; source snapshots/provenance bound in report.
+Not transition scheduling,global clock/VDP initialization or playable integration.
+No new playable ROM number; v0275 and all275 numbered ROMs preserved.
