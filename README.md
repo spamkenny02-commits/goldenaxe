@@ -17,17 +17,17 @@ Checksum Mega Drive : `8042`
 
 ## État du portage
 
-Le chargement natif partage maintenant une seule horloge jusqu'au heros,
-aux scripts et a la selection musicale (16D0..1FA7) : 24 chemins/888 points
-concordent avec la SMS, puis 48 executions de chaine en 68000 passent.
-L'initialisation du heros couvre 13 150 cas source/C et scripts/musique 288.
-Les portions sans IRQ de conversion graphique sont regroupees : le meme
-banc 68000 prend environ 62 % de temps en moins. Cette chaine reste hors
-du chemin jouable ; la revelation/fondu et la cadence physique restent a
-raccorder. La v0275 conserve le hasard SGDK provisoire.
-Voir le [chargement avec heros/scripts/musique et ses limites](analysis/native_room_ready.md),
-les [graphismes d'ennemis](analysis/native_room_graphics.md) et
-[l'historique cadence](analysis/history_timed_native.md).
+La nouvelle chaine native relie maintenant le chargement, le heros, les scripts,
+la musique, le rallumage et le fondu sur une seule horloge : 24 parcours et
+1 056 points controles jusqu'a la premiere attente du contour. Parmi eux,
+1 032 points comparent phase/R/M1/RAM/audio ; les 24 retours du fondu comparent
+le temps et le compteur logique. Les 48 executions 68000 de la chaine passent.
+Le fondu couvre aussi 96 cas SMS/C et 192 executions 68000 separees.
+Cette chaine reste hors du jeu : les transferts video des IRQ, le dessin des
+contours et la cadence physique doivent encore etre raccordes. La ROM jouable
+reste v0275, avec le hasard SGDK provisoire.
+Voir [le raccordement du rallumage et du fondu](analysis/native_room_reveal.md)
+et [la chaine precedente heros/scripts/musique](analysis/native_room_ready.md).
 
 État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.
 Les choix de direction des ennemis 47/48/49 et du boss 65 utilisent désormais

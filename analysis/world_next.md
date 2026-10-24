@@ -1407,3 +1407,15 @@ Compiled68000 matrix48 executions passes; stable2290T/351M1 remap rows batch onl
 Same diagnostic vectors/code except remap:6895->2626 NTSC frames,5772->2199 PAL (~62% less); not playable FPS/pacing proof.
 Assets156/remap96 source regressions pass. Playable v275 unchanged. No source intermediate hero/map/R/seed/audio injection.
 Next1FA7 reveal/0AA4 wait/fade and actual bitmap tile_count before full IRQ consumes C042; physical renderer/CPU deadlines/global boot clock/all classes/campaign remain open.
+
+
+2026-10-24 - Native reveal preparation and palette fade, still outside playable main.
+Previous goal response was no progress (status explanation only). This turn adds
+source_room_reveal.c/h: exact1FA7 clear,0AA4 palette preparation, source0B95 wait,
+restored display shadow and0ACE fade with two live IRQ waits per changed step.
+The pending hero bitmap tile count comes from the original asset, not a snapshot.
+24 single16D0 chains reach first contour0B95:1032 full source phase/R/M1/RAM/audio
+checkpoints plus24 fade-return time/C02F checks.48 compiled68000 chain executions.
+96 originalZ80/native C fade cases and192 compiled68000 fade executions pass.
+IRQ VRAM/SAT/CRAM publication and physical renderer/pacing remain external.
+No playable build or version increment; v0275 stays unchanged. See native_room_reveal.md.

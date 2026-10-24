@@ -1,0 +1,2438 @@
+{
+  "playable_version": 275,
+  "protected_sha256": {
+    "input/original.sms": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+    "gaw-megadrive.bin": "02b597b346e3518670f93e1cfc5281a9db6a6cfbfbe2a70139ef18b11f05a5c5",
+    "gaw-title-megadrive.bin": "02b597b346e3518670f93e1cfc5281a9db6a6cfbfbe2a70139ef18b11f05a5c5",
+    "versions/v0001-d32d3208/gaw-megadrive-v0001.bin": "d32d32085be047a05877356a79f3b017e5273d92b537323031f3b209ee8fd15b",
+    "versions/v0002-5d10a02a/gaw-megadrive-v0002.bin": "5d10a02a28e07170d10ec9b02354e81c42dc7a6185d1c48c7d636489c021d107",
+    "versions/v0003-7ab95bef/gaw-megadrive-v0003.bin": "7ab95bef3e0ecfae795bfc2705f5a316501b6b8f25ce815e2e125e3ece360dc0",
+    "versions/v0004-29e687c0/gaw-megadrive-v0004.bin": "29e687c0beff0c0c4210443d949f2b52b22f41309ab0c80ef35ebdad661f6f9c",
+    "versions/v0005-80d48c07/gaw-megadrive-v0005.bin": "80d48c07e1c79c94f76438b3e9a7ed365de7390df3c3b71404c34b82f9464d1c",
+    "versions/v0006-b82289fa/gaw-megadrive-v0006.bin": "b82289fa4a91003b304285c77c9b41505c93e299a0ac9625641cb79d8138047e",
+    "versions/v0007-62ebce68/gaw-megadrive-v0007.bin": "62ebce684ac9d1903bd87671c1cb6223420b89e521ce75415d177c134f34d211",
+    "versions/v0008-37023967/gaw-megadrive-v0008.bin": "37023967219a992e03bcb0c3f8b7e1ab55f22b6a4494e4621387b2fab92c6a57",
+    "versions/v0009-147c4ce4/gaw-megadrive-v0009.bin": "147c4ce4007a66da197009291606b55cc8ff6243cd2de0c5efe444dab39bb31f",
+    "versions/v0010-fd14924e/gaw-megadrive-v0010.bin": "fd14924e886e721dcc27cde37c3e2c7536107e46437593d26dd0b8359d029210",
+    "versions/v0011-174b1015/gaw-megadrive-v0011.bin": "174b10157b48d7f44ff7a271195b7d4367aa5ae219e32f757ddabf419b4f1aa9",
+    "versions/v0012-cea9c1bb/gaw-megadrive-v0012.bin": "cea9c1bb5063dcc3bdfc8ae73c8c375aaecf979cb4cc2aa4ba5f59ef0e02e797",
+    "versions/v0013-4ab93fb4/gaw-megadrive-v0013.bin": "4ab93fb473e026f95828ceca1d1881cb1d81b2b756bc8bc9871912322782b977",
+    "versions/v0014-8f9641da/gaw-megadrive-v0014.bin": "8f9641dab38de2e64a4ebd89ab52c32eed4a3a3eedb90f562516e76aa3f80a03",
+    "versions/v0015-5da7e25f/gaw-megadrive-v0015.bin": "5da7e25f09ba3e63e9a8c680972cb7fb67a70a856d83cc7ec929a8c6391c8fb5",
+    "versions/v0016-9a022782/gaw-megadrive-v0016.bin": "9a0227823cbcdfe349e398eaf08cfaae8851d066337b0bbd3c5f623024e2f334",
+    "versions/v0017-e44647ec/gaw-megadrive-v0017.bin": "e44647ecd41ba63bd5977364009b007648912bc0dad489836317da12fd88a831",
+    "versions/v0018-8eb043e1/gaw-megadrive-v0018.bin": "8eb043e13c34d640db41cedaebf177c7ea8e206ea53f8b45e0bd8a09b621cdfc",
+    "versions/v0019-865fe0a9/gaw-megadrive-v0019.bin": "865fe0a94f2939e9b999b3e3013d532d28ae293de8aba580889d1662dc44a456",
+    "versions/v0020-3fcc82be/gaw-megadrive-v0020.bin": "3fcc82be4c00617bb36be4e1adfd765e8443daa536afa7b61484c4ff1b434748",
+    "versions/v0021-27c56ec8/gaw-megadrive-v0021.bin": "27c56ec87e272f87f6d6bf368e5f34bd9b85264956b87932d74e281df5aa5cf5",
+    "versions/v0022-23ff4c2e/gaw-megadrive-v0022.bin": "23ff4c2e7f60399cc75bf59eb7fc46d5ac9ab76a046d168aaf2696382301fd0a",
+    "versions/v0023-3cfc6137/gaw-megadrive-v0023.bin": "3cfc61378ff64ecf311163707de88b6f309892e864693bcedcf849f1bb0b04b3",
+    "versions/v0024-92b10d8d/gaw-megadrive-v0024.bin": "92b10d8d94327cafb570d9e00e0f9050de69d53a89e990c9e12676348029a471",
+    "versions/v0025-e95a6b5b/gaw-megadrive-v0025.bin": "e95a6b5bfe9f5e1a714f6042531779e8213fcda3ac41cb142b2b7d4f9d005c58",
+    "versions/v0026-e0fef3c2/gaw-megadrive-v0026.bin": "e0fef3c26202309e88b6dcb60217ddc6727d4f9a85daf7ef989f25149d454f7e",
+    "versions/v0027-d7bdb3f6/gaw-megadrive-v0027.bin": "d7bdb3f6112d2efe06cef2c6ca9cde0159dd35b4f71c643b924428516a2196aa",
+    "versions/v0028-51452b3e/gaw-megadrive-v0028.bin": "51452b3e4e27abfe239fe2b4022abdb0dac0da82c6965e1d61eff7b97e279781",
+    "versions/v0029-28d4b958/gaw-megadrive-v0029.bin": "28d4b9580ee1297b4df416e154722c02c171d91c5d89ce78ed9b6f3c41155822",
+    "versions/v0030-c325609b/gaw-megadrive-v0030.bin": "c325609b47f43b324624a254be204fd89f59856ace4b2460f4e588f06f05cea1",
+    "versions/v0031-cec4ef9e/gaw-megadrive-v0031.bin": "cec4ef9e9b2a06a66c44e4fc32205613d99dbdb4d2385844eb26721f1d82e371",
+    "versions/v0032-ea5b8434/gaw-megadrive-v0032.bin": "ea5b8434f3606cac37ab1212fd7d8249b29703b3e84be993cd75fb357b7ed1f3",
+    "versions/v0033-86a5a66c/gaw-megadrive-v0033.bin": "86a5a66c59a479cd96214440abb4b76fa878f3b7a3690b29afec998d6665e6ff",
+    "versions/v0034-43775313/gaw-megadrive-v0034.bin": "43775313034361956b0446f9709bfbdbcaab0d9980fd50e4174536f2283714df",
+    "versions/v0035-75c38bcb/gaw-megadrive-v0035.bin": "75c38bcb0d25615754f4bec7d34dd26a88398acdc1cc6b569617ab450a2c94ca",
+    "versions/v0036-259c086b/gaw-megadrive-v0036.bin": "259c086bdc5b9ceba3bbde2afacc4b17e60ae59d98791c4f7dee02f5367b212c",
+    "versions/v0037-9b8f5ee7/gaw-megadrive-v0037.bin": "9b8f5ee7c131c2c51b60250c85c7a5c89084ac657a399b881343dc4bdd2cbf96",
+    "versions/v0038-73b3f51e/gaw-megadrive-v0038.bin": "73b3f51ead03f172a2c893402f7a9b4c2fb0b539bff9227c4843bc78ba1a1a66",
+    "versions/v0039-ece4a6b0/gaw-megadrive-v0039.bin": "ece4a6b0c171afb03fb04e680515df12b27601a07755a9f9210a2980622db70c",
+    "versions/v0040-a4f0f052/gaw-megadrive-v0040.bin": "a4f0f052ea5cb60c04f60c0dcae01245099b920464fa83e14eb198d2b2743122",
+    "versions/v0041-d8f2dc05/gaw-megadrive-v0041.bin": "d8f2dc050dd1b46f59370599da09c40f444908040bb5a0dcb287f7e89e752ffd",
+    "versions/v0042-2230c2b4/gaw-megadrive-v0042.bin": "2230c2b4badf9c0086cfcd0fd2ca45cea0e8942a79631252ee24306ddd8409ff",
+    "versions/v0043-94317503/gaw-megadrive-v0043.bin": "94317503805abf9288dd056b64a4f8b61d92dc3c9b2a51227813777879f01fb1",
+    "versions/v0044-267fcf5b/gaw-megadrive-v0044.bin": "267fcf5bf3154bc905ab9e75b9893f7d038c6aebdabb41849f61a349cec047b2",
+    "versions/v0045-e45374ab/gaw-megadrive-v0045.bin": "e45374abc29f9db490922d958357cf73ade7682c42e6e12036710987eca194f8",
+    "versions/v0046-3f77f21f/gaw-megadrive-v0046.bin": "3f77f21ff2e22586e66e109201750b237058e9347b9cca84999a3710410d4573",
+    "versions/v0047-ff1a0b0a/gaw-megadrive-v0047.bin": "ff1a0b0a5c513fbbacd473cba06bf4316b431036da9755b6caefe491ac815331",
+    "versions/v0048-e796cfbe/gaw-megadrive-v0048.bin": "e796cfbe1b6d15a67200953b17ab67546d9ce111a15c554da513f7eb15849b3c",
+    "versions/v0049-3e6de542/gaw-megadrive-v0049.bin": "3e6de5423466531de424804c834c071f53c757e3a29ee6efa6264912e68e1b14",
+    "versions/v0050-12d69d55/gaw-megadrive-v0050.bin": "12d69d553cc634c242d6143af7df3d196fff95e822fc4a6ad539deb97562b52f",
+    "versions/v0051-3161f829/gaw-megadrive-v0051.bin": "3161f829edc97c40f95ff52c90dd23529207d265ec73e170f4c6e6c9486bc172",
+    "versions/v0052-1e6402e3/gaw-megadrive-v0052.bin": "1e6402e38df077646a972a0a61dc335fd2c8fe54a6c4217888f8e1233ab5e6a5",
+    "versions/v0053-acc8299d/gaw-megadrive-v0053.bin": "acc8299def6be457146a520444bc6d0db9e8e8f13e623a7ec35da97b678ab535",
+    "versions/v0054-1dbffe65/gaw-megadrive-v0054.bin": "1dbffe65bf7aef56c4a355f776f4fc89d59acbf3fae1a8bdb99c85a240b8a65f",
+    "versions/v0055-8bb01ac9/gaw-megadrive-v0055.bin": "8bb01ac912d6a7d7a347d66a2ad67f8af664e75f92dbab18225e8438f16efe9b",
+    "versions/v0056-e9694529/gaw-megadrive-v0056.bin": "e969452902935eca93d236542d0a8048a2859e0918693c3b8ae59f19c611147c",
+    "versions/v0057-4c0e876d/gaw-megadrive-v0057.bin": "4c0e876dec34cbc21c232ca239047593f5b1e35c4ec0531951aa7aa8334213a6",
+    "versions/v0058-b01d9b9d/gaw-megadrive-v0058.bin": "b01d9b9d2519e382fe2da006d2c55730b94d225562bd017640276cec8cda5ee9",
+    "versions/v0059-637887dc/gaw-megadrive-v0059.bin": "637887dc2bdff7b3e544acf1207ab64b6d12ff7b514df747e6c0a2ea67939440",
+    "versions/v0060-b2742e83/gaw-megadrive-v0060.bin": "b2742e8311c22e93fcc49693b9332a5e0d13de95af0a85ca72712419f6d51fd6",
+    "versions/v0061-5c4b9137/gaw-megadrive-v0061.bin": "5c4b9137bb73638e16452dc408a6ad303d69fd5d430edadd3a470dc0c7731d13",
+    "versions/v0062-2af5d590/gaw-megadrive-v0062.bin": "2af5d590a86ff3f05f7bdcf07ef68ccdae002fe21da313b38383abcc7689b0d3",
+    "versions/v0063-62366fff/gaw-megadrive-v0063.bin": "62366fff149b56f25a62b8e10bdd13615bdef58efa3548362ab3ac857bf2f07b",
+    "versions/v0064-065f1446/gaw-megadrive-v0064.bin": "065f144627e9938c4e2af2601214c3c17b25aa84e08a96ad941b27a99156c444",
+    "versions/v0065-00d0e801/gaw-megadrive-v0065.bin": "00d0e8018f870b086ccc7b25cd6662bfdb7ab40a223af584780fd1fb9b0514d9",
+    "versions/v0066-6e394baf/gaw-megadrive-v0066.bin": "6e394baf28744cb9f6526aa43bbfdfa585c5081f552f7a0d17de37626562a471",
+    "versions/v0067-cab97c21/gaw-megadrive-v0067.bin": "cab97c21bb9dd9c65b67cb9fb4f8afa2fd5441a375bf84f402e76e7ef5500769",
+    "versions/v0068-67dcb426/gaw-megadrive-v0068.bin": "67dcb426363a45e24464028c2734d9a338bd1665558f03d0eaf5ede6f6bc95aa",
+    "versions/v0069-c75ec097/gaw-megadrive-v0069.bin": "c75ec097d5d6f460420583df4821bb721ada92eb7cbaa5e05f1cf9fd234bbc52",
+    "versions/v0070-ee7ae2e4/gaw-megadrive-v0070.bin": "ee7ae2e440037232e650fae4a30b1c0ce4a2ad1f1e955e46e9a261d88074d008",
+    "versions/v0071-b3613817/gaw-megadrive-v0071.bin": "b361381750ac3366da528a8d544864b2b097a6b5fffaf363d935ef5bb068e1f8",
+    "versions/v0072-e44949dd/gaw-megadrive-v0072.bin": "e44949dd17bccba7ec27c105170d1323fb7a22d548d6e7b86a06878810dadfef",
+    "versions/v0073-16544cb1/gaw-megadrive-v0073.bin": "16544cb1e00dfc72002f65e1b35612e981453cfe7afac05ae7ff82a55b43ba7f",
+    "versions/v0074-d28e6149/gaw-megadrive-v0074.bin": "d28e614977cb544474e9c38f5b2fac32c335796643a674c804306ce81c4a5a72",
+    "versions/v0075-82b3580f/gaw-megadrive-v0075.bin": "82b3580f29ef0829d3d33b42de7982b4cec0dbe3431d2156475339b052bdfc71",
+    "versions/v0076-a171c534/gaw-megadrive-v0076.bin": "a171c53496510b0e93fde0518fe517243a8fe55f78e310edf968eee53abd1b3d",
+    "versions/v0077-6641d4b3/gaw-megadrive-v0077.bin": "6641d4b3bc5983dc5fe7978f9c74ece3623eacf208da73c435a7fce241f85a14",
+    "versions/v0078-76081dc2/gaw-megadrive-v0078.bin": "76081dc2de34daf978bc0e56a936ed790555e538559382e6b55e20d00540864b",
+    "versions/v0079-c0146cd5/gaw-megadrive-v0079.bin": "c0146cd5b9621f6b59e6837e375f8e19fffd9a8694ee13bbc87c01f87343e5f2",
+    "versions/v0080-6aee1373/gaw-megadrive-v0080.bin": "6aee137328ef55bfb35aa39a33483be1457ab562cd8e3a7ea5a2689cff7efea5",
+    "versions/v0081-716bc75b/gaw-megadrive-v0081.bin": "716bc75b879fc1fdb0259b2b6e312a519a4c52805ccc02113e6fd3e37972b84d",
+    "versions/v0082-365b546d/gaw-megadrive-v0082.bin": "365b546d3f02682d7642b10970eda3863f47d49e80602619ebef16c95006b021",
+    "versions/v0083-ac6b7471/gaw-megadrive-v0083.bin": "ac6b7471f1a375b708aada21749779fa6395d8ef0d96b7d89cfa9c8f209bcf90",
+    "versions/v0084-7de7d76b/gaw-megadrive-v0084.bin": "7de7d76b234815306e8c91923f5413745ec5678c0697aeb929a3f2a31959da9a",
+    "versions/v0085-5e223105/gaw-megadrive-v0085.bin": "5e223105f6b3adcd99fbf5d4ec7bec7226874cb75bbc1c03fc07422583f2638a",
+    "versions/v0086-8d3b41f9/gaw-megadrive-v0086.bin": "8d3b41f9aea150db0dbea2be6114b43e7f9ff4bd965b4f72cd0f34e10bb50a1c",
+    "versions/v0087-4273eda3/gaw-megadrive-v0087.bin": "4273eda362638d07c3b7a0dcb54e8a9dea26781e3f8d8c69c938c828ab54f565",
+    "versions/v0088-7bbb79ba/gaw-megadrive-v0088.bin": "7bbb79bad0ffe2647b70f38e3af6a6d64bd587f45fadaa44aff98cdda1880532",
+    "versions/v0089-1942f987/gaw-megadrive-v0089.bin": "1942f9874b60a1f63742527016555105c1fb2c8e401164f4b0573ca571ce3109",
+    "versions/v0090-13d6eb10/gaw-megadrive-v0090.bin": "13d6eb102b7b5d0f34355a413a90f58acde8d900234b3368d574d234c6dcfe05",
+    "versions/v0091-43f9c07e/gaw-megadrive-v0091.bin": "43f9c07eb6bedb423eacb48ca2935ea2dc22b85d9688e4f3b3d355f9ede1efbd",
+    "versions/v0092-602393fc/gaw-megadrive-v0092.bin": "602393fc12173ab1670fbcbc1b58ce4596a6129291437524540118b82d1752f3",
+    "versions/v0093-28ce141a/gaw-megadrive-v0093.bin": "28ce141a255dbe91bdd62913e991435adff69719e07f12e6019343668902bfaf",
+    "versions/v0094-8639238d/gaw-megadrive-v0094.bin": "8639238d6de100f584c6f7daa18c7cb54398a3bd9b217da288c4169c3b80303d",
+    "versions/v0095-f2f9fdc1/gaw-megadrive-v0095.bin": "f2f9fdc1aaa20bc67eb5f1d9e21697b30c47dd9bc7b60f863c14b204b14d0328",
+    "versions/v0096-0faff7e5/gaw-megadrive-v0096.bin": "0faff7e5a78478e3c637209c3e380ade74d065c2149824be9598400014baf32c",
+    "versions/v0097-51363105/gaw-megadrive-v0097.bin": "5136310583bcc2eed918f0593c2209d28d5b1b5a32410e4cfbc7afc628acc912",
+    "versions/v0098-680c5ebc/gaw-megadrive-v0098.bin": "680c5ebc70be288899930ff67e832ea5f08c0866f6ef859ebc124ac9b9bc5933",
+    "versions/v0099-eade0289/gaw-megadrive-v0099.bin": "eade02892e01d3eaf7e2df1d3553aed344848a22c06cfeb3277334149647747d",
+    "versions/v0100-0a14bf9d/gaw-megadrive-v0100.bin": "0a14bf9d0383b9af0905d2676f6248c38757a4bd7925e7465ad5acef3a82885a",
+    "versions/v0101-fa3b3fda/gaw-megadrive-v0101.bin": "fa3b3fda81fb8d4aa6ee9241483561895da82738b395743eef88abecc5ea8443",
+    "versions/v0102-222c090b/gaw-megadrive-v0102.bin": "222c090bcc650d11d01d92b3d75aa6aff9927d1be0b93f77ae2738a1b29c8841",
+    "versions/v0103-6650285f/gaw-megadrive-v0103.bin": "6650285fd8864ceb1ed31c24fb7899d73dcb5ff455c5f2e23ce56917668480e6",
+    "versions/v0104-b0859ec2/gaw-megadrive-v0104.bin": "b0859ec2712632ecdf34d81b2dbe3ac048dc67163d9b34158e38e1f625b5a5d9",
+    "versions/v0105-5dbebb15/gaw-megadrive-v0105.bin": "5dbebb15dd30d2b8747303ff3a9a642587c222e72f94a8d4e84dece9efad4d8d",
+    "versions/v0106-f4d1dd39/gaw-megadrive-v0106.bin": "f4d1dd390a1c018172fff700ecf17fb17c99f874f16044d6810726d79b564e9c",
+    "versions/v0107-d490395b/gaw-megadrive-v0107.bin": "d490395b9961b5a7ae5b36d4463a0eb700951890bbcea0d4c4ba62605d83f0f0",
+    "versions/v0108-3e9ced37/gaw-megadrive-v0108.bin": "3e9ced370044caaec311aca2f9ac9b24ff6337b3dc53b57b8abc13cf66a13719",
+    "versions/v0109-54b787f9/gaw-megadrive-v0109.bin": "54b787f9bc3e6782040faf09dce47ca8844f240ca4d6a3c6e4b183f672fc74a2",
+    "versions/v0110-c64afe1e/gaw-megadrive-v0110.bin": "c64afe1e8e4802f49f8e1408a3c03a26e8443e729179308052a5af1ca157ca75",
+    "versions/v0111-26d75abb/gaw-megadrive-v0111.bin": "26d75abb554ed062e218a2e3d48fff120abcd08f28b7f9a6a1f220e5cb188b7d",
+    "versions/v0112-f01b1bee/gaw-megadrive-v0112.bin": "f01b1beee7001aa50e7b71d79fa182106beb0e8906b31d9397fa946e8325db31",
+    "versions/v0113-58543772/gaw-megadrive-v0113.bin": "585437724e49ca97f2595072459324a3311708c915f12e2c7532837c15feaae5",
+    "versions/v0114-fa929315/gaw-megadrive-v0114.bin": "fa9293155842594f13c97566a540bf3940ea0657bd513168a1770e592df16ba5",
+    "versions/v0115-cb4f0424/gaw-megadrive-v0115.bin": "cb4f042495ed0353dbd7b0104fbfef5f76c696a5d3f528ce2c83eba16bd171ac",
+    "versions/v0116-e7069055/gaw-megadrive-v0116.bin": "e7069055e4dca251b0905e83e9d212e55e991321058edb640ebab5c61f851b15",
+    "versions/v0117-da820264/gaw-megadrive-v0117.bin": "da8202641aa6d97cf4edab63cf39cc356cc461ca0b07fec6c61d74e40a3be932",
+    "versions/v0118-a72eb3e8/gaw-megadrive-v0118.bin": "a72eb3e83e49733761e285e3639ef6c4a344995fd8fd45f7372b3be8d2c60405",
+    "versions/v0119-d3ea2cd9/gaw-megadrive-v0119.bin": "d3ea2cd95d7cc771e8ef3615b08594acd371f74bc709a621adc9b125dce448ef",
+    "versions/v0120-8dd2bab8/gaw-megadrive-v0120.bin": "8dd2bab8372456b17bc74e79996ba2dc49ac2f8ab9e1e137f03150f69072a97f",
+    "versions/v0121-e5868929/gaw-megadrive-v0121.bin": "e58689290cf7a9e7f54b9651a0cef23b719d567e87b9327e58dbdb5af9d56fd6",
+    "versions/v0122-8b7e8076/gaw-megadrive-v0122.bin": "8b7e80769ddc081fe5caeacceba0f678a2b04c6b33857c526794b6645791b9fb",
+    "versions/v0123-121f3aa6/gaw-megadrive-v0123.bin": "121f3aa68676583cfa6a579b401056a16c354eae6c88c855138a90a1865d4fcd",
+    "versions/v0124-987f92ad/gaw-megadrive-v0124.bin": "987f92ad158c69c81aa5fd74d5e37a77711f39e8994e51c40633a765592fa822",
+    "versions/v0125-e361feb5/gaw-megadrive-v0125.bin": "e361feb5e2297f2ed87df884a1928e9b81cf2df8dad77035770183d8554c613a",
+    "versions/v0126-c5e5c136/gaw-megadrive-v0126.bin": "c5e5c13640de02fda61fb10f16c5857f4265f679b109b78a1ada95cc94bb9755",
+    "versions/v0127-d3770033/gaw-megadrive-v0127.bin": "d3770033cda9c7b306172abb2da7bfbc72815905b7bb21710f56c4b8d09b51e0",
+    "versions/v0128-681b8e80/gaw-megadrive-v0128.bin": "681b8e8089000d5fea9f175f77aac92f9cbc164e168e797408875d44784cd3b4",
+    "versions/v0129-8960a965/gaw-megadrive-v0129.bin": "8960a965dc1e68ec0304aedc1dbc542ba54068fac07d4be74258e4fcc38900c1",
+    "versions/v0130-ee2d31fc/gaw-megadrive-v0130.bin": "ee2d31fc71c765be4802ec8b5ad7d86b99a6225a2ce7850ea2071e23c721aa73",
+    "versions/v0131-a41f0e2f/gaw-megadrive-v0131.bin": "a41f0e2f59bc338620aab82c6937924cf50b9771a4ceec9c8e4275eee822c415",
+    "versions/v0132-f1537f6f/gaw-megadrive-v0132.bin": "f1537f6f2f7e51da9821629bc119dd1f645829730453b388c1eea748ea54a387",
+    "versions/v0133-cae543bf/gaw-megadrive-v0133.bin": "cae543bfc455fef341f1496f3fe2d4a71ad237dccfeb3a895e5cd67ccc418cf4",
+    "versions/v0134-1c2c26a2/gaw-megadrive-v0134.bin": "1c2c26a2dde2cd3e4caeb4da464a0faa8776aab50e7518253815148cab616549",
+    "versions/v0135-e4790504/gaw-megadrive-v0135.bin": "e4790504a6f3a165285c2cef9402fee56240c32dfe2b4a9f730f08a19fc6d8ae",
+    "versions/v0136-d995d9a0/gaw-megadrive-v0136.bin": "d995d9a005c68bde1f0991847d7f0b89c604c5df085962f8318f7667ac18523a",
+    "versions/v0137-775552e0/gaw-megadrive-v0137.bin": "775552e0c69285001d9763e3c584f26417fb00e36e6dc0471ab63a5c3427973d",
+    "versions/v0138-39058dcb/gaw-megadrive-v0138.bin": "39058dcb999456ab4f69b2a5afeaf06077e0148ca4235b02c865b22e9dad3c09",
+    "versions/v0139-cbc44ca1/gaw-megadrive-v0139.bin": "cbc44ca13ec2be15274c972a6a8aafb812219b346afed50934df2bb11199139d",
+    "versions/v0140-cc830a82/gaw-megadrive-v0140.bin": "cc830a8216e7432706dfd53bfafc3deee7c9e73635be09c232523e0aa524efc3",
+    "versions/v0141-51ff11b9/gaw-megadrive-v0141.bin": "51ff11b9c6a5d9ba1321f81c60bc3c4fb9fbc61d4c47514f9f0005dca3aee89e",
+    "versions/v0142-546b1a68/gaw-megadrive-v0142.bin": "546b1a68e93b64c59b3564bbb21316e53e1a766a1a15977c94f0d2681a76b838",
+    "versions/v0143-57c8ca28/gaw-megadrive-v0143.bin": "57c8ca289fb26b0e92ebc5c78bacd9c78d4654ab52ffec61ffcdf4510dbd4e03",
+    "versions/v0144-4fb44220/gaw-megadrive-v0144.bin": "4fb44220dec8019650634adf31f3acccf1f6fc6b6f42eeaac53a922201d81d53",
+    "versions/v0145-3d4c7893/gaw-megadrive-v0145.bin": "3d4c7893100e1d6dea7a064799176fa4151e52310a18c2b04c70431acd76765b",
+    "versions/v0146-edc3758a/gaw-megadrive-v0146.bin": "edc3758a27b634b87579b3049dc1553cba6308cec3a300a0848b3dab89043fa8",
+    "versions/v0147-aef23965/gaw-megadrive-v0147.bin": "aef239654fc2341bc35734d0d1b2c346534ce8038197a0b6e62bd4c571b32f5e",
+    "versions/v0148-0a3927a9/gaw-megadrive-v0148.bin": "0a3927a93d7ca4ebc06ff8fccf04cd2ca19b7eed1e6462c9d58334209ff1160f",
+    "versions/v0149-4ba31d49/gaw-megadrive-v0149.bin": "4ba31d49f9553901b5128ea1172d069b7488bc0ace2471ca4a285b403557fc18",
+    "versions/v0150-7964548f/gaw-megadrive-v0150.bin": "7964548f395729aca7332cfddc61c4d60f829ebd6826273657131367530cd333",
+    "versions/v0151-d5eb8d05/gaw-megadrive-v0151.bin": "d5eb8d058faec317c8dbb2eb7ad72c295e651c599ebe9486c7b5ecef38092784",
+    "versions/v0152-398b2f20/gaw-megadrive-v0152.bin": "398b2f205c89df496ad738275951765f5135e6a6476b14468e4c65dcc6f2e473",
+    "versions/v0153-551fc32e/gaw-megadrive-v0153.bin": "551fc32e64099db4f1895ee9c14aaee12f3f1f0724ffe804c39a06f56c5cedae",
+    "versions/v0154-e229d0f8/gaw-megadrive-v0154.bin": "e229d0f85428ee0ec459c3c38cd362f212bafe1ea5df0ef11aeaab2707515a4e",
+    "versions/v0155-709b001b/gaw-megadrive-v0155.bin": "709b001be8c9fbc0ebaa19810656a654d7e695449bb6e6d3d2d1cdb3a4139ef1",
+    "versions/v0156-ce3b6e77/gaw-megadrive-v0156.bin": "ce3b6e775b65ac01808658b9c90321f01bfc1ac06a46809bbbdfc2613d671bb3",
+    "versions/v0157-36623fbb/gaw-megadrive-v0157.bin": "36623fbb057ebc7ec7eb2c7ef17f5fc8a417537368b135d10d3cde1f39b0c9d9",
+    "versions/v0158-ae1a4d11/gaw-megadrive-v0158.bin": "ae1a4d11ba67556a51ae203fef6d4872ff225ddef640430717f88ca218c061a3",
+    "versions/v0159-89db44f7/gaw-megadrive-v0159.bin": "89db44f795fe62266ae4f2b8494c59b983a0675c89cc030d92f9ba9daecf4f63",
+    "versions/v0160-f8cca513/gaw-megadrive-v0160.bin": "f8cca513ad07cd84d402f5e9bff0042691003a50146b8baaa4fbf2d37db30de0",
+    "versions/v0161-e14b3079/gaw-megadrive-v0161.bin": "e14b30794aa5b1b872628f05f48c50dc0a73c7a31eed74065b02fd00f3c64655",
+    "versions/v0162-233c614a/gaw-megadrive-v0162.bin": "233c614a78bfd29a4c7e6404678bb1e11258a01940bb663578e387d9c1ba0d7e",
+    "versions/v0163-cd04a76a/gaw-megadrive-v0163.bin": "cd04a76a8046e85c5efc4c20d575923ef63d9fd85635a1195260aee3d37d7189",
+    "versions/v0164-7e2e7982/gaw-megadrive-v0164.bin": "7e2e79822ce9699d0b8e4217b554b84fb18567a72ab332d271951f4ae13e05ec",
+    "versions/v0165-be87ac1a/gaw-megadrive-v0165.bin": "be87ac1ae8e6a5c12a7e5500b8cc5d02de2edb4eb3fb083954df7bb57d71af31",
+    "versions/v0166-f3cb9b5b/gaw-megadrive-v0166.bin": "f3cb9b5b9731933f7ba686412f77702be75872f74daee3d945cd17681d136895",
+    "versions/v0167-cbcbfa73/gaw-megadrive-v0167.bin": "cbcbfa73d37247540e914aae9cb642aba3f8ae05df60aa51e2f4331590592377",
+    "versions/v0168-1bb83c7c/gaw-megadrive-v0168.bin": "1bb83c7c4bbe0c0db3ba1a90ab5de16bebb25e35f8077716a5f70736b2ab4d8a",
+    "versions/v0169-3b343327/gaw-megadrive-v0169.bin": "3b343327e2e58cffd3a5f34ed463c582b7627028d957dc7872f3b85fd1c1c273",
+    "versions/v0170-a4972307/gaw-megadrive-v0170.bin": "a4972307b03cc976890bda1e45b339767e6611492bb5f0fecce70ad1f83e9e78",
+    "versions/v0171-1f87396f/gaw-megadrive-v0171.bin": "1f87396f9b6e1e533c90e851d55eb397f5247cbde0b7c43a2a5978f84a973fd9",
+    "versions/v0172-d31a6ede/gaw-megadrive-v0172.bin": "d31a6ede2434240e43c9f7121288384edd91c7ae0d8348edd8f476fa8088e8f0",
+    "versions/v0173-b4790455/gaw-megadrive-v0173.bin": "b4790455242c29db4f07e1d96a83534e5e2ec27e16b083e9472a85d97c16f058",
+    "versions/v0174-911973c5/gaw-megadrive-v0174.bin": "911973c5b764172bc2d1807662778b4eaaa59e15e0517ea2980b31cdb3db52eb",
+    "versions/v0175-82520cf7/gaw-megadrive-v0175.bin": "82520cf76895fb015494576f4a71275838a3ea6cd7a7e24d9b6166b3d1efc929",
+    "versions/v0176-9a4471c0/gaw-megadrive-v0176.bin": "9a4471c02bbe93c05bd6c7ab1d4488a575ea1a278ada0fbd6619955f26496ce5",
+    "versions/v0177-3f4dbbc9/gaw-megadrive-v0177.bin": "3f4dbbc93e4c6db3e688c77c85912be93ed886dd73d0610d75fb77ec4c8f558c",
+    "versions/v0178-a8d8ee11/gaw-megadrive-v0178.bin": "a8d8ee11f592e748d89cfe4138dbc15701a33f3b3a908cb6047969ff94e0af34",
+    "versions/v0179-d018ed93/gaw-megadrive-v0179.bin": "d018ed93a4d25c99fa258d474b70fd36bbd853da13957a451232ef67e2680af4",
+    "versions/v0180-3f155979/gaw-megadrive-v0180.bin": "3f15597956511409df72c59bab0303d917dc962fa394816d031db9825a6bafc7",
+    "versions/v0181-97313b55/gaw-megadrive-v0181.bin": "97313b559898dcdc3a4d98623526f58c7b0b7565741882a02298de85a4358236",
+    "versions/v0182-f41db51b/gaw-megadrive-v0182.bin": "f41db51b8cb8356125c6b48f967a26bc775e63330cb87fb8f942b4e063fd848d",
+    "versions/v0183-ec1677f7/gaw-megadrive-v0183.bin": "ec1677f7fd5b45ff86a6a910488b47302ef759e5bfadd26332a1f3ded3bef876",
+    "versions/v0184-67010959/gaw-megadrive-v0184.bin": "67010959a2ab6fbaf409426ca2e06d645040c73d7f7cd99a01c4debb49fedc1e",
+    "versions/v0185-1a34d6f6/gaw-megadrive-v0185.bin": "1a34d6f67efb5b3ca2dbdcfc4611ab51a6cadf1055fcf1752a96967b77fb73c7",
+    "versions/v0186-83a88ce9/gaw-megadrive-v0186.bin": "83a88ce9e663a49944e1f729e4529f446c4e8997c195b3ef55907657aac66734",
+    "versions/v0187-af8dcbee/gaw-megadrive-v0187.bin": "af8dcbee838485e2ab8a403bf1bb6f434a4a30c346dc9aa83ca9f82d688405f5",
+    "versions/v0188-6ebb6a08/gaw-megadrive-v0188.bin": "6ebb6a08f01d543131fbf6bdafbbcff5f55726c8342a582247da173726c57b60",
+    "versions/v0189-72cdc002/gaw-megadrive-v0189.bin": "72cdc00261217500cbdbb8a76ed0dedf408e003434e898e13244ce2946ab320a",
+    "versions/v0190-ca8975f3/gaw-megadrive-v0190.bin": "ca8975f3df7f563ce2e90927e0bb299f4d86d56807e0b6c97be6e93a0b755eda",
+    "versions/v0191-4c5ba01e/gaw-megadrive-v0191.bin": "4c5ba01eb905c88138fba32a03b2f173cde3bacf8e2316c0982eee8487f86197",
+    "versions/v0192-a30af8ee/gaw-megadrive-v0192.bin": "a30af8eeb4748ebffb980c74213df2d87b469e69e947d43f08830593f60d3db4",
+    "versions/v0193-e610215d/gaw-megadrive-v0193.bin": "e610215d8a1b41e65e6b9b94e3bc2a105f57a9d66f745dd7a39378f83ee01604",
+    "versions/v0194-2fceb892/gaw-megadrive-v0194.bin": "2fceb892d6a4dfbe603fccbb3519727133cb9f7250eb8580002fcf3cb2b66143",
+    "versions/v0195-dfe79f9e/gaw-megadrive-v0195.bin": "dfe79f9e67bdba470a08a424540f253b4f87230743ca71fc9c48241e105e2393",
+    "versions/v0196-478294fe/gaw-megadrive-v0196.bin": "478294fe3caf3254d3076455e281eede4c7867a139f174064e5d89e6593a6044",
+    "versions/v0197-07917ec0/gaw-megadrive-v0197.bin": "07917ec03c9b861d3bf71df1860104c72482e1c08bb068eff047d7c3707b6033",
+    "versions/v0198-c7d01098/gaw-megadrive-v0198.bin": "c7d010987bee974547b25d5d5734c666c2f684603972b1e4159a8dd584087818",
+    "versions/v0199-31fe30d6/gaw-megadrive-v0199.bin": "31fe30d67b4307a56ab75f6dfd65969d70e9e5efa51db9bbb8a65409208eed48",
+    "versions/v0200-32506b02/gaw-megadrive-v0200.bin": "32506b0254c9fcb8ed65827ca62ce2ea4acfe24afe297531727bbc6a3e9339e4",
+    "versions/v0201-e6af967f/gaw-megadrive-v0201.bin": "e6af967f16b4637c4937fc9332c243c394a6b282c484d40ba87879970f655ee4",
+    "versions/v0202-f55643bb/gaw-megadrive-v0202.bin": "f55643bbf003cf954f5c78a85d3587e26f2346e1c6d87875ca13ddcaf424e5d1",
+    "versions/v0203-7660a4b5/gaw-megadrive-v0203.bin": "7660a4b5949d0f3362c4795ed5eb238f86c289708b51d1dda6eec669b4d3ecb7",
+    "versions/v0204-566c4798/gaw-megadrive-v0204.bin": "566c4798fc9d4773de6d1cb03976111813709e4cdef9917bcf9698c4ba732c57",
+    "versions/v0205-e6708f0c/gaw-megadrive-v0205.bin": "e6708f0cdc30deae005628e098a8c0510660cc8bc768ec3ed085ee7d29db14d7",
+    "versions/v0206-b3bfbea1/gaw-megadrive-v0206.bin": "b3bfbea127c9e1f21fe42c009662f2b96bd0c68aaa9a845989ebdd44d08af8d4",
+    "versions/v0207-82875871/gaw-megadrive-v0207.bin": "8287587147c352ca65af331f00edda5827ee3baa84b5a447e86ab73327861d32",
+    "versions/v0208-fe8d03a5/gaw-megadrive-v0208.bin": "fe8d03a5755d2bc74cc8017e009c18f970693e43b3df7f59955e55546b691e7e",
+    "versions/v0209-d2096e1d/gaw-megadrive-v0209.bin": "d2096e1d60130c95160147bf499876b62e3904b441edb85dc5ffff0bd991d5c0",
+    "versions/v0210-4678a4f4/gaw-megadrive-v0210.bin": "4678a4f4eddb4f1a76e9f174ba1381c76687f011de541f11bbfac8af3d65a554",
+    "versions/v0211-b7eec79d/gaw-megadrive-v0211.bin": "b7eec79d146402b6d6d402eecf0354c145001026dc57da36fc1b49ecf29a703d",
+    "versions/v0212-e6a444b4/gaw-megadrive-v0212.bin": "e6a444b40664a830bcc79d3701e647f764ccf1aa5e50ed6ad5b00c68fdeb3a24",
+    "versions/v0213-aeed5590/gaw-megadrive-v0213.bin": "aeed5590a1abccf4e1cb0c6e78cc339ece95b0b70f14faf7dbce53aa3eaa56dc",
+    "versions/v0214-b224e777/gaw-megadrive-v0214.bin": "b224e777393dbed504c56e86fe633badfe47e001d4525d72634c10c00976c892",
+    "versions/v0215-ba2279cd/gaw-megadrive-v0215.bin": "ba2279cd2e4d093e51eadff530becc02f561035436a55e80ce63896ae4233015",
+    "versions/v0216-5c4a7b35/gaw-megadrive-v0216.bin": "5c4a7b352d846ead271e748c4cc8cc62945563b5fa5f8d3a53dfd2ad210a3203",
+    "versions/v0217-d2b31074/gaw-megadrive-v0217.bin": "d2b31074f24880e2764826bc55d3a913edea53815b5f8aa06529a67a49ed171e",
+    "versions/v0218-399be6a3/gaw-megadrive-v0218.bin": "399be6a3753fadc9b0a6c13f52fa8074b4cf3107fbc82654a2c5c0cd22b7ff4d",
+    "versions/v0219-7518d3c1/gaw-megadrive-v0219.bin": "7518d3c174b117b299c1317b5921e351de7e96eee44fcd4a7d3d43566854cce7",
+    "versions/v0220-b49be582/gaw-megadrive-v0220.bin": "b49be582d3019f00e396840b1d0716b75f3ada775e298c75049c1e0216266202",
+    "versions/v0221-0cc51636/gaw-megadrive-v0221.bin": "0cc51636efdff6e1bed7c0e74808d0ce5589f9333718abdccb392cef7daa1013",
+    "versions/v0222-13edb546/gaw-megadrive-v0222.bin": "13edb546df3bb0f6a5466843170323fbaa9b258355e171672391fcbef61b7ce8",
+    "versions/v0223-39e69955/gaw-megadrive-v0223.bin": "39e6995514a87d170d4d1fc713938a3645905842fe93a340415c80e996057a31",
+    "versions/v0224-6be955fd/gaw-megadrive-v0224.bin": "6be955fdd0efeeb549b3b1a77f697989bed45b79b545c2d7f2ddd7bad8235549",
+    "versions/v0225-71b56c3c/gaw-megadrive-v0225.bin": "71b56c3cf045e55dc176c5009b88c091c60ad231937748102661d53f4847e01c",
+    "versions/v0226-36ad2e99/gaw-megadrive-v0226.bin": "36ad2e99daae5f74f97a081134e113a18b7b71706b5026ecaecfdafc8195d134",
+    "versions/v0227-4bea5e39/gaw-megadrive-v0227.bin": "4bea5e399dc59c58e914b0bdcc033c4aaa38401c88d54feddfcc7e4dea4fe620",
+    "versions/v0228-a875719f/gaw-megadrive-v0228.bin": "a875719f16edee88fc370e493841efbdc783b79767f0c04e4203b33ef56eb40a",
+    "versions/v0229-a9ae2d0a/gaw-megadrive-v0229.bin": "a9ae2d0abd7e49f0d638db0b23e28b5bb05e48123e1df7a00ce066ed69ef78a7",
+    "versions/v0230-1a09f7c6/gaw-megadrive-v0230.bin": "1a09f7c63cd924ea9f7aee15023d91856b3da11c143bdbdd390350c04a47a8ba",
+    "versions/v0231-390ada84/gaw-megadrive-v0231.bin": "390ada84d7e3bf6ed4c029432a83dacc95502d8f1a6c893ea2249d5f1975388a",
+    "versions/v0232-786d954c/gaw-megadrive-v0232.bin": "786d954c9bebd204d564d316279fbb7c78e47f59c2ff7fdb273bad4702ff935b",
+    "versions/v0233-bf93267a/gaw-megadrive-v0233.bin": "bf93267a44a5c702809b6b317b4cd18ea307f2a4e6cb73c1002330af6c847700",
+    "versions/v0234-fb0cea5e/gaw-megadrive-v0234.bin": "fb0cea5e4d355ca7b9d58f787e88bdf07dda26945b463aca16bf2defe11f1156",
+    "versions/v0235-7c9f6750/gaw-megadrive-v0235.bin": "7c9f6750c50ae2efd696894dcbaabc7170def8d4fa567657de0188526cf65084",
+    "versions/v0236-978bbf2d/gaw-megadrive-v0236.bin": "978bbf2d6076e3d0cdd43aad4802ef29f764a0d7943be1a3e609dd2fd055dd98",
+    "versions/v0237-3185a6b0/gaw-megadrive-v0237.bin": "3185a6b0145e93ca69de561ff3c0de6277de4dbc8b2d626712e49fb539ceef30",
+    "versions/v0238-18880bc0/gaw-megadrive-v0238.bin": "18880bc01b6698f34a7125c9a2cc257107affcdd65683a20eba4e729f25f1d2f",
+    "versions/v0239-d464cba4/gaw-megadrive-v0239.bin": "d464cba4aa72850ef5556c32a9999872dce9dcbba780288b646b38dac897900e",
+    "versions/v0240-e5c34931/gaw-megadrive-v0240.bin": "e5c3493162adfea6b539edfada41d471999c9e283e6edb035d1741813cb1b8c3",
+    "versions/v0241-3b9e06a3/gaw-megadrive-v0241.bin": "3b9e06a3c66a8c8104b9ee4172494394ec8c6e53cfee61b43bf67662501bbcf8",
+    "versions/v0242-b7ff1aa9/gaw-megadrive-v0242.bin": "b7ff1aa9fc40e3f290f51e66f8918d54669ddab3a5c81384582b9fc117840943",
+    "versions/v0243-53cebfa0/gaw-megadrive-v0243.bin": "53cebfa065645dcc9336159f41f334be7dfdf32fff5e35afb33746c0ebfb46c4",
+    "versions/v0244-81e5fec9/gaw-megadrive-v0244.bin": "81e5fec967be1f8c97382f8392ace1eff23d9b69591abe1ad004dcabc5b8c91c",
+    "versions/v0245-75cf145c/gaw-megadrive-v0245.bin": "75cf145cb35dac82216aa830fe38d6246c56de5e26f5d5530a3dd33f7a0196ed",
+    "versions/v0246-7d5e9a78/gaw-megadrive-v0246.bin": "7d5e9a783aca617b4a4a02489ec989b24d69f00437c7beb9c093b8c8ee40851d",
+    "versions/v0247-fe16d6ba/gaw-megadrive-v0247.bin": "fe16d6ba06a0c12ee7765cbc1e556fa47003efa2720682ab06285346c6014e94",
+    "versions/v0248-8283fbe9/gaw-megadrive-v0248.bin": "8283fbe9fadd831c99535e5fc1660f061e716bfaaac7bbb0f26c23974f9c36f8",
+    "versions/v0249-88978b6e/gaw-megadrive-v0249.bin": "88978b6ea58ee97944be66ded9c745c3eb12cf70556f07333ec1f2c16a2c74a8",
+    "versions/v0250-8832e6ab/gaw-megadrive-v0250.bin": "8832e6ab98b2e63c03faddaeed03e0fad48f1396d9ff593ccc29dbaf7a1e843f",
+    "versions/v0251-435d5ede/gaw-megadrive-v0251.bin": "435d5ede1a9ff386a395ef5d4973b4bfafbb06ce20ebadb377861511e6d09a87",
+    "versions/v0252-18c3985f/gaw-megadrive-v0252.bin": "18c3985f1be2d884ea78068184adbcfb734909e982df81f5460f361f8412dce5",
+    "versions/v0253-f2b80257/gaw-megadrive-v0253.bin": "f2b8025751c2d94735677bc7a9b6570b30d991200a6bec803162bac2291c411a",
+    "versions/v0254-021b7b9e/gaw-megadrive-v0254.bin": "021b7b9ea0d4b0a33cec82ffcff51837e71e72438d1d70a0c62d236d4b6eea95",
+    "versions/v0255-765847de/gaw-megadrive-v0255.bin": "765847de80829082d05db93783b62f2bc4d299234456d9f1efdff29639c13fb6",
+    "versions/v0256-30df7108/gaw-megadrive-v0256.bin": "30df710883591e7f4b4461ff85b3798575976f7b62eb1dcfd99f23b1dd56f466",
+    "versions/v0257-faf5c44b/gaw-megadrive-v0257.bin": "faf5c44ba4fe0cad8a2612ca7cf58f0601cf5c87f4c88e6e828b47cec1b6a9e7",
+    "versions/v0258-fe7c4957/gaw-megadrive-v0258.bin": "fe7c49573be73a940c7d6162deb5f525b5edd79b5e4d34bf60c2200bad5d9d1d",
+    "versions/v0259-6586d282/gaw-megadrive-v0259.bin": "6586d2822824bdb5c15d87f1a72f0f292235d5548e265a9048b880ff97ef08c1",
+    "versions/v0260-3531d463/gaw-megadrive-v0260.bin": "3531d463006acb61a0ee94be0ce86ad23fc80bafe211e2abd79a614702fa0afd",
+    "versions/v0261-f4f01077/gaw-megadrive-v0261.bin": "f4f01077de10b1edf2db0823a8b2220ecaa9ada0d7e8b51bfc49be452fe5b902",
+    "versions/v0262-e9442fb9/gaw-megadrive-v0262.bin": "e9442fb9b791a0f0814ca736638ac69d09c4ef8dc0eb90a478ca50c3536e55af",
+    "versions/v0263-25a2ca66/gaw-megadrive-v0263.bin": "25a2ca660968b0560df8c79005145148021b02e338d6d94aa0e406186a2f2653",
+    "versions/v0264-f4a55f14/gaw-megadrive-v0264.bin": "f4a55f1465abb54ec9b2581c726d657494098de0c3c0f203b23a20c51886e53c",
+    "versions/v0265-612826eb/gaw-megadrive-v0265.bin": "612826eba9e99caa42a9178abd3743c9ec8c9f3f9846957885310c0d4bad5b08",
+    "versions/v0266-a87da62c/gaw-megadrive-v0266.bin": "a87da62c5ee3936edc8f413a0b8f47f6f17007d2dcfe44d7819f69b294559d3b",
+    "versions/v0267-71d030d8/gaw-megadrive-v0267.bin": "71d030d8e70bde5d3b2e3e5219a7dcf23ca29f4fef340d21d659d525bfd84eab",
+    "versions/v0268-bfcf22b4/gaw-megadrive-v0268.bin": "bfcf22b42b1877f402a8a3f87041a528a6a942f00799195a7c405c4ba9126ad1",
+    "versions/v0269-0f1ea001/gaw-megadrive-v0269.bin": "0f1ea0018e7631177500d9100325f4ea81e46193831b09ca2518d0baeda101c7",
+    "versions/v0270-36af7e88/gaw-megadrive-v0270.bin": "36af7e881a2c98fac13812901f20dcfc1e350f22d4052b0a2dd134615b5a6ab4",
+    "versions/v0271-8a92b40c/gaw-megadrive-v0271.bin": "8a92b40cd3b2a72945ce9a8bbde941bd6f93958c885da8a11b806dca55bca1a6",
+    "versions/v0272-3cbf990c/gaw-megadrive-v0272.bin": "3cbf990c66bdce19bff069e39711205fb451ad88c9b0daef8091c45aedad4454",
+    "versions/v0273-10116d2f/gaw-megadrive-v0273.bin": "10116d2fabe5fd63db8be187c98ba6ed2b6e4388099cbb573853837ea560c769",
+    "versions/v0274-6af186de/gaw-megadrive-v0274.bin": "6af186deca6c86bfdeccaa607aab39f31345349b4d3a5861ad4d912b084c87f4",
+    "versions/v0275-02b597b3/gaw-megadrive-v0275.bin": "02b597b346e3518670f93e1cfc5281a9db6a6cfbfbe2a70139ef18b11f05a5c5"
+  },
+  "purpose": "Continuous native loading/reveal/fade through first contour wait; not playable main",
+  "files": {
+    "analysis/native_room_fade_68k_report.json": "ce354368883242353a18bfd5790c8d3fc6b53547128ed6725972f6f9b9fa09ec",
+    "analysis/native_room_fade_report.json": "4820f99f2d569f3a0bfdfe23aa30c2bc7889b4fb3c09af9c4064997dbd69f5b9",
+    "analysis/native_room_reveal.md": "14ea019540d3110b3b7d0dfaa0694b62ecda1918623d3c16a7ed94a4f284c79c",
+    "analysis/native_room_reveal_68k_report.json": "4fa3a7b409aa0c4f258a3e798f63f7385a1fdfeb7ab11a38b40c5f404ff0be63",
+    "analysis/native_room_reveal_report.json": "0014dea9ebf687cc1d3a91923553b91c6b728ee9bef1ed1ee9f6c6dc91e6a33b",
+    "analysis/native_room_reveal_worklog_prefix.json": "5844bb8afb3d8434b36dbc0b11e00f77cca9abb9d002e06941a186eaa12bd567",
+    "megadrive/src/source_actor_graphics.c": "c7b0657f72bc578079658b782555a84295aa8cf3ad8310ec2eb4a6fb7d486daa",
+    "megadrive/src/source_actor_graphics.h": "5e2ccee6da45c671692152349a3e458d1d19181ac0dbaac187bd6894c8030a3d",
+    "megadrive/src/source_actor_list.c": "d4a2e65cd5fd99d97cdf13e25bf0f19c2b23f6406c9d80deebc38aa516752676",
+    "megadrive/src/source_actor_list.h": "66cb7f9f5b3d1e70a5195cbbe4bbff820ec0ccf78c731ea37746df749a687fc8",
+    "megadrive/src/source_audio_dispatch.c": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "megadrive/src/source_audio_dispatch.h": "9c580f444fb6794054b7d714e2f63aee4651475cb6b0a74eb03d3b3eb9f9a960",
+    "megadrive/src/source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "megadrive/src/source_audio_envelope.h": "f16feb23cb71e1b6e4b25ec74aa48cb6da8c43d069694405fb564d0b58ebc43c",
+    "megadrive/src/source_audio_fast.c": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "megadrive/src/source_audio_fast.h": "2fdec938642ffcfe22790f5985bc16a74c8d3103d1b41927929b77797f1b3f5a",
+    "megadrive/src/source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "megadrive/src/source_audio_memory.h": "e328c37e231dd5e8fc96fe211a5b4ba26b07f11f291fe539a253e880315137d9",
+    "megadrive/src/source_audio_noise.c": "45b37e1689255404b86855e3970e82bfefd313421522aae46e3fae455fa9690b",
+    "megadrive/src/source_audio_noise.h": "b001f5f86528ac6db15b0bc1612eafd241fe716ed52e641478d199d8fc0de1e1",
+    "megadrive/src/source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795",
+    "megadrive/src/source_audio_pitch.h": "8d83445b6c756f40cfecbac07c789111dea82b7ec1b485e9efefdfc24ad7d3d2",
+    "megadrive/src/source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "megadrive/src/source_audio_prefix.h": "da56571196478cd1895aa8d0b1f306b51a3ef1e035416577f3bc6c13a0eafde9",
+    "megadrive/src/source_audio_priority.c": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "megadrive/src/source_audio_priority.h": "62886e73660af5a89d25d951b0952f7386ecc1af3958d5efb2dffcb662118ffb",
+    "megadrive/src/source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "megadrive/src/source_audio_reader.h": "f39ff02e990deedd53e5ec6397d02ebb5c621770f11b3c2cc1a38823c9ecd933",
+    "megadrive/src/source_audio_sequence.c": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "megadrive/src/source_audio_sequence.h": "bf9e77b18c5e53e1d01fb26d58045d9bb5d95613a50db6881c96357f2f3fc32c",
+    "megadrive/src/source_audio_tone.c": "8098ba4e45c21629a9920e6ca9ac5385ecb986e31d0db143cbbff42c0c92b272",
+    "megadrive/src/source_audio_tone.h": "5509c6c0398acbe0762fdf333f9e8c06f694fa90f8aa824a1f6ede6ab9d1c2c4",
+    "megadrive/src/source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "megadrive/src/source_clock.h": "d47d9dc891c71b43ab6ffa006b4da0d5ac0f3714793269403c342ae9255badb8",
+    "megadrive/src/source_graphics_load.c": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
+    "megadrive/src/source_graphics_load.h": "2c5d6c6e1bae96996c3dbfa8afc0b11eb4d03203d2f370aa591fecfa780fa69b",
+    "megadrive/src/source_hero_initialize.c": "e6f393d609e9fa62fe2874ec2208e34b103783706a840def7cb8c98214ff1117",
+    "megadrive/src/source_hero_initialize.h": "e08f3efcc1abe7df45e5754e787fb6d5e915dfe0a2b6e2947dc844ef1fafa40b",
+    "megadrive/src/source_irq.c": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+    "megadrive/src/source_irq.h": "c463a407ad732d2a78e16a6b50b18edb3c0fb941655c5a3aae3acc9df402d658",
+    "megadrive/src/source_irq_context.c": "9d423c3750d96318902c2e72f6456e571251357bfb2e6196f4ee3aad0f845b1b",
+    "megadrive/src/source_irq_context.h": "9f4b3cdc90fddff536522d8b7b95144c611bbda25948d42818554a632c24f901",
+    "megadrive/src/source_pattern_clock.c": "be36a399ae39e093a7489d71c205fe09a7f67755307b8385e6f872d46656146e",
+    "megadrive/src/source_pattern_clock.h": "9ae1a912c8e422d9fc8d0173f371eddbc065566caf4031f0c1b48794594d9b0d",
+    "megadrive/src/source_ram_planes.c": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
+    "megadrive/src/source_ram_planes.h": "ad2f3a5911db9eb8ee263cc689b79805e1fbab7b5bdcf7ff887e414eb25856bc",
+    "megadrive/src/source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "megadrive/src/source_rng.h": "4c0336042fd9655f7ef59d0815917b5dda9cf04755ff03b729cd048cb1890a7f",
+    "megadrive/src/source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "megadrive/src/source_rng_timed.h": "83ef265f2519f81fb26dd9a317d605f78aad7ef4950f1c65232859048121f186",
+    "megadrive/src/source_room_finish.c": "508dea1362a52d21459103bb73ebc8434d54902107b9d6ecad601fd61ed779f2",
+    "megadrive/src/source_room_finish.h": "01bf2987ba187cb1de43a54df1f73f6d0e51f3c4818b1572ca507ffdafb80ee2",
+    "megadrive/src/source_room_history_timed.c": "a0eaca563801d9640884e1b1c44457a6f7565c03bb7d9b0001c784e86e8a76bc",
+    "megadrive/src/source_room_history_timed.h": "d4e9d15b3dbd88aee6105e990989460badaf0df8de46ae386a19f75cbcd9e73c",
+    "megadrive/src/source_room_hud.c": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "megadrive/src/source_room_hud.h": "14ee23b14dfb24d3daccc829a2a4f25e2002bd0b950d66cd2273ae3eabea9dae",
+    "megadrive/src/source_room_load.c": "8de55099ba3da08a68c70b5d7a97ffbae7cd7fbd33f8fe24818431849db8277b",
+    "megadrive/src/source_room_load.h": "fc846cdfbf6667772f342f21af2e313a8b5437266bf129c87322424449f9631d",
+    "megadrive/src/source_room_memory.h": "f9ca42cf61bf6d5e90aa2f41e52e9fd304902226794456eb25d6d04ec171e70c",
+    "megadrive/src/source_room_ready.c": "b0e51f80c14d01dd54591e6d55eb17aa408ff48562bbfbf1ec2eb739d5b85dcf",
+    "megadrive/src/source_room_ready.h": "00c98c82ffb492ea95eebb58718cc54811deee33a945722020151a3e5de44b46",
+    "megadrive/src/source_room_reveal.c": "bbd1d72c997191da79f1050f436179dba4e0929ce83349204c79d57a3e3ae064",
+    "megadrive/src/source_room_reveal.h": "b72afa1b6511712588d4abb6992db44d405d3f319e53e6bb162cd808ac25750c",
+    "megadrive/src/source_wait.c": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "megadrive/src/source_wait.h": "5b19b3fab702b1401beca02842f9421cc5502cba3876251fb5827debff159dc5",
+    "megadrive/src/source_wait_restore.c": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
+    "megadrive/src/source_wait_restore.h": "553e0b70c01429b5a645a806ac2a97e8d9ca518a654fd1775370b59593a2acc3",
+    "megadrive/src/source_world_map.c": "ae46c79b62e76f8594615ebe2e944b09740cb549727fcbbef524fd8ef67e54c7",
+    "megadrive/src/source_world_map.h": "50ddb3249e80e1332aa6bc1c1a1bd62ef3cd93e2b398b063a3294865ae5c7c8c",
+    "tools/archive_native_room_reveal.py": "93cf4f666af53a8397e5e55175a9b4d572fb96c839ef0090b840b664e542cc57",
+    "tools/validate_native_room_fade.py": "72687c0d7e35c352adbe81cbf2124553c90841f3bd3a56ba69d280d99f7920c7",
+    "tools/validate_native_room_fade_68k.py": "cf7f99334e6c5a736c13c16671499b99db8694501b17757c9779a56a45c4e71e",
+    "tools/validate_native_room_reveal.py": "1ece369bd1844c4d1e6aa5c1334302e265ac3ee19bbb7120d9951e8e3e8aeb26",
+    "tools/validate_native_room_reveal_68k.py": "a173b42aa8aeaa87edaeb898892d61bb02752613a804edec20bcda239b09e48f"
+  },
+  "compressed": {
+    "validation/native-room-fade/auto/capture.json": {
+      "stored": "objects/b7fb53ec7ed5f4069b50c0561808aa41215b7c7f103f8d13cdaaa37407198f43.gz",
+      "raw_sha256": "b7fb53ec7ed5f4069b50c0561808aa41215b7c7f103f8d13cdaaa37407198f43",
+      "raw_bytes": 1299,
+      "stored_sha256": "0668a69127858e66a2e08521758adbb104fa7de6118f47ca7da0baecbc282fed"
+    },
+    "validation/native-room-fade/auto/trace_counts.bin": {
+      "stored": "objects/3d5f49c029ea53c7ccb0950da9b3d7daf990882b4dc16890d176be9a14664956.gz",
+      "raw_sha256": "3d5f49c029ea53c7ccb0950da9b3d7daf990882b4dc16890d176be9a14664956",
+      "raw_bytes": 1048576,
+      "stored_sha256": "944cb13f441e723de0f054c9d031a3c53a4d148635ed040a84cb112d7ef99869"
+    },
+    "validation/native-room-fade/auto/trace_states.bin": {
+      "stored": "objects/5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef.gz",
+      "raw_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "raw_bytes": 1024,
+      "stored_sha256": "a1b1b81d3d1afdb8fe119b002318c12c20934713b9754a40f702adb18a2540b9"
+    },
+    "validation/native-room-fade/auto/trace_windows.bin": {
+      "stored": "objects/12f552918dbbccc522b6c69bf06702714aa23539aa9f2b4a47733ead190db948.gz",
+      "raw_sha256": "12f552918dbbccc522b6c69bf06702714aa23539aa9f2b4a47733ead190db948",
+      "raw_bytes": 262144,
+      "stored_sha256": "6c83474545022a5b0db1c053ee991598bb95d67f3638eb3b0c81b75d84d813e3"
+    },
+    "validation/native-room-fade/cases.json": {
+      "stored": "objects/63611cffaedebcfaeab106ad59e2a60d9c8310eb9b5f64ace14a116502000bb8.gz",
+      "raw_sha256": "63611cffaedebcfaeab106ad59e2a60d9c8310eb9b5f64ace14a116502000bb8",
+      "raw_bytes": 3176560,
+      "stored_sha256": "ba336fd4d0be411af4c33017b7532c5a66b7fe9ca8bb90e2f95b53d8f5594958"
+    },
+    "validation/native-room-fade/compile.log": {
+      "stored": "objects/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_bytes": 0,
+      "stored_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "validation/native-room-fade/fade.dll": {
+      "stored": "objects/27a7f6a5a637b918ede3eb8818e2b0032c0d9557f40842dfced1beef3b495b3d.gz",
+      "raw_sha256": "27a7f6a5a637b918ede3eb8818e2b0032c0d9557f40842dfced1beef3b495b3d",
+      "raw_bytes": 337970,
+      "stored_sha256": "a57a96c3d10fcda2aa95a543cdacfa4834afe132435ee5050ad1d626157cfc15"
+    },
+    "validation/native-room-fade/fixture.sms": {
+      "stored": "objects/7da7223e140f2d10be7e8483a47974a6841eae2eba8388e350217d4a3f476a12.gz",
+      "raw_sha256": "7da7223e140f2d10be7e8483a47974a6841eae2eba8388e350217d4a3f476a12",
+      "raw_bytes": 262144,
+      "stored_sha256": "3ff6cf8fb9322a4b9b562730d65b57a527033a3e69c1a442f44f33ad87d1f5a8"
+    },
+    "validation/native-room-fade/kernel/auto/capture.json": {
+      "stored": "objects/46a4a4d925bbff29e42eb1d74fff914ac9c7ff9c4adad9b79c1946c8daf6ac04.gz",
+      "raw_sha256": "46a4a4d925bbff29e42eb1d74fff914ac9c7ff9c4adad9b79c1946c8daf6ac04",
+      "raw_bytes": 558,
+      "stored_sha256": "fde86f3e4421b3f22fa5906d7269a7feb95e0e8bb3a403f6b6895d4c5113313f"
+    },
+    "validation/native-room-fade/kernel/build.log": {
+      "stored": "objects/977e39169756fed81451f8ce64a9638125de8ff2fb73869577ef8f7541b6e563.gz",
+      "raw_sha256": "977e39169756fed81451f8ce64a9638125de8ff2fb73869577ef8f7541b6e563",
+      "raw_bytes": 51083,
+      "stored_sha256": "810107fcd19c53986522bd13ff5e4909bcf240f7f5d4d517cb2374a86d76ea15"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/main.d": {
+      "stored": "objects/8b5729435fd04eebdf779e4ef78a9cab4c071af7a57c68a025e5ef0d0d916dbf.gz",
+      "raw_sha256": "8b5729435fd04eebdf779e4ef78a9cab4c071af7a57c68a025e5ef0d0d916dbf",
+      "raw_bytes": 68,
+      "stored_sha256": "cb6001dc68e63442fb613232a69e8d8acfd4cc65c38fd8c72bb47f10aedfb69c"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_actor_graphics.d": {
+      "stored": "objects/efcff7fc79ee01cb7078cf18e33b2f5de4dae0fe33ad1de23f9a5fb1da6b6efb.gz",
+      "raw_sha256": "efcff7fc79ee01cb7078cf18e33b2f5de4dae0fe33ad1de23f9a5fb1da6b6efb",
+      "raw_bytes": 928,
+      "stored_sha256": "bf9c8ef4319df4b60947d2520afafeb3d8a8861aaac2c3f7380c038015ba7284"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_actor_list.d": {
+      "stored": "objects/74a58c5f704d12931d15ad5483fe15b32b344604c5296a139f90d912f5adf312.gz",
+      "raw_sha256": "74a58c5f704d12931d15ad5483fe15b32b344604c5296a139f90d912f5adf312",
+      "raw_bytes": 904,
+      "stored_sha256": "32c95937d8774c024ec512982b8a3301c52928a6ba757ab3c50738a998cc74f5"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_dispatch.d": {
+      "stored": "objects/a0d4ed2c6a8a46bcacb15fa833161472a723ef6575d160b0f4dcf16a1b7c9ee0.gz",
+      "raw_sha256": "a0d4ed2c6a8a46bcacb15fa833161472a723ef6575d160b0f4dcf16a1b7c9ee0",
+      "raw_bytes": 504,
+      "stored_sha256": "2a5e5120f619e8b97f8d125c2907537f3ea9683d1490ea301ac1666e4e1fc3c4"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_envelope.d": {
+      "stored": "objects/81f781a70e38c85fb8ffdabf4d2ce749efa21034c36f344359ea3a268668957a.gz",
+      "raw_sha256": "81f781a70e38c85fb8ffdabf4d2ce749efa21034c36f344359ea3a268668957a",
+      "raw_bytes": 504,
+      "stored_sha256": "c4bc2817b33a056bf8e4edb9029b55237e9d6cb5a231523a88127bfbd91d3c27"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_fast.d": {
+      "stored": "objects/33ba593f49a15e9e94393bc59bab7a8986eae50f277dbc2b0beb4517f19f58e6.gz",
+      "raw_sha256": "33ba593f49a15e9e94393bc59bab7a8986eae50f277dbc2b0beb4517f19f58e6",
+      "raw_bytes": 1810,
+      "stored_sha256": "e3f597de3fc9fa1191ba5dd3f607d15ed6d1e69c46b681ac5a3d22583ae28246"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_memory.d": {
+      "stored": "objects/a42aed6a98f00d14a3890a38e2b909e4f47785f216888412601856ab29cbfc67.gz",
+      "raw_sha256": "a42aed6a98f00d14a3890a38e2b909e4f47785f216888412601856ab29cbfc67",
+      "raw_bytes": 286,
+      "stored_sha256": "7613bd58281840dc5b5a1b09611323d3e5a35c894888825ee9855e3bd7bad301"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_noise.d": {
+      "stored": "objects/bf4bd5991e0bfc9b56dabb6f56acc7f55b667aaaa5742f345c46a6f57e64d85f.gz",
+      "raw_sha256": "bf4bd5991e0bfc9b56dabb6f56acc7f55b667aaaa5742f345c46a6f57e64d85f",
+      "raw_bytes": 604,
+      "stored_sha256": "14c5532347c8fb09fbbf28e2450f203533b696bd730defceee81ac84cd6dac87"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_pitch.d": {
+      "stored": "objects/960eee6d270006d28057bc1f6be7dedd49d4268b57be7c17f1bc2bed0326fa0c.gz",
+      "raw_sha256": "960eee6d270006d28057bc1f6be7dedd49d4268b57be7c17f1bc2bed0326fa0c",
+      "raw_bytes": 486,
+      "stored_sha256": "22a7139d21884b9a5100bc3f2db24bdd10f588794d5f8c4b18c9fd6dff299492"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_prefix.d": {
+      "stored": "objects/c4751db181a73c4e361bee667e40713c80b3c3ca2481a26347b950747f6fa099.gz",
+      "raw_sha256": "c4751db181a73c4e361bee667e40713c80b3c3ca2481a26347b950747f6fa099",
+      "raw_bytes": 382,
+      "stored_sha256": "4dc34e72d06afb034385ff998631c2c355f7983fe2ec5b1a48388e41864608cb"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_priority.d": {
+      "stored": "objects/0962d8684484057cae792bd5ff45011d6b21d715e3b677ac2978c26af7132905.gz",
+      "raw_sha256": "0962d8684484057cae792bd5ff45011d6b21d715e3b677ac2978c26af7132905",
+      "raw_bytes": 618,
+      "stored_sha256": "e8d56985cfe7b67d4142d9e6b2046ea1bb4ca3a3662bfe7c4c3866d57c0b6603"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_reader.d": {
+      "stored": "objects/b1b165bf9b6b6cf3c5f64ce9374cfa245f615b4f427622eaf3bf5b3a03d3e682.gz",
+      "raw_sha256": "b1b165bf9b6b6cf3c5f64ce9374cfa245f615b4f427622eaf3bf5b3a03d3e682",
+      "raw_bytes": 1048,
+      "stored_sha256": "576673972ebd9efe64ff18c75a89880ad699063ee5616cb485a7e134c04b5eb2"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_sequence.d": {
+      "stored": "objects/64296600fe9f1b7cc9c1da866362549dfe472f97d75cb6c6d654263d33db8fb5.gz",
+      "raw_sha256": "64296600fe9f1b7cc9c1da866362549dfe472f97d75cb6c6d654263d33db8fb5",
+      "raw_bytes": 842,
+      "stored_sha256": "2bd291ae4228ee3de3c802ba25652bcb141fd62a30f7359658231744ceca47c5"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_tone.d": {
+      "stored": "objects/0ce71765454f87073e851afa18e1f843e6106c2dc5fed5d9418ed8995eb885b1.gz",
+      "raw_sha256": "0ce71765454f87073e851afa18e1f843e6106c2dc5fed5d9418ed8995eb885b1",
+      "raw_bytes": 816,
+      "stored_sha256": "45579513a6aa83d953744db28cbab763cb121e4b414e473fad9e4e4d71bffbc1"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_clock.d": {
+      "stored": "objects/0ffee9a65747e607d3612a2c2b9ed928e33a48112b27af2b0f0b7b62b67d5d5d.gz",
+      "raw_sha256": "0ffee9a65747e607d3612a2c2b9ed928e33a48112b27af2b0f0b7b62b67d5d5d",
+      "raw_bytes": 336,
+      "stored_sha256": "b20e5958f5a713be04407e29001537e839421616fc407d49dfcb40b9bac44205"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_graphics_load.d": {
+      "stored": "objects/fe58970e58712e31aab581d256209949659d2e20cfb9378860b15ec6e570673f.gz",
+      "raw_sha256": "fe58970e58712e31aab581d256209949659d2e20cfb9378860b15ec6e570673f",
+      "raw_bytes": 916,
+      "stored_sha256": "5f9f960f091e354f39bb2d3d3faf0a22c09e6c521992b737ca300b8a51b17d4b"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_hero_initialize.d": {
+      "stored": "objects/001d3a36f8a63d30ba69f0c5ff0478b277ae08c24a872ca106ca617255f24349.gz",
+      "raw_sha256": "001d3a36f8a63d30ba69f0c5ff0478b277ae08c24a872ca106ca617255f24349",
+      "raw_bytes": 1042,
+      "stored_sha256": "6314c5763bdb586f277a4234b54c37a7f32946fc44e8e2da93414194d351a2eb"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_irq.d": {
+      "stored": "objects/75a76b5a40292044afc79e86732fdb64fac7f5f932acb32f61a44c226ae9ace2.gz",
+      "raw_sha256": "75a76b5a40292044afc79e86732fdb64fac7f5f932acb32f61a44c226ae9ace2",
+      "raw_bytes": 328,
+      "stored_sha256": "4c668ee0b1855b04f6200d7222ea8bf0b9ef419008c60eb8a3a14313fb5fce6b"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_irq_context.d": {
+      "stored": "objects/b5d6694f3c8df93bca1ac74898f40d9d5b08f97a6bbf8ee54f3105b08fac02f8.gz",
+      "raw_sha256": "b5d6694f3c8df93bca1ac74898f40d9d5b08f97a6bbf8ee54f3105b08fac02f8",
+      "raw_bytes": 684,
+      "stored_sha256": "1c1f951d7138a001bca6626c3316f3c2239a8fe7040649610cd919909a688c75"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_pattern_clock.d": {
+      "stored": "objects/da38bb89c3cd87fd58203e5b5a59a1135811045ccd9df3620c462b4b22ee420b.gz",
+      "raw_sha256": "da38bb89c3cd87fd58203e5b5a59a1135811045ccd9df3620c462b4b22ee420b",
+      "raw_bytes": 698,
+      "stored_sha256": "4d88c83e9e537200435b1e886713c31e34b1e2879312cb5114191b8e6b0c9ff4"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_ram_planes.d": {
+      "stored": "objects/24fa486ccea850f6e2c96f3c51b01e2acaca10c48d3778bf7a87f0ea60680124.gz",
+      "raw_sha256": "24fa486ccea850f6e2c96f3c51b01e2acaca10c48d3778bf7a87f0ea60680124",
+      "raw_bytes": 680,
+      "stored_sha256": "59bd5c1fabb076241536add132d36a9a42d9116598606c629b3c8538291f2560"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_rng.d": {
+      "stored": "objects/a8e39fb8ff372bcbba333718801031c6f471e1cf92a0b72f41d8f3b4b4a5ec85.gz",
+      "raw_sha256": "a8e39fb8ff372bcbba333718801031c6f471e1cf92a0b72f41d8f3b4b4a5ec85",
+      "raw_bytes": 232,
+      "stored_sha256": "8ed46a60a59bf5cf87ae384f2fd907190e05a8251926c5f648e6a9ffc73494f5"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_rng_timed.d": {
+      "stored": "objects/248e6a157af141690e4c62e4efd0c91d50064e43a68a485947b6a55b861c50f5.gz",
+      "raw_sha256": "248e6a157af141690e4c62e4efd0c91d50064e43a68a485947b6a55b861c50f5",
+      "raw_bytes": 456,
+      "stored_sha256": "6a3b5f3bd8962dd8794c20fa8a91ef2811488df5cb646e31db66d705cf514497"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_room_finish.d": {
+      "stored": "objects/bae7d63aaf7b5f8304bfedc385ff0db004dffef6f710744f15e0f4e9a02bb268.gz",
+      "raw_sha256": "bae7d63aaf7b5f8304bfedc385ff0db004dffef6f710744f15e0f4e9a02bb268",
+      "raw_bytes": 1320,
+      "stored_sha256": "4cc026dfdb9b9b11f99fdc6ce2c4efe8bfd2eb286f1bc1719da3497a9a3742fd"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_room_history_timed.d": {
+      "stored": "objects/a34e652af26885edc7bd3eb93c00dd119f48e373395785d99583201b25824686.gz",
+      "raw_sha256": "a34e652af26885edc7bd3eb93c00dd119f48e373395785d99583201b25824686",
+      "raw_bytes": 526,
+      "stored_sha256": "f83e623a8e7183e01b1c88637f6f1ed624059b40fce8e7d97ca3824b33ca0567"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_room_hud.d": {
+      "stored": "objects/eef8c323acec6d8d5e1582ce91399fd4565ea085693487ddc40d1c5d95e5d871.gz",
+      "raw_sha256": "eef8c323acec6d8d5e1582ce91399fd4565ea085693487ddc40d1c5d95e5d871",
+      "raw_bytes": 1102,
+      "stored_sha256": "4e717fcf2736b4658eb5124ab5370aa83084bf0e7cdfc896d485bfe434c2f5fc"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_room_load.d": {
+      "stored": "objects/f324969f8d0fd7261fb43cf01dfcb6a6e74a077e6f1a7f0e7f1453998381a8c6.gz",
+      "raw_sha256": "f324969f8d0fd7261fb43cf01dfcb6a6e74a077e6f1a7f0e7f1453998381a8c6",
+      "raw_bytes": 1658,
+      "stored_sha256": "afce1b134b3c2a676708f6bbb8d69c75d1d499dec99bd428134960ecf04ecd80"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_room_ready.d": {
+      "stored": "objects/12fd9ae02be6274143372a3625a397063dd8ccfb29ad7a0cb23408ad2d9086eb.gz",
+      "raw_sha256": "12fd9ae02be6274143372a3625a397063dd8ccfb29ad7a0cb23408ad2d9086eb",
+      "raw_bytes": 1992,
+      "stored_sha256": "d260cb4efe62aa4d1aa17800ee6c0bbc81a7b7ae9747183ea167bea58f42335e"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_room_reveal.d": {
+      "stored": "objects/a342f0251b9ec0fdd2cb719ef737eb894c6d6adbf45c6e69bf3091e84638ad37.gz",
+      "raw_sha256": "a342f0251b9ec0fdd2cb719ef737eb894c6d6adbf45c6e69bf3091e84638ad37",
+      "raw_bytes": 2308,
+      "stored_sha256": "09e9ba9126cf342d76362f55434629e8aedb62aece2b7394cd581a30d18b0ffa"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_wait.d": {
+      "stored": "objects/30a6b91ddd18d39d89c5d0587a5f9124f38db852a09b97daadb94e9634f4cf6c.gz",
+      "raw_sha256": "30a6b91ddd18d39d89c5d0587a5f9124f38db852a09b97daadb94e9634f4cf6c",
+      "raw_bytes": 644,
+      "stored_sha256": "ae825299249db7285ffc08618eaa83fb8b39cdb767442fb1038e3827081dad86"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_wait_restore.d": {
+      "stored": "objects/22cc855acfe62c8ebbabb6c5bf0467bc1bcac77035aceb090baa4da71837b7cd.gz",
+      "raw_sha256": "22cc855acfe62c8ebbabb6c5bf0467bc1bcac77035aceb090baa4da71837b7cd",
+      "raw_bytes": 786,
+      "stored_sha256": "892280e131994ee4fe78c6d1282fe8a1e859502b7adf24c14f1a4c256f0ae760"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/source_world_map.d": {
+      "stored": "objects/6bc03c863739c2a8406b2bd9819cf6ab043c32d21431d0736c0130076db2b502.gz",
+      "raw_sha256": "6bc03c863739c2a8406b2bd9819cf6ab043c32d21431d0736c0130076db2b502",
+      "raw_bytes": 1004,
+      "stored_sha256": "b35fb3ce74211adbd488973db64d3ad15fb96fe4574370d9407e24b5fbddaa6b"
+    },
+    "validation/native-room-fade/kernel/out/release/_deps/src/wrapper.d": {
+      "stored": "objects/66d12f410516fc9bae80b02a6c8faeffc4b0dea469a93679ba3a887813f9adac.gz",
+      "raw_sha256": "66d12f410516fc9bae80b02a6c8faeffc4b0dea469a93679ba3a887813f9adac",
+      "raw_bytes": 2178,
+      "stored_sha256": "5b21d76cebd92de97bf74d964e2d297be8c64bc7759a5c2b2f9e2cf1e5225cf8"
+    },
+    "validation/native-room-fade/kernel/out/release/rom.bin": {
+      "stored": "objects/c1e6e0f5e87862011c13398a0e77d2b05dd905b4d0392b975963ffce44ec3817.gz",
+      "raw_sha256": "c1e6e0f5e87862011c13398a0e77d2b05dd905b4d0392b975963ffce44ec3817",
+      "raw_bytes": 1966080,
+      "stored_sha256": "b753942c17237544ffc6ce30c3b1beeb3aa64ad054b219387e1b0321a7c97f44"
+    },
+    "validation/native-room-fade/kernel/out/release/rom.out": {
+      "stored": "objects/591a5cb52f3c5bde80bc852a8a14660314d553d40307a16528ef1750d688228c.gz",
+      "raw_sha256": "591a5cb52f3c5bde80bc852a8a14660314d553d40307a16528ef1750d688228c",
+      "raw_bytes": 1938496,
+      "stored_sha256": "b927ae782b68e545bdc568d306fa6f4e9b10aad7001a1b37ebe6f9556ef0c199"
+    },
+    "validation/native-room-fade/kernel/out/release/rom_header.o": {
+      "stored": "objects/bbd4af6a74fd3c92e08b500a7f98ea075e6a2d1917adf1e9cf5587f4851150de.gz",
+      "raw_sha256": "bbd4af6a74fd3c92e08b500a7f98ea075e6a2d1917adf1e9cf5587f4851150de",
+      "raw_bytes": 932,
+      "stored_sha256": "f88fb6edd122925586858b13955aae4feb3560124852ce24f76034affa84c587"
+    },
+    "validation/native-room-fade/kernel/out/release/sega.o": {
+      "stored": "objects/3cc038905b6b9ac0eee40d19320245a8b06fc02a4a712c73f20273b87d33362b.gz",
+      "raw_sha256": "3cc038905b6b9ac0eee40d19320245a8b06fc02a4a712c73f20273b87d33362b",
+      "raw_bytes": 4276,
+      "stored_sha256": "b7ffa9c336701fb16f0fbe181b11179d4230876fb26bb6f5927e7e414d69be2d"
+    },
+    "validation/native-room-fade/kernel/out/release/sega.s": {
+      "stored": "objects/d7954a33a7b17ddf060dadf21305256b524a019678849cf9f6e0dde4ee8e211b.gz",
+      "raw_sha256": "d7954a33a7b17ddf060dadf21305256b524a019678849cf9f6e0dde4ee8e211b",
+      "raw_bytes": 10664,
+      "stored_sha256": "7ef9b01e1f0d289592e0dba0c5463fd3cfc956291c3e3090fcd3c8c1c1a29cfd"
+    },
+    "validation/native-room-fade/kernel/out/release/src/main.o": {
+      "stored": "objects/b690fbcba625f015219c155827121e01ecb554e311f669505f6d43ad4cef8e48.gz",
+      "raw_sha256": "b690fbcba625f015219c155827121e01ecb554e311f669505f6d43ad4cef8e48",
+      "raw_bytes": 3227740,
+      "stored_sha256": "6406a1828021ee935e70b2b10d10486ee7037abaa6b449cac61a7219244b803a"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_actor_graphics.o": {
+      "stored": "objects/6983a2192b6c9489cccaa74522f631d56ecc7d362bd7156e1230690a8c05fada.gz",
+      "raw_sha256": "6983a2192b6c9489cccaa74522f631d56ecc7d362bd7156e1230690a8c05fada",
+      "raw_bytes": 43044,
+      "stored_sha256": "d03d92cd243c47c54a1314e04b1a0cd1ca1c3fe4eefdc8b17ce3ff308cc20349"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_actor_list.o": {
+      "stored": "objects/9c66132259e256d2dc1ab7679051ddc0433527939a692f59d9d80aac6f1281f7.gz",
+      "raw_sha256": "9c66132259e256d2dc1ab7679051ddc0433527939a692f59d9d80aac6f1281f7",
+      "raw_bytes": 26964,
+      "stored_sha256": "87f61b53b72342f88b1d81e25c5c142117f1861bd5aba4f837328915aaf8a11d"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_dispatch.o": {
+      "stored": "objects/298bb00afd1a13a9973d8c21495d1412b79b250eaf8d2ee1cd2179328665fd96.gz",
+      "raw_sha256": "298bb00afd1a13a9973d8c21495d1412b79b250eaf8d2ee1cd2179328665fd96",
+      "raw_bytes": 13736,
+      "stored_sha256": "2086eb09a62a947d22ce8bbe2c6a1d8ba19990eb68671eefdced7400ff782e41"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_envelope.o": {
+      "stored": "objects/d42acced6b0e2d7ce495abc248c7cdfb800a6b982c0fdbd56c2b6a3ccc546793.gz",
+      "raw_sha256": "d42acced6b0e2d7ce495abc248c7cdfb800a6b982c0fdbd56c2b6a3ccc546793",
+      "raw_bytes": 12784,
+      "stored_sha256": "bcf509c0f22c3ad339ad8558d28504f98ed8a811259778b1c027e489502abc44"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_fast.o": {
+      "stored": "objects/f26e81c1f0e7aadb77ea7eeb2186a3fec4541e229979bb248b639b70b2d72861.gz",
+      "raw_sha256": "f26e81c1f0e7aadb77ea7eeb2186a3fec4541e229979bb248b639b70b2d72861",
+      "raw_bytes": 66140,
+      "stored_sha256": "1d4cb76bf33f92d33a2ba00437f7f662c6c0a48c1bf2a19f6d616d62e76fadb5"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_memory.o": {
+      "stored": "objects/ff2b2f180816427f4052ccb83442473da3da85c4b84e4d996e75d9f09283a648.gz",
+      "raw_sha256": "ff2b2f180816427f4052ccb83442473da3da85c4b84e4d996e75d9f09283a648",
+      "raw_bytes": 4536,
+      "stored_sha256": "1e26fcb8e51d53f5050f2ec94ac66cfc1d60afa92ded79c10cf1065831174818"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_noise.o": {
+      "stored": "objects/f0d1bbdf8e84eec12b1b886fd752260f41a45ce078e071119be6b275044b75e7.gz",
+      "raw_sha256": "f0d1bbdf8e84eec12b1b886fd752260f41a45ce078e071119be6b275044b75e7",
+      "raw_bytes": 9152,
+      "stored_sha256": "438daff26b8a7b12fd40933980176b064f582112e633fd33d66b6781752ad57b"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_pitch.o": {
+      "stored": "objects/aff772ba44076c1981e9e5baf020434084f93a6117fb33852aa1db4ff1db3945.gz",
+      "raw_sha256": "aff772ba44076c1981e9e5baf020434084f93a6117fb33852aa1db4ff1db3945",
+      "raw_bytes": 10532,
+      "stored_sha256": "4461d234cf671637b379f5549c27cd2213b4245bc7c4640be28cd35667a67d11"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_prefix.o": {
+      "stored": "objects/a8ec0adb970351341d0dd86919157ae99c48bada1eb9e191c9e69ca2a78a3c2a.gz",
+      "raw_sha256": "a8ec0adb970351341d0dd86919157ae99c48bada1eb9e191c9e69ca2a78a3c2a",
+      "raw_bytes": 13876,
+      "stored_sha256": "aa59c6a5ab746fbd9b388f37fe6d1de12737f67af3bda28637b3bfbc8dbd830d"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_priority.o": {
+      "stored": "objects/2e2b79ff937b9554ca514d8ff96337846117d6728deee124f5831fdfcd5c50f3.gz",
+      "raw_sha256": "2e2b79ff937b9554ca514d8ff96337846117d6728deee124f5831fdfcd5c50f3",
+      "raw_bytes": 13908,
+      "stored_sha256": "2c2fbaeeb87bef658adc2a42493e1ff755b8a617a49e9e98948b2989b4e991bd"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_reader.o": {
+      "stored": "objects/3ef4a62a47a9187d5e664be479250a14a4ece96045f20a0af778a4612d147a24.gz",
+      "raw_sha256": "3ef4a62a47a9187d5e664be479250a14a4ece96045f20a0af778a4612d147a24",
+      "raw_bytes": 16248,
+      "stored_sha256": "ed43edddf99bfad45e977ee892bf169e05a364c359e56a6748b3ebce15b45be0"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_sequence.o": {
+      "stored": "objects/fcad815749514bd1ff568ed8b2aea0cfd5bcee1ffd84e5f1342bda3d976f40ae.gz",
+      "raw_sha256": "fcad815749514bd1ff568ed8b2aea0cfd5bcee1ffd84e5f1342bda3d976f40ae",
+      "raw_bytes": 39232,
+      "stored_sha256": "d99eab5e8f949e47149f42bef569823ea23bd4ed0d5e08677ceb5bab6d6f7c93"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_audio_tone.o": {
+      "stored": "objects/c356ea5de2e496f69ba2c5091950fc82d1178f3df7f818a99cd6ffec7df20629.gz",
+      "raw_sha256": "c356ea5de2e496f69ba2c5091950fc82d1178f3df7f818a99cd6ffec7df20629",
+      "raw_bytes": 16912,
+      "stored_sha256": "23dc03e30c01cb2e5fb8d8ddd61f85dc16bf9db48b844097b7f293f572370add"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_clock.o": {
+      "stored": "objects/ac27c900921ef10a136f1c491d2043f7f3fd154e3241deee0c076271148c326a.gz",
+      "raw_sha256": "ac27c900921ef10a136f1c491d2043f7f3fd154e3241deee0c076271148c326a",
+      "raw_bytes": 22708,
+      "stored_sha256": "f5cb82f858fa43475aa90710f0fab337a18b842ebdc23c79f29c9c67c5978a92"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_graphics_load.o": {
+      "stored": "objects/9b60055763b35ee14d968e88186410f0d122dadb994257cb278f548bfe3f0c25.gz",
+      "raw_sha256": "9b60055763b35ee14d968e88186410f0d122dadb994257cb278f548bfe3f0c25",
+      "raw_bytes": 31280,
+      "stored_sha256": "267ffc35efc2f5be287a891cd936dc6b5c12d6f1a2cc1b76efdf7fb02b81050d"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_hero_initialize.o": {
+      "stored": "objects/c9d3d5d64d12e7c60751daa24105bf7fa831e58c88c190e5d364a6c450bc6d60.gz",
+      "raw_sha256": "c9d3d5d64d12e7c60751daa24105bf7fa831e58c88c190e5d364a6c450bc6d60",
+      "raw_bytes": 53052,
+      "stored_sha256": "c84e6636abdb3617df280f56a6ffeae3fbac54a6c50d34b1b8065fe3ab8fa3e4"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_irq.o": {
+      "stored": "objects/c90ae98bc85c39c2f62582f5a58eb5be0b97e9dac54f301868ffb20ae31f8b7b.gz",
+      "raw_sha256": "c90ae98bc85c39c2f62582f5a58eb5be0b97e9dac54f301868ffb20ae31f8b7b",
+      "raw_bytes": 16224,
+      "stored_sha256": "cd967a4fffba54dccf6a3333c9dc4d409413ab8d73e8bfd9fe117956bce08789"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_irq_context.o": {
+      "stored": "objects/21a9434bbf4307effaba3220a510794738082e78d580300e896a037e624c1bee.gz",
+      "raw_sha256": "21a9434bbf4307effaba3220a510794738082e78d580300e896a037e624c1bee",
+      "raw_bytes": 11500,
+      "stored_sha256": "312dc999e701fe9aeee8d73a6ba30b0723edbba4e6b1a0628b6890bc56cc76a4"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_pattern_clock.o": {
+      "stored": "objects/4c22a9f26f6b4ff0e5878f9c36adaa997f055f9e9e156d044af9f47bc03d8d00.gz",
+      "raw_sha256": "4c22a9f26f6b4ff0e5878f9c36adaa997f055f9e9e156d044af9f47bc03d8d00",
+      "raw_bytes": 43544,
+      "stored_sha256": "248cb37533b398d5328cd5ced683e83f0cf16e409520c9f3652554c489dc9537"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_ram_planes.o": {
+      "stored": "objects/5b13ad41e0175e258b4064615ffedf19102c74a3e22d2a6d7b3f3a8de5509e00.gz",
+      "raw_sha256": "5b13ad41e0175e258b4064615ffedf19102c74a3e22d2a6d7b3f3a8de5509e00",
+      "raw_bytes": 25480,
+      "stored_sha256": "e7a65d245dd35ad03b280e49dfdefbf0272f9e811edc5c5730980786d07a47a6"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_rng.o": {
+      "stored": "objects/fa63945bb2e5c3214ea7e8f9dfd4787af9a8bc336ef65c577e6e1d3b0187b802.gz",
+      "raw_sha256": "fa63945bb2e5c3214ea7e8f9dfd4787af9a8bc336ef65c577e6e1d3b0187b802",
+      "raw_bytes": 5652,
+      "stored_sha256": "58cd659d8cff16787de61ca731164b0d475fc9ab928deb7aa61ccec4800ce791"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_rng_timed.o": {
+      "stored": "objects/d41cd991b61d00fed9fcf517bc8fba16761ae1feb958a24a7c2bdab7d1a7a159.gz",
+      "raw_sha256": "d41cd991b61d00fed9fcf517bc8fba16761ae1feb958a24a7c2bdab7d1a7a159",
+      "raw_bytes": 16272,
+      "stored_sha256": "ce0a6b02d45be8c30f9d58aa014bba28996f79a8f113c74934d30cb43d00bf57"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_room_finish.o": {
+      "stored": "objects/028cef62568e06d4342380184ba3e341656d3422e0a1fa8abc577eb14335fae3.gz",
+      "raw_sha256": "028cef62568e06d4342380184ba3e341656d3422e0a1fa8abc577eb14335fae3",
+      "raw_bytes": 28992,
+      "stored_sha256": "101d2c903b6d1711ad7c08f754f232b4095f4759814cd0bf8fd9196cb97014e2"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_room_history_timed.o": {
+      "stored": "objects/d27b0f4b27f7c03a7a49bc150916d1dfcc769dd64ae5f88af1ade0edab418b70.gz",
+      "raw_sha256": "d27b0f4b27f7c03a7a49bc150916d1dfcc769dd64ae5f88af1ade0edab418b70",
+      "raw_bytes": 29104,
+      "stored_sha256": "4a7933b2be42232aec41af1d2cba6bd759abd0345c0d302f3e4da498b6ba98ff"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_room_hud.o": {
+      "stored": "objects/e468cd892bcee0e8ce5d5003a2228d978e3db7528c90f2adaf8c10c160d73d0e.gz",
+      "raw_sha256": "e468cd892bcee0e8ce5d5003a2228d978e3db7528c90f2adaf8c10c160d73d0e",
+      "raw_bytes": 70848,
+      "stored_sha256": "e16a4c5a86ac90cca1e6b0358e2a207376f97c681d8214135fe50baefd2fabbb"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_room_load.o": {
+      "stored": "objects/b7cc5e034361109134a12c1155188761a731dd921d48969d8ce6d4a08db724e7.gz",
+      "raw_sha256": "b7cc5e034361109134a12c1155188761a731dd921d48969d8ce6d4a08db724e7",
+      "raw_bytes": 17836,
+      "stored_sha256": "9db7cc1ea37fd735d4418b77a0a5360dae33ee4a3e7bacf452bd666a19c6eea9"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_room_ready.o": {
+      "stored": "objects/62ea94db1bd3dc20026e98c340198e61b9e1644d27dcf73dc55a4ba3b498cec6.gz",
+      "raw_sha256": "62ea94db1bd3dc20026e98c340198e61b9e1644d27dcf73dc55a4ba3b498cec6",
+      "raw_bytes": 31952,
+      "stored_sha256": "5093b2850a1c6ea2ddea3beb716ac554baa2538a46f93d390f0b6d4654672c5a"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_room_reveal.o": {
+      "stored": "objects/2e491a6b9b900f2502e4b0808af22b3bd28ffa084c558e3285c633511992860c.gz",
+      "raw_sha256": "2e491a6b9b900f2502e4b0808af22b3bd28ffa084c558e3285c633511992860c",
+      "raw_bytes": 41664,
+      "stored_sha256": "c182ab4ca4bbffc3468c8f95ca98732cf91df8824e82d0c0809e5929cc00766b"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_wait.o": {
+      "stored": "objects/cd4900aee2ecf276d93559cad43c932532ba7490a180036ea715212c7fcdb2ad.gz",
+      "raw_sha256": "cd4900aee2ecf276d93559cad43c932532ba7490a180036ea715212c7fcdb2ad",
+      "raw_bytes": 9916,
+      "stored_sha256": "dcadfdd26615a42a81cc7a0941303fab3e6872884285f18160206abcfbd8f042"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_wait_restore.o": {
+      "stored": "objects/e485916c6162b475fe77e70f33984dd8dc4b06cea4842a625eb40645c3039140.gz",
+      "raw_sha256": "e485916c6162b475fe77e70f33984dd8dc4b06cea4842a625eb40645c3039140",
+      "raw_bytes": 10104,
+      "stored_sha256": "97bba5dfa1c0f1852cf857de0ebb46fadc85c044256ef6db6dce18a22b82acfc"
+    },
+    "validation/native-room-fade/kernel/out/release/src/source_world_map.o": {
+      "stored": "objects/5050ce1f66b699a61588ad156a6068819b3c1b5d8089cef88b53cd3e9203f99a.gz",
+      "raw_sha256": "5050ce1f66b699a61588ad156a6068819b3c1b5d8089cef88b53cd3e9203f99a",
+      "raw_bytes": 41588,
+      "stored_sha256": "0e60b57bb300e5b163b660233dd811a77afee83fa8e73405b5f2f90c162503db"
+    },
+    "validation/native-room-fade/kernel/out/release/src/wrapper.o": {
+      "stored": "objects/02b939d992dde268c7b2e6312f2be4f4f1a796a0e7680e63b8573ef2b1cda5de.gz",
+      "raw_sha256": "02b939d992dde268c7b2e6312f2be4f4f1a796a0e7680e63b8573ef2b1cda5de",
+      "raw_bytes": 11620,
+      "stored_sha256": "2ba3dcd23fbb4dd2e69b4b4a4bc8ccb6fe834cc28e93172ad6beddd6782e21ab"
+    },
+    "validation/native-room-fade/kernel/out/release/symbol.txt": {
+      "stored": "objects/5cb885503c65832ce7358bd0f618eb687d8ba3c68da63f981d899d8425527921.gz",
+      "raw_sha256": "5cb885503c65832ce7358bd0f618eb687d8ba3c68da63f981d899d8425527921",
+      "raw_bytes": 16615,
+      "stored_sha256": "34fc6d8d503bca279cc9a86e26c743642b6add89884a2f0d092f8a89e878e4ac"
+    },
+    "validation/native-room-fade/kernel/out/rom.bin": {
+      "stored": "objects/c1e6e0f5e87862011c13398a0e77d2b05dd905b4d0392b975963ffce44ec3817.gz",
+      "raw_sha256": "c1e6e0f5e87862011c13398a0e77d2b05dd905b4d0392b975963ffce44ec3817",
+      "raw_bytes": 1966080,
+      "stored_sha256": "b753942c17237544ffc6ce30c3b1beeb3aa64ad054b219387e1b0321a7c97f44"
+    },
+    "validation/native-room-fade/kernel/out/rom_header.bin": {
+      "stored": "objects/6fa50cf5287a5ea90ed5f186496649e235aa0bdc3553623665222d08ca80e88f.gz",
+      "raw_sha256": "6fa50cf5287a5ea90ed5f186496649e235aa0bdc3553623665222d08ca80e88f",
+      "raw_bytes": 256,
+      "stored_sha256": "098cf10e2a3e2f78086a55399bd6a7d940135182a611cf4fe609d2d74d619aae"
+    },
+    "validation/native-room-fade/kernel/pal/capture.json": {
+      "stored": "objects/87eb7f44e3bd72e7217c3101b3db403edadc735222795d17989833462f0026bd.gz",
+      "raw_sha256": "87eb7f44e3bd72e7217c3101b3db403edadc735222795d17989833462f0026bd",
+      "raw_bytes": 556,
+      "stored_sha256": "93ed97d53d1769da5ee5804a6a28003b0234f365c63a053517dea54f7dea9526"
+    },
+    "validation/native-room-fade/kernel/src/expected.h": {
+      "stored": "objects/8c0f794fe775117913d4ad711d9d5237698c7c37f2a5c47025cd6d55d28f8f26.gz",
+      "raw_sha256": "8c0f794fe775117913d4ad711d9d5237698c7c37f2a5c47025cd6d55d28f8f26",
+      "raw_bytes": 7663341,
+      "stored_sha256": "6e25442cf2db6907ec199336eaf500cf31abe15f66dd1eece2a34d972d4692ff"
+    },
+    "validation/native-room-fade/kernel/src/main.c": {
+      "stored": "objects/c37bac89c41915840aaabc6b1afcc732c761df945c63563c1df4be425d084c9a.gz",
+      "raw_sha256": "c37bac89c41915840aaabc6b1afcc732c761df945c63563c1df4be425d084c9a",
+      "raw_bytes": 785,
+      "stored_sha256": "757220bc5f3df0789275302ed468486e5ee18b54aefa34c236ff43dad0b5f1c2"
+    },
+    "validation/native-room-fade/kernel/src/rom_header.c": {
+      "stored": "objects/f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe.gz",
+      "raw_sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+      "raw_bytes": 790,
+      "stored_sha256": "5079bebbab60471cfe6a2fc21fd66d8c3b7eb92b5d4005f522583389d23ba933"
+    },
+    "validation/native-room-fade/kernel/src/source_actor_graphics.c": {
+      "stored": "objects/48dba564165945112adc225097d2d6b2f1bc484a096f00860480e7f2f50a6dc2.gz",
+      "raw_sha256": "48dba564165945112adc225097d2d6b2f1bc484a096f00860480e7f2f50a6dc2",
+      "raw_bytes": 61,
+      "stored_sha256": "a5d6129a7a2daa90a032ddf98156dbbb63f792642bb116216675f85e8c183136"
+    },
+    "validation/native-room-fade/kernel/src/source_actor_list.c": {
+      "stored": "objects/1eef51711da620ce149d93ca20b2b932fb3e6117890dfedcb93d79c3d90195bc.gz",
+      "raw_sha256": "1eef51711da620ce149d93ca20b2b932fb3e6117890dfedcb93d79c3d90195bc",
+      "raw_bytes": 57,
+      "stored_sha256": "6e50c6a1f07af783391f362ec24dbcee9a629281a5b74af0ed1f69a05ba3ee0b"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_dispatch.c": {
+      "stored": "objects/6767b3d46833e70e86b9c20a7e78a74f7d638cd8626eb2cc6fb727a9be5395bd.gz",
+      "raw_sha256": "6767b3d46833e70e86b9c20a7e78a74f7d638cd8626eb2cc6fb727a9be5395bd",
+      "raw_bytes": 61,
+      "stored_sha256": "7b492ee5bf6052866c54f4e6c12a3ef2df34733208c274c3c0d2b7a5fcde8f16"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_envelope.c": {
+      "stored": "objects/1b01b39f2d8912865298689615117f7bb89637f542327b3717e7cbab6c8287ec.gz",
+      "raw_sha256": "1b01b39f2d8912865298689615117f7bb89637f542327b3717e7cbab6c8287ec",
+      "raw_bytes": 61,
+      "stored_sha256": "14567c753ffdf629063056889c574caf89201e195cb375a94117329768351265"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_fast.c": {
+      "stored": "objects/2d92d13cc17fac3d184fa311ddecef3b9ef479e5b45f648efc7422200d7076a0.gz",
+      "raw_sha256": "2d92d13cc17fac3d184fa311ddecef3b9ef479e5b45f648efc7422200d7076a0",
+      "raw_bytes": 57,
+      "stored_sha256": "6ac5b8ad5b5833dd1b57908bc6d404e32871621bfd6a9843e1f44d766c430f71"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_memory.c": {
+      "stored": "objects/ce062418a9abbec390aa0963293d948fc018617e45c73038cc306fe04fd3260e.gz",
+      "raw_sha256": "ce062418a9abbec390aa0963293d948fc018617e45c73038cc306fe04fd3260e",
+      "raw_bytes": 59,
+      "stored_sha256": "478140c4f0395a9e483629903e820d0415320906b4c422d1504c2a9a98ef5e04"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_noise.c": {
+      "stored": "objects/8a2262af290c9e3dc149c3301b1b39b304a3fdebb4ceb40cd9525043f25e74e7.gz",
+      "raw_sha256": "8a2262af290c9e3dc149c3301b1b39b304a3fdebb4ceb40cd9525043f25e74e7",
+      "raw_bytes": 58,
+      "stored_sha256": "73a9391dcbb2987371411663e5b17d9b7e38e1c67c32b557275f86035ac71cf9"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_pitch.c": {
+      "stored": "objects/1c2b952a7b08602c767cea503e7a9d86c76e97064338870c10330d73f03ee343.gz",
+      "raw_sha256": "1c2b952a7b08602c767cea503e7a9d86c76e97064338870c10330d73f03ee343",
+      "raw_bytes": 58,
+      "stored_sha256": "6914fefeea6f73f3f389728525199265cbadc2b6d759f7edb157d69d8f7481cd"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_prefix.c": {
+      "stored": "objects/9cb73ef7a8b1e9761cf94ca63824effaa99387f478a3af55f7d915c7ce3bb73a.gz",
+      "raw_sha256": "9cb73ef7a8b1e9761cf94ca63824effaa99387f478a3af55f7d915c7ce3bb73a",
+      "raw_bytes": 59,
+      "stored_sha256": "8ab3ce208efc281474cc192b906ffb6069d9324798b981f2faa9d191377e2104"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_priority.c": {
+      "stored": "objects/8371cb9b823349425b4251c74620bc948fc27322a0526b6a2e26be5691e9d291.gz",
+      "raw_sha256": "8371cb9b823349425b4251c74620bc948fc27322a0526b6a2e26be5691e9d291",
+      "raw_bytes": 61,
+      "stored_sha256": "eddfd49f569a7c8d020c594e2d3731167276de02a22b5f49d1bc1410c2e27de1"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_reader.c": {
+      "stored": "objects/abdc99e2bb940cbf57fd45ad81dc6c46ba7109d72f449fdd8457df1536505a24.gz",
+      "raw_sha256": "abdc99e2bb940cbf57fd45ad81dc6c46ba7109d72f449fdd8457df1536505a24",
+      "raw_bytes": 59,
+      "stored_sha256": "97d7f1096a6862cafd1d1cd72d2091be068a817085650c9c14c7a31484937dad"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_sequence.c": {
+      "stored": "objects/ccffb1d7e30865a9d604e1a2f7449c3de3e7588afce877f8ec60274a2fe71f48.gz",
+      "raw_sha256": "ccffb1d7e30865a9d604e1a2f7449c3de3e7588afce877f8ec60274a2fe71f48",
+      "raw_bytes": 61,
+      "stored_sha256": "02af76e0d8d8edaf45fca4d0a3f2478c97937e2e3a41b01bd42d6057d22b471a"
+    },
+    "validation/native-room-fade/kernel/src/source_audio_tone.c": {
+      "stored": "objects/9bbbacdaaeded9907ac666a51fe25c8dbf93087a59ac58c385b95891df44bf3a.gz",
+      "raw_sha256": "9bbbacdaaeded9907ac666a51fe25c8dbf93087a59ac58c385b95891df44bf3a",
+      "raw_bytes": 57,
+      "stored_sha256": "023a73652398d08bc1a069bdae095b6c1f972c0ad6987167c013043ea10a47cf"
+    },
+    "validation/native-room-fade/kernel/src/source_clock.c": {
+      "stored": "objects/09b9250942692768f9014ce14e45b55bb2a397b827ca05497d95968105eb47fe.gz",
+      "raw_sha256": "09b9250942692768f9014ce14e45b55bb2a397b827ca05497d95968105eb47fe",
+      "raw_bytes": 52,
+      "stored_sha256": "fa48d5be40a663cd44ecb2138f8cd6f9eaba70c3c104ff34f9c70099435678db"
+    },
+    "validation/native-room-fade/kernel/src/source_graphics_load.c": {
+      "stored": "objects/71a723398165f4a787bd0ba36f633fcea1b7f7143c4d231d492d458647467e67.gz",
+      "raw_sha256": "71a723398165f4a787bd0ba36f633fcea1b7f7143c4d231d492d458647467e67",
+      "raw_bytes": 60,
+      "stored_sha256": "7dc435124cf746ed7235a670b491be146093d04d48f8980f2d371bde7f66ec1f"
+    },
+    "validation/native-room-fade/kernel/src/source_hero_initialize.c": {
+      "stored": "objects/e792ca53f9231e9d9687c6f8c98b4be1fe6214b40e6636dfacad34c26f0b8b00.gz",
+      "raw_sha256": "e792ca53f9231e9d9687c6f8c98b4be1fe6214b40e6636dfacad34c26f0b8b00",
+      "raw_bytes": 62,
+      "stored_sha256": "4ecc1736c520c71fd88088a6b508864ea983291889dbd1ec091f0293376347b5"
+    },
+    "validation/native-room-fade/kernel/src/source_irq.c": {
+      "stored": "objects/e8a5b27cb7867430667883c1de66f6ad9dc4d9380ccde2e250b3b5e084b4175d.gz",
+      "raw_sha256": "e8a5b27cb7867430667883c1de66f6ad9dc4d9380ccde2e250b3b5e084b4175d",
+      "raw_bytes": 50,
+      "stored_sha256": "0019b0f332e26f419863c4301bb4134d7176f10b139f3c727ec480a7b1cbbfc0"
+    },
+    "validation/native-room-fade/kernel/src/source_irq_context.c": {
+      "stored": "objects/c977c46d800f8683d44d250e70c22b65a395d91bdb6dce88b393f28965d4d21e.gz",
+      "raw_sha256": "c977c46d800f8683d44d250e70c22b65a395d91bdb6dce88b393f28965d4d21e",
+      "raw_bytes": 58,
+      "stored_sha256": "0f9509246b616b21851ab7f947d196bb581c3257c73e51ac0725fd59521668cf"
+    },
+    "validation/native-room-fade/kernel/src/source_pattern_clock.c": {
+      "stored": "objects/761aa22f3b9cb75db033851592efc1e8ee7e8a1bde10c38398d29ddba5b1a8fd.gz",
+      "raw_sha256": "761aa22f3b9cb75db033851592efc1e8ee7e8a1bde10c38398d29ddba5b1a8fd",
+      "raw_bytes": 60,
+      "stored_sha256": "286322a4048c67d2b7f3b3f3a71c7f8b189e43c3d140e598c46e9c9e1709458f"
+    },
+    "validation/native-room-fade/kernel/src/source_ram_planes.c": {
+      "stored": "objects/e5cf08be3076b236a935b7e5495b23b326a7933e8a48362303816af27c2a347e.gz",
+      "raw_sha256": "e5cf08be3076b236a935b7e5495b23b326a7933e8a48362303816af27c2a347e",
+      "raw_bytes": 57,
+      "stored_sha256": "8b58e5570c944a280e9bef021e75ad9de67a63d7c711312aa691b96471ce96e4"
+    },
+    "validation/native-room-fade/kernel/src/source_rng.c": {
+      "stored": "objects/53d6b9ae3b9897cf71a407c5eb88fe5719f68ad5d1ff9ce17510accc080d4a76.gz",
+      "raw_sha256": "53d6b9ae3b9897cf71a407c5eb88fe5719f68ad5d1ff9ce17510accc080d4a76",
+      "raw_bytes": 50,
+      "stored_sha256": "1838a04ee67b2beba4619df586ab56b8205da7b21cee22c23da6f0ed39a508bb"
+    },
+    "validation/native-room-fade/kernel/src/source_rng_timed.c": {
+      "stored": "objects/06df88406eb4aaa5d30625cc091c901ac0d5ff21d87e0fee8d3c28341d6cb9e0.gz",
+      "raw_sha256": "06df88406eb4aaa5d30625cc091c901ac0d5ff21d87e0fee8d3c28341d6cb9e0",
+      "raw_bytes": 56,
+      "stored_sha256": "5b75f2b9d09c745aebf8bf9f22f91b5b0e4f03e4e3a1ebc6eb19dfcd842ce406"
+    },
+    "validation/native-room-fade/kernel/src/source_room_finish.c": {
+      "stored": "objects/09c83b7cba9036f292932f8967d2de13af56163ab27daa659e484521e50c9f80.gz",
+      "raw_sha256": "09c83b7cba9036f292932f8967d2de13af56163ab27daa659e484521e50c9f80",
+      "raw_bytes": 58,
+      "stored_sha256": "e84d4fda5f60f8218036de20460c52cb8fd8b77e0b4788bf42c666241380c1a0"
+    },
+    "validation/native-room-fade/kernel/src/source_room_history_timed.c": {
+      "stored": "objects/03b2cc4b7f80fb40b592a49d4a9a9af7b353a95fe8e7921ee943c7d4dd7620c6.gz",
+      "raw_sha256": "03b2cc4b7f80fb40b592a49d4a9a9af7b353a95fe8e7921ee943c7d4dd7620c6",
+      "raw_bytes": 65,
+      "stored_sha256": "94ebb3bc8aa9691c72c7fb2ef2b621552450e70bc65fa7b4ce026787dfdd1ca8"
+    },
+    "validation/native-room-fade/kernel/src/source_room_hud.c": {
+      "stored": "objects/c5b07a56869b6bded2e85d3eb3869758c1fe104d5b15d3e6a198ac7c9bab6937.gz",
+      "raw_sha256": "c5b07a56869b6bded2e85d3eb3869758c1fe104d5b15d3e6a198ac7c9bab6937",
+      "raw_bytes": 55,
+      "stored_sha256": "b8dd093b141cf07e10a8f49dd895402e2588d03ee9c12fc57ecf2e57b1e32d68"
+    },
+    "validation/native-room-fade/kernel/src/source_room_load.c": {
+      "stored": "objects/babcdc01aa6fb1ace537d523ea5fe6080f054def9d00cc4b368df3e69c80ba32.gz",
+      "raw_sha256": "babcdc01aa6fb1ace537d523ea5fe6080f054def9d00cc4b368df3e69c80ba32",
+      "raw_bytes": 56,
+      "stored_sha256": "06474353ee54825da8013555d0f2a35b7739a6218c05b1b63118b686e92355af"
+    },
+    "validation/native-room-fade/kernel/src/source_room_ready.c": {
+      "stored": "objects/46e4af53aa15937f2676dd4bc0c0fb5215f71692360cdf7200842a7c5c0458ac.gz",
+      "raw_sha256": "46e4af53aa15937f2676dd4bc0c0fb5215f71692360cdf7200842a7c5c0458ac",
+      "raw_bytes": 57,
+      "stored_sha256": "4db4f3018e988ade6d270ee15c1866932a42e20e7fd671f8a60d794591908509"
+    },
+    "validation/native-room-fade/kernel/src/source_room_reveal.c": {
+      "stored": "objects/40413baa9f4e97b82bd34a9da0f70b6442ebb51467b5562762fca6c43b8baba2.gz",
+      "raw_sha256": "40413baa9f4e97b82bd34a9da0f70b6442ebb51467b5562762fca6c43b8baba2",
+      "raw_bytes": 58,
+      "stored_sha256": "5cc9487953f43a7a21ee67b060e778a2725be609eae674fb9e17a675df7d965a"
+    },
+    "validation/native-room-fade/kernel/src/source_wait.c": {
+      "stored": "objects/f4551586c37058f8d232add8b1507f3b57ee77766032d83878b28b14040a86f2.gz",
+      "raw_sha256": "f4551586c37058f8d232add8b1507f3b57ee77766032d83878b28b14040a86f2",
+      "raw_bytes": 51,
+      "stored_sha256": "792cf9a8f31ae3cb11c06ea6e32118448e27f63b659d8dbb983452c1e7c18478"
+    },
+    "validation/native-room-fade/kernel/src/source_wait_restore.c": {
+      "stored": "objects/9c69f4e4a0f1db378771ec9ca8e9e335a735912081c17034adb2dea57c0f8607.gz",
+      "raw_sha256": "9c69f4e4a0f1db378771ec9ca8e9e335a735912081c17034adb2dea57c0f8607",
+      "raw_bytes": 59,
+      "stored_sha256": "0cdd04948b02ba52df0962f912b31f4cea7152923f99a92067fc00918dfbcd14"
+    },
+    "validation/native-room-fade/kernel/src/source_world_map.c": {
+      "stored": "objects/d6b43ff11b671f6391bc085e431e75980d05293b9b71e71557fa9d65437a146e.gz",
+      "raw_sha256": "d6b43ff11b671f6391bc085e431e75980d05293b9b71e71557fa9d65437a146e",
+      "raw_bytes": 56,
+      "stored_sha256": "1557d7da90ef40e40cf9baf33296a5f46f310846273bb557842d827c18f7067e"
+    },
+    "validation/native-room-fade/kernel/src/wrapper.c": {
+      "stored": "objects/ef2af07bf2f43be0013a14262126bf99efac113cf12b01d98b1fc7b5c8277003.gz",
+      "raw_sha256": "ef2af07bf2f43be0013a14262126bf99efac113cf12b01d98b1fc7b5c8277003",
+      "raw_bytes": 1124,
+      "stored_sha256": "11cedc572120a2fef171188482af1c88417289eec7356b2268a5028debe0b5fd"
+    },
+    "validation/native-room-fade/pal/capture.json": {
+      "stored": "objects/eeb3c01d55e603000c994542c521f665acca38616f2bb83f03796c68f964a5b1.gz",
+      "raw_sha256": "eeb3c01d55e603000c994542c521f665acca38616f2bb83f03796c68f964a5b1",
+      "raw_bytes": 1297,
+      "stored_sha256": "dc5f7fad03f652657d49fa4643f282c2077143fdcfa9b57d5307b162a2661311"
+    },
+    "validation/native-room-fade/pal/trace_counts.bin": {
+      "stored": "objects/2b36da8eb226eda57c4ff3c5546cc1b39bd31b7dc5a552b79dec32f3f4b0804a.gz",
+      "raw_sha256": "2b36da8eb226eda57c4ff3c5546cc1b39bd31b7dc5a552b79dec32f3f4b0804a",
+      "raw_bytes": 1048576,
+      "stored_sha256": "e40be99705a3bd5fe675f660b1394dc02c962062ff4e665b1627a28d44df09da"
+    },
+    "validation/native-room-fade/pal/trace_states.bin": {
+      "stored": "objects/5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef.gz",
+      "raw_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "raw_bytes": 1024,
+      "stored_sha256": "a1b1b81d3d1afdb8fe119b002318c12c20934713b9754a40f702adb18a2540b9"
+    },
+    "validation/native-room-fade/pal/trace_windows.bin": {
+      "stored": "objects/12f552918dbbccc522b6c69bf06702714aa23539aa9f2b4a47733ead190db948.gz",
+      "raw_sha256": "12f552918dbbccc522b6c69bf06702714aa23539aa9f2b4a47733ead190db948",
+      "raw_bytes": 262144,
+      "stored_sha256": "6c83474545022a5b0db1c053ee991598bb95d67f3638eb3b0c81b75d84d813e3"
+    },
+    "validation/native-room-fade/wrapper.c": {
+      "stored": "objects/e8985eb00974d61d6633b3190713e3409c312860bbc5e1e1318aea1bdb10514b.gz",
+      "raw_sha256": "e8985eb00974d61d6633b3190713e3409c312860bbc5e1e1318aea1bdb10514b",
+      "raw_bytes": 1098,
+      "stored_sha256": "0dfc77a86ee8e0cbfdbafc80115768f1fa1311729b0ed98db5f94f1d059412af"
+    },
+    "validation/native-room-reveal/cases.json": {
+      "stored": "objects/fd6ec5f041280ce64de98dd54b1decf8e9f620356c29bc4578aff4342e9dbeba.gz",
+      "raw_sha256": "fd6ec5f041280ce64de98dd54b1decf8e9f620356c29bc4578aff4342e9dbeba",
+      "raw_bytes": 4362184,
+      "stored_sha256": "956ad9bbded91a89ae0af05c92ffbde845b4d53c7ca054382e7527db79f1eac0"
+    },
+    "validation/native-room-reveal/compile.log": {
+      "stored": "objects/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_bytes": 0,
+      "stored_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "validation/native-room-reveal/kernel/auto/capture.json": {
+      "stored": "objects/8e2bcb4bb87ec1998b7694c8baaab1ce6e549e4909080feb6a88d4ad84a17621.gz",
+      "raw_sha256": "8e2bcb4bb87ec1998b7694c8baaab1ce6e549e4909080feb6a88d4ad84a17621",
+      "raw_bytes": 560,
+      "stored_sha256": "792f16ee8ba8c52b6cd8f7c0e293e679b37d605fb27f00b28d4ea27d8f84453c"
+    },
+    "validation/native-room-reveal/kernel/build.log": {
+      "stored": "objects/ffdcd1cf7e1b073a1c4d03e340250e874325f59e2ae0ea8eaa34d7ad4ae3aeb1.gz",
+      "raw_sha256": "ffdcd1cf7e1b073a1c4d03e340250e874325f59e2ae0ea8eaa34d7ad4ae3aeb1",
+      "raw_bytes": 49456,
+      "stored_sha256": "0020d7e90f98617879d4bd58a1e37b1d931c2abfed16cf9332320e32a24f67da"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/main.d": {
+      "stored": "objects/8b5729435fd04eebdf779e4ef78a9cab4c071af7a57c68a025e5ef0d0d916dbf.gz",
+      "raw_sha256": "8b5729435fd04eebdf779e4ef78a9cab4c071af7a57c68a025e5ef0d0d916dbf",
+      "raw_bytes": 68,
+      "stored_sha256": "cb6001dc68e63442fb613232a69e8d8acfd4cc65c38fd8c72bb47f10aedfb69c"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_actor_graphics.d": {
+      "stored": "objects/efcff7fc79ee01cb7078cf18e33b2f5de4dae0fe33ad1de23f9a5fb1da6b6efb.gz",
+      "raw_sha256": "efcff7fc79ee01cb7078cf18e33b2f5de4dae0fe33ad1de23f9a5fb1da6b6efb",
+      "raw_bytes": 928,
+      "stored_sha256": "bf9c8ef4319df4b60947d2520afafeb3d8a8861aaac2c3f7380c038015ba7284"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_actor_list.d": {
+      "stored": "objects/74a58c5f704d12931d15ad5483fe15b32b344604c5296a139f90d912f5adf312.gz",
+      "raw_sha256": "74a58c5f704d12931d15ad5483fe15b32b344604c5296a139f90d912f5adf312",
+      "raw_bytes": 904,
+      "stored_sha256": "32c95937d8774c024ec512982b8a3301c52928a6ba757ab3c50738a998cc74f5"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_dispatch.d": {
+      "stored": "objects/a0d4ed2c6a8a46bcacb15fa833161472a723ef6575d160b0f4dcf16a1b7c9ee0.gz",
+      "raw_sha256": "a0d4ed2c6a8a46bcacb15fa833161472a723ef6575d160b0f4dcf16a1b7c9ee0",
+      "raw_bytes": 504,
+      "stored_sha256": "2a5e5120f619e8b97f8d125c2907537f3ea9683d1490ea301ac1666e4e1fc3c4"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_envelope.d": {
+      "stored": "objects/81f781a70e38c85fb8ffdabf4d2ce749efa21034c36f344359ea3a268668957a.gz",
+      "raw_sha256": "81f781a70e38c85fb8ffdabf4d2ce749efa21034c36f344359ea3a268668957a",
+      "raw_bytes": 504,
+      "stored_sha256": "c4bc2817b33a056bf8e4edb9029b55237e9d6cb5a231523a88127bfbd91d3c27"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_fast.d": {
+      "stored": "objects/33ba593f49a15e9e94393bc59bab7a8986eae50f277dbc2b0beb4517f19f58e6.gz",
+      "raw_sha256": "33ba593f49a15e9e94393bc59bab7a8986eae50f277dbc2b0beb4517f19f58e6",
+      "raw_bytes": 1810,
+      "stored_sha256": "e3f597de3fc9fa1191ba5dd3f607d15ed6d1e69c46b681ac5a3d22583ae28246"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_memory.d": {
+      "stored": "objects/a42aed6a98f00d14a3890a38e2b909e4f47785f216888412601856ab29cbfc67.gz",
+      "raw_sha256": "a42aed6a98f00d14a3890a38e2b909e4f47785f216888412601856ab29cbfc67",
+      "raw_bytes": 286,
+      "stored_sha256": "7613bd58281840dc5b5a1b09611323d3e5a35c894888825ee9855e3bd7bad301"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_noise.d": {
+      "stored": "objects/bf4bd5991e0bfc9b56dabb6f56acc7f55b667aaaa5742f345c46a6f57e64d85f.gz",
+      "raw_sha256": "bf4bd5991e0bfc9b56dabb6f56acc7f55b667aaaa5742f345c46a6f57e64d85f",
+      "raw_bytes": 604,
+      "stored_sha256": "14c5532347c8fb09fbbf28e2450f203533b696bd730defceee81ac84cd6dac87"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_pitch.d": {
+      "stored": "objects/960eee6d270006d28057bc1f6be7dedd49d4268b57be7c17f1bc2bed0326fa0c.gz",
+      "raw_sha256": "960eee6d270006d28057bc1f6be7dedd49d4268b57be7c17f1bc2bed0326fa0c",
+      "raw_bytes": 486,
+      "stored_sha256": "22a7139d21884b9a5100bc3f2db24bdd10f588794d5f8c4b18c9fd6dff299492"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_prefix.d": {
+      "stored": "objects/c4751db181a73c4e361bee667e40713c80b3c3ca2481a26347b950747f6fa099.gz",
+      "raw_sha256": "c4751db181a73c4e361bee667e40713c80b3c3ca2481a26347b950747f6fa099",
+      "raw_bytes": 382,
+      "stored_sha256": "4dc34e72d06afb034385ff998631c2c355f7983fe2ec5b1a48388e41864608cb"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_priority.d": {
+      "stored": "objects/0962d8684484057cae792bd5ff45011d6b21d715e3b677ac2978c26af7132905.gz",
+      "raw_sha256": "0962d8684484057cae792bd5ff45011d6b21d715e3b677ac2978c26af7132905",
+      "raw_bytes": 618,
+      "stored_sha256": "e8d56985cfe7b67d4142d9e6b2046ea1bb4ca3a3662bfe7c4c3866d57c0b6603"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_reader.d": {
+      "stored": "objects/b1b165bf9b6b6cf3c5f64ce9374cfa245f615b4f427622eaf3bf5b3a03d3e682.gz",
+      "raw_sha256": "b1b165bf9b6b6cf3c5f64ce9374cfa245f615b4f427622eaf3bf5b3a03d3e682",
+      "raw_bytes": 1048,
+      "stored_sha256": "576673972ebd9efe64ff18c75a89880ad699063ee5616cb485a7e134c04b5eb2"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_sequence.d": {
+      "stored": "objects/64296600fe9f1b7cc9c1da866362549dfe472f97d75cb6c6d654263d33db8fb5.gz",
+      "raw_sha256": "64296600fe9f1b7cc9c1da866362549dfe472f97d75cb6c6d654263d33db8fb5",
+      "raw_bytes": 842,
+      "stored_sha256": "2bd291ae4228ee3de3c802ba25652bcb141fd62a30f7359658231744ceca47c5"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_tone.d": {
+      "stored": "objects/0ce71765454f87073e851afa18e1f843e6106c2dc5fed5d9418ed8995eb885b1.gz",
+      "raw_sha256": "0ce71765454f87073e851afa18e1f843e6106c2dc5fed5d9418ed8995eb885b1",
+      "raw_bytes": 816,
+      "stored_sha256": "45579513a6aa83d953744db28cbab763cb121e4b414e473fad9e4e4d71bffbc1"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_clock.d": {
+      "stored": "objects/0ffee9a65747e607d3612a2c2b9ed928e33a48112b27af2b0f0b7b62b67d5d5d.gz",
+      "raw_sha256": "0ffee9a65747e607d3612a2c2b9ed928e33a48112b27af2b0f0b7b62b67d5d5d",
+      "raw_bytes": 336,
+      "stored_sha256": "b20e5958f5a713be04407e29001537e839421616fc407d49dfcb40b9bac44205"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_graphics_load.d": {
+      "stored": "objects/fe58970e58712e31aab581d256209949659d2e20cfb9378860b15ec6e570673f.gz",
+      "raw_sha256": "fe58970e58712e31aab581d256209949659d2e20cfb9378860b15ec6e570673f",
+      "raw_bytes": 916,
+      "stored_sha256": "5f9f960f091e354f39bb2d3d3faf0a22c09e6c521992b737ca300b8a51b17d4b"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_hero_initialize.d": {
+      "stored": "objects/001d3a36f8a63d30ba69f0c5ff0478b277ae08c24a872ca106ca617255f24349.gz",
+      "raw_sha256": "001d3a36f8a63d30ba69f0c5ff0478b277ae08c24a872ca106ca617255f24349",
+      "raw_bytes": 1042,
+      "stored_sha256": "6314c5763bdb586f277a4234b54c37a7f32946fc44e8e2da93414194d351a2eb"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_irq.d": {
+      "stored": "objects/75a76b5a40292044afc79e86732fdb64fac7f5f932acb32f61a44c226ae9ace2.gz",
+      "raw_sha256": "75a76b5a40292044afc79e86732fdb64fac7f5f932acb32f61a44c226ae9ace2",
+      "raw_bytes": 328,
+      "stored_sha256": "4c668ee0b1855b04f6200d7222ea8bf0b9ef419008c60eb8a3a14313fb5fce6b"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_irq_context.d": {
+      "stored": "objects/b5d6694f3c8df93bca1ac74898f40d9d5b08f97a6bbf8ee54f3105b08fac02f8.gz",
+      "raw_sha256": "b5d6694f3c8df93bca1ac74898f40d9d5b08f97a6bbf8ee54f3105b08fac02f8",
+      "raw_bytes": 684,
+      "stored_sha256": "1c1f951d7138a001bca6626c3316f3c2239a8fe7040649610cd919909a688c75"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_pattern_clock.d": {
+      "stored": "objects/da38bb89c3cd87fd58203e5b5a59a1135811045ccd9df3620c462b4b22ee420b.gz",
+      "raw_sha256": "da38bb89c3cd87fd58203e5b5a59a1135811045ccd9df3620c462b4b22ee420b",
+      "raw_bytes": 698,
+      "stored_sha256": "4d88c83e9e537200435b1e886713c31e34b1e2879312cb5114191b8e6b0c9ff4"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_ram_planes.d": {
+      "stored": "objects/24fa486ccea850f6e2c96f3c51b01e2acaca10c48d3778bf7a87f0ea60680124.gz",
+      "raw_sha256": "24fa486ccea850f6e2c96f3c51b01e2acaca10c48d3778bf7a87f0ea60680124",
+      "raw_bytes": 680,
+      "stored_sha256": "59bd5c1fabb076241536add132d36a9a42d9116598606c629b3c8538291f2560"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_rng.d": {
+      "stored": "objects/a8e39fb8ff372bcbba333718801031c6f471e1cf92a0b72f41d8f3b4b4a5ec85.gz",
+      "raw_sha256": "a8e39fb8ff372bcbba333718801031c6f471e1cf92a0b72f41d8f3b4b4a5ec85",
+      "raw_bytes": 232,
+      "stored_sha256": "8ed46a60a59bf5cf87ae384f2fd907190e05a8251926c5f648e6a9ffc73494f5"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_rng_timed.d": {
+      "stored": "objects/248e6a157af141690e4c62e4efd0c91d50064e43a68a485947b6a55b861c50f5.gz",
+      "raw_sha256": "248e6a157af141690e4c62e4efd0c91d50064e43a68a485947b6a55b861c50f5",
+      "raw_bytes": 456,
+      "stored_sha256": "6a3b5f3bd8962dd8794c20fa8a91ef2811488df5cb646e31db66d705cf514497"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_finish.d": {
+      "stored": "objects/bae7d63aaf7b5f8304bfedc385ff0db004dffef6f710744f15e0f4e9a02bb268.gz",
+      "raw_sha256": "bae7d63aaf7b5f8304bfedc385ff0db004dffef6f710744f15e0f4e9a02bb268",
+      "raw_bytes": 1320,
+      "stored_sha256": "4cc026dfdb9b9b11f99fdc6ce2c4efe8bfd2eb286f1bc1719da3497a9a3742fd"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_history_timed.d": {
+      "stored": "objects/a34e652af26885edc7bd3eb93c00dd119f48e373395785d99583201b25824686.gz",
+      "raw_sha256": "a34e652af26885edc7bd3eb93c00dd119f48e373395785d99583201b25824686",
+      "raw_bytes": 526,
+      "stored_sha256": "f83e623a8e7183e01b1c88637f6f1ed624059b40fce8e7d97ca3824b33ca0567"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_hud.d": {
+      "stored": "objects/eef8c323acec6d8d5e1582ce91399fd4565ea085693487ddc40d1c5d95e5d871.gz",
+      "raw_sha256": "eef8c323acec6d8d5e1582ce91399fd4565ea085693487ddc40d1c5d95e5d871",
+      "raw_bytes": 1102,
+      "stored_sha256": "4e717fcf2736b4658eb5124ab5370aa83084bf0e7cdfc896d485bfe434c2f5fc"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_load.d": {
+      "stored": "objects/f324969f8d0fd7261fb43cf01dfcb6a6e74a077e6f1a7f0e7f1453998381a8c6.gz",
+      "raw_sha256": "f324969f8d0fd7261fb43cf01dfcb6a6e74a077e6f1a7f0e7f1453998381a8c6",
+      "raw_bytes": 1658,
+      "stored_sha256": "afce1b134b3c2a676708f6bbb8d69c75d1d499dec99bd428134960ecf04ecd80"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_ready.d": {
+      "stored": "objects/12fd9ae02be6274143372a3625a397063dd8ccfb29ad7a0cb23408ad2d9086eb.gz",
+      "raw_sha256": "12fd9ae02be6274143372a3625a397063dd8ccfb29ad7a0cb23408ad2d9086eb",
+      "raw_bytes": 1992,
+      "stored_sha256": "d260cb4efe62aa4d1aa17800ee6c0bbc81a7b7ae9747183ea167bea58f42335e"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_reveal.d": {
+      "stored": "objects/a342f0251b9ec0fdd2cb719ef737eb894c6d6adbf45c6e69bf3091e84638ad37.gz",
+      "raw_sha256": "a342f0251b9ec0fdd2cb719ef737eb894c6d6adbf45c6e69bf3091e84638ad37",
+      "raw_bytes": 2308,
+      "stored_sha256": "09e9ba9126cf342d76362f55434629e8aedb62aece2b7394cd581a30d18b0ffa"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_wait.d": {
+      "stored": "objects/30a6b91ddd18d39d89c5d0587a5f9124f38db852a09b97daadb94e9634f4cf6c.gz",
+      "raw_sha256": "30a6b91ddd18d39d89c5d0587a5f9124f38db852a09b97daadb94e9634f4cf6c",
+      "raw_bytes": 644,
+      "stored_sha256": "ae825299249db7285ffc08618eaa83fb8b39cdb767442fb1038e3827081dad86"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_wait_restore.d": {
+      "stored": "objects/22cc855acfe62c8ebbabb6c5bf0467bc1bcac77035aceb090baa4da71837b7cd.gz",
+      "raw_sha256": "22cc855acfe62c8ebbabb6c5bf0467bc1bcac77035aceb090baa4da71837b7cd",
+      "raw_bytes": 786,
+      "stored_sha256": "892280e131994ee4fe78c6d1282fe8a1e859502b7adf24c14f1a4c256f0ae760"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/source_world_map.d": {
+      "stored": "objects/6bc03c863739c2a8406b2bd9819cf6ab043c32d21431d0736c0130076db2b502.gz",
+      "raw_sha256": "6bc03c863739c2a8406b2bd9819cf6ab043c32d21431d0736c0130076db2b502",
+      "raw_bytes": 1004,
+      "stored_sha256": "b35fb3ce74211adbd488973db64d3ad15fb96fe4574370d9407e24b5fbddaa6b"
+    },
+    "validation/native-room-reveal/kernel/out/release/_deps/src/wrapper.d": {
+      "stored": "objects/66d12f410516fc9bae80b02a6c8faeffc4b0dea469a93679ba3a887813f9adac.gz",
+      "raw_sha256": "66d12f410516fc9bae80b02a6c8faeffc4b0dea469a93679ba3a887813f9adac",
+      "raw_bytes": 2178,
+      "stored_sha256": "5b21d76cebd92de97bf74d964e2d297be8c64bc7759a5c2b2f9e2cf1e5225cf8"
+    },
+    "validation/native-room-reveal/kernel/out/release/rom.bin": {
+      "stored": "objects/151848535edc3784152a1fdb8814ee6b5a45cf9e71d10290d2f2b272c1e3aeb0.gz",
+      "raw_sha256": "151848535edc3784152a1fdb8814ee6b5a45cf9e71d10290d2f2b272c1e3aeb0",
+      "raw_bytes": 2359296,
+      "stored_sha256": "41ee0a542b82c7665b810b3c7fb3774c2cc77d61d704271f7f57a760f2fd202a"
+    },
+    "validation/native-room-reveal/kernel/out/release/rom.out": {
+      "stored": "objects/d11376f649e6e385c6305ea481c397f9ae24a6219db839d042686e42ed09bafd.gz",
+      "raw_sha256": "d11376f649e6e385c6305ea481c397f9ae24a6219db839d042686e42ed09bafd",
+      "raw_bytes": 2285544,
+      "stored_sha256": "c533a02bfdbd1cb5209b4c8d686570e385a7bf45736c0a775500e52ed73cc21f"
+    },
+    "validation/native-room-reveal/kernel/out/release/rom_header.o": {
+      "stored": "objects/bbd4af6a74fd3c92e08b500a7f98ea075e6a2d1917adf1e9cf5587f4851150de.gz",
+      "raw_sha256": "bbd4af6a74fd3c92e08b500a7f98ea075e6a2d1917adf1e9cf5587f4851150de",
+      "raw_bytes": 932,
+      "stored_sha256": "f88fb6edd122925586858b13955aae4feb3560124852ce24f76034affa84c587"
+    },
+    "validation/native-room-reveal/kernel/out/release/sega.o": {
+      "stored": "objects/3cc038905b6b9ac0eee40d19320245a8b06fc02a4a712c73f20273b87d33362b.gz",
+      "raw_sha256": "3cc038905b6b9ac0eee40d19320245a8b06fc02a4a712c73f20273b87d33362b",
+      "raw_bytes": 4276,
+      "stored_sha256": "b7ffa9c336701fb16f0fbe181b11179d4230876fb26bb6f5927e7e414d69be2d"
+    },
+    "validation/native-room-reveal/kernel/out/release/sega.s": {
+      "stored": "objects/d7954a33a7b17ddf060dadf21305256b524a019678849cf9f6e0dde4ee8e211b.gz",
+      "raw_sha256": "d7954a33a7b17ddf060dadf21305256b524a019678849cf9f6e0dde4ee8e211b",
+      "raw_bytes": 10664,
+      "stored_sha256": "7ef9b01e1f0d289592e0dba0c5463fd3cfc956291c3e3090fcd3c8c1c1a29cfd"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/main.o": {
+      "stored": "objects/55355de7aab6ca649d9d883d0ce65e283c0294acc090231b70706cc7cf254a85.gz",
+      "raw_sha256": "55355de7aab6ca649d9d883d0ce65e283c0294acc090231b70706cc7cf254a85",
+      "raw_bytes": 3766440,
+      "stored_sha256": "a4076837c3b826dc90179e73d1e9526436f4ee27bfd9b4a78e3d625f8c00136d"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_actor_graphics.o": {
+      "stored": "objects/08a31c20dfd70e2bda4c55d64c87fe83cf6e722a3c1e40c89f07f89871120318.gz",
+      "raw_sha256": "08a31c20dfd70e2bda4c55d64c87fe83cf6e722a3c1e40c89f07f89871120318",
+      "raw_bytes": 43056,
+      "stored_sha256": "48d89fceed624ea83b0b8a3cdd389beee0284f0a44f278daab4576c8c166504d"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_actor_list.o": {
+      "stored": "objects/c22ddc8939bf68c5ddcd27ad0acf20ed0ef328a2e756fdd932308919cbc6ec6d.gz",
+      "raw_sha256": "c22ddc8939bf68c5ddcd27ad0acf20ed0ef328a2e756fdd932308919cbc6ec6d",
+      "raw_bytes": 26976,
+      "stored_sha256": "788c4170cac45c0fa41cb11a36ae23ab6e932cdc4793016f59dcf2c5db903a24"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_dispatch.o": {
+      "stored": "objects/5ab275d51b9555a6b0c080632d5ab03dc5d71898937e512c1176595b7f5961ac.gz",
+      "raw_sha256": "5ab275d51b9555a6b0c080632d5ab03dc5d71898937e512c1176595b7f5961ac",
+      "raw_bytes": 13748,
+      "stored_sha256": "ab6057c8ba0d67ec10f9037a96078462d686b5ecdb3fdd8ec5d6e687b772b429"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_envelope.o": {
+      "stored": "objects/3730a9235a4444ce99a5b56e9104c1443a634a0123ee7db85c439701f1d04574.gz",
+      "raw_sha256": "3730a9235a4444ce99a5b56e9104c1443a634a0123ee7db85c439701f1d04574",
+      "raw_bytes": 12780,
+      "stored_sha256": "4470ed2775696e63d74bed2f4d3a5f37f60c1c31379eca104dd74b58cb9311e6"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_fast.o": {
+      "stored": "objects/c07a33e3747b40e3449cd9bd5489a10015a5c86b496822ee8ff5159b0ee85cd4.gz",
+      "raw_sha256": "c07a33e3747b40e3449cd9bd5489a10015a5c86b496822ee8ff5159b0ee85cd4",
+      "raw_bytes": 66156,
+      "stored_sha256": "5da095c18fbac48ac8e9a39f53639b675e22a3ccfb909f54385943494bd05a57"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_memory.o": {
+      "stored": "objects/1f7565b845fb8e330d9716d2be167da04db8ebd67e7abf2b3ae3e2ea35801221.gz",
+      "raw_sha256": "1f7565b845fb8e330d9716d2be167da04db8ebd67e7abf2b3ae3e2ea35801221",
+      "raw_bytes": 4540,
+      "stored_sha256": "369430609e94d6f8d5ea1e26208b1eff4448dd0ccc2071f438b12d8e07293315"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_noise.o": {
+      "stored": "objects/4a906632003bfa2d64d873b7410178c7ddb4c7955d490f00849f0b9ca78fba17.gz",
+      "raw_sha256": "4a906632003bfa2d64d873b7410178c7ddb4c7955d490f00849f0b9ca78fba17",
+      "raw_bytes": 9152,
+      "stored_sha256": "63918bbd2fac9ff5b01964cca53da355d4697dff60a44a6070cc0d0119820b07"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_pitch.o": {
+      "stored": "objects/1981d6fdea41792dae6ca03e4ed2762dba589525a1fb03182e8e4625da31a30e.gz",
+      "raw_sha256": "1981d6fdea41792dae6ca03e4ed2762dba589525a1fb03182e8e4625da31a30e",
+      "raw_bytes": 10536,
+      "stored_sha256": "578ef4732a9a4ba94ea973c27fedb7cd77aa201a8f2cf28e14f4e7e379c335b9"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_prefix.o": {
+      "stored": "objects/b6ac400dd580c6d28fd69ae194a14657154ee067ec4119cb01a4cb039e9dd876.gz",
+      "raw_sha256": "b6ac400dd580c6d28fd69ae194a14657154ee067ec4119cb01a4cb039e9dd876",
+      "raw_bytes": 13892,
+      "stored_sha256": "cbe4613295e1fd45ab6c8537863a92be63b94cb698ad74a6f841247fbddc9eba"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_priority.o": {
+      "stored": "objects/6c9e6b88cf7763d03e403b99862d206f3886f6c005507fa3e3bb848f31d9dd58.gz",
+      "raw_sha256": "6c9e6b88cf7763d03e403b99862d206f3886f6c005507fa3e3bb848f31d9dd58",
+      "raw_bytes": 13924,
+      "stored_sha256": "6e7749fe2a20eb22bd87f7470a1b6d78851013329115d0d44f27892b41502a19"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_reader.o": {
+      "stored": "objects/62eae6a3c23ca6e51976f62dd5a53aa8e3a6b861b7a44960dd0134d84a27243d.gz",
+      "raw_sha256": "62eae6a3c23ca6e51976f62dd5a53aa8e3a6b861b7a44960dd0134d84a27243d",
+      "raw_bytes": 16256,
+      "stored_sha256": "49fc50c9b92875da1374bbf3f40e7618245b49406d7007bda436ff06e9773f8a"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_sequence.o": {
+      "stored": "objects/d09251d2dfd69219b90109cb9e8c13096efd725ef85e43e4a804e279aa61f5e1.gz",
+      "raw_sha256": "d09251d2dfd69219b90109cb9e8c13096efd725ef85e43e4a804e279aa61f5e1",
+      "raw_bytes": 39232,
+      "stored_sha256": "344d09ccb833f6ff29d7307d1023335d297b19982e35eb03dd95e4b1cf686e34"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_audio_tone.o": {
+      "stored": "objects/6aa96e841a68bbd591aa464bd0d58a1539dd17decf272e5375f215f16f7cc3e3.gz",
+      "raw_sha256": "6aa96e841a68bbd591aa464bd0d58a1539dd17decf272e5375f215f16f7cc3e3",
+      "raw_bytes": 16916,
+      "stored_sha256": "308772aad3cd15fb7a97f87d4675330809d883f712efef6df1243d7b66147e39"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_clock.o": {
+      "stored": "objects/7f1eb33df5f45303c9dc1868909e01b8f62948c4a6cf6c9896a993671d01d26f.gz",
+      "raw_sha256": "7f1eb33df5f45303c9dc1868909e01b8f62948c4a6cf6c9896a993671d01d26f",
+      "raw_bytes": 22724,
+      "stored_sha256": "4a869fe7f8cd6b27d3d0a39e57d4b22cfa1867a552be70d3e24006428faeba0e"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_graphics_load.o": {
+      "stored": "objects/f330178b9d375086d1f94c45bc63639680e4af1333adcbadf37030ffe46d4fbe.gz",
+      "raw_sha256": "f330178b9d375086d1f94c45bc63639680e4af1333adcbadf37030ffe46d4fbe",
+      "raw_bytes": 31284,
+      "stored_sha256": "5c1607c79a07fbd978b79b856a510ab5ec95d299949dc9a37a91180fbd5a3e3d"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_hero_initialize.o": {
+      "stored": "objects/9bedf8f133c9fa0d34e70170cb2b034f7b92a15c74921939e60dd6aef14af06e.gz",
+      "raw_sha256": "9bedf8f133c9fa0d34e70170cb2b034f7b92a15c74921939e60dd6aef14af06e",
+      "raw_bytes": 53072,
+      "stored_sha256": "7599be329569c1787c12c80178d0497aad2bebe54b73f58c9d1c5e311035fb1b"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_irq.o": {
+      "stored": "objects/2695169157248a9beef3c33609cd5e329e90c35da3706b49f16a475a33f7b8ba.gz",
+      "raw_sha256": "2695169157248a9beef3c33609cd5e329e90c35da3706b49f16a475a33f7b8ba",
+      "raw_bytes": 16224,
+      "stored_sha256": "2136a88baa2b70d2c97305936cdd863cc257a26af6e6849ff568fb0c2892d700"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_irq_context.o": {
+      "stored": "objects/336092178d671a3633afc666b1c5edd472ded23aad8bd62eadc7508629cd490d.gz",
+      "raw_sha256": "336092178d671a3633afc666b1c5edd472ded23aad8bd62eadc7508629cd490d",
+      "raw_bytes": 11504,
+      "stored_sha256": "df2b2629242c9a3dbb01c113ef2a416773db6ead1d0488f1d0c12a9dbee0ae75"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_pattern_clock.o": {
+      "stored": "objects/f1a73ba402656cf68115415e286de935542f98a614016d487752b74ed8d49f75.gz",
+      "raw_sha256": "f1a73ba402656cf68115415e286de935542f98a614016d487752b74ed8d49f75",
+      "raw_bytes": 43556,
+      "stored_sha256": "97b595e797f5ee2a20a367a3b687775bfe11ef9d08e92bb7547317ca805f31d3"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_ram_planes.o": {
+      "stored": "objects/7d3855cec457b2832bc861757ba65b592c15f57034da68e5da18efe1382fcef9.gz",
+      "raw_sha256": "7d3855cec457b2832bc861757ba65b592c15f57034da68e5da18efe1382fcef9",
+      "raw_bytes": 25484,
+      "stored_sha256": "419c3683cbaa62a747f0af2c6c8837fcac1dd695e588612a11a03a783bff581c"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_rng.o": {
+      "stored": "objects/df0693f8c2d27a3ebc96399a74ac82fee531d897358d95aefec9c024ed337fcc.gz",
+      "raw_sha256": "df0693f8c2d27a3ebc96399a74ac82fee531d897358d95aefec9c024ed337fcc",
+      "raw_bytes": 5656,
+      "stored_sha256": "a4fa125783d8dc0862bfca2c437d404e0c72d1e9fcee665344ee3b1282d73a09"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_rng_timed.o": {
+      "stored": "objects/795b2f5df61e6e4afa95d8007fd34ae6c344c986d5d6ed1ba8a2b40fbce0e17e.gz",
+      "raw_sha256": "795b2f5df61e6e4afa95d8007fd34ae6c344c986d5d6ed1ba8a2b40fbce0e17e",
+      "raw_bytes": 16280,
+      "stored_sha256": "abaa12f7d9b4a2307be23858eb11362b6ac2b8f92541700f9694bb27f56778d9"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_room_finish.o": {
+      "stored": "objects/6c3fc3072c3ddf11376ed905629853a8b794a189b52d767b8512ed2892c3b030.gz",
+      "raw_sha256": "6c3fc3072c3ddf11376ed905629853a8b794a189b52d767b8512ed2892c3b030",
+      "raw_bytes": 29000,
+      "stored_sha256": "ac0db453315136fc873b574038cb31ca6419629dd73b4289f89984b4566d075d"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_room_history_timed.o": {
+      "stored": "objects/31c6ec1ee23f0ffe6634dd324c7c472e3f0bb86cea3b023f81fe95d7485b7d36.gz",
+      "raw_sha256": "31c6ec1ee23f0ffe6634dd324c7c472e3f0bb86cea3b023f81fe95d7485b7d36",
+      "raw_bytes": 29112,
+      "stored_sha256": "3b02abde2537ab45008f79edd3bbba6479b01cacb03189676199b1cace946261"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_room_hud.o": {
+      "stored": "objects/2b127e4cbf0cf5866ff9f347e5a42fb4a7f24e6f8bb062554118b8e32dd5fdce.gz",
+      "raw_sha256": "2b127e4cbf0cf5866ff9f347e5a42fb4a7f24e6f8bb062554118b8e32dd5fdce",
+      "raw_bytes": 70864,
+      "stored_sha256": "234668f278868eed65ff375bdb2dde598117831b4017d58507a73c460f3f93f1"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_room_load.o": {
+      "stored": "objects/36bb3a6da49b4f60f024d464b4e933e3f6a8e097864d195e258f6356b086e6d1.gz",
+      "raw_sha256": "36bb3a6da49b4f60f024d464b4e933e3f6a8e097864d195e258f6356b086e6d1",
+      "raw_bytes": 17844,
+      "stored_sha256": "49a60de3b99be6f83f149ac532d40279b4322ade6ebb1a56349e9e63755406ea"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_room_ready.o": {
+      "stored": "objects/f1098bd2cd65a77331d8a8aa95ecfec9b662460fffe15e23f3a22b3078fc0ef5.gz",
+      "raw_sha256": "f1098bd2cd65a77331d8a8aa95ecfec9b662460fffe15e23f3a22b3078fc0ef5",
+      "raw_bytes": 31968,
+      "stored_sha256": "55d82b416c4f6d203bb4ee5dd1a21c801735745155f7f5003501edca6a9b2e15"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_room_reveal.o": {
+      "stored": "objects/0ffafdeef37d48227a97a58361be14f2973b3acac69d9573b77d381e31219d54.gz",
+      "raw_sha256": "0ffafdeef37d48227a97a58361be14f2973b3acac69d9573b77d381e31219d54",
+      "raw_bytes": 41640,
+      "stored_sha256": "5e0826c6f597d35180a62cff7b286786a2e32b919b1c03e2aa604a01f0f906f3"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_wait.o": {
+      "stored": "objects/f314b3659c676b499c4eaa7687d486acd9c55b10be4dda6939fb5f088045b607.gz",
+      "raw_sha256": "f314b3659c676b499c4eaa7687d486acd9c55b10be4dda6939fb5f088045b607",
+      "raw_bytes": 9912,
+      "stored_sha256": "9d56de40c0d56a79a554ed9162955d49ad4156f35d74608a1a4c57e25232e012"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_wait_restore.o": {
+      "stored": "objects/766c8f8266ec7d45162e5e62ab46fdb469c2d561e28eef636ca0245a31e78874.gz",
+      "raw_sha256": "766c8f8266ec7d45162e5e62ab46fdb469c2d561e28eef636ca0245a31e78874",
+      "raw_bytes": 10108,
+      "stored_sha256": "237972601a2dfd3ac70c63925295143a9f0e8c23fe3372a1e3177ccba7804ca9"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/source_world_map.o": {
+      "stored": "objects/8bd2319a571f24b952f487654813314b9ea4619780462bb453fd5e2bc27ae7ac.gz",
+      "raw_sha256": "8bd2319a571f24b952f487654813314b9ea4619780462bb453fd5e2bc27ae7ac",
+      "raw_bytes": 41608,
+      "stored_sha256": "3fd32a684d2eb1617e41bbaa939ebf54a333f82b3e876bd9eba35fa6daa943b8"
+    },
+    "validation/native-room-reveal/kernel/out/release/src/wrapper.o": {
+      "stored": "objects/d62ed1f1258a46e149bb45e9e5ea64d1253665e613f7018532ca3246968cb244.gz",
+      "raw_sha256": "d62ed1f1258a46e149bb45e9e5ea64d1253665e613f7018532ca3246968cb244",
+      "raw_bytes": 31968,
+      "stored_sha256": "ba91d39a21b7160774868c93516aa312787754c66957fad17a1d1c7570da3499"
+    },
+    "validation/native-room-reveal/kernel/out/release/symbol.txt": {
+      "stored": "objects/c3304d2a501b4508bcb2da3263aa53c59431f4946c30a70bef56a1c6b9993ab6.gz",
+      "raw_sha256": "c3304d2a501b4508bcb2da3263aa53c59431f4946c30a70bef56a1c6b9993ab6",
+      "raw_bytes": 20226,
+      "stored_sha256": "0eebef8541742f0e9fbbf6b43d529e74c15ed2d8af94498a04104b2740de8ae7"
+    },
+    "validation/native-room-reveal/kernel/out/rom.bin": {
+      "stored": "objects/151848535edc3784152a1fdb8814ee6b5a45cf9e71d10290d2f2b272c1e3aeb0.gz",
+      "raw_sha256": "151848535edc3784152a1fdb8814ee6b5a45cf9e71d10290d2f2b272c1e3aeb0",
+      "raw_bytes": 2359296,
+      "stored_sha256": "41ee0a542b82c7665b810b3c7fb3774c2cc77d61d704271f7f57a760f2fd202a"
+    },
+    "validation/native-room-reveal/kernel/out/rom_header.bin": {
+      "stored": "objects/6fa50cf5287a5ea90ed5f186496649e235aa0bdc3553623665222d08ca80e88f.gz",
+      "raw_sha256": "6fa50cf5287a5ea90ed5f186496649e235aa0bdc3553623665222d08ca80e88f",
+      "raw_bytes": 256,
+      "stored_sha256": "098cf10e2a3e2f78086a55399bd6a7d940135182a611cf4fe609d2d74d619aae"
+    },
+    "validation/native-room-reveal/kernel/pal/capture.json": {
+      "stored": "objects/65717cc73d65327a6e108c3b7c2d2a7979fb08df264953d2e043d8c210880905.gz",
+      "raw_sha256": "65717cc73d65327a6e108c3b7c2d2a7979fb08df264953d2e043d8c210880905",
+      "raw_bytes": 558,
+      "stored_sha256": "fda4cb812fe7c0b368dee4c5f67197ca353a6c7e6f5ea7e8f4107490a980bc9c"
+    },
+    "validation/native-room-reveal/kernel/src/expected.h": {
+      "stored": "objects/72fc50704a5fdc279bcb6a0ff7327119eb3e0f80f25b54794c5e1a98023eb127.gz",
+      "raw_sha256": "72fc50704a5fdc279bcb6a0ff7327119eb3e0f80f25b54794c5e1a98023eb127",
+      "raw_bytes": 9411702,
+      "stored_sha256": "30f50d0698181b9fc933940cae23d59e67fc297c5888f6dd0fbcc38d8f5cc34a"
+    },
+    "validation/native-room-reveal/kernel/src/main.c": {
+      "stored": "objects/2fd2a9e1f51a9d810a33bc41ab3146d11317edd526b947108925585d5171d6e9.gz",
+      "raw_sha256": "2fd2a9e1f51a9d810a33bc41ab3146d11317edd526b947108925585d5171d6e9",
+      "raw_bytes": 1518,
+      "stored_sha256": "705c50d7ac3985595784a32f1fb3c4cd43e9448a034ba7db12ca8a1c069ad054"
+    },
+    "validation/native-room-reveal/kernel/src/rom_header.c": {
+      "stored": "objects/f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe.gz",
+      "raw_sha256": "f2dd0e22186bdcc0e1a0e371e05143069b69b4e837b204296ef19bfaa7de8efe",
+      "raw_bytes": 790,
+      "stored_sha256": "5079bebbab60471cfe6a2fc21fd66d8c3b7eb92b5d4005f522583389d23ba933"
+    },
+    "validation/native-room-reveal/kernel/src/source_actor_graphics.c": {
+      "stored": "objects/48dba564165945112adc225097d2d6b2f1bc484a096f00860480e7f2f50a6dc2.gz",
+      "raw_sha256": "48dba564165945112adc225097d2d6b2f1bc484a096f00860480e7f2f50a6dc2",
+      "raw_bytes": 61,
+      "stored_sha256": "a5d6129a7a2daa90a032ddf98156dbbb63f792642bb116216675f85e8c183136"
+    },
+    "validation/native-room-reveal/kernel/src/source_actor_list.c": {
+      "stored": "objects/1eef51711da620ce149d93ca20b2b932fb3e6117890dfedcb93d79c3d90195bc.gz",
+      "raw_sha256": "1eef51711da620ce149d93ca20b2b932fb3e6117890dfedcb93d79c3d90195bc",
+      "raw_bytes": 57,
+      "stored_sha256": "6e50c6a1f07af783391f362ec24dbcee9a629281a5b74af0ed1f69a05ba3ee0b"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_dispatch.c": {
+      "stored": "objects/6767b3d46833e70e86b9c20a7e78a74f7d638cd8626eb2cc6fb727a9be5395bd.gz",
+      "raw_sha256": "6767b3d46833e70e86b9c20a7e78a74f7d638cd8626eb2cc6fb727a9be5395bd",
+      "raw_bytes": 61,
+      "stored_sha256": "7b492ee5bf6052866c54f4e6c12a3ef2df34733208c274c3c0d2b7a5fcde8f16"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_envelope.c": {
+      "stored": "objects/1b01b39f2d8912865298689615117f7bb89637f542327b3717e7cbab6c8287ec.gz",
+      "raw_sha256": "1b01b39f2d8912865298689615117f7bb89637f542327b3717e7cbab6c8287ec",
+      "raw_bytes": 61,
+      "stored_sha256": "14567c753ffdf629063056889c574caf89201e195cb375a94117329768351265"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_fast.c": {
+      "stored": "objects/2d92d13cc17fac3d184fa311ddecef3b9ef479e5b45f648efc7422200d7076a0.gz",
+      "raw_sha256": "2d92d13cc17fac3d184fa311ddecef3b9ef479e5b45f648efc7422200d7076a0",
+      "raw_bytes": 57,
+      "stored_sha256": "6ac5b8ad5b5833dd1b57908bc6d404e32871621bfd6a9843e1f44d766c430f71"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_memory.c": {
+      "stored": "objects/ce062418a9abbec390aa0963293d948fc018617e45c73038cc306fe04fd3260e.gz",
+      "raw_sha256": "ce062418a9abbec390aa0963293d948fc018617e45c73038cc306fe04fd3260e",
+      "raw_bytes": 59,
+      "stored_sha256": "478140c4f0395a9e483629903e820d0415320906b4c422d1504c2a9a98ef5e04"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_noise.c": {
+      "stored": "objects/8a2262af290c9e3dc149c3301b1b39b304a3fdebb4ceb40cd9525043f25e74e7.gz",
+      "raw_sha256": "8a2262af290c9e3dc149c3301b1b39b304a3fdebb4ceb40cd9525043f25e74e7",
+      "raw_bytes": 58,
+      "stored_sha256": "73a9391dcbb2987371411663e5b17d9b7e38e1c67c32b557275f86035ac71cf9"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_pitch.c": {
+      "stored": "objects/1c2b952a7b08602c767cea503e7a9d86c76e97064338870c10330d73f03ee343.gz",
+      "raw_sha256": "1c2b952a7b08602c767cea503e7a9d86c76e97064338870c10330d73f03ee343",
+      "raw_bytes": 58,
+      "stored_sha256": "6914fefeea6f73f3f389728525199265cbadc2b6d759f7edb157d69d8f7481cd"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_prefix.c": {
+      "stored": "objects/9cb73ef7a8b1e9761cf94ca63824effaa99387f478a3af55f7d915c7ce3bb73a.gz",
+      "raw_sha256": "9cb73ef7a8b1e9761cf94ca63824effaa99387f478a3af55f7d915c7ce3bb73a",
+      "raw_bytes": 59,
+      "stored_sha256": "8ab3ce208efc281474cc192b906ffb6069d9324798b981f2faa9d191377e2104"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_priority.c": {
+      "stored": "objects/8371cb9b823349425b4251c74620bc948fc27322a0526b6a2e26be5691e9d291.gz",
+      "raw_sha256": "8371cb9b823349425b4251c74620bc948fc27322a0526b6a2e26be5691e9d291",
+      "raw_bytes": 61,
+      "stored_sha256": "eddfd49f569a7c8d020c594e2d3731167276de02a22b5f49d1bc1410c2e27de1"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_reader.c": {
+      "stored": "objects/abdc99e2bb940cbf57fd45ad81dc6c46ba7109d72f449fdd8457df1536505a24.gz",
+      "raw_sha256": "abdc99e2bb940cbf57fd45ad81dc6c46ba7109d72f449fdd8457df1536505a24",
+      "raw_bytes": 59,
+      "stored_sha256": "97d7f1096a6862cafd1d1cd72d2091be068a817085650c9c14c7a31484937dad"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_sequence.c": {
+      "stored": "objects/ccffb1d7e30865a9d604e1a2f7449c3de3e7588afce877f8ec60274a2fe71f48.gz",
+      "raw_sha256": "ccffb1d7e30865a9d604e1a2f7449c3de3e7588afce877f8ec60274a2fe71f48",
+      "raw_bytes": 61,
+      "stored_sha256": "02af76e0d8d8edaf45fca4d0a3f2478c97937e2e3a41b01bd42d6057d22b471a"
+    },
+    "validation/native-room-reveal/kernel/src/source_audio_tone.c": {
+      "stored": "objects/9bbbacdaaeded9907ac666a51fe25c8dbf93087a59ac58c385b95891df44bf3a.gz",
+      "raw_sha256": "9bbbacdaaeded9907ac666a51fe25c8dbf93087a59ac58c385b95891df44bf3a",
+      "raw_bytes": 57,
+      "stored_sha256": "023a73652398d08bc1a069bdae095b6c1f972c0ad6987167c013043ea10a47cf"
+    },
+    "validation/native-room-reveal/kernel/src/source_clock.c": {
+      "stored": "objects/09b9250942692768f9014ce14e45b55bb2a397b827ca05497d95968105eb47fe.gz",
+      "raw_sha256": "09b9250942692768f9014ce14e45b55bb2a397b827ca05497d95968105eb47fe",
+      "raw_bytes": 52,
+      "stored_sha256": "fa48d5be40a663cd44ecb2138f8cd6f9eaba70c3c104ff34f9c70099435678db"
+    },
+    "validation/native-room-reveal/kernel/src/source_graphics_load.c": {
+      "stored": "objects/71a723398165f4a787bd0ba36f633fcea1b7f7143c4d231d492d458647467e67.gz",
+      "raw_sha256": "71a723398165f4a787bd0ba36f633fcea1b7f7143c4d231d492d458647467e67",
+      "raw_bytes": 60,
+      "stored_sha256": "7dc435124cf746ed7235a670b491be146093d04d48f8980f2d371bde7f66ec1f"
+    },
+    "validation/native-room-reveal/kernel/src/source_hero_initialize.c": {
+      "stored": "objects/e792ca53f9231e9d9687c6f8c98b4be1fe6214b40e6636dfacad34c26f0b8b00.gz",
+      "raw_sha256": "e792ca53f9231e9d9687c6f8c98b4be1fe6214b40e6636dfacad34c26f0b8b00",
+      "raw_bytes": 62,
+      "stored_sha256": "4ecc1736c520c71fd88088a6b508864ea983291889dbd1ec091f0293376347b5"
+    },
+    "validation/native-room-reveal/kernel/src/source_irq.c": {
+      "stored": "objects/e8a5b27cb7867430667883c1de66f6ad9dc4d9380ccde2e250b3b5e084b4175d.gz",
+      "raw_sha256": "e8a5b27cb7867430667883c1de66f6ad9dc4d9380ccde2e250b3b5e084b4175d",
+      "raw_bytes": 50,
+      "stored_sha256": "0019b0f332e26f419863c4301bb4134d7176f10b139f3c727ec480a7b1cbbfc0"
+    },
+    "validation/native-room-reveal/kernel/src/source_irq_context.c": {
+      "stored": "objects/c977c46d800f8683d44d250e70c22b65a395d91bdb6dce88b393f28965d4d21e.gz",
+      "raw_sha256": "c977c46d800f8683d44d250e70c22b65a395d91bdb6dce88b393f28965d4d21e",
+      "raw_bytes": 58,
+      "stored_sha256": "0f9509246b616b21851ab7f947d196bb581c3257c73e51ac0725fd59521668cf"
+    },
+    "validation/native-room-reveal/kernel/src/source_pattern_clock.c": {
+      "stored": "objects/761aa22f3b9cb75db033851592efc1e8ee7e8a1bde10c38398d29ddba5b1a8fd.gz",
+      "raw_sha256": "761aa22f3b9cb75db033851592efc1e8ee7e8a1bde10c38398d29ddba5b1a8fd",
+      "raw_bytes": 60,
+      "stored_sha256": "286322a4048c67d2b7f3b3f3a71c7f8b189e43c3d140e598c46e9c9e1709458f"
+    },
+    "validation/native-room-reveal/kernel/src/source_ram_planes.c": {
+      "stored": "objects/e5cf08be3076b236a935b7e5495b23b326a7933e8a48362303816af27c2a347e.gz",
+      "raw_sha256": "e5cf08be3076b236a935b7e5495b23b326a7933e8a48362303816af27c2a347e",
+      "raw_bytes": 57,
+      "stored_sha256": "8b58e5570c944a280e9bef021e75ad9de67a63d7c711312aa691b96471ce96e4"
+    },
+    "validation/native-room-reveal/kernel/src/source_rng.c": {
+      "stored": "objects/53d6b9ae3b9897cf71a407c5eb88fe5719f68ad5d1ff9ce17510accc080d4a76.gz",
+      "raw_sha256": "53d6b9ae3b9897cf71a407c5eb88fe5719f68ad5d1ff9ce17510accc080d4a76",
+      "raw_bytes": 50,
+      "stored_sha256": "1838a04ee67b2beba4619df586ab56b8205da7b21cee22c23da6f0ed39a508bb"
+    },
+    "validation/native-room-reveal/kernel/src/source_rng_timed.c": {
+      "stored": "objects/06df88406eb4aaa5d30625cc091c901ac0d5ff21d87e0fee8d3c28341d6cb9e0.gz",
+      "raw_sha256": "06df88406eb4aaa5d30625cc091c901ac0d5ff21d87e0fee8d3c28341d6cb9e0",
+      "raw_bytes": 56,
+      "stored_sha256": "5b75f2b9d09c745aebf8bf9f22f91b5b0e4f03e4e3a1ebc6eb19dfcd842ce406"
+    },
+    "validation/native-room-reveal/kernel/src/source_room_finish.c": {
+      "stored": "objects/09c83b7cba9036f292932f8967d2de13af56163ab27daa659e484521e50c9f80.gz",
+      "raw_sha256": "09c83b7cba9036f292932f8967d2de13af56163ab27daa659e484521e50c9f80",
+      "raw_bytes": 58,
+      "stored_sha256": "e84d4fda5f60f8218036de20460c52cb8fd8b77e0b4788bf42c666241380c1a0"
+    },
+    "validation/native-room-reveal/kernel/src/source_room_history_timed.c": {
+      "stored": "objects/03b2cc4b7f80fb40b592a49d4a9a9af7b353a95fe8e7921ee943c7d4dd7620c6.gz",
+      "raw_sha256": "03b2cc4b7f80fb40b592a49d4a9a9af7b353a95fe8e7921ee943c7d4dd7620c6",
+      "raw_bytes": 65,
+      "stored_sha256": "94ebb3bc8aa9691c72c7fb2ef2b621552450e70bc65fa7b4ce026787dfdd1ca8"
+    },
+    "validation/native-room-reveal/kernel/src/source_room_hud.c": {
+      "stored": "objects/c5b07a56869b6bded2e85d3eb3869758c1fe104d5b15d3e6a198ac7c9bab6937.gz",
+      "raw_sha256": "c5b07a56869b6bded2e85d3eb3869758c1fe104d5b15d3e6a198ac7c9bab6937",
+      "raw_bytes": 55,
+      "stored_sha256": "b8dd093b141cf07e10a8f49dd895402e2588d03ee9c12fc57ecf2e57b1e32d68"
+    },
+    "validation/native-room-reveal/kernel/src/source_room_load.c": {
+      "stored": "objects/babcdc01aa6fb1ace537d523ea5fe6080f054def9d00cc4b368df3e69c80ba32.gz",
+      "raw_sha256": "babcdc01aa6fb1ace537d523ea5fe6080f054def9d00cc4b368df3e69c80ba32",
+      "raw_bytes": 56,
+      "stored_sha256": "06474353ee54825da8013555d0f2a35b7739a6218c05b1b63118b686e92355af"
+    },
+    "validation/native-room-reveal/kernel/src/source_room_ready.c": {
+      "stored": "objects/46e4af53aa15937f2676dd4bc0c0fb5215f71692360cdf7200842a7c5c0458ac.gz",
+      "raw_sha256": "46e4af53aa15937f2676dd4bc0c0fb5215f71692360cdf7200842a7c5c0458ac",
+      "raw_bytes": 57,
+      "stored_sha256": "4db4f3018e988ade6d270ee15c1866932a42e20e7fd671f8a60d794591908509"
+    },
+    "validation/native-room-reveal/kernel/src/source_room_reveal.c": {
+      "stored": "objects/40413baa9f4e97b82bd34a9da0f70b6442ebb51467b5562762fca6c43b8baba2.gz",
+      "raw_sha256": "40413baa9f4e97b82bd34a9da0f70b6442ebb51467b5562762fca6c43b8baba2",
+      "raw_bytes": 58,
+      "stored_sha256": "5cc9487953f43a7a21ee67b060e778a2725be609eae674fb9e17a675df7d965a"
+    },
+    "validation/native-room-reveal/kernel/src/source_wait.c": {
+      "stored": "objects/f4551586c37058f8d232add8b1507f3b57ee77766032d83878b28b14040a86f2.gz",
+      "raw_sha256": "f4551586c37058f8d232add8b1507f3b57ee77766032d83878b28b14040a86f2",
+      "raw_bytes": 51,
+      "stored_sha256": "792cf9a8f31ae3cb11c06ea6e32118448e27f63b659d8dbb983452c1e7c18478"
+    },
+    "validation/native-room-reveal/kernel/src/source_wait_restore.c": {
+      "stored": "objects/9c69f4e4a0f1db378771ec9ca8e9e335a735912081c17034adb2dea57c0f8607.gz",
+      "raw_sha256": "9c69f4e4a0f1db378771ec9ca8e9e335a735912081c17034adb2dea57c0f8607",
+      "raw_bytes": 59,
+      "stored_sha256": "0cdd04948b02ba52df0962f912b31f4cea7152923f99a92067fc00918dfbcd14"
+    },
+    "validation/native-room-reveal/kernel/src/source_world_map.c": {
+      "stored": "objects/d6b43ff11b671f6391bc085e431e75980d05293b9b71e71557fa9d65437a146e.gz",
+      "raw_sha256": "d6b43ff11b671f6391bc085e431e75980d05293b9b71e71557fa9d65437a146e",
+      "raw_bytes": 56,
+      "stored_sha256": "1557d7da90ef40e40cf9baf33296a5f46f310846273bb557842d827c18f7067e"
+    },
+    "validation/native-room-reveal/kernel/src/wrapper.c": {
+      "stored": "objects/ce38859f02fa1b254e616eba9b1fe9201e9c9275a819e9900d2321488a75e17c.gz",
+      "raw_sha256": "ce38859f02fa1b254e616eba9b1fe9201e9c9275a819e9900d2321488a75e17c",
+      "raw_bytes": 4772,
+      "stored_sha256": "3b56fbe4859019471f37826c51f49db7d5d5a26db020ea84f58a01afc1f735b1"
+    },
+    "validation/native-room-reveal/ready.dll": {
+      "stored": "objects/f4818bb416e0be528e1be4ce532feb72bc7d3f068043d3767792ece12c29ab02.gz",
+      "raw_sha256": "f4818bb416e0be528e1be4ce532feb72bc7d3f068043d3767792ece12c29ab02",
+      "raw_bytes": 340912,
+      "stored_sha256": "b442382e08070163ec0f67c6669b87865b5dbfd3992ecddcabc15f7d172de3bf"
+    },
+    "validation/native-room-reveal/wrapper.c": {
+      "stored": "objects/cd11496220c7902d1cdf6c462e3bf1b4c2b618260f7fe6c1204d2ce959cd929b.gz",
+      "raw_sha256": "cd11496220c7902d1cdf6c462e3bf1b4c2b618260f7fe6c1204d2ce959cd929b",
+      "raw_bytes": 4544,
+      "stored_sha256": "7239256705f1ad73ebd5aafbb55b0a53ac256dd58f9f30ecb7b9a05f95ea70a8"
+    }
+  },
+  "removed_verified_generated": [
+    {
+      "path": "validation/native-room-fade/auto/trace_counts.bin",
+      "bytes": 1048576
+    },
+    {
+      "path": "validation/native-room-fade/auto/trace_states.bin",
+      "bytes": 1024
+    },
+    {
+      "path": "validation/native-room-fade/auto/trace_windows.bin",
+      "bytes": 262144
+    },
+    {
+      "path": "validation/native-room-fade/fade.dll",
+      "bytes": 337970
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/main.d",
+      "bytes": 68
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_actor_graphics.d",
+      "bytes": 928
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_actor_list.d",
+      "bytes": 904
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_dispatch.d",
+      "bytes": 504
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_envelope.d",
+      "bytes": 504
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_fast.d",
+      "bytes": 1810
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_memory.d",
+      "bytes": 286
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_noise.d",
+      "bytes": 604
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_pitch.d",
+      "bytes": 486
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_prefix.d",
+      "bytes": 382
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_priority.d",
+      "bytes": 618
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_reader.d",
+      "bytes": 1048
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_sequence.d",
+      "bytes": 842
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_audio_tone.d",
+      "bytes": 816
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_clock.d",
+      "bytes": 336
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_graphics_load.d",
+      "bytes": 916
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_hero_initialize.d",
+      "bytes": 1042
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_irq.d",
+      "bytes": 328
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_irq_context.d",
+      "bytes": 684
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_pattern_clock.d",
+      "bytes": 698
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_ram_planes.d",
+      "bytes": 680
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_rng.d",
+      "bytes": 232
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_rng_timed.d",
+      "bytes": 456
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_room_finish.d",
+      "bytes": 1320
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_room_history_timed.d",
+      "bytes": 526
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_room_hud.d",
+      "bytes": 1102
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_room_load.d",
+      "bytes": 1658
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_room_ready.d",
+      "bytes": 1992
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_room_reveal.d",
+      "bytes": 2308
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_wait.d",
+      "bytes": 644
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_wait_restore.d",
+      "bytes": 786
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/source_world_map.d",
+      "bytes": 1004
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/_deps/src/wrapper.d",
+      "bytes": 2178
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/rom.bin",
+      "bytes": 1966080
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/rom.out",
+      "bytes": 1938496
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/rom_header.o",
+      "bytes": 932
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/sega.o",
+      "bytes": 4276
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/sega.s",
+      "bytes": 10664
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/main.o",
+      "bytes": 3227740
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_actor_graphics.o",
+      "bytes": 43044
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_actor_list.o",
+      "bytes": 26964
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_dispatch.o",
+      "bytes": 13736
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_envelope.o",
+      "bytes": 12784
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_fast.o",
+      "bytes": 66140
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_memory.o",
+      "bytes": 4536
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_noise.o",
+      "bytes": 9152
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_pitch.o",
+      "bytes": 10532
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_prefix.o",
+      "bytes": 13876
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_priority.o",
+      "bytes": 13908
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_reader.o",
+      "bytes": 16248
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_sequence.o",
+      "bytes": 39232
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_audio_tone.o",
+      "bytes": 16912
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_clock.o",
+      "bytes": 22708
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_graphics_load.o",
+      "bytes": 31280
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_hero_initialize.o",
+      "bytes": 53052
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_irq.o",
+      "bytes": 16224
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_irq_context.o",
+      "bytes": 11500
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_pattern_clock.o",
+      "bytes": 43544
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_ram_planes.o",
+      "bytes": 25480
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_rng.o",
+      "bytes": 5652
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_rng_timed.o",
+      "bytes": 16272
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_room_finish.o",
+      "bytes": 28992
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_room_history_timed.o",
+      "bytes": 29104
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_room_hud.o",
+      "bytes": 70848
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_room_load.o",
+      "bytes": 17836
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_room_ready.o",
+      "bytes": 31952
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_room_reveal.o",
+      "bytes": 41664
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_wait.o",
+      "bytes": 9916
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_wait_restore.o",
+      "bytes": 10104
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/source_world_map.o",
+      "bytes": 41588
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/release/src/wrapper.o",
+      "bytes": 11620
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/rom.bin",
+      "bytes": 1966080
+    },
+    {
+      "path": "validation/native-room-fade/kernel/out/rom_header.bin",
+      "bytes": 256
+    },
+    {
+      "path": "validation/native-room-fade/kernel/src/expected.h",
+      "bytes": 7663341
+    },
+    {
+      "path": "validation/native-room-fade/pal/trace_counts.bin",
+      "bytes": 1048576
+    },
+    {
+      "path": "validation/native-room-fade/pal/trace_states.bin",
+      "bytes": 1024
+    },
+    {
+      "path": "validation/native-room-fade/pal/trace_windows.bin",
+      "bytes": 262144
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/main.d",
+      "bytes": 68
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_actor_graphics.d",
+      "bytes": 928
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_actor_list.d",
+      "bytes": 904
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_dispatch.d",
+      "bytes": 504
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_envelope.d",
+      "bytes": 504
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_fast.d",
+      "bytes": 1810
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_memory.d",
+      "bytes": 286
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_noise.d",
+      "bytes": 604
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_pitch.d",
+      "bytes": 486
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_prefix.d",
+      "bytes": 382
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_priority.d",
+      "bytes": 618
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_reader.d",
+      "bytes": 1048
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_sequence.d",
+      "bytes": 842
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_audio_tone.d",
+      "bytes": 816
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_clock.d",
+      "bytes": 336
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_graphics_load.d",
+      "bytes": 916
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_hero_initialize.d",
+      "bytes": 1042
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_irq.d",
+      "bytes": 328
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_irq_context.d",
+      "bytes": 684
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_pattern_clock.d",
+      "bytes": 698
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_ram_planes.d",
+      "bytes": 680
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_rng.d",
+      "bytes": 232
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_rng_timed.d",
+      "bytes": 456
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_finish.d",
+      "bytes": 1320
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_history_timed.d",
+      "bytes": 526
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_hud.d",
+      "bytes": 1102
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_load.d",
+      "bytes": 1658
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_ready.d",
+      "bytes": 1992
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_room_reveal.d",
+      "bytes": 2308
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_wait.d",
+      "bytes": 644
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_wait_restore.d",
+      "bytes": 786
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/source_world_map.d",
+      "bytes": 1004
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/_deps/src/wrapper.d",
+      "bytes": 2178
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/rom.bin",
+      "bytes": 2359296
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/rom.out",
+      "bytes": 2285544
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/rom_header.o",
+      "bytes": 932
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/sega.o",
+      "bytes": 4276
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/sega.s",
+      "bytes": 10664
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/main.o",
+      "bytes": 3766440
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_actor_graphics.o",
+      "bytes": 43056
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_actor_list.o",
+      "bytes": 26976
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_dispatch.o",
+      "bytes": 13748
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_envelope.o",
+      "bytes": 12780
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_fast.o",
+      "bytes": 66156
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_memory.o",
+      "bytes": 4540
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_noise.o",
+      "bytes": 9152
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_pitch.o",
+      "bytes": 10536
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_prefix.o",
+      "bytes": 13892
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_priority.o",
+      "bytes": 13924
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_reader.o",
+      "bytes": 16256
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_sequence.o",
+      "bytes": 39232
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_audio_tone.o",
+      "bytes": 16916
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_clock.o",
+      "bytes": 22724
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_graphics_load.o",
+      "bytes": 31284
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_hero_initialize.o",
+      "bytes": 53072
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_irq.o",
+      "bytes": 16224
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_irq_context.o",
+      "bytes": 11504
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_pattern_clock.o",
+      "bytes": 43556
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_ram_planes.o",
+      "bytes": 25484
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_rng.o",
+      "bytes": 5656
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_rng_timed.o",
+      "bytes": 16280
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_room_finish.o",
+      "bytes": 29000
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_room_history_timed.o",
+      "bytes": 29112
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_room_hud.o",
+      "bytes": 70864
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_room_load.o",
+      "bytes": 17844
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_room_ready.o",
+      "bytes": 31968
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_room_reveal.o",
+      "bytes": 41640
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_wait.o",
+      "bytes": 9912
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_wait_restore.o",
+      "bytes": 10108
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/source_world_map.o",
+      "bytes": 41608
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/release/src/wrapper.o",
+      "bytes": 31968
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/rom.bin",
+      "bytes": 2359296
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/out/rom_header.bin",
+      "bytes": 256
+    },
+    {
+      "path": "validation/native-room-reveal/kernel/src/expected.h",
+      "bytes": 9411702
+    },
+    {
+      "path": "validation/native-room-reveal/ready.dll",
+      "bytes": 340912
+    },
+    {
+      "path": "validation/native-room-fade/fixture.sms",
+      "bytes": 262144
+    }
+  ]
+}
