@@ -1378,3 +1378,8 @@ Cold-reset R7=0; no ED4F in ROM. SGDK projection only, not exact R/IRQ sequence 
 36864 original Z80/C cases,2464 directions changed vs unprojected inputs.
 26 playable NTSC/PAL cases verify vectors/branches/exact draw counts;04E1 gate128 remains full-range.
 Source clock/RNG sequence, complete campaign on new SHA and hardware/audio fidelity remain open.
+
+2026-10-24: clocked1C15 history and24BF->1780 prefix ported;4608+4608 actualZ80/C vectors match,768 IRQ cases each.
+Compiled68000 replays9216 vectors in both regions:18432 executions pass, paused563T/59M1 source IRQ only.
+No gameplay RNG replacement, no observedR injection between draws, no new playable ROM.
+Need connect continuous graphics/loading entry clock and live IRQ context, then actor loader1780; full campaign remains open.

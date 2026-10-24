@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 50410,
+      "done": 1,
+      "cases": 9216,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "region": "pal",
+      "frame": 42197,
+      "done": 1,
+      "cases": 9216,
+      "failures": 0,
+      "first_error": 0
+    }
+  ],
+  "native_cases": 18432,
+  "module_sha256": {
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "source_room_history_timed.c": "a0eaca563801d9640884e1b1c44457a6f7565c03bb7d9b0001c784e86e8a76bc",
+    "source_room_history_timed.h": "d4e9d15b3dbd88aee6105e990989460badaf0df8de46ae386a19f75cbcd9e73c"
+  },
+  "test_rom_sha256": "df0f3ad839547904e890729c1928cb37803e778ea202289195e3da8a67734472",
+  "playable_rom_sha256": "02b597b346e3518670f93e1cfc5281a9db6a6cfbfbe2a70139ef18b11f05a5c5",
+  "production_integrated": false,
+  "limits": [
+    "Dedicated68000 cartridge; physical interrupts disabled, source IRQs use paused563T/59M1 model.",
+    "Controlled entry phases/R; no whole-game clock propagation or gameplay RNG replacement."
+  ]
+}

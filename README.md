@@ -17,6 +17,12 @@ Checksum Mega Drive : `8042`
 
 ## État du portage
 
+Le raccordement natif de l'historique au generateur SMS a avance le
+24 octobre : 9 216 cas Z80/C et 18 432 executions 68000 concordent pour
+l'historique et le prefixe de chargement jusqu'a 1780. Cette etape reste
+hors du chemin jouable ; elle ne remplace pas encore le hasard SGDK de
+la v0275. Voir le [raccordement et ses limites](analysis/history_timed_native.md).
+
 État au **23 octobre 2026** : la ROM jouable recommandée est **v0275**.
 Les choix de direction des ennemis 47/48/49 et du boss 65 utilisent désormais
 la plage 0–127 des lectures directes de R dans le démarrage SMS de référence.

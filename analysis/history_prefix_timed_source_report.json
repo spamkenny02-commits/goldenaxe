@@ -1,0 +1,50 @@
+{
+  "prefix_to_actor_loader": true,
+  "passed": true,
+  "rows": [
+    {
+      "region": "auto",
+      "enabled": 0,
+      "cases": 1152,
+      "interrupted": 0,
+      "irqs": 0
+    },
+    {
+      "region": "auto",
+      "enabled": 1,
+      "cases": 1152,
+      "interrupted": 384,
+      "irqs": 384
+    },
+    {
+      "region": "pal",
+      "enabled": 0,
+      "cases": 1152,
+      "interrupted": 0,
+      "irqs": 0
+    },
+    {
+      "region": "pal",
+      "enabled": 1,
+      "cases": 1152,
+      "interrupted": 384,
+      "irqs": 384
+    }
+  ],
+  "total_cases": 4608,
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "core_sha256": "129f4345ce915b4a19521ce9f815e6a6efc4d67c6ffeffd8030e9aa82532f896",
+  "module_sha256": {
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "source_room_history_timed.c": "a0eaca563801d9640884e1b1c44457a6f7565c03bb7d9b0001c784e86e8a76bc",
+    "source_room_history_timed.h": "d4e9d15b3dbd88aee6105e990989460badaf0df8de46ae386a19f75cbcd9e73c"
+  },
+  "production_integrated": false,
+  "limits": [
+    "Unchanged1C15..1C96 and optional24BF..24E3 on original Z80, controlled room/seed/R/history/masks and source entry phase observed from timing core.",
+    "Both IRQ-disabled and enabled fixtures, paused563T/59M1 audio IRQ model. Complete seed/history/masks, wall/foreground/IRQ time and sampled R compare.",
+    "No whole-game entry clock propagation, live nonpaused audio, native gameplay RNG replacement or campaign claim."
+  ]
+}
