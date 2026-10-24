@@ -213,11 +213,24 @@ u8 source_graphics_prefix_changed(SourceClock *clock,SourceIrqContext *context,u
         }
     }
     S(13,1);context->ram[0x40]=graphics;S(10,1);
-    for(n=0;n<sizeof(palette);n++) S(palette[n],1);
+    for(n=0;n<sizeof(palette);n++)
+    {
+        S(palette[n],1);
+        if(context->full_ram)
+        {
+            if(n==4 && context->full_ram[0x66]==15-graphics) return 0;
+            if(n==5) context->full_ram[0x66]=15-graphics;
+            if(n==8) context->full_ram[0x65]=0xb0;
+        }
+    }
     context->audio[6]=0xb0;
     for(n=0;n<sizeof(before_copy);n++) S(before_copy[n],1);
-    for(n=0;n<15;n++) S(21,2);
-    S(16,2);S(10,1);S(17,1);
+    for(n=0;n<16;n++)
+    {
+        S(n<15?21:16,2);
+        if(context->full_ram) context->full_ram[0x1ca0+n]=(patterns-16)[n];
+    }
+    S(10,1);S(17,1);
     if(!patterns032a(clock,context,&patterns,destination,plan,0x4000,0)) return 0;
     *end=patterns;
     return source_clock_checkpoint(clock,source_irq_interrupt,context);

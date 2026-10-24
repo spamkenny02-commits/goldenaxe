@@ -1398,3 +1398,12 @@ Scratch pixels occupy D130..D16F across8 rows, not one reused8-byte row; correct
 Native diagnostic compares736-byte checkpoint states in place against ROM to avoid starving SGDK startup heap.
 No new playable ROM: v275/275 numbered ROMs preserved. Full root clock, hero/tail, all classes, physical render/CPU budget/waveforms/campaign remain open.
 Next extend18E1 RET, hero2C63, room scripts5B20 and1CAF music selection to1FA7 on this same clock.
+
+2026-10-24: native hero2C63 and tail5B20/1CAF added; canonical8192 foreground body with live compact IRQ/audio overlays.
+C065/C066/DCA0 header and C06E metadata now tracked at original writes when full_ram supplied; old null-body path regression passes.
+Hero13150 source/C cases across3 classes pass475 bytes/time/M1/R; scripts/music288 cases cover3 classes/boss/empty/command suppression.
+Continuous16D0->1FA7:24 source paid exits match888 checkpoints/72 RNG calls plus hero entry+return/collision/scripts/music/actors/patterns.
+Compiled68000 matrix48 executions passes; stable2290T/351M1 remap rows batch only before IRQ, near-boundary scalar path retained.
+Same diagnostic vectors/code except remap:6895->2626 NTSC frames,5772->2199 PAL (~62% less); not playable FPS/pacing proof.
+Assets156/remap96 source regressions pass. Playable v275 unchanged. No source intermediate hero/map/R/seed/audio injection.
+Next1FA7 reveal/0AA4 wait/fade and actual bitmap tile_count before full IRQ consumes C042; physical renderer/CPU deadlines/global boot clock/all classes/campaign remain open.

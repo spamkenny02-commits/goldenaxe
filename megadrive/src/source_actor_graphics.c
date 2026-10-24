@@ -7,6 +7,24 @@ static u8 point(SourceClock *clock,SourceIrqContext *context,u16 pc,
  return !checkpoint || checkpoint(user,pc,clock,context);
 }
 #define POINT(pc) do {if(!point(clock,context,pc,checkpoint,user)) return 0;} while(0)
+/* One complete1D59..1DA4 row:2290T/351M1. Commit before the next clock
+ * operation, only when the scheduler proves no IRQ inside the whole row.
+ * Near VINT, the instruction path below keeps partial scratch/VRAM writes. */
+static void remap_row(u8 *patterns,u8 *terrain,u16 tile,u16 row)
+{
+ u8 input[4],output[4]={0,0,0,0},color,value;u16 bit,plane;
+ for(plane=0;plane<4;plane++) input[plane]=terrain[16+row*4+plane];
+ for(bit=0;bit<8;bit++)
+ {
+  color=0;
+  for(plane=0;plane<4;plane++) color|=((input[plane]>>(7-bit))&1)<<plane;
+  value=terrain[color];
+  for(plane=0;plane<4;plane++) output[plane]=(output[plane]<<1)|((value>>plane)&1);
+  terrain[48+row*8+bit]=value>>4;
+ }
+ for(plane=0;plane<4;plane++)
+ {terrain[16+row*4+plane]=0;patterns[tile*32+row*4+plane]=output[plane];}
+}
 u8 source_actor_remap(SourceClock *clock,SourceIrqContext *context,
  u8 *patterns,u8 *terrain,u16 address,u16 bytes,u8 remap)
 {
@@ -29,6 +47,7 @@ u8 source_actor_remap(SourceClock *clock,SourceIrqContext *context,
   S(10,1);S(10,1);S(4,1);
   for(row=0;row<8;row++)
   {
+   if(source_clock_block(clock,2290,351)) {remap_row(patterns,terrain,tile,row);continue;}
    S(7,1);
    for(bit=0;bit<8;bit++)
    {

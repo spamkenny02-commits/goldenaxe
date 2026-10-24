@@ -89,7 +89,7 @@ u8 source_world_map_load(SourceClock *clock,SourceIrqContext *context,u16 room,u
     if(bank2[offset]) { SEQ(found);record=bank2+offset+1; }
     else { SEQ(missing);record=context->low+0x199e; }
     S(10,1);
-    for(n=0;n<3;n++) { S(16,2);map->metadata[n]=record[n]; }
+    for(n=0;n<3;n++) { S(16,2);map->metadata[n]=record[n];if(context->full_ram) context->full_ram[0x6e +n]=record[n]; }
     SEQ(select);S(16,1);SEQ(persistent);SEQ(transformation);
     cell=map->metadata[1];kind=map->metadata[2];
     if(kind!=0 && kind!=4) return 0;

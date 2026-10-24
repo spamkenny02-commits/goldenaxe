@@ -15,6 +15,10 @@ typedef struct {
     SourceIrqOutput last_irq;
     SourceAudioReaderStatus last_audio;
     SourceClockIrq last_entry;
+    /* Optional8192-byte C000..DFFF body for composed foreground routines.
+     * The compact RAM/audio views above remain authoritative for their pages.
+     * Initialize to zero when unused; use source_room_memory accessors. */
+    u8 *full_ram;
 } SourceIrqContext;
 enum {SOURCE_IRQ_CONTEXT_INVALID=0x800,SOURCE_IRQ_CONTEXT_RESET,SOURCE_IRQ_CONTEXT_NESTED};
 /* SourceClockInterrupt adapter with dynamic native8000 + IRQ state/work.

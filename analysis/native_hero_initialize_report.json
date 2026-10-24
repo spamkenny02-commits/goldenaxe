@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "cases": 13150,
+  "rows": [
+    {
+      "region": "auto",
+      "cases": 6575,
+      "output_sha256": "e9dc40dbdc2700318c2ba4a6028edd9b4831fd284448cd15266be0f19833b3ff"
+    },
+    {
+      "region": "pal",
+      "cases": 6575,
+      "output_sha256": "0b697902d2f09d55427ee57dfdeb937d1326e6be6ae96fdde75dc4efb3c5f945"
+    }
+  ],
+  "source_sha256": "852e068e331dbfb01b9c38a62eecf81ce5b9f0f1bd10fff497117bd885c716c9",
+  "fixture_sha256": "b6486d541765a140ca016c312d775a5810732e5eebc583d0b10d88ba99a87c33",
+  "module_sha256": {
+    "source_hero_initialize.c": "e6f393d609e9fa62fe2874ec2208e34b103783706a840def7cb8c98214ff1117",
+    "source_room_finish.c": "508dea1362a52d21459103bb73ebc8434d54902107b9d6ecad601fd61ed779f2",
+    "source_wait_restore.c": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
+    "source_room_hud.c": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "source_world_map.c": "ae46c79b62e76f8594615ebe2e944b09740cb549727fcbbef524fd8ef67e54c7",
+    "source_ram_planes.c": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
+    "source_graphics_load.c": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
+    "source_pattern_clock.c": "be36a399ae39e093a7489d71c205fe09a7f67755307b8385e6f872d46656146e",
+    "source_wait.c": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "source_irq_context.c": "9d423c3750d96318902c2e72f6456e571251357bfb2e6196f4ee3aad0f845b1b",
+    "source_irq.c": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_audio_fast.c": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch.c": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "source_audio_priority.c": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "source_audio_tone.c": "8098ba4e45c21629a9920e6ca9ac5385ecb986e31d0db143cbbff42c0c92b272",
+    "source_audio_noise.c": "45b37e1689255404b86855e3970e82bfefd313421522aae46e3fae455fa9690b",
+    "source_audio_sequence.c": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "headers_sha256": {
+    "source_hero_initialize.h": "e08f3efcc1abe7df45e5754e787fb6d5e915dfe0a2b6e2947dc844ef1fafa40b",
+    "source_room_memory.h": "f9ca42cf61bf6d5e90aa2f41e52e9fd304902226794456eb25d6d04ec171e70c",
+    "source_irq_context.h": "9f4b3cdc90fddff536522d8b7b95144c611bbda25948d42818554a632c24f901"
+  },
+  "production_clock_wired": false,
+  "limits": [
+    "Original2C63 and callees unchanged, existing independent-dimension fixture: classes0..2, terrains0..5, selections0..16, directions, gear/curse/tiles/coordinate boundaries. Source IRQs disabled.",
+    "Entire475 affected/preserved RAM bytes and actual Z80 time/M1/R match. Not a complete Cartesian product, native68000, interrupted initialization, full loader composition or gameplay proof."
+  ]
+}

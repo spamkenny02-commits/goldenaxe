@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "region": "auto",
+      "baseline_frames": 6895,
+      "current_frames": 2626,
+      "reduction_percent": 61.91
+    },
+    {
+      "region": "pal",
+      "baseline_frames": 5772,
+      "current_frames": 2199,
+      "reduction_percent": 61.9
+    }
+  ],
+  "changed_modules": [
+    "source_actor_graphics.c"
+  ],
+  "source_cases_sha256": "4c518f5a55af493fe02ccadaff148a374d5d5131e67f553c0f8c15a527ac898c",
+  "baseline_test_rom_sha256": "5bced0891d73837ef39e1165c1b65da517bb0dfffc4f8d275a7e0ee6eef8c071",
+  "current_test_rom_sha256": "b5b99ce286e168a435be520059d01f3daf96ec36f06b4a4d001826f5201e0fd7",
+  "method": "Same24 continuous-loading cases and diagnostic comparisons. Only actor remap implementation changed: stable2290T/351M1 rows batch when no IRQ can occur.",
+  "limits": [
+    "Diagnostic CPU elapsed frames include setup/state/pixel comparisons and SGDK initialization; not playable FPS or standalone room pacing. Physical IRQs disabled, virtual IRQ/audio unchanged.",
+    "Playable v0275 is unchanged; this does not establish physical render deadlines or hardware behavior."
+  ]
+}

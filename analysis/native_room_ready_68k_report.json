@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "cases": 24,
+  "native_cases": 48,
+  "results": [
+    {
+      "region": "auto",
+      "frame": 2626,
+      "done": 1,
+      "cases": 24,
+      "failures": 0,
+      "first_error": 0
+    },
+    {
+      "region": "pal",
+      "frame": 2199,
+      "done": 1,
+      "cases": 24,
+      "failures": 0,
+      "first_error": 0
+    }
+  ],
+  "module_sha256": {
+    "source_room_ready.c": "b0e51f80c14d01dd54591e6d55eb17aa408ff48562bbfbf1ec2eb739d5b85dcf",
+    "source_hero_initialize.c": "e6f393d609e9fa62fe2874ec2208e34b103783706a840def7cb8c98214ff1117",
+    "source_actor_graphics.c": "c7b0657f72bc578079658b782555a84295aa8cf3ad8310ec2eb4a6fb7d486daa",
+    "source_actor_list.c": "d4a2e65cd5fd99d97cdf13e25bf0f19c2b23f6406c9d80deebc38aa516752676",
+    "source_room_load.c": "8de55099ba3da08a68c70b5d7a97ffbae7cd7fbd33f8fe24818431849db8277b",
+    "source_room_history_timed.c": "a0eaca563801d9640884e1b1c44457a6f7565c03bb7d9b0001c784e86e8a76bc",
+    "source_rng_timed.c": "722647a01b3ed17acc38f13c0daf72b3cff165e362b230ed7864b617b0f51a04",
+    "source_room_finish.c": "508dea1362a52d21459103bb73ebc8434d54902107b9d6ecad601fd61ed779f2",
+    "source_wait_restore.c": "a6ce6eac36ff120f8222dbe24c0456c7729c1062902f997ba7fb296d6dcecd28",
+    "source_room_hud.c": "71c0e1f8b7393cd2cf1c261a060ab184699d0ebef615f8eaec13027deb451f13",
+    "source_world_map.c": "ae46c79b62e76f8594615ebe2e944b09740cb549727fcbbef524fd8ef67e54c7",
+    "source_ram_planes.c": "8297e5a58e9a877485e69e98bbcadd1ffc19f7ec3194bea8273f5f4540be5cfc",
+    "source_graphics_load.c": "559314e87db463f4e65c24879e4e997721ab4a98b2b4ae92bd22a3319a6f8b39",
+    "source_pattern_clock.c": "be36a399ae39e093a7489d71c205fe09a7f67755307b8385e6f872d46656146e",
+    "source_wait.c": "4ed09b544bf7366d82afe04c0d86b07040a453e5e00209cd57fed05db4bfc7f6",
+    "source_irq_context.c": "9d423c3750d96318902c2e72f6456e571251357bfb2e6196f4ee3aad0f845b1b",
+    "source_irq.c": "bc5921ff1b8a9ed22c6c06c889cc430a469e926c360914e146481a89b1a2c534",
+    "source_clock.c": "800058a5cbafa50bcf27fc4a91b9622fd34312eb75fa46f8523cffc80799cc9a",
+    "source_rng.c": "5c64cd42ca0c18d69f8cfb1a185f282268b5dfd45a4b77f355323c6df802919f",
+    "source_audio_fast.c": "1e777c0b4ff03d4e70b925c441c51f68fc07d70a2dabee574f950f061a15de84",
+    "source_audio_reader.c": "e974968248964df36234528eea28a8791f0c170115db426ad5574db0326cecf8",
+    "source_audio_prefix.c": "c0c02bafe3dd7e4baf887f67b264786c70c74932c12c897213c941f32fea2d39",
+    "source_audio_dispatch.c": "f8ce91959f8fb0db6062900e69a1842da8cc108d33bdfcbb7509b681185b0d90",
+    "source_audio_priority.c": "d5bc487b634abc56b77df5aeec338a447be312c0e76679a1eec3b14585291147",
+    "source_audio_tone.c": "8098ba4e45c21629a9920e6ca9ac5385ecb986e31d0db143cbbff42c0c92b272",
+    "source_audio_noise.c": "45b37e1689255404b86855e3970e82bfefd313421522aae46e3fae455fa9690b",
+    "source_audio_sequence.c": "e7171cc12b4f031dc361943aca679b7a8fa5c1fc2bb7d7798864d16675aa7663",
+    "source_audio_memory.c": "ec755012b117bdb5bfe2c114037f44abe4891714f6532f4800206915e8dde1f0",
+    "source_audio_envelope.c": "d0878cd24b5d7bb8f255a5a9e97a231815ac41828cae53342b03c6cbe81ae17c",
+    "source_audio_pitch.c": "ea46d31e3c73a352995c3dcbcbbe141214a9c536fd827e1a16d49d8e5e058795"
+  },
+  "headers_sha256": {
+    "source_room_ready.h": "00c98c82ffb492ea95eebb58718cc54811deee33a945722020151a3e5de44b46",
+    "source_hero_initialize.h": "e08f3efcc1abe7df45e5754e787fb6d5e915dfe0a2b6e2947dc844ef1fafa40b",
+    "source_room_memory.h": "f9ca42cf61bf6d5e90aa2f41e52e9fd304902226794456eb25d6d04ec171e70c",
+    "source_irq_context.h": "9f4b3cdc90fddff536522d8b7b95144c611bbda25948d42818554a632c24f901"
+  },
+  "source_cases_sha256": "4c518f5a55af493fe02ccadaff148a374d5d5131e67f553c0f8c15a527ac898c",
+  "test_rom_sha256": "b5b99ce286e168a435be520059d01f3daf96ec36f06b4a4d001826f5201e0fd7",
+  "playable_sha256": "02b597b346e3518670f93e1cfc5281a9db6a6cfbfbe2a70139ef18b11f05a5c5",
+  "production_clock_wired": false,
+  "limits": [
+    "Dedicated68000 cartridge; physical IRQs disabled, continuous virtual source clock and live native IRQ/audio. Source-checked checkpoints, hero475 entry/return bytes, script/music fields, actors/history/masks and enemy patterns retained.",
+    "Other body/mirror bytes compare to host parity. Six controlled class0 destinations; no reveal/fade, physical renderer/pacing, boot entry, other classes or full campaign proof."
+  ]
+}

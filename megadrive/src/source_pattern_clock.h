@@ -24,7 +24,10 @@ u8 source_graphics_prefix_class0_planned(SourceClock *clock,SourceIrqContext *co
                                  const SourcePatternPlan *plan);
 /* Original175F classification for a changed bank, display already off.
  * room selects class0/1/2; patterns must start at that bank's8010. The
- * optional verified plan must describe exactly those pattern bytes. */
+ * optional verified plan must describe exactly those pattern bytes.
+ * With context->full_ram, also commits C065/C066 and the16-byte DCA0 header;
+ * patterns must have its original16 preceding ROM bytes. An unchanged
+ * C066 bank is outside this changed-bank path and is rejected. */
 u8 source_graphics_prefix_changed(SourceClock *clock,SourceIrqContext *context,u16 room,
                                  const u8 *patterns,u8 *destination,const u8 **end,
                                  const SourcePatternPlan *plan);

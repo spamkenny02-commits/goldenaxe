@@ -43,9 +43,9 @@ def compile_helper(actors=False):
  fn.argtypes=[u32,c.c_uint8,*([u8]*4),c.c_uint16,*([u8]*(10 if actors else 8)),u32,u32,u32,u8];fn.restype=c.c_uint8
  return folder,dll,fn
 
-@lru_cache(maxsize=3)
+@lru_cache(maxsize=4)
 def reference_manifest(actors):
- archive=ROOT/('analysis/actor-graphics-refresh-research-v0183' if actors=='graphics' else 'analysis/actor-prefix-refresh-research-v0183' if actors else 'analysis/history-refresh-research-v0183')
+ archive=ROOT/('analysis/loader-tail-refresh-research-v0183' if actors=='tail' else 'analysis/actor-graphics-refresh-research-v0183' if actors=='graphics' else 'analysis/actor-prefix-refresh-research-v0183' if actors else 'analysis/history-refresh-research-v0183')
  manifest=json.loads((archive/'manifest.json').read_bytes());assert manifest['source_sha256']==sha((ROOT/'input/original.sms').read_bytes())
  return archive,{i['path']:i['sha256'] for i in manifest['files']}
 
